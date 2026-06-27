@@ -37,20 +37,20 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 string pathToScript = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
                 MESHParse.Execute(pathToScript, "", true);
-                TextWriters.Write(Translate.DoTranslation("Script lint succeeded."), true, KernelColorType.Success);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_UESH_LINTER_SUCCESS"), true, KernelColorType.Success);
                 variableValue = "1";
                 return 0;
             }
             catch (KernelException kex) when (kex.ExceptionType == KernelExceptionType.UESHScript)
             {
-                TextWriters.Write(Translate.DoTranslation("Script lint failed. Most likely there is a syntax error. Check your script for errors and retry running the linter."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_UESH_LINTER_FAILURE"), true, KernelColorType.Error);
                 TextWriters.Write(kex.Message, true, KernelColorType.Error);
                 variableValue = "0";
                 return KernelExceptionTools.GetErrorCode(kex.ExceptionType);
             }
             catch (Exception ex)
             {
-                TextWriters.Write(Translate.DoTranslation("Script linter failed unexpectedly trying to parse your script.") + $" {ex.Message}", true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_UESH_LINTER_FAILED") + $" {ex.Message}", true, KernelColorType.Error);
                 variableValue = "0";
                 return ex.GetHashCode();
             }

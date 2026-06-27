@@ -23,16 +23,19 @@ namespace Nitrocid.Extras.Images.Icons
 {
     internal class IconsInit : IAddon
     {
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImagesIcons);
 
-        void IAddon.FinalizeAddon()
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasImagesIcons);
+
+        public void FinalizeAddon()
         { }
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         { }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         { }
     }
 }

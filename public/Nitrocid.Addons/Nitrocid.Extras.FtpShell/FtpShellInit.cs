@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,6 +26,7 @@ using Terminaux.Shell.Shells;
 using System.Collections.Generic;
 using System.Linq;
 using FtpConfig = Nitrocid.Extras.FtpShell.Settings.FtpConfig;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.FtpShell
 {
@@ -33,37 +34,42 @@ namespace Nitrocid.Extras.FtpShell
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("ftp", /* Localizable */ "Use an FTP shell to interact with servers",
+            new CommandInfo("ftp", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_FTP_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "server", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "FTP server to connect to"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC")
                         }),
                     ])
                 ], new FtpCommandExec())
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasFtpShell);
+
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasFtpShell);
 
         internal static FtpConfig FtpConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(FtpConfig)) ? (FtpConfig)Config.baseConfigurations[nameof(FtpConfig)] : Config.GetFallbackKernelConfig<FtpConfig>();
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.FtpShell.Resources.Languages.Output.Localizations", typeof(FtpShellInit).Assembly));
             var config = new FtpConfig();
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterShell("FTPShell", new FTPShellInfo());
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         { }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
             ShellManager.UnregisterShell("FTPShell");
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(FtpConfig));

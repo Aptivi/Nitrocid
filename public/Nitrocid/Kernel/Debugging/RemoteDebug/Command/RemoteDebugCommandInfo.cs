@@ -62,7 +62,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
         /// <summary>
         /// Gets the translated version of help entry (KS built-in remote debug commands only)
         /// </summary>
-        public string GetTranslatedHelpEntry() => Translate.DoTranslation(HelpDefinition);
+        public string GetTranslatedHelpEntry() => LanguageTools.GetLocalized(HelpDefinition);
 
     }
 }

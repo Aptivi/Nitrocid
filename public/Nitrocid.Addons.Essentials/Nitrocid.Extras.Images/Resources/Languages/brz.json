@@ -1,0 +1,25 @@
+{
+  "lang": "brz",
+  "name": "Portuguese (Brazil)",
+  "cultures": [
+    "pt-BR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "Visualiza uma imagem"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "O caminho para a imagem não foi fornecido."
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "O arquivo de imagem não existe."
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "Caminho para o arquivo de imagem"
+    }
+  ]
+}

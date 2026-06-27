@@ -27,16 +27,19 @@ namespace Nitrocid.Extras.Md5
     {
         private readonly MD5 singleton = new();
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMd5);
 
-        void IAddon.FinalizeAddon()
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasMd5);
+
+        public void FinalizeAddon()
         { }
 
-        void IAddon.StartAddon() =>
+        public void StartAddon() =>
             DriverHandler.RegisterBaseDriver<IEncryptionDriver>(singleton);
 
-        void IAddon.StopAddon() =>
+        public void StopAddon() =>
             DriverHandler.UnregisterBaseDriver<IEncryptionDriver>(singleton.DriverName);
     }
 }

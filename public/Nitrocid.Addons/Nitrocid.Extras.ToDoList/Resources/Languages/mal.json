@@ -1,0 +1,49 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "Tindakan tidak sah."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "Nama tugas"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "Pengurus tugas tugasan"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "Gagal menambah atau mengalih keluar tugasan."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "Sila berikan nama untuk tugas anda."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "Gagal menandakan tugasan."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "Tidak boleh mendapatkan senarai tugasan"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "Sama ada untuk menambah, mengalih keluar, menandai sebagai selesai atau menyahtanda sebagai selesai pada tugasan"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "Sama ada untuk menyenaraikan, menyimpan atau memuatkan semua tugasan"
+    }
+  ]
+}

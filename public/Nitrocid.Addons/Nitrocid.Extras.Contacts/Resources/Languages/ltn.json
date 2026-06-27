@@ -1,0 +1,322 @@
+{
+  "lang": "ltn",
+  "name": "Latin",
+  "cultures": [
+    "la",
+    "la-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTS_DESC",
+      "text": "Contactus tua manages"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED",
+      "text": "Scapus '{0}' aperire non potest quia' non invenitur."
+    },
+    {
+      "loc": "NKS_CONTACTS_IMPORTSUCCESS",
+      "text": "Importari contactus feliciter."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_NAMED",
+      "text": "Scapus \"{0}\" aperire non potest quia fasciculus chartarum invalidus est."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED",
+      "text": "Contactus fasciculus non est."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTSCOUNT",
+      "text": "contactus invenerunt"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED",
+      "text": "Contactus lima invalidum est."
+    },
+    {
+      "loc": "NKS_CONTACTS_MECARDEMPTY",
+      "text": "MeCard syntaxin vacua esse non potest."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOCONTACT",
+      "text": "Aut file contactus provisum non informationem de aliquo contactu habet vel non valet."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED",
+      "text": "Deficio ad parse contactus. Errorem details vide pro magis notitia."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE",
+      "text": "Contactus index feriunt. Maximus index est {0}, dum index {1}provisum est."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET",
+      "text": "Nullae contactus adquirendi."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH",
+      "text": "Contactus non sunt ad quaerendum."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_INVALIDREGEX",
+      "text": "Expressio regularis invalida est."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACT",
+      "text": "Contactus non est. Si contactus importare velis, optionibus importatis utere quaeso utentibus keystros definitos in fundo scrinii."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CANTIMPORTCONTACTS",
+      "text": "Aliqua ex contactibus importari non possunt."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PATHVCFPROMPT",
+      "text": "Ingredere iter ad VCF fasciculi cum indicem tuum. Scapus Android contactus2.db sustentatur."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_FILENOTFOUND",
+      "text": "Fasciculus non est. Fac ut rectam viam scripseris ad lima VCF vel ad notas2.db lima."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDPROMPT",
+      "text": "Intra validum MeCard repraesentatio contactus tui."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDINVALID",
+      "text": "Contactus MeCard syntaxin invalidum est."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDEMPTY",
+      "text": "Contactus MeCard syntaxin non sit inanis"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_SEARCHPROMPT",
+      "text": "Intrant expressionem regularem ad notos quaerendos."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTSSEARCH",
+      "text": "Nullae notae sunt quae expressionem petitam tuam contineant."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNAME",
+      "text": "Nomen Contangionis"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTNAME",
+      "text": "Nulla contactus nomen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESS",
+      "text": "Contactus oratio"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAIL",
+      "text": "Contactus mail"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOMAIL",
+      "text": "Nulla contactus mail"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORG",
+      "text": "Contactus ordo"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOORG",
+      "text": "Nulla contactus ordo"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PHONE",
+      "text": "Contactus telephono"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOPHONE",
+      "text": "Nulla contactus telephone"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URL",
+      "text": "Contactus URL"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOURL",
+      "text": "Nulla contactus URL"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEO",
+      "text": "Contactus geo"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOGEO",
+      "text": "Nulla contactus geo"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPP",
+      "text": "Contactus IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOIMPP",
+      "text": "Nulla contactus IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICK",
+      "text": "Contact cognomen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONICK",
+      "text": "Contactus cognomen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLE",
+      "text": "Contactus munus"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOROLE",
+      "text": "Nulla contactus munus"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLE",
+      "text": "Contactus titulus"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTITLE",
+      "text": "Nulla contactus titulus"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTES",
+      "text": "Contactus notas"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONOTES",
+      "text": "Nulla contactus notas"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC",
+      "text": "Contactus album tuum"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC",
+      "text": "Contactus tua onerat"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC",
+      "text": "Importat tua contactus"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC",
+      "text": "Tractat requiritur initus ut MeCard filum"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_DESC",
+      "text": "Contactus notitia accipit"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTS",
+      "text": "Nulli contactus."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMINVALID",
+      "text": "Contactus numerus invalidum est."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE",
+      "text": "Contactus numerus feriunt."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_FIRSTNAME",
+      "text": "Praenomen"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_LASTNAME",
+      "text": "Cognomen"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_GEO",
+      "text": "Contactus Geo"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NOTE",
+      "text": "Contactus nota"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_CANTLISTSOME",
+      "text": "Aliqua ex contactibus enumerari non possunt."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETE",
+      "text": "Delere"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_INFO",
+      "text": "Info"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Impetrare occasus viscus."
+    },
+    {
+      "loc": "NKS_CONTACTS_HOMEPAGE_CONTACTS",
+      "text": "Contactus"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETEALL",
+      "text": "Delere All"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORT",
+      "text": "Import"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM",
+      "text": "Ex importare"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCH",
+      "text": "Investigatio"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT",
+      "text": "Search Next"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK",
+      "text": "Quaerere Back"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_RAWINFO",
+      "text": "Rudis Info"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD",
+      "text": "Import Ex MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_DESC",
+      "text": "Haec sectio permittit te configurare quomodo contactus opera addon."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME",
+      "text": "Ostende profile pictures"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC",
+      "text": "Si confortavit, imagines contactus ostendit. Debilitatum ad impediendum abuti et ad rationes perficiendas."
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC",
+      "text": "Aut viam ad vCard lima contactum vel MeCard represnetation"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC",
+      "text": "Contactus numerus"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_EDIT",
+      "text": "Edit..."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
+      "text": "Intra novum nomen huic contactu"
+    }
+  ]
+}

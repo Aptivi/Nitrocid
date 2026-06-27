@@ -1,0 +1,46 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "Tindakan tidak valid."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "Nama tugas"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "Manajer tugas yang harus dilakukan"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "Gagal menambahkan atau menghapus tugas."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "Berikan nama untuk tugas Anda."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "Gagal menandai tugas."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "Tidak bisa mendapatkan daftar tugas"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "Apakah akan menambahkan, menghapus, menandai sebagai selesai, atau menghapus tanda sebagai selesai pada suatu tugas"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "Apakah akan mencantumkan, menyimpan, atau memuat semua tugas"
+    }
+  ]
+}

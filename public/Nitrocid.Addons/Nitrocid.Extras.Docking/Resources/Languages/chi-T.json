@@ -1,0 +1,42 @@
+{
+  "lang": "chi-T",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "显示有关所选停靠视图的全屏概述，以便能够将其用作信息面板"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "没有同名的停靠屏幕。"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "没有同名的屏幕底座。"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "没有屏幕底座。"
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "屏幕底座崩溃了"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "码头名称"
+    }
+  ]
+}

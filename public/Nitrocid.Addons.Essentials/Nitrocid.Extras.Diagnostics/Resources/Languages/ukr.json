@@ -1,0 +1,26 @@
+{
+  "lang": "ukr",
+  "name": "Ukrainian",
+  "cultures": [
+    "uk",
+    "uk-UA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "Отримує зворотне трасування для всіх потоків"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "Ми вважаємо, що ви використовуєте Windows 8 або старішу версію. Ця операція не підтримується."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "Інформація трасування стека потоку для {0}"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "Це не нитка Nitrocid KS"
+    }
+  ]
+}

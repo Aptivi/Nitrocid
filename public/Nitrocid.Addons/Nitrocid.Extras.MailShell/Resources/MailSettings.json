@@ -1,83 +1,83 @@
 [
     {
         "Name": "Mail",
-        "Desc": "This section lets you configure how the mail shell works.",
+        "Desc": "NKS_SHELLPACKS_MAIL_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "Prompt Preset",
+                "Name": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "MailPromptPreset",
                 "ShellType": "MailShell",
                 "Description": ""
             },
             {
-                "Name": "Show mail message preview",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_NAME",
                 "Type": "SBoolean",
                 "Variable": "ShowPreview",
-                "Description": "When listing mail messages, show body preview."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_DESC"
             },
             {
-                "Name": "Username prompt style for mail",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_USERNAMEPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "MailUserPromptStyle",
-                "Description": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_USERNAMEPROMPT_DESC"
             },
             {
-                "Name": "Password prompt style for mail",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_PASSWORDPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "MailPassPromptStyle",
-                "Description": "Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_PASSWORDPROMPT_DESC"
             },
             {
-                "Name": "IMAP prompt style for mail",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "MailIMAPPromptStyle",
-                "Description": "Write how you want your IMAP server prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_DESC"
             },
             {
-                "Name": "SMTP prompt style for mail",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "MailSMTPPromptStyle",
-                "Description": "Write how you want your SMTP server prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_DESC"
             },
             {
-                "Name": "Automatically detect mail server",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_NAME",
                 "Type": "SBoolean",
                 "Variable": "MailAutoDetectServer",
-                "Description": "Automatically detect the mail server based on the given address."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_DESC"
             },
             {
-                "Name": "Enable mail debug",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_NAME",
                 "Type": "SBoolean",
                 "Variable": "MailDebug",
-                "Description": "Enables mail server debug."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_DESC"
             },
             {
-                "Name": "Notify for new mail messages",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_NAME",
                 "Type": "SBoolean",
                 "Variable": "MailNotifyNewMail",
-                "Description": "Notifies you for any new mail messages."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_DESC"
             },
             {
-                "Name": "GPG password prompt style for mail",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "MailGPGPromptStyle",
-                "Description": "Write how you want your GPG password prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_DESC"
             },
             {
-                "Name": "Send IMAP ping interval",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_NAME",
                 "Type": "SInt",
                 "Variable": "MailImapPingInterval",
-                "Description": "How many milliseconds to send the IMAP ping?"
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_DESC"
             },
             {
-                "Name": "Send SMTP ping interval",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_NAME",
                 "Type": "SInt",
                 "Variable": "MailSmtpPingInterval",
-                "Description": "How many milliseconds to send the SMTP ping?"
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_DESC"
             },
             {
-                "Name": "Mail text format",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_NAME",
                 "Type": "SSelection",
                 "Variable": "MailTextFormat",
                 "IsEnumeration": true,
@@ -85,33 +85,33 @@
                 "Enumeration": "MimeKit.Text.TextFormat",
                 "EnumerationAssembly": "MimeKit",
                 "EnumerationZeroBased": true,
-                "Description": "Controls how the mail text will be shown."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_DESC"
             },
             {
-                "Name": "Maximum number of e-mails in one page",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_NAME",
                 "Type": "SIntSlider",
                 "Variable": "MailMaxMessagesInPage",
-                "Description": "How many e-mail messages to display in one page?",
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_DESC",
                 "MinimumValue": 0,
                 "MaximumValue": 25
             },
             {
-                "Name": "Show mail transfer progress",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_NAME",
                 "Type": "SBoolean",
                 "Variable": "MailShowProgress",
-                "Description": "If enabled, the mail shell will show how many bytes transmitted when downloading mail."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_DESC"
             },
             {
-                "Name": "Mail transfer progress",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_NAME",
                 "Type": "SString",
                 "Variable": "MailProgressStyle",
-                "Description": "Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size and {1} for total size."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_DESC"
             },
             {
-                "Name": "Mail transfer progress (single)",
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_NAME",
                 "Type": "SString",
                 "Variable": "MailProgressStyleSingle",
-                "Description": "Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size."
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_DESC"
             }
         ]
     }

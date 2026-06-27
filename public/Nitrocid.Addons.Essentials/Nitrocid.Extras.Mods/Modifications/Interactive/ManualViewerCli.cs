@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
             bool hasBody = !string.IsNullOrEmpty(selectedManual.Body?.ToString());
 
             // Generate the rendered text
-            string noDocs = Translate.DoTranslation("Unfortunately, this manual page doesn't have any contents. However, this documentation might have been found under the mod vendor's webpage. If you still can't find this documentation, ask the developers of the mod for more information.");
+            string noDocs = LanguageTools.GetLocalized("NKS_MODS_MANTUI_HASNOCONTENTS");
             string finalRenderedManualTitle = hasTitle ?
                 $"{selectedManual.Title} [v{selectedManual.Revision}]" :
                 $"{selectedManual.Name} [v{selectedManual.Revision}]";
@@ -61,7 +61,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
                 finalRenderedManualTitle + CharManager.NewLine +
                 new string('-', finalRenderedManualTitle.Length) + CharManager.NewLine + CharManager.NewLine +
                 finalRenderedManualBody + CharManager.NewLine + CharManager.NewLine +
-                Translate.DoTranslation("Presented to you by") + $" {selectedManual.ModName}";
+                LanguageTools.GetLocalized("NKS_MODS_MANTUI_PRESENTED") + $" {selectedManual.ModName}";
             ;
         }
 
@@ -102,11 +102,11 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
                 $"{manual.Title}" :
                 $"{manual.Name}";
             string finalRenderedManualBody = hasBody ?
-                Translate.DoTranslation("Content length") + $": {manual.Body?.Length}" :
-                Translate.DoTranslation("No contents.");
+                LanguageTools.GetLocalized("NKS_MODS_MANTUI_CONTENTLENGTH") + $": {manual.Body?.Length}" :
+                LanguageTools.GetLocalized("NKS_MODS_MANTUI_NOCONTENTS");
             string finalRenderedManualRevision = hasBody ?
                 $"v{manual.Revision}" :
-                Translate.DoTranslation("No revision.");
+                LanguageTools.GetLocalized("NKS_MODS_MANTUI_NOREVISION");
             finalInfoRendered.AppendLine(finalRenderedManualTitle);
             finalInfoRendered.AppendLine(finalRenderedManualBody);
             finalInfoRendered.AppendLine(finalRenderedManualRevision);

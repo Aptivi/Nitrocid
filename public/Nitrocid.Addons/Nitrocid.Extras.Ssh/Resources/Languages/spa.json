@@ -1,0 +1,143 @@
+{
+  "lang": "spa",
+  "name": "Spanish",
+  "cultures": [
+    "es",
+    "es-419",
+    "es-AR",
+    "es-BO",
+    "es-BR",
+    "es-BZ",
+    "es-CL",
+    "es-CO",
+    "es-CR",
+    "es-CU",
+    "es-DO",
+    "es-EC",
+    "es-ES",
+    "es-GQ",
+    "es-GT",
+    "es-HN",
+    "es-MX",
+    "es-NI",
+    "es-PA",
+    "es-PE",
+    "es-PH",
+    "es-PR",
+    "es-PY",
+    "es-SV",
+    "es-US",
+    "es-UY",
+    "es-VE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "Se conecta a un servidor SSH."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "Ingrese la contraseña para {0}:"
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH desconectado."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "Error al intentar conectarse al servidor SSH: {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "La opción {0} especificada no es válida."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "La respuesta debe ser numérica."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "Presione cualquier tecla para regresar."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "Se conecta a un servidor SSH para ejecutar un comando."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "¿Cómo quieres autenticarte?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "Archivo de clave privada"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "Contraseña"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "Ingrese la frase de contraseña para la clave {0}:"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "El archivo de clave {0} no existe."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "Error al intentar agregar la clave privada:"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "Error al ejecutar el comando SSH"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "Error en el shell SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "Escribe cómo quieres que sea tu indicador de inicio de sesión. Déjelo en blanco para usar el estilo predeterminado. Los marcadores de posición se analizan."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "Introduzca la ubicación de la clave privada de {0}. Escribe \"q\" para terminar de agregar claves:"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "Esta sección le permite configurar cómo funciona SSH."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "Estilo de solicitud de nombre de usuario para SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "Agregar nuevas conexiones al marcado rápido SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "Si está habilitado, agrega una nueva conexión al marcado rápido SSH."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "No se pudieron obtener las entradas de configuración."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "SSH está conectado pero no hay ningún cliente."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "Servidor SSH al que conectarse"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "Nombre de usuario para autenticarse"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "Comando para ejecutar remotamente"
+    }
+  ]
+}

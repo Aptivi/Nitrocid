@@ -1,0 +1,58 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_DESC",
+      "text": "Dán nội dung của một tệp hoặc một chuỗi vào nhà cung cấp dịch vụ lưu trữ văn bản"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_PROVIDER_DESC",
+      "text": "Chỉ định URL tới nhà cung cấp Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_TYPE_DESC",
+      "text": "Chỉ định loại nhà cung cấp Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTPAGE_DESC",
+      "text": "Chỉ định trang bài đăng của nhà cung cấp Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFORMAT_DESC",
+      "text": "Chỉ định định dạng bài đăng của nhà cung cấp Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFIELD_DESC",
+      "text": "Chỉ định tên trường bài đăng của nhà cung cấp Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_NEEDSFILEORTEXT",
+      "text": "Chỉ định tên tệp hoặc văn bản để tải lên."
+    },
+    {
+      "loc": "NKS_PASTEBIN_PROVIDERTYPEUNSUPPORTED",
+      "text": "Loại nhà cung cấp Pastebin không được hỗ trợ."
+    },
+    {
+      "loc": "NKS_PASTEBIN_PASTESUCCESS",
+      "text": "Đã dán vào nhà cung cấp thành công!"
+    },
+    {
+      "loc": "NKS_PASTEBIN_PASTEFAILURE",
+      "text": "Không thể dán vào nhà cung cấp."
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_FILESTRING_DESC",
+      "text": "Đường dẫn đến một tập tin hoặc một chuỗi để ghi"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_ARGUMENTS_DESC",
+      "text": "Đối số Pastebin"
+    }
+  ]
+}

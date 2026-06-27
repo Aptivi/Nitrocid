@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -87,7 +87,7 @@ namespace Nitrocid.Extras.FtpShell.FTP.Presets
 
             // SFTP user
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground());
-            PresetStringBuilder.AppendFormat(Translate.DoTranslation("User"));
+            PresetStringBuilder.AppendFormat(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_USER"));
 
             // "at" sign
             PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
@@ -95,7 +95,7 @@ namespace Nitrocid.Extras.FtpShell.FTP.Presets
 
             // SFTP site
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground());
-            PresetStringBuilder.AppendFormat(Translate.DoTranslation("Site"));
+            PresetStringBuilder.AppendFormat(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE"));
 
             // Closing
             PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());

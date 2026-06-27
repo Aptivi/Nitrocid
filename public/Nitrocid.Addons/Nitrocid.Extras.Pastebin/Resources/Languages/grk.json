@@ -1,0 +1,59 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_DESC",
+      "text": "Επικολλά το περιεχόμενο είτε ενός αρχείου είτε μιας συμβολοσειράς σε έναν πάροχο φιλοξενίας κειμένου"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_PROVIDER_DESC",
+      "text": "Καθορίζει τη διεύθυνση URL στον πάροχο Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_TYPE_DESC",
+      "text": "Καθορίζει τον τύπο πάροχου Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTPAGE_DESC",
+      "text": "Καθορίζει τη σελίδα ανάρτησης του παρόχου Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFORMAT_DESC",
+      "text": "Καθορίζει τη μορφή ανάρτησης του παρόχου Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFIELD_DESC",
+      "text": "Καθορίζει το όνομα του πεδίου ανάρτησης του παρόχου Pastebin"
+    },
+    {
+      "loc": "NKS_PASTEBIN_NEEDSFILEORTEXT",
+      "text": "Καθορίστε είτε όνομα αρχείου είτε κείμενο προς μεταφόρτωση."
+    },
+    {
+      "loc": "NKS_PASTEBIN_PROVIDERTYPEUNSUPPORTED",
+      "text": "Ο τύπος παρόχου Pastebin δεν υποστηρίζεται."
+    },
+    {
+      "loc": "NKS_PASTEBIN_PASTESUCCESS",
+      "text": "Επικολλήθηκε με επιτυχία στον πάροχο!"
+    },
+    {
+      "loc": "NKS_PASTEBIN_PASTEFAILURE",
+      "text": "Δεν είναι δυνατή η επικόλληση στον πάροχο."
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_FILESTRING_DESC",
+      "text": "Διαδρομή σε ένα αρχείο ή μια συμβολοσειρά για εγγραφή"
+    },
+    {
+      "loc": "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_ARGUMENTS_DESC",
+      "text": "Επιχειρήματα Pastebin"
+    }
+  ]
+}

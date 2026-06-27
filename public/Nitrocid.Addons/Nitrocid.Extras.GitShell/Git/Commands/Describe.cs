@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -40,7 +40,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 return 43;
             string commitish = parameters.ArgumentsList[0];
             var commit = GitShellCommon.Repository.Commits.Single((c) => c.Sha.StartsWith(commitish));
-            TextWriterColor.Write(Translate.DoTranslation("Description for commit") + $" {commit.Sha}:");
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMIT_DESC") + $" {commit.Sha}:");
             TextWriterColor.Write(GitShellCommon.Repository.Describe(commit, new DescribeOptions()));
             return 0;
         }

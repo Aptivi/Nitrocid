@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -267,7 +267,7 @@ namespace Nitrocid.Misc.Splash
         /// </summary>
         /// <param name="splash">Splash screen instance</param>
         public static void ResetProgressReportArea(ISplash? splash = null) =>
-            ReportProgress(Translate.DoTranslation("Loading..."), 0, false, splash ?? SplashManager.CurrentSplash);
+            ReportProgress(LanguageTools.GetLocalized("NKS_MISC_SPLASH_DEFAULTMSG"), 0, false, splash ?? SplashManager.CurrentSplash);
 
     }
 }

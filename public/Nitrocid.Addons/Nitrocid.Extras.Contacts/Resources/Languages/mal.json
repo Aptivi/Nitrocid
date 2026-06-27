@@ -1,0 +1,325 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTS_DESC",
+      "text": "Mengurus kenalan anda"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED",
+      "text": "Tidak dapat membuka fail '{0}' kerana ia tidak ditemui."
+    },
+    {
+      "loc": "NKS_CONTACTS_IMPORTSUCCESS",
+      "text": "Berjaya mengimport kenalan."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_NAMED",
+      "text": "Tidak dapat membuka fail '{0}' kerana fail kad tidak sah."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED",
+      "text": "Fail kenalan tidak wujud."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTSCOUNT",
+      "text": "kenalan ditemui"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED",
+      "text": "Fail kenalan tidak sah."
+    },
+    {
+      "loc": "NKS_CONTACTS_MECARDEMPTY",
+      "text": "Sintaks MeCard tidak boleh kosong."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOCONTACT",
+      "text": "Sama ada fail kenalan yang disediakan tidak mempunyai maklumat tentang sebarang kenalan atau tidak sah."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED",
+      "text": "Gagal menghuraikan kenalan. Lihat butiran ralat untuk mendapatkan maklumat lanjut."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE",
+      "text": "Indeks kenalan berada di luar julat. Indeks maksimum ialah {0} manakala indeks yang disediakan ialah {1}."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET",
+      "text": "Tiada kenalan untuk diperolehi."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH",
+      "text": "Tiada kenalan untuk dicari."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_INVALIDREGEX",
+      "text": "Ungkapan biasa tidak sah."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACT",
+      "text": "Tiada kenalan. Jika anda ingin mengimport kenalan, sila gunakan pilihan import menggunakan ketukan kekunci yang ditakrifkan di bahagian bawah skrin."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CANTIMPORTCONTACTS",
+      "text": "Sesetengah kenalan tidak boleh diimport."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PATHVCFPROMPT",
+      "text": "Masukkan laluan ke fail VCF yang mengandungi kenalan anda. Fail contacts2.db Android juga disokong."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_FILENOTFOUND",
+      "text": "Fail tidak wujud. Pastikan anda telah menulis laluan yang betul ke fail VCF atau ke fail contacts2.db."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDPROMPT",
+      "text": "Masukkan perwakilan MeCard yang sah bagi kenalan anda."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDINVALID",
+      "text": "Sintaks Hubungi MeCard tidak sah."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDEMPTY",
+      "text": "Sintaks Hubungi MeCard mungkin tidak kosong"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_SEARCHPROMPT",
+      "text": "Masukkan ungkapan biasa untuk mencari kenalan."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTSSEARCH",
+      "text": "Tiada kenalan yang mengandungi ungkapan yang anda minta."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNAME",
+      "text": "Nama kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTNAME",
+      "text": "Tiada nama kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESS",
+      "text": "Alamat kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAIL",
+      "text": "Mel hubungi"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOMAIL",
+      "text": "Tiada mel untuk dihubungi"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORG",
+      "text": "Organisasi hubungan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOORG",
+      "text": "Tiada organisasi hubungan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PHONE",
+      "text": "Telefon kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOPHONE",
+      "text": "Tiada telefon untuk dihubungi"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URL",
+      "text": "URL hubungan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOURL",
+      "text": "Tiada URL kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEO",
+      "text": "Hubungi geo"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOGEO",
+      "text": "Tiada kenalan geo"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPP",
+      "text": "Hubungi IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOIMPP",
+      "text": "Tiada kenalan IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICK",
+      "text": "Nama panggilan kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONICK",
+      "text": "Tiada nama panggilan kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLE",
+      "text": "Peranan kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOROLE",
+      "text": "Tiada peranan kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLE",
+      "text": "Tajuk kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTITLE",
+      "text": "Tiada tajuk kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTES",
+      "text": "Nota kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONOTES",
+      "text": "Tiada nota kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC",
+      "text": "Menyenaraikan kenalan anda"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC",
+      "text": "Memuatkan kenalan anda"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC",
+      "text": "Mengimport kenalan anda"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC",
+      "text": "Anggap input yang diperlukan sebagai rentetan MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_DESC",
+      "text": "Mendapat maklumat hubungan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTS",
+      "text": "Tiada kenalan."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMINVALID",
+      "text": "Nombor hubungan tidak sah."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE",
+      "text": "Nombor hubungan di luar julat."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_FIRSTNAME",
+      "text": "nama pertama"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_LASTNAME",
+      "text": "nama keluarga"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_GEO",
+      "text": "Hubungi Geo"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NOTE",
+      "text": "Nota kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_CANTLISTSOME",
+      "text": "Beberapa kenalan tidak dapat disenaraikan."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETE",
+      "text": "Padam"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_INFO",
+      "text": "info"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Gagal mendapatkan entri tetapan."
+    },
+    {
+      "loc": "NKS_CONTACTS_HOMEPAGE_CONTACTS",
+      "text": "Kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETEALL",
+      "text": "Padam Semua"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORT",
+      "text": "Import"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM",
+      "text": "Import Dari"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCH",
+      "text": "Cari"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT",
+      "text": "Cari Seterusnya"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK",
+      "text": "Cari Belakang"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_RAWINFO",
+      "text": "Maklumat Mentah"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD",
+      "text": "Import Dari MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_DESC",
+      "text": "Bahagian ini membolehkan anda mengkonfigurasi cara addon kenalan berfungsi."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME",
+      "text": "Tunjukkan gambar profil"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC",
+      "text": "Jika didayakan, tunjukkan imej kenalan. Dilumpuhkan secara lalai untuk mengelakkan penyalahgunaan dan atas sebab prestasi."
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC",
+      "text": "Sama ada laluan ke fail kenalan vCard atau represnetation MeCard"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC",
+      "text": "Nombor hubungan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_EDIT",
+      "text": "Edit..."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
+      "text": "Masukkan nama baharu untuk kenalan ini"
+    }
+  ]
+}

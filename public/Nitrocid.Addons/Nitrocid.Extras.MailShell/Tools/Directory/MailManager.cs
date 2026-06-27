@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -94,7 +94,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                         else
                         {
                             Msg = client.Inbox?.GetMessage(messages.ElementAtOrDefault(i), default, MailShellCommon.Progress) ??
-                                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Failed to obtain specified mail message"));
+                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED"));
                         }
                         MsgFrom = Msg.From.ToString();
                         MsgSubject = Msg.Subject ?? "";
@@ -138,12 +138,12 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             if (Message < 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Trying to remove message 0 or less than 0.");
-                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Message number may not be negative or zero."));
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO"));
             }
             else if (Message > MaxMessagesIndex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", vars: [Message, MaxMessagesIndex]);
-                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Message specified is not found."));
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND"));
             }
 
             lock (client.SyncRoot)
@@ -161,7 +161,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                 {
                     // Remove message
                     var inbox = client.Inbox ??
-                        throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Failed to obtain inbox"));
+                        throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
                     inbox.Open(FolderAccess.ReadWrite);
                     DebugWriter.WriteDebug(DebugLevel.I, "Removing {0}...", vars: [MsgNumber]);
                     inbox.Store(messages.ElementAtOrDefault(Message), new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
@@ -200,7 +200,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                         else
                         {
                             var inbox = client.Inbox ??
-                                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Failed to obtain inbox"));
+                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
                             Msg = inbox.GetMessage(MessageId, default, MailShellCommon.Progress);
                         }
                         SteppedMsgNumber += 1;
@@ -219,20 +219,20 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                                     DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
                                     Dir.Expunge();
                                     DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", vars: [DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber]);
-                                    TextWriterColor.Write(Translate.DoTranslation("Message {0} from {1} deleted from {2}. {3} messages remaining to parse."), DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX"), DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber);
                                 }
                                 else
                                 {
                                     // Remove message
                                     var inbox = client.Inbox ??
-                                        throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Failed to obtain inbox"));
+                                        throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
                                     inbox.Open(FolderAccess.ReadWrite);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Removing {0}...", vars: [Sender]);
                                     inbox.Store(MessageId, new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
                                     DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
                                     inbox.Expunge();
                                     DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", vars: [DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber]);
-                                    TextWriterColor.Write(Translate.DoTranslation("Message {0} from {1} deleted from inbox. {2} messages remaining to parse."), DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX"), DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber);
                                 }
                                 DeletedMsgNumber += 1;
                             }
@@ -265,12 +265,12 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             if (Message < 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Trying to move message 0 or less than 0.");
-                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Message number may not be negative or zero."));
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO"));
             }
             else if (Message > MaxMessagesIndex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", vars: [Message, MaxMessagesIndex]);
-                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Message specified is not found."));
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND"));
             }
 
             lock (client.SyncRoot)
@@ -290,7 +290,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                     var TargetF = MailDirectory.OpenFolder(TargetFolder);
                     DebugWriter.WriteDebug(DebugLevel.I, "Moving {0}...", vars: [MsgNumber]);
                     var inbox = client.Inbox ??
-                        throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Failed to obtain inbox"));
+                        throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
                     inbox.Open(FolderAccess.ReadWrite);
                     inbox.MoveTo(messages.ElementAtOrDefault(Message), TargetF);
                     DebugWriter.WriteDebug(DebugLevel.I, "Moved.");
@@ -328,7 +328,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                         else
                         {
                             var inbox = client.Inbox ??
-                                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Failed to obtain inbox"));
+                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
                             Msg = inbox.GetMessage(MessageId, default, MailShellCommon.Progress);
                         }
                         SteppedMsgNumber += 1;
@@ -347,7 +347,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                                     Dir.MoveTo(MessageId, TargetF);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Moved.");
                                     DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} moved from {2}. {3} messages remaining to parse.", vars: [DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber]);
-                                    TextWriterColor.Write(Translate.DoTranslation("Message {0} from {1} moved from {2}. {3} messages remaining to parse."), DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MVALL_DELETEDNOTINBOX"), DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber);
                                 }
                                 else
                                 {
@@ -355,12 +355,12 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                                     var TargetF = MailDirectory.OpenFolder(TargetFolder);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Moving {0}...", vars: [Sender]);
                                     var inbox = client.Inbox ??
-                                        throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Failed to obtain inbox"));
+                                        throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
                                     inbox.Open(FolderAccess.ReadWrite);
                                     inbox.MoveTo(MessageId, TargetF);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Moved.");
                                     DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} moved. {2} messages remaining to parse.", vars: [DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber]);
-                                    TextWriterColor.Write(Translate.DoTranslation("Message {0} from {1} moved. {2} messages remaining to parse."), DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX"), DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber);
                                 }
                                 DeletedMsgNumber += 1;
                             }

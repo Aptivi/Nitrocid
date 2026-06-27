@@ -1,32 +1,32 @@
 [
     {
         "Name": "SFTP",
-        "Desc": "This section lets you configure how the SFTP shell works.",
+        "Desc": "NKS_SHELLPACKS_SFTP_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "Prompt Preset",
+                "Name": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "SftpPromptPreset",
                 "ShellType": "SFTPShell",
                 "Description": ""
             },
             {
-                "Name": "Show file details in SFTP list",
+                "Name": "NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_NAME",
                 "Type": "SBoolean",
                 "Variable": "SFTPShowDetailsInList",
-                "Description": "Shows the SFTP file details while listing remote directories."
+                "Description": "NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_DESC"
             },
             {
-                "Name": "Username prompt style for SFTP",
+                "Name": "NKS_SHELLPACKS_SFTP_SETTINGS_USERNAMEPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "SFTPUserPromptStyle",
-                "Description": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_USERNAMEPROMPT_DESC"
             },
             {
-                "Name": "Add new connections to SFTP speed dial",
+                "Name": "NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_NAME",
                 "Type": "SBoolean",
                 "Variable": "SFTPNewConnectionsToSpeedDial",
-                "Description": "If enabled, adds a new connection to the SFTP speed dial."
+                "Description": "NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_DESC"
             }
         ]
     }

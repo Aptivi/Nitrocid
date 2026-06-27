@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.Mods.Commands
             string modName = parameters.ArgumentsList[0];
             if (!ModManager.Mods.TryGetValue(modName, out ModInfo? mod))
             {
-                TextWriters.Write(Translate.DoTranslation("Tried to query the manuals for nonexistent mod {0}."), true, KernelColorType.Error, modName);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND"), true, KernelColorType.Error, modName);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchMod);
             }
 

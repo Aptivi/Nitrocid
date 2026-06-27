@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -46,7 +46,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             // Prompt the user for selection
             var builder = new StringBuilder();
             var bootApps = BootManager.GetBootApps();
-            builder.AppendLine("\n  " + Translate.DoTranslation("Select boot entry:") + "\n");
+            builder.AppendLine("\n  " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_STD_BOOTENTRY") + "\n");
             for (int i = 0; i < bootApps.Count; i++)
             {
                 string bootApp = BootManager.GetBootAppNameByIndex(i);
@@ -67,7 +67,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
         }
 
         public override string RenderBootingMessage(string chosenBootName) =>
-            Translate.DoTranslation("Booting {0}...").FormatString(chosenBootName);
+            LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_BASE_BOOTING").FormatString(chosenBootName);
 
         public override string RenderSelectTimeout(int timeout) =>
             TextWriterWhereColor.RenderWhereColor($" {timeout}", ConsoleWrapper.WindowWidth - $" {timeout}".Length - 2, ConsoleWrapper.WindowHeight - 2, true, new Color(ConsoleColor.White));

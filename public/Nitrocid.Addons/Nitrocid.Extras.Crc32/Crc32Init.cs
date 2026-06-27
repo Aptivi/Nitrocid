@@ -27,16 +27,19 @@ namespace Nitrocid.Extras.Crc32
     {
         private readonly CRC32 singleton = new();
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCrc32);
 
-        void IAddon.FinalizeAddon()
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasCrc32);
+
+        public void FinalizeAddon()
         { }
 
-        void IAddon.StartAddon() =>
+        public void StartAddon() =>
             DriverHandler.RegisterBaseDriver<IEncryptionDriver>(singleton);
 
-        void IAddon.StopAddon() =>
+        public void StopAddon() =>
             DriverHandler.UnregisterBaseDriver<IEncryptionDriver>(singleton.DriverName);
     }
 }

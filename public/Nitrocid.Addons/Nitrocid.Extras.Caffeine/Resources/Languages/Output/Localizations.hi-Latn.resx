@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_CAFFEINE_COMMAND_CAFFEINE_DESC" xml:space="preserve">
+    <value>jab aapakee chaay ya kophee ka kap taiyaar hota hai to aapako sachet karane ke lie ek alaarm jodata hai.</value>
+  </data>
+  <data name="NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC" xml:space="preserve">
+    <value>ek alaarm ko nirast karata hai jo aapako tab sachet karata hai jab aapaka chaay ya kophee ka kap taiyaar ho jaata hai.</value>
+  </data>
+  <data name="NKS_CAFFEINE_AMERICANCOFFEE" xml:space="preserve">
+    <value>amerikan kofee</value>
+  </data>
+  <data name="NKS_CAFFEINE_REDTEA" xml:space="preserve">
+    <value>laal chaay</value>
+  </data>
+  <data name="NKS_CAFFEINE_GREENTEA" xml:space="preserve">
+    <value>haree chaay</value>
+  </data>
+  <data name="NKS_CAFFEINE_NOALERTS" xml:space="preserve">
+    <value>koee kaifeen alart nirast karane ke lie nahin.</value>
+  </data>
+  <data name="NKS_CAFFEINE_INVALIDSECONDS" xml:space="preserve">
+    <value>aapaka kap taiyaar hone mein lagane vaale sekand amaany hain.</value>
+  </data>
+  <data name="NKS_CAFFEINE_INVALIDSECONDSTIP" xml:space="preserve">
+    <value>yadi aap pey ka naam bataane ka prayaas kar rahe hain, to neeche dee gaee soochee dekhen:</value>
+  </data>
+  <data name="NKS_CAFFEINE_ALARMNAME" xml:space="preserve">
+    <value>aapaka kap ab taiyaar hai!</value>
+  </data>
+  <data name="NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC" xml:space="preserve">
+    <value>ya to sekand kee sankhya ya pey naam nirdisht karen</value>
+  </data>
+</root>

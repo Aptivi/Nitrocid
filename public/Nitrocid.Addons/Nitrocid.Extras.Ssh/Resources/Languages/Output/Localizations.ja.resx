@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_SSH_COMMAND_SSHELL_DESC" xml:space="preserve">
+    <value>SSHサーバーに接続します。</value>
+  </data>
+  <data name="NKS_SSH_PASSWORDPROMPT" xml:space="preserve">
+    <value>{0}のパスワードを入力してください：</value>
+  </data>
+  <data name="NKS_SSH_DISCONNECTED" xml:space="preserve">
+    <value>SSHが切断されました。</value>
+  </data>
+  <data name="NKS_SSH_CONNECTFAILED" xml:space="preserve">
+    <value>SSHサーバーに接続しようとしてエラーが発生しました：{0}</value>
+  </data>
+  <data name="NKS_SSH_INVALIDOPTION" xml:space="preserve">
+    <value>指定されたオプション{0}は無効です。</value>
+  </data>
+  <data name="NKS_SSH_ANSWERNEEDSNUM" xml:space="preserve">
+    <value>答えは数値でなければなりません。</value>
+  </data>
+  <data name="NKS_SSH_GOBACK" xml:space="preserve">
+    <value>いずれかのキーを押して戻ります。</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_SSHCMD_DESC" xml:space="preserve">
+    <value>コマンドを実行するために SSH サーバーに接続します。</value>
+  </data>
+  <data name="NKS_SSH_AUTHMETHOD_QUESTION" xml:space="preserve">
+    <value>どのように認証しますか?</value>
+  </data>
+  <data name="NKS_SSH_AUTHMETHOD_PRIVATEKEY" xml:space="preserve">
+    <value>秘密鍵ファイル</value>
+  </data>
+  <data name="NKS_SSH_AUTHMETHOD_PASSWORD" xml:space="preserve">
+    <value>パスワード</value>
+  </data>
+  <data name="NKS_SSH_PASSPHRASEPROMPT" xml:space="preserve">
+    <value>キー {0} のパスフレーズを入力してください:</value>
+  </data>
+  <data name="NKS_SSH_KEYFILENOTFOUND" xml:space="preserve">
+    <value>キー ファイル {0} は存在しません。</value>
+  </data>
+  <data name="NKS_SSH_CANTADDPRIVKEY" xml:space="preserve">
+    <value>秘密鍵の追加中にエラーが発生しました:</value>
+  </data>
+  <data name="NKS_SSH_SSHCMDFAILED" xml:space="preserve">
+    <value>SSH コマンドの実行中にエラーが発生しました</value>
+  </data>
+  <data name="NKS_SSH_SSHELLFAILED" xml:space="preserve">
+    <value>SSH シェルのエラー</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_LOGINPROMPT_DESC" xml:space="preserve">
+    <value>ログインプロンプトをどのようにするかを記述します。デフォルトのスタイルを使用するには、空白のままにします。プレースホルダーが解析されます。</value>
+  </data>
+  <data name="NKS_SSH_PRIVKEYLOCATIONPROMPT" xml:space="preserve">
+    <value>{0} の秘密キーの場所を入力します。「q」を入力してキーの追加を終了します。</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_DESC" xml:space="preserve">
+    <value>このセクションでは、SSH の動作を設定できます。</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_LOGINPROMPT_NAME" xml:space="preserve">
+    <value>SSH のユーザー名プロンプト スタイル</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_SPEEDDIAL_NAME" xml:space="preserve">
+    <value>SSHスピードダイヤルに新しい接続を追加する</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_SPEEDDIAL_DESC" xml:space="preserve">
+    <value>有効にすると、SSH スピードダイヤルに新しい接続が追加されます。</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>設定エントリを取得できませんでした。</value>
+  </data>
+  <data name="NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT" xml:space="preserve">
+    <value>SSH は接続されていますが、クライアントがありません。</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC" xml:space="preserve">
+    <value>接続するSSHサーバー</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC" xml:space="preserve">
+    <value>認証に使用するユーザー名</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>リモートで実行するコマンド</value>
+  </data>
+</root>

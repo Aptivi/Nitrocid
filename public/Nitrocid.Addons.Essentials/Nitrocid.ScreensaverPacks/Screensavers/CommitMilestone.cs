@@ -85,7 +85,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Prepare the figlet font for writing
             string text = "7,000!";
-            string textDesc = Translate.DoTranslation("Celebrating the 7,000th commit since 0.0.1!");
+            string textDesc = LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_COMMITMILESTONE_MESSAGE");
             int figWidth = FigletTools.GetFigletWidth(text, figFontUsed) / 2;
             int figHeight = FigletTools.GetFigletHeight(text, figFontUsed) / 2;
             int figWidthFallback = FigletTools.GetFigletWidth(text, figFontFallback) / 2;

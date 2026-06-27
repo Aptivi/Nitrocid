@@ -1,0 +1,117 @@
+{
+  "lang": "enk",
+  "name": "English (UK)",
+  "cultures": [
+    "en-GB"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "Connects to an SSH server."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "Enter the password for {0}: "
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH Disconnected."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "Error trying to connect to SSH server: {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "Specified option {0} is invalid."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "The answer must be numeric."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "Press any key to go back."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "Connects to an SSH server to execute a command."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "How do you want to authenticate?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "Private key file"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "Password"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "Enter the passphrase for key {0}: "
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "Key file {0} doesn't exist."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "Error trying to add private key:"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "Error executing SSH command"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "Error on SSH shell"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "Enter the location of the private key for {0}. Write \"q\" to finish adding keys:"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "This section lets you configure how the SSH works."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "Username prompt style for SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "Add new connections to SSH speed dial"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "If enabled, adds a new connection to the SSH speed dial."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Failed to obtain settings entries."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "SSH is connected but with no client."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "SSH server to connect to"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "Username to authenticate with"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "Command to remotely execute"
+    }
+  ]
+}

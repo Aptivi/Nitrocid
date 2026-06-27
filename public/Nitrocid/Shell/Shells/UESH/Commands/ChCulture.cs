@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -48,7 +48,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, parameters.CommandText);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
                 return -4;
             }
 
@@ -59,7 +59,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             var cultures = CultureManager.GetCultureCodes();
             if (!cultures.Contains(culture))
             {
-                TextWriters.Write(Translate.DoTranslation("Invalid culture") + $" {culture}", true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERCULTURE_FAILURE") + $" {culture}", true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
             }
 
@@ -71,7 +71,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             else
                 CultureManager.UpdateCulture(culture);
-            TextWriterColor.Write(Translate.DoTranslation("You may need to log out and log back in for changes to take effect."));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHLANG_RESTARTREQUIRED"));
             return 0;
         }
 

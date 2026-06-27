@@ -1,0 +1,146 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_DESC",
+      "text": "दिनांक और समय की जानकारी प्राप्त करता है"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
+      "text": "दिनांक जानकारी पार्स करने में विफल"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2",
+      "text": "सुनिश्चित करें कि प्रारूप सही है।"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC",
+      "text": "वर्तमान दिनांक और समय की जानकारी प्राप्त करता है"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HEADER",
+      "text": "की जानकारी"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC",
+      "text": "जानकारी प्रिंट करने की तिथि और समय"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATEINVALID",
+      "text": "उत्पादन तिथि अमान्य है"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIMEINVALID",
+      "text": "समाप्ति समय अवधि अमान्य है"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATEINVALID",
+      "text": "समाप्ति तिथि अमान्य है"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATE",
+      "text": "उत्पादन तिथि"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATE",
+      "text": "समाप्ति तिथि"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIME",
+      "text": "समाप्ति समय अवधि"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODHEALTH",
+      "text": "उत्पाद स्वास्थ्य"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODSTATUS",
+      "text": "उत्पाद स्थिति"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_NOEXPIRYINFO",
+      "text": "उत्पाद समाप्ति जानकारी प्राप्त करने में विफल"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_DESC",
+      "text": "उत्पाद समाप्ति जानकारी प्राप्त करता है"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC",
+      "text": "उत्पादन तिथि (उत्पाद के किनारे या नीचे देखें)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC",
+      "text": "समाप्ति तिथि या समय अवधि (या तो एक ही स्थान पर या समय अवधि में स्पष्ट रूप से लिखी गई है, जैसे कि 6 महीने या 1 वर्ष)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC",
+      "text": "क्या लक्ष्य उत्पाद समाप्ति तिथि को स्पष्ट रूप से निर्दिष्ट नहीं करता है"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MILLISECONDS",
+      "text": "मिलीसेकंड:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_SECONDS",
+      "text": "सेकंड:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MINUTES",
+      "text": "मिनट:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HOURS",
+      "text": "घंटे:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYS",
+      "text": "दिन:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MONTHS",
+      "text": "महीने:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_YEAR",
+      "text": "साल:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATE",
+      "text": "तारीख:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_TIME",
+      "text": "समय:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DOY",
+      "text": "साल का दिन:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DOW",
+      "text": "हफ़्ते का दिन:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_BINARY",
+      "text": "बाइनरी:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
+      "text": "लोकल टाइम:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
+      "text": "यूनिवर्सल टाइम:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
+      "text": "यूनिक्स टाइम:"
+    }
+  ]
+}

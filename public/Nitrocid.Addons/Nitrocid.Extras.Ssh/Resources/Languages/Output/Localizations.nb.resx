@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_SSH_COMMAND_SSHELL_DESC" xml:space="preserve">
+    <value>Kobler til en SSH-server.</value>
+  </data>
+  <data name="NKS_SSH_PASSWORDPROMPT" xml:space="preserve">
+    <value>Skriv inn passordet for {0}:</value>
+  </data>
+  <data name="NKS_SSH_DISCONNECTED" xml:space="preserve">
+    <value>SSH frakoblet.</value>
+  </data>
+  <data name="NKS_SSH_CONNECTFAILED" xml:space="preserve">
+    <value>Feil under forsøk på å koble til SSH-server: {0}</value>
+  </data>
+  <data name="NKS_SSH_INVALIDOPTION" xml:space="preserve">
+    <value>Spesifisert alternativ {0} er ugyldig.</value>
+  </data>
+  <data name="NKS_SSH_ANSWERNEEDSNUM" xml:space="preserve">
+    <value>Svaret må være numerisk.</value>
+  </data>
+  <data name="NKS_SSH_GOBACK" xml:space="preserve">
+    <value>Trykk på hvilken som helst tast for å gå tilbake.</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_SSHCMD_DESC" xml:space="preserve">
+    <value>Kobler til en SSH-server for å utføre en kommando.</value>
+  </data>
+  <data name="NKS_SSH_AUTHMETHOD_QUESTION" xml:space="preserve">
+    <value>Hvordan vil du autentisere?</value>
+  </data>
+  <data name="NKS_SSH_AUTHMETHOD_PRIVATEKEY" xml:space="preserve">
+    <value>Privat nøkkelfil</value>
+  </data>
+  <data name="NKS_SSH_AUTHMETHOD_PASSWORD" xml:space="preserve">
+    <value>Passord</value>
+  </data>
+  <data name="NKS_SSH_PASSPHRASEPROMPT" xml:space="preserve">
+    <value>Skriv inn passordfrasen for nøkkelen {0}:</value>
+  </data>
+  <data name="NKS_SSH_KEYFILENOTFOUND" xml:space="preserve">
+    <value>Nøkkelfilen {0} eksisterer ikke.</value>
+  </data>
+  <data name="NKS_SSH_CANTADDPRIVKEY" xml:space="preserve">
+    <value>Feil ved forsøk på å legge til privat nøkkel:</value>
+  </data>
+  <data name="NKS_SSH_SSHCMDFAILED" xml:space="preserve">
+    <value>Feil ved utførelse av SSH-kommando</value>
+  </data>
+  <data name="NKS_SSH_SSHELLFAILED" xml:space="preserve">
+    <value>Feil på SSH-skall</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_LOGINPROMPT_DESC" xml:space="preserve">
+    <value>Skriv hvordan du vil at påloggingsforespørselen skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres.</value>
+  </data>
+  <data name="NKS_SSH_PRIVKEYLOCATIONPROMPT" xml:space="preserve">
+    <value>Angi plasseringen av den private nøkkelen for {0}. Skriv "q" for å fullføre å legge til nøkler:</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_DESC" xml:space="preserve">
+    <value>Denne delen lar deg konfigurere hvordan SSH fungerer.</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_LOGINPROMPT_NAME" xml:space="preserve">
+    <value>Brukernavn-ledetekststil for SSH</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_SPEEDDIAL_NAME" xml:space="preserve">
+    <value>Legg til nye tilkoblinger til SSH-kortnummer</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_SPEEDDIAL_DESC" xml:space="preserve">
+    <value>Hvis aktivert, legger du til en ny tilkobling til SSH-kortnummeret.</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Kunne ikke hente innstillingsoppføringer.</value>
+  </data>
+  <data name="NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT" xml:space="preserve">
+    <value>SSH er tilkoblet, men uten klient.</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC" xml:space="preserve">
+    <value>SSH-server å koble til</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC" xml:space="preserve">
+    <value>Brukernavn å autentisere med</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>Kommando for ekstern kjøring</value>
+  </data>
+</root>

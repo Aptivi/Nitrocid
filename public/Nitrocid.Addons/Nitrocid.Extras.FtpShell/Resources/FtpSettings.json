@@ -1,107 +1,107 @@
 [
     {
         "Name": "FTP",
-        "Desc": "This section lets you configure how the FTP shell works.",
+        "Desc": "NKS_SHELLPACKS_FTP_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "Prompt Preset",
+                "Name": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "FtpPromptPreset",
                 "ShellType": "FTPShell",
                 "Description": ""
             },
             {
-                "Name": "Log FTP username",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpLoggerUsername",
-                "Description": "Whether or not to log FTP username."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_DESC"
             },
             {
-                "Name": "Log FTP IP address",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpLoggerIP",
-                "Description": "Whether or not to log FTP IP address."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_DESC"
             },
             {
-                "Name": "Return only first FTP profile",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpFirstProfileOnly",
-                "Description": "Pick the first profile only when connecting."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_DESC"
             },
             {
-                "Name": "Show file details in FTP list",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpShowDetailsInList",
-                "Description": "Shows the FTP file details while listing remote directories."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_DESC"
             },
             {
-                "Name": "Username prompt style for FTP",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_USERNAMEPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "FtpUserPromptStyle",
-                "Description": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_USERNAMEPROMPT_DESC"
             },
             {
-                "Name": "Password prompt style for FTP",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_PASSWORDPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "FtpPassPromptStyle",
-                "Description": "Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_PASSWORDPROMPT_DESC"
             },
             {
-                "Name": "Use first FTP profile",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpUseFirstProfile",
-                "Description": "Uses the first FTP profile to connect to FTP."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_DESC"
             },
             {
-                "Name": "Add new connections to FTP speed dial",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpNewConnectionsToSpeedDial",
-                "Description": "If enabled, adds a new connection to the FTP speed dial."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_DESC"
             },
             {
-                "Name": "Try to validate secure FTP certificates",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpTryToValidateCertificate",
-                "Description": "Tries to validate the FTP certificates. Turning it off is not recommended."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_DESC"
             },
             {
-                "Name": "Show FTP MOTD on connection",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpShowMotd",
-                "Description": "Shows the FTP message of the day on login."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_DESC"
             },
             {
-                "Name": "Always accept invalid FTP certificates",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpAlwaysAcceptInvalidCerts",
-                "Description": "Always accept invalid FTP certificates. Turning it on is not recommended as it may pose security risks."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_DESC"
             },
             {
-                "Name": "Recursive hashing for FTP",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_NAME",
                 "Type": "SBoolean",
                 "Variable": "FtpRecursiveHashing",
-                "Description": "Whether to recursively hash a directory. Please note that not all the FTP servers support that."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_DESC"
             },
             {
-                "Name": "Verify retry attempts for FTP transmission",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_NAME",
                 "Type": "SInt",
                 "Variable": "FtpVerifyRetryAttempts",
-                "Description": "How many times to verify the upload and download and retry if the verification fails before the download fails as a whole?"
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_DESC"
             },
             {
-                "Name": "FTP connection timeout",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_NAME",
                 "Type": "SInt",
                 "Variable": "FtpConnectTimeout",
-                "Description": "How many milliseconds to wait before the FTP connection timeout?"
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_DESC"
             },
             {
-                "Name": "FTP data connection timeout",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_NAME",
                 "Type": "SInt",
                 "Variable": "FtpDataConnectTimeout",
-                "Description": "How many milliseconds to wait before the FTP data connection timeout?"
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_DESC"
             },
             {
-                "Name": "FTP IP versions",
+                "Name": "NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_NAME",
                 "Type": "SSelection",
                 "Variable": "FtpProtocolVersions",
                 "IsEnumeration": true,
@@ -109,7 +109,7 @@
                 "Enumeration": "FluentFTP.FtpIpVersion",
                 "EnumerationAssembly": "FluentFTP",
                 "EnumerationZeroBased": false,
-                "Description": "Choose the version of Internet Protocol that the FTP server supports and that the FTP client uses."
+                "Description": "NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_DESC"
             }
         ]
     }

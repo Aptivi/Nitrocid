@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
         {
             if (!FilesystemTools.FileExists(path))
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't open file '{0}' because it's not found."), new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED"), new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
                 }, path);
@@ -44,14 +44,14 @@ namespace Nitrocid.Extras.Contacts.Contacts
             try
             {
                 ContactsManager.InstallContacts(path);
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Imported contacts successfully."), new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_IMPORTSUCCESS"), new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Success),
                 });
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't open file '{0}' because the card file is invalid.") + $" {ex.Message}", new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILEINVALID_NAMED") + $" {ex.Message}", new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
                 }, path);
@@ -62,28 +62,28 @@ namespace Nitrocid.Extras.Contacts.Contacts
         {
             if (!FilesystemTools.FileExists(path))
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't open file '{0}' because it's not found."), new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED"), new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
                 }, path);
-                return Translate.DoTranslation("Contact file doesn't exist.");
+                return LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED");
             }
             try
             {
                 var builder = new StringBuilder();
                 var cards = CardTools.GetCards(path);
-                builder.AppendLine($"{cards.Length} {Translate.DoTranslation("contacts found")}");
+                builder.AppendLine($"{cards.Length} {LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTSCOUNT")}");
                 foreach (var card in cards)
                     builder.AppendLine($"  - {card.GetString(CardStringsEnum.FullName)[0].Value}");
                 return builder.ToString();
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't open file '{0}' because the card file is invalid.") + $" {ex.Message}", new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILEINVALID_NAMED") + $" {ex.Message}", new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
                 }, path);
-                return Translate.DoTranslation("Contact file is invalid.");
+                return LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED");
             }
         }
     }

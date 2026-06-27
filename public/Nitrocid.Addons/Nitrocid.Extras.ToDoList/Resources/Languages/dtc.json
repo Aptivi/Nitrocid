@@ -1,0 +1,52 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "Ongeldige actie."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "Opdrachtnaam"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "Takenbeheer voor taken"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "Kan een taak niet toevoegen of verwijderen."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "Geef een naam op voor uw taak."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "Kan een taak niet markeren."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "Kan geen takenlijst krijgen"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "Of u een taak wilt toevoegen, verwijderen, als voltooid wilt markeren of de markering als voltooid wilt opheffen"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "Of alle taken moeten worden weergegeven, opgeslagen of geladen"
+    }
+  ]
+}

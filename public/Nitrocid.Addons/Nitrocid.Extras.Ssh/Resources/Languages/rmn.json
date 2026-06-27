@@ -1,0 +1,119 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "Se conectează la un server SSH."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "Introduceți parola pentru {0}:"
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH deconectat."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "Eroare la încercarea de conectare la serverul SSH: {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "Opțiunea specificată {0} este nevalidă."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "Răspunsul trebuie să fie numeric."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "Apăsați orice tastă pentru a reveni."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "Se conectează la un server SSH pentru a executa o comandă."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "Cum vrei să te autentifici?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "Fișier cu cheie privată"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "Parola"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "Introduceți expresia de acces pentru cheia {0}:"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "Fișierul cheie {0} nu există."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "Eroare la încercarea de a adăuga cheia privată:"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "Eroare la executarea comenzii SSH"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "Eroare pe shell SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "Scrieți cum doriți să fie solicitarea de conectare. Lăsați necompletat pentru a utiliza stilul implicit. Substituenții sunt analizați."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "Introduceți locația cheii private pentru {0}. Scrieți „q” pentru a termina adăugarea cheilor:"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "Această secțiune vă permite să configurați modul în care funcționează SSH."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "Stilul prompt al numelui de utilizator pentru SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "Adăugați conexiuni noi la apelarea rapidă SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "Dacă este activat, adaugă o nouă conexiune la apelarea rapidă SSH."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Nu s-au putut obține intrările de setări."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "SSH este conectat, dar fără client."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "Server SSH la care să vă conectați"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "Nume de utilizator cu care să vă autentificați"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "Comanda de executat de la distanță"
+    }
+  ]
+}

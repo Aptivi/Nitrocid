@@ -1,0 +1,95 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_DESC",
+      "text": "Cé mhéad milleasoicind atá le fanacht roimh an gcéad cheann eile a scríobh?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Theip ar na hiontrálacha socruithe a fháil."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC",
+      "text": "Cé mhéad milleasoicind atá le fanacht roimh scríobh sa scáileán nua?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_DESC",
+      "text": "Íosmhéid ainmneacha le giniúint"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_DESC",
+      "text": "Uasmhéid ainmneacha le giniúint"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_DESC",
+      "text": "Íosmhéid blianta d'aois le giniúint"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC",
+      "text": "Uasmhéid blianta aoise le giniúint"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
+      "text": "Insamhladh cuardaigh bunachar sonraí do dhuine randamach."
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
+      "text": "Aimsitheoir céadainm"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_TERM_DESC",
+      "text": "Téarma cuardaigh"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "Réimír ainm le cuardach"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "Iarmhír ainm le cuardach"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_NAMETAG_DESC",
+      "text": "Clibeanna ainm a ghiniúint (ní thacaítear le humlauts faoi láthair)"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_MALE_DESC",
+      "text": "Ainmneacha a ghiniúint ag baint úsáide as an liosta ainmneacha fireann"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_FEMALE_DESC",
+      "text": "Ainmneacha a ghiniúint ag baint úsáide as an liosta ainmneacha baineann"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_UNIFIED_DESC",
+      "text": "Ainmneacha a ghiniúint ag baint úsáide as an liosta ainmneacha aontaithe"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
+      "text": "Aimsitheoir sloinnte"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "Réimír sloinnte le cuardach"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "Iarmhír sloinnte le cuardach"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
+      "text": "Gineadóir ainmneacha agus sloinnte"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "Cé mhéad ainm le giniúint?"
+    }
+  ]
+}

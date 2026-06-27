@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -62,13 +62,13 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                 ArchiveFile = Convert.ToString(ShellArgs[0]) ?? "";
                 if (string.IsNullOrEmpty(ArchiveFile))
                 {
-                    TextWriters.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_NEEDSFILE"), true, KernelColorType.Error);
                     Bail = true;
                 }
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_NEEDSFILE"), true, KernelColorType.Error);
                 Bail = true;
             }
 
@@ -95,7 +95,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                     ArchiveShellCommon.Archive ??= TarArchive.OpenArchive(ArchiveShellCommon.FileStream);
                     break;
                 default:
-                    TextWriters.Write(Translate.DoTranslation("This archive type is not supported.") + $" {type}", true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED") + $" {type}", true, KernelColorType.Error);
                     Bail = true;
                     break;
             }
@@ -114,7 +114,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + " {0}", true, KernelColorType.Error, ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR") + " {0}", true, KernelColorType.Error, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     InputTools.DetectKeypress();

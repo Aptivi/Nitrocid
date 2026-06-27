@@ -1,0 +1,82 @@
+{
+  "lang": "chi-T",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NAME",
+      "text": "姓名"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_COMMAND_ELEMENT_DESC",
+      "text": "将有关化学物质的信息打印到控制台。"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_COMMAND_ELEMENT_ARGUMENT_SPECIFIER_DESC",
+      "text": "物质的名称、符号或原子序数"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_COMMAND_ELEMENTS_DESC",
+      "text": "将所有化学物质的信息打印到控制台。"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_ATOMICNUM",
+      "text": "没有具有原子序数的物质"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_SYMORNAME",
+      "text": "没有具有符号或名称的物质"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_ATOMICNUMBER",
+      "text": "原子序数"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_ATOMICMASS",
+      "text": "原子质量"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_SYMBOL",
+      "text": "象征"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_SUMMARY",
+      "text": "概括"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_PHASE",
+      "text": "阶段"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_POSITIONPT",
+      "text": "在元素周期表中的位置"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_POSITIONCOORD",
+      "text": "坐标位置"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_DISCOVERER",
+      "text": "发现者"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_NAMEDBY",
+      "text": "命名者"
+    },
+    {
+      "loc": "NKS_CHEMISTRY_ELEMENT_ELECTRON",
+      "text": "电子排布"
+    }
+  ]
+}

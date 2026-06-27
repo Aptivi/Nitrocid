@@ -1,0 +1,313 @@
+{
+  "lang": "cnt-T",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TIPS_KERNELTIP_1",
+      "text": "您可以透過兩種方式執行進程命令：直接輸入可執行檔名，以及使用「exec」命令？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_2",
+      "text": "您可以使用“lockscreen”命令鎖定螢幕嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_3",
+      "text": "您可以使用 C# 和 Visual Basic 建立自己的核心修改嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_4",
+      "text": "您可以使用指令之間的分號來使用多個指令嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_5",
+      "text": "執行指令時可以轉義帶引號的參數內的雙引號嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_6",
+      "text": "您可以使用“settings”命令更改內核設定嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_7",
+      "text": "您可以使用「savescreen」指令儲存畫面嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_8",
+      "text": "您可以透過造訪 Nitrocid 的 GitHub 專案頁面向我們報告錯誤嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_9",
+      "text": "您可以使用「別名」命令建立所需命令的捷徑嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_10",
+      "text": "您可以使用 C# 和 Visual Basic 建立自己的啟動畫面嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_11",
+      "text": "您可以安裝額外的插件來使您的核心更有用、更有趣嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_12",
+      "text": "您可以使用“mktheme”命令製作自己的精彩主題嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_13",
+      "text": "您可以透過使用“設定”命令或使用預先建置的主題之一來更改內核顏色嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_14",
+      "text": "您可以使用“reset”參數將內核重設為出廠預設值嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_15",
+      "text": "您可以在我們的 GitBook 頁面上存取我們豐富的文件嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_16",
+      "text": "長期版本的主要支援支援五年，安全更新支援三年？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_17",
+      "text": "0.0.1 是 Nitrocid KS 的第一個版本，於 2018 年 2 月 22 日發布？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_18",
+      "text": "0.0.24.x 系列是唯一擁有 API v2.1 版本的版本系列？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_19",
+      "text": "短期版本僅支援九個月？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_20",
+      "text": "0.1.x 系列與 0.0.24.x 系列或更早版本向後不相容？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_21",
+      "text": "您可以在 Linux、macOS 和 Android 上執行 Nitrocid KS 嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_22",
+      "text": "您可以參考 API 文件來幫助您製作模組嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_23",
+      "text": "透過安裝額外的插件，您可以獲得一些很棒的遊戲，例如 Hangman 和 ShipDuet？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_24",
+      "text": "在《流星》中，如果你遭遇紅色流星風暴，你的太空船也會墜毀？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_25",
+      "text": "您可以使用對接功能將內核轉換為資訊中心嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_26",
+      "text": "您可以建立使用者群組來組織使用者帳戶嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_27",
+      "text": "如果您是授予某些權限的群組的成員，您就可以執行此類操作？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_28",
+      "text": "您可以更改核心時區而不影響主機系統嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_29",
+      "text": "您可以使用互動式文字和十六進位編輯器來節省時間嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_30",
+      "text": "已知與第一個 Unix 系統配合使用的最古老的文本編輯器是 ed，它是 1973 年隨 Unix 系統一起發布的最早的文本編輯器，可以在 AT&T 貝爾實驗室的 PDP-7 上找到？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_31",
+      "text": "您還可以強制編輯命令以特定類型啟動編輯器嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_32",
+      "text": "互動式文字編輯器試圖模擬最受歡迎的 Unix 文字編輯器 vi 和 vim 的最基本功能？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_33",
+      "text": "除非您知道如何處理二進位文件，否則以這種方式編輯此類文件會導致目標文件中的資料損壞或資料遺失？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_34",
+      "text": "在 Linux 系統上，shell 是在登入處理程序和系統初始化程序的幫助下啟動的，通常可以在 /sbin/init 中找到？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_35",
+      "text": "您可以執行常見的檔案操作，例如複製、移動、刪除、編輯等？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_36",
+      "text": "檔案管理器的互動式 TUI 模擬了 Midnight Commander 的功能？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_37",
+      "text": "如果核心崩潰，它通常會建立一個轉儲檔案？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_38",
+      "text": "您可以透過使用內建調試功能調試內核來診斷內核嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_39",
+      "text": "您可以直接從 UESH shell 下載和上傳檔案嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_40",
+      "text": "即使在預引導階段，也可以透過使用「lang」參數啟動核心來翻譯核心？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_41",
+      "text": "您可以透過在您的 mod 中註冊來建立自己的螢幕保護程式嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_42",
+      "text": "最初的 IBM PC 上第一個在三分鐘不活動後使螢幕變黑的螢幕保護程式 scrnsave 是由 John Socha 於 1983 年創建的？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_43",
+      "text": "一些快節奏的螢幕保護程式可能會導致光敏性癲癇發作？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_44",
+      "text": "內核日誌用作啟動和關閉日誌嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_45",
+      "text": "你的模組現在可以翻譯了嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_46",
+      "text": "您的 mod 可以與內核插件和其他 mod 進行通信，創建某種通信並實現互通性？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_47",
+      "text": "您可以連接到遠端調試器，也可以選擇連接到聊天伺服器？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_48",
+      "text": "您可以使用調試 shell，該 shell 僅適用於開發版本？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_49",
+      "text": "您的 mod 現在可以透過註冊關聯的類別來擁有自己的配置？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_50",
+      "text": "你的 mods 可以註冊自己的 shell 嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_51",
+      "text": "您的 mod 可以向現有 shell 添加命令以增加可以使用的命令數量嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_52",
+      "text": "您的命令類別可以準確地表示傳遞的參數和開關嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_53",
+      "text": "您可以使用核心 API 中的開關管理類別來查詢傳遞的開關嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_54",
+      "text": "UESH 包含腳本功能以方便製作和執行腳本？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_55",
+      "text": "shell 包含禁止取消活動應用程式的功能？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_56",
+      "text": "Nitrocid 與 Terminaux 深度整合以實現更快更好的渲染？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_57",
+      "text": "現在您可以調整互動式應用程式的大小而不必擔心輸出被損壞？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_58",
+      "text": "有些命令要求使用者輸入，這對腳本很有用？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_59",
+      "text": "您可以透過多種方式呈現使用者輸入的問題，例如選擇、表格、簡單、選擇等等？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_60",
+      "text": "您可以將佔位符放置到支援它們的文字中嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_61",
+      "text": "您可以使用不同的核心驅動程式來更改特定操作的工作方式嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_62",
+      "text": "您可以使用 C# 或 Visual Basic 製作自己的螢幕保護程式和啟動畫面嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_63",
+      "text": "您可以使用核心平台類別查詢主機系統和終端模擬器嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_64",
+      "text": "在你的模組中做一些敏感的事情之前你可以請求隱私同意嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_65",
+      "text": "您可以使用「請勿打擾」功能關閉通知嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_66",
+      "text": "您可以使用通知管理員中的功能儲存通知記錄嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_67",
+      "text": "您可以透過更改驅動程式來更改隨機數的產生方式嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_68",
+      "text": "各種 API 是否為您的 mod 提供有用的功能？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_69",
+      "text": "此部分可讓您配置提示的工作方式。"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_70",
+      "text": "顯示內核提示"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_71",
+      "text": "如果啟用，shell 會在每次登入時顯示提示。"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_72",
+      "text": "您可以使用核心模組製作可啟動程式嗎？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_73",
+      "text": "無法取得設定條目。"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_74",
+      "text": "Nitrocid（內核模擬器 0.0.2）將內建 shell 稱為「UESH」shell？"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_75",
+      "text": "螢幕保護程式被吹捧為防止陰極射線管 (CRT) 或等離子顯示器燒屏的解決方案？"
+    }
+  ]
+}

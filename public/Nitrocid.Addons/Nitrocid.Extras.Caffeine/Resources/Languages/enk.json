@@ -1,0 +1,49 @@
+{
+  "lang": "enk",
+  "name": "English (UK)",
+  "cultures": [
+    "en-GB"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "Adds an alarm to alert you when your cup of tea or coffee is ready."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "Aborts an alarm that alerts you when your cup of tea or coffee is ready."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "American Coffee"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "Red Tea"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "Green Tea"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "No caffeine alerts to abort."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "The seconds in which your cup will be ready is invalid."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "If you're trying to supply a name of the drink, check out the list below:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "Your cup is now ready!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "Either specify a number of seconds or a drink name"
+    }
+  ]
+}

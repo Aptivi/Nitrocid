@@ -1,7 +1,7 @@
 Nitrocid KS changes
 ===================
 
-Released March 11th, 2024; version 0.1.0.81 (mod API 3.0.25.589); codename
+Released March 11th, 2024; version 0.1.0.81 (mod API 3.0.25.590); codename
 Magic Bloom
 
 =============================================================================
@@ -184,7 +184,7 @@ generate new locales, clean them up, analyze them, and more.
 In the source code of Nitrocid KS, we've improved how we categorize the
 unlocalized locales. Now, they're three diagnostics:
 
-  - NLOC0001: for strings wrapped in the Translate.DoTranslation() call
+  - NLOC0001: for strings wrapped in the LanguageTools.GetLocalized() call
   - NLOC0002: for strings marked as localizable with /* Localizable */
   - NLOC0003: for translatable strings in the Nitrocid JSON resources
 

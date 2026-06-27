@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_NOTES_TUI_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>消除</value>
+  </data>
+  <data name="NKS_NOTES_COMMAND_ADDNOTE_DESC" xml:space="preserve">
+    <value>新增註釋</value>
+  </data>
+  <data name="NKS_NOTES_COMMAND_REMOVENOTE_DESC" xml:space="preserve">
+    <value>刪除註釋</value>
+  </data>
+  <data name="NKS_NOTES_COMMAND_REMOVENOTES_DESC" xml:space="preserve">
+    <value>刪除所有註釋</value>
+  </data>
+  <data name="NKS_NOTES_COMMAND_LISTNOTES_DESC" xml:space="preserve">
+    <value>列出所有筆記</value>
+  </data>
+  <data name="NKS_NOTES_COMMAND_SAVENOTES_DESC" xml:space="preserve">
+    <value>儲存所有筆記</value>
+  </data>
+  <data name="NKS_NOTES_COMMAND_RELOADNOTES_DESC" xml:space="preserve">
+    <value>重新載入所有筆記</value>
+  </data>
+  <data name="NKS_NOTES_COMMAND_NOTESTUI_DESC" xml:space="preserve">
+    <value>筆記檢視器 TUI</value>
+  </data>
+  <data name="NKS_NOTES_NOTEIDNOTNUMERIC" xml:space="preserve">
+    <value>註釋 ID 必須是註釋編號</value>
+  </data>
+  <data name="NKS_NOTES_TUI_EMPTYNOTE" xml:space="preserve">
+    <value>此註釋為空</value>
+  </data>
+  <data name="NKS_NOTES_EXCEPTION_NOTENOTFOUND" xml:space="preserve">
+    <value>無法刪除不存在的註釋</value>
+  </data>
+  <data name="NKS_NOTES_TUI_KEYBINDING_SAVE" xml:space="preserve">
+    <value>節省</value>
+  </data>
+  <data name="NKS_NOTES_TUI_KEYBINDING_ADD" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="NKS_NOTES_TUI_KEYBINDING_EDIT" xml:space="preserve">
+    <value>編輯</value>
+  </data>
+  <data name="NKS_NOTES_TUI_KEYBINDING_REMOVEALL" xml:space="preserve">
+    <value>全部刪除</value>
+  </data>
+  <data name="NKS_NOTES_TUI_KEYBINDING_LOAD" xml:space="preserve">
+    <value>載入</value>
+  </data>
+  <data name="NKS_NOTES_HOMEPAGE_NOTES" xml:space="preserve">
+    <value>筆記</value>
+  </data>
+  <data name="NKS_NOTES_COMMAND_ADDNOTE_ARGUMENT_NOTECONTENTS_DESC" xml:space="preserve">
+    <value>注意要新增的內容</value>
+  </data>
+  <data name="NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC" xml:space="preserve">
+    <value>註釋編號</value>
+  </data>
+</root>

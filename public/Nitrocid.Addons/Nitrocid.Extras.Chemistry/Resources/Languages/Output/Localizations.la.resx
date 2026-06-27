@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_CHEMISTRY_ELEMENT_NAME" xml:space="preserve">
+    <value>Nomen</value>
+  </data>
+  <data name="NKS_CHEMISTRY_COMMAND_ELEMENT_DESC" xml:space="preserve">
+    <value>Procer informationes de substantia chemica ad consolatorium.</value>
+  </data>
+  <data name="NKS_CHEMISTRY_COMMAND_ELEMENT_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
+    <value>Aut nomen, symbolum, aut substantia atomicus</value>
+  </data>
+  <data name="NKS_CHEMISTRY_COMMAND_ELEMENTS_DESC" xml:space="preserve">
+    <value>Procer informationes de omnibus substantiis chemicis ad consolandum.</value>
+  </data>
+  <data name="NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_ATOMICNUM" xml:space="preserve">
+    <value>Nulla substantia est numerus atomicus</value>
+  </data>
+  <data name="NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_SYMORNAME" xml:space="preserve">
+    <value>Nulla substantia est cum signo vel nomine</value>
+  </data>
+  <data name="NKS_CHEMISTRY_ELEMENT_ATOMICNUMBER" xml:space="preserve">
+    <value>Numerus atomicus</value>
+  </data>
+  <data name="NKS_CHEMISTRY_ELEMENT_ATOMICMASS" xml:space="preserve">
+    <value>Massa atomicus</value>
+  </data>
+  <data name="NKS_CHEMISTRY_ELEMENT_SYMBOL" xml:space="preserve">
+    <value>Symbolum</value>
+  </data>
+  <data name="NKS_CHEMISTRY_ELEMENT_SUMMARY" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="NKS_CHEMISTRY_ELEMENT_PHASE" xml:space="preserve">
+    <value>Phase</value>
+  </data>
+  <data name="NKS_CHEMISTRY_ELEMENT_POSITIONPT" xml:space="preserve">
+    <value>Positus in periodica mensa</value>
+  </data>
+  <data name="NKS_CHEMISTRY_ELEMENT_POSITIONCOORD" xml:space="preserve">
+    <value>Positionem in coordinatis</value>
+  </data>
+  <data name="NKS_CHEMISTRY_ELEMENT_DISCOVERER" xml:space="preserve">
+    <value>Inventor</value>
+  </data>
+  <data name="NKS_CHEMISTRY_ELEMENT_NAMEDBY" xml:space="preserve">
+    <value>Nominatur per</value>
+  </data>
+  <data name="NKS_CHEMISTRY_ELEMENT_ELECTRON" xml:space="preserve">
+    <value>Electron configuratione</value>
+  </data>
+</root>

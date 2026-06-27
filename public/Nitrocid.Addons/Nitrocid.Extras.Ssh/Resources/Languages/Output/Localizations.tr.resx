@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_SSH_COMMAND_SSHELL_DESC" xml:space="preserve">
+    <value>Bir SSH sunucusuna bağlanır.</value>
+  </data>
+  <data name="NKS_SSH_PASSWORDPROMPT" xml:space="preserve">
+    <value>{0} için şifreyi girin:</value>
+  </data>
+  <data name="NKS_SSH_DISCONNECTED" xml:space="preserve">
+    <value>SSH Bağlantısı Kesildi.</value>
+  </data>
+  <data name="NKS_SSH_CONNECTFAILED" xml:space="preserve">
+    <value>SSH sunucusuna bağlanmaya çalışırken hata oluştu: {0}</value>
+  </data>
+  <data name="NKS_SSH_INVALIDOPTION" xml:space="preserve">
+    <value>Belirtilen {0} seçeneği geçersiz.</value>
+  </data>
+  <data name="NKS_SSH_ANSWERNEEDSNUM" xml:space="preserve">
+    <value>Cevap sayısal olmalıdır.</value>
+  </data>
+  <data name="NKS_SSH_GOBACK" xml:space="preserve">
+    <value>Geri dönmek için herhangi bir tuşa basın.</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_SSHCMD_DESC" xml:space="preserve">
+    <value>Bir komutu yürütmek için bir SSH sunucusuna bağlanır.</value>
+  </data>
+  <data name="NKS_SSH_AUTHMETHOD_QUESTION" xml:space="preserve">
+    <value>Kimlik doğrulamasını nasıl yapmak istiyorsunuz?</value>
+  </data>
+  <data name="NKS_SSH_AUTHMETHOD_PRIVATEKEY" xml:space="preserve">
+    <value>Özel anahtar dosyası</value>
+  </data>
+  <data name="NKS_SSH_AUTHMETHOD_PASSWORD" xml:space="preserve">
+    <value>Şifre</value>
+  </data>
+  <data name="NKS_SSH_PASSPHRASEPROMPT" xml:space="preserve">
+    <value>{0} anahtarı için parolayı girin:</value>
+  </data>
+  <data name="NKS_SSH_KEYFILENOTFOUND" xml:space="preserve">
+    <value>{0} anahtar dosyası mevcut değil.</value>
+  </data>
+  <data name="NKS_SSH_CANTADDPRIVKEY" xml:space="preserve">
+    <value>Özel anahtar eklemeye çalışırken hata oluştu:</value>
+  </data>
+  <data name="NKS_SSH_SSHCMDFAILED" xml:space="preserve">
+    <value>SSH komutu yürütülürken hata oluştu</value>
+  </data>
+  <data name="NKS_SSH_SSHELLFAILED" xml:space="preserve">
+    <value>SSH kabuğunda hata</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_LOGINPROMPT_DESC" xml:space="preserve">
+    <value>Giriş isteminizin nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır.</value>
+  </data>
+  <data name="NKS_SSH_PRIVKEYLOCATIONPROMPT" xml:space="preserve">
+    <value>{0} için özel anahtarın konumunu girin. Anahtar eklemeyi bitirmek için "q" yazın:</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_DESC" xml:space="preserve">
+    <value>Bu bölüm SSH'nin nasıl çalışacağını yapılandırmanızı sağlar.</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_LOGINPROMPT_NAME" xml:space="preserve">
+    <value>SSH için kullanıcı adı istemi stili</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_SPEEDDIAL_NAME" xml:space="preserve">
+    <value>SSH hızlı aramasına yeni bağlantılar ekleyin</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_SPEEDDIAL_DESC" xml:space="preserve">
+    <value>Etkinleştirildiğinde, SSH hızlı aramasına yeni bir bağlantı ekler.</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Ayar girişleri alınamadı.</value>
+  </data>
+  <data name="NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT" xml:space="preserve">
+    <value>SSH bağlı ancak istemci yok.</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC" xml:space="preserve">
+    <value>Bağlanılacak SSH sunucusu</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC" xml:space="preserve">
+    <value>Kimlik doğrulaması için kullanıcı adı</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>Uzaktan yürütme komutu</value>
+  </data>
+</root>

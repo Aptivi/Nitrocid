@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_COLORCONVERT_REDCOLOR" xml:space="preserve">
+    <value>Color ruber gradu:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_GREENCOLOR" xml:space="preserve">
+    <value>Color viridis gradus:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_BLUECOLOR" xml:space="preserve">
+    <value>Color caeruleus planus;</value>
+  </data>
+  <data name="NKS_COLORCONVERT_CYANCOLOR" xml:space="preserve">
+    <value>Cyan planities;</value>
+  </data>
+  <data name="NKS_COLORCONVERT_MAGENTACOLOR" xml:space="preserve">
+    <value>Magenta planities;</value>
+  </data>
+  <data name="NKS_COLORCONVERT_YELLOWCOLOR" xml:space="preserve">
+    <value>Flavo gradu:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_HUE" xml:space="preserve">
+    <value>Hue:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_SATURATION" xml:space="preserve">
+    <value>Saturatio:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_VALUE" xml:space="preserve">
+    <value>Precium:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_LUMA" xml:space="preserve">
+    <value>Luma:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_INPHASE" xml:space="preserve">
+    <value>In- dam;</value>
+  </data>
+  <data name="NKS_COLORCONVERT_QUADRATURE" xml:space="preserve">
+    <value>Quadratura:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_UCHROMA" xml:space="preserve">
+    <value>U-Chroma:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_VCHROMA" xml:space="preserve">
+    <value>V-Chroma:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORTO_DESC" xml:space="preserve">
+    <value>Fons colori exemplar vertit ad exemplar colorum in numeris.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORTOKS_DESC" xml:space="preserve">
+    <value>Fons color exemplar vertit ad exemplar scopo coloris in KS format.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORTOHEX_DESC" xml:space="preserve">
+    <value>Exemplar fontis colorem ad hex convertit.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORSPECTO_DESC" xml:space="preserve">
+    <value>Fons colori exemplar vertit ad speciem coloris speciei ad exemplar scopo coloratum.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORSPECTOKS_DESC" xml:space="preserve">
+    <value>Fons colori exemplar vertit ad speciem coloris speciei ad exemplar in KS formato colore scopo.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORSPECTOHEX_DESC" xml:space="preserve">
+    <value>Fons colori exemplar vertit ad speciem coloris speciei ad exemplar in hex scopo coloratum.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_INVALIDMODEL" xml:space="preserve">
+    <value>Exemplar specificatio invalida est.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_BLACKKEY" xml:space="preserve">
+    <value>Gradu clavis nigri:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_FIRSTLEVELNUMERIC" xml:space="preserve">
+    <value>Primus color gradu numerorum esse debet.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_SECONDLEVELNUMERIC" xml:space="preserve">
+    <value>Secundum gradum color numerorum esse oportet.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_THIRDLEVELNUMERIC" xml:space="preserve">
+    <value>Tertius color gradus debet esse numerorum.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_FOURTHLEVELNUMERIC" xml:space="preserve">
+    <value>Quartus gradus clavis numerorum esse debet.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_LUMINANCE" xml:space="preserve">
+    <value>Lumen (Levitas);</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC" xml:space="preserve">
+    <value>Fons color exemplum</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC" xml:space="preserve">
+    <value>Scopum color exemplum</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER1_DESC" xml:space="preserve">
+    <value>Primum numerum</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER2_DESC" xml:space="preserve">
+    <value>Secundus numerus</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER3_DESC" xml:space="preserve">
+    <value>Tertius numerus</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER4_DESC" xml:space="preserve">
+    <value>Quartus numerus</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
+    <value>Color speciei</value>
+  </data>
+</root>

@@ -1,0 +1,35 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Seçili bir dock görünümü hakkında tam ekran genel bakış gösterir ve bunu bir bilgi paneli olarak kullanabilmenizi sağlar"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "Bu isimde bir dock ekranı bulunmamaktadır."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "Bu isimde bir ekran yuvası yok."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Ekran yuvası yok."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "Ekran yuvası çöktü"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Rıhtım adı"
+    }
+  ]
+}

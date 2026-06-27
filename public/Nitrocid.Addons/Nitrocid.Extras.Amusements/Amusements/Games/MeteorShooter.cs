@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -313,7 +313,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Game is over with an unexpected error.
                 try
                 {
-                    TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Unexpected error") + ": {0}", 0, windowDimensions.Height - 1, false, ConsoleColors.Red, vars: ex.Message);
+                    TextWriterWhereColor.WriteWhereColor(LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMON_UNEXPECTEDERROR") + ": {0}", 0, windowDimensions.Height - 1, false, ConsoleColors.Red, vars: ex.Message);
                     ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
                 }
                 catch
@@ -333,7 +333,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 {
                     try
                     {
-                        TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Game over"), 0, windowDimensions.Height - 1, false, ConsoleColors.Red);
+                        TextWriterWhereColor.WriteWhereColor(LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMON_GAMEOVER"), 0, windowDimensions.Height - 1, false, ConsoleColors.Red);
                         ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
                     }
                     catch

@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_COLORCONVERT_REDCOLOR" xml:space="preserve">
+    <value>Tahap warna merah:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_GREENCOLOR" xml:space="preserve">
+    <value>Tahap warna hijau:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_BLUECOLOR" xml:space="preserve">
+    <value>Tahap warna biru:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_CYANCOLOR" xml:space="preserve">
+    <value>Tahap sian:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_MAGENTACOLOR" xml:space="preserve">
+    <value>Tahap magenta:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_YELLOWCOLOR" xml:space="preserve">
+    <value>Tahap kuning:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_HUE" xml:space="preserve">
+    <value>Warna:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_SATURATION" xml:space="preserve">
+    <value>Ketepuan:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_VALUE" xml:space="preserve">
+    <value>Nilai:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_LUMA" xml:space="preserve">
+    <value>Luma:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_INPHASE" xml:space="preserve">
+    <value>Dalam fasa:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_QUADRATURE" xml:space="preserve">
+    <value>Kuadratur:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_UCHROMA" xml:space="preserve">
+    <value>U-Chroma:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_VCHROMA" xml:space="preserve">
+    <value>V-Chroma:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORTO_DESC" xml:space="preserve">
+    <value>Menukar model warna sumber kepada model warna sasaran dalam nombor.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORTOKS_DESC" xml:space="preserve">
+    <value>Menukar model warna sumber kepada model warna sasaran dalam format KS.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORTOHEX_DESC" xml:space="preserve">
+    <value>Menukar model warna sumber kepada heks.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORSPECTO_DESC" xml:space="preserve">
+    <value>Menukar model warna sumber menggunakan penentu warna kepada model warna sasaran.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORSPECTOKS_DESC" xml:space="preserve">
+    <value>Menukar model warna sumber menggunakan penentu warna kepada model warna sasaran dalam format KS.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORSPECTOHEX_DESC" xml:space="preserve">
+    <value>Menukar model warna sumber menggunakan penentu warna kepada model warna sasaran dalam heks.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_INVALIDMODEL" xml:space="preserve">
+    <value>Spesifikasi model tidak sah.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_BLACKKEY" xml:space="preserve">
+    <value>Tahap kunci hitam:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_FIRSTLEVELNUMERIC" xml:space="preserve">
+    <value>Tahap warna pertama mestilah angka.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_SECONDLEVELNUMERIC" xml:space="preserve">
+    <value>Tahap warna kedua mestilah berangka.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_THIRDLEVELNUMERIC" xml:space="preserve">
+    <value>Tahap warna ketiga mestilah berangka.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_FOURTHLEVELNUMERIC" xml:space="preserve">
+    <value>Tahap kunci keempat mestilah angka.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_LUMINANCE" xml:space="preserve">
+    <value>Pencahayaan (Kecerahan):</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC" xml:space="preserve">
+    <value>Model warna sumber</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC" xml:space="preserve">
+    <value>Model warna sasaran</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER1_DESC" xml:space="preserve">
+    <value>Nombor pertama</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER2_DESC" xml:space="preserve">
+    <value>Nombor kedua</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER3_DESC" xml:space="preserve">
+    <value>Nombor ketiga</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER4_DESC" xml:space="preserve">
+    <value>Nombor keempat</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
+    <value>Penentu warna</value>
+  </data>
+</root>

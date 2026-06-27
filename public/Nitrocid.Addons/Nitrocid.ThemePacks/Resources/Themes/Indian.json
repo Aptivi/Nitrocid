@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Name": "Indian",
-        "Description": "Traditional Indian colors right in your console.",
+        "Description": "NKS_THEMEPACKS_THEME_DESC_INDIAN",
         "Localizable": true
     },
     "InputColor": "255;116;0",

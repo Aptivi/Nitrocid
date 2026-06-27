@@ -18,6 +18,7 @@
 //
 
 using Nitrocid.Arguments.CommandLineArguments;
+using Nitrocid.Languages;
 using System.Collections.Generic;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Arguments.Base;
@@ -33,21 +34,21 @@ namespace Nitrocid.Arguments
         internal readonly static Dictionary<string, ArgumentInfo> outArgs = new()
         {
             { "help",
-                new ArgumentInfo("help", /* Localizable */ "Help page",
+                new ArgumentInfo("help", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_HELP_DESC"),
                     [
                         new CommandArgumentInfo()
                     ], new HelpArgument())
             },
 
             { "version",
-                new ArgumentInfo("version", /* Localizable */ "Prints the kernel version",
+                new ArgumentInfo("version", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_VERSION_DESC"),
                     [
                         new CommandArgumentInfo()
                     ], new VersionArgument())
             },
 
             { "apiversion",
-                new ArgumentInfo("apiversion", /* Localizable */ "Prints the API version",
+                new ArgumentInfo("apiversion", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_APIVERSION_DESC"),
                     [
                         new CommandArgumentInfo()
                     ], new ApiVersionArgument())
@@ -57,63 +58,63 @@ namespace Nitrocid.Arguments
         private readonly static Dictionary<string, ArgumentInfo> args = new()
         {
             { "quiet",
-                new ArgumentInfo("quiet", /* Localizable */ "Starts the kernel quietly",
+                new ArgumentInfo("quiet", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_QUIET_DESC"),
                     [
                         new CommandArgumentInfo()
                     ], new QuietArgument())
             },
 
             { "maintenance",
-                new ArgumentInfo("maintenance", /* Localizable */ "Like safe mode, but also disables multi-user and some customization",
+                new ArgumentInfo("maintenance", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC"),
                     [
                         new CommandArgumentInfo()
                     ], new MaintenanceArgument())
             },
 
             { "safe",
-                new ArgumentInfo("safe", /* Localizable */ "Starts the kernel in safe mode, disabling all mods",
+                new ArgumentInfo("safe", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_SAFE_DESC"),
                     [
                         new CommandArgumentInfo()
                     ], new SafeArgument())
             },
 
             { "testInteractive",
-                new ArgumentInfo("testInteractive", /* Localizable */ "Opens a test shell",
+                new ArgumentInfo("testInteractive", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_TESTINTERACTIVE_DESC"),
                     [
                         new CommandArgumentInfo()
                     ], new TestInteractiveArgument())
             },
 
             { "debug",
-                new ArgumentInfo("debug", /* Localizable */ "Enables debug mode",
+                new ArgumentInfo("debug", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC"),
                     [
                         new CommandArgumentInfo()
                     ], new DebugArgument())
             },
 
             { "terminaldebug",
-                new ArgumentInfo("terminaldebug", /* Localizable */ "Enables terminal debug mode",
+                new ArgumentInfo("terminaldebug", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_TERMINALDEBUG_DESC"),
                     [
                         new CommandArgumentInfo()
                     ], new TerminalDebugArgument())
             },
 
             { "reset",
-                new ArgumentInfo("reset", /* Localizable */ "Resets the kernel to the factory settings",
+                new ArgumentInfo("reset", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_RESET_DESC"),
                     [
                         new CommandArgumentInfo()
                     ], new ResetArgument())
             },
 
             { "noaltbuffer",
-                new ArgumentInfo("noaltbuffer", /* Localizable */ "Prevents the kernel from using the alternative buffer",
+                new ArgumentInfo("noaltbuffer", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_NOALTBUFFER_DESC"),
                     [
                         new CommandArgumentInfo()
                     ], new NoAltBufferArgument())
             },
 
             { "lang",
-                new ArgumentInfo("lang", /* Localizable */ "Sets the initial pre-boot environment language",
+                new ArgumentInfo("lang", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_LANG_DESC"),
                     [
                         new CommandArgumentInfo(
                         [
@@ -123,21 +124,21 @@ namespace Nitrocid.Arguments
             },
 
             { "attach",
-                new ArgumentInfo("attach", /* Localizable */ "Attaches the Visual Studio debugger to this instance of Nitrocid",
+                new ArgumentInfo("attach", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_ATTACH_DESC"),
                     [
                         new CommandArgumentInfo()
                     ], new AttachArgument())
             },
 
             { "verbosepreboot",
-                new ArgumentInfo("verbosepreboot", /* Localizable */ "Turns on verbose messages for pre-boot environment",
+                new ArgumentInfo("verbosepreboot", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_VERBOSEPREBOOT_DESC"),
                     [
                         new CommandArgumentInfo()
                     ], new VerbosePrebootArgument())
             },
 
             { "noprebootsplash",
-                new ArgumentInfo("noprebootsplash", /* Localizable */ "Hides the pre-boot splash before configuration is loaded",
+                new ArgumentInfo("noprebootsplash", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_NOPREBOOTSPLASH_DESC"),
                     [
                         new CommandArgumentInfo()
                     ], new NoPrebootSplashArgument())

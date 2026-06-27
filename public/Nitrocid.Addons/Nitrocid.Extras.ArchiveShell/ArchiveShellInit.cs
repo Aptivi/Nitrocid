@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -27,6 +27,7 @@ using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Terminaux.Shell.Shells;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.ArchiveShell
 {
@@ -34,36 +35,41 @@ namespace Nitrocid.Extras.ArchiveShell
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("archive", /* Localizable */ "Opens the archive file to the archive shell",
+            new CommandInfo("archive", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "archivefile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to archive file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC")
                         }),
                     ])
                 ], new ArchiveCommand())
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasArchiveShell);
+
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasArchiveShell);
 
         internal static ArchiveConfig ArchiveConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(ArchiveConfig)) ? (ArchiveConfig)Config.baseConfigurations[nameof(ArchiveConfig)] : Config.GetFallbackKernelConfig<ArchiveConfig>();
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.ArchiveShell.Resources.Languages.Output.Localizations", typeof(ArchiveShellInit).Assembly));
             var config = new ArchiveConfig();
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterShell("ArchiveShell", new ArchiveShellInfo());
         }
 
-        void IAddon.StartAddon() =>
+        public void StartAddon() =>
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
             ShellManager.UnregisterShell("ArchiveShell");
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(ArchiveConfig));

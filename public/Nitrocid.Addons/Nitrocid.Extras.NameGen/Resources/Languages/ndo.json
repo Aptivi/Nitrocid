@@ -1,0 +1,94 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_DESC",
+      "text": "Berapa milidetik yang harus ditunggu sebelum melakukan penulisan berikutnya?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Gagal mendapatkan entri pengaturan."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC",
+      "text": "Berapa milidetik yang harus ditunggu sebelum menulis di layar baru?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_DESC",
+      "text": "Jumlah nama minimum yang harus dibuat"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_DESC",
+      "text": "Jumlah nama maksimum yang akan dihasilkan"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_DESC",
+      "text": "Jumlah usia minimum untuk menghasilkan"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC",
+      "text": "Jumlah tahun usia maksimum untuk menghasilkan"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
+      "text": "Mensimulasikan pencarian basis data untuk orang acak."
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
+      "text": "Pencari nama depan"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_TERM_DESC",
+      "text": "Kata kunci pencarian"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "Awalan nama yang dicari"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "Akhir nama yang dicari"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_NAMETAG_DESC",
+      "text": "Hasilkan label nama (umlaut saat ini tidak didukung)"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_MALE_DESC",
+      "text": "Hasilkan nama menggunakan daftar nama pria"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_FEMALE_DESC",
+      "text": "Hasilkan nama menggunakan daftar nama wanita"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_UNIFIED_DESC",
+      "text": "Hasilkan nama menggunakan daftar nama terpadu"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
+      "text": "Pencari nama keluarga"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "Awalan nama keluarga yang dicari"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "Akhir nama keluarga yang dicari"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
+      "text": "Generator nama dan nama keluarga"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "Berapa banyak nama yang akan dihasilkan?"
+    }
+  ]
+}

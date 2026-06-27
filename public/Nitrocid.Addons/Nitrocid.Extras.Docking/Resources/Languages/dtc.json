@@ -1,0 +1,40 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Toont u een schermvullend overzicht van een geselecteerde dockweergave, zodat u deze als infopaneel kunt gebruiken"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "Er is geen dockscherm met deze naam."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "Er is geen schermdock met deze naam."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Er is geen schermdock."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "Schermdock is gecrasht"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Naam van het dok"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
                 Target = ArchiveShellCommon.CurrentArchiveDirectory ?? "";
             var Entries = new List<IArchiveEntry>();
             var archiveEntries = ArchiveShellCommon.Archive?.Entries ??
-                throw new KernelException(KernelExceptionType.Archive, Translate.DoTranslation("Can't get archive entries"));
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_CANTGETENTRIES"));
             foreach (IArchiveEntry ArchiveEntry in archiveEntries)
             {
                 string key = ArchiveEntry.Key ?? "";
@@ -86,11 +86,11 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
         public static bool ExtractFileEntry(string Target, string Where, bool FullTargetPath = false)
         {
             if (ArchiveShellCommon.Archive is null)
-                throw new KernelException(KernelExceptionType.Archive, Translate.DoTranslation("Archive is not loaded yet."));
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED"));
             if (ArchiveShellCommon.FileStream is null)
-                throw new KernelException(KernelExceptionType.Archive, Translate.DoTranslation("Archive is not loaded yet."));
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED"));
             if (string.IsNullOrWhiteSpace(Target))
-                throw new KernelException(KernelExceptionType.Archive, Translate.DoTranslation("Can't extract nothing."));
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT"));
             if (string.IsNullOrWhiteSpace(Where))
                 Where = ArchiveShellCommon.CurrentDirectory ?? "";
 
@@ -134,15 +134,15 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
         public static bool PackFile(string Target, string Where)
         {
             if (ArchiveShellCommon.Archive is null)
-                throw new KernelException(KernelExceptionType.Archive, Translate.DoTranslation("Archive is not loaded yet."));
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED"));
             if (ArchiveShellCommon.FileStream is null)
-                throw new KernelException(KernelExceptionType.Archive, Translate.DoTranslation("Archive is not loaded yet."));
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED"));
             if (string.IsNullOrWhiteSpace(Target))
-                throw new KernelException(KernelExceptionType.Archive, Translate.DoTranslation("Can't pack nothing."));
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_PACK"));
             if (string.IsNullOrWhiteSpace(Where))
                 Where = ArchiveShellCommon.CurrentDirectory ?? "";
             if (ArchiveShellCommon.Archive is not IWritableArchive)
-                throw new KernelException(KernelExceptionType.Archive, Translate.DoTranslation("Archive is not writable because type is") + " {0}.", ArchiveShellCommon.Archive.Type);
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK") + " {0}.", ArchiveShellCommon.Archive.Type);
 
             // Define absolute archive target
             string ArchiveTarget = ArchiveShellCommon.CurrentArchiveDirectory + "/" + Target;
@@ -180,7 +180,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
         {
             if (string.IsNullOrWhiteSpace(Target))
                 Target = ArchiveShellCommon.CurrentArchiveDirectory ??
-                    throw new KernelException(KernelExceptionType.Archive, Translate.DoTranslation("Can't determine current archive directory."));
+                    throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_ARCHIVEDIRUNDETERMINABLE"));
             string archiveDir = ArchiveShellCommon.CurrentArchiveDirectory ?? "";
 
             // Check to see if we're going back
@@ -259,7 +259,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
         {
             if (string.IsNullOrWhiteSpace(Target))
                 Target = ArchiveShellCommon.CurrentArchiveDirectory ??
-                    throw new KernelException(KernelExceptionType.Archive, Translate.DoTranslation("Can't determine current archive directory."));
+                    throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_ARCHIVEDIRUNDETERMINABLE"));
             if (FilesystemTools.FolderExists(FilesystemTools.NeutralizePath(Target, ArchiveShellCommon.CurrentDirectory)))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} found. Changing...", vars: [Target]);

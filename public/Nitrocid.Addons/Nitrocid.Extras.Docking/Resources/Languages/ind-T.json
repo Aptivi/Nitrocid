@@ -1,0 +1,34 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "आपको एक चयनित डॉक दृश्य के बारे में एक पूर्ण-स्क्रीन अवलोकन दिखाता है ताकि आप इसे एक सूचना पैनल के रूप में उपयोग कर सकें"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "इस नाम की कोई डॉक स्क्रीन नहीं है."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "इस नाम से कोई स्क्रीन डॉक नहीं है."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "कोई स्क्रीन डॉक नहीं है."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "स्क्रीन डॉक क्रैश हो गया है"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "डॉक का नाम"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "Krijgt voorraadinformatie per uur"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "Kort bedrijfssymbool"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "Voer uw AlphaVantage API-sleutel in"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "Geef uw API-sleutel op."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "Demonstratie-API-sleutel kan niet worden gebruikt."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "Uw API-sleutel moet 16 tekens lang zijn."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "Er is een fout opgetreden bij het ophalen van de aandelengegevens. Aanvullende informatie vindt u hier"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "Openingskoers van de aandelen"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "Hoge aandelenkoers"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "Lage aandelenkoers"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "Slotkoers van het aandeel"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "Voorraadvolume"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "API-sleutel is vereist. Configureer vanuit de instellingen."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "Geen voorraadgegevens beschikbaar."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "In deze sectie kunt u de aandelen configureren."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "API sleutel"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "Sleutel voor de AlphaVantage Stocks API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "Bedrijfscode"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "Aandelen bedrijf"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Het is niet gelukt om de instellingen op te halen."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "Kan geen aandeleninformatie verkrijgen."
+    }
+  ]
+}

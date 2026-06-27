@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Terminaux.Shell.Shells;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.ColorConvert
 {
@@ -31,167 +32,176 @@ namespace Nitrocid.Extras.ColorConvert
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("colorto", /* Localizable */ "Converts the source color model to the target color model in numbers.",
+            new CommandInfo("colorto", LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_COLORTO_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "sourceModelName", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
-                            ArgumentDescription = /* Localizable */ "Source color model"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
-                            ArgumentDescription = /* Localizable */ "Target color model"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "number1", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "First number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER1_DESC")
                         }),
                         new CommandArgumentPart(true, "number2", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Second number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER2_DESC")
                         }),
                         new CommandArgumentPart(true, "number3", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Third number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER3_DESC")
                         }),
                         new CommandArgumentPart(false, "number4", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Fourth number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER4_DESC")
                         }),
                     ], true)
                 ], new ColorToCommand()),
 
-            new CommandInfo("colortoks", /* Localizable */ "Converts the source color model to the target color model in KS format.",
+            new CommandInfo("colortoks", LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_COLORTOKS_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "sourceModelName", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
-                            ArgumentDescription = /* Localizable */ "Source color model"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
-                            ArgumentDescription = /* Localizable */ "Target color model"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "number1", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "First number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER1_DESC")
                         }),
                         new CommandArgumentPart(true, "number2", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Second number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER2_DESC")
                         }),
                         new CommandArgumentPart(true, "number3", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Third number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER3_DESC")
                         }),
                         new CommandArgumentPart(false, "number4", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Fourth number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER4_DESC")
                         }),
                     ], true)
                 ], new ColorToKSCommand()),
             
-            new CommandInfo("colortohex", /* Localizable */ "Converts the source color model to hex.",
+            new CommandInfo("colortohex", LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_COLORTOHEX_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "sourceModelName", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
-                            ArgumentDescription = /* Localizable */ "Source color model"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC")
                         }),
 
                         new CommandArgumentPart(true, "number1", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "First number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER1_DESC")
                         }),
                         new CommandArgumentPart(true, "number2", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Second number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER2_DESC")
                         }),
                         new CommandArgumentPart(true, "number3", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Third number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER3_DESC")
                         }),
                         new CommandArgumentPart(false, "number4", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Fourth number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER4_DESC")
                         }),
                     ], true)
                 ], new ColorToHexCommand()),
             
-            new CommandInfo("colorspecto", /* Localizable */ "Converts the source color model using the color specifier to the target color model.",
+            new CommandInfo("colorspecto", LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_COLORSPECTO_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
-                            ArgumentDescription = /* Localizable */ "Target color model"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "specifier", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Color specifier"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_SPECIFIER_DESC")
                         }),
                     ], true)
                 ], new ColorSpecToCommand()),
             
-            new CommandInfo("colorspectoks", /* Localizable */ "Converts the source color model using the color specifier to the target color model in KS format.",
+            new CommandInfo("colorspectoks", LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_COLORSPECTOKS_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "targetModelName", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["rgb", "ryb", "cmy", "cmyk", "hsv", "hsl", "yiq", "yuv", "xyz"],
-                            ArgumentDescription = /* Localizable */ "Target color model"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "specifier", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Color specifier"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_SPECIFIER_DESC")
                         }),
                     ], true)
                 ], new ColorSpecToKSCommand()),
             
-            new CommandInfo("colorspectohex", /* Localizable */ "Converts the source color model using the color specifier to the target color model in hex.",
+            new CommandInfo("colorspectohex", LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_COLORSPECTOHEX_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "specifier", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Color specifier"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_COLORCONVERT_COMMAND_ARGUMENT_SPECIFIER_DESC")
                         }),
                     ], true)
                 ], new ColorSpecToHexCommand()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasColorConvert);
 
-        void IAddon.StartAddon() =>
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasColorConvert);
+
+        public void StartAddon()
+        {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.ColorConvert.Resources.Languages.Output.Localizations", typeof(ColorConvertInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        public void StopAddon()
+        {
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+        }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
     }
 }

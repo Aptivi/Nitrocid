@@ -1,0 +1,53 @@
+{
+  "lang": "ita",
+  "name": "Italian",
+  "cultures": [
+    "it",
+    "it-CH",
+    "it-IT",
+    "it-SM",
+    "it-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "Aggiunge un allarme per avvisarti quando la tua tazza di tè o caffè è pronta."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "Interrompe un allarme che ti avvisa quando la tua tazza di tè o caffè è pronta."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "Caffè americano"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "Tè rosso"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "Tè verde"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "Nessun avviso di caffeina da interrompere."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "I secondi in cui la tua tazza sarà pronta non sono validi."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "Se stai cercando di fornire il nome della bevanda, controlla l'elenco seguente:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "La tua tazza è ora pronta!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "Specificare un numero di secondi o il nome di una bevanda"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "Λαμβάνει backtrace για όλα τα νήματα"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "Πιστεύουμε ότι χρησιμοποιείτε Windows 8 ή παλαιότερη έκδοση. Αυτή η λειτουργία δεν υποστηρίζεται."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "Πληροφορίες ίχνους στοίβας νήματος για {0}"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "Δεν είναι νήμα Nitrocid KS"
+    }
+  ]
+}

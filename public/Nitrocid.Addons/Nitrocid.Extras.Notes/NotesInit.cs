@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,6 +26,7 @@ using Nitrocid.Kernel.Extensions;
 using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Shell.Homepage;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Notes
 {
@@ -33,71 +34,78 @@ namespace Nitrocid.Extras.Notes
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("addnote", /* Localizable */ "Adds a note",
+            new CommandInfo("addnote", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_ADDNOTE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "noteContents...", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Note contents to add"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_NOTES_COMMAND_ADDNOTE_ARGUMENT_NOTECONTENTS_DESC")
                         })
                     ]),
                 ], new AddNote()),
 
-            new CommandInfo("removenote", /* Localizable */ "Removes a note",
+            new CommandInfo("removenote", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_REMOVENOTE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "noteNumber", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Note number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC")
                         })
                     ]),
                 ], new RemoveNote()),
 
-            new CommandInfo("removenotes", /* Localizable */ "Removes all notes",
+            new CommandInfo("removenotes", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_REMOVENOTES_DESC"),
                 [
                     new CommandArgumentInfo(),
                 ], new RemoveNotes()),
 
-            new CommandInfo("listnotes", /* Localizable */ "Lists all notes",
+            new CommandInfo("listnotes", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_LISTNOTES_DESC"),
                 [
                     new CommandArgumentInfo(),
                 ], new ListNotes()),
 
-            new CommandInfo("savenotes", /* Localizable */ "Saves all notes",
+            new CommandInfo("savenotes", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_SAVENOTES_DESC"),
                 [
                     new CommandArgumentInfo(),
                 ], new SaveNotes()),
 
-            new CommandInfo("reloadnotes", /* Localizable */ "Reloads all notes",
+            new CommandInfo("reloadnotes", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_RELOADNOTES_DESC"),
                 [
                     new CommandArgumentInfo(),
                 ], new ReloadNotes()),
 
-            new CommandInfo("notestui", /* Localizable */ "Notes viewer TUI",
+            new CommandInfo("notestui", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_NOTESTUI_DESC"),
                 [
                     new CommandArgumentInfo(),
                 ], new NotesTui()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasNotes);
 
-        void IAddon.StartAddon() =>
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasNotes);
 
-        void IAddon.StopAddon()
+        public void StartAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Notes.Resources.Languages.Output.Localizations", typeof(NotesInit).Assembly));
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+        }
+
+        public void StopAddon()
+        {
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             HomepageTools.UnregisterBuiltinAction("Notes");
         }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
             // Add homepage entries
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Notes", NoteManagement.OpenNotesTui);
+            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_NOTES_HOMEPAGE_NOTES"), NoteManagement.OpenNotesTui);
 
             // Load notes
             NoteManagement.LoadNotes();

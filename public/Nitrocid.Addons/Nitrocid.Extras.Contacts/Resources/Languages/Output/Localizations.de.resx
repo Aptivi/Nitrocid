@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_CONTACTS_COMMAND_CONTACTS_DESC" xml:space="preserve">
+    <value>Verwaltet Ihre Kontakte</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED" xml:space="preserve">
+    <value>Die Datei „{0}“ kann nicht geöffnet werden, da sie nicht gefunden wurde.</value>
+  </data>
+  <data name="NKS_CONTACTS_IMPORTSUCCESS" xml:space="preserve">
+    <value>Kontakte erfolgreich importiert.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILEINVALID_NAMED" xml:space="preserve">
+    <value>Die Datei „{0}“ kann nicht geöffnet werden, da die Kartendatei ungültig ist.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED" xml:space="preserve">
+    <value>Die Kontaktdatei ist nicht vorhanden.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTSCOUNT" xml:space="preserve">
+    <value>Kontakte gefunden</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED" xml:space="preserve">
+    <value>Die Kontaktdatei ist ungültig.</value>
+  </data>
+  <data name="NKS_CONTACTS_MECARDEMPTY" xml:space="preserve">
+    <value>Die MeCard-Syntax darf nicht leer sein.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILENOCONTACT" xml:space="preserve">
+    <value>Entweder enthält die bereitgestellte Kontaktdatei keine Informationen zu einem Kontakt oder ist ungültig.</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED" xml:space="preserve">
+    <value>Kontakte konnten nicht analysiert werden. Weitere Informationen finden Sie in den Fehlerdetails.</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE" xml:space="preserve">
+    <value>Der Kontaktindex liegt außerhalb des zulässigen Bereichs. Der maximale Index ist {0}, während der bereitgestellte Index {1} ist.</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET" xml:space="preserve">
+    <value>Es sind keine Kontakte verfügbar.</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH" xml:space="preserve">
+    <value>Es sind keine Kontakte zum Suchen vorhanden.</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_INVALIDREGEX" xml:space="preserve">
+    <value>Der reguläre Ausdruck ist ungültig.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOCONTACT" xml:space="preserve">
+    <value>Es besteht kein Kontakt. Wenn Sie Kontakte importieren möchten, nutzen Sie bitte die Importoptionen über die am unteren Bildschirmrand definierten Tastenkombinationen.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CANTIMPORTCONTACTS" xml:space="preserve">
+    <value>Einige Kontakte können nicht importiert werden.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_PATHVCFPROMPT" xml:space="preserve">
+    <value>Geben Sie den Pfad zu einer VCF-Datei ein, die Ihren Kontakt enthält. Die Datei „contacts2.db“ von Android wird ebenfalls unterstützt.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_FILENOTFOUND" xml:space="preserve">
+    <value>Datei existiert nicht. Stellen Sie sicher, dass Sie den richtigen Pfad zu einer VCF-Datei oder einer Datei „contacts2.db“ angegeben haben.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MECARDPROMPT" xml:space="preserve">
+    <value>Geben Sie eine gültige MeCard-Darstellung Ihres Kontakts ein.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MECARDINVALID" xml:space="preserve">
+    <value>Die Contact MeCard-Syntax ist ungültig.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MECARDEMPTY" xml:space="preserve">
+    <value>Die Contact MeCard-Syntax darf nicht leer sein</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_SEARCHPROMPT" xml:space="preserve">
+    <value>Geben Sie einen regulären Ausdruck ein, um die Kontakte zu durchsuchen.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOCONTACTSSEARCH" xml:space="preserve">
+    <value>Es gibt keine Kontakte, die Ihren gewünschten Ausdruck enthalten.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNAME" xml:space="preserve">
+    <value>Kontaktname</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOCONTACTNAME" xml:space="preserve">
+    <value>Kein Kontaktname</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESS" xml:space="preserve">
+    <value>Kontakt Adresse</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MAIL" xml:space="preserve">
+    <value>Kontaktmail</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOMAIL" xml:space="preserve">
+    <value>Keine Kontaktmail</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORG" xml:space="preserve">
+    <value>Kontaktieren Sie die Organisation</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOORG" xml:space="preserve">
+    <value>Keine Kontaktorganisation</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_PHONE" xml:space="preserve">
+    <value>Kontakt Telefon</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOPHONE" xml:space="preserve">
+    <value>Kein Kontakttelefon</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_URL" xml:space="preserve">
+    <value>Kontakt-URL</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOURL" xml:space="preserve">
+    <value>Keine Kontakt-URL</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_GEO" xml:space="preserve">
+    <value>Kontaktieren Sie Geo</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOGEO" xml:space="preserve">
+    <value>Kein geografischer Kontakt</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_IMPP" xml:space="preserve">
+    <value>Kontaktieren Sie IMPP</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOIMPP" xml:space="preserve">
+    <value>Kein IMPP-Kontakt</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NICK" xml:space="preserve">
+    <value>Spitzname des Kontakts</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NONICK" xml:space="preserve">
+    <value>Kein Kontakt-Nickname</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ROLE" xml:space="preserve">
+    <value>Kontaktrolle</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOROLE" xml:space="preserve">
+    <value>Keine Kontaktrolle</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_TITLE" xml:space="preserve">
+    <value>Kontakttitel</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOTITLE" xml:space="preserve">
+    <value>Kein Kontakttitel</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOTES" xml:space="preserve">
+    <value>Kontaktnotizen</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NONOTES" xml:space="preserve">
+    <value>Keine Kontaktnotizen</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC" xml:space="preserve">
+    <value>Listet Ihre Kontakte auf</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC" xml:space="preserve">
+    <value>Lädt Ihre Kontakte</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC" xml:space="preserve">
+    <value>Importiert Ihre Kontakte</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC" xml:space="preserve">
+    <value>Behandelt die erforderliche Eingabe als MeCard-Zeichenfolge</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_CONTACTINFO_DESC" xml:space="preserve">
+    <value>Ruft Kontaktinformationen ab</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOCONTACTS" xml:space="preserve">
+    <value>Keine Kontakte.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_NUMINVALID" xml:space="preserve">
+    <value>Die Kontaktnummer ist ungültig.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE" xml:space="preserve">
+    <value>Die Kontaktnummer ist außerhalb des Bereichs.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_FIRSTNAME" xml:space="preserve">
+    <value>Vorname</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_LASTNAME" xml:space="preserve">
+    <value>Familienname, Nachname</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_GEO" xml:space="preserve">
+    <value>Kontakt Geo</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_NOTE" xml:space="preserve">
+    <value>Kontakthinweis</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_CANTLISTSOME" xml:space="preserve">
+    <value>Einige der Kontakte können nicht aufgelistet werden.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_DELETE" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_INFO" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Einstellungseinträge konnten nicht abgerufen werden.</value>
+  </data>
+  <data name="NKS_CONTACTS_HOMEPAGE_CONTACTS" xml:space="preserve">
+    <value>Kontakte</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_DELETEALL" xml:space="preserve">
+    <value>Alle löschen</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_IMPORT" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM" xml:space="preserve">
+    <value>Importieren von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>Suchen</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT" xml:space="preserve">
+    <value>Weiter suchen</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK" xml:space="preserve">
+    <value>Suche zurück</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_RAWINFO" xml:space="preserve">
+    <value>Rohdaten</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD" xml:space="preserve">
+    <value>Importieren aus MeCard</value>
+  </data>
+  <data name="NKS_CONTACTS_SETTINGS_DESC" xml:space="preserve">
+    <value>In diesem Abschnitt können Sie die Funktionsweise des Kontakte-Add-ons konfigurieren.</value>
+  </data>
+  <data name="NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME" xml:space="preserve">
+    <value>Profilbilder anzeigen</value>
+  </data>
+  <data name="NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC" xml:space="preserve">
+    <value>Wenn aktiviert, werden Kontaktbilder angezeigt. Standardmäßig deaktiviert, um Missbrauch zu verhindern und aus Leistungsgründen.</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC" xml:space="preserve">
+    <value>Entweder ein Pfad zu einer vCard-Kontaktdatei oder einer MeCard-Darstellung</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC" xml:space="preserve">
+    <value>Kontaktnummer</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_EDIT" xml:space="preserve">
+    <value>Bearbeiten...</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT" xml:space="preserve">
+    <value>Geben Sie einen neuen Namen für diesen Kontakt ein</value>
+  </data>
+</root>

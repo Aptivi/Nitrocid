@@ -1,0 +1,546 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SHELL_ERROR",
+      "text": "शेल में कोई त्रुटि थी।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_ADDRESSPROMPT",
+      "text": "उपयोगकर्ता नाम या मेल पता दर्ज करें:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PASSWORDPROMPT",
+      "text": "पास वर्ड दर्ज करें:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_CONNECTIONFAILED",
+      "text": "{0}: {1} से कनेक्ट करते समय त्रुटि"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_CONNECTING",
+      "text": "{0} से कनेक्ट हो रहा है ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_AUTHENTICATING",
+      "text": "प्रमाणित कर रहा है ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LIST_DESC",
+      "text": "संदेश डाउनलोड करता है और उन्हें सूचीबद्ध करता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READ_DESC",
+      "text": "एक संदेश खोलता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PAGENOTNUMERIC",
+      "text": "पृष्ठ एक संख्यात्मक मान नहीं है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO",
+      "text": "संदेश संख्या ऋणात्मक या शून्य नहीं हो सकती है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTNUMERIC",
+      "text": "संदेश संख्या एक संख्यात्मक मान नहीं है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM",
+      "text": "- {0} से"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO",
+      "text": "- {0} के लिए"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN",
+      "text": "- {0} में {1} पर भेजा गया"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND",
+      "text": "निर्दिष्ट संदेश नहीं मिला है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_CD_DESC",
+      "text": "वर्तमान मेल निर्देशिका को बदलता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_CANTOPENMAILFOLDER",
+      "text": "मेल फ़ोल्डर खोलने में असमर्थ {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LSDIRS_DESC",
+      "text": "अपने मेल पते में निर्देशिकाओं को सूचीबद्ध करता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT",
+      "text": "IMAP सर्वर पता और पोर्ट दर्ज करें (<पता> या <पता>: [पोर्ट]):"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT",
+      "text": "SMTP सर्वर पता और पोर्ट (<पता> या <पता>: [पोर्ट]) दर्ज करें:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_SEND_DESC",
+      "text": "एक पते पर एक संदेश भेजता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_TARGETPROMPT",
+      "text": "प्राप्तकर्ता मेल पता दर्ज करें:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SUBJECTPROMPT",
+      "text": "विषय दर्ज करें:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT",
+      "text": "अपना संदेश नीचे दर्ज करें। पुष्टि करने के लिए \"EOF\" लिखें।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SENDING",
+      "text": "संदेश भेजना..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_SENT",
+      "text": "मैसेज बेजा गया।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_INVALIDMAIL",
+      "text": "अमान्य ईमेल पता। सुनिश्चित करें कि आपने पता सही लिखा है और यह दिखाए गए उदाहरण के प्रारूप से मेल खाता है:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RM_DESC",
+      "text": "एक संदेश निकालता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RMALL_DESC",
+      "text": "प्राप्तकर्ता से सभी संदेशों को निकालता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX",
+      "text": "{1} से {0} संदेश {2} से हटा दिया गया। {3} संदेश पार्स करने के लिए शेष है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
+      "text": "इनबॉक्स से {0} संदेश {0} हटाए गए। {2} संदेश पार्स करने के लिए शेष है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_SUCCESS",
+      "text": "{0} द्वारा किए गए सभी मेल सफलतापूर्वक हटा दिए जाते हैं।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_RMALL_FAILURE",
+      "text": "{0} द्वारा किए गए सभी मेल को निकालने में विफल।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_ERRORSENDING",
+      "text": "संदेश भेजने में त्रुटि"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MV_DESC",
+      "text": "एक संदेश ले जाता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MVALL_DESC",
+      "text": "प्राप्तकर्ता के सभी संदेशों को ले जाता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_SUCCESS",
+      "text": "{0} द्वारा किए गए सभी मेल सफलतापूर्वक स्थानांतरित कर दिए गए हैं।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_FAILURE",
+      "text": "{0} द्वारा किए गए सभी मेल को स्थानांतरित करने में विफल।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDNOTINBOX",
+      "text": "{0} से {0} संदेश {2} से स्थानांतरित किया गया। {3} संदेश पार्स करने के लिए शेष है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_TITLE",
+      "text": "{0} नए संदेश इनबॉक्स में आए।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC",
+      "text": "उन्हें देखने के लिए \"mail\" खोलें।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
+      "text": "अनुलग्नकों के लिए फ़ाइल पथ दर्ज करें। पुष्टि करने के लिए रिक्त पथ पर ENTER दबाएँ।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
+      "text": "एक एन्क्रिप्टेड संदेश खोलता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
+      "text": "कुंजी आईडी {0} के लिए पासवर्ड लिखें"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_SENDENC_DESC",
+      "text": "एक पते पर एक एन्क्रिप्टेड संदेश भेजता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_CREATEFAILED",
+      "text": "मेल फ़ोल्डर बनाने में असमर्थ {0}: {1}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_MKDIR_DESC",
+      "text": "वर्तमान कार्यशील निर्देशिका में एक निर्देशिका बनाता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_RMDIR_DESC",
+      "text": "वर्तमान कार्यशील निर्देशिका से एक निर्देशिका निकालता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_DIRNOTFOUND",
+      "text": "मेल फ़ोल्डर {0} नहीं मिला।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MAILDIR_DELETEFAILED",
+      "text": "मेल फ़ोल्डर {0}: {1} को हटाने में असमर्थ"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_DESC",
+      "text": "एक फ़ोल्डर का नाम बदलता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_NAME",
+      "text": "मेल संदेश पूर्वावलोकन दिखाएं"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_DESC",
+      "text": "मेल संदेशों को सूचीबद्ध करते समय, निकाय पूर्वावलोकन दिखाएं।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_WEBALERT_OPENING",
+      "text": "URL खोला जा रहा है... स्क्रीन पर दिखाए गए चरणों का पालन करना सुनिश्चित करें।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_USERNAMEPROMPT_DESC",
+      "text": "लिखें कि आप अपना लॉगिन संकेत कैसे चाहते हैं। डिफ़ॉल्ट शैली का उपयोग करने के लिए खाली छोड़ दें। प्लेसहोल्डर्स को पार्स किया जाता है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_PASSWORDPROMPT_DESC",
+      "text": "लिखें कि आप कैसे चाहते हैं कि आपका पासवर्ड शीघ्र हो। डिफ़ॉल्ट शैली का उपयोग करने के लिए खाली छोड़ दें। प्लेसहोल्डर्स को पार्स किया जाता है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_USERNAMEPROMPT_NAME",
+      "text": "मेल के लिए उपयोगकर्ता नाम शीघ्र शैली"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_PASSWORDPROMPT_NAME",
+      "text": "मेल के लिए पासवर्ड शीघ्र शैली"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_NAME",
+      "text": "मेल के लिए IMAP शीघ्र शैली"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_NAME",
+      "text": "मेल के लिए एसएमटीपी शीघ्र शैली"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_NAME",
+      "text": "स्वचालित रूप से मेल सर्वर का पता लगाएं"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_NAME",
+      "text": "मेल डीबग सक्षम करें"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_NAME",
+      "text": "नए मेल संदेशों के लिए सूचित करें"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_NAME",
+      "text": "मेल के लिए GPG पासवर्ड शीघ्र शैली"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_NAME",
+      "text": "IMAP पिंग अंतराल भेजें"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_NAME",
+      "text": "एसएमटीपी पिंग अंतराल भेजें"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_NAME",
+      "text": "मेल टेक्स्ट प्रारूप"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_DESC",
+      "text": "लिखें कि आप अपने IMAP सर्वर को कैसे प्रॉम्प्ट करना चाहते हैं। डिफ़ॉल्ट शैली का उपयोग करने के लिए खाली छोड़ दें। प्लेसहोल्डर्स को पार्स किया जाता है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_DESC",
+      "text": "लिखें कि आप अपने एसएमटीपी सर्वर को कैसे संकेत देना चाहते हैं। डिफ़ॉल्ट शैली का उपयोग करने के लिए खाली छोड़ दें। प्लेसहोल्डर्स को पार्स किया जाता है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_DESC",
+      "text": "दिए गए पते के आधार पर मेल सर्वर का स्वचालित रूप से पता लगाएं।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_DESC",
+      "text": "मेल सर्वर डीबग सक्षम करता है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_DESC",
+      "text": "किसी भी नए मेल संदेशों के लिए आपको सूचित करता है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_DESC",
+      "text": "लिखें कि आप अपने GPG पासवर्ड को कैसा चाहते हैं। डिफ़ॉल्ट शैली का उपयोग करने के लिए खाली छोड़ दें। प्लेसहोल्डर्स को पार्स किया जाता है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_DESC",
+      "text": "IMAP पिंग भेजने के लिए कितने मिलीसेकंड?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_DESC",
+      "text": "SMTP पिंग भेजने के लिए कितने मिलीसेकंड?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_DESC",
+      "text": "नियंत्रित करता है कि मेल टेक्स्ट कैसे दिखाया जाएगा।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TRANSFERPROGRESS",
+      "text": "मेल के ट्रांसफर..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_NAME",
+      "text": "मेल स्थानांतरण प्रगति दिखाएं"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_NAME",
+      "text": "मेल स्थानांतरण प्रगति"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_NAME",
+      "text": "मेल स्थानांतरण प्रगति (एकल)"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_DESC",
+      "text": "यदि सक्षम किया गया है, तो मेल शेल दिखाएगा कि मेल डाउनलोड करते समय कितने बाइट प्रसारित हुए।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_DESC",
+      "text": "लिखें कि आप अपनी मेल स्थानांतरण प्रगति शैली कैसी चाहते हैं। डिफ़ॉल्ट शैली का उपयोग करने के लिए खाली छोड़ दें। प्लेसहोल्डर्स को पार्स किया जाता है। स्थानांतरित आकार के लिए {0} और कुल आकार के लिए {1}।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_DESC",
+      "text": "लिखें कि आप अपनी मेल स्थानांतरण प्रगति शैली कैसी चाहते हैं। डिफ़ॉल्ट शैली का उपयोग करने के लिए खाली छोड़ दें। प्लेसहोल्डर्स को पार्स किया जाता है। {0} स्थानांतरित आकार के लिए।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_DESC",
+      "text": "IMAP मेल क्लाइंट खोलता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC",
+      "text": "POP3 मेल क्लाइंट खोलता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
+      "text": "POP3 मेल 0.0.20.0 से लौट रहा है, लेकिन फिलहाल हम इसे इस संस्करण में जारी करने की योजना नहीं बना रहे हैं। अगले संस्करण की प्रतीक्षा करें."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC",
+      "text": "बिना डिस्कनेक्ट किए शेल से बाहर निकल जाता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
+      "text": "संदेश {0} को {1} से स्थानांतरित किया गया। {2} संदेश पार्स करने के लिए शेष हैं।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",
+      "text": "अनुलग्नक:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
+      "text": "शीघ्र पूर्व निर्धारित"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_ENTRYDESC",
+      "text": "यह अनुभाग आपको यह कॉन्फ़िगर करने देता है कि मेल शेल कैसे काम करता है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_NAME",
+      "text": "एक पृष्ठ में ई-मेल की अधिकतम संख्या"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_DESC",
+      "text": "एक पृष्ठ पर कितने ई-मेल संदेश प्रदर्शित करने हैं?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN",
+      "text": "खुला"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "सेटिंग प्रविष्टियाँ प्राप्त करने में विफल."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "अंतिम खोल वह खोल नहीं है जिससे अलग होना है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOIMAP",
+      "text": "IMAP सर्वर कॉन्फ़िगरेशन प्राप्त नहीं किया जा सका"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOSMTP",
+      "text": "SMTP सर्वर कॉन्फ़िगरेशन प्राप्त नहीं किया जा सका"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC",
+      "text": "लॉगइन करने के लिए ईमेल पता"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_CREATEFOLDER",
+      "text": "फ़ोल्डर बनाएँ"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVE",
+      "text": "कदम..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVEALL",
+      "text": "सब ले जाएँ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_RENAMEFOLDER",
+      "text": "फ़ोल्डर का नाम बदलें"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEFOLDER",
+      "text": "फ़ोल्डर हटाएँ"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVE",
+      "text": "संदेश हटाएँ"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEALL",
+      "text": "सभी हटाएं..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_FOLDERMESSAGEOPENFAILED",
+      "text": "फ़ोल्डर या संदेश नहीं खोला जा सकता"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMEPROMPT",
+      "text": "नई निर्देशिका का नाम लिखें."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_CREATINGDIR",
+      "text": "निर्देशिका बना रहा हूँ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_CREATINGDIRFAILED",
+      "text": "फ़ोल्डर नहीं बनाया जा सकता"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEPROMPT",
+      "text": "इस संदेश को ले जाने के लिए एक नई निर्देशिका चुनें."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGE",
+      "text": "मार्मिक संदेश..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEFAILED",
+      "text": "संदेश स्थानांतरित नहीं किया जा सकता"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEBYSAMESENDERPROMPT",
+      "text": "एक ही प्रेषक के सभी संदेशों को स्थानांतरित करने के लिए एक नई निर्देशिका का चयन करें।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDER",
+      "text": "प्रेषक {0} द्वारा संदेश स्थानांतरित किया जा रहा है..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDERFAILED",
+      "text": "एक ही प्रेषक द्वारा सभी संदेशों को स्थानांतरित नहीं किया जा सकता"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMERENAMEPROMPT",
+      "text": "{0} का नाम बदलने के लिए नई निर्देशिका का नाम लिखें."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIR",
+      "text": "निर्देशिका का नाम बदला जा रहा है..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIRFAILED",
+      "text": "फ़ोल्डर का नाम बदला नहीं जा सकता"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIR",
+      "text": "निर्देशिका हटा रहा है..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIRFAILED",
+      "text": "फ़ोल्डर हटाया नहीं जा सकता"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGE",
+      "text": "संदेश हटाया जा रहा है..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEFAILED",
+      "text": "संदेश हटाया नहीं जा सकता"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDER",
+      "text": "प्रेषक {0} द्वारा संदेश हटाया जा रहा है..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDERFAILED",
+      "text": "एक ही प्रेषक के सभी संदेश नहीं हटाए जा सकते"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC",
+      "text": "मेल निर्देशिका नाम"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_LIST_ARGUMENT_PAGENUM_DESC",
+      "text": "पृष्ठ संख्या"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC",
+      "text": "संदेश आईडी"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_SENDERNAME_DESC",
+      "text": "प्रेषक का नाम"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_OLDFOLDERNAME_DESC",
+      "text": "पुरानी मेल निर्देशिका का नाम"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_NEWFOLDERNAME_DESC",
+      "text": "नया मेल निर्देशिका नाम"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_TUI_DESC",
+      "text": "इंटरैक्टिव मेल प्रबंधन"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "बताया गया मेल मैसेज नहीं मिला"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
+      "text": "इनबॉक्स प्राप्त करना विफल रहा"
+    }
+  ]
+}

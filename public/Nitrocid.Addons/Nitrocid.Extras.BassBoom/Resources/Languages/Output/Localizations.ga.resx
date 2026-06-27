@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC" xml:space="preserve">
+    <value>Cé mhéad milleasoicind atá le fanacht roimh an gcéad cheann eile a scríobh?</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_LYRICLINES_DESC" xml:space="preserve">
+    <value>Faigheann gach líne lyric ón gcomhad lyric</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC" xml:space="preserve">
+    <value>Seinntear comhad lyric</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC" xml:space="preserve">
+    <value>Seinneann fuaim</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_NETFMINFO_DESC" xml:space="preserve">
+    <value>Faigheann sé eolas faoi do stáisiún raidió ar líne</value>
+  </data>
+  <data name="NKS_BASSBOOM_NOLYRICFILE" xml:space="preserve">
+    <value>Déan cinnte an cosán chuig comhad LRC a shonrú.</value>
+  </data>
+  <data name="NKS_BASSBOOM_NOSOUNDFILE" xml:space="preserve">
+    <value>Ní féidir fuaim a sheinm toisc nach bhfuil an comhad aimsithe.</value>
+  </data>
+  <data name="NKS_BASSBOOM_OPENEDSOUNDFILE" xml:space="preserve">
+    <value>D'éirigh leis an gcomhad ceoil a oscailt.</value>
+  </data>
+  <data name="NKS_BASSBOOM_CANTOPENSOUNDFILE" xml:space="preserve">
+    <value>Ní féidir an comhad ceoil a oscailt.</value>
+  </data>
+  <data name="NKS_BASSBOOM_TIMEOUT" xml:space="preserve">
+    <value>Ní féidir fuaim a sheinm mar gheall ar am istigh.</value>
+  </data>
+  <data name="NKS_BASSBOOM_UNKNOWNARTIST" xml:space="preserve">
+    <value>Ealaíontóir Anaithnid</value>
+  </data>
+  <data name="NKS_BASSBOOM_UNKNOWNGENRE" xml:space="preserve">
+    <value>Seánra Anaithnid</value>
+  </data>
+  <data name="NKS_BASSBOOM_NAME" xml:space="preserve">
+    <value>Ainm</value>
+  </data>
+  <data name="NKS_BASSBOOM_ARTIST" xml:space="preserve">
+    <value>Ealaíontóir</value>
+  </data>
+  <data name="NKS_BASSBOOM_GENRE" xml:space="preserve">
+    <value>Seánra</value>
+  </data>
+  <data name="NKS_BASSBOOM_DURATION" xml:space="preserve">
+    <value>Fad</value>
+  </data>
+  <data name="NKS_BASSBOOM_STOPPLAYING" xml:space="preserve">
+    <value>Brúigh 'q' chun stop a imirt.</value>
+  </data>
+  <data name="NKS_BASSBOOM_CANTPLAY" xml:space="preserve">
+    <value>Ní féidir fuaim a sheinm.</value>
+  </data>
+  <data name="NKS_BASSBOOM_TITLE" xml:space="preserve">
+    <value>Teideal</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_PORTINVALID" xml:space="preserve">
+    <value>Tá uimhir phoirt do raidió ar líne neamhbhailí.</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_FULLURL" xml:space="preserve">
+    <value>URL iomlán</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_CURRENTLISTENERS" xml:space="preserve">
+    <value>éisteoirí reatha</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_PEAKLISTENERS" xml:space="preserve">
+    <value>Lucht éisteachta buaic</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_STREAMS" xml:space="preserve">
+    <value>Sruthanna</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_ACTIVESTREAMS" xml:space="preserve">
+    <value>Sruthanna gníomhacha</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_STREAMINFO" xml:space="preserve">
+    <value>Sruth faisnéise le haghaidh ID</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_PATH" xml:space="preserve">
+    <value>Conair</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_CURRENTLYPLAYING" xml:space="preserve">
+    <value>Ag imirt faoi láthair</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_UPTIME" xml:space="preserve">
+    <value>Aga fónaimh</value>
+  </data>
+  <data name="NKS_BASSBOOM_LYRICFILENOTFOUND" xml:space="preserve">
+    <value>Bí cinnte an cosán chuig eolaire a shonrú ina bhfuil do chuid comhad lyric san fhormáid LRC. Is féidir leat cosán saincheaptha a shonrú freisin chuig d’fhillteán leabharlainne ceoil ina bhfuil na comhaid lyric.</value>
+  </data>
+  <data name="NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND" xml:space="preserve">
+    <value>Níl an comhad liricí seo ann.</value>
+  </data>
+  <data name="NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC" xml:space="preserve">
+    <value>Tá socruithe don spárálaíscáileáin seo ar fáil anseo.</value>
+  </data>
+  <data name="NKS_BASSBOOM_SETTINGS_DESC" xml:space="preserve">
+    <value>Ligeann an chuid seo duit conas a oibríonn an breiseán BassBoom a chumrú.</value>
+  </data>
+  <data name="NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC" xml:space="preserve">
+    <value>Socraíonn sé an cosán chuig fillteán ina bhfuil grúpa de chomhaid .lrc. Scríobh cosán iomlán chuig aon eolaire atá ann cheana féin.</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_STATIONTYPE" xml:space="preserve">
+    <value>Cineál stáisiúin</value>
+  </data>
+  <data name="NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Theip ar na hiontrálacha socruithe a fháil.</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_HEADER" xml:space="preserve">
+    <value>Raidió Idirlín (FM) eolas le haghaidh</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_CANTGETINFO" xml:space="preserve">
+    <value>Ní féidir faisnéis raidió idirlín a fháil.</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC" xml:space="preserve">
+    <value>Conair go dtí an comhad lyric</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC" xml:space="preserve">
+    <value>Bealach chun an comhad mp3</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC" xml:space="preserve">
+    <value>Ainm óstach a dhéanann óstáil ar an stáisiún raidió MPEG</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC" xml:space="preserve">
+    <value>Port chuig an stáisiún raidió MPEG</value>
+  </data>
+</root>

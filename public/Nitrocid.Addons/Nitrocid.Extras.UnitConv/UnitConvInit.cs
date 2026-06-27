@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -28,6 +28,7 @@ using Nitrocid.Kernel.Extensions;
 using Terminaux.Shell.Shells;
 using Nitrocid.Extras.UnitConv.Tools;
 using Nitrocid.Shell.Homepage;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.UnitConv
 {
@@ -35,43 +36,43 @@ namespace Nitrocid.Extras.UnitConv
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("listunits", /* Localizable */ "Lists all available units",
+            new CommandInfo("listunits", LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_LISTUNITS_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray(),
-                            ArgumentDescription = /* Localizable */ "Unit type"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC")
                         }),
                     ])
                 ], new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("unitconv", /* Localizable */ "Unit converter",
+            new CommandInfo("unitconv", LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "unittype", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray(),
-                            ArgumentDescription = /* Localizable */ "Unit type"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC")
                         }),
                         new CommandArgumentPart(true, "quantity", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Quantity in the source unit to convert"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_QUANTITY_DESC")
                         }),
                         new CommandArgumentPart(true, "sourceunit", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Source unit"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_SOURCEUNIT_DESC")
                         }),
                         new CommandArgumentPart(true, "targetunit", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Target unit"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("tui", /* Localizable */ "Use the TUI version of the unit converter", new SwitchOptions()
+                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_SWITCH_TUI_DESC"), new SwitchOptions()
                         {
                             OptionalizeLastRequiredArguments = 4,
                             AcceptsValues = false
@@ -80,22 +81,29 @@ namespace Nitrocid.Extras.UnitConv
                 ], new UnitConvCommand()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasUnitConv);
 
-        void IAddon.StartAddon() =>
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasUnitConv);
 
-        void IAddon.StopAddon()
+        public void StartAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.UnitConv.Resources.Languages.Output.Localizations", typeof(UnitConvInit).Assembly));
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+        }
+
+        public void StopAddon()
+        {
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             HomepageTools.UnregisterBuiltinAction("Unit Converter");
         }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
             // Add homepage entries
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Unit Converter", UnitConvTools.OpenUnitConvTui);
+            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_UNITCONV_HOMEPAGE_UNITCONV"), UnitConvTools.OpenUnitConvTui);
         }
     }
 }

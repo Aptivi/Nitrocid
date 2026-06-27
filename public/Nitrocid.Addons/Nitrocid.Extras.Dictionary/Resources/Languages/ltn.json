@@ -1,0 +1,62 @@
+{
+  "lang": "ltn",
+  "name": "Latin",
+  "cultures": [
+    "la",
+    "la-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Licentia informationes"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "Englishlatin Dictionary"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Verbum notitia for"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "API is licensed under"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "Verbum:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Verbum significat for"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Pars Orationis:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Definitio:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Exemplum in sententia:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Fontes ad definiendam"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "Synonyma:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Antonyms:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Verbum definire"
+    }
+  ]
+}

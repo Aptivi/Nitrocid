@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -64,13 +64,13 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
             if (Message < 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Trying to access message 0 or less than 0.");
-                TextWriters.Write(Translate.DoTranslation("Message number may not be negative or zero."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO"), true, KernelColorType.Error);
                 return;
             }
             else if (Message > MaxMessagesIndex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", vars: [Message, MaxMessagesIndex]);
-                TextWriters.Write(Translate.DoTranslation("Message specified is not found."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND"), true, KernelColorType.Error);
                 return;
             }
 
@@ -88,7 +88,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 else
                 {
                     var inbox = client.Inbox ??
-                        throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Failed to obtain inbox"));
+                        throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
                     Msg = inbox.GetMessage(finalMessages.ElementAtOrDefault(Message), default, MailShellCommon.Progress);
                 }
 
@@ -100,7 +100,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 foreach (InternetAddress Address in Msg.From)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", vars: [Address.Name, Address.Encoding.EncodingName]);
-                    TextWriters.Write(Translate.DoTranslation("- From {0}"), true, KernelColorType.ListEntry, Address.ToString());
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM"), true, KernelColorType.ListEntry, Address.ToString());
                 }
 
                 // Print all the addresses that received the mail
@@ -108,12 +108,12 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 foreach (InternetAddress Address in Msg.To)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", vars: [Address.Name, Address.Encoding.EncodingName]);
-                    TextWriters.Write(Translate.DoTranslation("- To {0}"), true, KernelColorType.ListEntry, Address.ToString());
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO"), true, KernelColorType.ListEntry, Address.ToString());
                 }
 
                 // Print the date and time when the user received the mail
                 DebugWriter.WriteDebug(DebugLevel.I, "Rendering time and date of {0}.", vars: [Msg.Date.DateTime.ToString()]);
-                TextWriters.Write(Translate.DoTranslation("- Sent at {0} in {1}"), true, KernelColorType.ListEntry, TimeDateRenderers.RenderTime(Msg.Date.DateTime), TimeDateRenderers.RenderDate(Msg.Date.DateTime));
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN"), true, KernelColorType.ListEntry, TimeDateRenderers.RenderTime(Msg.Date.DateTime), TimeDateRenderers.RenderDate(Msg.Date.DateTime));
 
                 // Prepare subject
                 TextWriterRaw.Write();
@@ -185,7 +185,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 // Populate attachments
                 if (Msg.Attachments.Any())
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Attachments:"));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_ATTACHMENTS"));
                     var AttachmentEntities = new List<MimeEntity>();
                     if (Decrypt)
                     {
@@ -421,7 +421,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                     if (string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) || MailShellCommon.IMAP_CurrentDirectory == "Inbox")
                     {
                         var inbox = client.Inbox ??
-                            throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Failed to obtain inbox"));
+                            throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
                         inbox.Open(FolderAccess.ReadWrite);
                         DebugWriter.WriteDebug(DebugLevel.I, "Opened inbox");
                         MailShellCommon.IMAP_Messages = inbox.Search(SearchQuery.All).Reverse();

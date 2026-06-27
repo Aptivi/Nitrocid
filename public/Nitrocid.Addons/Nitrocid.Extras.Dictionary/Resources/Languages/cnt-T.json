@@ -1,0 +1,65 @@
+{
+  "lang": "cnt-T",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "許可證信息"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "英語詞典"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "單詞信息"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "API 已獲得許可"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "單詞："
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "詞義為"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "部分演講："
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "定義："
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "句子中的例子："
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "用於定義的來源"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "同義詞："
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "反義詞："
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "定義詞"
+    }
+  ]
+}

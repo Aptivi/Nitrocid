@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,6 +25,7 @@ using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Prompts;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
 {
@@ -38,70 +39,70 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("cdir", /* Localizable */ "Gets current local directory", new CDirCommand()),
+            new CommandInfo("cdir", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC"), new CDirCommand()),
 
-            new CommandInfo("chdir", /* Localizable */ "Changes directory",
+            new CommandInfo("chdir", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_FS_COMMAND_CHDIR_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Local directory"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_CHDIR_ARGUMENT_DIRECTORY_DESC")
                         })
                     ])
                 ], new ChDirCommand()),
 
-            new CommandInfo("chadir", /* Localizable */ "Changes archive directory",
+            new CommandInfo("chadir", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_CHADIR_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "archivedirectory", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Directory inside the archive"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC")
                         })
                     ])
                 ], new ChADirCommand()),
 
-            new CommandInfo("get", /* Localizable */ "Extracts a file to a specified directory or a current directory",
+            new CommandInfo("get", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "entry", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "File in the archive"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_ENTRY_DESC")
                         }),
                         new CommandArgumentPart(false, "where", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Local directory to extract to"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_WHERE_DESC")
                         })
                     ],
                     [
-                        new SwitchInfo("absolute", /* Localizable */ "Indicates that the target path is absolute")
+                        new SwitchInfo("absolute", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC"))
                     ])
                 ], new GetCommand()),
 
-            new CommandInfo("list", /* Localizable */ "Lists all files inside the archive",
+            new CommandInfo("list", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_LIST_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "directory", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Directory inside the archive"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC")
                         })
                     ])
                 ], new ListCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("pack", /* Localizable */ "Packs a local file to the archive",
+            new CommandInfo("pack", LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "localfile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Local file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_LOCALFILE_DESC")
                         }),
                         new CommandArgumentPart(false, "where", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Archive directory to add to"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_WHERE_DESC")
                         })
                     ])
                 ], new PackCommand()),

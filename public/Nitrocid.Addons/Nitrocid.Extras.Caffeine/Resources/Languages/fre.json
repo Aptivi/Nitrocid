@@ -1,0 +1,96 @@
+{
+  "lang": "fre",
+  "name": "French",
+  "cultures": [
+    "fr",
+    "fr-029",
+    "fr-BE",
+    "fr-BF",
+    "fr-BI",
+    "fr-BJ",
+    "fr-BL",
+    "fr-CA",
+    "fr-CD",
+    "fr-CF",
+    "fr-CG",
+    "fr-CH",
+    "fr-CI",
+    "fr-CM",
+    "fr-DJ",
+    "fr-DZ",
+    "fr-FR",
+    "fr-GA",
+    "fr-GF",
+    "fr-GN",
+    "fr-GP",
+    "fr-GQ",
+    "fr-HT",
+    "fr-KM",
+    "fr-LU",
+    "fr-MA",
+    "fr-MC",
+    "fr-MF",
+    "fr-MG",
+    "fr-ML",
+    "fr-MQ",
+    "fr-MR",
+    "fr-MU",
+    "fr-NC",
+    "fr-NE",
+    "fr-PF",
+    "fr-PM",
+    "fr-RE",
+    "fr-RW",
+    "fr-SC",
+    "fr-SN",
+    "fr-SY",
+    "fr-TD",
+    "fr-TG",
+    "fr-TN",
+    "fr-VU",
+    "fr-WF",
+    "fr-YT"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "Ajoute une alarme pour vous avertir lorsque votre tasse de thé ou de café est prête."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "Annule une alarme qui vous avertit lorsque votre tasse de thé ou de café est prête."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "Café américain"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "Thé rouge"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "Thé vert"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "Aucune alerte de caféine pour abandonner."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "Les secondes pendant lesquelles votre tasse sera prête ne sont pas valides."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "Si vous essayez de fournir un nom pour la boisson, consultez la liste ci-dessous :"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "Votre tasse est maintenant prête !"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "Spécifiez soit un nombre de secondes, soit un nom de boisson"
+    }
+  ]
+}

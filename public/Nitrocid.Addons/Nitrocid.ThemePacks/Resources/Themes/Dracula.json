@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Name": "Dracula",
-        "Description": "Popular color scheme for IDEs, like IntelliJ",
+        "Description": "NKS_THEMEPACKS_THEME_DESC_DRACULA",
         "Localizable": true
     },
     "InputColor": "#629755",

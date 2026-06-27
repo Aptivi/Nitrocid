@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -77,7 +77,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
-                                TextWriters.Write(Translate.DoTranslation("Failed to show the calendar.") + " {0}", true, KernelColorType.Error, ex.Message);
+                                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_SHOWCALENDARFAILED") + " {0}", true, KernelColorType.Error, ex.Message);
                                 return ex.GetHashCode();
                             }
                         }
@@ -117,13 +117,13 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                                             catch (Exception ex)
                                             {
                                                 DebugWriter.WriteDebugStackTrace(ex);
-                                                TextWriters.Write(Translate.DoTranslation("Failed to add an event.") + " {0}", true, KernelColorType.Error, ex.Message);
+                                                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_EVENTADDFAILED") + " {0}", true, KernelColorType.Error, ex.Message);
                                                 return ex.GetHashCode();
                                             }
                                         }
                                         else
                                         {
-                                            TextWriters.Write(Translate.DoTranslation("Not enough arguments provided to add an event."), true, KernelColorType.Error);
+                                            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_EVENTARGSNOTPROVIDED_ADD"), true, KernelColorType.Error);
                                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                                         }
 
@@ -145,13 +145,13 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                                             catch (Exception ex)
                                             {
                                                 DebugWriter.WriteDebugStackTrace(ex);
-                                                TextWriters.Write(Translate.DoTranslation("Failed to remove an event.") + " {0}", true, KernelColorType.Error, ex.Message);
+                                                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_EVENTREMOVEFAILED") + " {0}", true, KernelColorType.Error, ex.Message);
                                                 return ex.GetHashCode();
                                             }
                                         }
                                         else
                                         {
-                                            TextWriters.Write(Translate.DoTranslation("Not enough arguments provided to remove an event."), true, KernelColorType.Error);
+                                            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_EVENTARGSNOTPROVIDED_REMOVE"), true, KernelColorType.Error);
                                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                                         }
 
@@ -172,14 +172,14 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                                 default:
                                     {
                                         // Invalid action.
-                                        TextWriters.Write(Translate.DoTranslation("Invalid action."), true, KernelColorType.Error);
+                                        TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_INVALIDACTION"), true, KernelColorType.Error);
                                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                                     }
                             }
                         }
                         else
                         {
-                            TextWriters.Write(Translate.DoTranslation("Not enough arguments provided for event manipulation."), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_EVENTMANIPULATIONARGSNOTPROVIDED"), true, KernelColorType.Error);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                         }
                     }
@@ -209,13 +209,13 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                                             catch (Exception ex)
                                             {
                                                 DebugWriter.WriteDebugStackTrace(ex);
-                                                TextWriters.Write(Translate.DoTranslation("Failed to add a reminder.") + " {0}", true, KernelColorType.Error, ex.Message);
+                                                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_REMINDERADDFAILED") + " {0}", true, KernelColorType.Error, ex.Message);
                                                 return ex.GetHashCode();
                                             }
                                         }
                                         else
                                         {
-                                            TextWriters.Write(Translate.DoTranslation("Not enough arguments provided to add a reminder."), true, KernelColorType.Error);
+                                            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_REMINDERADDNEEDSARGS"), true, KernelColorType.Error);
                                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                                         }
 
@@ -237,13 +237,13 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                                             catch (Exception ex)
                                             {
                                                 DebugWriter.WriteDebugStackTrace(ex);
-                                                TextWriters.Write(Translate.DoTranslation("Failed to remove a reminder.") + " {0}", true, KernelColorType.Error, ex.Message);
+                                                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_REMINDERREMOVEFAILED") + " {0}", true, KernelColorType.Error, ex.Message);
                                                 return ex.GetHashCode();
                                             }
                                         }
                                         else
                                         {
-                                            TextWriters.Write(Translate.DoTranslation("Not enough arguments provided to remove a reminder."), true, KernelColorType.Error);
+                                            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_REMINDERREMOVENEEDSARGS"), true, KernelColorType.Error);
                                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                                         }
 
@@ -264,21 +264,21 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                                 default:
                                     {
                                         // Invalid action.
-                                        TextWriters.Write(Translate.DoTranslation("Invalid action."), true, KernelColorType.Error);
+                                        TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_INVALIDACTION"), true, KernelColorType.Error);
                                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                                     }
                             }
                         }
                         else
                         {
-                            TextWriters.Write(Translate.DoTranslation("Not enough arguments provided for reminder manipulation."), true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_REMINDERMANIPULATIONARGSNOTPROVIDED"), true, KernelColorType.Error);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                         }
                     }
                 default:
                     {
                         // Invalid action.
-                        TextWriters.Write(Translate.DoTranslation("Invalid action."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_INVALIDACTION"), true, KernelColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                     }
             }

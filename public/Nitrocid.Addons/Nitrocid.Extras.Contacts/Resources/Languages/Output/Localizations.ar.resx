@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_CONTACTS_COMMAND_CONTACTS_DESC" xml:space="preserve">
+    <value>يدير جهات الاتصال الخاصة بك</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED" xml:space="preserve">
+    <value>لا يمكن فتح الملف '{0}' لأنه لم يتم العثور عليه.</value>
+  </data>
+  <data name="NKS_CONTACTS_IMPORTSUCCESS" xml:space="preserve">
+    <value>تم استيراد جهات الاتصال بنجاح.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILEINVALID_NAMED" xml:space="preserve">
+    <value>لا يمكن فتح الملف '{0}' لأن ملف البطاقة غير صالح.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED" xml:space="preserve">
+    <value>ملف الاتصال غير موجود.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTSCOUNT" xml:space="preserve">
+    <value>تم العثور على جهات الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED" xml:space="preserve">
+    <value>ملف الاتصال غير صالح.</value>
+  </data>
+  <data name="NKS_CONTACTS_MECARDEMPTY" xml:space="preserve">
+    <value>لا يمكن أن يكون بناء جملة MeCard فارغًا.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILENOCONTACT" xml:space="preserve">
+    <value>إما أن ملف جهات الاتصال المقدم لا يحتوي على معلومات حول أي جهة اتصال أو أنه غير صالح.</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED" xml:space="preserve">
+    <value>فشل في تحليل جهات الاتصال. راجع تفاصيل الخطأ لمزيد من المعلومات.</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE" xml:space="preserve">
+    <value>فهرس جهة الاتصال خارج النطاق. الحد الأقصى للفهرس هو {0} بينما الفهرس المقدم هو {1}.</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET" xml:space="preserve">
+    <value>لا توجد اتصالات للحصول عليها.</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH" xml:space="preserve">
+    <value>لا توجد جهات اتصال للبحث عنها.</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_INVALIDREGEX" xml:space="preserve">
+    <value>التعبير العادي غير صالح.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOCONTACT" xml:space="preserve">
+    <value>لا يوجد اتصال. إذا كنت ترغب في استيراد جهات الاتصال، فيرجى استخدام خيارات الاستيراد باستخدام ضغطات المفاتيح المحددة في الجزء السفلي من الشاشة.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CANTIMPORTCONTACTS" xml:space="preserve">
+    <value>لا يمكن استيراد بعض جهات الاتصال.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_PATHVCFPROMPT" xml:space="preserve">
+    <value>أدخل المسار إلى ملف VCF الذي يحتوي على جهة الاتصال الخاصة بك. يتم أيضًا دعم ملف Contacts2.db الخاص بنظام Android.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_FILENOTFOUND" xml:space="preserve">
+    <value>الملف غير موجود. تأكد من كتابة المسار الصحيح إلى ملف VCF أو إلى ملف Contacts2.db.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MECARDPROMPT" xml:space="preserve">
+    <value>أدخل تمثيل MeCard صالحًا لجهة الاتصال الخاصة بك.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MECARDINVALID" xml:space="preserve">
+    <value>بناء جملة جهة الاتصال MeCard غير صالح.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MECARDEMPTY" xml:space="preserve">
+    <value>قد لا يكون بناء جملة Contact MeCard فارغًا</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_SEARCHPROMPT" xml:space="preserve">
+    <value>أدخل التعبير العادي للبحث في جهات الاتصال.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOCONTACTSSEARCH" xml:space="preserve">
+    <value>لا توجد جهات اتصال تحتوي على التعبير المطلوب.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNAME" xml:space="preserve">
+    <value>اسم جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOCONTACTNAME" xml:space="preserve">
+    <value>لا يوجد اسم جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESS" xml:space="preserve">
+    <value>عنوان الإتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MAIL" xml:space="preserve">
+    <value>بريد الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOMAIL" xml:space="preserve">
+    <value>لا يوجد بريد اتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORG" xml:space="preserve">
+    <value>اتصل بالمنظمة</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOORG" xml:space="preserve">
+    <value>لا توجد منظمة اتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_PHONE" xml:space="preserve">
+    <value>اتصال هاتفي</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOPHONE" xml:space="preserve">
+    <value>لا يوجد هاتف اتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_URL" xml:space="preserve">
+    <value>عنوان URL لجهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOURL" xml:space="preserve">
+    <value>لا يوجد عنوان URL لجهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_GEO" xml:space="preserve">
+    <value>الاتصال الجغرافي</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOGEO" xml:space="preserve">
+    <value>لا توجد منطقة اتصال جغرافية</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_IMPP" xml:space="preserve">
+    <value>اتصل بـIMPP</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOIMPP" xml:space="preserve">
+    <value>لا يوجد اتصال IMPP</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NICK" xml:space="preserve">
+    <value>لقب جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NONICK" xml:space="preserve">
+    <value>لا يوجد لقب جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ROLE" xml:space="preserve">
+    <value>دور الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOROLE" xml:space="preserve">
+    <value>لا يوجد دور الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_TITLE" xml:space="preserve">
+    <value>عنوان الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOTITLE" xml:space="preserve">
+    <value>لا يوجد عنوان جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOTES" xml:space="preserve">
+    <value>ملاحظات الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NONOTES" xml:space="preserve">
+    <value>لا توجد ملاحظات الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC" xml:space="preserve">
+    <value>يسرد جهات الاتصال الخاصة بك</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC" xml:space="preserve">
+    <value>يقوم بتحميل جهات الاتصال الخاصة بك</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC" xml:space="preserve">
+    <value>استيراد جهات الاتصال الخاصة بك</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC" xml:space="preserve">
+    <value>يعامل الإدخال المطلوب كسلسلة MeCard</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_CONTACTINFO_DESC" xml:space="preserve">
+    <value>يحصل على معلومات الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOCONTACTS" xml:space="preserve">
+    <value>لا اتصالات.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_NUMINVALID" xml:space="preserve">
+    <value>رقم الاتصال غير صالح.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE" xml:space="preserve">
+    <value>رقم الاتصال خارج النطاق.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_FIRSTNAME" xml:space="preserve">
+    <value>الاسم الأول</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_LASTNAME" xml:space="preserve">
+    <value>اسم العائلة</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_GEO" xml:space="preserve">
+    <value>اتصل بـ جيو</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_NOTE" xml:space="preserve">
+    <value>ملاحظة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_CANTLISTSOME" xml:space="preserve">
+    <value>لا يمكن إدراج بعض جهات الاتصال.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_DELETE" xml:space="preserve">
+    <value>يمسح</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_INFO" xml:space="preserve">
+    <value>معلومات</value>
+  </data>
+  <data name="NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>فشل في الحصول على إدخالات الإعدادات.</value>
+  </data>
+  <data name="NKS_CONTACTS_HOMEPAGE_CONTACTS" xml:space="preserve">
+    <value>جهات الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_DELETEALL" xml:space="preserve">
+    <value>حذف الكل</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_IMPORT" xml:space="preserve">
+    <value>يستورد</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM" xml:space="preserve">
+    <value>استيراد من</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>يبحث</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT" xml:space="preserve">
+    <value>البحث التالي</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK" xml:space="preserve">
+    <value>البحث العودة</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_RAWINFO" xml:space="preserve">
+    <value>معلومات أولية</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD" xml:space="preserve">
+    <value>الاستيراد من MeCard</value>
+  </data>
+  <data name="NKS_CONTACTS_SETTINGS_DESC" xml:space="preserve">
+    <value>يسمح لك هذا القسم بتكوين كيفية عمل الوظيفة الإضافية لجهات الاتصال.</value>
+  </data>
+  <data name="NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME" xml:space="preserve">
+    <value>إظهار صور الملف الشخصي</value>
+  </data>
+  <data name="NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC" xml:space="preserve">
+    <value>إذا تم تمكينه، فسيتم عرض صور جهات الاتصال. يتم تعطيله افتراضيًا لمنع سوء الاستخدام ولأسباب تتعلق بالأداء.</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC" xml:space="preserve">
+    <value>إما مسار إلى ملف جهة اتصال vCard أو تمثيل MeCard</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC" xml:space="preserve">
+    <value>رقم التواصل</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_EDIT" xml:space="preserve">
+    <value>يحرر...</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT" xml:space="preserve">
+    <value>أدخل اسمًا جديدًا لهذه جهة الاتصال</value>
+  </data>
+</root>

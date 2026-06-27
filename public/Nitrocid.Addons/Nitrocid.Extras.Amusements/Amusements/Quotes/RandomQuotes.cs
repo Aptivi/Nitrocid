@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -34,8 +34,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Quotes
         {
             // Get a random quote
             var quote = QuoteTools.GetRandomQuote();
-            string content = quote?.Content ?? Translate.DoTranslation("Unknown quote.");
-            string author = quote?.Author ?? Translate.DoTranslation("Unknown author.");
+            string content = quote?.Content ?? LanguageTools.GetLocalized("NKS_AMUSEMENTS_QUOTE_QUOTEUNKNOWN");
+            string author = quote?.Author ?? LanguageTools.GetLocalized("NKS_AMUSEMENTS_QUOTE_AUTHORUNKNOWN");
 
             // Specify how to render the quote
             StringBuilder elegantQuote = new();

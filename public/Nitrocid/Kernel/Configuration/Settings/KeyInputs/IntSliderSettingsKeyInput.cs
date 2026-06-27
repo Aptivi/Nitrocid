@@ -17,10 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Styles.Infobox;
+using System;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
-using System;
+using Nitrocid.Languages;
+using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
@@ -32,8 +33,8 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             int CurrentValue = Convert.ToInt32(KeyDefaultValue);
 
             // Make an introductory banner
-            string keyName = key.Name;
-            string keyDesc = key.Description;
+            string keyName = LanguageTools.GetLocalized(key.Name);
+            string keyDesc = LanguageTools.GetLocalized(key.Description);
 
             CurrentValue = InfoBoxSliderColor.WriteInfoBoxSlider(CurrentValue, key.MaximumValue, keyDesc, new InfoBoxSettings()
             {

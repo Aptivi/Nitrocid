@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -33,16 +33,16 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var tui = new FtpFileManagerCli();
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, entry2, _) => tui.CopyFileOrDir(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(Translate.DoTranslation("Move"), ConsoleKey.F2, (entry1, _, entry2, _) => tui.MoveFileOrDir(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(Translate.DoTranslation("Delete"), ConsoleKey.F3, (entry1, _, entry2, _) => tui.RemoveFileOrDir(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(Translate.DoTranslation("Up"), ConsoleKey.F4, (_, _, _, _) => tui.GoUp()));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(Translate.DoTranslation("Info"), ConsoleKey.F5, (entry1, _, entry2, _) => tui.PrintFileSystemEntry(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(Translate.DoTranslation("Copy To"), ConsoleKey.F1, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.CopyTo(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(Translate.DoTranslation("Move to"), ConsoleKey.F2, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.MoveTo(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(Translate.DoTranslation("Rename"), ConsoleKey.F6, (entry1, _, entry2, _) => tui.Rename(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(Translate.DoTranslation("New Folder"), ConsoleKey.F7, (_, _, _, _) => tui.MakeDir()));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPY"), ConsoleKey.F1, (entry1, _, entry2, _) => tui.CopyFileOrDir(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVE"), ConsoleKey.F2, (entry1, _, entry2, _) => tui.MoveFileOrDir(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_DELETE"), ConsoleKey.F3, (entry1, _, entry2, _) => tui.RemoveFileOrDir(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_UP"), ConsoleKey.F4, (_, _, _, _) => tui.GoUp()));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO"), ConsoleKey.F5, (entry1, _, entry2, _) => tui.PrintFileSystemEntry(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPYTO"), ConsoleKey.F1, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.CopyTo(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVETO"), ConsoleKey.F2, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.MoveTo(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_RENAME"), ConsoleKey.F6, (entry1, _, entry2, _) => tui.Rename(entry1, entry2)));
+            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_NEWFOLDER"), ConsoleKey.F7, (_, _, _, _) => tui.MakeDir()));
             InteractiveTuiTools.OpenInteractiveTui(tui);
             return 0;
         }

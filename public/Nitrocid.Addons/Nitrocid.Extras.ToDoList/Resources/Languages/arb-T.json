@@ -1,0 +1,72 @@
+{
+  "lang": "arb-T",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "عمل غير صالح."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "اسم المهمة"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "مدير المهام الواجبة"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "فشل في إضافة مهمة أو إزالتها."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "الرجاء تقديم اسم لمهمتك."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "فشل في وضع علامة على المهمة."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "لا يمكن الحصول على قائمة المهام"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "سواء كنت تريد إضافة مهمة أو إزالتها أو وضع علامة عليها بأنها منجزة أو إلغاء وضع علامة عليها بأنها منجزة"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "سواء لإدراج أو حفظ أو تحميل كافة المهام"
+    }
+  ]
+}

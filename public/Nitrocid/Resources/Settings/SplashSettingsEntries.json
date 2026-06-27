@@ -1,13 +1,13 @@
 [
     {
         "Name": "Welcome",
-        "Desc": "Shows a big Welcome word written in the middle of the console; similar to the welcome mats",
+        "Desc": "NKS_SETTINGS_SPLASH_WELCOME_DESC",
         "Keys": [
             {
-                "Name": "Show progress",
+                "Name": "NKS_SETTINGS_SPLASH_WELCOME_PROGRESS_NAME",
                 "Type": "SBoolean",
                 "Variable": "WelcomeShowProgress",
-                "Description": "Show progress or not"
+                "Description": "NKS_SETTINGS_SPLASH_WELCOME_PROGRESS_DESC"
             }
         ]
     }

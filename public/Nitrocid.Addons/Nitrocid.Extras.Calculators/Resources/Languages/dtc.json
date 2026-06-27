@@ -1,0 +1,76 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "Calculator om uitdrukkingen te berekenen."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "Fout in berekening."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "Toon informatie over de formule voor denkbeeldige getallen, gespecificeerd door een opgegeven reëel en denkbeeldig getal"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "Het echte nummer is niet geldig."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "Het denkbeeldige getal is niet geldig."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "Formule:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "Straal:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "Werkelijk naar straal in radialen:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "Denkbeeldig naar Straal in Radialen:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "Hoek in radialen:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "Exponentieel:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "Driehoekig:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "Wiskundige uitdrukking"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "Echt getal"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "Imaginair getal"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Name": "Android",
-        "Description": "This is the Android mascot color in the foreground",
+        "Description": "NKS_THEMEPACKS_THEME_DESC_ANDROID",
         "Localizable": true
     },
     "InputColor": "#A4C639",

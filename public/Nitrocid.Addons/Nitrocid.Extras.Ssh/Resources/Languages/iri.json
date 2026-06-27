@@ -1,0 +1,119 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "Nascann sé le freastalaí SSH."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "Cuir isteach an pasfhocal le haghaidh {0}:"
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH Dícheangailte."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "Earráid agus iarracht á déanamh ceangal leis an bhfreastalaí SSH: {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "Tá an rogha shonraithe {0} neamhbhailí."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "Caithfidh an freagra a bheith uimhriúil."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "Brúigh eochair ar bith chun dul ar ais."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "Nascann sé le freastalaí SSH chun ordú a rith."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "Conas is mian leat a fhíordheimhniú?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "Comhad eochair phríobháideach"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "Pasfhocal"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "Cuir isteach an pasfhrása don eochair {0}:"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "Níl an eochairchomhad {0} ann."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "Earráid agus eochair phríobháideach á cur leis:"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "Earráid agus an t-ordú SSH á fheidhmiú"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "Earráid ar bhlaosc SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "Scríobh conas is mian leat do leid logáil isteach a bheith. Fág bán chun an stíl réamhshocraithe a úsáid. Déantar áitshealbhóirí a pharsáil."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "Cuir isteach suíomh na heochrach príobháidí le haghaidh {0}. Scríobh \"q\" chun eochracha a chur leis:"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "Ligeann an chuid seo duit conas a oibríonn an SSH a chumrú."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "Stíl leid ainm úsáideora le haghaidh SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "Cuir naisc nua le luas-dhiailiú SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "Má tá sé cumasaithe, cuireann sé nasc nua leis an luasdhiailiú SSH."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Theip ar na hiontrálacha socruithe a fháil."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "Tá SSH ceangailte ach gan aon chliant."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "Freastalaí SSH chun ceangal leis"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "Ainm úsáideora le fíordheimhniú leis"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "Ordú a fhorghníomhú go cianda"
+    }
+  ]
+}

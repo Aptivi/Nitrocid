@@ -1,0 +1,47 @@
+{
+  "lang": "kor-T",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "잘못된 작업입니다."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "작업 이름"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "할 일 작업 관리자"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "작업을 추가하거나 제거하지 못했습니다."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "작업 이름을 입력하세요."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "작업을 표시하지 못했습니다."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "작업 목록을 가져올 수 없습니다"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "작업을 추가, 제거, 완료로 표시 또는 완료 표시 해제할지 여부"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "모든 작업을 나열할지, 저장할지, 로드할지"
+    }
+  ]
+}

@@ -21,29 +21,35 @@ using Nitrocid.Extras.Tips.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Kernel.Starting;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Tips
 {
     internal class TipsInit : IAddon
     {
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTips);
+
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasTips);
 
         internal static TipsConfig TipsConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(TipsConfig)) ? (TipsConfig)Config.baseConfigurations[nameof(TipsConfig)] : Config.GetFallbackKernelConfig<TipsConfig>();
 
-        void IAddon.FinalizeAddon() =>
+        public void FinalizeAddon() =>
             WelcomeMessage.tips = TipsList.tips;
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Tips.Resources.Languages.Output.Localizations", typeof(TipsInit).Assembly));
             var config = new TipsConfig();
             ConfigTools.RegisterBaseSetting(config);
             WelcomeMessage.ShowTip = TipsConfig.ShowTip;
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
             WelcomeMessage.tips = [];
             ConfigTools.UnregisterBaseSetting(nameof(TipsConfig));
         }

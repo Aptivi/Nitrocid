@@ -1,0 +1,95 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_DESC",
+      "text": "Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν κάνετε την επόμενη εγγραφή;"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Αποτυχία λήψης καταχωρήσεων ρυθμίσεων."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC",
+      "text": "Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν γράψετε στη νέα οθόνη;"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_DESC",
+      "text": "Ελάχιστος αριθμός ονομάτων για δημιουργία"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_DESC",
+      "text": "Μέγιστος αριθμός ονομάτων προς δημιουργία"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_DESC",
+      "text": "Ελάχιστο ποσό ηλικίας ετών για δημιουργία"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC",
+      "text": "Μέγιστο ποσό ηλικίας ετών για δημιουργία"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
+      "text": "Προσομοιώνει μια αναζήτηση βάσης δεδομένων για ένα τυχαίο άτομο."
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
+      "text": "Εύρεση ονόματος"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_TERM_DESC",
+      "text": "Όρος αναζήτησης"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "Πρόθεμα ονόματος για αναζήτηση"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "Επίθημα ονόματος για αναζήτηση"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_NAMETAG_DESC",
+      "text": "Δημιουργία ετικετών ονομάτων (τα διαλυτικά δεν υποστηρίζονται προς το παρόν)"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_MALE_DESC",
+      "text": "Δημιουργία ονομάτων χρησιμοποιώντας τη λίστα ανδρικών ονομάτων"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_FEMALE_DESC",
+      "text": "Δημιουργία ονομάτων χρησιμοποιώντας τη λίστα γυναικείων ονομάτων"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_UNIFIED_DESC",
+      "text": "Δημιουργία ονομάτων χρησιμοποιώντας την ενοποιημένη λίστα ονομάτων"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
+      "text": "Εύρεση επωνύμου"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "Πρόθεμα επωνύμου για αναζήτηση"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "Επίθημα επωνύμου για αναζήτηση"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
+      "text": "Γεννήτρια ονόματος και επωνύμου"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "Πόσα ονόματα να δημιουργηθούν;"
+    }
+  ]
+}

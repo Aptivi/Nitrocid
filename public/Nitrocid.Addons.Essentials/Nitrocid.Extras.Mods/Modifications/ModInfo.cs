@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -52,15 +52,11 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// The mod version. We recommend using <seealso href="https://semver.org/">Semantic Versioning</seealso> scheme.
         /// </summary>
         public string ModVersion { get; private set; }
-        /// <summary>
-        /// The localization information containing the mod's strings
-        /// </summary>
-        public Dictionary<string, string[]> ModStrings { get; private set; } = [];
 
         /// <summary>
         /// Creates new mod info instance
         /// </summary>
-        internal ModInfo(string ModName, string ModFileName, string ModFilePath, IMod ModScript, string ModVersion, Dictionary<string, string[]> ModStrings)
+        internal ModInfo(string ModName, string ModFileName, string ModFilePath, IMod ModScript, string ModVersion)
         {
             // Validate values. Check to see if the name is null. If so, it will take the mod file name.
             if (string.IsNullOrWhiteSpace(ModName))
@@ -71,7 +67,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             // Check to see if the script is null or zero. If so, throw exception.
             if (ModScript is null)
             {
-                throw new KernelException(KernelExceptionType.ModWithoutMod, Translate.DoTranslation("The mod script may not be null."));
+                throw new KernelException(KernelExceptionType.ModWithoutMod, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_MODSCRIPTNEEDED"));
             }
 
             // Install values to new instance
@@ -80,7 +76,6 @@ namespace Nitrocid.Extras.Mods.Modifications
             this.ModFilePath = ModFilePath;
             this.ModScript = ModScript;
             this.ModVersion = ModVersion;
-            this.ModStrings = ModStrings;
         }
 
     }

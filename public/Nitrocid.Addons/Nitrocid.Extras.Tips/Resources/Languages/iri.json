@@ -1,0 +1,311 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TIPS_KERNELTIP_1",
+      "text": "gur féidir leat orduithe próisis a fhorghníomhú ar dhá bhealach: ainm an chomhaid inrite a iontráil go díreach, agus an t-ordú 'exec' a úsáid?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_2",
+      "text": "gur féidir leat do scáileán a ghlasáil leis an ordú 'scáileán glas'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_3",
+      "text": "gur féidir leat do chuid modhnuithe eithne féin a thógáil ag baint úsáide as C # agus Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_4",
+      "text": "gur féidir leat il-orduithe a úsáid leis an leathstad idir orduithe?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_5",
+      "text": "gur féidir leat éalú ó athfhriotail dhúbailte taobh istigh de na hargóintí luaite agus tú ag déanamh orduithe?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_6",
+      "text": "gur féidir leat na socruithe eithne a athrú leis an ordú 'settings'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_7",
+      "text": "gur féidir leat do scáileán a shábháil leis an ordú 'savescreen'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_8",
+      "text": "gur féidir leat fabhtanna a thuairisciú dúinn trí dhul chuig leathanach tionscadail GitHub Nitrocid?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_9",
+      "text": "gur féidir leat aicearra a dhéanamh chuig an ordú atá uait leis an ordú 'ailias'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_10",
+      "text": "gur féidir leat do splancscáileán féin a thógáil ag baint úsáide as C # agus Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_11",
+      "text": "gur féidir leat breiseáin bhreise a shuiteáil chun d'eithne a dhéanamh níos úsáidí agus níos taitneamhaí?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_12",
+      "text": "gur féidir leat do théamaí uafásacha féin a dhéanamh ag baint úsáide as an ordú 'mktheme'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_13",
+      "text": "gur féidir leat do dhathanna eithne a athrú tríd an ordú 'socruithe' a úsáid nó trí cheann de na téamaí réamhthógtha a úsáid?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_14",
+      "text": "gur féidir leat d'eithne a athshocrú go dtí na réamhshocruithe monarchan leis an argóint 'athshocraigh'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_15",
+      "text": "gur féidir leat teacht ar ár ndoiciméadú fairsing ar ár leathanach GitBook?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_16",
+      "text": "go dtugtar tacaíocht do eisiúintí fadtéarmacha ar feadh cúig bliana don phríomhthacaíocht, agus trí bliana le haghaidh nuashonruithe slándála?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_17",
+      "text": "gurbh é 0.0.1 an chéad leagan de Nitrocid KS a eisíodh ar 22 Feabhra, 2018?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_18",
+      "text": "go raibh an tsraith 0.0.24.x an tsraith leagan amháin a bhí an leagan API v2.1?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_19",
+      "text": "go dtugtar tacaíocht do eisiúintí gearrthéarmacha ar feadh naoi mí amháin?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_20",
+      "text": "go bhfuil sraith 0.1.x ar gcúl-neamh-chomhoiriúnach le sraith 0.0.24.x nó níos sine?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_21",
+      "text": "gur féidir leat Nitrocid KS a rith ar Linux, macOS, agus Android?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_22",
+      "text": "gur féidir leat a tharchur chuig an doiciméadú API chun cabhrú leat a dhéanamh do mods?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_23",
+      "text": "gur féidir leat roinnt de na cluichí uafásacha a fháil, cosúil le Hangman agus ShipDuet, trí na breiseáin breise a shuiteáil?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_24",
+      "text": "i Meteor, má thuairteáil tú le stoirm meteor dearg, tuairteanna do spásárthach?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_25",
+      "text": "gur féidir leat do eithne a thiontú go hionaid faisnéise ag baint úsáide as an ngné Á?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_26",
+      "text": "gur féidir leat grúpaí úsáideoirí a dhéanamh chun cuntais úsáideora a eagrú?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_27",
+      "text": "má tá tú i do bhall de ghrúpa a thugann ceadanna áirithe, go bhfuil cead agat oibríochtaí den sórt sin a dhéanamh?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_28",
+      "text": "gur féidir leat do chrios ama eithne a athrú gan cur isteach ar do chóras óstaigh?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_29",
+      "text": "gur féidir leat an téacs idirghníomhach agus eagarthóir heicsidheachúlach a úsáid chun am a shábháil?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_30",
+      "text": "go bhfuil an t-eagarthóir téacs is sine ar eolas a bheith ag obair leis an gcéad chóras Unix ed, an t-eagarthóir téacs is luaithe a eisíodh ar 1973 seolta leis an gcóras Unix a fuarthas ar PDP-7 ag AT&T Bell Labs?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_31",
+      "text": "gur féidir leat ordú eagarthóireachta a chur i bhfeidhm freisin chun an t-eagarthóir a sheoladh i gcineál ar leith?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_32",
+      "text": "go ndéanann an t-eagarthóir téacs idirghníomhach iarracht na gnéithe is bunúsaí de na heagarthóirí téacs Unix is mó a bhfuil tóir orthu, vi agus vim?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_33",
+      "text": "go mura bhfuil a fhios agat cad atá tú a dhéanamh leis an gcomhad dénártha, eagarthóireacht comhad den sórt sin ar an mbealach seo beidh éilliú sonraí nó caillteanas sonraí sa chomhad spriocdhírithe?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_34",
+      "text": "gur ar chórais Linux a thionscnaítear an bhlaosc le cabhair ón láimhseálaí logáil isteach agus ón gclár tosaithe córais, a fhaightear de ghnáth in /sbin/init?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_35",
+      "text": "gur féidir leat oibríochtaí comhaid coitianta a dhéanamh, mar shampla cóipeáil, bogadh, scriosadh, eagarthóireacht, agus mar sin de?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_36",
+      "text": "go ndéanann TUI idirghníomhach bainisteoir comhad insamhladh ar fheidhmiúlacht Cheannasaí an Mheán Oíche?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_37",
+      "text": "má thuairteanna an eithne, cruthaíonn sé comhad dumpála de ghnáth?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_38",
+      "text": "gur féidir leat an eithne a dhiagnóiseadh trína dhífhabhtú ag baint úsáide as an bhfeidhmiúlacht dífhabhtaithe ionsuite?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_39",
+      "text": "gur féidir leat comhaid a íoslódáil agus a uaslódáil go díreach ó bhlaosc UESH?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_40",
+      "text": "gur féidir an eithne a aistriú fiú ag céimeanna réamh-tosaithe ach é a thosú leis an argóint 'lang'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_41",
+      "text": "gur féidir leat do spárálaíscáileáin féin a thógáil trí iad a chlárú i do mod?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_42",
+      "text": "gur chruthaigh John Socha an chéad spárálaíscáileáin a d’fholaigh an scáileán tar éis trí nóiméad neamhghníomhaíochta ar na ríomhairí pearsanta bunaidh IBM, scrnsave?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_43",
+      "text": "go bhféadfadh cuid de na spárálaíscáileáin atá ar luas tapa a bheith ina gcúis le taomanna fóta-íogair?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_44",
+      "text": "go n-úsáidtear dialanna eithne mar logaí tosaithe agus múchta?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_45",
+      "text": "gur féidir do mods a aistriú anois?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_46",
+      "text": "gur féidir le do mods cumarsáid a dhéanamh le addons eithne agus mods eile, ag cruthú cumarsáide de chineál éigin agus ag baint amach idir-inoibritheacht?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_47",
+      "text": "gur féidir leat ceangal leis an gciandhífhabhtóir agus, go roghnach, leis an bhfreastalaí comhrá?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_48",
+      "text": "gur féidir leat an bhlaosc dífhabhtaithe a úsáid, nach bhfuil ar fáil ach le haghaidh leaganacha forbartha?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_49",
+      "text": "gur féidir a gcumraíocht féin a bheith ag do mods anois trína gcuid ranganna gaolmhara a chlárú?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_50",
+      "text": "gur féidir le do mods a sliogáin féin a chlárú?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_51",
+      "text": "gur féidir le do mods orduithe a chur leis na sliogáin atá ann cheana féin chun cur leis an méid orduithe is féidir a úsáid?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_52",
+      "text": "gur féidir le do chuid ranganna ordaithe argóintí agus lasca a ritheadh a léiriú go cruinn?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_53",
+      "text": "gur féidir leat lasca pasáilte a fhiosrú ag baint úsáide as na ranganna bainistíochta lasc a aimsítear san API eithne?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_54",
+      "text": "go n-áirítear UESH an fheidhmiúlacht scriptithe chun éascú a dhéanamh agus a rith scripteanna?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_55",
+      "text": "go n-áirítear sa bhlaosc feidhmiúlacht chun cealú feidhmchláir ghníomhacha a chosc?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_56",
+      "text": "go bhfuil Nitrocid comhtháite go domhain le Terminaux chun rindreáil níos tapúla agus níos fearr a cheadú?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_57",
+      "text": "gur féidir leat na feidhmchláir idirghníomhacha a athrú anois gan a bheith buartha go bhfuil an t-aschur truaillithe?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_58",
+      "text": "go bhfuil orduithe ann a iarrann ionchur úsáideora, atá úsáideach le haghaidh scripteanna?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_59",
+      "text": "gur féidir leat do cheist ionchur úsáideora a chur i láthair ar bhealaí éagsúla, mar shampla rogha, tábla, simplí, roghnú, agus mar sin de?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_60",
+      "text": "gur féidir leat na háitsealbhóirí a chur ar do théacs a thacaíonn leo?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_61",
+      "text": "gur féidir leat tiománaithe eithne éagsúla a úsáid chun an chaoi a n-oibríonn oibríocht shonrach a athrú?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_62",
+      "text": "gur féidir leat do spárálaíscáileáin féin agus splashes a dhéanamh i C# nó Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_63",
+      "text": "gur féidir leat an córas óstaigh agus an aithriseoir teirminéil a fhiosrú ag baint úsáide as an rang ardán eithne?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_64",
+      "text": "gur féidir leat toiliú príobháideachta a iarraidh sula ndéanfaidh tú rud íogair i do mhodúil?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_65",
+      "text": "gur féidir leat fógraí a mhúchadh tríd an ngné Ná Cuir Isteach?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_66",
+      "text": "gur féidir leat stair fógraí a shábháil trí úsáid a bhaint as feidhm a aimsíodh sa bhainisteoir fógraí?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_67",
+      "text": "gur féidir leat a athrú conas a ghintear uimhreacha randamacha tríd an tiománaí a athrú?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_68",
+      "text": "go soláthraíonn APIanna ilghnéitheacha feidhmeanna úsáideacha do do mods?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_69",
+      "text": "Ligeann an chuid seo duit conas a oibríonn Leideanna a chumrú."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_70",
+      "text": "Taispeáin leideanna eithne"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_71",
+      "text": "Má tá sé cumasaithe, taispeánann an bhlaosc na leideanna duit maidir le gach logáil isteach."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_72",
+      "text": "gur féidir leat cláir bootable a dhéanamh ag baint úsáide as do mhodhanna eithne?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_73",
+      "text": "Theip ar na hiontrálacha socruithe a fháil."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_74",
+      "text": "gur thug Nitrocid (Eithne Insamhlóir 0.0.2) an bhlaosc 'UESH' ar an bhlaosc ionsuite?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_75",
+      "text": "ar tugadh faoi na spárálaíscáileáin le bheith ina réiteach i gcoinne dóiteán scáileáin i bhfeadán ga-chatóideach (CRT) nó i dtaispeántais plasma?"
+    }
+  ]
+}

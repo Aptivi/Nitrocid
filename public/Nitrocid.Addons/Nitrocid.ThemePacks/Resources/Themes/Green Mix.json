@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Name": "Green Mix",
-        "Description": "Vivid and plastered green, blue, and purple colors",
+        "Description": "NKS_THEMEPACKS_THEME_DESC_GREENMIX",
         "Localizable": true
     },
     "InputColor": "179;95;68",

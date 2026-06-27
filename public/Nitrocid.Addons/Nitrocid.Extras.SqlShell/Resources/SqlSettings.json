@@ -1,10 +1,10 @@
 [
     {
         "Name": "SQL",
-        "Desc": "This section lets you configure how the SQL shell works.",
+        "Desc": "NKS_SHELLPACKS_SQL_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "SQL Shell Prompt Preset",
+                "Name": "NKS_SHELLPACKS_SQL_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "SqlShellPromptPreset",
                 "ShellType": "SqlShell",

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -27,6 +27,7 @@ using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Shell.Homepage;
 using Nitrocid.Extras.Timers.Timers;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Timers
 {
@@ -34,28 +35,33 @@ namespace Nitrocid.Extras.Timers
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("stopwatch", /* Localizable */ "A simple stopwatch", new StopwatchCommand()),
+            new CommandInfo("stopwatch", LanguageTools.GetLocalized("NKS_DATES_COMMAND_STOPWATCH_DESC"), new StopwatchCommand()),
 
-            new CommandInfo("timer", /* Localizable */ "A simple timer", new TimerCommand()),
+            new CommandInfo("timer", LanguageTools.GetLocalized("NKS_DATES_COMMAND_TIMER_DESC"), new TimerCommand()),
 
-            new CommandInfo("pomodoro", /* Localizable */ "Pomodoro timer", new PomodoroCommand()),
+            new CommandInfo("pomodoro", LanguageTools.GetLocalized("NKS_DATES_COMMAND_POMODORO_DESC"), new PomodoroCommand()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTimers);
+
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasTimers);
 
         internal static TimersConfig TimersConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(TimersConfig)) ? (TimersConfig)Config.baseConfigurations[nameof(TimersConfig)] : Config.GetFallbackKernelConfig<TimersConfig>();
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Timers.Resources.Languages.Output.Localizations", typeof(TimersInit).Assembly));
             var config = new TimersConfig();
             ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(TimersConfig));
             HomepageTools.UnregisterBuiltinAction("Timer");
@@ -63,12 +69,12 @@ namespace Nitrocid.Extras.Timers
             HomepageTools.UnregisterBuiltinAction("Pomodoro");
         }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
             // Add homepage entries
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Timer", TimerScreen.OpenTimer);
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Stopwatch", StopwatchScreen.OpenStopwatch);
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Pomodoro", PomodoroScreen.OpenPomodoro);
+            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_DATES_HOMEPAGE_TIMER"), TimerScreen.OpenTimer);
+            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_DATES_HOMEPAGE_STOPWATCH"), StopwatchScreen.OpenStopwatch);
+            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_DATES_HOMEPAGE_POMODORO"), PomodoroScreen.OpenPomodoro);
         }
     }
 }

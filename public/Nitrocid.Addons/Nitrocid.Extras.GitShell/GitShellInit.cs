@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -29,6 +29,7 @@ using Nitrocid.Files.Paths;
 using Terminaux.Shell.Shells;
 using Nitrocid.Kernel;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.GitShell
 {
@@ -37,26 +38,30 @@ namespace Nitrocid.Extras.GitShell
         private static bool nativeLibIsSet = false;
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("gitsh", /* Localizable */ "Git shell",
+            new CommandInfo("gitsh", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_GITSH_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "repoPath", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to a directory with Git repository"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC")
                         })
                     ]),
                 ], new GitCommandExec())
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasGitShell);
+
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasGitShell);
 
         internal static GitConfig GitConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(GitConfig)) ? (GitConfig)Config.baseConfigurations[nameof(GitConfig)] : Config.GetFallbackKernelConfig<GitConfig>();
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.GitShell.Resources.Languages.Output.Localizations", typeof(GitShellInit).Assembly));
             var config = new GitConfig();
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterShell("GitShell", new GitShellInfo());
@@ -68,11 +73,12 @@ namespace Nitrocid.Extras.GitShell
             }
         }
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         { }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
             ShellManager.UnregisterShell("GitShell");
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(GitConfig));

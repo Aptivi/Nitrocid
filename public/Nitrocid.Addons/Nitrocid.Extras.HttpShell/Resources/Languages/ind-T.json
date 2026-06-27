@@ -1,0 +1,166 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_FS_UPLOADINGFILE",
+      "text": "फ़ाइल अपलोड कर रहा है {0} ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_DELETING",
+      "text": "{0} हटा रहा है ..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC",
+      "text": "HTTP शेल प्रारंभ करता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_GET_DESC",
+      "text": "निर्दिष्ट अनुरोध का उपयोग करके HTTP सर्वर से प्रतिक्रिया प्राप्त करें"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_DELETE_DESC",
+      "text": "HTTP सर्वर से सामग्री हटाता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_SHELLERROR",
+      "text": "HTTP शेल में एक त्रुटि थी:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_GETSTRING_DESC",
+      "text": "निर्दिष्ट अनुरोध का उपयोग करके HTTP सर्वर से स्ट्रिंग प्राप्त करें"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_GETTING",
+      "text": "मिल रहा है {0}..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
+      "text": "सर्वर पता दर्ज करें:"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC",
+      "text": "बिना डिस्कनेक्ट किए शेल से बाहर निकल जाता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ADDHEADER_DESC",
+      "text": "सभी आगामी अनुरोधों के लिए कुंजी और मान के साथ एक हेडर जोड़ता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_CURRAGENT_DESC",
+      "text": "वर्तमान उपयोगकर्ता एजेंट प्राप्त करता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_EDITHEADER_DESC",
+      "text": "सभी आगामी अनुरोधों के लिए हेडर पर एक कुंजी संपादित करता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_LSHEADER_DESC",
+      "text": "अनुरोध शीर्षलेख सूचीबद्ध करता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_PUT_DESC",
+      "text": "निर्दिष्ट अनुरोध का उपयोग करके फ़ाइल को HTTP सर्वर पर रखता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_PUTSTRING_DESC",
+      "text": "निर्दिष्ट अनुरोध का उपयोग करके स्ट्रिंग को HTTP सर्वर पर डालता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_POST_DESC",
+      "text": "निर्दिष्ट अनुरोध का उपयोग करके फ़ाइल को HTTP सर्वर पर पोस्ट करता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_POSTSTRING",
+      "text": "निर्दिष्ट अनुरोध का उपयोग करके स्ट्रिंग को HTTP सर्वर पर पोस्ट करता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_RMHEADER_",
+      "text": "सभी आगामी अनुरोधों के लिए हेडर पर एक कुंजी हटा देता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
+      "text": "एक उपयोगकर्ता एजेंट सेट करता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
+      "text": "वह शीर्षलेख जोड़ना जो पहले से मौजूद है."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
+      "text": "जो हेडर मौजूद नहीं है उसे हटाया जा रहा है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
+      "text": "वह शीर्षलेख संपादित किया जा रहा है जो मौजूद नहीं है."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPHTTPSFTP_DELETECONFIRM",
+      "text": "क्या आप वाकई {0} को हटाना चाहते हैं?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE",
+      "text": "साइट"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_POST_POSTING_FILE",
+      "text": "फ़ाइल {0} पोस्ट की जा रही है..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_POST_POSTING_STRING",
+      "text": "स्ट्रिंग को {0} पर पोस्ट किया जा रहा है..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_PUT_PUTTING_STRING",
+      "text": "स्ट्रिंग को {0} पर अपलोड किया जा रहा है..."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
+      "text": "शीघ्र पूर्व निर्धारित"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_SETTINGS_ENTRYDESC",
+      "text": "यह अनुभाग आपको यह कॉन्फ़िगर करने देता है कि HTTP शेल कैसे काम करता है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "सेटिंग प्रविष्टियाँ प्राप्त करने में विफल."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "अंतिम खोल वह खोल नहीं है जिससे अलग होना है।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1",
+      "text": "क्लाइंट अभी तक कनेक्ट नहीं हुआ है."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_KEY_DESC",
+      "text": "हेडर कुंजी"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_VALUE_DESC",
+      "text": "हेडर मान"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC",
+      "text": "HTTP अनुरोध"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_FILE_DESC",
+      "text": "अपलोड करने के लिए फ़ाइल"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_STRING_DESC",
+      "text": "अपलोड करने के लिए स्ट्रिंग"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_ARGUMENT_UA_DESC",
+      "text": "उपयोगकर्ता एजेंट स्ट्रिंग"
+    }
+  ]
+}

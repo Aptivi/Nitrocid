@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -139,7 +139,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         {
             if (!EventNotified)
             {
-                var EventNotification = new Notification(EventTitle, Translate.DoTranslation("Now it's an event day!"), NotificationPriority.Medium, NotificationType.Normal);
+                var EventNotification = new Notification(EventTitle, LanguageTools.GetLocalized("NKS_CALENDAR_EVENT_NOTIFICATION"), NotificationPriority.Medium, NotificationType.Normal);
                 NotificationManager.NotifySend(EventNotification);
                 EventNotified = true;
             }

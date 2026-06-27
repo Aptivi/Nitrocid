@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -188,13 +188,13 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 if (hung)
                 {
                     // Lost the game
-                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("You're hung!"));
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HANGMAN_YOULOSE"));
                 }
                 else if (won)
                 {
                     // Won the game
                     hung = true;
-                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("You win!"));
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_AMUSEMENTS_HANGMAN_YOUWIN"));
                 }
                 else
                 {

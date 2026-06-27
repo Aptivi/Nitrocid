@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_COLORCONVERT_REDCOLOR" xml:space="preserve">
+    <value>लाल रंग का स्तर:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_GREENCOLOR" xml:space="preserve">
+    <value>हरा रंग स्तर:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_BLUECOLOR" xml:space="preserve">
+    <value>नीला रंग स्तर:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_CYANCOLOR" xml:space="preserve">
+    <value>सियान स्तर:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_MAGENTACOLOR" xml:space="preserve">
+    <value>मैजेंटा स्तर:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_YELLOWCOLOR" xml:space="preserve">
+    <value>पीला स्तर:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_HUE" xml:space="preserve">
+    <value>रंग:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_SATURATION" xml:space="preserve">
+    <value>संतृप्ति:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_VALUE" xml:space="preserve">
+    <value>कीमत:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_LUMA" xml:space="preserve">
+    <value>लूमा:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_INPHASE" xml:space="preserve">
+    <value>चरणबद्ध:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_QUADRATURE" xml:space="preserve">
+    <value>चतुर्भुज:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_UCHROMA" xml:space="preserve">
+    <value>यू-क्रोमा:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_VCHROMA" xml:space="preserve">
+    <value>वी-क्रोमा:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORTO_DESC" xml:space="preserve">
+    <value>स्रोत रंग मॉडल को संख्याओं में लक्ष्य रंग मॉडल में परिवर्तित करता है।</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORTOKS_DESC" xml:space="preserve">
+    <value>स्रोत रंग मॉडल को KS प्रारूप में लक्ष्य रंग मॉडल में परिवर्तित करता है।</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORTOHEX_DESC" xml:space="preserve">
+    <value>स्रोत रंग मॉडल को हेक्स में परिवर्तित करता है।</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORSPECTO_DESC" xml:space="preserve">
+    <value>रंग विनिर्देशक का उपयोग करके स्रोत रंग मॉडल को लक्ष्य रंग मॉडल में परिवर्तित करता है।</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORSPECTOKS_DESC" xml:space="preserve">
+    <value>रंग विनिर्देशक का उपयोग करके स्रोत रंग मॉडल को KS प्रारूप में लक्ष्य रंग मॉडल में परिवर्तित करता है।</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORSPECTOHEX_DESC" xml:space="preserve">
+    <value>रंग विनिर्देशक का उपयोग करके स्रोत रंग मॉडल को हेक्स में लक्ष्य रंग मॉडल में परिवर्तित करता है।</value>
+  </data>
+  <data name="NKS_COLORCONVERT_INVALIDMODEL" xml:space="preserve">
+    <value>मॉडल विनिर्देश अमान्य है.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_BLACKKEY" xml:space="preserve">
+    <value>काली कुंजी स्तर:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_FIRSTLEVELNUMERIC" xml:space="preserve">
+    <value>पहला रंग स्तर संख्यात्मक होना चाहिए.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_SECONDLEVELNUMERIC" xml:space="preserve">
+    <value>दूसरा रंग स्तर संख्यात्मक होना चाहिए.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_THIRDLEVELNUMERIC" xml:space="preserve">
+    <value>तीसरा रंग स्तर संख्यात्मक होना चाहिए.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_FOURTHLEVELNUMERIC" xml:space="preserve">
+    <value>चौथा कुंजी स्तर संख्यात्मक होना चाहिए.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_LUMINANCE" xml:space="preserve">
+    <value>चमक (प्रकाश):</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC" xml:space="preserve">
+    <value>स्रोत रंग मॉडल</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC" xml:space="preserve">
+    <value>लक्ष्य रंग मॉडल</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER1_DESC" xml:space="preserve">
+    <value>पहला नंबर</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER2_DESC" xml:space="preserve">
+    <value>दूसरा नंबर</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER3_DESC" xml:space="preserve">
+    <value>तीसरा नंबर</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER4_DESC" xml:space="preserve">
+    <value>चौथा अंक</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
+    <value>रंग निर्दिष्टकर्ता</value>
+  </data>
+</root>

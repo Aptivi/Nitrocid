@@ -27,16 +27,19 @@ namespace Nitrocid.Extras.Sha384
     {
         private readonly SHA384 singleton = new();
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSha384);
 
-        void IAddon.FinalizeAddon()
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasSha384);
+
+        public void FinalizeAddon()
         { }
 
-        void IAddon.StartAddon() =>
+        public void StartAddon() =>
             DriverHandler.RegisterBaseDriver<IEncryptionDriver>(singleton);
 
-        void IAddon.StopAddon() =>
+        public void StopAddon() =>
             DriverHandler.UnregisterBaseDriver<IEncryptionDriver>(singleton.DriverName);
     }
 }

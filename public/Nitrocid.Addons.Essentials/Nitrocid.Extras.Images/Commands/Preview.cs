@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -39,12 +39,12 @@ namespace Nitrocid.Extras.Images.Commands
             string path = parameters.ArgumentsList[0];
             if (string.IsNullOrEmpty(path))
             {
-                TextWriters.Write(Translate.DoTranslation("Path to the image is not provided."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_IMAGES_PATHNEEDED"), KernelColorType.Error);
                 return 39;
             }
             if (!FilesystemTools.FileExists(path))
             {
-                TextWriters.Write(Translate.DoTranslation("Image file doesn't exist."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_IMAGES_IMAGENOTFOUND"), KernelColorType.Error);
                 return 39;
             }
 

@@ -1,0 +1,46 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "अमान्य कार्रवाई।"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "कार्य का नाम"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "करने योग्य कार्य प्रबंधक"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "कोई कार्य जोड़ने या हटाने में विफल."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "कृपया अपने कार्य के लिए एक नाम प्रदान करें."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "किसी कार्य को चिह्नित करने में विफल."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "कार्यों की सूची प्राप्त नहीं की जा सकी"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "किसी कार्य में कुछ जोड़ना है, हटाना है, पूर्ण के रूप में चिह्नित करना है, या पूर्ण के रूप में अचिह्नित करना है"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "सभी कार्यों को सूचीबद्ध करना, सहेजना या लोड करना है या नहीं"
+    }
+  ]
+}

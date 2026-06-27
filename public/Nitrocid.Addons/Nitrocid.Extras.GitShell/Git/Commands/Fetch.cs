@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             // Check to see if the repo has been modified
             if (status.IsDirty)
             {
-                TextWriters.Write(Translate.DoTranslation("Save your work first by creating a commit before checking out a branch."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSSAVING"), true, KernelColorType.Error);
                 return 11;
             }
 
@@ -58,7 +58,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 string requestedRemote = parameters.ArgumentsList[0];
                 if (!remoteNames.Contains(requestedRemote))
                 {
-                    TextWriters.Write(Translate.DoTranslation("Remote doesn't exist.") + $" {requestedRemote}", true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_FETCH_REMOTENOTFOUND") + $" {requestedRemote}", true, KernelColorType.Error);
                     return 12;
                 }
             }
@@ -70,7 +70,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                     // We don't have origin! Let's select the first remote
                     if (remoteNames.Length == 0)
                     {
-                        TextWriters.Write(Translate.DoTranslation("No remotes found to pull updates from."), true, KernelColorType.Error);
+                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_FETCH_NOREMOTES"), true, KernelColorType.Error);
                         return 13;
                     }
                     selectedRemote = remoteNames[0];

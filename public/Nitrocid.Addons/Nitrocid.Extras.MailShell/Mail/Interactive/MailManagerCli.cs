@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -109,7 +109,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
                                     }
                                     else
                                         Msg = client.Inbox?.GetMessage(messages.ElementAtOrDefault(i), default, MailShellCommon.Progress) ??
-                                            throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Failed to obtain specified mail message"));
+                                            throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED"));
                                     secondPaneListing.Add(Msg);
                                 }
                             }
@@ -141,7 +141,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             }
             catch (Exception ex)
             {
-                return Translate.DoTranslation(ex.Message);
+                return LanguageTools.GetLocalized(ex.Message);
             }
         }
 
@@ -154,7 +154,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             }
             catch (Exception ex)
             {
-                return Translate.DoTranslation(ex.Message);
+                return LanguageTools.GetLocalized(ex.Message);
             }
         }
 
@@ -169,7 +169,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             }
             catch (Exception ex)
             {
-                return Translate.DoTranslation(ex.Message);
+                return LanguageTools.GetLocalized(ex.Message);
             }
         }
 
@@ -187,7 +187,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             }
             catch (Exception ex)
             {
-                return Translate.DoTranslation(ex.Message);
+                return LanguageTools.GetLocalized(ex.Message);
             }
         }
 
@@ -213,7 +213,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
                     foreach (InternetAddress Address in currentEntry.From)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", vars: [Address.Name, Address.Encoding.EncodingName]);
-                        messageBuilder.AppendLine(Translate.DoTranslation("- From {0}").FormatString(Address.ToString()));
+                        messageBuilder.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM").FormatString(Address.ToString()));
                     }
 
                     // Print all the addresses that received the mail
@@ -221,12 +221,12 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
                     foreach (InternetAddress Address in currentEntry.To)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", vars: [Address.Name, Address.Encoding.EncodingName]);
-                        messageBuilder.AppendLine(Translate.DoTranslation("- To {0}").FormatString(Address.ToString()));
+                        messageBuilder.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO").FormatString(Address.ToString()));
                     }
 
                     // Print the date and time when the user received the mail
                     DebugWriter.WriteDebug(DebugLevel.I, "Rendering time and date of {0}.", vars: [currentEntry.Date.DateTime.ToString()]);
-                    messageBuilder.AppendLine(Translate.DoTranslation("- Sent at {0} in {1}").FormatString(TimeDateRenderers.RenderTime(currentEntry.Date.DateTime), TimeDateRenderers.RenderDate(currentEntry.Date.DateTime)));
+                    messageBuilder.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN").FormatString(TimeDateRenderers.RenderTime(currentEntry.Date.DateTime), TimeDateRenderers.RenderDate(currentEntry.Date.DateTime)));
 
                     // Prepare subject
                     messageBuilder.AppendLine();
@@ -291,7 +291,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
                     // Populate attachments
                     if (currentEntry.Attachments.Any())
                     {
-                        messageBuilder.AppendLine(Translate.DoTranslation("Attachments:"));
+                        messageBuilder.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_ATTACHMENTS"));
                         var AttachmentEntities = new List<MimeEntity>();
                         if (currentEntry.Body is MultipartEncrypted)
                         {
@@ -373,7 +373,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't open folder or message") + ": {0}".FormatString(ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_FOLDERMESSAGEOPENFAILED") + ": {0}".FormatString(ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }
@@ -385,8 +385,8 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
                 // Determine whether to deal with the message or with the folder
                 if (CurrentPane == 1)
                 {
-                    string directoryName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Write the new directory name."), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
-                    InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Creating directory..."), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
+                    string directoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMEPROMPT"), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
+                    InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_CREATINGDIR"), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
                     MailDirectory.CreateMailDirectory(directoryName);
                     refreshFirstPaneListing = true;
                     refreshSecondPaneListing = true;
@@ -395,7 +395,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't make folder") + ": {0}".FormatString(ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_CREATINGDIRFAILED") + ": {0}".FormatString(ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }
@@ -408,12 +408,12 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
                 if (CurrentPane == 2)
                 {
                     InputChoiceInfo[] choices = firstPaneListing.Select((mf, idx) => new InputChoiceInfo($"{idx + 1}", mf.FullName)).ToArray();
-                    int directoryIdx = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, Translate.DoTranslation("Select a new directory to move this message to."), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
+                    int directoryIdx = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEPROMPT"), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
                     if (directoryIdx < 0)
                         return;
 
                     // Move the message to a specified directory
-                    InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Moving message..."), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
+                    InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGE"), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
                     MailManager.MailMoveMessage(messageIdx + 1, firstPaneListing[directoryIdx].Name);
                     refreshFirstPaneListing = true;
                     refreshSecondPaneListing = true;
@@ -422,7 +422,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move message") + ": {0}".FormatString(ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEFAILED") + ": {0}".FormatString(ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }
@@ -435,7 +435,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
                 if (CurrentPane == 2)
                 {
                     InputChoiceInfo[] choices = firstPaneListing.Select((mf, idx) => new InputChoiceInfo($"{idx + 1}", mf.FullName)).ToArray();
-                    int directoryIdx = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, Translate.DoTranslation("Select a new directory to move all messages by the same sender to."), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
+                    int directoryIdx = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEBYSAMESENDERPROMPT"), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
                     if (directoryIdx < 0)
                         return;
 
@@ -443,7 +443,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
                     var addresses = secondPaneListing[messageIdx].From;
                     foreach (var address in addresses)
                     {
-                        InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Moving messages by sender {0}..."), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor }, address.Name ?? "");
+                        InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDER"), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor }, address.Name ?? "");
                         MailManager.MailMoveAllBySender(address.Name ?? "", firstPaneListing[directoryIdx].Name);
                     }
                     refreshFirstPaneListing = true;
@@ -453,7 +453,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move all messages by the same sender") + ": {0}".FormatString(ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDERFAILED") + ": {0}".FormatString(ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }
@@ -469,8 +469,8 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
                 // Determine whether to deal with the message or with the folder
                 if (CurrentPane == 1)
                 {
-                    string directoryName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Write the new directory name to rename {0} to."), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor }, InfoBoxInputType.Text, folder.Name);
-                    InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Renaming directory..."), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
+                    string directoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMERENAMEPROMPT"), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor }, InfoBoxInputType.Text, folder.Name);
+                    InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIR"), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
                     MailDirectory.RenameMailDirectory(folder.Name, directoryName);
                     refreshFirstPaneListing = true;
                     refreshSecondPaneListing = true;
@@ -479,7 +479,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't rename folder") + ": {0}".FormatString(ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIRFAILED") + ": {0}".FormatString(ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }
@@ -495,7 +495,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
                 // Determine whether to deal with the message or with the folder
                 if (CurrentPane == 1)
                 {
-                    InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Removing directory..."), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
+                    InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIR"), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
                     MailDirectory.DeleteMailDirectory(folder.Name);
                     InteractiveTuiTools.SelectionMovement(this, FirstPaneCurrentSelection - 1);
                     refreshFirstPaneListing = true;
@@ -505,7 +505,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't remove folder") + ": {0}".FormatString(ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIRFAILED") + ": {0}".FormatString(ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }
@@ -517,7 +517,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
                 // Determine whether to deal with the message or with the folder
                 if (CurrentPane == 2)
                 {
-                    InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Removing message..."), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
+                    InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGE"), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
                     MailManager.MailRemoveMessage(msgIdx + 1);
                     InteractiveTuiTools.SelectionMovement(this, SecondPaneCurrentSelection - 1);
                     refreshFirstPaneListing = true;
@@ -527,7 +527,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't delete message") + ": {0}".FormatString(ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEFAILED") + ": {0}".FormatString(ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }
@@ -542,7 +542,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
                     var addresses = secondPaneListing[msgIdx].From;
                     foreach (var address in addresses)
                     {
-                        InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Removing messages by sender {0}..."), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor }, address.Name ?? "");
+                        InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDER"), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor }, address.Name ?? "");
                         MailManager.MailRemoveAllBySender(address.Name ?? "");
                     }
                     InteractiveTuiTools.SelectionMovement(this, SecondPaneCurrentSelection - 1);
@@ -553,7 +553,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't delete all messages by the same sender") + ": {0}".FormatString(ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDERFAILED") + ": {0}".FormatString(ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }

@@ -1,0 +1,95 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "Faigheann sé faisnéis stoic in aghaidh na huaire"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "Comhartha cuideachta gearrthóg"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "Cuir isteach d'eochair API AlphaVantage"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "Tabhair d'eochair API."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "Ní féidir eochair API Taispeána a úsáid."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "Ba cheart go mbeadh d’eochair API 16 charachtar ar fad."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "Tharla earráid agus na sonraí stoic á bhfáil. Is féidir eolas breise a fháil anseo"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "Praghas stoc oscailte"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "Praghas stoc ard"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "Praghas stoc íseal"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "Praghas stoc deiridh"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "Toirt stoic"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "Tá Eochair API ag teastáil. Cumraigh ó na socruithe."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "Níl aon sonraí stoic ar fáil."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "Ligeann an chuid seo duit na stoic a chumrú."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "Eochair API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "Eochair don API Stoic AlphaVantage"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "Cód cuideachta"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "Cuideachta stoic"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Theip ar na hiontrálacha socruithe a fháil."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "Ní féidir faisnéis stoic a fháil."
+    }
+  ]
+}

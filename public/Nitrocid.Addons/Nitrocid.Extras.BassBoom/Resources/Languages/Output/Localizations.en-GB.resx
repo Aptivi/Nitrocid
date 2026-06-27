@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC" xml:space="preserve">
+    <value>How many milliseconds to wait before making the next write?</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_LYRICLINES_DESC" xml:space="preserve">
+    <value>Gets all lyric lines from the lyric file</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC" xml:space="preserve">
+    <value>Plays a lyric file</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC" xml:space="preserve">
+    <value>Plays a sound</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_NETFMINFO_DESC" xml:space="preserve">
+    <value>Gets information about your online radio station</value>
+  </data>
+  <data name="NKS_BASSBOOM_NOLYRICFILE" xml:space="preserve">
+    <value>Make sure to specify the path to an LRC file.</value>
+  </data>
+  <data name="NKS_BASSBOOM_NOSOUNDFILE" xml:space="preserve">
+    <value>Can't play sound because the file is not found.</value>
+  </data>
+  <data name="NKS_BASSBOOM_OPENEDSOUNDFILE" xml:space="preserve">
+    <value>Opened music file successfully.</value>
+  </data>
+  <data name="NKS_BASSBOOM_CANTOPENSOUNDFILE" xml:space="preserve">
+    <value>Can't open music file.</value>
+  </data>
+  <data name="NKS_BASSBOOM_TIMEOUT" xml:space="preserve">
+    <value>Can't play sound because of timeout.</value>
+  </data>
+  <data name="NKS_BASSBOOM_UNKNOWNARTIST" xml:space="preserve">
+    <value>Unknown Artist</value>
+  </data>
+  <data name="NKS_BASSBOOM_UNKNOWNGENRE" xml:space="preserve">
+    <value>Unknown Genre</value>
+  </data>
+  <data name="NKS_BASSBOOM_NAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NKS_BASSBOOM_ARTIST" xml:space="preserve">
+    <value>Artist</value>
+  </data>
+  <data name="NKS_BASSBOOM_GENRE" xml:space="preserve">
+    <value>Genre</value>
+  </data>
+  <data name="NKS_BASSBOOM_DURATION" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="NKS_BASSBOOM_STOPPLAYING" xml:space="preserve">
+    <value>Press 'q' to stop playing.</value>
+  </data>
+  <data name="NKS_BASSBOOM_CANTPLAY" xml:space="preserve">
+    <value>Can't play sound.</value>
+  </data>
+  <data name="NKS_BASSBOOM_TITLE" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_PORTINVALID" xml:space="preserve">
+    <value>The port number for your online radio is invalid.</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_FULLURL" xml:space="preserve">
+    <value>Full URL</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_CURRENTLISTENERS" xml:space="preserve">
+    <value>Current listeners</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_PEAKLISTENERS" xml:space="preserve">
+    <value>Peak listeners</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_STREAMS" xml:space="preserve">
+    <value>Streams</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_ACTIVESTREAMS" xml:space="preserve">
+    <value>Active streams</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_STREAMINFO" xml:space="preserve">
+    <value>Stream info for ID</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_PATH" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_CURRENTLYPLAYING" xml:space="preserve">
+    <value>Currently playing</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_UPTIME" xml:space="preserve">
+    <value>Uptime</value>
+  </data>
+  <data name="NKS_BASSBOOM_LYRICFILENOTFOUND" xml:space="preserve">
+    <value>Make sure to specify the path to a directory containing your lyric files in the LRC format. You can also specify a custom path to your music library folder containing the lyric files.</value>
+  </data>
+  <data name="NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND" xml:space="preserve">
+    <value>This lyrics file doesn't exist.</value>
+  </data>
+  <data name="NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC" xml:space="preserve">
+    <value>Settings for this screensaver are available here.</value>
+  </data>
+  <data name="NKS_BASSBOOM_SETTINGS_DESC" xml:space="preserve">
+    <value>This section lets you configure how the BassBoom addon works.</value>
+  </data>
+  <data name="NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC" xml:space="preserve">
+    <value>Sets the path to a folder containing a group of .lrc files. Write an absolute path to any existing directory.</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_STATIONTYPE" xml:space="preserve">
+    <value>Station type</value>
+  </data>
+  <data name="NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Failed to obtain settings entries.</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_HEADER" xml:space="preserve">
+    <value>Internet Radio (FM) info for</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_CANTGETINFO" xml:space="preserve">
+    <value>Can't get internet radio information.</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC" xml:space="preserve">
+    <value>Path to the lyric file</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC" xml:space="preserve">
+    <value>Path to an MP3 file</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC" xml:space="preserve">
+    <value>Host name that hosts the MPEG radio station</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC" xml:space="preserve">
+    <value>Port to the MPEG radio station</value>
+  </data>
+</root>

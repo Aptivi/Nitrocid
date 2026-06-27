@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -95,9 +95,9 @@ namespace Nitrocid.SplashPacks.Splashes
             var versionText = new AlignedText()
             {
                 Text =
-                    context == SplashContext.Preboot ? Translate.DoTranslation("Please wait while the kernel is initializing...") :
-                    context == SplashContext.ShuttingDown ? Translate.DoTranslation("Please wait while the kernel is shutting down...") :
-                    $"{Translate.DoTranslation("Starting")} {KernelReleaseInfo.ConsoleTitle}...",
+                    context == SplashContext.Preboot ? LanguageTools.GetLocalized("NKS_SPLASHPACKS_FIGPROGRESS_INIT") :
+                    context == SplashContext.ShuttingDown ? LanguageTools.GetLocalized("NKS_SPLASHPACKS_FIGPROGRESS_HALT") :
+                    $"{LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_STARTING")} {KernelReleaseInfo.ConsoleTitle}...",
                 Top = consoleY + 2,
                 ForegroundColor = col,
                 Settings = new()
@@ -164,8 +164,8 @@ namespace Nitrocid.SplashPacks.Splashes
             Color col = KernelColorTools.GetColor(KernelColorType.Stage);
             string text =
                 (context == SplashContext.StartingUp ?
-                 Translate.DoTranslation("Welcome!") :
-                 Translate.DoTranslation("Goodbye!"))
+                 LanguageTools.GetLocalized("NKS_SPLASHPACKS_FIGPROGRESS_WELCOME") :
+                 LanguageTools.GetLocalized("NKS_SPLASHPACKS_FIGPROGRESS_GOODBYE"))
                 .ToUpper();
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
             var figFontFallback = FigletTools.GetFigletFont("small");

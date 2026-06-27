@@ -1,0 +1,94 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "Nhận thông tin chứng khoán hàng giờ"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "Biểu tượng công ty ngắn"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "Nhập khóa API AlphaVantage của bạn"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "Vui lòng cung cấp khóa API của bạn."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "Không thể sử dụng khóa API bản demo."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "Khóa API của bạn phải dài 16 ký tự."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "Đã xảy ra lỗi khi lấy dữ liệu cổ phiếu. Thông tin bổ sung có thể được tìm thấy tại đây"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "Giá cổ phiếu mở cửa"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "Giá cổ phiếu cao"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "Giá cổ phiếu thấp"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "Giá cổ phiếu đóng cửa"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "Khối lượng cổ phiếu"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "Cần có Khóa API. Cấu hình từ cài đặt."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "Không có dữ liệu chứng khoán."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "Phần này cho phép bạn cấu hình các cổ phiếu."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "Khóa API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "Chìa khóa cho API cổ phiếu AlphaVantage"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "Mã công ty"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "Công ty cổ phiếu"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Không lấy được mục cài đặt."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "Không thể lấy được thông tin về cổ phiếu."
+    }
+  ]
+}

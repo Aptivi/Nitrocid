@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -34,7 +34,7 @@ namespace Nitrocid.Kernel.Starting.Environment
 
         /// <inheritdoc/>
         public virtual string Name =>
-            Translate.DoTranslation("Nitrocid KS");
+            LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME");
 
         /// <inheritdoc/>
         public virtual Action EnvironmentEntry =>

@@ -1,0 +1,63 @@
+{
+  "lang": "kor-T",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "라이선스 정보"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "영어 사전"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "에 대한 단어 정보"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "API는 다음에 따라 라이선스가 부여됩니다."
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "단어:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "에 대한 단어 의미"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "품사:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "정의:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "문장의 예:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "정의하는 데 사용되는 소스"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "동의어:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "반대말:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "정의할 단어"
+    }
+  ]
+}

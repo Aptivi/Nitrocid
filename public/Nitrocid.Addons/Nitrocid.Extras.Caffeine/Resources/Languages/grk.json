@@ -1,0 +1,51 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "Προσθέτει ένα ξυπνητήρι για να σας ειδοποιεί όταν το φλιτζάνι του τσαγιού ή του καφέ σας είναι έτοιμο."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "Ματαιώνει έναν συναγερμό που σας ειδοποιεί όταν το φλιτζάνι του τσαγιού ή του καφέ σας είναι έτοιμο."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "Αμερικάνικος καφές"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "Κόκκινο Τσάι"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "Πράσινο τσάι"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "Δεν υπάρχουν ειδοποιήσεις καφεΐνης για αποβολή."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "Τα δευτερόλεπτα κατά τα οποία το φλιτζάνι σας θα είναι έτοιμο δεν είναι έγκυρα."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "Εάν προσπαθείτε να δώσετε ένα όνομα για το ποτό, δείτε την παρακάτω λίστα:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "Το φλιτζάνι σας είναι τώρα έτοιμο!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "Προσδιορίστε έναν αριθμό δευτερολέπτων ή ένα όνομα ποτού"
+    }
+  ]
+}

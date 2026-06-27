@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -40,18 +40,18 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
         {
             string RemoteFolder = parameters.ArgumentsList[0];
             string LocalFolder = parameters.ArgumentsList.Length > 1 ? parameters.ArgumentsList[1] : "";
-            TextWriters.Write(Translate.DoTranslation("Downloading folder {0}..."), true, KernelColorType.Progress, RemoteFolder);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADING"), true, KernelColorType.Progress, RemoteFolder);
             bool Result = !string.IsNullOrWhiteSpace(LocalFolder) ? FTPTransfer.FTPGetFolder(RemoteFolder, LocalFolder) : FTPTransfer.FTPGetFolder(RemoteFolder);
             if (Result)
             {
                 TextWriterRaw.Write();
-                TextWriters.Write(Translate.DoTranslation("Downloaded folder {0}."), true, KernelColorType.Success, RemoteFolder);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADED"), true, KernelColorType.Success, RemoteFolder);
                 return 0;
             }
             else
             {
                 TextWriterRaw.Write();
-                TextWriters.Write(Translate.DoTranslation("Download failed for folder {0}."), true, KernelColorType.Error, RemoteFolder);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADFAILED"), true, KernelColorType.Error, RemoteFolder);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPNetwork);
             }
         }

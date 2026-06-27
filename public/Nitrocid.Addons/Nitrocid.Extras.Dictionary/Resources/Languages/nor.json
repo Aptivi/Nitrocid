@@ -1,0 +1,66 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Lisensinformasjon"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "Den engelske ordboken"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Word informasjon for"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "API er lisensiert under"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "Ord:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Ordets betydning for"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Del av talen:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Definisjon:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Eksempel i setning:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Kilder som brukes til å definere"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "Synonymer:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Antonymer:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Ord å definere"
+    }
+  ]
+}

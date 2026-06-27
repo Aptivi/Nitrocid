@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Name": "Green and Red",
-        "Description": "We've added green and red as colors.",
+        "Description": "NKS_THEMEPACKS_THEME_DESC_GREENRED",
         "Localizable": true
     },
     "InputColor": "#00FF00",

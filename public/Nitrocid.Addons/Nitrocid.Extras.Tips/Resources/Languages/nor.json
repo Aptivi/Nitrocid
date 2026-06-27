@@ -1,0 +1,314 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TIPS_KERNELTIP_1",
+      "text": "at du kan utføre prosesskommandoer på to måter: skrive inn det kjørbare filnavnet direkte, og bruke 'exec'-kommandoen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_2",
+      "text": "at du kan låse skjermen ved å bruke 'låseskjerm'-kommandoen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_3",
+      "text": "at du kan bygge dine egne kjernemodifikasjoner ved hjelp av C# og Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_4",
+      "text": "at du kan bruke flere kommandoer ved å bruke semikolon mellom kommandoene?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_5",
+      "text": "at du kan unnslippe doble anførselstegn inne i de siterte argumentene når du utfører kommandoer?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_6",
+      "text": "at du kan endre kjerneinnstillingene ved å bruke 'innstillinger'-kommandoen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_7",
+      "text": "at du kan lagre skjermen ved å bruke 'savescreen'-kommandoen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_8",
+      "text": "at du kan rapportere feil til oss ved å gå til Nitrocids GitHub-prosjektside?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_9",
+      "text": "at du kan lage en snarvei til ønsket kommando ved å bruke 'alias'-kommandoen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_10",
+      "text": "at du kan bygge din egen splash-skjerm ved hjelp av C# og Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_11",
+      "text": "at du kan installere ekstra tillegg for å gjøre kjernen mer nyttig og morsom?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_12",
+      "text": "at du kan lage dine egne fantastiske temaer ved å bruke 'mktheme'-kommandoen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_13",
+      "text": "at du kan endre kjernefargene dine enten ved å bruke 'innstillinger'-kommandoen eller ved å bruke et av de forhåndsbygde temaene?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_14",
+      "text": "at du kan tilbakestille kjernen til fabrikkinnstillingene ved å bruke 'reset'-argumentet?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_15",
+      "text": "at du kan få tilgang til vår omfattende dokumentasjon på vår GitBook-side?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_16",
+      "text": "at langtidsutgivelser støttes i fem år for hovedstøtte, og tre år for sikkerhetsoppdateringer?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_17",
+      "text": "at 0.0.1 var den aller første versjonen av Nitrocid KS som ble utgitt 22. februar 2018?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_18",
+      "text": "at 0.0.24.x-serien var den eneste versjonsserien som inneholdt API v2.1-versjonen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_19",
+      "text": "at korttidsutgivelser støttes i bare ni måneder?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_20",
+      "text": "at 0.1.x-serien er bakover-inkompatibel med 0.0.24.x-serien eller eldre?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_21",
+      "text": "at du kan kjøre Nitrocid KS på Linux, macOS og Android?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_22",
+      "text": "at du kan referere til API-dokumentasjonen for å hjelpe deg med å lage dine mods?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_23",
+      "text": "at du kan få flere av de fantastiske spillene, som Hangman og ShipDuet, ved å installere de ekstra tilleggene?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_24",
+      "text": "at hvis du krasjer med en rød meteorstorm, krasjer romskipet ditt i Meteor?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_25",
+      "text": "at du kan konvertere kjernen til informasjonssentre ved å bruke dokkingfunksjonen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_26",
+      "text": "at du kan lage brukergrupper for å organisere brukerkontoer?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_27",
+      "text": "at hvis du er medlem av en gruppe som gir visse tillatelser, har du lov til å utføre slike operasjoner?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_28",
+      "text": "at du kan endre kjernens tidssone uten å påvirke vertssystemet ditt?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_29",
+      "text": "at du kan bruke den interaktive tekst- og hex-editoren for å spare tid?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_30",
+      "text": "at den eldste teksteditoren som er kjent for å jobbe med det første Unix-systemet er ed, den tidligste teksteditoren som ble utgitt i 1973 og ble levert med Unix-systemet funnet på en PDP-7 hos AT&T Bell Labs?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_31",
+      "text": "at du også kan tvinge redigeringskommandoen til å starte redigeringsprogrammet i en bestemt type?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_32",
+      "text": "at den interaktive teksteditoren forsøker å simulere de mest grunnleggende funksjonene til de mest populære Unix-tekstredigererne, vi og vim?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_33",
+      "text": "at med mindre du vet hva du gjør med den binære filen, vil redigering av en slik fil på denne måten føre til datakorrupsjon eller tap av data i målfilen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_34",
+      "text": "at på Linux-systemer initieres skallet ved hjelp av både påloggingsbehandleren og systeminitialiseringsprogrammet, vanligvis funnet i /sbin/init?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_35",
+      "text": "at du kan utføre vanlige filoperasjoner, som kopiering, flytting, sletting, redigering og så videre?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_36",
+      "text": "at den interaktive TUI-en til en filbehandler simulerer funksjonaliteten til Midnight Commander?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_37",
+      "text": "at hvis kjernen krasjer, lager den vanligvis en dumpfil?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_38",
+      "text": "at du kan diagnostisere kjernen ved å feilsøke den ved å bruke den innebygde feilsøkingsfunksjonen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_39",
+      "text": "at du kan laste ned og laste opp filer direkte fra UESH-skallet?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_40",
+      "text": "at kjernen kan oversettes selv på stadier før oppstart ved å starte den opp med 'lang'-argumentet?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_41",
+      "text": "at du kan bygge dine egne skjermsparere ved å registrere dem i din mod?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_42",
+      "text": "at den første skjermspareren som gjorde skjermen blank etter tre minutters inaktivitet på de originale IBM-PC-ene, scrnsave, ble opprettet i 1983 av John Socha?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_43",
+      "text": "at noen av de raske skjermsparerne kan forårsake lysfølsomme anfall?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_44",
+      "text": "at kjernejournaler brukes som oppstarts- og avslutningslogger?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_45",
+      "text": "at modsene dine nå kan bli oversettbare?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_46",
+      "text": "at modsene dine kan kommunisere med kjernetillegg og andre mods, skape en slags kommunikasjon og oppnå interoperabilitet?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_47",
+      "text": "at du kan koble til den eksterne debuggeren og, valgfritt, til chat-serveren?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_48",
+      "text": "at du kan bruke feilsøkingsskallet, som kun er tilgjengelig for utviklingsversjoner?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_49",
+      "text": "at dine mods nå kan ha sin egen konfigurasjon ved å registrere de tilknyttede klasser?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_50",
+      "text": "at dine mods kan registrere sine egne skall?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_51",
+      "text": "at modsene dine kan legge til kommandoer til de eksisterende skallene for å øke mengden kommandoer som kan brukes?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_52",
+      "text": "at kommandoklassene dine nøyaktig kan representere beståtte argumenter og brytere?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_53",
+      "text": "at du kan forespørre beståtte brytere ved å bruke bryteradministrasjonsklassene som finnes i kjerne-APIet?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_54",
+      "text": "at UESH inkluderer skriptfunksjonalitet for å gjøre det lettere å lage og kjøre skript?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_55",
+      "text": "at skallet inkluderer funksjonalitet for å hindre kansellering for aktive applikasjoner?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_56",
+      "text": "at Nitrocid er dypt integrert med Terminaux for å tillate raskere og bedre gjengivelse?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_57",
+      "text": "at du nå kan endre størrelsen på de interaktive applikasjonene uten å bekymre deg for at utdataene blir ødelagt?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_58",
+      "text": "at det er kommandoer som ber om brukerinndata, som er nyttige for skript?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_59",
+      "text": "at du kan presentere brukerinndataspørsmålet ditt på flere måter, som valg, tabell, enkel, utvalg og så videre?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_60",
+      "text": "at du kan plassere plassholderne til teksten din som støtter dem?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_61",
+      "text": "at du kan bruke forskjellige kjernedrivere for å endre hvordan en spesifikk operasjon fungerer?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_62",
+      "text": "at du kan lage dine egne skjermsparere og sprut i C# eller Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_63",
+      "text": "at du kan spørre vertssystemet og terminalemulatoren ved å bruke kjerneplattformklassen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_64",
+      "text": "at du kan be om personvernsamtykke før du gjør noe sensitivt i moden din?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_65",
+      "text": "at du kan slå av varsler ved hjelp av Ikke forstyrr-funksjonen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_66",
+      "text": "at du kan lagre varslingshistorikk ved å bruke en funksjon som finnes i varslingsbehandlingen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_67",
+      "text": "at du kan endre hvordan tilfeldige tall genereres ved å endre driver?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_68",
+      "text": "at diverse API-er gir nyttige funksjoner for modsene dine?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_69",
+      "text": "Denne delen lar deg konfigurere hvordan Tips fungerer."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_70",
+      "text": "Vis kjernetips"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_71",
+      "text": "Hvis aktivert, viser skallet deg tipsene ved hver pålogging."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_72",
+      "text": "at du kan lage oppstartbare programmer ved å bruke kjernemodsene dine?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_73",
+      "text": "Kunne ikke hente innstillingsoppføringer."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_74",
+      "text": "at Nitrocid (Kernel Simulator 0.0.2) kalte det innebygde skallet 'UESH'-skallet?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_75",
+      "text": "at skjermsparerne ble utpekt for å være en løsning mot skjerminnbrenninger i katodestrålerør (CRT) eller plasmaskjermer?"
+    }
+  ]
+}

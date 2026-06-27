@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC" xml:space="preserve">
+    <value>Quot milliseconds expectare ante quam proxime scribes?</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_LYRICLINES_DESC" xml:space="preserve">
+    <value>Omnes lyrici lineas accipit a file lyrico</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC" xml:space="preserve">
+    <value>Play lyrici file</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC" xml:space="preserve">
+    <value>Sana agit</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_NETFMINFO_DESC" xml:space="preserve">
+    <value>Informationem quae de vestri online radio station</value>
+  </data>
+  <data name="NKS_BASSBOOM_NOLYRICFILE" xml:space="preserve">
+    <value>Fac ut iter limae LRC definias.</value>
+  </data>
+  <data name="NKS_BASSBOOM_NOSOUNDFILE" xml:space="preserve">
+    <value>Sonus ludere non potest quia tabella non invenitur.</value>
+  </data>
+  <data name="NKS_BASSBOOM_OPENEDSOUNDFILE" xml:space="preserve">
+    <value>Fasciculus musicorum apertus feliciter.</value>
+  </data>
+  <data name="NKS_BASSBOOM_CANTOPENSOUNDFILE" xml:space="preserve">
+    <value>File musicam aperire non potest.</value>
+  </data>
+  <data name="NKS_BASSBOOM_TIMEOUT" xml:space="preserve">
+    <value>Sonus ludere non potest propter timeout.</value>
+  </data>
+  <data name="NKS_BASSBOOM_UNKNOWNARTIST" xml:space="preserve">
+    <value>Ignotum Artist</value>
+  </data>
+  <data name="NKS_BASSBOOM_UNKNOWNGENRE" xml:space="preserve">
+    <value>Genre ignotus</value>
+  </data>
+  <data name="NKS_BASSBOOM_NAME" xml:space="preserve">
+    <value>Nomen</value>
+  </data>
+  <data name="NKS_BASSBOOM_ARTIST" xml:space="preserve">
+    <value>Artist</value>
+  </data>
+  <data name="NKS_BASSBOOM_GENRE" xml:space="preserve">
+    <value>Genre</value>
+  </data>
+  <data name="NKS_BASSBOOM_DURATION" xml:space="preserve">
+    <value>Duratio</value>
+  </data>
+  <data name="NKS_BASSBOOM_STOPPLAYING" xml:space="preserve">
+    <value>Press 'q' ut subsisto ludens.</value>
+  </data>
+  <data name="NKS_BASSBOOM_CANTPLAY" xml:space="preserve">
+    <value>Sonus ludere non potest.</value>
+  </data>
+  <data name="NKS_BASSBOOM_TITLE" xml:space="preserve">
+    <value>Titulus</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_PORTINVALID" xml:space="preserve">
+    <value>Portus numerus pro radiophonico tuo invalidus est.</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_FULLURL" xml:space="preserve">
+    <value>Plena URL</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_CURRENTLISTENERS" xml:space="preserve">
+    <value>Current auditores</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_PEAKLISTENERS" xml:space="preserve">
+    <value>Apicem auditores</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_STREAMS" xml:space="preserve">
+    <value>rivi</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_ACTIVESTREAMS" xml:space="preserve">
+    <value>Active fluminum</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_STREAMINFO" xml:space="preserve">
+    <value>Amnis info ad ID</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_PATH" xml:space="preserve">
+    <value>Semita</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_CURRENTLYPLAYING" xml:space="preserve">
+    <value>Currently ludens</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_UPTIME" xml:space="preserve">
+    <value>Uptime</value>
+  </data>
+  <data name="NKS_BASSBOOM_LYRICFILENOTFOUND" xml:space="preserve">
+    <value>Fac ut demonstretur iter ad directorium continens fasciculos lyricos tuos in LRC forma. Denotare etiam potes viam consuetudinis ad bibliothecam tuam musicam folder continentem imaginum lyricorum.</value>
+  </data>
+  <data name="NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND" xml:space="preserve">
+    <value>Hoc lyrics file non est.</value>
+  </data>
+  <data name="NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC" xml:space="preserve">
+    <value>Optiones huius Screensaverii hic praesto sunt.</value>
+  </data>
+  <data name="NKS_BASSBOOM_SETTINGS_DESC" xml:space="preserve">
+    <value>Haec sectio permittit te configurare quomodo opera BassBoom addon.</value>
+  </data>
+  <data name="NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC" xml:space="preserve">
+    <value>Iter ponit ad folder in quo est coetus imaginum .lrc. Iter absolutum scribe cuilibet presul existente.</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_STATIONTYPE" xml:space="preserve">
+    <value>Genus station</value>
+  </data>
+  <data name="NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Impetrare occasus viscus.</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_HEADER" xml:space="preserve">
+    <value>Internet Radio (FM) info for</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_CANTGETINFO" xml:space="preserve">
+    <value>Non potest radio notitia penitus.</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC" xml:space="preserve">
+    <value>Iter lyrici lima</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC" xml:space="preserve">
+    <value>Iter ad MP3 lima</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC" xml:space="preserve">
+    <value>Hospes nomen est quod MPEG exercituum radiophonicum</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC" xml:space="preserve">
+    <value>Portum in MPEG radio station</value>
+  </data>
+</root>

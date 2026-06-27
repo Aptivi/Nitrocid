@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -33,7 +33,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Print a message
-            TextWriters.Write(Translate.DoTranslation("Posting file {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[1]);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_POST_POSTING_FILE"), true, KernelColorType.Progress, parameters.ArgumentsList[1]);
 
             try
             {

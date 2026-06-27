@@ -21,30 +21,36 @@ using Nitrocid.Extras.SqlShell.Settings;
 using Nitrocid.Extras.SqlShell.Sql;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
+using Nitrocid.Languages;
 using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.SqlShell
 {
     internal class SqlShellInit : IAddon
     {
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSqlShell);
+
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasSqlShell);
 
         internal static SqlConfig SqlConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(SqlConfig)) ? (SqlConfig)Config.baseConfigurations[nameof(SqlConfig)] : Config.GetFallbackKernelConfig<SqlConfig>();
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.SqlShell.Resources.Languages.Output.Localizations", typeof(SqlShellInit).Assembly));
             var config = new SqlConfig();
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterShell("SqlShell", new SqlShellInfo());
         }
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         { }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
             ShellManager.UnregisterShell("SqlShell");
             ConfigTools.UnregisterBaseSetting(nameof(SqlConfig));
         }

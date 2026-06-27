@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -91,7 +91,7 @@ namespace Nitrocid.Extras.MailShell.Tools
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Enter username or mail address: "), false, KernelColorType.Input);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_ADDRESSPROMPT"), false, KernelColorType.Input);
             }
 
             // Try to get the username or e-mail address from the input
@@ -114,7 +114,7 @@ namespace Nitrocid.Extras.MailShell.Tools
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Enter password: "), false, KernelColorType.Input);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_PASSWORDPROMPT"), false, KernelColorType.Input);
             }
             Authentication.Password = InputTools.ReadLineNoInput();
 
@@ -143,7 +143,7 @@ namespace Nitrocid.Extras.MailShell.Tools
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), false, KernelColorType.Input);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT"), false, KernelColorType.Input);
             }
             IMAP_Address = InputTools.ReadLine();
             DebugWriter.WriteDebug(DebugLevel.I, "IMAP Server: \"{0}\"", vars: [IMAP_Address]);
@@ -155,7 +155,7 @@ namespace Nitrocid.Extras.MailShell.Tools
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), false, KernelColorType.Input);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT"), false, KernelColorType.Input);
             }
             string SMTP_Address = InputTools.ReadLine();
             SMTP_Port = 587;
@@ -210,7 +210,7 @@ namespace Nitrocid.Extras.MailShell.Tools
                         if (ImapServers is not null && ImapServers.Any())
                         {
                             var ImapServer = ImapServers.ElementAtOrDefault(0) ??
-                                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Can't get IMAP server configuration"));
+                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_NOIMAP"));
                             ReturnedMailAddress = ImapServer.Hostname;
                             ReturnedMailPort = ImapServer.Port;
                         }
@@ -220,7 +220,7 @@ namespace Nitrocid.Extras.MailShell.Tools
                 case ServerType.SMTP:
                     {
                         var SmtpServer = DynamicConfiguration.EmailProvider?.OutgoingServer ??
-                                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Can't get SMTP server configuration"));
+                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_NOSMTP"));
                         ReturnedMailAddress = SmtpServer.Hostname;
                         ReturnedMailPort = SmtpServer.Port;
                         break;
@@ -254,18 +254,18 @@ namespace Nitrocid.Extras.MailShell.Tools
                 CryptographyContext.Register(typeof(PGPContext));
 
                 // IMAP Connection
-                TextWriterColor.Write(Translate.DoTranslation("Connecting to {0}..."), Address);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTING"), Address);
                 DebugWriter.WriteDebug(DebugLevel.I, "Connecting to IMAP Server {0}:{1} with SSL...", vars: [Address, Port]);
                 IMAP_Client.Connect(Address, Port, MailKit.Security.SecureSocketOptions.SslOnConnect);
                 IMAP_Client.WebAlert += MailHandlers.HandleWebAlert;
 
                 // SMTP Connection
-                TextWriterColor.Write(Translate.DoTranslation("Connecting to {0}..."), SmtpAddress);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTING"), SmtpAddress);
                 DebugWriter.WriteDebug(DebugLevel.I, "Connecting to SMTP Server {0}:{1} with SSL...", vars: [SmtpAddress, SmtpPort]);
                 SMTP_Client.Connect(SmtpAddress, SmtpPort, MailKit.Security.SecureSocketOptions.StartTlsWhenAvailable);
 
                 // IMAP Authentication
-                TextWriterColor.Write(Translate.DoTranslation("Authenticating..."));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_AUTHENTICATING"));
                 DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to IMAP server {1}...", vars: [Authentication.UserName, Address]);
                 IMAP_Client.Authenticate(Authentication);
 
@@ -281,7 +281,7 @@ namespace Nitrocid.Extras.MailShell.Tools
             }
             catch (Exception ex)
             {
-                TextWriters.Write(Translate.DoTranslation("Error while connecting to {0}: {1}"), true, KernelColorType.Error, Address, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTIONFAILED"), true, KernelColorType.Error, Address, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 IMAP_Client.Disconnect(true);
                 SMTP_Client.Disconnect(true);

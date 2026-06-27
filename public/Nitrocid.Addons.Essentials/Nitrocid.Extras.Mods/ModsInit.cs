@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,6 +26,7 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using System.Collections.Generic;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Mods
 {
@@ -33,18 +34,18 @@ namespace Nitrocid.Extras.Mods
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("modman", /* Localizable */ "Manage your mods",
+            new CommandInfo("modman", LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMAN_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "start/stop/info/reload/install/uninstall", new()
                         {
                             ExactWording = ["start", "stop", "info", "reload", "install", "uninstall"],
-                            ArgumentDescription = /* Localizable */ "Whether to start, stop, get info out of, reload, install, or uninstall a mod"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC")
                         }),
                         new CommandArgumentPart(true, "modfilename", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Mod name or file name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC")
                         }),
                     ]),
                     new CommandArgumentInfo(
@@ -52,41 +53,46 @@ namespace Nitrocid.Extras.Mods
                         new CommandArgumentPart(true, "list/reloadall/stopall/startall/tui", new()
                         {
                             ExactWording = ["list", "reloadall", "stopall", "startall", "tui"],
-                            ArgumentDescription = /* Localizable */ "Whether to list, reload, stop, start, or interactively manage all mods"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC")
                         }),
                     ]),
                 ], new ModManCommand()),
 
-            new CommandInfo("modmanual", /* Localizable */ "Mod manual",
+            new CommandInfo("modmanual", LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMANUAL_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "modname", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Mod name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC")
                         }),
                     ])
                 ], new ModManualCommand()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMods);
+
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasMods);
 
         internal static ModsConfig ModsConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(ModsConfig)) ? (ModsConfig)Config.baseConfigurations[nameof(ModsConfig)] : Config.GetFallbackKernelConfig<ModsConfig>();
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Mods.Resources.Languages.Output.Localizations", typeof(ModsInit).Assembly));
             var config = new ModsConfig();
             ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(ModsConfig));
         }

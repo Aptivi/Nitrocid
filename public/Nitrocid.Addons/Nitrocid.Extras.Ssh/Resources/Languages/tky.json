@@ -1,0 +1,119 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "Bir SSH sunucusuna bağlanır."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "{0} için şifreyi girin:"
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH Bağlantısı Kesildi."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "SSH sunucusuna bağlanmaya çalışırken hata oluştu: {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "Belirtilen {0} seçeneği geçersiz."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "Cevap sayısal olmalıdır."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "Geri dönmek için herhangi bir tuşa basın."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "Bir komutu yürütmek için bir SSH sunucusuna bağlanır."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "Kimlik doğrulamasını nasıl yapmak istiyorsunuz?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "Özel anahtar dosyası"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "Şifre"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "{0} anahtarı için parolayı girin:"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "{0} anahtar dosyası mevcut değil."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "Özel anahtar eklemeye çalışırken hata oluştu:"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "SSH komutu yürütülürken hata oluştu"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "SSH kabuğunda hata"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "Giriş isteminizin nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "{0} için özel anahtarın konumunu girin. Anahtar eklemeyi bitirmek için \"q\" yazın:"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "Bu bölüm SSH'nin nasıl çalışacağını yapılandırmanızı sağlar."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "SSH için kullanıcı adı istemi stili"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "SSH hızlı aramasına yeni bağlantılar ekleyin"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "Etkinleştirildiğinde, SSH hızlı aramasına yeni bir bağlantı ekler."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Ayar girişleri alınamadı."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "SSH bağlı ancak istemci yok."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "Bağlanılacak SSH sunucusu"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "Kimlik doğrulaması için kullanıcı adı"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "Uzaktan yürütme komutu"
+    }
+  ]
+}

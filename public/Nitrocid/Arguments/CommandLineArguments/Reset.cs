@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -69,7 +69,7 @@ namespace Nitrocid.Arguments.CommandLineArguments
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(Translate.DoTranslation("Can't wipe file") + $" {PathName}: {ex.Message}", true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_RESET_WIPEFAILED") + $" {PathName}: {ex.Message}", true, KernelColorType.Error);
                 }
             }
 
@@ -84,7 +84,7 @@ namespace Nitrocid.Arguments.CommandLineArguments
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(Translate.DoTranslation("Can't wipe dump file") + $" {dump}: {ex.Message}", true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_RESET_WIPEDUMPFAILED") + $" {dump}: {ex.Message}", true, KernelColorType.Error);
                 }
             }
 
@@ -95,16 +95,16 @@ namespace Nitrocid.Arguments.CommandLineArguments
             }
             catch (Exception ex)
             {
-                TextWriters.Write(Translate.DoTranslation("Can't wipe debug files") + $": {ex.Message}", true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_RESET_WIPEDEBUGFAILED") + $": {ex.Message}", true, KernelColorType.Error);
             }
 
             // Inform user that the wipe was not complete if there are files.
             string[] files = FilesystemTools.GetFilesystemEntries(PathsManagement.AppDataPath);
             if (files.Length > 0)
             {
-                TextWriters.Write(Translate.DoTranslation("The following files are not wiped:"), true, KernelColorType.Warning);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_RESET_LEFTOVERSLISTING"), true, KernelColorType.Warning);
                 TextWriters.WriteList(files);
-                string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Are you sure to wipe these files?"), [("y", "Yes"), ("n", "No")]);
+                string answer = ChoiceStyle.PromptChoice(LanguageTools.GetLocalized("NKS_ARGUMENTS_RESET_LEFTOVERSPROMPT"), [("y", "Yes"), ("n", "No")]);
                 if (answer == "y")
                 {
                     foreach (string file in files)
@@ -115,7 +115,7 @@ namespace Nitrocid.Arguments.CommandLineArguments
                         }
                         catch (Exception ex)
                         {
-                            TextWriters.Write(Translate.DoTranslation("Can't wipe miscellaneous file") + $" {file}: {ex.Message}", true, KernelColorType.Error);
+                            TextWriters.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_RESET_WIPEMISCFAILED") + $" {file}: {ex.Message}", true, KernelColorType.Error);
                         }
                     }
                 }

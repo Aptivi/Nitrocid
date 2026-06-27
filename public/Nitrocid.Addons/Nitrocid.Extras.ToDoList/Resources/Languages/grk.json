@@ -1,0 +1,47 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "Μη έγκυρη ενέργεια."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "Ονομα εργασίας"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "Διαχείριση εργασιών υποχρεώσεων"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "Αποτυχία προσθήκης ή κατάργησης μιας εργασίας."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "Δώστε ένα όνομα για την εργασία σας."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "Αποτυχία επισήμανσης εργασίας."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "Δεν είναι δυνατή η λήψη λίστας εργασιών"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "Εάν θέλετε να προσθέσετε, να αφαιρέσετε, να επισημάνετε ως ολοκληρωμένα ή να καταργήσετε την επισήμανση ως ολοκληρωμένη σε μια εργασία"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "Είτε για λίστα, αποθήκευση ή φόρτωση όλων των εργασιών"
+    }
+  ]
+}

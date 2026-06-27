@@ -1,0 +1,122 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "Kobler til en SSH-server."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "Skriv inn passordet for {0}:"
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH frakoblet."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "Feil under forsøk på å koble til SSH-server: {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "Spesifisert alternativ {0} er ugyldig."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "Svaret må være numerisk."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "Trykk på hvilken som helst tast for å gå tilbake."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "Kobler til en SSH-server for å utføre en kommando."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "Hvordan vil du autentisere?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "Privat nøkkelfil"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "Passord"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "Skriv inn passordfrasen for nøkkelen {0}:"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "Nøkkelfilen {0} eksisterer ikke."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "Feil ved forsøk på å legge til privat nøkkel:"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "Feil ved utførelse av SSH-kommando"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "Feil på SSH-skall"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "Skriv hvordan du vil at påloggingsforespørselen skal være. La stå tomt for å bruke standard stil. Plassholdere analyseres."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "Angi plasseringen av den private nøkkelen for {0}. Skriv \"q\" for å fullføre å legge til nøkler:"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "Denne delen lar deg konfigurere hvordan SSH fungerer."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "Brukernavn-ledetekststil for SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "Legg til nye tilkoblinger til SSH-kortnummer"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "Hvis aktivert, legger du til en ny tilkobling til SSH-kortnummeret."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Kunne ikke hente innstillingsoppføringer."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "SSH er tilkoblet, men uten klient."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "SSH-server å koble til"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "Brukernavn å autentisere med"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "Kommando for ekstern kjøring"
+    }
+  ]
+}

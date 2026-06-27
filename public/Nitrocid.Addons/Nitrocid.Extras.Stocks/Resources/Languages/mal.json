@@ -1,0 +1,97 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "Mendapat maklumat stok setiap jam"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "Simbol syarikat pendek"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "Masukkan kunci API AlphaVantage anda"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "Sila berikan kunci API anda."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "Kunci API Demonstrasi tidak boleh digunakan."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "Panjang kunci API anda hendaklah 16 aksara."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "Ralat berlaku semasa mengambil data stok. Maklumat tambahan boleh didapati di sini"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "Harga saham pembukaan"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "Harga saham tinggi"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "Harga saham rendah"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "Harga saham penutup"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "Jumlah stok"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "Kunci API diperlukan. Konfigurasikan daripada tetapan."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "Tiada data stok tersedia."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "Bahagian ini membolehkan anda mengkonfigurasi stok."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "kunci API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "Kunci untuk API Saham AlphaVantage"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "Kod syarikat"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "syarikat saham"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Gagal mendapatkan entri tetapan."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "Tidak dapat maklumat stok."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "lang": "brz",
+  "name": "Portuguese (Brazil)",
+  "cultures": [
+    "pt-BR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "Adiciona um alarme para alertá-lo quando sua xícara de chá ou café estiver pronta."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "Cancela um alarme que avisa quando sua xícara de chá ou café está pronta."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "Café americano"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "Chá vermelho"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "Chá verde"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "Nenhum alerta de cafeína para abortar."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "Os segundos em que sua xícara estará pronta são inválidos."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "Se você estiver tentando fornecer um nome para a bebida, confira a lista abaixo:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "Sua xícara está pronta!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "Especifique um número de segundos ou um nome de bebida"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "lang": "fre",
+  "name": "French",
+  "cultures": [
+    "fr",
+    "fr-029",
+    "fr-BE",
+    "fr-BF",
+    "fr-BI",
+    "fr-BJ",
+    "fr-BL",
+    "fr-CA",
+    "fr-CD",
+    "fr-CF",
+    "fr-CG",
+    "fr-CH",
+    "fr-CI",
+    "fr-CM",
+    "fr-DJ",
+    "fr-DZ",
+    "fr-FR",
+    "fr-GA",
+    "fr-GF",
+    "fr-GN",
+    "fr-GP",
+    "fr-GQ",
+    "fr-HT",
+    "fr-KM",
+    "fr-LU",
+    "fr-MA",
+    "fr-MC",
+    "fr-MF",
+    "fr-MG",
+    "fr-ML",
+    "fr-MQ",
+    "fr-MR",
+    "fr-MU",
+    "fr-NC",
+    "fr-NE",
+    "fr-PF",
+    "fr-PM",
+    "fr-RE",
+    "fr-RW",
+    "fr-SC",
+    "fr-SN",
+    "fr-SY",
+    "fr-TD",
+    "fr-TG",
+    "fr-TN",
+    "fr-VU",
+    "fr-WF",
+    "fr-YT"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "Calculatrice pour calculer les expressions."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "Erreur de calcul."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "Afficher des informations sur la formule du nombre imaginaire spécifiée par un nombre réel et imaginaire spécifié"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "Le vrai numéro n'est pas valide."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "Le nombre imaginaire n'est pas valide."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "Formule:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "Rayon:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "Réel en rayon en radians :"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "Imaginaire au rayon en radians :"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "Angle en radians :"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "Exponentiel:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "Triangulaire:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "Expression mathématique"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "Nombre réel"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "Nombre imaginaire"
+    }
+  ]
+}

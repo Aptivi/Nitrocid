@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,10 +44,10 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Print a message
-            TextWriters.Write(Translate.DoTranslation("Deleting {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
+            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPHTTPSFTP_DELETING"), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
 
             // Make a confirmation message so user will not accidentally delete a file or folder
-            string answer = ChoiceStyle.PromptChoice(TextTools.FormatString(Translate.DoTranslation("Are you sure you want to delete {0}?"), parameters.ArgumentsList[0]), [("y", "Yes"), ("n", "No")]);
+            string answer = ChoiceStyle.PromptChoice(TextTools.FormatString(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPHTTPSFTP_DELETECONFIRM"), parameters.ArgumentsList[0]), [("y", "Yes"), ("n", "No")]);
             if (answer != "y")
                 return 1;
 

@@ -1,0 +1,50 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "紅茶やコーヒーの準備ができたらアラームを追加して知らせます。"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "紅茶やコーヒーの準備ができたら知らせるアラームを中止します。"
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "アメリカンコーヒー"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "レッドティー"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "緑茶"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "中止するためのカフェイン警告はありません。"
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "カップの準備ができるまでの秒数は無効です。"
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "飲み物の名前を指定したい場合は、以下のリストを確認してください。"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "これでカップの準備が完了しました。"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "秒数またはドリンク名を指定してください"
+    }
+  ]
+}

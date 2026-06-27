@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_COLORCONVERT_REDCOLOR" xml:space="preserve">
+    <value>Mức độ màu đỏ:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_GREENCOLOR" xml:space="preserve">
+    <value>Mức độ màu xanh lá cây:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_BLUECOLOR" xml:space="preserve">
+    <value>Mức độ màu xanh:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_CYANCOLOR" xml:space="preserve">
+    <value>Mức độ màu lục lam:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_MAGENTACOLOR" xml:space="preserve">
+    <value>Mức độ màu đỏ tươi:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_YELLOWCOLOR" xml:space="preserve">
+    <value>Mức độ màu vàng:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_HUE" xml:space="preserve">
+    <value>Màu sắc:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_SATURATION" xml:space="preserve">
+    <value>Độ bão hòa:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_VALUE" xml:space="preserve">
+    <value>Giá trị:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_LUMA" xml:space="preserve">
+    <value>Độ sáng:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_INPHASE" xml:space="preserve">
+    <value>Trong pha:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_QUADRATURE" xml:space="preserve">
+    <value>Phép vuông góc:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_UCHROMA" xml:space="preserve">
+    <value>U-Chroma:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_VCHROMA" xml:space="preserve">
+    <value>V-Chroma:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORTO_DESC" xml:space="preserve">
+    <value>Chuyển đổi mô hình màu nguồn sang mô hình màu đích bằng số.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORTOKS_DESC" xml:space="preserve">
+    <value>Chuyển đổi mô hình màu nguồn sang mô hình màu đích theo định dạng KS.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORTOHEX_DESC" xml:space="preserve">
+    <value>Chuyển đổi mô hình màu nguồn sang hệ thập lục phân.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORSPECTO_DESC" xml:space="preserve">
+    <value>Chuyển đổi mô hình màu nguồn bằng cách sử dụng bộ chỉ định màu sang mô hình màu đích.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORSPECTOKS_DESC" xml:space="preserve">
+    <value>Chuyển đổi mô hình màu nguồn bằng cách sử dụng bộ chỉ định màu sang mô hình màu đích theo định dạng KS.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_COLORSPECTOHEX_DESC" xml:space="preserve">
+    <value>Chuyển đổi mô hình màu nguồn bằng cách sử dụng bộ chỉ định màu sang mô hình màu đích ở dạng thập lục phân.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_INVALIDMODEL" xml:space="preserve">
+    <value>Thông số kỹ thuật của mô hình không hợp lệ.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_BLACKKEY" xml:space="preserve">
+    <value>Cấp độ phím đen:</value>
+  </data>
+  <data name="NKS_COLORCONVERT_FIRSTLEVELNUMERIC" xml:space="preserve">
+    <value>Mức màu đầu tiên phải là số.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_SECONDLEVELNUMERIC" xml:space="preserve">
+    <value>Mức màu thứ hai phải là số.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_THIRDLEVELNUMERIC" xml:space="preserve">
+    <value>Mức màu thứ ba phải là số.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_FOURTHLEVELNUMERIC" xml:space="preserve">
+    <value>Cấp độ khóa thứ tư phải là số.</value>
+  </data>
+  <data name="NKS_COLORCONVERT_LUMINANCE" xml:space="preserve">
+    <value>Độ sáng (Độ sáng):</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_SOURCEMODELNAME_DESC" xml:space="preserve">
+    <value>Mô hình màu nguồn</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_TARGETMODELNAME_DESC" xml:space="preserve">
+    <value>Mô hình màu mục tiêu</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER1_DESC" xml:space="preserve">
+    <value>Số đầu tiên</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER2_DESC" xml:space="preserve">
+    <value>Số thứ hai</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER3_DESC" xml:space="preserve">
+    <value>Số thứ ba</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_NUMBER4_DESC" xml:space="preserve">
+    <value>Số thứ tư</value>
+  </data>
+  <data name="NKS_COLORCONVERT_COMMAND_ARGUMENT_SPECIFIER_DESC" xml:space="preserve">
+    <value>Chỉ định màu sắc</value>
+  </data>
+</root>

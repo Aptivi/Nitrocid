@@ -1,0 +1,88 @@
+{
+  "lang": "arb-T",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "معلومات الترخيص"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "قاموس اللغة الإنجليزية"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "معلومات Word لـ"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "API مرخص بموجب"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "كلمة:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "معاني الكلمات ل"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "جزء من الكلام:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "تعريف:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "مثال في الجملة:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "المصادر المستخدمة لتحديد"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "المرادفات:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "التضاد:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "كلمة للتعريف"
+    }
+  ]
+}

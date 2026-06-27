@@ -1,0 +1,319 @@
+{
+  "lang": "ger",
+  "name": "German",
+  "cultures": [
+    "de",
+    "de-AT",
+    "de-BE",
+    "de-CH",
+    "de-DE",
+    "de-IT",
+    "de-LI",
+    "de-LU",
+    "nds",
+    "nds-DE",
+    "nds-NL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TIPS_KERNELTIP_1",
+      "text": "dass Sie Prozessbefehle auf zwei Arten ausführen können: durch direkte Eingabe des Namens der ausführbaren Datei und durch Verwendung des Befehls „exec“?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_2",
+      "text": "dass Sie Ihren Bildschirm mit dem Befehl „lockscreen“ sperren können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_3",
+      "text": "dass Sie Ihre eigenen Kernel-Modifikationen mit C# und Visual Basic erstellen können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_4",
+      "text": "dass Sie mehrere Befehle verwenden können, indem Sie das Semikolon zwischen den Befehlen verwenden?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_5",
+      "text": "dass Sie beim Ausführen von Befehlen doppelte Anführungszeichen innerhalb der in Anführungszeichen gesetzten Argumente umgehen können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_6",
+      "text": "dass man die Kernel-Einstellungen mit dem Befehl „settings“ ändern kann?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_7",
+      "text": "dass Sie Ihren Bildschirm mit dem Befehl „savescreen“ speichern können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_8",
+      "text": "dass Sie uns Fehler melden können, indem Sie auf die GitHub-Projektseite von Nitrocid gehen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_9",
+      "text": "dass Sie mit dem Befehl „alias“ eine Verknüpfung zu Ihrem gewünschten Befehl erstellen können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_10",
+      "text": "dass Sie mit C# und Visual Basic Ihren eigenen Begrüßungsbildschirm erstellen können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_11",
+      "text": "dass Sie zusätzliche Add-ons installieren können, um Ihren Kernel nützlicher und unterhaltsamer zu machen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_12",
+      "text": "dass Sie mit dem Befehl „mktheme“ Ihre eigenen tollen Themes erstellen können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_13",
+      "text": "dass Sie Ihre Kernelfarben ändern können, indem Sie entweder den Befehl „Einstellungen“ oder eines der vorgefertigten Designs verwenden?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_14",
+      "text": "dass Sie Ihren Kernel mit dem Argument „reset“ auf die Werkseinstellungen zurücksetzen können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_15",
+      "text": "dass Sie auf unserer GitBook-Seite auf unsere umfangreiche Dokumentation zugreifen können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_16",
+      "text": "dass Langzeitversionen fünf Jahre lang für den Hauptsupport und drei Jahre für Sicherheitsupdates unterstützt werden?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_17",
+      "text": "dass 0.0.1 die allererste Version von Nitrocid KS war, die am 22. Februar 2018 veröffentlicht wurde?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_18",
+      "text": "dass die 0.0.24.x-Serie die einzige Versionsserie war, die die API v2.1-Version enthielt?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_19",
+      "text": "dass kurzfristige Releases nur neun Monate lang unterstützt werden?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_20",
+      "text": "dass die 0.1.x-Serie abwärtsinkompatibel mit der 0.0.24.x-Serie oder älter ist?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_21",
+      "text": "dass Sie Nitrocid KS unter Linux, macOS und Android ausführen können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_22",
+      "text": "dass Sie auf die API-Dokumentation zurückgreifen können, die Ihnen bei der Erstellung Ihrer Mods hilft?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_23",
+      "text": "dass Sie mehrere der tollen Spiele wie Hangman und ShipDuet erhalten können, indem Sie die zusätzlichen Add-ons installieren?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_24",
+      "text": "dass in Meteor Ihr Raumschiff abstürzt, wenn Sie mit einem roten Meteorsturm abstürzen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_25",
+      "text": "dass Sie Ihren Kernel mithilfe der Docking-Funktion in Informationszentren umwandeln können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_26",
+      "text": "dass man Benutzergruppen erstellen kann, um Benutzerkonten zu organisieren?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_27",
+      "text": "dass Sie solche Vorgänge ausführen dürfen, wenn Sie Mitglied einer Gruppe sind, die bestimmte Berechtigungen gewährt?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_28",
+      "text": "dass Sie die Zeitzone Ihres Kernels ändern können, ohne dass dies Auswirkungen auf Ihr Hostsystem hat?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_29",
+      "text": "dass Sie den interaktiven Text- und Hex-Editor nutzen können, um Zeit zu sparen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_30",
+      "text": "dass der älteste bekannte Texteditor, der mit dem ersten Unix-System funktioniert, ed ist, der früheste 1973 veröffentlichte Texteditor, der mit dem Unix-System ausgeliefert wurde, das auf einem PDP-7 bei AT&T Bell Labs gefunden wurde?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_31",
+      "text": "dass Sie den Bearbeitungsbefehl auch dazu zwingen können, den Editor in einem bestimmten Typ zu starten?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_32",
+      "text": "dass der interaktive Texteditor versucht, die grundlegendsten Funktionen der beliebtesten Unix-Texteditoren vi und vim zu simulieren?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_33",
+      "text": "dass die Bearbeitung einer solchen Datei auf diese Weise zu Datenbeschädigung oder Datenverlust in der Zieldatei führt, es sei denn, Sie wissen, was Sie mit der Binärdatei tun?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_34",
+      "text": "dass auf Linux-Systemen die Shell mit Hilfe sowohl des Login-Handlers als auch des Systeminitialisierungsprogramms initiiert wird, das normalerweise in /sbin/init zu finden ist?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_35",
+      "text": "dass Sie allgemeine Dateivorgänge wie Kopieren, Verschieben, Löschen, Bearbeiten usw. ausführen können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_36",
+      "text": "dass die interaktive TUI eines Dateimanagers die Funktionalität von Midnight Commander simuliert?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_37",
+      "text": "dass, wenn der Kernel abstürzt, normalerweise eine Dump-Datei erstellt wird?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_38",
+      "text": "dass Sie den Kernel diagnostizieren können, indem Sie ihn mithilfe der integrierten Debug-Funktionalität debuggen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_39",
+      "text": "dass Sie Dateien direkt von der UESH-Shell herunterladen und hochladen können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_40",
+      "text": "dass der Kernel sogar in der Phase vor dem Booten übersetzt werden kann, indem man ihn mit dem Argument „lang“ startet?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_41",
+      "text": "dass du deine eigenen Bildschirmschoner erstellen kannst, indem du sie in deinem Mod registrierst?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_42",
+      "text": "dass der erste Bildschirmschoner, der den Bildschirm nach drei Minuten Inaktivität auf den ursprünglichen IBM-PCs ausschaltete, scrnsave, 1983 von John Socha erstellt wurde?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_43",
+      "text": "dass einige der schnellen Bildschirmschoner lichtempfindliche Anfälle verursachen können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_44",
+      "text": "dass Kernel-Journale als Boot- und Shutdown-Protokolle verwendet werden?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_45",
+      "text": "dass deine Mods jetzt übersetzbar werden können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_46",
+      "text": "dass Ihre Mods mit Kernel-Addons und anderen Mods kommunizieren können, wodurch eine Art Kommunikation entsteht und Interoperabilität erreicht wird?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_47",
+      "text": "dass Sie sich mit dem Remote-Debugger und optional mit dem Chat-Server verbinden können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_48",
+      "text": "dass Sie die Debug-Shell verwenden können, die nur für Entwicklungsversionen verfügbar ist?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_49",
+      "text": "dass Ihre Mods jetzt ihre eigene Konfiguration haben können, indem sie die zugehörigen Klassen registrieren?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_50",
+      "text": "dass deine Mods ihre eigenen Shells registrieren können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_51",
+      "text": "dass Ihre Mods den vorhandenen Shells Befehle hinzufügen können, um die Anzahl der verwendbaren Befehle zu erhöhen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_52",
+      "text": "dass Ihre Befehlsklassen übergebene Argumente und Schalter genau darstellen können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_53",
+      "text": "dass Sie übergebene Schalter mithilfe der Schalterverwaltungsklassen in der Kernel-API abfragen können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_54",
+      "text": "dass UESH die Scripting-Funktionalität beinhaltet, um das Erstellen und Ausführen von Scripts zu erleichtern?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_55",
+      "text": "dass die Shell eine Funktion enthält, die den Abbruch aktiver Anwendungen verhindert?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_56",
+      "text": "dass Nitrocid tief in Terminaux integriert ist, um ein schnelleres und besseres Rendering zu ermöglichen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_57",
+      "text": "dass Sie jetzt die Größe der interaktiven Anwendungen ändern können, ohne befürchten zu müssen, dass die Ausgabe beschädigt wird?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_58",
+      "text": "dass es Befehle gibt, die nach Benutzereingaben fragen, die für Skripte nützlich sind?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_59",
+      "text": "dass Sie Ihre Benutzereingabefrage auf verschiedene Weise präsentieren können, z. B. als Auswahl, Tabelle, einfach, Auswahl usw.?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_60",
+      "text": "dass Sie die Platzhalter in Ihrem Text platzieren können, der sie unterstützt?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_61",
+      "text": "dass Sie verschiedene Kernel-Treiber verwenden können, um die Funktionsweise eines bestimmten Vorgangs zu ändern?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_62",
+      "text": "dass Sie Ihre eigenen Bildschirmschoner und Splashes in C# oder Visual Basic erstellen können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_63",
+      "text": "dass Sie das Hostsystem und den Terminalemulator mithilfe der Kernel-Plattformklasse abfragen können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_64",
+      "text": "dass du um eine Einwilligung zum Datenschutz bitten kannst, bevor du etwas Sensibles in deinem Mod machst?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_65",
+      "text": "dass Sie Benachrichtigungen mit der Funktion „Bitte nicht stören“ deaktivieren können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_66",
+      "text": "dass Sie den Benachrichtigungsverlauf mithilfe einer Funktion im Benachrichtigungsmanager speichern können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_67",
+      "text": "dass man die Generierung von Zufallszahlen durch einen Treiberwechsel ändern kann?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_68",
+      "text": "dass verschiedene APIs nützliche Funktionen für deine Mods bereitstellen?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_69",
+      "text": "In diesem Abschnitt können Sie konfigurieren, wie Tipps funktionieren."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_70",
+      "text": "Kernel-Tipps anzeigen"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_71",
+      "text": "Wenn aktiviert, zeigt Ihnen die Shell die Tipps bei jedem Login an."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_72",
+      "text": "dass Sie mit Ihren Kernel-Mods bootfähige Programme erstellen können?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_73",
+      "text": "Einstellungseinträge konnten nicht abgerufen werden."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_74",
+      "text": "dass Nitrocid (Kernel Simulator 0.0.2) die integrierte Shell „UESH“-Shell genannt hat?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_75",
+      "text": "dass die Bildschirmschoner als Lösung gegen das Einbrennen von Bildern bei Kathodenstrahlröhren- (CRT) oder Plasmabildschirmen angepriesen wurden?"
+    }
+  ]
+}

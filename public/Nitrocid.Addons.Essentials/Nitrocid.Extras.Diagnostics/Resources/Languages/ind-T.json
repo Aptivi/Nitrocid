@@ -1,0 +1,26 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "सभी थ्रेड्स के लिए बैकट्रेस प्राप्त करता है"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "हमारा मानना है कि आप विंडोज़ 8 या उससे नीचे का संस्करण चला रहे हैं। यह ऑपरेशन समर्थित नहीं है."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "{0} के लिए थ्रेड स्टैक ट्रेस जानकारी"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "नाइट्रोसिड केएस धागा नहीं"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "İfadeleri hesaplamak için hesap makinesi."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "Hesaplamada hata var."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "Belirli bir gerçek ve sanal sayı ile belirtilen sanal sayı formülü hakkında bilgi göster"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "Gerçek sayı geçerli değil."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "Hayali sayı geçerli değil."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "Formül:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "Yarıçap:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "Gerçek'ten Radyan Cinsinden Yarıçapa:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "Hayali'den Radyan Cinsinden Yarıçapa:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "Radyan Cinsinden Açı:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "Üstel:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "Üçgen:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "Matematiksel ifade"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "Gerçek sayı"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "Hayali sayı"
+    }
+  ]
+}

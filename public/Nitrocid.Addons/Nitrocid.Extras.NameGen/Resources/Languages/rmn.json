@@ -1,0 +1,95 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_DESC",
+      "text": "Câte milisecunde trebuie să așteptați înainte de a face următoarea scriere?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Nu s-au putut obține intrările de setări."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC",
+      "text": "Câte milisecunde să aștepte înainte de a scrie pe noul ecran?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_DESC",
+      "text": "Cantitatea minimă de nume de generat"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_DESC",
+      "text": "Numărul maxim de nume de generat"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_DESC",
+      "text": "Cantitatea minimă de ani de vârstă de generat"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC",
+      "text": "Cantitatea maximă de ani de vârstă de generat"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
+      "text": "Simulează o căutare în baza de date pentru o persoană aleatorie."
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
+      "text": "Căutare prenume"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_TERM_DESC",
+      "text": "Termen de căutare"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "Prefix de nume de căutat"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "Sufix de nume de căutat"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_NAMETAG_DESC",
+      "text": "Generare etichete de nume (umlautele nu sunt acceptate în prezent)"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_MALE_DESC",
+      "text": "Generare nume folosind lista de nume masculine"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_FEMALE_DESC",
+      "text": "Generare nume folosind lista de nume feminine"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_UNIFIED_DESC",
+      "text": "Generare nume folosind lista unificată de nume"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
+      "text": "Căutare nume de familie"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "Prefix de nume de căutare"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "Sufix de nume de căutare"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
+      "text": "Generator de nume și familie de familie"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "Câte nume să generați?"
+    }
+  ]
+}

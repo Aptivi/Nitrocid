@@ -1,0 +1,56 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "Voegt een alarm toe om u te waarschuwen wanneer uw kopje thee of koffie klaar is."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "Breekt een alarm af dat u waarschuwt wanneer uw kopje thee of koffie klaar is."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "Amerikaanse koffie"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "Rode thee"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "Groene thee"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "Geen cafeïnewaarschuwingen om af te breken."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "De seconden waarin uw kopje klaar zal zijn, zijn ongeldig."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "Als je de naam van het drankje probeert op te geven, bekijk dan de onderstaande lijst:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "Je kopje is nu klaar!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "Geef een aantal seconden op of een dranknaam"
+    }
+  ]
+}

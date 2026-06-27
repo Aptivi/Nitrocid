@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
             }
             catch (Exception ex)
             {
-                TextWriters.Write(Translate.DoTranslation("The JSON shell failed to remove an item.") + $" {ex.Message}", KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_REMOVEITEMFAILED") + $" {ex.Message}", KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.JsonEditor);
             }
             return 0;

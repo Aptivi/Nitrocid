@@ -1,19 +1,19 @@
 [
     {
         "Name": "Stocks",
-        "Desc": "This section lets you configure the stocks.",
+        "Desc": "NKS_STOCKS_SETTINGS_DESC",
         "Keys": [
             {
-                "Name": "API key",
+                "Name": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
                 "Type": "SString",
                 "Variable": "StocksApiKey",
-                "Description": "Key for the AlphaVantage Stocks API"
+                "Description": "NKS_STOCKS_SETTINGS_APIKEY_DESC"
             },
             {
-                "Name": "Company code",
+                "Name": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
                 "Type": "SString",
                 "Variable": "StocksCompany",
-                "Description": "Stocks company"
+                "Description": "NKS_STOCKS_SETTINGS_COMPANY_DESC"
             }
         ]
     }

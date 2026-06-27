@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -93,7 +93,7 @@ namespace Nitrocid.Drivers.Network
             // Initialize the progress bar indicator and the file completed event handler
             if (Config.MainConfig.DownloadNotificationProvoke)
             {
-                NetworkTransfer.DownloadNotif = new Notification(Translate.DoTranslation("Downloading..."), FileUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
+                NetworkTransfer.DownloadNotif = new Notification(LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_DOWNLOADING"), FileUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
                 NotificationManager.NotifySend(NetworkTransfer.DownloadNotif);
             }
             if (ShowProgress)
@@ -162,7 +162,7 @@ namespace Nitrocid.Drivers.Network
                     NetworkTransfer.DownloadNotif.ProgressState = NotificationProgressState.Failure;
                 NetworkTransfer.CancellationToken.Cancel();
                 throw NetworkTransfer.ReasonError ??
-                    new KernelException(KernelExceptionType.Network, Translate.DoTranslation("General network transfer failure"));
+                    new KernelException(KernelExceptionType.Network, LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_EXCEPTION_TRANSFERFAILURE"));
             }
             else
             {
@@ -193,7 +193,7 @@ namespace Nitrocid.Drivers.Network
             // Initialize the progress bar indicator and the file completed event handler
             if (Config.MainConfig.DownloadNotificationProvoke)
             {
-                NetworkTransfer.DownloadNotif = new Notification(Translate.DoTranslation("Downloading..."), StringUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
+                NetworkTransfer.DownloadNotif = new Notification(LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_DOWNLOADING"), StringUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
                 NotificationManager.NotifySend(NetworkTransfer.DownloadNotif);
             }
             if (ShowProgress)
@@ -262,7 +262,7 @@ namespace Nitrocid.Drivers.Network
                     NetworkTransfer.DownloadNotif.ProgressState = NotificationProgressState.Failure;
                 NetworkTransfer.CancellationToken.Cancel();
                 throw NetworkTransfer.ReasonError ??
-                    new KernelException(KernelExceptionType.Network, Translate.DoTranslation("General network transfer failure"));
+                    new KernelException(KernelExceptionType.Network, LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_EXCEPTION_TRANSFERFAILURE"));
             }
             else
             {
@@ -293,7 +293,7 @@ namespace Nitrocid.Drivers.Network
             // Initialize the progress bar indicator and the file completed event handler
             if (Config.MainConfig.UploadNotificationProvoke && NetworkTransfer.DownloadNotif is not null)
             {
-                NetworkTransfer.UploadNotif = new Notification(Translate.DoTranslation("Uploading..."), FileUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
+                NetworkTransfer.UploadNotif = new Notification(LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_UPLOADING"), FileUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
                 NotificationManager.NotifySend(NetworkTransfer.DownloadNotif);
             }
             if (ShowProgress)
@@ -336,7 +336,7 @@ namespace Nitrocid.Drivers.Network
                     NetworkTransfer.UploadNotif.ProgressState = NotificationProgressState.Failure;
                 NetworkTransfer.CancellationToken.Cancel();
                 throw NetworkTransfer.ReasonError ??
-                    new KernelException(KernelExceptionType.Network, Translate.DoTranslation("General network transfer failure"));
+                    new KernelException(KernelExceptionType.Network, LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_EXCEPTION_TRANSFERFAILURE"));
             }
             else
             {
@@ -367,7 +367,7 @@ namespace Nitrocid.Drivers.Network
             // Initialize the progress bar indicator and the file completed event handler
             if (Config.MainConfig.UploadNotificationProvoke)
             {
-                NetworkTransfer.UploadNotif = new Notification(Translate.DoTranslation("Uploading..."), StringUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
+                NetworkTransfer.UploadNotif = new Notification(LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_UPLOADING"), StringUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
                 NotificationManager.NotifySend(NetworkTransfer.UploadNotif);
             }
             if (ShowProgress)
@@ -404,7 +404,7 @@ namespace Nitrocid.Drivers.Network
                     NetworkTransfer.UploadNotif.ProgressState = NotificationProgressState.Failure;
                 NetworkTransfer.CancellationToken.Cancel();
                 throw NetworkTransfer.ReasonError ??
-                    new KernelException(KernelExceptionType.Network, Translate.DoTranslation("General network transfer failure"));
+                    new KernelException(KernelExceptionType.Network, LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_EXCEPTION_TRANSFERFAILURE"));
             }
             else
             {

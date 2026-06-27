@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -68,7 +68,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             var Operations = new string[] { "+", "-", "*", "/" };
 
             // Show tip to exit
-            TextWriterColor.Write(Translate.DoTranslation("Press \"q\" to exit."));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SOLVER_PRESSTOEXIT"));
             DebugWriter.WriteDebug(DebugLevel.I, "Initialized expressions.");
             while (true)
             {
@@ -94,12 +94,12 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     if (UserEvaluatedNumber == EvaluatedNumber)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Expression is {0} and equals {1}", vars: [UserEvaluated, EvaluatedNumber]);
-                        TextWriterColor.Write(Translate.DoTranslation("Solved perfectly!"));
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SOLVER_CORRECT"));
                     }
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Expression is {0} and equals {1}", vars: [UserEvaluated, EvaluatedNumber]);
-                        TextWriterColor.Write(Translate.DoTranslation("Solved incorrectly."));
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SOLVER_INCORRECT"));
                     }
                 }
                 else if (UserEvaluated == "q")
@@ -110,7 +110,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "User evaluated \"{0}\". However, it's not numeric.", vars: [UserEvaluated]);
-                    TextWriters.Write(Translate.DoTranslation("You can only write the numbers."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SOLVER_NEEDSNUM"), true, KernelColorType.Error);
                 }
             }
         }

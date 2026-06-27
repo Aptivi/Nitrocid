@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Terminaux.Shell.Shells;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.TimeInfo
 {
@@ -32,17 +33,17 @@ namespace Nitrocid.Extras.TimeInfo
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("gettimeinfo", /* Localizable */ "Gets the date and time information",
+            new CommandInfo("gettimeinfo", LanguageTools.GetLocalized("NKS_DATES_COMMAND_GETTIMEINFO_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "date", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Date and time to print info from"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC")
                         })
                     ],
                     [
-                        new SwitchInfo("now", /* Localizable */ "Gets the current date and time information", new SwitchOptions()
+                        new SwitchInfo("now", LanguageTools.GetLocalized("NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC"), new SwitchOptions()
                         {
                             OptionalizeLastRequiredArguments = 1,
                             AcceptsValues = false
@@ -50,21 +51,21 @@ namespace Nitrocid.Extras.TimeInfo
                     ])
                 ], new GetTimeInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("expiry", /* Localizable */ "Gets the product expiry information",
+            new CommandInfo("expiry", LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "production", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Production date (look at either the side or the bottom of the product)"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC")
                         }),
                         new CommandArgumentPart(true, "expiry", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Expiry date or time period (either explicitly written in the same spot or time spans, such as 6 months or 1 year)"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC")
                         })
                     ],
                     [
-                        new SwitchInfo("implicit", /* Localizable */ "Whether the target product doesn't specify the expiry date explicitly", new SwitchOptions()
+                        new SwitchInfo("implicit", LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC"), new SwitchOptions()
                         {
                             AcceptsValues = false
                         })
@@ -72,16 +73,25 @@ namespace Nitrocid.Extras.TimeInfo
                 ], new ExpiryCommand()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTimeInfo);
 
-        void IAddon.StartAddon() =>
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasTimeInfo);
+
+        public void StartAddon()
+        {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.TimeInfo.Resources.Languages.Output.Localizations", typeof(TimeInfoInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        public void StopAddon()
+        {
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+        }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
     }
 }

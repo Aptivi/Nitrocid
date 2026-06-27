@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -90,7 +90,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
                     foreach (var key in keys)
                     {
                         // Parse this key
-                        string keyName = key.Name.Original;
+                        string keyName = key.Name;
                         string keyVar = key.Variable;
                         var keyToken = sectionToken[keyName];
 
@@ -177,7 +177,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
                         foreach (var key in keys)
                         {
                             // Parse this key
-                            string keyName = key.Name.Original;
+                            string keyName = key.Name;
                             string keyVar = key.Variable;
                             var keyToken = sectionToken[keyName];
                             if (keyToken is JValue keyValue)
@@ -230,7 +230,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
                 return true;
             }
             var aliases = JsonConvert.DeserializeObject<AliasInfo[]>(contents) ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to get alias information"));
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_MIGRATION_EXCEPTION_ALIASINFO"));
             DebugWriter.WriteDebug(DebugLevel.I, "Got old alias token.");
 
             // Handle any possible errors here.

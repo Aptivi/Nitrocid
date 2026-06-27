@@ -1,0 +1,50 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "Ugyldig handling."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "Oppgavenavn"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "Å gjøre oppgavebehandling"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "Kunne ikke legge til eller fjerne en oppgave."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "Vennligst oppgi et navn på oppgaven din."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "Kunne ikke merke en oppgave."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "Kan ikke få en liste over oppgaver"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "Om du vil legge til, fjerne, merke som ferdig eller fjerne merking som ferdig på en oppgave"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "Om du vil liste opp, lagre eller laste inn alle oppgaver"
+    }
+  ]
+}

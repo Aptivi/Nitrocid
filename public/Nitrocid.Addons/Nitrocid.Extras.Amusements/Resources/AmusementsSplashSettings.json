@@ -1,17 +1,17 @@
 [
     {
         "Name": "Quote",
-        "Desc": "Shows you nice famous quotes.",
+        "Desc": "NKS_AMUSEMENTS_SETTINGS_QUOTE_DESC",
         "Keys": [
             {
-                "Name": "Progress text location",
+                "Name": "NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_NAME",
                 "Type": "SSelection",
                 "Variable": "QuoteProgressTextLocation",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
                 "Enumeration": "Misc.Text.TextLocation",
                 "EnumerationZeroBased": true,
-                "Description": "Select your preferred progress text location."
+                "Description": "NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_DESC"
             }
         ]
     }

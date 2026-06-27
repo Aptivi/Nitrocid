@@ -1,0 +1,32 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "Geeft een voorbeeld van een afbeelding weer"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "Er is geen pad naar de afbeelding opgegeven."
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "Afbeeldingsbestand bestaat niet."
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "Pad naar afbeeldingsbestand"
+    }
+  ]
+}

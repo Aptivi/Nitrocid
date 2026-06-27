@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -51,13 +51,13 @@ namespace Nitrocid.Extras.GitShell.Git
                 RepoPath = Convert.ToString(ShellArgs[0]) ?? "";
                 if (string.IsNullOrEmpty(RepoPath))
                 {
-                    TextWriters.Write(Translate.DoTranslation("Repository not specified. Exiting shell..."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSREPO"), true, KernelColorType.Error);
                     Bail = true;
                 }
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Repository not specified. Exiting shell..."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSREPO"), true, KernelColorType.Error);
                 Bail = true;
             }
 
@@ -67,7 +67,7 @@ namespace Nitrocid.Extras.GitShell.Git
                 DebugWriter.WriteDebug(DebugLevel.W, "Repo not open yet. Trying to open {0}...", vars: [RepoPath]);
                 if (!GitShellCommon.OpenRepository(RepoPath))
                 {
-                    TextWriters.Write(Translate.DoTranslation("Failed to open repository. Exiting shell..."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_REPOFAILED"), true, KernelColorType.Error);
                     Bail = true;
                 }
             }
@@ -87,7 +87,7 @@ namespace Nitrocid.Extras.GitShell.Git
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + " {0}", true, KernelColorType.Error, ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR") + " {0}", true, KernelColorType.Error, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     InputTools.DetectKeypress();

@@ -28,7 +28,7 @@
                         "Variable": {
                             "type": "string"
                         },
-                        "Description": {
+                        "NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC": {
                             "type": "string"
                         },
                         "Masked": {

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -81,16 +81,16 @@ namespace Nitrocid.Extras.Forecast.Forecast
             T Adjust<T>(string dayPartData)
             {
                 var dayPartArray = WeatherInfo.WeatherToken["daypart"]?[0]?[dayPartData] ??
-                    throw new Exception(Translate.DoTranslation("Can't get day part array"));
+                    throw new Exception(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_EXCEPTION_NODAYPARTARRAY"));
                 var adjusted = dayPartArray[0] ?? dayPartArray[1] ??
-                    throw new Exception(Translate.DoTranslation("Can't get day part"));
+                    throw new Exception(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_EXCEPTION_NODAYPART"));
                 return adjusted.GetValue<T>();
             }
 
             string WeatherSpecifier = "°";
             string WindSpeedSpecifier = "m.s";
-            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("-- Weather info --"), KernelColorTools.GetColor(KernelColorType.ListTitle));
-            TextWriterColor.Write(Translate.DoTranslation("Weather: {0}"), WeatherInfo.Weather);
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_HEADER"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_INFO_WEATHER"), WeatherInfo.Weather);
             if (WeatherInfo.TemperatureMeasurement == UnitMeasurement.Metric)
                 WeatherSpecifier += "C";
             else
@@ -98,11 +98,11 @@ namespace Nitrocid.Extras.Forecast.Forecast
                 WeatherSpecifier += "F";
                 WindSpeedSpecifier = "mph";
             }
-            TextWriterColor.Write(Translate.DoTranslation("Temperature: {0}") + WeatherSpecifier, WeatherInfo.Temperature.ToString("N2"));
-            TextWriterColor.Write(Translate.DoTranslation("Wind speed: {0}") + " {1}", WeatherInfo.WindSpeed.ToString("N2"), WindSpeedSpecifier);
-            TextWriterColor.Write(Translate.DoTranslation("Wind direction: {0}") + "°", WeatherInfo.WindDirection.ToString("N2"));
-            TextWriterColor.Write(Translate.DoTranslation("Humidity: {0}") + "%", WeatherInfo.Humidity.ToString("N2"));
-            TextWriterColor.Write(Translate.DoTranslation("Latitude and Longitude") + ": {0}, {1}", latitude, longitude);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_INFO_TEMPERATURE") + WeatherSpecifier, WeatherInfo.Temperature.ToString("N2"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_INFO_WINDSPEED") + " {1}", WeatherInfo.WindSpeed.ToString("N2"), WindSpeedSpecifier);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_INFO_WINDDIRECTION") + "°", WeatherInfo.WindDirection.ToString("N2"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_INFO_HUMIDITY") + "%", WeatherInfo.Humidity.ToString("N2"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_LATLON") + ": {0}, {1}", latitude, longitude);
 
             // More info
             int cloudCover = Adjust<int>("cloudCover");
@@ -117,16 +117,16 @@ namespace Nitrocid.Extras.Forecast.Forecast
             string windNarrative = Adjust<string>("windPhrase");
             int min = (int?)WeatherInfo.WeatherToken?["calendarDayTemperatureMin"]?[0] ?? 0;
             int max = (int?)WeatherInfo.WeatherToken?["calendarDayTemperatureMax"]?[0] ?? 0;
-            TextWriterColor.Write(Translate.DoTranslation("Cloud cover") + ": {0}%", cloudCover);
-            TextWriterColor.Write(Translate.DoTranslation("Time of day") + ": {0}", dayIndicator);
-            TextWriterColor.Write(Translate.DoTranslation("Minimum temperature") + ": {0}{1}", min, WeatherSpecifier);
-            TextWriterColor.Write(Translate.DoTranslation("Maximum temperature") + ": {0}{1}", max, WeatherSpecifier);
-            TextWriterColor.Write(Translate.DoTranslation("Precipitation chance") + ": {0}%", precipitation);
-            TextWriterColor.Write(Translate.DoTranslation("Precipitation type") + ": {0}", precipitationType);
-            TextWriterColor.Write(Translate.DoTranslation("Heat index") + ": {0}{1}", heatIdx, WeatherSpecifier);
-            TextWriterColor.Write(Translate.DoTranslation("Wind chill") + ": {0}{1}", windIdx, WeatherSpecifier);
-            TextWriterColor.Write(Translate.DoTranslation("Ultraviolet index") + " [0-10]: {0}", uvIdx);
-            TextWriterColor.Write(Translate.DoTranslation("Ultraviolet description") + ": {0}", uvDesc);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_CLOUDCOVER") + ": {0}%", cloudCover);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_TIMEOFDAY") + ": {0}", dayIndicator);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_MINTEMP") + ": {0}{1}", min, WeatherSpecifier);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_MAXTEMP") + ": {0}{1}", max, WeatherSpecifier);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_PCPCHANGE") + ": {0}%", precipitation);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_PCPTYPE") + ": {0}", precipitationType);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_HEATIDX") + ": {0}{1}", heatIdx, WeatherSpecifier);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_WINDCHILL") + ": {0}{1}", windIdx, WeatherSpecifier);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_UVINDEX") + " [0-10]: {0}", uvIdx);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_UVDESC") + ": {0}", uvDesc);
             TextWriterColor.Write("\n======================\n");
             TextWriterColor.Write($"{narrative} - {windNarrative}");
         }
@@ -191,8 +191,8 @@ namespace Nitrocid.Extras.Forecast.Forecast
             double feelsLike = (double?)WeatherInfo.WeatherToken?["main"]?["feels_like"] ?? 0d;
             double pressure = (double?)WeatherInfo.WeatherToken?["main"]?["pressure"] ?? 0d;
             DebugWriter.WriteDebug(DebugLevel.I, "City name: {0}, City ID: {1}", vars: [name, CityID]);
-            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("-- Weather info for {0} --"), KernelColorTools.GetColor(KernelColorType.ListTitle), true, name);
-            TextWriterColor.Write(Translate.DoTranslation("Weather: {0}"), WeatherInfo.Weather);
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_INFO_HEADER"), KernelColorTools.GetColor(KernelColorType.ListTitle), true, name);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_INFO_WEATHER"), WeatherInfo.Weather);
             if (WeatherInfo.TemperatureMeasurement == UnitMeasurement.Metric)
                 WeatherSpecifier += "C";
             else if (WeatherInfo.TemperatureMeasurement == UnitMeasurement.Kelvin)
@@ -202,12 +202,12 @@ namespace Nitrocid.Extras.Forecast.Forecast
                 WeatherSpecifier += "F";
                 WindSpeedSpecifier = "mph";
             }
-            TextWriterColor.Write(Translate.DoTranslation("Temperature: {0}") + WeatherSpecifier, WeatherInfo.Temperature.ToString("N2"));
-            TextWriterColor.Write(Translate.DoTranslation("Feels like: {0}") + WeatherSpecifier, feelsLike.ToString("N2"));
-            TextWriterColor.Write(Translate.DoTranslation("Wind speed: {0}") + " {1}", WeatherInfo.WindSpeed.ToString("N2"), WindSpeedSpecifier);
-            TextWriterColor.Write(Translate.DoTranslation("Wind direction: {0}") + "°", WeatherInfo.WindDirection.ToString("N2"));
-            TextWriterColor.Write(Translate.DoTranslation("Pressure: {0}") + " hPa", pressure.ToString("N2"));
-            TextWriterColor.Write(Translate.DoTranslation("Humidity: {0}") + "%", WeatherInfo.Humidity.ToString("N2"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_INFO_TEMPERATURE") + WeatherSpecifier, WeatherInfo.Temperature.ToString("N2"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_INFO_FEELSLIKE") + WeatherSpecifier, feelsLike.ToString("N2"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_INFO_WINDSPEED") + " {1}", WeatherInfo.WindSpeed.ToString("N2"), WindSpeedSpecifier);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_INFO_WINDDIRECTION") + "°", WeatherInfo.WindDirection.ToString("N2"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_INFO_PRESSURE") + " hPa", pressure.ToString("N2"));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_INFO_HUMIDITY") + "%", WeatherInfo.Humidity.ToString("N2"));
         }
         #endregion
     }

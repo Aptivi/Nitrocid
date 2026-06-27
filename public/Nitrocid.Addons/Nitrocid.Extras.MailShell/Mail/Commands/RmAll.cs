@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -39,12 +39,12 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
         {
             if (MailManager.MailRemoveAllBySender(parameters.ArgumentsList[0]))
             {
-                TextWriters.Write(Translate.DoTranslation("All mail made by {0} are removed successfully."), true, KernelColorType.Success, parameters.ArgumentsList[0]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_RMALL_SUCCESS"), true, KernelColorType.Success, parameters.ArgumentsList[0]);
                 return 0;
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Failed to remove all mail made by {0}."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_RMALL_FAILURE"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Mail);
             }
         }

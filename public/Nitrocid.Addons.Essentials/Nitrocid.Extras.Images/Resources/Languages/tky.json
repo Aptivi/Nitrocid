@@ -1,0 +1,27 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "Bir resmin önizlemesini yapar"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "Görüntüye giden yol sağlanmadı."
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "Resim dosyası bulunamadı."
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "Resim dosyasına giden yol"
+    }
+  ]
+}

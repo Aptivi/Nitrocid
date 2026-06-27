@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Terminaux.Shell.Shells;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Calculators
 {
@@ -31,45 +32,54 @@ namespace Nitrocid.Extras.Calculators
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("calc", /* Localizable */ "Calculator to calculate expressions.",
+            new CommandInfo("calc", LanguageTools.GetLocalized("NKS_CALCULATORS_COMMAND_CALC_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "expression", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Mathematical expression"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_CALCULATORS_EXPRESSION")
                         }),
                     ], true)
                 ], new CalcCommand()),
 
-            new CommandInfo("imaginary", /* Localizable */ "Show information about the imaginary number formula specified by a specified real and imaginary number",
+            new CommandInfo("imaginary", LanguageTools.GetLocalized("NKS_CALCULATORS_COMMAND_IMAGINARY_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "real", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Real number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_CALCULATORS_REAL")
                         }),
                         new CommandArgumentPart(true, "imaginary", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "Imaginary number"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_CALCULATORS_IMAG")
                         }),
                     ])
                 ], new ImaginaryCommand()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCalculators);
 
-        void IAddon.StartAddon() =>
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasCalculators);
+
+        public void StartAddon()
+        {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Calculators.Resources.Languages.Output.Localizations", typeof(CalculatorsInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        public void StopAddon()
+        {
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+        }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
     }
 }

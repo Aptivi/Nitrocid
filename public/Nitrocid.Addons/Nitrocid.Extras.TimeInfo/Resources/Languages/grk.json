@@ -1,0 +1,147 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_DESC",
+      "text": "Λαμβάνει πληροφορίες ημερομηνίας και ώρας"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
+      "text": "Αποτυχία ανάλυσης πληροφοριών ημερομηνίας για"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2",
+      "text": "Βεβαιωθείτε ότι η μορφή είναι σωστή."
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC",
+      "text": "Λαμβάνει τις τρέχουσες πληροφορίες ημερομηνίας και ώρας"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HEADER",
+      "text": "Πληροφορίες για"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC",
+      "text": "Ημερομηνία και ώρα εκτύπωσης πληροφοριών από"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATEINVALID",
+      "text": "Η ημερομηνία παραγωγής δεν είναι έγκυρη"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIMEINVALID",
+      "text": "Η χρονική περίοδος λήξης δεν είναι έγκυρη"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATEINVALID",
+      "text": "Η ημερομηνία λήξης δεν είναι έγκυρη"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODDATE",
+      "text": "Ημερομηνία παραγωγής"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPDATE",
+      "text": "Ημερομηνία λήξης"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_EXPTIME",
+      "text": "Χρονικό διάστημα λήξης"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODHEALTH",
+      "text": "Υγεία προϊόντος"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_PRODSTATUS",
+      "text": "Κατάσταση προϊόντος"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_NOEXPIRYINFO",
+      "text": "Αποτυχία λήψης πληροφοριών λήξης του προϊόντος"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_DESC",
+      "text": "Λαμβάνει τις πληροφορίες λήξης του προϊόντος"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC",
+      "text": "Ημερομηνία παραγωγής (κοιτάξτε είτε στο πλάι είτε στο κάτω μέρος του προϊόντος)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC",
+      "text": "Ημερομηνία ή χρονική περίοδος λήξης (είτε γράφεται ρητά στο ίδιο σημείο είτε χρονικά διαστήματα, όπως 6 μήνες ή 1 έτος)"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC",
+      "text": "Εάν το προϊόν-στόχος δεν προσδιορίζει ρητά την ημερομηνία λήξης"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MILLISECONDS",
+      "text": "Χιλιοστά του δευτερολέπτου:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_SECONDS",
+      "text": "Δευτερόλεπτα:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MINUTES",
+      "text": "Λεπτά:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_HOURS",
+      "text": "Ώρες:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DAYS",
+      "text": "Ημέρες:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_MONTHS",
+      "text": "Μήνες:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_YEAR",
+      "text": "Έτος:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DATE",
+      "text": "Ημερομηνία:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_TIME",
+      "text": "Ώρα:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DOY",
+      "text": "Ημέρα του έτους:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_DOW",
+      "text": "Ημέρα της εβδομάδας:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_BINARY",
+      "text": "Δυαδικό:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
+      "text": "Τοπική ώρα:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
+      "text": "Παγκόσμια ώρα:"
+    },
+    {
+      "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
+      "text": "Ώρα Unix:"
+    }
+  ]
+}

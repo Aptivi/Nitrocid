@@ -1,0 +1,25 @@
+{
+  "lang": "enk",
+  "name": "English (UK)",
+  "cultures": [
+    "en-GB"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "Gets backtrace for all threads"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "We believe that you're running Windows 8 or lower. This operation is not supported."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "Thread stack trace information for {0}"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "Not a Nitrocid KS thread"
+    }
+  ]
+}

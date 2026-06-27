@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -24,12 +24,12 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class TestTranslate : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Tests translating a string that exists in resources to specific language");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TRANSLATE_DESC");
         public override TestSection TestSection => TestSection.Languages;
         public override void Run()
         {
-            string lang = "spa";
-            string str = Translate.DoTranslation("Welcome to Kernel!", lang);
+            var spanish = LanguageManager.ListLanguages("es")["es"];
+            string str = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME", spanish);
             TextWriterColor.Write(str);
         }
     }

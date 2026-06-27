@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -48,45 +48,45 @@ namespace Nitrocid.Extras.TimeInfo.Commands
             DateTime DateTimeInfo = TimeDateTools.KernelDateTime;
             if (getNow || DateTime.TryParse(parameters.ArgumentsList[0], out DateTimeInfo))
             {
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Information for") + " {0}", true, TimeDateRenderers.Render(DateTimeInfo));
-                TextWriters.Write(Translate.DoTranslation("Milliseconds:") + " ", false, KernelColorType.ListEntry);
+                SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_HEADER") + " {0}", true, TimeDateRenderers.Render(DateTimeInfo));
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_MILLISECONDS") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Millisecond);
-                TextWriters.Write(Translate.DoTranslation("Seconds:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_SECONDS") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Second);
-                TextWriters.Write(Translate.DoTranslation("Minutes:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_MINUTES") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Minute);
-                TextWriters.Write(Translate.DoTranslation("Hours:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_HOURS") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Hour);
-                TextWriters.Write(Translate.DoTranslation("Days:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DAYS") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Day);
-                TextWriters.Write(Translate.DoTranslation("Months:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_MONTHS") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Month);
-                TextWriters.Write(Translate.DoTranslation("Year:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_YEAR") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Year);
                 TextWriterRaw.Write();
 
                 // Whole date and time
-                TextWriters.Write(Translate.DoTranslation("Date:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATE") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write("{0}", KernelColorType.ListValue, TimeDateRenderers.RenderDate(DateTimeInfo));
-                TextWriters.Write(Translate.DoTranslation("Time:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_TIME") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write("{0}", KernelColorType.ListValue, TimeDateRenderers.RenderTime(DateTimeInfo));
                 TextWriterRaw.Write();
 
                 // Some more info
-                TextWriters.Write(Translate.DoTranslation("Day of Year:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DOY") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.DayOfYear);
-                TextWriters.Write(Translate.DoTranslation("Day of Week:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DOW") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.DayOfWeek.ToString());
                 TextWriterRaw.Write();
 
                 // Conversions
-                TextWriters.Write(Translate.DoTranslation("Binary:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_BINARY") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.ToBinary());
-                TextWriters.Write(Translate.DoTranslation("Local Time:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_LOCALTIME") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write("{0}", KernelColorType.ListValue, TimeDateRenderers.Render(DateTimeInfo.ToLocalTime()));
-                TextWriters.Write(Translate.DoTranslation("Universal Time:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_UNIVERSALTIME") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write("{0}", KernelColorType.ListValue, TimeDateRenderers.Render(DateTimeInfo.ToUniversalTime()));
-                TextWriters.Write(Translate.DoTranslation("Unix Time:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_UNIXTIME") + " ", false, KernelColorType.ListEntry);
                 TextWriters.Write("{0}", KernelColorType.ListValue, TimeDateConverters.DateToUnix(DateTimeInfo));
                 TextWriterRaw.Write();
 
@@ -101,7 +101,7 @@ namespace Nitrocid.Extras.TimeInfo.Commands
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Failed to parse date information for") + " {0}. " + Translate.DoTranslation("Ensure that the format is correct."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1") + " {0}. " + LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.TimeDate);
             }
         }

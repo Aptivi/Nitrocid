@@ -1,0 +1,97 @@
+{
+  "lang": "ita",
+  "name": "Italian",
+  "cultures": [
+    "it",
+    "it-CH",
+    "it-IT",
+    "it-SM",
+    "it-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "Ottiene informazioni orarie sulle scorte"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "Simbolo aziendale breve"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "Inserisci la tua chiave API AlphaVantage"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "Fornisci la tua chiave API."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "Non è possibile utilizzare la chiave API dimostrativa."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "La tua chiave API dovrebbe essere lunga 16 caratteri."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "Si è verificato un errore durante il recupero dei dati sulle azioni. Ulteriori informazioni possono essere trovate qui"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "Prezzo di apertura delle azioni"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "Prezzo delle azioni elevato"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "Prezzo delle azioni basso"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "Prezzo di chiusura delle azioni"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "Volume delle scorte"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "È richiesta la chiave API. Configura dalle impostazioni."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "Nessun dato di borsa disponibile."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "Questa sezione consente di configurare le azioni."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "Chiave API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "Chiave per l'API AlphaVantage Stocks"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "Codice aziendale"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "Società per azioni"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Impossibile ottenere le voci delle impostazioni."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "Impossibile ottenere informazioni sulle azioni."
+    }
+  ]
+}

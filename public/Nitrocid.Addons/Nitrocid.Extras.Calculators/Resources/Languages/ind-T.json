@@ -1,0 +1,70 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "भावों की गणना करने के लिए कैलकुलेटर।"
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "गणना में त्रुटि।"
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "निर्दिष्ट वास्तविक और काल्पनिक संख्या द्वारा निर्दिष्ट काल्पनिक संख्या सूत्र के बारे में जानकारी दिखाएं"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "वास्तविक संख्या मान्य नहीं है."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "काल्पनिक संख्या मान्य नहीं है."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "सूत्र:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "त्रिज्या:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "रेडियंस में वास्तविक से त्रिज्या:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "रेडियन में त्रिज्या से काल्पनिक:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "रेडियंस में कोण:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "घातीय:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "त्रिकोणीय:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "गणितीय अभिव्यक्ति"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "वास्तविक संख्या"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "काल्पनिक संख्या"
+    }
+  ]
+}

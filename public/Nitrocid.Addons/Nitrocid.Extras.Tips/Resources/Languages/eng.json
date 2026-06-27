@@ -1,0 +1,416 @@
+{
+  "lang": "eng",
+  "name": "English",
+  "cultures": [
+    "en",
+    "en-001",
+    "en-029",
+    "en-150",
+    "en-AE",
+    "en-AG",
+    "en-AI",
+    "en-AS",
+    "en-AT",
+    "en-AU",
+    "en-BB",
+    "en-BE",
+    "en-BI",
+    "en-BM",
+    "en-BS",
+    "en-BW",
+    "en-BZ",
+    "en-CA",
+    "en-CC",
+    "en-CH",
+    "en-CK",
+    "en-CM",
+    "en-CX",
+    "en-CY",
+    "en-DE",
+    "en-DK",
+    "en-DM",
+    "en-ER",
+    "en-FI",
+    "en-FJ",
+    "en-FK",
+    "en-FM",
+    "en-GD",
+    "en-GG",
+    "en-GH",
+    "en-GI",
+    "en-GM",
+    "en-GU",
+    "en-GY",
+    "en-HK",
+    "en-ID",
+    "en-IE",
+    "en-IL",
+    "en-IM",
+    "en-IN",
+    "en-IO",
+    "en-JE",
+    "en-JM",
+    "en-KE",
+    "en-KI",
+    "en-KN",
+    "en-KY",
+    "en-LC",
+    "en-LR",
+    "en-LS",
+    "en-MG",
+    "en-MH",
+    "en-MO",
+    "en-MP",
+    "en-MS",
+    "en-MT",
+    "en-MU",
+    "en-MV",
+    "en-MW",
+    "en-MY",
+    "en-NA",
+    "en-NF",
+    "en-NG",
+    "en-NL",
+    "en-NR",
+    "en-NU",
+    "en-NZ",
+    "en-PG",
+    "en-PH",
+    "en-PK",
+    "en-PN",
+    "en-PR",
+    "en-PW",
+    "en-RW",
+    "en-SB",
+    "en-SC",
+    "en-SD",
+    "en-SE",
+    "en-SG",
+    "en-SH",
+    "en-SI",
+    "en-SL",
+    "en-SS",
+    "en-SX",
+    "en-SZ",
+    "en-TC",
+    "en-TK",
+    "en-TO",
+    "en-TT",
+    "en-TV",
+    "en-TZ",
+    "en-UG",
+    "en-UM",
+    "en-US",
+    "en-US-POSIX",
+    "en-VC",
+    "en-VG",
+    "en-VI",
+    "en-VU",
+    "en-WS",
+    "en-ZA",
+    "en-ZM",
+    "en-ZW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TIPS_KERNELTIP_1",
+      "text": "that you can execute process commands in two ways: entering the executable file name directly, and using the 'exec' command?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_2",
+      "text": "that you can lock your screen using the 'lockscreen' command?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_3",
+      "text": "that you can build your own kernel modifications using C# and Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_4",
+      "text": "that you can use multiple commands using the semicolon between commands?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_5",
+      "text": "that you can escape double quotes inside the quoted arguments when executing commands?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_6",
+      "text": "that you can change the kernel settings using the 'settings' command?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_7",
+      "text": "that you can save your screen using the 'savescreen' command?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_8",
+      "text": "that you can report bugs to us by going to Nitrocid's GitHub project page?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_9",
+      "text": "that you can make a shortcut to your desired command using the 'alias' command?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_10",
+      "text": "that you can build your own splash screen using C# and Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_11",
+      "text": "that you can install extra addons to make your kernel more useful and amusing?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_12",
+      "text": "that you can make your own awesome themes using the 'mktheme' command?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_13",
+      "text": "that you can change your kernel colors by either using the 'settings' command or by using one of the pre-built themes?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_14",
+      "text": "that you can reset your kernel to the factory defaults using the 'reset' argument?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_15",
+      "text": "that you can access our extensive documentation at our GitBook page?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_16",
+      "text": "that long term releases are supported for five years for main support, and three years for security updates?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_17",
+      "text": "that 0.0.1 was the very first version of Nitrocid KS that was released on February 22, 2018?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_18",
+      "text": "that the 0.0.24.x series was the only version series that held the API v2.1 version?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_19",
+      "text": "that short term releases are supported for just nine months?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_20",
+      "text": "that 0.1.x series is backwards-incompatible with 0.0.24.x series or older?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_21",
+      "text": "that you can run Nitrocid KS on Linux, macOS, and Android?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_22",
+      "text": "that you can refer to the API documentation to help you make your mods?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_23",
+      "text": "that you can get several of the awesome games, like Hangman and ShipDuet, by installing the extra addons?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_24",
+      "text": "that, in Meteor, if you crash with a red meteor storm, your spaceship crashes?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_25",
+      "text": "that you can convert your kernel to information centers using the docking feature?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_26",
+      "text": "that you can make user groups to organize user accounts?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_27",
+      "text": "that if you're a member of a group that grants certain permissions, you're allowed to perform such operations?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_28",
+      "text": "that you can change your kernel time zone without affecting your host system?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_29",
+      "text": "that you can use the interactive text and hex editor to save time?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_30",
+      "text": "that the oldest text editor known to be working with the first Unix system is ed, the earliest text editor released on 1973 shipped with the Unix system found on a PDP-7 at AT&T Bell Labs?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_31",
+      "text": "that you can also force edit command to launch the editor in a specific type?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_32",
+      "text": "that the interactive text editor attempts to simulate the most basic features of the most popular Unix text editors, vi and vim?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_33",
+      "text": "that unless you know what you're doing with the binary file, editing such file in this way will lead to data corruption or data loss in the targeted file?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_34",
+      "text": "that on Linux systems, the shell is initiated with the help of both the log-in handler and the system initialization program, usually found in /sbin/init?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_35",
+      "text": "that you can perform common file operations, such as copying, moving, deleting, editing, and so on?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_36",
+      "text": "that the interactive TUI of a file manager simulates the functionality of Midnight Commander?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_37",
+      "text": "that if the kernel crashes, it usually creates a dump file?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_38",
+      "text": "that you can diagnose the kernel by debugging it using the built-in debug functionality?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_39",
+      "text": "that you can download and upload files directly from the UESH shell?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_40",
+      "text": "that the kernel can be translated even at pre-boot stages by starting it up with the 'lang' argument?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_41",
+      "text": "that you can build your own screensavers by registering them in your mod?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_42",
+      "text": "that the first screensaver that blanked the screen after three minutes of inactivity on the original IBM PCs, scrnsave, was created on 1983 by John Socha?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_43",
+      "text": "that some of the fast-paced screensavers may cause photosensitive seizures?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_44",
+      "text": "that kernel journals are used as boot and shutdown logs?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_45",
+      "text": "that your mods can now become translatable?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_46",
+      "text": "that your mods can communicate with kernel addons and other mods, creating some kind of communication and achieving interoperability?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_47",
+      "text": "that you can connect to the remote debugger and, optionally, to the chat server?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_48",
+      "text": "that you can use the debug shell, which is only available for development versions?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_49",
+      "text": "that your mods can now have their own configuration by registering their associated classes?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_50",
+      "text": "that your mods can register their own shells?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_51",
+      "text": "that your mods can add commands to the existing shells to increase the amount of commands that can be used?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_52",
+      "text": "that your command classes can accurately represent passed arguments and switches?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_53",
+      "text": "that you can query passed switches using the switch management classes found in the kernel API?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_54",
+      "text": "that UESH includes the scripting functionality to facilitate making and running scripts?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_55",
+      "text": "that the shell includes functionality to inhibit cancellation for active applications?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_56",
+      "text": "that Nitrocid is deeply integrated with Terminaux to allow faster and better rendering?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_57",
+      "text": "that you can now resize the interactive applications without worrying that the output gets corrupted?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_58",
+      "text": "that there are commands that ask for user input, which are useful for scripts?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_59",
+      "text": "that you can present your user input question in several ways, such as choice, table, simple, selection, and so on?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_60",
+      "text": "that you can place the placeholders to your text that supports them?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_61",
+      "text": "that you can use different kernel drivers to change how a specific operation works?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_62",
+      "text": "that you can make your own screensavers and splashes in C# or Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_63",
+      "text": "that you can query the host system and the terminal emulator using the kernel platform class?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_64",
+      "text": "that you can ask for a privacy consent prior to doing something sensitive in your mod?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_65",
+      "text": "that you can turn off notifications using the Do Not Disturb feature?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_66",
+      "text": "that you can save notification history using a function found in the notification manager?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_67",
+      "text": "that you can change how random numbers are generated by changing the driver?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_68",
+      "text": "that miscellaneous APIs provide useful functions for your mods?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_69",
+      "text": "This section lets you configure how Tips works."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_70",
+      "text": "Show kernel tips"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_71",
+      "text": "If enabled, the shell shows you the tips on every login."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_72",
+      "text": "that you can make bootable programs using your kernel mods?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_73",
+      "text": "Failed to obtain settings entries."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_74",
+      "text": "that Nitrocid (Kernel Simulator 0.0.2) called the built-in shell the 'UESH' shell?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_75",
+      "text": "that the screensavers were touted to be a solution against screen burn-ins in cathode ray-tube (CRT) or plasma displays?"
+    }
+  ]
+}

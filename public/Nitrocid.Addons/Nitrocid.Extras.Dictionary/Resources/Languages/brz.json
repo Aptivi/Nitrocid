@@ -1,0 +1,61 @@
+{
+  "lang": "brz",
+  "name": "Portuguese (Brazil)",
+  "cultures": [
+    "pt-BR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Informações sobre a licença"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "O dicionário de inglês"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Informações de palavras para"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "A API é licenciada sob"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "Palavra:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Significados das palavras para"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Parte do discurso:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Definição:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Exemplo em frase:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Fontes utilizadas para definir"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "Sinônimos:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Antônimos:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Palavra para definir"
+    }
+  ]
+}

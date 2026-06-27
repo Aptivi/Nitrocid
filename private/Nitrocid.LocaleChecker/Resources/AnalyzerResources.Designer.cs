@@ -19,7 +19,7 @@ namespace Nitrocid.LocaleChecker.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class AnalyzerResources {
@@ -61,7 +61,52 @@ namespace Nitrocid.LocaleChecker.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This string, &quot;{0}&quot;, is marked as localizable, but is unlocalized.
+        ///   Looks up a localized string similar to While Nitrocid KS accepts unlocalized strings and returns them as is, it&apos;s recommended to remove this string so that translations would be complete before the end of the development cycle..
+        /// </summary>
+        internal static string ExtraLocalizedJsonStringAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("ExtraLocalizedJsonStringAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There might be potentially extra localization found in the JSON representation file that is not found in the source code: {0}.
+        /// </summary>
+        internal static string ExtraLocalizedJsonStringAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("ExtraLocalizedJsonStringAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You&apos;ll need to remove this string at the end of the development cycle.
+        /// </summary>
+        internal static string ExtraLocalizedJsonStringAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("ExtraLocalizedJsonStringAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This language, {0}, contains extraneous language descriptors: {1}.
+        /// </summary>
+        internal static string ExtraLocalizedJsonSummaryStringAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("ExtraLocalizedJsonSummaryStringAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here&apos;s a list of languages that have extra localization descriptors.
+        /// </summary>
+        internal static string ExtraLocalizedJsonSummaryStringAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("ExtraLocalizedJsonSummaryStringAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This string, &quot;{0}&quot;, is marked as localizable, but is unlocalized for languages &quot;{1}&quot;.
         /// </summary>
         internal static string UnlocalizedCommentStringAnalyzerMessageFormat {
             get {
@@ -70,7 +115,25 @@ namespace Nitrocid.LocaleChecker.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This string, &quot;{0}&quot;, is in a localizable part of the JSON resource, but is unlocalized.
+        ///   Looks up a localized string similar to This string, &quot;{0}&quot;, is marked as localizable, and is placed under conditional compiler preprocessor directive, but is unlocalized for languages &quot;{1}&quot;.
+        /// </summary>
+        internal static string UnlocalizedDisabledCommentStringAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("UnlocalizedDisabledCommentStringAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This string, &quot;{0}&quot;, is in the DoTranslation() method, and is placed under conditional compiler preprocessor directive, but is unlocalized for languages &quot;{1}&quot;.
+        /// </summary>
+        internal static string UnlocalizedDisabledStringAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("UnlocalizedDisabledStringAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This string, &quot;{0}&quot;, is in a localizable part of the JSON resource, but is unlocalized for languages &quot;{1}&quot;.
         /// </summary>
         internal static string UnlocalizedJsonStringAnalyzerMessageFormat {
             get {
@@ -88,7 +151,7 @@ namespace Nitrocid.LocaleChecker.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This string, &quot;{0}&quot;, is in the DoTranslation() method, but is unlocalized.
+        ///   Looks up a localized string similar to This string, &quot;{0}&quot;, is in the DoTranslation() method, but is unlocalized for languages &quot;{1}&quot;.
         /// </summary>
         internal static string UnlocalizedStringAnalyzerMessageFormat {
             get {

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -17,25 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-// Parts of the code were taken from BassBoom. License notes below:
-
-//   BassBoom  Copyright (C) 2023  Aptivi
-// 
-//   This file is part of BassBoom
-// 
-//   BassBoom is free software: you can redistribute it and/or modify
-//   it under the terms of the GNU General Public License as published by
-//   the Free Software Foundation, either version 3 of the License, or
-//   (at your option) any later version.
-// 
-//   BassBoom is distributed in the hope that it will be useful,
-//   but WITHOUT ANY WARRANTY; without even the implied warranty of
-//   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//   GNU General Public License for more details.
-// 
-//   You should have received a copy of the GNU General Public License
-//   along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.BassBoom.Commands;
 using Nitrocid.Extras.BassBoom.Screensavers;
@@ -51,6 +32,7 @@ using Nitrocid.Misc.Screensaver;
 using System.Linq;
 using Colorimetry;
 using Colorimetry.Data;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.BassBoom
 {
@@ -62,57 +44,60 @@ namespace Nitrocid.Extras.BassBoom
 
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("lyriclines", /* Localizable */ "Gets all lyric lines from the lyric file",
+            new CommandInfo("lyriclines", LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_LYRICLINES_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "lyric.lrc", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to the lyric file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC")
                         }),
                     ])
                 ], new LyricLinesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("playlyric", /* Localizable */ "Plays a lyric file",
+            new CommandInfo("playlyric", LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "lyric.lrc", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to the lyric file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC")
                         }),
                     ])
                 ], new PlayLyricCommand()),
 
-            new CommandInfo("playsound", /* Localizable */ "Plays a sound",
+            new CommandInfo("playsound", LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "musicFile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to an MP3 file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC")
                         }),
                     ])
                 ], new PlaySoundCommand()),
 
-            new CommandInfo("netfminfo", /* Localizable */ "Gets information about your online radio station",
+            new CommandInfo("netfminfo", LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_NETFMINFO_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "hostname", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Host name that hosts the MPEG radio station"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "port", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Port to the MPEG radio station"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC")
                         }),
                     ])
                 ], new NetFmInfoCommand()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasBassBoom);
+
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasBassBoom);
 
         internal static BassBoomSaversConfig SaversConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(BassBoomSaversConfig)) ? (BassBoomSaversConfig)Config.baseConfigurations[nameof(BassBoomSaversConfig)] : Config.GetFallbackKernelConfig<BassBoomSaversConfig>();
@@ -120,8 +105,9 @@ namespace Nitrocid.Extras.BassBoom
         internal static BassBoomConfig BassBoomConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(BassBoomConfig)) ? (BassBoomConfig)Config.baseConfigurations[nameof(BassBoomConfig)] : Config.GetFallbackKernelConfig<BassBoomConfig>();
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.BassBoom.Resources.Languages.Output.Localizations", typeof(BassBoomInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("lyrics", new LyricsDisplay());
 
@@ -140,15 +126,16 @@ namespace Nitrocid.Extras.BassBoom
             outVer = InitBasolia.OutLibVersion;
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ScreensaverManager.AddonSavers.Remove("lyrics");
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomConfig));
         }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
     }
 }

@@ -1,10 +1,10 @@
 [
     {
         "Name": "Git",
-        "Desc": "This section lets you configure how the Git shell work.",
+        "Desc": "NKS_SHELLPACKS_GIT_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "Prompt Preset",
+                "Name": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "GitPromptPreset",
                 "ShellType": "GitShell",

@@ -1,0 +1,78 @@
+{
+  "lang": "chi-T",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "计算器来计算表达式。"
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "计算错误。"
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "显示有关由指定实数和虚数指定的虚数公式的信息"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "真实号码无效。"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "虚数无效。"
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "公式："
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "半径："
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "实数到以弧度表示的半径："
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "虚数到以弧度为单位的半径："
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "以弧度表示的角度："
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "指数："
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "三角形："
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "数学表达式"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "实数"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "虚数"
+    }
+  ]
+}

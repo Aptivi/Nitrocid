@@ -19,6 +19,7 @@
 
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
+using Nitrocid.Languages;
 using Nitrocid.Misc.Splash;
 using Nitrocid.SplashPacks.Settings;
 using Nitrocid.SplashPacks.Splashes;
@@ -46,14 +47,19 @@ namespace Nitrocid.SplashPacks
             new SplashInfo("SquareCorner", new SplashSquareCorner()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonSplashPacks);
+
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.AddonSplashPacks);
 
         internal static ExtraSplashesConfig SplashConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(ExtraSplashesConfig)) ? (ExtraSplashesConfig)Config.baseConfigurations[nameof(ExtraSplashesConfig)] : Config.GetFallbackKernelConfig<ExtraSplashesConfig>();
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.SplashPacks.Resources.Languages.Output.Localizations", typeof(SplashPackInit).Assembly));
+
             // Close the splash first
             SplashManager.BeginSplashOut();
 
@@ -69,8 +75,10 @@ namespace Nitrocid.SplashPacks
             ConfigTools.RegisterBaseSetting(splashesConfig);
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
+
             // Close the splash first
             SplashManager.BeginSplashOut();
 
@@ -85,7 +93,7 @@ namespace Nitrocid.SplashPacks
             ConfigTools.UnregisterBaseSetting(nameof(ExtraSplashesConfig));
         }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
     }
 }

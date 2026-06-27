@@ -1,0 +1,70 @@
+{
+  "lang": "chi-T",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "许可证信息"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "英语词典"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "单词信息"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "API 已获得许可"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "单词："
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "词义为"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "部分演讲："
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "定义："
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "句子中的例子："
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "用于定义的来源"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "同义词："
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "反义词："
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "定义词"
+    }
+  ]
+}

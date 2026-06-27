@@ -1,0 +1,50 @@
+{
+  "lang": "ukr",
+  "name": "Ukrainian",
+  "cultures": [
+    "uk",
+    "uk-UA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "Додає будильник, щоб сповістити вас, коли чашка чаю чи кави буде готова."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "Вимикає будильник, який сповіщає вас, коли чашка чаю чи кави готова."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "Американська кава"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "Червоний чай"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "Зелений чай"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "Немає попереджень щодо кофеїну, щоб перервати."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "Секунди, за які ваша чашка буде готова, недійсні."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "Якщо ви намагаєтеся вказати назву напою, перегляньте список нижче:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "Тепер ваша чашка готова!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "Вкажіть кількість секунд або назву напою"
+    }
+  ]
+}

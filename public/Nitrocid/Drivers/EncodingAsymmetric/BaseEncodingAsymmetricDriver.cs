@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -57,7 +57,7 @@ namespace Nitrocid.Drivers.EncodingAsymmetric
         public virtual byte[] GetEncodedString(string text)
         {
             if (string.IsNullOrEmpty(text))
-                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The text must not be empty."));
+                throw new KernelException(KernelExceptionType.Encoding, LanguageTools.GetLocalized("NKS_DRIVERS_ENCODING_BASE_NEEDSTEXT"));
 
             // Try to get the encoded string
             string encoded = text.GetBase64Encoded();
@@ -68,7 +68,7 @@ namespace Nitrocid.Drivers.EncodingAsymmetric
         public virtual string GetDecodedString(byte[] encoded)
         {
             if (encoded is null || encoded.Length <= 0)
-                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The encoded text must not be empty."));
+                throw new KernelException(KernelExceptionType.Encoding, LanguageTools.GetLocalized("NKS_DRIVERS_ENCODING_BASE_NEEDSENCODEDTEXT"));
 
             // Try to get the decoded string
             string plaintext = TextEncoding.Default.GetString(encoded);
@@ -79,9 +79,9 @@ namespace Nitrocid.Drivers.EncodingAsymmetric
         public virtual void EncodeFile(string path)
         {
             if (string.IsNullOrEmpty(path))
-                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The path must not be empty."));
+                throw new KernelException(KernelExceptionType.Encoding, LanguageTools.GetLocalized("NKS_DRIVERS_ENCODING_BASE_NEEDSPATH"));
             if (!FilesystemTools.FileExists(path))
-                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("File doesn't exist."));
+                throw new KernelException(KernelExceptionType.Encoding, LanguageTools.GetLocalized("NKS_DRIVERS_ENCODING_BASE_FILENOTFOUND"));
 
             // Get the bytes of the file
             string file = FilesystemTools.ReadContentsText(path);
@@ -95,9 +95,9 @@ namespace Nitrocid.Drivers.EncodingAsymmetric
         public virtual void DecodeFile(string path)
         {
             if (string.IsNullOrEmpty(path))
-                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The path must not be empty."));
+                throw new KernelException(KernelExceptionType.Encoding, LanguageTools.GetLocalized("NKS_DRIVERS_ENCODING_BASE_NEEDSPATH"));
             if (!FilesystemTools.FileExists(path))
-                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("File doesn't exist."));
+                throw new KernelException(KernelExceptionType.Encoding, LanguageTools.GetLocalized("NKS_DRIVERS_ENCODING_BASE_FILENOTFOUND"));
 
             // Get the bytes of the file
             byte[] encoded = FilesystemTools.ReadAllBytes(path);
@@ -112,7 +112,7 @@ namespace Nitrocid.Drivers.EncodingAsymmetric
         public virtual byte[] ComposeBytesFromString(string encoded)
         {
             if (string.IsNullOrEmpty(encoded))
-                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The encoded text must not be empty."));
+                throw new KernelException(KernelExceptionType.Encoding, LanguageTools.GetLocalized("NKS_DRIVERS_ENCODING_BASE_NEEDSENCODEDTEXT"));
 
             // Get the wrapped bytes, assuming that all the byte numbers are padded to three digits.
             string[] encodedStrings = TextTools.GetWrappedSentences(encoded, 3);
@@ -126,7 +126,7 @@ namespace Nitrocid.Drivers.EncodingAsymmetric
         public virtual string DecomposeBytesFromString(byte[] encoded)
         {
             if (encoded is null || encoded.Length <= 0)
-                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The encoded text must not be empty."));
+                throw new KernelException(KernelExceptionType.Encoding, LanguageTools.GetLocalized("NKS_DRIVERS_ENCODING_BASE_NEEDSENCODEDTEXT"));
 
             // Pad the encoded byte numbers to three digits and return them as a single string
             StringBuilder encodedStringBuilder = new();

@@ -1,0 +1,69 @@
+{
+  "lang": "enk",
+  "name": "English (UK)",
+  "cultures": [
+    "en-GB"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "Calculator to calculate expressions."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "Error in calculation."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "Show information about the imaginary number formula specified by a specified real and imaginary number"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "The real number is not valid."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "The imaginary number is not valid."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "Formula:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "Radius:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "Real to Radius in Radians:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "Imaginary to Radius in Radians:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "Angle in Radians:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "Exponential:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "Triangular:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "Mathematical expression"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "Real number"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "Imaginary number"
+    }
+  ]
+}

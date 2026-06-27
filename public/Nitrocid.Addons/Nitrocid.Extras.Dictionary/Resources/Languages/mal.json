@@ -1,0 +1,65 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Maklumat lesen"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "Kamus Inggeris"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Maklumat perkataan untuk"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "API dilesenkan di bawah"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "perkataan:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Makna perkataan untuk"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Bahagian Ucapan:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Definisi:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Contoh dalam Ayat:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Sumber yang digunakan untuk menentukan"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "sinonim:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Antonim:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Perkataan untuk ditakrifkan"
+    }
+  ]
+}

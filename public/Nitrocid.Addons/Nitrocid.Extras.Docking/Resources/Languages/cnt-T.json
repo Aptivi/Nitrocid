@@ -1,0 +1,37 @@
+{
+  "lang": "cnt-T",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "顯示所選停靠視圖的全螢幕概述，以便能夠將其用作資訊面板"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "沒有同名的停靠螢幕。"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "沒有同名的螢幕底座。"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "沒有螢幕底座。"
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "螢幕底座崩潰了"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "碼頭名稱"
+    }
+  ]
+}

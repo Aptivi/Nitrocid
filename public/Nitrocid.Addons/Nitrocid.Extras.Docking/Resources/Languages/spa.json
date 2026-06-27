@@ -1,0 +1,59 @@
+{
+  "lang": "spa",
+  "name": "Spanish",
+  "cultures": [
+    "es",
+    "es-419",
+    "es-AR",
+    "es-BO",
+    "es-BR",
+    "es-BZ",
+    "es-CL",
+    "es-CO",
+    "es-CR",
+    "es-CU",
+    "es-DO",
+    "es-EC",
+    "es-ES",
+    "es-GQ",
+    "es-GT",
+    "es-HN",
+    "es-MX",
+    "es-NI",
+    "es-PA",
+    "es-PE",
+    "es-PH",
+    "es-PR",
+    "es-PY",
+    "es-SV",
+    "es-US",
+    "es-UY",
+    "es-VE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Le muestra una descripción general en pantalla completa sobre una vista del muelle seleccionada para poder usarla como panel de información."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "No hay ninguna pantalla de acoplamiento con este nombre."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "No hay ninguna base de pantalla con este nombre."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "No hay base de pantalla."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "La base de pantalla se ha bloqueado"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Nombre del muelle"
+    }
+  ]
+}

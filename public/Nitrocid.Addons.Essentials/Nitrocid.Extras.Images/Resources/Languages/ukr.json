@@ -1,0 +1,26 @@
+{
+  "lang": "ukr",
+  "name": "Ukrainian",
+  "cultures": [
+    "uk",
+    "uk-UA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "Попередній перегляд зображення"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "Шлях до зображення не вказано."
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "Файл зображення не існує."
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "Шлях до файлу зображення"
+    }
+  ]
+}

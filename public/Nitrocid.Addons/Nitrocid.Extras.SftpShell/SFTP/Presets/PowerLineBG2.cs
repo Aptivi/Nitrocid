@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -90,8 +90,8 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Presets
             // Segments
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), Translate.DoTranslation("User"), default, TransitionPartChar),
-                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), Translate.DoTranslation("Site"), PadlockChar, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_USER"), default, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE"), PadlockChar, TransitionPartChar),
                 new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), "/path", default, TransitionPartChar),
             ];
 

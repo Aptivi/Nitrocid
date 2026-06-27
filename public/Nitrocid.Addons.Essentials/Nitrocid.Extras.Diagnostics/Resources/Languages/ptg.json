@@ -1,0 +1,36 @@
+{
+  "lang": "ptg",
+  "name": "Portuguese",
+  "cultures": [
+    "pt",
+    "pt-AO",
+    "pt-CH",
+    "pt-CV",
+    "pt-GQ",
+    "pt-GW",
+    "pt-LU",
+    "pt-MO",
+    "pt-MZ",
+    "pt-PT",
+    "pt-ST",
+    "pt-TL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "Obtém backtrace para todos os threads"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "Acreditamos que você esteja executando o Windows 8 ou inferior. Esta operação não é suportada."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "Informações de rastreamento de pilha de threads para {0}"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "Não é um tópico Nitrocid KS"
+    }
+  ]
+}

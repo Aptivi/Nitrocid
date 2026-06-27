@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -47,14 +47,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                     if (hasName || hasFullName)
                         finalNameRendered.Append(contact.GetString(CardStringsEnum.FullName)[0].Value);
                     else
-                        finalNameRendered.Append(Translate.DoTranslation("No contact name"));
+                        finalNameRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOCONTACTNAME"));
                     TextWriters.Write(finalNameRendered.ToString(), KernelColorType.NeutralText);
                 }
                 return 0;
             }
             catch (Exception ex)
             {
-                TextWriters.Write(Translate.DoTranslation("Some of the contacts can't be listed.") + ex.Message, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_CANTLISTSOME") + ex.Message, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Contacts);
             }
         }

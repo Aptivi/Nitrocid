@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -37,7 +37,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var shell = (SFTPShell?)ShellManager.GetShellInfo(ShellManager.CurrentShellType).ShellBase ??
-                throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("The last shell is not this shell to detach from."));
+                throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             shell.detaching = true;
             ShellManager.KillShell();
             return 0;

@@ -1,0 +1,62 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Informasi lisensi"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "Kamus Bahasa Inggris"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Informasi kata untuk"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "API dilisensikan di bawah"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "Kata:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Arti kata untuk"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Bagian dari Pidato:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Definisi:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Contoh dalam kalimat:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Sumber yang digunakan untuk mendefinisikan"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "Sinonim:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Antonim:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Kata untuk mendefinisikan"
+    }
+  ]
+}

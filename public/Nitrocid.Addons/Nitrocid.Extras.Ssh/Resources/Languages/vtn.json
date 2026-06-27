@@ -1,0 +1,118 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "Kết nối tới máy chủ SSH."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "Nhập mật khẩu cho {0}:"
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH đã ngắt kết nối."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "Lỗi khi cố gắng kết nối với máy chủ SSH: {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "Tùy chọn {0} được chỉ định là không hợp lệ."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "Câu trả lời phải là số."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "Nhấn phím bất kỳ để quay lại."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "Kết nối với máy chủ SSH để thực hiện lệnh."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "Bạn muốn xác thực như thế nào?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "Tệp khóa riêng tư"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "Mật khẩu"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "Nhập mật khẩu cho khóa {0}:"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "Tệp khóa {0} không tồn tại."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "Lỗi khi cố gắng thêm khóa riêng tư:"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "Lỗi khi thực hiện lệnh SSH"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "Lỗi trên shell SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "Viết cách bạn muốn lời nhắc đăng nhập của mình như thế nào. Để trống để sử dụng kiểu mặc định. Các chỗ giữ chỗ được phân tích cú pháp."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "Nhập vị trí của khóa riêng cho {0}. Viết \"q\" để hoàn tất việc thêm khóa:"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "Phần này cho phép bạn cấu hình cách thức hoạt động của SSH."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "Kiểu nhắc tên người dùng cho SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "Thêm kết nối mới vào SSH speed dial"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "Nếu được bật, sẽ thêm một kết nối mới vào số quay số nhanh SSH."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Không lấy được mục cài đặt."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "SSH đã được kết nối nhưng không có máy khách."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "Máy chủ SSH để kết nối tới"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "Tên người dùng để xác thực với"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "Lệnh thực hiện từ xa"
+    }
+  ]
+}

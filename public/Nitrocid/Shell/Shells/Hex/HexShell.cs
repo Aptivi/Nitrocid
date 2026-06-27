@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -53,18 +53,18 @@ namespace Nitrocid.Shell.Shells.Hex
                 FilePath = Convert.ToString(ShellArgs[0]) ?? "";
                 if (string.IsNullOrEmpty(FilePath))
                 {
-                    TextWriters.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEXTEXT_NEEDSFILE"), true, KernelColorType.Error);
                     Bail = true;
                 }
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEXTEXT_NEEDSFILE"), true, KernelColorType.Error);
                 Bail = true;
             }
             TextWriters.Write(
-                Translate.DoTranslation("Please note that editing binary files using this shell is experimental and may lead to data corruption or data loss if not used properly.") + CharManager.NewLine +
-                Translate.DoTranslation("DON'T LAUNCH THE SHELL UNLESS YOU KNOW WHAT YOU'RE DOING!")
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_WARNING1") + CharManager.NewLine +
+                LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_WARNING2")
                 , true, KernelColorType.Warning);
 
             // Open file if not open
@@ -73,7 +73,7 @@ namespace Nitrocid.Shell.Shells.Hex
                 DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", vars: [FilePath]);
                 if (!HexEditTools.OpenBinaryFile(FilePath))
                 {
-                    TextWriters.Write(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEXTEXT_CANTOPEN"), true, KernelColorType.Error);
                     Bail = true;
                 }
                 HexEditShellCommon.AutoSave.Start();
@@ -94,7 +94,7 @@ namespace Nitrocid.Shell.Shells.Hex
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + " {0}", true, KernelColorType.Error, ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ERRORINSHELL") + " {0}", true, KernelColorType.Error, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     InputTools.DetectKeypress();

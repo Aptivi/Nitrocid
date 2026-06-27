@@ -1,37 +1,37 @@
 [
     {
-        "Name": "Timer",
-        "Desc": "This section lets you configure how the timer application works.",
+        "Name": "NKS_DATES_HOMEPAGE_TIMER",
+        "Desc": "NKS_DATES_TIMER_SETTINGS_DESC",
         "Keys": [
             {
-                "Name": "Enable Figlet for timer",
+                "Name": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_NAME",
                 "Type": "SBoolean",
                 "Variable": "EnableFigletTimer",
-                "Description": "If enabled, will use figlet for timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled."
+                "Description": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_DESC"
             },
             {
-                "Name": "Figlet font for timer",
+                "Name": "NKS_DATES_TIMER_SETTINGS_FIGLETFONT_NAME",
                 "Type": "SFiglet",
                 "Variable": "TimerFigletFont",
-                "Description": "Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information"
+                "Description": "NKS_DATES_COMMON_SETTINGS_FIGLETFONT_DESC"
             }
         ]
     },
     {
         "Name": "Pomodoro Timer",
-        "Desc": "This section lets you configure how the pomodoro timer application works.",
+        "Desc": "NKS_DATES_POMODORO_SETTINGS_DESC",
         "Keys": [
             {
-                "Name": "Enable Figlet for the pomodoro timer",
+                "Name": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_NAME",
                 "Type": "SBoolean",
                 "Variable": "EnableFigletPomodoro",
-                "Description": "If enabled, will use figlet for the pomodoro timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled."
+                "Description": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_DESC"
             },
             {
-                "Name": "Figlet font for the pomodoro timer",
+                "Name": "NKS_DATES_POMODORO_SETTINGS_FIGLETFONT_NAME",
                 "Type": "SFiglet",
                 "Variable": "PomodoroFigletFont",
-                "Description": "Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information"
+                "Description": "NKS_DATES_COMMON_SETTINGS_FIGLETFONT_DESC"
             }
         ]
     }

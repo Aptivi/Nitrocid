@@ -27,16 +27,19 @@ namespace Nitrocid.Extras.Sha512Enhanced
     {
         private readonly SHA512Enhanced singleton = new();
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSha512Enhanced);
 
-        void IAddon.FinalizeAddon()
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasSha512Enhanced);
+
+        public void FinalizeAddon()
         { }
 
-        void IAddon.StartAddon() =>
+        public void StartAddon() =>
             DriverHandler.RegisterBaseDriver<IEncryptionDriver>(singleton);
 
-        void IAddon.StopAddon() =>
+        public void StopAddon() =>
             DriverHandler.UnregisterBaseDriver<IEncryptionDriver>(singleton.DriverName);
     }
 }

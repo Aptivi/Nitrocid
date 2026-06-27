@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Extensions;
 using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Extras.Images.Commands;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Images
 {
@@ -31,28 +32,37 @@ namespace Nitrocid.Extras.Images
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("preview", /* Localizable */ "Previews an image",
+            new CommandInfo("preview", LanguageTools.GetLocalized("NKS_IMAGES_COMMAND_PREVIEW_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "imageFile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to image file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC")
                         }),
                     ])
                 ], new PreviewCommand()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImages);
 
-        void IAddon.FinalizeAddon()
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasImages);
+
+        public void FinalizeAddon()
         { }
 
-        void IAddon.StartAddon() =>
+        public void StartAddon()
+        {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Images.Resources.Languages.Output.Localizations", typeof(ImagesInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        public void StopAddon()
+        {
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+        }
     }
 }

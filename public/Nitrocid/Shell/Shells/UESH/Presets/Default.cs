@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -85,7 +85,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             {
                 // Maintenance mode
                 PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
-                PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
+                PresetStringBuilder.Append(LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_MAINTENANCE") + "> ");
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
             }
 
@@ -129,7 +129,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             {
                 // Maintenance mode
                 PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
-                PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
+                PresetStringBuilder.Append(LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_MAINTENANCE") + "> ");
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
             }
 

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,6 +25,7 @@ using Nitrocid.Kernel.Extensions;
 using Terminaux.Shell.Shells;
 using System.Linq;
 using Terminaux.Shell.Switches;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.ThemeStudio
 {
@@ -32,31 +33,40 @@ namespace Nitrocid.Extras.ThemeStudio
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("mktheme", /* Localizable */ "Makes a new theme",
+            new CommandInfo("mktheme", LanguageTools.GetLocalized("NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "themeName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Theme name to create"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("tui", /* Localizable */ "Makes a new theme in an interactive TUI")
+                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC"))
                     ])
                 ], new MkThemeCommand()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasThemeStudio);
 
-        void IAddon.StartAddon() =>
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasThemeStudio);
+
+        public void StartAddon()
+        {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.ThemeStudio.Resources.Languages.Output.Localizations", typeof(ThemeStudioInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        public void StopAddon()
+        {
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+        }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
     }
 }

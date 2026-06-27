@@ -1,0 +1,71 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "Calculator pentru a calcula expresii."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "Eroare la calcul."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "Afișați informații despre formula numărului imaginar specificat de un număr real și imaginar specificat"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "Numărul real nu este valid."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "Numărul imaginar nu este valabil."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "Formulă:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "Rază:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "Real la rază în radiani:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "Imaginar la raza în radiani:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "Unghi în radiani:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "exponențial:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "Triunghiular:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "Exprimarea matematică"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "Număr real"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "Număr imaginar"
+    }
+  ]
+}

@@ -8,9 +8,6 @@
       "commandName": "Project",
       "commandLineArgs": "--reset"
     },
-    "Nitrocid KS": {
-      "commandName": "Project"
-    },
     "Nitrocid KS - Test Interactive": {
       "commandName": "Project",
       "commandLineArgs": "--testInteractive"
@@ -58,6 +55,9 @@
     "Nitrocid KS - apiversion": {
       "commandName": "Project",
       "commandLineArgs": "--apiversion"
+    },
+    "Nitrocid KS": {
+      "commandName": "Project"
     }
   }
 }

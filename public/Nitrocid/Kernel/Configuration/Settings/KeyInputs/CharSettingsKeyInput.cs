@@ -31,11 +31,11 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, BaseKernelConfig configType, out bool bail)
         {
             // Translate the key name and description
-            string keyName = key.Name;
-            string keyDesc = key.Description;
+            string keyName = LanguageTools.GetLocalized(key.Name);
+            string keyDesc = LanguageTools.GetLocalized(key.Description);
 
             // Write the prompt
-            string? AnswerString = InfoBoxInputColor.WriteInfoBoxInput(keyName, $"{keyDesc}\n\n{Translate.DoTranslation("Press any letter on your keyboard to set it to that character.")} [{KeyDefaultValue}]");
+            string? AnswerString = InfoBoxInputColor.WriteInfoBoxInput(keyName, $"{keyDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_INPUT_CHAR_PROMPT")} [{KeyDefaultValue}]");
 
             // Neutralize path if required with the assumption that the keytype is not list
             DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", vars: [AnswerString]);

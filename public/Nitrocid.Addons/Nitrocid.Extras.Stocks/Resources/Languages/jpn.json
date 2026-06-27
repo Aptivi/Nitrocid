@@ -1,0 +1,94 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "1時間ごとの株価情報を取得します"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "短縮会社シンボル"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "AlphaVantage APIキーを入力してください"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "API キーを入力してください。"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "デモ API キーは使用できません。"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "API キーの長さは 16 文字にする必要があります。"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "株式データの取得中にエラーが発生しました。追加情報はここをご覧ください"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "株価の初値"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "株価高騰"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "株価が低い"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "終値"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "在庫量"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "APIキーが必要です。設定から設定してください。"
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "在庫データがありません。"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "このセクションでは、株式を設定できます。"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "APIキー"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "AlphaVantage Stocks API のキー"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "会社コード"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "株式会社"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "設定エントリを取得できませんでした。"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "在庫情報を取得できません。"
+    }
+  ]
+}

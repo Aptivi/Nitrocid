@@ -1,0 +1,323 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTS_DESC",
+      "text": "Kişilerinizi yönetin"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED",
+      "text": "'{0}' dosyası bulunamadığından açılamıyor."
+    },
+    {
+      "loc": "NKS_CONTACTS_IMPORTSUCCESS",
+      "text": "Kişiler başarıyla içe aktarıldı."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_NAMED",
+      "text": "'{0}' dosyası açılamıyor çünkü kart dosyası geçersiz."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED",
+      "text": "İletişim dosyası bulunamadı."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTSCOUNT",
+      "text": "bulunan kişiler"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED",
+      "text": "İletişim dosyası geçersiz."
+    },
+    {
+      "loc": "NKS_CONTACTS_MECARDEMPTY",
+      "text": "MeCard sözdizimi boş olamaz."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOCONTACT",
+      "text": "Ya sağlanan kişiler dosyasında herhangi bir kişiyle ilgili bilgi yok ya da geçerli değil."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED",
+      "text": "Kişiler ayrıştırılamadı. Daha fazla bilgi için hata ayrıntılarına bakın."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE",
+      "text": "İletişim dizini aralık dışında. Maksimum dizin {0} iken sağlanan dizin {1}."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET",
+      "text": "Ulaşılacak bir irtibat yok."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH",
+      "text": "Aranacak kişi bulunamadı."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_INVALIDREGEX",
+      "text": "Düzenli ifade geçersiz."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACT",
+      "text": "Hiçbir kişi yok. Kişileri içe aktarmak istiyorsanız, lütfen ekranın alt kısmında tanımlanan tuş vuruşlarını kullanarak içe aktarma seçeneklerini kullanın."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CANTIMPORTCONTACTS",
+      "text": "Bazı kişiler içe aktarılamıyor."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PATHVCFPROMPT",
+      "text": "Kişinizi içeren VCF dosyasının yolunu girin. Android'in contacts2.db dosyası da desteklenmektedir."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_FILENOTFOUND",
+      "text": "Dosya mevcut değil. VCF dosyasına veya contacts2.db dosyasına doğru yolu yazdığınızdan emin olun."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDPROMPT",
+      "text": "İletişim kurduğunuz kişinin geçerli bir MeCard temsilini girin."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDINVALID",
+      "text": "Contact MeCard sözdizimi geçersiz."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDEMPTY",
+      "text": "Contact MeCard sözdizimi boş olamaz"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_SEARCHPROMPT",
+      "text": "Kişileri aramak için düzenli ifade girin."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTSSEARCH",
+      "text": "İstediğiniz ifadeyi içeren hiçbir iletişim bulunamadı."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNAME",
+      "text": "İletişim adı"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTNAME",
+      "text": "İletişim adı yok"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESS",
+      "text": "İletişim adresi"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAIL",
+      "text": "İletişim maili"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOMAIL",
+      "text": "İletişim maili yok"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORG",
+      "text": "İletişim kuruluşu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOORG",
+      "text": "Hiçbir temas organizasyonu yok"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PHONE",
+      "text": "İletişim telefonu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOPHONE",
+      "text": "İrtibat telefonu yok"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URL",
+      "text": "İletişim URL'si"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOURL",
+      "text": "İletişim URL'si yok"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEO",
+      "text": "İletişim geo"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOGEO",
+      "text": "Temas yok coğrafi"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPP",
+      "text": "IMPP ile iletişime geçin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOIMPP",
+      "text": "Temas yok IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICK",
+      "text": "İletişim takma adı"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONICK",
+      "text": "İletişim yok takma adı"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLE",
+      "text": "İletişim rolü"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOROLE",
+      "text": "Temassız rol"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLE",
+      "text": "İletişim başlığı"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTITLE",
+      "text": "İletişim başlığı yok"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTES",
+      "text": "İletişim notları"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONOTES",
+      "text": "İletişim notu yok"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC",
+      "text": "Kişilerinizi listeler"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC",
+      "text": "Kişilerinizi yükler"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC",
+      "text": "Kişilerinizi içe aktarır"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC",
+      "text": "Gerekli girdiyi MeCard dizesi olarak ele alır"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_DESC",
+      "text": "İletişim bilgilerini alır"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTS",
+      "text": "Hiçbir iletişim yok."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMINVALID",
+      "text": "İletişim numarası geçersiz."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE",
+      "text": "İletişim numarası erişim mesafesi dışında."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_FIRSTNAME",
+      "text": "İlk adı"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_LASTNAME",
+      "text": "Soy isim"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_GEO",
+      "text": "Geo ile iletişime geçin"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NOTE",
+      "text": "İletişim notu"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_CANTLISTSOME",
+      "text": "Bazı kişiler listelenemiyor."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETE",
+      "text": "Silmek"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_INFO",
+      "text": "Bilgi"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Ayar girişleri alınamadı."
+    },
+    {
+      "loc": "NKS_CONTACTS_HOMEPAGE_CONTACTS",
+      "text": "İletişim"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETEALL",
+      "text": "Tümünü Sil"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORT",
+      "text": "İçe aktarmak"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM",
+      "text": "İthalat"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCH",
+      "text": "Aramak"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT",
+      "text": "Sonraki Arama"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK",
+      "text": "Geri Arama"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_RAWINFO",
+      "text": "Ham Bilgi"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD",
+      "text": "MeCard'dan İthalat"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_DESC",
+      "text": "Bu bölüm, kişiler eklentisinin nasıl çalışacağını yapılandırmanızı sağlar."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME",
+      "text": "Profil resimlerini göster"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC",
+      "text": "Etkinleştirilirse, kişi resimlerini gösterir. Kötüye kullanımı önlemek ve performans nedenleriyle varsayılan olarak devre dışıdır."
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC",
+      "text": "Bir vCard iletişim dosyasına veya bir MeCard temsiline giden bir yol"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC",
+      "text": "İletişim numarası"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_EDIT",
+      "text": "Düzenlemek..."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
+      "text": "Bu kişi için yeni bir ad girin"
+    }
+  ]
+}

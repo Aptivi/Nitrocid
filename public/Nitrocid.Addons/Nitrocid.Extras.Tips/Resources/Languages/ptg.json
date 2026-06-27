@@ -1,0 +1,320 @@
+{
+  "lang": "ptg",
+  "name": "Portuguese",
+  "cultures": [
+    "pt",
+    "pt-AO",
+    "pt-CH",
+    "pt-CV",
+    "pt-GQ",
+    "pt-GW",
+    "pt-LU",
+    "pt-MO",
+    "pt-MZ",
+    "pt-PT",
+    "pt-ST",
+    "pt-TL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TIPS_KERNELTIP_1",
+      "text": "que você pode executar comandos de processo de duas maneiras: inserindo o nome do arquivo executável diretamente e usando o comando 'exec'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_2",
+      "text": "que você pode bloquear sua tela usando o comando 'lockscreen'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_3",
+      "text": "que você pode construir suas próprias modificações de kernel usando C# e Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_4",
+      "text": "que você pode usar vários comandos usando ponto e vírgula entre os comandos?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_5",
+      "text": "que você pode escapar de aspas duplas dentro dos argumentos citados ao executar comandos?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_6",
+      "text": "que você pode alterar as configurações do kernel usando o comando 'settings'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_7",
+      "text": "que você pode salvar sua tela usando o comando 'savescreen'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_8",
+      "text": "que você pode nos relatar bugs acessando a página do projeto GitHub do Nitrocid?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_9",
+      "text": "que você pode criar um atalho para o comando desejado usando o comando 'alias'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_10",
+      "text": "que você pode construir sua própria tela inicial usando C# e Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_11",
+      "text": "que você pode instalar complementos extras para tornar seu kernel mais útil e divertido?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_12",
+      "text": "que você pode criar seus próprios temas incríveis usando o comando 'mktheme'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_13",
+      "text": "que você pode alterar as cores do kernel usando o comando 'settings' ou um dos temas pré-construídos?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_14",
+      "text": "que você pode redefinir seu kernel para os padrões de fábrica usando o argumento 'reset'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_15",
+      "text": "que você pode acessar nossa extensa documentação em nossa página GitBook?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_16",
+      "text": "que as versões de longo prazo têm suporte por cinco anos para suporte principal e três anos para atualizações de segurança?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_17",
+      "text": "que 0.0.1 foi a primeira versão do Nitrocid KS lançada em 22 de fevereiro de 2018?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_18",
+      "text": "que a série 0.0.24.x era a única série de versões que continha a versão API v2.1?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_19",
+      "text": "que os lançamentos de curto prazo são suportados por apenas nove meses?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_20",
+      "text": "que a série 0.1.x é incompatível com versões anteriores da série 0.0.24.x ou anterior?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_21",
+      "text": "que você pode executar o Nitrocid KS no Linux, macOS e Android?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_22",
+      "text": "que você pode consultar a documentação da API para ajudá-lo a fazer seus mods?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_23",
+      "text": "que você pode obter vários jogos incríveis, como Hangman e ShipDuet, instalando complementos extras?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_24",
+      "text": "que, em Meteor, se você colidir com uma tempestade de meteoros vermelhos, sua nave espacial cairá?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_25",
+      "text": "que você pode converter seu kernel em centros de informações usando o recurso de encaixe?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_26",
+      "text": "que você pode criar grupos de usuários para organizar contas de usuários?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_27",
+      "text": "que se você for membro de um grupo que concede certas permissões, você terá permissão para realizar tais operações?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_28",
+      "text": "que você pode alterar o fuso horário do kernel sem afetar o sistema host?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_29",
+      "text": "que você pode usar o texto interativo e o editor hexadecimal para economizar tempo?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_30",
+      "text": "que o editor de texto mais antigo conhecido por trabalhar com o primeiro sistema Unix é o ed, o primeiro editor de texto lançado em 1973 enviado com o sistema Unix encontrado em um PDP-7 no AT&T Bell Labs?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_31",
+      "text": "que você também pode forçar o comando de edição para iniciar o editor em um tipo específico?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_32",
+      "text": "que o editor de texto interativo tenta simular os recursos mais básicos dos editores de texto Unix mais populares, vi e vim?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_33",
+      "text": "que, a menos que você saiba o que está fazendo com o arquivo binário, a edição desse arquivo dessa maneira causará corrupção ou perda de dados no arquivo de destino?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_34",
+      "text": "que em sistemas Linux, o shell é iniciado com a ajuda do manipulador de login e do programa de inicialização do sistema, geralmente encontrado em /sbin/init?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_35",
+      "text": "que você pode realizar operações comuns em arquivos, como copiar, mover, excluir, editar e assim por diante?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_36",
+      "text": "que a TUI interativa de um gerenciador de arquivos simula a funcionalidade do Midnight Commander?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_37",
+      "text": "que se o kernel travar, ele geralmente cria um arquivo de despejo?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_38",
+      "text": "que você pode diagnosticar o kernel depurando-o usando a funcionalidade de depuração integrada?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_39",
+      "text": "que você pode baixar e enviar arquivos diretamente do shell UESH?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_40",
+      "text": "que o kernel pode ser traduzido mesmo nos estágios de pré-inicialização, iniciando-o com o argumento 'lang'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_41",
+      "text": "que você pode construir seus próprios protetores de tela registrando-os em seu mod?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_42",
+      "text": "que o primeiro protetor de tela que apagava a tela após três minutos de inatividade nos PCs IBM originais, scrnsave, foi criado em 1983 por John Socha?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_43",
+      "text": "que alguns dos protetores de tela de ritmo acelerado podem causar convulsões fotossensíveis?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_44",
+      "text": "que os diários do kernel são usados como logs de inicialização e desligamento?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_45",
+      "text": "que seus mods agora podem se tornar traduzíveis?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_46",
+      "text": "que seus mods podem se comunicar com addons de kernel e outros mods, criando algum tipo de comunicação e alcançando interoperabilidade?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_47",
+      "text": "que você pode se conectar ao depurador remoto e, opcionalmente, ao servidor de chat?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_48",
+      "text": "que você pode usar o shell de depuração, que está disponível apenas para versões de desenvolvimento?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_49",
+      "text": "que seus mods agora podem ter configurações próprias registrando suas classes associadas?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_50",
+      "text": "que seus mods podem registrar seus próprios shells?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_51",
+      "text": "que seus mods podem adicionar comandos aos shells existentes para aumentar a quantidade de comandos que podem ser usados?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_52",
+      "text": "que suas classes de comando podem representar com precisão argumentos e opções passadas?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_53",
+      "text": "que você pode consultar switches passados usando as classes de gerenciamento de switches encontradas na API do kernel?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_54",
+      "text": "que o UESH inclui a funcionalidade de script para facilitar a criação e execução de scripts?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_55",
+      "text": "que o shell inclui funcionalidade para inibir o cancelamento de aplicativos ativos?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_56",
+      "text": "que o Nitrocid está profundamente integrado ao Terminaux para permitir uma renderização melhor e mais rápida?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_57",
+      "text": "que agora você pode redimensionar os aplicativos interativos sem se preocupar com a corrupção da saída?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_58",
+      "text": "que existem comandos que solicitam a entrada do usuário, que são úteis para scripts?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_59",
+      "text": "que você pode apresentar sua pergunta de entrada do usuário de diversas maneiras, como escolha, tabela, simples, seleção e assim por diante?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_60",
+      "text": "que você pode colocar os espaços reservados no seu texto que os suporta?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_61",
+      "text": "que você pode usar drivers de kernel diferentes para alterar o funcionamento de uma operação específica?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_62",
+      "text": "que você pode criar seus próprios protetores de tela e splashes em C# ou Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_63",
+      "text": "que você pode consultar o sistema host e o emulador de terminal usando a classe de plataforma do kernel?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_64",
+      "text": "que você pode pedir consentimento de privacidade antes de fazer algo confidencial em seu mod?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_65",
+      "text": "que você pode desativar as notificações usando o recurso Não perturbe?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_66",
+      "text": "que você pode salvar o histórico de notificações usando uma função encontrada no gerenciador de notificações?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_67",
+      "text": "que você pode alterar a forma como os números aleatórios são gerados alterando o driver?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_68",
+      "text": "que diversas APIs fornecem funções úteis para seus mods?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_69",
+      "text": "Esta seção permite configurar como o Tips funciona."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_70",
+      "text": "Mostrar dicas do kernel"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_71",
+      "text": "Se ativado, o shell mostra dicas sobre cada login."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_72",
+      "text": "que você pode criar programas inicializáveis usando seus mods de kernel?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_73",
+      "text": "Falha à obtenção de entradas de definições."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_74",
+      "text": "que o Nitrocid (Kernel Simulator 0.0.2) chamou a concha integrada do shell 'UESH'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_75",
+      "text": "que os protetores de ecrã foram considerados uma solução contra queimaduras de ecrã no tubo de raios de cátodo (CRT) ou em exposições de plasma?"
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_THEMEPACKS_EXCEPTION_NODATA",
+      "text": "इस ऐडऑन को आरंभ करने के लिए आवश्यक डेटा प्राप्त नहीं किया जा सका."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AMAYA",
+      "text": "बैंगनी सद्भाव"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ANDROID",
+      "text": "यह अग्रभूमि में Android शुभंकर का रंग है"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_APTIVI",
+      "text": "हमारी ब्रांडिंग सद्भाव"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUDARK",
+      "text": "लोकप्रिय VIM थीम, आयु का डार्क संस्करण"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYULIGHT",
+      "text": "लोकप्रिय VIM थीम, आयु का हल्का संस्करण"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUMIRAGE",
+      "text": "लोकप्रिय VIM थीम, आयु का मिराज संस्करण"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BACKTOSCHOOL",
+      "text": "यह नये स्कूल वर्ष का पहला दिन है"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKONWHITE",
+      "text": "संभवतः सबसे हल्का टर्मिनल"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKROSE",
+      "text": "यह काला गुलाब है"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BREEZE",
+      "text": "ब्रीज़ के लिए रंग योजना, एक KDE प्लाज़्मा 5 थीम"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DRACULA",
+      "text": "IntelliJ जैसे IDEs के लिए लोकप्रिय रंग योजना"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DARKSIDE",
+      "text": "अब अंधेरे पक्ष की ओर वापस जाने का समय आ गया है।"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEBIAN",
+      "text": "डेबियन के लिए रंग योजनाएँ"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEFAULTVIVID",
+      "text": "कर्नेल के लिए ज्वलंत डिफ़ॉल्ट थीम"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICBACK",
+      "text": "आपके कर्नेल में पृष्ठभूमि लहजे!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICEXTRA",
+      "text": "हर जगह अधिक उच्चारण!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_EDM",
+      "text": "यदि आप ईडीएम के प्रशंसक हैं तो इसका उपयोग करें"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FIRE",
+      "text": "अग्नि छाया"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GOLDENPALACE",
+      "text": "गहरे नीले रंग की पृष्ठभूमि पर आपका महाकाव्य स्वर्ण महल"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPEKIWI",
+      "text": "अंगूर और कीवी को एक साथ मिलाकर"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPE",
+      "text": "अंगूर के लिए रंग योजना"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENMIX",
+      "text": "चमकीले और चटकीले हरे, नीले और बैंगनी रंग"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENIFIED",
+      "text": "अपने पर्यावरण को हरा-भरा बनाइये, अपने कर्नेल को हरा-भरा बनाइये। पृथ्वी को और हरा-भरा बनाइये!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENRED",
+      "text": "हमने इसमें हरा और लाल रंग भी जोड़ा है।"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRINK",
+      "text": "हरा और गुलाबी एक साथ मिश्रित"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRUVBOX",
+      "text": "ज्ञात टर्मिनल रंग योजनाओं में से एक"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_HACKER",
+      "text": "ग्रे पर हरा पाठ"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_INDIAN",
+      "text": "पारंपरिक भारतीय रंग सीधे आपके कंसोल में।"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEMON",
+      "text": "अपने टर्मिनल को नींबू एसिड से भरपूर बनाएं"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LIGHTPLANKS",
+      "text": "हल्की लकड़ी के तख्ते"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXCOLORED",
+      "text": "मानक लिनक्स टर्मिनल रंग"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXUNCOLORED",
+      "text": "ग्रे टर्मिनल"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MATERIALISTIC",
+      "text": "आपके टर्मिनल पर कुछ मटेरियल डिज़ाइन पाठ"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MAYA",
+      "text": "नारंगी और भूरे रंग"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MELANGE",
+      "text": "मेलेंज थीम इसी नाम के VIM थीम से प्रेरित है"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MINT",
+      "text": "अपने टर्मिनल को पुदीने से भरपूर बनाएं"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MIRAI",
+      "text": "बियॉन्ड द बाउंड्री से मिराई कुरियामा का रंग पैलेट।"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME",
+      "text": "इसी नाम की VIM थीम से प्रेरित थीम"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEONBREEZE",
+      "text": "क्या आपको निऑन नीला और गुलाबी रंग पसंद है?"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEUTRALIZED",
+      "text": "यह विषय आपके प्रति तटस्थ होना चाहिए।"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NIGHTSKY",
+      "text": "यह रात की शुरुआत में आपका रात्रि आकाश है!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OKTOBERFEST",
+      "text": "अक्टूबर जल्द ही आ रहा है, इसलिए तैयार हो जाओ!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ORANGESEA",
+      "text": "नारंगी रंग का सागर"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_PHOSPHORIC",
+      "text": "फॉस्फोरिक टर्मिनल जो हर चीज़ को नारंगी रंग में बदल देता है"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDBREEZE",
+      "text": "आपको लाल हवा का अहसास देता है।"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDCONSOLE",
+      "text": "एक खूनी लाल कंसोल"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SAKURA",
+      "text": "सकुरा के पेड़ आपको चीनी हवा का अहसास कराएंगे"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TEALED",
+      "text": "सभी चैती रंग"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TECHNO",
+      "text": "प्रौद्योगिकी प्रेमियों के लिए एक थीम"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TRANCE",
+      "text": "ट्रांस संगीत के प्रशंसक? यह थीम आपके लिए है!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_UBUNTU",
+      "text": "लोकप्रिय लिनक्स ऑपरेटिंग सिस्टम, उबंटू से रंग योजनाएं"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITY",
+      "text": "आपको एक परफेक्ट वाइस सिटी वाइब देता है"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITYDAWN",
+      "text": "यह आपकी वाइस सिटी सुबह है।"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VISUALSTUDIO",
+      "text": "सबसे शक्तिशाली IDE में से एक, Visual Studio के लिए रंग योजना"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS11",
+      "text": "विंडोज 11 के लिए रंग योजना, विंडोज का एक हालिया संस्करण"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS95",
+      "text": "इस थीम के साथ पुरानी यादें ताज़ा करें!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WOOD",
+      "text": "आपका टर्मिनल लकड़ी के तख्तों से बना है"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_YASAI",
+      "text": "विभिन्न फलों के चीनी पैटर्न से प्रेरित"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ALMALINUX",
+      "text": "अल्मा लिनक्स से रंग योजनाएं, लिनक्स ऑपरेटिंग सिस्टम का एक स्पिनऑफ, रेड हैट"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ARCHLINUX",
+      "text": "लिनक्स ऑपरेटिंग सिस्टम, आर्क लिनक्स से रंग योजनाएँ"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ENDEAVOUR",
+      "text": "एंडेवरओएस से रंग योजनाएं, जो कि लिनक्स ऑपरेटिंग सिस्टम, आर्क लिनक्स का एक स्पिनऑफ है"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FEDORA",
+      "text": "फेडोरा से रंग योजनाएं, लिनक्स ऑपरेटिंग सिस्टम का एक स्पिनऑफ, रेड हैट"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GENTOO",
+      "text": "लिनक्स ऑपरेटिंग सिस्टम, जेंटू से रंग योजनाएँ"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KALEIDOSCOPE",
+      "text": "तराशे गए पैटर्न के रंग एक रंगीन मंडल बनाते हैं"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KUBUNTU",
+      "text": "लोकप्रिय लिनक्स ऑपरेटिंग सिस्टम, उबंटू के स्पिनऑफ, कुबंटू से रंग योजनाएं"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXMINT",
+      "text": "लिनक्स मिंट से रंग योजनाएं, जो कि लोकप्रिय लिनक्स ऑपरेटिंग सिस्टम, उबंटू का एक अनौपचारिक स्पिनऑफ है"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LUBUNTU",
+      "text": "लुबुन्टू की रंग योजनाएं, जो कि लोकप्रिय लिनक्स ऑपरेटिंग सिस्टम, उबंटू का एक स्पिनऑफ है"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MANJARO",
+      "text": "लिनक्स ऑपरेटिंग सिस्टम, आर्क लिनक्स के स्पिनऑफ, मंजारो से रंग योजनाएं"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OPENSUSE",
+      "text": "लिनक्स ऑपरेटिंग सिस्टम, openSUSE से रंग योजनाएँ"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDHAT",
+      "text": "लिनक्स ऑपरेटिंग सिस्टम, रेड हैट से रंग योजनाएँ"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RENEGADE",
+      "text": "ध्यान आकर्षित करने वाले पाठ के लिए गतिशील उच्चारण रंगों के साथ लाल शेड्स"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ROCKYLINUX",
+      "text": "रॉकी लिनक्स से रंग योजनाएं, लिनक्स ऑपरेटिंग सिस्टम का एक स्पिनऑफ, रेड हैट"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SLACKWARE",
+      "text": "लिनक्स ऑपरेटिंग सिस्टम, स्लैकवेयर से रंग योजनाएँ"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_XUBUNTU",
+      "text": "लोकप्रिय लिनक्स ऑपरेटिंग सिस्टम, उबंटू के स्पिनऑफ, एक्सुबंटू से रंग योजनाएं"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
+      "text": "ज़ोरिन ओएस से रंग योजनाएं, एक लोकप्रिय लिनक्स ऑपरेटिंग सिस्टम, उबंटू का एक अनौपचारिक स्पिनऑफ"
+    }
+  ]
+}

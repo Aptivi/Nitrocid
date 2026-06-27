@@ -31,30 +31,44 @@
     <EmbeddedResource Update="Resources\AnalyzerResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="AnalyzerResources.Designer.cs">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\public\Nitrocid\Resources\Languages\eng.json" Visible="false" />
+
+    <EmbeddedResource Include="..\..\public\Nitrocid\Resources\Languages\*.json" Visible="false">
+      <LogicalName>Nitrocid.Langs Nitrocid %(EmbeddedResource.Filename)%(EmbeddedResource.Extension) %(EmbeddedResource.FullPath)</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\public\Nitrocid.Addons\**\Resources\Languages\*.json" Visible="false">
+      <LogicalName>Nitrocid.Langs %(EmbeddedResource.RelativeDir) %(EmbeddedResource.Filename)%(EmbeddedResource.Extension) %(EmbeddedResource.FullPath)</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\public\Nitrocid.Addons.Essentials\**\Resources\Languages\*.json" Visible="false">
+      <LogicalName>Nitrocid.Langs %(EmbeddedResource.RelativeDir) %(EmbeddedResource.Filename)%(EmbeddedResource.Extension) %(EmbeddedResource.FullPath)</LogicalName>
+    </EmbeddedResource>
+
     <EmbeddedResource Include="..\..\public\Nitrocid\Resources\Settings\*.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)?%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid\Resources\Themes\*.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\..\public\Nitrocid.Addons.Essentials\**\Resources\*Settings.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)?%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons\**\Resources\*Settings.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)?%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons\Nitrocid.ThemePacks\Resources\Themes\*.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)?%(EmbeddedResource.FullPath)</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\public\Nitrocid.Addons.Essentials\**\Resources\*Settings.json" Visible="false">
+      <LogicalName>%(EmbeddedResource.RelativeDir)?%(EmbeddedResource.FullPath)</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\public\Nitrocid.Addons.Essentials\Nitrocid.ThemePacks\Resources\Themes\*.json" Visible="false">
+      <LogicalName>%(EmbeddedResource.RelativeDir)?%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\private\Nitrocid.Generators\Nitrocid.Generators.KnownAddons\Resources\KnownAddons.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)?%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\public\Nitrocid.Analyzers\Nitrocid.Analyzers\Nitrocid.Analyzers.csproj" />
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="..\..\public\Nitrocid.Analyzers\Nitrocid.Analyzers.Common\*.cs" />
   </ItemGroup>

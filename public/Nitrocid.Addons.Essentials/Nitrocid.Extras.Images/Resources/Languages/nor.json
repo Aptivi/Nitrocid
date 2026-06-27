@@ -1,0 +1,30 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "Forhåndsviser et bilde"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "Banen til bildet er ikke oppgitt."
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "Bildefilen eksisterer ikke."
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "Sti til bildefil"
+    }
+  ]
+}

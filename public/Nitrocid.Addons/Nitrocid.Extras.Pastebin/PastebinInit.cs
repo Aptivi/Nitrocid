@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,6 +25,7 @@ using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
 using System.Collections.Generic;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Pastebin
 {
@@ -32,41 +33,41 @@ namespace Nitrocid.Extras.Pastebin
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("pastebin", /* Localizable */ "Pastes the content of either a file or a string to a text hosting provider",
+            new CommandInfo("pastebin", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file/string", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to a file or a string to write"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_FILESTRING_DESC")
                         }),
                         new CommandArgumentPart(false, "arguments", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Pastebin arguments"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_ARGUMENTS_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("provider", /* Localizable */ "Specifies the URL to the Pastebin provider", new()
+                        new SwitchInfo("provider", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_PROVIDER_DESC"), new()
                         {
                             AcceptsValues = true,
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("type", /* Localizable */ "Specifies the Pastebin provider type", new()
+                        new SwitchInfo("type", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_TYPE_DESC"), new()
                         {
                             AcceptsValues = true,
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("postpage", /* Localizable */ "Specifies the Pastebin provider post page", new()
+                        new SwitchInfo("postpage", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTPAGE_DESC"), new()
                         {
                             AcceptsValues = true,
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("postformat", /* Localizable */ "Specifies the Pastebin provider post format", new()
+                        new SwitchInfo("postformat", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFORMAT_DESC"), new()
                         {
                             AcceptsValues = true,
                             ArgumentsRequired = true,
                         }),
-                        new SwitchInfo("postfield", /* Localizable */ "Specifies the Pastebin provider post field name", new()
+                        new SwitchInfo("postfield", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFIELD_DESC"), new()
                         {
                             AcceptsValues = true,
                             ArgumentsRequired = true,
@@ -75,16 +76,25 @@ namespace Nitrocid.Extras.Pastebin
                 ], new PastebinCommand()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasPastebin);
 
-        void IAddon.FinalizeAddon()
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasPastebin);
+
+        public void FinalizeAddon()
         { }
 
-        void IAddon.StartAddon() =>
+        public void StartAddon()
+        {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Pastebin.Resources.Languages.Output.Localizations", typeof(PastebinInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        public void StopAddon()
+        {
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+        }
     }
 }

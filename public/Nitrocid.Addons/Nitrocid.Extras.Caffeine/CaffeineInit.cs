@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Terminaux.Shell.Shells;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Caffeine
 {
@@ -32,17 +33,17 @@ namespace Nitrocid.Extras.Caffeine
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("caffeine", /* Localizable */ "Adds an alarm to alert you when your cup of tea or coffee is ready.",
+            new CommandInfo("caffeine", LanguageTools.GetLocalized("NKS_CAFFEINE_COMMAND_CAFFEINE_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "secondsOrName", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Either specify a number of seconds or a drink name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("abort", /* Localizable */ "Aborts an alarm that alerts you when your cup of tea or coffee is ready.", new SwitchOptions()
+                        new SwitchInfo("abort", LanguageTools.GetLocalized("NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC"), new SwitchOptions()
                         {
                             OptionalizeLastRequiredArguments = 1
                         })
@@ -50,16 +51,25 @@ namespace Nitrocid.Extras.Caffeine
                 ], new CaffeineCommand())
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCaffeine);
 
-        void IAddon.StartAddon() =>
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasCaffeine);
+
+        public void StartAddon()
+        {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Caffeine.Resources.Languages.Output.Localizations", typeof(CaffeineInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        public void StopAddon()
+        {
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+        }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
     }
 }

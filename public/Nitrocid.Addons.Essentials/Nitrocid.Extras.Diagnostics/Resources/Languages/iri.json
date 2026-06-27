@@ -1,0 +1,27 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "Faigheann sé aisrian do gach snáithe"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "Creidimid go bhfuil tú ag rith Windows 8 nó níos ísle. Ní thacaítear leis an oibríocht seo."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "Faisnéis rian an chairn snáithe le haghaidh {0}"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "Ní snáithe KS Nitrocid é"
+    }
+  ]
+}

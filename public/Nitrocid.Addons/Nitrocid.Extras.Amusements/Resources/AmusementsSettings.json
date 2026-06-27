@@ -1,75 +1,75 @@
 [
     {
         "Name": "Solver",
-        "Desc": "This section lets you configure Solver.",
+        "Desc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_DESC",
         "Keys": [
             {
-                "Name": "Solver minimum number",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_NAME",
                 "Type": "SInt",
                 "Variable": "SolverMinimumNumber",
-                "Description": "What is the minimum number to choose?"
+                "Description": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_DESC"
             },
             {
-                "Name": "Solver maximum number",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_NAME",
                 "Type": "SInt",
                 "Variable": "SolverMaximumNumber",
-                "Description": "What is the maximum number to choose?"
+                "Description": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_DESC"
             },
             {
-                "Name": "Solver show input",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_NAME",
                 "Type": "SBoolean",
                 "Variable": "SolverShowInput",
-                "Description": "Whether to show what's written in the input prompt."
+                "Description": "NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_DESC"
             }
         ]
     },
     {
         "Name": "SpeedPress",
-        "Desc": "This section lets you configure SpeedPress.",
+        "Desc": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DESC",
         "Keys": [
             {
-                "Name": "Default difficulty for SpeedPress",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_NAME",
                 "Type": "SIntSlider",
                 "Variable": "SpeedPressCurrentDifficulty",
-                "Description": "Select your preferred difficulty, where 0 is easy, 1 is medium, 2 is hard, 3 is very hard, and 4 is custom.",
+                "Description": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_DESC",
                 "MinimumValue": 0,
                 "MaximumValue": 4
             },
             {
-                "Name": "Keypress timeout for SpeedPress",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_NAME",
                 "Type": "SInt",
                 "Variable": "SpeedPressTimeout",
-                "Description": "How many milliseconds to wait for the keypress before the timeout? (In custom difficulty)"
+                "Description": "NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_DESC"
             }
         ]
     },
     {
         "Name": "Meteor and ShipDuet",
-        "Desc": "This section lets you configure Meteor and ShipDuet.",
+        "Desc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_DESC",
         "Keys": [
             {
-                "Name": "Use PowerLine for rendering spaceship",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_NAME",
                 "Type": "SBoolean",
                 "Variable": "MeteorUsePowerLine",
-                "Description": "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support."
+                "Description": "NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_DESC"
             },
             {
-                "Name": "Meteor game speed",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_NAME",
                 "Type": "SInt",
                 "Variable": "MeteorSpeed",
-                "Description": "Specifies the game speed in milliseconds."
+                "Description": "NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_DESC"
             },
             {
-                "Name": "Use PowerLine for rendering spaceship in ShipDuet",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_NAME",
                 "Type": "SBoolean",
                 "Variable": "ShipDuetUsePowerLine",
-                "Description": "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with ShipDuet, you need to install an appropriate font with PowerLine support."
+                "Description": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_DESC"
             },
             {
-                "Name": "Game speed in ShipDuet",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETSPEED_NAME",
                 "Type": "SInt",
                 "Variable": "ShipDuetSpeed",
-                "Description": "Specifies the game speed in milliseconds."
+                "Description": "NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_DESC"
             }
         ]
     }

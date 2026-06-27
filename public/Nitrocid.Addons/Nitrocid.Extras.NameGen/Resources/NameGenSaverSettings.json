@@ -1,49 +1,49 @@
 [
     {
         "Name": "PersonLookup",
-        "Desc": "Simulates a database lookup for a random person.",
+        "Desc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
         "Keys": [
             {
-                "Name": "Delay in Milliseconds",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_NAME",
                 "Type": "SInt",
                 "Variable": "PersonLookupDelay",
-                "Description": "How many milliseconds to wait before making the next write?"
+                "Description": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_DESC"
             },
             {
-                "Name": "New Screen Delay in Milliseconds",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_NAME",
                 "Type": "SInt",
                 "Variable": "PersonLookupLookedUpDelay",
-                "Description": "How many milliseconds to wait before writing in the new screen?"
+                "Description": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC"
             },
             {
-                "Name": "Minimum names count",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME",
                 "Type": "SIntSlider",
                 "Variable": "PersonLookupMinimumNames",
-                "Description": "Minimum amount of names to generate",
+                "Description": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_DESC",
                 "MinimumValue": 10,
                 "MaximumValue": 1000
             },
             {
-                "Name": "Maximum names count",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_NAME",
                 "Type": "SIntSlider",
                 "Variable": "PersonLookupMaximumNames",
-                "Description": "Maximum amount of names to generate",
+                "Description": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_DESC",
                 "MinimumValue": 10,
                 "MaximumValue": 1000
             },
             {
-                "Name": "Minimum age years count",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_NAME",
                 "Type": "SIntSlider",
                 "Variable": "PersonLookupMinimumNames",
-                "Description": "Minimum amount of age years to generate",
+                "Description": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_DESC",
                 "MinimumValue": 18,
                 "MaximumValue": 100
             },
             {
-                "Name": "Maximum age years count",
+                "Name": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_NAME",
                 "Type": "SIntSlider",
                 "Variable": "PersonLookupMaximumNames",
-                "Description": "Maximum amount of age years to generate",
+                "Description": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC",
                 "MinimumValue": 18,
                 "MaximumValue": 100
             }

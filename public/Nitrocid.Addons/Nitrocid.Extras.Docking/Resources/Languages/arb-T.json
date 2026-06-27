@@ -1,0 +1,60 @@
+{
+  "lang": "arb-T",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "يعرض لك نظرة عامة بملء الشاشة حول عرض الإرساء المحدد لتتمكن من استخدامه كلوحة معلومات"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "لا توجد شاشة إرساء بهذا الاسم."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "لا يوجد إرساء شاشة بهذا الاسم."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "لا يوجد قفص الاتهام الشاشة."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "لقد تحطمت قاعدة الشاشة"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "اسم الرصيف"
+    }
+  ]
+}

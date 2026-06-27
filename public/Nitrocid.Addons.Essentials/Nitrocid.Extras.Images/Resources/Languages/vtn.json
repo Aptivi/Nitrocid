@@ -1,0 +1,26 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "Xem trước hình ảnh"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "Không cung cấp đường dẫn tới hình ảnh."
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "Tập tin hình ảnh không tồn tại."
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "Đường dẫn đến tập tin hình ảnh"
+    }
+  ]
+}

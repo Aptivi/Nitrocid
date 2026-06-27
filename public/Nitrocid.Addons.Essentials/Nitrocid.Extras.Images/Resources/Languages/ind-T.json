@@ -1,0 +1,26 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "छवि का पूर्वावलोकन करता है"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "छवि का पथ प्रदान नहीं किया गया है."
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "छवि फ़ाइल मौजूद नहीं है."
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "छवि फ़ाइल का पथ"
+    }
+  ]
+}

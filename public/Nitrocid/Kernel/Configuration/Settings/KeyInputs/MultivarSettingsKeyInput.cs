@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -37,12 +37,14 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 // Prompt for it
                 var keysChoices = keys.Select((sk, idx) =>
                 {
+                    string keyName = LanguageTools.GetLocalized(sk.Name);
+                    string keyDesc = LanguageTools.GetLocalized(sk.Description);
                     object? currentValue = sk.Masked ? "***" : ConfigTools.GetValueFromEntry(sk, configType);
-                    string finalKeyName = sk.Type == SettingsKeyType.SMultivar ? $"{sk.Name}..." : $"{sk.Name} [{currentValue}]";
-                    return new InputChoiceInfo($"{idx + 1}", finalKeyName, sk.Description);
+                    string finalKeyName = sk.Type == SettingsKeyType.SMultivar ? $"{keyName}..." : $"{keyName} [{currentValue}]";
+                    return new InputChoiceInfo($"{idx + 1}", finalKeyName, keyDesc);
                 }).ToList();
-                keysChoices.Add(new($"{keysChoices.Count + 1}", Translate.DoTranslation("Exit")));
-                int choiceIdx = InfoBoxSelectionColor.WriteInfoBoxSelection([.. keysChoices], Translate.DoTranslation("Choose an entry for") + $" \"{key.Name}\"");
+                keysChoices.Add(new($"{keysChoices.Count + 1}", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_EXIT")));
+                int choiceIdx = InfoBoxSelectionColor.WriteInfoBoxSelection([.. keysChoices], LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MULTIVAR_CHOOSE") + $" \"{LanguageTools.GetLocalized(key.Name)}\"");
 
                 // Check to see if exit is requested
                 if (choiceIdx < 0)

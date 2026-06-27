@@ -1,0 +1,70 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "式を計算するための計算機。"
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "計算エラー。"
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "指定された実数と虚数で指定された虚数式に関する情報を表示します"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "実数が無効です。"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "虚数が無効です。"
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "式："
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "半径："
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "実数からラジアン単位の半径:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "虚数から半径 (ラジアン) へ:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "ラジアン単位の角度:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "指数関数:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "三角："
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "数式表現"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "実数"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "虚数"
+    }
+  ]
+}

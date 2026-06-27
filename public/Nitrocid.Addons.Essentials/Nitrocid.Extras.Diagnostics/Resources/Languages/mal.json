@@ -1,0 +1,29 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "Mendapat jejak belakang untuk semua utas"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "Kami percaya bahawa anda menjalankan Windows 8 atau lebih rendah. Operasi ini tidak disokong."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "Maklumat surih tindanan benang untuk {0}"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "Bukan benang Nitrocid KS"
+    }
+  ]
+}

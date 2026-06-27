@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Name": "Space Duck",
-        "Description": "A theme inspired by a VIM theme of the same name",
+        "Description": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME",
         "Localizable": true
     },
     "InputColor": "#818596",

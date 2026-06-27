@@ -1,0 +1,119 @@
+{
+  "lang": "kor-T",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "SSH 서버에 연결합니다."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "{0}의 비밀번호를 입력하십시오."
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH 연결이 끊어졌습니다."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "SSH 서버에 연결하는 중 오류가 발생했습니다 : {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "지정된 옵션 {0}이 (가) 잘못되었습니다."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "답은 숫자 여야합니다."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "돌아가려면 아무 키나 누르십시오."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "SSH 서버에 연결하여 명령을 실행합니다."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "어떻게 인증 하시겠습니까?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "개인 키 파일"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "암호"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "{0} 키의 암호 입력 :"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "{0} 키 파일이 없습니다."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "개인 키 추가 시도 오류 :"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "SSH 명령 실행 오류"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "SSH 셸 오류"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "원하는 로그인 프롬프트를 작성하십시오. 기본 스타일을 사용하려면 비워 둡니다. 자리 표시자가 구문 분석됩니다."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "{0}의 개인 키 위치를 입력하세요. 키 추가를 완료하려면 \"q\"를 작성하세요."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "이 섹션에서는 SSH 작동 방식을 구성할 수 있습니다."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "SSH의 사용자 이름 프롬프트 스타일"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "SSH 단축 다이얼에 새 연결 추가"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "활성화된 경우 SSH 단축 다이얼에 새 연결을 추가합니다."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "설정 항목을 가져오지 못했습니다."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "SSH가 연결되었지만 클라이언트가 없습니다."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "연결할 SSH 서버"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "인증할 사용자 이름"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "원격으로 실행하기 위한 명령"
+    }
+  ]
+}

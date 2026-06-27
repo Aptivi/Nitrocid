@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Terminaux.Shell.Shells;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Docking
 {
@@ -32,29 +33,38 @@ namespace Nitrocid.Extras.Docking
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("dock", /* Localizable */ "Shows you a full-screen overview about a selected dock view to be able to use it as an info panel",
+            new CommandInfo("dock", LanguageTools.GetLocalized("NKS_DOCKING_COMMAND_DOCK_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "dockName", new()
                         {
                             AutoCompleter = (_) => DockTools.GetDockScreenNames(),
-                            ArgumentDescription = /* Localizable */ "Dock name"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC")
                         }),
                     ])
                 ], new DockCommand())
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasDocking);
 
-        void IAddon.FinalizeAddon()
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasDocking);
+
+        public void FinalizeAddon()
         { }
 
-        void IAddon.StartAddon() =>
+        public void StartAddon()
+        {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Docking.Resources.Languages.Output.Localizations", typeof(DockingInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        public void StopAddon()
+        {
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+        }
     }
 }

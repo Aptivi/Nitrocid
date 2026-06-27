@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Name": "Default",
-        "Description": "The default theme for the kernel",
+        "Description": "NKS_THEMES_DEFAULT_DESC",
         "Localizable": true,
         "Category": "Standard"
     },

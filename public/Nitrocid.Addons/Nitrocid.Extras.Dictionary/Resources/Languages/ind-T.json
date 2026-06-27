@@ -1,0 +1,62 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "लाइसेंस जानकारी"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "अंग्रेजी शब्दकोश"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "शब्द की जानकारी"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "एपीआई के तहत लाइसेंस प्राप्त है"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "शब्द:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "के लिए शब्द अर्थ"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "शब्द भेद:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "परिभाषा:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "वाक्य में उदाहरण:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "परिभाषित करने के लिए प्रयुक्त स्रोत"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "समानार्थी शब्द:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "विलोम शब्द:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "परिभाषित करने के लिए शब्द"
+    }
+  ]
+}

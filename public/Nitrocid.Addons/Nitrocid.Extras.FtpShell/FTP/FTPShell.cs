@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.FtpShell.FTP
             // Parse shell arguments
             NetworkConnection ftpConnection = (NetworkConnection)ShellArgs[0];
             FtpClient? clientFTP = (FtpClient?)ftpConnection.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("The client is not populated."));
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT"));
 
             // Finalize current connection
             FTPShellCommon.clientConnection = ftpConnection;
@@ -104,7 +104,7 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(Translate.DoTranslation("There was an error in the FTP shell:") + " {0}", true, KernelColorType.Error, ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_SHELLERROR") + " {0}", true, KernelColorType.Error, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     InputTools.DetectKeypress();

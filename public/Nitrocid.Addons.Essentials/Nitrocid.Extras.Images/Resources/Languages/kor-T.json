@@ -1,0 +1,27 @@
+{
+  "lang": "kor-T",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "이미지 미리보기"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "이미지 경로가 제공되지 않습니다."
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "이미지 파일이 존재하지 않습니다."
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "이미지 파일 경로"
+    }
+  ]
+}

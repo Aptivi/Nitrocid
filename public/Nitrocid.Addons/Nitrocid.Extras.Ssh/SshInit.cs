@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,6 +26,7 @@ using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Extras.Ssh.Settings;
 using Nitrocid.Extras.Ssh.Commands;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Ssh
 {
@@ -33,59 +34,64 @@ namespace Nitrocid.Extras.Ssh
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("sshell", /* Localizable */ "Connects to an SSH server.",
+            new CommandInfo("sshell", LanguageTools.GetLocalized("NKS_SSH_COMMAND_SSHELL_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "address:port", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "SSH server to connect to"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC")
                         }),
                         new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Username to authenticate with"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC")
                         }),
                     ])
                 ], new SshellCommand()),
 
-            new CommandInfo("sshcmd", /* Localizable */ "Connects to an SSH server to execute a command.",
+            new CommandInfo("sshcmd", LanguageTools.GetLocalized("NKS_SSH_COMMAND_SSHCMD_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "address:port", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "SSH server to connect to"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC")
                         }),
                         new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Username to authenticate with"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC")
                         }),
                         new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Command to remotely execute"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC")
                         }),
                     ])
                 ], new SshcmdCommand()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSsh);
+
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasSsh);
 
         internal static SshConfig SshConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(SshConfig)) ? (SshConfig)Config.baseConfigurations[nameof(SshConfig)] : Config.GetFallbackKernelConfig<SshConfig>();
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Ssh.Resources.Languages.Output.Localizations", typeof(SshInit).Assembly));
             var config = new SshConfig();
             ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         { }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(SshConfig));
         }

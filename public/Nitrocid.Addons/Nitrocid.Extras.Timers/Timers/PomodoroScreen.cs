@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -62,10 +62,10 @@ namespace Nitrocid.Extras.Timers.Timers
         private static Timer? _Timer;
         private readonly static Keybinding[] keyBindings =
         [
-            new( /* Localizable */ "Start counting down", ConsoleKey.Enter),
-            new( /* Localizable */ "Set interval", ConsoleKey.T),
-            new( /* Localizable */ "Set break interval", ConsoleKey.B),
-            new( /* Localizable */ "Exit", ConsoleKey.Escape),
+            new( LanguageTools.GetLocalized("NKS_DATES_TIMERS_KEYBINDING_COUNTDOWN"), ConsoleKey.Enter),
+            new( LanguageTools.GetLocalized("NKS_DATES_TIMERS_KEYBINDING_SETTIME"), ConsoleKey.T),
+            new( LanguageTools.GetLocalized("NKS_DATES_POMODORO_KEYBINDING_SETBREAKTIME"), ConsoleKey.B),
+            new( LanguageTools.GetLocalized("NKS_DATES_KEYBINDING_EXIT"), ConsoleKey.Escape),
         ];
 
         internal static Timer? Timer
@@ -191,10 +191,10 @@ namespace Nitrocid.Extras.Timers.Timers
                 var mode = new AlignedText()
                 {
                     Text =
-                        !running ? Translate.DoTranslation("Pomodoro timer is ready") :
+                        !running ? LanguageTools.GetLocalized("NKS_DATES_POMODORO_STATUS_READY") :
                         pomodoroStage == 1 && pomodoroIteration <= 4 ?
-                        Translate.DoTranslation("Pomodoro timer number {0} in four iterations").FormatString(pomodoroIteration) :
-                        Translate.DoTranslation("Short break"),
+                        LanguageTools.GetLocalized("NKS_DATES_POMODORO_STATUS_TIMERNUM").FormatString(pomodoroIteration) :
+                        LanguageTools.GetLocalized("NKS_DATES_POMODORO_STATUS_SHORTBREAK"),
                     ForegroundColor = timerColor,
                     Top = modeY,
                     Settings = new()
@@ -254,14 +254,14 @@ namespace Nitrocid.Extras.Timers.Timers
 
                         // Try to parse the interval
                         {
-                            string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify the timeout in milliseconds") + " [{0}] ", new InfoBoxSettings()
+                            string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_DATES_TIMERS_TIMEOUTPROMPT") + " [{0}] ", new InfoBoxSettings()
                             {
                                 ForegroundColor = KernelColorTools.GetColor(KernelColorType.Question),
                             }, InfoBoxInputType.Text, TimerInterval);
                             if (!double.TryParse(UnparsedInterval, out TimerInterval))
                             {
                                 // Not numeric.
-                                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Indicated timeout is not numeric."), new InfoBoxSettings()
+                                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER"), new InfoBoxSettings()
                                 {
                                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
                                 });
@@ -276,14 +276,14 @@ namespace Nitrocid.Extras.Timers.Timers
 
                         // Try to parse the interval
                         {
-                            string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify the break timeout in milliseconds") + " [{0}] ", new InfoBoxSettings()
+                            string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_DATES_POMODORO_TIMEOUTPROMPT") + " [{0}] ", new InfoBoxSettings()
                             {
                                 ForegroundColor = KernelColorTools.GetColor(KernelColorType.Question),
                             }, InfoBoxInputType.Text, breakTimerInterval);
                             if (!double.TryParse(UnparsedInterval, out breakTimerInterval))
                             {
                                 // Not numeric.
-                                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Indicated timeout is not numeric."), new InfoBoxSettings()
+                                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER"), new InfoBoxSettings()
                                 {
                                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
                                 });

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -86,7 +86,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Presets
             // Segments
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), Translate.DoTranslation("Site"), PadlockChar)
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE"), PadlockChar)
             ];
 
             // Builder

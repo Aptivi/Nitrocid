@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -147,7 +147,7 @@ namespace Nitrocid.Kernel.Extensions
                 {
                     var asm = Assembly.LoadFrom(addonPath);
                     addonInstance = GetAddonInstance(asm) ??
-                        throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("This addon is not a valid addon.") + $" {addonPath}");
+                        throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_ADDONINVALID") + $" {addonPath}");
                     addonInstances.Add(addonPath, addonInstance);
                 }
                 else
@@ -156,7 +156,7 @@ namespace Nitrocid.Kernel.Extensions
                 // Call the start function
                 try
                 {
-                    SplashReport.ReportProgress($"[{current}/{length}] " + Translate.DoTranslation("Starting kernel addon") + " {0}...", addonInstance.AddonName);
+                    SplashReport.ReportProgress($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_STARTING") + " {0}...", addonInstance.AddonTranslatedName);
                     addonInstance.StartAddon();
                     DebugWriter.WriteDebug(DebugLevel.I, "Started!");
 
@@ -165,18 +165,18 @@ namespace Nitrocid.Kernel.Extensions
                     if (!addons.Where((addon) => addonInstance.AddonName == addon.AddonName).Any())
                         addons.Add(info);
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded addon!");
-                    SplashReport.ReportProgress($"[{current}/{length}] " + Translate.DoTranslation("Started kernel addon") + " {0}!", 1, addonInstance.AddonName);
+                    SplashReport.ReportProgress($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_STARTED") + " {0}!", 1, addonInstance.AddonTranslatedName);
                 }
                 catch (Exception ex)
                 {
-                    SplashReport.ReportProgressError($"[{current}/{length}] " + Translate.DoTranslation("Failed to start kernel addon") + " {0}.", addonInstance.AddonName);
+                    SplashReport.ReportProgressError($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_STARTFAILED") + " {0}.", addonInstance.AddonTranslatedName);
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to start addon {0}. {1}", vars: [addon, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             catch (Exception ex)
             {
-                SplashReport.ReportProgressError($"[{current}/{length}] " + Translate.DoTranslation("Failed to initialize kernel addon") + " {0}.", Path.GetFileName(addon));
+                SplashReport.ReportProgressError($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZEFAILED") + " {0}.", Path.GetFileName(addon));
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to load addon {0}. {1}", vars: [addon, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
@@ -201,7 +201,7 @@ namespace Nitrocid.Kernel.Extensions
                 }
             }
             if (errors.Count != 0)
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Failed to finalize addons. Below addons have failed to finalize:") + $"\n  - {string.Join("\n  - ", errors.Select((kvp) => $"{kvp.Key}: {kvp.Value}"))}");
+                throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_FINALIZEFAILED") + $"\n  - {string.Join("\n  - ", errors.Select((kvp) => $"{kvp.Key}: {kvp.Value}"))}");
         }
 
         internal static void UnloadAddons()
@@ -223,7 +223,7 @@ namespace Nitrocid.Kernel.Extensions
                 }
             }
             if (errors.Count != 0)
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Failed to stop addons. Below addons have failed to stop:") + $"\n  - {string.Join("\n  - ", errors.Select((kvp) => $"{kvp.Key}: {kvp.Value}"))}");
+                throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_STOPFAILED") + $"\n  - {string.Join("\n  - ", errors.Select((kvp) => $"{kvp.Key}: {kvp.Value}"))}");
         }
 
         /// <summary>

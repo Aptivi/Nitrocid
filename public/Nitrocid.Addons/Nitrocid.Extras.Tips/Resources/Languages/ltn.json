@@ -1,0 +1,310 @@
+{
+  "lang": "ltn",
+  "name": "Latin",
+  "cultures": [
+    "la",
+    "la-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TIPS_KERNELTIP_1",
+      "text": "quod mandatum processus exequi potes duobus modis: intrans nomen lima exsecutabile directe, et utens mandato \"exec\"?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_2",
+      "text": "quod imperium tuum screen utendo 'lockscreen' potes claudere?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_3",
+      "text": "ut modificationes nuclei utens C# et Visual Basic aedificare possis?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_4",
+      "text": "ut pluribus praeceptis uti possis semicolon inter imperata?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_5",
+      "text": "quod duplicem virgulam effugere potes intra allegata argumenta cum mandata exequens?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_6",
+      "text": "te posse nucleos mutare occasus utentes \"occasus\" imperare?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_7",
+      "text": "te potest salvum facere screen tuum utendo imperio 'savescreen'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_8",
+      "text": "cimices nuntiare potes ut ad nos eundo ad paginam propositi Nitrocidi GitHub?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_9",
+      "text": "quod potes brevem facere tuo mandato desiderato utendo mandato tuo?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_10",
+      "text": "te posse aedificare tuum velum adipiscing utens C# et Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_11",
+      "text": "quod extra additamenta instituere potes ut nucleum tuum utilius et hilare possis?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_12",
+      "text": "te facere potes tua terribilis themata utens imperio 'mktheme'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_13",
+      "text": "nucleos tuos colores mutare potes utendo mandato occasus vel uno themata praestructa?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_14",
+      "text": "quod nucleum tuum ad officinas defaltis utens argumento retexere potes?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_15",
+      "text": "accedere te posse nostris amplis documentis ad nostram paginam GitBook?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_16",
+      "text": "quod diu terminus emissio quinquennium ad principale firmamentum sustentatur, et tres annos propter securitatem updates?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_17",
+      "text": "0.0,1 fuit prima versio Nitrocidi KS quae die 22 Februarii 2018 dimissa est?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_18",
+      "text": "Quod 0.0.24.x series erat solus version serie, quae tenuit API v2.1 version?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_19",
+      "text": "Quod brevis terminum solvo sunt sustentantur pro iustus novem menses?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_20",
+      "text": "Quod 0.1.X series est retro, repugnat cum 0.0.24.x seriem vel maior?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_21",
+      "text": "Quod vos can currere nitrocid ks in Linux, Macos et Android?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_22",
+      "text": "Quod vos can referri ad API documenta ad auxilium vobis facere mods?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_23",
+      "text": "Quod vos can adepto plures ex terribilis ludos, ut tangat et Shipdet, per installing ad extra addons?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_24",
+      "text": "Quod in Meteor, si fragosus cum rubrum meteor tempestate, spaceship crashes?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_25",
+      "text": "Ut vos can convertere vestri kernel ad notitia centers per docking pluma?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_26",
+      "text": "Quod vos can facere user coetus ut organize user rationes?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_27",
+      "text": "Quod si vestri 'a socius de coetus quod concessiones quaedam permissiones, vos erant' licebat praestare tales operationes?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_28",
+      "text": "Quod vos can mutare vestri kernel tempus zona sine afficiens exercitum ratio?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_29",
+      "text": "Quod vos can utor interactive textus et HEX Editor est salvare tempore?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_30",
+      "text": "vetustissimum textum editorem notum esse laboratum cum systemate Unix primo ed, textus antiquissimus editor in 1973 dimisit, cum systema Unix in PDP-7 at AT&T Bell Labs inventum?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_31",
+      "text": "Quod vos can quoque vim recensere mandatum ad launch editor in specifica genus?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_32",
+      "text": "Quod interactive textus emendator conatus ad simulare maxime basic features of plurrimi popular Unix Text Editors, VI et Vim?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_33",
+      "text": "nisi scias quid vales cum fasciculo binario, tale fasciculum emendo hoc modo ad corruptionem datam vel datam damnum in file iaculis?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_34",
+      "text": "quod in systematis Linux, testa initiatur ope utriusque tabulae in tracto et programmatis initializationis systematis, plerumque in /sbin/init?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_35",
+      "text": "quod operationes fasciculi communes facere potes, ut exscribendi, movendi, delendi, edendi, et sic de aliis?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_36",
+      "text": "Quod interactive Tui de lima procurator simulat functionality of mediae ducem?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_37",
+      "text": "Quod si kernel fragosus, solet gignit TUBER lima?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_38",
+      "text": "Quod vos can egritudo in kernel per debugging ut per aedificatum, in Debug functionality?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_39",
+      "text": "Quod vos can download et upload files directe ex uesh testa?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_40",
+      "text": "quod nucleus interpretari potest etiam in prae-statio caliga incipiens eam a 'lang' argumento?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_41",
+      "text": "te posse aedificare tuum screensaverum nominando eas in tuo modulo?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_42",
+      "text": "primum Screensaverium quod post tria minuta inertiae velum in originali IBM PCs, scrnsave, anno 1983 a Ioanne Socha creatum est?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_43",
+      "text": "ut aliqui ex ieiunatis deambulatis screensatores photosensitivas invasiones faciant?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_44",
+      "text": "quod nuclei nuclei usi sunt ut tabernus et shutdown acta?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_45",
+      "text": "Quod vestri mods potest iam fieri translatable?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_46",
+      "text": "modulos tuos communicare posse cum additamentis nucleis et aliis modis, communicationem aliquam creandi et interoperabilitatem assequendi?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_47",
+      "text": "te coniungere cum debugger remoto et, optione, cum servo chat?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_48",
+      "text": "Debug testa uti potes, quae tantum ad versiones evolutionis praesto est?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_49",
+      "text": "modalia tua nunc habere suam configurationem possunt per nominationem eorum adiunctis generibus?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_50",
+      "text": "mods ut conchas suas possit subcriptio?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_51",
+      "text": "modalia tua mandata addere potest conchis existentium ad augendam quantitatem mandatorum quae adhiberi possunt?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_52",
+      "text": "Tuum imperium classes accurate repraesentare posse argumenta et virgas latas?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_53",
+      "text": "quod interrogatione potes uti virgas transiit administrationis switch utens classes in nucleo API inventas?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_54",
+      "text": "quod UESH involvit functionem scriptionis ad faciliorem reddendam et currendi scripta?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_55",
+      "text": "quod testa functionality ad inhibenda applicationes activas, quae inhibent?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_56",
+      "text": "quod Nitrocid alte cum Terminaux inseritur, ut citius et melius redderetur?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_57",
+      "text": "nunc posses resize applicationes interactivas sine sollicitudine quod output corruptum sit?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_58",
+      "text": "Mandata esse quae pro usuario input quaerunt, quae scripta sunt utilia?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_59",
+      "text": "usorem tuum inputare pluribus modis interrogare possis, ut electio, mensa, simplex, delectu, et sic porro?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_60",
+      "text": "quod locatores in textu tuo sustinenti ponere potes?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_61",
+      "text": "ut diversis nucleis uti possis ad mutandum quomodo certae operationis operantur?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_62",
+      "text": "quod facere potes tuum screensaverum et spargit in C# vel Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_63",
+      "text": "quod potes investigare systema militiam et aemulatorem terminalem nucleum suggestum classis uti?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_64",
+      "text": "quod consensum secretum petere potes prior ad faciendum aliquid sensitivum in tuo modulo?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_65",
+      "text": "ut vos can notificationes averte utens in Do not Disturb pluma?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_66",
+      "text": "potesne servare historiam notificationem utentem functione in notificatione procuratoris?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_67",
+      "text": "quod te mutare potes, quam temere numeros aurigae mutando generantur?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_68",
+      "text": "quod insedit APIs utilia munera pro mods praebent?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_69",
+      "text": "Haec sectio permittit te configurare quomodo Apices operantur."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_70",
+      "text": "Monstra nuclei tips"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_71",
+      "text": "Si enabled, testa tibi apicibus in singulis login."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_72",
+      "text": "quod programmata bootable potes uti nucleo tuo mods?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_73",
+      "text": "Impetrare occasus viscus."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_74",
+      "text": "quod Nitrocid (Kernel Simulator 0.0.2) appellavit in concha \"UESH\" constructum?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_75",
+      "text": "Screensavers ut touted solutionem contra screen burn-ins in cathode ray-tube (CRT) vel plasma ostendimus?"
+    }
+  ]
+}

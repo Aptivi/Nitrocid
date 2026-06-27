@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -17,11 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
+using System.Globalization;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Terminaux.Shell.Commands;
 using Nitrocid.Users;
+using Terminaux.Shell.Commands;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.Admin.Commands
 {
@@ -36,7 +37,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
             if (lang == "clear")
             {
                 // If we're doing this on ourselves, change the kernel language to the system language
-                lang = LanguageManager.currentLanguage.ThreeLetterLanguageName;
+                lang = LanguageManager.currentLanguage.Name;
                 if (UserManagement.CurrentUser.Username == userName)
                 {
                     LanguageManager.currentUserLanguage = LanguageManager.currentLanguage;
@@ -46,9 +47,9 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                 // Now, change the language in the user config
                 UserManagement.Users[userIndex].PreferredLanguage = null;
                 UserManagement.SaveUsers();
-                TextWriterColor.Write(Translate.DoTranslation("Preferred user language set to {0}. You may want to log in again."), lang);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERLANG_SUCCESS"), lang);
             }
-            else if (LanguageManager.Languages.TryGetValue(lang, out LanguageInfo? langInfo))
+            else if (LanguageManager.Languages.TryGetValue(lang, out CultureInfo? langInfo))
             {
                 // Do it locally
                 if (UserManagement.CurrentUser.Username == userName)
@@ -60,11 +61,11 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                 // Now, change the language in the user config
                 UserManagement.Users[userIndex].PreferredLanguage = lang;
                 UserManagement.SaveUsers();
-                TextWriterColor.Write(Translate.DoTranslation("Preferred user language set to {0}. You may want to log in again."), lang);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERLANG_SUCCESS"), lang);
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Invalid language") + " {0}", lang);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_INVALIDLANG") + " {0}", lang);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
             }
             return 0;

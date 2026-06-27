@@ -1,0 +1,50 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "आपकी चाय या कॉफ़ी का कप तैयार होने पर आपको सचेत करने के लिए एक अलार्म जोड़ता है।"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "उस अलार्म को बंद कर देता है जो आपकी चाय या कॉफी का कप तैयार होने पर आपको सचेत करता है।"
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "अमेरिकन कॉफ़ी"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "लाल चाय"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "हरी चाय"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "गर्भपात के लिए कोई कैफीन अलर्ट नहीं।"
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "आपका कप कितने सेकंड में तैयार हो जाएगा, यह अमान्य है।"
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "यदि आप पेय का नाम देने का प्रयास कर रहे हैं, तो नीचे दी गई सूची देखें:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "आपका कप अब तैयार है!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "या तो सेकंड की संख्या निर्दिष्ट करें या पेय का नाम"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -27,6 +27,7 @@ using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Terminaux.Shell.Shells;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.RssShell
 {
@@ -34,40 +35,45 @@ namespace Nitrocid.Extras.RssShell
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("rss", /* Localizable */ "Opens an RSS shell to read the feeds",
+            new CommandInfo("rss", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_RSS_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "feedlink", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "RSS feed link"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_RSS_ARGUMENT_FEEDLINK_DESC")
                         }),
                     ],
                     [
-                        new SwitchInfo("tui", /* Localizable */ "Opens an interactive RSS feed reader TUI"),
+                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC")),
                     ])
                 ], new RssCommandExec())
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasRssShell);
+
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasRssShell);
 
         internal static RssConfig RssConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(RssConfig)) ? (RssConfig)Config.baseConfigurations[nameof(RssConfig)] : Config.GetFallbackKernelConfig<RssConfig>();
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.RssShell.Resources.Languages.Output.Localizations", typeof(RssShellInit).Assembly));
             var config = new RssConfig();
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterShell("RSSShell", new RSSShellInfo());
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         { }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
             ShellManager.UnregisterShell("RSSShell");
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(RssConfig));

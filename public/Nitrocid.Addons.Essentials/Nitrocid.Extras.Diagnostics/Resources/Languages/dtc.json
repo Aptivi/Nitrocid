@@ -1,0 +1,32 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "Krijgt backtrace voor alle threads"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "Wij gaan ervan uit dat u Windows 8 of lager gebruikt. Deze bewerking wordt niet ondersteund."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "Traceringsinformatie voor threadstack voor {0}"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "Geen Nitrocid KS-thread"
+    }
+  ]
+}

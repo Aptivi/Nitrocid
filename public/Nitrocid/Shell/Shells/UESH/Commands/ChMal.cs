@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -53,7 +53,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, parameters.CommandText);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
                 return -4;
             }
 
@@ -61,12 +61,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (string.IsNullOrEmpty(parameters.ArgumentsText))
                 {
-                    TextWriters.Write(Translate.DoTranslation("Blank MAL After Login."), true, KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHMAL_BLANK"), true, KernelColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.MOTD);
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Changing MAL..."));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHMAL_PROGRESS"));
                     MalParse.SetMal(parameters.ArgumentsText);
                     return 0;
                 }
@@ -74,7 +74,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             else
             {
                 ShellManager.StartShell("TextShell", PathsManagement.GetKernelPath(KernelPathType.MAL));
-                TextWriterColor.Write(Translate.DoTranslation("Changing MAL..."));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHMAL_PROGRESS"));
                 MalParse.ReadMal();
                 return 0;
             }

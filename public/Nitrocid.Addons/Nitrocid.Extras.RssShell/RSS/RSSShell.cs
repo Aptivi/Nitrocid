@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -53,7 +53,7 @@ namespace Nitrocid.Extras.RssShell.RSS
             // Parse shell arguments
             NetworkConnection rssConnection = (NetworkConnection)ShellArgs[0];
             RSSFeed? rssFeed = (RSSFeed?)rssConnection.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.RSSShell, Translate.DoTranslation("The client is not populated."));
+                throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT"));
             RSSShellCommon.feedInstance = rssFeed;
             RSSShellCommon.rssFeedLink = rssFeed.FeedUrl;
 
@@ -81,7 +81,7 @@ namespace Nitrocid.Extras.RssShell.RSS
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + " {0}", true, KernelColorType.Error, ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR") + " {0}", true, KernelColorType.Error, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     InputTools.DetectKeypress();

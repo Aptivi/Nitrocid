@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -41,9 +41,9 @@ namespace Nitrocid.Extras.Mods.Modifications.ManPages
         {
             ManualFile = FilesystemTools.NeutralizePath(ManualFile);
             if (!ModManager.Mods.ContainsKey(modName))
-                throw new KernelException(KernelExceptionType.ModManual, Translate.DoTranslation("Tried to initialize the manual file {0} for nonexistent mod {1}."), ManualFile, modName);
+                throw new KernelException(KernelExceptionType.ModManual, LanguageTools.GetLocalized("NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND"), ManualFile, modName);
             if (!FilesystemTools.FileExists(ManualFile))
-                throw new KernelException(KernelExceptionType.ModManual, Translate.DoTranslation("Tried to initialize the manual file {0} which doesn't exist for mod {1}."), ManualFile, modName);
+                throw new KernelException(KernelExceptionType.ModManual, LanguageTools.GetLocalized("NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD"), ManualFile, modName);
 
             // File found, but we need to verify that we're actually dealing with the manual page. If not, ignore it.
             if (Path.GetExtension(ManualFile) != ".man")
@@ -159,12 +159,12 @@ namespace Nitrocid.Extras.Mods.Modifications.ManPages
                     if (string.IsNullOrWhiteSpace(Body.ToString()))
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Body for \"{0}\" does not contain anything.", vars: [ManualFile]);
-                        Body.AppendLine(Translate.DoTranslation("Consider filling this manual page."));
+                        Body.AppendLine(LanguageTools.GetLocalized("NKS_MODS_MANPAGE_NEEDSFILL"));
                     }
                 }
                 else
                 {
-                    throw new KernelException(KernelExceptionType.InvalidManpage, Translate.DoTranslation("The manual page {0} is invalid."), ManualFile);
+                    throw new KernelException(KernelExceptionType.InvalidManpage, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_MANPAGEINVALID"), ManualFile);
                 }
             }
             catch (Exception ex)

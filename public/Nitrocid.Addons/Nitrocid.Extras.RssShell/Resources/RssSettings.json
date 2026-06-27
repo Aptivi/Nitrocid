@@ -1,38 +1,38 @@
 [
     {
         "Name": "RSS",
-        "Desc": "This section lets you configure how the RSS shell works.",
+        "Desc": "NKS_SHELLPACKS_RSS_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "RSS Prompt Preset",
+                "Name": "NKS_SHELLPACKS_RSS_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "RSSPromptPreset",
                 "ShellType": "RSSShell",
                 "Description": ""
             },
             {
-                "Name": "RSS feed URL prompt style",
+                "Name": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "RSSFeedUrlPromptStyle",
-                "Description": "Write how you want your RSS feed server prompt to be. Leave blank to use default style. Placeholders are parsed."
+                "Description": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_DESC"
             },
             {
-                "Name": "Auto refresh RSS feed",
+                "Name": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESH_NAME",
                 "Type": "SBoolean",
                 "Variable": "RSSRefreshFeeds",
-                "Description": "Auto refresh RSS feed"
+                "Description": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESH_NAME"
             },
             {
-                "Name": "Auto refresh RSS feed interval",
+                "Name": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_NAME",
                 "Type": "SInt",
                 "Variable": "RSSRefreshInterval",
-                "Description": "How many milliseconds to refresh the RSS feed?"
+                "Description": "NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_DESC"
             },
             {
-                "Name": "RSS feed fetch timeout",
+                "Name": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_NAME",
                 "Type": "SInt",
                 "Variable": "RSSFetchTimeout",
-                "Description": "How many milliseconds to wait before RSS feed fetch timeout?"
+                "Description": "NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_DESC"
             }
         ]
     }

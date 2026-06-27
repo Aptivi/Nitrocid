@@ -1,0 +1,63 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Eolas ceadúnais"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "An Foclóir Béarla"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Eolas focal le haghaidh"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "Tá API ceadúnaithe faoi"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "Focal:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Focal bríonna le haghaidh"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Cuid den Óráid:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Sainmhíniú:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Sampla san abairt:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Foinsí a úsáidtear chun a shainiú"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "Comhchiallaigh:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Frithainmneacha:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Focal le sainmhíniú"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "lang": "cnt-T",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "連接到 SSH 服務器。"
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "輸入 {0} 的密碼："
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH 斷開連接。"
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "嘗試連接到 SSH 服務器時出錯：{0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "指定的選項 {0} 無效。"
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "答案必須是數字。"
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "按任意鍵返回。"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "連接到 SSH 服務器以執行命令。"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "您想如何進行身份驗證？"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "私鑰文件"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "密碼"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "輸入密鑰 {0} 的密碼："
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "密鑰文件 {0} 不存在。"
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "嘗試添加私鑰時出錯："
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "執行 SSH 命令時出錯"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "SSH 外殼錯誤"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "寫下您希望登錄提示的方式。留空以使用默認樣式。佔位符被解析。"
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "輸入 {0} 的私鑰位置。寫“q”完成添加鍵："
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "本部分可讓您配置 SSH 的工作方式。"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "SSH 的使用者名稱提示樣式"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "將新連線新增至 SSH 快速撥號"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "如果啟用，則會為 SSH 快速撥號新增連線。"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "無法取得設定條目。"
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "SSH 已連接，但沒有客戶端。"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "要連接的 SSH 伺服器"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "要驗證的用戶名"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "遠端執行命令"
+    }
+  ]
+}

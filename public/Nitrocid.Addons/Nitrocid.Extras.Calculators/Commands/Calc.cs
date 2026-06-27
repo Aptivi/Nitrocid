@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.Calculators.Commands
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to calculate expression {0}: {1}", vars: [parameters.ArgumentsText, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(Translate.DoTranslation("Error in calculation.") + " {0}", true, KernelColorType.Error, ex.Message);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_CALCERROR") + " {0}", true, KernelColorType.Error, ex.Message);
                 return ex.GetHashCode();
             }
         }

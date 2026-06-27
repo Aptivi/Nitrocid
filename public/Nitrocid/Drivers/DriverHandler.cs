@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -508,7 +508,7 @@ namespace Nitrocid.Drivers
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Kernel driver, type {0}, no fallback found!", vars: [driverType.ToString()]);
-                throw new KernelException(KernelExceptionType.Hardware, Translate.DoTranslation("No fallback driver found."));
+                throw new KernelException(KernelExceptionType.Hardware, LanguageTools.GetLocalized("NKS_DRIVERS_EXCEPTION_NOFALLBACKS"));
             }
         }
 
@@ -543,7 +543,7 @@ namespace Nitrocid.Drivers
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Kernel driver, type {0}, no fallback found!", vars: [driverType.ToString()]);
-                throw new KernelException(KernelExceptionType.Hardware, Translate.DoTranslation("No fallback driver found."));
+                throw new KernelException(KernelExceptionType.Hardware, LanguageTools.GetLocalized("NKS_DRIVERS_EXCEPTION_NOFALLBACKS"));
             }
         }
 
@@ -622,7 +622,7 @@ namespace Nitrocid.Drivers
         public static void RegisterDriver(DriverTypes type, IDriver driver)
         {
             if (driver is null)
-                throw new KernelException(KernelExceptionType.DriverHandler, Translate.DoTranslation("Can't register a non-driver or a null driver."));
+                throw new KernelException(KernelExceptionType.DriverHandler, LanguageTools.GetLocalized("NKS_DRIVERS_EXCEPTION_NOTADRIVER"));
 
             // Now, get the driver name
             string name = driver.DriverName;
@@ -977,7 +977,7 @@ namespace Nitrocid.Drivers
 
             // Check the type
             if (!knownTypes.TryGetValue(type, out DriverTypes driverTypes))
-                throw new KernelException(KernelExceptionType.DriverHandler, Translate.DoTranslation("Failed to infer driver type from unknown type") + $" {type.Name} [{type.FullName}]");
+                throw new KernelException(KernelExceptionType.DriverHandler, LanguageTools.GetLocalized("NKS_DRIVERS_EXCEPTION_UNKNOWNTYPE") + $" {type.Name} [{type.FullName}]");
 
             // Now, actually infer the type from the driver interface type
             driverType = driverTypes;
@@ -991,7 +991,7 @@ namespace Nitrocid.Drivers
 
             // Check the type
             if (!Enum.TryParse(name, out DriverTypes driverTypes))
-                throw new KernelException(KernelExceptionType.DriverHandler, Translate.DoTranslation("Failed to infer driver type from unknown type") + $" {name}");
+                throw new KernelException(KernelExceptionType.DriverHandler, LanguageTools.GetLocalized("NKS_DRIVERS_EXCEPTION_UNKNOWNTYPE") + $" {name}");
 
             // Now, actually infer the type from the name
             driverType = driverTypes;

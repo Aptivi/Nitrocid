@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
 
         /// <inheritdoc/>
         public override string GetStatusFromItem(object item) =>
-            $"{GetUnits().OfType<string>().Count()} " + Translate.DoTranslation("units to convert");
+            $"{GetUnits().OfType<string>().Count()} " + LanguageTools.GetLocalized("NKS_UNITCONV_CLI_UNITSTOCONVERT");
 
         /// <inheritdoc/>
         public override string GetEntryFromItem(object item) =>
@@ -62,14 +62,14 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             try
             {
                 // Open a dialog box asking for number to convert
-                string answer = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a number to convert..."), new InfoBoxSettings()
+                string answer = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_NUMBERPROMPT"), new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                     BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
                 });
                 if (string.IsNullOrEmpty(answer))
                 {
-                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("You haven't entered a number to convert."), new InfoBoxSettings()
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_NONUMBER"), new InfoBoxSettings()
                     {
                         ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                         BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
@@ -78,7 +78,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
                 }
                 else if (!answer.IsNumeric())
                 {
-                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The entered number is invalid."), new InfoBoxSettings()
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_INVALIDNUMBER"), new InfoBoxSettings()
                     {
                         ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                         BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
@@ -111,7 +111,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't convert unit.") + ex.Message, new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_CANTCONVERT") + ex.Message, new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                     BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),

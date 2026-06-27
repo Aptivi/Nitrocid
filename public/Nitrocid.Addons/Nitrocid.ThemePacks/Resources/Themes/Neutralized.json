@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Name": "Neutralized",
-        "Description": "This theme should be neutral to you.",
+        "Description": "NKS_THEMEPACKS_THEME_DESC_NEUTRALIZED",
         "Localizable": true
     },
     "InputColor": "45;60;61",

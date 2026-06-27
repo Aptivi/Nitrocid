@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -73,7 +73,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                         else
                         {
                             // Unknown screen!
-                            string text = Translate.DoTranslation("Unknown screen number.");
+                            string text = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_UNKNOWNSCREENNUM");
                             string[] lines = ConsoleMisc.GetWrappedSentencesByWords(text, ConsoleWrapper.WindowWidth);
                             int top = ConsoleWrapper.WindowHeight / 2 - lines.Length / 2;
                             var errorText = new AlignedText()
@@ -94,7 +94,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                         // An error occurred!
                         DebugWriter.WriteDebug(DebugLevel.E, $"Error rendering the modern logon: {ex.Message}");
                         DebugWriter.WriteDebugStackTrace(ex);
-                        string text = Translate.DoTranslation("Failed to render the logon screen.") + (KernelEntry.DebugMode ? $"\n\n{Translate.DoTranslation("Investigate the debug logs for more information about the error.")}" : "");
+                        string text = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RENDERFAILED") + (KernelEntry.DebugMode ? $"\n\n{LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RENDERFAILTIP")}" : "");
                         string[] lines = ConsoleMisc.GetWrappedSentencesByWords(text, ConsoleWrapper.WindowWidth);
                         int top = ConsoleWrapper.WindowHeight / 2 - lines.Length / 2;
                         var errorText = new AlignedText()
@@ -134,10 +134,10 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                         if (key.Key == ConsoleKey.Escape)
                         {
                             int answer = InfoBoxButtonsColor.WriteInfoBoxButtons([
-                                new InputChoiceInfo("shutdown", Translate.DoTranslation("Shut down")),
-                                new InputChoiceInfo("reboot", Translate.DoTranslation("Restart")),
-                                new InputChoiceInfo("login", Translate.DoTranslation("Login")),
-                            ], Translate.DoTranslation("You've entered the power action menu. Please enter a choice using the left and the right arrow keys and press ENTER, or press ESC to go back to the main screen."));
+                                new InputChoiceInfo("shutdown", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_SHUTDOWN")),
+                                new InputChoiceInfo("reboot", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RESTART")),
+                                new InputChoiceInfo("login", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_LOGIN")),
+                            ], LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_POWERACTION"));
                             if (answer == 0)
                                 PowerManager.PowerManage(PowerMode.Shutdown);
                             else if (answer == 1)
@@ -181,7 +181,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                 ScreenTools.StopCyclicScreen();
                 DebugWriter.WriteDebug(DebugLevel.E, $"Error rendering the modern logon: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                string text = Translate.DoTranslation("Failed to render the logon screen.") + (KernelEntry.DebugMode ? $"\n\n{Translate.DoTranslation("Investigate the debug logs for more information about the error.")}" : "");
+                string text = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RENDERFAILED") + (KernelEntry.DebugMode ? $"\n\n{LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RENDERFAILTIP")}" : "");
                 InfoBoxModalColor.WriteInfoBoxModal(text);
             }
             finally
@@ -200,7 +200,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                 (user) =>
                 {
                     var userInfo = UserManagement.GetUser(user) ??
-                    throw new KernelException(KernelExceptionType.LoginHandler, Translate.DoTranslation("Can't get user info for") + $" {user}");
+                    throw new KernelException(KernelExceptionType.LoginHandler, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SUDO_EXCEPTION_USERINFO") + $" {user}");
                     var fullName = userInfo.FullName;
                     return (user, string.IsNullOrEmpty(fullName) ? user : fullName);
                 }
@@ -209,7 +209,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
             // Then, make the choices and prompt for the selection
             KernelColorTools.LoadBackground();
             var choices = InputChoiceTools.GetInputChoices(users);
-            int userNum = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices], Translate.DoTranslation("Select a user account you want to log in with.")) + 1;
+            int userNum = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices], LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_SELECTUSER")) + 1;
             return
                 userNum != 0 ?
                 UserManagement.SelectUser(userNum) :
@@ -220,14 +220,14 @@ namespace Nitrocid.Users.Login.Handlers.Logins
         {
             // Check if password is empty
             var userInfo = UserManagement.GetUser(user) ??
-            throw new KernelException(KernelExceptionType.LoginHandler, Translate.DoTranslation("Can't get user info for") + $" {user}");
+            throw new KernelException(KernelExceptionType.LoginHandler, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SUDO_EXCEPTION_USERINFO") + $" {user}");
             ConsoleWrapper.Clear();
             string UserPassword = userInfo.Password;
             if (UserPassword == Encryption.GetEmptyHash("SHA256"))
                 return true;
 
             // The password is not empty. Prompt for password.
-            pass = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter the password for user") + $" {user}: ", InfoBoxInputType.Password);
+            pass = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PASSWORD") + $" {user}: ", InfoBoxInputType.Password);
             KernelColorTools.LoadBackground();
 
             // Validate the password
@@ -236,7 +236,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                 return true;
             else
                 // Wrong password.
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Wrong password for user."), new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_WRONGPASSWORD"), new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
                 });

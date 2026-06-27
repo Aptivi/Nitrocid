@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -27,6 +27,7 @@ using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Terminaux.Shell.Shells;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.SftpShell
 {
@@ -34,37 +35,42 @@ namespace Nitrocid.Extras.SftpShell
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("sftp", /* Localizable */ "Lets you use an SSH FTP server",
+            new CommandInfo("sftp", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "server", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "SFTP server to connect to"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_SFTP_ARGUMENT_SERVER_DESC")
                         }),
                     ])
                 ], new SftpCommandExec()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSftpShell);
+
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasSftpShell);
 
         internal static SftpConfig SftpConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(SftpConfig)) ? (SftpConfig)Config.baseConfigurations[nameof(SftpConfig)] : Config.GetFallbackKernelConfig<SftpConfig>();
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.SftpShell.Resources.Languages.Output.Localizations", typeof(SftpShellInit).Assembly));
             var config = new SftpConfig();
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterShell("SFTPShell", new SFTPShellInfo());
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         { }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
             ShellManager.UnregisterShell("SFTPShell");
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(SftpConfig));

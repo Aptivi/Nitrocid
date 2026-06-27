@@ -1,0 +1,35 @@
+{
+  "lang": "kor-T",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "정보 패널로 사용할 수 있도록 선택한 도크 보기에 대한 전체 화면 개요를 표시합니다."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "이 이름의 도크 화면이 없습니다."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "이 이름의 스크린 독이 없습니다."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "스크린 독이 없습니다."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "스크린 독이 충돌했습니다"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "부두 이름"
+    }
+  ]
+}

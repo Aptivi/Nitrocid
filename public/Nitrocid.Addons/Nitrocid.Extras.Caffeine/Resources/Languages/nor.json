@@ -1,0 +1,54 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "Legger til en alarm for å varsle deg når koppen te eller kaffe er klar."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "Avbryter en alarm som varsler deg når koppen te eller kaffe er klar."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "Amerikansk kaffe"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "Rød te"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "Grønn te"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "Ingen koffeinvarsler om abort."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "Sekundene når koppen din er klar er ugyldige."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "Hvis du prøver å oppgi navnet på drinken, sjekk ut listen nedenfor:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "Koppen din er nå klar!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "Angi enten et antall sekunder eller et drikkenavn"
+    }
+  ]
+}

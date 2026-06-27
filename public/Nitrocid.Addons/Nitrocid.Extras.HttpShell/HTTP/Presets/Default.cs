@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -79,7 +79,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Presets
 
             // HTTP site
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground());
-            PresetStringBuilder.AppendFormat(Translate.DoTranslation("Site"));
+            PresetStringBuilder.AppendFormat(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE"));
 
             // Closing
             PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());

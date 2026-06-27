@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,23 +44,23 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (ConfigTools.IsCustomSettingRegistered(configName))
             {
                 var config = configs.Single((bkc) => bkc.GetType().Name == configName);
-                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Configuration variables for") + $" {configName}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGVALUES_LISTING") + $" {configName}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                 foreach (var entry in config.SettingsEntries ?? [])
                 {
-                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Entry name") + $": {entry.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_NAME") + $": {entry.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                     foreach (var key in entry.Keys)
                     {
                         var value = ConfigTools.GetValueFromEntry(key, config);
-                        SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Key name") + $" [{Translate.DoTranslation(key.Name)}]", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                        TextWriters.WriteListEntry(Translate.DoTranslation("Key description"), Translate.DoTranslation(key.Description), indent: 1);
-                        TextWriters.WriteListEntry(Translate.DoTranslation("Key type"), $"{key.Type}", indent: 1);
-                        TextWriters.WriteListEntry(Translate.DoTranslation("Key variable"), $"{key.Variable} [{value}]", indent: 1);
+                        SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYNAME") + $" [{LanguageTools.GetLocalized(key.Name)}]", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYDESC"), LanguageTools.GetLocalized(key.Description), indent: 1);
+                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTYPE"), $"{key.Type}", indent: 1);
+                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYVAR"), $"{key.Variable} [{value}]", indent: 1);
                     }
                 }
             }
             else
             {
-                TextWriters.Write(Translate.DoTranslation("Config not found."), KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_CONFIGNOTFOUND"), KernelColorType.Error);
                 return 28;
             }
             return 0;
@@ -69,7 +69,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override void HelpHelper()
         {
             var names = Config.GetKernelConfigs().Select((bkc) => bkc.GetType().Name).ToArray();
-            TextWriters.WriteListEntry(Translate.DoTranslation("Available configuration types"), string.Join(", ", names));
+            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_CONFIGTYPES"), string.Join(", ", names));
         }
 
     }

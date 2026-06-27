@@ -1,0 +1,119 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "Συνδέεται σε διακομιστή SSH."
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "Εισαγάγετε τον κωδικό πρόσβασης για το {0}:"
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "Το SSH αποσυνδέθηκε."
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "Σφάλμα κατά την προσπάθεια σύνδεσης με διακομιστή SSH: {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "Η καθορισμένη επιλογή {0} δεν είναι έγκυρη."
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "Η απάντηση πρέπει να είναι αριθμητική."
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "Πατήστε οποιοδήποτε πλήκτρο για να επιστρέψετε."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "Συνδέεται σε διακομιστή SSH για να εκτελέσει μια εντολή."
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "Πώς θέλετε να γίνει έλεγχος ταυτότητας;"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "Αρχείο ιδιωτικού κλειδιού"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "Κωδικός πρόσβασης"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "Εισαγάγετε τη φράση πρόσβασης για το κλειδί {0}:"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "Το αρχείο κλειδιού {0} δεν υπάρχει."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "Σφάλμα κατά την προσπάθεια προσθήκης ιδιωτικού κλειδιού:"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "Σφάλμα κατά την εκτέλεση της εντολής SSH"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "Σφάλμα στο κέλυφος SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "Γράψτε πώς θέλετε να είναι η προτροπή σύνδεσής σας. Αφήστε το κενό για να χρησιμοποιήσετε το προεπιλεγμένο στυλ. Τα σύμβολα θέσης αναλύονται."
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "Εισαγάγετε τη θέση του ιδιωτικού κλειδιού για το {0}. Γράψτε \"q\" για να ολοκληρώσετε την προσθήκη κλειδιών:"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του SSH."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "Στυλ προτροπής ονόματος χρήστη για SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "Προσθέστε νέες συνδέσεις στην ταχεία κλήση SSH"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "Εάν είναι ενεργοποιημένο, προσθέτει μια νέα σύνδεση στην ταχεία κλήση SSH."
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Αποτυχία λήψης καταχωρήσεων ρυθμίσεων."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "Το SSH είναι συνδεδεμένο αλλά χωρίς πελάτη."
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "Διακομιστής SSH για σύνδεση"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "Όνομα χρήστη για έλεγχο ταυτότητας"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "Εντολή για απομακρυσμένη εκτέλεση"
+    }
+  ]
+}

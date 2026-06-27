@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -35,8 +35,8 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, BaseKernelConfig configType, out bool bail)
         {
             // Make an introductory banner
-            string keyName = key.Name;
-            string keyDesc = key.Description;
+            string keyName = LanguageTools.GetLocalized(key.Name);
+            string keyDesc = LanguageTools.GetLocalized(key.Description);
 
             // Write the prompt
             var arguments = SettingsAppTools.ParseParameters(key);
@@ -63,7 +63,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 }
                 List<InputChoiceInfo> altChoices =
                 [
-                    new InputChoiceInfo($"{choices.Count + 1}", Translate.DoTranslation("Exit")),
+                    new InputChoiceInfo($"{choices.Count + 1}", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_EXIT")),
                 ];
 
                 // Wait for an answer and handle it
@@ -78,11 +78,11 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                     // Tell the user to choose between adding, removing, or exiting
                     int result = InfoBoxButtonsColor.WriteInfoBoxButtons(
                         [
-                            new InputChoiceInfo("keep", Translate.DoTranslation("Keep it")),
-                            new InputChoiceInfo("remove", Translate.DoTranslation("Remove it")),
-                            new InputChoiceInfo("add", Translate.DoTranslation("Add new item")),
+                            new InputChoiceInfo("keep", LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LIST_KEEP")),
+                            new InputChoiceInfo("remove", LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LIST_REMOVE")),
+                            new InputChoiceInfo("add", LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LIST_ADD")),
                         ],
-                        Translate.DoTranslation("What do you want to do with this item?")
+                        LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LIST_PROMPT")
                     ) + 1;
 
                     // Check the action number
@@ -97,12 +97,12 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                         else if (result == 3)
                         {
                             // Adding new item
-                            string newItemValue = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a value for the new item"));
+                            string newItemValue = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LIST_ENTERVALUE"));
                             TargetList.Add(newItemValue);
                         }
                     }
                     else
-                        InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Invalid action selected."));
+                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LIST_INVALIDACTION"));
                 }
             }
             bail = true;

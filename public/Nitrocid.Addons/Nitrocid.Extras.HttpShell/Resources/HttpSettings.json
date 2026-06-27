@@ -1,10 +1,10 @@
 [
     {
         "Name": "HTTP",
-        "Desc": "This section lets you configure how the HTTP shell works.",
+        "Desc": "NKS_SHELLPACKS_HTTP_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "Prompt Preset",
+                "Name": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "HttpShellPromptPreset",
                 "ShellType": "HTTPShell",

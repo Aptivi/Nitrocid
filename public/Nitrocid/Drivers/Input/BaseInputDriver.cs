@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -286,7 +286,7 @@ namespace Nitrocid.Drivers.Input
             if (!result)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Timeout trying to read key.");
-                throw new KernelException(KernelExceptionType.ConsoleReadTimeout, Translate.DoTranslation("User didn't provide any input in a timely fashion."));
+                throw new KernelException(KernelExceptionType.ConsoleReadTimeout, LanguageTools.GetLocalized("NKS_DRIVERS_INPUT_BASE_EXCEPTION_INPUTTIMEOUT"));
             }
             var keyInfo = input?.ConsoleKeyInfo ?? new();
             if (!Intercept)

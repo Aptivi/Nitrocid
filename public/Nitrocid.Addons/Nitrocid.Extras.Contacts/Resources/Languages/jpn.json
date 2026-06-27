@@ -1,0 +1,322 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTS_DESC",
+      "text": "連絡先を管理します"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED",
+      "text": "ファイル '{0}' が見つからないため開けません。"
+    },
+    {
+      "loc": "NKS_CONTACTS_IMPORTSUCCESS",
+      "text": "連絡先が正常にインポートされました。"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_NAMED",
+      "text": "カード ファイルが無効であるため、ファイル '{0}' を開けません。"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED",
+      "text": "連絡先ファイルが存在しません。"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTSCOUNT",
+      "text": "連絡先が見つかりました"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED",
+      "text": "連絡先ファイルが無効です。"
+    },
+    {
+      "loc": "NKS_CONTACTS_MECARDEMPTY",
+      "text": "MeCard 構文を空にすることはできません。"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOCONTACT",
+      "text": "提供された連絡先ファイルに連絡先に関する情報が含まれていないか、無効です。"
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED",
+      "text": "連絡先の解析に失敗しました。詳細については、エラーの詳細を参照してください。"
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE",
+      "text": "連絡先インデックスが範囲外です。最大インデックスは {0} ですが、指定されたインデックスは {1} です。"
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET",
+      "text": "取得できる連絡先はありません。"
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH",
+      "text": "検索する連絡先がありません。"
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_INVALIDREGEX",
+      "text": "正規表現が無効です。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACT",
+      "text": "連絡はありません。連絡先をインポートしたい場合は、画面の下部に定義されているキーストロークを使用してインポート オプションを使用してください。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CANTIMPORTCONTACTS",
+      "text": "一部の連絡先はインポートできません。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PATHVCFPROMPT",
+      "text": "連絡先を含む VCF ファイルへのパスを入力します。Android の contacts2.db ファイルもサポートされています。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_FILENOTFOUND",
+      "text": "ファイルが存在しません。VCF ファイルまたは contacts2.db ファイルへの正しいパスが書き込まれていることを確認してください。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDPROMPT",
+      "text": "連絡先の有効な MeCard 表現を入力してください。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDINVALID",
+      "text": "Contact MeCard の構文が無効です。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDEMPTY",
+      "text": "Contact MeCard の構文は空であってはなりません"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_SEARCHPROMPT",
+      "text": "正規表現を入力して連絡先を検索します。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTSSEARCH",
+      "text": "要求された表現を含む連絡先はありません。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNAME",
+      "text": "連絡先"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTNAME",
+      "text": "連絡先名がありません"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESS",
+      "text": "連絡先住所"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAIL",
+      "text": "連絡先メール"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOMAIL",
+      "text": "連絡メールが来ない"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORG",
+      "text": "連絡先組織"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOORG",
+      "text": "連絡機関なし"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PHONE",
+      "text": "連絡先電話番号"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOPHONE",
+      "text": "連絡先電話なし"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URL",
+      "text": "連絡先URL"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOURL",
+      "text": "連絡先URLがありません"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEO",
+      "text": "ジオに問い合わせる"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOGEO",
+      "text": "連絡先地域がありません"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPP",
+      "text": "IMPPに連絡する"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOIMPP",
+      "text": "連絡がありません IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICK",
+      "text": "連絡先のニックネーム"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONICK",
+      "text": "連絡先ニックネームなし"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLE",
+      "text": "連絡先の役割"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOROLE",
+      "text": "連絡先の役割がありません"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLE",
+      "text": "連絡先のタイトル"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTITLE",
+      "text": "連絡先のタイトルがありません"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTES",
+      "text": "連絡先メモ"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONOTES",
+      "text": "連絡メモがありません"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC",
+      "text": "連絡先をリストします"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC",
+      "text": "連絡先を読み込みます"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC",
+      "text": "連絡先をインポートします"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC",
+      "text": "必要な入力をMeCard文字列として扱う"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_DESC",
+      "text": "連絡先情報を取得する"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTS",
+      "text": "連絡先はありません。"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMINVALID",
+      "text": "連絡先番号が無効です。"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE",
+      "text": "連絡先番号が範囲外です。"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_FIRSTNAME",
+      "text": "ファーストネーム"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_LASTNAME",
+      "text": "苗字"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_GEO",
+      "text": "ジオへのお問い合わせ"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NOTE",
+      "text": "連絡先メモ"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_CANTLISTSOME",
+      "text": "一部の連絡先はリストに表示できません。"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETE",
+      "text": "消去"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_INFO",
+      "text": "情報"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "設定エントリを取得できませんでした。"
+    },
+    {
+      "loc": "NKS_CONTACTS_HOMEPAGE_CONTACTS",
+      "text": "連絡先"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETEALL",
+      "text": "すべて削除"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORT",
+      "text": "輸入"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM",
+      "text": "インポート元"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCH",
+      "text": "検索"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT",
+      "text": "次を検索"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK",
+      "text": "検索 戻る"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_RAWINFO",
+      "text": "生の情報"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD",
+      "text": "MeCardからのインポート"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_DESC",
+      "text": "このセクションでは、連絡先アドオンの動作を設定できます。"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME",
+      "text": "プロフィール写真を表示"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC",
+      "text": "有効にすると、連絡先の画像が表示されます。誤用を防ぐため、またパフォーマンス上の理由から、デフォルトでは無効になっています。"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC",
+      "text": "vCard 連絡先ファイルまたは MeCard 表現へのパス"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC",
+      "text": "連絡先"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_EDIT",
+      "text": "編集..."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
+      "text": "この連絡先の新しい名前を入力してください"
+    }
+  ]
+}

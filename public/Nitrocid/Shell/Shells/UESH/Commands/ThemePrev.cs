@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -64,7 +64,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             List<InputChoiceInfo> themeCategoryChoices = [];
                             List<InputChoiceInfo> themeCategoryAltChoices =
                             [
-                                new($"{categoryNames.Length + 1}", Translate.DoTranslation("Exit"))
+                                new($"{categoryNames.Length + 1}", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_EXIT"))
                             ];
                             for (int i = 0; i < categoryNames.Length; i++)
                             {
@@ -75,7 +75,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                                 );
                                 themeCategoryChoices.Add(ici);
                             }
-                            categoryIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a category"), [.. themeCategoryChoices], [.. themeCategoryAltChoices]);
+                            categoryIndex = SelectionStyle.PromptSelection(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_SELECTCATEGORY"), [.. themeCategoryChoices], [.. themeCategoryAltChoices]);
 
                             // If the color index is -1, exit.
                             if (categoryIndex == -1 || categoryIndex >= categoryNames.Length)
@@ -97,21 +97,21 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             List<InputChoiceInfo> themeChoices = [];
                             List<InputChoiceInfo> themeAltChoices =
                             [
-                                new("<--", Translate.DoTranslation("Back"))
+                                new("<--", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_GOBACK"))
                             ];
                             foreach (string theme in ThemeTools.GetInstalledThemesByCategory(finalCategory).Keys)
                             {
                                 var themeInstance = ThemeTools.GetThemeInfo(theme);
                                 string name = themeInstance.Name;
-                                string desc = themeInstance.Localizable ? Translate.DoTranslation(themeInstance.Description) : themeInstance.Description;
+                                string desc = themeInstance.Localizable ? LanguageTools.GetLocalized(themeInstance.Description) : themeInstance.Description;
                                 var ici = new InputChoiceInfo(
                                     theme,
-                                    $"{name}{(themeInstance.IsEvent ? $" - [{themeInstance.StartMonth}/{themeInstance.StartDay} -> {themeInstance.EndMonth}/{themeInstance.EndDay} / {(themeInstance.IsExpired ? Translate.DoTranslation("Expired") : Translate.DoTranslation("Available"))}]" : "")}",
+                                    $"{name}{(themeInstance.IsEvent ? $" - [{themeInstance.StartMonth}/{themeInstance.StartDay} -> {themeInstance.EndMonth}/{themeInstance.EndDay} / {(themeInstance.IsExpired ? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_THEMEEXPIRED") : LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_THEMEAVAILABLE"))}]" : "")}",
                                     desc
                                 );
                                 themeChoices.Add(ici);
                             }
-                            int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), [.. themeChoices], [.. themeAltChoices]);
+                            int colorIndex = SelectionStyle.PromptSelection(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_SELECTTHEME"), [.. themeChoices], [.. themeAltChoices]);
 
                             // If the color index is -1, exit.
                             if (colorIndex == -1)

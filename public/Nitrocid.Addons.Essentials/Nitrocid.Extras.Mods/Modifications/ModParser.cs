@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -34,7 +34,6 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Security.Signing;
-using Nitrocid.Languages.Decoy;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Extras.Mods.Modifications.Dependencies;
 
@@ -80,15 +79,15 @@ namespace Nitrocid.Extras.Mods.Modifications
                     if (!signed)
                     {
                         if (ModsInit.ModsConfig.AllowUntrustedMods)
-                            SplashReport.ReportProgressWarning(Translate.DoTranslation("The mod is not strongly signed. It may contain untrusted code."));
+                            SplashReport.ReportProgressWarning(LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_UNSAFEMOD"));
                         else
-                            throw new KernelException(KernelExceptionType.ModManagement, Translate.DoTranslation("The mod is not strongly signed. It may contain untrusted code."));
+                            throw new KernelException(KernelExceptionType.ModManagement, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_UNSAFEMOD"));
                     }
 
                     // Check to see if the DLL is actually a mod
                     var modAsm = Assembly.LoadFrom(ModPath + modFile);
                     var script = GetModInstance(modAsm) ??
-                        throw new KernelException(KernelExceptionType.InvalidMod, Translate.DoTranslation("The modfile is invalid."));
+                        throw new KernelException(KernelExceptionType.InvalidMod, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_INVALIDMODFILE"));
 
                     // Finalize the mod
                     if (script.LoadPriority == priority)
@@ -100,7 +99,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", vars: [modFile, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Mod can't be loaded because of the following: "));
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODCANTLOAD"));
                     foreach (Exception? LoaderException in ex.LoaderExceptions)
                     {
                         if (LoaderException is null)
@@ -109,27 +108,27 @@ namespace Nitrocid.Extras.Mods.Modifications
                         DebugWriter.WriteDebugStackTrace(LoaderException);
                         SplashReport.ReportProgressError(LoaderException.Message);
                     }
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."));
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSUPGRADE"));
                 }
                 catch (TargetInvocationException ex)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", vars: [modFile, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Mod can't be loaded because there's an incompatibility between this version of the kernel and this mod:") + $" {ex.Message}");
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Here's a list of errors that may help you investigate this incompatibility:"));
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODINCOMPATIBLE1") + $" {ex.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODINCOMPATIBLE2"));
                     Exception? inner = ex.InnerException;
                     while (inner != null)
                     {
                         SplashReport.ReportProgressError(inner.Message);
                         inner = inner.InnerException;
                     }
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."));
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSUPGRADE"));
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", vars: [modFile, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Mod can't be loaded because of the following: ") + ex.Message);
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODCANTLOAD") + ex.Message);
                 }
             }
             else
@@ -166,67 +165,14 @@ namespace Nitrocid.Extras.Mods.Modifications
                         if (KernelMain.ApiVersion != script.MinimumSupportedApiVersion)
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that requires minimum api version {1} on api {2}", vars: [modFile, script.MinimumSupportedApiVersion.ToString(), KernelMain.ApiVersion.ToString()]);
-                            SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} requires exactly an API version {1}, but you have version {2}. Upgrading Nitrocid KS and/or the mod usually helps. Mod parsing failed."), modFile, script.MinimumSupportedApiVersion.ToString(), KernelMain.ApiVersion.ToString());
+                            SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSAPIEXACT"), modFile, script.MinimumSupportedApiVersion.ToString(), KernelMain.ApiVersion.ToString());
                             return;
                         }
                     }
                     catch
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that has undeterminable minimum API version.", vars: [modFile]);
-                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} may not work properly with this API version. Mod may fail to start up. Contact the mod vendor to get a latest copy."), modFile);
-                    }
-
-                    // Locate the mod's localization files
-                    string ModLocalizationPath = ModPath + "Localization/" + Path.GetFileNameWithoutExtension(modFile) + "-" + FileVersionInfo.GetVersionInfo(ModPath + modFile).FileVersion + "/";
-                    Dictionary<string, string[]> localizations = [];
-                    if (FilesystemTools.FolderExists(ModLocalizationPath))
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Found mod localization collection in {0}", vars: [ModLocalizationPath]);
-                        foreach (string ModLocFile in Directory.GetFiles(ModLocalizationPath, "*.json", SearchOption.AllDirectories))
-                        {
-                            // This json file, as always, contains "Name" (ignored), "Transliterable" (ignored), and "Localizations" keys.
-                            string LanguageName = Path.GetFileNameWithoutExtension(ModLocFile);
-                            string ModLocFileContents = FilesystemTools.ReadContentsText(ModLocFile);
-                            var modLocs = JsonConvert.DeserializeObject<LanguageLocalizations[]>(ModLocFileContents) ??
-                                throw new KernelException(KernelExceptionType.ModManagement, Translate.DoTranslation("Can't load mod localizations"));
-                            DebugWriter.WriteDebug(DebugLevel.I, "{0} localizations.", vars: [modLocs.Length]);
-                            foreach (var modLoc in modLocs)
-                            {
-                                // Parse the values and install the language
-                                var ParsedLanguageLocalizations = modLoc.Localizations;
-
-                                // Check to see if we have that language...
-                                if (!LanguageManager.Languages.ContainsKey(LanguageName))
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.E, "Metadata contains nonexistent language!");
-                                    SplashReport.ReportProgressError(Translate.DoTranslation("Invalid language") + " {0} [{1}]", LanguageName, LanguageName);
-                                    return;
-                                }
-
-                                // Check the localizations...
-                                DebugWriter.WriteDebug(DebugLevel.I, "Checking localizations... (Null: {0})", vars: [ParsedLanguageLocalizations is null]);
-                                if (ParsedLanguageLocalizations is not null)
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Valid localizations found! Length: {0}", vars: [ParsedLanguageLocalizations.Length]);
-
-                                    // Try to install the localizations
-                                    if (!localizations.ContainsKey(LanguageName))
-                                        localizations.Add(LanguageName, LanguageManager.ProbeLocalizations(modLoc));
-                                }
-                                else
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.E, "Metadata doesn't contain valid localizations!");
-                                    SplashReport.ReportProgressError(Translate.DoTranslation("The metadata information needed to install the custom language doesn't provide the necessary localizations needed."));
-                                    return;
-                                }
-                            }
-                            if (modLocs.Length == 0)
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.E, "Metadata for language doesn't exist!");
-                                SplashReport.ReportProgressError(Translate.DoTranslation("The metadata information needed to install the custom language doesn't exist."));
-                                return;
-                            }
-                        }
+                        SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODHASNOAPIVERSION"), modFile);
                     }
 
                     // See if the mod has name
@@ -235,7 +181,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                     {
                         // Mod has no name!
                         DebugWriter.WriteDebug(DebugLevel.E, "No name for {0}", vars: [modFile]);
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} does not have the name. Mod parsing failed. Review the source code."), modFile);
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEDSNAME"), modFile);
                         return;
                     }
                     DebugWriter.WriteDebug(DebugLevel.I, "Mod name: {0}", vars: [ModName]);
@@ -244,7 +190,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                     if (string.IsNullOrWhiteSpace(script.Version))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = \"\" | {0}.Name = {1}", vars: [modFile, script.Name]);
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} does not have the version. Mod parsing failed. Review the source code."), modFile);
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSVERSION"), modFile);
                         return;
                     }
                     else
@@ -254,20 +200,20 @@ namespace Nitrocid.Extras.Mods.Modifications
                         {
                             // Parse the semantic version of the mod
                             var versionInfo = SemVer.Parse(script.Version);
-                            SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} started"), script.Name, script.Version);
+                            SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODSTARTED"), script.Name, script.Version);
                         }
                         catch (Exception ex)
                         {
                             DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse mod version {0}: {1}", vars: [script.Version, ex.Message]);
                             DebugWriter.WriteDebugStackTrace(ex);
-                            SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} contains invalid version. Mod parsing failed. Version was") + ": {1}\n{2}", modFile, script.Version, ex.Message);
+                            SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODVERSIONINVALID") + ": {1}\n{2}", modFile, script.Version, ex.Message);
                             return;
                         }
                     }
 
                     // Prepare the mod and part instances
                     queued.Add(modFilePath);
-                    ModInstance = new ModInfo(ModName, modFile, modFilePath, script, script.Version, localizations);
+                    ModInstance = new ModInfo(ModName, modFile, modFilePath, script, script.Version);
 
                     // Satisfy the dependencies
                     ModDependencySatisfier.SatisfyDependencies(ModInstance);
@@ -289,7 +235,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                     EventsManager.FireEvent(EventType.ModFinalizationFailed, modFile, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Finalization failed for {0}: {1}", vars: [modFile, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to finalize mod {0}: {1}"), modFile, ex.Message);
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_CANTFINALIZE"), modFile, ex.Message);
                 }
                 finally
                 {

@@ -1,0 +1,311 @@
+{
+  "lang": "kor-T",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TIPS_KERNELTIP_1",
+      "text": "실행 파일 이름을 직접 입력하는 방법과 'exec' 명령을 사용하는 두 가지 방법으로 프로세스 명령을 실행할 수 있다는 점을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_2",
+      "text": "'lockscreen' 명령을 사용하여 화면을 잠글 수 있다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_3",
+      "text": "C#과 Visual Basic을 사용하여 자신만의 커널 수정 사항을 만들 수 있다는 사실을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_4",
+      "text": "명령 사이에 세미콜론을 사용하면 여러 명령을 사용할 수 있다는 것인가요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_5",
+      "text": "명령을 실행할 때 인용된 인수 안에 큰따옴표를 이스케이프할 수 있다는 점을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_6",
+      "text": "'settings' 명령을 사용하여 커널 설정을 변경할 수 있다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_7",
+      "text": "'savescreen' 명령을 사용하여 화면을 저장할 수 있다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_8",
+      "text": "Nitrocid의 GitHub 프로젝트 페이지로 이동하여 버그를 보고할 수 있나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_9",
+      "text": "'alias' 명령을 사용하여 원하는 명령에 대한 바로가기를 만들 수 있다는 사실을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_10",
+      "text": "C#과 Visual Basic을 사용하여 자신만의 시작 화면을 만들 수 있다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_11",
+      "text": "커널을 더 유용하고 재미있게 만들기 위해 추가 애드온을 설치할 수 있다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_12",
+      "text": "'mktheme' 명령을 사용하여 자신만의 멋진 테마를 만들 수 있다는 사실을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_13",
+      "text": "'settings' 명령을 사용하거나 사전 구축된 테마 중 하나를 사용하여 커널 색상을 변경할 수 있다는 점을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_14",
+      "text": "'reset' 인수를 사용하여 커널을 공장 기본값으로 재설정할 수 있다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_15",
+      "text": "GitBook 페이지에서 광범위한 문서에 액세스할 수 있습니까?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_16",
+      "text": "장기 릴리스는 기본 지원을 위해 5년, 보안 업데이트를 위해 3년 동안 지원된다는 사실을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_17",
+      "text": "0.0.1이 2018년 2월 22일 출시된 Nitrocid KS의 첫 번째 버전이었죠?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_18",
+      "text": "0.0.24.x 시리즈가 API v2.1 버전을 보유한 유일한 버전 시리즈였다는 것인가요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_19",
+      "text": "단기 릴리스는 단 9개월 동안만 지원된다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_20",
+      "text": "0.1.x 시리즈는 0.0.24.x 시리즈 이전 버전과 호환되지 않나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_21",
+      "text": "Linux, macOS 및 Android에서 Nitrocid KS를 실행할 수 있습니까?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_22",
+      "text": "모드를 만드는 데 도움이 되는 API 문서를 참조할 수 있나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_23",
+      "text": "추가 애드온을 설치하면 Hangman 및 ShipDuet과 같은 여러 가지 멋진 게임을 얻을 수 있다는 사실을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_24",
+      "text": "Meteor에서는 붉은 유성 폭풍으로 충돌하면 우주선이 충돌한다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_25",
+      "text": "도킹 기능을 사용하여 커널을 정보 센터로 변환할 수 있다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_26",
+      "text": "사용자 그룹을 만들어 사용자 계정을 정리할 수 있다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_27",
+      "text": "특정 권한을 부여하는 그룹의 구성원이라면 그러한 작업을 수행할 수 있다는 것인가요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_28",
+      "text": "호스트 시스템에 영향을 주지 않고 커널 시간대를 변경할 수 있다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_29",
+      "text": "대화형 텍스트와 16진수 편집기를 사용하여 시간을 절약할 수 있다는 사실을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_30",
+      "text": "최초의 Unix 시스템에서 작동하는 것으로 알려진 가장 오래된 텍스트 편집기는 AT&T Bell Labs의 PDP-7에 있는 Unix 시스템과 함께 출시된 1973년에 출시된 최초의 텍스트 편집기인 ed입니다."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_31",
+      "text": "편집 명령을 사용하여 특정 유형의 편집기를 실행할 수도 있다는 점을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_32",
+      "text": "대화형 텍스트 편집기가 가장 널리 사용되는 Unix 텍스트 편집기인 vi 및 vim의 가장 기본적인 기능을 시뮬레이션하려고 시도한다는 사실은 무엇입니까?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_33",
+      "text": "바이너리 파일로 무엇을 하고 있는지 알지 못하는 경우 이러한 파일을 이런 방식으로 편집하면 대상 파일의 데이터 손상이나 데이터 손실이 발생할 수 있습니까?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_34",
+      "text": "Linux 시스템에서 쉘은 로그인 핸들러와 시스템 초기화 프로그램(보통 /sbin/init에 있음)의 도움으로 시작됩니다."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_35",
+      "text": "복사, 이동, 삭제, 편집 등과 같은 일반적인 파일 작업을 수행할 수 있다는 사실을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_36",
+      "text": "파일 관리자의 대화형 TUI가 Midnight Commander의 기능을 시뮬레이션한다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_37",
+      "text": "커널이 충돌하면 일반적으로 덤프 파일이 생성된다는 것인가요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_38",
+      "text": "내장된 디버그 기능을 사용하여 커널을 디버깅하여 진단할 수 있다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_39",
+      "text": "UESH 셸에서 직접 파일을 다운로드하고 업로드할 수 있다는 점을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_40",
+      "text": "'lang' 인수로 커널을 시작하면 사전 부팅 단계에서도 커널을 변환할 수 있다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_41",
+      "text": "모드에 등록하여 나만의 화면 보호기를 만들 수 있다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_42",
+      "text": "원래 IBM PC에서 3분간 활동이 없으면 화면을 공백으로 만드는 최초의 화면 보호기인 scrnsave는 1983년 John Socha에 의해 만들어졌습니다."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_43",
+      "text": "빠르게 진행되는 화면 보호기 중 일부가 감광성 발작을 일으킬 수 있다는 사실을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_44",
+      "text": "커널 저널이 부팅 및 종료 로그로 사용됩니까?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_45",
+      "text": "이제 모드를 번역할 수 있게 되었다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_46",
+      "text": "귀하의 모드가 커널 애드온 및 기타 모드와 통신하여 일종의 통신을 생성하고 상호 운용성을 달성할 수 있습니까?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_47",
+      "text": "원격 디버거에 연결하고 선택적으로 채팅 서버에 연결할 수 있습니까?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_48",
+      "text": "개발 버전에서만 사용할 수 있는 디버그 셸을 사용할 수 있다는 점을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_49",
+      "text": "이제 관련 클래스를 등록하여 모드가 자체 구성을 가질 수 있다는 사실을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_50",
+      "text": "당신의 모드가 자신의 쉘을 등록할 수 있다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_51",
+      "text": "당신의 모드가 기존 쉘에 명령을 추가하여 사용할 수 있는 명령의 양을 늘릴 수 있다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_52",
+      "text": "명령 클래스가 전달된 인수와 스위치를 정확하게 나타낼 수 있습니까?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_53",
+      "text": "커널 API에 있는 스위치 관리 클래스를 사용하여 전달된 스위치를 쿼리할 수 있다는 점을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_54",
+      "text": "UESH에는 스크립트 작성 및 실행을 용이하게 하는 스크립팅 기능이 포함되어 있습니까?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_55",
+      "text": "셸에는 활성 응용 프로그램의 취소를 금지하는 기능이 포함되어 있습니까?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_56",
+      "text": "Nitrocid가 Terminaux와 긴밀하게 통합되어 더 빠르고 더 나은 렌더링이 가능하다는 사실을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_57",
+      "text": "이제 출력이 손상될 염려 없이 대화형 응용 프로그램의 크기를 조정할 수 있다는 사실을 알고 계십니까?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_58",
+      "text": "스크립트에 유용한 사용자 입력을 요청하는 명령이 있다는 것을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_59",
+      "text": "선택, 테이블, 단순, 선택 등 여러 가지 방법으로 사용자 입력 질문을 제시할 수 있다는 점을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_60",
+      "text": "이를 지원하는 텍스트에 자리 표시자를 배치할 수 있습니까?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_61",
+      "text": "특정 작업의 작동 방식을 변경하기 위해 다른 커널 드라이버를 사용할 수 있다는 사실을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_62",
+      "text": "C#이나 Visual Basic으로 화면 보호기와 스플래시를 직접 만들 수 있다는 사실을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_63",
+      "text": "커널 플랫폼 클래스를 사용하여 호스트 시스템과 터미널 에뮬레이터에 쿼리할 수 있다는 점을 알고 계시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_64",
+      "text": "모드에서 민감한 일을 하기 전에 개인정보 보호 동의를 요청할 수 있나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_65",
+      "text": "방해 금지 기능을 사용하여 알림을 끌 수 있다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_66",
+      "text": "알림 관리자에 있는 기능을 사용하여 알림 기록을 저장할 수 있다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_67",
+      "text": "드라이버를 변경하여 난수 생성 방법을 변경할 수 있습니까?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_68",
+      "text": "기타 API가 모드에 유용한 기능을 제공한다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_69",
+      "text": "이 섹션에서는 팁 작동 방식을 구성할 수 있습니다."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_70",
+      "text": "커널 팁 표시"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_71",
+      "text": "활성화되면 쉘은 로그인할 때마다 팁을 표시합니다."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_72",
+      "text": "커널 모드를 사용하여 부팅 가능한 프로그램을 만들 수 있다고요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_73",
+      "text": "설정 항목을 가져오지 못했습니다."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_74",
+      "text": "Nitrocid(커널 시뮬레이터 0.0.2)가 내장 셸을 'UESH' 셸이라고 부르는 걸 기억하시나요?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_75",
+      "text": "스크린세이버가 CRT(음극선관)나 플라스마 디스플레이의 화면 잔상 현상에 대한 해결책으로 선전되었다는 걸 알고 있나요?"
+    }
+  ]
+}

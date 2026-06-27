@@ -1,0 +1,62 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "ライセンス情報"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "英語辞書"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "の単語情報"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "APIは以下のライセンスを受けています"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "語："
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "の単語の意味"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "品詞："
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "意味："
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "文の例："
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "定義に使用されるソース"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "同義語："
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "反意語："
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "定義する単語"
+    }
+  ]
+}

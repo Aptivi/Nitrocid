@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -55,10 +55,10 @@ namespace Nitrocid.Misc.Screensaver
             ThemeColorsTools.LoadBackground();
             var infoBox = new InfoBox()
             {
-                Text = Translate.DoTranslation("This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive. It's recommended to seek a medical specialist for more information about such seizure before continuing. If you want to get rid of this warning, you can turn this off from the screensaver settings."),
+                Text = LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_PSWARNING_DESC"),
                 Settings = new InfoBoxSettings()
                 {
-                    Title = Translate.DoTranslation("Photosensitive seizure warning"),
+                    Title = LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_PSWARNING_TITLE"),
                     ForegroundColor = ConsoleColors.White,
                     BackgroundColor = ConsoleColors.Red
                 }

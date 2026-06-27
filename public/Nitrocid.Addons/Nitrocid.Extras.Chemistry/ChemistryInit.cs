@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,6 +26,7 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using System.Collections.Generic;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Chemistry
 {
@@ -33,36 +34,41 @@ namespace Nitrocid.Extras.Chemistry
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("element", /* Localizable */ "Prints information about a chemical substance to the console.",
+            new CommandInfo("element", LanguageTools.GetLocalized("NKS_CHEMISTRY_COMMAND_ELEMENT_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "name/symbol/atomicNumber", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Either a name, a symbol, or an atomic number of a substance"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_CHEMISTRY_COMMAND_ELEMENT_ARGUMENT_SPECIFIER_DESC")
                         }),
                     ])
                 ], new ElementCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("elements", /* Localizable */ "Prints information about all chemical substances to the console.", new ElementsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            new CommandInfo("elements", LanguageTools.GetLocalized("NKS_CHEMISTRY_COMMAND_ELEMENTS_DESC"), new ElementsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasChemistry);
 
-        void IAddon.StartAddon()
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasChemistry);
+
+        public void StartAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Chemistry.Resources.Languages.Output.Localizations", typeof(ChemistryInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("periodicpreview", new PeriodicPreviewDisplay());
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ScreensaverManager.AddonSavers.Remove("periodicpreview");
         }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
     }
 }

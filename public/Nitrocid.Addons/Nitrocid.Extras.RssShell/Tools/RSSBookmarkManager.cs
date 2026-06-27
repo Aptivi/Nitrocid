@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -76,10 +76,10 @@ namespace Nitrocid.Extras.RssShell.Tools
                     if (ex.GetType().Name == nameof(UriFormatException))
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Verify that {0} is actually valid.", vars: [FeedURL]);
-                        throw new KernelException(KernelExceptionType.InvalidFeedLink, Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
+                        throw new KernelException(KernelExceptionType.InvalidFeedLink, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL") + " {0}", ex.Message);
                     }
                     else
-                        throw new KernelException(KernelExceptionType.InvalidFeed, Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
+                        throw new KernelException(KernelExceptionType.InvalidFeed, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL") + " {0}", ex.Message);
                 }
             }
             else
@@ -120,7 +120,7 @@ namespace Nitrocid.Extras.RssShell.Tools
                         SaveBookmarks(RssBookmarks);
                     }
                     else
-                        throw new KernelException(KernelExceptionType.InvalidFeedLink, Translate.DoTranslation("The feed doesn't exist in bookmarks."));
+                        throw new KernelException(KernelExceptionType.InvalidFeedLink, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_EXCEPTION_FEEDNOTINBOOKMARKS"));
                 }
                 catch (Exception ex)
                 {
@@ -129,10 +129,10 @@ namespace Nitrocid.Extras.RssShell.Tools
                     if (ex.GetType().Name == nameof(UriFormatException))
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Verify that {0} is actually valid.", vars: [FeedURL]);
-                        throw new KernelException(KernelExceptionType.InvalidFeedLink, Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
+                        throw new KernelException(KernelExceptionType.InvalidFeedLink, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL") + " {0}", ex.Message);
                     }
                     else
-                        throw new KernelException(KernelExceptionType.InvalidFeed, Translate.DoTranslation("Failed to parse feed URL:") + " {0}", ex.Message);
+                        throw new KernelException(KernelExceptionType.InvalidFeed, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL") + " {0}", ex.Message);
                 }
             }
             else

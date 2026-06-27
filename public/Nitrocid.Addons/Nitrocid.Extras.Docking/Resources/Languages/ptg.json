@@ -1,0 +1,44 @@
+{
+  "lang": "ptg",
+  "name": "Portuguese",
+  "cultures": [
+    "pt",
+    "pt-AO",
+    "pt-CH",
+    "pt-CV",
+    "pt-GQ",
+    "pt-GW",
+    "pt-LU",
+    "pt-MO",
+    "pt-MZ",
+    "pt-PT",
+    "pt-ST",
+    "pt-TL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Mostra uma visão geral em tela inteira sobre uma visualização de encaixe selecionada para poder usá-la como um painel de informações"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "Não há tela de encaixe com esse nome."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "Não há encaixe de tela com esse nome."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Não há encaixe de tela."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "O encaixe da tela travou"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Nome da doca"
+    }
+  ]
+}

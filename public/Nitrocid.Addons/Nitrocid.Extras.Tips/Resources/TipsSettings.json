@@ -1,13 +1,13 @@
 [
     {
         "Name": "Tips",
-        "Desc": "This section lets you configure how Tips works.",
+        "Desc": "NKS_TIPS_KERNELTIP_69",
         "Keys": [
             {
-                "Name": "Show kernel tips",
+                "Name": "NKS_TIPS_KERNELTIP_70",
                 "Type": "SBoolean",
                 "Variable": "ShowTip",
-                "Description": "If enabled, the shell shows you the tips on every login."
+                "Description": "NKS_TIPS_KERNELTIP_71"
             }
         ]
     }

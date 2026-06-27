@@ -1,0 +1,146 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DATES_KEYBINDING_EXIT",
+      "text": "बाहर जाएं"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",
+      "text": "एक साधारण स्टॉपवॉच"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STARTSTOP",
+      "text": "स्टार्ट या स्टॉप"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAP",
+      "text": "गोद"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_RESET",
+      "text": "रीसेट"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_TIMER_DESC",
+      "text": "एक साधारण टाइमर"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_SETTIME",
+      "text": "अंतराल सेट करें"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER",
+      "text": "संकेतित समयबाह्य सांख्यिक नहीं है।"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTPROMPT",
+      "text": "मिलीसेकंड में टाइमआउट निर्दिष्ट करें"
+    },
+    {
+      "loc": "NKS_DATES_COMMON_SETTINGS_FIGLETFONT_DESC",
+      "text": "एक फिगलेट फॉन्ट लिखें जो फिगल लाइब्रेरी द्वारा समर्थित हो। अधिक जानकारी के लिए पुस्तकालय के दस्तावेज़ देखें"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_FIGLETFONT_NAME",
+      "text": "टाइमर के लिए फिगलेट फ़ॉन्ट"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "टाइमर के लिए फिगलेट सक्षम करें"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "यदि सक्षम किया गया है, तो टाइमर के लिए फिगलेट का उपयोग करेगा। कृपया ध्यान दें कि Figlet सक्षम के साथ समय को ठीक से प्रस्तुत करने के लिए इसे एक बड़ी कंसोल स्क्रीन की आवश्यकता है।"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_READY",
+      "text": "स्टॉपवॉच तैयार है."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_RUNNING",
+      "text": "स्टॉपवॉच चल रही है!"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_NEWLAP",
+      "text": "नई गोद!"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_COUNTDOWN",
+      "text": "उल्टी गिनती शुरू करें"
+    },
+    {
+      "loc": "NKS_DATES_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "सेटिंग प्रविष्टियाँ प्राप्त करने में विफल."
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_TIMER",
+      "text": "घड़ी"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_STOPWATCH",
+      "text": "स्टॉपवॉच देखनी"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_NOLAPS",
+      "text": "अभी तक कोई लैप नहीं..."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAPLIST",
+      "text": "लैप सूची"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_POMODORO_DESC",
+      "text": "पोमोडोरो टाइमर"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_POMODORO",
+      "text": "पोमोडोरो"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_READY",
+      "text": "पोमोडोरो टाइमर तैयार है"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_TIMERNUM",
+      "text": "पोमोडोरो टाइमर संख्या {0} चार पुनरावृत्तियों में"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_SHORTBREAK",
+      "text": "छोटा सा ब्रेक"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_TIMEOUTPROMPT",
+      "text": "ब्रेक टाइमआउट को मिलीसेकंड में निर्दिष्ट करें"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_KEYBINDING_SETBREAKTIME",
+      "text": "ब्रेक अंतराल सेट करें"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_DESC",
+      "text": "यह अनुभाग आपको यह कॉन्फ़िगर करने देता है कि टाइमर एप्लिकेशन कैसे काम करता है।"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_DESC",
+      "text": "यह अनुभाग आपको यह कॉन्फ़िगर करने देता है कि पोमोडोरो टाइमर एप्लिकेशन कैसे काम करता है।"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "पोमोडोरो टाइमर के लिए फिगलेट सक्षम करें"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "यदि सक्षम है, तो पोमोडोरो टाइमर के लिए फिगलेट का उपयोग किया जाएगा। कृपया ध्यान दें कि फिगलेट सक्षम होने पर समय को ठीक से प्रस्तुत करने के लिए इसे एक बड़ी कंसोल स्क्रीन की आवश्यकता होती है।"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_FIGLETFONT_NAME",
+      "text": "पोमोडोरो टाइमर के लिए फ़िगलेट फ़ॉन्ट"
+    }
+  ]
+}

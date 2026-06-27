@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -33,6 +33,7 @@ using Nitrocid.Extras.Contacts.Settings;
 using Nitrocid.Kernel.Configuration;
 using VisualCard.Common.Diagnostics;
 using Nitrocid.Kernel;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Contacts
 {
@@ -44,66 +45,72 @@ namespace Nitrocid.Extras.Contacts
         ];
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("contacts", /* Localizable */ "Manages your contacts", new ContactsCommand()),
-            new CommandInfo("listcontacts", /* Localizable */ "Lists your contacts", new ListContactsCommand()),
-            new CommandInfo("loadcontacts", /* Localizable */ "Loads your contacts", new LoadContactsCommand()),
-            new CommandInfo("importcontacts", /* Localizable */ "Imports your contacts",
+            new CommandInfo("contacts", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_CONTACTS_DESC"), new ContactsCommand()),
+            new CommandInfo("listcontacts", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC"), new ListContactsCommand()),
+            new CommandInfo("loadcontacts", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC"), new LoadContactsCommand()),
+            new CommandInfo("importcontacts", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC"),
                 [
                     new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "mecard/path", new CommandArgumentPartOptions()
                             {
-                                ArgumentDescription = /* Localizable */ "Either a path to a vCard contact file or a MeCard represnetation"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC")
                             })
                         ],
                         [
-                            new SwitchInfo("mecard", /* Localizable */ "Treats the required input as MeCard string", new(){
+                            new SwitchInfo("mecard", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC"), new(){
                                 AcceptsValues = false,
                             }),
                         ]
                     )
                 ], new ImportContactsCommand()),
-            new CommandInfo("contactinfo", /* Localizable */ "Gets contact information",
+            new CommandInfo("contactinfo", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_CONTACTINFO_DESC"),
                 [
                     new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "contactNum", new()
                             {
                                 IsNumeric = true,
-                                ArgumentDescription = /* Localizable */ "Contact number"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC")
                             })
                         ]
                     )
                 ], new ContactInfoCommand()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasContacts);
+
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasContacts);
 
         internal static ContactsConfig ContactsConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(ContactsConfig)) ? (ContactsConfig)Config.baseConfigurations[nameof(ContactsConfig)] : Config.GetFallbackKernelConfig<ContactsConfig>();
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
             // Add homepage entries
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "Contacts", ContactsManager.OpenContactsTui);
+            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_CONTACTS_HOMEPAGE_CONTACTS"), ContactsManager.OpenContactsTui);
         }
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Contacts.Resources.Languages.Output.Localizations", typeof(ContactsInit).Assembly));
             var config = new ContactsConfig();
             ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ExtensionHandlerTools.extensionHandlers.AddRange(handlers);
 
             // Enable logging if debugging is enabled
-            LoggingTools.AbstractLogger = DebugWriter.debugLogger;
             LoggingTools.EnableLogging = KernelEntry.DebugMode;
+            if (LoggingTools.EnableLogging)
+                LoggingTools.AbstractLogger = DebugWriter.debugLogger;
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
             // Unload all contacts
+            LanguageTools.RemoveCustomAction(AddonName);
             ContactsManager.RemoveContacts(false);
             DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all contacts");
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);

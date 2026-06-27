@@ -1,0 +1,62 @@
+{
+  "lang": "ukr",
+  "name": "Ukrainian",
+  "cultures": [
+    "uk",
+    "uk-UA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Інформація про ліцензію"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "Англійський словник"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Word інформація для"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "API ліцензовано за"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "слово:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Значення слів для"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Частина мови:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "визначення:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Приклад у реченні:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Джерела, використані для визначення"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "Синоніми:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Антоніми:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Слово для визначення"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -26,6 +26,7 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using System.Collections.Generic;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.MailShell
 {
@@ -33,47 +34,52 @@ namespace Nitrocid.Extras.MailShell
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("mail", /* Localizable */ "Opens the IMAP mail client",
+            new CommandInfo("mail", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_MAIL_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "emailAddress", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "E-mail address to login to"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC")
                         }),
                     ])
                 ], new MailCommandExec()),
-            new CommandInfo("popmail", /* Localizable */ "Opens the POP3 mail client",
+            new CommandInfo("popmail", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(false, "emailAddress", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "E-mail address to login to"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC")
                         }),
                     ])
                 ], new PopMailCommandExec()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMailShell);
+
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasMailShell);
 
         internal static MailConfig MailConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(MailConfig)) ? (MailConfig)Config.baseConfigurations[nameof(MailConfig)] : Config.GetFallbackKernelConfig<MailConfig>();
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.MailShell.Resources.Languages.Output.Localizations", typeof(MailShellInit).Assembly));
             var config = new MailConfig();
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterShell("MailShell", new MailShellInfo());
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         { }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
             ShellManager.UnregisterShell("MailShell");
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(MailConfig));

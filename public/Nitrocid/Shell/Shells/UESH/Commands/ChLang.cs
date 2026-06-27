@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -17,19 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
-using Nitrocid.Users;
-using Terminaux.Inputs.Styles.Choice;
-using System.Linq;
-using Terminaux.Inputs.Styles;
 using Nitrocid.Security.Permissions;
-using Nitrocid.Kernel.Debugging;
+using Nitrocid.Users;
+using Terminaux.Shell.Commands;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -50,52 +45,19 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, parameters.CommandText);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
 
-            bool useUser = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-user");
-            bool useCountry = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-country");
-            string language = "eng";
-            if (useCountry)
-            {
-                // Country selection is entirely different, because a country might contain more than one language
-                var countries = LanguageManager.ListAllCountries();
-                string country = parameters.ArgumentsList[0];
-                if (!countries.TryGetValue(country, out LanguageInfo[]? countryLanguages))
-                {
-                    TextWriters.Write(Translate.DoTranslation("Invalid country") + $" {country}", true, KernelColorType.Error);
-                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.LanguageManagement);
-                }
+            bool useUser = parameters.ContainsSwitch("-user");
+            string language = parameters.ArgumentsList[0];
 
-                if (countryLanguages.Length > 1)
-                {
-                    var langChoices = countryLanguages.Select((li, idx) => new InputChoiceInfo($"{idx + 1}", $"{li.FullLanguageName} [{li.ThreeLetterLanguageName}]")).ToArray();
-                    string choice = ChoiceStyle.PromptChoice(Translate.DoTranslation("Choose a language for country") + $" {country}", langChoices, new()
-                    {
-                        OutputType = ChoiceOutputType.Modern,
-                        PressEnter = true,
-                    });
-                    if (!int.TryParse(choice, out int langNum) || langNum < 1 || langNum >= langChoices.Length)
-                    {
-                        TextWriters.Write(Translate.DoTranslation("Invalid language selection for") + $" {country}", true, KernelColorType.Error);
-                        return KernelExceptionTools.GetErrorCode(KernelExceptionType.LanguageManagement);
-                    }
-                    language = countryLanguages[langNum - 1].ThreeLetterLanguageName;
-                }
-                else
-                    language = countryLanguages[0].ThreeLetterLanguageName;
-            }
-            else
+            // Language selection takes only one language
+            var languages = LanguageManager.ListAllLanguages();
+            if (!languages.ContainsKey(language))
             {
-                // Language selection takes only one language
-                language = parameters.ArgumentsList[0];
-                var languages = LanguageManager.ListAllLanguages();
-                if (!languages.ContainsKey(language))
-                {
-                    TextWriters.Write(Translate.DoTranslation("Invalid language") + $" {language}", true, KernelColorType.Error);
-                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
-                }
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_LANGUAGES_EXCEPTION_INVALIDLANG") + $" {language}", true, ThemeColorType.Error);
+                return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
             }
 
             // Change the language
@@ -106,7 +68,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             else
                 LanguageManager.SetLang(language);
-            TextWriterColor.Write(Translate.DoTranslation("You may need to log out and log back in for changes to take effect."));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHLANG_RESTARTREQUIRED"));
             return 0;
         }
 

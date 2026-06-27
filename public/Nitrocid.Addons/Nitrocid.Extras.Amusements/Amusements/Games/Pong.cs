@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -127,9 +127,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 var scores = new AlignedText()
                 {
                     Text =
-                        Translate.DoTranslation("Score") + $": {p1Score,3}" +
+                        LanguageTools.GetLocalized("NKS_AMUSEMENTS_PONG_SCORE") + $": {p1Score,3}" +
                         "     |     " +
-                        Translate.DoTranslation("Score") + $": {p2Score,3}",
+                        LanguageTools.GetLocalized("NKS_AMUSEMENTS_PONG_SCORE") + $": {p2Score,3}",
                     Top = 1,
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.NeutralText),
                     Settings = new()

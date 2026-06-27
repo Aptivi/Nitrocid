@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Name": "Gruvbox",
-        "Description": "One of the known terminal color schemes",
+        "Description": "NKS_THEMEPACKS_THEME_DESC_GRUVBOX",
         "Localizable": true
     },
     "InputColor": "#3c3836",

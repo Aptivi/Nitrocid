@@ -1,0 +1,50 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "Menambahkan alarm untuk mengingatkan Anda saat cangkir teh atau kopi Anda siap."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "Membatalkan alarm yang mengingatkan Anda saat cangkir teh atau kopi Anda siap."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "Kopi Amerika"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "Teh Merah"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "Teh hijau"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "Tidak ada peringatan kafein untuk membatalkan."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "Detik-detik saat cangkir Anda siap tidak valid."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "Jika Anda mencoba memberikan nama minumannya, lihat daftar di bawah ini:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "Cangkir Anda sekarang sudah siap!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "Tentukan jumlah detik atau nama minuman"
+    }
+  ]
+}

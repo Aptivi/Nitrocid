@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -36,8 +36,8 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             ConsoleWrapper.Clear();
 
             // Translate the key name and description
-            string keyName = key.Name;
-            string keyDesc = key.Description;
+            string keyName = LanguageTools.GetLocalized(key.Name);
+            string keyDesc = LanguageTools.GetLocalized(key.Description);
 
             // Write the prompt
             var settings = new InfoBoxSettings()
@@ -46,8 +46,8 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             };
             string? AnswerString =
                 key.Masked ?
-                InfoBoxInputColor.WriteInfoBoxInput($"{keyDesc}\n\n{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")}", settings, InfoBoxInputType.Password) :
-                InfoBoxInputColor.WriteInfoBoxInput($"{keyDesc}\n\n{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")} [{KeyDefaultValue}]", settings);
+                InfoBoxInputColor.WriteInfoBoxInput($"{keyDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT")}", settings, InfoBoxInputType.Password) :
+                InfoBoxInputColor.WriteInfoBoxInput($"{keyDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT")} [{KeyDefaultValue}]", settings);
 
             // Neutralize path if required with the assumption that the keytype is not list
             AnswerString = (string?)TranslateStringValueWithDefault(key, AnswerString, KeyDefaultValue);

@@ -1,0 +1,26 @@
+{
+  "lang": "ltn",
+  "name": "Latin",
+  "cultures": [
+    "la",
+    "la-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "Accipit LABOR omnibus relatorum"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "Fenestras 8 vel inferiores curris te credimus. Haec operatio non valet."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "Post ACERVUS vestigium notitiae pro {0}"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "Non Nitrocidum KS, filum"
+    }
+  ]
+}

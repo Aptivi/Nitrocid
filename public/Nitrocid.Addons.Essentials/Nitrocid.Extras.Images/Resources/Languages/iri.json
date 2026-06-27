@@ -1,0 +1,27 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_DESC",
+      "text": "Réamhamhairc íomhá"
+    },
+    {
+      "loc": "NKS_IMAGES_PATHNEEDED",
+      "text": "Ní chuirtear cosán chuig an íomhá ar fáil."
+    },
+    {
+      "loc": "NKS_IMAGES_IMAGENOTFOUND",
+      "text": "Níl an comhad íomhá ann."
+    },
+    {
+      "loc": "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC",
+      "text": "Conair go dtí an comhad íomhá"
+    }
+  ]
+}

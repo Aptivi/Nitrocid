@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_THEMESTUDIO_APP_EXIT" xml:space="preserve">
+    <value>Вихід</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC" xml:space="preserve">
+    <value>Створює нову тему</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_MAKINGTHEME" xml:space="preserve">
+    <value>Створення нової теми "{0}".</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETOCURRENT" xml:space="preserve">
+    <value>Зберегти тему в поточний каталог</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETOOTHER" xml:space="preserve">
+    <value>Зберегти тему в інший каталог...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETOCURRENTAS" xml:space="preserve">
+    <value>Зберегти тему в поточному каталозі як...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETOOTHERAS" xml:space="preserve">
+    <value>Зберегти тему в інший каталог як...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMENAMEPROMPT" xml:space="preserve">
+    <value>Вкажіть назву теми:</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_LOADFROMBUILTIN" xml:space="preserve">
+    <value>Завантажити тему з готових тем...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMEFILEPROMPT" xml:space="preserve">
+    <value>Вкажіть назву файлу теми без розширення .json:</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_PREVIEW" xml:space="preserve">
+    <value>Попередній перегляд...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_LOADCURRENT" xml:space="preserve">
+    <value>Завантажити поточні кольори</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_LOADFROM" xml:space="preserve">
+    <value>Завантажити тему з файлу...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETODIRPROMPT" xml:space="preserve">
+    <value>Вкажіть каталог для збереження теми:</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC" xml:space="preserve">
+    <value>Створює нову тему в інтерактивному TUI</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_COPYCOLORTO" xml:space="preserve">
+    <value>Копіювати колір до...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_SOURCETYPEPROMPT" xml:space="preserve">
+    <value>Виберіть вихідний тип кольору, з якого потрібно скопіювати колір.</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TARGETTYPEPROMPT" xml:space="preserve">
+    <value>Виберіть цільові типи кольорів, до яких потрібно скопіювати вихідний тип кольору {0}.</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_COLORTYPE" xml:space="preserve">
+    <value>Кольоротип</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_COLOR" xml:space="preserve">
+    <value>колір</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_COLORNAME" xml:space="preserve">
+    <value>Назва кольору</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_COLORHEX" xml:space="preserve">
+    <value>Шістнадцятковий колір</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_COLORBRIGHT" xml:space="preserve">
+    <value>Яскравість кольору</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HOWSAVE" xml:space="preserve">
+    <value>Виберіть, як ви хочете зберегти цю тему</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HOWLOAD" xml:space="preserve">
+    <value>Виберіть спосіб завантаження теми</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_KEYBINDING_CHANGE" xml:space="preserve">
+    <value>змінити...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_KEYBINDING_SAVE" xml:space="preserve">
+    <value>зберегти...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_KEYBINDING_LOAD" xml:space="preserve">
+    <value>Завантажити...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_KEYBINDING_COPY" xml:space="preserve">
+    <value>Копіювати...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC" xml:space="preserve">
+    <value>Назва теми для створення</value>
+  </data>
+</root>

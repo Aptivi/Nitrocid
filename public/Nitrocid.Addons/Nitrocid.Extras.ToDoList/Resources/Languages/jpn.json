@@ -1,0 +1,46 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "無効なアクション。"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "タスク名"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "ToDoタスクマネージャー"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "タスクの追加または削除に失敗しました。"
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "タスクの名前を入力してください。"
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "タスクをマークできませんでした。"
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "タスクのリストを取得できません"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "タスクに追加、削除、完了としてマーク、または完了としてマーク解除するかどうか"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "すべてのタスクを一覧表示、保存、または読み込むかどうか"
+    }
+  ]
+}

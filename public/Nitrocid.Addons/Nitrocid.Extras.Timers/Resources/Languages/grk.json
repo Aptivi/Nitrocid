@@ -1,0 +1,147 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DATES_KEYBINDING_EXIT",
+      "text": "Εξοδος"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",
+      "text": "Ένα απλό χρονόμετρο"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STARTSTOP",
+      "text": "Έναρξη ή διακοπή"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAP",
+      "text": "Αγκαλιά"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_RESET",
+      "text": "Επαναφορά"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_TIMER_DESC",
+      "text": "Ένα απλό χρονόμετρο"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_SETTIME",
+      "text": "Ορισμός διαστήματος"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER",
+      "text": "Το ενδεικνυόμενο χρονικό όριο δεν είναι αριθμητικό."
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_TIMEOUTPROMPT",
+      "text": "Καθορίστε το χρονικό όριο σε χιλιοστά του δευτερολέπτου"
+    },
+    {
+      "loc": "NKS_DATES_COMMON_SETTINGS_FIGLETFONT_DESC",
+      "text": "Γράψτε μια γραμματοσειρά figlet που να υποστηρίζεται από τη βιβλιοθήκη Figgle. Συμβουλευτείτε την τεκμηρίωση της βιβλιοθήκης για περισσότερες πληροφορίες"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_FIGLETFONT_NAME",
+      "text": "Γραμματοσειρά Figlet για χρονόμετρο"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "Ενεργοποιήστε το Figlet για χρονόμετρο"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "Εάν είναι ενεργοποιημένο, θα χρησιμοποιήσει το figlet για χρονόμετρο. Λάβετε υπόψη ότι χρειάζεται μια μεγάλη οθόνη κονσόλας για να αποδώσει σωστά τον χρόνο με το Figlet ενεργοποιημένο."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_READY",
+      "text": "Το χρονόμετρο είναι έτοιμο."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_RUNNING",
+      "text": "Χρονόμετρο που τρέχει!"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_STATUS_NEWLAP",
+      "text": "Νέος γύρος!"
+    },
+    {
+      "loc": "NKS_DATES_TIMERS_KEYBINDING_COUNTDOWN",
+      "text": "Αρχίστε να μετράτε αντίστροφα"
+    },
+    {
+      "loc": "NKS_DATES_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Αποτυχία λήψης καταχωρήσεων ρυθμίσεων."
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_TIMER",
+      "text": "Μετρών την ώραν"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_STOPWATCH",
+      "text": "Χρονόμετρο"
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_NOLAPS",
+      "text": "Χωρίς γύρους ακόμα..."
+    },
+    {
+      "loc": "NKS_DATES_STOPWATCH_LAPLIST",
+      "text": "Λίστα γύρου"
+    },
+    {
+      "loc": "NKS_DATES_COMMAND_POMODORO_DESC",
+      "text": "Χρονόμετρο Pomodoro"
+    },
+    {
+      "loc": "NKS_DATES_HOMEPAGE_POMODORO",
+      "text": "Πομοντόρο"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_READY",
+      "text": "Το χρονόμετρο Pomodoro είναι έτοιμο"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_TIMERNUM",
+      "text": "Αριθμός χρονοδιακόπτη Pomodoro {0} σε τέσσερις επαναλήψεις"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_STATUS_SHORTBREAK",
+      "text": "Σύντομο διάλειμμα"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_TIMEOUTPROMPT",
+      "text": "Καθορίστε το χρονικό όριο διαλείμματος σε χιλιοστά του δευτερολέπτου"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_KEYBINDING_SETBREAKTIME",
+      "text": "Ορίστε το διάστημα διαλείμματος"
+    },
+    {
+      "loc": "NKS_DATES_TIMER_SETTINGS_DESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας της εφαρμογής χρονοδιακόπτη."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_DESC",
+      "text": "Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας της εφαρμογής χρονοδιακόπτη pomodoro."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_NAME",
+      "text": "Ενεργοποιήστε το Figlet για το χρονόμετρο pomodoro"
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_DESC",
+      "text": "Εάν είναι ενεργοποιημένο, θα χρησιμοποιήσει το figlet για το χρονόμετρο pomodoro. Λάβετε υπόψη ότι χρειάζεται μια μεγάλη οθόνη κονσόλας για να αποδώσει σωστά τον χρόνο με το Figlet ενεργοποιημένο."
+    },
+    {
+      "loc": "NKS_DATES_POMODORO_SETTINGS_FIGLETFONT_NAME",
+      "text": "Γραμματοσειρά Figlet για το χρονόμετρο pomodoro"
+    }
+  ]
+}

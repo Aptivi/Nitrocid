@@ -1,0 +1,51 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "Adaugă o alarmă pentru a vă avertiza când ceașca de ceai sau cafea este gata."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "Anulează o alarmă care vă avertizează când ceașca de ceai sau cafea este gata."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "Cafea americană"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "Ceai rosu"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "Ceai verde"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "Fără alerte de cofeină pentru avort."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "Secundele în care cana ta va fi gata sunt invalide."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "Dacă încercați să furnizați un nume pentru băutură, consultați lista de mai jos:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "Cupa ta este acum gata!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "Specificați fie un număr de secunde, fie un nume de băutură"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Thông tin giấy phép"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "Từ điển tiếng Anh"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Thông tin từ cho"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "API được cấp phép theo"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "Từ:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Ý nghĩa của từ cho"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Loại từ:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Sự định nghĩa:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Ví dụ trong câu:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Nguồn được sử dụng để định nghĩa"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "Từ đồng nghĩa:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Từ trái nghĩa:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Từ để định nghĩa"
+    }
+  ]
+}

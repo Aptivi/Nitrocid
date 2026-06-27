@@ -1,0 +1,51 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "Cuirtear aláram leis chun foláireamh a thabhairt duit nuair a bhíonn do chupán tae nó caife réidh."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "Cuireann sé deireadh le haláram a chuireann tú ar an eolas nuair a bhíonn do chupán tae nó caife réidh."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "Caife Meiriceánach"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "Tae Dearg"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "Tae Glas"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "Uimh foláirimh caiféin chun ginmhilleadh."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "Tá na soicind ina mbeidh do chupán réidh neamhbhailí."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "Má tá tú ag iarraidh ainm na dí a sholáthar, seiceáil an liosta thíos:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "Tá do chupán réidh anois!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "Sonraigh roinnt soicind nó ainm dí"
+    }
+  ]
+}

@@ -1,0 +1,323 @@
+{
+  "lang": "kor-T",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTS_DESC",
+      "text": "연락처를 관리합니다"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED",
+      "text": "'{0}' 파일을 찾을 수 없기 때문에 열 수 없습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_IMPORTSUCCESS",
+      "text": "연락처를 성공적으로 가져왔습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_NAMED",
+      "text": "카드 파일이 잘못되어 '{0}' 파일을 열 수 없습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED",
+      "text": "연락처 파일이 존재하지 않습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTSCOUNT",
+      "text": "연락처를 찾았습니다"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED",
+      "text": "연락처 파일이 잘못되었습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_MECARDEMPTY",
+      "text": "MeCard 구문은 비워둘 수 없습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOCONTACT",
+      "text": "제공된 연락처 파일에 연락처에 대한 정보가 없거나 유효하지 않습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED",
+      "text": "연락처를 구문 분석하지 못했습니다. 자세한 내용은 오류 세부정보를 참조하세요."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE",
+      "text": "연락처 색인이 범위를 벗어났습니다. 최대 색인은 {0}이고 제공된 색인은 {1}입니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET",
+      "text": "받을 연락처가 없습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH",
+      "text": "검색할 연락처가 없습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_INVALIDREGEX",
+      "text": "정규식이 유효하지 않습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACT",
+      "text": "연락이 없습니다. 연락처를 가져오려면 화면 하단에 정의된 키 입력을 사용하여 가져오기 옵션을 사용하세요."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CANTIMPORTCONTACTS",
+      "text": "일부 연락처를 가져올 수 없습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PATHVCFPROMPT",
+      "text": "연락처가 포함된 VCF 파일의 경로를 입력하세요. Android의 Contact2.db 파일도 지원됩니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_FILENOTFOUND",
+      "text": "파일이 존재하지 않습니다. VCF 파일 또는contacts2.db 파일에 올바른 경로를 작성했는지 확인하십시오."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDPROMPT",
+      "text": "귀하의 연락처에 대한 유효한 MeCard 표현을 입력하세요."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDINVALID",
+      "text": "Contact MeCard 구문이 잘못되었습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDEMPTY",
+      "text": "Contact MeCard 구문은 비워둘 수 없습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_SEARCHPROMPT",
+      "text": "연락처를 검색하려면 정규식을 입력하세요."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTSSEARCH",
+      "text": "요청하신 표현이 포함된 연락처가 없습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNAME",
+      "text": "담당자 이름"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTNAME",
+      "text": "연락처 이름 없음"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESS",
+      "text": "연락처"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAIL",
+      "text": "연락메일"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOMAIL",
+      "text": "연락메일이 없습니다"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORG",
+      "text": "조직에 문의"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOORG",
+      "text": "연락할 수 없는 조직"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PHONE",
+      "text": "전화번호로 연락하세요"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOPHONE",
+      "text": "연락 전화 없음"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URL",
+      "text": "연락처 URL"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOURL",
+      "text": "연락처 URL 없음"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEO",
+      "text": "지역에 연락하기"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOGEO",
+      "text": "연락처 없음"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPP",
+      "text": "IMPP에 문의하기"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOIMPP",
+      "text": "IMPP에 연락하지 않음"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICK",
+      "text": "연락처 닉네임"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONICK",
+      "text": "연락처 닉네임 없음"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLE",
+      "text": "연락 역할"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOROLE",
+      "text": "연락 역할 없음"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLE",
+      "text": "연락처 제목"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTITLE",
+      "text": "연락처 제목 없음"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTES",
+      "text": "연락처 메모"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONOTES",
+      "text": "연락처 메모 없음"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC",
+      "text": "연락처를 나열합니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC",
+      "text": "연락처를 로드합니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC",
+      "text": "연락처를 가져옵니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC",
+      "text": "필요한 입력을 MeCard 문자열로 처리합니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_DESC",
+      "text": "연락처 정보 가져오기"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTS",
+      "text": "연락처가 없습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMINVALID",
+      "text": "연락번호가 유효하지 않습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE",
+      "text": "연락처 번호가 범위를 벗어났습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_FIRSTNAME",
+      "text": "이름"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_LASTNAME",
+      "text": "성"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_GEO",
+      "text": "지오에 연락하기"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NOTE",
+      "text": "연락처 메모"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_CANTLISTSOME",
+      "text": "일부 연락처를 나열할 수 없습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETE",
+      "text": "삭제"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_INFO",
+      "text": "정보"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "설정 항목을 가져오지 못했습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_HOMEPAGE_CONTACTS",
+      "text": "콘택트 렌즈"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETEALL",
+      "text": "모두 삭제"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORT",
+      "text": "수입"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM",
+      "text": "에서 가져오기"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCH",
+      "text": "찾다"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT",
+      "text": "다음 검색"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK",
+      "text": "검색 뒤로"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_RAWINFO",
+      "text": "원시 정보"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD",
+      "text": "MeCard에서 가져오기"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_DESC",
+      "text": "이 섹션에서는 연락처 애드온의 작동 방식을 구성할 수 있습니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME",
+      "text": "프로필 사진 보기"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC",
+      "text": "활성화하면 연락처 이미지가 표시됩니다. 오용을 방지하고 성능을 위해 기본적으로 비활성화됩니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC",
+      "text": "vCard 연락처 파일 또는 MeCard 표현에 대한 경로"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC",
+      "text": "연락처 번호"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_EDIT",
+      "text": "편집하다..."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
+      "text": "이 연락처에 대한 새 이름을 입력하세요"
+    }
+  ]
+}

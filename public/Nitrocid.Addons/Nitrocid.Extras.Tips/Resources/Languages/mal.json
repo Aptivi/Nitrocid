@@ -1,0 +1,313 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TIPS_KERNELTIP_1",
+      "text": "bahawa anda boleh melaksanakan perintah proses dalam dua cara: memasukkan nama fail boleh laku secara terus, dan menggunakan arahan 'exec'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_2",
+      "text": "bahawa anda boleh mengunci skrin anda menggunakan arahan 'skrin kunci'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_3",
+      "text": "bahawa anda boleh membina pengubahsuaian kernel anda sendiri menggunakan C# dan Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_4",
+      "text": "bahawa anda boleh menggunakan berbilang arahan menggunakan koma bertitik antara arahan?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_5",
+      "text": "bahawa anda boleh melepaskan petikan berganda di dalam hujah yang dipetik apabila melaksanakan arahan?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_6",
+      "text": "bahawa anda boleh menukar tetapan kernel menggunakan arahan 'tetapan'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_7",
+      "text": "bahawa anda boleh menyimpan skrin anda menggunakan arahan 'savescreen'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_8",
+      "text": "bahawa anda boleh melaporkan pepijat kepada kami dengan pergi ke halaman projek GitHub Nitrocid?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_9",
+      "text": "bahawa anda boleh membuat pintasan ke arahan yang anda inginkan menggunakan arahan 'alias'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_10",
+      "text": "bahawa anda boleh membina skrin percikan anda sendiri menggunakan C# dan Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_11",
+      "text": "bahawa anda boleh memasang tambahan tambahan untuk menjadikan kernel anda lebih berguna dan lucu?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_12",
+      "text": "bahawa anda boleh membuat tema hebat anda sendiri menggunakan arahan 'mktheme'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_13",
+      "text": "bahawa anda boleh menukar warna kernel anda sama ada menggunakan arahan 'tetapan' atau dengan menggunakan salah satu tema yang telah dibina sebelumnya?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_14",
+      "text": "bahawa anda boleh menetapkan semula kernel anda kepada lalai kilang menggunakan argumen 'set semula'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_15",
+      "text": "bahawa anda boleh mengakses dokumentasi kami yang luas di halaman GitBook kami?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_16",
+      "text": "bahawa keluaran jangka panjang disokong selama lima tahun untuk sokongan utama, dan tiga tahun untuk kemas kini keselamatan?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_17",
+      "text": "bahawa 0.0.1 ialah versi pertama Nitrocid KS yang dikeluarkan pada 22 Februari 2018?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_18",
+      "text": "bahawa siri 0.0.24.x ialah satu-satunya siri versi yang memegang versi API v2.1?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_19",
+      "text": "bahawa keluaran jangka pendek hanya disokong selama sembilan bulan?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_20",
+      "text": "bahawa siri 0.1.x tidak serasi ke belakang dengan siri 0.0.24.x atau lebih lama?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_21",
+      "text": "bahawa anda boleh menjalankan Nitrocid KS pada Linux, macOS dan Android?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_22",
+      "text": "bahawa anda boleh merujuk kepada dokumentasi API untuk membantu anda membuat mod anda?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_23",
+      "text": "bahawa anda boleh mendapatkan beberapa permainan hebat, seperti Hangman dan ShipDuet, dengan memasang tambahan tambahan?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_24",
+      "text": "bahawa, di Meteor, jika anda terhempas dengan ribut meteor merah, kapal angkasa anda terhempas?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_25",
+      "text": "bahawa anda boleh menukar kernel anda kepada pusat maklumat menggunakan ciri dok?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_26",
+      "text": "bahawa anda boleh membuat kumpulan pengguna untuk mengatur akaun pengguna?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_27",
+      "text": "bahawa jika anda ahli kumpulan yang memberikan kebenaran tertentu, anda dibenarkan melakukan operasi sedemikian?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_28",
+      "text": "bahawa anda boleh menukar zon waktu kernel anda tanpa menjejaskan sistem hos anda?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_29",
+      "text": "bahawa anda boleh menggunakan teks interaktif dan editor heks untuk menjimatkan masa?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_30",
+      "text": "bahawa editor teks tertua yang diketahui bekerja dengan sistem Unix yang pertama ialah ed, editor teks terawal yang dikeluarkan pada 1973 dihantar dengan sistem Unix yang ditemui pada PDP-7 di AT&T Bell Labs?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_31",
+      "text": "bahawa anda juga boleh memaksa arahan edit untuk melancarkan editor dalam jenis tertentu?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_32",
+      "text": "bahawa penyunting teks interaktif cuba mensimulasikan ciri paling asas bagi penyunting teks Unix yang paling popular, vi dan vim?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_33",
+      "text": "bahawa melainkan anda tahu apa yang anda lakukan dengan fail binari, mengedit fail sedemikian dengan cara ini akan membawa kepada kerosakan data atau kehilangan data dalam fail yang disasarkan?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_34",
+      "text": "bahawa pada sistem Linux, shell dimulakan dengan bantuan kedua-dua pengendali log masuk dan program pemula sistem, biasanya terdapat dalam /sbin/init?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_35",
+      "text": "bahawa anda boleh melakukan operasi fail biasa, seperti menyalin, mengalihkan, memadam, mengedit dan sebagainya?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_36",
+      "text": "bahawa TUI interaktif pengurus fail meniru fungsi Midnight Commander?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_37",
+      "text": "bahawa jika kernel ranap, ia biasanya mencipta fail dump?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_38",
+      "text": "bahawa anda boleh mendiagnosis kernel dengan menyahpepijatnya menggunakan fungsi nyahpepijat terbina dalam?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_39",
+      "text": "bahawa anda boleh memuat turun dan memuat naik fail terus dari cangkerang UESH?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_40",
+      "text": "bahawa kernel boleh diterjemahkan walaupun pada peringkat pra-boot dengan memulakannya dengan hujah 'lang'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_41",
+      "text": "bahawa anda boleh membina penyelamat skrin anda sendiri dengan mendaftarkannya dalam mod anda?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_42",
+      "text": "bahawa penyelamat skrin pertama yang mengosongkan skrin selepas tiga minit tidak aktif pada PC IBM asal, scrnsave, dicipta pada tahun 1983 oleh John Socha?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_43",
+      "text": "bahawa sesetengah penyelamat skrin pantas boleh menyebabkan sawan fotosensitif?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_44",
+      "text": "bahawa jurnal kernel digunakan sebagai log but dan penutupan?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_45",
+      "text": "bahawa mod anda kini boleh diterjemahkan?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_46",
+      "text": "bahawa mod anda boleh berkomunikasi dengan tambahan kernel dan mod lain, mewujudkan beberapa jenis komunikasi dan mencapai kesalingoperasian?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_47",
+      "text": "bahawa anda boleh menyambung ke penyahpepijat jauh dan, secara pilihan, ke pelayan sembang?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_48",
+      "text": "bahawa anda boleh menggunakan cangkang nyahpepijat, yang hanya tersedia untuk versi pembangunan?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_49",
+      "text": "bahawa mod anda kini boleh mempunyai konfigurasi mereka sendiri dengan mendaftarkan kelas yang berkaitan?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_50",
+      "text": "bahawa mod anda boleh mendaftarkan shell mereka sendiri?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_51",
+      "text": "bahawa mod anda boleh menambah arahan pada cengkerang sedia ada untuk meningkatkan jumlah arahan yang boleh digunakan?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_52",
+      "text": "bahawa kelas arahan anda boleh mewakili argumen dan suis yang diluluskan dengan tepat?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_53",
+      "text": "bahawa anda boleh menanyakan suis yang diluluskan menggunakan kelas pengurusan suis yang terdapat dalam API kernel?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_54",
+      "text": "bahawa UESH termasuk fungsi skrip untuk memudahkan membuat dan menjalankan skrip?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_55",
+      "text": "bahawa shell termasuk fungsi untuk menghalang pembatalan untuk aplikasi aktif?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_56",
+      "text": "bahawa Nitrocid disepadukan secara mendalam dengan Terminaux untuk membolehkan pemaparan yang lebih pantas dan lebih baik?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_57",
+      "text": "bahawa anda kini boleh mengubah saiz aplikasi interaktif tanpa bimbang bahawa output akan rosak?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_58",
+      "text": "bahawa terdapat arahan yang meminta input pengguna, yang berguna untuk skrip?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_59",
+      "text": "bahawa anda boleh mengemukakan soalan input pengguna anda dalam beberapa cara, seperti pilihan, jadual, ringkas, pemilihan dan sebagainya?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_60",
+      "text": "bahawa anda boleh meletakkan ruang letak pada teks anda yang menyokongnya?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_61",
+      "text": "bahawa anda boleh menggunakan pemacu kernel yang berbeza untuk mengubah cara operasi tertentu berfungsi?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_62",
+      "text": "bahawa anda boleh membuat screensaver dan percikan anda sendiri dalam C# atau Visual Basic?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_63",
+      "text": "bahawa anda boleh menanyakan sistem hos dan emulator terminal menggunakan kelas platform kernel?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_64",
+      "text": "bahawa anda boleh meminta persetujuan privasi sebelum melakukan sesuatu yang sensitif dalam mod anda?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_65",
+      "text": "bahawa anda boleh mematikan pemberitahuan menggunakan ciri Jangan Ganggu?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_66",
+      "text": "bahawa anda boleh menyimpan sejarah pemberitahuan menggunakan fungsi yang terdapat dalam pengurus pemberitahuan?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_67",
+      "text": "bahawa anda boleh mengubah cara nombor rawak dijana dengan menukar pemandu?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_68",
+      "text": "bahawa pelbagai API menyediakan fungsi yang berguna untuk mod anda?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_69",
+      "text": "Bahagian ini membolehkan anda mengkonfigurasi cara Petua berfungsi."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_70",
+      "text": "Tunjukkan petua kernel"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_71",
+      "text": "Jika didayakan, shell menunjukkan kepada anda petua pada setiap log masuk."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_72",
+      "text": "bahawa anda boleh membuat program boleh boot menggunakan mod kernel anda?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_73",
+      "text": "Gagal mendapatkan entri tetapan."
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_74",
+      "text": "bahawa Nitrocid (Simulator Kernel 0.0.2) memanggil cangkerang terbina dalam cangkerang 'UESH'?"
+    },
+    {
+      "loc": "NKS_TIPS_KERNELTIP_75",
+      "text": "bahawa penyelamat skrin disebut-sebut sebagai penyelesaian terhadap lecuran skrin dalam tiub sinar katod (CRT) atau paparan plasma?"
+    }
+  ]
+}

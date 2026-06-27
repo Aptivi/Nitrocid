@@ -1,0 +1,50 @@
+{
+  "lang": "ltn",
+  "name": "Latin",
+  "cultures": [
+    "la",
+    "la-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "terrorem addit ut te sollicitent cum calicem tea vel capulus tuum paratum est."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "Trepidatum gignit quod in summis te cum calicem tea vel capulus tuum paratum est."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "American Coffee"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "Rubrum Tea"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "viridis Tea"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "In summis montibus nulla Julius abort."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "Secunda in quibus poculum tuum paratum erit, irrita erunt."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "Si nomen potionis supplere conaris, indicem infra inspicias:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "Calix tuus nunc paratus est!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "Aut numerum nominare vel potum seconds"
+    }
+  ]
+}

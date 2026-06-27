@@ -1,0 +1,94 @@
+{
+  "lang": "ukr",
+  "name": "Ukrainian",
+  "cultures": [
+    "uk",
+    "uk-UA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "Отримує щогодинну інформацію про акції"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "Короткий символ компанії"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "Введіть ключ API AlphaVantage"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "Будь ласка, надайте свій ключ API."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "Демонстраційний ключ API не можна використовувати."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "Ключ API має містити 16 символів."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "Під час отримання даних про акції сталася помилка. Додаткову інформацію можна знайти тут"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "Ціна відкриття акцій"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "Висока ціна акцій"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "Низька ціна акцій"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "Ціна акції на момент закриття"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "Обсяг запасів"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "Потрібен ключ API. Налаштувати з налаштувань."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "Немає даних про склад."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "У цьому розділі можна налаштувати акції."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "Ключ API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "Ключ для AlphaVantage Stocks API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "Код компанії"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "Акції компанії"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Не вдалося отримати записи налаштувань."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "Не вдається отримати інформацію про акції."
+    }
+  ]
+}

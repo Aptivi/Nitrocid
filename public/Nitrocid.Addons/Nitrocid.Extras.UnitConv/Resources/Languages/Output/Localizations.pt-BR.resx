@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_UNITCONV_COMMAND_UNITCONV_DESC" xml:space="preserve">
+    <value>Conversor de unidades</value>
+  </data>
+  <data name="NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS" xml:space="preserve">
+    <value>Tipos de unidades disponíveis e suas unidades:</value>
+  </data>
+  <data name="NKS_UNITCONV_COMMAND_LISTUNITS_DESC" xml:space="preserve">
+    <value>Lista todas as unidades disponíveis</value>
+  </data>
+  <data name="NKS_UNITCONV_COMMAND_UNITCONV_SWITCH_TUI_DESC" xml:space="preserve">
+    <value>Use a versão TUI do conversor de unidades</value>
+  </data>
+  <data name="NKS_UNITCONV_LISTUNITS_NOUNITTYPE" xml:space="preserve">
+    <value>Nenhum tipo de unidade:</value>
+  </data>
+  <data name="NKS_UNITCONV_LISTUNITS_AVAILABLETYPES" xml:space="preserve">
+    <value>Tipos de unidades disponíveis:</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_UNITSTOCONVERT" xml:space="preserve">
+    <value>unidades para converter</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_NUMBERPROMPT" xml:space="preserve">
+    <value>Insira um número para converter...</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_NONUMBER" xml:space="preserve">
+    <value>Você não inseriu um número para converter.</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_INVALIDNUMBER" xml:space="preserve">
+    <value>O número inserido é inválido.</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_CANTCONVERT" xml:space="preserve">
+    <value>Não é possível converter a unidade.</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_KEYBINDING_CONVERT" xml:space="preserve">
+    <value>Converter...</value>
+  </data>
+  <data name="NKS_UNITCONV_HOMEPAGE_UNITCONV" xml:space="preserve">
+    <value>Conversor de unidades</value>
+  </data>
+  <data name="NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC" xml:space="preserve">
+    <value>Tipo de unidade</value>
+  </data>
+  <data name="NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_QUANTITY_DESC" xml:space="preserve">
+    <value>Quantidade na unidade de origem para converter</value>
+  </data>
+  <data name="NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_SOURCEUNIT_DESC" xml:space="preserve">
+    <value>Unidade de origem</value>
+  </data>
+  <data name="NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC" xml:space="preserve">
+    <value>Unidade alvo</value>
+  </data>
+</root>

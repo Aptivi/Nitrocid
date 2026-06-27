@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -44,7 +44,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             var modelConvert = ColorConvertTools.GetConvertFuncFromSingleModel(source);
             if (modelConvert is null)
             {
-                TextWriters.Write(Translate.DoTranslation("Model specification is invalid."), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_INVALIDMODEL"), true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             var modelConverted = modelConvert.Invoke(specifier);

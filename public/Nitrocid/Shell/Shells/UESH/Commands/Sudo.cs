@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -47,10 +47,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
             // First, check to see if we're already root
             var root = UserManagement.GetUser("root") ??
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't get user info for the system user"));
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SUDO_EXCEPTION_USERINFOSYSTEM"));
             if (UserManagement.CurrentUserInfo == root)
             {
-                TextWriterColor.Write(Translate.DoTranslation("You are already a superuser!"));
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SUDO_ALREADYROOT"));
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.ShellOperation);
             }
 
@@ -77,7 +77,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 failed = true;
                 DebugWriter.WriteDebug(DebugLevel.I, "Executing command {0} as superuser failed: {1}", vars: [parameters.ArgumentsText, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Failed to execute the command as superuser.") + $" {ex.Message}");
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SUDO_CANTEXECUTE") + $" {ex.Message}");
             }
             finally
             {
@@ -85,7 +85,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Sudo is done. Switching to user {0}...", vars: [currentUsername]);
                     UserManagement.CurrentUserInfo = UserManagement.GetUser(currentUsername) ??
-                        throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't get user info for") + $" {currentUsername}");
+                        throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SUDO_EXCEPTION_USERINFO") + $" {currentUsername}");
                     UserManagement.UnlockUser(currentUsername);
                     UserManagement.UnlockUser("root");
                 }

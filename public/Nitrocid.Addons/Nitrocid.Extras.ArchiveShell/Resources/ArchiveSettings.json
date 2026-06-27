@@ -1,10 +1,10 @@
 [
     {
         "Name": "Archive",
-        "Desc": "This section lets you configure how the archive shell work.",
+        "Desc": "NKS_SHELLPACKS_ARCHIVE_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "Prompt Preset",
+                "Name": "NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "ArchivePromptPreset",
                 "ShellType": "ArchiveShell",

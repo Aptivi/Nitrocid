@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NKS_TODO_INVALIDACTION" xml:space="preserve">
+    <value>अमान्य कार्रवाई।</value>
+  </data>
+  <data name="NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC" xml:space="preserve">
+    <value>कार्य का नाम</value>
+  </data>
+  <data name="NKS_TODO_COMMAND_TODO_DESC" xml:space="preserve">
+    <value>करने योग्य कार्य प्रबंधक</value>
+  </data>
+  <data name="NKS_TODO_ADDREMOVEFAILED" xml:space="preserve">
+    <value>कोई कार्य जोड़ने या हटाने में विफल.</value>
+  </data>
+  <data name="NKS_TODO_NAMENEEDED" xml:space="preserve">
+    <value>कृपया अपने कार्य के लिए एक नाम प्रदान करें.</value>
+  </data>
+  <data name="NKS_TODO_MARKFAILED" xml:space="preserve">
+    <value>किसी कार्य को चिह्नित करने में विफल.</value>
+  </data>
+  <data name="NKS_TODO_LOADFAILED" xml:space="preserve">
+    <value>कार्यों की सूची प्राप्त नहीं की जा सकी</value>
+  </data>
+  <data name="NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC" xml:space="preserve">
+    <value>किसी कार्य में कुछ जोड़ना है, हटाना है, पूर्ण के रूप में चिह्नित करना है, या पूर्ण के रूप में अचिह्नित करना है</value>
+  </data>
+  <data name="NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC" xml:space="preserve">
+    <value>सभी कार्यों को सूचीबद्ध करना, सहेजना या लोड करना है या नहीं</value>
+  </data>
+</root>

@@ -1,0 +1,56 @@
+{
+  "lang": "ptg",
+  "name": "Portuguese",
+  "cultures": [
+    "pt",
+    "pt-AO",
+    "pt-CH",
+    "pt-CV",
+    "pt-GQ",
+    "pt-GW",
+    "pt-LU",
+    "pt-MO",
+    "pt-MZ",
+    "pt-PT",
+    "pt-ST",
+    "pt-TL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "Ação inválida."
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "Nome da tarefa"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "Gerenciador de tarefas pendentes"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "Falha ao adicionar ou remover uma tarefa."
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "Forneça um nome para sua tarefa."
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "Falha ao marcar uma tarefa."
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "Não é possível obter uma lista de tarefas"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "Se pretender adicionar, remover, marcar como concluído ou desmarcar como concluído numa tarefa"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "Se deve listar, guardar ou carregar todas as tarefas"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -27,6 +27,7 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using System.Collections.Generic;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.JsonShell
 {
@@ -34,71 +35,76 @@ namespace Nitrocid.Extras.JsonShell
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("jsondiff", /* Localizable */ "Shows the difference between two JSON files",
+            new CommandInfo("jsondiff", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "file1", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "First JSON file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE1_DESC")
                         }),
                         new CommandArgumentPart(true, "file2", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Second JSON file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE2_DESC")
                         }),
                     ])
                 ], new JsonDiffCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("jsonbeautify", /* Localizable */ "Beautifies the JSON file",
+            new CommandInfo("jsonbeautify", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONBEAUTIFY_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "jsonfile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to JSON file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC")
                         }),
                         new CommandArgumentPart(true, "output", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to output JSON file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC")
                         }),
                     ], true)
                 ], new JsonBeautifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
-            new CommandInfo("jsonminify", /* Localizable */ "Minifies the JSON file",
+            new CommandInfo("jsonminify", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONMINIFY_DESC"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "jsonfile", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to JSON file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC")
                         }),
                         new CommandArgumentPart(true, "output", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Path to output JSON file"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC")
                         }),
                     ], true)
                 ], new JsonMinifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasJsonShell);
+
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasJsonShell);
 
         internal static JsonConfig JsonConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(JsonConfig)) ? (JsonConfig)Config.baseConfigurations[nameof(JsonConfig)] : Config.GetFallbackKernelConfig<JsonConfig>();
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.JsonShell.Resources.Languages.Output.Localizations", typeof(JsonShellInit).Assembly));
             var config = new JsonConfig();
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterShell("JsonShell", new JsonShellInfo());
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         { }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
             ShellManager.UnregisterShell("JsonShell");
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(JsonConfig));

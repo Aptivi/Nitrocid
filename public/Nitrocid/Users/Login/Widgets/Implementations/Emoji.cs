@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -48,7 +48,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             {
                 var message = new AlignedText()
                 {
-                    Text = Translate.DoTranslation("The icons addon needs to be installed before being able to display this emoji."),
+                    Text = LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EMOJI_NEEDSADDON"),
                     Top = iconTop,
                     Left = left,
                     Width = width,

@@ -1,0 +1,118 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_SSH_COMMAND_SSHELL_DESC",
+      "text": "एक SSH सर्वर से जुड़ता है।"
+    },
+    {
+      "loc": "NKS_SSH_PASSWORDPROMPT",
+      "text": "{0} के लिए पासवर्ड दर्ज करें:"
+    },
+    {
+      "loc": "NKS_SSH_DISCONNECTED",
+      "text": "SSH डिस्कनेक्ट किया गया।"
+    },
+    {
+      "loc": "NKS_SSH_CONNECTFAILED",
+      "text": "SSH सर्वर से कनेक्ट करने का प्रयास करने में त्रुटि: {0}"
+    },
+    {
+      "loc": "NKS_SSH_INVALIDOPTION",
+      "text": "निर्दिष्ट विकल्प {0} अमान्य है।"
+    },
+    {
+      "loc": "NKS_SSH_ANSWERNEEDSNUM",
+      "text": "उत्तर संख्यात्मक होना चाहिए।"
+    },
+    {
+      "loc": "NKS_SSH_GOBACK",
+      "text": "वापस जाने के लिए कोई भी कुंजी दबाएँ।"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_DESC",
+      "text": "एक कमांड निष्पादित करने के लिए एक SSH सर्वर से जुड़ता है।"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_QUESTION",
+      "text": "आप कैसे प्रमाणित करना चाहते हैं?"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PRIVATEKEY",
+      "text": "निजी कुंजी फ़ाइल"
+    },
+    {
+      "loc": "NKS_SSH_AUTHMETHOD_PASSWORD",
+      "text": "कुंजिका"
+    },
+    {
+      "loc": "NKS_SSH_PASSPHRASEPROMPT",
+      "text": "कुंजी {0} के लिए पासफ़्रेज़ दर्ज करें:"
+    },
+    {
+      "loc": "NKS_SSH_KEYFILENOTFOUND",
+      "text": "कुंजी फ़ाइल {0} मौजूद नहीं है."
+    },
+    {
+      "loc": "NKS_SSH_CANTADDPRIVKEY",
+      "text": "निजी कुंजी जोड़ने का प्रयास करने में त्रुटि:"
+    },
+    {
+      "loc": "NKS_SSH_SSHCMDFAILED",
+      "text": "SSH कमांड निष्पादित करने में त्रुटि"
+    },
+    {
+      "loc": "NKS_SSH_SSHELLFAILED",
+      "text": "SSH शेल में त्रुटि"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_DESC",
+      "text": "लिखें कि आप अपना लॉगिन संकेत कैसे चाहते हैं। डिफ़ॉल्ट शैली का उपयोग करने के लिए खाली छोड़ दें। प्लेसहोल्डर्स को पार्स किया जाता है।"
+    },
+    {
+      "loc": "NKS_SSH_PRIVKEYLOCATIONPROMPT",
+      "text": "{0} के लिए निजी कुंजी का स्थान दर्ज करें। कुंजियाँ जोड़ना समाप्त करने के लिए \"q\" लिखें:"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_DESC",
+      "text": "यह अनुभाग आपको SSH के कार्य करने के तरीके को कॉन्फ़िगर करने देता है।"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_LOGINPROMPT_NAME",
+      "text": "SSH के लिए उपयोगकर्ता नाम प्रॉम्प्ट शैली"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_NAME",
+      "text": "SSH स्पीड डायल में नए कनेक्शन जोड़ें"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_SPEEDDIAL_DESC",
+      "text": "यदि सक्षम किया गया है, तो SSH स्पीड डायल में एक नया कनेक्शन जोड़ता है।"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "सेटिंग प्रविष्टियाँ प्राप्त करने में विफल."
+    },
+    {
+      "loc": "NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT",
+      "text": "SSH कनेक्ट है लेकिन कोई क्लाइंट नहीं है।"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC",
+      "text": "SSH सर्वर से कनेक्ट करें"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC",
+      "text": "प्रमाणीकृत करने के लिए उपयोगकर्ता नाम"
+    },
+    {
+      "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
+      "text": "दूरस्थ रूप से निष्पादित करने के लिए आदेश"
+    }
+  ]
+}

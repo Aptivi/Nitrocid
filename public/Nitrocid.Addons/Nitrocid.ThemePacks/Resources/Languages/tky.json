@@ -1,0 +1,315 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_THEMEPACKS_EXCEPTION_NODATA",
+      "text": "Bu eklentiyi başlatmak için gerekli veriler alınamıyor."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AMAYA",
+      "text": "Mor uyumu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ANDROID",
+      "text": "Bu ön plandaki Android maskot rengidir"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_APTIVI",
+      "text": "Marka uyumumuz"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUDARK",
+      "text": "Popüler bir VIM teması olan Ayu'nun koyu versiyonu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYULIGHT",
+      "text": "Popüler bir VIM teması olan Ayu'nun hafif versiyonu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_AYUMIRAGE",
+      "text": "Popüler bir VIM teması olan Ayu'nun Mirage versiyonu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BACKTOSCHOOL",
+      "text": "Bugün yeni okul yılının ilk günü"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKONWHITE",
+      "text": "Mümkün olan en hafif terminal"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BLACKROSE",
+      "text": "Bu siyah güldür"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_BREEZE",
+      "text": "KDE Plasma 5 teması olan Breeze için renk şeması"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DRACULA",
+      "text": "IntelliJ gibi IDE'ler için popüler renk şeması"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DARKSIDE",
+      "text": "Karanlık tarafa dönmenin zamanı geldi."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEBIAN",
+      "text": "Debian için renk şemaları"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DEFAULTVIVID",
+      "text": "Çekirdek için canlı varsayılan tema"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICBACK",
+      "text": "Çekirdeğinizde arka plan aksanları var!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_DYNAMICEXTRA",
+      "text": "Her yerde daha fazla aksan!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_EDM",
+      "text": "EDM hayranıysanız kullanın"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FIRE",
+      "text": "Yangın gölgelikleri"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GOLDENPALACE",
+      "text": "Koyu mavi zemin üzerine destansı altın sarayınız"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPEKIWI",
+      "text": "Üzüm ve kivi birlikte karıştırıldı"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRAPE",
+      "text": "Üzümler için renk şeması"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENMIX",
+      "text": "Canlı ve sıvalı yeşil, mavi ve mor renkler"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENIFIED",
+      "text": "Çevrenizi yeşillendirin, çekirdeğinizi yeşillendirin. Dünyayı daha yeşil yapın!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GREENRED",
+      "text": "Renk olarak yeşil ve kırmızıyı ekledik."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRINK",
+      "text": "Yeşil ve pembe bir arada"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GRUVBOX",
+      "text": "Bilinen terminal renk şemalarından biri"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_HACKER",
+      "text": "Gri zemin üzerine yeşil metin"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_INDIAN",
+      "text": "Geleneksel Hint renkleri konsolunuzda."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEMON",
+      "text": "Terminalinizi limon asidiyle doldurun"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LIGHTPLANKS",
+      "text": "Açık renkli ahşap plakalar"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXCOLORED",
+      "text": "Standart Linux terminal renkleri"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXUNCOLORED",
+      "text": "Gri terminal"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MATERIALISTIC",
+      "text": "Terminalinizde bazı Material Design metinleri"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MAYA",
+      "text": "Turuncu ve kahverengi tonları"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MELANGE",
+      "text": "Aynı isimli VIM temasından esinlenen Melange teması"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MINT",
+      "text": "Terminalinizi nane ile doldurun"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MIRAI",
+      "text": "Beyond the Boundary'den Mirai Kuriyama'nın renk paleti."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME",
+      "text": "Aynı isimli VIM temasından esinlenerek oluşturulmuş bir tema"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEONBREEZE",
+      "text": "Neon mavi ve pembeyi sever misiniz?"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NEUTRALIZED",
+      "text": "Bu temanın sizin için nötr olması gerekir."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_NIGHTSKY",
+      "text": "Bu, gecenin başlangıcındaki gece gökyüzünüz!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OKTOBERFEST",
+      "text": "Ekim ayı yaklaşıyor, hazır olun!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ORANGESEA",
+      "text": "Turuncu deniz"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_PHOSPHORIC",
+      "text": "Her şeyi turuncuya çeviren fosforik terminal"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDBREEZE",
+      "text": "Kırmızı bir esinti verir."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDCONSOLE",
+      "text": "Kan kırmızısı bir konsol"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SAKURA",
+      "text": "Sakura ağaçları size biraz Çin esintisi verecek"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TEALED",
+      "text": "Tüm turkuaz renkleri"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TECHNO",
+      "text": "Teknoloji tutkunlarına özel bir tema"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_TRANCE",
+      "text": "Trance müzik hayranı mısınız? Bu tema tam size göre!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_UBUNTU",
+      "text": "Popüler bir Linux işletim sistemi olan Ubuntu'dan renk şemaları"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITY",
+      "text": "Size mükemmel bir Vice City havası verir"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VICECITYDAWN",
+      "text": "Bu sizin Vice City'nizin şafağında."
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_VISUALSTUDIO",
+      "text": "En güçlü IDE'lerden biri olan Visual Studio için renk şeması"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS11",
+      "text": "Windows 11'in renk düzeni, Windows'un yeni bir sürümü"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WINDOWS95",
+      "text": "Bu tema ile nostaljiyi geri getirin!"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_WOOD",
+      "text": "Terminaliniz ahşap plakalardan oluşmaktadır"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_YASAI",
+      "text": "Farklı meyvelerin Çin desenlerinden esinlenilmiştir"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ALMALINUX",
+      "text": "Red Hat Linux işletim sisteminin bir yan ürünü olan Alma Linux'tan renk şemaları"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ARCHLINUX",
+      "text": "Bir Linux işletim sistemi olan Arch Linux'tan renk şemaları"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ENDEAVOUR",
+      "text": "EndeavourOS'den renk şemaları, bir Linux işletim sistemi olan Arch Linux'un bir yan ürünüdür"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_FEDORA",
+      "text": "Fedora'dan renk şemaları, Linux işletim sistemi Red Hat'in bir yan ürünüdür"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_GENTOO",
+      "text": "Bir Linux işletim sistemi olan Gentoo'dan renk şemaları"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KALEIDOSCOPE",
+      "text": "Renkli bir mandala oluşturan yontulmuş desen renkleri"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_KUBUNTU",
+      "text": "Popüler bir Linux işletim sistemi olan Ubuntu'nun yan ürünü olan Kubuntu'dan renk şemaları"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LINUXMINT",
+      "text": "Popüler bir Linux işletim sistemi olan Ubuntu'nun resmi olmayan bir yan ürünü olan Linux Mint'ten renk şemaları"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LUBUNTU",
+      "text": "Popüler bir Linux işletim sistemi olan Ubuntu'nun yan ürünü olan Lubuntu'dan renk şemaları"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_MANJARO",
+      "text": "Manjaro'dan renk şemaları, bir Linux işletim sistemi olan Arch Linux'un bir yan ürünüdür"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_OPENSUSE",
+      "text": "Bir Linux işletim sistemi olan openSUSE'den renk şemaları"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_REDHAT",
+      "text": "Bir Linux işletim sistemi olan Red Hat'ten renk şemaları"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RENEGADE",
+      "text": "Dikkat çekici metinler için dinamik vurgu renklerine sahip kırmızı tonlar"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ROCKYLINUX",
+      "text": "Linux işletim sistemi Red Hat'in bir yan ürünü olan Rocky Linux'tan renk şemaları"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_SLACKWARE",
+      "text": "Bir Linux işletim sistemi olan Slackware'den renk şemaları"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_XUBUNTU",
+      "text": "Popüler bir Linux işletim sistemi olan Ubuntu'nun bir yan ürünü olan Xubuntu'dan renk şemaları"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
+      "text": "Popüler bir Linux işletim sistemi olan Ubuntu'nun resmi olmayan bir yan ürünü olan Zorin OS'den renk şemaları"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Name": "Oktoberfest",
-        "Description": "October is coming soon, so get ready!",
+        "Description": "NKS_THEMEPACKS_THEME_DESC_OKTOBERFEST",
         "IsEvent": true,
         "StartMonth": 9,
         "StartDay": 26,

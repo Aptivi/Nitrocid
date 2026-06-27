@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -54,12 +54,11 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
 
             // Render them to the second pane
             return
-                ListEntryWriterColor.RenderListEntry(Translate.DoTranslation("Name"), selectedMod.ModName) + CharManager.NewLine +
-                ListEntryWriterColor.RenderListEntry(Translate.DoTranslation("File name"), selectedMod.ModFileName) + CharManager.NewLine +
-                ListEntryWriterColor.RenderListEntry(Translate.DoTranslation("File path"), selectedMod.ModFilePath) + CharManager.NewLine +
-                ListEntryWriterColor.RenderListEntry(Translate.DoTranslation("Version"), selectedMod.ModVersion) + CharManager.NewLine + CharManager.NewLine +
-                ListEntryWriterColor.RenderListEntry(Translate.DoTranslation("Languages"), $"{selectedMod.ModStrings.Count}") + CharManager.NewLine +
-                ListEntryWriterColor.RenderListEntry(Translate.DoTranslation("Entry point"), selectedMod.ModScript.GetType().ToString());
+                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODNAME"), selectedMod.ModName) + CharManager.NewLine +
+                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODFILENAME"), selectedMod.ModFileName) + CharManager.NewLine +
+                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODFILEPATH"), selectedMod.ModFilePath) + CharManager.NewLine +
+                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODVERSION"), selectedMod.ModVersion) + CharManager.NewLine + CharManager.NewLine +
+                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_MODS_TUI_MODENTRYPOINT"), selectedMod.ModScript.GetType().ToString());
             ;
         }
 
@@ -89,7 +88,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
                 if (manual)
                 {
                     // Give an infobox that lets the user enter the mod path
-                    path = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a path to the mod that you want to start"));
+                    path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MODS_TUI_PATHTOMODPROMPT"));
                 }
                 else
                 {
@@ -103,7 +102,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Failed to start mod") + $" {path}: {ex.Message}");
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MODS_TUI_MODSTARTFAILED") + $" {path}: {ex.Message}");
             }
         }
 
@@ -143,7 +142,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
                 if (manual)
                 {
                     // Give an infobox that lets the user enter the mod path
-                    path = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a path to the mod that you want to install"));
+                    path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MODS_TUI_PATHTOMODINSTALLPROMPT"));
                 }
                 else
                 {
@@ -156,7 +155,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Failed to install mod") + $" {path}: {ex.Message}");
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MODS_TUI_MODINSTALLFAILED") + $" {path}: {ex.Message}");
             }
         }
 

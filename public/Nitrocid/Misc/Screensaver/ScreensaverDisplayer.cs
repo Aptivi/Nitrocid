@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -57,9 +57,9 @@ namespace Nitrocid.Misc.Screensaver
         internal static void DisplayScreensaver(object[] threadParams)
         {
             if (threadParams.Length == 0)
-                throw new KernelException(KernelExceptionType.ScreensaverManagement, Translate.DoTranslation("Screensaver instance is not specified"));
+                throw new KernelException(KernelExceptionType.ScreensaverManagement, LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_EXCEPTION_NEEDSSCREENSAVER"));
             BaseScreensaver? Screensaver = (BaseScreensaver?)threadParams[0] ??
-                throw new KernelException(KernelExceptionType.ScreensaverManagement, Translate.DoTranslation("Screensaver instance is not specified"));
+                throw new KernelException(KernelExceptionType.ScreensaverManagement, LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_EXCEPTION_NEEDSSCREENSAVER"));
             bool displaySeizureWarning = (bool?)threadParams[1] ?? false;
             bool initialVisible = ConsoleWrapper.CursorVisible;
             bool initialBack = ConsoleColoring.AllowBackground;
@@ -143,7 +143,7 @@ namespace Nitrocid.Misc.Screensaver
                 while (!ScreensaverAmbienceThread.IsStopping)
                 {
                     var ambientStream = cue.GetStream(ambientFxType) ??
-                        throw new KernelException(KernelExceptionType.AudioCue, Translate.DoTranslation("Can't get audio cue required for ambient screensavers."));
+                        throw new KernelException(KernelExceptionType.AudioCue, LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_EXCEPTION_NOCUE"));
 
                     try
                     {
@@ -151,7 +151,7 @@ namespace Nitrocid.Misc.Screensaver
                         DebugWriter.WriteDebug(DebugLevel.I, $"Restarting screensaver ambience {ambientFxType} from {Config.MainConfig.AudioCueThemeName}...");
                         basoliaMedia.PlayAsync();
                         if (!SpinWait.SpinUntil(() => basoliaMedia.GetState() == PlaybackState.Playing, 15000))
-                            throw new KernelException(KernelExceptionType.AudioCue, Translate.DoTranslation("Can't play sound because of timeout."));
+                            throw new KernelException(KernelExceptionType.AudioCue, LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_AMBIENT_EXCEPTION_SOUNDPLAYTIMEOUT"));
                         while (basoliaMedia.GetState() == PlaybackState.Playing && !ScreensaverDisplayerThread.IsStopping) ;
                         ambientStream.Seek(0, System.IO.SeekOrigin.Begin);
                         basoliaMedia.CloseFile();

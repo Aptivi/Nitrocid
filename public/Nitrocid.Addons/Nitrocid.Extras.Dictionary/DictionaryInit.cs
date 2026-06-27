@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Terminaux.Shell.Shells;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Dictionary
 {
@@ -31,28 +32,37 @@ namespace Nitrocid.Extras.Dictionary
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("dict", /* Localizable */ "The English Dictionary",
+            new CommandInfo("dict", LanguageTools.GetLocalized("NKS_DICTIONARY_DICTIONARY"),
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "word", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "Word to define"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DICTIONARY_WORDTODEFINE")
                         }),
                     ])
                 ], new DictCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasDictionary);
 
-        void IAddon.StartAddon() =>
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasDictionary);
+
+        public void StartAddon()
+        {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Dictionary.Resources.Languages.Output.Localizations", typeof(DictionaryInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+        }
 
-        void IAddon.StopAddon() =>
+        public void StopAddon()
+        {
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+        }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
     }
 }

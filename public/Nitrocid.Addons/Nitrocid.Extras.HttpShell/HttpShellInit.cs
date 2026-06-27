@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,6 +25,7 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using System.Collections.Generic;
 using System.Linq;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.HttpShell
 {
@@ -32,28 +33,33 @@ namespace Nitrocid.Extras.HttpShell
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("http", /* Localizable */ "Starts the HTTP shell", new HttpCommandExec())
+            new CommandInfo("http", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC"), new HttpCommandExec())
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasHttpShell);
+
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasHttpShell);
 
         internal static HttpConfig HttpConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(HttpConfig)) ? (HttpConfig)Config.baseConfigurations[nameof(HttpConfig)] : Config.GetFallbackKernelConfig<HttpConfig>();
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.HttpShell.Resources.Languages.Output.Localizations", typeof(HttpShellInit).Assembly));
             var config = new HttpConfig();
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterShell("HTTPShell", new HTTPShellInfo());
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         { }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
             ShellManager.UnregisterShell("HTTPShell");
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(HttpConfig));

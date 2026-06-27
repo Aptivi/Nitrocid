@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -30,31 +30,40 @@ namespace Nitrocid.ThemePacks
 {
     internal class ThemePackInit : IAddon
     {
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonThemePacks);
 
-        void IAddon.StartAddon()
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.AddonThemePacks);
+
+        public void StartAddon()
         {
             // Add them all!
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.ThemePacks.Resources.Languages.Output.Localizations", typeof(ThemePackInit).Assembly));
             string[] themeResNames = ResourcesManager.GetResourceNames(typeof(ThemePackInit).Assembly);
             foreach (string resource in themeResNames)
             {
+                if (!resource.VerifyPrefix("Themes.") || !resource.VerifySuffix(".json"))
+                    continue;
                 string key = resource.RemovePrefix("Themes.");
                 string themeName = key.RemoveSuffix(".json");
                 string data = ResourcesManager.ConvertToString(ResourcesManager.GetData(key, ResourcesType.Themes, typeof(ThemePackInit).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("Can't get necessary data to initialize this addon.")));
+                    throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized("NKS_THEMEPACKS_EXCEPTION_NODATA")));
                 var themeToken = JToken.Parse(data);
                 bool result = ThemeTools.themes.TryAdd(themeName, new ThemeInfo(themeToken));
                 DebugWriter.WriteDebug(DebugLevel.I, "Added {0}: {1}", vars: [themeName, result]);
             }
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
             // Remove them all!
+            LanguageTools.RemoveCustomAction(AddonName);
             string[] themeResNames = ResourcesManager.GetResourceNames(typeof(ThemePackInit).Assembly);
             foreach (string resource in themeResNames)
             {
+                if (!resource.VerifyPrefix("Themes.") || !resource.VerifySuffix(".json"))
+                    continue;
                 string key = resource.RemovePrefix("Themes.");
                 string themeName = key.RemoveSuffix(".json");
                 bool result = ThemeTools.themes.Remove(themeName);
@@ -62,7 +71,7 @@ namespace Nitrocid.ThemePacks
             }
         }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
     }
 }

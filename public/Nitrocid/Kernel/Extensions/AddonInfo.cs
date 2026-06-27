@@ -25,9 +25,11 @@ namespace Nitrocid.Kernel.Extensions
     internal class AddonInfo
     {
         internal string AddonName =>
-            Addon is not null ?
-            Addon.AddonName :
-            "";
+            Addon is not null ? Addon.AddonName : "";
+
+        internal string AddonDisplayName =>
+            Addon is not null ? Addon.AddonTranslatedName : "";
+
         internal IAddon Addon { get; }
 
         internal AddonInfo(IAddon addon)

@@ -17,12 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
+using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.ScreensaverPacks.Screensavers;
 using Nitrocid.ScreensaverPacks.Settings;
-using System.Collections.Generic;
 
 namespace Nitrocid.ScreensaverPacks
 {
@@ -135,14 +136,19 @@ namespace Nitrocid.ScreensaverPacks
             { "zebrashift", new ZebraShiftDisplay() },
         };
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonScreensaverPacks);
+
+        public string AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.AddonScreensaverPacks);
 
         internal static ExtraSaversConfig SaversConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(ExtraSaversConfig)) ? (ExtraSaversConfig)Config.baseConfigurations[nameof(ExtraSaversConfig)] : Config.GetFallbackKernelConfig<ExtraSaversConfig>();
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.ScreensaverPacks.Resources.Languages.Output.Localizations", typeof(ScreensaverPackInit).Assembly));
+
             // First, initialize screensavers
             foreach (var saver in Screensavers.Keys)
                 ScreensaverManager.AddonSavers.Add(saver, Screensavers[saver]);
@@ -152,8 +158,10 @@ namespace Nitrocid.ScreensaverPacks
             ConfigTools.RegisterBaseSetting(saversConfig);
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
+
             // First, unload screensavers
             foreach (var saver in Screensavers.Keys)
                 ScreensaverManager.AddonSavers.Remove(saver);
@@ -162,7 +170,7 @@ namespace Nitrocid.ScreensaverPacks
             ConfigTools.UnregisterBaseSetting(nameof(ExtraSaversConfig));
         }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
     }
 }

@@ -1,0 +1,96 @@
+{
+  "lang": "arb-T",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "آلة حاسبة لحساب التعبيرات."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "خطأ في الحساب."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "عرض معلومات حول صيغة العدد التخيلي المحددة برقم حقيقي وتخيلي محدد"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "الرقم الحقيقي غير صالح."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "الرقم الخيالي غير صالح."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "معادلة:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "نصف القطر:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "الحقيقي إلى نصف القطر بالراديان:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "وهمي لنصف القطر في راديان:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "الزاوية بالراديان:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "متسارع:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "الثلاثي:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "تعبير رياضي"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "عدد حقيقي"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "عدد وهمي"
+    }
+  ]
+}

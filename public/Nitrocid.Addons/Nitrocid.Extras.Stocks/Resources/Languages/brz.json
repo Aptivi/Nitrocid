@@ -1,0 +1,93 @@
+{
+  "lang": "brz",
+  "name": "Portuguese (Brazil)",
+  "cultures": [
+    "pt-BR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "Obtém informações de estoque por hora"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "Símbolo curto da empresa"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "Insira sua chave de API AlphaVantage"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "Forneça sua chave de API."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "A chave da API de demonstração não pode ser usada."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "Sua chave de API deve ter 16 caracteres."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "Ocorreu um erro ao buscar os dados de ações. Informações adicionais podem ser encontradas aqui"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "Preço de abertura das ações"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "Alto preço das ações"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "Preço baixo das ações"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "Preço de fechamento das ações"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "Volume de estoque"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "Chave API é necessária. Configure nas configurações."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "Não há dados de estoque disponíveis."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "Esta seção permite que você configure os estoques."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "Chave API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "Chave para a API AlphaVantage Stocks"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "Código da empresa"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "Empresa de ações"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Falha ao obter entradas de configurações."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "Não é possível obter informações sobre ações."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "lang": "cnt-T",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_TODO_INVALIDACTION",
+      "text": "無效的操作。"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC",
+      "text": "任務名稱"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_DESC",
+      "text": "待辦事項管理員"
+    },
+    {
+      "loc": "NKS_TODO_ADDREMOVEFAILED",
+      "text": "新增或刪除任務失敗。"
+    },
+    {
+      "loc": "NKS_TODO_NAMENEEDED",
+      "text": "請提供您的任務的名稱。"
+    },
+    {
+      "loc": "NKS_TODO_MARKFAILED",
+      "text": "無法標記任務。"
+    },
+    {
+      "loc": "NKS_TODO_LOADFAILED",
+      "text": "無法取得任務列表"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC",
+      "text": "是否新增、刪除、標記為已完成或取消標記為已完成的任務"
+    },
+    {
+      "loc": "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC",
+      "text": "是否列出、儲存或載入所有任務"
+    }
+  ]
+}

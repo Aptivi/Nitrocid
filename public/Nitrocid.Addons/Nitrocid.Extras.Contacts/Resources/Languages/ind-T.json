@@ -1,0 +1,322 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTS_DESC",
+      "text": "आपके संपर्कों को प्रबंधित करता है"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED",
+      "text": "फ़ाइल '{0}' नहीं मिल पाने के कारण इसे नहीं खोला जा सकता।"
+    },
+    {
+      "loc": "NKS_CONTACTS_IMPORTSUCCESS",
+      "text": "संपर्क सफलतापूर्वक आयातित."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_NAMED",
+      "text": "फ़ाइल '{0}' नहीं खोली जा सकती क्योंकि कार्ड फ़ाइल अमान्य है।"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED",
+      "text": "संपर्क फ़ाइल मौजूद नहीं है."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTSCOUNT",
+      "text": "संपर्क मिले"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED",
+      "text": "संपर्क फ़ाइल अमान्य है."
+    },
+    {
+      "loc": "NKS_CONTACTS_MECARDEMPTY",
+      "text": "MeCard सिंटैक्स खाली नहीं हो सकता."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTFILENOCONTACT",
+      "text": "या तो प्रदान की गई संपर्क फ़ाइल में किसी संपर्क के बारे में जानकारी नहीं है या वह मान्य नहीं है।"
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED",
+      "text": "संपर्कों को पार्स करने में विफल. अधिक जानकारी के लिए त्रुटि विवरण देखें."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE",
+      "text": "संपर्क सूचकांक सीमा से बाहर है. अधिकतम सूचकांक {0} है जबकि प्रदान किया गया सूचकांक {1} है।"
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET",
+      "text": "पाने के लिए कोई संपर्क नहीं है."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH",
+      "text": "खोजने के लिए कोई संपर्क नहीं हैं."
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_INVALIDREGEX",
+      "text": "नियमित अभिव्यक्ति अमान्य है."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACT",
+      "text": "कोई संपर्क नहीं है. यदि आप संपर्क आयात करना चाहते हैं, तो कृपया स्क्रीन के नीचे परिभाषित कीस्ट्रोक्स का उपयोग करके आयात विकल्पों का उपयोग करें।"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CANTIMPORTCONTACTS",
+      "text": "कुछ संपर्क आयात नहीं किये जा सकते."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PATHVCFPROMPT",
+      "text": "अपने संपर्क वाली वीसीएफ फ़ाइल का पथ दर्ज करें। एंड्रॉइड की contacts2.db फ़ाइल भी समर्थित है।"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_FILENOTFOUND",
+      "text": "फ़ाइल मौजूद नहीं है. सुनिश्चित करें कि आपने VCF फ़ाइल या contacts2.db फ़ाइल के लिए सही पथ लिखा है।"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDPROMPT",
+      "text": "अपने संपर्क का वैध मेकार्ड प्रतिनिधित्व दर्ज करें।"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDINVALID",
+      "text": "संपर्क मीकार्ड सिंटैक्स अमान्य है."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MECARDEMPTY",
+      "text": "संपर्क मीकार्ड सिंटैक्स खाली नहीं हो सकता"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_SEARCHPROMPT",
+      "text": "संपर्कों को खोजने के लिए रेगुलर एक्सप्रेशन दर्ज करें।"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTSSEARCH",
+      "text": "ऐसा कोई संपर्क नहीं है जिसमें आपकी अनुरोधित अभिव्यक्ति शामिल हो।"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNAME",
+      "text": "संपर्क नाम"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTNAME",
+      "text": "कोई संपर्क नाम नहीं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESS",
+      "text": "संपर्क पता"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAIL",
+      "text": "मेल से संपर्क करें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOMAIL",
+      "text": "कोई संपर्क मेल नहीं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORG",
+      "text": "संगठन से संपर्क करें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOORG",
+      "text": "कोई संपर्क संगठन नहीं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_PHONE",
+      "text": "टेलीफोन से संपर्क करें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOPHONE",
+      "text": "कोई संपर्क टेलीफोन नहीं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URL",
+      "text": "संपर्क यूआरएल"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOURL",
+      "text": "कोई संपर्क URL नहीं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEO",
+      "text": "जियो से संपर्क करें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOGEO",
+      "text": "कोई संपर्क जियो नहीं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPP",
+      "text": "IMPP से संपर्क करें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOIMPP",
+      "text": "कोई संपर्क नहीं IMPP"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICK",
+      "text": "संपर्क उपनाम"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONICK",
+      "text": "कोई संपर्क उपनाम नहीं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLE",
+      "text": "संपर्क भूमिका"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOROLE",
+      "text": "कोई संपर्क भूमिका नहीं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLE",
+      "text": "संपर्क शीर्षक"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTITLE",
+      "text": "कोई संपर्क शीर्षक नहीं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTES",
+      "text": "संपर्क नोट्स"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NONOTES",
+      "text": "कोई संपर्क नोट नहीं"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC",
+      "text": "आपके संपर्कों की सूची"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC",
+      "text": "आपके संपर्कों को लोड करता है"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC",
+      "text": "आपके संपर्क आयात करता है"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC",
+      "text": "आवश्यक इनपुट को MeCard स्ट्रिंग के रूप में मानता है"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_DESC",
+      "text": "संपर्क जानकारी प्राप्त करें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOCONTACTS",
+      "text": "कोई संपर्क नहीं."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMINVALID",
+      "text": "संपर्क नंबर अमान्य है."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE",
+      "text": "संपर्क नंबर सीमा से बाहर है."
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_FIRSTNAME",
+      "text": "पहला नाम"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_LASTNAME",
+      "text": "उपनाम"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_GEO",
+      "text": "संपर्क करें जियो"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_NOTE",
+      "text": "संपर्क नोट"
+    },
+    {
+      "loc": "NKS_CONTACTS_CONTACTINFO_CANTLISTSOME",
+      "text": "कुछ संपर्कों को सूचीबद्ध नहीं किया जा सकता."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETE",
+      "text": "मिटाना"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_INFO",
+      "text": "जानकारी"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "सेटिंग प्रविष्टियाँ प्राप्त करने में विफल."
+    },
+    {
+      "loc": "NKS_CONTACTS_HOMEPAGE_CONTACTS",
+      "text": "संपर्क"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_DELETEALL",
+      "text": "सभी हटा दो"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORT",
+      "text": "आयात"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM",
+      "text": "से आयात"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCH",
+      "text": "खोज"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT",
+      "text": "अगला खोजें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK",
+      "text": "वापस खोजें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_RAWINFO",
+      "text": "कच्ची जानकारी"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD",
+      "text": "MeCard से आयात करें"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_DESC",
+      "text": "यह अनुभाग आपको संपर्क ऐडऑन के कार्य करने के तरीके को कॉन्फ़िगर करने देता है।"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME",
+      "text": "प्रोफ़ाइल चित्र दिखाएं"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC",
+      "text": "यदि सक्षम है, तो संपर्क छवियाँ दिखाता है। दुरुपयोग को रोकने और प्रदर्शन कारणों से डिफ़ॉल्ट रूप से अक्षम है।"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC",
+      "text": "या तो vCard संपर्क फ़ाइल या MeCard प्रतिनिधित्व के लिए पथ"
+    },
+    {
+      "loc": "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC",
+      "text": "संपर्क संख्या"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_EDIT",
+      "text": "संपादन करना..."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
+      "text": "इस संपर्क के लिए नया नाम दर्ज करें"
+    }
+  ]
+}

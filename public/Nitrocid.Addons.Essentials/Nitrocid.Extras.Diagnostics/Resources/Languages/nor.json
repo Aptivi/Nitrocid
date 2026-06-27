@@ -1,0 +1,30 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "Får tilbakespor for alle tråder"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "Vi tror at du kjører Windows 8 eller lavere. Denne operasjonen støttes ikke."
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "Trådstabelsporingsinformasjon for {0}"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "Ikke en Nitrocid KS-tråd"
+    }
+  ]
+}

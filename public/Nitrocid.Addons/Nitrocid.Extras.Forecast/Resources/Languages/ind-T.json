@@ -1,0 +1,258 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_DESC",
+      "text": "निर्दिष्ट शहर के लिए मौसम की जानकारी दिखाता है। OpenWeatherMap का उपयोग करता है।"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
+      "text": "- {0} के लिए मौसम की जानकारी -"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
+      "text": "मौसम: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_PRESSURE",
+      "text": "दबाव: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_HUMIDITY",
+      "text": "आर्द्रता: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_APIKEY",
+      "text": "आप https://home.openweathermap.org/api_keys पर अपनी खुद की एपीआई कुंजी प्राप्त कर सकते हैं।"
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_PREFERREDUNIT_NAME",
+      "text": "तापमान के लिए पसंदीदा इकाई"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_FEELSLIKE",
+      "text": "ऐसा लगता है: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_TEMPERATURE",
+      "text": "तापमान: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WINDSPEED",
+      "text": "हवा की गति: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_INFO_WINDDIRECTION",
+      "text": "हवा की दिशा: {0}"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC",
+      "text": "सभी उपलब्ध शहरों को दिखाता है"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVE",
+      "text": "निकालना"
+    },
+    {
+      "loc": "NKS_FORECAST_APIKEYPROMPT",
+      "text": "अपनी एपीआई कुंजी दर्ज करें:"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
+      "text": "आप या तो शहरों की उनकी आईडी के साथ सूची के लिए नीचे दिए गए लिंक से परामर्श ले सकते हैं, या, इस कमांड को \"-सूची\" पास कर सकते हैं।"
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_DESC",
+      "text": "यह अनुभाग आपको यह कॉन्फ़िगर करने देता है कि पूर्वानुमान कैसे काम करता है।"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_DESC",
+      "text": "निर्दिष्ट शहर के लिए मौसम की जानकारी दिखाता है। IBM से मौसम चैनल का उपयोग करता है।"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC",
+      "text": "इंटरैक्टिव TUI में मौसम की जानकारी"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC",
+      "text": "सभी उपलब्ध शहरों और उनके अक्षांश/देशांतर जोड़ों को दिखाता है"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
+      "text": "-- मौसम की जानकारी --"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",
+      "text": "अक्षांश और देशांतर"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_CLOUDCOVER",
+      "text": "बादल मूंदना"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_TIMEOFDAY",
+      "text": "अपना समय"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_MINTEMP",
+      "text": "न्यूनतम तापमान"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_MAXTEMP",
+      "text": "अधिकतम तापमान"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_PCPCHANGE",
+      "text": "वर्षा की संभावना"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_PCPTYPE",
+      "text": "वर्षा का प्रकार"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_HEATIDX",
+      "text": "ताप सूचकांक"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_WINDCHILL",
+      "text": "शीतल पवन"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_UVINDEX",
+      "text": "पराबैंगनी सूचकांक"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_INFO_UVDESC",
+      "text": "पराबैंगनी विवरण"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_LATLONPROMPT",
+      "text": "शहर का अक्षांश और देशांतर दर्ज करें."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_APIKEY",
+      "text": "आप मार्गदर्शन के लिए आईबीएम वेबसाइट से परामर्श करके अपनी स्वयं की एपीआई कुंजी प्राप्त कर सकते हैं।"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LOADING",
+      "text": "भौगोलिक स्थान से मौसम की जानकारी लोड करना"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_CONDITION",
+      "text": "मौसम स्थिति"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_TEMPERATURE",
+      "text": "तापमान"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_WINDSPEED",
+      "text": "हवा की गति"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_WINDDIRECTION",
+      "text": "हवा की दिशा"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HUMIDITY",
+      "text": "आर्द्रता दर"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LAT",
+      "text": "अक्षांश"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LON",
+      "text": "देशान्तर"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_CITYNAMEPROMPT",
+      "text": "खोजने के लिए शहर का नाम दर्ज करें."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_NOCITIES",
+      "text": "इस नाम का कोई शहर नहीं है। अगर आप किसी खास शहर को खोजने की कोशिश कर रहे हैं, तो उस शहर के सबसे नज़दीक किसी बड़े स्थान को खोजने की कोशिश करें जिसे आप खोज रहे हैं।"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_SELECTCITY",
+      "text": "नीचे दी गई सूची में से कोई शहर चुनें। दो संख्याएँ भौगोलिक स्थानों को दर्शाती हैं।"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATPROMPT",
+      "text": "शहर का अक्षांश दर्ज करें."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LONPROMPT",
+      "text": "शहर का देशांतर दर्ज करें."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATINVALID",
+      "text": "अक्षांश अमान्य है."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LONINVALID",
+      "text": "देशांतर अमान्य है."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_APIKEYPROMPT",
+      "text": "आप मार्गदर्शन के लिए IBM वेबसाइट से परामर्श करके अपनी खुद की API कुंजी प्राप्त कर सकते हैं। वेदर चैनल API कुंजी दर्ज करें।"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_APIKEYNOTPROVIDED",
+      "text": "मौसम चैनल API कुंजी उपलब्ध नहीं है। यदि आपको सहायता की आवश्यकता है, तो IBM वेबसाइट से परामर्श लें।"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADD",
+      "text": "जोड़ना"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVEALL",
+      "text": "सभी हटाएं"
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "सेटिंग प्रविष्टियाँ प्राप्त करने में विफल."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADDMANUAL",
+      "text": "मैन्युअल रूप से जोड़ें"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_EXCEPTION_NODAYPARTARRAY",
+      "text": "दिन भाग सरणी प्राप्त नहीं की जा सकी"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_EXCEPTION_NODAYPART",
+      "text": "दिन का भाग नहीं मिल सकता"
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_PREFERREDUNIT_DESC",
+      "text": "तापमान के लिए अपनी पसंदीदा इकाई चुनें (यह केवल \"मौसम\" कमांड पर लागू होता है)। 1 केल्विन है, 2 मीट्रिक है, और 3 इंपीरियल है।"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC",
+      "text": "उपयोग हेतु अक्षांश"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC",
+      "text": "उपयोग करने के लिए देशांतर"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC",
+      "text": "Weather.com API कुंजी"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC",
+      "text": "शहर की आईडी या शहर का नाम जो OpenWeatherMap को ज्ञात है"
+    },
+    {
+      "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
+      "text": "OpenWeatherMap API कुंजी"
+    }
+  ]
+}

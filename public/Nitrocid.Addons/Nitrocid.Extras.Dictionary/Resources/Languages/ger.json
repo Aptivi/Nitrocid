@@ -1,0 +1,71 @@
+{
+  "lang": "ger",
+  "name": "German",
+  "cultures": [
+    "de",
+    "de-AT",
+    "de-BE",
+    "de-CH",
+    "de-DE",
+    "de-IT",
+    "de-LI",
+    "de-LU",
+    "nds",
+    "nds-DE",
+    "nds-NL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DICTIONARY_LICENSEINFO",
+      "text": "Lizenzinformationen"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DICTIONARY",
+      "text": "Das englische Wörterbuch"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDINFO",
+      "text": "Wortinformationen für"
+    },
+    {
+      "loc": "NKS_DICTIONARY_APILICENSE",
+      "text": "API ist lizenziert unter"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORD",
+      "text": "Wort:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_MEAININGS",
+      "text": "Wortbedeutungen für"
+    },
+    {
+      "loc": "NKS_DICTIONARY_PARTOFSPEECH",
+      "text": "Teil der Rede:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_DEF",
+      "text": "Definition:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_EXAMPLE",
+      "text": "Beispiel im Satz:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SOURCES",
+      "text": "Quellen verwendet, um zu definieren"
+    },
+    {
+      "loc": "NKS_DICTIONARY_SYNONYMS",
+      "text": "Synonyme:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_ANTONYMS",
+      "text": "Antonyme:"
+    },
+    {
+      "loc": "NKS_DICTIONARY_WORDTODEFINE",
+      "text": "Zu definierendes Wort"
+    }
+  ]
+}

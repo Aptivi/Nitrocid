@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -25,7 +25,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
     internal class BenchmarkSleepOne : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("How many milliseconds did it really take to sleep for just one millisecond?");
+        public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_BENCHMARKSLEEPONE_DESC");
         public override TestSection TestSection => TestSection.Kernel;
         public override void Run()
         {

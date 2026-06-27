@@ -17,20 +17,22 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Text.RegularExpressions;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
-using System.Collections.Immutable;
-using Nitrocid.LocaleChecker.Resources;
-using System;
-using System.Linq;
-using System.IO;
-using System.Collections.Generic;
-using System.Reflection;
-using Newtonsoft.Json.Linq;
+using Microsoft.CodeAnalysis.Text;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Nitrocid.Analyzers.Common;
+using Nitrocid.LocaleChecker.Resources;
 
 namespace Nitrocid.LocaleChecker.Localization
 {
@@ -38,25 +40,46 @@ namespace Nitrocid.LocaleChecker.Localization
     public class UnlocalizedStringAnalyzer : DiagnosticAnalyzer
     {
         // This assembly
-        private readonly Assembly thisAssembly = typeof(UnlocalizedStringAnalyzer).Assembly;
+        private static readonly Assembly thisAssembly = typeof(UnlocalizedStringAnalyzer).Assembly;
+        private static readonly string[] languageManifestNames = [.. thisAssembly.GetManifestResourceNames().Where((name) => name.StartsWith("Nitrocid.Langs"))];
 
         // Some constants
         public const string DiagnosticId = "NLOC0001";
         public const string DiagnosticIdComment = "NLOC0002";
         public const string DiagnosticIdJson = "NLOC0003";
+        public const string DiagnosticIdExtraJson = "NLOC0004";
+        public const string DiagnosticIdExtraJsonSummary = "NLOC0005";
+        public const string DiagnosticIdDisabled = "NLOC0006";
+        public const string DiagnosticIdDisabledComment = "NLOC0007";
         private const string Category = "Localization";
 
         // Some strings
         private static readonly LocalizableString Title =
             new LocalizableResourceString(nameof(AnalyzerResources.UnlocalizedStringAnalyzerTitle), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+        private static readonly LocalizableString ExtraJsonTitle =
+            new LocalizableResourceString(nameof(AnalyzerResources.ExtraLocalizedJsonStringAnalyzerTitle), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+        private static readonly LocalizableString ExtraJsonSummaryTitle =
+            new LocalizableResourceString(nameof(AnalyzerResources.ExtraLocalizedJsonSummaryStringAnalyzerTitle), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+
         private static readonly LocalizableString MessageFormat =
             new LocalizableResourceString(nameof(AnalyzerResources.UnlocalizedStringAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
         private static readonly LocalizableString MessageFormatComment =
             new LocalizableResourceString(nameof(AnalyzerResources.UnlocalizedCommentStringAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
         private static readonly LocalizableString MessageFormatJson =
             new LocalizableResourceString(nameof(AnalyzerResources.UnlocalizedJsonStringAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+        private static readonly LocalizableString MessageFormatExtraJson =
+            new LocalizableResourceString(nameof(AnalyzerResources.ExtraLocalizedJsonStringAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+        private static readonly LocalizableString MessageFormatExtraJsonSummary =
+            new LocalizableResourceString(nameof(AnalyzerResources.ExtraLocalizedJsonSummaryStringAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+        private static readonly LocalizableString MessageFormatDisabled =
+            new LocalizableResourceString(nameof(AnalyzerResources.UnlocalizedDisabledStringAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+        private static readonly LocalizableString MessageFormatDisabledComment =
+            new LocalizableResourceString(nameof(AnalyzerResources.UnlocalizedDisabledCommentStringAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+
         private static readonly LocalizableString Description =
             new LocalizableResourceString(nameof(AnalyzerResources.UnlocalizedStringAnalyzerDescription), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+        private static readonly LocalizableString ExtraJsonDescription =
+            new LocalizableResourceString(nameof(AnalyzerResources.ExtraLocalizedJsonStringAnalyzerDescription), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
 
         // A rule
         private static readonly DiagnosticDescriptor Rule =
@@ -65,93 +88,166 @@ namespace Nitrocid.LocaleChecker.Localization
             new(DiagnosticIdComment, Title, MessageFormatComment, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description, customTags: ["CompilationEnd"]);
         private static readonly DiagnosticDescriptor RuleJson =
             new(DiagnosticIdJson, Title, MessageFormatJson, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description, customTags: ["CompilationEnd"]);
+        private static readonly DiagnosticDescriptor RuleExtraJson =
+            new(DiagnosticIdExtraJson, ExtraJsonTitle, MessageFormatExtraJson, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: ExtraJsonDescription, customTags: ["CompilationEnd"]);
+        private static readonly DiagnosticDescriptor RuleExtraJsonSummary =
+            new(DiagnosticIdExtraJsonSummary, ExtraJsonSummaryTitle, MessageFormatExtraJsonSummary, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: ExtraJsonDescription, customTags: ["CompilationEnd"]);
+        private static readonly DiagnosticDescriptor RuleDisabled =
+            new(DiagnosticIdDisabled, Title, MessageFormatDisabled, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description, customTags: ["CompilationEnd"]);
+        private static readonly DiagnosticDescriptor RuleDisabledComment =
+            new(DiagnosticIdDisabledComment, Title, MessageFormatDisabledComment, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description, customTags: ["CompilationEnd"]);
 
         // English localization list
-        private static readonly HashSet<string> localizationList = [];
+        private readonly Dictionary<string, (List<string>, List<JToken>)> localizationList = [];
+
+        // Found locs
+        private static readonly DiagnosticDescriptor assemblyLocsDbg =
+            new("DBG_NLOC", "Debug Diagnostic for localization", "DEBUG: {0} = {1}", Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, customTags: ["CompilationEnd"]);
+        private readonly Dictionary<string, List<Location?>> assemblyLocs = [];
+
+        // State lock
+        private readonly object stateLock = new();
 
         // Supported diagnostics
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics =>
-            ImmutableArray.Create(Rule, RuleComment, RuleJson);
+            ImmutableArray.Create(Rule, RuleComment, RuleJson, RuleExtraJson, RuleExtraJsonSummary, RuleDisabled, RuleDisabledComment, assemblyLocsDbg);
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("MicrosoftCodeAnalysisCorrectness", "RS1026:Enable concurrent execution", Justification = "Concurrency causes false positives related to assembly locs")]
         public override void Initialize(AnalysisContext context)
         {
             context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.None);
-            context.EnableConcurrentExecution();
-            context.RegisterCompilationStartAction(PopulateEnglishLocalizations);
+            context.RegisterCompilationStartAction(PopulateLocalizations);
         }
 
-        private void PopulateEnglishLocalizations(CompilationStartAnalysisContext context)
+        private void PopulateLocalizations(CompilationStartAnalysisContext context)
         {
-            // Find the English JSON stream and open it.
-            var stream = thisAssembly.GetManifestResourceStream("Nitrocid.LocaleChecker.eng.json") ??
-                throw new Exception("Opening the eng.json resource stream has failed.");
-            var reader = new StreamReader(stream);
-            var jsonReader = new JsonTextReader(reader);
-            var document = JToken.Load(jsonReader) ??
-                throw new Exception("Unable to parse JSON for English localizations.");
-            var localizations = document["Localizations"]?.Values<string>() ??
-                throw new Exception("Unable to get localizations.");
-
-            // Now, add all localizations to a separate array
-            foreach (var localization in localizations)
+            lock (stateLock)
             {
-                if (localization is null)
-                    throw new Exception("There is no localization.");
-                string localizationString = localization.ToString();
-                localizationList.Add(localizationString);
+                localizationList.Clear();
+                assemblyLocs.Clear();
+            }
+
+            foreach (string langStream in languageManifestNames)
+            {
+                // Find the JSON stream and open it.
+                using var stream = thisAssembly.GetManifestResourceStream(langStream) ??
+                    throw new Exception($"Opening the {langStream} resource stream has failed.");
+                using var reader = new StreamReader(stream);
+                using var jsonReader = new JsonTextReader(reader);
+                var document = JToken.Load(jsonReader) ??
+                    throw new Exception("Unable to parse JSON for localizations.");
+                var locs = document["locs"] ??
+                    throw new Exception("Unable to get localizations.");
+                var localizations = JsonConvert.DeserializeObject<LocalizationInfo[]>(locs.ToString()) ??
+                    throw new Exception("Unable to get localizations.");
+                string[] splitLangStream = langStream.Split(' ');
+                string langFileName = splitLangStream[3].Contains("\\") ? splitLangStream[3].Substring(splitLangStream[3].LastIndexOf('\\') + 1) : splitLangStream[3].Substring(splitLangStream[3].LastIndexOf('/') + 1);
+                string langName = langFileName.Remove(langFileName.IndexOf("."));
+                string assemblyName =
+                    splitLangStream[1].Contains("\\") ? splitLangStream[1].Split('\\')[4] :
+                    splitLangStream[1].Contains("/") ? splitLangStream[1].Split('/')[4] : splitLangStream[1];
+                string finalLangStream = $"Nitrocid.Langs {assemblyName} {splitLangStream[2]} {splitLangStream[3]}";
+                if (assemblyName != context.Compilation.AssemblyName)
+                    continue;
+
+                // Now, add all localizations to a separate array
+                string finalKey = langName + " - " + finalLangStream;
+
+                lock (stateLock)
+                {
+                    if (!localizationList.ContainsKey(finalKey))
+                        localizationList.Add(finalKey, ([], []));
+                }
+                for (int i = 0; i < localizations.Length; i++)
+                {
+                    LocalizationInfo? localization = localizations[i] ??
+                        throw new Exception("There is no localization.");
+                    JToken? localizationToken = locs.ElementAt(i)["loc"] ??
+                        throw new Exception("There is no localization.");
+                    string localizationString = localization.Localization.ToString();
+                    localizationList[finalKey].Item1.Add(localizationString);
+                    localizationList[finalKey].Item2.Add(localizationToken);
+                    localizationList[finalKey] = (localizationList[finalKey].Item1, localizationList[finalKey].Item2);
+                }
             }
 
             // Register the localization analysis action
             context.RegisterSyntaxNodeAction(AnalyzeLocalization, SyntaxKind.InvocationExpression);
             context.RegisterSyntaxNodeAction(AnalyzeImplicitLocalization, SyntaxKind.CompilationUnit);
+            context.RegisterSyntaxTreeAction((stac) => AnalyzeDisabledLocalization(stac, context.Compilation));
             context.RegisterCompilationEndAction(AnalyzeResourceLocalization);
+            context.RegisterCompilationEndAction(CheckExtraJsonLocalizations);
         }
 
-        private static void AnalyzeLocalization(SyntaxNodeAnalysisContext context)
+        private void AnalyzeLocalization(SyntaxNodeAnalysisContext context) =>
+            AnalyzeLocalizationNode((InvocationExpressionSyntax)context.Node, context, null, context.SemanticModel.Compilation);
+
+        private void AnalyzeLocalizationNode(InvocationExpressionSyntax exp, SyntaxNodeAnalysisContext? contextNode, SyntaxTreeAnalysisContext? contextTree, Compilation compilation)
         {
+            if (contextNode is null && contextTree is null)
+                return;
+
             // Check for argument
-            var exp = (InvocationExpressionSyntax)context.Node;
             var args = exp.ArgumentList.Arguments;
             if (args.Count < 1)
                 return;
             var localizableStringArgument = args[0] ??
                 throw new Exception("Can't get localizable string");
 
-            // Now, check for the Translate.DoTranslation() call
+            // Now, check for the LanguageTools.GetLocalized() call
             if (exp.Expression is not MemberAccessExpressionSyntax expMaes)
                 return;
             if (expMaes.Expression is IdentifierNameSyntax expIdentifier && expMaes.Name is IdentifierNameSyntax identifier)
             {
-                // Verify that we're dealing with Translate.DoTranslation()
-                var location = context.Node.GetLocation();
+                // Verify that we're dealing with LanguageTools.GetLocalized()
+                var location = exp.GetLocation();
                 var idExpression = expIdentifier.Identifier.Text;
                 var idName = identifier.Identifier.Text;
-                if (idExpression == "Translate" && idName == "DoTranslation")
+                if ((idExpression == "LanguageTools" || idExpression == "BaseLangTools") && idName == "GetLocalized")
                 {
                     // Now, get the string representation from the argument count and compare it with the list of translations.
-                    // You'll notice that we sometimes call Translate.DoTranslation() with a variable instead of a string, so
+                    // You'll notice that we sometimes call LanguageTools.GetLocalized() with a variable instead of a string, so
                     // check that first, because they're usually obtained from a string representation usually prefixed with
                     // either the /* Localizable */ comment or in individual kernel resources. However, the resources don't
                     // have a prefix, so the key names alone are enough.
                     if (localizableStringArgument.Expression is LiteralExpressionSyntax literalText)
                     {
-                        string text = literalText.ToString();
-                        text = text.Substring(1, text.Length - 2).Replace("\\\"", "\"");
-                        if (!string.IsNullOrWhiteSpace(text) && !localizationList.Contains(text))
+                        string text = literalText.Token.ValueText;
+                        if (!string.IsNullOrWhiteSpace(text))
                         {
-                            var diagnostic = Diagnostic.Create(Rule, location, text);
-                            context.ReportDiagnostic(diagnostic);
+                            List<string> incompleteLangs = [];
+                            foreach (var localization in localizationList.Keys)
+                            {
+                                ProcessAssemblyLoc(localization, text, out bool found);
+                                if (!found && localization.Contains($"Nitrocid.Langs {compilation.AssemblyName} "))
+                                    incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                            }
+                            if (incompleteLangs.Count > 0)
+                            {
+                                if (contextNode is SyntaxNodeAnalysisContext snac)
+                                {
+                                    var diagnostic = Diagnostic.Create(Rule, location, text, string.Join(", ", incompleteLangs));
+                                    snac.ReportDiagnostic(diagnostic);
+                                }
+                                else if (contextTree is SyntaxTreeAnalysisContext stac)
+                                {
+                                    var diagnostic = Diagnostic.Create(RuleDisabled, location, text, string.Join(", ", incompleteLangs));
+                                    stac.ReportDiagnostic(diagnostic);
+                                }
+                            }
                         }
                     }
                 }
             }
         }
 
-        private void AnalyzeImplicitLocalization(SyntaxNodeAnalysisContext context)
+        private void AnalyzeImplicitLocalization(SyntaxNodeAnalysisContext context) =>
+            AnalyzeImplicitLocalizationNode((CompilationUnitSyntax)context.Node, context, null, context.SemanticModel.Compilation);
+
+        private void AnalyzeImplicitLocalizationNode(CompilationUnitSyntax exp, SyntaxNodeAnalysisContext? contextNode, SyntaxTreeAnalysisContext? contextTree, Compilation compilation)
         {
             // Since /* Localizable */ represents a multiline comment, we need to find them and find the string
             // next to each one.
-            var exp = (CompilationUnitSyntax)context.Node;
             var triviaList = exp.DescendantTrivia();
             var multiLineComments = triviaList.Where((trivia) => trivia.IsKind(SyntaxKind.MultiLineCommentTrivia));
             foreach (var multiLineComment in multiLineComments)
@@ -170,19 +266,6 @@ namespace Nitrocid.LocaleChecker.Localization
                     // Now, enumerate them to find the string
                     foreach (var token in tokens)
                     {
-                        void Process(LiteralExpressionSyntax literalText)
-                        {
-                            // Process it.
-                            var location = literalText.GetLocation();
-                            string text = literalText.ToString();
-                            text = text.Substring(1, text.Length - 2).Replace("\\\"", "\"");
-                            if (!string.IsNullOrWhiteSpace(text) && !localizationList.Contains(text))
-                            {
-                                var diagnostic = Diagnostic.Create(RuleComment, location, text);
-                                context.ReportDiagnostic(diagnostic);
-                            }
-                        }
-
                         // Try to get a child
                         int start = token.FullSpan.End;
                         var parent = token.Parent;
@@ -190,7 +273,7 @@ namespace Nitrocid.LocaleChecker.Localization
                             continue;
                         if (parent is LiteralExpressionSyntax literalParent)
                         {
-                            Process(literalParent);
+                            AnalyzeImplicitLocalizationNode(literalParent.Token, contextNode, contextTree, compilation);
                             continue;
                         }
                         if (parent is NameColonSyntax)
@@ -203,9 +286,97 @@ namespace Nitrocid.LocaleChecker.Localization
 
                         // Now, check to see if it's a literal string
                         if (child is LiteralExpressionSyntax literalText)
-                            Process(literalText);
+                            AnalyzeImplicitLocalizationNode(literalText.Token, contextNode, contextTree, compilation);
                         else if (child is ArgumentSyntax argument && argument.Expression is LiteralExpressionSyntax literalArgText)
-                            Process(literalArgText);
+                            AnalyzeImplicitLocalizationNode(literalArgText.Token, contextNode, contextTree, compilation);
+                    }
+                }
+            }
+        }
+
+        private void AnalyzeImplicitLocalizationNode(SyntaxToken token, SyntaxNodeAnalysisContext? contextNode, SyntaxTreeAnalysisContext? contextTree, Compilation compilation)
+        {
+            // Process it.
+            var location = token.GetLocation();
+            string text = token.ValueText;
+            if (!string.IsNullOrWhiteSpace(text))
+            {
+                List<string> incompleteLangs = [];
+                foreach (var localization in localizationList.Keys)
+                {
+                    ProcessAssemblyLoc(localization, text, out bool found);
+                    if (!found && localization.Contains($"Nitrocid.Langs {compilation.AssemblyName} "))
+                        incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                }
+                if (incompleteLangs.Count > 0)
+                {
+                    if (contextNode is SyntaxNodeAnalysisContext snac)
+                    {
+                        var diagnostic = Diagnostic.Create(RuleComment, location, text, string.Join(", ", incompleteLangs));
+                        snac.ReportDiagnostic(diagnostic);
+                    }
+                    else if (contextTree is SyntaxTreeAnalysisContext stac)
+                    {
+                        var diagnostic = Diagnostic.Create(RuleDisabledComment, location, text, string.Join(", ", incompleteLangs));
+                        stac.ReportDiagnostic(diagnostic);
+                    }
+                }
+            }
+        }
+
+        private void AnalyzeDisabledLocalization(SyntaxTreeAnalysisContext context, Compilation compilation)
+        {
+            var root = context.Tree.GetRoot(context.CancellationToken);
+            foreach (var trivia in root.DescendantTrivia(descendIntoTrivia: true))
+            {
+                if (trivia.IsKind(SyntaxKind.DisabledTextTrivia))
+                {
+                    var disabledText = trivia.ToString();
+                    try
+                    {
+                        // Check to see if this disabled text compiles
+                        var parsedTree = CSharpSyntaxTree.ParseText(disabledText);
+
+                        // This text compiles. Get the invocation expression syntax and analyze them
+                        var parsedRoot = parsedTree.GetRoot();
+                        var invocations = parsedRoot.DescendantNodes()
+                            .OfType<InvocationExpressionSyntax>();
+                        foreach (var invocation in invocations)
+                            AnalyzeLocalizationNode(invocation, null, context, compilation);
+
+                        // Now, it's implicit localization's turn.
+                        var literals = parsedRoot.DescendantTokens()
+                            .Where(t => t.IsKind(SyntaxKind.StringLiteralToken));
+                        foreach (var literal in literals)
+                            AnalyzeImplicitLocalizationNode(literal, null, context, compilation);
+                    }
+                    catch
+                    {
+                        // Plan B is to analyze this text using regex
+                        var explicitLocalizationMatches = Regex.Matches(disabledText, @"LanguageTools\.GetLocalized\s*\(\s*""(NKS_[^""]+)""");
+                        var implicitLocalizationMatches = Regex.Matches(disabledText, @"/\*\s*Localizable\s*\*/\s*""(NKS_[^""]+)""");
+                        void ProcessRegexLoc(Match match, bool implicitLoc)
+                        {
+                            var text = match.Groups[1].Value;
+                            var triviaSpan = trivia.Span;
+                            var location = Location.Create(context.Tree, new TextSpan(triviaSpan.Start + match.Index, match.Length + 1));
+                            List<string> incompleteLangs = [];
+                            foreach (var localization in localizationList.Keys)
+                            {
+                                ProcessAssemblyLoc(localization, text, out bool found);
+                                if (!found && localization.Contains($"Nitrocid.Langs {compilation.AssemblyName} "))
+                                    incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                            }
+                            if (incompleteLangs.Count > 0)
+                            {
+                                var diagnostic = Diagnostic.Create(implicitLoc ? RuleDisabledComment : RuleDisabled, location, text, string.Join(", ", incompleteLangs));
+                                context.ReportDiagnostic(diagnostic);
+                            }
+                        }
+                        foreach (Match match in explicitLocalizationMatches)
+                            ProcessRegexLoc(match, false);
+                        foreach (Match match in implicitLocalizationMatches)
+                            ProcessRegexLoc(match, true);
                     }
                 }
             }
@@ -215,16 +386,31 @@ namespace Nitrocid.LocaleChecker.Localization
         {
             // Open every resource except the English translations file and the analyzer string resources
             var resourceNames = thisAssembly.GetManifestResourceNames().Except([
-                "Nitrocid.LocaleChecker.eng.json",
+                .. languageManifestNames,
                 "Nitrocid.LocaleChecker.Resources.AnalyzerResources.resources",
-            ]).Where((path) => path.Contains($"\\{context.Compilation.Assembly.Name}\\"));
+            ]).Where((path) => path.Contains("?"));
             foreach (var resourceName in resourceNames)
             {
+                // Check the assembly name
+                string[] pathArgs = resourceName.Split('?');
+                string relativePath = pathArgs[0];
+                string absolutePath = pathArgs[1];
+                string assemblyName = context.Compilation.AssemblyName ?? "";
+                if (relativePath.Contains("\\") || relativePath.Contains('/'))
+                {
+                    // Split the path and find "Resources"
+                    string[] splitPath = relativePath.Contains('/') ? relativePath.Split('/') : relativePath.Split('\\');
+                    int asmNameIdx = splitPath.IndexOf("Resources") - 1;
+                    assemblyName = splitPath[asmNameIdx];
+                }
+                if (assemblyName != context.Compilation.AssemblyName && assemblyName != "Nitrocid.Generators.KnownAddons")
+                    continue;
+
                 // Open the resource and load it to a JSON token instance
-                var stream = thisAssembly.GetManifestResourceStream(resourceName) ??
+                using var stream = thisAssembly.GetManifestResourceStream(resourceName) ??
                     throw new Exception($"Opening the {resourceName} resource stream has failed.");
-                var reader = new StreamReader(stream);
-                var jsonReader = new JsonTextReader(reader);
+                using var reader = new StreamReader(stream);
+                using var jsonReader = new JsonTextReader(reader);
                 var document = JToken.Load(jsonReader) ??
                     throw new Exception($"Unable to parse JSON for {resourceName}.");
 
@@ -235,12 +421,21 @@ namespace Nitrocid.LocaleChecker.Localization
                     // It's a theme. Get its description and its localizable boolean value
                     string descriptionOrig = (string?)themeMetadata["Description"] ?? "";
                     string description = descriptionOrig.Replace("\\\"", "\"");
-                    bool localizable = (bool?)themeMetadata["Localizable"] ?? false;
-                    if (!string.IsNullOrWhiteSpace(description) && localizable && !localizationList.Contains(description))
+                    var location = AnalyzerTools.GenerateLocation(themeMetadata["Description"], descriptionOrig, absolutePath, false);
+                    if (!string.IsNullOrWhiteSpace(description))
                     {
-                        var location = AnalyzerTools.GenerateLocation(themeMetadata["Description"], descriptionOrig, resourceName, false);
-                        var diagnostic = Diagnostic.Create(RuleJson, location, description);
-                        context.ReportDiagnostic(diagnostic);
+                        List<string> incompleteLangs = [];
+                        foreach (var localization in localizationList.Keys)
+                        {
+                            ProcessAssemblyLoc(localization, description, out bool found);
+                            if (!found && localization.Contains($"Nitrocid.Langs {assemblyName} "))
+                                incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                        }
+                        if (incompleteLangs.Count > 0)
+                        {
+                            var diagnostic = Diagnostic.Create(RuleJson, location, description, string.Join(", ", incompleteLangs));
+                            context.ReportDiagnostic(diagnostic);
+                        }
                     }
                 }
                 else if (document.Type == JTokenType.Array)
@@ -255,23 +450,53 @@ namespace Nitrocid.LocaleChecker.Localization
                         string description = descriptionOrig.Replace("\\\"", "\"");
                         string displayAs = displayAsOrig.Replace("\\\"", "\"");
                         string knownAddonDisplay = knownAddonDisplayOrig.Replace("\\\"", "\"");
-                        if (!string.IsNullOrWhiteSpace(description) && !localizationList.Contains(description))
+                        if (!string.IsNullOrWhiteSpace(description))
                         {
-                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["Desc"], descriptionOrig, resourceName, false);
-                            var diagnostic = Diagnostic.Create(RuleJson, location, description);
-                            context.ReportDiagnostic(diagnostic);
+                            List<string> incompleteLangs = [];
+                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["Desc"], descriptionOrig, absolutePath, false);
+                            foreach (var localization in localizationList.Keys)
+                            {
+                                ProcessAssemblyLoc(localization, description, out bool found);
+                                if (!found && localization.Contains($"Nitrocid.Langs {assemblyName} "))
+                                    incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                            }
+                            if (incompleteLangs.Count > 0)
+                            {
+                                var diagnostic = Diagnostic.Create(RuleJson, location, description, string.Join(", ", incompleteLangs));
+                                context.ReportDiagnostic(diagnostic);
+                            }
                         }
-                        if (!string.IsNullOrWhiteSpace(displayAs) && !localizationList.Contains(displayAs))
+                        if (!string.IsNullOrWhiteSpace(displayAs))
                         {
-                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["DisplayAs"], displayAsOrig, resourceName, false);
-                            var diagnostic = Diagnostic.Create(RuleJson, location, displayAs);
-                            context.ReportDiagnostic(diagnostic);
+                            List<string> incompleteLangs = [];
+                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["DisplayAs"], displayAsOrig, absolutePath, false);
+                            foreach (var localization in localizationList.Keys)
+                            {
+                                ProcessAssemblyLoc(localization, displayAs, out bool found);
+                                if (!found && localization.Contains($"Nitrocid.Langs {assemblyName} "))
+                                    incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                            }
+                            if (incompleteLangs.Count > 0)
+                            {
+                                var diagnostic = Diagnostic.Create(RuleJson, location, displayAs, string.Join(", ", incompleteLangs));
+                                context.ReportDiagnostic(diagnostic);
+                            }
                         }
-                        if (!string.IsNullOrWhiteSpace(knownAddonDisplay) && !localizationList.Contains(knownAddonDisplay))
+                        if (!string.IsNullOrWhiteSpace(knownAddonDisplay))
                         {
-                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["display"], knownAddonDisplayOrig, resourceName, false);
-                            var diagnostic = Diagnostic.Create(RuleJson, location, knownAddonDisplay);
-                            context.ReportDiagnostic(diagnostic);
+                            List<string> incompleteLangs = [];
+                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["display"], knownAddonDisplayOrig, absolutePath, false);
+                            foreach (var localization in localizationList.Keys)
+                            {
+                                ProcessAssemblyLoc(localization, knownAddonDisplay, out bool found);
+                                if (!found && localization.Contains($"Nitrocid.Langs {assemblyName} "))
+                                    incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                            }
+                            if (incompleteLangs.Count > 0)
+                            {
+                                var diagnostic = Diagnostic.Create(RuleJson, location, knownAddonDisplay, string.Join(", ", incompleteLangs));
+                                context.ReportDiagnostic(diagnostic);
+                            }
                         }
 
                         // Helper function to check a key, because a key can be a multivar
@@ -282,19 +507,57 @@ namespace Nitrocid.LocaleChecker.Localization
                                 string keyNameOrig = (string?)key["Name"] ?? "";
                                 string keyType = (string?)key["Type"] ?? "";
                                 string keyDescOrig = (string?)key["Description"] ?? "";
+                                string keyTipOrig = (string?)key["Tip"] ?? "";
                                 string keyName = keyNameOrig.Replace("\\\"", "\"");
                                 string keyDesc = keyDescOrig.Replace("\\\"", "\"");
-                                if (!string.IsNullOrWhiteSpace(keyName) && !localizationList.Contains(keyName))
+                                string keyTip = keyTipOrig.Replace("\\\"", "\"");
+                                if (!string.IsNullOrWhiteSpace(keyName))
                                 {
-                                    var location = AnalyzerTools.GenerateLocation(key["Name"], keyNameOrig, resourceName, false);
-                                    var diagnostic = Diagnostic.Create(RuleJson, location, keyName);
-                                    context.ReportDiagnostic(diagnostic);
+                                    List<string> incompleteLangs = [];
+                                    var location = AnalyzerTools.GenerateLocation(key["Name"], keyNameOrig, absolutePath, false);
+                                    foreach (var localization in localizationList.Keys)
+                                    {
+                                        ProcessAssemblyLoc(localization, keyName, out bool found);
+                                        if (!found && localization.Contains($"Nitrocid.Langs {assemblyName} "))
+                                            incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                                    }
+                                    if (incompleteLangs.Count > 0)
+                                    {
+                                        var diagnostic = Diagnostic.Create(RuleJson, location, keyName, string.Join(", ", incompleteLangs));
+                                        context.ReportDiagnostic(diagnostic);
+                                    }
                                 }
-                                if (!string.IsNullOrWhiteSpace(keyDesc) && !localizationList.Contains(keyDesc))
+                                if (!string.IsNullOrWhiteSpace(keyDesc))
                                 {
-                                    var location = AnalyzerTools.GenerateLocation(key["Description"], keyDescOrig, resourceName, false);
-                                    var diagnostic = Diagnostic.Create(RuleJson, location, keyDesc);
-                                    context.ReportDiagnostic(diagnostic);
+                                    List<string> incompleteLangs = [];
+                                    var location = AnalyzerTools.GenerateLocation(key["Description"], keyDescOrig, absolutePath, false);
+                                    foreach (var localization in localizationList.Keys)
+                                    {
+                                        ProcessAssemblyLoc(localization, keyDesc, out bool found);
+                                        if (!found && localization.Contains($"Nitrocid.Langs {assemblyName} "))
+                                            incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                                    }
+                                    if (incompleteLangs.Count > 0)
+                                    {
+                                        var diagnostic = Diagnostic.Create(RuleJson, location, keyDesc, string.Join(", ", incompleteLangs));
+                                        context.ReportDiagnostic(diagnostic);
+                                    }
+                                }
+                                if (!string.IsNullOrWhiteSpace(keyTip))
+                                {
+                                    List<string> incompleteLangs = [];
+                                    var location = AnalyzerTools.GenerateLocation(key["Tip"], keyTipOrig, absolutePath, false);
+                                    foreach (var localization in localizationList.Keys)
+                                    {
+                                        ProcessAssemblyLoc(localization, keyTip, out bool found);
+                                        if (!found && localization.Contains($"Nitrocid.Langs {assemblyName} "))
+                                            incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                                    }
+                                    if (incompleteLangs.Count > 0)
+                                    {
+                                        var diagnostic = Diagnostic.Create(RuleJson, location, keyTip, string.Join(", ", incompleteLangs));
+                                        context.ReportDiagnostic(diagnostic);
+                                    }
                                 }
                                 if (!string.IsNullOrWhiteSpace(keyType) && keyType == "SMultivar")
                                 {
@@ -312,6 +575,85 @@ namespace Nitrocid.LocaleChecker.Localization
                             continue;
                         CheckKeys(keys);
                     }
+                }
+            }
+        }
+
+        private void CheckExtraJsonLocalizations(CompilationAnalysisContext context)
+        {
+#if LOCALECHECK_DEBUG
+            // Debug diagnostic
+            var debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, "DETECTED LOCALIZATIONS: assemblyLocs", string.Join(", ", assemblyLocs));
+            context.ReportDiagnostic(debugDiagnostic);
+#endif
+
+            Dictionary<string, List<string>> summary = [];
+            foreach (var localization in localizationList.Keys)
+            {
+                string name = localization.Split(' ')[0];
+                var hashSet = localizationList[localization];
+                summary.Add(name, []);
+#if LOCALECHECK_DEBUG
+                debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, $"DETECTED JSON LOCALIZATIONS: localizationList[{localization}]", string.Join(", ", hashSet));
+                context.ReportDiagnostic(debugDiagnostic);
+#endif
+
+                // List extras in Locs and JSON
+                for (int i = 0; i < hashSet.Item1.Count; i++)
+                {
+                    string? loc = hashSet.Item1[i];
+                    var locObj = hashSet.Item2[i];
+                    if (!assemblyLocs.ContainsKey(loc))
+                    {
+                        summary[name].Add(loc);
+                        string filePath = localization.Split(' ')[5];
+#if LOCALECHECK_DEBUG
+                        debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, $"GENERATING LOCATION FOR: {loc}", filePath);
+                        context.ReportDiagnostic(debugDiagnostic);
+#endif
+                        var location = AnalyzerTools.GenerateLocation(locObj, loc, filePath);
+                        var diagnostic = Diagnostic.Create(RuleExtraJson, location, loc);
+                        context.ReportDiagnostic(diagnostic);
+                    }
+                }
+            }
+            foreach (var summaryKvp in summary)
+            {
+#if LOCALECHECK_DEBUG
+                debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, $"PROCESSING SUMMARIES: {summaryKvp.Key}", $"{summaryKvp.Value.Count}");
+                context.ReportDiagnostic(debugDiagnostic);
+#endif
+                if (summaryKvp.Value.Count > 0)
+                {
+                    var totalDiagnostic = Diagnostic.Create(RuleExtraJsonSummary, null, summaryKvp.Key, string.Join(", ", summaryKvp.Value));
+                    context.ReportDiagnostic(totalDiagnostic);
+                }
+            }
+        }
+
+        private void ProcessAssemblyLoc(string localization, string assemblyLoc, out bool found)
+        {
+            var hashSets = localizationList[localization];
+            var hashSet = hashSets.Item1;
+            var hashSetObjs = hashSets.Item2;
+            found = false;
+            if (hashSet.Count != hashSetObjs.Count)
+                return;
+            for (int i = 0; i < hashSetObjs.Count && !found; i++)
+            {
+                var locLocalization = hashSet[i];
+                var locLocalizationObj = hashSetObjs[i];
+                if (locLocalization == assemblyLoc)
+                {
+                    var locLocation = AnalyzerTools.GenerateLocation(locLocalizationObj, locLocalization, localization.Substring(localization.LastIndexOf(" ")));
+                    lock (stateLock)
+                    {
+                        if (assemblyLocs.ContainsKey(assemblyLoc))
+                            assemblyLocs[assemblyLoc].Add(locLocation);
+                        else
+                            assemblyLocs.Add(assemblyLoc, [locLocation]);
+                    }
+                    found = true;
                 }
             }
         }

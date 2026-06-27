@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.Chemistry.Commands
                 // This is an atomic number.
                 if (!PeriodicTableParser.IsSubstanceRegistered(atomicNumber, out substance))
                 {
-                    TextWriters.Write(Translate.DoTranslation("There is no substance with atomic number") + $" {atomicNumber}", KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_ATOMICNUM") + $" {atomicNumber}", KernelColorType.Error);
                     return 44;
                 }
             }
@@ -48,23 +48,23 @@ namespace Nitrocid.Extras.Chemistry.Commands
                 if (!PeriodicTableParser.IsSubstanceRegistered(representation, out substance) &&
                     !PeriodicTableParser.IsSubstanceRegisteredName(representation, out substance))
                 {
-                    TextWriters.Write(Translate.DoTranslation("There is no substance with symbol or name") + $" {representation}", KernelColorType.Error);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_SYMORNAME") + $" {representation}", KernelColorType.Error);
                     return 44;
                 }
             }
 
             // Print information
-            TextWriters.WriteListEntry(Translate.DoTranslation("Name"), substance.Name);
-            TextWriters.WriteListEntry(Translate.DoTranslation("Atomic number"), $"{substance.AtomicNumber}");
-            TextWriters.WriteListEntry(Translate.DoTranslation("Atomic mass"), $"{substance.AtomicMass}");
-            TextWriters.WriteListEntry(Translate.DoTranslation("Symbol"), substance.Symbol);
-            TextWriters.WriteListEntry(Translate.DoTranslation("Summary"), substance.Summary);
-            TextWriters.WriteListEntry(Translate.DoTranslation("Phase"), $"{substance.Phase}");
-            TextWriters.WriteListEntry(Translate.DoTranslation("Position in the periodic table"), $"{substance.Period}, {substance.Group}");
-            TextWriters.WriteListEntry(Translate.DoTranslation("Position in coordinates"), $"{substance.PosX} (w: {substance.WPosX}), {substance.PosY} (w: {substance.WPosY})");
-            TextWriters.WriteListEntry(Translate.DoTranslation("Discoverer"), substance.Discoverer);
-            TextWriters.WriteListEntry(Translate.DoTranslation("Named by"), substance.NamedBy);
-            TextWriters.WriteListEntry(Translate.DoTranslation("Electron configuration"), substance.ElectronConfiguration);
+            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_NAME"), substance.Name);
+            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_ATOMICNUMBER"), $"{substance.AtomicNumber}");
+            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_ATOMICMASS"), $"{substance.AtomicMass}");
+            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_SYMBOL"), substance.Symbol);
+            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_SUMMARY"), substance.Summary);
+            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_PHASE"), $"{substance.Phase}");
+            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_POSITIONPT"), $"{substance.Period}, {substance.Group}");
+            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_POSITIONCOORD"), $"{substance.PosX} (w: {substance.WPosX}), {substance.PosY} (w: {substance.WPosY})");
+            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_DISCOVERER"), substance.Discoverer);
+            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_NAMEDBY"), substance.NamedBy);
+            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_ELECTRON"), substance.ElectronConfiguration);
             return 0;
         }
     }

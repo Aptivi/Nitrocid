@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -47,7 +47,7 @@ namespace Nitrocid.Extras.MailShell.Tools
         {
             var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
             var inbox = client.Inbox ??
-                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Failed to obtain inbox"));
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
             inbox.CountChanged += OnCountChanged;
         }
 
@@ -58,7 +58,7 @@ namespace Nitrocid.Extras.MailShell.Tools
         {
             var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
             var inbox = client.Inbox ??
-                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Failed to obtain inbox"));
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
             inbox.CountChanged -= OnCountChanged;
         }
 
@@ -69,7 +69,7 @@ namespace Nitrocid.Extras.MailShell.Tools
         {
             DebugWriter.WriteDebug(DebugLevel.I, "WebAlert URI: {0}", vars: [e.WebUri.AbsoluteUri]);
             TextWriters.Write(e.Message, true, KernelColorType.Warning);
-            TextWriterColor.Write(Translate.DoTranslation("Opening URL... Make sure to follow the steps shown on the screen."));
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_WEBALERT_OPENING"));
             PlatformHelper.PlatformOpen(e.WebUri.AbsoluteUri);
         }
 
@@ -86,7 +86,7 @@ namespace Nitrocid.Extras.MailShell.Tools
             if (folder.Count > messages.Count())
             {
                 int NewMessagesCount = folder.Count - messages.Count();
-                NotificationManager.NotifySend(new Notification(TextTools.FormatString(Translate.DoTranslation("{0} new messages arrived in inbox."), NewMessagesCount), Translate.DoTranslation("Open \"mail\" to see them."), NotificationPriority.Medium, NotificationType.Normal));
+                NotificationManager.NotifySend(new Notification(TextTools.FormatString(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_TITLE"), NewMessagesCount), LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC"), NotificationPriority.Medium, NotificationType.Normal));
             }
         }
 

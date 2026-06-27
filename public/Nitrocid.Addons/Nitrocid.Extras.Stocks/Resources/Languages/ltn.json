@@ -1,0 +1,94 @@
+{
+  "lang": "ltn",
+  "name": "Latin",
+  "cultures": [
+    "la",
+    "la-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_DESC",
+      "text": "Accipit hourly stirpe notitia"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC",
+      "text": "Comitatu brevis symbolum"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYPROMPT",
+      "text": "Nulla AlphaVantage API key"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYNEEDED",
+      "text": "Quaeso te praebere API key."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYISDEMO",
+      "text": "API demonstratio clavis adhiberi non potest."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYINVALIDLENGTH",
+      "text": "Tua API key debet esse XVI characteres tempore."
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIFAILED",
+      "text": "Error occurrit in nervum data. Additae notitiae hic inveniri possunt"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_OPENING",
+      "text": "Aperiens stirpe pretium"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HIGH",
+      "text": "Princeps pretium"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_LOW",
+      "text": "Humilis pretium"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CLOSING",
+      "text": "Claudendo stirpe pretio"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_VOLUME",
+      "text": "Stock volume"
+    },
+    {
+      "loc": "NKS_STOCKS_AVAPIKEYCONFIGURE",
+      "text": "API Key non requiritur. Configurare ab occasus."
+    },
+    {
+      "loc": "NKS_STOCKS_NODATA",
+      "text": "Nulla stirpe notitia available."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_DESC",
+      "text": "Hanc sectionem tibi configurare nervo permittit."
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_NAME",
+      "text": "API key"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_APIKEY_DESC",
+      "text": "Clavis pro AlphaVantage ac porta API"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_NAME",
+      "text": "Turba codice"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_COMPANY_DESC",
+      "text": "Stocks company"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Impetrare occasus viscus."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
+      "text": "Stock notitia non potest."
+    }
+  ]
+}

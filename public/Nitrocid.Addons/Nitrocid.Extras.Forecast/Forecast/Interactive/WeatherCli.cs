@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -50,7 +50,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
         {
             // Load the weather information, given the API key provided by the command line. Prompt for it if empty.
             CheckApiKey();
-            InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Loading weather info from geographical location") + $" {item.Item1}, {item.Item2}...", new InfoBoxSettings()
+            InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LOADING") + $" {item.Item1}, {item.Item2}...", new InfoBoxSettings()
             {
                 ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                 BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
@@ -59,9 +59,9 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
             T Adjust<T>(string dayPartData)
             {
                 var dayPartArray = WeatherInfo.WeatherToken["daypart"]?[0]?[dayPartData] ??
-                    throw new Exception(Translate.DoTranslation("Can't get day part array"));
+                    throw new Exception(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_EXCEPTION_NODAYPARTARRAY"));
                 var adjusted = dayPartArray[0] ?? dayPartArray[1] ??
-                    throw new Exception(Translate.DoTranslation("Can't get day part"));
+                    throw new Exception(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_EXCEPTION_NODAYPART"));
                 return adjusted.GetValue<T>();
             }
 
@@ -88,21 +88,21 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
             int min = (int?)WeatherInfo.WeatherToken?["calendarDayTemperatureMin"]?[0] ?? 0;
             int max = (int?)WeatherInfo.WeatherToken?["calendarDayTemperatureMax"]?[0] ?? 0;
             string info =
-                $"{Translate.DoTranslation("Weather condition")}: {WeatherInfo.Weather}{WeatherSpecifier}\n" +
-                $"{Translate.DoTranslation("Temperature")}: {WeatherInfo.Temperature:N2}\n" +
-                $"{Translate.DoTranslation("Wind speed")}: {WeatherInfo.WindSpeed:N2} {WindSpeedSpecifier}\n" +
-                $"{Translate.DoTranslation("Wind direction")}: {WeatherInfo.WindDirection:N2}°\n" +
-                $"{Translate.DoTranslation("Humidity rate")}: {WeatherInfo.Humidity:N2}%\n" +
-                $"{Translate.DoTranslation("Cloud cover")}: {cloudCover}\n" +
-                $"{Translate.DoTranslation("Time of day")}: {dayIndicator}\n" +
-                $"{Translate.DoTranslation("Minimum temperature")}: {min}, {WeatherSpecifier}\n" +
-                $"{Translate.DoTranslation("Maximum temperature")}: {max}, {WeatherSpecifier}\n" +
-                $"{Translate.DoTranslation("Precipitation chance")}: {precipitation}%\n" +
-                $"{Translate.DoTranslation("Precipitation type")}: {precipitationType}\n" +
-                $"{Translate.DoTranslation("Heat index")}: {heatIdx}, {WeatherSpecifier}\n" +
-                $"{Translate.DoTranslation("Wind chill")}: {windIdx}, {WeatherSpecifier}\n" +
-                $"{Translate.DoTranslation("Ultraviolet index")} [0-10]: {uvIdx}\n" +
-                $"{Translate.DoTranslation("Ultraviolet description")}: {uvDesc}\n" +
+                $"{LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_CONDITION")}: {WeatherInfo.Weather}{WeatherSpecifier}\n" +
+                $"{LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_TEMPERATURE")}: {WeatherInfo.Temperature:N2}\n" +
+                $"{LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_WINDSPEED")}: {WeatherInfo.WindSpeed:N2} {WindSpeedSpecifier}\n" +
+                $"{LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_WINDDIRECTION")}: {WeatherInfo.WindDirection:N2}°\n" +
+                $"{LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_HUMIDITY")}: {WeatherInfo.Humidity:N2}%\n" +
+                $"{LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_CLOUDCOVER")}: {cloudCover}\n" +
+                $"{LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_TIMEOFDAY")}: {dayIndicator}\n" +
+                $"{LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_MINTEMP")}: {min}, {WeatherSpecifier}\n" +
+                $"{LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_MAXTEMP")}: {max}, {WeatherSpecifier}\n" +
+                $"{LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_PCPCHANGE")}: {precipitation}%\n" +
+                $"{LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_PCPTYPE")}: {precipitationType}\n" +
+                $"{LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_HEATIDX")}: {heatIdx}, {WeatherSpecifier}\n" +
+                $"{LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_WINDCHILL")}: {windIdx}, {WeatherSpecifier}\n" +
+                $"{LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_UVINDEX")} [0-10]: {uvIdx}\n" +
+                $"{LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_INFO_UVDESC")}: {uvDesc}\n" +
                 $"======================\n" +
                 $"{narrative} - {windNarrative}"
             ;
@@ -115,16 +115,16 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
         public override string GetStatusFromItem((double, double) item)
         {
             return
-                Translate.DoTranslation("Latitude") + $": {item.Item1} | " +
-                Translate.DoTranslation("Longitude") + $": {item.Item2}";
+                LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LAT") + $": {item.Item1} | " +
+                LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LON") + $": {item.Item2}";
         }
 
         /// <inheritdoc/>
         public override string GetEntryFromItem((double, double) item)
         {
             return
-                Translate.DoTranslation("Latitude") + $": {item.Item1} | " +
-                Translate.DoTranslation("Longitude") + $": {item.Item2}";
+                LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LAT") + $": {item.Item1} | " +
+                LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LON") + $": {item.Item2}";
         }
 
         internal void Add()
@@ -132,7 +132,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
             CheckApiKey();
 
             // Search for a specific city
-            string cityName = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a city name to search."), new InfoBoxSettings()
+            string cityName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_CITYNAMEPROMPT"), new InfoBoxSettings()
             {
                 ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                 BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
@@ -140,7 +140,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
             var cities = WeatherForecast.ListAllCities(cityName, Forecast.ApiKey);
             if (cities.Count == 0)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("There are no cities by this name. If you are trying to search for a specific city, try searching for a broader location that is closest to the city that you're looking for."), new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_NOCITIES"), new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                     BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
@@ -149,7 +149,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
             }
 
             // Now, let the user select a city
-            int cityIdx = InfoBoxSelectionColor.WriteInfoBoxSelection(cities.Select((kvp, idx) => new InputChoiceInfo($"{idx + 1}", $"[{kvp.Value.Item1}, {kvp.Value.Item2}] {kvp.Key}")).ToArray(), Translate.DoTranslation("Select a city from the list below. The two numbers represent geographical locations."), new InfoBoxSettings()
+            int cityIdx = InfoBoxSelectionColor.WriteInfoBoxSelection(cities.Select((kvp, idx) => new InputChoiceInfo($"{idx + 1}", $"[{kvp.Value.Item1}, {kvp.Value.Item2}] {kvp.Key}")).ToArray(), LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_SELECTCITY"), new InfoBoxSettings()
             {
                 ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                 BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
@@ -165,19 +165,19 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
             CheckApiKey();
 
             // Let the user input the latitude and the longitude data
-            string latString = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter city latitude."), new InfoBoxSettings()
+            string latString = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LATPROMPT"), new InfoBoxSettings()
             {
                 ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                 BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
             });
-            string lngString = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter city longitude."), new InfoBoxSettings()
+            string lngString = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LONPROMPT"), new InfoBoxSettings()
             {
                 ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                 BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
             });
             if (!double.TryParse(latString, out var lat))
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Latitude is invalid."), new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LATINVALID"), new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                     BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
@@ -186,7 +186,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
             }
             if (!double.TryParse(lngString, out var lng))
             {
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Longitude is invalid."), new InfoBoxSettings()
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LONINVALID"), new InfoBoxSettings()
                 {
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                     BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
@@ -208,13 +208,13 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
             {
                 do
                 {
-                    Forecast.ApiKey = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("You can get your own API key by consulting the IBM website for guidance. Enter The Weather Channel API key."), new InfoBoxSettings()
+                    Forecast.ApiKey = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_APIKEYPROMPT"), new InfoBoxSettings()
                     {
                         ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                         BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
                     }, InfoBoxInputType.Password);
                     if (string.IsNullOrEmpty(Forecast.ApiKey))
-                        InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The Weather Channel API key is not provided. If you need help, consult the IBM website."), new InfoBoxSettings()
+                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_APIKEYNOTPROVIDED"), new InfoBoxSettings()
                         {
                             ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                             BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),

@@ -1,0 +1,26 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DIAG_COMMAND_THREADSBT_DESC",
+      "text": "すべてのスレッドのバックトレースを取得します"
+    },
+    {
+      "loc": "NKS_DIAG_W8LOWER",
+      "text": "Windows 8 以前を実行していると思われます。この操作はサポートされていません。"
+    },
+    {
+      "loc": "NKS_DIAG_TRACEINFO",
+      "text": "{0} のスレッド スタック トレース情報"
+    },
+    {
+      "loc": "NKS_DIAG_NOTNKSTHREAD",
+      "text": "Nitrocid KS スレッドではありません"
+    }
+  ]
+}

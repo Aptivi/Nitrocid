@@ -1,0 +1,70 @@
+{
+  "lang": "ukr",
+  "name": "Ukrainian",
+  "cultures": [
+    "uk",
+    "uk-UA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_CALC_DESC",
+      "text": "Калькулятор для обчислення виразів."
+    },
+    {
+      "loc": "NKS_CALCULATORS_CALCERROR",
+      "text": "Помилка в розрахунку."
+    },
+    {
+      "loc": "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
+      "text": "Показати інформацію про формулу уявного числа, задану вказаним дійсним і уявним числом"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALINVALID",
+      "text": "Справжнє число недійсне."
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGINARYINVALID",
+      "text": "Уявне число недійсне."
+    },
+    {
+      "loc": "NKS_CALCULATORS_FORMULA",
+      "text": "формула:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_RADIUS",
+      "text": "радіус:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REALTORAD",
+      "text": "Дійсний радіус у радіанах:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAGTORAD",
+      "text": "Уявний радіус у радіанах:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_ANGLE",
+      "text": "Кут у радіанах:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPONENTIAL",
+      "text": "Експоненціальний:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_TRIANGULAR",
+      "text": "Трикутний:"
+    },
+    {
+      "loc": "NKS_CALCULATORS_EXPRESSION",
+      "text": "Математичний вираз"
+    },
+    {
+      "loc": "NKS_CALCULATORS_REAL",
+      "text": "Реальне число"
+    },
+    {
+      "loc": "NKS_CALCULATORS_IMAG",
+      "text": "Уявне число"
+    }
+  ]
+}

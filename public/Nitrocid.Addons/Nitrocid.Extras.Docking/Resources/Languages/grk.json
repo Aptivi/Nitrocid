@@ -1,0 +1,35 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Σας εμφανίζει μια επισκόπηση πλήρους οθόνης σχετικά με μια επιλεγμένη προβολή βάσης σύνδεσης για να μπορείτε να τη χρησιμοποιήσετε ως πίνακα πληροφοριών"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN1",
+      "text": "Δεν υπάρχει οθόνη βάσης με αυτό το όνομα."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN2",
+      "text": "Δεν υπάρχει βάση σύνδεσης οθόνης με αυτό το όνομα."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Δεν υπάρχει βάση σύνδεσης οθόνης."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "Η βάση σύνδεσης οθόνης έχει καταρρεύσει"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Όνομα αποβάθρας"
+    }
+  ]
+}

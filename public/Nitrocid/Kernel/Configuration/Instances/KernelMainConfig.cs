@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -73,7 +73,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
             get
             {
                 var dataStream = ResourcesManager.GetData("SettingsEntries.json", ResourcesType.Settings) ??
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain main settings entries."));
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_ENTRIESFAILED_MAIN"));
                 string dataString = ResourcesManager.ConvertToString(dataStream);
                 return ConfigTools.GetSettingsEntries(dataString);
             }
@@ -100,7 +100,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string CurrentLanguage
         {
-            get => LanguageManager.currentLanguage is not null ? LanguageManager.currentLanguage.ThreeLetterLanguageName : "eng";
+            get => LanguageManager.currentLanguage is not null ? LanguageManager.currentLanguage.Name : "en-US";
             set => LanguageManager.SetLangDry(value);
         }
         /// <summary>
@@ -998,7 +998,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
                     ConsoleFilesystem.CurrentDir = value;
                 }
                 else
-                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found"), value);
+                    throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2"), value);
             }
         }
         /// <summary>

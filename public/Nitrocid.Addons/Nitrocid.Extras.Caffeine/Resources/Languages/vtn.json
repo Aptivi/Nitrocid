@@ -1,0 +1,50 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
+      "text": "Thêm chức năng báo thức để thông báo cho bạn khi tách trà hoặc cà phê của bạn đã sẵn sàng."
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC",
+      "text": "Hủy bỏ cảnh báo khi tách trà hoặc cà phê của bạn đã sẵn sàng."
+    },
+    {
+      "loc": "NKS_CAFFEINE_AMERICANCOFFEE",
+      "text": "Cà phê Mỹ"
+    },
+    {
+      "loc": "NKS_CAFFEINE_REDTEA",
+      "text": "Trà đỏ"
+    },
+    {
+      "loc": "NKS_CAFFEINE_GREENTEA",
+      "text": "Trà xanh"
+    },
+    {
+      "loc": "NKS_CAFFEINE_NOALERTS",
+      "text": "Không có cảnh báo caffeine để phá thai."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDS",
+      "text": "Số giây để cốc của bạn sẵn sàng là không hợp lệ."
+    },
+    {
+      "loc": "NKS_CAFFEINE_INVALIDSECONDSTIP",
+      "text": "Nếu bạn đang cố gắng cung cấp tên của đồ uống, hãy kiểm tra danh sách bên dưới:"
+    },
+    {
+      "loc": "NKS_CAFFEINE_ALARMNAME",
+      "text": "Cốc của bạn đã sẵn sàng rồi!"
+    },
+    {
+      "loc": "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC",
+      "text": "Hoặc chỉ định số giây hoặc tên đồ uống"
+    }
+  ]
+}

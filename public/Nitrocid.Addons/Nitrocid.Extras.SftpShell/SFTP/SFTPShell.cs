@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP
             // Parse shell arguments
             NetworkConnection sftpConnection = (NetworkConnection)ShellArgs[0];
             SftpClient? client = (SftpClient?)sftpConnection.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("The client is not populated."));
+                throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT"));
 
             // Finalize current connection
             SFTPShellCommon.clientConnection = sftpConnection;
@@ -85,7 +85,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(Translate.DoTranslation("There was an error in the SFTP shell:") + " {0}", true, KernelColorType.Error, ex.Message);
+                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_EXCEPTION_SHELLERROR") + " {0}", true, KernelColorType.Error, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     InputTools.DetectKeypress();

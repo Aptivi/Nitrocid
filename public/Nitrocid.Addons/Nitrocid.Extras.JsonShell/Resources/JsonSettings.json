@@ -1,29 +1,29 @@
 [
     {
         "Name": "JSON",
-        "Desc": "This section lets you configure how the JSON shell works.",
+        "Desc": "NKS_SHELLPACKS_JSON_SETTINGS_ENTRYDESC",
         "Keys": [
             {
-                "Name": "JSON Shell Prompt Preset",
+                "Name": "NKS_SHELLPACKS_JSON_SETTINGS_PROMPTPRESET",
                 "Type": "SPreset",
                 "Variable": "JsonShellPromptPreset",
                 "ShellType": "JsonShell",
                 "Description": ""
             },
             {
-                "Name": "Enable JSON editor autosave",
+                "Name": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_NAME",
                 "Type": "SBoolean",
                 "Variable": "JsonEditAutoSaveFlag",
-                "Description": "Turns on or off the JSON editor autosave feature."
+                "Description": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_DESC"
             },
             {
-                "Name": "JSON editor autosave interval",
+                "Name": "NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVEINTERVAL_NAME",
                 "Type": "SInt",
                 "Variable": "JsonEditAutoSaveInterval",
-                "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
+                "Description": "NKS_SHELLPACKS_JSON_SETTINGS_SAVEEACH_DESC"
             },
             {
-                "Name": "Default JSON formatting for JSON shell",
+                "Name": "NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_NAME",
                 "Type": "SSelection",
                 "Variable": "JsonShellFormatting",
                 "IsEnumeration": true,
@@ -31,7 +31,7 @@
                 "Enumeration": "Newtonsoft.Json.Formatting",
                 "EnumerationAssembly": "Newtonsoft.Json",
                 "EnumerationZeroBased": true,
-                "Description": "Selects the default JSON formatting (beautified or minified) for the JSON shell to save."
+                "Description": "NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_DESC"
             }
         ]
     }
