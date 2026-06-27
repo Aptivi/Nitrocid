@@ -1,3 +1,9 @@
+nitrocid-28 (4.0.28.60-0.2.0.14-1) noble; urgency=medium
+
+  * Please populate changelogs here
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sat, 27 Jun 2026 20:37:18 +0300
+
 nitrocid-28 (4.0.28.60-0.2.0.13-1) noble; urgency=medium
 
   * Updated SQL and Cryptography's XML libraries to fix security issues
