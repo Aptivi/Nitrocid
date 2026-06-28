@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
+  </resheader>
+  <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
     <value>Voer het beheerderswachtwoord in voor onderhoud.</value>
   </data>
   <data name="NKS_KERNEL_ENTRY_EXCEPTION_KERNELERROR" xml:space="preserve">
@@ -319,7 +260,7 @@
     <value>Downloaden mislukt in probeer {0}: {1}</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GET_NEEDSFTP" xml:space="preserve">
-    <value>Gebruik &quot;ftp&quot; als u bestanden van de FTP-server gaat downloaden.</value>
+    <value>Gebruik "ftp" als u bestanden van de FTP-server gaat downloaden.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GET_DESC" xml:space="preserve">
     <value>Download een bestand naar de huidige werkmap</value>
@@ -553,7 +494,7 @@
     <value>Schrijf een poort voor foutopsporing op afstand. Het moet numeriek zijn en mag niet al worden gebruikt. Anders kan de externe debugger de poort niet openen.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_RETRYTIMES_DESC" xml:space="preserve">
-    <value>Schrijf op hoe vaak de opdracht &quot;&quot; get &quot;&quot; mislukte downloads opnieuw moet proberen. Het moet numeriek zijn.</value>
+    <value>Schrijf op hoe vaak de opdracht "" get "" mislukte downloads opnieuw moet proberen. Het moet numeriek zijn.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERPOSITIVE" xml:space="preserve">
     <value>Het antwoord mag niet negatief zijn.</value>
@@ -604,7 +545,7 @@
     <value>Kan wachtwoord van gebruikersnaam niet wijzigen: {0}</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FINDFILEFORMATCHFAILED" xml:space="preserve">
-    <value>Kan bestand niet vinden dat overeenkomt met tekenreeks &quot;{0}&quot;: {1}</value>
+    <value>Kan bestand niet vinden dat overeenkomt met tekenreeks "{0}": {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_DESC" xml:space="preserve">
     <value>Elke keer dat het opstart, controleert het op updates.</value>
@@ -703,7 +644,7 @@
     <value>Het bestand is een archief. Gebruikt voor back-ups.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_INVALIDATTR" xml:space="preserve">
-    <value>Kenmerk &quot;{0}&quot; is ongeldig.</value>
+    <value>Kenmerk "{0}" is ongeldig.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_ADDSUCCESS" xml:space="preserve">
     <value>Kenmerk is succesvol toegevoegd.</value>
@@ -739,10 +680,10 @@
     <value>Downloaden van {0} ...</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_NAME" xml:space="preserve">
-    <value>Toon voortgangsbalk tijdens het downloaden of uploaden met de opdracht &quot;get&quot; of &quot;put&quot;</value>
+    <value>Toon voortgangsbalk tijdens het downloaden of uploaden met de opdracht "get" of "put"</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_DESC" xml:space="preserve">
-    <value>Als dit waar is, laat het &quot;get&quot; of &quot;put&quot; de voortgangsbalk zien tijdens het downloaden of uploaden.</value>
+    <value>Als dit waar is, laat het "get" of "put" de voortgangsbalk zien tijdens het downloaden of uploaden.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PUT_DESC" xml:space="preserve">
     <value>Uploadt een bestand naar de opgegeven website</value>
@@ -757,13 +698,13 @@
     <value>Upload is voltooid.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_NEEDSFTP" xml:space="preserve">
-    <value>Gebruik &quot;ftp&quot; als u bestanden naar de FTP-server gaat uploaden.</value>
+    <value>Gebruik "ftp" als u bestanden naar de FTP-server gaat uploaden.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_FAILED" xml:space="preserve">
     <value>Uploaden mislukt in poging {0}: {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_UPRETRYTIMES_DESC" xml:space="preserve">
-    <value>Schrijf op hoe vaak het &quot;put&quot; -commando mislukte uploads opnieuw moet proberen. Het moet numeriek zijn.</value>
+    <value>Schrijf op hoe vaak het "put" -commando mislukte uploads opnieuw moet proberen. Het moet numeriek zijn.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PING_NEEDSADDR" xml:space="preserve">
     <value>Adres mag niet leeg zijn.</value>
@@ -811,7 +752,7 @@
     <value>Schakelt de functie voor automatisch opslaan van de teksteditor in of uit.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_DESC" xml:space="preserve">
-    <value>Als autosave is ingeschakeld, wordt het tekstbestand elke &quot;n&quot; seconden bewaard.</value>
+    <value>Als autosave is ingeschakeld, wordt het tekstbestand elke "n" seconden bewaard.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVE_NAME" xml:space="preserve">
     <value>Schakel teksteditor automatisch opslaan in</value>
@@ -835,7 +776,7 @@
     <value>Hoeveel milliseconden moet ik wachten voordat ik de volgende keer schrijf?</value>
   </data>
   <data name="NKS_SHELL_BASE_HELP_NOHELP" xml:space="preserve">
-    <value>Geen hulp voor commando &quot;{0}&quot;.</value>
+    <value>Geen hulp voor commando "{0}".</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_HWINFO_DESC" xml:space="preserve">
     <value>Drukt hardware-informatie af</value>
@@ -892,13 +833,13 @@
     <value>Een niet-bestaand pad geneutraliseerd.</value>
   </data>
   <data name="NKS_SHELL_BASE_HELP_GENERALLISTING" xml:space="preserve">
-    <value>Algemene commando&apos;s:</value>
+    <value>Algemene commando's:</value>
   </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_MAINTENANCE" xml:space="preserve">
     <value>onderhoudsstand</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_NAME" xml:space="preserve">
-    <value>Directory&apos;s opzoeken</value>
+    <value>Directory's opzoeken</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_DESC" xml:space="preserve">
     <value>Vraagt een woord in een opgegeven regel of alle regels</value>
@@ -925,7 +866,7 @@
     <value>Stuurt een melding om de ontvanger te testen</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_LISTCODEPAGES_DESC" xml:space="preserve">
-    <value>Geeft een overzicht van alle ondersteunde codepagina&apos;s</value>
+    <value>Geeft een overzicht van alle ondersteunde codepagina's</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PROBEHARDWARE_DESC" xml:space="preserve">
     <value>Tests die de hardware onderzoeken</value>
@@ -1372,7 +1313,7 @@
     <value>Voegt de nieuwe regels toe aan het einde van het bestand</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_ADDLINES_LINEPROMPT" xml:space="preserve">
-    <value>Voer de tekst in die u aan het einde van het bestand wilt toevoegen. Als je klaar bent, schrijf je &quot;EOF&quot; op zijn eigen regel.</value>
+    <value>Voer de tekst in die u aan het einde van het bestand wilt toevoegen. Als je klaar bent, schrijf je "EOF" op zijn eigen regel.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_HOSTNAME_NAME" xml:space="preserve">
     <value>Hostnaam</value>
@@ -1462,7 +1403,7 @@
     <value>Sorteert de bestandssysteemlijst professioneel.</value>
   </data>
   <data name="NKS_SHELL_BASE_HELP_NOLISTING" xml:space="preserve">
-    <value>Shell-commando&apos;s niet geïmplementeerd!!!</value>
+    <value>Shell-commando's niet geïmplementeerd!!!</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME" xml:space="preserve">
     <value>Toon laatste RSS-kop bij inloggen</value>
@@ -1525,7 +1466,7 @@
     <value>Toont de bestandsdetails in de lijst</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>Onderdrukt de vervelende &quot;toestemming geweigerd&quot;-berichten</value>
+    <value>Onderdrukt de vervelende "toestemming geweigerd"-berichten</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_ALL_DESC" xml:space="preserve">
     <value>Toont alle tijdzones</value>
@@ -1588,10 +1529,10 @@
     <value>Zet de kernel terug naar de fabrieksinstellingen</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_MAINCOMMANDCOUNT_NAME" xml:space="preserve">
-    <value>Toon de commando&apos;s rekenen op hulp</value>
+    <value>Toon de commando's rekenen op hulp</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_SHELLCOMMANDCOUNT_NAME" xml:space="preserve">
-    <value>Toon de shell-commando&apos;s rekenen op hulp</value>
+    <value>Toon de shell-commando's rekenen op hulp</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_ALIASESCOMMANDCOUNT_NAME" xml:space="preserve">
     <value>Toon de aliassen rekenen op hulp</value>
@@ -1651,7 +1592,7 @@
     <value>De hex-editor heeft nog geen bestandsstream geopend.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_PROMPT" xml:space="preserve">
-    <value>Voer een byte op zijn eigen regel in die u aan het einde van het bestand wilt toevoegen. Als je klaar bent, schrijf je &quot;EOF&quot; op zijn eigen regel.</value>
+    <value>Voer een byte op zijn eigen regel in die u aan het einde van het bestand wilt toevoegen. Als je klaar bent, schrijf je "EOF" op zijn eigen regel.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_INVALIDBYTE" xml:space="preserve">
     <value>Geen geldige byte.</value>
@@ -1774,7 +1715,7 @@
     <value>Bestand of map {0} is nog steeds vergrendeld, zelfs na een wachttijd van {1} seconden.</value>
   </data>
   <data name="NKS_KERNEL_LICENSEINFO" xml:space="preserve">
-    <value>Voer &apos;license&apos; uit om de licentie-informatie te bekijken.</value>
+    <value>Voer 'license' uit om de licentie-informatie te bekijken.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_TITLE" xml:space="preserve">
     <value>Kernel eerste run</value>
@@ -1816,7 +1757,7 @@
     <value>Naast het automatisch controleren op updates, kan Nitrocid KS het updatebestand ook automatisch downloaden.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
-    <value>U kunt altijd controleren op kernelupdates met behulp van de opdracht &quot;update&quot;.</value>
+    <value>U kunt altijd controleren op kernelupdates met behulp van de opdracht "update".</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TITLE" xml:space="preserve">
     <value>Begin!</value>
@@ -1984,7 +1925,7 @@
     <value>Extensies moeten beginnen met de punt. Tip:</value>
   </data>
   <data name="NKS_FILES_EXTENSIONS_EXCEPTION_NEEDSIMPLEMENTER" xml:space="preserve">
-    <value>Zo&apos;n uitvoerder bestaat niet.</value>
+    <value>Zo'n uitvoerder bestaat niet.</value>
   </data>
   <data name="NKS_FILES_EXTENSIONS_EXCEPTION_NOEXTENSION" xml:space="preserve">
     <value>De extensie is niet opgegeven.</value>
@@ -2155,7 +2096,7 @@
     <value>Ongeldig kernelpad.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDMANPAGE" xml:space="preserve">
-    <value>Ongeldige handleidingpagina. Controleer of de mod met de geldige handleidingpagina&apos;s is geladen.</value>
+    <value>Ongeldige handleidingpagina. Controleer of de mod met de geldige handleidingpagina's is geladen.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDMOD" xml:space="preserve">
     <value>Ongeldige mod. Als uw mod een geldige .NET-assembly is, controleer dan of deze daadwerkelijk de interface implementeert die nodig is om de mod te starten.</value>
@@ -2302,7 +2243,7 @@
     <value>Er wordt een ongeldige teksteditorbewerking uitgevoerd.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>Toen de kernel de opgegeven mod probeerde te laden, werd gevraagd om &quot;Kernel Simulator&quot; te laden. Omdat de hoofdtoepassing is hernoemd naar Nitrocid KS, kan deze mod niet veilig worden uitgevoerd. Wij adviseren u om de mod te upgraden.</value>
+    <value>Toen de kernel de opgegeven mod probeerde te laden, werd gevraagd om "Kernel Simulator" te laden. Omdat de hoofdtoepassing is hernoemd naar Nitrocid KS, kan deze mod niet veilig worden uitgevoerd. Wij adviseren u om de mod te upgraden.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
     <value>Er is een contactbeheerfout opgetreden bij het uitvoeren van de gevraagde bewerking. Zorg ervoor dat het contactbestand in de juiste map staat en dat het een geldig vCard 2.1, 3.0 of 4.0 contactbestand is.</value>
@@ -2581,16 +2522,16 @@
     <value>Kan geen aangepaste functie uitvoeren met een niet-bestaande add-on</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FUNCTIONNOTFOUND" xml:space="preserve">
-    <value>Kan functie &apos;{0}&apos; niet vinden in add-on &apos;{1}&apos;.</value>
+    <value>Kan functie '{0}' niet vinden in add-on '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_PROPERTYNOTFOUND" xml:space="preserve">
-    <value>Kan eigenschap &apos;{0}&apos; niet vinden in add-on &apos;{1}&apos;.</value>
+    <value>Kan eigenschap '{0}' niet vinden in add-on '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FIELDNOTFOUND" xml:space="preserve">
-    <value>Kan veld &apos;{0}&apos; niet vinden in add-on &apos;{1}&apos;.</value>
+    <value>Kan veld '{0}' niet vinden in add-on '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_NOADDONTYPE" xml:space="preserve">
-    <value>Een dergelijk add-ontype &apos;{0}&apos; bestaat niet</value>
+    <value>Een dergelijk add-ontype '{0}' bestaat niet</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_PROBEFAILED_CPU" xml:space="preserve">
     <value>Een of meer CPU-kernen konden het onderzoek niet uitvoeren. Toch informatie tonen...</value>
@@ -2605,13 +2546,13 @@
     <value>Een of meer van de harde schijven konden het onderzoek niet uitvoeren. Toch informatie tonen...</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_NEEDSELEVATION" xml:space="preserve">
-    <value>Hardware wordt niet geparseerd vanwege onvoldoende rechten. Gebruik &quot;winelevate&quot; om Nitrocid opnieuw te starten in verhoogde modus.</value>
+    <value>Hardware wordt niet geparseerd vanwege onvoldoende rechten. Gebruik "winelevate" om Nitrocid opnieuw te starten in verhoogde modus.</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_FAILED" xml:space="preserve">
     <value>Er is een fout opgetreden bij het onderzoeken van de hardware: {0}</value>
   </data>
   <data name="NKS_KERNEL_JOURNALING_EXCEPTION_FILENOTFOUND" xml:space="preserve">
-    <value>Journaalbestand &apos;{0}&apos; bestaat niet.</value>
+    <value>Journaalbestand '{0}' bestaat niet.</value>
   </data>
   <data name="NKS_KERNEL_POWER_INVOKING" xml:space="preserve">
     <value>Energiebeheer op afstand geactiveerd:</value>
@@ -2818,7 +2759,7 @@
     <value>Bestandspad</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS" xml:space="preserve">
-    <value>&apos;{0}&apos; geselecteerd. Druk op ESC om af te sluiten en de selectie te bevestigen.</value>
+    <value>'{0}' geselecteerd. Druk op ESC om af te sluiten en de selectie te bevestigen.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTFAILED" xml:space="preserve">
     <value>Kan map niet openen of bestand selecteren</value>
@@ -2830,10 +2771,10 @@
     <value>Druk op SPACE voor meer informatie</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>&apos;{0}&apos; geselecteerd. Druk op ESC om af te sluiten en de selecties te bevestigen.</value>
+    <value>'{0}' geselecteerd. Druk op ESC om af te sluiten en de selecties te bevestigen.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_UNSELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>Niet-geselecteerde &apos;{0}&apos;. Druk op ESC om af te sluiten en de selecties te bevestigen.</value>
+    <value>Niet-geselecteerde '{0}'. Druk op ESC om af te sluiten en de selecties te bevestigen.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOSELECTIONS" xml:space="preserve">
     <value>Geen geselecteerde bestanden.</value>
@@ -3169,7 +3110,7 @@
     <value>&gt;&gt; Foutopsporing op afstand: versie</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_FIRSTTIME" xml:space="preserve">
-    <value>&gt;&gt; Welkom! Dit is de eerste keer dat u debug op afstand gebruikt. Gebruik &quot;/register &lt;naam&gt;&quot; om te registreren.</value>
+    <value>&gt;&gt; Welkom! Dit is de eerste keer dat u debug op afstand gebruikt. Gebruik "/register &lt;naam&gt;" om te registreren.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_DEVICENOTFOUND_BLOCK" xml:space="preserve">
     <value>Apparaat blokkeert niet.</value>
@@ -3244,7 +3185,7 @@
     <value>Tijdzone niet gevonden.</value>
   </data>
   <data name="NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NEEDSTZDATA" xml:space="preserve">
-    <value>Het tijdzone-informatiepakket is nog niet geïnstalleerd op uw Linux-systeem. Installeer &apos;tzdata&apos; met behulp van de pakketbeheerder van uw distributie.</value>
+    <value>Het tijdzone-informatiepakket is nog niet geïnstalleerd op uw Linux-systeem. Installeer 'tzdata' met behulp van de pakketbeheerder van uw distributie.</value>
   </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
     <value>Bezig met laden</value>
@@ -3262,7 +3203,7 @@
     <value>Laatste nieuws van</value>
   </data>
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>Om het laatste nieuws te kunnen ontvangen, moet u de add-on RSS Shell Extras installeren. U kunt de opdracht &apos;getaddons&apos; gebruiken om alle add-ons te verkrijgen!</value>
+    <value>Om het laatste nieuws te kunnen ontvangen, moet u de add-on RSS Shell Extras installeren. U kunt de opdracht 'getaddons' gebruiken om alle add-ons te verkrijgen!</value>
   </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Opdracht niet gevonden.</value>
@@ -3652,7 +3593,7 @@
     <value>Toont de uptime van de kernel</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_USERMANUAL_DESC" xml:space="preserve">
-    <value>Toont de twee nuttige URL&apos;s voor handleiding.</value>
+    <value>Toont de twee nuttige URL's voor handleiding.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_VERSION_DESC" xml:space="preserve">
     <value>Haalt de huidige versie op</value>
@@ -3742,7 +3683,7 @@
     <value>&gt;&gt; Chat op afstand: versie</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CHAT_WELCOME" xml:space="preserve">
-    <value>&gt;&gt; Welkom! Dit is de eerste keer dat u deelneemt aan de externe chat. Gebruik in de externe foutopsporing &quot;/register &lt;naam&gt;&quot; om te registreren. Je kunt pas praten als je je registreert.</value>
+    <value>&gt;&gt; Welkom! Dit is de eerste keer dat u deelneemt aan de externe chat. Gebruik in de externe foutopsporing "/register &lt;naam&gt;" om te registreren. Je kunt pas praten als je je registreert.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_BENCHMARKSLEEPONE_DESC" xml:space="preserve">
     <value>Hoeveel milliseconden duurde het werkelijk om slechts één milliseconde te slapen?</value>
@@ -4303,7 +4244,7 @@
     <value>Hardware-instellingen</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TIP" xml:space="preserve">
-    <value>Gebruik &quot;hwinfo&quot; voor uitgebreide informatie over hardware.</value>
+    <value>Gebruik "hwinfo" voor uitgebreide informatie over hardware.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_USER_TITLE" xml:space="preserve">
     <value>Gebruikersinstellingen</value>
@@ -4453,13 +4394,13 @@
     <value>Accentkleur op de voorgrond</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_FGACCENT_DESC" xml:space="preserve">
-    <value>Voor thema&apos;s die accenten ondersteunen, is dit de geaccentueerde voorgrondkleur.</value>
+    <value>Voor thema's die accenten ondersteunen, is dit de geaccentueerde voorgrondkleur.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_BGACCENT_NAME" xml:space="preserve">
     <value>Achtergrondaccentkleur</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_BGACCENT_DESC" xml:space="preserve">
-    <value>Voor thema&apos;s die accenten ondersteunen, is dit de geaccentueerde achtergrondkleur.</value>
+    <value>Voor thema's die accenten ondersteunen, is dit de geaccentueerde achtergrondkleur.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_CONSOLEPALETTE_NAME" xml:space="preserve">
     <value>Gebruik het consolekleurenpalet</value>
@@ -4714,7 +4655,7 @@
     <value>Instellingen voor bestandssysteem</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_FILESYSTEM_PRINTLINENUMS_DESC" xml:space="preserve">
-    <value>Zorgt ervoor dat de opdracht &quot;cat&quot; de regelnummers van het bestand afdrukt.</value>
+    <value>Zorgt ervoor dat de opdracht "cat" de regelnummers van het bestand afdrukt.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_DESC" xml:space="preserve">
     <value>In dit gedeelte worden de netwerkinstellingen vermeld, zoals de FTP-shell, de netwerkgerelateerde opdrachtinstellingen en de instellingen voor foutopsporing op afstand.</value>
@@ -4771,7 +4712,7 @@
     <value>Een teken dat lijkt op de rechter benedenhoek. Zorg ervoor dat u slechts één teken invoert.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_MAINCOMMANDCOUNT_DESC" xml:space="preserve">
-    <value>Toont het aantal commando&apos;s in de commandolijst, bestuurd door de schakelaars voor het tonen van tellingen voor verschillende soorten commando&apos;s.</value>
+    <value>Toont het aantal commando's in de commandolijst, bestuurd door de schakelaars voor het tonen van tellingen voor verschillende soorten commando's.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_SHELLCOMMANDCOUNT_DESC" xml:space="preserve">
     <value>Toon het aantal shell-opdrachten wanneer u ze opsomt in de help-opdracht</value>
@@ -4780,7 +4721,7 @@
     <value>Toon het aantal aliasopdrachten wanneer u deze opsomt in de helpopdracht</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_UNIFIEDCOMMANDCOUNT_NAME" xml:space="preserve">
-    <value>Laat zien dat de uniforme commando&apos;s op hulp rekenen</value>
+    <value>Laat zien dat de uniforme commando's op hulp rekenen</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_UNIFIEDCOMMANDCOUNT_DESC" xml:space="preserve">
     <value>Toon het aantal uniforme shell-opdrachten wanneer u ze opsomt in de help-opdracht</value>
@@ -5188,22 +5129,22 @@
     <value>Gebruik de toetsen ↑ en ↓ om te selecteren welk item gemarkeerd is.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING2" xml:space="preserve">
-    <value>Druk op enter om het geselecteerde besturingssysteem op te starten, op `e&apos; om de opdrachten te bewerken</value>
+    <value>Druk op enter om het geselecteerde besturingssysteem op te starten, op `e' om de opdrachten te bewerken</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING3" xml:space="preserve">
-    <value>vóór het opstarten of `c&apos; voor een opdrachtregel.</value>
+    <value>vóór het opstarten of `c' voor een opdrachtregel.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_TIMEOUT" xml:space="preserve">
     <value>Het gemarkeerde item wordt automatisch uitgevoerd over {0}s.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING1" xml:space="preserve">
-    <value>Druk op enter om het geselecteerde besturingssysteem op te starten, op `e&apos; om het</value>
+    <value>Druk op enter om het geselecteerde besturingssysteem op te starten, op `e' om het</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING2" xml:space="preserve">
-    <value>commando&apos;s vóór het opstarten of `c&apos; voor een commandoregel.</value>
+    <value>commando's vóór het opstarten of `c' voor een commandoregel.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING1" xml:space="preserve">
-    <value>&apos;{0}&apos; opstarten</value>
+    <value>'{0}' opstarten</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING2" xml:space="preserve">
     <value>Bestandssysteemtype is</value>
@@ -5257,10 +5198,10 @@
     <value>Standaard opstartinvoerselectie. Dit getal is op nul gebaseerd, dus het eerste element is index 0, enzovoort.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_NAME" xml:space="preserve">
-    <value>Schakel &apos;De Nitrocid-startpagina&apos; in</value>
+    <value>Schakel 'De Nitrocid-startpagina' in</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_DESC" xml:space="preserve">
-    <value>Schakelt &apos;The Nitrocid Homepage&apos; in, zodat u in één oogopslag kunt zien wat er gebeurt.</value>
+    <value>Schakelt 'The Nitrocid Homepage' in, zodat u in één oogopslag kunt zien wat er gebeurt.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGBGCOLOR_NAME" xml:space="preserve">
     <value>Interactieve TUI ingebouwde sleutelbinding achtergrondkleur</value>
@@ -5863,16 +5804,16 @@
     <value>Onwaar om te ontkennen, waar om te erkennen</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_ARGUMENT_NEWNAME_DESC" xml:space="preserve">
-    <value>Nieuwe weergavenaam, of &apos;wissen&apos; om de weergavenaam te wissen</value>
+    <value>Nieuwe weergavenaam, of 'wissen' om de weergavenaam te wissen</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERLANG_ARGUMENT_LANGID_DESC" xml:space="preserve">
-    <value>Taal-ID met drie letters, of &apos;clear&apos; om de voorkeurstaal te wissen</value>
+    <value>Taal-ID met drie letters, of 'clear' om de voorkeurstaal te wissen</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_DESC" xml:space="preserve">
     <value>Verandert de voorkeursgebruikercultuur</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_ARGUMENT_CULTUREID_DESC" xml:space="preserve">
-    <value>Cultuur-ID, of &apos;clear&apos; om de gewenste cultuur te clearen</value>
+    <value>Cultuur-ID, of 'clear' om de gewenste cultuur te clearen</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_USERCULTURE_SUCCESS" xml:space="preserve">
     <value>Voorkeursgebruikerscultuur ingesteld op {0}. U kunt zich het beste opnieuw aanmelden.</value>
@@ -5968,7 +5909,7 @@
     <value>Een personage om te bevragen</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_ARGUMENT_LINENUM_DESC" xml:space="preserve">
-    <value>Regelnummer (hetzij enkelvoud of begin van het bereik), of &apos;alles&apos; om een teken in alle regels op te vragen</value>
+    <value>Regelnummer (hetzij enkelvoud of begin van het bereik), of 'alles' om een teken in alle regels op te vragen</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_ARGUMENT_WORD_DESC" xml:space="preserve">
     <value>Een woord of zin om te bevragen</value>
@@ -5983,7 +5924,7 @@
     <value>Een woord of zin om te vervangen door</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINE_ARGUMENT_LINENUM_DESC" xml:space="preserve">
-    <value>Regelnummer (hetzij enkelvoud of begin van het bereik), of &apos;all&apos; om in alle regels te vervangen</value>
+    <value>Regelnummer (hetzij enkelvoud of begin van het bereik), of 'all' om in alle regels te vervangen</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_ARGUMENT_REGEX_DESC" xml:space="preserve">
     <value>Een reguliere expressie om zinnen te matchen die vervangen moeten worden</value>
@@ -6139,7 +6080,7 @@
     <value>Doeldriver om te veranderen naar</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_LIST_DESC" xml:space="preserve">
-    <value>Stuurprogramma&apos;s weergeven</value>
+    <value>Stuurprogramma's weergeven</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_TYPES_DESC" xml:space="preserve">
     <value>Stuurprogrammatypen weergeven</value>
@@ -6247,7 +6188,7 @@
     <value>Groepsnaam waaruit gebruiker moet worden verwijderd</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_ARGUMENT_SAVERNAME_DESC" xml:space="preserve">
-    <value>Ofwel de naam van de screensaver of &apos;willekeurig&apos;</value>
+    <value>Ofwel de naam van de screensaver of 'willekeurig'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SEARCH_ARGUMENT_REGEXP_DESC" xml:space="preserve">
     <value>Reguliere expressie om te zoeken</value>
@@ -6364,10 +6305,10 @@
     <value>Hiermee kunt u het kernel-energiemechanisme configureren</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_NAME" xml:space="preserve">
-    <value>Kernel-kleurenschema&apos;s</value>
+    <value>Kernel-kleurenschema's</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_DESC" xml:space="preserve">
-    <value>Hiermee kunt u meerdere kernelkleurenschema&apos;s instellen</value>
+    <value>Hiermee kunt u meerdere kernelkleurenschema's instellen</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_NAME" xml:space="preserve">
     <value>Helpsysteem</value>
@@ -6517,16 +6458,16 @@
     <value>Welke cultuur wordt gebruikt om de maandnamen, kalender, etc. te wijzigen?</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME" xml:space="preserve">
-    <value>Schakel &apos;The Nitrocid Homepage&apos; RSS-feed in</value>
+    <value>Schakel 'The Nitrocid Homepage' RSS-feed in</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_DESC" xml:space="preserve">
-    <value>Schakel &apos;The Nitrocid Homepage&apos; RSS-feedwidget in aan de rechterkant van het scherm.</value>
+    <value>Schakel 'The Nitrocid Homepage' RSS-feedwidget in aan de rechterkant van het scherm.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_NAME" xml:space="preserve">
-    <value>&apos;The Nitrocid Homepage&apos;-widget</value>
+    <value>'The Nitrocid Homepage'-widget</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_DESC" xml:space="preserve">
-    <value>Selecteert een widget die wordt weergegeven in &apos;The Nitrocid Homepage&apos;.</value>
+    <value>Selecteert een widget die wordt weergegeven in 'The Nitrocid Homepage'.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_NAME" xml:space="preserve">
     <value>Instellingen voor meldingsrand</value>
@@ -6586,91 +6527,91 @@
     <value>Extra themapakket</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_AMUSEMENTS" xml:space="preserve">
-    <value>Extra&apos;s - Amusements</value>
+    <value>Extra's - Amusements</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_ARCHIVE" xml:space="preserve">
-    <value>Extra&apos;s - Archief Shell</value>
+    <value>Extra's - Archief Shell</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_BASSBOOM" xml:space="preserve">
-    <value>Extra&apos;s - BassBoom</value>
+    <value>Extra's - BassBoom</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_CAFFEINE" xml:space="preserve">
-    <value>Extra&apos;s - Cafeïne</value>
+    <value>Extra's - Cafeïne</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_CALCULATORS" xml:space="preserve">
-    <value>Extra&apos;s - Rekenmachines</value>
+    <value>Extra's - Rekenmachines</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_CALENDAR" xml:space="preserve">
-    <value>Extra&apos;s - Kalender</value>
+    <value>Extra's - Kalender</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_COLORCONVERTER" xml:space="preserve">
-    <value>Extra&apos;s - Kleurenconverter</value>
+    <value>Extra's - Kleurenconverter</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_CONTACTS" xml:space="preserve">
-    <value>Extra&apos;s - Contacten</value>
+    <value>Extra's - Contacten</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_DIAGS" xml:space="preserve">
-    <value>Extra&apos;s - Diagnostiek</value>
+    <value>Extra's - Diagnostiek</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_DICTIONARY" xml:space="preserve">
-    <value>Extra&apos;s - Woordenboek</value>
+    <value>Extra's - Woordenboek</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_DOCKING" xml:space="preserve">
-    <value>Extra&apos;s - Docking</value>
+    <value>Extra's - Docking</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_FORECAST" xml:space="preserve">
-    <value>Extra&apos;s - Prognose</value>
+    <value>Extra's - Prognose</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_NOTES" xml:space="preserve">
-    <value>Extra&apos;s - Opmerkingen</value>
+    <value>Extra's - Opmerkingen</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO" xml:space="preserve">
-    <value>Extra&apos;s - Themastudio</value>
+    <value>Extra's - Themastudio</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_TIPS" xml:space="preserve">
-    <value>Extra&apos;s - Kerneltips</value>
+    <value>Extra's - Kerneltips</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_TODO" xml:space="preserve">
-    <value>Extra&apos;s - Takenlijst</value>
+    <value>Extra's - Takenlijst</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_UNITCONV" xml:space="preserve">
-    <value>Extra&apos;s - Eenhedenconversie</value>
+    <value>Extra's - Eenhedenconversie</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_PASTEBIN" xml:space="preserve">
-    <value>Extra&apos;s - Pastebin</value>
+    <value>Extra's - Pastebin</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_IMAGES" xml:space="preserve">
-    <value>Extra&apos;s - Afbeeldingen</value>
+    <value>Extra's - Afbeeldingen</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_STOCKS" xml:space="preserve">
-    <value>Extra&apos;s - Voorraden</value>
+    <value>Extra's - Voorraden</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_BEEPSYNTH" xml:space="preserve">
-    <value>Extra&apos;s - Beep Synth</value>
+    <value>Extra's - Beep Synth</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_SSH" xml:space="preserve">
-    <value>Extra&apos;s - SSH</value>
+    <value>Extra's - SSH</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_CHEMISTRY" xml:space="preserve">
-    <value>Extra&apos;s - Chemie</value>
+    <value>Extra's - Chemie</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_MODS" xml:space="preserve">
-    <value>Extra&apos;s - Mods</value>
+    <value>Extra's - Mods</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_ICONS" xml:space="preserve">
-    <value>Extra&apos;s - Iconen</value>
+    <value>Extra's - Iconen</value>
   </data>
   <data name="NKS_KNOWNADDONS_PACKS_SHELLS" xml:space="preserve">
     <value>Extra Shells-pakket</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_DATES" xml:space="preserve">
-    <value>Extra&apos;s - Datums</value>
+    <value>Extra's - Datums</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_HASHES" xml:space="preserve">
-    <value>Extra&apos;s - Hashes</value>
+    <value>Extra's - Hashes</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_CHATBOT" xml:space="preserve">
-    <value>Extra&apos;s - Chatbot AI</value>
+    <value>Extra's - Chatbot AI</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE" xml:space="preserve">
     <value>Kan de basisconfiguratie niet deserialiseren {0}</value>
@@ -6748,7 +6689,7 @@
     <value>Selecteert een willekeurige screensaver</value>
   </data>
   <data name="NKS_KERNEL_SHELLTIP" xml:space="preserve">
-    <value>Om te beginnen, typ &apos;help&apos; en druk op ENTER.</value>
+    <value>Om te beginnen, typ 'help' en druk op ENTER.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME" xml:space="preserve">
     <value>Audiogeluidssignaalvolume voor de lezer</value>
@@ -6763,7 +6704,7 @@
     <value>Een teken dat het ingevoerde wachtwoord maskeert. Laat dit veld leeg voor meer veiligheid.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3" xml:space="preserve">
-    <value>Om de shell te openen, druk je op de S-toets als je op de homepage bent. Daarna kun je &apos;help&apos; typen en op ENTER drukken om te beginnen!</value>
+    <value>Om de shell te openen, druk je op de S-toets als je op de homepage bent. Daarna kun je 'help' typen en op ENTER drukken om te beginnen!</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
     <value>Er zijn dubbele sleutels in uw instellingen. Controleer de variabele om er zeker van te zijn dat deze niet meer dan één keer voorkomt.</value>
@@ -6973,7 +6914,7 @@
     <value>Mappen selecteren met behulp van de TUI voor het selecteren van mappengroepen</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY" xml:space="preserve">
-    <value>Een deel van de TUI&apos;s voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van opdrachtregelprogramma&apos;s om dezelfde actie uit te voeren. Een van de TUI&apos;s is de TUI voor het selecteren van mapgroepen, waarmee u meerdere mappen kunt selecteren als doel voor de gewenste bewerking. Als u hier terechtkomt, heeft een toepassing u gevraagd een groep mappen te selecteren om de bewerking te voltooien. U kunt de spatiebalk gebruiken om een ​​map aan de lijst toe te voegen en vervolgens op ESC drukken om uw selectie te bevestigen.</value>
+    <value>Een deel van de TUI's voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van opdrachtregelprogramma's om dezelfde actie uit te voeren. Een van de TUI's is de TUI voor het selecteren van mapgroepen, waarmee u meerdere mappen kunt selecteren als doel voor de gewenste bewerking. Als u hier terechtkomt, heeft een toepassing u gevraagd een groep mappen te selecteren om de bewerking te voltooien. U kunt de spatiebalk gebruiken om een ​​map aan de lijst toe te voegen en vervolgens op ESC drukken om uw selectie te bevestigen.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE" xml:space="preserve">
     <value>Mappen selecteren</value>
@@ -6982,7 +6923,7 @@
     <value>Gebruik de mapkiezer-interface om een ​​map te selecteren.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY" xml:space="preserve">
-    <value>Een deel van de TUI&apos;s voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van de opdrachtregelprogramma&apos;s om dezelfde actie uit te voeren. Een van de TUI&apos;s is de TUI voor mapselectie, waarmee u een map kunt selecteren als doel voor de gewenste bewerking. Als u hier terechtkomt, heeft een toepassing u gevraagd een map te selecteren om de bewerking te voltooien. U kunt de spatiebalk gebruiken om een ​​map te selecteren en vervolgens op ESC drukken om uw selectie te bevestigen.</value>
+    <value>Een deel van de TUI's voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van de opdrachtregelprogramma's om dezelfde actie uit te voeren. Een van de TUI's is de TUI voor mapselectie, waarmee u een map kunt selecteren als doel voor de gewenste bewerking. Als u hier terechtkomt, heeft een toepassing u gevraagd een map te selecteren om de bewerking te voltooien. U kunt de spatiebalk gebruiken om een ​​map te selecteren en vervolgens op ESC drukken om uw selectie te bevestigen.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE" xml:space="preserve">
     <value>Bestanden selecteren</value>
@@ -6991,7 +6932,7 @@
     <value>Bestanden selecteren met behulp van de TUI voor het selecteren van bestandsgroepen.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY" xml:space="preserve">
-    <value>Een deel van de TUI&apos;s voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van de opdrachtregelprogramma&apos;s om dezelfde actie uit te voeren. Een van de TUI&apos;s is de TUI voor het selecteren van bestandsgroepen, waarmee u meerdere bestanden kunt selecteren als doel voor de gewenste bewerking. Als u hier terechtkomt, heeft een toepassing u gevraagd een groep bestanden te selecteren om de bewerking te voltooien. U kunt de spatiebalk gebruiken om een ​​bestand aan de lijst toe te voegen en vervolgens op ESC drukken om uw selectie te bevestigen.</value>
+    <value>Een deel van de TUI's voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van de opdrachtregelprogramma's om dezelfde actie uit te voeren. Een van de TUI's is de TUI voor het selecteren van bestandsgroepen, waarmee u meerdere bestanden kunt selecteren als doel voor de gewenste bewerking. Als u hier terechtkomt, heeft een toepassing u gevraagd een groep bestanden te selecteren om de bewerking te voltooien. U kunt de spatiebalk gebruiken om een ​​bestand aan de lijst toe te voegen en vervolgens op ESC drukken om uw selectie te bevestigen.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE" xml:space="preserve">
     <value>Bestanden selecteren</value>
@@ -7000,7 +6941,7 @@
     <value>Een bestand selecteren met behulp van de TUI-bestandsselector</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY" xml:space="preserve">
-    <value>Een deel van de TUI&apos;s voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van de opdrachtregelprogramma&apos;s om dezelfde actie uit te voeren. Een van de TUI&apos;s is de TUI voor bestandsselectie, waarmee u een bestand kunt selecteren als doel voor de gewenste bewerking. Als u hier terechtkomt, heeft een toepassing u gevraagd een bestand te selecteren om de bewerking te voltooien. U kunt de spatiebalk gebruiken om een ​​bestand te selecteren en vervolgens op ESC drukken om uw selectie te bevestigen.</value>
+    <value>Een deel van de TUI's voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van de opdrachtregelprogramma's om dezelfde actie uit te voeren. Een van de TUI's is de TUI voor bestandsselectie, waarmee u een bestand kunt selecteren als doel voor de gewenste bewerking. Als u hier terechtkomt, heeft een toepassing u gevraagd een bestand te selecteren om de bewerking te voltooien. U kunt de spatiebalk gebruiken om een ​​bestand te selecteren en vervolgens op ESC drukken om uw selectie te bevestigen.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE" xml:space="preserve">
     <value>Bestandsbeheerder met één venster</value>
@@ -7009,7 +6950,7 @@
     <value>Bestanden beheren met behulp van de TUI-bestandsselector en een voorbeeldweergave.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY" xml:space="preserve">
-    <value>Een selectie van TUI&apos;s voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van opdrachtregelprogramma&apos;s om dezelfde actie uit te voeren. Een van de beschikbare TUI&apos;s is de TUI voor bestandsbeheer met één venster, waarmee u uw bestanden kunt beheren met een voorbeeldweergave in het rechtervenster. Dit is handig als u in één oogopslag een voorbeeldweergave wilt zien wanneer u bestanden of mappen selecteert.</value>
+    <value>Een selectie van TUI's voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van opdrachtregelprogramma's om dezelfde actie uit te voeren. Een van de beschikbare TUI's is de TUI voor bestandsbeheer met één venster, waarmee u uw bestanden kunt beheren met een voorbeeldweergave in het rechtervenster. Dit is handig als u in één oogopslag een voorbeeldweergave wilt zien wanneer u bestanden of mappen selecteert.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE" xml:space="preserve">
     <value>Bestandsbeheerder met dubbel venster</value>
@@ -7018,7 +6959,7 @@
     <value>De bestandsselector-interface gebruiken om bestanden in twee vensters te beheren.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY" xml:space="preserve">
-    <value>Een selectie van TUI&apos;s voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van opdrachtregelprogramma&apos;s om dezelfde actie uit te voeren. Een van de beschikbare TUI&apos;s is de TUI voor bestandsbeheer met twee vensters, waarmee u uw bestanden kunt beheren zoals in Total Commander. Hiermee kunt u snel bestandsbewerkingen uitvoeren in beide vensters, zonder handmatig paden te hoeven opgeven.</value>
+    <value>Een selectie van TUI's voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van opdrachtregelprogramma's om dezelfde actie uit te voeren. Een van de beschikbare TUI's is de TUI voor bestandsbeheer met twee vensters, waarmee u uw bestanden kunt beheren zoals in Total Commander. Hiermee kunt u snel bestandsbewerkingen uitvoeren in beide vensters, zonder handmatig paden te hoeven opgeven.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE" xml:space="preserve">
     <value>Alarmen beheren</value>
@@ -7182,5 +7123,7 @@
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
     <value>U gebruikt de bètaversie van de kernel. U kunt bugs, instabiliteit of zelfs gegevensverlies tegenkomen. We raden u aan om, indien mogelijk, de stabiele versie te gebruiken.</value>
   </data>
-
+  <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
+    <value>Geen artikelen</value>
+  </data>
 </root>

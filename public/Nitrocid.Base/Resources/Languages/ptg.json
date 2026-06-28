@@ -9435,6 +9435,10 @@
     {
       "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
       "text": "Está a executar a versão beta do kernel. Pode encontrar bugs, instabilidades ou até mesmo perda de dados. Recomendamos a utilização da versão estável, se possível."
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
+      "text": "Sem artigos"
     }
   ]
 }

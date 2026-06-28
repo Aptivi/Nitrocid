@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
+  </resheader>
+  <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
     <value>Masukkan kata sandi admin untuk pemeliharaan.</value>
   </data>
   <data name="NKS_KERNEL_ENTRY_EXCEPTION_KERNELERROR" xml:space="preserve">
@@ -319,7 +260,7 @@
     <value>Unduhan gagal pada percobaan {0}: {1}</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GET_NEEDSFTP" xml:space="preserve">
-    <value>Silakan gunakan &quot;ftp&quot; jika Anda akan mengunduh berkas dari server FTP.</value>
+    <value>Silakan gunakan "ftp" jika Anda akan mengunduh berkas dari server FTP.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GET_DESC" xml:space="preserve">
     <value>Mengunduh file ke direktori kerja saat ini</value>
@@ -553,7 +494,7 @@
     <value>Tulis port debugger jarak jauh. Port tersebut harus berupa angka, dan belum boleh digunakan. Jika tidak, debugger jarak jauh akan gagal membuka port tersebut.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_RETRYTIMES_DESC" xml:space="preserve">
-    <value>Tuliskan berapa kali perintah &quot;get&quot; harus mencoba lagi unduhan yang gagal. Harus berupa angka.</value>
+    <value>Tuliskan berapa kali perintah "get" harus mencoba lagi unduhan yang gagal. Harus berupa angka.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERPOSITIVE" xml:space="preserve">
     <value>Jawabannya mungkin tidak negatif.</value>
@@ -604,7 +545,7 @@
     <value>Gagal mengubah kata sandi nama pengguna: {0}</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FINDFILEFORMATCHFAILED" xml:space="preserve">
-    <value>Tidak dapat menemukan berkas yang cocok dengan string &quot;{0}&quot;: {1}</value>
+    <value>Tidak dapat menemukan berkas yang cocok dengan string "{0}": {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_DESC" xml:space="preserve">
     <value>Setiap kali memulai, ia akan memeriksa pembaruan.</value>
@@ -703,7 +644,7 @@
     <value>Berkas tersebut merupakan arsip. Digunakan untuk pencadangan.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_INVALIDATTR" xml:space="preserve">
-    <value>Atribut &quot;{0}&quot; tidak valid.</value>
+    <value>Atribut "{0}" tidak valid.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_ADDSUCCESS" xml:space="preserve">
     <value>Atribut telah berhasil ditambahkan.</value>
@@ -739,10 +680,10 @@
     <value>Mengunduh dari {0}...</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_NAME" xml:space="preserve">
-    <value>Tampilkan bilah kemajuan saat mengunduh atau mengunggah dari perintah &quot;get&quot; atau &quot;put&quot;</value>
+    <value>Tampilkan bilah kemajuan saat mengunduh atau mengunggah dari perintah "get" atau "put"</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_DESC" xml:space="preserve">
-    <value>Jika benar, maka &quot;get&quot; atau &quot;put&quot; akan menampilkan bilah kemajuan selagi mengunduh atau mengunggah.</value>
+    <value>Jika benar, maka "get" atau "put" akan menampilkan bilah kemajuan selagi mengunduh atau mengunggah.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PUT_DESC" xml:space="preserve">
     <value>Mengunggah file ke situs web tertentu</value>
@@ -757,13 +698,13 @@
     <value>Pengunggahan telah selesai.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_NEEDSFTP" xml:space="preserve">
-    <value>Silakan gunakan &quot;ftp&quot; jika Anda akan mengunggah berkas ke server FTP.</value>
+    <value>Silakan gunakan "ftp" jika Anda akan mengunggah berkas ke server FTP.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_FAILED" xml:space="preserve">
     <value>Pengunggahan gagal pada percobaan {0}: {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_UPRETRYTIMES_DESC" xml:space="preserve">
-    <value>Tuliskan berapa kali perintah &quot;put&quot; harus mencoba lagi unggahan yang gagal. Harus berupa angka.</value>
+    <value>Tuliskan berapa kali perintah "put" harus mencoba lagi unggahan yang gagal. Harus berupa angka.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PING_NEEDSADDR" xml:space="preserve">
     <value>Alamat tidak boleh kosong.</value>
@@ -811,7 +752,7 @@
     <value>Mengaktifkan atau menonaktifkan fitur penyimpanan otomatis editor teks.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_DESC" xml:space="preserve">
-    <value>Jika penyimpanan otomatis diaktifkan, file teks akan disimpan setiap &quot;n&quot; detik.</value>
+    <value>Jika penyimpanan otomatis diaktifkan, file teks akan disimpan setiap "n" detik.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVE_NAME" xml:space="preserve">
     <value>Aktifkan penyimpanan otomatis editor teks</value>
@@ -835,7 +776,7 @@
     <value>Berapa milidetik yang harus ditunggu sebelum melakukan penulisan berikutnya?</value>
   </data>
   <data name="NKS_SHELL_BASE_HELP_NOHELP" xml:space="preserve">
-    <value>Tidak ada bantuan untuk perintah &quot;{0}&quot;.</value>
+    <value>Tidak ada bantuan untuk perintah "{0}".</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_HWINFO_DESC" xml:space="preserve">
     <value>Mencetak informasi perangkat keras</value>
@@ -1372,7 +1313,7 @@
     <value>Menambahkan baris baru di akhir file</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_ADDLINES_LINEPROMPT" xml:space="preserve">
-    <value>Masukkan teks yang ingin Anda tambahkan di akhir berkas. Setelah selesai, tulis &quot;EOF&quot; pada barisnya sendiri.</value>
+    <value>Masukkan teks yang ingin Anda tambahkan di akhir berkas. Setelah selesai, tulis "EOF" pada barisnya sendiri.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_HOSTNAME_NAME" xml:space="preserve">
     <value>Nama Tuan Rumah</value>
@@ -1525,7 +1466,7 @@
     <value>Menampilkan detail file dalam daftar</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>Menekan pesan &quot;izin ditolak&quot; yang mengganggu</value>
+    <value>Menekan pesan "izin ditolak" yang mengganggu</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_ALL_DESC" xml:space="preserve">
     <value>Menampilkan semua zona waktu</value>
@@ -1651,7 +1592,7 @@
     <value>Editor hex belum membuka aliran berkas.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_PROMPT" xml:space="preserve">
-    <value>Masukkan byte pada barisnya sendiri yang ingin Anda tambahkan di akhir berkas. Setelah selesai, tulis &quot;EOF&quot; pada barisnya sendiri.</value>
+    <value>Masukkan byte pada barisnya sendiri yang ingin Anda tambahkan di akhir berkas. Setelah selesai, tulis "EOF" pada barisnya sendiri.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_INVALIDBYTE" xml:space="preserve">
     <value>Bukan byte yang valid.</value>
@@ -1774,7 +1715,7 @@
     <value>File atau folder {0} masih terkunci bahkan setelah menunggu selama {1} detik.</value>
   </data>
   <data name="NKS_KERNEL_LICENSEINFO" xml:space="preserve">
-    <value>Jalankan &apos;license&apos; untuk melihat informasi lisensi.</value>
+    <value>Jalankan 'license' untuk melihat informasi lisensi.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_TITLE" xml:space="preserve">
     <value>Kernel pertama kali dijalankan</value>
@@ -1816,7 +1757,7 @@
     <value>Selain memeriksa pembaruan secara otomatis, Nitrocid KS juga dapat mengunduh berkas pembaruan secara otomatis.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
-    <value>Anda selalu dapat memeriksa pembaruan kernel menggunakan perintah &quot;update&quot;.</value>
+    <value>Anda selalu dapat memeriksa pembaruan kernel menggunakan perintah "update".</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TITLE" xml:space="preserve">
     <value>Ayo Mulai!</value>
@@ -2302,7 +2243,7 @@
     <value>Operasi editor teks yang tidak valid sedang dilakukan.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>Ketika kernel mencoba memuat mod yang ditentukan, kernel meminta untuk memuat &quot;Kernel Simulator&quot;. Karena aplikasi utama diubah namanya menjadi Nitrocid KS, mod ini tidak dapat dijalankan dengan aman. Kami menyarankan Anda untuk memutakhirkan mod tersebut.</value>
+    <value>Ketika kernel mencoba memuat mod yang ditentukan, kernel meminta untuk memuat "Kernel Simulator". Karena aplikasi utama diubah namanya menjadi Nitrocid KS, mod ini tidak dapat dijalankan dengan aman. Kami menyarankan Anda untuk memutakhirkan mod tersebut.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
     <value>Terjadi kesalahan pengelola kontak saat mencoba melakukan operasi yang diminta. Pastikan berkas kontak ada di folder yang benar dan merupakan berkas kontak vCard 2.1, 3.0, atau 4.0 yang valid.</value>
@@ -2581,16 +2522,16 @@
     <value>Tidak dapat menjalankan fungsi kustom dengan addon yang tidak ada</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FUNCTIONNOTFOUND" xml:space="preserve">
-    <value>Tidak dapat menemukan fungsi &apos;{0}&apos; di addon &apos;{1}&apos;.</value>
+    <value>Tidak dapat menemukan fungsi '{0}' di addon '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_PROPERTYNOTFOUND" xml:space="preserve">
-    <value>Tidak dapat menemukan properti &apos;{0}&apos; di addon &apos;{1}&apos;.</value>
+    <value>Tidak dapat menemukan properti '{0}' di addon '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FIELDNOTFOUND" xml:space="preserve">
-    <value>Tidak dapat menemukan bidang &apos;{0}&apos; di addon &apos;{1}&apos;.</value>
+    <value>Tidak dapat menemukan bidang '{0}' di addon '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_NOADDONTYPE" xml:space="preserve">
-    <value>Tidak ada tipe addon seperti &apos;{0}&apos;</value>
+    <value>Tidak ada tipe addon seperti '{0}'</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_PROBEFAILED_CPU" xml:space="preserve">
     <value>Satu atau beberapa inti CPU gagal diperiksa. Tetap menampilkan informasi...</value>
@@ -2605,13 +2546,13 @@
     <value>Satu atau beberapa hard drive gagal diperiksa. Tetap menampilkan informasi...</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_NEEDSELEVATION" xml:space="preserve">
-    <value>Perangkat keras tidak akan diurai karena hak istimewa tidak mencukupi. Gunakan &quot;winelevate&quot; untuk memulai ulang Nitrocid dalam mode tinggi.</value>
+    <value>Perangkat keras tidak akan diurai karena hak istimewa tidak mencukupi. Gunakan "winelevate" untuk memulai ulang Nitrocid dalam mode tinggi.</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_FAILED" xml:space="preserve">
     <value>Terjadi kesalahan saat memeriksa perangkat keras: {0}</value>
   </data>
   <data name="NKS_KERNEL_JOURNALING_EXCEPTION_FILENOTFOUND" xml:space="preserve">
-    <value>Berkas jurnal &apos;{0}&apos; tidak ada.</value>
+    <value>Berkas jurnal '{0}' tidak ada.</value>
   </data>
   <data name="NKS_KERNEL_POWER_INVOKING" xml:space="preserve">
     <value>Manajemen daya jarak jauh dipanggil:</value>
@@ -2818,7 +2759,7 @@
     <value>Jalur berkas</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS" xml:space="preserve">
-    <value>Pilih &apos;{0}&apos;. Tekan ESC untuk keluar dan mengonfirmasi pilihan Anda.</value>
+    <value>Pilih '{0}'. Tekan ESC untuk keluar dan mengonfirmasi pilihan Anda.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTFAILED" xml:space="preserve">
     <value>Tidak dapat membuka folder atau memilih file</value>
@@ -2830,10 +2771,10 @@
     <value>Tekan SPACE untuk info lebih lanjut</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>Dipilih &apos;{0}&apos;. Tekan ESC untuk keluar dan mengonfirmasi pilihan.</value>
+    <value>Dipilih '{0}'. Tekan ESC untuk keluar dan mengonfirmasi pilihan.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_UNSELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>Tidak dipilih &apos;{0}&apos;. Tekan ESC untuk keluar dan mengonfirmasi pilihan.</value>
+    <value>Tidak dipilih '{0}'. Tekan ESC untuk keluar dan mengonfirmasi pilihan.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOSELECTIONS" xml:space="preserve">
     <value>Tidak ada berkas yang dipilih.</value>
@@ -3169,7 +3110,7 @@
     <value>&gt;&gt; Debug Jarak Jauh: versi</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_FIRSTTIME" xml:space="preserve">
-    <value>&gt;&gt; Selamat datang! Ini adalah pertama kalinya Anda memasuki debug jarak jauh. Gunakan &quot;/register &lt;nama&gt;&quot; untuk mendaftar.</value>
+    <value>&gt;&gt; Selamat datang! Ini adalah pertama kalinya Anda memasuki debug jarak jauh. Gunakan "/register &lt;nama&gt;" untuk mendaftar.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_DEVICENOTFOUND_BLOCK" xml:space="preserve">
     <value>Perangkat tidak ditemukan untuk diblokir.</value>
@@ -3244,7 +3185,7 @@
     <value>Zona waktu tidak ditemukan.</value>
   </data>
   <data name="NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NEEDSTZDATA" xml:space="preserve">
-    <value>Paket informasi zona waktu belum terpasang di sistem Linux Anda. Instal &apos;tzdata&apos; menggunakan pengelola paket distribusi Anda.</value>
+    <value>Paket informasi zona waktu belum terpasang di sistem Linux Anda. Instal 'tzdata' menggunakan pengelola paket distribusi Anda.</value>
   </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
     <value>Memuat</value>
@@ -3262,7 +3203,7 @@
     <value>Berita terbaru dari</value>
   </data>
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>Untuk bisa mendapatkan berita terbaru, Anda harus memasang add-on RSS Shell Extras. Anda dapat menggunakan perintah &apos;getaddons&apos; untuk mendapatkan semua add-on tersebut!</value>
+    <value>Untuk bisa mendapatkan berita terbaru, Anda harus memasang add-on RSS Shell Extras. Anda dapat menggunakan perintah 'getaddons' untuk mendapatkan semua add-on tersebut!</value>
   </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Perintah tidak ditemukan.</value>
@@ -3742,7 +3683,7 @@
     <value>&gt;&gt; Obrolan Jarak Jauh: versi</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CHAT_WELCOME" xml:space="preserve">
-    <value>&gt;&gt; Selamat datang! Ini adalah pertama kalinya Anda memasuki obrolan jarak jauh. Di debugger jarak jauh, gunakan &quot;/register &lt;nama&gt;&quot; untuk mendaftar. Anda tidak dapat berbicara sebelum mendaftar.</value>
+    <value>&gt;&gt; Selamat datang! Ini adalah pertama kalinya Anda memasuki obrolan jarak jauh. Di debugger jarak jauh, gunakan "/register &lt;nama&gt;" untuk mendaftar. Anda tidak dapat berbicara sebelum mendaftar.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_BENCHMARKSLEEPONE_DESC" xml:space="preserve">
     <value>Berapa milidetik yang dibutuhkan untuk tidur hanya selama satu milidetik?</value>
@@ -4303,7 +4244,7 @@
     <value>Pengaturan perangkat keras</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TIP" xml:space="preserve">
-    <value>Gunakan &quot;hwinfo&quot; untuk informasi lebih lanjut tentang perangkat keras.</value>
+    <value>Gunakan "hwinfo" untuk informasi lebih lanjut tentang perangkat keras.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_USER_TITLE" xml:space="preserve">
     <value>Pengaturan pengguna</value>
@@ -4714,7 +4655,7 @@
     <value>Pengaturan sistem berkas</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_FILESYSTEM_PRINTLINENUMS_DESC" xml:space="preserve">
-    <value>Membuat perintah &quot;cat&quot; mencetak nomor baris file.</value>
+    <value>Membuat perintah "cat" mencetak nomor baris file.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_DESC" xml:space="preserve">
     <value>Bagian ini mencantumkan pengaturan jaringan, seperti shell FTP, pengaturan perintah terkait jaringan, dan pengaturan debug jarak jauh.</value>
@@ -5188,22 +5129,22 @@
     <value>Gunakan tombol ↑ dan ↓ untuk memilih entri mana yang disorot.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING2" xml:space="preserve">
-    <value>Tekan enter untuk mem-boot OS yang dipilih, `e&apos; untuk mengedit perintah</value>
+    <value>Tekan enter untuk mem-boot OS yang dipilih, `e' untuk mengedit perintah</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING3" xml:space="preserve">
-    <value>sebelum boot atau `c&apos; untuk baris perintah.</value>
+    <value>sebelum boot atau `c' untuk baris perintah.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_TIMEOUT" xml:space="preserve">
     <value>Entri yang disorot akan dieksekusi secara otomatis dalam {0} detik.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING1" xml:space="preserve">
-    <value>Tekan enter untuk mem-boot OS yang dipilih, `e&apos; untuk mengedit</value>
+    <value>Tekan enter untuk mem-boot OS yang dipilih, `e' untuk mengedit</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING2" xml:space="preserve">
-    <value>perintah sebelum boot atau `c&apos; untuk baris perintah.</value>
+    <value>perintah sebelum boot atau `c' untuk baris perintah.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING1" xml:space="preserve">
-    <value>Mem-boot &apos;{0}&apos;</value>
+    <value>Mem-boot '{0}'</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING2" xml:space="preserve">
     <value>Tipe sistem berkas adalah</value>
@@ -5257,10 +5198,10 @@
     <value>Entri boot default FilesystemTools. Angka ini berbasis nol, jadi elemen pertama adalah indeks 0, dan seterusnya.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_NAME" xml:space="preserve">
-    <value>Aktifkan &apos;Halaman Depan Nitrocid&apos;</value>
+    <value>Aktifkan 'Halaman Depan Nitrocid'</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_DESC" xml:space="preserve">
-    <value>Mengaktifkan &apos;Beranda Nitrocid&apos; yang memungkinkan Anda melihat apa yang terjadi dalam sekejap.</value>
+    <value>Mengaktifkan 'Beranda Nitrocid' yang memungkinkan Anda melihat apa yang terjadi dalam sekejap.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGBGCOLOR_NAME" xml:space="preserve">
     <value>Warna latar belakang pengikatan kunci bawaan TUI interaktif</value>
@@ -5863,16 +5804,16 @@
     <value>Salah jika menyangkal, benar jika mengabulkan</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_ARGUMENT_NEWNAME_DESC" xml:space="preserve">
-    <value>Nama tampilan baru, atau &apos;bersihkan&apos; untuk menghapus nama tampilan</value>
+    <value>Nama tampilan baru, atau 'bersihkan' untuk menghapus nama tampilan</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERLANG_ARGUMENT_LANGID_DESC" xml:space="preserve">
-    <value>ID bahasa tiga huruf, atau &apos;clear&apos; untuk menghapus bahasa pilihan</value>
+    <value>ID bahasa tiga huruf, atau 'clear' untuk menghapus bahasa pilihan</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_DESC" xml:space="preserve">
     <value>Mengubah budaya pengguna yang disukai</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_ARGUMENT_CULTUREID_DESC" xml:space="preserve">
-    <value>ID Budaya, atau &apos;bersihkan&apos; untuk menghapus budaya yang diinginkan</value>
+    <value>ID Budaya, atau 'bersihkan' untuk menghapus budaya yang diinginkan</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_USERCULTURE_SUCCESS" xml:space="preserve">
     <value>Budaya pengguna pilihan ditetapkan ke {0}. Anda mungkin ingin masuk lagi.</value>
@@ -5968,7 +5909,7 @@
     <value>Karakter untuk ditanyakan</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_ARGUMENT_LINENUM_DESC" xml:space="preserve">
-    <value>Nomor baris (tunggal atau awal rentang), atau &apos;semua&apos; untuk menanyakan karakter di semua baris</value>
+    <value>Nomor baris (tunggal atau awal rentang), atau 'semua' untuk menanyakan karakter di semua baris</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_ARGUMENT_WORD_DESC" xml:space="preserve">
     <value>Kata atau frasa untuk ditanyakan</value>
@@ -5983,7 +5924,7 @@
     <value>Kata atau frasa yang akan diganti</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINE_ARGUMENT_LINENUM_DESC" xml:space="preserve">
-    <value>Nomor baris (tunggal atau awal rentang), atau &apos;semua&apos; untuk mengganti di semua baris</value>
+    <value>Nomor baris (tunggal atau awal rentang), atau 'semua' untuk mengganti di semua baris</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_ARGUMENT_REGEX_DESC" xml:space="preserve">
     <value>Ekspresi reguler untuk mencocokkan frasa yang akan diganti</value>
@@ -6247,7 +6188,7 @@
     <value>Nama grup untuk menghapus pengguna dari</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_ARGUMENT_SAVERNAME_DESC" xml:space="preserve">
-    <value>Entah nama screensaver atau &apos;acak&apos;</value>
+    <value>Entah nama screensaver atau 'acak'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SEARCH_ARGUMENT_REGEXP_DESC" xml:space="preserve">
     <value>Ekspresi reguler untuk pencarian</value>
@@ -6517,16 +6458,16 @@
     <value>Budaya mana yang digunakan untuk mengubah nama bulan, kalender, dll.?</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME" xml:space="preserve">
-    <value>Aktifkan umpan RSS &apos;Halaman Depan Nitrocid&apos;</value>
+    <value>Aktifkan umpan RSS 'Halaman Depan Nitrocid'</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_DESC" xml:space="preserve">
-    <value>Mengaktifkan widget umpan RSS &apos;Beranda Nitrocid&apos; di sisi kanan layar.</value>
+    <value>Mengaktifkan widget umpan RSS 'Beranda Nitrocid' di sisi kanan layar.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_NAME" xml:space="preserve">
-    <value>Widget &apos;Beranda Nitrocid&apos;</value>
+    <value>Widget 'Beranda Nitrocid'</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_DESC" xml:space="preserve">
-    <value>Memilih widget yang akan ditampilkan di &apos;Beranda Nitrocid&apos;.</value>
+    <value>Memilih widget yang akan ditampilkan di 'Beranda Nitrocid'.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_NAME" xml:space="preserve">
     <value>Pengaturan batas notifikasi</value>
@@ -6748,7 +6689,7 @@
     <value>Memilih screensaver acak</value>
   </data>
   <data name="NKS_KERNEL_SHELLTIP" xml:space="preserve">
-    <value>Untuk memulai, ketik &apos;help&apos; dan tekan ENTER.</value>
+    <value>Untuk memulai, ketik 'help' dan tekan ENTER.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME" xml:space="preserve">
     <value>Volume isyarat audio untuk pembaca</value>
@@ -6763,7 +6704,7 @@
     <value>Karakter yang menyembunyikan kata sandi yang dimasukkan. Biarkan kosong untuk keamanan lebih.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3" xml:space="preserve">
-    <value>Untuk masuk ke shell, tekan tombol S jika Anda berada di halaman beranda. Setelah itu, Anda dapat mengetik &apos;help&apos; dan tekan ENTER untuk memulai!</value>
+    <value>Untuk masuk ke shell, tekan tombol S jika Anda berada di halaman beranda. Setelah itu, Anda dapat mengetik 'help' dan tekan ENTER untuk memulai!</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
     <value>Terdapat kunci duplikat dalam instance pengaturan Anda. Harap periksa kembali variabel tersebut untuk memastikan bahwa variabel tersebut tidak ada lebih dari satu kali.</value>
@@ -7182,5 +7123,7 @@
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
     <value>Anda menjalankan kernel versi beta. Anda mungkin mengalami bug, ketidakstabilan, atau bahkan kehilangan data. Kami sarankan untuk menggunakan versi stabil, jika memungkinkan.</value>
   </data>
-
+  <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
+    <value>Tidak ada artikel</value>
+  </data>
 </root>

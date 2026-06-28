@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
+  </resheader>
+  <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
     <value>Enter the admin password for maintenance.</value>
   </data>
   <data name="NKS_KERNEL_ENTRY_EXCEPTION_KERNELERROR" xml:space="preserve">
@@ -163,7 +104,7 @@
     <value>Special characters are not allowed.</value>
   </data>
   <data name="NKS_USERS_LOGIN_PASSWORDPROMPT" xml:space="preserve">
-    <value>{0}&apos;s password: </value>
+    <value>{0}'s password: </value>
   </data>
   <data name="NKS_USERS_LOGIN_WRONGPASSWORD" xml:space="preserve">
     <value>Wrong password.</value>
@@ -178,7 +119,7 @@
     <value>User {0} not found.</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_UNREMOVABLE" xml:space="preserve">
-    <value>User {0} isn&apos;t allowed to be removed.</value>
+    <value>User {0} isn't allowed to be removed.</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_DELETESELF" xml:space="preserve">
     <value>User {0} is already logged in. Log-out and log-in as another admin.</value>
@@ -220,7 +161,7 @@
     <value>Wrong user password.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_ADDUSER_PASSWORDMISMATCH" xml:space="preserve">
-    <value>Passwords don&apos;t match.</value>
+    <value>Passwords don't match.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHUSRNAME_SUCCESS" xml:space="preserve">
     <value>Username has been changed to {0}!</value>
@@ -286,7 +227,7 @@
     <value>There was an error in the shell.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_NEEDSPERM" xml:space="preserve">
-    <value>You don&apos;t have permission to use {0}</value>
+    <value>You don't have permission to use {0}</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UNUSABLEINMAINTENANCE" xml:space="preserve">
     <value>Shell message: The requested command {0} is not allowed to run in maintenance mode.</value>
@@ -319,7 +260,7 @@
     <value>Download failed in try {0}: {1}</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GET_NEEDSFTP" xml:space="preserve">
-    <value>Please use &quot;ftp&quot; if you are going to download files from the FTP server.</value>
+    <value>Please use "ftp" if you are going to download files from the FTP server.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GET_DESC" xml:space="preserve">
     <value>Downloads a file to current working directory</value>
@@ -553,7 +494,7 @@
     <value>Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_RETRYTIMES_DESC" xml:space="preserve">
-    <value>Write how many times the &quot;get&quot; command should retry failed downloads. It must be numeric.</value>
+    <value>Write how many times the "get" command should retry failed downloads. It must be numeric.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERPOSITIVE" xml:space="preserve">
     <value>The answer may not be negative.</value>
@@ -604,7 +545,7 @@
     <value>Failed to change password of username: {0}</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FINDFILEFORMATCHFAILED" xml:space="preserve">
-    <value>Unable to find file to match string &quot;{0}&quot;: {1}</value>
+    <value>Unable to find file to match string "{0}": {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_DESC" xml:space="preserve">
     <value>Each startup, it will check for updates.</value>
@@ -643,7 +584,7 @@
     <value>Removes a directory or a file</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_REMOVENONEXISTENTFILE" xml:space="preserve">
-    <value>Can&apos;t remove {0} because it doesn&apos;t exist.</value>
+    <value>Can't remove {0} because it doesn't exist.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FILEINFO_DESC" xml:space="preserve">
     <value>Provides information about a file</value>
@@ -652,10 +593,10 @@
     <value>Provides information about a directory</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_DIRINFO_DIRNOTFOUND" xml:space="preserve">
-    <value>Can&apos;t get information about nonexistent directory.</value>
+    <value>Can't get information about nonexistent directory.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_FILEINFO_FILENOTFOUND" xml:space="preserve">
-    <value>Can&apos;t get information about nonexistent file.</value>
+    <value>Can't get information about nonexistent file.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_INFO_FULLNAME" xml:space="preserve">
     <value>Full name: {0}</value>
@@ -703,7 +644,7 @@
     <value>The file is an archive. Used for backups.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_INVALIDATTR" xml:space="preserve">
-    <value>Attribute &quot;{0}&quot; is invalid.</value>
+    <value>Attribute "{0}" is invalid.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_ADDSUCCESS" xml:space="preserve">
     <value>Attribute has been added successfully.</value>
@@ -730,7 +671,7 @@
     <value>{0} is already blocked.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_BLOCKDBGDEV_SUCCESS" xml:space="preserve">
-    <value>{0} can&apos;t join remote debug now.</value>
+    <value>{0} can't join remote debug now.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_BLOCKDBGDEV_BLOCKFAILED" xml:space="preserve">
     <value>Failed to block {0}.</value>
@@ -739,10 +680,10 @@
     <value>Downloading from {0}...</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_NAME" xml:space="preserve">
-    <value>Show progress bar while downloading or uploading from &quot;get&quot; or &quot;put&quot; command</value>
+    <value>Show progress bar while downloading or uploading from "get" or "put" command</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_DESC" xml:space="preserve">
-    <value>If true, it makes &quot;get&quot; or &quot;put&quot; show the progress bar while downloading or uploading.</value>
+    <value>If true, it makes "get" or "put" show the progress bar while downloading or uploading.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PUT_DESC" xml:space="preserve">
     <value>Uploads a file to specified website</value>
@@ -757,13 +698,13 @@
     <value>Upload has completed.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_NEEDSFTP" xml:space="preserve">
-    <value>Please use &quot;ftp&quot; if you are going to upload files to the FTP server.</value>
+    <value>Please use "ftp" if you are going to upload files to the FTP server.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_FAILED" xml:space="preserve">
     <value>Upload failed in try {0}: {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_UPRETRYTIMES_DESC" xml:space="preserve">
-    <value>Write how many times the &quot;put&quot; command should retry failed uploads. It must be numeric.</value>
+    <value>Write how many times the "put" command should retry failed uploads. It must be numeric.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PING_NEEDSADDR" xml:space="preserve">
     <value>Address may not be empty.</value>
@@ -787,7 +728,7 @@
     <value>Hashes are malformed.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_VERIFY_HASHESNOMATCH" xml:space="preserve">
-    <value>Hashes don&apos;t match.</value>
+    <value>Hashes don't match.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_VERIFY_HASHESMATCH" xml:space="preserve">
     <value>Hashes match.</value>
@@ -805,13 +746,13 @@
     <value>Queries a character in a specified line or all lines</value>
   </data>
   <data name="NKS_KERNEL_UPDATES_CHECKDISABLED" xml:space="preserve">
-    <value>Checking for updates is disabled because you&apos;re running a development version.</value>
+    <value>Checking for updates is disabled because you're running a development version.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVE_DESC" xml:space="preserve">
     <value>Turns on or off the text editor autosave feature.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_DESC" xml:space="preserve">
-    <value>If autosave is enabled, the text file will be saved for each &quot;n&quot; seconds.</value>
+    <value>If autosave is enabled, the text file will be saved for each "n" seconds.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVE_NAME" xml:space="preserve">
     <value>Enable text editor autosave</value>
@@ -835,7 +776,7 @@
     <value>How many milliseconds to wait before making the next write?</value>
   </data>
   <data name="NKS_SHELL_BASE_HELP_NOHELP" xml:space="preserve">
-    <value>No help for command &quot;{0}&quot;.</value>
+    <value>No help for command "{0}".</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_HWINFO_DESC" xml:space="preserve">
     <value>Prints hardware information</value>
@@ -871,7 +812,7 @@
     <value>Current Directory</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_SHELL_CURRDIR_DESC" xml:space="preserve">
-    <value>Sets the shell&apos;s current directory. Write an absolute path to any existing directory.</value>
+    <value>Sets the shell's current directory. Write an absolute path to any existing directory.</value>
   </data>
   <data name="NKS_NETWORK_TYPES_RPC_PINGACK_TITLE" xml:space="preserve">
     <value>Ping!</value>
@@ -970,7 +911,7 @@
     <value>Write an RPC port. It must be numeric, and must not be already used. Otherwise, RPC will fail to open the port.</value>
   </data>
   <data name="NKS_NETWORK_TYPES_RPC_EXCEPTION_DISABLED" xml:space="preserve">
-    <value>Not starting RPC because it&apos;s disabled.</value>
+    <value>Not starting RPC because it's disabled.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_LISTCULTURES_DESC" xml:space="preserve">
     <value>Lists supported cultures</value>
@@ -979,10 +920,10 @@
     <value>Searches for specified string in the provided file using regular expressions</value>
   </data>
   <data name="NKS_DRIVERS_INPUT_BASE_EXCEPTION_INPUTTIMEOUT" xml:space="preserve">
-    <value>User didn&apos;t provide any input in a timely fashion.</value>
+    <value>User didn't provide any input in a timely fashion.</value>
   </data>
   <data name="NKS_NETWORK_TYPES_RPC_EXCEPTION_SENDWITHOUTRPC" xml:space="preserve">
-    <value>Trying to send an RPC command while RPC didn&apos;t start.</value>
+    <value>Trying to send an RPC command while RPC didn't start.</value>
   </data>
   <data name="NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_MAXFADESTEPS_NAME" xml:space="preserve">
     <value>Max Fade Steps</value>
@@ -1006,7 +947,7 @@
     <value>Controls how the files will be sorted.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_FILESYSTEM_SORTDIRECTION_DESC" xml:space="preserve">
-    <value>Controls the direction of filesystem sorting whether it&apos;s ascending or descending.</value>
+    <value>Controls the direction of filesystem sorting whether it's ascending or descending.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_STAGE_FINISHEDIN" xml:space="preserve">
     <value>Stage finished in</value>
@@ -1015,7 +956,7 @@
     <value>Internal initialization finished in</value>
   </data>
   <data name="NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOFILESTREAM" xml:space="preserve">
-    <value>The text editor hasn&apos;t opened a file stream yet.</value>
+    <value>The text editor hasn't opened a file stream yet.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_REPLACE_SUCCESS" xml:space="preserve">
     <value>String replaced.</value>
@@ -1372,7 +1313,7 @@
     <value>Adds the new lines at the end of the file</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_ADDLINES_LINEPROMPT" xml:space="preserve">
-    <value>Enter the text that you want to append to the end of the file. When you&apos;re done, write &quot;EOF&quot; on its own line.</value>
+    <value>Enter the text that you want to append to the end of the file. When you're done, write "EOF" on its own line.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_HOSTNAME_NAME" xml:space="preserve">
     <value>Host Name</value>
@@ -1414,7 +1355,7 @@
     <value>Like safe mode, but also disables multi-user and some customization</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS" xml:space="preserve">
-    <value>Colors don&apos;t require a restart, but most of the settings require a restart.</value>
+    <value>Colors don't require a restart, but most of the settings require a restart.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC" xml:space="preserve">
     <value>Replaces a word or phrase with another one using regular expressions</value>
@@ -1438,7 +1379,7 @@
     <value>File {0} not found</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_DESC" xml:space="preserve">
-    <value>Checks all the localization text line numbers to see if they&apos;re all equal</value>
+    <value>Checks all the localization text line numbers to see if they're all equal</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_MISMATCH" xml:space="preserve">
     <value>Line mismatch in</value>
@@ -1489,7 +1430,7 @@
     <value>Where do you want to save the current kernel settings?</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CANTOVERWRITE" xml:space="preserve">
-    <value>Can&apos;t save kernel settings on top of existing file.</value>
+    <value>Can't save kernel settings on top of existing file.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT" xml:space="preserve">
     <value>Where do you want to load the current kernel settings from?</value>
@@ -1501,7 +1442,7 @@
     <value>Failed to combine files.</value>
   </data>
   <data name="NKS_NETWORK_TYPES_RPC_EXCEPTION_ALREADYSTARTED" xml:space="preserve">
-    <value>Trying to start RPC while it&apos;s already started.</value>
+    <value>Trying to start RPC while it's already started.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIND_DESC" xml:space="preserve">
     <value>Finds a file in the specified directory or in the current directory</value>
@@ -1519,13 +1460,13 @@
     <value>If enabled, shows the total folder size in list, depending on how to calculate the folder sizes according to the configuration.</value>
   </data>
   <data name="NKS_KERNEL_UPDATES_UPTODATE" xml:space="preserve">
-    <value>You&apos;re up to date!</value>
+    <value>You're up to date!</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SHOWDETAILS_DESC" xml:space="preserve">
     <value>Shows the file details in the list</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>Suppresses the annoying &quot;permission denied&quot; messages</value>
+    <value>Suppresses the annoying "permission denied" messages</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_ALL_DESC" xml:space="preserve">
     <value>Shows all the time zones</value>
@@ -1540,7 +1481,7 @@
     <value>No compression</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_NOBASEDIR_DESC" xml:space="preserve">
-    <value>Don&apos;t create base directory in archive</value>
+    <value>Don't create base directory in archive</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_CLEARFIREDEVENTS_DESC" xml:space="preserve">
     <value>Clears all fired events</value>
@@ -1648,10 +1589,10 @@
     <value>Byte replaced.</value>
   </data>
   <data name="NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_FILESTREAMNOTOPENYET" xml:space="preserve">
-    <value>The hex editor hasn&apos;t opened a file stream yet.</value>
+    <value>The hex editor hasn't opened a file stream yet.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_PROMPT" xml:space="preserve">
-    <value>Enter a byte on its own line that you want to append to the end of the file. When you&apos;re done, write &quot;EOF&quot; on its own line.</value>
+    <value>Enter a byte on its own line that you want to append to the end of the file. When you're done, write "EOF" on its own line.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_INVALIDBYTE" xml:space="preserve">
     <value>Not a valid byte.</value>
@@ -1678,7 +1619,7 @@
     <value>Please note that editing binary files using this shell is experimental and may lead to data corruption or data loss if not used properly.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_WARNING2" xml:space="preserve">
-    <value>DON&apos;T LAUNCH THE SHELL UNLESS YOU KNOW WHAT YOU&apos;RE DOING!</value>
+    <value>DON'T LAUNCH THE SHELL UNLESS YOU KNOW WHAT YOU'RE DOING!</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_KEYINFO_DESC" xml:space="preserve">
     <value>Gets key information for a pressed key. Useful for debugging</value>
@@ -1720,7 +1661,7 @@
     <value>Simulate No APM Mode</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_DESC" xml:space="preserve">
-    <value>Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it&apos;s now safe to turn off the computer upon shutdown.</value>
+    <value>Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_POWERLINETEST_DESC" xml:space="preserve">
     <value>Tests your console for PowerLine support</value>
@@ -1732,7 +1673,7 @@
     <value>Device already exists in the block list.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_NOLONGERBLOCKED" xml:space="preserve">
-    <value>Device doesn&apos;t exist in the block list.</value>
+    <value>Device doesn't exist in the block list.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_DESC" xml:space="preserve">
     <value>Tests assembly entry point execution</value>
@@ -1759,7 +1700,7 @@
     <value>No fallback driver found.</value>
   </data>
   <data name="NKS_DRIVERS_EXCEPTION_NOTADRIVER" xml:space="preserve">
-    <value>Can&apos;t register a non-driver or a null driver.</value>
+    <value>Can't register a non-driver or a null driver.</value>
   </data>
   <data name="NKS_DRIVERS_EXCEPTION_UNKNOWNTYPE" xml:space="preserve">
     <value>Failed to infer driver type from unknown type</value>
@@ -1774,7 +1715,7 @@
     <value>File or folder {0} is still locked even after waiting for {1} seconds.</value>
   </data>
   <data name="NKS_KERNEL_LICENSEINFO" xml:space="preserve">
-    <value>Run &apos;license&apos; to see the license information.</value>
+    <value>Run 'license' to see the license information.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_TITLE" xml:space="preserve">
     <value>Kernel first-run</value>
@@ -1792,7 +1733,7 @@
     <value>Create your first user</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE2_TEXT1" xml:space="preserve">
-    <value>We&apos;ll help you create your own username. Select any name you want. This could be your nickname or your short name, as long as your username doesn&apos;t contain spaces and special characters and that it doesn&apos;t already exist. The following usernames are registered:</value>
+    <value>We'll help you create your own username. Select any name you want. This could be your nickname or your short name, as long as your username doesn't contain spaces and special characters and that it doesn't already exist. The following usernames are registered:</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_USERNAMEPROMPT" xml:space="preserve">
     <value>Enter the username</value>
@@ -1801,7 +1742,7 @@
     <value>Enter the password</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_USERCREATIONFAILED" xml:space="preserve">
-    <value>Failed to create username. Please ensure that your username doesn&apos;t contain spaces and special characters.</value>
+    <value>Failed to create username. Please ensure that your username doesn't contain spaces and special characters.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TITLE" xml:space="preserve">
     <value>Automatic updates</value>
@@ -1816,7 +1757,7 @@
     <value>In addition to automatically checking for updates, Nitrocid KS can also download the update file automatically.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
-    <value>You can always check for kernel updates using the &quot;update&quot; command.</value>
+    <value>You can always check for kernel updates using the "update" command.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TITLE" xml:space="preserve">
     <value>Get Started!</value>
@@ -1828,22 +1769,22 @@
     <value>Press the ENTER key to get started using the kernel and log-in to your new account. Good luck!</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_CRASH1" xml:space="preserve">
-    <value>We apologize for your inconvenience, but the out-of-box experience has crashed. If you&apos;re sure that this is a defect in the experience, please report the crash to us with debugging logs.</value>
+    <value>We apologize for your inconvenience, but the out-of-box experience has crashed. If you're sure that this is a defect in the experience, please report the crash to us with debugging logs.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_CRASH2" xml:space="preserve">
     <value>Press any key to start the shell anyways, but please note that you may have to create your new user manually.</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_USERLOCKED" xml:space="preserve">
-    <value>Trying to modify existing account while it&apos;s locked</value>
+    <value>Trying to modify existing account while it's locked</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_UNENCRYPTEDPASS" xml:space="preserve">
     <value>Trying to add unencrypted password to users list.</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_CANNOTVALIDATE_ADD" xml:space="preserve">
-    <value>Can&apos;t add username. Make sure that the username doesn&apos;t exist.</value>
+    <value>Can't add username. Make sure that the username doesn't exist.</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_CANNOTVALIDATE_DELETE" xml:space="preserve">
-    <value>Can&apos;t remove username. Make sure that the username exists.</value>
+    <value>Can't remove username. Make sure that the username exists.</value>
   </data>
   <data name="NKS_ARGUMENTS_DEBUG_WAITING" xml:space="preserve">
     <value>Kernel is waiting for the debugger...</value>
@@ -1855,10 +1796,10 @@
     <value>Make sure that you have an appropriate debugger set up in your system before being able to attach Nitrocid to it.</value>
   </data>
   <data name="NKS_ARGUMENTS_RESET_WIPEFAILED" xml:space="preserve">
-    <value>Can&apos;t wipe file</value>
+    <value>Can't wipe file</value>
   </data>
   <data name="NKS_ARGUMENTS_RESET_WIPEDUMPFAILED" xml:space="preserve">
-    <value>Can&apos;t wipe dump file</value>
+    <value>Can't wipe dump file</value>
   </data>
   <data name="NKS_ARGUMENTS_RESET_LEFTOVERSLISTING" xml:space="preserve">
     <value>The following files are not wiped:</value>
@@ -1867,7 +1808,7 @@
     <value>Are you sure to wipe these files?</value>
   </data>
   <data name="NKS_ARGUMENTS_RESET_WIPEMISCFAILED" xml:space="preserve">
-    <value>Can&apos;t wipe miscellaneous file</value>
+    <value>Can't wipe miscellaneous file</value>
   </data>
   <data name="NKS_DRIVERS_ENCODING_BASE_NEEDSTEXT" xml:space="preserve">
     <value>The text must not be empty.</value>
@@ -1879,7 +1820,7 @@
     <value>The path must not be empty.</value>
   </data>
   <data name="NKS_DRIVERS_ENCODING_BASE_FILENOTFOUND" xml:space="preserve">
-    <value>File doesn&apos;t exist.</value>
+    <value>File doesn't exist.</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_COMBINETEXT" xml:space="preserve">
     <value>To combine text files, use the appropriate function.</value>
@@ -1888,7 +1829,7 @@
     <value>To combine binary files, use the appropriate function.</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_SOURCENOTEXISTS" xml:space="preserve">
-    <value>The source is either not found or isn&apos;t a file.</value>
+    <value>The source is either not found or isn't a file.</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISZERO" xml:space="preserve">
     <value>Byte number must start with 1.</value>
@@ -1900,13 +1841,13 @@
     <value>Invalid regular expression syntax.</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_TARGETNOTFOUND" xml:space="preserve">
-    <value>The target file or directory isn&apos;t found.</value>
+    <value>The target file or directory isn't found.</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_OVERWRITEWITHSYMLINK" xml:space="preserve">
-    <value>Can&apos;t overwrite an existing file or directory with a symbolic link.</value>
+    <value>Can't overwrite an existing file or directory with a symbolic link.</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_NEEDSREALTEXTFILE" xml:space="preserve">
-    <value>The file you provided, {0}, is not a valid text file. If this file is a JSON file, this function might cause it to be unreadable. For your file&apos;s safety, this operation is halted to prevent file corruption.</value>
+    <value>The file you provided, {0}, is not a valid text file. If this file is a JSON file, this function might cause it to be unreadable. For your file's safety, this operation is halted to prevent file corruption.</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_SOURCEISNOTREALTEXTFILE" xml:space="preserve">
     <value>The source file you provided, {0}, is not a valid text file.</value>
@@ -1915,28 +1856,28 @@
     <value>The target file you provided, {0}, is not a valid text file.</value>
   </data>
   <data name="NKS_DRIVERS_HARDWARE_BASE_DISKNONEXISTENT" xml:space="preserve">
-    <value>Disk doesn&apos;t exist</value>
+    <value>Disk doesn't exist</value>
   </data>
   <data name="NKS_DRIVERS_HARDWARE_BASE_PARTNONEXISTENT" xml:space="preserve">
-    <value>Partition doesn&apos;t exist</value>
+    <value>Partition doesn't exist</value>
   </data>
   <data name="NKS_DRIVERS_HARDWARE_BASE_STORAGEFAILED" xml:space="preserve">
-    <value>The hardware probing library has failed to probe hard drives. If you&apos;re running Windows, the most likely cause is that you have insufficient permissions to access the hard drive information. Restart Nitrocid with elevated administrative privileges to be able to parse hard drives.</value>
+    <value>The hardware probing library has failed to probe hard drives. If you're running Windows, the most likely cause is that you have insufficient permissions to access the hard drive information. Restart Nitrocid with elevated administrative privileges to be able to parse hard drives.</value>
   </data>
   <data name="NKS_DRIVERS_HARDWARE_BASE_NEEDSELEVATION" xml:space="preserve">
-    <value>You&apos;ll need to restart the kernel as elevated in order to be able to show hardware information.</value>
+    <value>You'll need to restart the kernel as elevated in order to be able to show hardware information.</value>
   </data>
   <data name="NKS_DRIVERS_HARDWARE_BASE_CPUPARSEFAILED" xml:space="preserve">
-    <value>Failed to parse the CPU info. Ensure that it&apos;s a valid info list.</value>
+    <value>Failed to parse the CPU info. Ensure that it's a valid info list.</value>
   </data>
   <data name="NKS_DRIVERS_HARDWARE_BASE_RAMPARSEFAILED" xml:space="preserve">
-    <value>Failed to parse the RAM info. Ensure that it&apos;s a valid info list.</value>
+    <value>Failed to parse the RAM info. Ensure that it's a valid info list.</value>
   </data>
   <data name="NKS_DRIVERS_HARDWARE_BASE_GPUPARSEFAILED" xml:space="preserve">
-    <value>Failed to parse the GPU info. Ensure that it&apos;s a valid info list.</value>
+    <value>Failed to parse the GPU info. Ensure that it's a valid info list.</value>
   </data>
   <data name="NKS_DRIVERS_HARDWARE_BASE_HDDPARSEFAILED" xml:space="preserve">
-    <value>Failed to parse the HDD info. Ensure that it&apos;s a valid info list.</value>
+    <value>Failed to parse the HDD info. Ensure that it's a valid info list.</value>
   </data>
   <data name="NKS_DRIVERS_HARDWARE_BASE_PROCESSORVENDOR" xml:space="preserve">
     <value>Processor vendor:</value>
@@ -1987,19 +1928,19 @@
     <value>No such implementer.</value>
   </data>
   <data name="NKS_FILES_EXTENSIONS_EXCEPTION_NOEXTENSION" xml:space="preserve">
-    <value>The extension isn&apos;t specified.</value>
+    <value>The extension isn't specified.</value>
   </data>
   <data name="NKS_FILES_EXTENSIONS_EXCEPTION_NOIMPLEMENTER" xml:space="preserve">
-    <value>The implementer name isn&apos;t specified.</value>
+    <value>The implementer name isn't specified.</value>
   </data>
   <data name="NKS_FILES_EXTENSIONS_EXCEPTION_HANDLERNOTREGGED" xml:space="preserve">
     <value>Handler for extension is not registered.</value>
   </data>
   <data name="NKS_FILES_OPEN_NEEDSJSONSHELLADDON" xml:space="preserve">
-    <value>It looks like that you don&apos;t have the JSON shell addon installed. In order to get extra features that it offers, install the addons pack.</value>
+    <value>It looks like that you don't have the JSON shell addon installed. In order to get extra features that it offers, install the addons pack.</value>
   </data>
   <data name="NKS_FILES_OPEN_NEEDSSQLSHELLADDON" xml:space="preserve">
-    <value>It looks like that you don&apos;t have the SQL shell addon installed. In order to get extra features that it offers, install the addons pack.</value>
+    <value>It looks like that you don't have the SQL shell addon installed. In order to get extra features that it offers, install the addons pack.</value>
   </data>
   <data name="NKS_FILES_OPEN_EXCEPTION_NOHANDLER" xml:space="preserve">
     <value>No handler to handle this extension.</value>
@@ -2017,7 +1958,7 @@
     <value>Error</value>
   </data>
   <data name="NKS_FILES_INSTANCES_EXCEPTION_BASEENTRYFAILED" xml:space="preserve">
-    <value>Can&apos;t get base entry out of non-existent file or directory.</value>
+    <value>Can't get base entry out of non-existent file or directory.</value>
   </data>
   <data name="NKS_FILES_EXCEPTION_NEEDSTEXTFILE" xml:space="preserve">
     <value>Only text files are supported.</value>
@@ -2062,10 +2003,10 @@
     <value>Trying to fix configuration...</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_NOTYPE" xml:space="preserve">
-    <value>Can&apos;t check configuration variables when no type specified.</value>
+    <value>Can't check configuration variables when no type specified.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_NOENTRIES" xml:space="preserve">
-    <value>Can&apos;t check configuration variables when no entries are specified.</value>
+    <value>Can't check configuration variables when no entries are specified.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMSETTINGSNOCONTENT_REGISTER" xml:space="preserve">
     <value>Trying to register a custom setting with no content.</value>
@@ -2113,13 +2054,13 @@
     <value>The alias system encountered an invalid operation trying to process your request.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_ALIASNOSUCHALIAS" xml:space="preserve">
-    <value>The specified alias isn&apos;t found.</value>
+    <value>The specified alias isn't found.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_ALIASNOSUCHCOMMAND" xml:space="preserve">
-    <value>The specified command isn&apos;t found to alias to.</value>
+    <value>The specified command isn't found to alias to.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_ALIASNOSUCHTYPE" xml:space="preserve">
-    <value>The specified alias type isn&apos;t found.</value>
+    <value>The specified alias type isn't found.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_COLOR" xml:space="preserve">
     <value>An error occurred while trying to process the color request. Common mistakes include specifying the wrong color specifier.</value>
@@ -2146,10 +2087,10 @@
     <value>A general HTTP shell error occurred.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDHASHALGORITHM" xml:space="preserve">
-    <value>Invalid hash algorithm. If you&apos;re using a custom hash sum driver, check to make sure that the driver is loaded.</value>
+    <value>Invalid hash algorithm. If you're using a custom hash sum driver, check to make sure that the driver is loaded.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDHASHSUM" xml:space="preserve">
-    <value>Invalid hash sum. Check to make sure that you copied and pasted the hash sum correctly. If you&apos;re using a custom hash sum driver, check to make sure that the driver is loaded and that it works as expected.</value>
+    <value>Invalid hash sum. Check to make sure that you copied and pasted the hash sum correctly. If you're using a custom hash sum driver, check to make sure that the driver is loaded and that it works as expected.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDKERNELPATH" xml:space="preserve">
     <value>Invalid kernel path.</value>
@@ -2161,7 +2102,7 @@
     <value>Invalid mod. If your mod is a valid .NET assembly, check to make sure that it actually implements the interface that is necessary to start the mod.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDPATH" xml:space="preserve">
-    <value>Invalid filesystem path. Check to make sure that it&apos;s written correctly.</value>
+    <value>Invalid filesystem path. Check to make sure that it's written correctly.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDPLACEHOLDER" xml:space="preserve">
     <value>Invalid placeholder. Consult the kernel documentation for more information.</value>
@@ -2179,7 +2120,7 @@
     <value>The mail system encountered an error.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_MODINSTALL" xml:space="preserve">
-    <value>The mod failed to install. Check to make sure that it&apos;s a valid mod file. If your mod is a valid .NET assembly, check to make sure that it actually implements the interface that is necessary to start the mod.</value>
+    <value>The mod failed to install. Check to make sure that it's a valid mod file. If your mod is a valid .NET assembly, check to make sure that it actually implements the interface that is necessary to start the mod.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_MODWITHOUTMOD" xml:space="preserve">
     <value>The mod contains no mod instance. Consult with the mod vendor for a new copy.</value>
@@ -2215,7 +2156,7 @@
     <value>There is no shell preset by this name.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_NULLUSERS" xml:space="preserve">
-    <value>There are zero users in the entire kernel. We&apos;ve reached an extremely rare situation. The kernel can&apos;t continue.</value>
+    <value>There are zero users in the entire kernel. We've reached an extremely rare situation. The kernel can't continue.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_PERMISSIONMANAGEMENT" xml:space="preserve">
     <value>An error occurred trying to manage permissions</value>
@@ -2224,7 +2165,7 @@
     <value>The remote debug device already exists.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_REMOTEDEBUGDEVICENOTFOUND" xml:space="preserve">
-    <value>The remote debug device is not found. Check to make sure that you&apos;ve written an IP address of the device right.</value>
+    <value>The remote debug device is not found. Check to make sure that you've written an IP address of the device right.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_REMOTEDEBUGDEVICEOPERATION" xml:space="preserve">
     <value>The remote debug device operation failed.</value>
@@ -2254,7 +2195,7 @@
     <value>A user management error occurred.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_NETWORK" xml:space="preserve">
-    <value>A general network error occurred. Should you be trying to connect to a remote end, make sure that you&apos;re connected to the Internet or to your local network.</value>
+    <value>A general network error occurred. Should you be trying to connect to a remote end, make sure that you're connected to the Internet or to your local network.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_ASSERTIONFAILURE" xml:space="preserve">
     <value>An assertion failure has been detected in the kernel! This is most likely a bug in the kernel module that should be fixed on our end.</value>
@@ -2263,10 +2204,10 @@
     <value>Your network needs to be online before being able to perform operations related to networking. Connect your network adapter and try again.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHUSER" xml:space="preserve">
-    <value>User doesn&apos;t exist. Check to make sure that you&apos;ve written the user correctly.</value>
+    <value>User doesn't exist. Check to make sure that you've written the user correctly.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHDRIVER" xml:space="preserve">
-    <value>Driver doesn&apos;t exist. Check to make sure that you&apos;ve written the driver name correctly, and that the driver is registered properly.</value>
+    <value>Driver doesn't exist. Check to make sure that you've written the driver name correctly, and that the driver is registered properly.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_THREADNOTREADYYET" xml:space="preserve">
     <value>The thread is not ready yet. The user code might have forgotten to regenerate the kernel thread after stopping it manually.</value>
@@ -2302,16 +2243,16 @@
     <value>An invalid text editor operation is being performed.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>When the kernel tried to load the specified mod, it requested loading &quot;Kernel Simulator&quot;. Since the main application is renamed to Nitrocid KS, this mod can&apos;t be run safely. We advice you to upgrade the mod.</value>
+    <value>When the kernel tried to load the specified mod, it requested loading "Kernel Simulator". Since the main application is renamed to Nitrocid KS, this mod can't be run safely. We advice you to upgrade the mod.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
-    <value>A contacts manager error occurred when trying to perform the requested operation. Make sure that the contact file exists in the correct folder and that it&apos;s a valid vCard 2.1, 3.0, or 4.0 contact file.</value>
+    <value>A contacts manager error occurred when trying to perform the requested operation. Make sure that the contact file exists in the correct folder and that it's a valid vCard 2.1, 3.0, or 4.0 contact file.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_SQLEDITOR" xml:space="preserve">
     <value>An invalid SQL editor operation is being performed.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHGROUP" xml:space="preserve">
-    <value>Group doesn&apos;t exist. Check to make sure that you&apos;ve written the group name correctly.</value>
+    <value>Group doesn't exist. Check to make sure that you've written the group name correctly.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CUSTOMSETTINGS" xml:space="preserve">
     <value>An error occurred in the custom settings manager for users.</value>
@@ -2323,13 +2264,13 @@
     <value>A general HTTP network error occurred. Check to make sure that your internet connection is working.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_COMMANDMANAGER" xml:space="preserve">
-    <value>A general command manager error occurred. Check to make sure that you&apos;ve written the command or the shell type correctly.</value>
+    <value>A general command manager error occurred. Check to make sure that you've written the command or the shell type correctly.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_LOCALEGEN" xml:space="preserve">
     <value>Locale generator tool returned an error while trying to generate JSON files for languages.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_TIMEDATE" xml:space="preserve">
-    <value>An error occurred in the time and date module. Check to make sure that you&apos;ve specified the time and the date correctly, and that the time zone exists.</value>
+    <value>An error occurred in the time and date module. Check to make sure that you've specified the time and the date correctly, and that the time zone exists.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_MODMANUAL" xml:space="preserve">
     <value>An error occurred in the mod manual parser. Please ensure that your manual file is valid and that the mod is started.</value>
@@ -2362,7 +2303,7 @@
     <value>Hardware component management failed.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_LOGINHANDLER" xml:space="preserve">
-    <value>Login handler failed. Please ensure that it&apos;s registered properly and that it does its job as expected.</value>
+    <value>Login handler failed. Please ensure that it's registered properly and that it does its job as expected.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_ENCODING" xml:space="preserve">
     <value>Encoding has failed. Check to make sure that your encoding driver works correctly and fix any problems if found, then try again.</value>
@@ -2380,7 +2321,7 @@
     <value>Invalid placeholder action. Consult the kernel documentation for more information.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_DRIVERHANDLER" xml:space="preserve">
-    <value>The driver handler failed to perform this action because you might have supplied the parameters wrong. If you&apos;re sure that they&apos;re specified correctly, make sure that you&apos;ve provided the right driver name and type.</value>
+    <value>The driver handler failed to perform this action because you might have supplied the parameters wrong. If you're sure that they're specified correctly, make sure that you've provided the right driver name and type.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_PROGRESSHANDLER" xml:space="preserve">
     <value>The progress handler has failed to perform the requested operation.</value>
@@ -2401,7 +2342,7 @@
     <value>There was an error when trying to perform an operation for the kernel driver management.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_FINALEXCEPTION_INTRO" xml:space="preserve">
-    <value>There is an error in the kernel, one of the kernel addons, one of your mods, or one of the kernel components. If the routine tried to process your input, ensure that you&apos;ve written all the parameters correctly.</value>
+    <value>There is an error in the kernel, one of the kernel addons, one of your mods, or one of the kernel components. If the routine tried to process your input, ensure that you've written all the parameters correctly.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_FINALEXCEPTION_EXCEPTIONINFO" xml:space="preserve">
     <value>Exception info</value>
@@ -2419,16 +2360,16 @@
     <value>The module that caused the fault provided this additional information that may help you further</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_FINALEXCEPTION_HASNOINFO" xml:space="preserve">
-    <value>The module that caused the fault didn&apos;t provide additional information.</value>
+    <value>The module that caused the fault didn't provide additional information.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_FINALEXCEPTION_EXCEPTIONDETAILS" xml:space="preserve">
     <value>Exception details</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_FINALEXCEPTION_ADDIITONALINFO1" xml:space="preserve">
-    <value>If the additional info above doesn&apos;t help you pinpoint the problem, this may help you pinpoint it.</value>
+    <value>If the additional info above doesn't help you pinpoint the problem, this may help you pinpoint it.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_FINALEXCEPTION_HASNOEXCEPTIONINFO" xml:space="preserve">
-    <value>The module didn&apos;t provide the exception information, so it&apos;s usually an indicator that something is wrong.</value>
+    <value>The module didn't provide the exception information, so it's usually an indicator that something is wrong.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_FINALEXCEPTION_INNEREXCEPTION" xml:space="preserve">
     <value>Inner exception details</value>
@@ -2437,10 +2378,10 @@
     <value>Additional errors were found when the routine tried to perform this operation</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_FINALEXCEPTION_OUTRO" xml:space="preserve">
-    <value>If you&apos;re sure that this error is unexpected, try to restart the kernel with debugging enabled and investigate the logs after retrying the action.</value>
+    <value>If you're sure that this error is unexpected, try to restart the kernel with debugging enabled and investigate the logs after retrying the action.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_FINALEXCEPTION_INVALIDTYPE" xml:space="preserve">
-    <value>Unfortunately, an invalid message type was given, so it&apos;s possible that something is messed up. Try turning on the debugger and reproducing the problem.</value>
+    <value>Unfortunately, an invalid message type was given, so it's possible that something is messed up. Try turning on the debugger and reproducing the problem.</value>
   </data>
   <data name="NKS_KERNEL_PANIC_DOUBLEPANIC_MESSAGE" xml:space="preserve">
     <value>{0} -- Rebooting in {1} seconds...</value>
@@ -2578,19 +2519,19 @@
     <value>Failed to stop addons. Below addons have failed to stop:</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_CUSTOMFUNCTIONADDONNONEXISTENT" xml:space="preserve">
-    <value>Can&apos;t execute custom function with non-existent addon</value>
+    <value>Can't execute custom function with non-existent addon</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FUNCTIONNOTFOUND" xml:space="preserve">
-    <value>Can&apos;t find function &apos;{0}&apos; in addon &apos;{1}&apos;.</value>
+    <value>Can't find function '{0}' in addon '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_PROPERTYNOTFOUND" xml:space="preserve">
-    <value>Can&apos;t find property &apos;{0}&apos; in addon &apos;{1}&apos;.</value>
+    <value>Can't find property '{0}' in addon '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FIELDNOTFOUND" xml:space="preserve">
-    <value>Can&apos;t find field &apos;{0}&apos; in addon &apos;{1}&apos;.</value>
+    <value>Can't find field '{0}' in addon '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_NOADDONTYPE" xml:space="preserve">
-    <value>No such addon type &apos;{0}&apos;</value>
+    <value>No such addon type '{0}'</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_PROBEFAILED_CPU" xml:space="preserve">
     <value>One or more of the CPU cores failed to probe. Showing information anyway...</value>
@@ -2605,19 +2546,19 @@
     <value>One or more of the hard drives failed to probe. Showing information anyway...</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_NEEDSELEVATION" xml:space="preserve">
-    <value>Hardware won&apos;t be parsed because of insufficient privileges. Use &quot;winelevate&quot; to restart Nitrocid in elevated mode.</value>
+    <value>Hardware won't be parsed because of insufficient privileges. Use "winelevate" to restart Nitrocid in elevated mode.</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_FAILED" xml:space="preserve">
     <value>There was an error when probing hardware: {0}</value>
   </data>
   <data name="NKS_KERNEL_JOURNALING_EXCEPTION_FILENOTFOUND" xml:space="preserve">
-    <value>Journal file &apos;{0}&apos; doesn&apos;t exist.</value>
+    <value>Journal file '{0}' doesn't exist.</value>
   </data>
   <data name="NKS_KERNEL_POWER_INVOKING" xml:space="preserve">
     <value>Remote power management invoked:</value>
   </data>
   <data name="NKS_KERNEL_STARTING_CANNOTINITVTSQUENCES" xml:space="preserve">
-    <value>Can not initialize VT sequences for your Windows terminal. Make sure that you&apos;re running Windows 10 or later.</value>
+    <value>Can not initialize VT sequences for your Windows terminal. Make sure that you're running Windows 10 or later.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_CRITICALFAILED" xml:space="preserve">
     <value>Failed to start critical components</value>
@@ -2644,7 +2585,7 @@
     <value>Kernel environment information</value>
   </data>
   <data name="NKS_KERNEL_STARTING_OPTIONALSFAILED" xml:space="preserve">
-    <value>The kernel failed to initialize some of the optional components. If it&apos;s trying to read a configuration file, make sure that it&apos;s formatted correctly.</value>
+    <value>The kernel failed to initialize some of the optional components. If it's trying to read a configuration file, make sure that it's formatted correctly.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_GENERALVARSRESET" xml:space="preserve">
     <value>General variables reset</value>
@@ -2656,7 +2597,7 @@
     <value>Extra kernel functions and their registered components stopped.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_RESETALLFAILED" xml:space="preserve">
-    <value>The kernel failed to reset all the configuration to their initial states. Some of the components might have not unloaded correctly. If you&apos;re experiencing problems after the reboot, this might be the cause. Please shut down the kernel once rebooted.</value>
+    <value>The kernel failed to reset all the configuration to their initial states. Some of the components might have not unloaded correctly. If you're experiencing problems after the reboot, this might be the cause. Please shut down the kernel once rebooted.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_GOODBYE" xml:space="preserve">
     <value>Goodbye!</value>
@@ -2701,10 +2642,10 @@
     <value>Running in maintenance mode. Skipping stage...</value>
   </data>
   <data name="NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING" xml:space="preserve">
-    <value>Can&apos;t regenerate the kernel thread while the same thread is already running.</value>
+    <value>Can't regenerate the kernel thread while the same thread is already running.</value>
   </data>
   <data name="NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM" xml:space="preserve">
-    <value>Child thread start action can&apos;t be null.</value>
+    <value>Child thread start action can't be null.</value>
   </data>
   <data name="NKS_KERNEL_THREADING_FAILED" xml:space="preserve">
     <value>Kernel thread {0} failed.</value>
@@ -2713,7 +2654,7 @@
     <value>No info.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_CANTOPENFILEFOLDER" xml:space="preserve">
-    <value>Can&apos;t open file or folder</value>
+    <value>Can't open file or folder</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NEWLINESTYLE" xml:space="preserve">
     <value>Newline style:</value>
@@ -2740,28 +2681,28 @@
     <value>File is not a valid .NET assembly.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_CANTGETFSINFO" xml:space="preserve">
-    <value>Can&apos;t get file system info</value>
+    <value>Can't get file system info</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_CANTCOPY" xml:space="preserve">
-    <value>Can&apos;t copy file or directory</value>
+    <value>Can't copy file or directory</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_CANTMOVE" xml:space="preserve">
-    <value>Can&apos;t move file or directory</value>
+    <value>Can't move file or directory</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_CANTREMOVE" xml:space="preserve">
-    <value>Can&apos;t remove file or directory</value>
+    <value>Can't remove file or directory</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERNOTFOUND" xml:space="preserve">
-    <value>Folder doesn&apos;t exist. Make sure that you&apos;ve written the correct path.</value>
+    <value>Folder doesn't exist. Make sure that you've written the correct path.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_TARGETPATHCOPY" xml:space="preserve">
     <value>Enter a path or a full path to a destination folder to copy the selected file to.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_INVALIDPATH" xml:space="preserve">
-    <value>Make sure that you&apos;ve written the correct path.</value>
+    <value>Make sure that you've written the correct path.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILENOTFOUND" xml:space="preserve">
-    <value>File doesn&apos;t exist. Make sure that you&apos;ve written the correct path.</value>
+    <value>File doesn't exist. Make sure that you've written the correct path.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_TARGETPATHMOVE" xml:space="preserve">
     <value>Enter a path or a full path to a destination folder to move the selected file to.</value>
@@ -2770,16 +2711,16 @@
     <value>Enter a new file name.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_INVALIDFILENAME" xml:space="preserve">
-    <value>Make sure that you&apos;ve written the correct file name.</value>
+    <value>Make sure that you've written the correct file name.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILEEXISTS" xml:space="preserve">
-    <value>File already exists. The name shouldn&apos;t be occupied by another file.</value>
+    <value>File already exists. The name shouldn't be occupied by another file.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NEWFOLDERNAMEPROMPT" xml:space="preserve">
     <value>Enter a new directory name.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDEREXISTS" xml:space="preserve">
-    <value>Folder already exists. The name shouldn&apos;t be occupied by another folder.</value>
+    <value>Folder already exists. The name shouldn't be occupied by another folder.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOTAFILE" xml:space="preserve">
     <value>Selected entry is not a file.</value>
@@ -2797,7 +2738,7 @@
     <value>Two hashes match!</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_HASHESNOMATCH" xml:space="preserve">
-    <value>Two hashes don&apos;t match.</value>
+    <value>Two hashes don't match.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTED" xml:space="preserve">
     <value>Selected</value>
@@ -2818,10 +2759,10 @@
     <value>File path</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS" xml:space="preserve">
-    <value>Selected &apos;{0}&apos;. Press ESC to exit and confirm your selection.</value>
+    <value>Selected '{0}'. Press ESC to exit and confirm your selection.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTFAILED" xml:space="preserve">
-    <value>Can&apos;t open folder or select file</value>
+    <value>Can't open folder or select file</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERPROMPT" xml:space="preserve">
     <value>Enter a path or a full path to a local folder.</value>
@@ -2830,19 +2771,19 @@
     <value>Press SPACE for more info</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>Selected &apos;{0}&apos;. Press ESC to exit and confirm selections.</value>
+    <value>Selected '{0}'. Press ESC to exit and confirm selections.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_UNSELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>Unselected &apos;{0}&apos;. Press ESC to exit and confirm selections.</value>
+    <value>Unselected '{0}'. Press ESC to exit and confirm selections.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOSELECTIONS" xml:space="preserve">
     <value>No selected files.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_CANNOTOPENFOLDER" xml:space="preserve">
-    <value>Can&apos;t open folder</value>
+    <value>Can't open folder</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_CANNOTSELECTFOLDER" xml:space="preserve">
-    <value>Can&apos;t select folder</value>
+    <value>Can't select folder</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOSELECTIONSFOLDER" xml:space="preserve">
     <value>No selected folders.</value>
@@ -2893,10 +2834,10 @@
     <value>Kernel task is already killed.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_TASKMANTUI_TASKCRITICAL" xml:space="preserve">
-    <value>Kernel task is critical and can&apos;t be killed.</value>
+    <value>Kernel task is critical and can't be killed.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_TASKMANTUI_TASKOSTHREADSCANTKILL" xml:space="preserve">
-    <value>OS threads can&apos;t be killed.</value>
+    <value>OS threads can't be killed.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_TZTUI_DATE" xml:space="preserve">
     <value>Date</value>
@@ -2935,7 +2876,7 @@
     <value>Photosensitive seizure warning</value>
   </data>
   <data name="NKS_MISC_SCREENSAVER_PSWARNING_DESC" xml:space="preserve">
-    <value>This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive. It&apos;s recommended to seek a medical specialist for more information about such seizure before continuing. If you want to get rid of this warning, you can turn this off from the screensaver settings.</value>
+    <value>This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive. It's recommended to seek a medical specialist for more information about such seizure before continuing. If you want to get rid of this warning, you can turn this off from the screensaver settings.</value>
   </data>
   <data name="NKS_MISC_SCREENSAVER_EXCEPTION_CUSTOMSAVERALREADYEXISTS" xml:space="preserve">
     <value>Custom screensaver already exists.</value>
@@ -2944,28 +2885,28 @@
     <value>Custom screensaver not found.</value>
   </data>
   <data name="NKS_MISC_SPLASH_EXCEPTION_EMPTYSPLASH" xml:space="preserve">
-    <value>Can&apos;t register empty splash</value>
+    <value>Can't register empty splash</value>
   </data>
   <data name="NKS_MISC_SPLASH_EXCEPTION_SPLASHNONAME" xml:space="preserve">
-    <value>Can&apos;t register splash with no name</value>
+    <value>Can't register splash with no name</value>
   </data>
   <data name="NKS_MISC_SPLASH_EXCEPTION_SPLASHNOENTRYPOINT" xml:space="preserve">
-    <value>Can&apos;t register splash with no entry point</value>
+    <value>Can't register splash with no entry point</value>
   </data>
   <data name="NKS_MISC_SPLASH_EXCEPTION_CANTOVERWRITE" xml:space="preserve">
-    <value>Can&apos;t re-register splash. You need to unregister that splash first.</value>
+    <value>Can't re-register splash. You need to unregister that splash first.</value>
   </data>
   <data name="NKS_MISC_SPLASH_EXCEPTION_UNREGISTERSPLASHNONAME" xml:space="preserve">
-    <value>Can&apos;t unregister splash with no name</value>
+    <value>Can't unregister splash with no name</value>
   </data>
   <data name="NKS_MISC_SPLASH_EXCEPTION_UNREGISTERNOSPLASH" xml:space="preserve">
-    <value>Can&apos;t unregister non-existent splash</value>
+    <value>Can't unregister non-existent splash</value>
   </data>
   <data name="NKS_MISC_SPLASH_CLOSINGDISPLAYFAILED" xml:space="preserve">
     <value>The closing splash has failed to display</value>
   </data>
   <data name="NKS_MISC_SPLASH_DEMO_REACHED" xml:space="preserve">
-    <value>We&apos;ve reached {0}%!</value>
+    <value>We've reached {0}%!</value>
   </data>
   <data name="NKS_MISC_SPLASH_DEFAULTMSG" xml:space="preserve">
     <value>Loading...</value>
@@ -2974,7 +2915,7 @@
     <value>This property is only valid for connections with threads. For instance connections, call the appropriate property on the instance itself instead of calling this property.</value>
   </data>
   <data name="NKS_NETWORK_CONNECTION_SELECT_PROMPT" xml:space="preserve">
-    <value>Select a connection. If you have no connections, you&apos;ll have to create a new connection. Additionally, you can use the speed dial feature to quickly connect to servers.</value>
+    <value>Select a connection. If you have no connections, you'll have to create a new connection. Additionally, you can use the speed dial feature to quickly connect to servers.</value>
   </data>
   <data name="NKS_NETWORK_CONNECTION_SELECT_CREATE" xml:space="preserve">
     <value>Create a new connection</value>
@@ -3004,7 +2945,7 @@
     <value>Connection type already exists</value>
   </data>
   <data name="NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS" xml:space="preserve">
-    <value>The shell {0} doesn&apos;t accept network connections.</value>
+    <value>The shell {0} doesn't accept network connections.</value>
   </data>
   <data name="NKS_NETWORK_CONNECTION_ADDRESSPROMPT" xml:space="preserve">
     <value>Enter the server address:</value>
@@ -3019,7 +2960,7 @@
     <value>Unknown networked shell error:</value>
   </data>
   <data name="NKS_NETWORK_SPEEDDIAL_EXCEPTION_TYPENOTFOUND" xml:space="preserve">
-    <value>Can&apos;t add a speed dial with non-existent type.</value>
+    <value>Can't add a speed dial with non-existent type.</value>
   </data>
   <data name="NKS_NETWORK_TRANSFER_UPLOADINDICATOR" xml:space="preserve">
     <value>{0} of {1} uploaded.</value>
@@ -3031,40 +2972,40 @@
     <value>Permission not granted</value>
   </data>
   <data name="NKS_SECURITY_PERMISSIONS_EXCEPTION_EMPTY" xml:space="preserve">
-    <value>Can&apos;t consent an empty permission.</value>
+    <value>Can't consent an empty permission.</value>
   </data>
   <data name="NKS_SECURITY_PRIVACY_TRYINGACCESS" xml:space="preserve">
     <value>It looks like that a mod with the root namespace of {0} tries to access your data with the permission of {1}. Do you want to allow this mod to access your data?</value>
   </data>
   <data name="NKS_SECURITY_SIGNING_EXCEPTION_NEEDSASSEMBLY" xml:space="preserve">
-    <value>You didn&apos;t specify an assembly.</value>
+    <value>You didn't specify an assembly.</value>
   </data>
   <data name="NKS_SECURITY_SIGNING_EXCEPTION_NEEDSPATH" xml:space="preserve">
-    <value>You didn&apos;t specify an assembly path.</value>
+    <value>You didn't specify an assembly path.</value>
   </data>
   <data name="NKS_SECURITY_SIGNING_EXCEPTION_NEEDSNAME" xml:space="preserve">
-    <value>You didn&apos;t specify an assembly name.</value>
+    <value>You didn't specify an assembly name.</value>
   </data>
   <data name="NKS_USERS_GROUPS_EXCEPTION_GROUPALREADYEXISTS" xml:space="preserve">
-    <value>Can&apos;t add a group with the same name.</value>
+    <value>Can't add a group with the same name.</value>
   </data>
   <data name="NKS_USERS_GROUPS_EXCEPTION_GROUPNOTFOUND_REMOVE" xml:space="preserve">
-    <value>Can&apos;t remove a nonexistent group.</value>
+    <value>Can't remove a nonexistent group.</value>
   </data>
   <data name="NKS_USERS_GROUPS_EXCEPTION_GROUPNOTFOUND_ADDUSER" xml:space="preserve">
-    <value>Can&apos;t add a user to a nonexistent group.</value>
+    <value>Can't add a user to a nonexistent group.</value>
   </data>
   <data name="NKS_USERS_GROUPS_EXCEPTION_USERINGROUP" xml:space="preserve">
     <value>User has already joined the group!</value>
   </data>
   <data name="NKS_USERS_GROUPS_EXCEPTION_GROUPNOTFOUND_REMOVEUSER" xml:space="preserve">
-    <value>Can&apos;t remove a user from a nonexistent group.</value>
+    <value>Can't remove a user from a nonexistent group.</value>
   </data>
   <data name="NKS_USERS_GROUPS_EXCEPTION_USERNOTINGROUP" xml:space="preserve">
     <value>User has already left the group!</value>
   </data>
   <data name="NKS_USERS_GROUPS_EXCEPTION_GROUPNOTFOUND_QUERYUSER" xml:space="preserve">
-    <value>Can&apos;t query a user from a nonexistent group.</value>
+    <value>Can't query a user from a nonexistent group.</value>
   </data>
   <data name="NKS_USERS_LOGIN_EXCEPTION_NOHANDLER" xml:space="preserve">
     <value>The login handler is not found!</value>
@@ -3094,7 +3035,7 @@
     <value>The key specified, {0}, already exists.</value>
   </data>
   <data name="NKS_USERS_SETTINGS_EXCEPTION_KEYNOTEXISTS" xml:space="preserve">
-    <value>The key specified, {0}, doesn&apos;t exist.</value>
+    <value>The key specified, {0}, doesn't exist.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_WELCOMEMESSAGE" xml:space="preserve">
     <value>Welcome to Nitrocid Kernel! - Version</value>
@@ -3109,7 +3050,7 @@
     <value>Acknowledged</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_DESC" xml:space="preserve">
-    <value>Please note that running Nitrocid KS on an unusual environment means that some features are limited. You won&apos;t be able to load mods and configurations.</value>
+    <value>Please note that running Nitrocid KS on an unusual environment means that some features are limited. You won't be able to load mods and configurations.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_TITLE" xml:space="preserve">
     <value>Unusual environment notice</value>
@@ -3127,10 +3068,10 @@
     <value>Remove</value>
   </data>
   <data name="NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOARRAY" xml:space="preserve">
-    <value>Can&apos;t perform this operation on a null array.</value>
+    <value>Can't perform this operation on a null array.</value>
   </data>
   <data name="NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_NOLIST" xml:space="preserve">
-    <value>Can&apos;t perform this operation on a null lines list.</value>
+    <value>Can't perform this operation on a null lines list.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_EXCEPTION_TYPENOTFOUND" xml:space="preserve">
     <value>Settings type is not found.</value>
@@ -3169,7 +3110,7 @@
     <value>&gt;&gt; Remote Debug: version</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_FIRSTTIME" xml:space="preserve">
-    <value>&gt;&gt; Welcome! This is your first time entering remote debug. Use &quot;/register &lt;name&gt;&quot; to register.</value>
+    <value>&gt;&gt; Welcome! This is your first time entering remote debug. Use "/register &lt;name&gt;" to register.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_DEVICENOTFOUND_BLOCK" xml:space="preserve">
     <value>Device not found to block.</value>
@@ -3208,10 +3149,10 @@
     <value>No</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_FRAMENUMOUTOFRANGE" xml:space="preserve">
-    <value>Stack frame number shouldn&apos;t exceed current amount of frames or shouldn&apos;t be negative.</value>
+    <value>Stack frame number shouldn't exceed current amount of frames or shouldn't be negative.</value>
   </data>
   <data name="NKS_KERNEL_THREADING_WATCHDOG_CRITICALSNOSTART" xml:space="preserve">
-    <value>Kernel thread supervisor detected {0} critical threads that haven&apos;t started yet.</value>
+    <value>Kernel thread supervisor detected {0} critical threads that haven't started yet.</value>
   </data>
   <data name="NKS_KERNEL_THREADING_WATCHDOG_DEADTHREADS" xml:space="preserve">
     <value>Kernel thread supervisor detected {0} dead threads.</value>
@@ -3244,7 +3185,7 @@
     <value>Time zone not found.</value>
   </data>
   <data name="NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NEEDSTZDATA" xml:space="preserve">
-    <value>The time zone information package is not installed yet on your Linux system. Install &apos;tzdata&apos; using your distribution&apos;s package manager.</value>
+    <value>The time zone information package is not installed yet on your Linux system. Install 'tzdata' using your distribution's package manager.</value>
   </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
     <value>Loading</value>
@@ -3262,7 +3203,7 @@
     <value>Latest news from</value>
   </data>
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>To be able to get the latest news, you must install the RSS Shell Extras addon. You can use the &apos;getaddons&apos; command to get all the addons!</value>
+    <value>To be able to get the latest news, you must install the RSS Shell Extras addon. You can use the 'getaddons' command to get all the addons!</value>
   </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Command not found.</value>
@@ -3385,7 +3326,7 @@
     <value>Gets the current directory</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHANGES_DESC" xml:space="preserve">
-    <value>What&apos;s new in this version of Nitrocid?</value>
+    <value>What's new in this version of Nitrocid?</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHKLOCK_DESC" xml:space="preserve">
     <value>Checks the file or the folder lock</value>
@@ -3607,7 +3548,7 @@
     <value>Sets the default extension handler of the specified extension to the specific implementer</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_SELECTION_DESC" xml:space="preserve">
-    <value>Opens an interactive TUI in which you&apos;ll be able to see the world clock in real time</value>
+    <value>Opens an interactive TUI in which you'll be able to see the world clock in real time</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_DESC" xml:space="preserve">
     <value>Runs the command as the root user</value>
@@ -3724,7 +3665,7 @@
     <value>Invalid action selected.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT" xml:space="preserve">
-    <value>Write any text to use. Remember, follow the description of the option that you&apos;ve chosen.</value>
+    <value>Write any text to use. Remember, follow the description of the option that you've chosen.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_COMMAND_REGISTER_DESC" xml:space="preserve">
     <value>Registers your name to your remote debug device</value>
@@ -3742,7 +3683,7 @@
     <value>&gt;&gt; Remote Chat: version</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CHAT_WELCOME" xml:space="preserve">
-    <value>&gt;&gt; Welcome! This is your first time entering remote chat. In the remote debugger, use &quot;/register &lt;name&gt;&quot; to register. You can&apos;t talk until you register.</value>
+    <value>&gt;&gt; Welcome! This is your first time entering remote chat. In the remote debugger, use "/register &lt;name&gt;" to register. You can't talk until you register.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_BENCHMARKSLEEPONE_DESC" xml:space="preserve">
     <value>How many milliseconds did it really take to sleep for just one millisecond?</value>
@@ -3886,7 +3827,7 @@
     <value>Tests the file selector</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTFILESELECTOR_TEST" xml:space="preserve">
-    <value>You&apos;ve selected</value>
+    <value>You've selected</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTFILESSELECTOR_DESC" xml:space="preserve">
     <value>Tests the multiple files selector</value>
@@ -4069,16 +4010,16 @@
     <value>Changing MOTD...</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHPWD_MISMATCH" xml:space="preserve">
-    <value>Passwords doesn&apos;t match.</value>
+    <value>Passwords doesn't match.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMBINE_MAYNOTMIX" xml:space="preserve">
-    <value>Can&apos;t combine a mix of text and binary files.</value>
+    <value>Can't combine a mix of text and binary files.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMPARE_SOURCENOTFOUND" xml:space="preserve">
-    <value>Source file doesn&apos;t exist.</value>
+    <value>Source file doesn't exist.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMPARE_TARGETNOTFOUND" xml:space="preserve">
-    <value>Target file doesn&apos;t exist.</value>
+    <value>Target file doesn't exist.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMPARE_IDENTICAL" xml:space="preserve">
     <value>The two files are identical.</value>
@@ -4090,7 +4031,7 @@
     <value>Different</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CONVERTLINEENDINGS_BINARYFILE" xml:space="preserve">
-    <value>Can&apos;t convert line endings on a binary file since it results in file corruption.</value>
+    <value>Can't convert line endings on a binary file since it results in file corruption.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_DRIVERMAN_DRIVERNOTFOUND" xml:space="preserve">
     <value>The driver is not found.</value>
@@ -4111,7 +4052,7 @@
     <value>Driver management is disabled in safe mode.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_EDIT_NOTFOUND" xml:space="preserve">
-    <value>Can&apos;t edit file {0} because it&apos;s not found.</value>
+    <value>Can't edit file {0} because it's not found.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_ENCODEFILE_KEYUSED" xml:space="preserve">
     <value>Key used</value>
@@ -4282,7 +4223,7 @@
     <value>Failed to execute the command as superuser.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYMLINK_FAILED" xml:space="preserve">
-    <value>Can&apos;t make a symbolic link.</value>
+    <value>Can't make a symbolic link.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_TITLE" xml:space="preserve">
     <value>Kernel settings</value>
@@ -4303,7 +4244,7 @@
     <value>Hardware settings</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TIP" xml:space="preserve">
-    <value>Use &quot;hwinfo&quot; for extended information about hardware.</value>
+    <value>Use "hwinfo" for extended information about hardware.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_USER_TITLE" xml:space="preserve">
     <value>User settings</value>
@@ -4339,10 +4280,10 @@
     <value>To access the user manual for general uses of Nitrocid, please visit the below link:</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_USERMANUAL_APILINK" xml:space="preserve">
-    <value>To access the developer&apos;s manual for updated ways of making kernel modifications and screensavers, please visit the below link:</value>
+    <value>To access the developer's manual for updated ways of making kernel modifications and screensavers, please visit the below link:</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_WINELEVATE_ELEVATED" xml:space="preserve">
-    <value>You&apos;re already running the elevated Nitrocid session!</value>
+    <value>You're already running the elevated Nitrocid session!</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_WINELEVATE_ELEVATING" xml:space="preserve">
     <value>Elevating your Nitrocid session...</value>
@@ -4378,7 +4319,7 @@
     <value>No remote debug command description</value>
   </data>
   <data name="NKS_MISC_SCREENSAVER_AMBIENT_EXCEPTION_SOUNDPLAYTIMEOUT" xml:space="preserve">
-    <value>Can&apos;t play sound because of timeout.</value>
+    <value>Can't play sound because of timeout.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_INSTANCES_DRIVERSETTINGS" xml:space="preserve">
     <value>Kernel driver settings</value>
@@ -4471,7 +4412,7 @@
     <value>Allow background color</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_ALLOWBG_DESC" xml:space="preserve">
-    <value>When this is set to true, the current background color is honored. Else, it uses your terminal&apos;s default colors.</value>
+    <value>When this is set to true, the current background color is honored. Else, it uses your terminal's default colors.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_USERNAMECOLOR_NAME" xml:space="preserve">
     <value>User Name Shell Color</value>
@@ -4714,7 +4655,7 @@
     <value>Filesystem settings</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_FILESYSTEM_PRINTLINENUMS_DESC" xml:space="preserve">
-    <value>Makes the &quot;cat&quot; command print the file&apos;s line numbers.</value>
+    <value>Makes the "cat" command print the file's line numbers.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_DESC" xml:space="preserve">
     <value>This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.</value>
@@ -4756,10 +4697,10 @@
     <value>Acknowledge the photosensitive seizure warning</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_SCREENSAVER_WARNINGACK_DESC" xml:space="preserve">
-    <value>If you aren&apos;t photosensitive to the fast-paced animations that some of the screensavers show you, you can disable this warning by enabling this option. Please note that we aren&apos;t responsible for the side effects that may have come from such animations. Seek a professional medical specialist for more information.</value>
+    <value>If you aren't photosensitive to the fast-paced animations that some of the screensavers show you, you can disable this warning by enabling this option. Please note that we aren't responsible for the side effects that may have come from such animations. Seek a professional medical specialist for more information.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_DESC" xml:space="preserve">
-    <value>Settings that don&apos;t fit in their appropriate sections land here.</value>
+    <value>Settings that don't fit in their appropriate sections land here.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_DISPLAYAS" xml:space="preserve">
     <value>Miscellaneous settings</value>
@@ -4801,7 +4742,7 @@
     <value>Do Not Disturb</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_DND_DESC" xml:space="preserve">
-    <value>If Do Not Disturb is enabled, all notifications received will be suppressed from the display. This means that you won&apos;t be able to see any notification to help you focus.</value>
+    <value>If Do Not Disturb is enabled, all notifications received will be suppressed from the display. This means that you won't be able to see any notification to help you focus.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_ULCORNERCHAR_NAME" xml:space="preserve">
     <value>Upper left corner character for general border</value>
@@ -4873,13 +4814,13 @@
     <value>Simple date and time in the middle of the screen.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG_SUCCESS" xml:space="preserve">
-    <value>Configuration migration may not have been completed successfully. If you&apos;re sure that your configuration files are valid, investigate the debug logs for more info.</value>
+    <value>Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_LANGAUGE_PROMPT" xml:space="preserve">
     <value>Select your language.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_USERNAME_PROMPT_DESC" xml:space="preserve">
-    <value>Enter your new username. You should enter a new username that doesn&apos;t already exist.</value>
+    <value>Enter your new username. You should enter a new username that doesn't already exist.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PASSWORD_PROMPT_DESC" xml:space="preserve">
     <value>Enter your user password. You should choose a strong password for increased security.</value>
@@ -4900,16 +4841,16 @@
     <value>The kernel networking has reported an error for the hostname component.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDFEED" xml:space="preserve">
-    <value>Invalid RSS feed. Ensure that you&apos;ve referenced the feed correctly and try again.</value>
+    <value>Invalid RSS feed. Ensure that you've referenced the feed correctly and try again.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDFEEDLINK" xml:space="preserve">
-    <value>Invalid RSS feed link. Ensure that you&apos;ve entered the link correctly and try again.</value>
+    <value>Invalid RSS feed link. Ensure that you've entered the link correctly and try again.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDFEEDTYPE" xml:space="preserve">
-    <value>Invalid RSS feed type. Ensure that you&apos;ve entered the feed type correctly and try again.</value>
+    <value>Invalid RSS feed type. Ensure that you've entered the feed type correctly and try again.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_PERMISSIONDENIED" xml:space="preserve">
-    <value>Permission denied trying to perform an operation. You&apos;ll need to log in as a user that has the necessary permissions in order to be able to perform this operation.</value>
+    <value>Permission denied trying to perform an operation. You'll need to log in as a user that has the necessary permissions in order to be able to perform this operation.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_ENVIRONMENT" xml:space="preserve">
     <value>There was an error when trying to perform an operation for the environment management.</value>
@@ -4921,7 +4862,7 @@
     <value>There was an error when trying to process an alarm system operation.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_WIDGET" xml:space="preserve">
-    <value>There was an error when trying to process a widget system operation. If you&apos;re sure that this widget is registered properly, please make sure that you&apos;ve written the widget class name properly.</value>
+    <value>There was an error when trying to process a widget system operation. If you're sure that this widget is registered properly, please make sure that you've written the widget class name properly.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_FINALEXCEPTION_ADDITIONALERRORS" xml:space="preserve">
     <value>Additional errors were not found during the operation.</value>
@@ -4978,7 +4919,7 @@
     <value>Notification title</value>
   </data>
   <data name="NKS_MISC_SPLASH_NOINFO" xml:space="preserve">
-    <value>Reporter didn&apos;t provide any info!</value>
+    <value>Reporter didn't provide any info!</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_EXECUTE" xml:space="preserve">
     <value>Execute</value>
@@ -5035,7 +4976,7 @@
     <value>Investigate the debug logs for more information about the error.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV" xml:space="preserve">
-    <value>You&apos;re running Nitrocid KS on an unusual environment. Please verify that you&apos;ve started the kernel directly. If you&apos;re sure that you&apos;ve started the kernel in a usual way, it might be because you&apos;re running an unsupported version of Nitrocid KS.</value>
+    <value>You're running Nitrocid KS on an unusual environment. Please verify that you've started the kernel directly. If you're sure that you've started the kernel in a usual way, it might be because you're running an unsupported version of Nitrocid KS.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_ERROR" xml:space="preserve">
     <value>GRILO has experienced an internal error</value>
@@ -5101,10 +5042,10 @@
     <value>Widget name is not provided.</value>
   </data>
   <data name="NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTFOUND" xml:space="preserve">
-    <value>Widget doesn&apos;t exist.</value>
+    <value>Widget doesn't exist.</value>
   </data>
   <data name="NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETUNREMOVABLE" xml:space="preserve">
-    <value>Widget can&apos;t be removed.</value>
+    <value>Widget can't be removed.</value>
   </data>
   <data name="NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTBUILTIN" xml:space="preserve">
     <value>Widget is not a built-in widget.</value>
@@ -5119,7 +5060,7 @@
     <value>Boot app already exists</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_EXCEPTION_BOOTAPPNOTFOUND" xml:space="preserve">
-    <value>Boot app doesn&apos;t exist</value>
+    <value>Boot app doesn't exist</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_BASE_BOOTENTRY" xml:space="preserve">
     <value>Select boot entry</value>
@@ -5143,7 +5084,7 @@
     <value>Alarm name and interval is not specified.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_ALARM_NOTFOUND" xml:space="preserve">
-    <value>Alarm doesn&apos;t exist.</value>
+    <value>Alarm doesn't exist.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_ALARM_NAME" xml:space="preserve">
     <value>Alarm name:</value>
@@ -5155,16 +5096,16 @@
     <value>Alarm due date:</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_BEEP_INVALIDFREQ" xml:space="preserve">
-    <value>The frequency is invalid. Make sure that you&apos;ve correctly written the frequency in hertz.</value>
+    <value>The frequency is invalid. Make sure that you've correctly written the frequency in hertz.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_BEEP_INVALIDDURATION" xml:space="preserve">
-    <value>The duration is invalid. Make sure that you&apos;ve correctly written the duration in milliseconds.</value>
+    <value>The duration is invalid. Make sure that you've correctly written the duration in milliseconds.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_ENCODETEXT_SUCCESS" xml:space="preserve">
     <value>Encoded as string</value>
   </data>
   <data name="NKS_USERS_LOGIN_MODERNLOGON_POWERACTION" xml:space="preserve">
-    <value>You&apos;ve entered the power action menu. Please enter a choice using the left and the right arrow keys and press ENTER, or press ESC to go back to the main screen.</value>
+    <value>You've entered the power action menu. Please enter a choice using the left and the right arrow keys and press ENTER, or press ESC to go back to the main screen.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_BOOTMGR_TITLE" xml:space="preserve">
     <value>Windows Boot Manager</value>
@@ -5188,22 +5129,22 @@
     <value>Use the ↑ and ↓ keys to select which entry is highlighted.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING2" xml:space="preserve">
-    <value>Press enter to boot the selected OS, `e&apos; to edit the commands</value>
+    <value>Press enter to boot the selected OS, `e' to edit the commands</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING3" xml:space="preserve">
-    <value>before booting or `c&apos; for a command line.</value>
+    <value>before booting or `c' for a command line.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_TIMEOUT" xml:space="preserve">
     <value>The highlighted entry will be executed automatically in {0}s.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING1" xml:space="preserve">
-    <value>Press enter to boot the selected OS, `e&apos; to edit the</value>
+    <value>Press enter to boot the selected OS, `e' to edit the</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING2" xml:space="preserve">
-    <value>commands before booting or `c&apos; for a command line.</value>
+    <value>commands before booting or `c' for a command line.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING1" xml:space="preserve">
-    <value>Booting &apos;{0}&apos;</value>
+    <value>Booting '{0}'</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING2" xml:space="preserve">
     <value>Filesystem type is</value>
@@ -5257,10 +5198,10 @@
     <value>Default boot entry FilesystemTools. This number is zero-based, so the first element is index 0, and so on.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_NAME" xml:space="preserve">
-    <value>Enable &apos;The Nitrocid Homepage&apos;</value>
+    <value>Enable 'The Nitrocid Homepage'</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_DESC" xml:space="preserve">
-    <value>Enables &apos;The Nitrocid Homepage&apos; that allows you to see what&apos;s happening in a glance.</value>
+    <value>Enables 'The Nitrocid Homepage' that allows you to see what's happening in a glance.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGBGCOLOR_NAME" xml:space="preserve">
     <value>Interactive TUI builtin key binding background color</value>
@@ -5389,10 +5330,10 @@
     <value>Open</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_NEEDSCONFIG" xml:space="preserve">
-    <value>Can&apos;t check configuration variables when the kernel config is not specified.</value>
+    <value>Can't check configuration variables when the kernel config is not specified.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_INVALIDENTRIES" xml:space="preserve">
-    <value>Can&apos;t get settings entries.</value>
+    <value>Can't get settings entries.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_ENTRIESFAILED_DRIVER" xml:space="preserve">
     <value>Failed to obtain driver settings entries.</value>
@@ -5413,7 +5354,7 @@
     <value>There is nothing to select from.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTION_EXCEPTION_NOTYPEFROM" xml:space="preserve">
-    <value>Can&apos;t get type from</value>
+    <value>Can't get type from</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_SET" xml:space="preserve">
     <value>Set</value>
@@ -5437,16 +5378,16 @@
     <value>Settings entries are not found.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_MAYBEUNEXPECTEDLYDISCONNECTED" xml:space="preserve">
-    <value>Remote debug device doesn&apos;t seem to exist.</value>
+    <value>Remote debug device doesn't seem to exist.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_LOADDEVICESFAILED" xml:space="preserve">
-    <value>Can&apos;t get remote debug devices from</value>
+    <value>Can't get remote debug devices from</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_EXCEPTION_OPENENGRSOURCE" xml:space="preserve">
-    <value>Can&apos;t open the English localization resource</value>
+    <value>Can't open the English localization resource</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_EXCEPTION_OPENRSOURCE" xml:space="preserve">
-    <value>Can&apos;t open the localization resource for</value>
+    <value>Can't open the localization resource for</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_EXCEPTION_ENTRYPOINTGET" xml:space="preserve">
     <value>Failed to get entry point.</value>
@@ -5485,25 +5426,25 @@
     <value>Tests the input multiple selection style (large number of items to test scrolling and paging)</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_NOFRAME" xml:space="preserve">
-    <value>Can&apos;t get frame</value>
+    <value>Can't get frame</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_NOMETHOD" xml:space="preserve">
-    <value>Can&apos;t get method</value>
+    <value>Can't get method</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_REGULAREXPRESSION" xml:space="preserve">
-    <value>A regular expression error happened while the text is being processed. Check your regular expression syntax and try again. If the time-out occurred, ensure that you don&apos;t recurse too much (don&apos;t be greedy).</value>
+    <value>A regular expression error happened while the text is being processed. Check your regular expression syntax and try again. If the time-out occurred, ensure that you don't recurse too much (don't be greedy).</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_HOMEPAGE" xml:space="preserve">
-    <value>The homepage tools has encountered an error when trying to process your request. Please make sure that you&apos;ve entered all the necessary data correctly.</value>
+    <value>The homepage tools has encountered an error when trying to process your request. Please make sure that you've entered all the necessary data correctly.</value>
   </data>
   <data name="NKS_KERNEL_PANIC_NOTIFY_UNKNOWN" xml:space="preserve">
-    <value>Unfortunately, the last failure is unknown, so we don&apos;t exactly know what went wrong. However, it could be helpful if you&apos;ve consulted the kernel debug logs.</value>
+    <value>Unfortunately, the last failure is unknown, so we don't exactly know what went wrong. However, it could be helpful if you've consulted the kernel debug logs.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FIELDINFO" xml:space="preserve">
-    <value>Can&apos;t get field info for</value>
+    <value>Can't get field info for</value>
   </data>
   <data name="NKS_KERNEL_JOURNALING_EXCEPTION_GETENTRIES" xml:space="preserve">
-    <value>Can&apos;t get journal entries</value>
+    <value>Can't get journal entries</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_BOOTMGR_KEYBINDING2" xml:space="preserve">
     <value>(Use the arrow keys to highlight your choice, then press ENTER.)</value>
@@ -5515,7 +5456,7 @@
     <value>Remote debug failed to start for unknown reasons.</value>
   </data>
   <data name="NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN" xml:space="preserve">
-    <value>Thread can&apos;t be regenerated</value>
+    <value>Thread can't be regenerated</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT" xml:space="preserve">
     <value>MIME metadata (extended)</value>
@@ -5524,28 +5465,28 @@
     <value>Handler is registered but somehow failed to get an extension handler for</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES" xml:space="preserve">
-    <value>Can&apos;t get settings entries</value>
+    <value>Can't get settings entries</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_CANTSETENTRY" xml:space="preserve">
-    <value>Can&apos;t set settings entry</value>
+    <value>Can't set settings entry</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_CANTSAVE" xml:space="preserve">
-    <value>Can&apos;t save settings</value>
+    <value>Can't save settings</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_CANTLOAD" xml:space="preserve">
-    <value>Can&apos;t load settings</value>
+    <value>Can't load settings</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_CANTRELOAD" xml:space="preserve">
-    <value>Can&apos;t reload settings</value>
+    <value>Can't reload settings</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_CANTMIGRATE" xml:space="preserve">
-    <value>Can&apos;t migrate settings</value>
+    <value>Can't migrate settings</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_CANTCHECK" xml:space="preserve">
-    <value>Can&apos;t check for updates</value>
+    <value>Can't check for updates</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_CANTSYSINFO" xml:space="preserve">
-    <value>Can&apos;t get system information</value>
+    <value>Can't get system information</value>
   </data>
   <data name="NKS_MISC_SCREENSAVER_EXCEPTION_NEEDSSCREENSAVER" xml:space="preserve">
     <value>Screensaver instance is not specified</value>
@@ -5554,7 +5495,7 @@
     <value>Splash thread parameters are not specified</value>
   </data>
   <data name="NKS_SECURITY_PRIVACY_EXCEPTION_LASTTWOFRAMES" xml:space="preserve">
-    <value>Can&apos;t get method from the last two frames.</value>
+    <value>Can't get method from the last two frames.</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT" xml:space="preserve">
     <value>About</value>
@@ -5569,10 +5510,10 @@
     <value>Action already exists.</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_EXCEPTION_ACTIONNOTFOUND" xml:space="preserve">
-    <value>Action doesn&apos;t exist.</value>
+    <value>Action doesn't exist.</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_EXCEPTION_ACTIONUNREMOVABLE" xml:space="preserve">
-    <value>Built-in action can&apos;t be removed.</value>
+    <value>Built-in action can't be removed.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_COPYTO" xml:space="preserve">
     <value>Copy To</value>
@@ -5602,40 +5543,40 @@
     <value>Copyright (C) 2018-2026 Aptivi - All rights reserved</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_DESC" xml:space="preserve">
-    <value>Changes the user&apos;s full name (display name)</value>
+    <value>Changes the user's full name (display name)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC" xml:space="preserve">
     <value>Shows the main buffer that was on the screen before starting Nitrocid KS (Unix systems only)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED" xml:space="preserve">
-    <value>Can&apos;t obtain addons package.</value>
+    <value>Can't obtain addons package.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SUDO_EXCEPTION_USERINFOSYSTEM" xml:space="preserve">
-    <value>Can&apos;t get user info for the system user</value>
+    <value>Can't get user info for the system user</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SUDO_EXCEPTION_USERINFO" xml:space="preserve">
-    <value>Can&apos;t get user info for</value>
+    <value>Can't get user info for</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_WINELEVATE_DESC" xml:space="preserve">
     <value>Restarts Nitrocid with the elevated permissions (Windows only)</value>
   </data>
   <data name="NKS_USERS_GROUPS_EXCEPTION_GROUPINFOARRAY" xml:space="preserve">
-    <value>Can&apos;t deserialize group info array</value>
+    <value>Can't deserialize group info array</value>
   </data>
   <data name="NKS_USERS_GROUPS_EXCEPTION_GROUPINFO" xml:space="preserve">
-    <value>Can&apos;t deserialize group info</value>
+    <value>Can't deserialize group info</value>
   </data>
   <data name="NKS_USERS_LOGIN_EXCEPTION_SETROOT" xml:space="preserve">
-    <value>Can&apos;t set root account.</value>
+    <value>Can't set root account.</value>
   </data>
   <data name="NKS_USERS_LOGIN_EXCEPTION_POWERUNAUTHORIZED" xml:space="preserve">
-    <value>You don&apos;t have permission to request a reboot or a shutdown.</value>
+    <value>You don't have permission to request a reboot or a shutdown.</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_USERINFOARRAY" xml:space="preserve">
-    <value>Can&apos;t deserialize the user info array</value>
+    <value>Can't deserialize the user info array</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_USERINFO" xml:space="preserve">
-    <value>Can&apos;t deserialize the user info instance</value>
+    <value>Can't deserialize the user info instance</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_CANTGETUSER" xml:space="preserve">
     <value>Failed to get user</value>
@@ -5656,16 +5597,16 @@
     <value>Prints the API version</value>
   </data>
   <data name="NKS_ARGUMENTS_RESET_WIPEDEBUGFAILED" xml:space="preserve">
-    <value>Can&apos;t wipe debug files</value>
+    <value>Can't wipe debug files</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_VALIDATIONFAILED" xml:space="preserve">
     <value>Kernel configuration will not work properly. Consult the kernel debugger for more info.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_NOBASEKERNELCONFIG" xml:space="preserve">
-    <value>Can&apos;t check configuration variables when no base kernel configuration is specified.</value>
+    <value>Can't check configuration variables when no base kernel configuration is specified.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_NOKEYS" xml:space="preserve">
-    <value>Can&apos;t check configuration variables when no keys are specified.</value>
+    <value>Can't check configuration variables when no keys are specified.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_VALIDATIONFAILED_CUSTOM" xml:space="preserve">
     <value>Trying to register a custom setting with invalid content. Consult the kernel debugger for more info.</value>
@@ -5701,7 +5642,7 @@
     <value>There was an error when processing your audio cue action.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_CLASSTYPENOTFOUND" xml:space="preserve">
-    <value>Can&apos;t return non-existent class type from addon assembly</value>
+    <value>Can't return non-existent class type from addon assembly</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_NOTADDONCLASS" xml:space="preserve">
     <value>This class is not an addon class</value>
@@ -5710,7 +5651,7 @@
     <value>Playing shutdown sound...</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLWARNING" xml:space="preserve">
-    <value>We&apos;ll no longer support this version of Nitrocid KS after this date</value>
+    <value>We'll no longer support this version of Nitrocid KS after this date</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLTIP" xml:space="preserve">
     <value>Make sure that you upgrade to the supported version soon if you want to continue receiving support.</value>
@@ -5830,19 +5771,19 @@
     <value>There is no such audio cue type.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_EXCEPTION_FALLBACK" xml:space="preserve">
-    <value>Can&apos;t get fallback settings</value>
+    <value>Can't get fallback settings</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_RESETALLFAILED" xml:space="preserve">
-    <value>Can&apos;t reset all settings entries for</value>
+    <value>Can't reset all settings entries for</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_RESETFAILED" xml:space="preserve">
-    <value>Can&apos;t reset this settings entry for</value>
+    <value>Can't reset this settings entry for</value>
   </data>
   <data name="NKS_MISC_REFLECTION_EXCEPTION_NOSUCHVAR" xml:space="preserve">
     <value>Variable is not found on any of the modules.</value>
   </data>
   <data name="NKS_MISC_SCREENSAVER_EXCEPTION_NOCUE" xml:space="preserve">
-    <value>Can&apos;t get audio cue required for ambient screensavers.</value>
+    <value>Can't get audio cue required for ambient screensavers.</value>
   </data>
   <data name="NKS_NETWORK_CONNECTION_EXCEPTION_CONNECTIONERROR" xml:space="preserve">
     <value>The network connection might not have been established properly due to an error.</value>
@@ -5863,16 +5804,16 @@
     <value>False to deny, true to grant</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_ARGUMENT_NEWNAME_DESC" xml:space="preserve">
-    <value>New display name, or &apos;clear&apos; to erase the display name</value>
+    <value>New display name, or 'clear' to erase the display name</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERLANG_ARGUMENT_LANGID_DESC" xml:space="preserve">
-    <value>Three-letter language ID, or &apos;clear&apos; to clear preferred language</value>
+    <value>Three-letter language ID, or 'clear' to clear preferred language</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_DESC" xml:space="preserve">
     <value>Changes the preferred user culture</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_ARGUMENT_CULTUREID_DESC" xml:space="preserve">
-    <value>Culture ID, or &apos;clear&apos; to clear preferred culture</value>
+    <value>Culture ID, or 'clear' to clear preferred culture</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_USERCULTURE_SUCCESS" xml:space="preserve">
     <value>Preferred user culture set to {0}. You may want to log in again.</value>
@@ -5968,7 +5909,7 @@
     <value>A character to query</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_ARGUMENT_LINENUM_DESC" xml:space="preserve">
-    <value>Line number (either singular or start of the range), or &apos;all&apos; to query a character in all lines</value>
+    <value>Line number (either singular or start of the range), or 'all' to query a character in all lines</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_ARGUMENT_WORD_DESC" xml:space="preserve">
     <value>A word or phrase to query</value>
@@ -5983,7 +5924,7 @@
     <value>A word or phrase to replace with</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINE_ARGUMENT_LINENUM_DESC" xml:space="preserve">
-    <value>Line number (either singular or start of the range), or &apos;all&apos; to replace in all lines</value>
+    <value>Line number (either singular or start of the range), or 'all' to replace in all lines</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_ARGUMENT_REGEX_DESC" xml:space="preserve">
     <value>A regular expression to match phrases that are to be replaced</value>
@@ -6247,7 +6188,7 @@
     <value>Group name to remove user from</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_ARGUMENT_SAVERNAME_DESC" xml:space="preserve">
-    <value>Either the screensaver name or &apos;random&apos;</value>
+    <value>Either the screensaver name or 'random'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SEARCH_ARGUMENT_REGEXP_DESC" xml:space="preserve">
     <value>Regular expression to search</value>
@@ -6517,16 +6458,16 @@
     <value>Which culture is being used to change the month names, calendar, etc.?</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME" xml:space="preserve">
-    <value>Enable &apos;The Nitrocid Homepage&apos; RSS feed</value>
+    <value>Enable 'The Nitrocid Homepage' RSS feed</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_DESC" xml:space="preserve">
-    <value>Enables &apos;The Nitrocid Homepage&apos; RSS feed widget at the right side of the screen.</value>
+    <value>Enables 'The Nitrocid Homepage' RSS feed widget at the right side of the screen.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_NAME" xml:space="preserve">
-    <value>&apos;The Nitrocid Homepage&apos; widget</value>
+    <value>'The Nitrocid Homepage' widget</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_DESC" xml:space="preserve">
-    <value>Selects a widget that will be displayed in &apos;The Nitrocid Homepage&apos;.</value>
+    <value>Selects a widget that will be displayed in 'The Nitrocid Homepage'.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_NAME" xml:space="preserve">
     <value>Notification border settings</value>
@@ -6574,7 +6515,7 @@
     <value>Select a configuration instance to switch to.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG_FAILED" xml:space="preserve">
-    <value>Can&apos;t select configuration</value>
+    <value>Can't select configuration</value>
   </data>
   <data name="NKS_KNOWNADDONS_PACKS_SCREENSAVERS" xml:space="preserve">
     <value>Extra Screensavers Pack</value>
@@ -6673,10 +6614,10 @@
     <value>Extras - Chatbot AI</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE" xml:space="preserve">
-    <value>Can&apos;t deserialize the base configuration {0}</value>
+    <value>Can't deserialize the base configuration {0}</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_CUSTOMCONFIGDESERIALIZE" xml:space="preserve">
-    <value>Can&apos;t deserialize the custom configuration {0}</value>
+    <value>Can't deserialize the custom configuration {0}</value>
   </data>
   <data name="NKS_SETTINGS_DRIVERS_DESC" xml:space="preserve">
     <value>This section lists the driver settings.</value>
@@ -6742,13 +6683,13 @@
     <value>Which asymmetric encoding driver would you like to use?</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI" xml:space="preserve">
-    <value>A Chatbot AI error has occurred. Please make sure that you have an Internet connection, your API key is valid, and that you don&apos;t exceed your API quota.</value>
+    <value>A Chatbot AI error has occurred. Please make sure that you have an Internet connection, your API key is valid, and that you don't exceed your API quota.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC" xml:space="preserve">
     <value>Selects a random screensaver</value>
   </data>
   <data name="NKS_KERNEL_SHELLTIP" xml:space="preserve">
-    <value>To get started, write &apos;help&apos; and press ENTER.</value>
+    <value>To get started, write 'help' and press ENTER.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME" xml:space="preserve">
     <value>Audio cue volume for the reader</value>
@@ -6763,10 +6704,10 @@
     <value>A character that masks the input password. Leave blank for more security.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3" xml:space="preserve">
-    <value>To go to the shell, press the S key if you&apos;re in the homepage. Afterwards, you can write &apos;help&apos; and press ENTER to get started!</value>
+    <value>To go to the shell, press the S key if you're in the homepage. Afterwards, you can write 'help' and press ENTER to get started!</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
-    <value>There have been duplicate keys in your settings instance. Please double check the variable to ensure that it doesn&apos;t exist more than once.</value>
+    <value>There have been duplicate keys in your settings instance. Please double check the variable to ensure that it doesn't exist more than once.</value>
   </data>
   <data name="NKS_USERS_LOGIN_MODERNLOGON_CLOSE" xml:space="preserve">
     <value>Close</value>
@@ -6838,7 +6779,7 @@
     <value>Checks for the user enrollment</value>
   </data>
   <data name="NKS_USERS_LOGIN_2FA_PROVIDECODE" xml:space="preserve">
-    <value>Provide the verification code for this user. You can usually access this code from authenticator apps, such as Google Authenticator. If you don&apos;t enter a code, you&apos;ll be taken back to the sign-in page.</value>
+    <value>Provide the verification code for this user. You can usually access this code from authenticator apps, such as Google Authenticator. If you don't enter a code, you'll be taken back to the sign-in page.</value>
   </data>
   <data name="NKS_USERS_LOGIN_2FA_CODEINVALID" xml:space="preserve">
     <value>The code you entered is invalid.</value>
@@ -6865,7 +6806,7 @@
     <value>Returns the setup key (in case you lost it for some reason)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC" xml:space="preserve">
-    <value>Returns the setup key&apos;s QR code you can scan with your phone</value>
+    <value>Returns the setup key's QR code you can scan with your phone</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED" xml:space="preserve">
     <value>Mode is not specified.</value>
@@ -6946,7 +6887,7 @@
     <value>Using the task manager TUI to view operating system threads</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY" xml:space="preserve">
-    <value>For each managed thread (that is, managed by Nitrocid and its thread manager), the task manager TUI shows you all operating system threads that are related to a managed thread, and they don&apos;t always have a one-to-one relationship, because a managed thread may contain more than one operating system thread. Unlike managed threads, they can&apos;t be terminated.</value>
+    <value>For each managed thread (that is, managed by Nitrocid and its thread manager), the task manager TUI shows you all operating system threads that are related to a managed thread, and they don't always have a one-to-one relationship, because a managed thread may contain more than one operating system thread. Unlike managed threads, they can't be terminated.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE" xml:space="preserve">
     <value>Managing kernel settings</value>
@@ -6964,7 +6905,7 @@
     <value>Using the notifications TUI to manage notifications</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_BODY" xml:space="preserve">
-    <value>With this TUI, you can manage all notifications that you haven&apos;t read yet. When a notification is received, it&apos;s added to the history for future reference, which lasts for the entire kernel session or until you dismiss it. This TUI allows you to easily dismiss and manage notifications, which is easier than using the command-line utility.</value>
+    <value>With this TUI, you can manage all notifications that you haven't read yet. When a notification is received, it's added to the history for future reference, which lasts for the entire kernel session or until you dismiss it. This TUI allows you to easily dismiss and manage notifications, which is easier than using the command-line utility.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_TITLE" xml:space="preserve">
     <value>Selecting folders</value>
@@ -6973,7 +6914,7 @@
     <value>Using the folder group selector TUI to select folders</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY" xml:space="preserve">
-    <value>A subset of file management TUIs are provided for easier management, which is faster and more convenient than using the command-line utilities to perform the same action. One of the TUIs provided is the folder group selection TUI, which allows you to select multiple folders as targets for the intended operation. If you&apos;re brought here, an application has requested you to select a group of folders in order for the operation to complete. You can use the SPACE key to add a folder to the list, then press ESC to confirm your selection.</value>
+    <value>A subset of file management TUIs are provided for easier management, which is faster and more convenient than using the command-line utilities to perform the same action. One of the TUIs provided is the folder group selection TUI, which allows you to select multiple folders as targets for the intended operation. If you're brought here, an application has requested you to select a group of folders in order for the operation to complete. You can use the SPACE key to add a folder to the list, then press ESC to confirm your selection.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE" xml:space="preserve">
     <value>Selecting folders</value>
@@ -6982,7 +6923,7 @@
     <value>Using the folder selector TUI to select a folder</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY" xml:space="preserve">
-    <value>A subset of file management TUIs are provided for easier management, which is faster and more convenient than using the command-line utilities to perform the same action. One of the TUIs provided is the folder selection TUI, which allows you to select a folder as a target for the intended operation. If you&apos;re brought here, an application has requested you to select a folder in order for the operation to complete. You can use the SPACE key to select a folder, then press ESC to confirm your selection.</value>
+    <value>A subset of file management TUIs are provided for easier management, which is faster and more convenient than using the command-line utilities to perform the same action. One of the TUIs provided is the folder selection TUI, which allows you to select a folder as a target for the intended operation. If you're brought here, an application has requested you to select a folder in order for the operation to complete. You can use the SPACE key to select a folder, then press ESC to confirm your selection.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE" xml:space="preserve">
     <value>Selecting files</value>
@@ -6991,7 +6932,7 @@
     <value>Using the file group selector TUI to select files</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY" xml:space="preserve">
-    <value>A subset of file management TUIs are provided for easier management, which is faster and more convenient than using the command-line utilities to perform the same action. One of the TUIs provided is the file group selection TUI, which allows you to select multiple files as targets for the intended operation. If you&apos;re brought here, an application has requested you to select a group of files in order for the operation to complete. You can use the SPACE key to add a file to the list, then press ESC to confirm your selection.</value>
+    <value>A subset of file management TUIs are provided for easier management, which is faster and more convenient than using the command-line utilities to perform the same action. One of the TUIs provided is the file group selection TUI, which allows you to select multiple files as targets for the intended operation. If you're brought here, an application has requested you to select a group of files in order for the operation to complete. You can use the SPACE key to add a file to the list, then press ESC to confirm your selection.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE" xml:space="preserve">
     <value>Selecting files</value>
@@ -7000,7 +6941,7 @@
     <value>Using the file selector TUI to select a file</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY" xml:space="preserve">
-    <value>A subset of file management TUIs are provided for easier management, which is faster and more convenient than using the command-line utilities to perform the same action. One of the TUIs provided is the file selection TUI, which allows you to select a file as a target for the intended operation. If you&apos;re brought here, an application has requested you to select a file in order for the operation to complete. You can use the SPACE key to select a file, then press ESC to confirm your selection.</value>
+    <value>A subset of file management TUIs are provided for easier management, which is faster and more convenient than using the command-line utilities to perform the same action. One of the TUIs provided is the file selection TUI, which allows you to select a file as a target for the intended operation. If you're brought here, an application has requested you to select a file in order for the operation to complete. You can use the SPACE key to select a file, then press ESC to confirm your selection.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE" xml:space="preserve">
     <value>Single-pane file manager</value>
@@ -7039,7 +6980,7 @@
     <value>How to interactively test kernel components</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY" xml:space="preserve">
-    <value>You can interactively test all kernel components that are testable here by selecting a test section in the left pane and a test fixture in the right pane. You&apos;ll be given a report that indicates that a test has passed or failed.</value>
+    <value>You can interactively test all kernel components that are testable here by selecting a test section in the left pane and a test fixture in the right pane. You'll be given a report that indicates that a test has passed or failed.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR" xml:space="preserve">
     <value>Unknown error when running a test fixture</value>
@@ -7060,13 +7001,13 @@
     <value>Message</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH" xml:space="preserve">
-    <value>Expected value doesn&apos;t match actual value.</value>
+    <value>Expected value doesn't match actual value.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_NAME" xml:space="preserve">
     <value>Ignore certificate errors</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_DESC" xml:space="preserve">
-    <value>If enabled, will ignore certificate errors when making a connection. Otherwise, verifies the server certificate. This should, normally, be not enabled unless you&apos;re sure that you&apos;re trusting the server.</value>
+    <value>If enabled, will ignore certificate errors when making a connection. Otherwise, verifies the server certificate. This should, normally, be not enabled unless you're sure that you're trusting the server.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTIP" xml:space="preserve">
     <value>Key tip</value>
@@ -7165,22 +7106,24 @@
     <value>Press any key to continue...</value>
   </data>
   <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
-    <value>It&apos;s now safe to turn off your computer.</value>
+    <value>It's now safe to turn off your computer.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
-    <value>You&apos;re running the development version of the kernel. While you can experience upcoming features which may exist in the final release, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.</value>
+    <value>You're running the development version of the kernel. While you can experience upcoming features which may exist in the final release, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
-    <value>You&apos;re running the release candidate version of the kernel. While you can experience the final touches, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.</value>
+    <value>You're running the release candidate version of the kernel. While you can experience the final touches, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
     <value>We recommend against running this version of the kernel, because it is unsupported. If you have downloaded this kernel from unknown sources, this message may appear. Please download from our official downloads page.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
-    <value>You&apos;re running the alpha version of the kernel. You may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.</value>
+    <value>You're running the alpha version of the kernel. You may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
-    <value>You&apos;re running the beta version of the kernel. You may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.</value>
+    <value>You're running the beta version of the kernel. You may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.</value>
   </data>
-
+  <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
+    <value>No articles</value>
+  </data>
 </root>

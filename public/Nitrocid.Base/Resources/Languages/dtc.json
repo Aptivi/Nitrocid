@@ -9431,6 +9431,10 @@
     {
       "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
       "text": "U gebruikt de bètaversie van de kernel. U kunt bugs, instabiliteit of zelfs gegevensverlies tegenkomen. We raden u aan om, indien mogelijk, de stabiele versie te gebruiken."
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
+      "text": "Geen artikelen"
     }
   ]
 }

@@ -9425,6 +9425,10 @@
     {
       "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
       "text": "Versionem beta nuclei uteris. In errores, instabilitates, vel etiam iacturam datorum incidere potes. Versione stabili uti commendamus, si fieri potest."
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
+      "text": "Nullae commentationes"
     }
   ]
 }

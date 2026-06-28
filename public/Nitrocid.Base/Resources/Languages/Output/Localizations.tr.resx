@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
+  </resheader>
+  <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
     <value>Bakım için yönetici şifresini girin.</value>
   </data>
   <data name="NKS_KERNEL_ENTRY_EXCEPTION_KERNELERROR" xml:space="preserve">
@@ -163,7 +104,7 @@
     <value>Özel karakterlere izin verilmez.</value>
   </data>
   <data name="NKS_USERS_LOGIN_PASSWORDPROMPT" xml:space="preserve">
-    <value>{0}&apos;ın şifresi:</value>
+    <value>{0}'ın şifresi:</value>
   </data>
   <data name="NKS_USERS_LOGIN_WRONGPASSWORD" xml:space="preserve">
     <value>Yanlış şifre.</value>
@@ -319,7 +260,7 @@
     <value>{0} denemesinde indirme başarısız oldu: {1}</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GET_NEEDSFTP" xml:space="preserve">
-    <value>FTP sunucusundan dosya indirecekseniz lütfen &quot;ftp&quot; kullanın.</value>
+    <value>FTP sunucusundan dosya indirecekseniz lütfen "ftp" kullanın.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GET_DESC" xml:space="preserve">
     <value>Bir dosyayı geçerli çalışma dizinine indirir</value>
@@ -520,7 +461,7 @@
     <value>Sessiz Sonda</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_SHOWMOTD_NAME" xml:space="preserve">
-    <value>Girişte MOTD&apos;yi göster</value>
+    <value>Girişte MOTD'yi göster</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME" xml:space="preserve">
     <value>Girişte Ekranı Temizle</value>
@@ -553,7 +494,7 @@
     <value>Uzaktan hata ayıklayıcı portu yazın. Sayısal olmalı ve daha önce kullanılmamış olmalıdır. Aksi takdirde, uzaktan hata ayıklayıcı portu açmayı başaramaz.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_RETRYTIMES_DESC" xml:space="preserve">
-    <value>&quot;get&quot; komutunun başarısız indirmeleri kaç kez tekrar denemesi gerektiğini yazın. Sayısal olmalıdır.</value>
+    <value>"get" komutunun başarısız indirmeleri kaç kez tekrar denemesi gerektiğini yazın. Sayısal olmalıdır.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERPOSITIVE" xml:space="preserve">
     <value>Cevap olumsuz olmayabilir.</value>
@@ -568,10 +509,10 @@
     <value>Ana bilgisayar adını değiştirir</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHMAL_DESC" xml:space="preserve">
-    <value>Girişten Sonra MAL, MOTD&apos;yi Değiştirir</value>
+    <value>Girişten Sonra MAL, MOTD'yi Değiştirir</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_DESC" xml:space="preserve">
-    <value>Günün Mesajı MOTD&apos;yi Değiştiriyor</value>
+    <value>Günün Mesajı MOTD'yi Değiştiriyor</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_DESC" xml:space="preserve">
     <value>Kullanıcı adını değiştirir</value>
@@ -604,7 +545,7 @@
     <value>Kullanıcı adı {0} şifresi değiştirilemedi</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FINDFILEFORMATCHFAILED" xml:space="preserve">
-    <value>&quot;{0}&quot; dizesiyle eşleşen dosya bulunamadı: {1}</value>
+    <value>"{0}" dizesiyle eşleşen dosya bulunamadı: {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_DESC" xml:space="preserve">
     <value>Her açılışta güncellemeleri kontrol edecektir.</value>
@@ -703,7 +644,7 @@
     <value>Dosya bir arşivdir. Yedeklemeler için kullanılır.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_INVALIDATTR" xml:space="preserve">
-    <value>&quot;{0}&quot; niteliği geçersiz.</value>
+    <value>"{0}" niteliği geçersiz.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_ADDSUCCESS" xml:space="preserve">
     <value>Öznitelik başarıyla eklendi.</value>
@@ -739,10 +680,10 @@
     <value>{0} adresinden indiriliyor...</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_NAME" xml:space="preserve">
-    <value>&quot;get&quot; veya &quot;put&quot; komutuyla indirme veya yükleme sırasında ilerleme çubuğunu göster</value>
+    <value>"get" veya "put" komutuyla indirme veya yükleme sırasında ilerleme çubuğunu göster</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_DESC" xml:space="preserve">
-    <value>Doğruysa, indirme veya yükleme sırasında &quot;get&quot; veya &quot;put&quot; komutunun ilerleme çubuğunu göstermesini sağlar.</value>
+    <value>Doğruysa, indirme veya yükleme sırasında "get" veya "put" komutunun ilerleme çubuğunu göstermesini sağlar.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PUT_DESC" xml:space="preserve">
     <value>Belirtilen web sitesine bir dosya yükler</value>
@@ -751,19 +692,19 @@
     <value>Bir adresi pingler</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_PROGRESS" xml:space="preserve">
-    <value>{0} {1}&apos;e yükleniyor...</value>
+    <value>{0} {1}'e yükleniyor...</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_SUCCESS" xml:space="preserve">
     <value>Yükleme tamamlandı.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_NEEDSFTP" xml:space="preserve">
-    <value>FTP sunucusuna dosya yükleyecekseniz lütfen &quot;ftp&quot; kullanın.</value>
+    <value>FTP sunucusuna dosya yükleyecekseniz lütfen "ftp" kullanın.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_FAILED" xml:space="preserve">
     <value>Yükleme {0} denemesinde başarısız oldu: {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_UPRETRYTIMES_DESC" xml:space="preserve">
-    <value>&quot;put&quot; komutunun başarısız yüklemeleri kaç kez tekrar denemesi gerektiğini yazın. Sayısal olmalıdır.</value>
+    <value>"put" komutunun başarısız yüklemeleri kaç kez tekrar denemesi gerektiğini yazın. Sayısal olmalıdır.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PING_NEEDSADDR" xml:space="preserve">
     <value>Adres boş bırakılamaz.</value>
@@ -772,13 +713,13 @@
     <value>{0}: {1} pingleme başarısız oldu</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PING_SUCCESS" xml:space="preserve">
-    <value>Ping {0} ms&apos;de başarılı oldu.</value>
+    <value>Ping {0} ms'de başarılı oldu.</value>
   </data>
   <data name="NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM" xml:space="preserve">
     <value>Belirtilen satır numarası son dosya satır numarasından büyük olamaz.</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_INFODATE" xml:space="preserve">
-    <value>{0}, {1} {2}&apos;de oluşturuldu, {3} {4}&apos;te değiştirildi</value>
+    <value>{0}, {1} {2}'de oluşturuldu, {3} {4}'te değiştirildi</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_DESC" xml:space="preserve">
     <value>Dosyanın sağlamlığını doğrular</value>
@@ -790,7 +731,7 @@
     <value>Karmalar uyuşmuyor.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_VERIFY_HASHESMATCH" xml:space="preserve">
-    <value>Hash&apos;ler eşleşiyor.</value>
+    <value>Hash'ler eşleşiyor.</value>
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_TESTINTERACTIVE_DESC" xml:space="preserve">
     <value>Bir test kabuğu açar</value>
@@ -811,7 +752,7 @@
     <value>Metin düzenleyicinin otomatik kaydetme özelliğini açar veya kapatır.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_DESC" xml:space="preserve">
-    <value>Otomatik kaydetme etkinleştirilirse, metin dosyası her &quot;n&quot; saniyede bir kaydedilecektir.</value>
+    <value>Otomatik kaydetme etkinleştirilirse, metin dosyası her "n" saniyede bir kaydedilecektir.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVE_NAME" xml:space="preserve">
     <value>Metin düzenleyicinin otomatik kaydetmesini etkinleştir</value>
@@ -835,7 +776,7 @@
     <value>Bir sonraki yazma işlemini yapmadan önce kaç milisaniye beklenmeli?</value>
   </data>
   <data name="NKS_SHELL_BASE_HELP_NOHELP" xml:space="preserve">
-    <value>&quot;{0}&quot; komutu için yardım yok.</value>
+    <value>"{0}" komutu için yardım yok.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_HWINFO_DESC" xml:space="preserve">
     <value>Donanım bilgilerini yazdırır</value>
@@ -958,13 +899,13 @@
     <value>Dizi karakter listesi:</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_NAME" xml:space="preserve">
-    <value>RPC&apos;yi etkinleştir</value>
+    <value>RPC'yi etkinleştir</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_RPCPORT_NAME" xml:space="preserve">
     <value>RPC Bağlantı Noktası</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_DESC" xml:space="preserve">
-    <value>RPC&apos;nin etkinleştirilip etkinleştirilmeyeceği.</value>
+    <value>RPC'nin etkinleştirilip etkinleştirilmeyeceği.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_RPCPORT_DESC" xml:space="preserve">
     <value>Bir RPC portu yazın. Sayısal olmalı ve daha önce kullanılmamış olmalıdır. Aksi takdirde, RPC portu açmayı başaramaz.</value>
@@ -1258,28 +1199,28 @@
     <value>Maksimum renk seviyesi</value>
   </data>
   <data name="NKS_SETTINGS_COMMON_MINREDCOLOR_DESC" xml:space="preserve">
-    <value>Minimum kırmızı renk seviyesi. Kabul edilebilir minimum değer 0, kabul edilebilir maksimum değer 255&apos;tir.</value>
+    <value>Minimum kırmızı renk seviyesi. Kabul edilebilir minimum değer 0, kabul edilebilir maksimum değer 255'tir.</value>
   </data>
   <data name="NKS_SETTINGS_COMMON_MINGREENCOLOR_DESC" xml:space="preserve">
-    <value>Minimum yeşil renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255&apos;tir.</value>
+    <value>Minimum yeşil renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255'tir.</value>
   </data>
   <data name="NKS_SETTINGS_COMMON_MINBLUECOLOR_DESC" xml:space="preserve">
-    <value>Minimum mavi renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255&apos;tir.</value>
+    <value>Minimum mavi renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255'tir.</value>
   </data>
   <data name="NKS_SETTINGS_COMMON_MINCOLOR_DESC" xml:space="preserve">
-    <value>Minimum renk seviyesi. Kabul edilebilir minimum değer 0&apos;dır ve kabul edilebilir maksimum değer 255 renk için 255 veya 16 renk için 16&apos;dır.</value>
+    <value>Minimum renk seviyesi. Kabul edilebilir minimum değer 0'dır ve kabul edilebilir maksimum değer 255 renk için 255 veya 16 renk için 16'dır.</value>
   </data>
   <data name="NKS_SETTINGS_COMMON_MAXREDCOLOR_DESC" xml:space="preserve">
-    <value>Maksimum kırmızı renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255&apos;tir.</value>
+    <value>Maksimum kırmızı renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255'tir.</value>
   </data>
   <data name="NKS_SETTINGS_COMMON_MAXGREENCOLOR_DESC" xml:space="preserve">
-    <value>Maksimum yeşil renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255&apos;tir.</value>
+    <value>Maksimum yeşil renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255'tir.</value>
   </data>
   <data name="NKS_SETTINGS_COMMON_MAXBLUECOLOR_DESC" xml:space="preserve">
-    <value>Maksimum mavi renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255&apos;tir.</value>
+    <value>Maksimum mavi renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255'tir.</value>
   </data>
   <data name="NKS_SETTINGS_COMMON_MAXCOLOR_DESC" xml:space="preserve">
-    <value>Maksimum renk seviyesi. Kabul edilebilir minimum değer 0&apos;dır ve kabul edilebilir maksimum değer 255 renk için 255 veya 16 renk için 16&apos;dır.</value>
+    <value>Maksimum renk seviyesi. Kabul edilebilir minimum değer 0'dır ve kabul edilebilir maksimum değer 255 renk için 255 veya 16 renk için 16'dır.</value>
   </data>
   <data name="NKS_SETTINGS_COMMON_ULCORNERCHAR_DESC" xml:space="preserve">
     <value>Sol üst köşeye benzeyen bir karakter. Sadece bir karakter girdiğinizden emin olun.</value>
@@ -1372,7 +1313,7 @@
     <value>Dosyanın sonuna yeni satırlar ekler</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_ADDLINES_LINEPROMPT" xml:space="preserve">
-    <value>Dosyanın sonuna eklemek istediğiniz metni girin. İşiniz bittiğinde, kendi satırına &quot;EOF&quot; yazın.</value>
+    <value>Dosyanın sonuna eklemek istediğiniz metni girin. İşiniz bittiğinde, kendi satırına "EOF" yazın.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_HOSTNAME_NAME" xml:space="preserve">
     <value>Ana Bilgisayar Adı</value>
@@ -1468,13 +1409,13 @@
     <value>Girişte en son RSS başlığını göster</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME" xml:space="preserve">
-    <value>RSS başlık URL&apos;si</value>
+    <value>RSS başlık URL'si</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC" xml:space="preserve">
-    <value>Her girişte, seçili başlık URL&apos;sinden en son RSS başlığı gösterilecektir.</value>
+    <value>Her girişte, seçili başlık URL'sinden en son RSS başlığı gösterilecektir.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC" xml:space="preserve">
-    <value>En son başlığı gösterirken kullanılacak RSS başlık URL&apos;si. Bu genellikle favori akışınızdır.</value>
+    <value>En son başlığı gösterirken kullanılacak RSS başlık URL'si. Bu genellikle favori akışınızdır.</value>
   </data>
   <data name="NKS_NETWORK_TYPES_RSS_FETCHFAILED" xml:space="preserve">
     <value>Son haberlere ulaşılamadı.</value>
@@ -1525,7 +1466,7 @@
     <value>Listedeki dosya ayrıntılarını gösterir</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>Rahatsız edici &quot;izin reddedildi&quot; mesajlarını bastırır</value>
+    <value>Rahatsız edici "izin reddedildi" mesajlarını bastırır</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_ALL_DESC" xml:space="preserve">
     <value>Tüm zaman dilimlerini gösterir</value>
@@ -1651,7 +1592,7 @@
     <value>Hex editörü henüz bir dosya akışı açmadı.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_PROMPT" xml:space="preserve">
-    <value>Dosyanın sonuna eklemek istediğiniz bir baytı kendi satırına girin. İşiniz bittiğinde kendi satırına &quot;EOF&quot; yazın.</value>
+    <value>Dosyanın sonuna eklemek istediğiniz bir baytı kendi satırına girin. İşiniz bittiğinde kendi satırına "EOF" yazın.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_INVALIDBYTE" xml:space="preserve">
     <value>Geçerli bir bayt değil.</value>
@@ -1720,7 +1661,7 @@
     <value>APM Yok Modunu Simüle Et</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_DESC" xml:space="preserve">
-    <value>APM&apos;nin mevcut olmadığı bir durumu simüle edip etmemek. Etkinleştirilirse, kullanıcıya bilgisayarı kapatırken artık güvenli bir şekilde kapatılabileceğini bildirir.</value>
+    <value>APM'nin mevcut olmadığı bir durumu simüle edip etmemek. Etkinleştirilirse, kullanıcıya bilgisayarı kapatırken artık güvenli bir şekilde kapatılabileceğini bildirir.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_POWERLINETEST_DESC" xml:space="preserve">
     <value>Konsolunuzun PowerLine desteğini test eder</value>
@@ -1774,16 +1715,16 @@
     <value>{0} dosyası veya klasörü {1} saniye beklenmesine rağmen hala kilitli.</value>
   </data>
   <data name="NKS_KERNEL_LICENSEINFO" xml:space="preserve">
-    <value>Lisans bilgilerini görmek için &apos;license&apos; komutunu çalıştırın.</value>
+    <value>Lisans bilgilerini görmek için 'license' komutunu çalıştırın.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_TITLE" xml:space="preserve">
     <value>Çekirdek ilk çalıştırma</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE1_TEXT1" xml:space="preserve">
-    <value>Nitrocid Kernel&apos;e hoş geldiniz! Denediğiniz için teşekkür ederiz!</value>
+    <value>Nitrocid Kernel'e hoş geldiniz! Denediğiniz için teşekkür ederiz!</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE1_TEXT2" xml:space="preserve">
-    <value>Başlamak için ENTER&apos;a basın.</value>
+    <value>Başlamak için ENTER'a basın.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_LANGPROMPT" xml:space="preserve">
     <value>Dilinizi seçin. Çekirdek varsayılan olarak İngilizce dilini kullanır, ancak burada başka herhangi bir dili seçebilirsiniz.</value>
@@ -1810,13 +1751,13 @@
     <value>Nitrocid KS şu anda genel iyileştirmeler ve hata düzeltmeleri içeren en son sürümü almak için kendini güncelliyor. Yeni büyük sürümler genellikle bozucu değişiklikler ve yeni heyecan verici özellikler içerir.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT" xml:space="preserve">
-    <value>Nitrocid KS&apos;nin güncellemeleri otomatik olarak kontrol etmesini ister misiniz?</value>
+    <value>Nitrocid KS'nin güncellemeleri otomatik olarak kontrol etmesini ister misiniz?</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2" xml:space="preserve">
     <value>Nitrocid KS güncellemeleri otomatik olarak kontrol etmesinin yanı sıra güncelleme dosyasını da otomatik olarak indirebiliyor.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
-    <value>Çekirdek güncellemelerini her zaman &quot;update&quot; komutunu kullanarak kontrol edebilirsiniz.</value>
+    <value>Çekirdek güncellemelerini her zaman "update" komutunu kullanarak kontrol edebilirsiniz.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TITLE" xml:space="preserve">
     <value>Başlayın!</value>
@@ -1831,7 +1772,7 @@
     <value>Rahatsızlığınız için özür dileriz, ancak kutudan çıkan deneyim çöktü. Bunun deneyimdeki bir kusur olduğundan eminseniz, lütfen çökmeyi hata ayıklama günlükleriyle bize bildirin.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_CRASH2" xml:space="preserve">
-    <value>Shell&apos;i başlatmak için herhangi bir tuşa basmanız yeterli olacaktır, ancak yeni kullanıcınızı manuel olarak oluşturmanız gerekebileceğini unutmayın.</value>
+    <value>Shell'i başlatmak için herhangi bir tuşa basmanız yeterli olacaktır, ancak yeni kullanıcınızı manuel olarak oluşturmanız gerekebileceğini unutmayın.</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_USERLOCKED" xml:space="preserve">
     <value>Mevcut hesap kilitliyken değiştirilmeye çalışılıyor</value>
@@ -1852,7 +1793,7 @@
     <value>Hata ayıklayıcı bağlanamadı. Yine de başlatılıyor...</value>
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_DEBUG_HELPER" xml:space="preserve">
-    <value>Nitrocid&apos;i sisteminize bağlamadan önce, sisteminizde uygun bir hata ayıklayıcının kurulu olduğundan emin olun.</value>
+    <value>Nitrocid'i sisteminize bağlamadan önce, sisteminizde uygun bir hata ayıklayıcının kurulu olduğundan emin olun.</value>
   </data>
   <data name="NKS_ARGUMENTS_RESET_WIPEFAILED" xml:space="preserve">
     <value>Dosya silinemiyor</value>
@@ -1921,7 +1862,7 @@
     <value>Bölümleme mevcut değil</value>
   </data>
   <data name="NKS_DRIVERS_HARDWARE_BASE_STORAGEFAILED" xml:space="preserve">
-    <value>Donanım araştırma kitaplığı sabit diskleri araştırmayı başaramadı. Windows çalıştırıyorsanız, en olası neden sabit disk bilgilerine erişmek için yeterli izninizin olmamasıdır. Sabit diskleri ayrıştırabilmek için Nitrocid&apos;i yükseltilmiş yönetici ayrıcalıklarıyla yeniden başlatın.</value>
+    <value>Donanım araştırma kitaplığı sabit diskleri araştırmayı başaramadı. Windows çalıştırıyorsanız, en olası neden sabit disk bilgilerine erişmek için yeterli izninizin olmamasıdır. Sabit diskleri ayrıştırabilmek için Nitrocid'i yükseltilmiş yönetici ayrıcalıklarıyla yeniden başlatın.</value>
   </data>
   <data name="NKS_DRIVERS_HARDWARE_BASE_NEEDSELEVATION" xml:space="preserve">
     <value>Donanım bilgilerini görüntüleyebilmek için çekirdeği yükseltilmiş olarak yeniden başlatmanız gerekecektir.</value>
@@ -2254,7 +2195,7 @@
     <value>Kullanıcı yönetimi hatası oluştu.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_NETWORK" xml:space="preserve">
-    <value>Genel bir ağ hatası oluştu. Uzak bir uca bağlanmaya çalışıyorsanız, İnternet&apos;e veya yerel ağınıza bağlı olduğunuzdan emin olun.</value>
+    <value>Genel bir ağ hatası oluştu. Uzak bir uca bağlanmaya çalışıyorsanız, İnternet'e veya yerel ağınıza bağlı olduğunuzdan emin olun.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_ASSERTIONFAILURE" xml:space="preserve">
     <value>Çekirdekte bir doğrulama hatası tespit edildi! Bu büyük ihtimalle çekirdek modülünde bizim tarafımızdan düzeltilmesi gereken bir hatadır.</value>
@@ -2302,7 +2243,7 @@
     <value>Geçersiz bir metin düzenleyici işlemi gerçekleştiriliyor.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>Çekirdek belirtilen modu yüklemeye çalıştığında, &quot;Kernel Simulator&quot; yüklemeyi talep etti. Ana uygulama Nitrocid KS olarak yeniden adlandırıldığından, bu mod güvenli bir şekilde çalıştırılamaz. Modu yükseltmenizi öneririz.</value>
+    <value>Çekirdek belirtilen modu yüklemeye çalıştığında, "Kernel Simulator" yüklemeyi talep etti. Ana uygulama Nitrocid KS olarak yeniden adlandırıldığından, bu mod güvenli bir şekilde çalıştırılamaz. Modu yükseltmenizi öneririz.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
     <value>İstenen işlemi gerçekleştirmeye çalışırken bir kişiler yöneticisi hatası oluştu. Kişi dosyasının doğru klasörde bulunduğundan ve geçerli bir vCard 2.1, 3.0 veya 4.0 kişi dosyası olduğundan emin olun.</value>
@@ -2581,16 +2522,16 @@
     <value>Varolmayan eklentiyle özel işlev yürütülemez</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FUNCTIONNOTFOUND" xml:space="preserve">
-    <value>Eklenti &apos;{1}&apos; içinde &apos;{0}&apos; fonksiyonu bulunamadı.</value>
+    <value>Eklenti '{1}' içinde '{0}' fonksiyonu bulunamadı.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_PROPERTYNOTFOUND" xml:space="preserve">
-    <value>&apos;{1}&apos; eklentisinde &apos;{0}&apos; özelliği bulunamadı.</value>
+    <value>'{1}' eklentisinde '{0}' özelliği bulunamadı.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FIELDNOTFOUND" xml:space="preserve">
-    <value>Eklenti &apos;{1}&apos; içinde &apos;{0}&apos; alanı bulunamadı.</value>
+    <value>Eklenti '{1}' içinde '{0}' alanı bulunamadı.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_NOADDONTYPE" xml:space="preserve">
-    <value>Böyle bir eklenti türü yok &apos;{0}&apos;</value>
+    <value>Böyle bir eklenti türü yok '{0}'</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_PROBEFAILED_CPU" xml:space="preserve">
     <value>Bir veya daha fazla CPU çekirdeği araştırmayı başaramadı. Bilgiler yine de gösteriliyor...</value>
@@ -2605,13 +2546,13 @@
     <value>Sabit disklerden bir veya daha fazlası araştırmayı başaramadı. Bilgiler yine de gösteriliyor...</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_NEEDSELEVATION" xml:space="preserve">
-    <value>Yetersiz ayrıcalıklar nedeniyle donanım ayrıştırılmayacak. Nitrocid&apos;i yükseltilmiş modda yeniden başlatmak için &quot;winelevate&quot; kullanın.</value>
+    <value>Yetersiz ayrıcalıklar nedeniyle donanım ayrıştırılmayacak. Nitrocid'i yükseltilmiş modda yeniden başlatmak için "winelevate" kullanın.</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_FAILED" xml:space="preserve">
     <value>Donanım araştırılırken bir hata oluştu: {0}</value>
   </data>
   <data name="NKS_KERNEL_JOURNALING_EXCEPTION_FILENOTFOUND" xml:space="preserve">
-    <value>&apos;{0}&apos; günlük dosyası mevcut değil.</value>
+    <value>'{0}' günlük dosyası mevcut değil.</value>
   </data>
   <data name="NKS_KERNEL_POWER_INVOKING" xml:space="preserve">
     <value>Uzaktan güç yönetimi çağrıldı:</value>
@@ -2623,7 +2564,7 @@
     <value>Kritik bileşenler başlatılamadı</value>
   </data>
   <data name="NKS_KERNEL_STARTING_STARTING" xml:space="preserve">
-    <value>Nitrocid&apos;e Başlıyorum...</value>
+    <value>Nitrocid'e Başlıyorum...</value>
   </data>
   <data name="NKS_KERNEL_STARTING_IMPORTANTADDONS" xml:space="preserve">
     <value>Önemli çekirdek eklentileri yükleniyor...</value>
@@ -2818,7 +2759,7 @@
     <value>Dosya yolu</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS" xml:space="preserve">
-    <value>&apos;{0}&apos; seçildi. Çıkmak ve seçimi onaylamak için ESC&apos;ye basın.</value>
+    <value>'{0}' seçildi. Çıkmak ve seçimi onaylamak için ESC'ye basın.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTFAILED" xml:space="preserve">
     <value>Klasör açılamıyor veya dosya seçilemiyor</value>
@@ -2830,10 +2771,10 @@
     <value>Daha fazla bilgi için SPACE tuşuna basın</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>&apos;{0}&apos; seçildi. Çıkmak ve seçimleri onaylamak için ESC&apos;ye basın.</value>
+    <value>'{0}' seçildi. Çıkmak ve seçimleri onaylamak için ESC'ye basın.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_UNSELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>Seçili olmayan &apos;{0}&apos;. Çıkmak ve seçimleri onaylamak için ESC&apos;ye basın.</value>
+    <value>Seçili olmayan '{0}'. Çıkmak ve seçimleri onaylamak için ESC'ye basın.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOSELECTIONS" xml:space="preserve">
     <value>Seçili dosya yok.</value>
@@ -2953,7 +2894,7 @@
     <value>Giriş noktası olmayan sıçrama kaydedilemiyor</value>
   </data>
   <data name="NKS_MISC_SPLASH_EXCEPTION_CANTOVERWRITE" xml:space="preserve">
-    <value>Splash&apos;ı yeniden kaydedemiyorum. Önce o splash&apos;ın kaydını iptal etmeniz gerekiyor.</value>
+    <value>Splash'ı yeniden kaydedemiyorum. Önce o splash'ın kaydını iptal etmeniz gerekiyor.</value>
   </data>
   <data name="NKS_MISC_SPLASH_EXCEPTION_UNREGISTERSPLASHNONAME" xml:space="preserve">
     <value>İsimsiz sıçramanın kaydı silinemez</value>
@@ -2965,7 +2906,7 @@
     <value>Kapanış sıçraması görüntülenemedi</value>
   </data>
   <data name="NKS_MISC_SPLASH_DEMO_REACHED" xml:space="preserve">
-    <value>{0}%&apos;a ulaştık!</value>
+    <value>{0}%'a ulaştık!</value>
   </data>
   <data name="NKS_MISC_SPLASH_DEFAULTMSG" xml:space="preserve">
     <value>Yükleniyor...</value>
@@ -3097,7 +3038,7 @@
     <value>Belirtilen {0} anahtarı mevcut değil.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_WELCOMEMESSAGE" xml:space="preserve">
-    <value>Nitrocid Kernel&apos;e Hoş Geldiniz! - Sürüm</value>
+    <value>Nitrocid Kernel'e Hoş Geldiniz! - Sürüm</value>
   </data>
   <data name="NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE1" xml:space="preserve">
     <value>Bu program GNU Genel Kamu Lisansı 3.0 veya üzeri lisansla lisanslanmıştır.</value>
@@ -3109,13 +3050,13 @@
     <value>Kabul edildi</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_DESC" xml:space="preserve">
-    <value>Nitrocid KS&apos;yi alışılmadık bir ortamda çalıştırmanın bazı özelliklerin sınırlı olduğu anlamına geldiğini lütfen unutmayın. Modları ve yapılandırmaları yükleyemezsiniz.</value>
+    <value>Nitrocid KS'yi alışılmadık bir ortamda çalıştırmanın bazı özelliklerin sınırlı olduğu anlamına geldiğini lütfen unutmayın. Modları ve yapılandırmaları yükleyemezsiniz.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_TITLE" xml:space="preserve">
     <value>Olağandışı çevre uyarısı</value>
   </data>
   <data name="NKS_KERNEL_STARTING_TIPS_ADDONNEEDED" xml:space="preserve">
-    <value>Nitrocid&apos;in tam sürümüyle birlikte gelen çekirdek eklentisinden ekstra ipuçları alabileceğinizi biliyor muydunuz?</value>
+    <value>Nitrocid'in tam sürümüyle birlikte gelen çekirdek eklentisinden ekstra ipuçları alabileceğinizi biliyor muydunuz?</value>
   </data>
   <data name="NKS_KERNEL_STARTING_TIPS_PREFIX" xml:space="preserve">
     <value>Profesyonel ipucu: Biliyor muydunuz?</value>
@@ -3169,7 +3110,7 @@
     <value>&gt;&gt; Uzaktan Hata Ayıklama: sürüm</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_FIRSTTIME" xml:space="preserve">
-    <value>&gt;&gt; Hoş geldiniz! Uzaktan hata ayıklamaya ilk kez giriyorsunuz. Kaydolmak için &quot;/register &lt;name&gt;&quot; kullanın.</value>
+    <value>&gt;&gt; Hoş geldiniz! Uzaktan hata ayıklamaya ilk kez giriyorsunuz. Kaydolmak için "/register &lt;name&gt;" kullanın.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_DEVICENOTFOUND_BLOCK" xml:space="preserve">
     <value>Engellenecek cihaz bulunamadı.</value>
@@ -3244,7 +3185,7 @@
     <value>Saat dilimi bulunamadı.</value>
   </data>
   <data name="NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NEEDSTZDATA" xml:space="preserve">
-    <value>Saat dilimi bilgi paketi henüz Linux sisteminize yüklenmedi. Dağıtımınızın paket yöneticisini kullanarak &apos;tzdata&apos;yı yükleyin.</value>
+    <value>Saat dilimi bilgi paketi henüz Linux sisteminize yüklenmedi. Dağıtımınızın paket yöneticisini kullanarak 'tzdata'yı yükleyin.</value>
   </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
     <value>Yükleniyor</value>
@@ -3262,7 +3203,7 @@
     <value>Son haberler</value>
   </data>
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>En son haberleri alabilmek için RSS Shell Extras eklentisini yüklemeniz gerekir. Tüm eklentileri edinmek için &apos;getaddons&apos; komutunu kullanabilirsiniz!</value>
+    <value>En son haberleri alabilmek için RSS Shell Extras eklentisini yüklemeniz gerekir. Tüm eklentileri edinmek için 'getaddons' komutunu kullanabilirsiniz!</value>
   </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Komut bulunamadı.</value>
@@ -3352,7 +3293,7 @@
     <value>Belirtilen konuma yeni bir bayt ekler</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_COMMAND_TUI_DESC" xml:space="preserve">
-    <value>Etkileşimli hex düzenleyici TUI&apos;yi açar</value>
+    <value>Etkileşimli hex düzenleyici TUI'yi açar</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_TUI_DESC" xml:space="preserve">
     <value>Etkileşimli düzenleyiciyi açar</value>
@@ -3385,7 +3326,7 @@
     <value>Geçerli dizini alır</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHANGES_DESC" xml:space="preserve">
-    <value>Nitrocid&apos;in bu versiyonunda ne gibi yenilikler var?</value>
+    <value>Nitrocid'in bu versiyonunda ne gibi yenilikler var?</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHKLOCK_DESC" xml:space="preserve">
     <value>Dosya veya klasör kilidini kontrol eder</value>
@@ -3652,7 +3593,7 @@
     <value>Çekirdek çalışma süresini gösterir</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_USERMANUAL_DESC" xml:space="preserve">
-    <value>Manuel için iki faydalı URL&apos;yi gösterir.</value>
+    <value>Manuel için iki faydalı URL'yi gösterir.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_VERSION_DESC" xml:space="preserve">
     <value>Güncel sürümü alır</value>
@@ -3679,7 +3620,7 @@
     <value>Gününüzün tadını çıkarın</value>
   </data>
   <data name="NKS_USERS_LOGIN_MOTD_EXCEPTION_SETFAILED_MAL" xml:space="preserve">
-    <value>MAL&apos;ı ayarlamaya çalışırken hata oluştu: {0}</value>
+    <value>MAL'ı ayarlamaya çalışırken hata oluştu: {0}</value>
   </data>
   <data name="NKS_USERS_LOGIN_MOTD_EXCEPTION_GETFAILED_MAL" xml:space="preserve">
     <value>MAL alınırken hata oluştu: {0}</value>
@@ -3688,13 +3629,13 @@
     <value>Giriş yaptıktan sonraki günün mesajı boş olmayabilir.</value>
   </data>
   <data name="NKS_USERS_LOGIN_MOTD_DEFAULTMOTD" xml:space="preserve">
-    <value>Nitrocid Kernel&apos;e Hoş Geldiniz!</value>
+    <value>Nitrocid Kernel'e Hoş Geldiniz!</value>
   </data>
   <data name="NKS_USERS_LOGIN_MOTD_EXCEPTION_SETFAILED_MOTD" xml:space="preserve">
-    <value>MOTD&apos;yi ayarlamaya çalışırken hata oluştu: {0}</value>
+    <value>MOTD'yi ayarlamaya çalışırken hata oluştu: {0}</value>
   </data>
   <data name="NKS_USERS_LOGIN_MOTD_EXCEPTION_GETFAILED_MOTD" xml:space="preserve">
-    <value>MOTD&apos;yi almaya çalışırken hata oluştu: {0}</value>
+    <value>MOTD'yi almaya çalışırken hata oluştu: {0}</value>
   </data>
   <data name="NKS_USERS_LOGIN_MOTD_EXCEPTION_DYNAMICNOTNULL_MOTD" xml:space="preserve">
     <value>Günün mesajı boş olmayabilir.</value>
@@ -3742,7 +3683,7 @@
     <value>&gt;&gt; Uzaktan Sohbet: sürüm</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CHAT_WELCOME" xml:space="preserve">
-    <value>&gt;&gt; Hoş geldiniz! Uzaktan sohbete ilk kez giriyorsunuz. Uzaktan hata ayıklayıcıda, kaydolmak için &quot;/register &lt;isim&gt;&quot; kullanın. Kaydolana kadar konuşamazsınız.</value>
+    <value>&gt;&gt; Hoş geldiniz! Uzaktan sohbete ilk kez giriyorsunuz. Uzaktan hata ayıklayıcıda, kaydolmak için "/register &lt;isim&gt;" kullanın. Kaydolana kadar konuşamazsınız.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_BENCHMARKSLEEPONE_DESC" xml:space="preserve">
     <value>Sadece bir milisaniye uyumak gerçekten kaç milisaniye sürüyor?</value>
@@ -4036,7 +3977,7 @@
     <value>Mevcut sıçramalar:</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_SHOWMAINBUFFER_WINDOWS" xml:space="preserve">
-    <value>Bu komut Windows&apos;ta desteklenmiyor.</value>
+    <value>Bu komut Windows'ta desteklenmiyor.</value>
   </data>
   <data name="NKS_SHELL_PROMPTS_PRESETS_DEBUG" xml:space="preserve">
     <value>Hata Ayıklama Kabuğu</value>
@@ -4303,7 +4244,7 @@
     <value>Donanım ayarları</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TIP" xml:space="preserve">
-    <value>Donanım hakkında daha detaylı bilgi edinmek için &quot;hwinfo&quot; kullanın.</value>
+    <value>Donanım hakkında daha detaylı bilgi edinmek için "hwinfo" kullanın.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_USER_TITLE" xml:space="preserve">
     <value>Kullanıcı ayarları</value>
@@ -4336,7 +4277,7 @@
     <value>Bu temayı ayarlamak ister misiniz?</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_USERMANUAL_MAINLINK" xml:space="preserve">
-    <value>Nitrocid&apos;in genel kullanımlarına ilişkin kullanıcı kılavuzuna erişmek için lütfen aşağıdaki bağlantıyı ziyaret edin:</value>
+    <value>Nitrocid'in genel kullanımlarına ilişkin kullanıcı kılavuzuna erişmek için lütfen aşağıdaki bağlantıyı ziyaret edin:</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_USERMANUAL_APILINK" xml:space="preserve">
     <value>Çekirdek değişiklikleri ve ekran koruyucular yapmanın güncel yollarını içeren geliştirici kılavuzuna erişmek için lütfen aşağıdaki bağlantıyı ziyaret edin:</value>
@@ -4666,7 +4607,7 @@
     <value>MAL Yolu</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_NAME" xml:space="preserve">
-    <value>Girişte MAL&apos;ı göster</value>
+    <value>Girişte MAL'ı göster</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_HANDLER_NAME" xml:space="preserve">
     <value>Giriş işleyicisi</value>
@@ -4714,7 +4655,7 @@
     <value>Dosya sistemi ayarları</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_FILESYSTEM_PRINTLINENUMS_DESC" xml:space="preserve">
-    <value>&quot;cat&quot; komutunun dosyanın satır numaralarını yazdırmasını sağlar.</value>
+    <value>"cat" komutunun dosyanın satır numaralarını yazdırmasını sağlar.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_DESC" xml:space="preserve">
     <value>Bu bölümde FTP kabuğu, ağla ilgili komut ayarları ve uzaktan hata ayıklama ayarları gibi ağ ayarları listelenir.</value>
@@ -4732,7 +4673,7 @@
     <value>Yükleme Tekrar Deneme Süreleri</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_SCREENSAVER_DESC" xml:space="preserve">
-    <value>Bu bölüm genel ekran koruyucu ayarlarını listeler. Bireysel ekran koruyucu ayarları için Ayarlar&apos;dan çıkın ve Ekran Koruyucu Ayarları&apos;nı açın.</value>
+    <value>Bu bölüm genel ekran koruyucu ayarlarını listeler. Bireysel ekran koruyucu ayarları için Ayarlar'dan çıkın ve Ekran Koruyucu Ayarları'nı açın.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_SCREENSAVER_DISPLAYAS" xml:space="preserve">
     <value>Temel ekran koruyucu ayarları</value>
@@ -4921,7 +4862,7 @@
     <value>Alarm sistemi işlemi gerçekleştirilirken bir hata oluştu.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_WIDGET" xml:space="preserve">
-    <value>Bir widget sistemi işlemini işlemeye çalışırken bir hata oluştu. Bu widget&apos;ın düzgün bir şekilde kaydedildiğinden eminseniz, lütfen widget sınıf adını düzgün bir şekilde yazdığınızdan emin olun.</value>
+    <value>Bir widget sistemi işlemini işlemeye çalışırken bir hata oluştu. Bu widget'ın düzgün bir şekilde kaydedildiğinden eminseniz, lütfen widget sınıf adını düzgün bir şekilde yazdığınızdan emin olun.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_FINALEXCEPTION_ADDITIONALERRORS" xml:space="preserve">
     <value>İşlem sırasında ek bir hata bulunamadı.</value>
@@ -5008,7 +4949,7 @@
     <value>Nitrocid Hakkında</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_HEADER" xml:space="preserve">
-    <value>Merhaba, {0}! Nitrocid&apos;e hoş geldiniz!</value>
+    <value>Merhaba, {0}! Nitrocid'e hoş geldiniz!</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_NEEDSHEADLINES" xml:space="preserve">
     <value>RSS beslemelerini göstermek için girişte başlıkları etkinleştirin</value>
@@ -5017,7 +4958,7 @@
     <value>Ayarlar</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_DESC" xml:space="preserve">
-    <value>Nitrocid KS gelecekteki çekirdeğimiz olan Nitrocid Kernel&apos;i simüle eder.</value>
+    <value>Nitrocid KS gelecekteki çekirdeğimiz olan Nitrocid Kernel'i simüle eder.</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_MODAPI" xml:space="preserve">
     <value>Mod API</value>
@@ -5035,7 +4976,7 @@
     <value>Hata hakkında daha fazla bilgi edinmek için hata ayıklama günlüklerini inceleyin.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV" xml:space="preserve">
-    <value>Nitrocid KS&apos;yi alışılmadık bir ortamda çalıştırıyorsunuz. Lütfen çekirdeği doğrudan başlattığınızdan emin olun. Çekirdeği olağan bir şekilde başlattığınızdan eminseniz, bunun nedeni desteklenmeyen bir Nitrocid KS sürümü çalıştırıyor olmanız olabilir.</value>
+    <value>Nitrocid KS'yi alışılmadık bir ortamda çalıştırıyorsunuz. Lütfen çekirdeği doğrudan başlattığınızdan emin olun. Çekirdeği olağan bir şekilde başlattığınızdan eminseniz, bunun nedeni desteklenmeyen bir Nitrocid KS sürümü çalıştırıyor olmanız olabilir.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_ERROR" xml:space="preserve">
     <value>GRILO dahili bir hatayla karşılaştı</value>
@@ -5080,7 +5021,7 @@
     <value>Alarmlarınızı yönetin</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_SWITCH_TUI_DESC" xml:space="preserve">
-    <value>Alarmlarınızı etkileşimli bir TUI&apos;de yönetin</value>
+    <value>Alarmlarınızı etkileşimli bir TUI'de yönetin</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_RREBOOT_DESC" xml:space="preserve">
     <value>Uzak bir çekirdek örneğini yeniden başlatır</value>
@@ -5089,7 +5030,7 @@
     <value>Uzak örnekteki çekirdek kapatılacak</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SHOWNOTIFS_SWITCH_TUI_DESC" xml:space="preserve">
-    <value>Alınan tüm bildirimleri etkileşimli bir TUI&apos;de gösterir</value>
+    <value>Alınan tüm bildirimleri etkileşimli bir TUI'de gösterir</value>
   </data>
   <data name="NKS_USERS_LOGIN_WIDGETS_EXCEPTION_NOWIDGET" xml:space="preserve">
     <value>Widget sağlanmıyor.</value>
@@ -5164,7 +5105,7 @@
     <value>Dize olarak kodlandı</value>
   </data>
   <data name="NKS_USERS_LOGIN_MODERNLOGON_POWERACTION" xml:space="preserve">
-    <value>Güç eylem menüsüne girdiniz. Lütfen sol ve sağ ok tuşlarını kullanarak bir seçim girin ve ENTER&apos;a basın veya ana ekrana geri dönmek için ESC&apos;ye basın.</value>
+    <value>Güç eylem menüsüne girdiniz. Lütfen sol ve sağ ok tuşlarını kullanarak bir seçim girin ve ENTER'a basın veya ana ekrana geri dönmek için ESC'ye basın.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_BOOTMGR_TITLE" xml:space="preserve">
     <value>Windows Önyükleme Yöneticisi</value>
@@ -5188,22 +5129,22 @@
     <value>Hangi girişin vurgulanacağını seçmek için ↑ ve ↓ tuşlarını kullanın.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING2" xml:space="preserve">
-    <value>Seçili işletim sistemini başlatmak için enter&apos;a, komutları düzenlemek için `e&apos;ye basın</value>
+    <value>Seçili işletim sistemini başlatmak için enter'a, komutları düzenlemek için `e'ye basın</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING3" xml:space="preserve">
-    <value>önyüklemeden önce veya komut satırı için `c&apos;</value>
+    <value>önyüklemeden önce veya komut satırı için `c'</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_TIMEOUT" xml:space="preserve">
     <value>Vurgulanan giriş {0} saniye içinde otomatik olarak yürütülecektir.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING1" xml:space="preserve">
-    <value>Seçili işletim sistemini başlatmak için enter&apos;a, düzenlemek için `e&apos;ye basın</value>
+    <value>Seçili işletim sistemini başlatmak için enter'a, düzenlemek için `e'ye basın</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING2" xml:space="preserve">
-    <value>önyüklemeden önce komutlar veya komut satırı için `c&apos;.</value>
+    <value>önyüklemeden önce komutlar veya komut satırı için `c'.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING1" xml:space="preserve">
-    <value>&apos;{0}&apos; başlatılıyor</value>
+    <value>'{0}' başlatılıyor</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING2" xml:space="preserve">
     <value>Dosya sistemi türü</value>
@@ -5218,7 +5159,7 @@
     <value>Seçim yapmak için ok tuşlarını kullanın</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_LILO_KEYBINDING2" xml:space="preserve">
-    <value>Seçim ve seçenekleri girin, başlatmak için CR&apos;ye basın</value>
+    <value>Seçim ve seçenekleri girin, başlatmak için CR'ye basın</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_NTLDR_PROMPT" xml:space="preserve">
     <value>Lütfen başlatmak için işletim sistemini seçin</value>
@@ -5227,7 +5168,7 @@
     <value>Vurguyu istediğiniz yere taşımak için yukarı ve aşağı ok tuşlarını kullanın.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_NTLDR_KEYBINDING2" xml:space="preserve">
-    <value>Seçmek için ENTER&apos;a basın.</value>
+    <value>Seçmek için ENTER'a basın.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_NTLDR_ADVOPTIONS" xml:space="preserve">
     <value>Windows için sorun giderme ve gelişmiş başlatma seçenekleri için F8 tuşuna basın.</value>
@@ -5254,13 +5195,13 @@
     <value>Önyükleyici varsayılan seçimi</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_BOOTLOADER_SELECT_DESC" xml:space="preserve">
-    <value>Varsayılan önyükleme girişi seçimi. Bu sayı sıfır tabanlıdır, bu nedenle ilk öğe dizin 0&apos;dır, vb.</value>
+    <value>Varsayılan önyükleme girişi seçimi. Bu sayı sıfır tabanlıdır, bu nedenle ilk öğe dizin 0'dır, vb.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_NAME" xml:space="preserve">
-    <value>&apos;Nitrocid Ana Sayfasını&apos; etkinleştirin</value>
+    <value>'Nitrocid Ana Sayfasını' etkinleştirin</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_DESC" xml:space="preserve">
-    <value>Neler olup bittiğini bir bakışta görebilmenizi sağlayan &apos;Nitrocid Ana Sayfası&apos;nı etkinleştirir.</value>
+    <value>Neler olup bittiğini bir bakışta görebilmenizi sağlayan 'Nitrocid Ana Sayfası'nı etkinleştirir.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGBGCOLOR_NAME" xml:space="preserve">
     <value>Etkileşimli TUI yerleşik tuş bağlama arka plan rengi</value>
@@ -5506,7 +5447,7 @@
     <value>Günlük girişleri alınamıyor</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_BOOTMGR_KEYBINDING2" xml:space="preserve">
-    <value>(Seçiminizi vurgulamak için ok tuşlarını kullanın, ardından ENTER&apos;a basın.)</value>
+    <value>(Seçiminizi vurgulamak için ok tuşlarını kullanın, ardından ENTER'a basın.)</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_TITLE" xml:space="preserve">
     <value>GNU GRUB sürüm 0.97 (638K alt / 1046784K üst bellek)</value>
@@ -5605,7 +5546,7 @@
     <value>Kullanıcının tam adını (görünen adı) değiştirir</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC" xml:space="preserve">
-    <value>Nitrocid KS&apos;yi başlatmadan önce ekranda bulunan ana tamponu gösterir (sadece Unix sistemleri)</value>
+    <value>Nitrocid KS'yi başlatmadan önce ekranda bulunan ana tamponu gösterir (sadece Unix sistemleri)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED" xml:space="preserve">
     <value>Eklenti paketi alınamıyor.</value>
@@ -5617,7 +5558,7 @@
     <value>Kullanıcı bilgisi alınamıyor</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_WINELEVATE_DESC" xml:space="preserve">
-    <value>Nitrocid&apos;i yükseltilmiş izinlerle yeniden başlatır (yalnızca Windows)</value>
+    <value>Nitrocid'i yükseltilmiş izinlerle yeniden başlatır (yalnızca Windows)</value>
   </data>
   <data name="NKS_USERS_GROUPS_EXCEPTION_GROUPINFOARRAY" xml:space="preserve">
     <value>Grup bilgi dizisi seri hale getirilemiyor</value>
@@ -5710,13 +5651,13 @@
     <value>Kapatma sesi çalınıyor...</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLWARNING" xml:space="preserve">
-    <value>Bu tarihten sonra Nitrocid KS&apos;nin bu sürümünü desteklemeyeceğiz</value>
+    <value>Bu tarihten sonra Nitrocid KS'nin bu sürümünü desteklemeyeceğiz</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLTIP" xml:space="preserve">
     <value>Desteğe devam etmek istiyorsanız, desteklenen sürüme en kısa sürede yükseltme yaptığınızdan emin olun.</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOL" xml:space="preserve">
-    <value>Nitrocid KS&apos;nin bu sürümü artık desteklenmiyor.</value>
+    <value>Nitrocid KS'nin bu sürümü artık desteklenmiyor.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS" xml:space="preserve">
     <value>Önemli çekirdek eklentileri yüklenemedi</value>
@@ -5863,16 +5804,16 @@
     <value>İnkar etmek yanlış, kabul etmek doğrudur</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_ARGUMENT_NEWNAME_DESC" xml:space="preserve">
-    <value>Yeni görüntü adı veya görüntü adını silmek için &apos;temizle&apos;</value>
+    <value>Yeni görüntü adı veya görüntü adını silmek için 'temizle'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERLANG_ARGUMENT_LANGID_DESC" xml:space="preserve">
-    <value>Üç harfli dil kimliği veya tercih edilen dili temizlemek için &apos;temizle&apos;</value>
+    <value>Üç harfli dil kimliği veya tercih edilen dili temizlemek için 'temizle'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_DESC" xml:space="preserve">
     <value>Tercih edilen kullanıcı kültürünü değiştirir</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_ARGUMENT_CULTUREID_DESC" xml:space="preserve">
-    <value>Kültür Kimliği veya tercih edilen kültürü temizlemek için &apos;temizle&apos;</value>
+    <value>Kültür Kimliği veya tercih edilen kültürü temizlemek için 'temizle'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_USERCULTURE_SUCCESS" xml:space="preserve">
     <value>Tercih edilen kullanıcı kültürü {0} olarak ayarlandı. Tekrar oturum açmak isteyebilirsiniz.</value>
@@ -5884,10 +5825,10 @@
     <value>Tercih edilen kültür</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_DEBUGLOG_INVALIDGUID" xml:space="preserve">
-    <value>Geçersiz oturum GUID&apos;si</value>
+    <value>Geçersiz oturum GUID'si</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_DEBUGLOG_NOGUID" xml:space="preserve">
-    <value>Böyle bir oturum GUID&apos;si yok</value>
+    <value>Böyle bir oturum GUID'si yok</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_UNKNOWNTYPE" xml:space="preserve">
     <value>Bilinmeyen tip</value>
@@ -5899,10 +5840,10 @@
     <value>Türlerin listesi</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_DEBUGLOG_DESC" xml:space="preserve">
-    <value>Oturum GUID&apos;sini kullanarak hata ayıklama günlüğü bilgilerini kolayca getirir</value>
+    <value>Oturum GUID'sini kullanarak hata ayıklama günlüğü bilgilerini kolayca getirir</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_DEBUGLOG_ARGUMENT_SESSIONGUID_DESC" xml:space="preserve">
-    <value>Bulunacak Oturum GUID&apos;i</value>
+    <value>Bulunacak Oturum GUID'i</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_EXCINFO_ARGUMENT_EXCNUMBER_DESC" xml:space="preserve">
     <value>İstisna numarası</value>
@@ -5968,7 +5909,7 @@
     <value>Sorgulanacak bir karakter</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_ARGUMENT_LINENUM_DESC" xml:space="preserve">
-    <value>Satır numarası (tekil veya aralığın başlangıcı) veya tüm satırlardaki bir karakteri sorgulamak için &apos;tümü&apos;</value>
+    <value>Satır numarası (tekil veya aralığın başlangıcı) veya tüm satırlardaki bir karakteri sorgulamak için 'tümü'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_ARGUMENT_WORD_DESC" xml:space="preserve">
     <value>Sorgulanacak bir kelime veya ifade</value>
@@ -5983,7 +5924,7 @@
     <value>Yerine konulacak bir kelime veya ifade</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINE_ARGUMENT_LINENUM_DESC" xml:space="preserve">
-    <value>Satır numarası (tekil veya aralığın başlangıcı) veya tüm satırlarda değiştirilecek &apos;tümü&apos;</value>
+    <value>Satır numarası (tekil veya aralığın başlangıcı) veya tüm satırlarda değiştirilecek 'tümü'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_ARGUMENT_REGEX_DESC" xml:space="preserve">
     <value>Değiştirilecek ifadeleri eşleştirmek için düzenli bir ifade</value>
@@ -6223,7 +6164,7 @@
     <value>Yükleme uç noktasına işaret eden URL</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC" xml:space="preserve">
-    <value>Nitrocid KS&apos;yi çalıştıran ana bilgisayar adı</value>
+    <value>Nitrocid KS'yi çalıştıran ana bilgisayar adı</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC" xml:space="preserve">
     <value>Uzak hedefte Nitrocid KS Limanı</value>
@@ -6247,7 +6188,7 @@
     <value>Kullanıcının kaldırılacağı grup adı</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_ARGUMENT_SAVERNAME_DESC" xml:space="preserve">
-    <value>Ekran koruyucu adı veya &apos;rastgele&apos;</value>
+    <value>Ekran koruyucu adı veya 'rastgele'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SEARCH_ARGUMENT_REGEXP_DESC" xml:space="preserve">
     <value>Arama yapmak için düzenli ifade</value>
@@ -6517,16 +6458,16 @@
     <value>Ay adlarını, takvimi vb. değiştirmek için hangi kültür kullanılıyor?</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME" xml:space="preserve">
-    <value>&apos;Nitrocid Ana Sayfası&apos; RSS beslemesini etkinleştir</value>
+    <value>'Nitrocid Ana Sayfası' RSS beslemesini etkinleştir</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_DESC" xml:space="preserve">
-    <value>Ekranın sağ tarafındaki &apos;Nitrocid Ana Sayfası&apos; RSS besleme widget&apos;ını etkinleştirir.</value>
+    <value>Ekranın sağ tarafındaki 'Nitrocid Ana Sayfası' RSS besleme widget'ını etkinleştirir.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_NAME" xml:space="preserve">
-    <value>&apos;Nitrocid Ana Sayfası&apos; widget&apos;ı</value>
+    <value>'Nitrocid Ana Sayfası' widget'ı</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_DESC" xml:space="preserve">
-    <value>&apos;Nitrocid Ana Sayfası&apos;nda görüntülenecek bir widget&apos;ı seçer.</value>
+    <value>'Nitrocid Ana Sayfası'nda görüntülenecek bir widget'ı seçer.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_NAME" xml:space="preserve">
     <value>Bildirim kenarlığı ayarları</value>
@@ -6748,7 +6689,7 @@
     <value>Rastgele bir ekran koruyucu seçer</value>
   </data>
   <data name="NKS_KERNEL_SHELLTIP" xml:space="preserve">
-    <value>Başlamak için &apos;help&apos; yazın ve ENTER tuşuna basın.</value>
+    <value>Başlamak için 'help' yazın ve ENTER tuşuna basın.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME" xml:space="preserve">
     <value>Okuyucu için sesli ipucu ses seviyesi</value>
@@ -6763,7 +6704,7 @@
     <value>Girilen şifreyi gizleyen bir karakter. Daha fazla güvenlik için boş bırakın.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3" xml:space="preserve">
-    <value>Komut satırına geçmek için ana sayfadaysanız S tuşuna basın. Ardından &apos;help&apos; yazıp ENTER tuşuna basarak başlayabilirsiniz!</value>
+    <value>Komut satırına geçmek için ana sayfadaysanız S tuşuna basın. Ardından 'help' yazıp ENTER tuşuna basarak başlayabilirsiniz!</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
     <value>Ayarlar örneğinizde yinelenen anahtarlar bulunmaktadır. Lütfen değişkenin birden fazla kez mevcut olmadığından emin olmak için tekrar kontrol edin.</value>
@@ -6916,7 +6857,7 @@
     <value>Ekran koruyucunun önizlemesi</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_DESC" xml:space="preserve">
-    <value>Ekran koruyucu TUI&apos;sini kullanarak ekran koruyucunun önizlemesini yapın.</value>
+    <value>Ekran koruyucu TUI'sini kullanarak ekran koruyucunun önizlemesini yapın.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY" xml:space="preserve">
     <value>Bu etkileşimli TUI, yerleşik bir ekran koruyucu veya özel bir ekran koruyucu kullanarak ekran koruyucuyu önizlemenize ve ekranınızı onunla kaydetmenize olanak tanır. Listeden bir ekran koruyucu seçip ENTER tuşuna basarak doğrudan bu TUI üzerinden önizlemek istediğiniz ekran koruyucuyu kolayca seçebilirsiniz.</value>
@@ -6934,7 +6875,7 @@
     <value>Görevleri yönetmek</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_DESC" xml:space="preserve">
-    <value>Görev yöneticisi TUI&apos;sini kullanarak iş parçacıklarını yönetme</value>
+    <value>Görev yöneticisi TUI'sini kullanarak iş parçacıklarını yönetme</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_BODY" xml:space="preserve">
     <value>Görev yöneticisi TUI, hem Nitrocid ve iş parçacığı yöneticisi tarafından yönetilen Nitrocid çekirdek iş parçacıklarını hem de işletim sisteminiz tarafından yönetilen işletim sistemi iş parçacıklarını yönetmenizi sağlar. Tüm iş parçacıklarını listeleyebilir ve görevlerini sonlandırma özelliği de dahil olmak üzere yönetebilirsiniz.</value>
@@ -6943,7 +6884,7 @@
     <value>İşletim sistemi iş parçacıklarını görüntüleme</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_DESC" xml:space="preserve">
-    <value>Görev yöneticisi TUI&apos;sini kullanarak işletim sistemi iş parçacıklarını görüntüleme</value>
+    <value>Görev yöneticisi TUI'sini kullanarak işletim sistemi iş parçacıklarını görüntüleme</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY" xml:space="preserve">
     <value>Nitrocid ve iş parçacığı yöneticisi tarafından yönetilen her bir iş parçacığı için, görev yöneticisi arayüzü (TUI), yönetilen iş parçacığıyla ilişkili tüm işletim sistemi iş parçacıklarını gösterir ve bunlar her zaman bire bir ilişkiye sahip olmayabilir, çünkü yönetilen bir iş parçacığı birden fazla işletim sistemi iş parçacığı içerebilir. Yönetilen iş parçacıklarının aksine, bunlar sonlandırılamaz.</value>
@@ -6955,7 +6896,7 @@
     <value>TUI adlı ayarlar uygulamasını kullanarak çekirdek ayarlarını yönetme</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY" xml:space="preserve">
-    <value>Çekirdek yapılandırması, Nitrocid&apos;in çekirdeğin ve bileşenlerinin (ağ yığını ve kabuk yığını dahil) bölümlerini yapılandırmanıza olanak tanıyan önemli bir parçasıdır. Bu TUI, çekirdeğin bölümlerini yapılandırmayı kolaylaştırır ve sezgisel tasarımı, yapılandırma dosyasını manuel olarak düzenlemekten daha kullanışlı hale getirir.</value>
+    <value>Çekirdek yapılandırması, Nitrocid'in çekirdeğin ve bileşenlerinin (ağ yığını ve kabuk yığını dahil) bölümlerini yapılandırmanıza olanak tanıyan önemli bir parçasıdır. Bu TUI, çekirdeğin bölümlerini yapılandırmayı kolaylaştırır ve sezgisel tasarımı, yapılandırma dosyasını manuel olarak düzenlemekten daha kullanışlı hale getirir.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_TITLE" xml:space="preserve">
     <value>Bildirimleri yönetme</value>
@@ -6970,10 +6911,10 @@
     <value>Klasörleri seçme</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_DESC" xml:space="preserve">
-    <value>Klasör grubu seçici TUI&apos;yi kullanarak klasörleri seçme</value>
+    <value>Klasör grubu seçici TUI'yi kullanarak klasörleri seçme</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY" xml:space="preserve">
-    <value>Dosya yönetimi için sunulan TUI&apos;lerin bir alt kümesi, aynı işlemi komut satırı yardımcı programlarıyla yapmaktan daha hızlı ve daha kullanışlı olan daha kolay bir yönetim sağlar. Sunulan TUI&apos;lerden biri, amaçlanan işlem için hedef olarak birden fazla klasör seçmenize olanak tanıyan klasör grubu seçimi TUI&apos;sidir. Buraya yönlendirildiyseniz, bir uygulama sizden işlemin tamamlanması için bir klasör grubu seçmenizi istemiştir. Listeye bir klasör eklemek için SPACE tuşunu, ardından seçiminizi onaylamak için ESC tuşunu kullanabilirsiniz.</value>
+    <value>Dosya yönetimi için sunulan TUI'lerin bir alt kümesi, aynı işlemi komut satırı yardımcı programlarıyla yapmaktan daha hızlı ve daha kullanışlı olan daha kolay bir yönetim sağlar. Sunulan TUI'lerden biri, amaçlanan işlem için hedef olarak birden fazla klasör seçmenize olanak tanıyan klasör grubu seçimi TUI'sidir. Buraya yönlendirildiyseniz, bir uygulama sizden işlemin tamamlanması için bir klasör grubu seçmenizi istemiştir. Listeye bir klasör eklemek için SPACE tuşunu, ardından seçiminizi onaylamak için ESC tuşunu kullanabilirsiniz.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE" xml:space="preserve">
     <value>Klasörleri seçme</value>
@@ -6982,16 +6923,16 @@
     <value>TUI klasör seçiciyi kullanarak bir klasör seçin.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY" xml:space="preserve">
-    <value>Dosya yönetimi için sunulan TUI&apos;lerin bir alt kümesi, aynı işlemi komut satırı yardımcı programlarıyla yapmaktan daha hızlı ve daha kullanışlı olan daha kolay bir yönetim sağlar. Sunulan TUI&apos;lerden biri, amaçlanan işlem için hedef olarak bir klasör seçmenize olanak tanıyan klasör seçimi TUI&apos;sidir. Buraya yönlendirildiyseniz, bir uygulama işlemin tamamlanması için sizden bir klasör seçmenizi istemiştir. Bir klasör seçmek için SPACE tuşunu, ardından seçiminizi onaylamak için ESC tuşunu kullanabilirsiniz.</value>
+    <value>Dosya yönetimi için sunulan TUI'lerin bir alt kümesi, aynı işlemi komut satırı yardımcı programlarıyla yapmaktan daha hızlı ve daha kullanışlı olan daha kolay bir yönetim sağlar. Sunulan TUI'lerden biri, amaçlanan işlem için hedef olarak bir klasör seçmenize olanak tanıyan klasör seçimi TUI'sidir. Buraya yönlendirildiyseniz, bir uygulama işlemin tamamlanması için sizden bir klasör seçmenizi istemiştir. Bir klasör seçmek için SPACE tuşunu, ardından seçiminizi onaylamak için ESC tuşunu kullanabilirsiniz.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE" xml:space="preserve">
     <value>Dosyaları seçme</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_DESC" xml:space="preserve">
-    <value>Dosya grubu seçici TUI&apos;yi kullanarak dosyaları seçme</value>
+    <value>Dosya grubu seçici TUI'yi kullanarak dosyaları seçme</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY" xml:space="preserve">
-    <value>Dosya yönetimi için sunulan TUI&apos;lerin bir alt kümesi, aynı işlemi komut satırı yardımcı programlarını kullanarak gerçekleştirmekten daha hızlı ve daha kullanışlı olan daha kolay bir yönetim sağlar. Sunulan TUI&apos;lerden biri, amaçlanan işlem için hedef olarak birden fazla dosya seçmenize olanak tanıyan dosya grubu seçimi TUI&apos;sidir. Buraya yönlendirildiyseniz, bir uygulama sizden işlemin tamamlanması için bir dosya grubu seçmenizi istemiştir. Listeye dosya eklemek için SPACE tuşunu, ardından seçiminizi onaylamak için ESC tuşunu kullanabilirsiniz.</value>
+    <value>Dosya yönetimi için sunulan TUI'lerin bir alt kümesi, aynı işlemi komut satırı yardımcı programlarını kullanarak gerçekleştirmekten daha hızlı ve daha kullanışlı olan daha kolay bir yönetim sağlar. Sunulan TUI'lerden biri, amaçlanan işlem için hedef olarak birden fazla dosya seçmenize olanak tanıyan dosya grubu seçimi TUI'sidir. Buraya yönlendirildiyseniz, bir uygulama sizden işlemin tamamlanması için bir dosya grubu seçmenizi istemiştir. Listeye dosya eklemek için SPACE tuşunu, ardından seçiminizi onaylamak için ESC tuşunu kullanabilirsiniz.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE" xml:space="preserve">
     <value>Dosyaları seçme</value>
@@ -7000,25 +6941,25 @@
     <value>TUI dosya seçiciyi kullanarak dosya seçme</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY" xml:space="preserve">
-    <value>Dosya yönetimi için sunulan TUI&apos;lerin bir alt kümesi, aynı işlemi komut satırı yardımcı programlarıyla yapmaktan daha hızlı ve daha kullanışlı olan daha kolay bir yönetim sağlar. Sunulan TUI&apos;lerden biri, amaçlanan işlem için hedef olarak bir dosya seçmenize olanak tanıyan dosya seçme TUI&apos;sidir. Buraya yönlendirildiyseniz, bir uygulama işlemin tamamlanması için sizden bir dosya seçmenizi istemiştir. Bir dosya seçmek için SPACE tuşunu, ardından seçiminizi onaylamak için ESC tuşunu kullanabilirsiniz.</value>
+    <value>Dosya yönetimi için sunulan TUI'lerin bir alt kümesi, aynı işlemi komut satırı yardımcı programlarıyla yapmaktan daha hızlı ve daha kullanışlı olan daha kolay bir yönetim sağlar. Sunulan TUI'lerden biri, amaçlanan işlem için hedef olarak bir dosya seçmenize olanak tanıyan dosya seçme TUI'sidir. Buraya yönlendirildiyseniz, bir uygulama işlemin tamamlanması için sizden bir dosya seçmenizi istemiştir. Bir dosya seçmek için SPACE tuşunu, ardından seçiminizi onaylamak için ESC tuşunu kullanabilirsiniz.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE" xml:space="preserve">
     <value>Tek bölmeli dosya yöneticisi</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC" xml:space="preserve">
-    <value>Dosya seçici TUI&apos;sini kullanarak önizleme özelliğiyle dosyaları yönetmek</value>
+    <value>Dosya seçici TUI'sini kullanarak önizleme özelliğiyle dosyaları yönetmek</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY" xml:space="preserve">
-    <value>Dosya yönetimi için sunulan TUI&apos;lerin bir alt kümesi, aynı işlemi komut satırı yardımcı programlarıyla yapmaktan daha hızlı ve daha kullanışlı olan daha kolay bir yönetim sağlar. Sunulan TUI&apos;lerden biri, dosyalarınızı sağ bölmede dosya önizlemesiyle birlikte yönetmenizi sağlayan tek bölmeli dosya yönetimi TUI&apos;sidir. Bu, dosya veya klasör seçtiğinizde anlık önizleme bölmesine sahip olmak istediğinizde kullanışlıdır.</value>
+    <value>Dosya yönetimi için sunulan TUI'lerin bir alt kümesi, aynı işlemi komut satırı yardımcı programlarıyla yapmaktan daha hızlı ve daha kullanışlı olan daha kolay bir yönetim sağlar. Sunulan TUI'lerden biri, dosyalarınızı sağ bölmede dosya önizlemesiyle birlikte yönetmenizi sağlayan tek bölmeli dosya yönetimi TUI'sidir. Bu, dosya veya klasör seçtiğinizde anlık önizleme bölmesine sahip olmak istediğinizde kullanışlıdır.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE" xml:space="preserve">
     <value>Çift bölmeli dosya yöneticisi</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC" xml:space="preserve">
-    <value>Dosya seçici TUI&apos;sini kullanarak dosyaları iki bölmede yönetme</value>
+    <value>Dosya seçici TUI'sini kullanarak dosyaları iki bölmede yönetme</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY" xml:space="preserve">
-    <value>Dosya yönetimi için sunulan TUI&apos;lerin bir alt kümesi, aynı işlemi komut satırı yardımcı programlarıyla yapmaktan daha hızlı ve daha kullanışlı olan daha kolay bir yönetim sağlar. Sunulan TUI&apos;lerden biri, dosyalarınızı Total Commander&apos;a benzer şekilde yönetmenizi sağlayan çift bölmeli dosya yönetimi TUI&apos;sidir. Bu sayede, yolları manuel olarak belirtmek zorunda kalmadan, her iki bölmede de dosya işlemlerini hızlıca gerçekleştirebilirsiniz.</value>
+    <value>Dosya yönetimi için sunulan TUI'lerin bir alt kümesi, aynı işlemi komut satırı yardımcı programlarıyla yapmaktan daha hızlı ve daha kullanışlı olan daha kolay bir yönetim sağlar. Sunulan TUI'lerden biri, dosyalarınızı Total Commander'a benzer şekilde yönetmenizi sağlayan çift bölmeli dosya yönetimi TUI'sidir. Bu sayede, yolları manuel olarak belirtmek zorunda kalmadan, her iki bölmede de dosya işlemlerini hızlıca gerçekleştirebilirsiniz.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE" xml:space="preserve">
     <value>Alarmları yönetme</value>
@@ -7182,5 +7123,7 @@
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
     <value>Çekirdeğin beta sürümünü kullanıyorsunuz. Hatalarla, dengesizliklerle ve hatta veri kayıplarıyla karşılaşabilirsiniz. Mümkünse kararlı sürümü kullanmanızı öneririz.</value>
   </data>
-
+  <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
+    <value>Makale yok</value>
+  </data>
 </root>

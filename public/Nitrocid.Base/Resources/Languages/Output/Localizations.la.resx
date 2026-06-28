@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
+  </resheader>
+  <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
     <value>Intrant admin password pro tutela.</value>
   </data>
   <data name="NKS_KERNEL_ENTRY_EXCEPTION_KERNELERROR" xml:space="preserve">
@@ -319,7 +260,7 @@
     <value>Download in experimentum defecerunt {0}: {1}</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GET_NEEDSFTP" xml:space="preserve">
-    <value>Quaeso utere &quot;ftp&quot; si limas ex FTP servo es usores.</value>
+    <value>Quaeso utere "ftp" si limas ex FTP servo es usores.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GET_DESC" xml:space="preserve">
     <value>Download lima ut current opus Directory</value>
@@ -523,7 +464,7 @@
     <value>Monstra MOTD in Log-in</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_CLEARSCREEN_NAME" xml:space="preserve">
-    <value>Patet &apos;collaborative text in Log-in&apos;</value>
+    <value>Patet 'collaborative text in Log-in'</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_SIMPLIFIED_NAME" xml:space="preserve">
     <value>Simplicior Auxilium Imperii</value>
@@ -553,7 +494,7 @@
     <value>Scribere portum remotis debugger. Oportet numerorum esse, et iam non esse utendum. Alioquin pabulatorium remotius non aperiet portum.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_RETRYTIMES_DESC" xml:space="preserve">
-    <value>Scribe quotiens mandatum &quot;accipere&quot; debet retry downloads. Sciendum est numerorum.</value>
+    <value>Scribe quotiens mandatum "accipere" debet retry downloads. Sciendum est numerorum.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERPOSITIVE" xml:space="preserve">
     <value>Responsio non potest esse negativa.</value>
@@ -604,7 +545,7 @@
     <value>Defecit tesseram mutare usoris: {0}</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FINDFILEFORMATCHFAILED" xml:space="preserve">
-    <value>Tabularium invenire nequitur ut ligamen chordae &quot;{0}&quot; 1 invenire possit.</value>
+    <value>Tabularium invenire nequitur ut ligamen chordae "{0}" 1 invenire possit.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_DESC" xml:space="preserve">
     <value>Quisque startup, pro updates reprehendo.</value>
@@ -703,7 +644,7 @@
     <value>Scapus archivum. Usus est in tergum.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_INVALIDATTR" xml:space="preserve">
-    <value>Tributum &quot;{0}&quot; invalidum est.</value>
+    <value>Tributum "{0}" invalidum est.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_ADDSUCCESS" xml:space="preserve">
     <value>Attributum adiectum est feliciter.</value>
@@ -739,10 +680,10 @@
     <value>Download Ex {0}...</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_NAME" xml:space="preserve">
-    <value>Monstrare progressus talea dum deprimendo vel discas ab &quot;adepto&quot; vel &quot;pone&quot; mandatum</value>
+    <value>Monstrare progressus talea dum deprimendo vel discas ab "adepto" vel "pone" mandatum</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_DESC" xml:space="preserve">
-    <value>Quod si verum est, &quot;accipere&quot; vel &quot;ponere&quot; ostendit progressum vectis dum deprimit vel discit.</value>
+    <value>Quod si verum est, "accipere" vel "ponere" ostendit progressum vectis dum deprimit vel discit.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PUT_DESC" xml:space="preserve">
     <value>Uploads file ad certum website</value>
@@ -757,13 +698,13 @@
     <value>Upload has completed.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_NEEDSFTP" xml:space="preserve">
-    <value>Quaeso utere &quot;ftp&quot; si fasciculos oneres ad FTP servo pergis.</value>
+    <value>Quaeso utere "ftp" si fasciculos oneres ad FTP servo pergis.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_FAILED" xml:space="preserve">
     <value>Index rerum in conatu defecit {0}: {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_UPRETRYTIMES_DESC" xml:space="preserve">
-    <value>Quotiens scribe &quot;posuit&quot; mandatum retry onerationes incassum debet. Sciendum est numerorum.</value>
+    <value>Quotiens scribe "posuit" mandatum retry onerationes incassum debet. Sciendum est numerorum.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PING_NEEDSADDR" xml:space="preserve">
     <value>Quisque sit amet nulla.</value>
@@ -811,7 +752,7 @@
     <value>Vertitur in vel off in textu editore autosave pluma.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_DESC" xml:space="preserve">
-    <value>Si autosave possit, fasciculus textus singulis secundis &quot;n&quot; salvus erit.</value>
+    <value>Si autosave possit, fasciculus textus singulis secundis "n" salvus erit.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVE_NAME" xml:space="preserve">
     <value>Admitte textum ed autosave</value>
@@ -835,7 +776,7 @@
     <value>Quot milliseconds expectare ante quam proxime scribes?</value>
   </data>
   <data name="NKS_SHELL_BASE_HELP_NOHELP" xml:space="preserve">
-    <value>Nullum auxilium pro imperio &quot;{0}&quot;.</value>
+    <value>Nullum auxilium pro imperio "{0}".</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_HWINFO_DESC" xml:space="preserve">
     <value>Maps hardware notitia</value>
@@ -1096,7 +1037,7 @@
     <value>Praesto nucleo argumentorum;</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSHA512_DESC" xml:space="preserve">
-    <value>Encrypts in linea per SHA512 &quot;</value>
+    <value>Encrypts in linea per SHA512 "</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSHA384_DESC" xml:space="preserve">
     <value>Encrypts per filum per SHA384</value>
@@ -1372,7 +1313,7 @@
     <value>Addit novas lineas in fine tabella</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_ADDLINES_LINEPROMPT" xml:space="preserve">
-    <value>Ingredere textum quem ad finem tabellae apponere vis. Cum factum es, scribe &quot;EOF&quot; in linea sua.</value>
+    <value>Ingredere textum quem ad finem tabellae apponere vis. Cum factum es, scribe "EOF" in linea sua.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_HOSTNAME_NAME" xml:space="preserve">
     <value>Nomen exercitus</value>
@@ -1525,7 +1466,7 @@
     <value>Ostendit tabella singula in indice</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>Supprimit molestissima &quot;permissio negata&quot; nuntiis</value>
+    <value>Supprimit molestissima "permissio negata" nuntiis</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_ALL_DESC" xml:space="preserve">
     <value>Ostendit omne tempus zonis</value>
@@ -1651,7 +1592,7 @@
     <value>Hex editor limam adhuc rivum non aperuit.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_PROMPT" xml:space="preserve">
-    <value>Intra byte in sua linea quam ad finem tabellae appendere vis. Cum factum es, scribe &quot;EOF&quot; in linea sua.</value>
+    <value>Intra byte in sua linea quam ad finem tabellae appendere vis. Cum factum es, scribe "EOF" in linea sua.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_INVALIDBYTE" xml:space="preserve">
     <value>Non validum byte.</value>
@@ -1774,7 +1715,7 @@
     <value>Tabularium seu folder {0} adhuc clausum est etiam post {1} seconds.</value>
   </data>
   <data name="NKS_KERNEL_LICENSEINFO" xml:space="preserve">
-    <value>Curre &apos;licentiam&apos; ad videndi informationem.</value>
+    <value>Curre 'licentiam' ad videndi informationem.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_TITLE" xml:space="preserve">
     <value>Kernel primo-run</value>
@@ -1816,7 +1757,7 @@
     <value>Praeter automatice pro updates reprimendis, Nitrocid KS, etiam tabellam update automatice detrahi potest.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
-    <value>Semper reprehendo pro updates nucleo utens mandatum &quot;update&quot;.</value>
+    <value>Semper reprehendo pro updates nucleo utens mandatum "update".</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TITLE" xml:space="preserve">
     <value>Incipias!</value>
@@ -1834,7 +1775,7 @@
     <value>Preme quamlibet clavem ut putamen anyways incipias, sed nota quaeso te ut novum usorem manually creare possis.</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_USERLOCKED" xml:space="preserve">
-    <value>Conatur ad modify existentium causa dum suus &apos;clausum</value>
+    <value>Conatur ad modify existentium causa dum suus 'clausum</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_UNENCRYPTEDPASS" xml:space="preserve">
     <value>Conatur ad addere unencrypted password ut users list.</value>
@@ -2179,7 +2120,7 @@
     <value>Et mail ratio offendit errorem.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_MODINSTALL" xml:space="preserve">
-    <value>De mod defuit ad install. Reprehendo fac quod suus &apos;a valet mod lima. Si vestri mod est valida .NET ecclesiam, reprehendo facere certus quod actualiter perfecta interface quod est ad satus ad mod.</value>
+    <value>De mod defuit ad install. Reprehendo fac quod suus 'a valet mod lima. Si vestri mod est valida .NET ecclesiam, reprehendo facere certus quod actualiter perfecta interface quod est ad satus ad mod.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_MODWITHOUTMOD" xml:space="preserve">
     <value>Mod continet non modi exempli. Consulere cum mod vendor ad novum copy.</value>
@@ -2302,10 +2243,10 @@
     <value>Operatio inrita textus editor conficitur.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>Cum nucleus certum modum onerare conatus est, postulavit loading &quot;Kernel Simulator&quot;. Cum principalis applicatio Nitrocid KS appellata sit, modus hic tuto currere non potest. Monemus te ut mod upgrade.</value>
+    <value>Cum nucleus certum modum onerare conatus est, postulavit loading "Kernel Simulator". Cum principalis applicatio Nitrocid KS appellata sit, modus hic tuto currere non potest. Monemus te ut mod upgrade.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
-    <value>A contactus procurator errore occurrit cum trying ut praestare rogatus operationem. Fac quod in contactu lima existit in rectam folder quod suus &apos;a valet vCard 2.1, 3.0, aut 4.0 Contact file.</value>
+    <value>A contactus procurator errore occurrit cum trying ut praestare rogatus operationem. Fac quod in contactu lima existit in rectam folder quod suus 'a valet vCard 2.1, 3.0, aut 4.0 Contact file.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_SQLEDITOR" xml:space="preserve">
     <value>An Aliquam SQL Editor operatio est facta.</value>
@@ -2362,7 +2303,7 @@
     <value>Defecit administratione pars hardware.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_LOGINHANDLER" xml:space="preserve">
-    <value>Login Handl defecit. Quaeso ut suus &apos;relatus proprie et quod facit suum officium quod expectata.</value>
+    <value>Login Handl defecit. Quaeso ut suus 'relatus proprie et quod facit suum officium quod expectata.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_ENCODING" xml:space="preserve">
     <value>Encoding est defuit. Reprehendo fac ut encoding coegi operatur recte et figere aliqua difficultates si invenitur, deinde iterum.</value>
@@ -2380,7 +2321,7 @@
     <value>Aliquam placeholder actio. Consulere kernel documenta pro magis notitia.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_DRIVERHANDLER" xml:space="preserve">
-    <value>A coegi Handl defecit praestare quod actio, quia ut suppleverunt parametri iniuriam. Si vos erant &apos;certus quod ipsi erant&apos; certa recte, fac quod tu provisum est ius coegi nomen et genus.</value>
+    <value>A coegi Handl defecit praestare quod actio, quia ut suppleverunt parametri iniuriam. Si vos erant 'certus quod ipsi erant' certa recte, fac quod tu provisum est ius coegi nomen et genus.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_PROGRESSHANDLER" xml:space="preserve">
     <value>Progress Handl est defecit praestare rogatus operationem.</value>
@@ -2581,16 +2522,16 @@
     <value>Mores exequi non possunt, cum non existentibus addon</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FUNCTIONNOTFOUND" xml:space="preserve">
-    <value>Munus invenire non potest &apos;{0}&apos; in addon &apos;{1}&apos;.</value>
+    <value>Munus invenire non potest '{0}' in addon '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_PROPERTYNOTFOUND" xml:space="preserve">
-    <value>Proprietatem invenire non potest &apos;{0}&apos; in addon &apos;{1}&apos;.</value>
+    <value>Proprietatem invenire non potest '{0}' in addon '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FIELDNOTFOUND" xml:space="preserve">
-    <value>Agrum invenire non potest &apos;{0}&apos; in addon &apos;{1}&apos;.</value>
+    <value>Agrum invenire non potest '{0}' in addon '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_NOADDONTYPE" xml:space="preserve">
-    <value>Tantum non Type, {0} &apos;</value>
+    <value>Tantum non Type, {0} '</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_PROBEFAILED_CPU" xml:space="preserve">
     <value>Unum vel de CPU Cores defecit ad specillo. Showing notitia usquam ...</value>
@@ -2605,13 +2546,13 @@
     <value>Unus vel plures de duris agitet omisit probe. Exhibens informationes usquam...</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_NEEDSELEVATION" xml:space="preserve">
-    <value>Hardware non parsed propter privilegia insufficiens. Utere &quot;winelevate&quot; ut sileo Nitrocid in modo sublimi.</value>
+    <value>Hardware non parsed propter privilegia insufficiens. Utere "winelevate" ut sileo Nitrocid in modo sublimi.</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_FAILED" xml:space="preserve">
     <value>Fuit errorem cum probing hardware: {0}</value>
   </data>
   <data name="NKS_KERNEL_JOURNALING_EXCEPTION_FILENOTFOUND" xml:space="preserve">
-    <value>Journal file, {0} &apos;non est.</value>
+    <value>Journal file, {0} 'non est.</value>
   </data>
   <data name="NKS_KERNEL_POWER_INVOKING" xml:space="preserve">
     <value>Longinquus Power Management invocatum:</value>
@@ -2818,7 +2759,7 @@
     <value>File iter</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS" xml:space="preserve">
-    <value>Electus &apos;{0}&apos;. Press ESC exire ac confirmare lectio.</value>
+    <value>Electus '{0}'. Press ESC exire ac confirmare lectio.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTFAILED" xml:space="preserve">
     <value>Non possumus aperire folder vel eligere file</value>
@@ -2830,10 +2771,10 @@
     <value>Press spatium pro more info</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>Electus &apos;{0}&apos;. Press ESC exire ac confirmare excerpta.</value>
+    <value>Electus '{0}'. Press ESC exire ac confirmare excerpta.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_UNSELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>Nonne electae &apos;{0}&apos;. Press ESC exire ac confirmare excerpta.</value>
+    <value>Nonne electae '{0}'. Press ESC exire ac confirmare excerpta.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOSELECTIONS" xml:space="preserve">
     <value>Nulla files lectus.</value>
@@ -3169,7 +3110,7 @@
     <value>&gt;&gt; Longinquus Debug: versio</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_FIRSTTIME" xml:space="preserve">
-    <value>&gt;&gt; Welcome! Hoc primum tuum est lusione remota intrantes. Utere &quot;/subcriptio &lt;nomen&gt;&quot; ad subcriptio.</value>
+    <value>&gt;&gt; Welcome! Hoc primum tuum est lusione remota intrantes. Utere "/subcriptio &lt;nomen&gt;" ad subcriptio.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_DEVICENOTFOUND_BLOCK" xml:space="preserve">
     <value>Machinam non inveni angustos.</value>
@@ -3244,7 +3185,7 @@
     <value>Tempus zona non invenitur.</value>
   </data>
   <data name="NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NEEDSTZDATA" xml:space="preserve">
-    <value>Tempus zonae informationis involucrum nondum in systemate Linux inauguratus est. Instrue &apos;tzdata&apos; utens involucrum distributionis tuae procurator.</value>
+    <value>Tempus zonae informationis involucrum nondum in systemate Linux inauguratus est. Instrue 'tzdata' utens involucrum distributionis tuae procurator.</value>
   </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
     <value>Loading</value>
@@ -3262,7 +3203,7 @@
     <value>Tardus nuntius e</value>
   </data>
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>Ut novissimum nuntium adsequi possem, Testa RSS addon extras instituere debet. Imperio uti potes &quot;getaddons&quot; ut omnia additamenta!</value>
+    <value>Ut novissimum nuntium adsequi possem, Testa RSS addon extras instituere debet. Imperio uti potes "getaddons" ut omnia additamenta!</value>
   </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Mandatum non inveni.</value>
@@ -3742,7 +3683,7 @@
     <value>&gt;&gt; Longinquus Chat: version</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CHAT_WELCOME" xml:space="preserve">
-    <value>&gt;&gt; Welcome! Hoc est primum intrantes chat remotis. In remotis debugger, &quot;/subcriptio &lt;nomen&gt;&quot; utere ad subcriptio. Non potes loqui donec subcriptio.</value>
+    <value>&gt;&gt; Welcome! Hoc est primum intrantes chat remotis. In remotis debugger, "/subcriptio &lt;nomen&gt;" utere ad subcriptio. Non potes loqui donec subcriptio.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_BENCHMARKSLEEPONE_DESC" xml:space="preserve">
     <value>Quot milliseconds dormire fecit pro uno millisecondo tantum?</value>
@@ -3946,7 +3887,7 @@
     <value>Probat screen pluma pro console</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_FAILED" xml:space="preserve">
-    <value>&apos;Collaborative non reddere:</value>
+    <value>'Collaborative non reddere:</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSWITCHES_DESC" xml:space="preserve">
     <value>probat permutat</value>
@@ -3955,7 +3896,7 @@
     <value>Sessio numerus invalida est.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_USERFLAG_FLAGINVALID" xml:space="preserve">
-    <value>In certa principalis vexillum genus invalidum est &quot;</value>
+    <value>In certa principalis vexillum genus invalidum est "</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_USERFULLNAME_SUCCESS" xml:space="preserve">
     <value>Nomen plenum pone {0}. Iterum ini velis.</value>
@@ -4303,7 +4244,7 @@
     <value>Hardware occasus</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TIP" xml:space="preserve">
-    <value>Utere &quot;hwinfo&quot; pro extenso informationes circa hardware.</value>
+    <value>Utere "hwinfo" pro extenso informationes circa hardware.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_USER_TITLE" xml:space="preserve">
     <value>User occasus</value>
@@ -4714,7 +4655,7 @@
     <value>Filesystem occasus</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_FILESYSTEM_PRINTLINENUMS_DESC" xml:space="preserve">
-    <value>Facit &quot;cat&quot; mandatum imprimendi tabellae lineae numerorum.</value>
+    <value>Facit "cat" mandatum imprimendi tabellae lineae numerorum.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_DESC" xml:space="preserve">
     <value>Haec sectio uncinos retis enumerat, sicut putamen FTP, mandatum retis actis uncinis et uncinis debug remotis.</value>
@@ -5188,22 +5129,22 @@
     <value>Utere et claves seligere quae viscus illustratur.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING2" xml:space="preserve">
-    <value>Torcular intrare tabernus delectis OS, `e&apos; ut emendo mandata</value>
+    <value>Torcular intrare tabernus delectis OS, `e' ut emendo mandata</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING3" xml:space="preserve">
-    <value>ante tabernus vel &apos;c&apos; pro order versus.</value>
+    <value>ante tabernus vel 'c' pro order versus.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_TIMEOUT" xml:space="preserve">
     <value>Viscus illustratus sponte in {0}s exsecutioni mandabitur.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING1" xml:space="preserve">
-    <value>Torcular intrare ut tabernus lectus OS, `e&apos; ut emendo</value>
+    <value>Torcular intrare ut tabernus lectus OS, `e' ut emendo</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING2" xml:space="preserve">
-    <value>iubet ante tabernus vel &apos;c&apos; pro order versus.</value>
+    <value>iubet ante tabernus vel 'c' pro order versus.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING1" xml:space="preserve">
-    <value>Tabernus &apos;{0}&apos;</value>
+    <value>Tabernus '{0}'</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING2" xml:space="preserve">
     <value>Filesystem genus est</value>
@@ -5257,10 +5198,10 @@
     <value>Default tabernus ingressum lectio. Hic numerus nullus est substructio, ergo elementum primum index 0 est, et sic porro.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_NAME" xml:space="preserve">
-    <value>Admitte &apos;Protocollum Nitrocidum&apos;</value>
+    <value>Admitte 'Protocollum Nitrocidum'</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_DESC" xml:space="preserve">
-    <value>&quot;Protogium Nitrocid&quot; dat id videre permittit quod in aspectu fit.</value>
+    <value>"Protogium Nitrocid" dat id videre permittit quod in aspectu fit.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGBGCOLOR_NAME" xml:space="preserve">
     <value>Interactive TUI builtin key binding background color</value>
@@ -5863,16 +5804,16 @@
     <value>Falsum negare, verum concedere</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_ARGUMENT_NEWNAME_DESC" xml:space="preserve">
-    <value>Nova ostentationis nomen vel &apos;cladum&apos; nomen ostentationis dele</value>
+    <value>Nova ostentationis nomen vel 'cladum' nomen ostentationis dele</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERLANG_ARGUMENT_LANGID_DESC" xml:space="preserve">
-    <value>Idioma trium litterarum ID, vel &apos;clara&apos; ad linguam praelatam manifestam</value>
+    <value>Idioma trium litterarum ID, vel 'clara' ad linguam praelatam manifestam</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_DESC" xml:space="preserve">
     <value>Mutat satius user cultura</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_ARGUMENT_CULTUREID_DESC" xml:space="preserve">
-    <value>Cultura ID, vel &apos;clara&apos; ad culturam praeferendam purgandam</value>
+    <value>Cultura ID, vel 'clara' ad culturam praeferendam purgandam</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_USERCULTURE_SUCCESS" xml:space="preserve">
     <value>Praeposuit culturae usuario {0} ad pone. Iterum ini velis.</value>
@@ -5968,7 +5909,7 @@
     <value>A character to query</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_ARGUMENT_LINENUM_DESC" xml:space="preserve">
-    <value>Linea numerus (vel singulare vel initium range), vel &apos;omnibus&apos; ad quaerendum characterem in omnibus lineis</value>
+    <value>Linea numerus (vel singulare vel initium range), vel 'omnibus' ad quaerendum characterem in omnibus lineis</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_ARGUMENT_WORD_DESC" xml:space="preserve">
     <value>Verbum vel sententia ad query</value>
@@ -5983,7 +5924,7 @@
     <value>Verbum aut sententia reponere apud</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINE_ARGUMENT_LINENUM_DESC" xml:space="preserve">
-    <value>Linea numerus (vel singulare vel initium distribuendi) vel &apos;omne&apos; pro omnibus lineis</value>
+    <value>Linea numerus (vel singulare vel initium distribuendi) vel 'omne' pro omnibus lineis</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_ARGUMENT_REGEX_DESC" xml:space="preserve">
     <value>A regular expression to match phrases, qui reponi debent</value>
@@ -6517,16 +6458,16 @@
     <value>Quae cultura adhibetur ut nomina, calendarium, mutare mensem, etc.?</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME" xml:space="preserve">
-    <value>Admitte &apos;Protocollum Nitrocidum&apos; RSS feed</value>
+    <value>Admitte 'Protocollum Nitrocidum' RSS feed</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_DESC" xml:space="preserve">
     <value>Protocollum nitrocidum dat RSS feed content in dextra parte tentorii.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_NAME" xml:space="preserve">
-    <value>&apos;Protocollum Nitrocidum&apos; content</value>
+    <value>'Protocollum Nitrocidum' content</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_DESC" xml:space="preserve">
-    <value>Partem quandam eligit quae in &apos;Protocollo Nitrocido&apos; ostendetur.</value>
+    <value>Partem quandam eligit quae in 'Protocollo Nitrocido' ostendetur.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_NAME" xml:space="preserve">
     <value>Notification terminus occasus</value>
@@ -6748,7 +6689,7 @@
     <value>Protector scrinii fortuitus eligit.</value>
   </data>
   <data name="NKS_KERNEL_SHELLTIP" xml:space="preserve">
-    <value>Ad incipiendum, scribe &apos;help&apos; et preme ENTER.</value>
+    <value>Ad incipiendum, scribe 'help' et preme ENTER.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME" xml:space="preserve">
     <value>Volumen indicii audio pro lectore</value>
@@ -6763,7 +6704,7 @@
     <value>Character qui tesserae ingressae obtegit. Vacuum relinque propter maiorem securitatem.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3" xml:space="preserve">
-    <value>Ad testam accedendum, clavem S preme si in pagina prima es. Postea, &apos;auxilium&apos; scribere et clavem ENTER premere potes ut incipias!</value>
+    <value>Ad testam accedendum, clavem S preme si in pagina prima es. Postea, 'auxilium' scribere et clavem ENTER premere potes ut incipias!</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
     <value>Claves duplicatae in exemplo configurationum tuarum fuerunt. Quaeso, variabilem iterum verifica ut confirmes eam non plus quam semel exstare.</value>
@@ -6919,7 +6860,7 @@
     <value>Utendi interfacie usoris tutelaris scrinii ad praevidendum servatorem scrinii</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY" xml:space="preserve">
-    <value>Haec interactiva interfacies usoris (TUI) tibi permittit ut protectorem scrinii praevideas et imaginem tuam cum eo serves, sive cum protectore incluso sive cum protectore proprio. Facile protectorem scrinii eligere potes ut directe ex hac TUI praevideas, protectorem scrinii ex indice deligendo et clavem &quot;ENTER&quot; premendo.</value>
+    <value>Haec interactiva interfacies usoris (TUI) tibi permittit ut protectorem scrinii praevideas et imaginem tuam cum eo serves, sive cum protectore incluso sive cum protectore proprio. Facile protectorem scrinii eligere potes ut directe ex hac TUI praevideas, protectorem scrinii ex indice deligendo et clavem "ENTER" premendo.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE" xml:space="preserve">
     <value>Zonae horariae vivae</value>
@@ -7182,5 +7123,7 @@
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
     <value>Versionem beta nuclei uteris. In errores, instabilitates, vel etiam iacturam datorum incidere potes. Versione stabili uti commendamus, si fieri potest.</value>
   </data>
-
+  <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
+    <value>Nullae commentationes</value>
+  </data>
 </root>

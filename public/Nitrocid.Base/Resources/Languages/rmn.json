@@ -9426,6 +9426,10 @@
     {
       "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
       "text": "Utilizați versiunea beta a kernelului. Este posibil să întâmpinați erori, instabilități sau chiar pierderi de date. Vă recomandăm să utilizați versiunea stabilă, dacă este posibil."
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
+      "text": "Niciun articol"
     }
   ]
 }

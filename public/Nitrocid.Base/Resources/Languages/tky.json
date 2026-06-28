@@ -9426,6 +9426,10 @@
     {
       "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
       "text": "Çekirdeğin beta sürümünü kullanıyorsunuz. Hatalarla, dengesizliklerle ve hatta veri kayıplarıyla karşılaşabilirsiniz. Mümkünse kararlı sürümü kullanmanızı öneririz."
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
+      "text": "Makale yok"
     }
   ]
 }

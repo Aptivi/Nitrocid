@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
+  </resheader>
+  <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
     <value>أدخل كلمة مرور المسؤول للصيانة.</value>
   </data>
   <data name="NKS_KERNEL_ENTRY_EXCEPTION_KERNELERROR" xml:space="preserve">
@@ -319,7 +260,7 @@
     <value>فشل التنزيل في المحاولة {0}: {1}</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GET_NEEDSFTP" xml:space="preserve">
-    <value>يرجى استخدام &quot;ftp&quot; إذا كنت تنوي تنزيل الملفات من خادم FTP.</value>
+    <value>يرجى استخدام "ftp" إذا كنت تنوي تنزيل الملفات من خادم FTP.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GET_DESC" xml:space="preserve">
     <value>يقوم بتنزيل ملف إلى دليل العمل الحالي</value>
@@ -553,7 +494,7 @@
     <value>اكتب منفذ مصحح أخطاء بعيد. يجب أن تكون رقمية ، ويجب ألا تكون مستخدمة بالفعل. خلاف ذلك ، سيفشل المصحح عن بعد في فتح المنفذ.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_RETRYTIMES_DESC" xml:space="preserve">
-    <value>اكتب عدد المرات التي يجب فيها على أمر &quot;get&quot; إعادة محاولة التنزيلات الفاشلة. يجب أن تكون رقمية.</value>
+    <value>اكتب عدد المرات التي يجب فيها على أمر "get" إعادة محاولة التنزيلات الفاشلة. يجب أن تكون رقمية.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERPOSITIVE" xml:space="preserve">
     <value>قد لا تكون الإجابة بالنفي.</value>
@@ -604,7 +545,7 @@
     <value>فشل تغيير كلمة مرور اسم المستخدم: {0}</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FINDFILEFORMATCHFAILED" xml:space="preserve">
-    <value>تعذر العثور على ملف يطابق السلسلة &quot;{0}&quot;: {1}</value>
+    <value>تعذر العثور على ملف يطابق السلسلة "{0}": {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_DESC" xml:space="preserve">
     <value>كل بدء التشغيل ، سوف يتحقق من وجود تحديثات.</value>
@@ -703,7 +644,7 @@
     <value>الملف عبارة عن أرشيف. تستخدم للنسخ الاحتياطي.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_INVALIDATTR" xml:space="preserve">
-    <value>السمة &quot;{0}&quot; غير صالحة.</value>
+    <value>السمة "{0}" غير صالحة.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_ADDSUCCESS" xml:space="preserve">
     <value>تمت إضافة السمة بنجاح.</value>
@@ -739,10 +680,10 @@
     <value>جارٍ التنزيل من {0} ...</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_NAME" xml:space="preserve">
-    <value>إظهار شريط التقدم أثناء التنزيل أو التحميل من أمر &quot;get&quot; أو &quot;put&quot;</value>
+    <value>إظهار شريط التقدم أثناء التنزيل أو التحميل من أمر "get" أو "put"</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_DESC" xml:space="preserve">
-    <value>إذا كان هذا صحيحًا ، فإنه يجعل &quot;get&quot; أو &quot;put&quot; يظهر شريط التقدم أثناء التنزيل أو التحميل.</value>
+    <value>إذا كان هذا صحيحًا ، فإنه يجعل "get" أو "put" يظهر شريط التقدم أثناء التنزيل أو التحميل.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PUT_DESC" xml:space="preserve">
     <value>يقوم بتحميل ملف إلى موقع الويب المحدد</value>
@@ -757,13 +698,13 @@
     <value>اكتمل التحميل.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_NEEDSFTP" xml:space="preserve">
-    <value>الرجاء استخدام &quot;ftp&quot; إذا كنت تنوي تحميل الملفات إلى خادم FTP.</value>
+    <value>الرجاء استخدام "ftp" إذا كنت تنوي تحميل الملفات إلى خادم FTP.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_FAILED" xml:space="preserve">
     <value>فشل التحميل في محاولة {0}: {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_UPRETRYTIMES_DESC" xml:space="preserve">
-    <value>اكتب عدد المرات التي يجب أن يعيد فيها الأمر &quot;put&quot; محاولة التحميلات الفاشلة. يجب أن تكون رقمية.</value>
+    <value>اكتب عدد المرات التي يجب أن يعيد فيها الأمر "put" محاولة التحميلات الفاشلة. يجب أن تكون رقمية.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PING_NEEDSADDR" xml:space="preserve">
     <value>يجب ألا يكون العنوان فارغًا.</value>
@@ -811,7 +752,7 @@
     <value>لتشغيل أو إيقاف تشغيل ميزة الحفظ التلقائي لمحرر النصوص.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_DESC" xml:space="preserve">
-    <value>إذا تم تمكين الحفظ التلقائي ، فسيتم حفظ الملف النصي لكل ثانية &quot;n&quot;.</value>
+    <value>إذا تم تمكين الحفظ التلقائي ، فسيتم حفظ الملف النصي لكل ثانية "n".</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVE_NAME" xml:space="preserve">
     <value>تفعيل الحفظ التلقائي لمحرر النصوص</value>
@@ -835,7 +776,7 @@
     <value>كم ميلي ثانية يجب الانتظار قبل إجراء الكتابة التالية؟</value>
   </data>
   <data name="NKS_SHELL_BASE_HELP_NOHELP" xml:space="preserve">
-    <value>لا توجد تعليمات للأمر &quot;{0}&quot;.</value>
+    <value>لا توجد تعليمات للأمر "{0}".</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_HWINFO_DESC" xml:space="preserve">
     <value>يطبع معلومات الأجهزة</value>
@@ -1372,7 +1313,7 @@
     <value>يضيف الأسطر الجديدة في نهاية الملف</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_ADDLINES_LINEPROMPT" xml:space="preserve">
-    <value>أدخل النص الذي تريد إلحاقه بنهاية الملف. عند الانتهاء ، اكتب &quot;EOF&quot; على السطر الخاص بها.</value>
+    <value>أدخل النص الذي تريد إلحاقه بنهاية الملف. عند الانتهاء ، اكتب "EOF" على السطر الخاص بها.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_HOSTNAME_NAME" xml:space="preserve">
     <value>اسم المضيف</value>
@@ -1525,7 +1466,7 @@
     <value>يظهر تفاصيل الملف في القائمة</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>منع رسائل &quot;رفض الإذن&quot; المزعجة</value>
+    <value>منع رسائل "رفض الإذن" المزعجة</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_ALL_DESC" xml:space="preserve">
     <value>يظهر كل المناطق الزمنية</value>
@@ -1651,7 +1592,7 @@
     <value>لم يفتح المحرر السداسي تدفق ملف حتى الآن.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_PROMPT" xml:space="preserve">
-    <value>أدخل بايت في السطر الخاص به الذي تريد إلحاقه بنهاية الملف. عند الانتهاء ، اكتب &quot;EOF&quot; على السطر الخاص بها.</value>
+    <value>أدخل بايت في السطر الخاص به الذي تريد إلحاقه بنهاية الملف. عند الانتهاء ، اكتب "EOF" على السطر الخاص بها.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_INVALIDBYTE" xml:space="preserve">
     <value>بايت غير صالح.</value>
@@ -1774,7 +1715,7 @@
     <value>يظل الملف أو المجلد {0} مقفلاً حتى بعد الانتظار لمدة {1} ثانية.</value>
   </data>
   <data name="NKS_KERNEL_LICENSEINFO" xml:space="preserve">
-    <value>قم بتشغيل &quot;الترخيص&quot; لرؤية معلومات الترخيص.</value>
+    <value>قم بتشغيل "الترخيص" لرؤية معلومات الترخيص.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_TITLE" xml:space="preserve">
     <value>تشغيل النواة لأول مرة</value>
@@ -1816,7 +1757,7 @@
     <value>بالإضافة إلى التحقق تلقائيًا من وجود تحديثات، يمكن لـ Nitrocid KS أيضًا تنزيل ملف التحديث تلقائيًا.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
-    <value>يمكنك دائمًا التحقق من تحديثات kernel باستخدام أمر &quot;update&quot;.</value>
+    <value>يمكنك دائمًا التحقق من تحديثات kernel باستخدام أمر "update".</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TITLE" xml:space="preserve">
     <value>البدء!</value>
@@ -2302,7 +2243,7 @@
     <value>يتم الآن تنفيذ عملية محرر نص غير صالحة.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>عندما حاولت النواة تحميل الوضع المحدد، طلبت تحميل &quot;Kernel Simulator&quot;. نظرًا لإعادة تسمية التطبيق الرئيسي إلى Nitrocid KS، لا يمكن تشغيل هذا الوضع بأمان. ننصحك بترقية الوضع.</value>
+    <value>عندما حاولت النواة تحميل الوضع المحدد، طلبت تحميل "Kernel Simulator". نظرًا لإعادة تسمية التطبيق الرئيسي إلى Nitrocid KS، لا يمكن تشغيل هذا الوضع بأمان. ننصحك بترقية الوضع.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
     <value>حدث خطأ في إدارة جهات الاتصال أثناء محاولة تنفيذ العملية المطلوبة. تأكد من وجود ملف جهة الاتصال في المجلد الصحيح وأنه ملف جهة اتصال vCard 2.1 أو 3.0 أو 4.0 صالح.</value>
@@ -2581,16 +2522,16 @@
     <value>لا يمكن تنفيذ وظيفة مخصصة مع ملحق غير موجود</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FUNCTIONNOTFOUND" xml:space="preserve">
-    <value>لا يمكن العثور على الوظيفة &apos;{0}&apos; في الملحق &apos;{1}&apos;.</value>
+    <value>لا يمكن العثور على الوظيفة '{0}' في الملحق '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_PROPERTYNOTFOUND" xml:space="preserve">
-    <value>لا يمكن العثور على الخاصية &apos;{0}&apos; في الملحق &apos;{1}&apos;.</value>
+    <value>لا يمكن العثور على الخاصية '{0}' في الملحق '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FIELDNOTFOUND" xml:space="preserve">
-    <value>لا يمكن العثور على الحقل &apos;{0}&apos; في الملحق &apos;{1}&apos;.</value>
+    <value>لا يمكن العثور على الحقل '{0}' في الملحق '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_NOADDONTYPE" xml:space="preserve">
-    <value>لا يوجد مثل هذا النوع الإضافي &apos;{0}&apos;</value>
+    <value>لا يوجد مثل هذا النوع الإضافي '{0}'</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_PROBEFAILED_CPU" xml:space="preserve">
     <value>فشل واحد أو أكثر من مراكز وحدة المعالجة المركزية في التحقيق. عرض المعلومات على أي حال...</value>
@@ -2605,13 +2546,13 @@
     <value>فشل واحد أو أكثر من محركات الأقراص الثابتة في التحقيق. عرض المعلومات على أي حال...</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_NEEDSELEVATION" xml:space="preserve">
-    <value>لن يتم تحليل الأجهزة بسبب عدم كفاية الامتيازات. استخدم &quot;winelevate&quot; لإعادة تشغيل Nitrocid في الوضع المرتفع.</value>
+    <value>لن يتم تحليل الأجهزة بسبب عدم كفاية الامتيازات. استخدم "winelevate" لإعادة تشغيل Nitrocid في الوضع المرتفع.</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_FAILED" xml:space="preserve">
     <value>حدث خطأ أثناء فحص الأجهزة: {0}</value>
   </data>
   <data name="NKS_KERNEL_JOURNALING_EXCEPTION_FILENOTFOUND" xml:space="preserve">
-    <value>ملف اليومية &apos;{0}&apos; غير موجود.</value>
+    <value>ملف اليومية '{0}' غير موجود.</value>
   </data>
   <data name="NKS_KERNEL_POWER_INVOKING" xml:space="preserve">
     <value>تم استدعاء إدارة الطاقة عن بعد:</value>
@@ -2818,7 +2759,7 @@
     <value>مسار الملف</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS" xml:space="preserve">
-    <value>تم تحديد &quot;{0}&quot;. اضغط على ESC للخروج وتأكيد الاختيار.</value>
+    <value>تم تحديد "{0}". اضغط على ESC للخروج وتأكيد الاختيار.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTFAILED" xml:space="preserve">
     <value>لا يمكن فتح المجلد أو تحديد الملف</value>
@@ -2830,10 +2771,10 @@
     <value>اضغط على SPACE لمزيد من المعلومات</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>تم تحديد &quot;{0}&quot;. اضغط على ESC للخروج وتأكيد التحديدات.</value>
+    <value>تم تحديد "{0}". اضغط على ESC للخروج وتأكيد التحديدات.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_UNSELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>تم إلغاء تحديد &quot;{0}&quot;. اضغط على ESC للخروج وتأكيد التحديدات.</value>
+    <value>تم إلغاء تحديد "{0}". اضغط على ESC للخروج وتأكيد التحديدات.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOSELECTIONS" xml:space="preserve">
     <value>لا توجد ملفات محددة.</value>
@@ -3169,7 +3110,7 @@
     <value>&gt;&gt; التصحيح عن بعد: الإصدار</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_FIRSTTIME" xml:space="preserve">
-    <value>&gt;&gt; مرحبا! هذه هي المرة الأولى التي تدخل فيها التصحيح عن بعد. استخدم &quot;/ تسجيل &lt;الاسم&gt;&quot; للتسجيل.</value>
+    <value>&gt;&gt; مرحبا! هذه هي المرة الأولى التي تدخل فيها التصحيح عن بعد. استخدم "/ تسجيل &lt;الاسم&gt;" للتسجيل.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_DEVICENOTFOUND_BLOCK" xml:space="preserve">
     <value>لم يتم العثور على الجهاز ليتم حظره.</value>
@@ -3244,7 +3185,7 @@
     <value>لم يتم العثور على المنطقة الزمنية.</value>
   </data>
   <data name="NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NEEDSTZDATA" xml:space="preserve">
-    <value>لم يتم تثبيت حزمة معلومات المنطقة الزمنية بعد على نظام Linux الخاص بك. قم بتثبيت &quot;tzdata&quot; باستخدام مدير الحزم الخاص بالتوزيع.</value>
+    <value>لم يتم تثبيت حزمة معلومات المنطقة الزمنية بعد على نظام Linux الخاص بك. قم بتثبيت "tzdata" باستخدام مدير الحزم الخاص بالتوزيع.</value>
   </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
     <value>تحميل</value>
@@ -3262,7 +3203,7 @@
     <value>آخر الأخبار من</value>
   </data>
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>لتتمكن من الحصول على آخر الأخبار، يجب عليك تثبيت الملحق RSS Shell Extras. يمكنك استخدام الأمر &quot;getaddons&quot; للحصول على جميع الإضافات!</value>
+    <value>لتتمكن من الحصول على آخر الأخبار، يجب عليك تثبيت الملحق RSS Shell Extras. يمكنك استخدام الأمر "getaddons" للحصول على جميع الإضافات!</value>
   </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>القيادة لم يتم العثور.</value>
@@ -3742,7 +3683,7 @@
     <value>&gt;&gt; الدردشة عن بعد: الإصدار</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CHAT_WELCOME" xml:space="preserve">
-    <value>&gt;&gt; مرحبا! هذه هي المرة الأولى التي تدخل فيها إلى الدردشة عن بعد. في مصحح الأخطاء عن بعد، استخدم &quot;/ تسجيل &lt;الاسم&gt;&quot; للتسجيل. لا يمكنك التحدث حتى تقوم بالتسجيل.</value>
+    <value>&gt;&gt; مرحبا! هذه هي المرة الأولى التي تدخل فيها إلى الدردشة عن بعد. في مصحح الأخطاء عن بعد، استخدم "/ تسجيل &lt;الاسم&gt;" للتسجيل. لا يمكنك التحدث حتى تقوم بالتسجيل.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_BENCHMARKSLEEPONE_DESC" xml:space="preserve">
     <value>كم ميلي ثانية استغرقها النوم لمدة ميلي ثانية واحدة فقط؟</value>
@@ -4303,7 +4244,7 @@
     <value>إعدادات الأجهزة</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TIP" xml:space="preserve">
-    <value>استخدم &quot;hwinfo&quot; للحصول على معلومات موسعة حول الأجهزة.</value>
+    <value>استخدم "hwinfo" للحصول على معلومات موسعة حول الأجهزة.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_USER_TITLE" xml:space="preserve">
     <value>إعدادات المستخدم</value>
@@ -4447,7 +4388,7 @@
     <value>استخدم الألوان المميزة</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_ACCENT_DESC" xml:space="preserve">
-    <value>إذا تم التعيين على &quot;صحيح&quot;، يقوم مدير السمات بملء الألوان المميزة لأنواع ألوان محددة يدعمها القالب.</value>
+    <value>إذا تم التعيين على "صحيح"، يقوم مدير السمات بملء الألوان المميزة لأنواع ألوان محددة يدعمها القالب.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_FGACCENT_NAME" xml:space="preserve">
     <value>لون التمييز الأمامي</value>
@@ -4714,7 +4655,7 @@
     <value>إعدادات نظام الملفات</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_FILESYSTEM_PRINTLINENUMS_DESC" xml:space="preserve">
-    <value>يجعل الأمر &quot;cat&quot; يطبع أرقام أسطر الملف.</value>
+    <value>يجعل الأمر "cat" يطبع أرقام أسطر الملف.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_DESC" xml:space="preserve">
     <value>يسرد هذا القسم إعدادات الشبكة، مثل FTP shell، وإعدادات الأوامر المتعلقة بالشبكة، وإعدادات التصحيح عن بعد.</value>
@@ -5188,22 +5129,22 @@
     <value>استخدم المفتاحين ↑ و↓ لتحديد الإدخال الذي سيتم تمييزه.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING2" xml:space="preserve">
-    <value>اضغط على زر الإدخال لتشغيل نظام التشغيل المحدد، و`e&apos; لتحرير الأوامر</value>
+    <value>اضغط على زر الإدخال لتشغيل نظام التشغيل المحدد، و`e' لتحرير الأوامر</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING3" xml:space="preserve">
-    <value>قبل التشغيل أو &quot;c&quot; لسطر الأوامر.</value>
+    <value>قبل التشغيل أو "c" لسطر الأوامر.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_TIMEOUT" xml:space="preserve">
     <value>سيتم تنفيذ الإدخال المميز تلقائيًا خلال {0}.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING1" xml:space="preserve">
-    <value>اضغط على Enter لتشغيل نظام التشغيل المحدد، و`e&apos; لتحرير</value>
+    <value>اضغط على Enter لتشغيل نظام التشغيل المحدد، و`e' لتحرير</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING2" xml:space="preserve">
-    <value>الأوامر قبل التشغيل أو &quot;c&quot; لسطر الأوامر.</value>
+    <value>الأوامر قبل التشغيل أو "c" لسطر الأوامر.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING1" xml:space="preserve">
-    <value>التشغيل &apos;{0}&apos;</value>
+    <value>التشغيل '{0}'</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING2" xml:space="preserve">
     <value>نوع نظام الملفات هو</value>
@@ -5257,10 +5198,10 @@
     <value>اختيار إدخال التمهيد الافتراضي. هذا الرقم مبني على الصفر، لذا فإن العنصر الأول هو الفهرس 0، وهكذا.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_NAME" xml:space="preserve">
-    <value>تمكين &quot;الصفحة الرئيسية لـ Nitrocid&quot;</value>
+    <value>تمكين "الصفحة الرئيسية لـ Nitrocid"</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_DESC" xml:space="preserve">
-    <value>تمكين &quot;صفحة Nitrocid الرئيسية&quot; التي تسمح لك برؤية ما يحدث في لمحة.</value>
+    <value>تمكين "صفحة Nitrocid الرئيسية" التي تسمح لك برؤية ما يحدث في لمحة.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGBGCOLOR_NAME" xml:space="preserve">
     <value>لون خلفية ربط مفتاح TUI التفاعلي</value>
@@ -5863,16 +5804,16 @@
     <value>من الخطأ أن ننكر، ومن الصواب أن نمنح</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_ARGUMENT_NEWNAME_DESC" xml:space="preserve">
-    <value>اسم عرض جديد، أو &quot;مسح&quot; لمسح اسم العرض</value>
+    <value>اسم عرض جديد، أو "مسح" لمسح اسم العرض</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERLANG_ARGUMENT_LANGID_DESC" xml:space="preserve">
-    <value>معرف اللغة المكون من ثلاثة أحرف، أو &quot;مسح&quot; لمسح اللغة المفضلة</value>
+    <value>معرف اللغة المكون من ثلاثة أحرف، أو "مسح" لمسح اللغة المفضلة</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_DESC" xml:space="preserve">
     <value>تغيير ثقافة المستخدم المفضلة</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_ARGUMENT_CULTUREID_DESC" xml:space="preserve">
-    <value>معرف الثقافة، أو &quot;مسح&quot; لمسح الثقافة المفضلة</value>
+    <value>معرف الثقافة، أو "مسح" لمسح الثقافة المفضلة</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_USERCULTURE_SUCCESS" xml:space="preserve">
     <value>تم ضبط ثقافة المستخدم المفضلة على {0}. قد ترغب في تسجيل الدخول مرة أخرى.</value>
@@ -5968,7 +5909,7 @@
     <value>شخصية للاستعلام</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_ARGUMENT_LINENUM_DESC" xml:space="preserve">
-    <value>رقم السطر (إما مفرد أو بداية النطاق)، أو &quot;الكل&quot; للاستعلام عن حرف في جميع الأسطر</value>
+    <value>رقم السطر (إما مفرد أو بداية النطاق)، أو "الكل" للاستعلام عن حرف في جميع الأسطر</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_ARGUMENT_WORD_DESC" xml:space="preserve">
     <value>كلمة أو عبارة للاستعلام</value>
@@ -5983,7 +5924,7 @@
     <value>كلمة أو عبارة لاستبدالها بـ</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINE_ARGUMENT_LINENUM_DESC" xml:space="preserve">
-    <value>رقم السطر (إما مفرد أو بداية النطاق)، أو &quot;الكل&quot; للاستبدال في جميع الأسطر</value>
+    <value>رقم السطر (إما مفرد أو بداية النطاق)، أو "الكل" للاستبدال في جميع الأسطر</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_ARGUMENT_REGEX_DESC" xml:space="preserve">
     <value>تعبير منتظم لمطابقة العبارات التي يجب استبدالها</value>
@@ -6247,7 +6188,7 @@
     <value>اسم المجموعة التي سيتم إزالة المستخدم منها</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_ARGUMENT_SAVERNAME_DESC" xml:space="preserve">
-    <value>إما اسم شاشة التوقف أو &quot;عشوائي&quot;</value>
+    <value>إما اسم شاشة التوقف أو "عشوائي"</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SEARCH_ARGUMENT_REGEXP_DESC" xml:space="preserve">
     <value>تعبير منتظم للبحث</value>
@@ -6517,16 +6458,16 @@
     <value>ما هي الثقافة التي يتم استخدامها لتغيير أسماء الأشهر والتقويم وما إلى ذلك؟</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME" xml:space="preserve">
-    <value>تمكين موجز RSS لـ &quot;الصفحة الرئيسية لـ Nitrocid&quot;</value>
+    <value>تمكين موجز RSS لـ "الصفحة الرئيسية لـ Nitrocid"</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_DESC" xml:space="preserve">
-    <value>تمكين أداة موجز RSS لـ &quot;الصفحة الرئيسية لـ Nitrocid&quot; على الجانب الأيمن من الشاشة.</value>
+    <value>تمكين أداة موجز RSS لـ "الصفحة الرئيسية لـ Nitrocid" على الجانب الأيمن من الشاشة.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_NAME" xml:space="preserve">
-    <value>أداة &quot;الصفحة الرئيسية لـ Nitrocid&quot;</value>
+    <value>أداة "الصفحة الرئيسية لـ Nitrocid"</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_DESC" xml:space="preserve">
-    <value>تحديد أداة سيتم عرضها في &quot;الصفحة الرئيسية لـ Nitrocid&quot;.</value>
+    <value>تحديد أداة سيتم عرضها في "الصفحة الرئيسية لـ Nitrocid".</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_NAME" xml:space="preserve">
     <value>إعدادات حدود الإشعارات</value>
@@ -6748,7 +6689,7 @@
     <value>يختار شاشة توقف عشوائية</value>
   </data>
   <data name="NKS_KERNEL_SHELLTIP" xml:space="preserve">
-    <value>للبدء، اكتب &quot;help&quot; واضغط على مفتاح الإدخال (ENTER).</value>
+    <value>للبدء، اكتب "help" واضغط على مفتاح الإدخال (ENTER).</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME" xml:space="preserve">
     <value>مستوى صوت الإشارة الصوتية للقارئ</value>
@@ -6763,7 +6704,7 @@
     <value>حرف يُستخدم لإخفاء كلمة المرور المدخلة. اتركه فارغًا لمزيد من الأمان.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3" xml:space="preserve">
-    <value>للدخول إلى سطر الأوامر، اضغط على مفتاح S إذا كنت في الصفحة الرئيسية. بعد ذلك، يمكنك كتابة &apos;help&apos; والضغط على مفتاح الإدخال (Enter) للبدء!</value>
+    <value>للدخول إلى سطر الأوامر، اضغط على مفتاح S إذا كنت في الصفحة الرئيسية. بعد ذلك، يمكنك كتابة 'help' والضغط على مفتاح الإدخال (Enter) للبدء!</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
     <value>تم العثور على مفاتيح مكررة في إعداداتك. يرجى التحقق من المتغير للتأكد من عدم وجوده أكثر من مرة.</value>
@@ -7182,5 +7123,7 @@
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
     <value>أنت تستخدم الإصدار التجريبي من النواة. قد تواجه أخطاءً أو عدم استقرار أو حتى فقدانًا للبيانات. نوصي باستخدام الإصدار المستقر إن أمكن.</value>
   </data>
-
+  <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
+    <value>لا توجد مقالات</value>
+  </data>
 </root>
