@@ -7033,4 +7033,7 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_CRC32C" xml:space="preserve">
     <value>Ekstralar - CRC32C (Castagnoli)</value>
   </data>
+  <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
+    <value>Makale yok</value>
+  </data>
 </root>

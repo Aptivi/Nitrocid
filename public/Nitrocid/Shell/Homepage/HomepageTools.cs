@@ -108,7 +108,6 @@ namespace Nitrocid.Shell.Homepage
             {
                 // Create a screen for the homepage
                 var homeScreenBuffer = new ScreenPart();
-                string rssSequence = "";
                 ScreenTools.SetCurrent(homeScreen);
                 ScreenTools.SetCurrentCyclic(homeScreen);
                 KernelColorTools.LoadBackground();
@@ -127,6 +126,11 @@ namespace Nitrocid.Shell.Homepage
                     string widgetInit = widget.Initialize(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
                     TextWriterRaw.WriteRaw(widgetInit);
                 }
+
+                // Check to see if we have the feed addon installed
+                bool feedAddonInstalled = AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasRssShell)) is not null;
+                string feedErrorMessage = "";
+                (string feedTitle, string articleTitle)[]? articles = null;
 
                 // Now, render the homepage
                 homeScreenBuffer.AddDynamicText(() =>
@@ -212,58 +216,58 @@ namespace Nitrocid.Shell.Homepage
                     // Render the first three RSS feeds
                     if (Config.MainConfig.EnableHomepageRssFeed)
                     {
-                        if (string.IsNullOrEmpty(rssSequence))
+                        int rssFeedLeft = widgetLeft + 1;
+                        int rssFeedTop = rssTop + 1;
+                        string rssSequence = "";
+                        try
                         {
-                            var rssSequenceBuilder = new StringBuilder();
-                            try
+                            if (!Config.MainConfig.ShowHeadlineOnLogin)
+                                rssSequence = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES");
+                            else if (!feedAddonInstalled)
+                                rssSequence = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON");
+                            else
                             {
-                                if (!Config.MainConfig.ShowHeadlineOnLogin)
-                                    rssSequenceBuilder.Append(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES"));
+                                articles ??= ((string feedTitle, string articleTitle)[]?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetArticles", "Nitrocid.Extras.RssShell.Tools.RSSShellTools", Config.MainConfig.RssHeadlineUrl) ?? [];
+                                if (articles is not null && articles.Length > 0)
+                                {
+                                    var headlines = new StringBuilder();
+                                    foreach (var (feedTitle, articleTitle) in articles)
+                                    {
+                                        string finalFeedEntry = $"{articleTitle}";
+                                        finalFeedEntry = finalFeedEntry.Truncate(widgetWidth);
+                                        headlines.AppendLine(finalFeedEntry);
+                                    }
+                                    rssSequence = headlines.ToString();
+                                }
                                 else
                                 {
-                                    var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasRssShell, "Nitrocid.Extras.RssShell.Tools.RSSShellTools");
-                                    var feedsObject = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetArticles", addonType, Config.MainConfig.RssHeadlineUrl);
-                                    bool found = false;
-                                    if (feedsObject is (string feedTitle, string articleTitle)[] feeds)
-                                    {
-                                        for (int i = 0; i < 3; i++)
-                                        {
-                                            if (i >= feeds.Length)
-                                                break;
-                                            (string _, string articleTitle) = feeds[i];
-                                            rssSequenceBuilder.AppendLine(articleTitle);
-                                            found = true;
-                                        }
-                                    }
-                                    if (!found)
-                                        rssSequenceBuilder.Append(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_NOARTICLES"));
+                                    if (string.IsNullOrEmpty(feedErrorMessage))
+                                        feedErrorMessage = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NOARTICLES");
                                 }
                             }
-                            catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
-                                DebugWriter.WriteDebugStackTrace(ex);
-                                rssSequenceBuilder.Append(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON"));
-                            }
-                            catch (Exception ex)
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
-                                DebugWriter.WriteDebugStackTrace(ex);
-                                rssSequenceBuilder.Append(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED"));
-                            }
-                            rssSequence = rssSequenceBuilder.ToString();
+                        }
+                        catch (Exception ex)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
+                            DebugWriter.WriteDebugStackTrace(ex);
+                            feedErrorMessage = LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED");
+                        }
+                        if (!string.IsNullOrEmpty(feedErrorMessage))
+                        {
+                            rssSequence = feedErrorMessage;
+                            articles = [];
                         }
 
-                        // Render the RSS feed sequence
-                        var sequences = rssSequence.GetWrappedSentencesByWords(widgetWidth);
-                        for (int i = 0; i < 3; i++)
+                        // Render the RSS feed sequence or an error message
+                        rssSequence = new BoundedText()
                         {
-                            if (i >= sequences.Length)
-                                break;
-                            string sequence = sequences[i];
-                            builder.Append(CsiSequences.GenerateCsiCursorPosition(widgetLeft + 2, rssTop + 2 + i));
-                            builder.Append(sequence);
-                        }
+                            Left = rssFeedLeft,
+                            Top = rssFeedTop,
+                            Width = widgetWidth,
+                            Height = 3,
+                            Text = rssSequence,
+                        }.Render();
+                        builder.Append(rssSequence);
                     }
 
                     // Populate the button positions

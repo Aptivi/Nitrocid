@@ -9306,6 +9306,10 @@
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CRC32C",
       "text": "추가 기능 - CRC32C (카스타뇰리)"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
+      "text": "기사 없음"
     }
   ]
 }

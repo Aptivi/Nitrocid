@@ -9330,6 +9330,10 @@
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CRC32C",
       "text": "Extras - CRC32C (Castagnoli)"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
+      "text": "No hay artículos"
     }
   ]
 }

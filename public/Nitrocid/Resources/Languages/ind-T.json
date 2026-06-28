@@ -9305,6 +9305,10 @@
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CRC32C",
       "text": "एक्स्ट्रा - CRC32C (कास्टाग्नोली)"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
+      "text": "कोई लेख नहीं"
     }
   ]
 }

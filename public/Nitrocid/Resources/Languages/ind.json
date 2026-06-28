@@ -9305,6 +9305,10 @@
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CRC32C",
       "text": "extra - CRC32C (kastagnoli)"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
+      "text": "koi lekh nahin"
     }
   ]
 }

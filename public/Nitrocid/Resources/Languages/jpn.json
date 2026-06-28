@@ -9305,6 +9305,10 @@
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CRC32C",
       "text": "追加機能 - CRC32C (カスタニョーリ)"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
+      "text": "記事はありません"
     }
   ]
 }
