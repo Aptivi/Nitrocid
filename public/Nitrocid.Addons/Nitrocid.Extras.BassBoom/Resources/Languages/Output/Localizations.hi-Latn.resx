@@ -184,4 +184,10 @@
   <data name="NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC" xml:space="preserve">
     <value>mpaig rediyo steshan ka port</value>
   </data>
+  <data name="NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME" xml:space="preserve">
+    <value>milisecond mein deri</value>
+  </data>
+  <data name="NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME" xml:space="preserve">
+    <value>geet ka rasta</value>
+  </data>
 </root>

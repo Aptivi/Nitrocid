@@ -184,4 +184,10 @@
   <data name="NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC" xml:space="preserve">
     <value>MPEG 라디오 방송국으로 포팅</value>
   </data>
+  <data name="NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME" xml:space="preserve">
+    <value>지연 시간(밀리초)</value>
+  </data>
+  <data name="NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME" xml:space="preserve">
+    <value>가사 경로</value>
+  </data>
 </root>

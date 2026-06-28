@@ -184,4 +184,10 @@
   <data name="NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC" xml:space="preserve">
     <value>Port chuig an stáisiún raidió MPEG</value>
   </data>
+  <data name="NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME" xml:space="preserve">
+    <value>Moill i Milleasoicindí</value>
+  </data>
+  <data name="NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME" xml:space="preserve">
+    <value>Conair na Liricí</value>
+  </data>
 </root>

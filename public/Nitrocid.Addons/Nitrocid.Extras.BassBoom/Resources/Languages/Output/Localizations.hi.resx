@@ -184,4 +184,10 @@
   <data name="NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC" xml:space="preserve">
     <value>MPEG रेडियो स्टेशन पर पोर्ट करें</value>
   </data>
+  <data name="NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME" xml:space="preserve">
+    <value>मिलीसेकंड में देरी</value>
+  </data>
+  <data name="NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME" xml:space="preserve">
+    <value>गीत का रास्ता</value>
+  </data>
 </root>
