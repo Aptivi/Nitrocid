@@ -471,7 +471,10 @@ namespace Nitrocid.Base.Misc.Splash
                 splashScreen.AddBufferedPart("Display", displayPart);
                 while (!BaseSplash.SplashClosing && !SplashThread.IsStopping)
                 {
-                    ScreenTools.Render();
+                    lock (splashScreen)
+                    {
+                        ScreenTools.Render();
+                    }
                     Thread.Sleep(20);
 
                     // Check to see if the splash is the same or not

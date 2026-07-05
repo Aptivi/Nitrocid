@@ -236,6 +236,10 @@ namespace Nitrocid.Base.Misc.Splash
                             SplashManager.splashScreen.EditBufferedPart("Splash report", openingPart);
                         else
                             SplashManager.splashScreen.AddBufferedPart("Splash report", openingPart);
+                        lock (SplashManager.splashScreen)
+                        {
+                            ScreenTools.Render();
+                        }
                     }
                     else if (!KernelEntry.QuietKernel)
                     {
