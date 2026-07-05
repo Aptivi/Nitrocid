@@ -32,11 +32,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class DoorShiftDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "DoorShift";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

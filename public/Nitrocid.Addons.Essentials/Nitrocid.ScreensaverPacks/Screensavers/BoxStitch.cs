@@ -37,11 +37,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private Color boxColor2 = Color.Empty;
         private Color boxColor3 = Color.Empty;
         private Color boxColor4 = Color.Empty;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "BoxStitch";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

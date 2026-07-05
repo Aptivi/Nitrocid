@@ -42,11 +42,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private List<Coordinate> positions = [];
         private int posIdxVertical = 0;
         private int posIdxHorizontal = 0;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Trails";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

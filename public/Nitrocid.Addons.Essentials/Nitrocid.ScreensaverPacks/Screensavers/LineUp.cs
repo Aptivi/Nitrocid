@@ -37,11 +37,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private Color line2Color = Color.Empty;
         private int line1PosY = -1;
         private int line2PosY = -1;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "LineUp";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

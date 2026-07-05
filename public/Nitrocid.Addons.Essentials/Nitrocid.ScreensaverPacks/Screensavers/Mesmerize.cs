@@ -52,11 +52,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private Color dotColor = Color.Empty;
         private readonly List<Color> dotColorShades = [];
         private readonly List<(int, int)> dotPositions = [];
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Mesmerize";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

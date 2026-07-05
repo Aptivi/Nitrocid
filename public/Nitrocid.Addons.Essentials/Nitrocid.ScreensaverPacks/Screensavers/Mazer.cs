@@ -35,11 +35,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class MazerDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Mazer";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

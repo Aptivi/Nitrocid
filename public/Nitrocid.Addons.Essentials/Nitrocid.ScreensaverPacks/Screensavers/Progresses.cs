@@ -48,11 +48,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private double firstPositionThreshold, secondPositionThreshold, thirdPositionThreshold;
         private long CurrentTicks;
         private string lastProgresses = "";
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Progresses";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

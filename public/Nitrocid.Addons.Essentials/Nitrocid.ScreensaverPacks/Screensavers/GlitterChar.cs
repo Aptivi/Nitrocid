@@ -34,11 +34,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class GlitterCharDisplay : BaseScreensaver, IScreensaver
     {
         private static char[] characters = CharManager.GetAllLettersAndNumbers(false);
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "GlitterChar";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

@@ -42,11 +42,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private int count = 0;
         private int cycle = 0;
         private List<int> currentPos = [];
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "WaveRun";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

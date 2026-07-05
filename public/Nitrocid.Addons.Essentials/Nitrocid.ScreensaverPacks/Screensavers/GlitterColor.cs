@@ -32,11 +32,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class GlitterColorDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "GlitterColor";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

@@ -38,11 +38,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private static int currentOuterRadius = 0;
         private static Coordinate coords = new();
         private static Color colorStorage = Color.Empty;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "ColorSpread";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

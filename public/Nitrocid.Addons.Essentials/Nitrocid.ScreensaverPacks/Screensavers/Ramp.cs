@@ -36,11 +36,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class RampDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Ramp";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

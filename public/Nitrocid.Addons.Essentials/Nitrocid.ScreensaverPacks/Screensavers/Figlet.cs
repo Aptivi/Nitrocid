@@ -39,11 +39,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         private int currentHueAngle = 0;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Figlet";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation() =>
             ThemeColorsTools.LoadBackground();

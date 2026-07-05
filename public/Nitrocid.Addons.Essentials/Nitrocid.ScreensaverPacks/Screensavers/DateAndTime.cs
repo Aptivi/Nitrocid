@@ -34,11 +34,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
         private string lastRenderedDate = "";
         private string lastRenderedTime = "";
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "DateAndTime";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

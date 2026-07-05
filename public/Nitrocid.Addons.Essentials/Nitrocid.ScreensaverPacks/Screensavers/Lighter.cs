@@ -37,11 +37,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         private readonly List<Tuple<int, int>> CoveredPositions = [];
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Lighter";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

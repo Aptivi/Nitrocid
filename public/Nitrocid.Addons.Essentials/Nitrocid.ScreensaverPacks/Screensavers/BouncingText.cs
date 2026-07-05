@@ -39,11 +39,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private int RowText, ColumnFirstLetter, ColumnLastLetter;
         private int lastLeft, lastTop;
         private Color? BouncingColor;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "BouncingText";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

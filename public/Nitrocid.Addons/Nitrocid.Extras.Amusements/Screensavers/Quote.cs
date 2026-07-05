@@ -36,11 +36,6 @@ namespace Nitrocid.Extras.Amusements.Screensavers
     {
 
         private string lastQuote = "";
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Quote";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

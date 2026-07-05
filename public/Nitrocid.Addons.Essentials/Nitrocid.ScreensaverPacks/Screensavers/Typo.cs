@@ -34,11 +34,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class TypoDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Typo";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

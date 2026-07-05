@@ -35,11 +35,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class BarRotDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "BarRot";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation() =>
             ThemeColorsTools.LoadBackground();

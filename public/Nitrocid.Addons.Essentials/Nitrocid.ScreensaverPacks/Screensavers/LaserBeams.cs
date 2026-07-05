@@ -39,11 +39,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         private static readonly List<(int, int)> laserEnds = [];
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "LaserBeams";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

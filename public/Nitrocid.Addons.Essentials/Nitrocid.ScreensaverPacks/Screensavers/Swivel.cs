@@ -40,11 +40,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private Color targetColor = ConsoleColors.Lime;
         private int posIdxVertical = 0;
         private int posIdxHorizontal = 0;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Swivel";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

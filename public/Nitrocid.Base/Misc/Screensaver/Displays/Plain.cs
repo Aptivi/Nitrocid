@@ -24,10 +24,5 @@ namespace Nitrocid.Base.Misc.Screensaver.Displays
     /// </summary>
     public class PlainDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Plain";
-
     }
 }

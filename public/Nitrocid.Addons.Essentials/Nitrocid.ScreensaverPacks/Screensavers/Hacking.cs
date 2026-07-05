@@ -46,11 +46,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private static int hackingProgress = 0;
         private static readonly List<MatrixBleedState> bleedStates = [];
         private static readonly List<(string[] lines, int linePos, int x, int y, int width, int height)> windows = [];
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Hacking";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

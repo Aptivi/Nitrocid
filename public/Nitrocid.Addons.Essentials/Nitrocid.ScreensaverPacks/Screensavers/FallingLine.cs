@@ -40,11 +40,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
         private int ColumnLine;
         private readonly List<Tuple<int, int>> CoveredPositions = [];
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "FallingLine";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

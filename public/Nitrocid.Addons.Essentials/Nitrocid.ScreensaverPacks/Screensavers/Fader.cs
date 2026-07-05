@@ -32,11 +32,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         private Animations.Fader.FaderSettings? FaderSettingsInstance;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Fader";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

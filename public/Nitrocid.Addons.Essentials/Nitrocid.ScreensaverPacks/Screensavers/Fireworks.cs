@@ -34,11 +34,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class FireworksDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Fireworks";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

@@ -38,11 +38,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
         private static int MaxLevel =>
             ScreensaverPackInit.SaversConfig.ColorologyDarkColors ? 32 : 255;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Colorology";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

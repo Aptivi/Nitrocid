@@ -28,11 +28,6 @@ namespace Nitrocid.Base.Misc.Screensaver.Displays
     /// </summary>
     public class CurtainDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Curtain";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

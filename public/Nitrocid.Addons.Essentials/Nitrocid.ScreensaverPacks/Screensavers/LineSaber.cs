@@ -35,11 +35,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class LineSaberDisplay : BaseScreensaver, IScreensaver
     {
         private List<(Color color, int position, bool vertical, bool reverse)> lines = [];
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "LineSaber";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

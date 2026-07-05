@@ -39,11 +39,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private readonly AnalogClock widget = (AnalogClock)WidgetTools.GetWidget("AnalogClock");
         private DateTime lastDateTime;
         private bool needsRefresh = true;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "ClochromaAnalog";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

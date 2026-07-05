@@ -33,11 +33,6 @@ namespace Nitrocid.Base.Misc.Screensaver.Displays
     public class MatrixBleedDisplay : BaseScreensaver, IScreensaver
     {
         private static readonly List<MatrixBleedState> bleedStates = [];
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "MatrixBleed";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

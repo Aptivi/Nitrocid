@@ -40,11 +40,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
         private bool ColorFilled;
         private Color currentColor = Color.Empty;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "FillFade";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

@@ -29,11 +29,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class TextRevealDisplay : BaseScreensaver, IScreensaver
     {
         private Animations.TextReveal.TextRevealSettings? TextRevealSettingsInstance;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "TextReveal";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

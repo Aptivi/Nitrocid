@@ -37,11 +37,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class TypewriterDisplay : BaseScreensaver, IScreensaver
     {
         private int linesWritten = 0;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Typewriter";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

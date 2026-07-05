@@ -30,11 +30,6 @@ namespace Nitrocid.Extras.BassBoom.Screensavers
     {
 
         private Animations.Lyrics.LyricsSettings? LyricsSettingsInstance;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Lyrics";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

@@ -37,11 +37,6 @@ namespace Nitrocid.Extras.Calendar.Calendar.Screensavers
     public class CalendarDisplay : BaseScreensaver, IScreensaver
     {
         private Color? CalendarColor;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Calendar";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

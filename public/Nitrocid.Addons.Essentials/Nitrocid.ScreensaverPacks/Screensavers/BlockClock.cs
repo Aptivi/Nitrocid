@@ -41,11 +41,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private Color blockColorInfo = Color.Empty;
         private string lastRenderedDate = "";
         private string lastRenderedTime = "";
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "BlockClock";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

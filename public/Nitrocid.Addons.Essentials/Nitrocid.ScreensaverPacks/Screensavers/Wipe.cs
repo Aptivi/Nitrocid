@@ -36,11 +36,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
         private WipeDirections ToDirection = WipeDirections.Right;
         private int TimesWiped = 0;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Wipe";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

@@ -37,11 +37,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             { "Neon",       new Color[] { new(255, 0, 255), new(0, 255, 255) } }
         };
         private int step = 0;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Siren";
-
         /// <inheritdoc/>
         public override bool ScreensaverContainsFlashingImages =>
             true;

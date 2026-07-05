@@ -32,11 +32,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         private int currentHueAngle = 0;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "TextBox";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

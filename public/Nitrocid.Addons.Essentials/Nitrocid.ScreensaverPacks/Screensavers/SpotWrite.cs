@@ -34,11 +34,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class SpotWriteDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "SpotWrite";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

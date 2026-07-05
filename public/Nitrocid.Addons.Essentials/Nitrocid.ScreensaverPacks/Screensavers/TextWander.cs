@@ -30,11 +30,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class TextWanderDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "TextWander";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

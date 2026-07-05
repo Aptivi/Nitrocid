@@ -36,11 +36,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class OmenDisplay : BaseScreensaver, IScreensaver
     {
         private int step = 0;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Omen";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

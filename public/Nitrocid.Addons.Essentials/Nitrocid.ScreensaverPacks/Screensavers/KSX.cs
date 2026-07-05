@@ -47,11 +47,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class KSXDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "KSX";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

@@ -36,11 +36,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class ParticlesDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Particles";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

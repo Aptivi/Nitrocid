@@ -32,11 +32,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class MultiLinesDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "MultiLines";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

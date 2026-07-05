@@ -34,11 +34,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class MarqueeDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Marquee";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

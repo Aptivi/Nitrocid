@@ -43,11 +43,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private static Color colorStorage = Color.Empty;
         private static Arc clearArc = new(0, 0, 0);
         private static Arc clearArc2 = new(0, 0, 0);
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Ripple";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

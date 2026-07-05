@@ -37,11 +37,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class RainingDisplay : BaseScreensaver, IScreensaver
     {
         private readonly List<Tuple<int, int>> droplets = [];
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Raining";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

@@ -42,11 +42,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private List<int> currentPosVertical = [];
         private List<int> currentPosHorizontal = [];
         private Coordinate clearCoords = new(-1, -1);
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "SwivelReveal";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

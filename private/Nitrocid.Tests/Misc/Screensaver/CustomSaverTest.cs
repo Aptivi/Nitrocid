@@ -22,8 +22,5 @@ using Nitrocid.Base.Misc.Screensaver;
 namespace Nitrocid.Tests.Misc.Screensaver
 {
     internal class CustomSaverTest : BaseScreensaver, IScreensaver
-    {
-        public override string ScreensaverName =>
-            "CustomSaverTest";
-    }
+    { }
 }

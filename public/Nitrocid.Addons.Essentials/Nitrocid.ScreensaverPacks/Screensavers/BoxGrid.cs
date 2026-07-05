@@ -30,11 +30,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class BoxGridDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "BoxGrid";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

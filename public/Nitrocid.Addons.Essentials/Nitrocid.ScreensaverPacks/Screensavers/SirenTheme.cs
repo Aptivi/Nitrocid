@@ -33,11 +33,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
         internal readonly static Dictionary<string, Color[]> sirens = [];
         private int step = 0;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "SirenTheme";
-
         /// <inheritdoc/>
         public override bool ScreensaverContainsFlashingImages =>
             true;

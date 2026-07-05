@@ -33,11 +33,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class DanceNumbersDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "DanceNumbers";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

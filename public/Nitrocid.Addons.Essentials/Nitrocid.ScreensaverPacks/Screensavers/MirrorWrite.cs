@@ -37,11 +37,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class MirrorWriteDisplay : BaseScreensaver, IScreensaver
     {
         private int linesWritten = 0;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "MirrorWrite";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

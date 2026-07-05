@@ -40,11 +40,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private static bool reverting = true;
         private static Color colorStorage = Color.Empty;
         private static Arc clearArc = new(0, 0, 0);
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Pi";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

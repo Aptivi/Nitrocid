@@ -41,11 +41,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private int batteryDrainSpeed = 500;
         private int batteryChargeSpeed = 250;
         private bool batteryCharging = false;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "BatteryFull";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

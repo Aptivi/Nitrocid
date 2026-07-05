@@ -35,11 +35,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class LightningDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Lightning";
-
         /// <inheritdoc/>
         public override bool ScreensaverContainsFlashingImages =>
             true;

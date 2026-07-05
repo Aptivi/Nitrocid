@@ -40,11 +40,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             new(ConsoleColors.Lime),
             new(ConsoleColors.Blue),
         ];
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Aberration";
-
         /// <inheritdoc/>
         public override bool ScreensaverContainsFlashingImages =>
             true;

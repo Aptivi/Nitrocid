@@ -45,11 +45,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class KSX2Display : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "KSX2";
-
         /// <inheritdoc/>
         public override bool ScreensaverContainsFlashingImages =>
             true;

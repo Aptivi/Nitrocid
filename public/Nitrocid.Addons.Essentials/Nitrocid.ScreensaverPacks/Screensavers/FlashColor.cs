@@ -33,11 +33,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class FlashColorDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "FlashColor";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

@@ -29,11 +29,6 @@ namespace Nitrocid.Extras.Amusements.Screensavers
     /// </summary>
     public class MeteorDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Meteor";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation() => ConsoleWrapper.Clear();
 

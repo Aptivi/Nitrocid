@@ -32,11 +32,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class DigitalClockDisplay : BaseScreensaver, IScreensaver
     {
         private readonly DigitalClock widget = (DigitalClock)WidgetTools.GetWidget("DigitalClock");
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "DigitalClock";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

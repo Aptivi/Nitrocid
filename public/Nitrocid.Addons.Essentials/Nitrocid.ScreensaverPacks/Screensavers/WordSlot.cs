@@ -36,11 +36,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class WordSlotDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "WordSlot";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

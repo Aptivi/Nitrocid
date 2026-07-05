@@ -36,11 +36,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         private static readonly List<(int left, int top)> stars = [];
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "SkyComet";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

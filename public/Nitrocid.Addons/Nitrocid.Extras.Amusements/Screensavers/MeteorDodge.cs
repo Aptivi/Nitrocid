@@ -29,11 +29,6 @@ namespace Nitrocid.Extras.Amusements.Screensavers
     /// </summary>
     public class MeteorDodgeDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "MeteorDodge";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation() => ConsoleWrapper.Clear();
 

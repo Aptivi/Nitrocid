@@ -54,11 +54,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             { "Rock",           (5,     -1,     5)  },
             { "Small Speakers", (-1.7,  0.5,    2)  }
         };
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Equalizer";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

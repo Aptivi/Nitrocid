@@ -33,11 +33,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class ColorMixDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "ColorMix";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

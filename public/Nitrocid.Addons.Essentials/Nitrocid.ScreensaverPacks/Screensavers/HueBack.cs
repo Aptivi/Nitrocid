@@ -31,11 +31,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
         // Hue angle is in degrees and not radians
         private static int currentHueAngle = 0;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "HueBack";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

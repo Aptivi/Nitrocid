@@ -38,11 +38,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
         private readonly List<Tuple<int, int>> droplets = [];
         private readonly List<Tuple<int, int>> evaporations = [];
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Evaporate";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

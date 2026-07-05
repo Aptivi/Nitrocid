@@ -38,11 +38,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private string Direction = "BottomRight";
         private int RowBlock, ColumnBlock;
         private Color? blockColor = null;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "BouncingBlock";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

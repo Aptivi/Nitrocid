@@ -30,11 +30,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         private Animations.Spin.SpinSettings? SpinSettingsInstance;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Spin";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

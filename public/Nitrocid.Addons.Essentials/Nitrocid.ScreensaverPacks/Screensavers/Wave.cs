@@ -37,11 +37,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class WaveDisplay : BaseScreensaver, IScreensaver
     {
         private int posIdx = 0;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Wave";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

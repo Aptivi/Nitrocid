@@ -37,11 +37,6 @@ namespace Nitrocid.Extras.Amusements.Screensavers
     /// </summary>
     public class PersonLookupDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "PersonLookup";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

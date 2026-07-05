@@ -36,14 +36,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class SprayDisplay : BaseScreensaver, IScreensaver
     {
-
         private bool moveUp = false;
         private int offsetY = 0;
         private readonly List<Tuple<int, int>> Stars = [];
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Spray";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
@@ -117,15 +112,5 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SprayDelay);
             ConsoleColoring.LoadBackDry(0);
         }
-
-        /// <inheritdoc/>
-        public override void ScreensaverResizeSync()
-        {
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...");
-            Stars.Clear();
-            offsetY = 0;
-            base.ScreensaverResizeSync();
-        }
-
     }
 }

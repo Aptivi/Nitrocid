@@ -27,11 +27,6 @@ namespace Nitrocid.Extras.Amusements.Screensavers
     /// </summary>
     public class SnakerDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Snaker";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

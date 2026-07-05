@@ -38,11 +38,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private readonly Dictionary<(int, int), char> characters = [];
         private readonly char minChar = 'a';
         private readonly char maxChar = 'z';
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "LetterScatter";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

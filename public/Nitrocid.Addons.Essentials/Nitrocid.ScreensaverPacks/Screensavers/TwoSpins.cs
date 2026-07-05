@@ -49,11 +49,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private static int newDotGroup = 1;
         private static readonly List<(int x, int y, DotMovementDirection direction)> firstGroupDots = [];
         private static readonly List<(int x, int y, DotMovementDirection direction)> secondGroupDots = [];
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "TwoSpins";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
@@ -105,10 +100,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             secondGroupNewDotGenerate = true;
             newDotGroup = RandomDriver.Random(1, 2);
         }
-
-        /// <inheritdoc/>
-        public override void ScreensaverResizeSync() =>
-            ScreensaverPreparation();
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()

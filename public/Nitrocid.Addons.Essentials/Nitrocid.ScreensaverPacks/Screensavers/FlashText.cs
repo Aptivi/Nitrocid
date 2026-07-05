@@ -37,11 +37,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         private int Left, Top;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "FlashText";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

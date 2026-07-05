@@ -46,11 +46,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                       ColorStorage = Color.Empty;
         private long CurrentTicks;
         private string lastDate = "";
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "ProgressClock";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

@@ -31,12 +31,6 @@ namespace Nitrocid.Base.Misc.Screensaver
     /// </summary>
     public abstract class BaseScreensaver : IScreensaver
     {
-
-        /// <summary>
-        /// Screensaver name
-        /// </summary>
-        public virtual string ScreensaverName =>
-            "BaseScreensaver";
         /// <summary>
         /// Whether the screensaver contains flashing images
         /// </summary>
@@ -81,11 +75,5 @@ namespace Nitrocid.Base.Misc.Screensaver
         /// Screensaver outro
         /// </summary>
         public virtual void ScreensaverOutro() { }
-
-        /// <summary>
-        /// Screensaver resize sync
-        /// </summary>
-        public virtual void ScreensaverResizeSync() =>
-            ScreensaverPreparation();
     }
 }

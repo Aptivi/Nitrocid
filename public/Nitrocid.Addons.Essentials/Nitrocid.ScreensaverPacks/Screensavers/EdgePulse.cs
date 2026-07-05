@@ -31,11 +31,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         private Animations.EdgePulse.EdgePulseSettings? EdgePulseSettingsInstance;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "EdgePulse";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

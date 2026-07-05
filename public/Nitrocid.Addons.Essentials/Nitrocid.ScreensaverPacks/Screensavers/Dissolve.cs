@@ -40,11 +40,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
         private bool ColorFilled;
         private readonly List<Tuple<int, int>> CoveredPositions = [];
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Dissolve";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

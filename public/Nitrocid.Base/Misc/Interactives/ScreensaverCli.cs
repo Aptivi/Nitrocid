@@ -52,7 +52,7 @@ namespace Nitrocid.Base.Misc.Interactives
             var screensaver = ScreensaverManager.GetScreensaver(item);
 
             // Generate the rendered text
-            string name = screensaver.ScreensaverName;
+            string name = screensaver.GetType().Name;
             bool flashing = screensaver.ScreensaverContainsFlashingImages;
 
             // Render them to the second pane

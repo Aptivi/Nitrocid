@@ -38,11 +38,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class BarWaveDisplay : BaseScreensaver, IScreensaver
     {
         private double TimeSecs = 0.0d;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "BarWave";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation() =>
             ThemeColorsTools.LoadBackground();

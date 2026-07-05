@@ -44,11 +44,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleColors.Pink1,
             ConsoleColors.White
         ];
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Diamond";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

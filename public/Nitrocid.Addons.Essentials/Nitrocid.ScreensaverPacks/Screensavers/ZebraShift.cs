@@ -40,11 +40,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private static Color firstLineColor = ConsoleColors.White;
         private static Color secondLineColor = ConsoleColors.Black;
         private static bool inverse = false;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "ZebraShift";
-
         /// <inheritdoc/>
         public override bool ScreensaverContainsFlashingImages =>
             true;

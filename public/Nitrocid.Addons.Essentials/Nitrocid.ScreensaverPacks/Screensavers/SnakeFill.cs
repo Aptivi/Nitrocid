@@ -33,11 +33,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class SnakeFillDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "SnakeFill";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

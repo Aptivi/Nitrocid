@@ -31,11 +31,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class MemdumpDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Memdump";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

@@ -37,11 +37,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         private bool Drawn;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "WindowsLogo";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

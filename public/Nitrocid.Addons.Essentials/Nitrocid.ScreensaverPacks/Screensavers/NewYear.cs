@@ -39,11 +39,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class NewYearDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "NewYear";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

@@ -42,11 +42,6 @@ namespace Nitrocid.Extras.Amusements.Screensavers
     public class BdayCardDisplay : BaseScreensaver, IScreensaver
     {
         private string randomName = "";
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "BdayCard";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

@@ -32,11 +32,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class AnalogClockDisplay : BaseScreensaver, IScreensaver
     {
         private readonly AnalogClock widget = (AnalogClock)WidgetTools.GetWidget("AnalogClock");
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "AnalogClock";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

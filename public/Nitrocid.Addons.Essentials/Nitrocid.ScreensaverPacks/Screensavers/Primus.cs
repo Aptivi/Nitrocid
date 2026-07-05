@@ -36,11 +36,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
         private static int currentOuterRadius = 0;
         private static Color colorStorage = Color.Empty;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Primus";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

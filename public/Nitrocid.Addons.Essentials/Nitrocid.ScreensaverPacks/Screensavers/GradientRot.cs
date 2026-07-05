@@ -36,11 +36,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class GradientRotDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "GradientRot";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

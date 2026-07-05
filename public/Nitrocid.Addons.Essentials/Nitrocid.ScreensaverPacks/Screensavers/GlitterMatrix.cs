@@ -32,11 +32,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class GlitterMatrixDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "GlitterMatrix";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

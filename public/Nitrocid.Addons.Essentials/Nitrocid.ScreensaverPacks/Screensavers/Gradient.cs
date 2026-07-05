@@ -36,11 +36,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class GradientDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Gradient";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

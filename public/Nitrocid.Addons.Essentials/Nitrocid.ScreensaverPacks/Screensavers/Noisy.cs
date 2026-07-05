@@ -30,12 +30,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// Display code for Noisy
     /// </summary>
     public class NoisyDisplay : BaseScreensaver, IScreensaver
-    {
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Noisy";
-
-        /// <inheritdoc/>
+    {        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             // Generate either monochrome noise or colored noise, similar to old televisions

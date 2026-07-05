@@ -34,12 +34,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// Display code for LetterCycle
     /// </summary>
     public class LetterCycleDisplay : BaseScreensaver, IScreensaver
-    {
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "LetterCycle";
-
-        /// <inheritdoc/>
+    {        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             // Change color

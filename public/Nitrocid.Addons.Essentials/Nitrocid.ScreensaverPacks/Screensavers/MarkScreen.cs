@@ -60,11 +60,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             (95.00d, "A"),
             (97.50d, "A+"),
         ];
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "MarkScreen";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

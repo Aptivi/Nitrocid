@@ -40,11 +40,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class WordHasherWriteDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "WordHasherWrite";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

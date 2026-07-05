@@ -59,7 +59,7 @@ namespace Nitrocid.Base.ConsoleBase
 
             // Also, tell the screensaver application to refresh itself
             if (ScreensaverManager.InSaver && ScreensaverDisplayer.displayingSaver is not null)
-                ScreensaverDisplayer.displayingSaver.ScreensaverResizeSync();
+                ScreensaverDisplayer.displayingSaver.ScreensaverPreparation();
 
             // Also, tell the input reader to reset
             if (TermReaderTools.Busy)

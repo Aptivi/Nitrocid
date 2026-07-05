@@ -30,11 +30,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         private Animations.Pulse.PulseSettings? PulseSettingsInstance;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Pulse";
-
         /// <inheritdoc/>
         public override bool ScreensaverContainsFlashingImages =>
             true;

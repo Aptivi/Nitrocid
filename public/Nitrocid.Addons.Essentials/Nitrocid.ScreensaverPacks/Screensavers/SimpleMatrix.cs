@@ -33,11 +33,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class SimpleMatrixDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "SimpleMatrix";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

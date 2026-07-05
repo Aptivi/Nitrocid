@@ -43,11 +43,6 @@ namespace Nitrocid.Extras.Chemistry.Screensavers
     public class PeriodicPreviewDisplay : BaseScreensaver, IScreensaver
     {
         private static readonly SubstanceInfo[] substances = PeriodicTableParser.GetSubstances();
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Periodic Preview";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

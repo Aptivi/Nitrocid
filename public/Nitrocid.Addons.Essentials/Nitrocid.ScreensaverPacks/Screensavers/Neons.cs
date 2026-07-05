@@ -34,11 +34,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class NeonsDisplay : BaseScreensaver, IScreensaver
     {
         private int currentStep = 0;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Neons";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

@@ -43,11 +43,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private int IndeterminateCurrentBlockStart;
         private int IndeterminateCurrentBlockEnd;
         private IndeterminateDirection IndeterminateCurrentBlockDirection = IndeterminateDirection.LeftToRight;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Indeterminate";
-
         /// <inheritdoc/>
         public IndeterminateDisplay()
         {

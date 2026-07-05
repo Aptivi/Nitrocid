@@ -37,11 +37,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
         string timeZoneName = "";
         int times;
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "WorldClock";
-
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {

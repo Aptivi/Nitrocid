@@ -39,17 +39,9 @@ namespace Nitrocid.Base.Misc.Screensaver
         /// </summary>
         void ScreensaverLogic();
         /// <summary>
-        /// Resize synchronization logic. This is executed by <see cref="ConsoleResizeHandler.HandleResize(int, int, int, int)"/>
-        /// </summary>
-        void ScreensaverResizeSync();
-        /// <summary>
         /// The outro logic once the screensaver is done displaying.
         /// </summary>
         void ScreensaverOutro();
-        /// <summary>
-        /// The name of screensaver, usually the assembly name of the custom screensaver
-        /// </summary>
-        string ScreensaverName { get; }
         /// <summary>
         /// Whether the screensaver contains flashing images
         /// </summary>

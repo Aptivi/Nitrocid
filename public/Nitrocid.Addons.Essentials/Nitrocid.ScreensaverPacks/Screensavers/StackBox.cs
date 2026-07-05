@@ -37,11 +37,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class StackBoxDisplay : BaseScreensaver, IScreensaver
     {
-
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "StackBox";
-
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {

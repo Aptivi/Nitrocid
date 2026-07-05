@@ -32,12 +32,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// Display code for Clochroma
     /// </summary>
     public class ClochromaDisplay : BaseScreensaver, IScreensaver
-    {
-        /// <inheritdoc/>
-        public override string ScreensaverName =>
-            "Clochroma";
-
-        /// <inheritdoc/>
+    {        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             // Get the color and positions
