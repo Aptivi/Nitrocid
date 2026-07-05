@@ -100,8 +100,8 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
                  "") + modeText;
 
             // Write an infobox border
-            int height = ConsoleWrapper.WindowHeight - 4;
-            int width = ConsoleWrapper.WindowWidth - 8;
+            int height = ConsoleWrapper.WindowHeight - 2;
+            int width = ConsoleWrapper.WindowWidth - 4;
             int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
             int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
             string versionStr = $"Nitrocid v{KernelReleaseInfo.VersionFullStr} (API v{KernelReleaseInfo.ApiVersion})";
@@ -118,7 +118,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
 
             // Write the program name
             int interiorPosX = posX + 2;
-            progress.Width = width - 4;
+            progress.Width = width - 2;
             string text = "Nitrocid";
             var figFont = FigletTools.GetFigletFont("thin");
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
@@ -175,8 +175,8 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
                 return builder.ToString();
 
             // Write an infobox border
-            int height = ConsoleWrapper.WindowHeight - 4;
-            int width = ConsoleWrapper.WindowWidth - 8;
+            int height = ConsoleWrapper.WindowHeight - 2;
+            int width = ConsoleWrapper.WindowWidth - 4;
             int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
             int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
             string versionStr = $"Nitrocid v{KernelReleaseInfo.VersionFullStr} (API v{KernelReleaseInfo.ApiVersion})";
@@ -248,12 +248,12 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             Color col = ThemeColorsTools.GetColor(colorType);
 
             // Get infobox position info
-            int width = ConsoleWrapper.WindowWidth - 8;
+            int width = ConsoleWrapper.WindowWidth - 4;
             int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
-            int posY = ConsoleWrapper.WindowHeight - 4;
+            int posY = ConsoleWrapper.WindowHeight - 3;
 
             // Write the progress report
-            int interiorPosX = posX + 3;
+            int interiorPosX = posX + 2;
             int progressReportPosY = posY;
             var modeTextEraser = new Eraser()
             {
@@ -280,7 +280,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             // Write the progress bar
             int progressBarPosY = posY + 1;
             progress.Position = Progress;
-            progress.Width = width - 4;
+            progress.Width = width - 2;
             builder.Append(
                 RendererTools.RenderRenderable(progress, new(interiorPosX, progressBarPosY))
             );

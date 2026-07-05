@@ -57,8 +57,8 @@ namespace Nitrocid.Base.Users.Login
             if (actualScreenNum < 0)
             {
                 // Write an infobox border
-                int height = ConsoleWrapper.WindowHeight - 4;
-                int width = ConsoleWrapper.WindowWidth - 8;
+                int height = ConsoleWrapper.WindowHeight - 2;
+                int width = ConsoleWrapper.WindowWidth - 4;
                 int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
                 int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
                 string versionStr = $"Nitrocid v{KernelReleaseInfo.VersionFullStr} (API v{KernelReleaseInfo.ApiVersion})";
@@ -143,7 +143,7 @@ namespace Nitrocid.Base.Users.Login
                 if (!curtainMode)
                 {
                     string instStr = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PRESSKEY");
-                    int consoleInstY = ConsoleWrapper.WindowHeight - 3;
+                    int consoleInstY = ConsoleWrapper.WindowHeight - 2;
                     var instText = new AlignedText()
                     {
                         Left = interiorPosX,

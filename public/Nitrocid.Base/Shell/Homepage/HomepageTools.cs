@@ -174,8 +174,8 @@ namespace Nitrocid.Base.Shell.Homepage
                             continue;
 
                         // Prepare the common variables
-                        int height = ConsoleWrapper.WindowHeight - 4;
-                        int width = ConsoleWrapper.WindowWidth - 8;
+                        int height = ConsoleWrapper.WindowHeight - 2;
+                        int width = ConsoleWrapper.WindowWidth - 4;
                         int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
                         int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
 
@@ -186,7 +186,7 @@ namespace Nitrocid.Base.Shell.Homepage
                         int widgetTop = posY + 1;
 
                         // Get the necessary positions
-                        int buttonPanelPosY = ConsoleWrapper.WindowHeight - 5;
+                        int buttonPanelPosY = ConsoleWrapper.WindowHeight - 4;
                         int buttonPanelWidth = widgetWidth + 1 + ConsoleWrapper.WindowWidth % 2;
                         int buttonWidth = buttonPanelWidth / 2 - 1;
                         int buttonHeight = 1;
@@ -648,8 +648,8 @@ namespace Nitrocid.Base.Shell.Homepage
             if (actualScreenNum < 0)
             {
                 // Prepare the common variables
-                int height = ConsoleWrapper.WindowHeight - 4;
-                int width = ConsoleWrapper.WindowWidth - 8;
+                int height = ConsoleWrapper.WindowHeight - 2;
+                int width = ConsoleWrapper.WindowWidth - 4;
                 int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
                 int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
 
@@ -783,7 +783,7 @@ namespace Nitrocid.Base.Shell.Homepage
                 }
 
                 // Populate the button positions
-                int buttonPanelPosY = ConsoleWrapper.WindowHeight - 5;
+                int buttonPanelPosY = ConsoleWrapper.WindowHeight - 4;
                 int buttonPanelWidth = widgetWidth + 1 + ConsoleWrapper.WindowWidth % 2;
                 int buttonWidth = buttonPanelWidth / 2 - 1;
                 int buttonHeight = 1;
