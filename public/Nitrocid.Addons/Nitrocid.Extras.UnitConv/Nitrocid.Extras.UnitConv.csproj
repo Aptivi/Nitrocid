@@ -2,8 +2,8 @@
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <PropertyGroup>
-    <Description>Nitrocid KS Extras - UnitConv</Description>
-    <AssemblyTitle>Nitrocid KS Extras - UnitConv</AssemblyTitle>
+    <Description>Nitrocid Extras - UnitConv</Description>
+    <AssemblyTitle>Nitrocid Extras - UnitConv</AssemblyTitle>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 

@@ -166,7 +166,7 @@
     <value>長期リリースはメイン サポートが 5 年間、セキュリティ アップデートが 3 年間サポートされるということですか?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_17" xml:space="preserve">
-    <value>0.0.1 は 2018 年 2 月 22 日にリリースされた Nitrocid KS の最初のバージョンだったのでしょうか?</value>
+    <value>0.0.1 は 2018 年 2 月 22 日にリリースされた Nitrocid の最初のバージョンだったのでしょうか?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_18" xml:space="preserve">
     <value>API v2.1 バージョンを保持しているバージョン シリーズは 0.0.24.x シリーズだけだったのでしょうか?</value>
@@ -178,7 +178,7 @@
     <value>0.1.x シリーズは 0.0.24.x シリーズ以前と下位互換性がないということですか?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_21" xml:space="preserve">
-    <value>Linux、macOS、Android 上で Nitrocid KS を実行できるということですか?</value>
+    <value>Linux、macOS、Android 上で Nitrocid を実行できるということですか?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_22" xml:space="preserve">
     <value>MOD の作成に役立つ API ドキュメントを参照できると思いますか?</value>

@@ -166,7 +166,7 @@
     <value>bahwa rilis jangka panjang didukung selama lima tahun untuk dukungan utama, dan tiga tahun untuk pembaruan keamanan?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_17" xml:space="preserve">
-    <value>bahwa 0.0.1 adalah versi pertama Nitrocid KS yang dirilis pada tanggal 22 Februari 2018?</value>
+    <value>bahwa 0.0.1 adalah versi pertama Nitrocid yang dirilis pada tanggal 22 Februari 2018?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_18" xml:space="preserve">
     <value>bahwa seri versi 0.0.24.x adalah satu-satunya seri versi yang menggunakan API versi v2.1?</value>
@@ -178,7 +178,7 @@
     <value>bahwa seri 0.1.x tidak kompatibel dengan seri 0.0.24.x atau yang lebih lama?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_21" xml:space="preserve">
-    <value>bahwa Anda dapat menjalankan Nitrocid KS di Linux, macOS, dan Android?</value>
+    <value>bahwa Anda dapat menjalankan Nitrocid di Linux, macOS, dan Android?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_22" xml:space="preserve">
     <value>bahwa Anda dapat merujuk ke dokumentasi API untuk membantu Anda membuat mod?</value>

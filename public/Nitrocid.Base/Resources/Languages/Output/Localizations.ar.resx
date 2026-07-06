@@ -1748,13 +1748,13 @@
     <value>التحديثات التلقائية</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1" xml:space="preserve">
-    <value>يقوم Nitrocid KS حاليًا بتحديث نفسه للحصول على أحدث إصدار يتضمن تحسينات عامة وإصلاحات للأخطاء. تتضمن الإصدارات الرئيسية الجديدة عادةً تغييرات جذرية وميزات جديدة ومثيرة.</value>
+    <value>يقوم Nitrocid حاليًا بتحديث نفسه للحصول على أحدث إصدار يتضمن تحسينات عامة وإصلاحات للأخطاء. تتضمن الإصدارات الرئيسية الجديدة عادةً تغييرات جذرية وميزات جديدة ومثيرة.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT" xml:space="preserve">
-    <value>هل تريد أن يقوم Nitrocid KS بالتحقق تلقائيًا من التحديثات؟</value>
+    <value>هل تريد أن يقوم Nitrocid بالتحقق تلقائيًا من التحديثات؟</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2" xml:space="preserve">
-    <value>بالإضافة إلى التحقق تلقائيًا من وجود تحديثات، يمكن لـ Nitrocid KS أيضًا تنزيل ملف التحديث تلقائيًا.</value>
+    <value>بالإضافة إلى التحقق تلقائيًا من وجود تحديثات، يمكن لـ Nitrocid أيضًا تنزيل ملف التحديث تلقائيًا.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
     <value>يمكنك دائمًا التحقق من تحديثات kernel باستخدام أمر "update".</value>
@@ -2243,7 +2243,7 @@
     <value>يتم الآن تنفيذ عملية محرر نص غير صالحة.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>عندما حاولت النواة تحميل الوضع المحدد، طلبت تحميل "Kernel Simulator". نظرًا لإعادة تسمية التطبيق الرئيسي إلى Nitrocid KS، لا يمكن تشغيل هذا الوضع بأمان. ننصحك بترقية الوضع.</value>
+    <value>عندما حاولت النواة تحميل الوضع المحدد، طلبت تحميل "Kernel Simulator". نظرًا لإعادة تسمية التطبيق الرئيسي إلى Nitrocid، لا يمكن تشغيل هذا الوضع بأمان. ننصحك بترقية الوضع.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
     <value>حدث خطأ في إدارة جهات الاتصال أثناء محاولة تنفيذ العملية المطلوبة. تأكد من وجود ملف جهة الاتصال في المجلد الصحيح وأنه ملف جهة اتصال vCard 2.1 أو 3.0 أو 4.0 صالح.</value>
@@ -3041,7 +3041,7 @@
     <value>معترف به</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_DESC" xml:space="preserve">
-    <value>يرجى ملاحظة أن تشغيل Nitrocid KS في بيئة غير عادية يعني أن بعض الميزات محدودة. لن تتمكن من تحميل التعديلات والتكوينات.</value>
+    <value>يرجى ملاحظة أن تشغيل Nitrocid في بيئة غير عادية يعني أن بعض الميزات محدودة. لن تتمكن من تحميل التعديلات والتكوينات.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_TITLE" xml:space="preserve">
     <value>إشعار بيئة غير عادية</value>
@@ -4946,7 +4946,7 @@
     <value>إعدادات</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_DESC" xml:space="preserve">
-    <value>Nitrocid KS يحاكي نواة المستقبل، Nitrocid Kernel.</value>
+    <value>Nitrocid يحاكي نواة المستقبل، Nitrocid Kernel.</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_MODAPI" xml:space="preserve">
     <value>وزارة الدفاع API</value>
@@ -4964,7 +4964,7 @@
     <value>تحقق من سجلات التصحيح للحصول على مزيد من المعلومات حول الخطأ.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV" xml:space="preserve">
-    <value>أنت تقوم بتشغيل Nitrocid KS في بيئة غير عادية. يرجى التحقق من أنك قمت بتشغيل النواة مباشرة. إذا كنت متأكدًا من أنك قمت بتشغيل النواة بالطريقة المعتادة، فقد يكون السبب هو أنك تقوم بتشغيل إصدار غير مدعوم من Nitrocid KS.</value>
+    <value>أنت تقوم بتشغيل Nitrocid في بيئة غير عادية. يرجى التحقق من أنك قمت بتشغيل النواة مباشرة. إذا كنت متأكدًا من أنك قمت بتشغيل النواة بالطريقة المعتادة، فقد يكون السبب هو أنك تقوم بتشغيل إصدار غير مدعوم من Nitrocid.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_ERROR" xml:space="preserve">
     <value>واجه GRILO خطأً داخليًا</value>
@@ -5531,7 +5531,7 @@
     <value>تغيير الاسم الكامل للمستخدم (اسم العرض)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC" xml:space="preserve">
-    <value>يعرض المخزن المؤقت الرئيسي الذي كان موجودًا على الشاشة قبل بدء تشغيل Nitrocid KS (أنظمة Unix فقط)</value>
+    <value>يعرض المخزن المؤقت الرئيسي الذي كان موجودًا على الشاشة قبل بدء تشغيل Nitrocid (أنظمة Unix فقط)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED" xml:space="preserve">
     <value>لا يمكن الحصول على حزمة الإضافات.</value>
@@ -5636,13 +5636,13 @@
     <value>تشغيل صوت إيقاف التشغيل...</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLWARNING" xml:space="preserve">
-    <value>لن ندعم هذا الإصدار من Nitrocid KS بعد هذا التاريخ</value>
+    <value>لن ندعم هذا الإصدار من Nitrocid بعد هذا التاريخ</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLTIP" xml:space="preserve">
     <value>تأكد من الترقية إلى الإصدار المدعوم قريبًا إذا كنت ترغب في الاستمرار في تلقي الدعم.</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOL" xml:space="preserve">
-    <value>لم يعد هذا الإصدار من Nitrocid KS مدعومًا.</value>
+    <value>لم يعد هذا الإصدار من Nitrocid مدعومًا.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS" xml:space="preserve">
     <value>فشل تحميل الإضافات الهامة للنواة</value>
@@ -6149,10 +6149,10 @@
     <value>عنوان URL يشير إلى نقطة نهاية التحميل</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC" xml:space="preserve">
-    <value>اسم المضيف الذي يقوم بتشغيل Nitrocid KS</value>
+    <value>اسم المضيف الذي يقوم بتشغيل Nitrocid</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC" xml:space="preserve">
-    <value>منفذ Nitrocid KS على الهدف البعيد</value>
+    <value>منفذ Nitrocid على الهدف البعيد</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC" xml:space="preserve">
     <value>أمر للتنفيذ عن بعد</value>

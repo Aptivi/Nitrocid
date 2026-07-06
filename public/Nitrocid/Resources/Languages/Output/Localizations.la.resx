@@ -121,7 +121,7 @@
     <value>Kernel ambitus erroris;</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
-    <value>Nitrocid KS problema deprehendit et clausa est.</value>
+    <value>Nitrocid problema deprehendit et clausa est.</value>
   </data>
 
 </root>

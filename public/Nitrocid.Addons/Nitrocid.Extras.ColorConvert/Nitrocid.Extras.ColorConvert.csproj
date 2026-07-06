@@ -2,8 +2,8 @@
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <PropertyGroup>
-    <Description>Nitrocid KS Extras - Color Conversion Tools</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Color Conversion Tools</AssemblyTitle>
+    <Description>Nitrocid Extras - Color Conversion Tools</Description>
+    <AssemblyTitle>Nitrocid Extras - Color Conversion Tools</AssemblyTitle>
   </PropertyGroup>
 
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />

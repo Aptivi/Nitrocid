@@ -121,7 +121,7 @@
     <value>Ralat persekitaran kernel:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
-    <value>Nitrocid KS telah mengesan masalah dan ia telah ditutup.</value>
+    <value>Nitrocid telah mengesan masalah dan ia telah ditutup.</value>
   </data>
 
 </root>

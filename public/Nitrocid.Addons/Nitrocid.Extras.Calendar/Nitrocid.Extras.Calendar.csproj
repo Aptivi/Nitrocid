@@ -2,8 +2,8 @@
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <PropertyGroup>
-    <Description>Nitrocid KS Extras - Calendar</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Calendar</AssemblyTitle>
+    <Description>Nitrocid Extras - Calendar</Description>
+    <AssemblyTitle>Nitrocid Extras - Calendar</AssemblyTitle>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 

@@ -9,6 +9,7 @@
     <File Path="CHANGES" />
     <File Path="changes.chg" />
     <File Path="CHANGES.TITLE" />
+    <File Path="debian/changelog" />
     <File Path="Directory.Build.props" />
   </Folder>
   <Folder Name="/Private/" />

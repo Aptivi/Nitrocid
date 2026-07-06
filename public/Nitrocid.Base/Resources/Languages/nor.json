@@ -2264,15 +2264,15 @@
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1",
-      "text": "Nitrocid KS oppdaterer seg selv for å få den nyeste versjonen som inkluderer generelle forbedringer og feilrettinger. Nye hovedversjoner inkluderer vanligvis nye endringer og nye spennende funksjoner."
+      "text": "Nitrocid oppdaterer seg selv for å få den nyeste versjonen som inkluderer generelle forbedringer og feilrettinger. Nye hovedversjoner inkluderer vanligvis nye endringer og nye spennende funksjoner."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT",
-      "text": "Vil du at Nitrocid KS automatisk skal se etter oppdateringer?"
+      "text": "Vil du at Nitrocid automatisk skal se etter oppdateringer?"
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2",
-      "text": "I tillegg til automatisk å se etter oppdateringer, kan Nitrocid KS også laste ned oppdateringsfilen automatisk."
+      "text": "I tillegg til automatisk å se etter oppdateringer, kan Nitrocid også laste ned oppdateringsfilen automatisk."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3",
@@ -2924,7 +2924,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED",
-      "text": "Da kjernen prøvde å laste den angitte moden, ba den om å laste \"Kernel Simulator\". Siden hovedapplikasjonen er omdøpt til Nitrocid KS, kan denne moden ikke kjøres trygt. Vi anbefaler deg å oppgradere moden."
+      "text": "Da kjernen prøvde å laste den angitte moden, ba den om å laste \"Kernel Simulator\". Siden hovedapplikasjonen er omdøpt til Nitrocid, kan denne moden ikke kjøres trygt. Vi anbefaler deg å oppgradere moden."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS",
@@ -3988,7 +3988,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
-      "text": "Vær oppmerksom på at å kjøre Nitrocid KS i et uvanlig miljø betyr at noen funksjoner er begrenset. Du vil ikke kunne laste inn mods og konfigurasjoner."
+      "text": "Vær oppmerksom på at å kjøre Nitrocid i et uvanlig miljø betyr at noen funksjoner er begrenset. Du vil ikke kunne laste inn mods og konfigurasjoner."
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_TITLE",
@@ -6528,7 +6528,7 @@
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_DESC",
-      "text": "Nitrocid KS simulerer vår fremtidige kjerne, Nitrocid-kjernen."
+      "text": "Nitrocid simulerer vår fremtidige kjerne, Nitrocid-kjernen."
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_MODAPI",
@@ -6552,7 +6552,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
-      "text": "Du kjører Nitrocid KS i et uvanlig miljø. Vennligst bekreft at du har startet kjernen direkte. Hvis du er sikker på at du har startet kjernen på en vanlig måte, kan det være fordi du kjører en versjon av Nitrocid KS som ikke støttes."
+      "text": "Du kjører Nitrocid i et uvanlig miljø. Vennligst bekreft at du har startet kjernen direkte. Hvis du er sikker på at du har startet kjernen på en vanlig måte, kan det være fordi du kjører en versjon av Nitrocid som ikke støttes."
     },
     {
       "loc": "NKS_KERNEL_STARTING_BOOTLOADER_ERROR",
@@ -7308,7 +7308,7 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC",
-      "text": "Viser hovedbufferen som var på skjermen før du startet Nitrocid KS (kun Unix-systemer)"
+      "text": "Viser hovedbufferen som var på skjermen før du startet Nitrocid (kun Unix-systemer)"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED",
@@ -7448,7 +7448,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLWARNING",
-      "text": "Vi vil ikke lenger støtte denne versjonen av Nitrocid KS etter denne datoen"
+      "text": "Vi vil ikke lenger støtte denne versjonen av Nitrocid etter denne datoen"
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLTIP",
@@ -7456,7 +7456,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOL",
-      "text": "Denne versjonen av Nitrocid KS støttes ikke lenger."
+      "text": "Denne versjonen av Nitrocid støttes ikke lenger."
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
@@ -8132,11 +8132,11 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC",
-      "text": "Vertsnavn som kjører Nitrocid KS"
+      "text": "Vertsnavn som kjører Nitrocid"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC",
-      "text": "Port of Nitrocid KS på det eksterne målet"
+      "text": "Port of Nitrocid på det eksterne målet"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC",

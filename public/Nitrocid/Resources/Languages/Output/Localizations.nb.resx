@@ -121,7 +121,7 @@
     <value>Kjernemiljøfeil:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
-    <value>Nitrocid KS har oppdaget et problem, og det har blitt stengt.</value>
+    <value>Nitrocid har oppdaget et problem, og det har blitt stengt.</value>
   </data>
 
 </root>

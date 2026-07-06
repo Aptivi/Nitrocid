@@ -127,7 +127,7 @@
     <value>Thông tin theo dõi ngăn xếp luồng cho {0}</value>
   </data>
   <data name="NKS_DIAG_NOTNKSTHREAD" xml:space="preserve">
-    <value>Không phải là chủ đề Nitrocid KS</value>
+    <value>Không phải là chủ đề Nitrocid</value>
   </data>
 
 </root>

@@ -12,7 +12,7 @@
 
 <br>
 
-# Nitrocid KS
+# Nitrocid
     
 *A simulator for our future-planned kernel, Nitrocid Kernel!*
 

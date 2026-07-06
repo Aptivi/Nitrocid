@@ -121,7 +121,7 @@
     <value>Lỗi môi trường hạt nhân:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
-    <value>Nitrocid KS đã phát hiện ra sự cố và đã dừng hoạt động.</value>
+    <value>Nitrocid đã phát hiện ra sự cố và đã dừng hoạt động.</value>
   </data>
 
 </root>

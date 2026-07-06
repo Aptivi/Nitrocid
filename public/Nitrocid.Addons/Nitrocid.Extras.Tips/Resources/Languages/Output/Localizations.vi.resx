@@ -166,7 +166,7 @@
     <value>rằng các bản phát hành dài hạn được hỗ trợ trong năm năm đối với hỗ trợ chính và ba năm đối với các bản cập nhật bảo mật?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_17" xml:space="preserve">
-    <value>rằng 0.0.1 là phiên bản đầu tiên của Nitrocid KS được phát hành vào ngày 22 tháng 2 năm 2018?</value>
+    <value>rằng 0.0.1 là phiên bản đầu tiên của Nitrocid được phát hành vào ngày 22 tháng 2 năm 2018?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_18" xml:space="preserve">
     <value>rằng phiên bản 0.0.24.x là phiên bản duy nhất có phiên bản API v2.1?</value>
@@ -178,7 +178,7 @@
     <value>phiên bản 0.1.x không tương thích ngược với phiên bản 0.0.24.x hoặc cũ hơn?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_21" xml:space="preserve">
-    <value>bạn có thể chạy Nitrocid KS trên Linux, macOS và Android không?</value>
+    <value>bạn có thể chạy Nitrocid trên Linux, macOS và Android không?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_22" xml:space="preserve">
     <value>rằng bạn có thể tham khảo tài liệu API để giúp bạn tạo bản mod của mình không?</value>

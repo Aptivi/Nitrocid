@@ -2,8 +2,8 @@
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <PropertyGroup>
-    <Description>Nitrocid KS Shell Packs</Description>
-    <AssemblyTitle>Nitrocid KS Shell Packs</AssemblyTitle>
+    <Description>Nitrocid Shell Packs</Description>
+    <AssemblyTitle>Nitrocid Shell Packs</AssemblyTitle>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 

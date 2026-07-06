@@ -1,14 +1,14 @@
 //
-// Nitrocid KS  Copyright (C) 2018-2026  Aptivi
+// Nitrocid  Copyright (C) 2018-2026  Aptivi
 //
-// This file is part of Nitrocid KS
+// This file is part of Nitrocid
 //
-// Nitrocid KS is free software: you can redistribute it and/or modify
+// Nitrocid is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Nitrocid KS is distributed in the hope that it will be useful,
+// Nitrocid is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY, without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
     /// Shows weather information for a specified city
     /// </summary>
     /// <remarks>
-    /// We credit OpenWeatherMap for their decent free API service for weather information for the cities around the world. It requires that you have your own API key for OpenWeatherMap. Don't worry, Nitrocid KS only accesses free features; all you have to do is make an account and generate your own API key.
+    /// We credit OpenWeatherMap for their decent free API service for weather information for the cities around the world. It requires that you have your own API key for OpenWeatherMap. Don't worry, Nitrocid only accesses free features; all you have to do is make an account and generate your own API key.
     /// <br></br>
     /// This command lets you get current weather information for a specified city by city ID as recommended by OpenWeatherMap. If you want a list, use the switch indicated below.
     /// <br></br>

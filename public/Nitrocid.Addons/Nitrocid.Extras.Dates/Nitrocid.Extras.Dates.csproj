@@ -2,8 +2,8 @@
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <PropertyGroup>
-    <Description>Nitrocid KS Extras - Dates</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Dates</AssemblyTitle>
+    <Description>Nitrocid Extras - Dates</Description>
+    <AssemblyTitle>Nitrocid Extras - Dates</AssemblyTitle>
   </PropertyGroup>
 
   <ItemGroup>

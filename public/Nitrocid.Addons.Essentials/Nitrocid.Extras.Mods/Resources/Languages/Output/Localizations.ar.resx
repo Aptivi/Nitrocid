@@ -244,7 +244,7 @@
     <value>فيما يلي قائمة بالأخطاء التي قد تساعدك في التحقق من عدم التوافق هذا:</value>
   </data>
   <data name="NKS_MODS_MODNEEDSAPIEXACT" xml:space="preserve">
-    <value>يتطلب Mod {0} إصدار API {1} بالضبط، ولكن لديك الإصدار {2}. عادةً ما تساعد ترقية Nitrocid KS و/أو الوضع. فشل تحليل وزارة الدفاع.</value>
+    <value>يتطلب Mod {0} إصدار API {1} بالضبط، ولكن لديك الإصدار {2}. عادةً ما تساعد ترقية Nitrocid و/أو الوضع. فشل تحليل وزارة الدفاع.</value>
   </data>
   <data name="NKS_MODS_MODHASNOAPIVERSION" xml:space="preserve">
     <value>قد لا يعمل Mod {0} بشكل صحيح مع إصدار API هذا. قد يفشل التعديل في بدء التشغيل. اتصل ببائع التعديل للحصول على أحدث نسخة.</value>

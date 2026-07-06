@@ -244,7 +244,7 @@
     <value>Hier is een lijst met fouten die u kunnen helpen deze incompatibiliteit te onderzoeken:</value>
   </data>
   <data name="NKS_MODS_MODNEEDSAPIEXACT" xml:space="preserve">
-    <value>Mod {0} vereist precies een API-versie {1}, maar jij hebt versie {2}. Het upgraden van Nitrocid KS en/of de mod helpt meestal. Het parseren van mods is mislukt.</value>
+    <value>Mod {0} vereist precies een API-versie {1}, maar jij hebt versie {2}. Het upgraden van Nitrocid en/of de mod helpt meestal. Het parseren van mods is mislukt.</value>
   </data>
   <data name="NKS_MODS_MODHASNOAPIVERSION" xml:space="preserve">
     <value>Mod {0} werkt mogelijk niet correct met deze API-versie. Mod start mogelijk niet op. Neem contact op met de mod-leverancier voor een nieuwste exemplaar.</value>

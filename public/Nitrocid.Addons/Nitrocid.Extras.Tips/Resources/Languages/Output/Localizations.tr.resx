@@ -166,7 +166,7 @@
     <value>Uzun vadeli sürümlerin ana destek için beş yıl, güvenlik güncellemeleri için ise üç yıl desteklendiği doğru mu?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_17" xml:space="preserve">
-    <value>0.0.1&apos;in 22 Şubat 2018&apos;de yayınlanan Nitrocid KS&apos;nin ilk sürümü olduğunu biliyor muydunuz?</value>
+    <value>0.0.1&apos;in 22 Şubat 2018&apos;de yayınlanan Nitrocid&apos;nin ilk sürümü olduğunu biliyor muydunuz?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_18" xml:space="preserve">
     <value>0.0.24.x serisinin API v2.1 sürümünü barındıran tek sürüm serisi olduğunu mu?</value>
@@ -178,7 +178,7 @@
     <value>0.1.x serisinin 0.0.24.x serisi veya daha eskileriyle geriye dönük uyumsuz olduğu doğru mu?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_21" xml:space="preserve">
-    <value>Nitrocid KS&apos;yi Linux, macOS ve Android&apos;de çalıştırabileceğinizi biliyor muydunuz?</value>
+    <value>Nitrocid&apos;yi Linux, macOS ve Android&apos;de çalıştırabileceğinizi biliyor muydunuz?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_22" xml:space="preserve">
     <value>Modlarınızı yaparken API dokümantasyonuna başvurabileceğinizi biliyor muydunuz?</value>

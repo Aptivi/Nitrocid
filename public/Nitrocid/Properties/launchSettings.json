@@ -1,61 +1,61 @@
 {
   "profiles": {
-    "Nitrocid KS": {
+    "Nitrocid": {
       "commandName": "Project"
     },
-    "Nitrocid KS - Debug": {
+    "Nitrocid - Debug": {
       "commandName": "Project",
       "commandLineArgs": "--debug"
     },
-    "Nitrocid KS - Reset": {
+    "Nitrocid - Reset": {
       "commandName": "Project",
       "commandLineArgs": "--reset"
     },
-    "Nitrocid KS - Test Interactive": {
+    "Nitrocid - Test Interactive": {
       "commandName": "Project",
       "commandLineArgs": "--testInteractive"
     },
-    "Nitrocid KS - Console Debug": {
+    "Nitrocid - Console Debug": {
       "commandName": "Project",
       "commandLineArgs": "--debug --terminaldebug"
     },
-    "Nitrocid KS - quiet": {
+    "Nitrocid - quiet": {
       "commandName": "Project",
       "commandLineArgs": "--quiet"
     },
-    "Nitrocid KS - safe": {
+    "Nitrocid - safe": {
       "commandName": "Project",
       "commandLineArgs": "--safe"
     },
-    "Nitrocid KS - maintenance": {
+    "Nitrocid - maintenance": {
       "commandName": "Project",
       "commandLineArgs": "--maintenance"
     },
-    "Nitrocid KS - Pre-boot in Spanish": {
+    "Nitrocid - Pre-boot in Spanish": {
       "commandName": "Project",
       "commandLineArgs": "--lang es-ES --verbosepreboot"
     },
-    "Nitrocid KS - Enable pre-boot messages": {
+    "Nitrocid - Enable pre-boot messages": {
       "commandName": "Project",
       "commandLineArgs": "--verbosepreboot"
     },
-    "Nitrocid KS - Set buffer size override": {
+    "Nitrocid - Set buffer size override": {
       "commandName": "Project",
       "commandLineArgs": "--nosetbuffersize"
     },
-    "Nitrocid KS - No pre-boot splash": {
+    "Nitrocid - No pre-boot splash": {
       "commandName": "Project",
       "commandLineArgs": "--verbosepreboot --noprebootsplash"
     },
-    "Nitrocid KS - Help system for cmdline args": {
+    "Nitrocid - Help system for cmdline args": {
       "commandName": "Project",
       "commandLineArgs": "--help"
     },
-    "Nitrocid KS - version": {
+    "Nitrocid - version": {
       "commandName": "Project",
       "commandLineArgs": "--version"
     },
-    "Nitrocid KS - apiversion": {
+    "Nitrocid - apiversion": {
       "commandName": "Project",
       "commandLineArgs": "--apiversion"
     }

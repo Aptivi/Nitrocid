@@ -127,7 +127,7 @@
     <value>{0} için iş parçacığı yığın izleme bilgisi</value>
   </data>
   <data name="NKS_DIAG_NOTNKSTHREAD" xml:space="preserve">
-    <value>Nitrocid KS konusu değil</value>
+    <value>Nitrocid konusu değil</value>
   </data>
 
 </root>

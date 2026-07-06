@@ -121,7 +121,7 @@
     <value>カーネル環境エラー:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
-    <value>Nitrocid KS は問題を検出したため、シャットダウンされました。</value>
+    <value>Nitrocid は問題を検出したため、シャットダウンされました。</value>
   </data>
 
 </root>

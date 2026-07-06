@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <Target Name="PruneAddons" BeforeTargets="Build" Condition="Exists('$(RootPath)/public/Nitrocid/KSBuild/net10.0/Addons')">
-    <Message Importance="high" Text="Pruning addons..." />
+    <Message Importance="high" Text="Nitrocid: Pruning addons..." />
     
     <!--
         List all addon folders from the public/Nitrocid.Addons folder. Any addon folder, even if it does not
@@ -54,7 +54,7 @@
     <ItemGroup>
       <FullPathsToPrune Include="$(RootPath)/public/Nitrocid/KSBuild/net10.0/Addons/%(ExcludedAddons.Identity)" Condition=" '@(ExcludedAddons)' != '' "/>
     </ItemGroup>
-    <Message Importance="high" Text="Pruning addon: %(FullPathsToPrune.Identity)" Condition=" '@(ExcludedAddons)' != '' " />
+    <Message Importance="high" Text="Nitrocid: Pruning addon: %(FullPathsToPrune.Identity)" Condition=" '@(ExcludedAddons)' != '' " />
     <RemoveDir Directories="@(FullPathsToPrune)" ContinueOnError="true" Condition=" '@(ExcludedAddons)' != '' " />
 
     <!--
@@ -76,14 +76,14 @@
     <!--
         Wipe out all folders that are in the InvalidAddonSources item
     -->
-    <Message Importance="high" Text="Pruning addon source: %(InvalidAddonSources.Identity)" Condition=" '@(InvalidAddonSources)' != '' " />
+    <Message Importance="high" Text="Nitrocid: Pruning addon source: %(InvalidAddonSources.Identity)" Condition=" '@(InvalidAddonSources)' != '' " />
     <RemoveDir Directories="@(InvalidAddonSources)" ContinueOnError="true" Condition=" '@(InvalidAddonSources)' != '' " />
 
     <!--
         Declare victory!
     -->
-    <Message Importance="high" Text="No obsolete addons!" Condition=" '@(ExcludedAddons)' == '' " />
-    <Message Importance="high" Text="Pruning addons done!" Condition=" '@(ExcludedAddons)' != '' " />
+    <Message Importance="high" Text="Nitrocid: No obsolete addons!" Condition=" '@(ExcludedAddons)' == '' " />
+    <Message Importance="high" Text="Nitrocid: Pruning addons done!" Condition=" '@(ExcludedAddons)' != '' " />
     
     <!--
         Clean up
@@ -100,7 +100,7 @@
   </Target>
 
   <Target Name="PruneEssentialAddons" BeforeTargets="Build" Condition="Exists('$(RootPath)/public/Nitrocid/KSBuild/net10.0/Addons.Essentials')">
-    <Message Importance="high" Text="Pruning essential addons..." />
+    <Message Importance="high" Text="Nitrocid: Pruning essential addons..." />
     
     <!--
         See above for more info
@@ -134,7 +134,7 @@
     <ItemGroup>
       <FullPathsToPrune Include="$(RootPath)/public/Nitrocid/KSBuild/net10.0/Addons.Essentials/%(ExcludedAddons.Identity)" Condition=" '@(ExcludedAddons)' != '' "/>
     </ItemGroup>
-    <Message Importance="high" Text="Pruning essential addon: %(FullPathsToPrune.Identity)" Condition=" '@(ExcludedAddons)' != '' " />
+    <Message Importance="high" Text="Nitrocid: Pruning essential addon: %(FullPathsToPrune.Identity)" Condition=" '@(ExcludedAddons)' != '' " />
     <RemoveDir Directories="@(FullPathsToPrune)" ContinueOnError="true" Condition=" '@(ExcludedAddons)' != '' " />
 
     <ItemGroup>
@@ -149,11 +149,11 @@
       <Output TaskParameter="Include" ItemName="InvalidAddonSources"/>
     </CreateItem>
 
-    <Message Importance="high" Text="Pruning essential addon source: %(InvalidAddonSources.Identity)" Condition=" '@(InvalidAddonSources)' != '' " />
+    <Message Importance="high" Text="Nitrocid: Pruning essential addon source: %(InvalidAddonSources.Identity)" Condition=" '@(InvalidAddonSources)' != '' " />
     <RemoveDir Directories="@(InvalidAddonSources)" ContinueOnError="true" Condition=" '@(InvalidAddonSources)' != '' " />
 
-    <Message Importance="high" Text="No obsolete essential addons!" Condition=" '@(ExcludedAddons)' == '' " />
-    <Message Importance="high" Text="Pruning essentials done!" Condition=" '@(ExcludedAddons)' != '' " />
+    <Message Importance="high" Text="Nitrocid: No obsolete essential addons!" Condition=" '@(ExcludedAddons)' == '' " />
+    <Message Importance="high" Text="Nitrocid: Pruning essentials done!" Condition=" '@(ExcludedAddons)' != '' " />
 
     <ItemGroup Condition=" '@(NitrocidAddonsNames)' != '' ">
       <NitrocidAddonsNames Remove="@(NitrocidAddonsNames)" />

@@ -4964,7 +4964,7 @@
     <value>त्रुटि के बारे में अधिक जानकारी के लिए डीबग लॉग की जांच करें.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV" xml:space="preserve">
-    <value>आप Nitrocid KS को असामान्य वातावरण पर चला रहे हैं। कृपया सत्यापित करें कि आपने कर्नेल को सीधे शुरू किया है। यदि आप सुनिश्चित हैं कि आपने कर्नेल को सामान्य तरीके से शुरू किया है, तो ऐसा इसलिए हो सकता है क्योंकि आप Nitrocid KS का असमर्थित संस्करण चला रहे हैं।</value>
+    <value>आप Nitrocid को असामान्य वातावरण पर चला रहे हैं। कृपया सत्यापित करें कि आपने कर्नेल को सीधे शुरू किया है। यदि आप सुनिश्चित हैं कि आपने कर्नेल को सामान्य तरीके से शुरू किया है, तो ऐसा इसलिए हो सकता है क्योंकि आप Nitrocid का असमर्थित संस्करण चला रहे हैं।</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_ERROR" xml:space="preserve">
     <value>GRILO में आंतरिक त्रुटि आई है</value>
@@ -5636,7 +5636,7 @@
     <value>शटडाउन ध्वनि बजा रहा हूँ...</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLWARNING" xml:space="preserve">
-    <value>इस तिथि के बाद हम Nitrocid KS के इस संस्करण का समर्थन नहीं करेंगे</value>
+    <value>इस तिथि के बाद हम Nitrocid के इस संस्करण का समर्थन नहीं करेंगे</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLTIP" xml:space="preserve">
     <value>यदि आप समर्थन प्राप्त करना जारी रखना चाहते हैं तो सुनिश्चित करें कि आप शीघ्र ही समर्थित संस्करण में अपग्रेड कर लें।</value>
@@ -6149,7 +6149,7 @@
     <value>अपलोड एंडपॉइंट की ओर इशारा करने वाला URL</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC" xml:space="preserve">
-    <value>होस्ट नाम जो Nitrocid KS चलाता है</value>
+    <value>होस्ट नाम जो Nitrocid चलाता है</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC" xml:space="preserve">
     <value>दूरस्थ लक्ष्य पर नाइट्रोसिड के.एस. का बंदरगाह</value>

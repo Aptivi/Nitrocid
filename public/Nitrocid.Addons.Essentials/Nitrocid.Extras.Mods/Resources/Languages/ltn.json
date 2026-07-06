@@ -176,7 +176,7 @@
     },
     {
       "loc": "NKS_MODS_MODNEEDSAPIEXACT",
-      "text": "Mod {0} exigit exacte an API version {I}, vos have poema poematis {II}. Upgrading nitrocid ks et / vel mod plerumque adjuvat. Mod parsing defuit."
+      "text": "Mod {0} exigit exacte an API version {I}, vos have poema poematis {II}. Upgrading Nitrocid et / vel mod plerumque adjuvat. Mod parsing defuit."
     },
     {
       "loc": "NKS_MODS_MODHASNOAPIVERSION",

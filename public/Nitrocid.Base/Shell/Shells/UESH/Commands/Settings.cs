@@ -1,14 +1,14 @@
 //
-// Nitrocid KS  Copyright (C) 2018-2026  Aptivi
+// Nitrocid  Copyright (C) 2018-2026  Aptivi
 //
-// This file is part of Nitrocid KS
+// This file is part of Nitrocid
 //
-// Nitrocid KS is free software: you can redistribute it and/or modify
+// Nitrocid is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Nitrocid KS is distributed in the hope that it will be useful,
+// Nitrocid is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY, without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
@@ -36,7 +36,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// Lets you change kernel settings
     /// </summary>
     /// <remarks>
-    /// This command starts up the Settings application, which allows you to change the kernel settings available to you. It's the successor to the defunct Nitrocid KS Configuration Tool application, and is native to the kernel.
+    /// This command starts up the Settings application, which allows you to change the kernel settings available to you. It's the successor to the defunct Nitrocid Configuration Tool application, and is native to the kernel.
     /// It starts with the list of sections to start from. Once the user selects one, they'll be greeted with various options that are configurable. When they choose one, they'll be able to change the setting there.
     /// If you just want to try out a setting without saving to the configuration file, you can change a setting and exit it immediately. It only survives the current session until you decide to save the changes to the configuration file.
     /// Some settings allow you to specify a string, a number, or by the usage of another API, like the ColorWheel() tool.

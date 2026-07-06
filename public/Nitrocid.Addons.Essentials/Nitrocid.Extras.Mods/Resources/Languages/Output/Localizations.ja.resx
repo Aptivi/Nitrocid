@@ -244,7 +244,7 @@
     <value>この非互換性の調査に役立つエラーのリストを次に示します。</value>
   </data>
   <data name="NKS_MODS_MODNEEDSAPIEXACT" xml:space="preserve">
-    <value>モジュール {0} には API バージョン {1} が必要ですが、バージョン {2} があります。通常、Nitrocid KS および/または MOD をアップグレードすると役に立ちます。MODの解析に失敗しました。</value>
+    <value>モジュール {0} には API バージョン {1} が必要ですが、バージョン {2} があります。通常、Nitrocid および/または MOD をアップグレードすると役に立ちます。MODの解析に失敗しました。</value>
   </data>
   <data name="NKS_MODS_MODHASNOAPIVERSION" xml:space="preserve">
     <value>Mod {0} は、この API バージョンでは正しく動作しない可能性があります。MODの起動に失敗する場合があります。最新コピーを入手するには、MOD ベンダーに問い合わせてください。</value>

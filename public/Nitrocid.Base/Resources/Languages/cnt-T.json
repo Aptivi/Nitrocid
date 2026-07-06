@@ -2263,15 +2263,15 @@
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1",
-      "text": "Nitrocid KS 目前會自行更新以獲得最新版本，其中包括一般改進和錯誤修復。新的主要版本通常包括重大更改和新的令人興奮的功能。"
+      "text": "Nitrocid 目前會自行更新以獲得最新版本，其中包括一般改進和錯誤修復。新的主要版本通常包括重大更改和新的令人興奮的功能。"
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT",
-      "text": "您希望 Nitrocid KS 自動檢查更新嗎？"
+      "text": "您希望 Nitrocid 自動檢查更新嗎？"
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2",
-      "text": "除了自動檢查更新外，Nitrocid KS 還可以自動下載更新檔案。"
+      "text": "除了自動檢查更新外，Nitrocid 還可以自動下載更新檔案。"
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3",
@@ -2923,7 +2923,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED",
-      "text": "當核心嘗試載入指定的mod時，它請求載入“核心模擬器”。由於主應用程式已重新命名為 Nitrocid KS，因此該 mod 無法安全運作。我們建議您升級模組。"
+      "text": "當核心嘗試載入指定的mod時，它請求載入“核心模擬器”。由於主應用程式已重新命名為 Nitrocid，因此該 mod 無法安全運作。我們建議您升級模組。"
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS",
@@ -3987,7 +3987,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
-      "text": "請注意，在不尋常的環境中運行 Nitrocid KS 意味著某些功能會受到限制。您將無法載入模組和配置。"
+      "text": "請注意，在不尋常的環境中運行 Nitrocid 意味著某些功能會受到限制。您將無法載入模組和配置。"
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_TITLE",
@@ -6527,7 +6527,7 @@
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_DESC",
-      "text": "Nitrocid KS 模擬我們未來的內核，Nitrocid Kernel。"
+      "text": "Nitrocid 模擬我們未來的內核，Nitrocid Kernel。"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_MODAPI",
@@ -6551,7 +6551,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
-      "text": "您在不尋常的環境中執行 Nitrocid KS。請驗證您是否直接啟動了核心。如果您確定已以常規方式啟動內核，可能是因為您正在執行不受支援的 Nitrocid KS 版本。"
+      "text": "您在不尋常的環境中執行 Nitrocid。請驗證您是否直接啟動了核心。如果您確定已以常規方式啟動內核，可能是因為您正在執行不受支援的 Nitrocid 版本。"
     },
     {
       "loc": "NKS_KERNEL_STARTING_BOOTLOADER_ERROR",
@@ -7307,7 +7307,7 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC",
-      "text": "顯示啟動 Nitrocid KS 之前畫面上的主緩衝區（僅限 Unix 系統）"
+      "text": "顯示啟動 Nitrocid 之前畫面上的主緩衝區（僅限 Unix 系統）"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED",
@@ -7447,7 +7447,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLWARNING",
-      "text": "此日期之後，我們將不再支援此版本的 Nitrocid KS"
+      "text": "此日期之後，我們將不再支援此版本的 Nitrocid"
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLTIP",
@@ -7455,7 +7455,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOL",
-      "text": "此版本的 Nitrocid KS 不再受支援。"
+      "text": "此版本的 Nitrocid 不再受支援。"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
@@ -8131,11 +8131,11 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC",
-      "text": "運行 Nitrocid KS 的主機名"
+      "text": "運行 Nitrocid 的主機名"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC",
-      "text": "遠端目標上的 Nitrocid KS 連接埠"
+      "text": "遠端目標上的 Nitrocid 連接埠"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC",

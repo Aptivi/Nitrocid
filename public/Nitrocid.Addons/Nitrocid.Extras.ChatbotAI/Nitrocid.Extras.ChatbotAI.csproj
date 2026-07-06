@@ -2,8 +2,8 @@
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <PropertyGroup>
-    <Description>Nitrocid KS Extras - Chatbot AI</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Chatbot AI</AssemblyTitle>
+    <Description>Nitrocid Extras - Chatbot AI</Description>
+    <AssemblyTitle>Nitrocid Extras - Chatbot AI</AssemblyTitle>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 

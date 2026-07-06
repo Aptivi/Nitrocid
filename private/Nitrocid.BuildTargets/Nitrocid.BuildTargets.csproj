@@ -9,7 +9,7 @@
       <DateTimePart>$([System.DateTime]::Now.ToString('yyyyMMddHHmmss'))</DateTimePart>
     </PropertyGroup>
     <WriteLinesToFile Overwrite="true" File="$(MSBuildThisFileDirectory)/obj/.dtp" Lines="$(DateTimePart)" />
-    <Message Importance="high" Text="Nitrocid is building on CI: $(DateTimePart)" />
+    <Message Importance="high" Text="Nitrocid: Building on CI: $(DateTimePart)" />
   </Target>
 
 </Project>

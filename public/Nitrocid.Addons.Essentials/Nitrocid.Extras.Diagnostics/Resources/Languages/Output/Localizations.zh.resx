@@ -127,7 +127,7 @@
     <value>{0} 的線程堆疊追蹤訊息</value>
   </data>
   <data name="NKS_DIAG_NOTNKSTHREAD" xml:space="preserve">
-    <value>不是 Nitrocid KS 螺紋</value>
+    <value>不是 Nitrocid 螺紋</value>
   </data>
 
 </root>

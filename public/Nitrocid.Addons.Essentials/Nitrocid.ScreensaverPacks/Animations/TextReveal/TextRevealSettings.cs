@@ -1,14 +1,14 @@
 ﻿//
-// Nitrocid KS  Copyright (C) 2018-2026  Aptivi
+// Nitrocid  Copyright (C) 2018-2026  Aptivi
 //
-// This file is part of Nitrocid KS
+// This file is part of Nitrocid
 //
-// Nitrocid KS is free software: you can redistribute it and/or modify
+// Nitrocid is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Nitrocid KS is distributed in the hope that it will be useful,
+// Nitrocid is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY, without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
@@ -28,7 +28,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.TextReveal
         private int _textRevealDelay = 50;
         private int _textRevealFadeOutDelay = 3000;
         private int _textRevealNewScreenDelay = 10000;
-        private string _textRevealWrite = "Nitrocid KS";
+        private string _textRevealWrite = "Nitrocid";
         private int _textRevealMaxSteps = 25;
         private int _textRevealMinimumRedColorLevel = 0;
         private int _textRevealMinimumGreenColorLevel = 0;
@@ -97,7 +97,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.TextReveal
             set
             {
                 if (string.IsNullOrEmpty(value))
-                    value = "Nitrocid KS";
+                    value = "Nitrocid";
                 _textRevealWrite = value;
             }
         }

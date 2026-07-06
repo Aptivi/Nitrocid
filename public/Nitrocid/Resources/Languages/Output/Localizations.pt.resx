@@ -121,7 +121,7 @@
     <value>Erro no ambiente do kernel:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
-    <value>Nitrocid KS detectou um problema e foi encerrado.</value>
+    <value>Nitrocid detectou um problema e foi encerrado.</value>
   </data>
 
 </root>

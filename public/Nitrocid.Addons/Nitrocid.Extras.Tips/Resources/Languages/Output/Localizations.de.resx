@@ -166,7 +166,7 @@
     <value>dass Langzeitversionen fünf Jahre lang für den Hauptsupport und drei Jahre für Sicherheitsupdates unterstützt werden?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_17" xml:space="preserve">
-    <value>dass 0.0.1 die allererste Version von Nitrocid KS war, die am 22. Februar 2018 veröffentlicht wurde?</value>
+    <value>dass 0.0.1 die allererste Version von Nitrocid war, die am 22. Februar 2018 veröffentlicht wurde?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_18" xml:space="preserve">
     <value>dass die 0.0.24.x-Serie die einzige Versionsserie war, die die API v2.1-Version enthielt?</value>
@@ -178,7 +178,7 @@
     <value>dass die 0.1.x-Serie abwärtsinkompatibel mit der 0.0.24.x-Serie oder älter ist?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_21" xml:space="preserve">
-    <value>dass Sie Nitrocid KS unter Linux, macOS und Android ausführen können?</value>
+    <value>dass Sie Nitrocid unter Linux, macOS und Android ausführen können?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_22" xml:space="preserve">
     <value>dass Sie auf die API-Dokumentation zurückgreifen können, die Ihnen bei der Erstellung Ihrer Mods hilft?</value>

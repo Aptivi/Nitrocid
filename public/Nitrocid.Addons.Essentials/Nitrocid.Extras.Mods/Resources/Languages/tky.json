@@ -177,7 +177,7 @@
     },
     {
       "loc": "NKS_MODS_MODNEEDSAPIEXACT",
-      "text": "Mod {0} tam olarak bir API sürümü {1} gerektirir, ancak siz {2} sürümüne sahipsiniz. Nitrocid KS'yi ve/veya modu yükseltmek genellikle yardımcı olur. Mod ayrıştırma başarısız oldu."
+      "text": "Mod {0} tam olarak bir API sürümü {1} gerektirir, ancak siz {2} sürümüne sahipsiniz. Nitrocid'yi ve/veya modu yükseltmek genellikle yardımcı olur. Mod ayrıştırma başarısız oldu."
     },
     {
       "loc": "NKS_MODS_MODHASNOAPIVERSION",

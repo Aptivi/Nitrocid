@@ -310,7 +310,7 @@
     <value>In dit gedeelte kunt u configureren hoe Agenda werkt.</value>
   </data>
   <data name="NKS_CALENDAR_BUILTIN_NKSANNIVERSARY" xml:space="preserve">
-    <value>Nitrocid KS-releaseverjaardag</value>
+    <value>Nitrocid-releaseverjaardag</value>
   </data>
   <data name="NKS_CALENDAR_BUILTIN_RAMADAN" xml:space="preserve">
     <value>Ramadan</value>

@@ -121,7 +121,7 @@
     <value>核心環境錯誤：</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
-    <value>Nitrocid KS 已偵測到問題並已關閉。</value>
+    <value>Nitrocid 已偵測到問題並已關閉。</value>
   </data>
 
 </root>

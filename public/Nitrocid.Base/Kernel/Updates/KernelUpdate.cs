@@ -1,14 +1,14 @@
 ﻿//
-// Nitrocid KS  Copyright (C) 2018-2026  Aptivi
+// Nitrocid  Copyright (C) 2018-2026  Aptivi
 //
-// This file is part of Nitrocid KS
+// This file is part of Nitrocid
 //
-// Nitrocid KS is free software: you can redistribute it and/or modify
+// Nitrocid is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Nitrocid KS is distributed in the hope that it will be useful,
+// Nitrocid is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY, without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
@@ -68,7 +68,7 @@ namespace Nitrocid.Base.Kernel.Updates
             // After:
             // [ 0.0.21.5, 0.0.21.4, 0.0.21.3, 0.0.21.2, 0.0.21.1,  0.0.21.0, 0.0.20.6, 0.0.20.5, 0.0.20.4, 0.0.20.3, 0.0.20.2, ... ]
             // 
-            // After we do this, Nitrocid KS should recognize newer servicing versions based on the current series (i.e. KS 0.0.21.3 didn't notify
+            // After we do this, Nitrocid should recognize newer servicing versions based on the current series (i.e. KS 0.0.21.3 didn't notify
             // the user that 0.0.21.4 was available due to 0.0.8.12 and versions that came after coming as first according to the API until 0.0.21.5
             // arrived)
             List<(SemVer? UpdateVersion, Uri UpdateURL)> SortedVersions = [];
@@ -78,7 +78,7 @@ namespace Nitrocid.Base.Kernel.Updates
                 if (KernelUpdate is null)
                     continue;
 
-                // We usually prefix versions with vx.x.x.x-xxx on Nitrocid KS releases.
+                // We usually prefix versions with vx.x.x.x-xxx on Nitrocid releases.
                 string tagName = KernelUpdate.SelectToken("tag_name")?.ToString() ?? "";
                 tagName = tagName.StartsWith('v') ? tagName[1..] : tagName;
                 SemVer? KernelUpdateVer = default;

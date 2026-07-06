@@ -127,7 +127,7 @@
     <value>Πληροφορίες ίχνους στοίβας νήματος για {0}</value>
   </data>
   <data name="NKS_DIAG_NOTNKSTHREAD" xml:space="preserve">
-    <value>Δεν είναι νήμα Nitrocid KS</value>
+    <value>Δεν είναι νήμα Nitrocid</value>
   </data>
 
 </root>

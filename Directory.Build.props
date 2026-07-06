@@ -22,7 +22,7 @@
         <AssemblyOriginatorKeyFile>$(RootPath)\aptivi_snk.snk</AssemblyOriginatorKeyFile>
 
         <!--
-          Increment NitrocidModAPIVersionMajor every time there is a new version of Nitrocid KS. For example, N-KS 0.1.1 is
+          Increment NitrocidModAPIVersionMajor every time there is a new version of Nitrocid. For example, Nitrocid 0.1.1 is
           3.0.26. Also, increment NitrocidModAPIVersionChangeset every time there is a breaking change or an API addition
           in the N-KS API. Don't forget to document it in the GitBook instance so the mod developers are aware of the breaking
           changes!

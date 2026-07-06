@@ -61,7 +61,7 @@ namespace Nitrocid.LocaleChecker.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to While Nitrocid KS accepts unlocalized strings and returns them as is, it&apos;s recommended to remove this string so that translations would be complete before the end of the development cycle..
+        ///   Looks up a localized string similar to While Nitrocid accepts unlocalized strings and returns them as is, it&apos;s recommended to remove this string so that translations would be complete before the end of the development cycle..
         /// </summary>
         internal static string ExtraLocalizedJsonStringAnalyzerDescription {
             get {
@@ -142,7 +142,7 @@ namespace Nitrocid.LocaleChecker.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to While Nitrocid KS accepts unlocalized strings and returns them as is, it&apos;s recommended to localize this string so that translations would be complete before the end of the development cycle..
+        ///   Looks up a localized string similar to While Nitrocid accepts unlocalized strings and returns them as is, it&apos;s recommended to localize this string so that translations would be complete before the end of the development cycle..
         /// </summary>
         internal static string UnlocalizedStringAnalyzerDescription {
             get {

@@ -4,7 +4,7 @@
     <PackageId>KS.Templates</PackageId>
     <PackageType>Template</PackageType>
     <Authors>Aptivi</Authors>
-    <Title>Nitrocid KS Templates</Title>
+    <Title>Nitrocid Templates</Title>
     <Description>Simulates our future-planned kernel, Nitrocid Kernel. This package contains templates to use when creating N-KS mods, screensavers, and splashes</Description>
     <PackageTags>dotnet-new;templats;ks;kernel;simulator</PackageTags>
     <!-- URL settings -->

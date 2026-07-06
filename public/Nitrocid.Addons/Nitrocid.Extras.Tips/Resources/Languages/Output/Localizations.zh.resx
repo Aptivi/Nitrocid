@@ -166,7 +166,7 @@
     <value>長期版本的主要支援支援五年，安全更新支援三年？</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_17" xml:space="preserve">
-    <value>0.0.1 是 Nitrocid KS 的第一個版本，於 2018 年 2 月 22 日發布？</value>
+    <value>0.0.1 是 Nitrocid 的第一個版本，於 2018 年 2 月 22 日發布？</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_18" xml:space="preserve">
     <value>0.0.24.x 系列是唯一擁有 API v2.1 版本的版本系列？</value>
@@ -178,7 +178,7 @@
     <value>0.1.x 系列與 0.0.24.x 系列或更早版本向後不相容？</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_21" xml:space="preserve">
-    <value>您可以在 Linux、macOS 和 Android 上執行 Nitrocid KS 嗎？</value>
+    <value>您可以在 Linux、macOS 和 Android 上執行 Nitrocid 嗎？</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_22" xml:space="preserve">
     <value>您可以參考 API 文件來幫助您製作模組嗎？</value>

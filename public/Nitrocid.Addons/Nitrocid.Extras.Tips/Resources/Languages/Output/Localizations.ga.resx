@@ -166,7 +166,7 @@
     <value>go dtugtar tacaíocht do eisiúintí fadtéarmacha ar feadh cúig bliana don phríomhthacaíocht, agus trí bliana le haghaidh nuashonruithe slándála?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_17" xml:space="preserve">
-    <value>gurbh é 0.0.1 an chéad leagan de Nitrocid KS a eisíodh ar 22 Feabhra, 2018?</value>
+    <value>gurbh é 0.0.1 an chéad leagan de Nitrocid a eisíodh ar 22 Feabhra, 2018?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_18" xml:space="preserve">
     <value>go raibh an tsraith 0.0.24.x an tsraith leagan amháin a bhí an leagan API v2.1?</value>
@@ -178,7 +178,7 @@
     <value>go bhfuil sraith 0.1.x ar gcúl-neamh-chomhoiriúnach le sraith 0.0.24.x nó níos sine?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_21" xml:space="preserve">
-    <value>gur féidir leat Nitrocid KS a rith ar Linux, macOS, agus Android?</value>
+    <value>gur féidir leat Nitrocid a rith ar Linux, macOS, agus Android?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_22" xml:space="preserve">
     <value>gur féidir leat a tharchur chuig an doiciméadú API chun cabhrú leat a dhéanamh do mods?</value>

@@ -244,7 +244,7 @@
     <value>Di seguito è riportato un elenco di errori che potrebbero aiutarti a indagare su questa incompatibilità:</value>
   </data>
   <data name="NKS_MODS_MODNEEDSAPIEXACT" xml:space="preserve">
-    <value>La mod {0} richiede esattamente una versione API {1}, ma hai la versione {2}. Aggiornare Nitrocid KS e/o la mod di solito aiuta. Analisi della mod non riuscita.</value>
+    <value>La mod {0} richiede esattamente una versione API {1}, ma hai la versione {2}. Aggiornare Nitrocid e/o la mod di solito aiuta. Analisi della mod non riuscita.</value>
   </data>
   <data name="NKS_MODS_MODHASNOAPIVERSION" xml:space="preserve">
     <value>La mod {0} potrebbe non funzionare correttamente con questa versione API. La mod potrebbe non avviarsi. Contatta il venditore del mod per ottenere una copia più recente.</value>
