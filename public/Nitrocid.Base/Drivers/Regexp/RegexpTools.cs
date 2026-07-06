@@ -20,9 +20,8 @@
 extern alias TextifyDep;
 using TextifyDep::System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
-using Nitrocid.Base.Drivers;
 
-namespace Nitrocid.Base.Misc.Text.Probers.Regexp
+namespace Nitrocid.Base.Drivers.Regexp
 {
     /// <summary>
     /// All tools for the regular expressions

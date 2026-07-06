@@ -27,10 +27,10 @@ using Nitrocid.Base.Misc.Interactives;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Text.Probers.Regexp;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Files.Instances;
 using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Drivers.Regexp;
 
 namespace Nitrocid.Base.Files
 {

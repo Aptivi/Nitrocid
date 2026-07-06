@@ -28,13 +28,13 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Text.Probers.Regexp;
 using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Drivers.Encryption;
+using Nitrocid.Base.Drivers.Regexp;
 
 namespace Nitrocid.Base.Users
 {

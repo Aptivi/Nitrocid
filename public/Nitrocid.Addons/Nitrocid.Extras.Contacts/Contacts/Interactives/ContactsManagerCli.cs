@@ -28,7 +28,6 @@ using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
-using Nitrocid.Base.Misc.Text.Probers.Regexp;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Colorimetry;
@@ -41,6 +40,7 @@ using Textify.General;
 using VisualCard.Parts;
 using VisualCard.Parts.Enums;
 using VisualCard.Parts.Implementations;
+using Nitrocid.Base.Drivers.Regexp;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 {
