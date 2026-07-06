@@ -22,7 +22,7 @@ using Terminaux.Base;
 using Colorimetry.Data;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Simple;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Time.Renderers;
 
@@ -50,8 +50,6 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
             var table = new Table()
             {
                 Rows = Rows,
-                Left = 4,
-                Top = 2,
                 Width = ConsoleWrapper.WindowWidth - 7,
                 Height = ConsoleWrapper.WindowHeight - 5,
                 Header = true,

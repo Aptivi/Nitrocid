@@ -29,8 +29,8 @@ jobs:
           sudo NEEDRESTART_SUSPEND=1 mk-build-deps -i
           rm *build-deps*
 
-      # - name: Add GitHub Package Registry to get access to beta builds
-      #   run: dotnet nuget add source --username AptiviCEO --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aptivi/index.json"
+      - name: Add GitHub Package Registry to get access to beta builds
+        run: dotnet nuget add source --username AptiviCEO --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aptivi/index.json"
         
       - name: Initialize offline package
         run: |
@@ -41,8 +41,8 @@ jobs:
         run: |
           mv debian ..
           mv .github ..
-          tar cfv ../nitrocid-29_4.1.29.9-0.2.1.0~beta.orig.tar .
-          xz ../nitrocid-29_4.1.29.9-0.2.1.0~beta.orig.tar
+          tar cfv ../nitrocid-29_4.1.29.10-0.2.1.0~beta.orig.tar .
+          xz ../nitrocid-29_4.1.29.10-0.2.1.0~beta.orig.tar
           mv ../debian .
 
       - name: Build package

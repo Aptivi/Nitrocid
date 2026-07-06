@@ -29,7 +29,7 @@ using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Time.Converters;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
-using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
@@ -153,8 +153,6 @@ namespace Nitrocid.Extras.Calendar.Calendar
             var calendarTable = new Table()
             {
                 Rows = CalendarData,
-                Left = 2,
-                Top = 3,
                 Width = ConsoleWrapper.WindowWidth - 4,
                 Height = ConsoleWrapper.WindowHeight - 4,
                 Header = true,
