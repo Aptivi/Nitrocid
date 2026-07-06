@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Time.Renderers;
@@ -30,25 +29,33 @@ using Textify.Data.Figlet;
 
 namespace Nitrocid.Base.Misc.Widgets.Implementations
 {
-    internal class DigitalClock : BaseWidget, IWidget
+    /// <summary>
+    /// Digital clock widget
+    /// </summary>
+    public class DigitalClock : BaseWidget, IWidget
     {
-        internal Color clockColor = Color.Empty;
-        internal Color? backgroundColor;
-        private bool colorInitialized = false;
+        private Color clockColor = Color.Empty;
+        private Color? backgroundColor;
 
-        public override string Cleanup(int left, int top, int width, int height) =>
-            "";
-
-        public override string Initialize(int left, int top, int width, int height)
+        /// <summary>
+        /// Clock text color
+        /// </summary>
+        public Color ClockColor
         {
-            if (!colorInitialized)
-            {
-                clockColor = ChangeDateAndTimeColor();
-                colorInitialized = true;
-            }
-            return "";
+            get => clockColor;
+            set => clockColor = value;
         }
 
+        /// <summary>
+        /// Seconds hand color
+        /// </summary>
+        public Color BackgroundColor
+        {
+            get => backgroundColor ?? ConsoleColoring.CurrentBackgroundColor;
+            set => backgroundColor = value;
+        }
+
+        /// <inheritdoc/>
         public override string Render(int left, int top, int width, int height)
         {
             var display = new StringBuilder();
@@ -61,8 +68,8 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
             var timeText = new AlignedFigletText(figFont)
             {
                 Text = timeStr,
-                ForegroundColor = clockColor,
-                BackgroundColor = backgroundColor ?? ConsoleColoring.CurrentBackgroundColor,
+                ForegroundColor = ClockColor,
+                BackgroundColor = BackgroundColor,
                 Top = consoleY,
                 Left = left,
                 Width = width,
@@ -81,8 +88,8 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
                 var dateText = new AlignedText()
                 {
                     Text = dateStr,
-                    ForegroundColor = clockColor,
-                    BackgroundColor = backgroundColor ?? ConsoleColoring.CurrentBackgroundColor,
+                    ForegroundColor = ClockColor,
+                    BackgroundColor = BackgroundColor,
                     Top = consoleInfoY,
                     OneLine = true,
                     Left = left,
@@ -102,22 +109,21 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
         /// <summary>
         /// Changes the color of date and time
         /// </summary>
-        private Color ChangeDateAndTimeColor()
+        private Color ChangeDateAndTimeColor() =>
+            ColorTools.GetRandomColor(
+                Config.WidgetConfig.DigitalTrueColor ? ColorType.TrueColor : ColorType.EightBitColor,
+                Config.WidgetConfig.DigitalMinimumColorLevel, Config.WidgetConfig.DigitalMaximumColorLevel,
+                Config.WidgetConfig.DigitalMinimumRedColorLevel, Config.WidgetConfig.DigitalMaximumRedColorLevel,
+                Config.WidgetConfig.DigitalMinimumGreenColorLevel, Config.WidgetConfig.DigitalMaximumGreenColorLevel,
+                Config.WidgetConfig.DigitalMinimumBlueColorLevel, Config.WidgetConfig.DigitalMaximumBlueColorLevel
+            );
+
+        /// <summary>
+        /// Makes a new digital clock widget instance
+        /// </summary>
+        public DigitalClock()
         {
-            Color ColorInstance;
-            if (Config.WidgetConfig.DigitalTrueColor)
-            {
-                int RedColorNum = RandomDriver.Random(Config.WidgetConfig.DigitalMinimumRedColorLevel, Config.WidgetConfig.DigitalMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(Config.WidgetConfig.DigitalMinimumGreenColorLevel, Config.WidgetConfig.DigitalMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(Config.WidgetConfig.DigitalMinimumBlueColorLevel, Config.WidgetConfig.DigitalMaximumBlueColorLevel);
-                ColorInstance = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-            }
-            else
-            {
-                int ColorNum = RandomDriver.Random(Config.WidgetConfig.DigitalMinimumColorLevel, Config.WidgetConfig.DigitalMaximumColorLevel);
-                ColorInstance = new Color(ColorNum);
-            }
-            return ColorInstance;
+            clockColor = ChangeDateAndTimeColor();
         }
     }
 }

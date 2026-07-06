@@ -26,12 +26,6 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
 {
     internal class UnknownWidget : BaseWidget, IWidget
     {
-        public override string Cleanup(int left, int top, int width, int height) =>
-            "";
-
-        public override string Initialize(int left, int top, int width, int height) =>
-            "";
-
         public override string Render(int left, int top, int width, int height)
         {
             var unknownWidget = new BoundedText()

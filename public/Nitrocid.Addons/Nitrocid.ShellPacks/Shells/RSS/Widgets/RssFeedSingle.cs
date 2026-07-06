@@ -28,19 +28,24 @@ using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Widgets
 {
-    internal class RssFeedSingle : BaseWidget, IWidget
+    /// <summary>
+    /// RSS feeds (single article) widget
+    /// </summary>
+    public class RssFeedSingle : BaseWidget, IWidget
     {
         (string feedTitle, string articleTitle)? article = null;
 
-        public override string Cleanup(int left, int top, int width, int height)
-        {
-            article = null;
-            return "";
-        }
+        /// <summary>
+        /// Whether to show the feed title or not
+        /// </summary>
+        public bool ShowFeedTitle { get; set; } = true;
 
-        public override string Initialize(int left, int top, int width, int height) =>
-            "";
+        /// <summary>
+        /// RSS headline URL
+        /// </summary>
+        public string HeadlineUrl { get; set; }
 
+        /// <inheritdoc/>
         public override string Render(int left, int top, int width, int height)
         {
             var display = new StringBuilder();
@@ -62,9 +67,9 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Widgets
         {
             try
             {
-                article ??= RSSShellTools.GetFirstArticle(Config.MainConfig.RssHeadlineUrl);
+                article ??= RSSShellTools.GetFirstArticle(HeadlineUrl);
                 if (article is (string feedTitle, string articleTitle))
-                    return LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_RSSFEED_FROM") + $" {feedTitle}: {articleTitle}";
+                    return (ShowFeedTitle ? (LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_RSSFEED_FROM") + $" {feedTitle}: ") : "") + articleTitle;
                 return LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_RSSFEED_NOFEED");
             }
             catch (Exception ex)
@@ -73,6 +78,14 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Widgets
                 DebugWriter.WriteDebugStackTrace(ex);
                 return LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FETCHFAILED");
             }
+        }
+
+        /// <summary>
+        /// Makes a new RSS feed latest update widget instance
+        /// </summary>
+        public RssFeedSingle()
+        {
+            HeadlineUrl = Config.MainConfig.RssHeadlineUrl;
         }
     }
 }

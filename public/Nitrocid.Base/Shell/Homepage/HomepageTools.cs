@@ -126,7 +126,7 @@ namespace Nitrocid.Base.Shell.Homepage
                     WidgetTools.CheckWidget(Config.MainConfig.HomepageWidget) ?
                     WidgetTools.GetWidget(Config.MainConfig.HomepageWidget) :
                     WidgetTools.GetWidget(nameof(AnalogClock));
-                var notificationsWidget = WidgetTools.GetWidget(nameof(NotificationIcons));
+                var notificationsWidget = new NotificationIcons();
                 bool feedAddonInstalled =
 #if NKS_EXTENSIONS
                     AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.AddonShellPacks)) is not null;
@@ -636,7 +636,7 @@ namespace Nitrocid.Base.Shell.Homepage
             return homepagePages;
         }
 
-        private static string RenderHomepagePage(bool refreshWasDone, int pageNumber, List<WidgetRenderInfo[]> canvases, (InputChoiceInfo, Action)[] choices, int choiceIdx, int buttonHighlight, BaseWidget widget, BaseWidget notificationsWidget, bool feedAddonInstalled, ref (string feedTitle, string articleTitle)[]? articles, ref string feedErrorMessage)
+        private static string RenderHomepagePage(bool refreshWasDone, int pageNumber, List<WidgetRenderInfo[]> canvases, (InputChoiceInfo, Action)[] choices, int choiceIdx, int buttonHighlight, BaseWidget widget, NotificationIcons notificationsWidget, bool feedAddonInstalled, ref (string feedTitle, string articleTitle)[]? articles, ref string feedErrorMessage)
         {
             int actualScreenNum = pageNumber - 2;
             var builder = new StringBuilder();
@@ -658,13 +658,6 @@ namespace Nitrocid.Base.Shell.Homepage
                 int widgetWidth = width / 2 - 4;
                 int widgetHeight = height - 7;
                 int widgetTop = posY + 1;
-
-                // Prepare the widget
-                if (refreshWasDone)
-                {
-                    string widgetInit = widget.Initialize(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
-                    builder.Append(widgetInit);
-                }
 
                 // Make a master border
                 string displayName =
@@ -888,7 +881,7 @@ namespace Nitrocid.Base.Shell.Homepage
                     TitleColor = ThemeColorsTools.GetColor(buttonHighlight == 1 ? ThemeColorType.TuiPaneSelectedSeparator : ThemeColorType.Separator),
                     Text = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NOTIFICATIONS")
                 };
-                notificationsWidget.Options["alignment"] = TextAlignment.Left;
+                notificationsWidget.Alignment = TextAlignment.Left;
                 builder.Append(
                     notificationsBorder.Render() +
                     notificationsWidget.Render(settingsButtonPosX + 1, notificationsY + 1, buttonPanelWidth - 2, buttonHeight)
@@ -900,7 +893,7 @@ namespace Nitrocid.Base.Shell.Homepage
             else
             {
                 var canvas = canvases[actualScreenNum];
-                var renderedCanvas = WidgetCanvasTools.RenderFromInfos(canvas, refreshWasDone);
+                var renderedCanvas = WidgetCanvasTools.RenderFromInfos(canvas);
                 builder.Append(renderedCanvas);
             }
             return builder.ToString();

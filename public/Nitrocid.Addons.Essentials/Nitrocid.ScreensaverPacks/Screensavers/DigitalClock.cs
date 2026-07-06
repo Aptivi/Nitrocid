@@ -17,9 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Misc.Screensaver;
-using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.Base.Misc.Widgets.Implementations;
 using Colorimetry;
 using Terminaux.Writer.ConsoleWriters;
@@ -31,13 +29,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class DigitalClockDisplay : BaseScreensaver, IScreensaver
     {
-        private readonly DigitalClock widget = (DigitalClock)WidgetTools.GetWidget("DigitalClock");
+        private readonly DigitalClock widget = new();
+
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             base.ScreensaverPreparation();
-            widget.Initialize();
-            widget.clockColor = ChangeDigitalClockColor();
+            widget.ClockColor = ChangeDigitalClockColor();
         }
 
         /// <inheritdoc/>
@@ -48,22 +46,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.DigitalClockDelay);
         }
 
-        private Color ChangeDigitalClockColor()
-        {
-            Color ColorInstance;
-            if (ScreensaverPackInit.SaversConfig.DigitalClockTrueColor)
-            {
-                int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.DigitalClockMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.DigitalClockMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.DigitalClockMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.DigitalClockMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.DigitalClockMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.DigitalClockMaximumBlueColorLevel);
-                ColorInstance = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-            }
-            else
-            {
-                int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.DigitalClockMinimumColorLevel, ScreensaverPackInit.SaversConfig.DigitalClockMaximumColorLevel);
-                ColorInstance = new Color(ColorNum);
-            }
-            return ColorInstance;
-        }
+        private Color ChangeDigitalClockColor() =>
+            ColorTools.GetRandomColor(
+                ScreensaverPackInit.SaversConfig.DigitalClockTrueColor ? ColorType.TrueColor : ColorType.EightBitColor,
+                ScreensaverPackInit.SaversConfig.DigitalClockMinimumColorLevel, ScreensaverPackInit.SaversConfig.DigitalClockMaximumColorLevel,
+                ScreensaverPackInit.SaversConfig.DigitalClockMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.DigitalClockMaximumRedColorLevel,
+                ScreensaverPackInit.SaversConfig.DigitalClockMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.DigitalClockMaximumGreenColorLevel,
+                ScreensaverPackInit.SaversConfig.DigitalClockMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.DigitalClockMaximumBlueColorLevel
+            );
     }
 }

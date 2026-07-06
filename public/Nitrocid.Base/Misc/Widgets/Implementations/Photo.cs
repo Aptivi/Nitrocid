@@ -24,18 +24,20 @@ using Terminaux.Images;
 
 namespace Nitrocid.Base.Misc.Widgets.Implementations
 {
-    internal class Photo : BaseWidget, IWidget
+    /// <summary>
+    /// Photo renderer widget
+    /// </summary>
+    public class Photo : BaseWidget, IWidget
     {
-        public override string Cleanup(int left, int top, int width, int height) =>
-            "";
+        /// <summary>
+        /// Path to image file
+        /// </summary>
+        public string? PhotoPath { get; set; }
 
-        public override string Initialize(int left, int top, int width, int height) =>
-            "";
-
+        /// <inheritdoc/>
         public override string Render(int left, int top, int width, int height)
         {
-            string photoPath = Options.TryGetValue("photoPath", out object? photoPathValue) ? (string)photoPathValue : "";
-            if (string.IsNullOrEmpty(photoPath) || !FilesystemTools.FileExists(photoPath))
+            if (string.IsNullOrEmpty(PhotoPath) || !FilesystemTools.FileExists(PhotoPath))
             {
                 // Get the Nitrocid logo
                 var resourceLogo = ResourcesManager.GetData("Misc.Widgets.Resources.Photo.Placeholder", ResourcesType.Misc);
@@ -46,7 +48,13 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
                 return ImageProcessor.RenderImage(width, height, left, top);
             }
             else
-                return ImageProcessor.RenderImage(photoPath, width, height, left, top);
+                return ImageProcessor.RenderImage(PhotoPath, width, height, left, top);
         }
+
+        /// <summary>
+        /// Makes a new photo widget instance
+        /// </summary>
+        public Photo()
+        { }
     }
 }

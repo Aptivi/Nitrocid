@@ -85,7 +85,6 @@ namespace Nitrocid.Extras.Docking.Dock
                 // center that displays continuously, and we don't want screensavers to interfere with the operation.
                 ScreensaverManager.PreventLock();
                 ThemeColorsTools.LoadBackground();
-                TextWriterRaw.WriteRaw(dockInstance.Initialize());
                 while (true)
                 {
                     ConsoleWrapper.CursorVisible = false;
@@ -98,7 +97,6 @@ namespace Nitrocid.Extras.Docking.Dock
                     if (result)
                         break;
                 }
-                TextWriterRaw.WriteRaw(dockInstance.Cleanup());
                 Input.ReadKey();
             }
             catch (Exception ex)

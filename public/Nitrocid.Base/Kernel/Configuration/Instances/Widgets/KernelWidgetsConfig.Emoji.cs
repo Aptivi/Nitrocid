@@ -28,8 +28,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
     /// </summary>
     public partial class KernelWidgetsConfig : BaseKernelConfig
     {
-        private string emojiWidgetCurrentEmoticon = "gem-stone";
-
         /// <summary>
         /// Whether to cycle between emoticons
         /// </summary>
@@ -37,24 +35,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// Emoticon name to show
         /// </summary>
-        public string EmojiWidgetEmoticonName
-        {
-            get => emojiWidgetCurrentEmoticon;
-            set
-            {
-#if NKS_EXTENSIONS
-                if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImagesIcons)) is null)
-                {
-#endif
-                    emojiWidgetCurrentEmoticon = value;
-                    return;
-#if NKS_EXTENSIONS
-                }
-                var type = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasImagesIcons, "Nitrocid.Extras.Images.Icons.Tools.IconsTools");
-                var hasIcon = (bool?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "HasIcon", type, value) ?? false;
-                emojiWidgetCurrentEmoticon = hasIcon ? value : emojiWidgetCurrentEmoticon;
-#endif
-            }
-        }
+        public string EmojiWidgetEmoticonName { get; set; } = "gem-stone";
     }
 }

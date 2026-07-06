@@ -29,21 +29,24 @@ using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Widgets
 {
-    internal class RssFeeds : BaseWidget, IWidget
+    /// <summary>
+    /// RSS feeds widget
+    /// </summary>
+    public class RssFeeds : BaseWidget, IWidget
     {
         (string feedTitle, string articleTitle)[]? articles = null;
 
+        /// <summary>
+        /// Whether to show the feed title or not
+        /// </summary>
         public bool ShowFeedTitle { get; set; } = true;
 
-        public override string Cleanup(int left, int top, int width, int height)
-        {
-            articles = null;
-            return "";
-        }
+        /// <summary>
+        /// RSS headline URL
+        /// </summary>
+        public string HeadlineUrl { get; set; }
 
-        public override string Initialize(int left, int top, int width, int height) =>
-            "";
-
+        /// <inheritdoc/>
         public override string Render(int left, int top, int width, int height)
         {
             var display = new StringBuilder();
@@ -65,7 +68,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Widgets
         {
             try
             {
-                articles ??= RSSShellTools.GetArticles(Config.MainConfig.RssHeadlineUrl);
+                articles ??= RSSShellTools.GetArticles(HeadlineUrl);
                 if (articles is not null)
                 {
                     var headlines = new StringBuilder();
@@ -87,6 +90,14 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Widgets
                 DebugWriter.WriteDebugStackTrace(ex);
                 return LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FETCHFAILED");
             }
+        }
+
+        /// <summary>
+        /// Makes a new RSS feed list widget instance
+        /// </summary>
+        public RssFeeds()
+        {
+            HeadlineUrl = Config.MainConfig.RssHeadlineUrl;
         }
     }
 }

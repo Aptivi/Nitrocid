@@ -18,23 +18,26 @@
 //
 
 using System.Text;
+using Colorimetry;
 using Nitrocid.Base.Misc.Notifications;
 using Terminaux.Base.Extensions;
-using Colorimetry;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.Base.Misc.Widgets.Implementations
 {
-    internal class NotificationIcons : BaseWidget, IWidget
+    /// <summary>
+    /// Notification icons widget
+    /// </summary>
+    public class NotificationIcons : BaseWidget, IWidget
     {
-        public override string Cleanup(int left, int top, int width, int height) =>
-            "";
+        /// <summary>
+        /// Selects how to align the notification icons
+        /// </summary>
+        public TextAlignment Alignment { get; set; } = TextAlignment.Middle;
 
-        public override string Initialize(int left, int top, int width, int height) =>
-            "";
-
+        /// <inheritdoc/>
         public override string Render(int left, int top, int width, int height)
         {
             var notificationListing = new StringBuilder();
@@ -88,10 +91,6 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
             }
 
             // Return the final rendered notification icons
-            TextAlignment alignment =
-                Options.TryGetValue("alignment", out object? alignmentValue) ?
-                    alignmentValue is not null ? (TextAlignment)alignmentValue : TextAlignment.Middle :
-                TextAlignment.Middle;
             var listingText = new BoundedText()
             {
                 Text = notificationListing.ToString(),
@@ -101,10 +100,16 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
                 Height = height,
                 Settings =
                 {
-                    Alignment = alignment,
+                    Alignment = Alignment,
                 }
             };
             return listingText.Render();
         }
+
+        /// <summary>
+        /// Makes a new notification icons widget instance
+        /// </summary>
+        public NotificationIcons()
+        { }
     }
 }

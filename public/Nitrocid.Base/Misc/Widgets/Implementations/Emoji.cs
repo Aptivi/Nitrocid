@@ -31,56 +31,95 @@ using Nitrocid.Base.Kernel.Extensions;
 
 namespace Nitrocid.Base.Misc.Widgets.Implementations
 {
-    internal class Emoji : BaseWidget, IWidget
+    /// <summary>
+    /// Emoji widget
+    /// </summary>
+    public class Emoji : BaseWidget, IWidget
     {
-        private string cachedIcon = "";
+        private string? cachedIcon = null;
+        private string currentEmoticon = "gem-stone";
 
-        public override string Cleanup(int left, int top, int width, int height) =>
-            "";
+        /// <summary>
+        /// Whether to cycle between emoticons
+        /// </summary>
+        public bool CycleEmoticons { get; set; }
 
-        public override string Initialize(int left, int top, int width, int height)
+        /// <summary>
+        /// Emoticon name to show
+        /// </summary>
+        public string EmoticonName
         {
-            // Get the dimensions
-            int iconHeight = height;
-            int iconWidth = height * 2;
-            int iconLeft = left + width / 2 - height;
-            int iconTop = top;
-
-            // Render the icon, caching it in the process
-#if NKS_EXTENSIONS
-            if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImagesIcons)) is null)
+            get => currentEmoticon;
+            set
             {
-#endif
-                var message = new AlignedText()
-                {
-                    Text = LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EMOJI_NEEDSADDON"),
-                    Top = iconTop,
-                    Left = left,
-                    Width = width,
-                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error),
-                    Settings = new()
-                    {
-                        Alignment = TextAlignment.Middle
-                    },
-                };
-                return message.Render();
 #if NKS_EXTENSIONS
-            }
-            var type = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasImagesIcons, "Nitrocid.Extras.Images.Icons.Tools.IconsTools");
-            string[] emojiList = (string[]?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "GetIconNames", type) ?? [];
-            string finalEmojiName = Config.WidgetConfig.EmojiWidgetCycleEmoticons ? emojiList[RandomDriver.RandomIdx(emojiList.Length)] : Config.WidgetConfig.EmojiWidgetEmoticonName;
-            cachedIcon = (string?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "RenderIcon", type, finalEmojiName, iconWidth, iconHeight, iconLeft, iconTop) ?? "";
-            return "";
+                if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImagesIcons)) is null)
+                {
 #endif
+                    currentEmoticon = value;
+                    return;
+#if NKS_EXTENSIONS
+                }
+                var type = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasImagesIcons, "Nitrocid.Extras.Images.Icons.Tools.IconsTools");
+                var hasIcon = (bool?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "HasIcon", type, value) ?? false;
+                currentEmoticon = hasIcon ? value : currentEmoticon;
+#endif
+            }
         }
 
+        /// <inheritdoc/>
         public override string Render(int left, int top, int width, int height)
         {
             var display = new StringBuilder();
 
+            // Check to see if we need to cache the icon
+            if (string.IsNullOrEmpty(cachedIcon))
+            {
+                // Get the dimensions
+                int iconHeight = height;
+                int iconWidth = height * 2;
+                int iconLeft = left + width / 2 - height;
+                int iconTop = top;
+
+                // Render the icon, caching it in the process
+#if NKS_EXTENSIONS
+                if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImagesIcons)) is null)
+                {
+#endif
+                    var message = new AlignedText()
+                    {
+                        Text = LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EMOJI_NEEDSADDON"),
+                        Top = iconTop,
+                        Left = left,
+                        Width = width,
+                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error),
+                        Settings = new()
+                        {
+                            Alignment = TextAlignment.Middle
+                        },
+                    };
+                    return message.Render();
+#if NKS_EXTENSIONS
+                }
+                var type = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasImagesIcons, "Nitrocid.Extras.Images.Icons.Tools.IconsTools");
+                string[] emojiList = (string[]?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "GetIconNames", type) ?? [];
+                string finalEmojiName = Config.WidgetConfig.EmojiWidgetCycleEmoticons ? emojiList[RandomDriver.RandomIdx(emojiList.Length)] : Config.WidgetConfig.EmojiWidgetEmoticonName;
+                cachedIcon = (string?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "RenderIcon", type, finalEmojiName, iconWidth, iconHeight, iconLeft, iconTop) ?? "";
+#endif
+            }
+
             // Print everything
             display.Append(cachedIcon);
             return display.ToString();
+        }
+
+        /// <summary>
+        /// Makes a new emoji widget instance
+        /// </summary>
+        public Emoji()
+        {
+            CycleEmoticons = Config.WidgetConfig.EmojiWidgetCycleEmoticons;
+            EmoticonName = Config.WidgetConfig.EmojiWidgetEmoticonName;
         }
     }
 }

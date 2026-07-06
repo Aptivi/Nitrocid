@@ -21,26 +21,34 @@ using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Base.Misc.Widgets.Implementations
 {
-    internal class TextWidget : BaseWidget, IWidget
+    /// <summary>
+    /// Text widget
+    /// </summary>
+    public class TextWidget : BaseWidget, IWidget
     {
-        public override string Cleanup(int left, int top, int width, int height) =>
-            "";
+        /// <summary>
+        /// Text to render
+        /// </summary>
+        public string Text { get; set; } = "😊";
 
-        public override string Initialize(int left, int top, int width, int height) =>
-            "";
-
+        /// <inheritdoc/>
         public override string Render(int left, int top, int width, int height)
         {
-            string textText = Options.TryGetValue("text", out object? textValue) ? (string)textValue : "😊";
             var textAlignedText = new BoundedText()
             {
                 Left = left,
                 Top = top,
                 Width = width,
                 Height = height,
-                Text = textText,
+                Text = Text,
             };
             return textAlignedText.Render();
         }
+
+        /// <summary>
+        /// Makes a new text widget instance
+        /// </summary>
+        public TextWidget()
+        { }
     }
 }

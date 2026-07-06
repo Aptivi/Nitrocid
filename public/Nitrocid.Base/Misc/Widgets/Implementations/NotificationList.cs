@@ -25,14 +25,12 @@ using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Base.Misc.Widgets.Implementations
 {
-    internal class NotificationList : BaseWidget, IWidget
+    /// <summary>
+    /// Notification list widget
+    /// </summary>
+    public class NotificationList : BaseWidget, IWidget
     {
-        public override string Cleanup(int left, int top, int width, int height) =>
-            "";
-
-        public override string Initialize(int left, int top, int width, int height) =>
-            "";
-
+        /// <inheritdoc/>
         public override string Render(int left, int top, int width, int height)
         {
             var notificationList = new StringBuilder();
@@ -114,5 +112,11 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
             // Return the notification list
             return notificationList.ToString();
         }
+
+        /// <summary>
+        /// Makes a new notification list widget instance
+        /// </summary>
+        public NotificationList()
+        { }
     }
 }

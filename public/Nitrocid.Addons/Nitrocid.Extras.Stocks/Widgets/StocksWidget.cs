@@ -30,19 +30,22 @@ using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.Stocks.Widgets
 {
-    internal class StocksWidget : BaseWidget, IWidget
+    /// <summary>
+    /// Stocks widget
+    /// </summary>
+    public class StocksWidget : BaseWidget, IWidget
     {
-        private bool isReady = false;
+        /// <summary>
+        /// Selects how to align the notification icons
+        /// </summary>
+        public string ApiKey { get; set; }
+        
+        /// <summary>
+        /// Stocks company
+        /// </summary>
+        public string Company { get; set; }
 
-        public override string Cleanup(int left, int top, int width, int height) =>
-            "";
-
-        public override string Initialize(int left, int top, int width, int height)
-        {
-            isReady = !string.IsNullOrWhiteSpace(StocksInit.StocksConfig.StocksApiKey);
-            return "";
-        }
-
+        /// <inheritdoc/>
         public override string Render(int left, int top, int width, int height)
         {
             var display = new StringBuilder();
@@ -56,7 +59,9 @@ namespace Nitrocid.Extras.Stocks.Widgets
                     Alignment = TextAlignment.Middle
                 }
             };
-            if (!isReady)
+
+            // User needs to provide the API key
+            if (string.IsNullOrWhiteSpace(ApiKey))
             {
                 displayer.Text = LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYCONFIGURE");
                 display.Append(displayer.Render());
@@ -64,7 +69,7 @@ namespace Nitrocid.Extras.Stocks.Widgets
             else
             {
                 // Get the stock info
-                string stocksJson = NetworkTransfer.DownloadString($"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={StocksInit.StocksConfig.StocksCompany}&apikey={StocksInit.StocksConfig.StocksApiKey}", false);
+                string stocksJson = NetworkTransfer.DownloadString($"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={Company}&apikey={ApiKey}", false);
                 var stocksToken = JToken.Parse(stocksJson);
                 var stocksIntervalToken = stocksToken["Time Series (Daily)"];
                 if (stocksIntervalToken is null)
@@ -91,6 +96,15 @@ namespace Nitrocid.Extras.Stocks.Widgets
                 }
             }
             return display.ToString();
+        }
+
+        /// <summary>
+        /// Makes a new stocks widget instance
+        /// </summary>
+        public StocksWidget()
+        {
+            ApiKey = StocksInit.StocksConfig.StocksApiKey;
+            Company = StocksInit.StocksConfig.StocksCompany;
         }
     }
 }

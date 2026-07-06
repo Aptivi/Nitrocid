@@ -24,8 +24,6 @@ using Terminaux.Base;
 using Nitrocid.Base.Kernel.Time;
 using Colorimetry.Transformation;
 using Nitrocid.Base.Misc.Widgets.Implementations;
-using Nitrocid.Base.Misc.Widgets;
-using Nitrocid.Base.Drivers.RNG;
 using System;
 using Terminaux.Base.Extensions;
 
@@ -36,19 +34,19 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class ClochromaAnalogDisplay : BaseScreensaver, IScreensaver
     {
-        private readonly AnalogClock widget = (AnalogClock)WidgetTools.GetWidget("AnalogClock");
+        private readonly AnalogClock widget = new();
         private DateTime lastDateTime;
         private bool needsRefresh = true;
+
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             base.ScreensaverPreparation();
-            widget.Initialize();
-            widget.timeColor = ChangeAnalogClockColor();
-            widget.bezelColor = ChangeAnalogClockColor();
-            widget.handsColor = ChangeAnalogClockColor();
-            widget.secondsHandColor = ChangeAnalogClockColor();
-            widget.showSecondsHand = ScreensaverPackInit.SaversConfig.ClochromaAnalogShowSecondsHand;
+            widget.TimeColor = ChangeAnalogClockColor();
+            widget.BezelColor = ChangeAnalogClockColor();
+            widget.HandsColor = ChangeAnalogClockColor();
+            widget.SecondsHandColor = ChangeAnalogClockColor();
+            widget.ShowSecondsHand = ScreensaverPackInit.SaversConfig.ClochromaAnalogShowSecondsHand;
         }
 
         /// <inheritdoc/>
@@ -57,7 +55,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Get the color
             Color timeColor = TimeToColor();
             Color bgColor = TransformationTools.GetDarkBackground(timeColor);
-            widget.backgroundColor = bgColor;
+            widget.BackgroundColor = bgColor;
 
             // Render the analog clock
             if (needsRefresh || ConsoleResizeHandler.WasResized(false))
@@ -93,22 +91,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             dateTime.Minute != lastDateTime.Minute ||
             dateTime.Second != lastDateTime.Second;
 
-        private Color ChangeAnalogClockColor()
-        {
-            Color ColorInstance;
-            if (ScreensaverPackInit.SaversConfig.ClochromaAnalogTrueColor)
-            {
-                int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ClochromaAnalogMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.ClochromaAnalogMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ClochromaAnalogMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.ClochromaAnalogMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ClochromaAnalogMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.ClochromaAnalogMaximumBlueColorLevel);
-                ColorInstance = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-            }
-            else
-            {
-                int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ClochromaAnalogMinimumColorLevel, ScreensaverPackInit.SaversConfig.ClochromaAnalogMaximumColorLevel);
-                ColorInstance = new Color(ColorNum);
-            }
-            return ColorInstance;
-        }
+        private Color ChangeAnalogClockColor() =>
+            ColorTools.GetRandomColor(
+                ScreensaverPackInit.SaversConfig.ClochromaAnalogTrueColor ? ColorType.TrueColor : ColorType.EightBitColor,
+                ScreensaverPackInit.SaversConfig.ClochromaAnalogMinimumColorLevel, ScreensaverPackInit.SaversConfig.ClochromaAnalogMaximumColorLevel,
+                ScreensaverPackInit.SaversConfig.ClochromaAnalogMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.ClochromaAnalogMaximumRedColorLevel,
+                ScreensaverPackInit.SaversConfig.ClochromaAnalogMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.ClochromaAnalogMaximumGreenColorLevel,
+                ScreensaverPackInit.SaversConfig.ClochromaAnalogMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.ClochromaAnalogMaximumBlueColorLevel
+            );
     }
 }
