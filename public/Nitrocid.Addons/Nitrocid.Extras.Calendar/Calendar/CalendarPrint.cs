@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             var CalendarData = new TableCellOptions[7, CalendarDays.Length];
             var maxDate = calendarInstance.Calendar.GetDaysInMonth(Year, Month);
             var selectedDate = new DateTime(Year, Month, TimeDateTools.KernelDateTime.Day > maxDate ? 1 : TimeDateTools.KernelDateTime.Day);
-            var (year, month, _, _) = TimeDateConverters.GetDateFromCalendar(selectedDate, calendar);
+            var (year, month, calDay, _) = TimeDateConverters.GetDateFromCalendar(selectedDate, calendar);
             var DateTo = new DateTime(year, month, calendarInstance.Calendar.GetDaysInMonth(year, month));
             int CurrentWeek = 1;
             string CalendarTitle = CalendarMonths[month - 1] + " " + year;
@@ -101,7 +101,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 bool ReminderMarked = false;
                 bool EventMarked = false;
                 bool IsWeekend = currentDay > 5;
-                bool IsToday = CurrentDate == TimeDateTools.KernelDateTime.Date;
+                bool IsToday = CurrentDate == new DateTime(year, month, calDay);
                 CalendarData[CurrentWeekIndex + 1, currentDay - 1] = new($"{CurrentDay}")
                 {
                     TextSettings = new()
