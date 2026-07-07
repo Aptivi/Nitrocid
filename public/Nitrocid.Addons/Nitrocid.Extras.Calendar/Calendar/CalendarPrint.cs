@@ -18,17 +18,18 @@
 //
 
 using System;
-using System.Linq;
 using System.Collections.Generic;
-using Nitrocid.Extras.Calendar.Calendar.Reminders;
-using Nitrocid.Extras.Calendar.Calendar.Events;
+using System.Linq;
+using System.Text.RegularExpressions;
 using Calendrier;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Time.Converters;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Extras.Calendar.Calendar.Events;
+using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using Terminaux.Base;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.Extras.Calendar.Calendar
@@ -58,6 +59,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
         {
             var calendarInstance = CalendarTools.GetCalendar(calendar);
             var CalendarDays = calendarInstance.Culture.DateTimeFormat.DayNames;
+            var calendarAbbreviatedDays = calendarInstance.Culture.DateTimeFormat.AbbreviatedDayNames;
             var CalendarMonths = calendarInstance.Culture.DateTimeFormat.MonthNames;
             var CalendarWeek = calendarInstance.Culture.DateTimeFormat.FirstDayOfWeek;
             var CalendarData = new TableCellOptions[7, CalendarDays.Length];
@@ -78,12 +80,16 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 dayOfWeek++;
                 if (dayOfWeek > 6)
                     dayOfWeek = 0;
-                CalendarData[0, i] = new($"{day}");
+                CalendarData[0, i] = new($"{calendarAbbreviatedDays[(int)day]}")
+                {
+                    TextSettings = new()
+                    {
+                        Alignment = TextAlignment.Middle
+                    }
+                };
             }
 
             // Populate the calendar data
-            ThemeColorsTools.LoadBackground();
-            TextWriterWhereColor.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), 1, true, ThemeColorType.TableTitle);
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {
                 var CurrentDate = new DateTime(year, month, CurrentDay);
@@ -96,7 +102,13 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 bool EventMarked = false;
                 bool IsWeekend = currentDay > 5;
                 bool IsToday = CurrentDate == TimeDateTools.KernelDateTime.Date;
-                CalendarData[CurrentWeekIndex + 1, currentDay - 1] = new($"{CurrentDay}");
+                CalendarData[CurrentWeekIndex + 1, currentDay - 1] = new($"{CurrentDay}")
+                {
+                    TextSettings = new()
+                    {
+                        Alignment = TextAlignment.Middle
+                    }
+                };
 
                 // Dim out the weekends
                 if (IsWeekend)
@@ -153,11 +165,10 @@ namespace Nitrocid.Extras.Calendar.Calendar
             var calendarTable = new Table()
             {
                 Rows = CalendarData,
-                Width = ConsoleWrapper.WindowWidth - 4,
-                Height = ConsoleWrapper.WindowHeight - 4,
+                Title = CalendarTitle,
                 Header = true,
             };
-            TextWriterRaw.WriteRaw(calendarTable.Render());
+            TextWriterRaw.WritePlain(calendarTable.Render());
         }
 
     }
