@@ -18,16 +18,10 @@
 //
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using Calendrier;
 using Nitrocid.Base.Kernel.Time;
-using Nitrocid.Base.Kernel.Time.Converters;
-using Nitrocid.Extras.Calendar.Calendar.Events;
-using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.Extras.Calendar.Calendar
@@ -42,13 +36,13 @@ namespace Nitrocid.Extras.Calendar.Calendar
         /// Prints the table of the calendar
         /// </summary>
         public static void PrintCalendar() =>
-            PrintCalendar(DateTime.Today.Year, DateTime.Today.Month);
+            PrintCalendar(TimeDateTools.KernelDateTime.Year, TimeDateTools.KernelDateTime.Month);
 
         /// <summary>
         /// Prints the table of the calendar
         /// </summary>
         public static void PrintCalendar(CalendarTypes calendar) =>
-            PrintCalendar(DateTime.Today.Year, DateTime.Today.Month, calendar);
+            PrintCalendar(TimeDateTools.KernelDateTime.Year, TimeDateTools.KernelDateTime.Month, calendar);
 
         /// <summary>
         /// Prints the table of the calendar
@@ -56,118 +50,15 @@ namespace Nitrocid.Extras.Calendar.Calendar
         public static void PrintCalendar(int Year, int Month, CalendarTypes calendar = CalendarTypes.Variant)
         {
             var calendarInstance = CalendarTools.GetCalendar(calendar);
-            var CalendarDays = calendarInstance.Culture.DateTimeFormat.DayNames;
-            var calendarAbbreviatedDays = calendarInstance.Culture.DateTimeFormat.AbbreviatedDayNames;
-            var CalendarMonths = calendarInstance.Culture.DateTimeFormat.MonthNames;
-            var CalendarWeek = calendarInstance.Culture.DateTimeFormat.FirstDayOfWeek;
-            var CalendarData = new TableCellOptions[7, CalendarDays.Length];
-            var maxDate = calendarInstance.Calendar.GetDaysInMonth(Year, Month);
-            var selectedDate = new DateTime(Year, Month, TimeDateTools.KernelDateTime.Day > maxDate ? 1 : TimeDateTools.KernelDateTime.Day);
-            var (year, month, calDay, _) = TimeDateConverters.GetDateFromCalendar(selectedDate, calendar);
-            var DateTo = new DateTime(year, month, calendarInstance.Calendar.GetDaysInMonth(year, month));
-            int CurrentWeek = 1;
-            string CalendarTitle = CalendarMonths[month - 1] + " " + year;
-
-            // Re-arrange the days according to the first day of week
-            Dictionary<DayOfWeek, int> mappedDays = [];
-            int dayOfWeek = (int)CalendarWeek;
-            for (int i = 0; i < CalendarDays.Length; i++)
+            var calendars = new Calendars()
             {
-                var day = (DayOfWeek)dayOfWeek;
-                mappedDays.Add(day, i);
-                dayOfWeek++;
-                if (dayOfWeek > 6)
-                    dayOfWeek = 0;
-                CalendarData[0, i] = new($"{calendarAbbreviatedDays[(int)day]}")
-                {
-                    TextSettings = new()
-                    {
-                        Alignment = TextAlignment.Middle
-                    }
-                };
-            }
-
-            // Populate the calendar data
-            for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
-            {
-                var CurrentDate = new DateTime(year, month, CurrentDay);
-                if (CurrentDate.DayOfWeek == CalendarWeek)
-                    CurrentWeek += 1;
-                int CurrentWeekIndex = CurrentWeek - 1;
-                int currentDay = mappedDays[CurrentDate.DayOfWeek] + 1;
-                string CurrentDayMark;
-                bool ReminderMarked = false;
-                bool EventMarked = false;
-                bool IsWeekend = currentDay > 5;
-                bool IsToday = CurrentDate == new DateTime(year, month, calDay);
-                CalendarData[CurrentWeekIndex + 1, currentDay - 1] = new($"{CurrentDay}")
-                {
-                    TextSettings = new()
-                    {
-                        Alignment = TextAlignment.Middle
-                    }
-                };
-
-                // Dim out the weekends
-                if (IsWeekend)
-                {
-                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].ColoredCell = true;
-                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellColor = ThemeColorsTools.GetColor(ThemeColorType.WeekendDay);
-                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
-                }
-
-                // Highlight today
-                if (IsToday)
-                {
-                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].ColoredCell = true;
-                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellColor = ThemeColorsTools.GetColor(ThemeColorType.TodayDay);
-                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
-                }
-
-                // Know where and how to put the day number
-                foreach (ReminderInfo Reminder in ReminderManager.Reminders)
-                {
-                    var rDate = Reminder.ReminderDate.Date;
-                    var (rYear, rMonth, rDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(rDate.Year, rDate.Month, rDate.Day), calendar);
-                    rDate = new(rYear, rMonth, rDay);
-                    if (rDate == CurrentDate & !ReminderMarked)
-                        ReminderMarked = true;
-                }
-                foreach (EventInfo EventInstance in EventManager.CalendarEvents.Union(EventManager.baseEvents))
-                {
-                    EventInstance.UpdateEventInfo(new DateTime(Year, 1, 1));
-                    var nDate = EventInstance.EventDate.Date;
-                    var sDate = EventInstance.Start.Date;
-                    var eDate = EventInstance.End.Date;
-                    var (nYear, nMonth, nDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(nDate.Year, nDate.Month, nDate.Day), calendar);
-                    var (sYear, sMonth, sDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(sDate.Year, sDate.Month, sDate.Day), calendar);
-                    var (eYear, eMonth, eDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(eDate.Year, eDate.Month, eDate.Day), calendar);
-                    nDate = new(nYear, nMonth, nDay);
-                    sDate = new(sYear, sMonth, sDay);
-                    eDate = new(eYear, eMonth, eDay);
-                    if (((EventInstance.IsYearly && CurrentDate >= sDate && CurrentDate <= eDate) ||
-                         (!EventInstance.IsYearly && CurrentDate == nDate)) && !EventMarked)
-                    {
-                        CalendarData[CurrentWeekIndex + 1, currentDay - 1].ColoredCell = true;
-                        CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellColor = ThemeColorsTools.GetColor(ThemeColorType.EventDay);
-                        CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
-                        EventMarked = true;
-                    }
-                }
-                string markStart = ReminderMarked && EventMarked ? "[" : ReminderMarked ? "(" : EventMarked ? "<" : " ";
-                string markEnd = ReminderMarked && EventMarked ? "]" : ReminderMarked ? ")" : EventMarked ? ">" : " ";
-                CurrentDayMark = $"{markStart}{CurrentDay}{markEnd}";
-                CalendarData[CurrentWeekIndex + 1, currentDay - 1].Value = CurrentDayMark;
-            }
-
-            var calendarTable = new Table()
-            {
-                Rows = CalendarData,
-                Title = CalendarTitle,
-                Header = true,
+                Year = Year,
+                Month = Month,
+                TodayColor = ThemeColorsTools.GetColor(ThemeColorType.TodayDay),
+                WeekendColor = ThemeColorsTools.GetColor(ThemeColorType.WeekendDay),
+                Culture = calendarInstance.Culture,
             };
-            TextWriterRaw.WritePlain(calendarTable.Render());
+            TextWriterRaw.WritePlain(calendars.Render());
         }
-
     }
 }
