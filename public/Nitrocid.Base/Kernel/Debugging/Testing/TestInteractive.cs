@@ -21,7 +21,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Magico.Enumeration;
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Kernel.Debugging.Testing.Facades;
 using Nitrocid.Base.Languages;
 using Terminaux.Base.Buffered;
@@ -30,6 +29,7 @@ using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.TestFixtures;
 using Terminaux.Inputs.TestFixtures.Tools;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing
 {
@@ -236,7 +236,7 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing
             finally
             {
                 ScreenTools.SetCurrent(currentScreen);
-                InputTools.DetectKeypress();
+                Input.ReadKey();
             }
         }
 

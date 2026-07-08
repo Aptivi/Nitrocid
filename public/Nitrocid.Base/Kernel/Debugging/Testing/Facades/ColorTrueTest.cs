@@ -20,7 +20,7 @@
 using Terminaux.Writer.ConsoleWriters;
 using Colorimetry;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.ConsoleBase.Inputs;
+using Terminaux.Reader;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
 {
@@ -32,11 +32,11 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         {
             string TextR = "", TextG = "", TextB = "";
             if (string.IsNullOrEmpty(TextR))
-                TextR = InputTools.ReadLine("R - " + LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT") + " ");
+                TextR = TermReader.Read("R - " + LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT") + " ");
             if (string.IsNullOrEmpty(TextG))
-                TextG = InputTools.ReadLine("G - " + LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT") + " ");
+                TextG = TermReader.Read("G - " + LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT") + " ");
             if (string.IsNullOrEmpty(TextB))
-                TextB = InputTools.ReadLine("B - " + LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT") + " ");
+                TextB = TermReader.Read("B - " + LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT") + " ");
             if (int.TryParse(TextR, out int r) && int.TryParse(TextG, out int g) && int.TryParse(TextB, out int b))
             {
                 var color = new Color(r, g, b);

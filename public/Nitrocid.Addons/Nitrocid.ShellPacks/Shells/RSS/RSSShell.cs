@@ -29,7 +29,7 @@ using Terminaux.Themes.Colors;
 using Nitrocid.Base.Network.SpeedDial;
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 
 namespace Nitrocid.ShellPacks.Shells.RSS
 {
@@ -84,7 +84,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR") + " {0}", true, ThemeColorType.Error, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    InputTools.DetectKeypress();
+                    Input.ReadKey();
                     Bail = true;
                 }
 

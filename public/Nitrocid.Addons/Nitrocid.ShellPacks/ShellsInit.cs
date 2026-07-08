@@ -19,7 +19,6 @@
 
 using LibGit2Sharp;
 using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Core.Languages;

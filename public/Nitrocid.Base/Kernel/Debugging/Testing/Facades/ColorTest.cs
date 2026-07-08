@@ -20,7 +20,7 @@
 using Terminaux.Writer.ConsoleWriters;
 using Colorimetry;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.ConsoleBase.Inputs;
+using Terminaux.Reader;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
 {
@@ -32,7 +32,7 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         {
             string Text = "";
             if (string.IsNullOrEmpty(Text))
-                Text = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT") + " ");
+                Text = TermReader.Read(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT") + " ");
             if (int.TryParse(Text, out int color))
             {
                 var colorInstance = new Color(color);

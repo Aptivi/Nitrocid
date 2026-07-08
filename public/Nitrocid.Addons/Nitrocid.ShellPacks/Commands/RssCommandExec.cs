@@ -25,9 +25,9 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using System;
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.ShellPacks.Tools;
+using Terminaux.Reader;
 
 namespace Nitrocid.ShellPacks.Commands
 {
@@ -46,7 +46,7 @@ namespace Nitrocid.ShellPacks.Commands
                 }
                 else
                 {
-                    string address = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FEEDURLPROMPT") + ": ", Config.MainConfig.RssHeadlineUrl);
+                    string address = TermReader.Read(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FEEDURLPROMPT") + ": ", Config.MainConfig.RssHeadlineUrl);
                     if (string.IsNullOrEmpty(address) || !Uri.TryCreate(address, UriKind.Absolute, out Uri? uri))
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE"), ThemeColorType.Error);
@@ -66,7 +66,7 @@ namespace Nitrocid.ShellPacks.Commands
         private NetworkConnection EstablishRssConnection(string address)
         {
             if (string.IsNullOrEmpty(address))
-                address = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT") + " ");
+                address = TermReader.Read(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT") + " ");
             return NetworkConnectionTools.EstablishConnection("RSS connection", address, NetworkConnectionType.RSS, new RSSFeed(address, RSSFeedType.Infer));
         }
 

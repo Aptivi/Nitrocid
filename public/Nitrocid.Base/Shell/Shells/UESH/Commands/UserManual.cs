@@ -21,7 +21,6 @@ using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Textify.General;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Languages;
 using SpecProbe.Software.Platform;
 

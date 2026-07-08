@@ -27,7 +27,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Textify.General;
-using Nitrocid.Base.Network.Connections;
 using SpecProbe.Software.Platform;
 using Terminaux.Base.Extensions;
 

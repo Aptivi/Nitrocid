@@ -34,9 +34,9 @@ using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Drivers.Encryption;
 using OtpNet;
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Terminaux.Base;
 using Nitrocid.Base.Users.TwoFactorAuth;
+using Terminaux.Reader;
 
 namespace Nitrocid.Base.Users.Login
 {
@@ -152,7 +152,7 @@ namespace Nitrocid.Base.Users.Login
                             if (LoginHandlerTools.CurrentHandlerName == "classic")
                             {
                                 // Present a prompt that tells the user to provide the 2FA code
-                                string codeInputStr = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC") + ": ");
+                                string codeInputStr = TermReader.Read(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC") + ": ");
 
                                 // If there is no input, assume cancellation
                                 if (string.IsNullOrEmpty(codeInputStr))

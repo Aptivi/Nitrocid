@@ -33,10 +33,10 @@ using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Textify.Tools.Placeholder;
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.ShellPacks.Tools.PGP;
+using Terminaux.Reader;
 
 namespace Nitrocid.ShellPacks.Tools
 {
@@ -74,7 +74,7 @@ namespace Nitrocid.ShellPacks.Tools
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_ADDRESSPROMPT"), false, ThemeColorType.Input);
 
             // Try to get the username or e-mail address from the input
-            string InputMailAddress = InputTools.ReadLine();
+            string InputMailAddress = TermReader.Read();
             return PromptPassword(InputMailAddress);
         }
 
@@ -95,7 +95,7 @@ namespace Nitrocid.ShellPacks.Tools
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_PASSWORDPROMPT"), false, ThemeColorType.Input);
             }
-            Authentication.Password = InputTools.ReadLineNoInput();
+            Authentication.Password = TermReader.Read(password: true);
 
             string DynamicAddressIMAP = ShellsInit.ShellsConfig.MailAutoDetectServer ? ServerDetect(Username, ServerType.IMAP) : "";
             string DynamicAddressSMTP = ShellsInit.ShellsConfig.MailAutoDetectServer ? ServerDetect(Username, ServerType.SMTP) : "";
@@ -120,7 +120,7 @@ namespace Nitrocid.ShellPacks.Tools
                 TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailIMAPPromptStyle), false, ThemeColorType.Input);
             else
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT"), false, ThemeColorType.Input);
-            IMAP_Address = InputTools.ReadLine();
+            IMAP_Address = TermReader.Read();
             DebugWriter.WriteDebug(DebugLevel.I, "IMAP Server: \"{0}\"", vars: [IMAP_Address]);
 
             // SMTP server address and port
@@ -128,7 +128,7 @@ namespace Nitrocid.ShellPacks.Tools
                 TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailSMTPPromptStyle), false, ThemeColorType.Input);
             else
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT"), false, ThemeColorType.Input);
-            string SMTP_Address = InputTools.ReadLine();
+            string SMTP_Address = TermReader.Read();
             SMTP_Port = 587;
             DebugWriter.WriteDebug(DebugLevel.I, "SMTP Server: \"{0}\"", vars: [SMTP_Address]);
 

@@ -19,7 +19,6 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users.Windows;
 using Nitrocid.Base.Kernel.Power;

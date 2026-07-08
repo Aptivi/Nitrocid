@@ -21,10 +21,10 @@ using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Switches;
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Network.Connections;
 using OpenAI.Chat;
+using Terminaux.Reader;
 
 namespace Nitrocid.Extras.ChatbotAI.Commands
 {
@@ -58,7 +58,7 @@ namespace Nitrocid.Extras.ChatbotAI.Commands
             // Prompt for API key if needed
             while (string.IsNullOrEmpty(apiKey))
             {
-                apiKey = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_CHATBOTAI_APIKEYPROMPT") + ": ");
+                apiKey = TermReader.Read(LanguageTools.GetLocalized("NKS_CHATBOTAI_APIKEYPROMPT") + ": ");
                 if (string.IsNullOrEmpty(apiKey))
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CHATBOTAI_APIKEYNOTPROVIDED"), ThemeColorType.Error);
             }

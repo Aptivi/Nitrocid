@@ -30,7 +30,7 @@ using Terminaux.Shell.Shells;
 using Renci.SshNet;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
-using Nitrocid.Base.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP
 {
@@ -88,7 +88,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_EXCEPTION_SHELLERROR") + " {0}", true, ThemeColorType.Error, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    InputTools.DetectKeypress();
+                    Input.ReadKey();
                     Bail = true;
                 }
 

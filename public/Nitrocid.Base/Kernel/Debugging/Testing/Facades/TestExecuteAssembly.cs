@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Files;
 using System.Reflection;
+using Terminaux.Reader;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
 {
@@ -32,7 +32,7 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         {
             string path = "";
             if (string.IsNullOrEmpty(path))
-                path = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_PROMPT") + " ");
+                path = TermReader.Read(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_PROMPT") + " ");
             path = FilesystemTools.NeutralizePath(path);
             var entryPoint = Assembly.LoadFrom(path).EntryPoint ??
                 throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_EXCEPTION_ENTRYPOINTGET"));

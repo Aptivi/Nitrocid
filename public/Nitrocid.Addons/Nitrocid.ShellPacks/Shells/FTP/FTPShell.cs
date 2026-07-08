@@ -32,7 +32,7 @@ using Nitrocid.Base.Files.Paths;
 using Terminaux.Themes.Colors;
 using Nitrocid.Base.Network.SpeedDial;
 using Nitrocid.Base.Network.Connections;
-using Nitrocid.Base.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 
 namespace Nitrocid.ShellPacks.Shells.FTP
 {
@@ -110,7 +110,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_SHELLERROR") + " {0}", true, ThemeColorType.Error, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    InputTools.DetectKeypress();
+                    Input.ReadKey();
                     Bail = true;
                 }
 

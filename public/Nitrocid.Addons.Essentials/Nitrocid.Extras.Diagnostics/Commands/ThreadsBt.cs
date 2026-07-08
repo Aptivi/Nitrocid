@@ -19,7 +19,6 @@
 
 using System;
 using System.Collections.Generic;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Threading.Watchdog;
 using Nitrocid.Base.Languages;

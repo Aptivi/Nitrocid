@@ -20,13 +20,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using Calendrier;
 using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Time.Converters;
 using Nitrocid.Extras.Calendar.Calendar.Events;
 using Nitrocid.Extras.Calendar.Calendar.Reminders;
-using Terminaux.Base;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

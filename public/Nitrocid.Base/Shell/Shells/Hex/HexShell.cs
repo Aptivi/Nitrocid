@@ -27,7 +27,7 @@ using Textify.General;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Files.Editors.HexEdit;
-using Nitrocid.Base.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Base.Shell.Shells.Hex
 {
@@ -97,7 +97,7 @@ namespace Nitrocid.Base.Shell.Shells.Hex
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ERRORINSHELL") + " {0}", true, ThemeColorType.Error, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    InputTools.DetectKeypress();
+                    Input.ReadKey();
                     Bail = true;
                 }
             }

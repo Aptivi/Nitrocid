@@ -100,7 +100,7 @@ namespace Nitrocid.Analyzers.Test.ConsoleBase
                     {   
                         public static void Main()
                         {
-                            InputTools.ReadLine();
+                            TermReader.Read();
                         }
                     }
                 }

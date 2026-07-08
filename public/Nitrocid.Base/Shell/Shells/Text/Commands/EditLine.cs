@@ -25,7 +25,7 @@ using Textify.General;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.ConsoleBase.Inputs;
+using Terminaux.Reader;
 
 namespace Nitrocid.Base.Shell.Shells.Text.Commands
 {
@@ -47,7 +47,7 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                 {
                     string OriginalLine = TextEditShellCommon.FileLines[lineNum - 1];
                     TextWriterColor.Write(">> ", false, ThemeColorType.Input);
-                    string EditedLine = InputTools.ReadLine("", OriginalLine);
+                    string EditedLine = TermReader.Read("", OriginalLine);
                     TextEditShellCommon.FileLines[lineNum - 1] = EditedLine;
                     return 0;
                 }

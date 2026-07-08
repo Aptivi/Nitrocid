@@ -21,7 +21,6 @@ using System;
 using System.Runtime.InteropServices;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
-using Nitrocid.Base.Kernel;
 using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands

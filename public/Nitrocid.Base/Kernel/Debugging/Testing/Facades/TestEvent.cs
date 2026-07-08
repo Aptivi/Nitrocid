@@ -21,7 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using System;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Events;
-using Nitrocid.Base.ConsoleBase.Inputs;
+using Terminaux.Reader;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
 {
@@ -31,7 +31,7 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Kernel;
         public override void Run()
         {
-            string Text = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEVENT_PROMPT") + " ");
+            string Text = TermReader.Read(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEVENT_PROMPT") + " ");
             string[] eventArgs = ["RanByTest"];
             if (Enum.TryParse(Text, out EventType eventType))
                 EventsManager.FireEvent(eventType, eventArgs);

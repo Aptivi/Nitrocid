@@ -29,8 +29,8 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Threadify.Manager;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Network.SpeedDial;
+using Terminaux.Reader;
 
 namespace Nitrocid.Base.Network.Connections
 {
@@ -423,7 +423,7 @@ namespace Nitrocid.Base.Network.Connections
                     {
                         // Prompt the user to provide connection information
                         DebugWriter.WriteDebug(DebugLevel.I, "Letting user provide connection info...");
-                        address = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_ADDRESSPROMPT") + " ");
+                        address = TermReader.Read(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_ADDRESSPROMPT") + " ");
                         connection = establisher(address);
                     }
                     else if (selectedConnection == availableConnections + 1)
@@ -449,7 +449,7 @@ namespace Nitrocid.Base.Network.Connections
                         {
                             // User selected to create a new connection
                             DebugWriter.WriteDebug(DebugLevel.I, "Letting user provide connection info...");
-                            address = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_ADDRESSPROMPT") + " ");
+                            address = TermReader.Read(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_ADDRESSPROMPT") + " ");
                             connection = establisher(address);
                         }
                         else

@@ -25,8 +25,8 @@ using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Themes.Colors;
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Network.Connections;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.ChatbotAI.Shell
 {
@@ -72,7 +72,7 @@ namespace Nitrocid.Extras.ChatbotAI.Shell
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CHATBOTAI_COMMON_SHELL_ERROR") + " {0}", true, ThemeColorType.Error, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    InputTools.DetectKeypress();
+                    Input.ReadKey();
                     Bail = true;
                 }
 

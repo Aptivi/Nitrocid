@@ -21,12 +21,12 @@ using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Nettify.Weather;
 using Terminaux.Shell.Switches;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Extras.Forecast.Forecast.Interactive;
 using System;
+using Terminaux.Reader;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {
@@ -79,7 +79,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_APIKEY"));
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_APIKEYPROMPT") + " ", false, ThemeColorType.Input);
-                APIKey = InputTools.ReadLineNoInput();
+                APIKey = TermReader.Read(password: true);
                 Forecast.ApiKey = APIKey;
             }
             var ListMode = false;

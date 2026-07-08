@@ -23,7 +23,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Files.Editors.TextEdit;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.ConsoleBase.Inputs;
+using Terminaux.Reader;
 
 namespace Nitrocid.Base.Shell.Shells.Text.Commands
 {
@@ -46,7 +46,7 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
             while (FinalLine != "EOF")
             {
                 TextWriterColor.Write(">> ", false, ThemeColorType.Input);
-                FinalLine = InputTools.ReadLine();
+                FinalLine = TermReader.Read();
                 if (FinalLine != "EOF")
                 {
                     FinalLines.Add(FinalLine);

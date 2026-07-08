@@ -21,7 +21,6 @@ using System.IO;
 using System.Text.RegularExpressions;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;

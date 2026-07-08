@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Connections;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Network.Transfer;
+using Terminaux.Reader;
 
 namespace Nitrocid.ShellPacks.Commands
 {
@@ -38,7 +38,7 @@ namespace Nitrocid.ShellPacks.Commands
         private NetworkConnection EstablishHttpConnection(string address)
         {
             if (string.IsNullOrEmpty(address))
-                address = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT") + " ");
+                address = TermReader.Read(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT") + " ");
             return NetworkConnectionTools.EstablishConnection("HTTP connection", address, NetworkConnectionType.HTTP, NetworkTransfer.HttpClientNew);
         }
 

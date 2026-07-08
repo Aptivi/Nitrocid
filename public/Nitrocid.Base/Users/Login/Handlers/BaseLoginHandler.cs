@@ -27,9 +27,9 @@ using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Users.Login.Motd;
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Drivers.Encryption;
+using Terminaux.Reader;
 
 namespace Nitrocid.Base.Users.Login.Handlers
 {
@@ -92,7 +92,7 @@ namespace Nitrocid.Base.Users.Login.Handlers
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_PASSWORDPROMPT"), false, ThemeColorType.Input, user);
 
                     // Get input
-                    string answerpass = InputTools.ReadLineNoInputUnsafe();
+                    string answerpass = TermReader.Read(new TermReaderSettings() { DisableLock = true });
                     pass = answerpass;
                     if (UserManagement.ValidatePassword(user, answerpass))
                         return true;
@@ -127,7 +127,7 @@ namespace Nitrocid.Base.Users.Login.Handlers
                 TextWriterColor.Write(PlaceParse.ProbePlaces(Config.MainConfig.UsernamePrompt), false, ThemeColorType.Input);
             else
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_USERNAMEPROMPT"), false, ThemeColorType.Input);
-            return InputTools.ReadLine();
+            return TermReader.Read();
         }
     }
 }

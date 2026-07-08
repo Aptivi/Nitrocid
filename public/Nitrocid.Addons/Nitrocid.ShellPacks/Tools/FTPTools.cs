@@ -28,7 +28,6 @@ using Nitrocid.Base.Languages;
 using Textify.Tools.Placeholder;
 using Terminaux.Themes.Colors;
 using Textify.General;
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Network.Connections;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Choice;
@@ -36,6 +35,7 @@ using System.Collections.Generic;
 using Terminaux.Inputs.Styles;
 using Nitrocid.ShellPacks.Shells.FTP;
 using Terminaux.Base.Extensions;
+using Terminaux.Reader;
 
 namespace Nitrocid.ShellPacks.Tools
 {
@@ -80,7 +80,7 @@ namespace Nitrocid.ShellPacks.Tools
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD"), false, ThemeColorType.Input, user);
 
             // Get input
-            FTPShellCommon.FtpPass = InputTools.ReadLineNoInput();
+            FTPShellCommon.FtpPass = TermReader.Read(password: true);
 
             // Set up credentials
             clientFTP.Credentials = new NetworkCredential(user, FTPShellCommon.FtpPass);
@@ -135,7 +135,7 @@ namespace Nitrocid.ShellPacks.Tools
                     TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.FtpUserPromptStyle), false, ThemeColorType.Input, address);
                 else
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME"), false, ThemeColorType.Input, address);
-                FTPShellCommon.FtpUser = InputTools.ReadLine();
+                FTPShellCommon.FtpUser = TermReader.Read();
                 if (string.IsNullOrEmpty(FTPShellCommon.FtpUser))
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "User is not provided. Fallback to \"anonymous\"");

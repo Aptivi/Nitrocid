@@ -23,7 +23,6 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
 using Nitrocid.Base.Drivers;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Network.Transfer;

@@ -20,7 +20,7 @@
 using Terminaux.Writer.ConsoleWriters;
 using System.Globalization;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.ConsoleBase.Inputs;
+using Terminaux.Reader;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
 {
@@ -30,7 +30,7 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Languages;
         public override void Run()
         {
-            string Text = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_LISTCULTURES_PROMPT") + " ");
+            string Text = TermReader.Read(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_LISTCULTURES_PROMPT") + " ");
             var Cults = CultureInfo.GetCultures(CultureTypes.AllCultures);
             foreach (CultureInfo Cult in Cults)
             {

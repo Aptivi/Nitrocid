@@ -25,7 +25,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.ConsoleBase.Inputs;
+using Terminaux.Reader;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -82,7 +82,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 TextWriterColor.Write(RandomExpression, true, ThemeColorType.Input);
 
                 // Wait for response
-                UserEvaluated = SolverShowInput ? InputTools.ReadLine() : InputTools.ReadLineNoInput(Convert.ToChar("\0"));
+                UserEvaluated = SolverShowInput ? TermReader.Read() : TermReader.Read(new TermReaderSettings()
+                {
+                    PasswordMaskChar = '\0'
+                }, true);
                 DebugWriter.WriteDebug(DebugLevel.I, "Evaluated: {0}", vars: [UserEvaluated]);
 
                 // Check to see if the user has entered the correct answer

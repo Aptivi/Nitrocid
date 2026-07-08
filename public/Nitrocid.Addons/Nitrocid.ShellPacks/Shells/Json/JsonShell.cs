@@ -26,7 +26,7 @@ using Nitrocid.Base.Languages;
 using Terminaux.Shell.Shells;
 using System.Threading;
 using Terminaux.Shell.Commands;
-using Nitrocid.Base.ConsoleBase.Inputs;
+using Terminaux.Inputs;
 
 namespace Nitrocid.ShellPacks.Shells.Json
 {
@@ -91,7 +91,7 @@ namespace Nitrocid.ShellPacks.Shells.Json
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR") + " {0}", true, ThemeColorType.Error, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    InputTools.DetectKeypress();
+                    Input.ReadKey();
                     Bail = true;
                 }
             }

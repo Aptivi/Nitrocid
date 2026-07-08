@@ -22,7 +22,7 @@ using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using Nitrocid.Base.ConsoleBase.Inputs;
+using Terminaux.Reader;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {
@@ -70,7 +70,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_APIKEY"));
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_APIKEYPROMPT") + " ", false, ThemeColorType.Input);
-                    APIKey = InputTools.ReadLineNoInput();
+                    APIKey = TermReader.Read(password: true);
                     Forecast.ApiKeyOwm = APIKey;
                 }
                 Forecast.PrintWeatherInfoOwm(parameters.ArgumentsList[0], APIKey);

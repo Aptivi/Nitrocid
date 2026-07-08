@@ -80,7 +80,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     if (idName.Identifier.Text != nameof(Console.ReadLine))
                         continue;
 
-                    // We need to have a syntax that calls InputTools.ReadLine
+                    // We need to have a syntax that calls TermReader.Read
                     var classSyntax = SyntaxFactory.IdentifierName("Input");
                     var methodSyntax = SyntaxFactory.IdentifierName("ReadLine");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

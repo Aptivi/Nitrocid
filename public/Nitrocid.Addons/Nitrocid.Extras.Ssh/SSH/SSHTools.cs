@@ -30,10 +30,8 @@ using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Themes.Colors;
-using Nitrocid.Base.Kernel;
 using Textify.General;
 using Terminaux.Base;
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Network.Connections;
 using Terminaux.Inputs;
 using System.Reflection;
@@ -41,6 +39,7 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Extensions.Data;
 using SpecProbe.Software.Platform;
+using Terminaux.Reader;
 
 namespace Nitrocid.Extras.Ssh.SSH
 {
@@ -89,7 +88,7 @@ namespace Nitrocid.Extras.Ssh.SSH
                 TextWriterColor.Write("1) " + LanguageTools.GetLocalized("NKS_SSH_AUTHMETHOD_PRIVATEKEY"), true, ThemeColorType.Option);
                 TextWriterColor.Write("2) " + LanguageTools.GetLocalized("NKS_SSH_AUTHMETHOD_PASSWORD") + CharManager.NewLine, true, ThemeColorType.Option);
                 TextWriterColor.Write(">> ", false, ThemeColorType.Input);
-                if (int.TryParse(InputTools.ReadLine(), out Answer))
+                if (int.TryParse(TermReader.Read(), out Answer))
                 {
                     // Check for answer
                     bool exitWhile = false;
@@ -133,13 +132,13 @@ namespace Nitrocid.Extras.Ssh.SSH
 
                         // Ask for location
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SSH_PRIVKEYLOCATIONPROMPT"), false, ThemeColorType.Input, Username);
-                        PrivateKeyFile = InputTools.ReadLine();
+                        PrivateKeyFile = TermReader.Read();
                         PrivateKeyFile = FilesystemTools.NeutralizePath(PrivateKeyFile);
                         if (FilesystemTools.FileExists(PrivateKeyFile))
                         {
                             // Ask for passphrase
                             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SSH_PASSPHRASEPROMPT"), false, ThemeColorType.Input, PrivateKeyFile);
-                            PrivateKeyPassphrase = InputTools.ReadLineNoInput();
+                            PrivateKeyPassphrase = TermReader.Read(password: true);
 
                             // Add authentication method
                             try
@@ -172,7 +171,7 @@ namespace Nitrocid.Extras.Ssh.SSH
 
                     // Ask for password
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SSH_PASSWORDPROMPT"), false, ThemeColorType.Input, Username);
-                    Pass = InputTools.ReadLineNoInput();
+                    Pass = TermReader.Read(password: true);
 
                     // Add authentication method
                     AuthenticationMethods.Add(new PasswordAuthenticationMethod(Username, Pass));

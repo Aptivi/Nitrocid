@@ -26,7 +26,7 @@ using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Textify.General;
-using Nitrocid.Base.ConsoleBase.Inputs;
+using Terminaux.Reader;
 
 namespace Nitrocid.ShellPacks.Shells.Sql.Commands
 {
@@ -47,7 +47,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
             {
                 if (StringArg.StartsWith("@"))
                 {
-                    string paramValue = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT").FormatString(StringArg) + " ");
+                    string paramValue = TermReader.Read(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT").FormatString(StringArg) + " ");
                     sqlParameters.Add(new SqliteParameter(StringArg, paramValue));
                 }
             }

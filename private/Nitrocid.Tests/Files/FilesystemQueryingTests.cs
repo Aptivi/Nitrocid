@@ -22,7 +22,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using System.IO;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Files;
 using SpecProbe.Software.Platform;
 

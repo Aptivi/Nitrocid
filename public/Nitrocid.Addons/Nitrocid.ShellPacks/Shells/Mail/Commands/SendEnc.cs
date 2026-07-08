@@ -27,7 +27,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Themes.Colors;
 using Textify.General;
-using Nitrocid.Base.ConsoleBase.Inputs;
+using Terminaux.Reader;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 {
@@ -68,7 +68,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 
             // Prompt for receiver e-mail address
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_TARGETPROMPT") + " ", false, ThemeColorType.Input);
-            Receiver = InputTools.ReadLine();
+            Receiver = TermReader.Read();
             DebugWriter.WriteDebug(DebugLevel.I, "Recipient: {0}", vars: [Receiver]);
 
             // Check for mail format
@@ -78,7 +78,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 
                 // Prompt for subject
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_SUBJECTPROMPT") + " ", false, ThemeColorType.Input);
-                Subject = InputTools.ReadLine();
+                Subject = TermReader.Read();
                 DebugWriter.WriteDebug(DebugLevel.I, "Subject: {0} ({1} chars)", vars: [Subject, Subject.Length]);
 
                 // Prompt for body
@@ -86,7 +86,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
                 string BodyLine = "";
                 while (!BodyLine.Equals("EOF", System.StringComparison.OrdinalIgnoreCase))
                 {
-                    BodyLine = InputTools.ReadLine();
+                    BodyLine = TermReader.Read();
                     if (!BodyLine.Equals("EOF", System.StringComparison.OrdinalIgnoreCase))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Body line: {0} ({1} chars)", vars: [BodyLine, BodyLine.Length]);
@@ -100,7 +100,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
                 while (!string.IsNullOrEmpty(PathLine))
                 {
                     TextWriterColor.Write("> ", false, ThemeColorType.Input);
-                    PathLine = InputTools.ReadLine();
+                    PathLine = TermReader.Read();
                     if (!string.IsNullOrEmpty(PathLine))
                     {
                         PathLine = FilesystemTools.NeutralizePath(PathLine);

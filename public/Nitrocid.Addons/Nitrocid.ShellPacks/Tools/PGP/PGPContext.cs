@@ -19,11 +19,11 @@
 
 using MimeKit.Cryptography;
 using Terminaux.Themes.Colors;
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Textify.Tools.Placeholder;
 using Org.BouncyCastle.Bcpg.OpenPgp;
+using Terminaux.Reader;
 
 namespace Nitrocid.ShellPacks.Tools.PGP
 {
@@ -44,7 +44,7 @@ namespace Nitrocid.ShellPacks.Tools.PGP
                 TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailGPGPromptStyle), false, ThemeColorType.Input, key.KeyId);
             else
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD") + ": ", false, ThemeColorType.Input, key.KeyId);
-            string Password = InputTools.ReadLineNoInput();
+            string Password = TermReader.Read(password: true);
             return Password;
         }
     }

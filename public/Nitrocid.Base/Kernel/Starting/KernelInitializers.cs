@@ -57,7 +57,6 @@ using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Security.Privacy;
 using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Files.Extensions;
 using Nitrocid.Base.Kernel.Journaling;
 using Nitrocid.Base.Kernel.Power;
@@ -70,6 +69,7 @@ using Terminaux.Themes;
 using Nitrocid.Base.Misc.Reflection.Internal;
 using System.Globalization;
 using SpecProbe.Software.Platform;
+using Terminaux.Inputs;
 
 #if NKS_EXTENSIONS
 using Nitrocid.Base.Kernel.Extensions;
@@ -111,7 +111,7 @@ namespace Nitrocid.Base.Kernel.Starting
                     if (!ConsoleMisc.InitializeSequences())
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_CANNOTINITVTSQUENCES"));
-                        InputTools.DetectKeypress();
+                        Input.ReadKey();
                     }
                 }
 
@@ -131,6 +131,9 @@ namespace Nitrocid.Base.Kernel.Starting
 
                 // Power signal handlers
                 PowerSignalHandlers.RegisterHandlers();
+
+                // Initialize input lock
+                Input.DefaultLockCondition = () => !ScreensaverManager.LockMode;
 
                 // Resize handler
                 ConsoleResizeHandler.StartHandler();
@@ -883,6 +886,9 @@ namespace Nitrocid.Base.Kernel.Starting
 
                 // Reset base state
                 KernelEntry.enteredBase = false;
+
+                // Initialize input lock
+                Input.DefaultLockCondition = () => true;
             }
         }
 

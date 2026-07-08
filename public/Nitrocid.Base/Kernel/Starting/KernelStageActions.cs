@@ -33,7 +33,6 @@ using Nitrocid.Base.Network.Types.RPC;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Users.Groups;
 using Nitrocid.Core.Environment;
-using SpecProbe.Software.Platform;
 
 #if SPECIFIERREL
 using Nitrocid.Base.Files.Paths;

@@ -43,7 +43,6 @@ using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Power;
-using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Misc.Screensaver
 {
@@ -227,7 +226,7 @@ namespace Nitrocid.Base.Misc.Screensaver
             {
                 // Show the screensaver and wait for input
                 ShowSavers();
-                InputEventInfo eventInfo = Input.ReadPointerOrKey();
+                InputEventInfo eventInfo = Input.ReadPointerOrKey(disableLock: true);
                 EventsManager.FireEvent(EventType.PreUnlock, DefaultSaverName);
 
                 // Bail from screensaver and optionally prompt for password
@@ -241,7 +240,7 @@ namespace Nitrocid.Base.Misc.Screensaver
                 if (eventInfo.PointerEventContext is not null && eventInfo.PointerEventContext.ButtonPress == PointerButtonPress.Clicked)
                 {
                     while (eventInfo.PointerEventContext is not null && eventInfo.PointerEventContext.ButtonPress != PointerButtonPress.Released)
-                        eventInfo = Input.ReadPointerOrKey(InputEventType.Mouse);
+                        eventInfo = Input.ReadPointerOrKey(InputEventType.Mouse, disableLock: true);
                 }
 
                 // Now, show the password prompt

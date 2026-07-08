@@ -31,7 +31,6 @@ using Nitrocid.Base.Files.Folders;
 using Nitrocid.Base.Files.Instances;
 using Nitrocid.Base.Files.LineEndings;
 using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Events;
