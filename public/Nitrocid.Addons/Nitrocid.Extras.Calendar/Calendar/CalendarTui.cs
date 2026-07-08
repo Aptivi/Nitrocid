@@ -218,6 +218,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 var calendar = CalendarPrint.RenderCalendar(state.Year, state.Month, state.calendar);
                 calendar.HighlightToday = false;
                 calendar.HighlightedDay = new(state.Year, state.Month, state.Day);
+                calendar.Width = CalendarPrint.calendarWidth;
+                calendar.Height = CalendarPrint.calendarHeight;
                 builder.Append(RendererTools.RenderRenderable(calendar, new(4, 3)));
 
                 // Write the side box representing the list of events

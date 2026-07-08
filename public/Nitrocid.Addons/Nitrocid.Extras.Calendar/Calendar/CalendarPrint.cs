@@ -22,13 +22,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Calendrier;
 using Nitrocid.Base.Kernel.Time;
-using Nitrocid.Base.Kernel.Time.Converters;
 using Nitrocid.Extras.Calendar.Calendar.Events;
 using Nitrocid.Extras.Calendar.Calendar.Reminders;
-using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Simple;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
@@ -37,12 +34,14 @@ namespace Nitrocid.Extras.Calendar.Calendar
     /// </summary>
     public static class CalendarPrint
     {
+        internal const int calendarWidth = 5 + (6 * 6);
+        internal const int calendarHeight = 7;
 
         /// <summary>
         /// Prints the table of the calendar
         /// </summary>
         public static void PrintCalendar() =>
-            PrintCalendar(TimeDateTools.KernelDateTime.Year, TimeDateTools.KernelDateTime.Month);
+            PrintCalendar(TimeDateTools.KernelDateTime.Year, TimeDateTools.KernelDateTime.Month, CalendarTypes.Variant);
 
         /// <summary>
         /// Prints the table of the calendar
@@ -54,19 +53,53 @@ namespace Nitrocid.Extras.Calendar.Calendar
         /// <summary>
         /// Prints the table of the calendar
         /// </summary>
+        /// <param name="calendar">Calendar instance</param>
+        public static void PrintCalendar(BaseCalendar calendar) =>
+            PrintCalendar(TimeDateTools.KernelDateTime.Year, TimeDateTools.KernelDateTime.Month, calendar);
+
+        /// <summary>
+        /// Prints the table of the calendar
+        /// </summary>
         /// <param name="Year">Year to use</param>
         /// <param name="Month">Month to use</param>
         /// <param name="calendar">Calendar type</param>
-        public static void PrintCalendar(int Year, int Month, CalendarTypes calendar = CalendarTypes.Variant)
+        public static void PrintCalendar(int Year, int Month, CalendarTypes calendar)
+        {
+            // Render the calendar
+            var calendarInstance = CalendarTools.GetCalendar(calendar);
+            PrintCalendar(Year, Month, calendarInstance);
+        }
+
+        /// <summary>
+        /// Prints the table of the calendar
+        /// </summary>
+        /// <param name="Year">Year to use</param>
+        /// <param name="Month">Month to use</param>
+        /// <param name="calendar">Calendar instance</param>
+        public static void PrintCalendar(int Year, int Month, BaseCalendar calendar)
         {
             // Render the calendar
             var calendars = RenderCalendar(Year, Month, calendar);
             TextWriterRaw.WritePlain(calendars.Render());
         }
 
-        internal static Calendars RenderCalendar(int Year, int Month, CalendarTypes calendar = CalendarTypes.Variant)
+        internal static Calendars RenderCalendar() =>
+            RenderCalendar(TimeDateTools.KernelDateTime.Year, TimeDateTools.KernelDateTime.Month, CalendarTypes.Variant);
+
+        internal static Calendars RenderCalendar(CalendarTypes calendar) =>
+            RenderCalendar(TimeDateTools.KernelDateTime.Year, TimeDateTools.KernelDateTime.Month, calendar);
+
+        internal static Calendars RenderCalendar(BaseCalendar calendar) =>
+            RenderCalendar(TimeDateTools.KernelDateTime.Year, TimeDateTools.KernelDateTime.Month, calendar);
+
+        internal static Calendars RenderCalendar(int Year, int Month, CalendarTypes calendar)
         {
             var calendarInstance = CalendarTools.GetCalendar(calendar);
+            return RenderCalendar(Year, Month, calendarInstance);
+        }
+
+        internal static Calendars RenderCalendar(int Year, int Month, BaseCalendar calendar)
+        {
             var maxDate = DateTime.DaysInMonth(Year, Month);
 
             // List events and reminders
@@ -103,7 +136,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 Month = Month,
                 EventDates = [.. events],
                 ReminderDates = [.. reminders],
-                Culture = calendarInstance.Culture,
+                Culture = calendar.Culture,
             };
             return calendars;
         }

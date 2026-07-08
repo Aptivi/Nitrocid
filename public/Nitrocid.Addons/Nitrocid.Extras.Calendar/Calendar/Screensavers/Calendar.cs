@@ -17,17 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Drivers.RNG;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Misc.Screensaver;
-using Colorimetry;
-using Terminaux.Base;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Languages;
 using System.Globalization;
+using Colorimetry;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Time;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Screensaver;
+using Terminaux.Base;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Screensavers
 {
@@ -58,23 +59,17 @@ namespace Nitrocid.Extras.Calendar.Calendar.Screensavers
             if (!ConsoleResizeHandler.WasResized(false))
             {
                 var cultures = CultureManager.GetCulturesDictionary();
-                var calendar = new FullCalendar()
-                {
-                    HeaderColor = ThemeColorsTools.GetColor(ThemeColorType.TuiForeground),
-                    TodayColor = ThemeColorsTools.GetColor(ThemeColorType.TodayDay),
-                    WeekendColor = ThemeColorsTools.GetColor(ThemeColorType.WeekendDay),
-                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
-                    Year = TimeDateTools.KernelDateTime.Year,
-                    Month = TimeDateTools.KernelDateTime.Month,
-                    Left = ConsoleWrapper.WindowWidth / 2 - FullCalendar.calendarWidth / 2,
-                    Top = ConsoleWrapper.WindowHeight / 2 - FullCalendar.calendarHeight / 2 - 1,
-                    Culture =
-                        CalendarInit.CalendarConfig.CalendarUseSystemCulture ?
-                        CultureManager.CurrentCulture :
-                        cultures.TryGetValue(CalendarInit.CalendarConfig.CalendarCultureName, out CultureInfo? value) ? value :
-                        CultureManager.CurrentCulture,
-                };
-                TextWriterRaw.WriteRaw(calendar.Render());
+                var currentCulture =
+                    CalendarInit.CalendarConfig.CalendarUseSystemCulture ? CultureManager.CurrentCulture :
+                    cultures.TryGetValue(CalendarInit.CalendarConfig.CalendarCultureName, out CultureInfo? value) ? value :
+                    CultureManager.CurrentCulture;
+                var calendar = CalendarPrint.RenderCalendar();
+                calendar.Width = CalendarPrint.calendarWidth;
+                calendar.Height = CalendarPrint.calendarHeight;
+                calendar.Culture = currentCulture;
+                int left = ConsoleWrapper.WindowWidth / 2 - CalendarPrint.calendarWidth / 2,
+                    top = ConsoleWrapper.WindowHeight / 2 - CalendarPrint.calendarHeight / 2 - 2;
+                TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(calendar, new(left, top)));
             }
             ScreensaverManager.Delay(CalendarInit.CalendarConfig.CalendarDelay);
         }
