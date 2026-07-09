@@ -7,3 +7,6 @@
 [submodule "assets/quotes"]
 	path = assets/quotes
 	url = https://github.com/quotable-io/data
+[submodule "private/Dtp"]
+	path = private/Dtp
+	url = https://github.com/Aptivi/Dtp
