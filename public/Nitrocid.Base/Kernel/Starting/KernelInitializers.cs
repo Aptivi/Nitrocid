@@ -41,7 +41,6 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Misc.Reflection;
-using Nitrocid.Base.ConsoleBase;
 using Nitrocid.Base.Kernel.Time.Alarm;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Time.Renderers;
@@ -70,6 +69,7 @@ using Nitrocid.Base.Misc.Reflection.Internal;
 using System.Globalization;
 using SpecProbe.Software.Platform;
 using Terminaux.Inputs;
+using Nitrocid.Base.Kernel.ConsoleBase;
 
 #if NKS_EXTENSIONS
 using Nitrocid.Base.Kernel.Extensions;

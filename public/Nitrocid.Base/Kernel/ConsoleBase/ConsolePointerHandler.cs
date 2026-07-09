@@ -21,7 +21,7 @@ using System.Threading;
 using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Inputs;
 
-namespace Nitrocid.Base.ConsoleBase
+namespace Nitrocid.Base.Kernel.ConsoleBase
 {
     /// <summary>
     /// Console pointer handler

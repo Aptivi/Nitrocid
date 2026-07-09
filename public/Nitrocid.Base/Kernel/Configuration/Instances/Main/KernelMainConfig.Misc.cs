@@ -18,7 +18,7 @@
 //
 
 using Newtonsoft.Json;
-using Nitrocid.Base.ConsoleBase;
+using Nitrocid.Base.Kernel.ConsoleBase;
 using Nitrocid.Base.Kernel.Threading.Performance;
 using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Shell.Shells.Hex;

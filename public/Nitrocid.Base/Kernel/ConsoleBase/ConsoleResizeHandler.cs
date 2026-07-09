@@ -25,7 +25,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Kernel.Events;
 
-namespace Nitrocid.Base.ConsoleBase
+namespace Nitrocid.Base.Kernel.ConsoleBase
 {
     /// <summary>
     /// The console resize listener module
