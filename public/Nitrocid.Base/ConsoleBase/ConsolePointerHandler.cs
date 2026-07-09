@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Threading;
 using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Inputs;
 
@@ -28,7 +29,7 @@ namespace Nitrocid.Base.ConsoleBase
     public static class ConsolePointerHandler
     {
         internal static bool enableHandler = true;
-        private static readonly object _lock = new();
+        private static readonly Lock _lock = new();
 
         /// <summary>
         /// Starts the console pointer handler

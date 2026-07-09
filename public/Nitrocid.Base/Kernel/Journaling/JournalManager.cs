@@ -30,6 +30,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Files.Paths;
+using System.Threading;
 
 namespace Nitrocid.Base.Kernel.Journaling
 {
@@ -41,7 +42,7 @@ namespace Nitrocid.Base.Kernel.Journaling
 
         internal static List<JournalEntry> journalEntries = [];
         internal static string JournalPath = "";
-        private static readonly object journalLock = new();
+        private static readonly Lock journalLock = new();
 
         /// <summary>
         /// Writes a message to the journal
