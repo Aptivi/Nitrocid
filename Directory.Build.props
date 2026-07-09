@@ -76,13 +76,16 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.300" PrivateAssets="all" />
     </ItemGroup>
-    <Target Name="EnsureCommitShaInclusion" BeforeTargets="GenerateNuspec" Condition="'$(Configuration)' == 'Debug' And '$(SourceRevisionId)' != '' And '$(ContinuousIntegrationBuild)' == 'true'">
-        <ReadLinesFromFile File="$(RootPath)/private/Nitrocid.BuildTargets/obj/.dtp">
+    <!-- KS SourceLink End -->
+
+    <!-- DTP -->
+    <Target Name="EnsureDtpInclusion" BeforeTargets="GenerateNuspec" Condition="'$(Configuration)' == 'Debug' And '$(SourceRevisionId)' != '' And '$(ContinuousIntegrationBuild)' == 'true'">
+        <ReadLinesFromFile File="$(RootPath)/private/Dtp/obj/.dtp">
             <Output TaskParameter="Lines" ItemName="DateTimePart"/>
         </ReadLinesFromFile>
         <CreateProperty Value="$(Version)-%(DateTimePart.Identity)+$(SourceRevisionId)">
             <Output TaskParameter="Value" PropertyName="PackageVersion"/>
         </CreateProperty>
     </Target>
-    <!-- KS SourceLink End -->
+    <!-- DTP End -->
 </Project>

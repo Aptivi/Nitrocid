@@ -19,12 +19,12 @@
   <Folder Name="/Private/Generators/">
     <Project Path="private/Nitrocid.Generators/Nitrocid.Generators.KnownAddons/Nitrocid.Generators.KnownAddons.csproj">
       <BuildDependency Project="private/Nitrocid.AddonPruner/Nitrocid.AddonPruner.csproj" />
-      <BuildDependency Project="private/Nitrocid.BuildTargets/Nitrocid.BuildTargets.csproj" />
+      <BuildDependency Project="private/Dtp/Dtp.csproj" />
     </Project>
   </Folder>
   <Folder Name="/Private/Helpers/">
     <Project Path="private/Nitrocid.AddonPruner/Nitrocid.AddonPruner.csproj" />
-    <Project Path="private/Nitrocid.BuildTargets/Nitrocid.BuildTargets.csproj" />
+    <Project Path="private/Dtp/Dtp.csproj" />
   </Folder>
   <Folder Name="/Private/Locales/">
     <Project Path="private/Nitrocid.LocaleChecker/Nitrocid.LocaleChecker.csproj" />
@@ -68,12 +68,12 @@
   <Folder Name="/Public/">
     <Project Path="public/Nitrocid.Base/Nitrocid.Base.csproj">
       <BuildDependency Project="private/Nitrocid.AddonPruner/Nitrocid.AddonPruner.csproj" />
-      <BuildDependency Project="private/Nitrocid.BuildTargets/Nitrocid.BuildTargets.csproj" />
+      <BuildDependency Project="private/Dtp/Dtp.csproj" />
     </Project>
     <Project Path="public/Nitrocid.Core/Nitrocid.Core.csproj" />
     <Project Path="public/Nitrocid/Nitrocid.csproj">
       <BuildDependency Project="private/Nitrocid.AddonPruner/Nitrocid.AddonPruner.csproj" />
-      <BuildDependency Project="private/Nitrocid.BuildTargets/Nitrocid.BuildTargets.csproj" />
+      <BuildDependency Project="private/Dtp/Dtp.csproj" />
     </Project>
   </Folder>
   <Folder Name="/Public/Addons/">
@@ -121,7 +121,7 @@
     <Project Path="public/Nitrocid.Analyzers/Nitrocid.Analyzers.Package/Nitrocid.Analyzers.Package.csproj" />
     <Project Path="public/Nitrocid.Analyzers/Nitrocid.Analyzers/Nitrocid.Analyzers.csproj">
       <BuildDependency Project="private/Nitrocid.AddonPruner/Nitrocid.AddonPruner.csproj" />
-      <BuildDependency Project="private/Nitrocid.BuildTargets/Nitrocid.BuildTargets.csproj" />
+      <BuildDependency Project="private/Dtp/Dtp.csproj" />
     </Project>
     <Project Path="public/Nitrocid.Analyzers/Nitrocid.StandaloneAnalyzer/Nitrocid.StandaloneAnalyzer.csproj">
       <BuildDependency Project="public/Nitrocid.Analyzers/Nitrocid.Analyzers/Nitrocid.Analyzers.csproj" />
@@ -133,7 +133,7 @@
   <Folder Name="/Public/Templates/">
     <Project Path="public/Nitrocid.Templates/Nitrocid.Templates.csproj">
       <BuildDependency Project="private/Nitrocid.AddonPruner/Nitrocid.AddonPruner.csproj" />
-      <BuildDependency Project="private/Nitrocid.BuildTargets/Nitrocid.BuildTargets.csproj" />
+      <BuildDependency Project="private/Dtp/Dtp.csproj" />
     </Project>
   </Folder>
 </Solution>
