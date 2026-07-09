@@ -69,8 +69,8 @@ namespace Nitrocid.Analyzers.ConsoleBase
                 var idName = ((IdentifierNameSyntax)typeDecl.Name).Identifier.Text;
 
                 // We need to have a syntax that calls TermReader.Read
-                var classSyntax = SyntaxFactory.IdentifierName("InputTools");
-                var methodSyntax = SyntaxFactory.IdentifierName("ReadLine");
+                var classSyntax = SyntaxFactory.IdentifierName("TermReader");
+                var methodSyntax = SyntaxFactory.IdentifierName("Read");
                 var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                 var replacedSyntax = resultSyntax
                     .WithLeadingTrivia(resultSyntax.GetLeadingTrivia())
@@ -83,13 +83,11 @@ namespace Nitrocid.Analyzers.ConsoleBase
                 // Check the imports
                 if (finalNode is not CompilationUnitSyntax compilation)
                     return document.Project.Solution;
-                if (compilation.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.ConsoleBase.Inputs") == false)
+                if (compilation.Usings.Any(u => u.Name?.ToString() == $"Terminaux.Reader") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.QualifiedName(
-                            SyntaxFactory.QualifiedName(SyntaxFactory.IdentifierName(AnalysisTools.firstRootNameSpace), SyntaxFactory.IdentifierName("Base")),
-                            SyntaxFactory.IdentifierName("ConsoleBase")),
-                        SyntaxFactory.IdentifierName("Inputs"));
+                        SyntaxFactory.IdentifierName("Terminaux"),
+                        SyntaxFactory.IdentifierName("Reader"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));
                 }
