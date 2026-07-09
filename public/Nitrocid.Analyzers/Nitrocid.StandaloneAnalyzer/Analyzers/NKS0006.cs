@@ -81,8 +81,8 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         continue;
 
                     // We need to have a syntax that calls TermReader.Read
-                    var classSyntax = SyntaxFactory.IdentifierName("Input");
-                    var methodSyntax = SyntaxFactory.IdentifierName("ReadLine");
+                    var classSyntax = SyntaxFactory.IdentifierName("TermReader");
+                    var methodSyntax = SyntaxFactory.IdentifierName("Read");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                     var replacedSyntax = resultSyntax
                         .WithLeadingTrivia(resultSyntax.GetLeadingTrivia())
@@ -97,13 +97,11 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
 
                     // Check the imports
                     var compilation = finalNode as CompilationUnitSyntax;
-                    if (compilation?.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.ConsoleBase.Inputs") == false)
+                    if (compilation?.Usings.Any(u => u.Name?.ToString() == $"Terminaux.Reader") == false)
                     {
                         var name = SyntaxFactory.QualifiedName(
-                            SyntaxFactory.QualifiedName(
-                                SyntaxFactory.QualifiedName(SyntaxFactory.IdentifierName(AnalysisTools.firstRootNameSpace), SyntaxFactory.IdentifierName("Base")),
-                                SyntaxFactory.IdentifierName("ConsoleBase")),
-                            SyntaxFactory.IdentifierName("Inputs"));
+                            SyntaxFactory.IdentifierName("Terminaux"),
+                            SyntaxFactory.IdentifierName("Reader"));
                         var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();
                         TextWriterColor.WriteColor("Additionally, the suggested fix will add the following using statement:", true, ConsoleColors.Yellow);
                         TextWriterColor.WriteColor($"  + {directive.ToFullString()}", true, ConsoleColors.Green);

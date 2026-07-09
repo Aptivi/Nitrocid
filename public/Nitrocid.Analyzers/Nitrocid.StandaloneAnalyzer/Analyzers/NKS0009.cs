@@ -97,13 +97,13 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
 
                     // Check the imports
                     var compilation = finalNode as CompilationUnitSyntax;
-                    if (compilation?.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.ConsoleBase.Colors") == false)
+                    if (compilation?.Usings.Any(u => u.Name?.ToString() == $"Terminaux.Themes.Colors") == false)
                     {
                         var name =
                             SyntaxFactory.QualifiedName(
                                 SyntaxFactory.QualifiedName(
-                                    SyntaxFactory.QualifiedName(SyntaxFactory.IdentifierName(AnalysisTools.firstRootNameSpace), SyntaxFactory.IdentifierName("Base")),
-                                    SyntaxFactory.IdentifierName("ConsoleBase")
+                                    SyntaxFactory.IdentifierName("Terminaux"),
+                                    SyntaxFactory.IdentifierName("Themes")
                                 ), SyntaxFactory.IdentifierName("Colors")
                             );
                         var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();
