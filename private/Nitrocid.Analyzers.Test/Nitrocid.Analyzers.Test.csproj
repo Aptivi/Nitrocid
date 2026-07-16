@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSTest.Sdk/4.3.0">
+﻿<Project Sdk="MSTest.Sdk/4.3.2">
 
   <PropertyGroup>
     <OutputPath>..\KSTest\</OutputPath>
