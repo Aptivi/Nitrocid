@@ -28,13 +28,13 @@ jobs:
         run: |
           pip install aptivi-adt
           adt build -b "-p:Configuration=Release -p:ContinuousIntegrationBuild=true"
-          adt packbin
           adt gendocs
           adt packdocs
-          dotnet build -p:Configuration=Release -p:Platform=x64 public/Nitrocid.Installers/Nitrocid.Installer.slnx
-          dotnet build -p:Configuration=Release -p:Platform=ARM64 public/Nitrocid.Installers/Nitrocid.Installer.slnx
-          Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/x64/Release/Nitrocid.InstallerBundle.exe artifacts/nitrocid-win-x64-installer.exe
-          Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/ARM64/Release/Nitrocid.InstallerBundle.exe artifacts/nitrocid-win-arm64-installer.exe
+          adt buildwix Release x64
+          adt buildwix Release ARM64
+          adt packbin
+          adt packwix Release x64
+          adt packwix Release ARM64
       - name: Release Preparation
         id: release-asset
         shell: bash

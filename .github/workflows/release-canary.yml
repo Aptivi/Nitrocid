@@ -28,11 +28,11 @@ jobs:
         run: |
           pip install aptivi-adt
           adt build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true"
-          mkdir artifacts
-          dotnet build -p:Configuration=Debug -p:Platform=x64 public/Nitrocid.Installers/Nitrocid.Installer.slnx
-          dotnet build -p:Configuration=Debug -p:Platform=ARM64 public/Nitrocid.Installers/Nitrocid.Installer.slnx
-          Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/x64/Debug/Nitrocid.InstallerBundle.exe artifacts/nitrocid-win-x64-installer.exe
-          Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/ARM64/Debug/Nitrocid.InstallerBundle.exe artifacts/nitrocid-win-arm64-installer.exe
+          adt buildwix Debug x64
+          adt buildwix Debug ARM64
+          adt packbin
+          adt packwix Debug x64
+          adt packwix Debug ARM64
       - uses: actions/upload-artifact@v7
         with:
           name: installer-x64-msi
