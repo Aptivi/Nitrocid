@@ -34,7 +34,9 @@ jobs:
       with:
         languages: ${{ matrix.language }}
     - name: Build
-      run: make rel-ci
+      run: |
+        pip install aptivi-adt
+        make rel-ci
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:

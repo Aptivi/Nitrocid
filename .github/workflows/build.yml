@@ -24,9 +24,11 @@ jobs:
         with:
           dotnet-version: '10.0.x'
       - name: Solution Compilation
-        run: python tools/adt.py build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true"
+        run: |
+          pip install aptivi-adt
+          adt build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true"
       - name: Testing
-        run: python tools/adt.py test -t="--no-build --configuration Debug"
+        run: adt test -t="--no-build --configuration Debug"
       - uses: actions/upload-artifact@v7
         if: success() || failure()
         with:

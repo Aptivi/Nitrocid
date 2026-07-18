@@ -34,6 +34,7 @@ jobs:
         run: dotnet tool install --global docfx
       - name: Generating Documentation
         run: |
+          pip install aptivi-adt
           make rel-ci
           make doc
       - name: Saving changes to gh-pages

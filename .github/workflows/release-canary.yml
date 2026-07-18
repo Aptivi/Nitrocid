@@ -26,7 +26,8 @@ jobs:
           dotnet-version: '10.0.x'
       - name: Release Asset Preparation
         run: |
-          python tools/adt.py build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true"
+          pip install aptivi-adt
+          adt build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true"
           mkdir artifacts
           dotnet build -p:Configuration=Debug -p:Platform=x64 public/Nitrocid.Installers/Nitrocid.Installer.slnx
           dotnet build -p:Configuration=Debug -p:Platform=ARM64 public/Nitrocid.Installers/Nitrocid.Installer.slnx
@@ -53,4 +54,4 @@ jobs:
       - name: Package Publication
         run: |
           dotnet nuget add source --username AptiviCEO --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aptivi/index.json"
-          python tools/adt.py pushbin -a "${{ secrets.GITHUB_TOKEN }}" -s "github"
+          adt pushbin -a "${{ secrets.GITHUB_TOKEN }}" -s "github"
