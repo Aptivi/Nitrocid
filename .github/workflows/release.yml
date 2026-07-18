@@ -28,10 +28,11 @@ jobs:
         run: dotnet tool install --global docfx
       - name: Release Asset Preparation
         run: |
-          python tools/adt.py build -b "-p:Configuration=Release -p:ContinuousIntegrationBuild=true"
-          python tools/adt.py packbin
-          python tools/adt.py gendocs
-          python tools/adt.py packdocs
+          pip install aptivi-adt
+          adt build -b "-p:Configuration=Release -p:ContinuousIntegrationBuild=true"
+          adt packbin
+          adt gendocs
+          adt packdocs
           dotnet build -p:Configuration=Release -p:Platform=x64 public/Nitrocid.Installers/Nitrocid.Installer.slnx
           dotnet build -p:Configuration=Release -p:Platform=ARM64 public/Nitrocid.Installers/Nitrocid.Installer.slnx
           Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/x64/Release/Nitrocid.InstallerBundle.exe artifacts/nitrocid-win-x64-installer.exe
@@ -61,4 +62,4 @@ jobs:
             artifacts/*-changes.chg
             artifacts/*.exe
       - name: Package Publication
-        run: python tools/adt.py pushbin -a "${{ secrets.NUGET_APIKEY }}"
+        run: adt pushbin -a "${{ secrets.NUGET_APIKEY }}"

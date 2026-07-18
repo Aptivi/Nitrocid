@@ -39,6 +39,7 @@ jobs:
     #   run: dotnet nuget add source --username AptiviCEO --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aptivi/index.json"
     - name: Build
       run: |
+        pip install aptivi-adt
         make rel-ci
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
