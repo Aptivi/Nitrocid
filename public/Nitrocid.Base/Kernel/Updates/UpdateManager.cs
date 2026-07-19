@@ -75,36 +75,26 @@ namespace Nitrocid.Base.Kernel.Updates
         /// </summary>
         public static void CheckKernelUpdates()
         {
-            // The LocaleClean analyzer-based cleaner reports false positives for extra strings that happen to be
-            // translated in the compiler pre-processor directives, so we need to move all translations here to
-            // avoid this happening again and for the locale tools to actually see them.
-            string devVersionWarning = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKDISABLED");
-            string checkFailed = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKFAILED");
-            string checking = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKING");
-            string newVersion = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_FOUND");
-            string downloadManually = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_LINK");
-            string upToDate = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_UPTODATE");
-
 #if SPECIFIERREL
             // Check for updates now
-            SplashReport.ReportProgress(checking, 10);
+            SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKING"), 10);
             var AvailableUpdate = FetchKernelUpdates(UpdateKind.Binary);
             if (AvailableUpdate is not null)
             {
                 if (!AvailableUpdate.Updated && AvailableUpdate.UpdateVersion is not null)
                 {
-                    SplashReport.ReportProgress(newVersion, 10);
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_FOUND"), 10);
                     SplashReport.ReportProgress(AvailableUpdate.UpdateVersion.ToString(), 10);
-                    SplashReport.ReportProgress(downloadManually, 10);
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_LINK"), 10);
                     SplashReport.ReportProgress(AvailableUpdate.UpdateURL.ToString(), 10);
                 }
                 else
-                    SplashReport.ReportProgress(upToDate, 10);
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_UPTODATE"), 10);
             }
             else if (AvailableUpdate is null)
-                SplashReport.ReportProgressError(checkFailed);
+                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKFAILED"));
 #else
-            SplashReport.ReportProgressWarning(devVersionWarning);
+            SplashReport.ReportProgressWarning(LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKDISABLED"));
 #endif
         }
 

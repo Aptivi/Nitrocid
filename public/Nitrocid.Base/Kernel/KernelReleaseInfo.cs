@@ -70,7 +70,7 @@ namespace Nitrocid.Base.Kernel
         ;
 
         // Release support window info
-        internal readonly static DateTime supportWindow = new(2036, 2, 12);
+        internal readonly static DateTime supportWindow = new(2027, 6, 24);
         internal readonly static bool supportWindowPrimed =
 #if SPECIFIERREL
             true;

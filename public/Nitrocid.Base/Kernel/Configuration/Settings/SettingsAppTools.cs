@@ -137,30 +137,21 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
 
         internal static void CheckForSystemUpdates()
         {
-            // The LocaleClean analyzer-based cleaner reports false positives for extra strings that happen to be
-            // translated in the compiler pre-processor directives, so we need to move all translations here to
-            // avoid this happening again and for the locale tools to actually see them.
-            string devVersionWarning = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKDISABLED");
-            string checkFailed = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKFAILED");
-            string checking = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKING");
-            string newVersion = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_FOUND");
-            string upToDate = LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_UPTODATE");
-
 #if SPECIFIERREL
             // Check for updates now
-            InfoBoxNonModalColor.WriteInfoBox(checking);
+            InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKING"));
             var AvailableUpdate = UpdateManager.FetchKernelUpdates(UpdateKind.Binary);
             if (AvailableUpdate is not null)
             {
                 if (!AvailableUpdate.Updated)
-                    InfoBoxModalColor.WriteInfoBoxModal(newVersion + $"{AvailableUpdate.UpdateVersion}");
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_FOUND") + $"{AvailableUpdate.UpdateVersion}");
                 else
-                    InfoBoxModalColor.WriteInfoBoxModal(upToDate);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_UPTODATE"));
             }
             else if (AvailableUpdate is null)
-                InfoBoxModalColor.WriteInfoBoxModal(checkFailed);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKFAILED"));
 #else
-            InfoBoxModalColor.WriteInfoBoxModal(devVersionWarning);
+            InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_UPDATES_CHECKDISABLED"));
 #endif
         }
 
