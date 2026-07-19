@@ -60,6 +60,11 @@ namespace Nitrocid.Base.Kernel.Updates
         /// <param name="kind">The kernel update kind</param>
         protected internal KernelUpdate(JToken UpdateToken, UpdateKind kind)
         {
+#if !NKS_EXTENSIONS
+            if (kind == UpdateKind.Binary)
+                kind = UpdateKind.BinaryLite;
+#endif
+
             // Sort the versions (We sometimes release servicing versions of earlier series, like 0.0.8.x, and the GitHub API sorts the releases based
             // on the date of the release, so we retry sorting them, this time, by version, so we get the list in the below format.)
             // 

@@ -56,7 +56,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             try
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_FETCHING"), ThemeColorType.Progress);
-                addonsPackage = UpdateManager.FetchAddonPack();
+                addonsPackage = UpdateManager.FetchKernelUpdates(UpdateKind.Addons);
             }
             catch (Exception ex)
             {

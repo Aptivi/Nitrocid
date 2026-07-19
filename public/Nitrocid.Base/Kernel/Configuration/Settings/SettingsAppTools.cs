@@ -149,7 +149,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
 #if SPECIFIERREL
             // Check for updates now
             InfoBoxNonModalColor.WriteInfoBox(checking);
-            var AvailableUpdate = UpdateManager.FetchBinaryArchive();
+            var AvailableUpdate = UpdateManager.FetchKernelUpdates(UpdateKind.Binary);
             if (AvailableUpdate is not null)
             {
                 if (!AvailableUpdate.Updated)

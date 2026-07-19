@@ -31,9 +31,6 @@ using Nitrocid.Base.Kernel.Configuration;
 using System.IO;
 #endif
 
-#if NKS_EXTENSIONS
-#endif
-
 namespace Nitrocid.Base.Kernel.Updates
 {
     /// <summary>
@@ -41,7 +38,6 @@ namespace Nitrocid.Base.Kernel.Updates
     /// </summary>
     public static class UpdateManager
     {
-
         /// <summary>
         /// Fetches the GitHub repo to see if there are any updates
         /// </summary>
@@ -75,48 +71,6 @@ namespace Nitrocid.Base.Kernel.Updates
         }
 
         /// <summary>
-        /// Fetches the GitHub repo to see if there are any updates
-        /// </summary>
-        /// <returns>A kernel update instance</returns>
-        public static KernelUpdate? FetchBinaryArchive()
-        {
-            try
-            {
-                // Determine the update kind by build type
-#if NKS_EXTENSIONS
-                var kind = UpdateKind.Binary;
-#else
-                var kind = UpdateKind.BinaryLite;
-#endif
-                return FetchKernelUpdates(kind);
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to check for updates: {0}", vars: [ex.Message]);
-                DebugWriter.WriteDebugStackTrace(ex);
-            }
-            return null;
-        }
-
-        /// <summary>
-        /// Fetches the GitHub repo for addon pack
-        /// </summary>
-        /// <returns>A kernel update instance</returns>
-        public static KernelUpdate? FetchAddonPack()
-        {
-            try
-            {
-                return FetchKernelUpdates(UpdateKind.Addons);
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to check for updates: {0}", vars: [ex.Message]);
-                DebugWriter.WriteDebugStackTrace(ex);
-            }
-            return null;
-        }
-
-        /// <summary>
         /// Prompt for checking for kernel updates
         /// </summary>
         public static void CheckKernelUpdates()
@@ -134,7 +88,7 @@ namespace Nitrocid.Base.Kernel.Updates
 #if SPECIFIERREL
             // Check for updates now
             SplashReport.ReportProgress(checking, 10);
-            var AvailableUpdate = FetchBinaryArchive();
+            var AvailableUpdate = FetchKernelUpdates(UpdateKind.Binary);
             if (AvailableUpdate is not null)
             {
                 if (!AvailableUpdate.Updated && AvailableUpdate.UpdateVersion is not null)
