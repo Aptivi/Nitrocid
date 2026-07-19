@@ -28,7 +28,7 @@ using SpecProbe.Parts;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Splash;
-using Nitrocid.Base.Users.Windows;
+using Nitrocid.Base.Kernel;
 
 namespace Nitrocid.Base.Drivers.HardwareProber
 {
@@ -161,7 +161,7 @@ namespace Nitrocid.Base.Drivers.HardwareProber
         /// <inheritdoc/>
         public virtual void ListHardware(IEnumerable? processors, IEnumerable? memory, IEnumerable? graphics, IEnumerable? hardDrives)
         {
-            if (!WindowsUserTools.IsAdministrator())
+            if (!KernelPlatform.IsCurrentWindowsUserAdmin())
             {
                 SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_NEEDSELEVATION"));
                 return;
@@ -223,7 +223,7 @@ namespace Nitrocid.Base.Drivers.HardwareProber
         /// <inheritdoc/>
         public virtual void ListHardware(string hardwareType)
         {
-            if (!WindowsUserTools.IsAdministrator())
+            if (!KernelPlatform.IsCurrentWindowsUserAdmin())
             {
                 SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_NEEDSELEVATION"));
                 return;

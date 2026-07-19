@@ -22,7 +22,6 @@ using Nitrocid.Base.Drivers.HardwareProber;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Splash;
-using Nitrocid.Base.Users.Windows;
 
 namespace Nitrocid.Base.Kernel.Hardware
 {
@@ -38,7 +37,7 @@ namespace Nitrocid.Base.Kernel.Hardware
         internal static void ListHardware()
         {
             // First, check to see if we're running elevated
-            if (!WindowsUserTools.IsAdministrator())
+            if (!KernelPlatform.IsCurrentWindowsUserAdmin())
                 return;
 
             // Some variables

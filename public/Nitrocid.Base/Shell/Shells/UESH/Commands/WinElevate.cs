@@ -20,9 +20,9 @@
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users.Windows;
 using Nitrocid.Base.Kernel.Power;
 using SpecProbe.Software.Platform;
+using Nitrocid.Base.Kernel;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -39,7 +39,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         {
             if (PlatformHelper.IsOnWindows())
             {
-                bool isAdmin = WindowsUserTools.IsAdministrator();
+                bool isAdmin = KernelPlatform.IsCurrentWindowsUserAdmin();
                 if (isAdmin)
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_WINELEVATE_ELEVATED"));
                 else

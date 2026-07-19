@@ -19,6 +19,8 @@
 
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Kernel
 {
@@ -53,5 +55,24 @@ namespace Nitrocid.Base.Kernel
         /// <returns>Returns a runtime identifier (win-x64 for example).</returns>
         public static string GetCurrentRid() =>
             RuntimeInformation.RuntimeIdentifier;
+
+        /// <summary>
+        /// Checks to see if the current Windows user is an administrator
+        /// </summary>
+        public static bool IsCurrentWindowsUserAdmin()
+        {
+            if (PlatformHelper.IsOnWindows() ||
+
+                // This is a trick to avoid compiler warnings, since IsOnWindows() above doesn't seem to avoid compiler warnings.
+                RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                var identity = WindowsIdentity.GetCurrent();
+                var principal = new WindowsPrincipal(identity);
+                return principal.IsInRole(WindowsBuiltInRole.Administrator);
+            }
+            else
+                // Assume that the user is admin for other systems.
+                return true;
+        }
     }
 }

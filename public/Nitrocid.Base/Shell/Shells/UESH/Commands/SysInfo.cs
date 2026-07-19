@@ -26,7 +26,6 @@ using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Users.Login.Motd;
-using Nitrocid.Base.Users.Windows;
 using Nitrocid.Base.Kernel.Hardware;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
@@ -84,7 +83,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.Separator));
                 HardwareList.ListHardware();
 
-                if (!WindowsUserTools.IsAdministrator())
+                if (!KernelPlatform.IsCurrentWindowsUserAdmin())
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_NEEDSELEVATION"), true, ThemeColorType.Error);
                 else
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TIP"), true, ThemeColorType.Tip);

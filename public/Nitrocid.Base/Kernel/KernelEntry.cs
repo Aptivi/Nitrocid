@@ -33,7 +33,6 @@ using Nitrocid.Base.Shell.Homepage;
 using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Users.Login.Handlers;
 using Nitrocid.Base.Users.Login.Motd;
-using Nitrocid.Base.Users.Windows;
 using SpecProbe.Software.Platform;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
@@ -201,7 +200,7 @@ namespace Nitrocid.Base.Kernel
                 ConsoleWrapper.CursorVisible = true;
 
                 // Check to see if we're restarting Nitrocid with elevated permissions
-                if (PowerManager.elevating && PlatformHelper.IsOnWindows() && !WindowsUserTools.IsAdministrator())
+                if (PowerManager.elevating && PlatformHelper.IsOnWindows() && !KernelPlatform.IsCurrentWindowsUserAdmin())
                     PowerManager.ElevateSelf();
             }
         }
