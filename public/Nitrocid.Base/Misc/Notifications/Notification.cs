@@ -279,43 +279,20 @@ namespace Nitrocid.Base.Misc.Notifications
         /// </summary>
         /// <param name="other">Notification to compare</param>
         /// <returns>True if there is a match; false otherwise.</returns>
-        public bool Equals(Notification? other)
-        {
-            return
-                other is not null &&
-                Id == other.Id &&
-                Title == other.Title &&
-                Desc == other.Desc &&
-                Priority == other.Priority &&
-                Type == other.Type &&
-                CustomBeepTimes == other.CustomBeepTimes &&
-                CustomColor == other.CustomColor &&
-                CustomTitleColor == other.CustomTitleColor &&
-                CustomDescriptionColor == other.CustomDescriptionColor &&
-                CustomProgressColor == other.CustomProgressColor &&
-                CustomProgressFailureColor == other.CustomProgressFailureColor &&
-                CustomProgressSuccessColor == other.CustomProgressSuccessColor &&
-                CustomUpperLeftCornerChar == other.CustomUpperLeftCornerChar &&
-                CustomUpperRightCornerChar == other.CustomUpperRightCornerChar &&
-                CustomLowerLeftCornerChar == other.CustomLowerLeftCornerChar &&
-                CustomLowerRightCornerChar == other.CustomLowerRightCornerChar &&
-                CustomUpperFrameChar == other.CustomUpperFrameChar &&
-                CustomLowerFrameChar == other.CustomLowerFrameChar &&
-                CustomLeftFrameChar == other.CustomLeftFrameChar &&
-                CustomRightFrameChar == other.CustomRightFrameChar &&
-                NotificationBorderColor == other.NotificationBorderColor &&
-                ProgressIndeterminate == other.ProgressIndeterminate;
-        }
+        public bool Equals(Notification? other) =>
+            Equals(other, true);
 
         /// <summary>
         /// Checks to see if the notification matches another one
         /// </summary>
         /// <param name="other">Notification to compare</param>
+        /// <param name="withId">Whether to run comparison with ID or not</param>
         /// <returns>True if there is a match; false otherwise.</returns>
-        public bool EqualsNoId(Notification? other)
+        public bool Equals(Notification? other, bool withId)
         {
             return
                 other is not null &&
+                (!withId || Id == other.Id) &&
                 Title == other.Title &&
                 Desc == other.Desc &&
                 Priority == other.Priority &&

@@ -1,6 +1,6 @@
 # Maintainer: Aptivi <ceo at aptivi dot anonaddy dot com>
 pkgname=nitrocid-29
-pkgver=4.1.29.16+0.2.1.0~beta
+pkgver=4.1.29.17+0.2.1.0~beta
 pkgrel=1
 pkgdesc="Simulates our future-planned kernel"
 arch=('x86_64' 'aarch64')
