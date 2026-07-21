@@ -25,6 +25,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Time.Renderers;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
 {
@@ -50,8 +51,6 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
             var table = new Table()
             {
                 Rows = Rows,
-                Left = 4,
-                Top = 2,
                 Width = ConsoleWrapper.WindowWidth - 7,
                 Height = ConsoleWrapper.WindowHeight - 5,
                 Header = true,

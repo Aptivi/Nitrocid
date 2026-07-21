@@ -28,7 +28,7 @@
           changes!
         -->
         <NitrocidModAPIVersionMajor>4.0.28</NitrocidModAPIVersionMajor>
-        <NitrocidModAPIVersionChangeset>61</NitrocidModAPIVersionChangeset>
+        <NitrocidModAPIVersionChangeset>62</NitrocidModAPIVersionChangeset>
 
         <!-- The above two properties are to be installed to the file version -->
         <NitrocidModAPIVersion>$(NitrocidModAPIVersionMajor).$(NitrocidModAPIVersionChangeset)</NitrocidModAPIVersion>
@@ -74,7 +74,7 @@
 
     <!-- KS SourceLink -->
     <ItemGroup>
-        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.300" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.301" PrivateAssets="all" />
     </ItemGroup>
     <!-- KS SourceLink End -->
 
