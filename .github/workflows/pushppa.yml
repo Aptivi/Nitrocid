@@ -34,17 +34,18 @@ jobs:
         run: |
           UPSTREAM_VERSION=$(dpkg-parsechangelog -S Version | sed -E 's/-[^-]+$//')
           ORIG_NAME="nitrocid-28_${UPSTREAM_VERSION}.orig.tar"
+          mkdir -p dist
           mv debian ..
           mv .github ..
-          tar cfv "../${ORIG_NAME}" .
-          xz "../${ORIG_NAME}"
+          tar cfv "dist/${ORIG_NAME}" .
+          xz "dist/${ORIG_NAME}"
           mv ../debian .
           echo "orig-name=${ORIG_NAME}.xz" >> "$GITHUB_OUTPUT"
 
       - uses: actions/upload-artifact@v4
         with:
           name: orig-source
-          path: ../${{ steps.pack.outputs.orig-name }}
+          path: dist/${{ steps.pack.outputs.orig-name }}
           retention-days: 1
 
   build:
@@ -69,7 +70,10 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: orig-source
-          path: ..
+          path: dist
+
+      - name: Prepare the source
+        run: mv dist/*.orig.tar.xz ..
 
       - name: Import GPG
         uses: crazy-max/ghaction-import-gpg@v7

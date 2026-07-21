@@ -16,14 +16,15 @@ jobs:
         run: |
           UPSTREAM_VERSION=$(echo "$ORIG_VERSION" | sed -E 's/-[^-]+$//')
           ORIG_NAME="nitrocid-28_${UPSTREAM_VERSION}.orig.tar.xz"
-          wget --output-document="../${ORIG_NAME}" \
+          mkdir -p dist
+          wget --output-document="dist/${ORIG_NAME}" \
             "https://launchpad.net/~eofla/+archive/ubuntu/nitrocid/+sourcefiles/nitrocid-28/${ORIG_VERSION}/${ORIG_NAME}"
           echo "orig-name=${ORIG_NAME}" >> "$GITHUB_OUTPUT"
 
       - uses: actions/upload-artifact@v4
         with:
           name: orig-source
-          path: ../${{ steps.dl.outputs.orig-name }}
+          path: dist/${{ steps.dl.outputs.orig-name }}
           retention-days: 1
 
   build:
@@ -47,7 +48,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: orig-source
-          path: ..
+          path: dist
 
       - name: Changelog targeting ${{ matrix.distro }}
         env:
@@ -63,7 +64,8 @@ jobs:
 
       - name: Extract original source
         run: |
-          tar xf "../$(basename ../nitrocid-28_*.orig.tar.xz)" .
+          mv dist/*.orig.tar.xz ..
+          tar xf ../*.orig.tar.xz .
           mv .github ..
 
       - name: Build source package
