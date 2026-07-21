@@ -32,6 +32,7 @@ using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
@@ -84,7 +85,6 @@ namespace Nitrocid.Extras.Calendar.Calendar
             }
 
             // Populate the calendar data
-            KernelColorTools.LoadBackground();
             TextWriters.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), 1, true, KernelColorType.TableTitle);
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {
@@ -155,8 +155,6 @@ namespace Nitrocid.Extras.Calendar.Calendar
             var calendarTable = new Table()
             {
                 Rows = CalendarData,
-                Left = 2,
-                Top = 3,
                 Width = ConsoleWrapper.WindowWidth - 4,
                 Height = ConsoleWrapper.WindowHeight - 4,
                 Header = true,
