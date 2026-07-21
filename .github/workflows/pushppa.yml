@@ -23,6 +23,7 @@ jobs:
           sudo NEEDRESTART_SUSPEND=1 apt update
           sudo NEEDRESTART_SUSPEND=1 apt install devscripts build-essential equivs
           sudo NEEDRESTART_SUSPEND=1 mk-build-deps -i
+          rm *build-deps*
 
       - name: Initialize offline package
         run: |
@@ -34,17 +35,18 @@ jobs:
         run: |
           UPSTREAM_VERSION=$(dpkg-parsechangelog -S Version | sed -E 's/-[^-]+$//')
           ORIG_NAME="nitrocid-29_${UPSTREAM_VERSION}.orig.tar"
+          mkdir -p dist
           mv debian ..
           mv .github ..
-          tar cfv "../${ORIG_NAME}" .
-          xz "../${ORIG_NAME}"
+          tar cfv "dist/${ORIG_NAME}" .
+          xz "dist/${ORIG_NAME}"
           mv ../debian .
           echo "orig-name=${ORIG_NAME}.xz" >> "$GITHUB_OUTPUT"
 
       - uses: actions/upload-artifact@v4
         with:
           name: orig-source
-          path: ../${{ steps.pack.outputs.orig-name }}
+          path: dist/${{ steps.pack.outputs.orig-name }}
           retention-days: 1
 
   build:
@@ -69,7 +71,13 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: orig-source
-          path: ..
+          path: dist
+
+      - name: Prepare the source
+        run: |
+          mv dist/*.orig.tar.xz ..
+          tar xf ../*.orig.tar.xz .
+          mv .github ..
 
       - name: Import GPG
         uses: crazy-max/ghaction-import-gpg@v7
@@ -110,6 +118,7 @@ jobs:
           sudo NEEDRESTART_SUSPEND=1 apt update
           sudo NEEDRESTART_SUSPEND=1 apt install devscripts debhelper-compat dput build-essential equivs
           sudo NEEDRESTART_SUSPEND=1 mk-build-deps -i
+          rm *build-deps*
 
       - name: Changelog targeting ${{ matrix.distro }}
         env:
@@ -127,4 +136,6 @@ jobs:
         run: debuild -S -sa
 
       - name: Push to Launchpad
-        run: dput apt-ppa ../nitrocid-29_*_source.changes
+        run: |
+          cat ../nitrocid-29_*_source.changes
+          dput -d apt-ppa ../nitrocid-29_*_source.changes
