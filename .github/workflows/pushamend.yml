@@ -6,12 +6,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - distro: noble
+            series: "24.04"
+          - distro: resolute
+            series: "26.04"
+          - distro: stonking
+            series: "26.10"
 
     steps:
       - uses: actions/checkout@v6
         with:
           submodules: 'true'
-      
+
       - name: Import GPG
         uses: crazy-max/ghaction-import-gpg@v7
         with:
@@ -32,7 +42,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.APT_SSH_PRIV }}
           SSH_KNOWN_HOSTS: ${{ secrets.APT_KNOWN_HOST_FOR_UBUNTU_PPA }}
-       
+
       - name: Configure Launchpad PPA
         run: |
           cat > ~/.dput.cf << EOF
@@ -52,15 +62,31 @@ jobs:
           sudo NEEDRESTART_SUSPEND=1 apt install devscripts debhelper-compat dput build-essential equivs
           sudo NEEDRESTART_SUSPEND=1 mk-build-deps -i
           rm *build-deps*
-        
-      - name: Download original source
+
+      - name: Changelog targeting ${{ matrix.distro }}
+        env:
+          DEBEMAIL: "ceo@aptivi.anonaddy.com"
+          DEBFULLNAME: "Aptivi CEO"
         run: |
-          wget --output-document=../nitrocid-29_4.1.29.17-0.2.1.0~beta.orig.tar.xz https://launchpad.net/~eofla/+archive/ubuntu/nitrocid/+sourcefiles/nitrocid-29/4.1.29.17-0.2.1.0~beta-1/nitrocid-29_4.1.29.17-0.2.1.0~beta.orig.tar.xz
-          tar xf ../nitrocid-29_4.1.29.17-0.2.1.0~beta.orig.tar.xz .
+          BASE_VERSION=$(dpkg-parsechangelog -S Version)
+          NEW_VERSION="${BASE_VERSION}~${{ matrix.series }}.1"
+          dch --newversion "$NEW_VERSION" \
+              --distribution "${{ matrix.distro }}" \
+              --force-distribution -b \
+              "Rebuild for Ubuntu ${{ matrix.series }} (${{ matrix.distro }})"
+
+      - name: Download original source
+        env:
+          ORIG_VERSION: "4.1.29.17-0.2.1.0~beta-1"
+        run: |
+          UPSTREAM_VERSION=$(echo "$ORIG_VERSION" | sed -E 's/-[^-]+$//')
+          wget --output-document="../nitrocid-29_${UPSTREAM_VERSION}.orig.tar.xz" \
+            "https://launchpad.net/~eofla/+archive/ubuntu/nitrocid/+sourcefiles/nitrocid-29/${ORIG_VERSION}/nitrocid-29_${UPSTREAM_VERSION}.orig.tar.xz"
+          tar xf "../nitrocid-29_${UPSTREAM_VERSION}.orig.tar.xz" .
           mv .github ..
 
       - name: Build source package
         run: debuild -S
-        
+
       - name: Push to Launchpad
         run: dput apt-ppa ../nitrocid-29_*_source.changes
