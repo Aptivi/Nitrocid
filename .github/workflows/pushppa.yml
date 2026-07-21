@@ -23,6 +23,7 @@ jobs:
           sudo NEEDRESTART_SUSPEND=1 apt update
           sudo NEEDRESTART_SUSPEND=1 apt install devscripts build-essential equivs
           sudo NEEDRESTART_SUSPEND=1 mk-build-deps -i
+          rm *build-deps*
 
       - name: Initialize offline package
         run: |
@@ -73,7 +74,9 @@ jobs:
           path: dist
 
       - name: Prepare the source
-        run: mv dist/*.orig.tar.xz ..
+        run: |
+          mv dist/*.orig.tar.xz ..
+          tar xf ../*.orig.tar.xz .
 
       - name: Import GPG
         uses: crazy-max/ghaction-import-gpg@v7
@@ -114,6 +117,7 @@ jobs:
           sudo NEEDRESTART_SUSPEND=1 apt update
           sudo NEEDRESTART_SUSPEND=1 apt install devscripts debhelper-compat dput build-essential equivs
           sudo NEEDRESTART_SUSPEND=1 mk-build-deps -i
+          rm *build-deps*
 
       - name: Changelog targeting ${{ matrix.distro }}
         env:
