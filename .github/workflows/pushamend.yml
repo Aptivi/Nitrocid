@@ -77,7 +77,7 @@ jobs:
 
       - name: Download original source
         env:
-          ORIG_VERSION: "3.0.25.592-0.1.0.83-1"
+          ORIG_VERSION: "3.0.25.593-0.1.0.83-1"
         run: |
           UPSTREAM_VERSION=$(echo "$ORIG_VERSION" | sed -E 's/-[^-]+$//')
           wget --output-document="../nitrocid-25_${UPSTREAM_VERSION}.orig.tar.xz" \

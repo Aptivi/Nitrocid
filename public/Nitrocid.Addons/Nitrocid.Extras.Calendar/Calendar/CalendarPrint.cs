@@ -41,89 +41,87 @@ namespace Nitrocid.Extras.Calendar.Calendar
     /// </summary>
     public static class CalendarPrint
     {
+        internal const int calendarWidth = 5 + (6 * 6);
+        internal const int calendarHeight = 7;
 
         /// <summary>
         /// Prints the table of the calendar
         /// </summary>
         public static void PrintCalendar() =>
-            PrintCalendar(DateTime.Today.Year, DateTime.Today.Month);
+            PrintCalendar(TimeDateTools.KernelDateTime.Year, TimeDateTools.KernelDateTime.Month, CalendarTypes.Variant);
 
         /// <summary>
         /// Prints the table of the calendar
         /// </summary>
+        /// <param name="calendar">Calendar type</param>
         public static void PrintCalendar(CalendarTypes calendar) =>
-            PrintCalendar(DateTime.Today.Year, DateTime.Today.Month, calendar);
+            PrintCalendar(TimeDateTools.KernelDateTime.Year, TimeDateTools.KernelDateTime.Month, calendar);
 
         /// <summary>
         /// Prints the table of the calendar
         /// </summary>
-        public static void PrintCalendar(int Year, int Month, CalendarTypes calendar = CalendarTypes.Variant)
+        /// <param name="calendar">Calendar instance</param>
+        public static void PrintCalendar(BaseCalendar calendar) =>
+            PrintCalendar(TimeDateTools.KernelDateTime.Year, TimeDateTools.KernelDateTime.Month, calendar);
+
+        /// <summary>
+        /// Prints the table of the calendar
+        /// </summary>
+        /// <param name="Year">Year to use</param>
+        /// <param name="Month">Month to use</param>
+        /// <param name="calendar">Calendar type</param>
+        public static void PrintCalendar(int Year, int Month, CalendarTypes calendar)
+        {
+            // Render the calendar
+            var calendarInstance = CalendarTools.GetCalendar(calendar);
+            PrintCalendar(Year, Month, calendarInstance);
+        }
+
+        /// <summary>
+        /// Prints the table of the calendar
+        /// </summary>
+        /// <param name="Year">Year to use</param>
+        /// <param name="Month">Month to use</param>
+        /// <param name="calendar">Calendar instance</param>
+        public static void PrintCalendar(int Year, int Month, BaseCalendar calendar)
+        {
+            // Render the calendar
+            var calendars = RenderCalendar(Year, Month, calendar);
+            TextWriterRaw.WritePlain(calendars.Render());
+        }
+
+        internal static Calendars RenderCalendar() =>
+            RenderCalendar(TimeDateTools.KernelDateTime.Year, TimeDateTools.KernelDateTime.Month, CalendarTypes.Variant);
+
+        internal static Calendars RenderCalendar(CalendarTypes calendar) =>
+            RenderCalendar(TimeDateTools.KernelDateTime.Year, TimeDateTools.KernelDateTime.Month, calendar);
+
+        internal static Calendars RenderCalendar(BaseCalendar calendar) =>
+            RenderCalendar(TimeDateTools.KernelDateTime.Year, TimeDateTools.KernelDateTime.Month, calendar);
+
+        internal static Calendars RenderCalendar(int Year, int Month, CalendarTypes calendar)
         {
             var calendarInstance = CalendarTools.GetCalendar(calendar);
-            var CalendarDays = calendarInstance.Culture.DateTimeFormat.DayNames;
-            var CalendarMonths = calendarInstance.Culture.DateTimeFormat.MonthNames;
-            var CalendarWeek = calendarInstance.Culture.DateTimeFormat.FirstDayOfWeek;
-            var CalendarData = new TableCellOptions[7, CalendarDays.Length];
-            var maxDate = calendarInstance.Calendar.GetDaysInMonth(Year, Month);
-            var selectedDate = new DateTime(Year, Month, TimeDateTools.KernelDateTime.Day > maxDate ? 1 : TimeDateTools.KernelDateTime.Day);
-            var (year, month, _, _) = TimeDateConverters.GetDateFromCalendar(selectedDate, calendar);
-            var DateTo = new DateTime(year, month, calendarInstance.Calendar.GetDaysInMonth(year, month));
-            int CurrentWeek = 1;
-            string CalendarTitle = CalendarMonths[month - 1] + " " + year;
+            return RenderCalendar(Year, Month, calendarInstance);
+        }
 
-            // Re-arrange the days according to the first day of week
-            Dictionary<DayOfWeek, int> mappedDays = [];
-            int dayOfWeek = (int)CalendarWeek;
-            for (int i = 0; i < CalendarDays.Length; i++)
+        internal static Calendars RenderCalendar(int Year, int Month, BaseCalendar calendar)
+        {
+            var maxDate = DateTime.DaysInMonth(Year, Month);
+
+            // List events and reminders
+            var events = new List<DateTime>();
+            var reminders = new List<DateTime>();
+            for (int currentDay = 1; currentDay <= maxDate; currentDay++)
             {
-                var day = (DayOfWeek)dayOfWeek;
-                mappedDays.Add(day, i);
-                dayOfWeek++;
-                if (dayOfWeek > 6)
-                    dayOfWeek = 0;
-                CalendarData[0, i] = new($"{day}");
-            }
-
-            // Populate the calendar data
-            TextWriters.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), 1, true, KernelColorType.TableTitle);
-            for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
-            {
-                var CurrentDate = new DateTime(year, month, CurrentDay);
-                if (CurrentDate.DayOfWeek == CalendarWeek)
-                    CurrentWeek += 1;
-                int CurrentWeekIndex = CurrentWeek - 1;
-                int currentDay = mappedDays[CurrentDate.DayOfWeek] + 1;
-                string CurrentDayMark;
-                bool ReminderMarked = false;
-                bool EventMarked = false;
-                bool IsWeekend = currentDay > 5;
-                bool IsToday = CurrentDate == TimeDateTools.KernelDateTime.Date;
-                CalendarData[CurrentWeekIndex + 1, currentDay - 1] = new($"{CurrentDay}");
-
-                // Dim out the weekends
-                if (IsWeekend)
-                {
-                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].ColoredCell = true;
-                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellColor = KernelColorTools.GetColor(KernelColorType.WeekendDay);
-                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background);
-                }
-
-                // Highlight today
-                if (IsToday)
-                {
-                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].ColoredCell = true;
-                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellColor = KernelColorTools.GetColor(KernelColorType.TodayDay);
-                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background);
-                }
+                var currentDate = new DateTime(Year, Month, currentDay);
 
                 // Know where and how to put the day number
                 foreach (ReminderInfo Reminder in ReminderManager.Reminders)
                 {
                     var rDate = Reminder.ReminderDate.Date;
-                    var (rYear, rMonth, rDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(rDate.Year, rDate.Month, rDate.Day), calendar);
-                    rDate = new(rYear, rMonth, rDay);
-                    if (rDate == CurrentDate & !ReminderMarked)
-                        ReminderMarked = true;
+                    if (rDate == currentDate)
+                        reminders.Add(rDate);
                 }
                 foreach (EventInfo EventInstance in EventManager.CalendarEvents.Union(EventManager.baseEvents))
                 {
@@ -131,36 +129,23 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     var nDate = EventInstance.EventDate.Date;
                     var sDate = EventInstance.Start.Date;
                     var eDate = EventInstance.End.Date;
-                    var (nYear, nMonth, nDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(nDate.Year, nDate.Month, nDate.Day), calendar);
-                    var (sYear, sMonth, sDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(sDate.Year, sDate.Month, sDate.Day), calendar);
-                    var (eYear, eMonth, eDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(eDate.Year, eDate.Month, eDate.Day), calendar);
-                    nDate = new(nYear, nMonth, nDay);
-                    sDate = new(sYear, sMonth, sDay);
-                    eDate = new(eYear, eMonth, eDay);
-                    if (((EventInstance.IsYearly && CurrentDate >= sDate && CurrentDate <= eDate) ||
-                         (!EventInstance.IsYearly && CurrentDate == nDate)) && !EventMarked)
-                    {
-                        CalendarData[CurrentWeekIndex + 1, currentDay - 1].ColoredCell = true;
-                        CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellColor = KernelColorTools.GetColor(KernelColorType.EventDay);
-                        CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background);
-                        EventMarked = true;
-                    }
+                    if (EventInstance.IsYearly && currentDate >= sDate && currentDate <= eDate)
+                        events.Add(currentDate);
+                    else if (!EventInstance.IsYearly && currentDate == nDate)
+                        events.Add(nDate);
                 }
-                string markStart = ReminderMarked && EventMarked ? "[" : ReminderMarked ? "(" : EventMarked ? "<" : " ";
-                string markEnd = ReminderMarked && EventMarked ? "]" : ReminderMarked ? ")" : EventMarked ? ">" : " ";
-                CurrentDayMark = $"{markStart}{CurrentDay}{markEnd}";
-                CalendarData[CurrentWeekIndex + 1, currentDay - 1].Value = CurrentDayMark;
             }
 
-            var calendarTable = new Table()
+            // Render the calendar
+            var calendars = new Calendars()
             {
-                Rows = CalendarData,
-                Width = ConsoleWrapper.WindowWidth - 4,
-                Height = ConsoleWrapper.WindowHeight - 4,
-                Header = true,
+                Year = Year,
+                Month = Month,
+                EventDates = [.. events],
+                ReminderDates = [.. reminders],
+                Culture = calendar.Culture,
             };
-            TextWriterRaw.WriteRaw(calendarTable.Render());
+            return calendars;
         }
-
     }
 }

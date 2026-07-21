@@ -215,22 +215,12 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 string CalendarTitle = CalendarMonths[month - 1] + " " + year;
                 var boxForeground = KernelColorTools.GetColor(KernelColorType.NeutralText);
                 var background = KernelColorTools.GetColor(KernelColorType.Background);
-                var calendar = new FullCalendar()
-                {
-                    Left = 4,
-                    Top = 3,
-                    Year = state.Year,
-                    Month = state.Month,
-                    ForegroundColor = boxForeground,
-                    BackgroundColor = background,
-                    HighlightToday = false,
-                    HighlightedDay = new(state.Year, state.Month, state.Day),
-                    TodayColor = KernelColorTools.GetColor(KernelColorType.TodayDay),
-                    WeekendColor = KernelColorTools.GetColor(KernelColorType.WeekendDay),
-                    HeaderColor = KernelColorTools.GetColor(KernelColorType.TuiForeground),
-                    Culture = calendarInstance.Culture,
-                };
-                builder.Append(calendar.Render());
+                var calendar = CalendarPrint.RenderCalendar(state.Year, state.Month, state.calendar);
+                calendar.HighlightToday = false;
+                calendar.HighlightedDay = new(state.Year, state.Month, state.Day);
+                calendar.Width = CalendarPrint.calendarWidth;
+                calendar.Height = CalendarPrint.calendarHeight;
+                builder.Append(RendererTools.RenderRenderable(calendar, new(4, 3)));
 
                 // Write the side box representing the list of events
                 int eventBoxLeft = 4 + (6 * 7) + 2;
