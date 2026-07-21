@@ -49,6 +49,12 @@ jobs:
         with:
           name: orig-source
           path: dist
+          
+      - name: Prepare the source
+        run: |
+          mv dist/*.orig.tar.xz ..
+          tar xf ../*.orig.tar.xz .
+          mv .github ..
       
       - name: Install required packages
         run: |
@@ -70,12 +76,6 @@ jobs:
               --distribution "${{ matrix.distro }}" \
               --force-distribution -b \
               "Rebuild for Ubuntu ${{ matrix.series }} (${{ matrix.distro }})"
-
-      - name: Extract original source
-        run: |
-          mv dist/*.orig.tar.xz ..
-          tar xf ../*.orig.tar.xz .
-          mv .github ..
 
       - name: Build source package
         run: debuild -S
