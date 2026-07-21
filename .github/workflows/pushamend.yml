@@ -4,7 +4,30 @@ on:
   workflow_dispatch:
 
 jobs:
+  prepare:
+    runs-on: ubuntu-24.04
+    outputs:
+      orig-name: ${{ steps.dl.outputs.orig-name }}
+    steps:
+      - name: Download original source
+        id: dl
+        env:
+          ORIG_VERSION: "4.1.29.17-0.2.1.0~beta-1"
+        run: |
+          UPSTREAM_VERSION=$(echo "$ORIG_VERSION" | sed -E 's/-[^-]+$//')
+          ORIG_NAME="nitrocid-29_${UPSTREAM_VERSION}.orig.tar.xz"
+          wget --output-document="../${ORIG_NAME}" \
+            "https://launchpad.net/~eofla/+archive/ubuntu/nitrocid/+sourcefiles/nitrocid-29/${ORIG_VERSION}/${ORIG_NAME}"
+          echo "orig-name=${ORIG_NAME}" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: orig-source
+          path: ../${{ steps.dl.outputs.orig-name }}
+          retention-days: 1
+
   build:
+    needs: prepare
     runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
@@ -16,52 +39,15 @@ jobs:
             series: "26.04"
           - distro: stonking
             series: "26.10"
-
     steps:
       - uses: actions/checkout@v6
         with:
           submodules: 'true'
 
-      - name: Import GPG
-        uses: crazy-max/ghaction-import-gpg@v7
+      - uses: actions/download-artifact@v4
         with:
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-          passphrase: ${{ secrets.PASSPHRASE }}
-
-      - name: Import SSH
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/private.key
-          sudo chmod 600 ~/.ssh/private.key
-          echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-          cat > ~/.ssh/config << EOF
-          Host ppa.launchpad.net
-            IdentityFile ~/.ssh/private.key
-            User eofla
-          EOF
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.APT_SSH_PRIV }}
-          SSH_KNOWN_HOSTS: ${{ secrets.APT_KNOWN_HOST_FOR_UBUNTU_PPA }}
-
-      - name: Configure Launchpad PPA
-        run: |
-          cat > ~/.dput.cf << EOF
-          [apt-ppa]
-          fqdn = ppa.launchpad.net
-          method = sftp
-          incoming = ~eofla/ubuntu/nitrocid/
-          login = eofla
-          allow_unsigned_uploads = 0
-          EOF
-
-      - name: Install required packages
-        run: |
-          sudo rm /etc/apt/sources.list.d/microsoft-prod.list
-          sudo add-apt-repository -y ppa:eofla/adt
-          sudo NEEDRESTART_SUSPEND=1 apt update
-          sudo NEEDRESTART_SUSPEND=1 apt install devscripts debhelper-compat dput build-essential equivs
-          sudo NEEDRESTART_SUSPEND=1 mk-build-deps -i
-          rm *build-deps*
+          name: orig-source
+          path: ..
 
       - name: Changelog targeting ${{ matrix.distro }}
         env:
@@ -75,14 +61,9 @@ jobs:
               --force-distribution -b \
               "Rebuild for Ubuntu ${{ matrix.series }} (${{ matrix.distro }})"
 
-      - name: Download original source
-        env:
-          ORIG_VERSION: "4.1.29.17-0.2.1.0~beta-1"
+      - name: Extract original source
         run: |
-          UPSTREAM_VERSION=$(echo "$ORIG_VERSION" | sed -E 's/-[^-]+$//')
-          wget --output-document="../nitrocid-29_${UPSTREAM_VERSION}.orig.tar.xz" \
-            "https://launchpad.net/~eofla/+archive/ubuntu/nitrocid/+sourcefiles/nitrocid-29/${ORIG_VERSION}/nitrocid-29_${UPSTREAM_VERSION}.orig.tar.xz"
-          tar xf "../nitrocid-29_${UPSTREAM_VERSION}.orig.tar.xz" .
+          tar xf "../$(basename ../nitrocid-29_*.orig.tar.xz)" .
           mv .github ..
 
       - name: Build source package
