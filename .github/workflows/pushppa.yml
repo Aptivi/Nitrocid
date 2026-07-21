@@ -136,4 +136,6 @@ jobs:
         run: debuild -S -sa
 
       - name: Push to Launchpad
-        run: dput apt-ppa ../nitrocid-28_*_source.changes
+        run: |
+          cat ../nitrocid-28_*_source.changes
+          dput -d apt-ppa ../nitrocid-28_*_source.changes
