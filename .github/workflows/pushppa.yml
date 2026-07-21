@@ -79,7 +79,7 @@ jobs:
           NEW_VERSION="${BASE_VERSION}~${{ matrix.series }}.1"
           dch --newversion "$NEW_VERSION" \
               --distribution "${{ matrix.distro }}" \
-              --force-distribution \
+              --force-distribution -b \
               "Rebuild for Ubuntu ${{ matrix.series }} (${{ matrix.distro }})"
           echo "PKG_VERSION=$NEW_VERSION" >> "$GITHUB_ENV"
 
