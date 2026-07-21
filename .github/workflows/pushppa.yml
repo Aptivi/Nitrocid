@@ -9,18 +9,28 @@ on:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - distro: noble
+            series: "24.04"
+          - distro: resolute
+            series: "26.04"
+          - distro: stonking
+            series: "26.10"
 
     steps:
       - uses: actions/checkout@v6
         with:
           submodules: 'true'
-      
+
       - name: Import GPG
         uses: crazy-max/ghaction-import-gpg@v7
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
-      
+
       - name: Import SSH
         run: |
           mkdir -p ~/.ssh/
@@ -35,7 +45,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.APT_SSH_PRIV }}
           SSH_KNOWN_HOSTS: ${{ secrets.APT_KNOWN_HOST_FOR_UBUNTU_PPA }}
-      
+
       - name: Configure Launchpad PPA
         run: |
           cat > ~/.dput.cf << EOF
@@ -54,22 +64,36 @@ jobs:
           sudo NEEDRESTART_SUSPEND=1 apt update
           sudo NEEDRESTART_SUSPEND=1 apt install devscripts debhelper-compat dput build-essential equivs
           sudo NEEDRESTART_SUSPEND=1 mk-build-deps -i
-          
+
       - name: Initialize offline package
         run: |
           make init-offline
           make clean
-        
+
+      - name: Changelog targeting ${{ matrix.distro }}
+        env:
+          DEBEMAIL: "ceo@aptivi.anonaddy.com"
+          DEBFULLNAME: "Aptivi CEO"
+        run: |
+          BASE_VERSION=$(dpkg-parsechangelog -S Version)
+          NEW_VERSION="${BASE_VERSION}~${{ matrix.series }}.1"
+          dch --newversion "$NEW_VERSION" \
+              --distribution "${{ matrix.distro }}" \
+              --force-distribution \
+              "Rebuild for Ubuntu ${{ matrix.series }} (${{ matrix.distro }})"
+          echo "PKG_VERSION=$NEW_VERSION" >> "$GITHUB_ENV"
+
       - name: Make original package
         run: |
+          UPSTREAM_VERSION=$(dpkg-parsechangelog -S Version | sed -E 's/-[^-]+$//')
           mv debian ..
           mv .github ..
-          tar cfv ../nitrocid-25_3.0.25.591-0.1.0.82.orig.tar .
-          xz ../nitrocid-25_3.0.25.591-0.1.0.82.orig.tar
+          tar cfv "../nitrocid-25_${UPSTREAM_VERSION}.orig.tar" .
+          xz "../nitrocid-25_${UPSTREAM_VERSION}.orig.tar"
           mv ../debian .
 
       - name: Build source package
         run: debuild -S -sa
-        
+
       - name: Push to Launchpad
         run: dput apt-ppa ../nitrocid-25_*_source.changes
