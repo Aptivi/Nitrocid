@@ -173,7 +173,7 @@
     },
     {
       "loc": "NKS_MODS_MODNEEDSAPIEXACT",
-      "text": "Mod {0} erfordert genau eine API-Version {1}, aber Sie haben Version {2}. Ein Upgrade von Nitrocid KS und/oder der Mod hilft normalerweise. Mod-Parsing ist fehlgeschlagen."
+      "text": "Mod {0} erfordert genau eine API-Version {1}, aber Sie haben Version {2}. Ein Upgrade von Nitrocid und/oder der Mod hilft normalerweise. Mod-Parsing ist fehlgeschlagen."
     },
     {
       "loc": "NKS_MODS_MODHASNOAPIVERSION",

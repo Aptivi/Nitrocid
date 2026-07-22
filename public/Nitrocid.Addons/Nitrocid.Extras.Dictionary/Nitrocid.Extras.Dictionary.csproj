@@ -10,8 +10,8 @@
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Extras - Dictionary</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Dictionary</AssemblyTitle>
+    <Description>Nitrocid Extras - Dictionary</Description>
+    <AssemblyTitle>Nitrocid Extras - Dictionary</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- Extras.Dictionary addon General Information End -->

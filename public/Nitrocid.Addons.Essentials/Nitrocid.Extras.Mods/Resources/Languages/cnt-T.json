@@ -167,7 +167,7 @@
     },
     {
       "loc": "NKS_MODS_MODNEEDSAPIEXACT",
-      "text": "Mod {0} 完全需要 API 版本 {1}，但您擁有版本 {2}。升級 Nitrocid KS 和/或 mod 通常會有所幫助。Mod 解析失敗。"
+      "text": "Mod {0} 完全需要 API 版本 {1}，但您擁有版本 {2}。升級 Nitrocid 和/或 mod 通常會有所幫助。Mod 解析失敗。"
     },
     {
       "loc": "NKS_MODS_MODHASNOAPIVERSION",

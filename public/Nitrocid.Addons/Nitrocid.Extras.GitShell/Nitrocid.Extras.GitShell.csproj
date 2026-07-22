@@ -10,8 +10,8 @@
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Extras - Git Shell</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Git Shell</AssemblyTitle>
+    <Description>Nitrocid Extras - Git Shell</Description>
+    <AssemblyTitle>Nitrocid Extras - Git Shell</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>

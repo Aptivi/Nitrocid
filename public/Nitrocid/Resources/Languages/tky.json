@@ -2257,15 +2257,15 @@
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1",
-      "text": "Nitrocid KS şu anda genel iyileştirmeler ve hata düzeltmeleri içeren en son sürümü almak için kendini güncelliyor. Yeni büyük sürümler genellikle bozucu değişiklikler ve yeni heyecan verici özellikler içerir."
+      "text": "Nitrocid şu anda genel iyileştirmeler ve hata düzeltmeleri içeren en son sürümü almak için kendini güncelliyor. Yeni büyük sürümler genellikle bozucu değişiklikler ve yeni heyecan verici özellikler içerir."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT",
-      "text": "Nitrocid KS'nin güncellemeleri otomatik olarak kontrol etmesini ister misiniz?"
+      "text": "Nitrocid'nin güncellemeleri otomatik olarak kontrol etmesini ister misiniz?"
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2",
-      "text": "Nitrocid KS güncellemeleri otomatik olarak kontrol etmesinin yanı sıra güncelleme dosyasını da otomatik olarak indirebiliyor."
+      "text": "Nitrocid güncellemeleri otomatik olarak kontrol etmesinin yanı sıra güncelleme dosyasını da otomatik olarak indirebiliyor."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3",
@@ -2917,7 +2917,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED",
-      "text": "Çekirdek belirtilen modu yüklemeye çalıştığında, \"Kernel Simulator\" yüklemeyi talep etti. Ana uygulama Nitrocid KS olarak yeniden adlandırıldığından, bu mod güvenli bir şekilde çalıştırılamaz. Modu yükseltmenizi öneririz."
+      "text": "Çekirdek belirtilen modu yüklemeye çalıştığında, \"Kernel Simulator\" yüklemeyi talep etti. Ana uygulama Nitrocid olarak yeniden adlandırıldığından, bu mod güvenli bir şekilde çalıştırılamaz. Modu yükseltmenizi öneririz."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS",
@@ -3993,7 +3993,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
-      "text": "Nitrocid KS'yi alışılmadık bir ortamda çalıştırmanın bazı özelliklerin sınırlı olduğu anlamına geldiğini lütfen unutmayın. Modları ve yapılandırmaları yükleyemezsiniz."
+      "text": "Nitrocid'yi alışılmadık bir ortamda çalıştırmanın bazı özelliklerin sınırlı olduğu anlamına geldiğini lütfen unutmayın. Modları ve yapılandırmaları yükleyemezsiniz."
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_TITLE",
@@ -6529,7 +6529,7 @@
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_DESC",
-      "text": "Nitrocid KS gelecekteki çekirdeğimiz olan Nitrocid Kernel'i simüle eder."
+      "text": "Nitrocid gelecekteki çekirdeğimiz olan Nitrocid Kernel'i simüle eder."
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_MODAPI",
@@ -6553,7 +6553,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
-      "text": "Nitrocid KS'yi alışılmadık bir ortamda çalıştırıyorsunuz. Lütfen çekirdeği doğrudan başlattığınızdan emin olun. Çekirdeği olağan bir şekilde başlattığınızdan eminseniz, bunun nedeni desteklenmeyen bir Nitrocid KS sürümü çalıştırıyor olmanız olabilir."
+      "text": "Nitrocid'yi alışılmadık bir ortamda çalıştırıyorsunuz. Lütfen çekirdeği doğrudan başlattığınızdan emin olun. Çekirdeği olağan bir şekilde başlattığınızdan eminseniz, bunun nedeni desteklenmeyen bir Nitrocid sürümü çalıştırıyor olmanız olabilir."
     },
     {
       "loc": "NKS_KERNEL_STARTING_BOOTLOADER_ERROR",
@@ -7313,7 +7313,7 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC",
-      "text": "Nitrocid KS'yi başlatmadan önce ekranda bulunan ana tamponu gösterir (sadece Unix sistemleri)"
+      "text": "Nitrocid'yi başlatmadan önce ekranda bulunan ana tamponu gösterir (sadece Unix sistemleri)"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED",
@@ -7453,7 +7453,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLWARNING",
-      "text": "Bu tarihten sonra Nitrocid KS'nin bu sürümünü desteklemeyeceğiz"
+      "text": "Bu tarihten sonra Nitrocid'nin bu sürümünü desteklemeyeceğiz"
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLTIP",
@@ -7461,7 +7461,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOL",
-      "text": "Nitrocid KS'nin bu sürümü artık desteklenmiyor."
+      "text": "Nitrocid'nin bu sürümü artık desteklenmiyor."
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
@@ -8137,11 +8137,11 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC",
-      "text": "Nitrocid KS'yi çalıştıran ana bilgisayar adı"
+      "text": "Nitrocid'yi çalıştıran ana bilgisayar adı"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC",
-      "text": "Uzak hedefte Nitrocid KS Limanı"
+      "text": "Uzak hedefte Nitrocid Limanı"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC",
@@ -8829,7 +8829,7 @@
     },
     {
       "loc": "NKS_KERNEL_FATALERROR",
-      "text": "Nitrocid KS bir sorun tespit etti ve kapatıldı."
+      "text": "Nitrocid bir sorun tespit etti ve kapatıldı."
     },
     {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_INVALIDTEMPLATE",
@@ -9049,7 +9049,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLE",
-      "text": "Olağanüstü konsol tespit edildi. Nitrocid KS çalışmaya devam edemez çünkü konsolunuz gereksinimlerimizle uyumlu değil."
+      "text": "Olağanüstü konsol tespit edildi. Nitrocid çalışmaya devam edemez çünkü konsolunuz gereksinimlerimizle uyumlu değil."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",

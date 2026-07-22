@@ -2362,15 +2362,15 @@
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1",
-      "text": "Nitrocid KS currently updates itself to get the most recent version that includes general improvements and bug fixes. New major versions usually include breaking changes and new exciting features."
+      "text": "Nitrocid currently updates itself to get the most recent version that includes general improvements and bug fixes. New major versions usually include breaking changes and new exciting features."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT",
-      "text": "Do you want Nitrocid KS to automatically check for updates?"
+      "text": "Do you want Nitrocid to automatically check for updates?"
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2",
-      "text": "In addition to automatically checking for updates, Nitrocid KS can also download the update file automatically."
+      "text": "In addition to automatically checking for updates, Nitrocid can also download the update file automatically."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3",
@@ -3022,7 +3022,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED",
-      "text": "When the kernel tried to load the specified mod, it requested loading \"Kernel Simulator\". Since the main application is renamed to Nitrocid KS, this mod can't be run safely. We advice you to upgrade the mod."
+      "text": "When the kernel tried to load the specified mod, it requested loading \"Kernel Simulator\". Since the main application is renamed to Nitrocid, this mod can't be run safely. We advice you to upgrade the mod."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS",
@@ -4098,7 +4098,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
-      "text": "Please note that running Nitrocid KS on an unusual environment means that some features are limited. You won't be able to load mods and configurations."
+      "text": "Please note that running Nitrocid on an unusual environment means that some features are limited. You won't be able to load mods and configurations."
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_TITLE",
@@ -6634,7 +6634,7 @@
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_DESC",
-      "text": "Nitrocid KS simulates our future kernel, the Nitrocid Kernel."
+      "text": "Nitrocid simulates our future kernel, the Nitrocid Kernel."
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_MODAPI",
@@ -6658,7 +6658,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
-      "text": "You're running Nitrocid KS on an unusual environment. Please verify that you've started the kernel directly. If you're sure that you've started the kernel in a usual way, it might be because you're running an unsupported version of Nitrocid KS."
+      "text": "You're running Nitrocid on an unusual environment. Please verify that you've started the kernel directly. If you're sure that you've started the kernel in a usual way, it might be because you're running an unsupported version of Nitrocid."
     },
     {
       "loc": "NKS_KERNEL_STARTING_BOOTLOADER_ERROR",
@@ -7418,7 +7418,7 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC",
-      "text": "Shows the main buffer that was on the screen before starting Nitrocid KS (Unix systems only)"
+      "text": "Shows the main buffer that was on the screen before starting Nitrocid (Unix systems only)"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED",
@@ -7558,7 +7558,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLWARNING",
-      "text": "We'll no longer support this version of Nitrocid KS after this date"
+      "text": "We'll no longer support this version of Nitrocid after this date"
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLTIP",
@@ -7566,7 +7566,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOL",
-      "text": "This version of Nitrocid KS is no longer supported."
+      "text": "This version of Nitrocid is no longer supported."
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
@@ -8242,11 +8242,11 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC",
-      "text": "Host name that runs Nitrocid KS"
+      "text": "Host name that runs Nitrocid"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC",
-      "text": "Port of Nitrocid KS on the remote target"
+      "text": "Port of Nitrocid on the remote target"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC",
@@ -8922,7 +8922,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
-      "text": "Nitrocid KS"
+      "text": "Nitrocid"
     },
     {
       "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
@@ -8934,7 +8934,7 @@
     },
     {
       "loc": "NKS_KERNEL_FATALERROR",
-      "text": "Nitrocid KS has detected a problem and it has been shut down."
+      "text": "Nitrocid has detected a problem and it has been shut down."
     },
     {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_INVALIDTEMPLATE",
@@ -9154,7 +9154,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLE",
-      "text": "Insane console has been detected. Nitrocid KS can't continue running, because your console is incompatible with our requirements."
+      "text": "Insane console has been detected. Nitrocid can't continue running, because your console is incompatible with our requirements."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",

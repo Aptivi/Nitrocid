@@ -1,14 +1,14 @@
 ﻿//
-// Nitrocid KS  Copyright (C) 2018-2026  Aptivi
+// Nitrocid  Copyright (C) 2018-2026  Aptivi
 //
-// This file is part of Nitrocid KS
+// This file is part of Nitrocid
 //
-// Nitrocid KS is free software: you can redistribute it and/or modify
+// Nitrocid is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Nitrocid KS is distributed in the hope that it will be useful,
+// Nitrocid is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY, without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
@@ -41,7 +41,7 @@ namespace Nitrocid.SplashPacks.Splashes
         private Color _currentColor = Color.Empty;
         private bool _inited = false;
         private readonly int _faderDelay = 50;
-        private readonly string _faderWrite = "Nitrocid KS";
+        private readonly string _faderWrite = "Nitrocid";
         private readonly int _faderMaxSteps = 25;
         private readonly int _faderMinimumRedColorLevel = 0;
         private readonly int _faderMinimumGreenColorLevel = 0;

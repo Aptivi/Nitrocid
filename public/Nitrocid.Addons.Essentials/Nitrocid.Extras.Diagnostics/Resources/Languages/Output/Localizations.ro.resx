@@ -68,6 +68,6 @@
     <value>Informații de urmărire a stivei de fire pentru {0}</value>
   </data>
   <data name="NKS_DIAG_NOTNKSTHREAD" xml:space="preserve">
-    <value>Nu este un fir Nitrocid KS</value>
+    <value>Nu este un fir Nitrocid</value>
   </data>
 </root>

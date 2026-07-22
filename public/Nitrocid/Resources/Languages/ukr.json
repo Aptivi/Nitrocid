@@ -2256,15 +2256,15 @@
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1",
-      "text": "Nitrocid KS наразі оновлюється, щоб отримати останню версію, яка містить загальні покращення та виправлення помилок. Нові основні версії зазвичай містять критичні зміни та нові захоплюючі функції."
+      "text": "Nitrocid наразі оновлюється, щоб отримати останню версію, яка містить загальні покращення та виправлення помилок. Нові основні версії зазвичай містять критичні зміни та нові захоплюючі функції."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT",
-      "text": "Ви хочете, щоб Nitrocid KS автоматично перевіряв наявність оновлень?"
+      "text": "Ви хочете, щоб Nitrocid автоматично перевіряв наявність оновлень?"
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2",
-      "text": "Окрім автоматичної перевірки наявності оновлень, Nitrocid KS також може автоматично завантажувати файл оновлення."
+      "text": "Окрім автоматичної перевірки наявності оновлень, Nitrocid також може автоматично завантажувати файл оновлення."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3",
@@ -2916,7 +2916,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED",
-      "text": "Коли ядро намагалося завантажити вказаний мод, воно запитувало завантаження «Симулятора ядра». Оскільки основну програму перейменовано на Nitrocid KS, цей мод неможливо запустити безпечно. Радимо оновити мод."
+      "text": "Коли ядро намагалося завантажити вказаний мод, воно запитувало завантаження «Симулятора ядра». Оскільки основну програму перейменовано на Nitrocid, цей мод неможливо запустити безпечно. Радимо оновити мод."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS",
@@ -3992,7 +3992,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
-      "text": "Зауважте, що запуск Nitrocid KS у незвичайному середовищі означає обмеження деяких функцій. Ви не зможете завантажувати моди та конфігурації."
+      "text": "Зауважте, що запуск Nitrocid у незвичайному середовищі означає обмеження деяких функцій. Ви не зможете завантажувати моди та конфігурації."
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_TITLE",
@@ -6528,7 +6528,7 @@
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_DESC",
-      "text": "Nitrocid KS імітує наше майбутнє ядро, ядро Nitrocid."
+      "text": "Nitrocid імітує наше майбутнє ядро, ядро Nitrocid."
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_MODAPI",
@@ -6552,7 +6552,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
-      "text": "Ви використовуєте Nitrocid KS у незвичайному середовищі. Переконайтеся, що ви запустили ядро безпосередньо. Якщо ви впевнені, що запустили ядро у звичайний спосіб, можливо, ви використовуєте непідтримувану версію Nitrocid KS."
+      "text": "Ви використовуєте Nitrocid у незвичайному середовищі. Переконайтеся, що ви запустили ядро безпосередньо. Якщо ви впевнені, що запустили ядро у звичайний спосіб, можливо, ви використовуєте непідтримувану версію Nitrocid."
     },
     {
       "loc": "NKS_KERNEL_STARTING_BOOTLOADER_ERROR",
@@ -7312,7 +7312,7 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC",
-      "text": "Показує головний буфер, який був на екрані перед запуском Nitrocid KS (тільки для систем Unix)"
+      "text": "Показує головний буфер, який був на екрані перед запуском Nitrocid (тільки для систем Unix)"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED",
@@ -7452,7 +7452,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLWARNING",
-      "text": "Після цієї дати ми більше не підтримуватимемо цю версію Nitrocid KS"
+      "text": "Після цієї дати ми більше не підтримуватимемо цю версію Nitrocid"
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLTIP",
@@ -7460,7 +7460,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOL",
-      "text": "Ця версія Nitrocid KS більше не підтримується."
+      "text": "Ця версія Nitrocid більше не підтримується."
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
@@ -8136,11 +8136,11 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC",
-      "text": "Ім’я хоста, який запускає Nitrocid KS"
+      "text": "Ім’я хоста, який запускає Nitrocid"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC",
-      "text": "Порт Nitrocid KS на віддалену ціль"
+      "text": "Порт Nitrocid на віддалену ціль"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC",
@@ -8828,7 +8828,7 @@
     },
     {
       "loc": "NKS_KERNEL_FATALERROR",
-      "text": "Nitrocid KS виявив проблему, і його було закрито."
+      "text": "Nitrocid виявив проблему, і його було закрито."
     },
     {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_INVALIDTEMPLATE",
@@ -9048,7 +9048,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLE",
-      "text": "Виявлено божевільну консоль. Nitrocid KS не може продовжувати роботу, оскільки ваша консоль несумісна з нашими вимогами."
+      "text": "Виявлено божевільну консоль. Nitrocid не може продовжувати роботу, оскільки ваша консоль несумісна з нашими вимогами."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",

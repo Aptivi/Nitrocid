@@ -2,7 +2,7 @@
     <Target Name="Build">
         <Message
             Importance="high"
-            Text="Nitrocid KS: $(MSBuildProjectName) is not going to be compiled for Nitrocid Lite."
+            Text="Nitrocid: $(MSBuildProjectName) is not going to be compiled for Nitrocid Lite."
         />
     </Target>
 </Project>

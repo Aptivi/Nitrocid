@@ -9048,7 +9048,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLE",
-      "text": "kharab console ka pata chala hai. Nitrocid KS chal nahin sakta, kyonki aapka console hamari zarooraton ke hisab se nahin hai."
+      "text": "kharab console ka pata chala hai. Nitrocid chal nahin sakta, kyonki aapka console hamari zarooraton ke hisab se nahin hai."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",

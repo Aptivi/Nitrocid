@@ -165,7 +165,7 @@
     },
     {
       "loc": "NKS_MODS_MODNEEDSAPIEXACT",
-      "text": "Modul {0} necesită exact o versiune API {1}, dar aveți versiunea {2}. Actualizarea Nitrocid KS și/sau a modului ajută de obicei. Analiza modului a eșuat."
+      "text": "Modul {0} necesită exact o versiune API {1}, dar aveți versiunea {2}. Actualizarea Nitrocid și/sau a modului ajută de obicei. Analiza modului a eșuat."
     },
     {
       "loc": "NKS_MODS_MODHASNOAPIVERSION",

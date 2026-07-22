@@ -68,6 +68,6 @@
     <value>{0}에 대한 스레드 스택 추적 정보</value>
   </data>
   <data name="NKS_DIAG_NOTNKSTHREAD" xml:space="preserve">
-    <value>Nitrocid KS 스레드가 아닙니다.</value>
+    <value>Nitrocid 스레드가 아닙니다.</value>
   </data>
 </root>

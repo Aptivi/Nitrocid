@@ -10,8 +10,8 @@
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Extras - Calendar</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Calendar</AssemblyTitle>
+    <Description>Nitrocid Extras - Calendar</Description>
+    <AssemblyTitle>Nitrocid Extras - Calendar</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- Extras.Calendar addon General Information End -->

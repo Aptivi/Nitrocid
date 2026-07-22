@@ -164,7 +164,7 @@
     },
     {
       "loc": "NKS_MODS_MODNEEDSAPIEXACT",
-      "text": "Mod {0} memerlukan versi API yang sama persis dengan {1}, tetapi Anda memiliki versi {2}. Memutakhirkan Nitrocid KS dan/atau mod biasanya membantu. Penguraian mod gagal."
+      "text": "Mod {0} memerlukan versi API yang sama persis dengan {1}, tetapi Anda memiliki versi {2}. Memutakhirkan Nitrocid dan/atau mod biasanya membantu. Penguraian mod gagal."
     },
     {
       "loc": "NKS_MODS_MODHASNOAPIVERSION",

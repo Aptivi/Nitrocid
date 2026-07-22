@@ -10,8 +10,8 @@
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons.Essentials\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Screensaver Packs</Description>
-    <AssemblyTitle>Nitrocid KS Screensaver Packs</AssemblyTitle>
+    <Description>Nitrocid Screensaver Packs</Description>
+    <AssemblyTitle>Nitrocid Screensaver Packs</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>

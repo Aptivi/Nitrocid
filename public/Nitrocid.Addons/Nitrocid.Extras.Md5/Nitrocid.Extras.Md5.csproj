@@ -10,8 +10,8 @@
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Extras - MD5</Description>
-    <AssemblyTitle>Nitrocid KS Extras - MD5</AssemblyTitle>
+    <Description>Nitrocid Extras - MD5</Description>
+    <AssemblyTitle>Nitrocid Extras - MD5</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- Extras.Md5 addon General Information End -->

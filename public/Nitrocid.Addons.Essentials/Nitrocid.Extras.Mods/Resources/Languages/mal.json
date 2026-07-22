@@ -167,7 +167,7 @@
     },
     {
       "loc": "NKS_MODS_MODNEEDSAPIEXACT",
-      "text": "Mod {0} memerlukan versi API {1}, tetapi anda mempunyai versi {2}. Menaik taraf Nitrocid KS dan/atau mod biasanya membantu. Penghuraian mod gagal."
+      "text": "Mod {0} memerlukan versi API {1}, tetapi anda mempunyai versi {2}. Menaik taraf Nitrocid dan/atau mod biasanya membantu. Penghuraian mod gagal."
     },
     {
       "loc": "NKS_MODS_MODHASNOAPIVERSION",

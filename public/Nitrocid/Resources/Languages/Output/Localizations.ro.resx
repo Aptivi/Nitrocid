@@ -1745,13 +1745,13 @@
     <value>Actualizari automate</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1" xml:space="preserve">
-    <value>Nitrocid KS se actualizează în prezent pentru a obține cea mai recentă versiune care include îmbunătățiri generale și remedieri de erori. Noile versiuni majore includ de obicei modificări de ultimă oră și noi funcții interesante.</value>
+    <value>Nitrocid se actualizează în prezent pentru a obține cea mai recentă versiune care include îmbunătățiri generale și remedieri de erori. Noile versiuni majore includ de obicei modificări de ultimă oră și noi funcții interesante.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT" xml:space="preserve">
-    <value>Doriți ca Nitrocid KS să verifice automat actualizările?</value>
+    <value>Doriți ca Nitrocid să verifice automat actualizările?</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2" xml:space="preserve">
-    <value>Pe lângă verificarea automată a actualizărilor, Nitrocid KS poate descărca automat fișierul de actualizare.</value>
+    <value>Pe lângă verificarea automată a actualizărilor, Nitrocid poate descărca automat fișierul de actualizare.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
     <value>Puteți verifica oricând actualizările kernelului folosind comanda „update”.</value>
@@ -2240,7 +2240,7 @@
     <value>Se efectuează o operație de editor de text nevalidă.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>Când nucleul a încercat să încarce modul specificat, a cerut încărcarea „Kernel Simulator”. Deoarece aplicația principală este redenumită Nitrocid KS, acest mod nu poate fi rulat în siguranță. Vă sfătuim să faceți upgrade la mod.</value>
+    <value>Când nucleul a încercat să încarce modul specificat, a cerut încărcarea „Kernel Simulator”. Deoarece aplicația principală este redenumită Nitrocid, acest mod nu poate fi rulat în siguranță. Vă sfătuim să faceți upgrade la mod.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
     <value>A apărut o eroare a managerului de contacte la încercarea de a efectua operațiunea solicitată. Asigurați-vă că fișierul de contact există în folderul corect și că este un fișier de contact valid vCard 2.1, 3.0 sau 4.0.</value>
@@ -3047,7 +3047,7 @@
     <value>Recunoscut</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_DESC" xml:space="preserve">
-    <value>Vă rugăm să rețineți că rularea Nitrocid KS într-un mediu neobișnuit înseamnă că unele funcții sunt limitate. Nu veți putea încărca modificări și configurații.</value>
+    <value>Vă rugăm să rețineți că rularea Nitrocid într-un mediu neobișnuit înseamnă că unele funcții sunt limitate. Nu veți putea încărca modificări și configurații.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_TITLE" xml:space="preserve">
     <value>Notă de mediu neobișnuit</value>
@@ -4949,7 +4949,7 @@
     <value>Setări</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_DESC" xml:space="preserve">
-    <value>Nitrocid KS simulează viitorul nostru nucleu, Nitrocid Kernel.</value>
+    <value>Nitrocid simulează viitorul nostru nucleu, Nitrocid Kernel.</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_MODAPI" xml:space="preserve">
     <value>Mod API</value>
@@ -4967,7 +4967,7 @@
     <value>Investigați jurnalele de depanare pentru mai multe informații despre eroare.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV" xml:space="preserve">
-    <value>Rulați Nitrocid KS într-un mediu neobișnuit. Vă rugăm să verificați dacă ați pornit direct nucleul. Dacă sunteți sigur că ați pornit nucleul într-un mod obișnuit, s-ar putea să fie pentru că rulați o versiune neacceptată de Nitrocid KS.</value>
+    <value>Rulați Nitrocid într-un mediu neobișnuit. Vă rugăm să verificați dacă ați pornit direct nucleul. Dacă sunteți sigur că ați pornit nucleul într-un mod obișnuit, s-ar putea să fie pentru că rulați o versiune neacceptată de Nitrocid.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_ERROR" xml:space="preserve">
     <value>GRILO a întâmpinat o eroare internă</value>
@@ -5537,7 +5537,7 @@
     <value>Schimbă numele complet al utilizatorului (numele afișat)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC" xml:space="preserve">
-    <value>Afișează tamponul principal care era pe ecran înainte de a porni Nitrocid KS (numai sistemele Unix)</value>
+    <value>Afișează tamponul principal care era pe ecran înainte de a porni Nitrocid (numai sistemele Unix)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED" xml:space="preserve">
     <value>Nu se poate obține pachetul de suplimente.</value>
@@ -5642,13 +5642,13 @@
     <value>Se redă sunet de închidere...</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLWARNING" xml:space="preserve">
-    <value>Nu vom mai susține această versiune de Nitrocid KS după această dată</value>
+    <value>Nu vom mai susține această versiune de Nitrocid după această dată</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLTIP" xml:space="preserve">
     <value>Asigurați-vă că faceți upgrade la versiunea acceptată în curând dacă doriți să continuați să primiți asistență.</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOL" xml:space="preserve">
-    <value>Această versiune de Nitrocid KS nu mai este acceptată.</value>
+    <value>Această versiune de Nitrocid nu mai este acceptată.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS" xml:space="preserve">
     <value>Nu s-au încărcat suplimente importante pentru nucleu</value>
@@ -6155,10 +6155,10 @@
     <value>Adresa URL care indică punctul final de încărcare</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC" xml:space="preserve">
-    <value>Nume de gazdă care rulează Nitrocid KS</value>
+    <value>Nume de gazdă care rulează Nitrocid</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC" xml:space="preserve">
-    <value>Portul Nitrocid KS pe ținta de la distanță</value>
+    <value>Portul Nitrocid pe ținta de la distanță</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC" xml:space="preserve">
     <value>Comanda de executat de la distanță</value>
@@ -6665,7 +6665,7 @@
     <value>Vă recomandăm să nu rulați această versiune a nucleului, deoarece nu este acceptată. Dacă ați descărcat acest nucleu din surse necunoscute, este posibil să apară acest mesaj. Vă rugăm să descărcați de pe pagina noastră oficială de descărcări.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME" xml:space="preserve">
-    <value>Nitrocid KS</value>
+    <value>Nitrocid</value>
   </data>
   <data name="NKS_KERNEL_STARTING_ENVIRONMENT_NOENV" xml:space="preserve">
     <value>Mediul nu este specificat</value>
@@ -6674,7 +6674,7 @@
     <value>Eroare de mediu kernel:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
-    <value>Nitrocid KS a detectat o problemă și a fost oprit.</value>
+    <value>Nitrocid a detectat o problemă și a fost oprit.</value>
   </data>
   <data name="NKS_CONSOLEBASE_THEMES_EXCEPTION_INVALIDTEMPLATE" xml:space="preserve">
     <value>Șablon de culoare nevalid {0}</value>
@@ -6839,7 +6839,7 @@
     <value>Nu s-a putut găsi setarea solicitată.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLE" xml:space="preserve">
-    <value>A fost detectată o consolă necorespunzătoare. Nitrocid KS nu poate continua să ruleze, deoarece consola dvs. este incompatibilă cu cerințele noastre.</value>
+    <value>A fost detectată o consolă necorespunzătoare. Nitrocid nu poate continua să ruleze, deoarece consola dvs. este incompatibilă cu cerințele noastre.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME" xml:space="preserve">
     <value>Nu există nicio temă cu acest nume.</value>

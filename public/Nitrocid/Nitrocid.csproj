@@ -3,7 +3,7 @@
   <PropertyGroup>
     <PackageId>KS</PackageId>
     <Authors>Aptivi</Authors>
-    <Title>Nitrocid KS</Title>
+    <Title>Nitrocid</Title>
     <PackageDescription>Simulates our future-planned kernel, Nitrocid Kernel. This package contains Nitrocid API that you can use for your mods.</PackageDescription>
     <PackageTags>kernel;simulator;csharp</PackageTags>
     <!-- URL settings -->
@@ -25,7 +25,7 @@
     <DebugSymbols>true</DebugSymbols>
     <OutputType>Exe</OutputType>
     <AssemblyName>Nitrocid</AssemblyName>
-    <AssemblyTitle>Nitrocid KS</AssemblyTitle>
+    <AssemblyTitle>Nitrocid</AssemblyTitle>
     <Description>Simulates our future-planned kernel, Nitrocid Kernel</Description>
     <OutputPath>KSBuild\</OutputPath>
     <ApplicationIcon>OfficialAppIcon-NitrocidKS.ico</ApplicationIcon>

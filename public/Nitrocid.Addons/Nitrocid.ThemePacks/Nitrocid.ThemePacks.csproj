@@ -10,8 +10,8 @@
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Theme Packs</Description>
-    <AssemblyTitle>Nitrocid KS Theme Packs</AssemblyTitle>
+    <Description>Nitrocid Theme Packs</Description>
+    <AssemblyTitle>Nitrocid Theme Packs</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- ThemePacks addon General Information End -->

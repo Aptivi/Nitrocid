@@ -10,8 +10,8 @@
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons.Essentials\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Splash Packs</Description>
-    <AssemblyTitle>Nitrocid KS Splash Packs</AssemblyTitle>
+    <Description>Nitrocid Splash Packs</Description>
+    <AssemblyTitle>Nitrocid Splash Packs</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- SplashPacks addon General Information End -->

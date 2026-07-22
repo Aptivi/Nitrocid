@@ -10,8 +10,8 @@
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Extras - SFTP Shell</Description>
-    <AssemblyTitle>Nitrocid KS Extras - SFTP Shell</AssemblyTitle>
+    <Description>Nitrocid Extras - SFTP Shell</Description>
+    <AssemblyTitle>Nitrocid Extras - SFTP Shell</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>

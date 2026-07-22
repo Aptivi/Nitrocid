@@ -251,7 +251,7 @@
     <value>Questa sezione ti consente di configurare il funzionamento del Calendario.</value>
   </data>
   <data name="NKS_CALENDAR_BUILTIN_NKSANNIVERSARY" xml:space="preserve">
-    <value>Anniversario del rilascio di Nitrocid KS</value>
+    <value>Anniversario del rilascio di Nitrocid</value>
   </data>
   <data name="NKS_CALENDAR_BUILTIN_RAMADAN" xml:space="preserve">
     <value>Ramadan</value>

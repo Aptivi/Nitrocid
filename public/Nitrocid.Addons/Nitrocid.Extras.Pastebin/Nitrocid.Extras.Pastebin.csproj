@@ -10,8 +10,8 @@
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Extras - Pastebin</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Pastebin</AssemblyTitle>
+    <Description>Nitrocid Extras - Pastebin</Description>
+    <AssemblyTitle>Nitrocid Extras - Pastebin</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- Extras.Pastebin addon General Information End -->

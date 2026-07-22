@@ -2256,15 +2256,15 @@
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1",
-      "text": "Nitrocid KS hiện đang tự cập nhật để có phiên bản mới nhất bao gồm các cải tiến chung và sửa lỗi. Các phiên bản chính mới thường bao gồm các thay đổi đột phá và các tính năng mới thú vị."
+      "text": "Nitrocid hiện đang tự cập nhật để có phiên bản mới nhất bao gồm các cải tiến chung và sửa lỗi. Các phiên bản chính mới thường bao gồm các thay đổi đột phá và các tính năng mới thú vị."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT",
-      "text": "Bạn có muốn Nitrocid KS tự động kiểm tra bản cập nhật không?"
+      "text": "Bạn có muốn Nitrocid tự động kiểm tra bản cập nhật không?"
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2",
-      "text": "Ngoài việc tự động kiểm tra bản cập nhật, Nitrocid KS còn có thể tự động tải xuống tệp cập nhật."
+      "text": "Ngoài việc tự động kiểm tra bản cập nhật, Nitrocid còn có thể tự động tải xuống tệp cập nhật."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3",
@@ -2916,7 +2916,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED",
-      "text": "Khi kernel cố gắng tải mod đã chỉ định, nó yêu cầu tải \"Kernel Simulator\". Vì ứng dụng chính được đổi tên thành Nitrocid KS nên mod này không thể chạy an toàn. Chúng tôi khuyên bạn nên nâng cấp mod."
+      "text": "Khi kernel cố gắng tải mod đã chỉ định, nó yêu cầu tải \"Kernel Simulator\". Vì ứng dụng chính được đổi tên thành Nitrocid nên mod này không thể chạy an toàn. Chúng tôi khuyên bạn nên nâng cấp mod."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS",
@@ -3992,7 +3992,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
-      "text": "Xin lưu ý rằng chạy Nitrocid KS trên môi trường bất thường có nghĩa là một số tính năng bị hạn chế. Bạn sẽ không thể tải mod và cấu hình."
+      "text": "Xin lưu ý rằng chạy Nitrocid trên môi trường bất thường có nghĩa là một số tính năng bị hạn chế. Bạn sẽ không thể tải mod và cấu hình."
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_TITLE",
@@ -6528,7 +6528,7 @@
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_DESC",
-      "text": "Nitrocid KS mô phỏng hạt nhân tương lai của chúng ta, Hạt nhân Nitrocid."
+      "text": "Nitrocid mô phỏng hạt nhân tương lai của chúng ta, Hạt nhân Nitrocid."
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_MODAPI",
@@ -6552,7 +6552,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
-      "text": "Bạn đang chạy Nitrocid KS trên một môi trường bất thường. Vui lòng xác minh rằng bạn đã khởi động kernel trực tiếp. Nếu bạn chắc chắn rằng mình đã khởi động kernel theo cách thông thường, có thể là do bạn đang chạy phiên bản Nitrocid KS không được hỗ trợ."
+      "text": "Bạn đang chạy Nitrocid trên một môi trường bất thường. Vui lòng xác minh rằng bạn đã khởi động kernel trực tiếp. Nếu bạn chắc chắn rằng mình đã khởi động kernel theo cách thông thường, có thể là do bạn đang chạy phiên bản Nitrocid không được hỗ trợ."
     },
     {
       "loc": "NKS_KERNEL_STARTING_BOOTLOADER_ERROR",
@@ -7312,7 +7312,7 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC",
-      "text": "Hiển thị bộ đệm chính trên màn hình trước khi khởi động Nitrocid KS (chỉ dành cho hệ thống Unix)"
+      "text": "Hiển thị bộ đệm chính trên màn hình trước khi khởi động Nitrocid (chỉ dành cho hệ thống Unix)"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED",
@@ -7452,7 +7452,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLWARNING",
-      "text": "Chúng tôi sẽ không còn hỗ trợ phiên bản Nitrocid KS này sau ngày này"
+      "text": "Chúng tôi sẽ không còn hỗ trợ phiên bản Nitrocid này sau ngày này"
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLTIP",
@@ -7460,7 +7460,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOL",
-      "text": "Phiên bản Nitrocid KS này không còn được hỗ trợ."
+      "text": "Phiên bản Nitrocid này không còn được hỗ trợ."
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
@@ -8136,11 +8136,11 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC",
-      "text": "Tên máy chủ chạy Nitrocid KS"
+      "text": "Tên máy chủ chạy Nitrocid"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC",
-      "text": "Cảng Nitrocid KS trên mục tiêu từ xa"
+      "text": "Cảng Nitrocid trên mục tiêu từ xa"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC",
@@ -8816,7 +8816,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
-      "text": "Nitrocid KS"
+      "text": "Nitrocid"
     },
     {
       "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
@@ -8828,7 +8828,7 @@
     },
     {
       "loc": "NKS_KERNEL_FATALERROR",
-      "text": "Nitrocid KS đã phát hiện ra sự cố và đã dừng hoạt động."
+      "text": "Nitrocid đã phát hiện ra sự cố và đã dừng hoạt động."
     },
     {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_INVALIDTEMPLATE",
@@ -9048,7 +9048,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLE",
-      "text": "Đã phát hiện bảng điều khiển Insane. Nitrocid KS không thể tiếp tục chạy vì bảng điều khiển của bạn không tương thích với các yêu cầu của chúng tôi."
+      "text": "Đã phát hiện bảng điều khiển Insane. Nitrocid không thể tiếp tục chạy vì bảng điều khiển của bạn không tương thích với các yêu cầu của chúng tôi."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",

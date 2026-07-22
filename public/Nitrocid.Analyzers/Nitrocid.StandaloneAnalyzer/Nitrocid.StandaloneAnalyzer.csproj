@@ -11,8 +11,8 @@
     <RootNamespace>Nitrocid.StandaloneAnalyzer</RootNamespace>
     <AssemblyName>Nitrocid.StandaloneAnalyzer</AssemblyName>
     <OutputPath>..\..\Nitrocid\KSAnalyzer\</OutputPath>
-    <Description>Nitrocid KS Standalone Analyzer</Description>
-    <AssemblyTitle>Nitrocid KS Standalone Analyzer</AssemblyTitle>
+    <Description>Nitrocid Standalone Analyzer</Description>
+    <AssemblyTitle>Nitrocid Standalone Analyzer</AssemblyTitle>
     <ApplicationIcon>../../Nitrocid/OfficialAppIcon-NitrocidKS.ico</ApplicationIcon>
   </PropertyGroup>
   <!-- LocaleGen General Information End -->

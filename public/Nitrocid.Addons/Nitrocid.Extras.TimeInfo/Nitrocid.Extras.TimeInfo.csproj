@@ -10,8 +10,8 @@
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Extras - TimeInfo</Description>
-    <AssemblyTitle>Nitrocid KS Extras - TimeInfo</AssemblyTitle>
+    <Description>Nitrocid Extras - TimeInfo</Description>
+    <AssemblyTitle>Nitrocid Extras - TimeInfo</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- Extras.TimeInfo addon General Information End -->

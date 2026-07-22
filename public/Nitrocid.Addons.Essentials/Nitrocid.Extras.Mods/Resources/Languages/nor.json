@@ -168,7 +168,7 @@
     },
     {
       "loc": "NKS_MODS_MODNEEDSAPIEXACT",
-      "text": "Mod {0} krever nøyaktig en API-versjon {1}, men du har versjon {2}. Oppgradering av Nitrocid KS og/eller moden hjelper vanligvis. Mod-parsing mislyktes."
+      "text": "Mod {0} krever nøyaktig en API-versjon {1}, men du har versjon {2}. Oppgradering av Nitrocid og/eller moden hjelper vanligvis. Mod-parsing mislyktes."
     },
     {
       "loc": "NKS_MODS_MODHASNOAPIVERSION",

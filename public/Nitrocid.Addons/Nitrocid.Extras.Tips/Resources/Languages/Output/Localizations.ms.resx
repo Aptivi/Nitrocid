@@ -107,7 +107,7 @@
     <value>bahawa keluaran jangka panjang disokong selama lima tahun untuk sokongan utama, dan tiga tahun untuk kemas kini keselamatan?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_17" xml:space="preserve">
-    <value>bahawa 0.0.1 ialah versi pertama Nitrocid KS yang dikeluarkan pada 22 Februari 2018?</value>
+    <value>bahawa 0.0.1 ialah versi pertama Nitrocid yang dikeluarkan pada 22 Februari 2018?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_18" xml:space="preserve">
     <value>bahawa siri 0.0.24.x ialah satu-satunya siri versi yang memegang versi API v2.1?</value>
@@ -119,7 +119,7 @@
     <value>bahawa siri 0.1.x tidak serasi ke belakang dengan siri 0.0.24.x atau lebih lama?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_21" xml:space="preserve">
-    <value>bahawa anda boleh menjalankan Nitrocid KS pada Linux, macOS dan Android?</value>
+    <value>bahawa anda boleh menjalankan Nitrocid pada Linux, macOS dan Android?</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_22" xml:space="preserve">
     <value>bahawa anda boleh merujuk kepada dokumentasi API untuk membantu anda membuat mod anda?</value>

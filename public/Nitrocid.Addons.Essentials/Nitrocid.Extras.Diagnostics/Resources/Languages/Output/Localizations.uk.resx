@@ -68,6 +68,6 @@
     <value>Інформація трасування стека потоку для {0}</value>
   </data>
   <data name="NKS_DIAG_NOTNKSTHREAD" xml:space="preserve">
-    <value>Це не нитка Nitrocid KS</value>
+    <value>Це не нитка Nitrocid</value>
   </data>
 </root>

@@ -176,7 +176,7 @@
     <value>Sau đây là danh sách các lỗi có thể giúp bạn điều tra sự không tương thích này:</value>
   </data>
   <data name="NKS_MODS_MODNEEDSAPIEXACT" xml:space="preserve">
-    <value>Mod {0} yêu cầu chính xác phiên bản API {1}, nhưng bạn có phiên bản {2}. Nâng cấp Nitrocid KS và/hoặc mod thường giúp ích. Phân tích cú pháp mod không thành công.</value>
+    <value>Mod {0} yêu cầu chính xác phiên bản API {1}, nhưng bạn có phiên bản {2}. Nâng cấp Nitrocid và/hoặc mod thường giúp ích. Phân tích cú pháp mod không thành công.</value>
   </data>
   <data name="NKS_MODS_MODHASNOAPIVERSION" xml:space="preserve">
     <value>Mod {0} có thể không hoạt động bình thường với phiên bản API này. Mod có thể không khởi động được. Liên hệ với nhà cung cấp mod để nhận bản sao mới nhất.</value>

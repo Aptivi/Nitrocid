@@ -167,7 +167,7 @@
     },
     {
       "loc": "NKS_MODS_MODNEEDSAPIEXACT",
-      "text": "La mod {0} richiede esattamente una versione API {1}, ma hai la versione {2}. Aggiornare Nitrocid KS e/o la mod di solito aiuta. Analisi della mod non riuscita."
+      "text": "La mod {0} richiede esattamente una versione API {1}, ma hai la versione {2}. Aggiornare Nitrocid e/o la mod di solito aiuta. Analisi della mod non riuscita."
     },
     {
       "loc": "NKS_MODS_MODHASNOAPIVERSION",

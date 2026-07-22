@@ -2265,15 +2265,15 @@
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1",
-      "text": "Nitrocid KS aktualisiert sich derzeit selbst, um die neueste Version zu erhalten, die allgemeine Verbesserungen und Fehlerbehebungen enthält. Neue Hauptversionen enthalten in der Regel bahnbrechende Änderungen und neue aufregende Funktionen."
+      "text": "Nitrocid aktualisiert sich derzeit selbst, um die neueste Version zu erhalten, die allgemeine Verbesserungen und Fehlerbehebungen enthält. Neue Hauptversionen enthalten in der Regel bahnbrechende Änderungen und neue aufregende Funktionen."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT",
-      "text": "Möchten Sie, dass Nitrocid KS automatisch nach Updates sucht?"
+      "text": "Möchten Sie, dass Nitrocid automatisch nach Updates sucht?"
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2",
-      "text": "Zusätzlich zur automatischen Suche nach Updates kann Nitrocid KS die Update-Datei auch automatisch herunterladen."
+      "text": "Zusätzlich zur automatischen Suche nach Updates kann Nitrocid die Update-Datei auch automatisch herunterladen."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3",
@@ -2925,7 +2925,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED",
-      "text": "Als der Kernel versuchte, den angegebenen Mod zu laden, forderte er das Laden von „Kernel Simulator“ an. Da die Hauptanwendung in Nitrocid KS umbenannt wurde, kann dieser Mod nicht sicher ausgeführt werden. Wir empfehlen Ihnen, den Mod zu aktualisieren."
+      "text": "Als der Kernel versuchte, den angegebenen Mod zu laden, forderte er das Laden von „Kernel Simulator“ an. Da die Hauptanwendung in Nitrocid umbenannt wurde, kann dieser Mod nicht sicher ausgeführt werden. Wir empfehlen Ihnen, den Mod zu aktualisieren."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS",
@@ -4001,7 +4001,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
-      "text": "Bitte beachten Sie, dass die Ausführung von Nitrocid KS in einer ungewöhnlichen Umgebung dazu führt, dass einige Funktionen eingeschränkt sind. Sie können keine Mods und Konfigurationen laden."
+      "text": "Bitte beachten Sie, dass die Ausführung von Nitrocid in einer ungewöhnlichen Umgebung dazu führt, dass einige Funktionen eingeschränkt sind. Sie können keine Mods und Konfigurationen laden."
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_TITLE",
@@ -6537,7 +6537,7 @@
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_DESC",
-      "text": "Nitrocid KS simuliert unseren zukünftigen Kernel, den Nitrocid-Kernel."
+      "text": "Nitrocid simuliert unseren zukünftigen Kernel, den Nitrocid-Kernel."
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_MODAPI",
@@ -6561,7 +6561,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
-      "text": "Sie führen Nitrocid KS in einer ungewöhnlichen Umgebung aus. Bitte überprüfen Sie, ob Sie den Kernel direkt gestartet haben. Wenn Sie sicher sind, dass Sie den Kernel auf die übliche Weise gestartet haben, liegt dies möglicherweise daran, dass Sie eine nicht unterstützte Version von Nitrocid KS ausführen."
+      "text": "Sie führen Nitrocid in einer ungewöhnlichen Umgebung aus. Bitte überprüfen Sie, ob Sie den Kernel direkt gestartet haben. Wenn Sie sicher sind, dass Sie den Kernel auf die übliche Weise gestartet haben, liegt dies möglicherweise daran, dass Sie eine nicht unterstützte Version von Nitrocid ausführen."
     },
     {
       "loc": "NKS_KERNEL_STARTING_BOOTLOADER_ERROR",
@@ -7321,7 +7321,7 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC",
-      "text": "Zeigt den Hauptpuffer, der vor dem Start von Nitrocid KS auf dem Bildschirm angezeigt wurde (nur Unix-Systeme)"
+      "text": "Zeigt den Hauptpuffer, der vor dem Start von Nitrocid auf dem Bildschirm angezeigt wurde (nur Unix-Systeme)"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED",
@@ -7461,7 +7461,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLWARNING",
-      "text": "Wir werden diese Version von Nitrocid KS nach diesem Datum nicht mehr unterstützen."
+      "text": "Wir werden diese Version von Nitrocid nach diesem Datum nicht mehr unterstützen."
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLTIP",
@@ -7469,7 +7469,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOL",
-      "text": "Diese Version von Nitrocid KS wird nicht mehr unterstützt."
+      "text": "Diese Version von Nitrocid wird nicht mehr unterstützt."
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
@@ -8145,11 +8145,11 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC",
-      "text": "Hostname, auf dem Nitrocid KS ausgeführt wird"
+      "text": "Hostname, auf dem Nitrocid ausgeführt wird"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC",
-      "text": "Port von Nitrocid KS auf dem Remote-Ziel"
+      "text": "Port von Nitrocid auf dem Remote-Ziel"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC",
@@ -8837,7 +8837,7 @@
     },
     {
       "loc": "NKS_KERNEL_FATALERROR",
-      "text": "Nitrocid KS hat ein Problem festgestellt und wurde abgeschaltet."
+      "text": "Nitrocid hat ein Problem festgestellt und wurde abgeschaltet."
     },
     {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_INVALIDTEMPLATE",
@@ -9057,7 +9057,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLE",
-      "text": "Ungültige Konsolenausgabe erkannt. Nitrocid KS kann nicht weiter ausgeführt werden, da Ihre Konsole nicht mit unseren Anforderungen kompatibel ist."
+      "text": "Ungültige Konsolenausgabe erkannt. Nitrocid kann nicht weiter ausgeführt werden, da Ihre Konsole nicht mit unseren Anforderungen kompatibel ist."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",

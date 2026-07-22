@@ -68,6 +68,6 @@
     <value>Thread-Stack-Trace-Informationen für {0}</value>
   </data>
   <data name="NKS_DIAG_NOTNKSTHREAD" xml:space="preserve">
-    <value>Kein Nitrocid KS-Thread</value>
+    <value>Kein Nitrocid-Thread</value>
   </data>
 </root>

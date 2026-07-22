@@ -68,6 +68,6 @@
     <value>Informazioni sull'analisi dello stack del thread per {0}</value>
   </data>
   <data name="NKS_DIAG_NOTNKSTHREAD" xml:space="preserve">
-    <value>Non un thread Nitrocid KS</value>
+    <value>Non un thread Nitrocid</value>
   </data>
 </root>

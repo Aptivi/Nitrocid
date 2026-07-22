@@ -10,8 +10,8 @@
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons.Essentials\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Extras - Mods</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Mods</AssemblyTitle>
+    <Description>Nitrocid Extras - Mods</Description>
+    <AssemblyTitle>Nitrocid Extras - Mods</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- Extras.Mods addon General Information End -->

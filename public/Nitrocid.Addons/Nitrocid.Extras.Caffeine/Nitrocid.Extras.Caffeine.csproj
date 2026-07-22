@@ -10,8 +10,8 @@
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Extras - Caffeine</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Caffeine</AssemblyTitle>
+    <Description>Nitrocid Extras - Caffeine</Description>
+    <AssemblyTitle>Nitrocid Extras - Caffeine</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- Extras.Caffeine addon General Information End -->

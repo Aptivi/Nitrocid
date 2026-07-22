@@ -124,7 +124,7 @@
     <value>This string, "{0}", is in the DoTranslation() method, but is unlocalized for languages "{1}"</value>
   </data>
   <data name="UnlocalizedStringAnalyzerDescription" xml:space="preserve">
-    <value>While Nitrocid KS accepts unlocalized strings and returns them as is, it's recommended to localize this string so that translations would be complete before the end of the development cycle.</value>
+    <value>While Nitrocid accepts unlocalized strings and returns them as is, it's recommended to localize this string so that translations would be complete before the end of the development cycle.</value>
   </data>
   <data name="UnlocalizedCommentStringAnalyzerMessageFormat" xml:space="preserve">
     <value>This string, "{0}", is marked as localizable, but is unlocalized for languages "{1}"</value>
@@ -139,7 +139,7 @@
     <value>You'll need to remove this string at the end of the development cycle</value>
   </data>
   <data name="ExtraLocalizedJsonStringAnalyzerDescription" xml:space="preserve">
-    <value>While Nitrocid KS accepts unlocalized strings and returns them as is, it's recommended to remove this string so that translations would be complete before the end of the development cycle.</value>
+    <value>While Nitrocid accepts unlocalized strings and returns them as is, it's recommended to remove this string so that translations would be complete before the end of the development cycle.</value>
   </data>
   <data name="ExtraLocalizedJsonSummaryStringAnalyzerTitle" xml:space="preserve">
     <value>Here's a list of languages that have extra localization descriptors</value>

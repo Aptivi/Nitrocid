@@ -68,6 +68,6 @@
     <value>Informations de trace de pile de threads pour {0}</value>
   </data>
   <data name="NKS_DIAG_NOTNKSTHREAD" xml:space="preserve">
-    <value>Il ne s'agit pas d'un fil Nitrocid KS.</value>
+    <value>Il ne s'agit pas d'un fil Nitrocid.</value>
   </data>
 </root>

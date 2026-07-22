@@ -170,7 +170,7 @@
     },
     {
       "loc": "NKS_MODS_MODNEEDSAPIEXACT",
-      "text": "Mod {0} vereist precies een API-versie {1}, maar jij hebt versie {2}. Het upgraden van Nitrocid KS en/of de mod helpt meestal. Het parseren van mods is mislukt."
+      "text": "Mod {0} vereist precies een API-versie {1}, maar jij hebt versie {2}. Het upgraden van Nitrocid en/of de mod helpt meestal. Het parseren van mods is mislukt."
     },
     {
       "loc": "NKS_MODS_MODHASNOAPIVERSION",

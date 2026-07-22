@@ -1,14 +1,14 @@
 //
-// Nitrocid KS  Copyright (C) 2018-2026  Aptivi
+// Nitrocid  Copyright (C) 2018-2026  Aptivi
 //
-// This file is part of Nitrocid KS
+// This file is part of Nitrocid
 //
-// Nitrocid KS is free software: you can redistribute it and/or modify
+// Nitrocid is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Nitrocid KS is distributed in the hope that it will be useful,
+// Nitrocid is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY, without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
@@ -2686,7 +2686,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
         #region BouncingText
         private bool bouncingTextTrueColor = true;
         private int bouncingTextDelay = 50;
-        private string bouncingTextWrite = "Nitrocid KS";
+        private string bouncingTextWrite = "Nitrocid";
         private string bouncingTextBackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
         private string bouncingTextForegroundColor = new Color(ConsoleColors.White).PlainSequence;
         private int bouncingTextMinimumRedColorLevel = 0;
@@ -2740,7 +2740,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
             set
             {
                 if (string.IsNullOrEmpty(value))
-                    value = "Nitrocid KS";
+                    value = "Nitrocid";
                 bouncingTextWrite = value;
             }
         }
@@ -2923,7 +2923,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
         #region Fader
         private int faderDelay = 50;
         private int faderFadeOutDelay = 3000;
-        private string faderWrite = "Nitrocid KS";
+        private string faderWrite = "Nitrocid";
         private int faderMaxSteps = 25;
         private string faderBackgroundColor = new Color(0, 0, 0).PlainSequence;
         private int faderMinimumRedColorLevel = 0;
@@ -2977,7 +2977,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
             set
             {
                 if (string.IsNullOrEmpty(value))
-                    value = "Nitrocid KS";
+                    value = "Nitrocid";
                 faderWrite = value;
             }
         }
@@ -3530,7 +3530,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
         #region Typo
         private int typoDelay = 50;
         private int typoWriteAgainDelay = 3000;
-        private string typoWrite = "Nitrocid KS";
+        private string typoWrite = "Nitrocid";
         private int typoWritingSpeedMin = 50;
         private int typoWritingSpeedMax = 80;
         private int typoMissStrikePossibility = 20;
@@ -3581,7 +3581,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
             set
             {
                 if (string.IsNullOrEmpty(value))
-                    value = "Nitrocid KS";
+                    value = "Nitrocid";
                 typoWrite = value;
             }
         }
@@ -3668,7 +3668,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
         #region Marquee
         private bool marqueeTrueColor = true;
         private int marqueeDelay = 10;
-        private string marqueeWrite = "Nitrocid KS";
+        private string marqueeWrite = "Nitrocid";
         private bool marqueeAlwaysCentered = true;
         private bool marqueeUseConsoleAPI;
         private string marqueeBackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
@@ -3882,7 +3882,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
         #region Linotypo
         private int linotypoDelay = 50;
         private int linotypoNewScreenDelay = 3000;
-        private string linotypoWrite = "Nitrocid KS";
+        private string linotypoWrite = "Nitrocid";
         private int linotypoWritingSpeedMin = 50;
         private int linotypoWritingSpeedMax = 80;
         private int linotypoMissStrikePossibility = 1;
@@ -3937,7 +3937,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
             set
             {
                 if (string.IsNullOrEmpty(value))
-                    value = "Nitrocid KS";
+                    value = "Nitrocid";
                 linotypoWrite = value;
             }
         }
@@ -4090,7 +4090,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
         #region Typewriter
         private int typewriterDelay = 50;
         private int typewriterNewScreenDelay = 3000;
-        private string typewriterWrite = "Nitrocid KS";
+        private string typewriterWrite = "Nitrocid";
         private int typewriterWritingSpeedMin = 50;
         private int typewriterWritingSpeedMax = 80;
         private bool typewriterShowArrowPos = true;
@@ -4140,7 +4140,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
             set
             {
                 if (string.IsNullOrEmpty(value))
-                    value = "Nitrocid KS";
+                    value = "Nitrocid";
                 typewriterWrite = value;
             }
         }
@@ -4414,7 +4414,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
         #region SpotWrite
         private int spotWriteDelay = 100;
         private int spotWriteNewScreenDelay = 3000;
-        private string spotWriteWrite = "Nitrocid KS";
+        private string spotWriteWrite = "Nitrocid";
         private string spotWriteTextColor = new Color(ConsoleColors.White).PlainSequence;
 
         /// <summary>
@@ -4445,7 +4445,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
             set
             {
                 if (string.IsNullOrEmpty(value))
-                    value = "Nitrocid KS";
+                    value = "Nitrocid";
                 spotWriteWrite = value;
             }
         }
@@ -5943,7 +5943,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
         #region Figlet
         private bool figletTrueColor = true;
         private int figletDelay = 1000;
-        private string figletText = "Nitrocid KS";
+        private string figletText = "Nitrocid";
         private string figletFont = "small";
         private bool figletRainbowMode;
         private int figletMinimumRedColorLevel = 0;
@@ -5997,7 +5997,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
             set
             {
                 if (string.IsNullOrEmpty(value))
-                    value = "Nitrocid KS";
+                    value = "Nitrocid";
                 figletText = value;
             }
         }
@@ -6180,7 +6180,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
         #region FlashText
         private bool flashTextTrueColor = true;
         private int flashTextDelay = 100;
-        private string flashTextWrite = "Nitrocid KS";
+        private string flashTextWrite = "Nitrocid";
         private string flashTextBackgroundColor = new Color(ConsoleColors.Black).PlainSequence;
         private int flashTextMinimumRedColorLevel = 0;
         private int flashTextMinimumGreenColorLevel = 0;
@@ -10692,7 +10692,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
         #region Text
         private bool textTrueColor = true;
         private int textDelay = 1000;
-        private string textWrite = "Nitrocid KS";
+        private string textWrite = "Nitrocid";
         private bool textRainbowMode;
         private int textMinimumRedColorLevel = 0;
         private int textMinimumGreenColorLevel = 0;
@@ -10745,7 +10745,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
             set
             {
                 if (string.IsNullOrEmpty(value))
-                    value = "Nitrocid KS";
+                    value = "Nitrocid";
                 textWrite = value;
             }
         }
@@ -10914,7 +10914,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
         #region TextBox
         private bool textBoxTrueColor = true;
         private int textBoxDelay = 1000;
-        private string textBoxWrite = "Nitrocid KS";
+        private string textBoxWrite = "Nitrocid";
         private bool textBoxRainbowMode;
         private int textBoxMinimumRedColorLevel = 0;
         private int textBoxMinimumGreenColorLevel = 0;
@@ -10967,7 +10967,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
             set
             {
                 if (string.IsNullOrEmpty(value))
-                    value = "Nitrocid KS";
+                    value = "Nitrocid";
                 textBoxWrite = value;
             }
         }
@@ -11900,7 +11900,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
         #region TextWander
         private bool textWanderTrueColor = true;
         private int textWanderDelay = 1000;
-        private string textWanderWrite = "Nitrocid KS";
+        private string textWanderWrite = "Nitrocid";
         private int textWanderMinimumRedColorLevel = 0;
         private int textWanderMinimumGreenColorLevel = 0;
         private int textWanderMinimumBlueColorLevel = 0;
@@ -11952,7 +11952,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
             set
             {
                 if (string.IsNullOrEmpty(value))
-                    value = "Nitrocid KS";
+                    value = "Nitrocid";
                 textWanderWrite = value;
             }
         }
@@ -14601,7 +14601,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
 
         #region Omen
         private int omenDelay = 100;
-        private string omenWrite = "Nitrocid KS";
+        private string omenWrite = "Nitrocid";
         private int omenMaximumBackColorLevel = 32;
         private int omenMaximumLineColorLevel = 64;
         private int omenMaximumTextColorLevel = 128;
@@ -14634,7 +14634,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
             set
             {
                 if (string.IsNullOrEmpty(value))
-                    value = "Nitrocid KS";
+                    value = "Nitrocid";
                 omenWrite = value;
             }
         }

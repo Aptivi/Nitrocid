@@ -176,7 +176,7 @@
     <value>Her er en liste over feil som kan hjelpe deg med å undersøke denne inkompatibiliteten:</value>
   </data>
   <data name="NKS_MODS_MODNEEDSAPIEXACT" xml:space="preserve">
-    <value>Mod {0} krever nøyaktig en API-versjon {1}, men du har versjon {2}. Oppgradering av Nitrocid KS og/eller moden hjelper vanligvis. Mod-parsing mislyktes.</value>
+    <value>Mod {0} krever nøyaktig en API-versjon {1}, men du har versjon {2}. Oppgradering av Nitrocid og/eller moden hjelper vanligvis. Mod-parsing mislyktes.</value>
   </data>
   <data name="NKS_MODS_MODHASNOAPIVERSION" xml:space="preserve">
     <value>Mod {0} fungerer kanskje ikke ordentlig med denne API-versjonen. Mod kan ikke starte opp. Kontakt mod-leverandøren for å få en siste kopi.</value>

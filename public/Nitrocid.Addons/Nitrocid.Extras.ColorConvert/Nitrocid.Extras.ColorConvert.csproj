@@ -10,8 +10,8 @@
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Extras - Color Conversion Tools</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Color Conversion Tools</AssemblyTitle>
+    <Description>Nitrocid Extras - Color Conversion Tools</Description>
+    <AssemblyTitle>Nitrocid Extras - Color Conversion Tools</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- Extras.ColorConvert addon General Information End -->

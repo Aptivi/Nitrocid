@@ -165,7 +165,7 @@
     },
     {
       "loc": "NKS_MODS_MODNEEDSAPIEXACT",
-      "text": "Mod {0}에는 정확히 API 버전 {1}이(가) 필요하지만 귀하의 버전은 {2}입니다. 일반적으로 Nitrocid KS 및/또는 모드를 업그레이드하는 것이 도움이 됩니다. 모드 구문 분석에 실패했습니다."
+      "text": "Mod {0}에는 정확히 API 버전 {1}이(가) 필요하지만 귀하의 버전은 {2}입니다. 일반적으로 Nitrocid 및/또는 모드를 업그레이드하는 것이 도움이 됩니다. 모드 구문 분석에 실패했습니다."
     },
     {
       "loc": "NKS_MODS_MODHASNOAPIVERSION",

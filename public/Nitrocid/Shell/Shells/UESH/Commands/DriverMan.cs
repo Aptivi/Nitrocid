@@ -1,14 +1,14 @@
 //
-// Nitrocid KS  Copyright (C) 2018-2026  Aptivi
+// Nitrocid  Copyright (C) 2018-2026  Aptivi
 //
-// This file is part of Nitrocid KS
+// This file is part of Nitrocid
 //
-// Nitrocid KS is free software: you can redistribute it and/or modify
+// Nitrocid is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Nitrocid KS is distributed in the hope that it will be useful,
+// Nitrocid is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY, without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
@@ -37,7 +37,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// Manages your drivers
     /// </summary>
     /// <remarks>
-    /// You can manage all your drivers installed in Nitrocid KS by this command. It allows you to set, get info, and list all your drivers.
+    /// You can manage all your drivers installed in Nitrocid by this command. It allows you to set, get info, and list all your drivers.
     /// <br></br>
     /// The user must have at least the administrative privileges before they can run the below commands.
     /// </remarks>

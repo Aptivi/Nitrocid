@@ -176,7 +176,7 @@
     <value>Bu uyumsuzluğu araştırmanıza yardımcı olabilecek hataların listesi aşağıdadır:</value>
   </data>
   <data name="NKS_MODS_MODNEEDSAPIEXACT" xml:space="preserve">
-    <value>Mod {0} tam olarak bir API sürümü {1} gerektirir, ancak siz {2} sürümüne sahipsiniz. Nitrocid KS'yi ve/veya modu yükseltmek genellikle yardımcı olur. Mod ayrıştırma başarısız oldu.</value>
+    <value>Mod {0} tam olarak bir API sürümü {1} gerektirir, ancak siz {2} sürümüne sahipsiniz. Nitrocid'yi ve/veya modu yükseltmek genellikle yardımcı olur. Mod ayrıştırma başarısız oldu.</value>
   </data>
   <data name="NKS_MODS_MODHASNOAPIVERSION" xml:space="preserve">
     <value>Mod {0} bu API sürümüyle düzgün çalışmayabilir. Mod başlatılamayabilir. En son kopyayı almak için mod satıcısıyla iletişime geçin.</value>

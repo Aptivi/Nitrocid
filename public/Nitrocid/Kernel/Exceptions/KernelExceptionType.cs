@@ -1,14 +1,14 @@
 ﻿//
-// Nitrocid KS  Copyright (C) 2018-2026  Aptivi
+// Nitrocid  Copyright (C) 2018-2026  Aptivi
 //
-// This file is part of Nitrocid KS
+// This file is part of Nitrocid
 //
-// Nitrocid KS is free software: you can redistribute it and/or modify
+// Nitrocid is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Nitrocid KS is distributed in the hope that it will be useful,
+// Nitrocid is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY, without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
@@ -89,7 +89,7 @@ namespace Nitrocid.Kernel.Exceptions
         /// </summary>
         HTTPShell,
         /// <summary>
-        /// Insane console has been detected. Nitrocid KS can't continue running, because your console is incompatible with our requirements.
+        /// Insane console has been detected. Nitrocid can't continue running, because your console is incompatible with our requirements.
         /// </summary>
         InsaneConsoleDetected,
         /// <summary>
@@ -333,7 +333,7 @@ namespace Nitrocid.Kernel.Exceptions
         /// </summary>
         TextEditor,
         /// <summary>
-        /// When the kernel tried to load the specified mod, it requested loading "Kernel Simulator". Since the main application is renamed to Nitrocid KS, this mod can't be run safely. We advice you to upgrade the mod.
+        /// When the kernel tried to load the specified mod, it requested loading "Kernel Simulator". Since the main application is renamed to Nitrocid, this mod can't be run safely. We advice you to upgrade the mod.
         /// </summary>
         OldModDetected,
         /// <summary>

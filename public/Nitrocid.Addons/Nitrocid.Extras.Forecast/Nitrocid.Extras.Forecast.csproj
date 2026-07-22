@@ -10,8 +10,8 @@
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Extras - Forecast</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Forecast</AssemblyTitle>
+    <Description>Nitrocid Extras - Forecast</Description>
+    <AssemblyTitle>Nitrocid Extras - Forecast</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- Extras.Forecast addon General Information End -->

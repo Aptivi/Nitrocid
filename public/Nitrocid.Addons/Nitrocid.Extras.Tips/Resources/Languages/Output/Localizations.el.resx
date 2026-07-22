@@ -107,7 +107,7 @@
     <value>ότι οι μακροπρόθεσμες εκδόσεις υποστηρίζονται για πέντε χρόνια για κύρια υποστήριξη και τρία χρόνια για ενημερώσεις ασφαλείας;</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_17" xml:space="preserve">
-    <value>ότι το 0.0.1 ήταν η πρώτη έκδοση του Nitrocid KS που κυκλοφόρησε στις 22 Φεβρουαρίου 2018;</value>
+    <value>ότι το 0.0.1 ήταν η πρώτη έκδοση του Nitrocid που κυκλοφόρησε στις 22 Φεβρουαρίου 2018;</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_18" xml:space="preserve">
     <value>ότι η σειρά 0.0.24.x ήταν η μόνη σειρά εκδόσεων που είχε την έκδοση API v2.1;</value>
@@ -119,7 +119,7 @@
     <value>ότι η σειρά 0.1.x δεν είναι συμβατή προς τα πίσω με τη σειρά 0.0.24.x ή παλαιότερη;</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_21" xml:space="preserve">
-    <value>ότι μπορείτε να εκτελέσετε το Nitrocid KS σε Linux, macOS και Android;</value>
+    <value>ότι μπορείτε να εκτελέσετε το Nitrocid σε Linux, macOS και Android;</value>
   </data>
   <data name="NKS_TIPS_KERNELTIP_22" xml:space="preserve">
     <value>ότι μπορείτε να ανατρέξετε στην τεκμηρίωση του API για να σας βοηθήσει να φτιάξετε τα mods σας;</value>

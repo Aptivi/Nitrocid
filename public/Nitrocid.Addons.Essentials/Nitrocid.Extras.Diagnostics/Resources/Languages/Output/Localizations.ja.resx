@@ -68,6 +68,6 @@
     <value>{0} のスレッド スタック トレース情報</value>
   </data>
   <data name="NKS_DIAG_NOTNKSTHREAD" xml:space="preserve">
-    <value>Nitrocid KS スレッドではありません</value>
+    <value>Nitrocid スレッドではありません</value>
   </data>
 </root>

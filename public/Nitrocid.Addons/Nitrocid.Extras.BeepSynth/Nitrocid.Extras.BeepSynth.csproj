@@ -10,8 +10,8 @@
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Extras - Beep Synth</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Beep Synth</AssemblyTitle>
+    <Description>Nitrocid Extras - Beep Synth</Description>
+    <AssemblyTitle>Nitrocid Extras - Beep Synth</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- Extras.BeepSynth addon General Information End -->

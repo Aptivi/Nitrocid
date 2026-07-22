@@ -270,7 +270,7 @@
     },
     {
       "loc": "NKS_MODS_MODNEEDSAPIEXACT",
-      "text": "Mod {0} requires exactly an API version {1}, but you have version {2}. Upgrading Nitrocid KS and/or the mod usually helps. Mod parsing failed."
+      "text": "Mod {0} requires exactly an API version {1}, but you have version {2}. Upgrading Nitrocid and/or the mod usually helps. Mod parsing failed."
     },
     {
       "loc": "NKS_MODS_MODHASNOAPIVERSION",

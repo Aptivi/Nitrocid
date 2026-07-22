@@ -2260,11 +2260,11 @@
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT",
-      "text": "Visne Nitrocid KS ut sponte reprehendo pro updates?"
+      "text": "Visne Nitrocid ut sponte reprehendo pro updates?"
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2",
-      "text": "Praeter automatice pro updates reprimendis, Nitrocid KS, etiam tabellam update automatice detrahi potest."
+      "text": "Praeter automatice pro updates reprimendis, Nitrocid, etiam tabellam update automatice detrahi potest."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3",
@@ -2916,7 +2916,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED",
-      "text": "Cum nucleus certum modum onerare conatus est, postulavit loading \"Kernel Simulator\". Cum principalis applicatio Nitrocid KS appellata sit, modus hic tuto currere non potest. Monemus te ut mod upgrade."
+      "text": "Cum nucleus certum modum onerare conatus est, postulavit loading \"Kernel Simulator\". Cum principalis applicatio Nitrocid appellata sit, modus hic tuto currere non potest. Monemus te ut mod upgrade."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS",
@@ -3992,7 +3992,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
-      "text": "Nota quaeso quod Nitrocid KS in inusitato ambitu currit significat quasdam lineas limitatas esse. Modi et figurationes onerare non poteris."
+      "text": "Nota quaeso quod Nitrocid in inusitato ambitu currit significat quasdam lineas limitatas esse. Modi et figurationes onerare non poteris."
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_TITLE",
@@ -6528,7 +6528,7 @@
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_DESC",
-      "text": "Nitrocid KS, futurum nucleum nostrum simulat, Kernel Nitrocid."
+      "text": "Nitrocid, futurum nucleum nostrum simulat, Kernel Nitrocid."
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_MODAPI",
@@ -6552,7 +6552,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
-      "text": "Nitrocid KS in inusitato ambitu curris. Quaeso cognoscere te nucleum protinus incepisse. Si certus es quod more solito nucleum incepisti, fieri potest quod sine versione Nitrocidi KS curris."
+      "text": "Nitrocid in inusitato ambitu curris. Quaeso cognoscere te nucleum protinus incepisse. Si certus es quod more solito nucleum incepisti, fieri potest quod sine versione Nitrocidi KS curris."
     },
     {
       "loc": "NKS_KERNEL_STARTING_BOOTLOADER_ERROR",
@@ -7312,7 +7312,7 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC",
-      "text": "Praecipuum quiddam ostendit quod in screen ante incipiens Nitrocid KS (unix systemata tantum)"
+      "text": "Praecipuum quiddam ostendit quod in screen ante incipiens Nitrocid (unix systemata tantum)"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED",
@@ -7460,7 +7460,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOL",
-      "text": "Haec versio Nitrocid KS non diutius sustinetur."
+      "text": "Haec versio Nitrocid non diutius sustinetur."
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
@@ -8136,11 +8136,11 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC",
-      "text": "Exercitum nomen Nitrocid KS . decurrit"
+      "text": "Exercitum nomen Nitrocid . decurrit"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC",
-      "text": "Portus Nitrocid KS in remotis target"
+      "text": "Portus Nitrocid in remotis target"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC",
@@ -8816,7 +8816,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
-      "text": "Nitrocid KS"
+      "text": "Nitrocid"
     },
     {
       "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
@@ -8828,7 +8828,7 @@
     },
     {
       "loc": "NKS_KERNEL_FATALERROR",
-      "text": "Nitrocid KS problema deprehendit et clausa est."
+      "text": "Nitrocid problema deprehendit et clausa est."
     },
     {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_INVALIDTEMPLATE",
@@ -9048,7 +9048,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLE",
-      "text": "Consola insana detecta est. Nitrocid KS currere non potest, quia consola tua cum requisitis nostris non congruit."
+      "text": "Consola insana detecta est. Nitrocid currere non potest, quia consola tua cum requisitis nostris non congruit."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",

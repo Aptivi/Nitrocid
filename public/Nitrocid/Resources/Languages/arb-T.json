@@ -2282,15 +2282,15 @@
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1",
-      "text": "يقوم Nitrocid KS حاليًا بتحديث نفسه للحصول على أحدث إصدار يتضمن تحسينات عامة وإصلاحات للأخطاء. تتضمن الإصدارات الرئيسية الجديدة عادةً تغييرات جذرية وميزات جديدة ومثيرة."
+      "text": "يقوم Nitrocid حاليًا بتحديث نفسه للحصول على أحدث إصدار يتضمن تحسينات عامة وإصلاحات للأخطاء. تتضمن الإصدارات الرئيسية الجديدة عادةً تغييرات جذرية وميزات جديدة ومثيرة."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT",
-      "text": "هل تريد أن يقوم Nitrocid KS بالتحقق تلقائيًا من التحديثات؟"
+      "text": "هل تريد أن يقوم Nitrocid بالتحقق تلقائيًا من التحديثات؟"
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2",
-      "text": "بالإضافة إلى التحقق تلقائيًا من وجود تحديثات، يمكن لـ Nitrocid KS أيضًا تنزيل ملف التحديث تلقائيًا."
+      "text": "بالإضافة إلى التحقق تلقائيًا من وجود تحديثات، يمكن لـ Nitrocid أيضًا تنزيل ملف التحديث تلقائيًا."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3",
@@ -2942,7 +2942,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED",
-      "text": "عندما حاولت النواة تحميل الوضع المحدد، طلبت تحميل \"Kernel Simulator\". نظرًا لإعادة تسمية التطبيق الرئيسي إلى Nitrocid KS، لا يمكن تشغيل هذا الوضع بأمان. ننصحك بترقية الوضع."
+      "text": "عندما حاولت النواة تحميل الوضع المحدد، طلبت تحميل \"Kernel Simulator\". نظرًا لإعادة تسمية التطبيق الرئيسي إلى Nitrocid، لا يمكن تشغيل هذا الوضع بأمان. ننصحك بترقية الوضع."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS",
@@ -4018,7 +4018,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
-      "text": "يرجى ملاحظة أن تشغيل Nitrocid KS في بيئة غير عادية يعني أن بعض الميزات محدودة. لن تتمكن من تحميل التعديلات والتكوينات."
+      "text": "يرجى ملاحظة أن تشغيل Nitrocid في بيئة غير عادية يعني أن بعض الميزات محدودة. لن تتمكن من تحميل التعديلات والتكوينات."
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_TITLE",
@@ -6554,7 +6554,7 @@
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_DESC",
-      "text": "Nitrocid KS يحاكي نواة المستقبل، Nitrocid Kernel."
+      "text": "Nitrocid يحاكي نواة المستقبل، Nitrocid Kernel."
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_MODAPI",
@@ -6578,7 +6578,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
-      "text": "أنت تقوم بتشغيل Nitrocid KS في بيئة غير عادية. يرجى التحقق من أنك قمت بتشغيل النواة مباشرة. إذا كنت متأكدًا من أنك قمت بتشغيل النواة بالطريقة المعتادة، فقد يكون السبب هو أنك تقوم بتشغيل إصدار غير مدعوم من Nitrocid KS."
+      "text": "أنت تقوم بتشغيل Nitrocid في بيئة غير عادية. يرجى التحقق من أنك قمت بتشغيل النواة مباشرة. إذا كنت متأكدًا من أنك قمت بتشغيل النواة بالطريقة المعتادة، فقد يكون السبب هو أنك تقوم بتشغيل إصدار غير مدعوم من Nitrocid."
     },
     {
       "loc": "NKS_KERNEL_STARTING_BOOTLOADER_ERROR",
@@ -7338,7 +7338,7 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC",
-      "text": "يعرض المخزن المؤقت الرئيسي الذي كان موجودًا على الشاشة قبل بدء تشغيل Nitrocid KS (أنظمة Unix فقط)"
+      "text": "يعرض المخزن المؤقت الرئيسي الذي كان موجودًا على الشاشة قبل بدء تشغيل Nitrocid (أنظمة Unix فقط)"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED",
@@ -7478,7 +7478,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLWARNING",
-      "text": "لن ندعم هذا الإصدار من Nitrocid KS بعد هذا التاريخ"
+      "text": "لن ندعم هذا الإصدار من Nitrocid بعد هذا التاريخ"
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLTIP",
@@ -7486,7 +7486,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOL",
-      "text": "لم يعد هذا الإصدار من Nitrocid KS مدعومًا."
+      "text": "لم يعد هذا الإصدار من Nitrocid مدعومًا."
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
@@ -8162,11 +8162,11 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC",
-      "text": "اسم المضيف الذي يقوم بتشغيل Nitrocid KS"
+      "text": "اسم المضيف الذي يقوم بتشغيل Nitrocid"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC",
-      "text": "منفذ Nitrocid KS على الهدف البعيد"
+      "text": "منفذ Nitrocid على الهدف البعيد"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC",
@@ -8854,7 +8854,7 @@
     },
     {
       "loc": "NKS_KERNEL_FATALERROR",
-      "text": "اكتشف Nitrocid KS مشكلة وتم إغلاقه."
+      "text": "اكتشف Nitrocid مشكلة وتم إغلاقه."
     },
     {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_INVALIDTEMPLATE",
@@ -9074,7 +9074,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLE",
-      "text": "تم اكتشاف وحدة تحكم غير طبيعية. لا يمكن لبرنامج Nitrocid KS الاستمرار في التشغيل، لأن وحدة التحكم الخاصة بك غير متوافقة مع متطلباتنا."
+      "text": "تم اكتشاف وحدة تحكم غير طبيعية. لا يمكن لبرنامج Nitrocid الاستمرار في التشغيل، لأن وحدة التحكم الخاصة بك غير متوافقة مع متطلباتنا."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",

@@ -1745,13 +1745,13 @@
     <value>Nuashonruithe uathoibríocha</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1" xml:space="preserve">
-    <value>Nuashonraíonn Nitrocid KS é féin faoi láthair chun an leagan is déanaí a fháil a chuimsíonn feabhsuithe ginearálta agus ceartúcháin fhabht. Cuimsíonn leaganacha móra nua de ghnáth athruithe briste agus gnéithe spreagúla nua.</value>
+    <value>Nuashonraíonn Nitrocid é féin faoi láthair chun an leagan is déanaí a fháil a chuimsíonn feabhsuithe ginearálta agus ceartúcháin fhabht. Cuimsíonn leaganacha móra nua de ghnáth athruithe briste agus gnéithe spreagúla nua.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT" xml:space="preserve">
-    <value>Ar mhaith leat go ndéanfaidh Nitrocid KS seiceáil go huathoibríoch le haghaidh nuashonruithe?</value>
+    <value>Ar mhaith leat go ndéanfaidh Nitrocid seiceáil go huathoibríoch le haghaidh nuashonruithe?</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2" xml:space="preserve">
-    <value>Chomh maith le nuashonruithe a sheiceáil go huathoibríoch, is féidir le Nitrocid KS an comhad nuashonraithe a íoslódáil go huathoibríoch.</value>
+    <value>Chomh maith le nuashonruithe a sheiceáil go huathoibríoch, is féidir le Nitrocid an comhad nuashonraithe a íoslódáil go huathoibríoch.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
     <value>Is féidir leat seiceáil i gcónaí le haghaidh nuashonruithe eithne ag baint úsáide as an ordú "nuashonraigh".</value>
@@ -2240,7 +2240,7 @@
     <value>Tá oibríocht eagarthóireachta téacs neamhbhailí á déanamh.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>Nuair a rinne an eithne iarracht an mod sonraithe a luchtú, d'iarr sé "Eithne Insamhlóir" a luchtú. Ós rud é go bhfuil an príomhfheidhmchlár athainmnithe go Nitrocid KS, ní féidir an mod seo a rith go sábháilte. Molaimid duit an mod a uasghrádú.</value>
+    <value>Nuair a rinne an eithne iarracht an mod sonraithe a luchtú, d'iarr sé "Eithne Insamhlóir" a luchtú. Ós rud é go bhfuil an príomhfheidhmchlár athainmnithe go Nitrocid, ní féidir an mod seo a rith go sábháilte. Molaimid duit an mod a uasghrádú.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
     <value>Tharla earráid le bainisteoir teagmhálaithe agus iarracht á déanamh an oibríocht iarrtha a dhéanamh. Cinntigh go bhfuil an comhad teagmhála san fhillteán ceart agus gur comhad teagmhála vCard 2.1, 3.0 nó 4.0 bailí é.</value>
@@ -3047,7 +3047,7 @@
     <value>Admhaítear</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_DESC" xml:space="preserve">
-    <value>Tabhair faoi deara go gciallaíonn rith Nitrocid KS ar thimpeallacht neamhghnách go bhfuil roinnt gnéithe teoranta. Ní bheidh tú in ann mods agus cumraíochtaí a lódáil.</value>
+    <value>Tabhair faoi deara go gciallaíonn rith Nitrocid ar thimpeallacht neamhghnách go bhfuil roinnt gnéithe teoranta. Ní bheidh tú in ann mods agus cumraíochtaí a lódáil.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_TITLE" xml:space="preserve">
     <value>Fógra timpeallachta neamhghnách</value>
@@ -4949,7 +4949,7 @@
     <value>Socruithe</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_DESC" xml:space="preserve">
-    <value>Samhlaíonn Nitrocid KS ár n-eithne sa todhchaí, an Eithne Nitrocid.</value>
+    <value>Samhlaíonn Nitrocid ár n-eithne sa todhchaí, an Eithne Nitrocid.</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_MODAPI" xml:space="preserve">
     <value>Mod API</value>
@@ -4967,7 +4967,7 @@
     <value>Déan iniúchadh ar na logaí dífhabhtaithe chun tuilleadh eolais a fháil faoin earráid.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV" xml:space="preserve">
-    <value>Tá tú ag rith Nitrocid KS ar thimpeallacht neamhghnách. Cinntigh gur thosaigh tú ar an eithne go díreach. Má tá tú cinnte go bhfuil tú tosaithe ar an eithne ar an ngnáthbhealach, b'fhéidir gurb é an fáth go bhfuil tú ag rith leagan de Nitrocid KS nach dtacaítear leis.</value>
+    <value>Tá tú ag rith Nitrocid ar thimpeallacht neamhghnách. Cinntigh gur thosaigh tú ar an eithne go díreach. Má tá tú cinnte go bhfuil tú tosaithe ar an eithne ar an ngnáthbhealach, b'fhéidir gurb é an fáth go bhfuil tú ag rith leagan de Nitrocid nach dtacaítear leis.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_ERROR" xml:space="preserve">
     <value>Tharla earráid inmheánach do GRILO</value>
@@ -5537,7 +5537,7 @@
     <value>Athraítear ainm iomlán an úsáideora (ainm taispeána)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC" xml:space="preserve">
-    <value>Taispeáin an príomh-mhaolán a bhí ar an scáileán sular thosaigh Nitrocid KS (córais Unix amháin)</value>
+    <value>Taispeáin an príomh-mhaolán a bhí ar an scáileán sular thosaigh Nitrocid (córais Unix amháin)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED" xml:space="preserve">
     <value>Ní féidir an pacáiste breiseán a fháil.</value>
@@ -5642,13 +5642,13 @@
     <value>Fuaime múchadh a imirt. .</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLWARNING" xml:space="preserve">
-    <value>Ní thacfaimid leis an leagan seo de Nitrocid KS a thuilleadh tar éis an dáta seo</value>
+    <value>Ní thacfaimid leis an leagan seo de Nitrocid a thuilleadh tar éis an dáta seo</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLTIP" xml:space="preserve">
     <value>Cinntigh go n-uasghrádóidh tú go dtí an leagan tacaithe go luath más mian leat leanúint ar aghaidh ag fáil tacaíochta.</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOL" xml:space="preserve">
-    <value>Ní thacaítear leis an leagan seo de Nitrocid KS a thuilleadh.</value>
+    <value>Ní thacaítear leis an leagan seo de Nitrocid a thuilleadh.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS" xml:space="preserve">
     <value>Theip ar bhreiseáin eithne tábhachtacha a luchtú</value>
@@ -6155,10 +6155,10 @@
     <value>URL dírithe ar an gcríochphointe uaslódála</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC" xml:space="preserve">
-    <value>Ainm ósta a ritheann Nitrocid KS</value>
+    <value>Ainm ósta a ritheann Nitrocid</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC" xml:space="preserve">
-    <value>Port Nitrocid KS ar an sprioc cianda</value>
+    <value>Port Nitrocid ar an sprioc cianda</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC" xml:space="preserve">
     <value>Ordú a fhorghníomhú go cianda</value>
@@ -6674,7 +6674,7 @@
     <value>Earráid timpeallachta eithne:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
-    <value>Tá fadhb aimsithe ag Nitrocid KS agus tá sé múchta.</value>
+    <value>Tá fadhb aimsithe ag Nitrocid agus tá sé múchta.</value>
   </data>
   <data name="NKS_CONSOLEBASE_THEMES_EXCEPTION_INVALIDTEMPLATE" xml:space="preserve">
     <value>Teimpléad datha neamhbhailí {0}</value>
@@ -6839,7 +6839,7 @@
     <value>Theip ar an socrú a d'iarr tú a aimsiú.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLE" xml:space="preserve">
-    <value>Braitheadh ​​consól mire. Ní féidir le Nitrocid KS leanúint ar aghaidh ag rith, mar níl do chonsól comhoiriúnach lenár riachtanais.</value>
+    <value>Braitheadh ​​consól mire. Ní féidir le Nitrocid leanúint ar aghaidh ag rith, mar níl do chonsól comhoiriúnach lenár riachtanais.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME" xml:space="preserve">
     <value>Níl aon téama den ainm seo ann.</value>

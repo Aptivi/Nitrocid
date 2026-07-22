@@ -10,8 +10,8 @@
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Extras - SQL Shell</Description>
-    <AssemblyTitle>Nitrocid KS Extras - SQL Shell</AssemblyTitle>
+    <Description>Nitrocid Extras - SQL Shell</Description>
+    <AssemblyTitle>Nitrocid Extras - SQL Shell</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- Extras.SqlShell addon General Information End -->
