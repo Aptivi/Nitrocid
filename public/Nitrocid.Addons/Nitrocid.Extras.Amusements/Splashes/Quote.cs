@@ -46,8 +46,8 @@ namespace Nitrocid.Extras.Amusements.Splashes
         {
             if (_refresh)
             {
-                _selectedQuote = RandomQuotes.RenderQuote();
                 _quoteColor = ColorTools.GetRandomColor(ColorType.TrueColor);
+                _selectedQuote = RandomQuotes.RenderQuote(_quoteColor);
             }
             _refresh = false;
             return base.Opening(context);
@@ -62,17 +62,14 @@ namespace Nitrocid.Extras.Amusements.Splashes
 
                 // Display the quote
                 string[] quoteSplit = _selectedQuote.SplitNewLines();
-                int maxLength = quoteSplit.Max((quote) => quote.Length);
+                int maxLength = quoteSplit.Max(ConsoleChar.EstimateCellWidth);
                 int halfConsoleY = ConsoleWrapper.WindowHeight / 2 - quoteSplit.Length / 2;
                 int quotePosX = ConsoleWrapper.WindowWidth / 2 - maxLength / 2;
                 for (int i = 0; i < quoteSplit.Length; i++)
                 {
                     int currentY = halfConsoleY + i;
                     string str = quoteSplit[i];
-                    builder.Append(
-                        _quoteColor.VTSequenceForeground() +
-                        TextWriterWhereColor.RenderWhere(str, quotePosX, currentY)
-                    );
+                    TextWriterWhereColor.WriteWhere(str, quotePosX, currentY);
                 }
             }
             catch (ThreadInterruptedException)
