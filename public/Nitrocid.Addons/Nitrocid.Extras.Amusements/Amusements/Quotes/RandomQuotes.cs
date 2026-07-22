@@ -17,62 +17,34 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Text;
+using Colorimetry;
 using Nettify.Quotes;
-using Newtonsoft.Json.Linq;
-using Nitrocid.Drivers.RNG;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Reflection.Internal;
-using Terminaux.Base.Extensions;
-using Textify.General;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Quotes
 {
     internal static class RandomQuotes
     {
-        internal static string RenderQuote()
+        internal static string RenderQuote(Color? color = null)
         {
             // Get a random quote
             var quote = QuoteTools.GetRandomQuote();
             string content = quote?.Content ?? LanguageTools.GetLocalized("NKS_AMUSEMENTS_QUOTE_QUOTEUNKNOWN");
             string author = quote?.Author ?? LanguageTools.GetLocalized("NKS_AMUSEMENTS_QUOTE_AUTHORUNKNOWN");
 
-            // Specify how to render the quote
-            StringBuilder elegantQuote = new();
-            int padding = 3;
-            int maxQuoteWidth = 50;
-            int maxWidth = 50 + padding * 2;
-
-            // Get quote incomplete sentences
-            string[] quoteSentences = ConsoleMisc.GetWrappedSentencesByWords(content, maxQuoteWidth);
-
-            // Render the sentences to the builder
-            for (int i = 0; i < quoteSentences.Length; i++)
+            // Render the quote
+            var renderableQuote = new Terminaux.Writer.CyclicWriters.Simple.Quote()
             {
-                string quoteSentence = quoteSentences[i];
-
-                // If the sentence is the first one, don't do padding and write a quote mark.
-                if (i == 0)
-                    elegantQuote.Append($"\"{CharManager.NewLine}   ");
-                else
-                    elegantQuote.Append(new string(' ', padding));
-
-                // Render the sentence
-                elegantQuote.Append(quoteSentence);
-
-                // Check to see if we're going to put the second quote mark
-                if (i == quoteSentences.Length - 1)
-                    elegantQuote.AppendLine(CharManager.NewLine + new string(' ', maxQuoteWidth + padding) + "  \"");
-                else
-                    elegantQuote.AppendLine();
+                Author = author,
+                QuoteText = content,
+                UseColors = color is not null,
+            };
+            if (color is not null)
+            {
+                renderableQuote.ForegroundColor = color;
+                renderableQuote.PadColor = color;
             }
-
-            // Now, write the name of the author
-            int authorPosition = maxWidth - ConsoleChar.EstimateCellWidth(author);
-            elegantQuote.AppendLine();
-            elegantQuote.Append(new string(' ', authorPosition));
-            elegantQuote.Append(author);
-            return elegantQuote.ToString();
+            return renderableQuote.Render();
         }
     }
 }
