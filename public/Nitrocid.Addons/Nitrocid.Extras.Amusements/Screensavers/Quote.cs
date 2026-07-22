@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             // Get the color and positions
             Color quoteColor = ChangeQuoteColor();
-            string renderedQuote = RandomQuotes.RenderQuote();
+            string renderedQuote = RandomQuotes.RenderQuote(quoteColor);
             string[] quoteSplit = renderedQuote.SplitNewLines();
             int maxLength = quoteSplit.Max(ConsoleChar.EstimateCellWidth);
             int halfConsoleY = ConsoleWrapper.WindowHeight / 2 - quoteSplit.Length / 2;
@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
             {
                 int currentY = oldHalfConsoleY + i;
                 string str = oldQuoteSplit[i];
-                TextWriterWhereColor.WriteWhereColor(str, oldQuotePosX, currentY, quoteColor);
+                TextWriterWhereColor.WriteWhere(str, oldQuotePosX, currentY);
             }
 
             // Write quote
@@ -64,7 +64,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
             {
                 int currentY = halfConsoleY + i;
                 string str = quoteSplit[i];
-                TextWriterWhereColor.WriteWhereColor(str, quotePosX, currentY, quoteColor);
+                TextWriterWhereColor.WriteWhere(str, quotePosX, currentY);
             }
 
             // Delay

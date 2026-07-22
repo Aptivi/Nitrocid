@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Colorimetry;
 using Nettify.Quotes;
 using Nitrocid.Base.Languages;
 
@@ -24,7 +25,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Quotes
 {
     internal static class RandomQuotes
     {
-        internal static string RenderQuote()
+        internal static string RenderQuote(Color? color = null)
         {
             // Get a random quote
             var quote = QuoteTools.GetRandomQuote();
@@ -36,7 +37,13 @@ namespace Nitrocid.Extras.Amusements.Amusements.Quotes
             {
                 Author = author,
                 QuoteText = content,
+                UseColors = color is not null,
             };
+            if (color is not null)
+            {
+                renderableQuote.ForegroundColor = color;
+                renderableQuote.PadColor = color;
+            }
             return renderableQuote.Render();
         }
     }
