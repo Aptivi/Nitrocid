@@ -1748,13 +1748,13 @@
     <value>Actualizaciones automáticas</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1" xml:space="preserve">
-    <value>Nitrocid KS actualmente se actualiza para obtener la versión más reciente que incluye mejoras generales y correcciones de errores. Las nuevas versiones principales suelen incluir cambios importantes y nuevas funciones interesantes.</value>
+    <value>Nitrocid actualmente se actualiza para obtener la versión más reciente que incluye mejoras generales y correcciones de errores. Las nuevas versiones principales suelen incluir cambios importantes y nuevas funciones interesantes.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT" xml:space="preserve">
-    <value>¿Quieres que Nitrocid KS busque actualizaciones automáticamente?</value>
+    <value>¿Quieres que Nitrocid busque actualizaciones automáticamente?</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2" xml:space="preserve">
-    <value>Además de buscar actualizaciones automáticamente, Nitrocid KS también puede descargar el archivo de actualización automáticamente.</value>
+    <value>Además de buscar actualizaciones automáticamente, Nitrocid también puede descargar el archivo de actualización automáticamente.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
     <value>Siempre puedes buscar actualizaciones del kernel usando el comando "update".</value>
@@ -2243,7 +2243,7 @@
     <value>Se está realizando una operación de editor de texto no válida.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>Cuando el kernel intentó cargar el mod especificado, solicitó cargar "Kernel Simulator". Dado que la aplicación principal pasa a llamarse Nitrocid KS, este mod no se puede ejecutar de forma segura. Le recomendamos que actualice el mod.</value>
+    <value>Cuando el kernel intentó cargar el mod especificado, solicitó cargar "Kernel Simulator". Dado que la aplicación principal pasa a llamarse Nitrocid, este mod no se puede ejecutar de forma segura. Le recomendamos que actualice el mod.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
     <value>Se produjo un error en el administrador de contactos al intentar realizar la operación solicitada. Asegúrese de que el archivo de contacto exista en la carpeta correcta y que sea un archivo de contacto vCard 2.1, 3.0 o 4.0 válido.</value>
@@ -3050,7 +3050,7 @@
     <value>Admitido</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_DESC" xml:space="preserve">
-    <value>Tenga en cuenta que ejecutar Nitrocid KS en un entorno inusual significa que algunas funciones son limitadas. No podrás cargar mods y configuraciones.</value>
+    <value>Tenga en cuenta que ejecutar Nitrocid en un entorno inusual significa que algunas funciones son limitadas. No podrás cargar mods y configuraciones.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_TITLE" xml:space="preserve">
     <value>Aviso de entorno inusual</value>
@@ -4958,7 +4958,7 @@
     <value>Ajustes</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_DESC" xml:space="preserve">
-    <value>Nitrocid KS simula nuestro futuro kernel, el Nitrocid Kernel.</value>
+    <value>Nitrocid simula nuestro futuro kernel, el Nitrocid Kernel.</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_MODAPI" xml:space="preserve">
     <value>API de modificación</value>
@@ -4976,7 +4976,7 @@
     <value>Investigue los registros de depuración para obtener más información sobre el error.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV" xml:space="preserve">
-    <value>Está ejecutando Nitrocid KS en un entorno inusual. Verifique que haya iniciado el kernel directamente. Si está seguro de haber iniciado el kernel de la forma habitual, puede deberse a que está ejecutando una versión no compatible de Nitrocid KS.</value>
+    <value>Está ejecutando Nitrocid en un entorno inusual. Verifique que haya iniciado el kernel directamente. Si está seguro de haber iniciado el kernel de la forma habitual, puede deberse a que está ejecutando una versión no compatible de Nitrocid.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_ERROR" xml:space="preserve">
     <value>GRILO ha experimentado un error interno</value>
@@ -5546,7 +5546,7 @@
     <value>Cambia el nombre completo del usuario (nombre para mostrar)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC" xml:space="preserve">
-    <value>Muestra el buffer principal que estaba en la pantalla antes de iniciar Nitrocid KS (solo sistemas Unix)</value>
+    <value>Muestra el buffer principal que estaba en la pantalla antes de iniciar Nitrocid (solo sistemas Unix)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED" xml:space="preserve">
     <value>No se puede obtener el paquete de complementos.</value>
@@ -5651,13 +5651,13 @@
     <value>Reproduciendo sonido de apagado...</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLWARNING" xml:space="preserve">
-    <value>Ya no brindaremos soporte para esta versión de Nitrocid KS después de esta fecha.</value>
+    <value>Ya no brindaremos soporte para esta versión de Nitrocid después de esta fecha.</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLTIP" xml:space="preserve">
     <value>Asegúrese de actualizar a la versión compatible pronto si desea seguir recibiendo soporte.</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOL" xml:space="preserve">
-    <value>Esta versión de Nitrocid KS ya no recibe soporte.</value>
+    <value>Esta versión de Nitrocid ya no recibe soporte.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS" xml:space="preserve">
     <value>No se pudieron cargar complementos importantes del kernel</value>
@@ -6164,10 +6164,10 @@
     <value>URL que apunta al punto final de carga</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC" xml:space="preserve">
-    <value>Nombre de host que ejecuta Nitrocid KS</value>
+    <value>Nombre de host que ejecuta Nitrocid</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC" xml:space="preserve">
-    <value>Puerto de Nitrocid KS en el objetivo remoto</value>
+    <value>Puerto de Nitrocid en el objetivo remoto</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC" xml:space="preserve">
     <value>Comando para ejecutar remotamente</value>

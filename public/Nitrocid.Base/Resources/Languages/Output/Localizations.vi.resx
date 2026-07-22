@@ -1748,13 +1748,13 @@
     <value>Cập nhật tự động</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1" xml:space="preserve">
-    <value>Nitrocid KS hiện đang tự cập nhật để có phiên bản mới nhất bao gồm các cải tiến chung và sửa lỗi. Các phiên bản chính mới thường bao gồm các thay đổi đột phá và các tính năng mới thú vị.</value>
+    <value>Nitrocid hiện đang tự cập nhật để có phiên bản mới nhất bao gồm các cải tiến chung và sửa lỗi. Các phiên bản chính mới thường bao gồm các thay đổi đột phá và các tính năng mới thú vị.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT" xml:space="preserve">
-    <value>Bạn có muốn Nitrocid KS tự động kiểm tra bản cập nhật không?</value>
+    <value>Bạn có muốn Nitrocid tự động kiểm tra bản cập nhật không?</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2" xml:space="preserve">
-    <value>Ngoài việc tự động kiểm tra bản cập nhật, Nitrocid KS còn có thể tự động tải xuống tệp cập nhật.</value>
+    <value>Ngoài việc tự động kiểm tra bản cập nhật, Nitrocid còn có thể tự động tải xuống tệp cập nhật.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
     <value>Bạn luôn có thể kiểm tra bản cập nhật kernel bằng lệnh "update".</value>
@@ -2243,7 +2243,7 @@
     <value>Đang thực hiện một thao tác soạn thảo văn bản không hợp lệ.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>Khi kernel cố gắng tải mod đã chỉ định, nó yêu cầu tải "Kernel Simulator". Vì ứng dụng chính được đổi tên thành Nitrocid KS nên mod này không thể chạy an toàn. Chúng tôi khuyên bạn nên nâng cấp mod.</value>
+    <value>Khi kernel cố gắng tải mod đã chỉ định, nó yêu cầu tải "Kernel Simulator". Vì ứng dụng chính được đổi tên thành Nitrocid nên mod này không thể chạy an toàn. Chúng tôi khuyên bạn nên nâng cấp mod.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
     <value>Đã xảy ra lỗi trình quản lý danh bạ khi cố gắng thực hiện thao tác được yêu cầu. Đảm bảo rằng tệp danh bạ nằm trong đúng thư mục và đó là tệp danh bạ vCard 2.1, 3.0 hoặc 4.0 hợp lệ.</value>
@@ -3050,7 +3050,7 @@
     <value>Đã xác nhận</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_DESC" xml:space="preserve">
-    <value>Xin lưu ý rằng chạy Nitrocid KS trên môi trường bất thường có nghĩa là một số tính năng bị hạn chế. Bạn sẽ không thể tải mod và cấu hình.</value>
+    <value>Xin lưu ý rằng chạy Nitrocid trên môi trường bất thường có nghĩa là một số tính năng bị hạn chế. Bạn sẽ không thể tải mod và cấu hình.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_TITLE" xml:space="preserve">
     <value>Thông báo môi trường bất thường</value>
@@ -4958,7 +4958,7 @@
     <value>Cài đặt</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_DESC" xml:space="preserve">
-    <value>Nitrocid KS mô phỏng hạt nhân tương lai của chúng ta, Hạt nhân Nitrocid.</value>
+    <value>Nitrocid mô phỏng hạt nhân tương lai của chúng ta, Hạt nhân Nitrocid.</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_MODAPI" xml:space="preserve">
     <value>API sửa đổi</value>
@@ -4976,7 +4976,7 @@
     <value>Kiểm tra nhật ký gỡ lỗi để biết thêm thông tin về lỗi.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV" xml:space="preserve">
-    <value>Bạn đang chạy Nitrocid KS trên một môi trường bất thường. Vui lòng xác minh rằng bạn đã khởi động kernel trực tiếp. Nếu bạn chắc chắn rằng mình đã khởi động kernel theo cách thông thường, có thể là do bạn đang chạy phiên bản Nitrocid KS không được hỗ trợ.</value>
+    <value>Bạn đang chạy Nitrocid trên một môi trường bất thường. Vui lòng xác minh rằng bạn đã khởi động kernel trực tiếp. Nếu bạn chắc chắn rằng mình đã khởi động kernel theo cách thông thường, có thể là do bạn đang chạy phiên bản Nitrocid không được hỗ trợ.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_ERROR" xml:space="preserve">
     <value>GRILO đã gặp phải lỗi nội bộ</value>
@@ -5546,7 +5546,7 @@
     <value>Thay đổi tên đầy đủ của người dùng (tên hiển thị)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC" xml:space="preserve">
-    <value>Hiển thị bộ đệm chính trên màn hình trước khi khởi động Nitrocid KS (chỉ dành cho hệ thống Unix)</value>
+    <value>Hiển thị bộ đệm chính trên màn hình trước khi khởi động Nitrocid (chỉ dành cho hệ thống Unix)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED" xml:space="preserve">
     <value>Không thể tải được gói tiện ích bổ sung.</value>
@@ -5651,13 +5651,13 @@
     <value>Đang phát âm thanh tắt máy...</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLWARNING" xml:space="preserve">
-    <value>Chúng tôi sẽ không còn hỗ trợ phiên bản Nitrocid KS này sau ngày này</value>
+    <value>Chúng tôi sẽ không còn hỗ trợ phiên bản Nitrocid này sau ngày này</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLTIP" xml:space="preserve">
     <value>Hãy đảm bảo rằng bạn sớm nâng cấp lên phiên bản được hỗ trợ nếu bạn muốn tiếp tục nhận được hỗ trợ.</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOL" xml:space="preserve">
-    <value>Phiên bản Nitrocid KS này không còn được hỗ trợ.</value>
+    <value>Phiên bản Nitrocid này không còn được hỗ trợ.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS" xml:space="preserve">
     <value>Không tải được các tiện ích bổ sung quan trọng của kernel</value>
@@ -6164,10 +6164,10 @@
     <value>URL trỏ đến điểm cuối tải lên</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC" xml:space="preserve">
-    <value>Tên máy chủ chạy Nitrocid KS</value>
+    <value>Tên máy chủ chạy Nitrocid</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC" xml:space="preserve">
-    <value>Cảng Nitrocid KS trên mục tiêu từ xa</value>
+    <value>Cảng Nitrocid trên mục tiêu từ xa</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC" xml:space="preserve">
     <value>Lệnh thực hiện từ xa</value>

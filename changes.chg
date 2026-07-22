@@ -17,7 +17,7 @@ FreeBSD support
 
 We have finally added support for FreeBSD systems to Nitrocid the same way we
 added support for Linux and macOS. Starting from this release, you can now
-run Nitrocid KS more comfortably without any issues on FreeBSD systems. This
+run Nitrocid more comfortably without any issues on FreeBSD systems. This
 was realized by automated builds that are audited from time to time to make
 sure that things run smoothly. We have tested this support on FreeBSD 15.0,
 which means that if you are running this version of FreeBSD, you can

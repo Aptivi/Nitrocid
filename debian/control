@@ -14,7 +14,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, dotnet-runtime-10.0 (>= 10.0), tzda
 Conflicts: nitrocid-28-lite
 Provides: nitrocid
 Description: Simulates our future-planned kernel, Nitrocid Kernel!
- Nitrocid KS (Kernel Simulator) simulates our future kernel, Nitrocid Kernel!
+ Nitrocid (Kernel Simulator) simulates our future kernel, Nitrocid Kernel!
  It simulates the kernel, the shell, and all the common applications.
 
 Package: nitrocid-28-lite
@@ -23,6 +23,6 @@ Depends: ${shlibs:Depends}, ${misc:Depends}, dotnet-runtime-10.0 (>= 10.0), tzda
 Conflicts: nitrocid-28
 Provides: nitrocid
 Description: Simulates our future-planned kernel, Nitrocid Kernel!
- Nitrocid KS (Kernel Simulator) simulates our future kernel, Nitrocid Kernel!
+ Nitrocid (Kernel Simulator) simulates our future kernel, Nitrocid Kernel!
  It simulates the kernel, the shell, and all the common applications. This is
- the lite version of Nitrocid KS without any addons installed.
+ the lite version of Nitrocid without any addons installed.

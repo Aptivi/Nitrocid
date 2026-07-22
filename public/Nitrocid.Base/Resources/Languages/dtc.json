@@ -2266,15 +2266,15 @@
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1",
-      "text": "Nitrocid KS werkt zichzelf momenteel bij om de meest recente versie te krijgen die algemene verbeteringen en bugfixes bevat. Nieuwe hoofdversies bevatten meestal baanbrekende wijzigingen en nieuwe opwindende functies."
+      "text": "Nitrocid werkt zichzelf momenteel bij om de meest recente versie te krijgen die algemene verbeteringen en bugfixes bevat. Nieuwe hoofdversies bevatten meestal baanbrekende wijzigingen en nieuwe opwindende functies."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT",
-      "text": "Wilt u dat Nitrocid KS automatisch controleert op updates?"
+      "text": "Wilt u dat Nitrocid automatisch controleert op updates?"
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2",
-      "text": "Naast het automatisch controleren op updates, kan Nitrocid KS het updatebestand ook automatisch downloaden."
+      "text": "Naast het automatisch controleren op updates, kan Nitrocid het updatebestand ook automatisch downloaden."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3",
@@ -2926,7 +2926,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED",
-      "text": "Toen de kernel de opgegeven mod probeerde te laden, werd gevraagd om \"Kernel Simulator\" te laden. Omdat de hoofdtoepassing is hernoemd naar Nitrocid KS, kan deze mod niet veilig worden uitgevoerd. Wij adviseren u om de mod te upgraden."
+      "text": "Toen de kernel de opgegeven mod probeerde te laden, werd gevraagd om \"Kernel Simulator\" te laden. Omdat de hoofdtoepassing is hernoemd naar Nitrocid, kan deze mod niet veilig worden uitgevoerd. Wij adviseren u om de mod te upgraden."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS",
@@ -4002,7 +4002,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
-      "text": "Houd er rekening mee dat het uitvoeren van Nitrocid KS in een ongebruikelijke omgeving betekent dat sommige functies beperkt zijn. Je kunt geen mods en configuraties laden."
+      "text": "Houd er rekening mee dat het uitvoeren van Nitrocid in een ongebruikelijke omgeving betekent dat sommige functies beperkt zijn. Je kunt geen mods en configuraties laden."
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_TITLE",
@@ -6546,7 +6546,7 @@
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_DESC",
-      "text": "Nitrocid KS simuleert onze toekomstige kernel, de Nitrocid Kernel."
+      "text": "Nitrocid simuleert onze toekomstige kernel, de Nitrocid Kernel."
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_MODAPI",
@@ -6570,7 +6570,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
-      "text": "U gebruikt Nitrocid KS in een ongebruikelijke omgeving. Controleer of u de kernel rechtstreeks hebt gestart. Als u zeker weet dat u de kernel op de gebruikelijke manier hebt gestart, kan het zijn dat u een niet-ondersteunde versie van Nitrocid KS gebruikt."
+      "text": "U gebruikt Nitrocid in een ongebruikelijke omgeving. Controleer of u de kernel rechtstreeks hebt gestart. Als u zeker weet dat u de kernel op de gebruikelijke manier hebt gestart, kan het zijn dat u een niet-ondersteunde versie van Nitrocid gebruikt."
     },
     {
       "loc": "NKS_KERNEL_STARTING_BOOTLOADER_ERROR",
@@ -7330,7 +7330,7 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC",
-      "text": "Geeft de hoofdbuffer weer die op het scherm stond voordat Nitrocid KS werd gestart (alleen Unix-systemen)"
+      "text": "Geeft de hoofdbuffer weer die op het scherm stond voordat Nitrocid werd gestart (alleen Unix-systemen)"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED",
@@ -7470,7 +7470,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLWARNING",
-      "text": "Na deze datum ondersteunen we deze versie van Nitrocid KS niet meer"
+      "text": "Na deze datum ondersteunen we deze versie van Nitrocid niet meer"
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLTIP",
@@ -7478,7 +7478,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOL",
-      "text": "Deze versie van Nitrocid KS wordt niet langer ondersteund."
+      "text": "Deze versie van Nitrocid wordt niet langer ondersteund."
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
@@ -8154,11 +8154,11 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC",
-      "text": "Hostnaam waarop Nitrocid KS draait"
+      "text": "Hostnaam waarop Nitrocid draait"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC",
-      "text": "Haven van Nitrocid KS op het afgelegen doel"
+      "text": "Haven van Nitrocid op het afgelegen doel"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC",

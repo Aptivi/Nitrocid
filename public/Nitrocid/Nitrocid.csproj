@@ -4,7 +4,7 @@
     <DebugSymbols>true</DebugSymbols>
     <OutputType>Exe</OutputType>
     <AssemblyName>Nitrocid</AssemblyName>
-    <AssemblyTitle>Nitrocid KS</AssemblyTitle>
+    <AssemblyTitle>Nitrocid</AssemblyTitle>
     <Description>Simulates our future-planned kernel, Nitrocid Kernel</Description>
     <OutputPath>KSBuild\</OutputPath>
     <ApplicationIcon>OfficialAppIcon-Nitrocid.ico</ApplicationIcon>

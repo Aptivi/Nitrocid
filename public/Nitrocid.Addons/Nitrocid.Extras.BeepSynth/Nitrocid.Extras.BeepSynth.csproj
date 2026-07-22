@@ -2,8 +2,8 @@
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <PropertyGroup>
-    <Description>Nitrocid KS Extras - Beep Synth</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Beep Synth</AssemblyTitle>
+    <Description>Nitrocid Extras - Beep Synth</Description>
+    <AssemblyTitle>Nitrocid Extras - Beep Synth</AssemblyTitle>
   </PropertyGroup>
 
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />

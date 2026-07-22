@@ -244,7 +244,7 @@
     <value>Hic est index errorum qui te adiuvet hanc incompatibilitatem investigare:</value>
   </data>
   <data name="NKS_MODS_MODNEEDSAPIEXACT" xml:space="preserve">
-    <value>Mod {0} exigit exacte an API version {I}, vos have poema poematis {II}. Upgrading nitrocid ks et / vel mod plerumque adjuvat. Mod parsing defuit.</value>
+    <value>Mod {0} exigit exacte an API version {I}, vos have poema poematis {II}. Upgrading Nitrocid et / vel mod plerumque adjuvat. Mod parsing defuit.</value>
   </data>
   <data name="NKS_MODS_MODHASNOAPIVERSION" xml:space="preserve">
     <value>Mod {0} ut non operatur bene cum hoc API version. Mod ut deficere incipere est. Contact in mod vendor ut a tardus copy.</value>

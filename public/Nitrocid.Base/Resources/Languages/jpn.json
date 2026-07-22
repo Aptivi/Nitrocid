@@ -2260,15 +2260,15 @@
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1",
-      "text": "Nitrocid KS は現在、自身を更新して、一般的な改善とバグ修正を含む最新バージョンを取得します。新しいメジャー バージョンには通常、重大な変更と新しい魅力的な機能が含まれています。"
+      "text": "Nitrocid は現在、自身を更新して、一般的な改善とバグ修正を含む最新バージョンを取得します。新しいメジャー バージョンには通常、重大な変更と新しい魅力的な機能が含まれています。"
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT",
-      "text": "Nitrocid KS が更新を自動的にチェックするようにしますか?"
+      "text": "Nitrocid が更新を自動的にチェックするようにしますか?"
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2",
-      "text": "Nitrocid KS は、アップデートを自動的にチェックするだけでなく、アップデート ファイルを自動的にダウンロードすることもできます。"
+      "text": "Nitrocid は、アップデートを自動的にチェックするだけでなく、アップデート ファイルを自動的にダウンロードすることもできます。"
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3",
@@ -2920,7 +2920,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED",
-      "text": "カーネルが指定された MOD をロードしようとしたとき、「カーネル シミュレータ」のロードを要求しました。メインアプリケーションの名前が Nitrocid KS に変更されているため、この MOD は安全に実行できません。MODをアップグレードすることをお勧めします。"
+      "text": "カーネルが指定された MOD をロードしようとしたとき、「カーネル シミュレータ」のロードを要求しました。メインアプリケーションの名前が Nitrocid に変更されているため、この MOD は安全に実行できません。MODをアップグレードすることをお勧めします。"
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS",
@@ -3996,7 +3996,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
-      "text": "通常とは異なる環境で Nitrocid KS を実行すると、一部の機能が制限されることに注意してください。MOD や設定をロードすることはできません。"
+      "text": "通常とは異なる環境で Nitrocid を実行すると、一部の機能が制限されることに注意してください。MOD や設定をロードすることはできません。"
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_TITLE",
@@ -6540,7 +6540,7 @@
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_DESC",
-      "text": "Nitrocid KS は、将来のカーネルである Nitrocid Kernel をシミュレートします。"
+      "text": "Nitrocid は、将来のカーネルである Nitrocid Kernel をシミュレートします。"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_MODAPI",
@@ -6564,7 +6564,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
-      "text": "Nitrocid KS を通常とは異なる環境で実行しています。カーネルを直接起動したことを確認してください。カーネルを通常の方法で起動したと確信できる場合は、サポートされていないバージョンの Nitrocid KS を実行していることが原因である可能性があります。"
+      "text": "Nitrocid を通常とは異なる環境で実行しています。カーネルを直接起動したことを確認してください。カーネルを通常の方法で起動したと確信できる場合は、サポートされていないバージョンの Nitrocid を実行していることが原因である可能性があります。"
     },
     {
       "loc": "NKS_KERNEL_STARTING_BOOTLOADER_ERROR",
@@ -7324,7 +7324,7 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC",
-      "text": "Nitrocid KS を起動する前に画面に表示されていたメイン バッファを表示します (Unix システムのみ)"
+      "text": "Nitrocid を起動する前に画面に表示されていたメイン バッファを表示します (Unix システムのみ)"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED",
@@ -7464,7 +7464,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLWARNING",
-      "text": "この日付以降、このバージョンの Nitrocid KS のサポートは終了します。"
+      "text": "この日付以降、このバージョンの Nitrocid のサポートは終了します。"
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLTIP",
@@ -7472,7 +7472,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOL",
-      "text": "このバージョンの Nitrocid KS はサポートされなくなりました。"
+      "text": "このバージョンの Nitrocid はサポートされなくなりました。"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
@@ -8148,11 +8148,11 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC",
-      "text": "Nitrocid KSを実行するホスト名"
+      "text": "Nitrocidを実行するホスト名"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC",
-      "text": "リモートターゲット上のNitrocid KSのポート"
+      "text": "リモートターゲット上のNitrocidのポート"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC",

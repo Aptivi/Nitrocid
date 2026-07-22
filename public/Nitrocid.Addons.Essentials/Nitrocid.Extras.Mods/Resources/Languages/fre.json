@@ -222,7 +222,7 @@
     },
     {
       "loc": "NKS_MODS_MODNEEDSAPIEXACT",
-      "text": "Le mod {0} nécessite exactement une version d'API {1}, mais vous disposez de la version {2}. La mise à niveau de Nitrocid KS et/ou du mod est généralement utile. L'analyse du module a échoué."
+      "text": "Le mod {0} nécessite exactement une version d'API {1}, mais vous disposez de la version {2}. La mise à niveau de Nitrocid et/ou du mod est généralement utile. L'analyse du module a échoué."
     },
     {
       "loc": "NKS_MODS_MODHASNOAPIVERSION",

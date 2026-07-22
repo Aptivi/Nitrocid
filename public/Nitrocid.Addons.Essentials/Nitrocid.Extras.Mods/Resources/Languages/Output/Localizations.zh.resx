@@ -244,7 +244,7 @@
     <value>以下是可以幫助您調查這種不相容性的錯誤清單：</value>
   </data>
   <data name="NKS_MODS_MODNEEDSAPIEXACT" xml:space="preserve">
-    <value>Mod {0} 完全需要 API 版本 {1}，但您擁有版本 {2}。升級 Nitrocid KS 和/或 mod 通常會有所幫助。Mod 解析失敗。</value>
+    <value>Mod {0} 完全需要 API 版本 {1}，但您擁有版本 {2}。升級 Nitrocid 和/或 mod 通常會有所幫助。Mod 解析失敗。</value>
   </data>
   <data name="NKS_MODS_MODHASNOAPIVERSION" xml:space="preserve">
     <value>Mod {0} 可能無法在此 API 版本上正常運作。Mod 可能無法啟動。請聯絡模組供應商以取得最新副本。</value>

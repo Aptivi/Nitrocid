@@ -121,7 +121,7 @@
     <value>Помилка середовища ядра:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
-    <value>Nitrocid KS виявив проблему, і його було закрито.</value>
+    <value>Nitrocid виявив проблему, і його було закрито.</value>
   </data>
 
 </root>

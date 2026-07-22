@@ -121,7 +121,7 @@
     <value>Kernelomgevingsfout:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
-    <value>Nitrocid KS heeft een probleem gedetecteerd en is afgesloten.</value>
+    <value>Nitrocid heeft een probleem gedetecteerd en is afgesloten.</value>
   </data>
 
 </root>

@@ -121,7 +121,7 @@
     <value>Erro de ambiente do kernel:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
-    <value>O Nitrocid KS detectou um problema e foi desligado.</value>
+    <value>O Nitrocid detectou um problema e foi desligado.</value>
   </data>
 
 </root>

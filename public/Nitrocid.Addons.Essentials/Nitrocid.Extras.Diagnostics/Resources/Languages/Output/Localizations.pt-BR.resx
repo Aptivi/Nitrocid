@@ -127,7 +127,7 @@
     <value>Informações de rastreamento de pilha de thread para {0}</value>
   </data>
   <data name="NKS_DIAG_NOTNKSTHREAD" xml:space="preserve">
-    <value>Não é um tópico Nitrocid KS</value>
+    <value>Não é um tópico Nitrocid</value>
   </data>
 
 </root>

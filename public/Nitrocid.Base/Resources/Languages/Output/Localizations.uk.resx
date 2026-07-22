@@ -1748,13 +1748,13 @@
     <value>Автоматичні оновлення</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1" xml:space="preserve">
-    <value>Nitrocid KS наразі оновлюється, щоб отримати останню версію, яка містить загальні покращення та виправлення помилок. Нові основні версії зазвичай містять критичні зміни та нові захоплюючі функції.</value>
+    <value>Nitrocid наразі оновлюється, щоб отримати останню версію, яка містить загальні покращення та виправлення помилок. Нові основні версії зазвичай містять критичні зміни та нові захоплюючі функції.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT" xml:space="preserve">
-    <value>Ви хочете, щоб Nitrocid KS автоматично перевіряв наявність оновлень?</value>
+    <value>Ви хочете, щоб Nitrocid автоматично перевіряв наявність оновлень?</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2" xml:space="preserve">
-    <value>Окрім автоматичної перевірки наявності оновлень, Nitrocid KS також може автоматично завантажувати файл оновлення.</value>
+    <value>Окрім автоматичної перевірки наявності оновлень, Nitrocid також може автоматично завантажувати файл оновлення.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
     <value>Ви завжди можете перевірити наявність оновлень ядра за допомогою команди «оновити».</value>
@@ -2243,7 +2243,7 @@
     <value>Виконується недійсна операція текстового редактора.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>Коли ядро намагалося завантажити вказаний мод, воно запитувало завантаження «Симулятора ядра». Оскільки основну програму перейменовано на Nitrocid KS, цей мод неможливо запустити безпечно. Радимо оновити мод.</value>
+    <value>Коли ядро намагалося завантажити вказаний мод, воно запитувало завантаження «Симулятора ядра». Оскільки основну програму перейменовано на Nitrocid, цей мод неможливо запустити безпечно. Радимо оновити мод.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
     <value>Під час спроби виконати запитану операцію сталася помилка менеджера контактів. Переконайтеся, що файл контакту існує у правильній папці та що це дійсний файл контакту vCard 2.1, 3.0 або 4.0.</value>
@@ -3050,7 +3050,7 @@
     <value>Визнано</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_DESC" xml:space="preserve">
-    <value>Зауважте, що запуск Nitrocid KS у незвичайному середовищі означає обмеження деяких функцій. Ви не зможете завантажувати моди та конфігурації.</value>
+    <value>Зауважте, що запуск Nitrocid у незвичайному середовищі означає обмеження деяких функцій. Ви не зможете завантажувати моди та конфігурації.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_TITLE" xml:space="preserve">
     <value>Повідомлення про незвичне середовище</value>
@@ -4958,7 +4958,7 @@
     <value>Налаштування</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_DESC" xml:space="preserve">
-    <value>Nitrocid KS імітує наше майбутнє ядро, ядро Nitrocid.</value>
+    <value>Nitrocid імітує наше майбутнє ядро, ядро Nitrocid.</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_MODAPI" xml:space="preserve">
     <value>Mod API</value>
@@ -4976,7 +4976,7 @@
     <value>Перегляньте журнали налагодження, щоб дізнатися більше про помилку.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV" xml:space="preserve">
-    <value>Ви використовуєте Nitrocid KS у незвичайному середовищі. Переконайтеся, що ви запустили ядро безпосередньо. Якщо ви впевнені, що запустили ядро у звичайний спосіб, можливо, ви використовуєте непідтримувану версію Nitrocid KS.</value>
+    <value>Ви використовуєте Nitrocid у незвичайному середовищі. Переконайтеся, що ви запустили ядро безпосередньо. Якщо ви впевнені, що запустили ядро у звичайний спосіб, можливо, ви використовуєте непідтримувану версію Nitrocid.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_ERROR" xml:space="preserve">
     <value>У GRILO сталася внутрішня помилка</value>
@@ -5546,7 +5546,7 @@
     <value>Змінює повне ім'я користувача (відображуване ім'я)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC" xml:space="preserve">
-    <value>Показує головний буфер, який був на екрані перед запуском Nitrocid KS (тільки для систем Unix)</value>
+    <value>Показує головний буфер, який був на екрані перед запуском Nitrocid (тільки для систем Unix)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED" xml:space="preserve">
     <value>Не вдається отримати пакет додатків.</value>
@@ -5651,13 +5651,13 @@
     <value>Відтворюється звук вимкнення...</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLWARNING" xml:space="preserve">
-    <value>Після цієї дати ми більше не підтримуватимемо цю версію Nitrocid KS</value>
+    <value>Після цієї дати ми більше не підтримуватимемо цю версію Nitrocid</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLTIP" xml:space="preserve">
     <value>Незабаром оновіть програму до підтримуваної версії, якщо хочете й надалі отримувати підтримку.</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOL" xml:space="preserve">
-    <value>Ця версія Nitrocid KS більше не підтримується.</value>
+    <value>Ця версія Nitrocid більше не підтримується.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS" xml:space="preserve">
     <value>Не вдалося завантажити важливі доповнення ядра</value>
@@ -6164,10 +6164,10 @@
     <value>URL-адреса, що вказує на кінцеву точку завантаження</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC" xml:space="preserve">
-    <value>Ім’я хоста, який запускає Nitrocid KS</value>
+    <value>Ім’я хоста, який запускає Nitrocid</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC" xml:space="preserve">
-    <value>Порт Nitrocid KS на віддалену ціль</value>
+    <value>Порт Nitrocid на віддалену ціль</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC" xml:space="preserve">
     <value>Команда для дистанційного виконання</value>

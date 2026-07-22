@@ -176,7 +176,7 @@
     },
     {
       "loc": "NKS_MODS_MODNEEDSAPIEXACT",
-      "text": "モジュール {0} には API バージョン {1} が必要ですが、バージョン {2} があります。通常、Nitrocid KS および/または MOD をアップグレードすると役に立ちます。MODの解析に失敗しました。"
+      "text": "モジュール {0} には API バージョン {1} が必要ですが、バージョン {2} があります。通常、Nitrocid および/または MOD をアップグレードすると役に立ちます。MODの解析に失敗しました。"
     },
     {
       "loc": "NKS_MODS_MODHASNOAPIVERSION",

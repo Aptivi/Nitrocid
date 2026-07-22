@@ -121,7 +121,7 @@
     <value>Kernel environment error:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
-    <value>Nitrocid KS has detected a problem and it has been shut down.</value>
+    <value>Nitrocid has detected a problem and it has been shut down.</value>
   </data>
 
 </root>

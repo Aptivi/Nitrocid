@@ -121,7 +121,7 @@
     <value>خطأ في بيئة النواة:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
-    <value>اكتشف Nitrocid KS مشكلة وتم إغلاقه.</value>
+    <value>اكتشف Nitrocid مشكلة وتم إغلاقه.</value>
   </data>
 
 </root>

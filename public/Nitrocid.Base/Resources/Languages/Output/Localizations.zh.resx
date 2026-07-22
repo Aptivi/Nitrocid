@@ -1748,13 +1748,13 @@
     <value>自動更新</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1" xml:space="preserve">
-    <value>Nitrocid KS 目前會自行更新以獲得最新版本，其中包括一般改進和錯誤修復。新的主要版本通常包括重大更改和新的令人興奮的功能。</value>
+    <value>Nitrocid 目前會自行更新以獲得最新版本，其中包括一般改進和錯誤修復。新的主要版本通常包括重大更改和新的令人興奮的功能。</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT" xml:space="preserve">
-    <value>您希望 Nitrocid KS 自動檢查更新嗎？</value>
+    <value>您希望 Nitrocid 自動檢查更新嗎？</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2" xml:space="preserve">
-    <value>除了自動檢查更新外，Nitrocid KS 還可以自動下載更新檔案。</value>
+    <value>除了自動檢查更新外，Nitrocid 還可以自動下載更新檔案。</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
     <value>您始終可以使用“update”命令檢查內核更新。</value>
@@ -2243,7 +2243,7 @@
     <value>正在執行無效的文字編輯器操作。</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>當核心嘗試載入指定的mod時，它請求載入“核心模擬器”。由於主應用程式已重新命名為 Nitrocid KS，因此該 mod 無法安全運作。我們建議您升級模組。</value>
+    <value>當核心嘗試載入指定的mod時，它請求載入“核心模擬器”。由於主應用程式已重新命名為 Nitrocid，因此該 mod 無法安全運作。我們建議您升級模組。</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
     <value>嘗試執行請求的操作時發生聯絡人管理器錯誤。確保聯絡人文件存在於正確的資料夾中，並且是有效的 vCard 2.1、3.0 或 4.0 聯絡人文件。</value>
@@ -3050,7 +3050,7 @@
     <value>已確認</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_DESC" xml:space="preserve">
-    <value>請注意，在不尋常的環境中運行 Nitrocid KS 意味著某些功能會受到限制。您將無法載入模組和配置。</value>
+    <value>請注意，在不尋常的環境中運行 Nitrocid 意味著某些功能會受到限制。您將無法載入模組和配置。</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_TITLE" xml:space="preserve">
     <value>異常環境通知</value>
@@ -4958,7 +4958,7 @@
     <value>設定</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_DESC" xml:space="preserve">
-    <value>Nitrocid KS 模擬我們未來的內核，Nitrocid Kernel。</value>
+    <value>Nitrocid 模擬我們未來的內核，Nitrocid Kernel。</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_MODAPI" xml:space="preserve">
     <value>模組API</value>
@@ -4976,7 +4976,7 @@
     <value>研究調試日誌以獲取有關錯誤的更多資訊。</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV" xml:space="preserve">
-    <value>您在不尋常的環境中執行 Nitrocid KS。請驗證您是否直接啟動了核心。如果您確定已以常規方式啟動內核，可能是因為您正在執行不受支援的 Nitrocid KS 版本。</value>
+    <value>您在不尋常的環境中執行 Nitrocid。請驗證您是否直接啟動了核心。如果您確定已以常規方式啟動內核，可能是因為您正在執行不受支援的 Nitrocid 版本。</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_ERROR" xml:space="preserve">
     <value>GRILO 遇到內部錯誤</value>
@@ -5546,7 +5546,7 @@
     <value>更改使用者的全名（顯示名稱）</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC" xml:space="preserve">
-    <value>顯示啟動 Nitrocid KS 之前畫面上的主緩衝區（僅限 Unix 系統）</value>
+    <value>顯示啟動 Nitrocid 之前畫面上的主緩衝區（僅限 Unix 系統）</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED" xml:space="preserve">
     <value>無法取得插件包。</value>
@@ -5651,13 +5651,13 @@
     <value>正在播放關機聲音...</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLWARNING" xml:space="preserve">
-    <value>此日期之後，我們將不再支援此版本的 Nitrocid KS</value>
+    <value>此日期之後，我們將不再支援此版本的 Nitrocid</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLTIP" xml:space="preserve">
     <value>如果您想繼續獲得支持，請確保盡快升級到支援的版本。</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOL" xml:space="preserve">
-    <value>此版本的 Nitrocid KS 不再受支援。</value>
+    <value>此版本的 Nitrocid 不再受支援。</value>
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS" xml:space="preserve">
     <value>無法載入重要的核心插件</value>
@@ -6164,10 +6164,10 @@
     <value>指向上傳端點的 URL</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC" xml:space="preserve">
-    <value>運行 Nitrocid KS 的主機名</value>
+    <value>運行 Nitrocid 的主機名</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC" xml:space="preserve">
-    <value>遠端目標上的 Nitrocid KS 連接埠</value>
+    <value>遠端目標上的 Nitrocid 連接埠</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC" xml:space="preserve">
     <value>遠端執行命令</value>

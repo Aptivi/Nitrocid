@@ -121,7 +121,7 @@
     <value>Eroare de mediu kernel:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
-    <value>Nitrocid KS a detectat o problemă și a fost oprit.</value>
+    <value>Nitrocid a detectat o problemă și a fost oprit.</value>
   </data>
 
 </root>

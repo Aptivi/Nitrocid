@@ -127,7 +127,7 @@
     <value>Trådstabelsporingsinformasjon for {0}</value>
   </data>
   <data name="NKS_DIAG_NOTNKSTHREAD" xml:space="preserve">
-    <value>Ikke en Nitrocid KS-tråd</value>
+    <value>Ikke en Nitrocid-tråd</value>
   </data>
 
 </root>

@@ -2261,15 +2261,15 @@
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1",
-      "text": "Nitrocid KS se actualizează în prezent pentru a obține cea mai recentă versiune care include îmbunătățiri generale și remedieri de erori. Noile versiuni majore includ de obicei modificări de ultimă oră și noi funcții interesante."
+      "text": "Nitrocid se actualizează în prezent pentru a obține cea mai recentă versiune care include îmbunătățiri generale și remedieri de erori. Noile versiuni majore includ de obicei modificări de ultimă oră și noi funcții interesante."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT",
-      "text": "Doriți ca Nitrocid KS să verifice automat actualizările?"
+      "text": "Doriți ca Nitrocid să verifice automat actualizările?"
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2",
-      "text": "Pe lângă verificarea automată a actualizărilor, Nitrocid KS poate descărca automat fișierul de actualizare."
+      "text": "Pe lângă verificarea automată a actualizărilor, Nitrocid poate descărca automat fișierul de actualizare."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3",
@@ -2921,7 +2921,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED",
-      "text": "Când nucleul a încercat să încarce modul specificat, a cerut încărcarea „Kernel Simulator”. Deoarece aplicația principală este redenumită Nitrocid KS, acest mod nu poate fi rulat în siguranță. Vă sfătuim să faceți upgrade la mod."
+      "text": "Când nucleul a încercat să încarce modul specificat, a cerut încărcarea „Kernel Simulator”. Deoarece aplicația principală este redenumită Nitrocid, acest mod nu poate fi rulat în siguranță. Vă sfătuim să faceți upgrade la mod."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS",
@@ -3997,7 +3997,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
-      "text": "Vă rugăm să rețineți că rularea Nitrocid KS într-un mediu neobișnuit înseamnă că unele funcții sunt limitate. Nu veți putea încărca modificări și configurații."
+      "text": "Vă rugăm să rețineți că rularea Nitrocid într-un mediu neobișnuit înseamnă că unele funcții sunt limitate. Nu veți putea încărca modificări și configurații."
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_TITLE",
@@ -6541,7 +6541,7 @@
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_DESC",
-      "text": "Nitrocid KS simulează viitorul nostru nucleu, Nitrocid Kernel."
+      "text": "Nitrocid simulează viitorul nostru nucleu, Nitrocid Kernel."
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_MODAPI",
@@ -6565,7 +6565,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
-      "text": "Rulați Nitrocid KS într-un mediu neobișnuit. Vă rugăm să verificați dacă ați pornit direct nucleul. Dacă sunteți sigur că ați pornit nucleul într-un mod obișnuit, s-ar putea să fie pentru că rulați o versiune neacceptată de Nitrocid KS."
+      "text": "Rulați Nitrocid într-un mediu neobișnuit. Vă rugăm să verificați dacă ați pornit direct nucleul. Dacă sunteți sigur că ați pornit nucleul într-un mod obișnuit, s-ar putea să fie pentru că rulați o versiune neacceptată de Nitrocid."
     },
     {
       "loc": "NKS_KERNEL_STARTING_BOOTLOADER_ERROR",
@@ -7325,7 +7325,7 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC",
-      "text": "Afișează tamponul principal care era pe ecran înainte de a porni Nitrocid KS (numai sistemele Unix)"
+      "text": "Afișează tamponul principal care era pe ecran înainte de a porni Nitrocid (numai sistemele Unix)"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED",
@@ -7465,7 +7465,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLWARNING",
-      "text": "Nu vom mai susține această versiune de Nitrocid KS după această dată"
+      "text": "Nu vom mai susține această versiune de Nitrocid după această dată"
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLTIP",
@@ -7473,7 +7473,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOL",
-      "text": "Această versiune de Nitrocid KS nu mai este acceptată."
+      "text": "Această versiune de Nitrocid nu mai este acceptată."
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
@@ -8149,11 +8149,11 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC",
-      "text": "Nume de gazdă care rulează Nitrocid KS"
+      "text": "Nume de gazdă care rulează Nitrocid"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC",
-      "text": "Portul Nitrocid KS pe ținta de la distanță"
+      "text": "Portul Nitrocid pe ținta de la distanță"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC",

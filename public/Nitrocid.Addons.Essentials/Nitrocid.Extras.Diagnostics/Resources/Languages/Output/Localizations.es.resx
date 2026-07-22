@@ -127,7 +127,7 @@
     <value>Información de seguimiento de la pila de subprocesos para {0}</value>
   </data>
   <data name="NKS_DIAG_NOTNKSTHREAD" xml:space="preserve">
-    <value>No es un hilo de Nitrocid KS</value>
+    <value>No es un hilo de Nitrocid</value>
   </data>
 
 </root>

@@ -2261,15 +2261,15 @@
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1",
-      "text": "Nitrocid KS는 현재 일반적인 개선 사항과 버그 수정이 포함된 최신 버전을 얻기 위해 자체 업데이트됩니다. 새로운 주요 버전에는 일반적으로 획기적인 변경 사항과 새롭고 흥미로운 기능이 포함됩니다."
+      "text": "Nitrocid는 현재 일반적인 개선 사항과 버그 수정이 포함된 최신 버전을 얻기 위해 자체 업데이트됩니다. 새로운 주요 버전에는 일반적으로 획기적인 변경 사항과 새롭고 흥미로운 기능이 포함됩니다."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT",
-      "text": "Nitrocid KS가 자동으로 업데이트를 확인하도록 하시겠습니까?"
+      "text": "Nitrocid가 자동으로 업데이트를 확인하도록 하시겠습니까?"
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2",
-      "text": "Nitrocid KS는 업데이트를 자동으로 확인하는 것 외에도 업데이트 파일을 자동으로 다운로드할 수도 있습니다."
+      "text": "Nitrocid는 업데이트를 자동으로 확인하는 것 외에도 업데이트 파일을 자동으로 다운로드할 수도 있습니다."
     },
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3",
@@ -2921,7 +2921,7 @@
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED",
-      "text": "커널이 지정된 모드를 로드하려고 시도했을 때 \"커널 시뮬레이터\" 로드를 요청했습니다. 기본 애플리케이션의 이름이 Nitrocid KS로 변경되었으므로 이 모드를 안전하게 실행할 수 없습니다. 모드를 업그레이드하는 것이 좋습니다."
+      "text": "커널이 지정된 모드를 로드하려고 시도했을 때 \"커널 시뮬레이터\" 로드를 요청했습니다. 기본 애플리케이션의 이름이 Nitrocid로 변경되었으므로 이 모드를 안전하게 실행할 수 없습니다. 모드를 업그레이드하는 것이 좋습니다."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS",
@@ -3997,7 +3997,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
-      "text": "비정상적인 환경에서 Nitrocid KS를 실행하면 일부 기능이 제한될 수 있으니 주의하시기 바랍니다. 모드와 구성을 로드할 수 없습니다."
+      "text": "비정상적인 환경에서 Nitrocid를 실행하면 일부 기능이 제한될 수 있으니 주의하시기 바랍니다. 모드와 구성을 로드할 수 없습니다."
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_TITLE",
@@ -6541,7 +6541,7 @@
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_DESC",
-      "text": "Nitrocid KS는 미래 커널인 Nitrocid 커널을 시뮬레이션합니다."
+      "text": "Nitrocid는 미래 커널인 Nitrocid 커널을 시뮬레이션합니다."
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_ABOUT_MODAPI",
@@ -6565,7 +6565,7 @@
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
-      "text": "당신은 특이한 환경에서 Nitrocid KS를 실행하고 있습니다. 커널을 직접 시작했는지 확인하십시오. 일반적인 방법으로 커널을 시작했다면 지원되지 않는 Nitrocid KS 버전을 실행하고 있기 때문일 수 있습니다."
+      "text": "당신은 특이한 환경에서 Nitrocid를 실행하고 있습니다. 커널을 직접 시작했는지 확인하십시오. 일반적인 방법으로 커널을 시작했다면 지원되지 않는 Nitrocid 버전을 실행하고 있기 때문일 수 있습니다."
     },
     {
       "loc": "NKS_KERNEL_STARTING_BOOTLOADER_ERROR",
@@ -7325,7 +7325,7 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC",
-      "text": "Nitrocid KS를 시작하기 전에 화면에 있던 주 버퍼를 표시합니다(Unix 시스템 전용)"
+      "text": "Nitrocid를 시작하기 전에 화면에 있던 주 버퍼를 표시합니다(Unix 시스템 전용)"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED",
@@ -7465,7 +7465,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLWARNING",
-      "text": "이 날짜 이후에는 더 이상 Nitrocid KS 버전을 지원하지 않습니다."
+      "text": "이 날짜 이후에는 더 이상 Nitrocid 버전을 지원하지 않습니다."
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOLTIP",
@@ -7473,7 +7473,7 @@
     },
     {
       "loc": "NKS_KERNEL_RELEASEINFO_EOL",
-      "text": "이 버전의 Nitrocid KS는 더 이상 지원되지 않습니다."
+      "text": "이 버전의 Nitrocid는 더 이상 지원되지 않습니다."
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
@@ -8149,11 +8149,11 @@
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC",
-      "text": "Nitrocid KS를 실행하는 호스트 이름"
+      "text": "Nitrocid를 실행하는 호스트 이름"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC",
-      "text": "원격 대상의 Nitrocid KS 항구"
+      "text": "원격 대상의 Nitrocid 항구"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC",

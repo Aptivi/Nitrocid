@@ -121,7 +121,7 @@
     <value>커널 환경 오류:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
-    <value>Nitrocid KS가 문제를 감지하여 종료되었습니다.</value>
+    <value>Nitrocid가 문제를 감지하여 종료되었습니다.</value>
   </data>
 
 </root>

@@ -2,8 +2,8 @@
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <PropertyGroup>
-    <Description>Nitrocid KS Extras - Images</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Images</AssemblyTitle>
+    <Description>Nitrocid Extras - Images</Description>
+    <AssemblyTitle>Nitrocid Extras - Images</AssemblyTitle>
   </PropertyGroup>
 
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />

@@ -244,7 +244,7 @@
     <value>Berikut daftar kesalahan yang dapat membantu Anda menyelidiki ketidakcocokan ini:</value>
   </data>
   <data name="NKS_MODS_MODNEEDSAPIEXACT" xml:space="preserve">
-    <value>Mod {0} memerlukan versi API yang sama persis dengan {1}, tetapi Anda memiliki versi {2}. Memutakhirkan Nitrocid KS dan/atau mod biasanya membantu. Penguraian mod gagal.</value>
+    <value>Mod {0} memerlukan versi API yang sama persis dengan {1}, tetapi Anda memiliki versi {2}. Memutakhirkan Nitrocid dan/atau mod biasanya membantu. Penguraian mod gagal.</value>
   </data>
   <data name="NKS_MODS_MODHASNOAPIVERSION" xml:space="preserve">
     <value>Mod {0} mungkin tidak berfungsi dengan baik dengan versi API ini. Mod mungkin gagal untuk memulai. Hubungi vendor mod untuk mendapatkan salinan terbaru.</value>

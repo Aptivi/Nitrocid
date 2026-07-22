@@ -4,7 +4,7 @@
     <DebugSymbols>true</DebugSymbols>
     <OutputType>Exe</OutputType>
     <AssemblyName>Nitrocid.Rkm</AssemblyName>
-    <AssemblyTitle>Nitrocid KS - Remote Kernel Manager</AssemblyTitle>
+    <AssemblyTitle>Nitrocid - Remote Kernel Manager</AssemblyTitle>
     <Description>Simulates our future-planned kernel, Nitrocid Kernel - Remote Kernel Manager</Description>
     <OutputPath>../../Nitrocid/KSBuild/</OutputPath>
     <ApplicationIcon>../../Nitrocid/OfficialAppIcon-Nitrocid.ico</ApplicationIcon>

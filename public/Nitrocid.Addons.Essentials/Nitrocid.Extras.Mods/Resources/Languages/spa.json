@@ -201,7 +201,7 @@
     },
     {
       "loc": "NKS_MODS_MODNEEDSAPIEXACT",
-      "text": "Mod {0} requiere exactamente una versión de API {1}, pero usted tiene la versión {2}. Actualizar Nitrocid KS y/o el mod suele ser útil. Error al analizar el mod."
+      "text": "Mod {0} requiere exactamente una versión de API {1}, pero usted tiene la versión {2}. Actualizar Nitrocid y/o el mod suele ser útil. Error al analizar el mod."
     },
     {
       "loc": "NKS_MODS_MODHASNOAPIVERSION",

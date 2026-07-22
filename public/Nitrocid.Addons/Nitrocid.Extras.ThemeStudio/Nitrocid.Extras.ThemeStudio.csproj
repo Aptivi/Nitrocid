@@ -2,8 +2,8 @@
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <PropertyGroup>
-    <Description>Nitrocid KS Extras - Theme Studio</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Theme Studio</AssemblyTitle>
+    <Description>Nitrocid Extras - Theme Studio</Description>
+    <AssemblyTitle>Nitrocid Extras - Theme Studio</AssemblyTitle>
   </PropertyGroup>
 
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />

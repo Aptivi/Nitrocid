@@ -7,13 +7,13 @@ COPY . ./
 # Remove this when Terminaux 8.3 gets released by Apr 2026
 # RUN --mount=type=secret,id=github_token dotnet nuget add source --username AptiviCEO --password $(cat /run/secrets/github_token) --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aptivi/index.json"
 
-# Attempt to build Nitrocid KS
+# Attempt to build Nitrocid
 RUN dotnet build "Nitrocid.slnx" -p:Configuration=Release
 
 # Run the ASP.NET image
 FROM mcr.microsoft.com/dotnet/aspnet:10.0
 WORKDIR /NKS
 
-# Copy the output files and start Nitrocid KS
+# Copy the output files and start Nitrocid
 COPY --from=build-env /NKS/public/Nitrocid/KSBuild/net10.0 .
 ENTRYPOINT ["dotnet", "Nitrocid.dll"]

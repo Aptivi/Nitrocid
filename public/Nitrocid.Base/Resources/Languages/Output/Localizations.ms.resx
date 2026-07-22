@@ -1748,13 +1748,13 @@
     <value>Kemas kini automatik</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1" xml:space="preserve">
-    <value>Nitrocid KS pada masa ini mengemas kini dirinya sendiri untuk mendapatkan versi terkini yang merangkumi penambahbaikan umum dan pembetulan pepijat. Versi utama baharu biasanya termasuk perubahan terkini dan ciri menarik baharu.</value>
+    <value>Nitrocid pada masa ini mengemas kini dirinya sendiri untuk mendapatkan versi terkini yang merangkumi penambahbaikan umum dan pembetulan pepijat. Versi utama baharu biasanya termasuk perubahan terkini dan ciri menarik baharu.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT" xml:space="preserve">
-    <value>Adakah anda mahu Nitrocid KS menyemak kemas kini secara automatik?</value>
+    <value>Adakah anda mahu Nitrocid menyemak kemas kini secara automatik?</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2" xml:space="preserve">
-    <value>Selain menyemak kemas kini secara automatik, Nitrocid KS juga boleh memuat turun fail kemas kini secara automatik.</value>
+    <value>Selain menyemak kemas kini secara automatik, Nitrocid juga boleh memuat turun fail kemas kini secara automatik.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
     <value>Anda sentiasa boleh menyemak kemas kini kernel menggunakan arahan "kemas kini".</value>
@@ -2243,7 +2243,7 @@
     <value>Operasi penyunting teks yang tidak sah sedang dilakukan.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>Apabila kernel cuba memuatkan mod yang ditentukan, ia meminta memuatkan "Simulator Kernel". Memandangkan aplikasi utama dinamakan semula kepada Nitrocid KS, mod ini tidak boleh dijalankan dengan selamat. Kami menasihati anda untuk menaik taraf mod.</value>
+    <value>Apabila kernel cuba memuatkan mod yang ditentukan, ia meminta memuatkan "Simulator Kernel". Memandangkan aplikasi utama dinamakan semula kepada Nitrocid, mod ini tidak boleh dijalankan dengan selamat. Kami menasihati anda untuk menaik taraf mod.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
     <value>Ralat pengurus kenalan berlaku semasa cuba melaksanakan operasi yang diminta. Pastikan fail kenalan wujud dalam folder yang betul dan ia adalah fail kenalan vCard 2.1, 3.0 atau 4.0 yang sah.</value>
@@ -3050,7 +3050,7 @@
     <value>Diakui</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_DESC" xml:space="preserve">
-    <value>Sila ambil perhatian bahawa menjalankan Nitrocid KS pada persekitaran yang luar biasa bermakna beberapa ciri adalah terhad. Anda tidak akan dapat memuatkan mod dan konfigurasi.</value>
+    <value>Sila ambil perhatian bahawa menjalankan Nitrocid pada persekitaran yang luar biasa bermakna beberapa ciri adalah terhad. Anda tidak akan dapat memuatkan mod dan konfigurasi.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_TITLE" xml:space="preserve">
     <value>Notis persekitaran yang luar biasa</value>
@@ -4958,7 +4958,7 @@
     <value>tetapan</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_DESC" xml:space="preserve">
-    <value>Nitrocid KS mensimulasikan kernel masa depan kami, Kernel Nitrocid.</value>
+    <value>Nitrocid mensimulasikan kernel masa depan kami, Kernel Nitrocid.</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_MODAPI" xml:space="preserve">
     <value>API Mod</value>
@@ -4976,7 +4976,7 @@
     <value>Siasat log nyahpepijat untuk mendapatkan maklumat lanjut tentang ralat.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV" xml:space="preserve">
-    <value>Anda menjalankan Nitrocid KS pada persekitaran yang luar biasa. Sila sahkan bahawa anda telah memulakan kernel secara langsung. Jika anda pasti bahawa anda telah memulakan kernel dengan cara biasa, ini mungkin kerana anda menjalankan versi Nitrocid KS yang tidak disokong.</value>
+    <value>Anda menjalankan Nitrocid pada persekitaran yang luar biasa. Sila sahkan bahawa anda telah memulakan kernel secara langsung. Jika anda pasti bahawa anda telah memulakan kernel dengan cara biasa, ini mungkin kerana anda menjalankan versi Nitrocid yang tidak disokong.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_ERROR" xml:space="preserve">
     <value>GRILO telah mengalami ralat dalaman</value>
@@ -5546,7 +5546,7 @@
     <value>Menukar nama penuh pengguna (nama paparan)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC" xml:space="preserve">
-    <value>Menunjukkan penimbal utama yang ada pada skrin sebelum memulakan Nitrocid KS (sistem Unix sahaja)</value>
+    <value>Menunjukkan penimbal utama yang ada pada skrin sebelum memulakan Nitrocid (sistem Unix sahaja)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED" xml:space="preserve">
     <value>Tidak boleh mendapatkan pakej tambahan.</value>
@@ -5651,13 +5651,13 @@
     <value>Memainkan bunyi penutupan...</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLWARNING" xml:space="preserve">
-    <value>Kami tidak akan menyokong versi Nitrocid KS ini lagi selepas tarikh ini</value>
+    <value>Kami tidak akan menyokong versi Nitrocid ini lagi selepas tarikh ini</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLTIP" xml:space="preserve">
     <value>Pastikan anda menaik taraf kepada versi yang disokong tidak lama lagi jika anda ingin terus menerima sokongan.</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOL" xml:space="preserve">
-    <value>Versi Nitrocid KS ini tidak lagi disokong.</value>
+    <value>Versi Nitrocid ini tidak lagi disokong.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS" xml:space="preserve">
     <value>Gagal memuatkan tambahan kernel yang penting</value>
@@ -6164,10 +6164,10 @@
     <value>URL yang menghala ke titik akhir muat naik</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC" xml:space="preserve">
-    <value>Nama hos yang menjalankan Nitrocid KS</value>
+    <value>Nama hos yang menjalankan Nitrocid</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC" xml:space="preserve">
-    <value>Pelabuhan Nitrocid KS pada sasaran jauh</value>
+    <value>Pelabuhan Nitrocid pada sasaran jauh</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC" xml:space="preserve">
     <value>Perintah untuk melaksanakan dari jauh</value>

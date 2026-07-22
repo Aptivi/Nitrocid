@@ -2,8 +2,8 @@
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <PropertyGroup>
-    <Description>Nitrocid KS Extras - SSH</Description>
-    <AssemblyTitle>Nitrocid KS Extras - SSH</AssemblyTitle>
+    <Description>Nitrocid Extras - SSH</Description>
+    <AssemblyTitle>Nitrocid Extras - SSH</AssemblyTitle>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 

@@ -176,7 +176,7 @@
     },
     {
       "loc": "NKS_MODS_MODNEEDSAPIEXACT",
-      "text": "Mod {0} yêu cầu chính xác phiên bản API {1}, nhưng bạn có phiên bản {2}. Nâng cấp Nitrocid KS và/hoặc mod thường giúp ích. Phân tích cú pháp mod không thành công."
+      "text": "Mod {0} yêu cầu chính xác phiên bản API {1}, nhưng bạn có phiên bản {2}. Nâng cấp Nitrocid và/hoặc mod thường giúp ích. Phân tích cú pháp mod không thành công."
     },
     {
       "loc": "NKS_MODS_MODHASNOAPIVERSION",

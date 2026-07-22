@@ -1748,13 +1748,13 @@
     <value>Otomatik güncellemeler</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT1" xml:space="preserve">
-    <value>Nitrocid KS şu anda genel iyileştirmeler ve hata düzeltmeleri içeren en son sürümü almak için kendini güncelliyor. Yeni büyük sürümler genellikle bozucu değişiklikler ve yeni heyecan verici özellikler içerir.</value>
+    <value>Nitrocid şu anda genel iyileştirmeler ve hata düzeltmeleri içeren en son sürümü almak için kendini güncelliyor. Yeni büyük sürümler genellikle bozucu değişiklikler ve yeni heyecan verici özellikler içerir.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT" xml:space="preserve">
-    <value>Nitrocid KS'nin güncellemeleri otomatik olarak kontrol etmesini ister misiniz?</value>
+    <value>Nitrocid'nin güncellemeleri otomatik olarak kontrol etmesini ister misiniz?</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT2" xml:space="preserve">
-    <value>Nitrocid KS güncellemeleri otomatik olarak kontrol etmesinin yanı sıra güncelleme dosyasını da otomatik olarak indirebiliyor.</value>
+    <value>Nitrocid güncellemeleri otomatik olarak kontrol etmesinin yanı sıra güncelleme dosyasını da otomatik olarak indirebiliyor.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
     <value>Çekirdek güncellemelerini her zaman "update" komutunu kullanarak kontrol edebilirsiniz.</value>
@@ -2243,7 +2243,7 @@
     <value>Geçersiz bir metin düzenleyici işlemi gerçekleştiriliyor.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>Çekirdek belirtilen modu yüklemeye çalıştığında, "Kernel Simulator" yüklemeyi talep etti. Ana uygulama Nitrocid KS olarak yeniden adlandırıldığından, bu mod güvenli bir şekilde çalıştırılamaz. Modu yükseltmenizi öneririz.</value>
+    <value>Çekirdek belirtilen modu yüklemeye çalıştığında, "Kernel Simulator" yüklemeyi talep etti. Ana uygulama Nitrocid olarak yeniden adlandırıldığından, bu mod güvenli bir şekilde çalıştırılamaz. Modu yükseltmenizi öneririz.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
     <value>İstenen işlemi gerçekleştirmeye çalışırken bir kişiler yöneticisi hatası oluştu. Kişi dosyasının doğru klasörde bulunduğundan ve geçerli bir vCard 2.1, 3.0 veya 4.0 kişi dosyası olduğundan emin olun.</value>
@@ -3050,7 +3050,7 @@
     <value>Kabul edildi</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_DESC" xml:space="preserve">
-    <value>Nitrocid KS'yi alışılmadık bir ortamda çalıştırmanın bazı özelliklerin sınırlı olduğu anlamına geldiğini lütfen unutmayın. Modları ve yapılandırmaları yükleyemezsiniz.</value>
+    <value>Nitrocid'yi alışılmadık bir ortamda çalıştırmanın bazı özelliklerin sınırlı olduğu anlamına geldiğini lütfen unutmayın. Modları ve yapılandırmaları yükleyemezsiniz.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_TITLE" xml:space="preserve">
     <value>Olağandışı çevre uyarısı</value>
@@ -4958,7 +4958,7 @@
     <value>Ayarlar</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_DESC" xml:space="preserve">
-    <value>Nitrocid KS gelecekteki çekirdeğimiz olan Nitrocid Kernel'i simüle eder.</value>
+    <value>Nitrocid gelecekteki çekirdeğimiz olan Nitrocid Kernel'i simüle eder.</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_ABOUT_MODAPI" xml:space="preserve">
     <value>Mod API</value>
@@ -4976,7 +4976,7 @@
     <value>Hata hakkında daha fazla bilgi edinmek için hata ayıklama günlüklerini inceleyin.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV" xml:space="preserve">
-    <value>Nitrocid KS'yi alışılmadık bir ortamda çalıştırıyorsunuz. Lütfen çekirdeği doğrudan başlattığınızdan emin olun. Çekirdeği olağan bir şekilde başlattığınızdan eminseniz, bunun nedeni desteklenmeyen bir Nitrocid KS sürümü çalıştırıyor olmanız olabilir.</value>
+    <value>Nitrocid'yi alışılmadık bir ortamda çalıştırıyorsunuz. Lütfen çekirdeği doğrudan başlattığınızdan emin olun. Çekirdeği olağan bir şekilde başlattığınızdan eminseniz, bunun nedeni desteklenmeyen bir Nitrocid sürümü çalıştırıyor olmanız olabilir.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_ERROR" xml:space="preserve">
     <value>GRILO dahili bir hatayla karşılaştı</value>
@@ -5546,7 +5546,7 @@
     <value>Kullanıcının tam adını (görünen adı) değiştirir</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC" xml:space="preserve">
-    <value>Nitrocid KS'yi başlatmadan önce ekranda bulunan ana tamponu gösterir (sadece Unix sistemleri)</value>
+    <value>Nitrocid'yi başlatmadan önce ekranda bulunan ana tamponu gösterir (sadece Unix sistemleri)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED" xml:space="preserve">
     <value>Eklenti paketi alınamıyor.</value>
@@ -5651,13 +5651,13 @@
     <value>Kapatma sesi çalınıyor...</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLWARNING" xml:space="preserve">
-    <value>Bu tarihten sonra Nitrocid KS'nin bu sürümünü desteklemeyeceğiz</value>
+    <value>Bu tarihten sonra Nitrocid'nin bu sürümünü desteklemeyeceğiz</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOLTIP" xml:space="preserve">
     <value>Desteğe devam etmek istiyorsanız, desteklenen sürüme en kısa sürede yükseltme yaptığınızdan emin olun.</value>
   </data>
   <data name="NKS_KERNEL_RELEASEINFO_EOL" xml:space="preserve">
-    <value>Nitrocid KS'nin bu sürümü artık desteklenmiyor.</value>
+    <value>Nitrocid'nin bu sürümü artık desteklenmiyor.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS" xml:space="preserve">
     <value>Önemli çekirdek eklentileri yüklenemedi</value>
@@ -6164,10 +6164,10 @@
     <value>Yükleme uç noktasına işaret eden URL</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC" xml:space="preserve">
-    <value>Nitrocid KS'yi çalıştıran ana bilgisayar adı</value>
+    <value>Nitrocid'yi çalıştıran ana bilgisayar adı</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC" xml:space="preserve">
-    <value>Uzak hedefte Nitrocid KS Limanı</value>
+    <value>Uzak hedefte Nitrocid Limanı</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC" xml:space="preserve">
     <value>Uzaktan yürütme komutu</value>

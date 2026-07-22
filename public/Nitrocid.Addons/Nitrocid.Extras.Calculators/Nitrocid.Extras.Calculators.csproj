@@ -2,8 +2,8 @@
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <PropertyGroup>
-    <Description>Nitrocid KS Extras - Calculators</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Calculators</AssemblyTitle>
+    <Description>Nitrocid Extras - Calculators</Description>
+    <AssemblyTitle>Nitrocid Extras - Calculators</AssemblyTitle>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 

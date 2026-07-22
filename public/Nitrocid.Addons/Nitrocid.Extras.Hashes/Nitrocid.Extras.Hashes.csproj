@@ -2,8 +2,8 @@
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <PropertyGroup>
-    <Description>Nitrocid KS Extras - Hashes</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Hashes</AssemblyTitle>
+    <Description>Nitrocid Extras - Hashes</Description>
+    <AssemblyTitle>Nitrocid Extras - Hashes</AssemblyTitle>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 

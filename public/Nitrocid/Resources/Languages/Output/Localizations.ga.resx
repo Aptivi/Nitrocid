@@ -121,7 +121,7 @@
     <value>Earráid timpeallachta eithne:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
-    <value>Tá fadhb aimsithe ag Nitrocid KS agus tá sé múchta.</value>
+    <value>Tá fadhb aimsithe ag Nitrocid agus tá sé múchta.</value>
   </data>
 
 </root>
