@@ -1,0 +1,14 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "配布物にはアイコンは含まれていません。"
+    }
+  ]
+}

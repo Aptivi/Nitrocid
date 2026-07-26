@@ -1,0 +1,14 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "डिस्ट्रीब्यूशन में कोई आइकन नहीं हैं।"
+    }
+  ]
+}

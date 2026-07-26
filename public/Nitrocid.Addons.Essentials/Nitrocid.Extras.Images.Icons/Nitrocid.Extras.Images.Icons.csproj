@@ -13,6 +13,10 @@
     <PackageReference Include="Terminaux" Version="8.6.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\Languages\" />
+  </ItemGroup>
+
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
   <Import Project="..\..\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 </Project>

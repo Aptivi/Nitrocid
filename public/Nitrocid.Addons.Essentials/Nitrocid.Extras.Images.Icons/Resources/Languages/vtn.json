@@ -1,0 +1,14 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "Không có biểu tượng nào trong bản phân phối này."
+    }
+  ]
+}

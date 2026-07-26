@@ -1,0 +1,20 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "De distributie bevat geen pictogrammen."
+    }
+  ]
+}

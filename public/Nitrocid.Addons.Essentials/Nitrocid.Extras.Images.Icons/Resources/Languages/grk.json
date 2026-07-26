@@ -1,0 +1,15 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "Δεν υπάρχουν εικονίδια στην διανομή."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "lang": "ita",
+  "name": "Italian",
+  "cultures": [
+    "it",
+    "it-CH",
+    "it-IT",
+    "it-SM",
+    "it-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "Nella distribuzione non sono presenti icone."
+    }
+  ]
+}

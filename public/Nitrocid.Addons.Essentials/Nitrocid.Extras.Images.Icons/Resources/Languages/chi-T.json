@@ -1,0 +1,22 @@
+{
+  "lang": "chi-T",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "该发行版中没有图标。"
+    }
+  ]
+}

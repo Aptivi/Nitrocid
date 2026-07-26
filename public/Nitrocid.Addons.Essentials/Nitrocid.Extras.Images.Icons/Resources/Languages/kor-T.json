@@ -1,0 +1,15 @@
+{
+  "lang": "kor-T",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "배포판에는 아이콘이 없습니다."
+    }
+  ]
+}

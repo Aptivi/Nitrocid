@@ -1,0 +1,13 @@
+{
+  "lang": "brz",
+  "name": "Portuguese (Brazil)",
+  "cultures": [
+    "pt-BR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "Não há ícones na distribuição."
+    }
+  ]
+}

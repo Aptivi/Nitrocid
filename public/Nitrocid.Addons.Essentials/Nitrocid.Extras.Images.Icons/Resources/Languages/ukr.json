@@ -1,0 +1,14 @@
+{
+  "lang": "ukr",
+  "name": "Ukrainian",
+  "cultures": [
+    "uk",
+    "uk-UA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "У дистрибутиві немає іконок."
+    }
+  ]
+}

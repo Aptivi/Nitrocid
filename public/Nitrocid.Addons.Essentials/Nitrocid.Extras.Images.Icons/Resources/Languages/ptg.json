@@ -1,0 +1,24 @@
+{
+  "lang": "ptg",
+  "name": "Portuguese",
+  "cultures": [
+    "pt",
+    "pt-AO",
+    "pt-CH",
+    "pt-CV",
+    "pt-GQ",
+    "pt-GW",
+    "pt-LU",
+    "pt-MO",
+    "pt-MZ",
+    "pt-PT",
+    "pt-ST",
+    "pt-TL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "Não existem ícones na distribuição."
+    }
+  ]
+}

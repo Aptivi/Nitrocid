@@ -1,0 +1,18 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "Det er ingen ikoner i distribusjonen."
+    }
+  ]
+}

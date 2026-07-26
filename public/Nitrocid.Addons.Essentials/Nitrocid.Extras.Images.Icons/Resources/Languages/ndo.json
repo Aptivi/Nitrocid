@@ -1,0 +1,14 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "Tidak ada ikon dalam distribusi ini."
+    }
+  ]
+}

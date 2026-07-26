@@ -1,0 +1,14 @@
+{
+  "lang": "ltn",
+  "name": "Latin",
+  "cultures": [
+    "la",
+    "la-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "Nullae icones in distributione sunt."
+    }
+  ]
+}

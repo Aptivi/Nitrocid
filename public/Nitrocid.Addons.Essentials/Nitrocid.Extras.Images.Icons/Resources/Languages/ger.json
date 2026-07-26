@@ -1,0 +1,23 @@
+{
+  "lang": "ger",
+  "name": "German",
+  "cultures": [
+    "de",
+    "de-AT",
+    "de-BE",
+    "de-CH",
+    "de-DE",
+    "de-IT",
+    "de-LI",
+    "de-LU",
+    "nds",
+    "nds-DE",
+    "nds-NL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "Die Distribution enthält keine Symbole."
+    }
+  ]
+}

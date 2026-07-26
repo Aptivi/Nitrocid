@@ -1,0 +1,15 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "Níl aon deilbhíní sa dáileadh."
+    }
+  ]
+}

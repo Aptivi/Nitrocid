@@ -1,0 +1,17 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "Tiada ikon dalam pengedaran."
+    }
+  ]
+}

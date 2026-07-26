@@ -1,0 +1,17 @@
+{
+  "lang": "cnt-T",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "該發行版中沒有圖示。"
+    }
+  ]
+}

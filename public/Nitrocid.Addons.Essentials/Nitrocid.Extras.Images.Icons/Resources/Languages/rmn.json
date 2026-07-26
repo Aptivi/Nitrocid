@@ -1,0 +1,15 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "Nu există pictograme în distribuție."
+    }
+  ]
+}

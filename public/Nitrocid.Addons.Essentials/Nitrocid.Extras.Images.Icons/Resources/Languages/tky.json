@@ -1,0 +1,15 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "Dağıtımda hiçbir simge bulunmamaktadır."
+    }
+  ]
+}

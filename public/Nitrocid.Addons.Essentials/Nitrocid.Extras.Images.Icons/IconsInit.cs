@@ -17,7 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Core.Languages;
+using Nitrocid.Extras.Images.Icons.Tools;
 
 namespace Nitrocid.Extras.Images.Icons
 {
@@ -30,9 +34,21 @@ namespace Nitrocid.Extras.Images.Icons
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasImagesIcons);
 
         public void StartAddon()
-        { }
+        {
+            // Verify that all icons load successfully
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Images.Icons.Resources.Languages.Output.Localizations", typeof(IconsInit).Assembly));
+            var iconNames = IconsTools.GetIconNames();
+            DebugWriter.WriteDebug(DebugLevel.I, $"Icons are {iconNames.Length} [{string.Join(", ", iconNames)}]");
+            if (iconNames.Length == 0)
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Icons don't exist in distribution, icon tools will fail");
+                throw new KernelException(KernelExceptionType.AssertionFailure, LanguageTools.GetLocalized("NKS_IMAGES_ICONS_EXCEPTION_NOICONS"));
+            }
+        }
 
         public void StopAddon()
-        { }
+        {
+            LanguageTools.RemoveCustomAction(AddonName);
+        }
     }
 }

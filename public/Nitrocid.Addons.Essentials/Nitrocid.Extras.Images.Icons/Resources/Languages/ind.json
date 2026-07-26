@@ -1,0 +1,14 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi-Latn",
+    "hi-Latn-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_IMAGES_ICONS_EXCEPTION_NOICONS",
+      "text": "distribution mein koi icon nahin han."
+    }
+  ]
+}
