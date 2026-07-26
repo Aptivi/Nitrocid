@@ -226,11 +226,12 @@ namespace Nitrocid.Base.Kernel.Starting
                 catch (Exception exc)
                 {
                     exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to load important kernel addons");
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to load configuration");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
+                    // TODO: NKS_KERNEL_STARTING_FAILED_LOAD_CONFIG -> Failed to load configuration.
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_CONFIG") + $": {exc.Message}");
                 }
 
                 // Read privacy consents
