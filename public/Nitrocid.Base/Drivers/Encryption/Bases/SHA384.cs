@@ -22,19 +22,19 @@ using Nitrocid.Base.Drivers.Encryption;
 using Nitrocid.Base.Kernel.Debugging;
 using System.IO;
 using System.Text.RegularExpressions;
-using Encryptor = System.Security.Cryptography.SHA3_512;
+using Encryptor = System.Security.Cryptography.SHA384;
 using FS = Nitrocid.Base.Files.FilesystemTools;
 using TextEncoding = System.Text.Encoding;
 
-namespace Nitrocid.Extras.Hashes.Drivers
+namespace Nitrocid.Base.Drivers.Encryption.Bases
 {
     /// <summary>
-    /// SHA512 enhanced encryptor
+    /// SHA384 encryptor
     /// </summary>
-    public class SHA512Enhanced : BaseEncryptionDriver, IEncryptionDriver
+    public class SHA384 : BaseEncryptionDriver, IEncryptionDriver
     {
         /// <inheritdoc/>
-        public override string DriverName => "SHA512Enhanced";
+        public override string DriverName => "SHA384";
 
         /// <inheritdoc/>
         public override DriverTypes DriverType => DriverTypes.Encryption;

@@ -17,24 +17,24 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Force.Crc32;
-using FS = Nitrocid.Base.Files.FilesystemTools;
-using System.IO;
-using System.Text.RegularExpressions;
-using TextEncoding = System.Text.Encoding;
-using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Drivers.Encryption;
+using Nitrocid.Base.Kernel.Debugging;
+using System.IO;
+using System.Text.RegularExpressions;
+using Encryptor = System.Security.Cryptography.SHA3_256;
+using FS = Nitrocid.Base.Files.FilesystemTools;
+using TextEncoding = System.Text.Encoding;
 
-namespace Nitrocid.Extras.Hashes.Drivers
+namespace Nitrocid.Base.Drivers.Encryption.Bases
 {
     /// <summary>
-    /// CRC32 encryptor
+    /// SHA256 enhanced encryptor
     /// </summary>
-    public class CRC32 : BaseEncryptionDriver, IEncryptionDriver
+    public class SHA256Enhanced : BaseEncryptionDriver, IEncryptionDriver
     {
         /// <inheritdoc/>
-        public override string DriverName => "CRC32";
+        public override string DriverName => "SHA256Enhanced";
 
         /// <inheritdoc/>
         public override DriverTypes DriverType => DriverTypes.Encryption;
@@ -43,16 +43,16 @@ namespace Nitrocid.Extras.Hashes.Drivers
         public override string EmptyHash => GetEncryptedString("");
 
         /// <inheritdoc/>
-        public override int HashLength => 8;
+        public override int HashLength => 96;
 
         /// <inheritdoc/>
-        public override Regex HashRegex => new("^([a-fA-F0-9]{8})$");
+        public override Regex HashRegex => new("^([a-fA-F0-9]{96})$");
 
         /// <inheritdoc/>
         public override string GetEncryptedFile(Stream stream)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", vars: [stream.Length]);
-            var hashbyte = new Crc32Algorithm().ComputeHash(stream);
+            var hashbyte = Encryptor.Create().ComputeHash(stream);
             return Encryption.GetArrayEnc(hashbyte);
         }
 
@@ -70,7 +70,7 @@ namespace Nitrocid.Extras.Hashes.Drivers
         public override string GetEncryptedString(string str)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", vars: [str.Length]);
-            var hashbyte = new Crc32Algorithm().ComputeHash(TextEncoding.UTF8.GetBytes(str));
+            var hashbyte = Encryptor.HashData(TextEncoding.UTF8.GetBytes(str));
             return Encryption.GetArrayEnc(hashbyte);
         }
 

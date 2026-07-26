@@ -22,19 +22,19 @@ using Nitrocid.Base.Drivers.Encryption;
 using Nitrocid.Base.Kernel.Debugging;
 using System.IO;
 using System.Text.RegularExpressions;
-using Encryptor = System.Security.Cryptography.SHA384;
+using Encryptor = System.Security.Cryptography.MD5;
 using FS = Nitrocid.Base.Files.FilesystemTools;
 using TextEncoding = System.Text.Encoding;
 
-namespace Nitrocid.Extras.Hashes.Drivers
+namespace Nitrocid.Base.Drivers.Encryption.Bases
 {
     /// <summary>
-    /// SHA384 encryptor
+    /// MD5 encryptor
     /// </summary>
-    public class SHA384 : BaseEncryptionDriver, IEncryptionDriver
+    public class MD5 : BaseEncryptionDriver, IEncryptionDriver
     {
         /// <inheritdoc/>
-        public override string DriverName => "SHA384";
+        public override string DriverName => "MD5";
 
         /// <inheritdoc/>
         public override DriverTypes DriverType => DriverTypes.Encryption;
@@ -43,10 +43,10 @@ namespace Nitrocid.Extras.Hashes.Drivers
         public override string EmptyHash => GetEncryptedString("");
 
         /// <inheritdoc/>
-        public override int HashLength => 96;
+        public override int HashLength => 32;
 
         /// <inheritdoc/>
-        public override Regex HashRegex => new("^([a-fA-F0-9]{96})$");
+        public override Regex HashRegex => new("^([a-fA-F0-9]{32})$");
 
         /// <inheritdoc/>
         public override string GetEncryptedFile(Stream stream)

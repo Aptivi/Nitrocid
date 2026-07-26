@@ -26,7 +26,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Drivers.Encryption;
 
-namespace Nitrocid.Extras.Hashes.Drivers
+namespace Nitrocid.Base.Drivers.Encryption.Bases
 {
     /// <summary>
     /// CRC32C (Castagnoli) encryptor

@@ -88,8 +88,16 @@ namespace Nitrocid.Base.Drivers
             {
                 DriverTypes.Encryption, new()
                 {
+                    new CRC32(),
+                    new CRC32C(),
+                    new MD5(),
+                    new SHA1(),
                     new SHA256(),
-                    new SHA512()
+                    new SHA256Enhanced(),
+                    new SHA384(),
+                    new SHA384Enhanced(),
+                    new SHA512(),
+                    new SHA512Enhanced()
                 }
             },
             {
