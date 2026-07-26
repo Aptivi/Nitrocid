@@ -72,8 +72,5 @@ namespace Nitrocid.Extras.Stocks
             ConfigTools.UnregisterBaseSetting(nameof(StocksConfig));
             WidgetTools.RemoveBaseWidget(nameof(StocksWidget));
         }
-
-        public void FinalizeAddon()
-        { }
     }
 }

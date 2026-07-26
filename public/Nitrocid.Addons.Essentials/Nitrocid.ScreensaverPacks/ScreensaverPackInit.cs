@@ -192,8 +192,5 @@ namespace Nitrocid.ScreensaverPacks
             // Then, unload the configuration
             ConfigTools.UnregisterBaseSetting(nameof(ExtraSaversConfig));
         }
-
-        public void FinalizeAddon()
-        { }
     }
 }

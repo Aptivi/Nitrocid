@@ -133,8 +133,5 @@ namespace Nitrocid.Extras.BassBoom
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomConfig));
         }
-
-        public void FinalizeAddon()
-        { }
     }
 }

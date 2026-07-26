@@ -64,17 +64,14 @@ namespace Nitrocid.Extras.ToDoList
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasToDoList);
 
-        public void FinalizeAddon()
-        {
-            // Initialize to-do tasks
-            ToDoManager.LoadTasks();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded tasks.");
-        }
-
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.ToDoList.Resources.Languages.Output.Localizations", typeof(ToDoListInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+
+            // Initialize to-do tasks
+            ToDoManager.LoadTasks();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded tasks.");
         }
 
         public void StopAddon()

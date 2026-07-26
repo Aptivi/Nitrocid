@@ -39,9 +39,6 @@ namespace Nitrocid.Extras.Diagnostics
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasDiagnostics);
 
-        public void FinalizeAddon()
-        { }
-
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Diagnostics.Resources.Languages.Output.Localizations", typeof(DiagnosticsInit).Assembly));

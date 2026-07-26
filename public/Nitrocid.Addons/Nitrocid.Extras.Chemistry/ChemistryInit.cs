@@ -66,8 +66,5 @@ namespace Nitrocid.Extras.Chemistry
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ScreensaverManager.AddonSavers.Remove("periodicpreview");
         }
-
-        public void FinalizeAddon()
-        { }
     }
 }

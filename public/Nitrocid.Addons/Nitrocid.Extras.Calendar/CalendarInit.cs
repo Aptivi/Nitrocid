@@ -243,6 +243,16 @@ namespace Nitrocid.Extras.Calendar
 
         public void FinalizeAddon()
         {
+        }
+
+        public void StartAddon()
+        {
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Calendar.Resources.Languages.Output.Localizations", typeof(CalendarInit).Assembly));
+            var config = new CalendarConfig();
+            ConfigTools.RegisterBaseSetting(config);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            ScreensaverManager.AddonSavers.Add("calendar", new CalendarDisplay());
+
             // Initialize events and reminders
             if (!ReminderManager.ReminderThread.IsAlive)
                 ReminderManager.ReminderThread.Start();
@@ -254,15 +264,6 @@ namespace Nitrocid.Extras.Calendar
 
             // Add the calendar option to the homepage
             HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_CALENDAR_HOMEPAGE_CALENDAR", CalendarTui.OpenInteractive);
-        }
-
-        public void StartAddon()
-        {
-            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Calendar.Resources.Languages.Output.Localizations", typeof(CalendarInit).Assembly));
-            var config = new CalendarConfig();
-            ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
-            ScreensaverManager.AddonSavers.Add("calendar", new CalendarDisplay());
         }
 
         public void StopAddon()

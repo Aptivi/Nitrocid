@@ -71,8 +71,5 @@ namespace Nitrocid.ThemePacks
                 DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}", vars: [themeName]);
             }
         }
-
-        public void FinalizeAddon()
-        { }
     }
 }

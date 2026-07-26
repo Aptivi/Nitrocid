@@ -49,9 +49,6 @@ namespace Nitrocid.Extras.Images
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasImages);
 
-        public void FinalizeAddon()
-        { }
-
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Images.Resources.Languages.Output.Localizations", typeof(ImagesInit).Assembly));

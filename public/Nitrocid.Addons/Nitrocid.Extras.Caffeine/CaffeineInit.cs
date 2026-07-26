@@ -67,8 +67,5 @@ namespace Nitrocid.Extras.Caffeine
             LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
         }
-
-        public void FinalizeAddon()
-        { }
     }
 }

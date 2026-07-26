@@ -51,9 +51,6 @@ namespace Nitrocid.Extras.Docking
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasDocking);
 
-        public void FinalizeAddon()
-        { }
-
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Docking.Resources.Languages.Output.Localizations", typeof(DockingInit).Assembly));

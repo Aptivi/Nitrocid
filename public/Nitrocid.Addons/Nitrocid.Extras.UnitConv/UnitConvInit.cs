@@ -90,6 +90,9 @@ namespace Nitrocid.Extras.UnitConv
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.UnitConv.Resources.Languages.Output.Localizations", typeof(UnitConvInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+
+            // Add homepage entries
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_UNITCONV_HOMEPAGE_UNITCONV", UnitConvTools.OpenUnitConvTui);
         }
 
         public void StopAddon()
@@ -97,12 +100,6 @@ namespace Nitrocid.Extras.UnitConv
             LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_UNITCONV_HOMEPAGE_UNITCONV");
-        }
-
-        public void FinalizeAddon()
-        {
-            // Add homepage entries
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_UNITCONV_HOMEPAGE_UNITCONV", UnitConvTools.OpenUnitConvTui);
         }
     }
 }

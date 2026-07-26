@@ -443,21 +443,24 @@ namespace Nitrocid.Base.Kernel.Starting
                 }
 
 #if NKS_EXTENSIONS
+                // Initialize addons
                 try
                 {
-                    // Finalize addons
+                    // TODO: NKS_KERNEL_STARTING_ADDONS -> Loading kernel addons...
+                    if (KernelEntry.TalkativePreboot)
+                        SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ADDONS"));
                     AddonTools.ProcessAddons(ModLoadPriority.Optional);
-                    AddonTools.FinalizeAddons();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Finalized addons.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded kernel addons.");
                 }
                 catch (Exception exc)
                 {
                     exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to finalize addons");
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to load kernel addons");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
+                    // TODO: NKS_KERNEL_STARTING_FAILED_LOAD_ADDONS -> Failed to load kernel addons
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_FINALIZE_ADDONS") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_ADDONS") + $": {exc.Message}");
                 }
 #endif
 

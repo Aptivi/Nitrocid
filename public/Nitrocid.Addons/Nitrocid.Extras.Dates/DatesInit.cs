@@ -97,6 +97,11 @@ namespace Nitrocid.Extras.Dates
             var config = new DatesConfig();
             ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+
+            // Add homepage entries
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_DATES_HOMEPAGE_TIMER", TimerScreen.OpenTimer);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_DATES_HOMEPAGE_STOPWATCH", StopwatchScreen.OpenStopwatch);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_DATES_HOMEPAGE_POMODORO", PomodoroScreen.OpenPomodoro);
         }
 
         public void StopAddon()
@@ -107,14 +112,6 @@ namespace Nitrocid.Extras.Dates
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_DATES_HOMEPAGE_TIMER");
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_DATES_HOMEPAGE_STOPWATCH");
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_DATES_HOMEPAGE_POMODORO");
-        }
-
-        public void FinalizeAddon()
-        {
-            // Add homepage entries
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_DATES_HOMEPAGE_TIMER", TimerScreen.OpenTimer);
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_DATES_HOMEPAGE_STOPWATCH", StopwatchScreen.OpenStopwatch);
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_DATES_HOMEPAGE_POMODORO", PomodoroScreen.OpenPomodoro);
         }
     }
 }

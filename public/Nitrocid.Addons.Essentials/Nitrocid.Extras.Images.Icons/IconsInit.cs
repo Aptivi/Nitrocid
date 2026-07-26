@@ -29,9 +29,6 @@ namespace Nitrocid.Extras.Images.Icons
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasImagesIcons);
 
-        public void FinalizeAddon()
-        { }
-
         public void StartAddon()
         { }
 

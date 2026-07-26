@@ -41,9 +41,6 @@ namespace Nitrocid.Extras.Hashes
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasHashes);
 
-        public void FinalizeAddon()
-        { }
-
         public void StartAddon()
         {
             DriverHandler.RegisterBaseDriver<IEncryptionDriver>(singletonCrc32);

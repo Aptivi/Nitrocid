@@ -199,8 +199,5 @@ namespace Nitrocid.Extras.ColorConvert
             LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
         }
-
-        public void FinalizeAddon()
-        { }
     }
 }

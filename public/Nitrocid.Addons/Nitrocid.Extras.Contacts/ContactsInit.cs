@@ -86,12 +86,6 @@ namespace Nitrocid.Extras.Contacts
         internal static ContactsConfig ContactsConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(ContactsConfig)) ? (ContactsConfig)Config.baseConfigurations[nameof(ContactsConfig)] : Config.GetFallbackKernelConfig<ContactsConfig>();
 
-        public void FinalizeAddon()
-        {
-            // Add homepage entries
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_CONTACTS_HOMEPAGE_CONTACTS", ContactsManager.OpenContactsTui);
-        }
-
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Contacts.Resources.Languages.Output.Localizations", typeof(ContactsInit).Assembly));
@@ -104,6 +98,9 @@ namespace Nitrocid.Extras.Contacts
             LoggingTools.EnableLogging = KernelEntry.DebugMode;
             if (LoggingTools.EnableLogging)
                 LoggingTools.AbstractLogger = DebugWriter.debugLogger;
+
+            // Add homepage entries
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_CONTACTS_HOMEPAGE_CONTACTS", ContactsManager.OpenContactsTui);
         }
 
         public void StopAddon()

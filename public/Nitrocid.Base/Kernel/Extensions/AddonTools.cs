@@ -188,30 +188,6 @@ namespace Nitrocid.Base.Kernel.Extensions
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void FinalizeAddons()
-        {
-            Dictionary<string, string> errors = [];
-            foreach (var addonInfo in addons)
-            {
-                try
-                {
-                    using var context = addonInfo.alc.EnterContextualReflection();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Finalizing addon {0}...", vars: [addonInfo.AddonName]);
-                    addonInfo.Addon.FinalizeAddon();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Finalized addon {0}!", vars: [addonInfo.AddonName]);
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to finalize addon {0}. {1}", vars: [addonInfo.AddonName, ex.Message]);
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    errors.Add(addonInfo.AddonName, ex is KernelException kex ? kex.OriginalExceptionMessage : ex.Message);
-                }
-            }
-            if (errors.Count != 0)
-                throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_FINALIZEFAILED") + $"\n  - {string.Join("\n  - ", errors.Select((kvp) => $"{kvp.Key}: {kvp.Value}"))}");
-        }
-
-        [MethodImpl(MethodImplOptions.NoInlining)]
         internal static void UnloadAddons()
         {
             Dictionary<string, string> errors = [];

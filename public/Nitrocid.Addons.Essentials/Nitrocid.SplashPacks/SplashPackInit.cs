@@ -89,8 +89,5 @@ namespace Nitrocid.SplashPacks
             // Then, unload the configuration
             ConfigTools.UnregisterBaseSetting(nameof(ExtraSplashesConfig));
         }
-
-        public void FinalizeAddon()
-        { }
     }
 }

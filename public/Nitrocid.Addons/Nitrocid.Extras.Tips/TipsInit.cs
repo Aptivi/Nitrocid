@@ -36,15 +36,13 @@ namespace Nitrocid.Extras.Tips
         internal static TipsConfig TipsConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(TipsConfig)) ? (TipsConfig)Config.baseConfigurations[nameof(TipsConfig)] : Config.GetFallbackKernelConfig<TipsConfig>();
 
-        public void FinalizeAddon() =>
-            WelcomeMessage.tips = TipsList.tips;
-
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Tips.Resources.Languages.Output.Localizations", typeof(TipsInit).Assembly));
             var config = new TipsConfig();
             ConfigTools.RegisterBaseSetting(config);
             WelcomeMessage.ShowTip = TipsConfig.ShowTip;
+            WelcomeMessage.tips = TipsList.tips;
         }
 
         public void StopAddon()

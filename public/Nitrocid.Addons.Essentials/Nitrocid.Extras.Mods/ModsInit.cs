@@ -78,9 +78,6 @@ namespace Nitrocid.Extras.Mods
         internal static ModsConfig ModsConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(ModsConfig)) ? (ModsConfig)Config.baseConfigurations[nameof(ModsConfig)] : Config.GetFallbackKernelConfig<ModsConfig>();
 
-        public void FinalizeAddon()
-        { }
-
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Mods.Resources.Languages.Output.Localizations", typeof(ModsInit).Assembly));

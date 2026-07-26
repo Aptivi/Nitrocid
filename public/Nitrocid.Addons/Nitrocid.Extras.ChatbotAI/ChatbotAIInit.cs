@@ -57,9 +57,6 @@ namespace Nitrocid.Extras.ChatbotAI
         internal static ChatbotAIConfig ChatbotAIConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(ChatbotAIConfig)) ? (ChatbotAIConfig)Config.baseConfigurations[nameof(ChatbotAIConfig)] : Config.GetFallbackKernelConfig<ChatbotAIConfig>();
 
-        public void FinalizeAddon()
-        { }
-
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.ChatbotAI.Resources.Languages.Output.Localizations", typeof(ChatbotAIInit).Assembly));

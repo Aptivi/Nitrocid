@@ -25,7 +25,6 @@ namespace Nitrocid.Base.Kernel.Extensions
         internal string AddonName { get; }
         internal string AddonTranslatedName { get; }
         internal void StartAddon();
-        internal void FinalizeAddon();
         internal void StopAddon();
     }
 }

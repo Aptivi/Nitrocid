@@ -221,7 +221,7 @@ namespace Nitrocid.ShellPacks
         internal static ShellsConfig ShellsConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(ShellsConfig)) ? (ShellsConfig)Config.baseConfigurations[nameof(ShellsConfig)] : Config.GetFallbackKernelConfig<ShellsConfig>();
 
-        public void FinalizeAddon()
+        public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.ShellPacks.Resources.Languages.Output.Localizations", typeof(ShellsInit).Assembly));
             var config = new ShellsConfig();
@@ -253,9 +253,6 @@ namespace Nitrocid.ShellPacks
                 GlobalSettings.NativeLibraryPath = PathsManagement.AddonsPath + "/ShellPacks/runtimes/" + PlatformHelper.GetCurrentGenericRid() + "/native/";
             }
         }
-
-        public void StartAddon()
-        { }
 
         public void StopAddon()
         {

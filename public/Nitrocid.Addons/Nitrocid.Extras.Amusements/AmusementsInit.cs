@@ -191,25 +191,6 @@ namespace Nitrocid.Extras.Amusements
 
         public void FinalizeAddon()
         {
-            // Add the amusements to the homepage
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_BACKRACE", BackRace.OpenBackRace);
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_CLICKER", Clicker.InitializeClicker);
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_HANGMAN", () => Hangman.InitializeHangman(HangmanDifficulty.None));
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_INVADERS", Invaders.InitializeInvaders);
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE", () => MeteorShooter.InitializeMeteor(false, true));
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER", () => MeteorShooter.InitializeMeteor());
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_PONG", Pong.InitializePong);
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_DEFAULT", () => ScoreSim.InitializeScoreSim(0, "", ""));
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_SOCCER", () => ScoreSim.InitializeScoreSim(1, "", ""));
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_BASKETBALL", () => ScoreSim.InitializeScoreSim(2, "", ""));
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET", () => ShipDuetShooter.InitializeShipDuet());
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SIMON", Simon.InitializeSimon);
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SNAKER", () => Snaker.InitializeSnaker(false));
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_STREETRUN", StreetRun.InitializeStreetRun);
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_CPU", () => TicTacToe.InitializeTicTacToe(true));
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_2P", () => TicTacToe.InitializeTicTacToe(false));
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_WORDLE", () => Wordle.InitializeWordle());
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG", () => Wordle.InitializeWordle(true));
         }
 
         public void StartAddon()
@@ -230,16 +211,32 @@ namespace Nitrocid.Extras.Amusements
             }
 
             // Initialize configuration in a way that no mod can play with them
+            var config = new AmusementsConfig();
             var saversConfig = new AmusementsSaversConfig();
-            ConfigTools.RegisterBaseSetting(saversConfig);
-
-            // Splashes...
             var splashesConfig = new AmusementsSplashesConfig();
+            ConfigTools.RegisterBaseSetting(config);
+            ConfigTools.RegisterBaseSetting(saversConfig);
             ConfigTools.RegisterBaseSetting(splashesConfig);
 
-            // Main...
-            var config = new AmusementsConfig();
-            ConfigTools.RegisterBaseSetting(config);
+            // Add the amusements to the homepage
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_BACKRACE", BackRace.OpenBackRace);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_CLICKER", Clicker.InitializeClicker);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_HANGMAN", () => Hangman.InitializeHangman(HangmanDifficulty.None));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_INVADERS", Invaders.InitializeInvaders);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE", () => MeteorShooter.InitializeMeteor(false, true));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER", () => MeteorShooter.InitializeMeteor());
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_PONG", Pong.InitializePong);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_DEFAULT", () => ScoreSim.InitializeScoreSim(0, "", ""));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_SOCCER", () => ScoreSim.InitializeScoreSim(1, "", ""));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_BASKETBALL", () => ScoreSim.InitializeScoreSim(2, "", ""));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET", () => ShipDuetShooter.InitializeShipDuet());
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SIMON", Simon.InitializeSimon);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SNAKER", () => Snaker.InitializeSnaker(false));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_STREETRUN", StreetRun.InitializeStreetRun);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_CPU", () => TicTacToe.InitializeTicTacToe(true));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_2P", () => TicTacToe.InitializeTicTacToe(false));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_WORDLE", () => Wordle.InitializeWordle());
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG", () => Wordle.InitializeWordle(true));
         }
 
         public void StopAddon()

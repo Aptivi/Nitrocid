@@ -99,9 +99,6 @@ namespace Nitrocid.Extras.Forecast
         internal static ForecastConfig ForecastConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(ForecastConfig)) ? (ForecastConfig)Config.baseConfigurations[nameof(ForecastConfig)] : Config.GetFallbackKernelConfig<ForecastConfig>();
 
-        public void FinalizeAddon()
-        { }
-
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Forecast.Resources.Languages.Output.Localizations", typeof(ForecastInit).Assembly));

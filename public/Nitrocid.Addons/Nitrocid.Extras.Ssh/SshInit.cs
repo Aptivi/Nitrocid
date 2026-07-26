@@ -77,16 +77,13 @@ namespace Nitrocid.Extras.Ssh
         internal static SshConfig SshConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(SshConfig)) ? (SshConfig)Config.baseConfigurations[nameof(SshConfig)] : Config.GetFallbackKernelConfig<SshConfig>();
 
-        public void FinalizeAddon()
+        public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Ssh.Resources.Languages.Output.Localizations", typeof(SshInit).Assembly));
             var config = new SshConfig();
             ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
-
-        public void StartAddon()
-        { }
 
         public void StopAddon()
         {

@@ -92,6 +92,12 @@ namespace Nitrocid.Extras.Notes
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Notes.Resources.Languages.Output.Localizations", typeof(NotesInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+
+            // Add homepage entries
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_NOTES_HOMEPAGE_NOTES", NoteManagement.OpenNotesTui);
+
+            // Load notes
+            NoteManagement.LoadNotes();
         }
 
         public void StopAddon()
@@ -99,15 +105,6 @@ namespace Nitrocid.Extras.Notes
             LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_NOTES_HOMEPAGE_NOTES");
-        }
-
-        public void FinalizeAddon()
-        {
-            // Add homepage entries
-            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_NOTES_HOMEPAGE_NOTES", NoteManagement.OpenNotesTui);
-
-            // Load notes
-            NoteManagement.LoadNotes();
         }
     }
 }

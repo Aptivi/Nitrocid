@@ -81,9 +81,6 @@ namespace Nitrocid.Extras.Pastebin
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasPastebin);
 
-        public void FinalizeAddon()
-        { }
-
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Pastebin.Resources.Languages.Output.Localizations", typeof(PastebinInit).Assembly));
