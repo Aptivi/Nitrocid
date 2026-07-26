@@ -18,15 +18,17 @@
 //
 
 #if NKS_EXTENSIONS
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Reflection;
-using Nitrocid.Base.Security.Permissions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
+using Nitrocid.Base.Security.Permissions;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Nitrocid.Base.Kernel.Extensions
 {
@@ -350,9 +352,6 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="parameters">Parameters to execute the function with</param>
         public static object? ExecuteCustomAddonFunction(string addonName, string functionName, Type type, params object?[]? parameters)
         {
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
-
             // Verify the type before proceeding
             VerifyType(addonName, type);
 
@@ -360,6 +359,11 @@ namespace Nitrocid.Base.Kernel.Extensions
             var function = GetFunctionInfo(addonName, functionName, type);
             if (function is null)
                 return null;
+
+            // Check to see if this function is a privileged function
+            var privileged = function.GetCustomAttribute<CommunicationPrivilegedAttribute>() is not null;
+            if (privileged)
+                PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
 
             // The function instance is valid. Try to dynamically invoke it.
             return MethodManager.InvokeMethodStatic(function, parameters);
@@ -404,9 +408,6 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
         public static object? GetCustomAddonPropertyValue(string addonName, string propertyName, Type type)
         {
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
-
             // Verify the type before proceeding
             VerifyType(addonName, type);
 
@@ -414,6 +415,11 @@ namespace Nitrocid.Base.Kernel.Extensions
             var property = GetPropertyInfo(addonName, propertyName, type);
             if (property is null)
                 return null;
+
+            // Check to see if this property is a privileged property
+            var privileged = property.GetCustomAttribute<CommunicationPrivilegedAttribute>() is not null;
+            if (privileged)
+                PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
 
             // Try to get a value from it.
             return PropertyManager.GetPropertyValue(property);
@@ -462,9 +468,6 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="value">Value to set the property to</param>
         public static void SetCustomAddonPropertyValue(string addonName, string propertyName, Type type, object? value)
         {
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
-
             // Verify the type before proceeding
             VerifyType(addonName, type);
 
@@ -472,6 +475,11 @@ namespace Nitrocid.Base.Kernel.Extensions
             var property = GetPropertyInfo(addonName, propertyName, type);
             if (property is null)
                 return;
+
+            // Check to see if this property is a privileged property
+            var privileged = property.GetCustomAttribute<CommunicationPrivilegedAttribute>() is not null;
+            if (privileged)
+                PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
 
             // Try to set a value in it.
             PropertyManager.SetPropertyValue(property, value);
@@ -516,15 +524,17 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available addon fields from an addon type.</param>
         public static object? GetCustomAddonFieldValue(string addonName, string fieldName, Type type)
         {
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
-
             // Verify the type before proceeding
             VerifyType(addonName, type);
 
             // Get the field
             var field = GetFieldInfo(addonName, fieldName, type) ??
                 throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FIELDINFO") + $" {addonName} -> {fieldName}");
+
+            // Check to see if this field is a privileged field
+            var privileged = field.GetCustomAttribute<CommunicationPrivilegedAttribute>() is not null;
+            if (privileged)
+                PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
 
             // Try to get a value from it.
             return FieldManager.GetFieldValue(field);
@@ -573,15 +583,17 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="value">Value to set the field to</param>
         public static void SetCustomAddonFieldValue(string addonName, string fieldName, Type type, object? value)
         {
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
-
             // Verify the type before proceeding
             VerifyType(addonName, type);
 
             // Get the field
             var field = GetFieldInfo(addonName, fieldName, type) ??
                 throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FIELDINFO") + $" {addonName} -> {fieldName}");
+
+            // Check to see if this field is a privileged field
+            var privileged = field.GetCustomAttribute<CommunicationPrivilegedAttribute>() is not null;
+            if (privileged)
+                PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
 
             // Try to set a value in it.
             FieldManager.SetFieldValue(field, value);
@@ -630,9 +642,6 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no function</returns>
         public static ParameterInfo[]? GetFunctionParameters(string addonName, string functionName, Type type)
         {
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
-
             // Verify the type before proceeding
             VerifyType(addonName, type);
 
@@ -640,6 +649,11 @@ namespace Nitrocid.Base.Kernel.Extensions
             var function = GetFunctionInfo(addonName, functionName, type);
             if (function is null)
                 return null;
+
+            // Check to see if this function is a privileged function
+            var privileged = function.GetCustomAttribute<CommunicationPrivilegedAttribute>() is not null;
+            if (privileged)
+                PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
 
             // Get the function parameters
             return function.GetParameters();
@@ -688,9 +702,6 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no property</returns>
         public static ParameterInfo[]? GetSetPropertyParameters(string addonName, string propertyName, Type type)
         {
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
-
             // Verify the type before proceeding
             VerifyType(addonName, type);
 
@@ -698,6 +709,11 @@ namespace Nitrocid.Base.Kernel.Extensions
             var property = GetPropertyInfo(addonName, propertyName, type);
             if (property is null)
                 return null;
+
+            // Check to see if this property is a privileged property
+            var privileged = property.GetCustomAttribute<CommunicationPrivilegedAttribute>() is not null;
+            if (privileged)
+                PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
 
             // Get the property parameters
             var get = property.GetSetMethod();
