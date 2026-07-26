@@ -50,11 +50,6 @@
         "project": "Extras.Calendar"
     },
     {
-        "name": "ExtrasColorConvert",
-        "display": "NKS_KNOWNADDONS_EXTRAS_COLORCONVERTER",
-        "project": "Extras.ColorConvert"
-    },
-    {
         "name": "ExtrasContacts",
         "display": "NKS_KNOWNADDONS_EXTRAS_CONTACTS",
         "project": "Extras.Contacts"
@@ -68,11 +63,6 @@
         "name": "ExtrasDictionary",
         "display": "NKS_KNOWNADDONS_EXTRAS_DICTIONARY",
         "project": "Extras.Dictionary"
-    },
-    {
-        "name": "ExtrasDocking",
-        "display": "NKS_KNOWNADDONS_EXTRAS_DOCKING",
-        "project": "Extras.Docking"
     },
     {
         "name": "ExtrasForecast",
@@ -148,11 +138,6 @@
         "name": "ExtrasImagesIcons",
         "display": "NKS_KNOWNADDONS_EXTRAS_ICONS",
         "project": "Extras.Images.Icons"
-    },
-    {
-        "name": "ExtrasHashes",
-        "display": "NKS_KNOWNADDONS_EXTRAS_HASHES",
-        "project": "Extras.Hashes"
     },
     {
         "name": "ExtrasChatbotAI",
