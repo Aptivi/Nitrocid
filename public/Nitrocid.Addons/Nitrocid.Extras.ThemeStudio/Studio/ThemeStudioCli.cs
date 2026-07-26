@@ -17,23 +17,28 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Colorimetry;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Terminaux.Base.Extensions;
-using Colorimetry;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Themes;
+using Terminaux.Themes.Colors;
 using Textify.General;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio
 {
     internal class ThemeStudioCli : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
-        internal Dictionary<string, Color> originalColors = [];
+        internal Dictionary<string, Color> originalColors = ThemeColorsTools.PopulateColorsCurrent();
         internal string themeName = "";
 
         /// <inheritdoc/>
@@ -84,8 +89,8 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
 
         internal void Save()
         {
-            foreach (var type in ThemeStudioTools.SelectedColors.Keys)
-                ThemeStudioTools.SelectedColors[type] = originalColors[type];
+            foreach (var type in originalColors.Keys)
+                originalColors[type] = originalColors[type];
             var choices = new InputChoiceInfo[]
             {
                 new("1", LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETOCURRENT")),
@@ -101,7 +106,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 case 0:
                     {
                         // Save theme to current directory
-                        ThemeStudioTools.SaveThemeToCurrentDirectory(themeName);
+                        SaveThemeToCurrentDirectory(themeName);
                         break;
                     }
                 case 1:
@@ -111,7 +116,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                         string DirectoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETODIRPROMPT") + " [{0}] ", vars: [FilesystemTools.CurrentDir]);
                         DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? FilesystemTools.CurrentDir : DirectoryName;
                         DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", vars: [DirectoryName]);
-                        ThemeStudioTools.SaveThemeToAnotherDirectory(themeName, DirectoryName);
+                        SaveThemeToAnotherDirectory(themeName, DirectoryName);
                         break;
                     }
                 case 2:
@@ -121,7 +126,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                         string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT") + " [{0}] ", vars: [themeName]);
                         AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? themeName : AltThemeName;
                         DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
-                        ThemeStudioTools.SaveThemeToCurrentDirectory(AltThemeName);
+                        SaveThemeToCurrentDirectory(AltThemeName);
                         break;
                     }
                 case 3:
@@ -135,7 +140,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                         string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT") + " [{0}] ", vars: [themeName]);
                         AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? themeName : AltThemeName;
                         DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
-                        ThemeStudioTools.SaveThemeToAnotherDirectory(AltThemeName, DirectoryName);
+                        SaveThemeToAnotherDirectory(AltThemeName, DirectoryName);
                         break;
                     }
             }
@@ -160,7 +165,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                         DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
                         string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMEFILEPROMPT")) + ".json";
                         DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
-                        ThemeStudioTools.LoadThemeFromFile(AltThemeName);
+                        LoadThemeFromFile(AltThemeName);
                         break;
                     }
                 case 1:
@@ -169,14 +174,14 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                         DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
                         string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT"));
                         DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
-                        ThemeStudioTools.LoadThemeFromResource(AltThemeName);
+                        LoadThemeFromResource(AltThemeName);
                         break;
                     }
                 case 2:
                     {
                         // Load Current Colors
                         DebugWriter.WriteDebug(DebugLevel.I, "Loading current colors...");
-                        ThemeStudioTools.LoadThemeFromCurrentColors();
+                        LoadThemeFromCurrentColors();
                         break;
                     }
             }
@@ -198,6 +203,80 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 var targetType = originalColors.ElementAt(idx).Key;
                 originalColors[targetType] = sourceColor;
             }
+        }
+
+        private void SaveThemeToCurrentDirectory(string Theme)
+        {
+            var ThemeJson = GetThemeJson(Theme);
+            FilesystemTools.WriteContentsText(FilesystemTools.NeutralizePath(Theme + ".json"), JsonConvert.SerializeObject(ThemeJson, Formatting.Indented));
+        }
+
+        private void SaveThemeToAnotherDirectory(string Theme, string Path)
+        {
+            var ThemeJson = GetThemeJson(Theme);
+            FilesystemTools.WriteContentsText(FilesystemTools.NeutralizePath(Path + "/" + Theme + ".json"), JsonConvert.SerializeObject(ThemeJson, Formatting.Indented));
+        }
+
+        private void LoadThemeFromResource(string Theme) =>
+            LoadThemeFromThemeInfo(ThemeTools.GetThemeInfo(Theme));
+
+        private void LoadThemeFromFile(string Theme)
+        {
+            // Populate theme info
+            var ThemeInfo = new ThemeInfo(FilesystemTools.NeutralizePath(Theme));
+            LoadThemeFromThemeInfo(ThemeInfo);
+        }
+
+        private void LoadThemeFromThemeInfo(ThemeInfo themeInfo)
+        {
+            // Place information to the studio
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length; typeIndex++)
+            {
+                string type = originalColors.Keys.ElementAt(typeIndex);
+                originalColors[type] = ThemeTools.GetColorsFromTheme(themeInfo)[type];
+            }
+        }
+
+        private void LoadThemeFromCurrentColors()
+        {
+            // Place information to the studio
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length; typeIndex++)
+            {
+                string type = originalColors.Keys.ElementAt(typeIndex);
+                originalColors[type] = ThemeColorsTools.GetColor(type);
+            }
+        }
+
+        private JObject GetThemeJson(string themeName)
+        {
+            JObject themeJson = [];
+
+            // Populate the metadata
+            JProperty metadata =
+                /*
+                 * Metadata instance with the format of:
+                 * 
+                 *     "Metadata": {
+                 *         "Name": "ThemeName"
+                 *     },
+                 */
+                new("Metadata",
+                    new JObject(
+                        new JProperty("Name", themeName)
+                    )
+                );
+            themeJson.Add(metadata);
+
+            // Populate the colors
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length; typeIndex++)
+            {
+                // Add the color to the final object
+                string type = originalColors.Keys.ElementAt(typeIndex);
+                themeJson.Add(new JProperty($"{type}Color", originalColors[type].PlainSequence));
+            }
+
+            // Return the final object with the metadata
+            return themeJson;
         }
     }
 }

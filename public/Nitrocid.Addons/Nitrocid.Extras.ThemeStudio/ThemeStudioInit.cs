@@ -40,9 +40,6 @@ namespace Nitrocid.Extras.ThemeStudio
                         {
                             ArgumentDescription = /* Localizable */ "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC"
                         }),
-                    ],
-                    [
-                        new SwitchInfo("tui", /* Localizable */ "NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC")
                     ])
                 ], new MkThemeCommand()),
         ];
