@@ -9410,6 +9410,26 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "Gan beatha."
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Léiríonn sé forbhreathnú lánscáileáin duit ar radharc duga roghnaithe chun go mbeidh tú in ann é a úsáid mar phainéal faisnéise"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN",
+      "text": "Níl aon duga scáileáin leis an ainm seo."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Níl aon duga scáileáin ann."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "Tá duga scáileáin tuairteála"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Ainm an duga"
     }
   ]
 }

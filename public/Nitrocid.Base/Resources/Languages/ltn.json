@@ -9409,6 +9409,26 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "Nulla a lorem."
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Monstrat tibi plenum screen overview visum navale delectum eo uti posse ut tabula info"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN",
+      "text": "Nullum navale tegumentum hoc nomine est."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Nulla veli navale."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "'Collaborative dictum est ingruat"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Navale nomen"
     }
   ]
 }

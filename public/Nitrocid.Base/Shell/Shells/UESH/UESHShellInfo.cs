@@ -33,6 +33,7 @@ using Nitrocid.Base.Users;
 using Nitrocid.Base.Drivers.Encoding;
 using Nitrocid.Base.Files.Extensions;
 using Nitrocid.Base.Drivers.Encryption;
+using Nitrocid.Base.Misc.Dock;
 
 namespace Nitrocid.Base.Shell.Shells.UESH
 {
@@ -686,6 +687,18 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                 ], new DismissNotifCommand()),
 
             new CommandInfo("dismissnotifs", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DISMISSNOTIFS_DESC", new DismissNotifsCommand()),
+
+            new CommandInfo("dock", /* Localizable */ "NKS_DOCKING_COMMAND_DOCK_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "dockName", new()
+                        {
+                            AutoCompleter = (_) => DockTools.GetDockScreenNames(),
+                            ArgumentDescription = /* Localizable */ "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC"
+                        }),
+                    ])
+                ], new DockCommand()),
 
             new CommandInfo("driverman", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN",
                 [

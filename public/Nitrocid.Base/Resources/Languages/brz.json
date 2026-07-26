@@ -9408,6 +9408,26 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "Sem alimentação."
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Mostra uma visão geral em tela cheia sobre uma visualização de dock selecionada para poder usá-la como um painel de informações"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN",
+      "text": "Não há nenhum dock de tela com esse nome."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Não há dock de tela."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "O dock de tela travou"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Nome da doca"
     }
   ]
 }

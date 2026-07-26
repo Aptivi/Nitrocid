@@ -9412,6 +9412,26 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "Tiada suapan."
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Menunjukkan kepada anda gambaran keseluruhan skrin penuh tentang paparan dok yang dipilih untuk dapat menggunakannya sebagai panel maklumat"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN",
+      "text": "Tiada dok skrin dengan nama ini."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Tiada dok skrin."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "Dok skrin telah ranap"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Nama dok"
     }
   ]
 }

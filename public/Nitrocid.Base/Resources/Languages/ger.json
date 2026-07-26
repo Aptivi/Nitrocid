@@ -9418,6 +9418,26 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "Kein Feed."
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Zeigt Ihnen eine Vollbildübersicht über eine ausgewählte Dockansicht, um diese als Infopanel nutzen zu können"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN",
+      "text": "Es gibt kein Bildschirmdock mit diesem Namen."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Es gibt kein Bildschirmdock."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "Das Bildschirmdock ist abgestürzt"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Dockname"
     }
   ]
 }

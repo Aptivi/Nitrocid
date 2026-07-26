@@ -9415,6 +9415,26 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "Geen voer."
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Toont u een schermvullend overzicht van een geselecteerde dockweergave, zodat u deze als infopaneel kunt gebruiken"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN",
+      "text": "Er is geen schermdock met deze naam."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Er is geen schermdock."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "Schermdock is gecrasht"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Naam van het dok"
     }
   ]
 }

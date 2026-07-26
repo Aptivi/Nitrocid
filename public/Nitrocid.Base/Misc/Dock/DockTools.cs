@@ -34,7 +34,7 @@ using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace Nitrocid.Extras.Docking.Dock
+namespace Nitrocid.Base.Misc.Dock
 {
     /// <summary>
     /// Screen dock tools
@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.Docking.Dock
         {
             // Check to see if there is a dock by this name
             if (!DoesDockScreenExist(dockName, out BaseWidget? dock))
-                throw new KernelException(KernelExceptionType.Docking, LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN2"));
+                throw new KernelException(KernelExceptionType.Docking, LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN"));
 
             // Now, dock the screen
             DebugWriter.WriteDebug(DebugLevel.I, $"Docking screen with name: {dockName}");

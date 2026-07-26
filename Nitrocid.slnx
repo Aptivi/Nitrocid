@@ -50,7 +50,6 @@
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Contacts/Nitrocid.Extras.Contacts.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Dates/Nitrocid.Extras.Dates.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Dictionary/Nitrocid.Extras.Dictionary.csproj" />
-      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Docking/Nitrocid.Extras.Docking.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Forecast/Nitrocid.Extras.Forecast.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Notes/Nitrocid.Extras.Notes.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Pastebin/Nitrocid.Extras.Pastebin.csproj" />
@@ -101,7 +100,6 @@
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Contacts/Nitrocid.Extras.Contacts.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Dates/Nitrocid.Extras.Dates.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Dictionary/Nitrocid.Extras.Dictionary.csproj" />
-    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Docking/Nitrocid.Extras.Docking.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Forecast/Nitrocid.Extras.Forecast.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Notes/Nitrocid.Extras.Notes.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Pastebin/Nitrocid.Extras.Pastebin.csproj" />

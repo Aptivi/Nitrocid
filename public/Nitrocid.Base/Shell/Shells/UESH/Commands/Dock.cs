@@ -19,12 +19,12 @@
 
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Extras.Docking.Dock;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Misc.Widgets;
+using Nitrocid.Base.Misc.Dock;
 
-namespace Nitrocid.Extras.Docking.Commands
+namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
     class DockCommand : BaseCommand, ICommand
     {
@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.Docking.Commands
             // Check the dock screen for existence
             if (!DockTools.DoesDockScreenExist(parameters.ArgumentsList[0], out BaseWidget? dock))
             {
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN1"), ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN"), ThemeColorType.Error);
                 return 34;
             }
 

@@ -9434,6 +9434,26 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "Sin alimentación."
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Le muestra una descripción general en pantalla completa sobre una vista del muelle seleccionada para poder usarla como panel de información."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN",
+      "text": "No hay ninguna base de pantalla con este nombre."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "No hay base de pantalla."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "La base de pantalla se ha bloqueado"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Nombre del muelle"
     }
   ]
 }

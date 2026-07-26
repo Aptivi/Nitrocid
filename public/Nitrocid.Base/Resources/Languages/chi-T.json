@@ -9417,6 +9417,26 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "没有饲料。"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "显示有关所选停靠视图的全屏概述，以便能够将其用作信息面板"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN",
+      "text": "没有同名的屏幕底座。"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "没有屏幕底座。"
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "屏幕底座崩溃了"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "码头名称"
     }
   ]
 }

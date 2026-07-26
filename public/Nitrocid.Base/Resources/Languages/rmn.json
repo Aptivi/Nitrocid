@@ -9410,6 +9410,26 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "Fără hrană."
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Vă arată o prezentare generală pe ecran complet despre o vizualizare de andocare selectată pentru a o putea folosi ca panou de informații"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN",
+      "text": "Nu există dock pentru ecran cu acest nume."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Nu există dock pentru ecran."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "Dock-ul pentru ecran s-a prăbușit"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Numele andocului"
     }
   ]
 }

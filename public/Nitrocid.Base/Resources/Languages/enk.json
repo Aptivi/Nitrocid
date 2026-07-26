@@ -9408,6 +9408,26 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "No feed."
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Shows you a full-screen overview about a selected dock view to be able to use it as an info panel"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN",
+      "text": "There is no screen dock by this name."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "There is no screen dock."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "Screen dock has crashed"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Dock name"
     }
   ]
 }

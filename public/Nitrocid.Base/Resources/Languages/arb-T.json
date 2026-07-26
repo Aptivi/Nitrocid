@@ -9435,6 +9435,26 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "لا يوجد رد فعل."
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "يعرض لك نظرة عامة بملء الشاشة حول عرض الإرساء المحدد لتتمكن من استخدامه كلوحة معلومات"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN",
+      "text": "لا يوجد إرساء شاشة بهذا الاسم."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "لا يوجد قفص الاتهام الشاشة."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "لقد تحطمت قاعدة الشاشة"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "اسم الرصيف"
     }
   ]
 }

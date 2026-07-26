@@ -9413,6 +9413,26 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "Ingen feed."
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Viser deg en fullskjermsoversikt over en valgt dock-visning for å kunne bruke den som et infopanel"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN",
+      "text": "Det er ingen skjermdokking med dette navnet."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Det er ingen skjermdokk."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "Skjermdokken har krasjet"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Dokknavn"
     }
   ]
 }

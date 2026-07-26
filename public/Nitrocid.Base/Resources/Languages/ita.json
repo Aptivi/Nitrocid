@@ -9412,6 +9412,26 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "Nessuna alimentazione."
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_DESC",
+      "text": "Mostra una panoramica a schermo intero su una visualizzazione dock selezionata per poterla utilizzare come pannello informativo"
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCKSCREEN",
+      "text": "Non esiste uno screen dock con questo nome."
+    },
+    {
+      "loc": "NKS_DOCKING_NODOCK",
+      "text": "Non è presente una dock per lo schermo."
+    },
+    {
+      "loc": "NKS_DOCKING_DOCKCRASHED",
+      "text": "Il dock dello schermo si è bloccato"
+    },
+    {
+      "loc": "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC",
+      "text": "Nome del molo"
     }
   ]
 }
