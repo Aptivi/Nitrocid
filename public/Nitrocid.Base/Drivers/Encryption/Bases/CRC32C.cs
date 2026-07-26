@@ -23,8 +23,6 @@ using System.IO;
 using System.Text.RegularExpressions;
 using TextEncoding = System.Text.Encoding;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Drivers;
-using Nitrocid.Base.Drivers.Encryption;
 
 namespace Nitrocid.Base.Drivers.Encryption.Bases
 {

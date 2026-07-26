@@ -1,0 +1,42 @@
+﻿//
+// Nitrocid  Copyright (C) 2018-2026  Aptivi
+//
+// This file is part of Nitrocid
+//
+// Nitrocid is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Nitrocid is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY, without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+
+using Terminaux.Writer.ConsoleWriters;
+using Colorimetry;
+using Terminaux.Base;
+using Colorimetry.Data;
+using Terminaux.Base.Extensions;
+
+namespace Nitrocid.Extras.Animated.Animations.BSOD.Simulations
+{
+    internal class GrubError : BaseBSOD
+    {
+        public override void Simulate()
+        {
+            ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
+            ConsoleColoring.SetConsoleColor(new Color(ConsoleColors.White));
+
+            // Simulate a Haiku bootloader failure
+            TextWriterRaw.WritePlain("error: unknown filesystem.", true);
+            TextWriterRaw.WritePlain("Entering rescue mode...", true);
+            TextWriterRaw.WritePlain("grub rescue> ", false);
+            ConsoleWrapper.CursorVisible = true;
+        }
+    }
+}

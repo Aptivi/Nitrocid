@@ -1,0 +1,48 @@
+//
+// Nitrocid  Copyright (C) 2018-2026  Aptivi
+//
+// This file is part of Nitrocid
+//
+// Nitrocid is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Nitrocid is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY, without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+
+using Newtonsoft.Json;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration.Instances;
+using Nitrocid.Base.Kernel.Configuration.Settings;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection.Internal;
+
+namespace Nitrocid.Extras.Animated.Settings
+{
+    /// <summary>
+    /// Animated splashes kernel configuration instance
+    /// </summary>
+    public partial class AnimatedSplashesConfig : BaseKernelConfig
+    {
+        /// <inheritdoc/>
+        [JsonIgnore]
+        public override SettingsEntry[] SettingsEntries
+        {
+            get
+            {
+                var dataStream = ResourcesManager.GetData("AnimatedSplashSettings.json", ResourcesType.Misc, typeof(AnimatedSplashesConfig).Assembly) ??
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED"));
+                string dataString = ResourcesManager.ConvertToString(dataStream);
+                return ConfigTools.GetSettingsEntries(dataString);
+            }
+        }
+    }
+}

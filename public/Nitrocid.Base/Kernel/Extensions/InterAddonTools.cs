@@ -28,7 +28,6 @@ using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Security.Permissions;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Nitrocid.Base.Kernel.Extensions
 {

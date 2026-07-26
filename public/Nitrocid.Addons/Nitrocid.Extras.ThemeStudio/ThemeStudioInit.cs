@@ -23,7 +23,6 @@ using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
-using Terminaux.Shell.Switches;
 using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.ThemeStudio

@@ -24,7 +24,6 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Users;
-using Terminaux.Base.TermInfo.Tabsets;
 using Terminaux.Reader;
 using Terminaux.Shell.Commands;
 using Terminaux.Themes.Colors;

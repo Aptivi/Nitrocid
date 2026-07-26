@@ -17,25 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
-using System.Linq;
 using Terminaux.Themes.Colors;
-using Terminaux.Inputs.Styles.Selection;
-using Terminaux.Themes;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Languages;
-using Colorimetry;
-using Textify.General;
-using Terminaux.Base;
-using Terminaux.Inputs.Styles;
-using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Interactive;
 using System;
-using Nitrocid.Base.Files;
-using Terminaux.Base.Extensions;
-using Terminaux.Reader;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio
 {

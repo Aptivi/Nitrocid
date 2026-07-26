@@ -143,5 +143,10 @@
         "name": "ExtrasChatbotAI",
         "display": "NKS_KNOWNADDONS_EXTRAS_CHATBOT",
         "project": "Extras.ChatbotAI"
+    },
+    {
+        "name": "ExtrasAnimated",
+        "display": "NKS_KNOWNADDONS_EXTRAS_ANIMATED",
+        "project": "Extras.Animated"
     }
 ]

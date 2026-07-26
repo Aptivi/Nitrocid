@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Drivers;
-using Nitrocid.Base.Drivers.Encryption;
 using Nitrocid.Base.Kernel.Debugging;
 using System.IO;
 using System.Text.RegularExpressions;
