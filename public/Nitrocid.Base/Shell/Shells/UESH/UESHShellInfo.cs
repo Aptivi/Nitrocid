@@ -428,10 +428,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC"
                         }),
-                        new CommandArgumentPart(true, "UserPass", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC"
-                        }),
                         new CommandArgumentPart(true, "newPass", new()
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_ARGUMENT_PASSWORD_DESC"

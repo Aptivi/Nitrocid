@@ -18,14 +18,17 @@
 //
 
 using System;
+using Nitrocid.Base.Drivers.Encryption;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users;
+using Terminaux.Base.TermInfo.Tabsets;
+using Terminaux.Reader;
+using Terminaux.Shell.Commands;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Security.Permissions;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -56,20 +59,32 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
             try
             {
-                if (parameters.ArgumentsList[3].Contains(' '))
+                string username = parameters.ArgumentsList[0];
+                string newPass = parameters.ArgumentsList[1];
+                string newPassTwice = parameters.ArgumentsList[2];
+                if (newPassTwice.Contains(' '))
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES"), true, ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
                 }
-                else if (parameters.ArgumentsList[3] == parameters.ArgumentsList[2])
-                {
-                    UserManagement.ChangePassword(parameters.ArgumentsList[0], parameters.ArgumentsList[1], parameters.ArgumentsList[2]);
-                    return 0;
-                }
-                else if (parameters.ArgumentsList[3] != parameters.ArgumentsList[2])
+                else if (newPassTwice != newPass)
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_MISMATCH"), true, ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
+                }
+                else
+                {
+                    // Check to see if the user has password or not
+                    var targetUser = UserManagement.GetUser(username) ??
+                        throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CANTGETUSER") + $" {username}");
+                    string currentPassword = "";
+                    if (targetUser.Password != Encryption.GetEmptyHash("SHA256"))
+                    {
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_PASSWORDPROMPT"), false, ThemeColorType.Input, username);
+                        currentPassword = TermReader.Read(true);
+                    }
+                    UserManagement.ChangePassword(username, currentPassword, newPass);
+                    return 0;
                 }
             }
             catch (Exception ex)
@@ -78,7 +93,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 DebugWriter.WriteDebugStackTrace(ex);
                 return ex.GetHashCode();
             }
-            return 0;
         }
 
     }
