@@ -46,7 +46,6 @@
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Calendar/Nitrocid.Extras.Calendar.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.ChatbotAI/Nitrocid.Extras.ChatbotAI.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Chemistry/Nitrocid.Extras.Chemistry.csproj" />
-      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.ColorConvert/Nitrocid.Extras.ColorConvert.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Contacts/Nitrocid.Extras.Contacts.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Dates/Nitrocid.Extras.Dates.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Dictionary/Nitrocid.Extras.Dictionary.csproj" />
@@ -96,7 +95,6 @@
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Calendar/Nitrocid.Extras.Calendar.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.ChatbotAI/Nitrocid.Extras.ChatbotAI.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Chemistry/Nitrocid.Extras.Chemistry.csproj" />
-    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.ColorConvert/Nitrocid.Extras.ColorConvert.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Contacts/Nitrocid.Extras.Contacts.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Dates/Nitrocid.Extras.Dates.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Dictionary/Nitrocid.Extras.Dictionary.csproj" />
