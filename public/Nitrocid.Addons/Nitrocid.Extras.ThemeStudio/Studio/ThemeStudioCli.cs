@@ -87,65 +87,6 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
             originalColors[colorType] = color;
         }
 
-        internal void Save()
-        {
-            foreach (var type in originalColors.Keys)
-                originalColors[type] = originalColors[type];
-            var choices = new InputChoiceInfo[]
-            {
-                new("1", LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETOCURRENT")),
-                new("2", LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETOOTHER")),
-                new("3", LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETOCURRENTAS")),
-                new("4", LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETOOTHERAS")),
-            };
-            int choice = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TUI_HOWSAVE"));
-            if (choice < 0)
-                return;
-            switch (choice)
-            {
-                case 0:
-                    {
-                        // Save theme to current directory
-                        SaveThemeToCurrentDirectory(themeName);
-                        break;
-                    }
-                case 1:
-                    {
-                        // Save theme to another directory...
-                        DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for directory name...");
-                        string DirectoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETODIRPROMPT") + " [{0}] ", vars: [FilesystemTools.CurrentDir]);
-                        DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? FilesystemTools.CurrentDir : DirectoryName;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", vars: [DirectoryName]);
-                        SaveThemeToAnotherDirectory(themeName, DirectoryName);
-                        break;
-                    }
-                case 2:
-                    {
-                        // Save theme to current directory as...
-                        DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                        string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT") + " [{0}] ", vars: [themeName]);
-                        AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? themeName : AltThemeName;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
-                        SaveThemeToCurrentDirectory(AltThemeName);
-                        break;
-                    }
-                case 3:
-                    {
-                        // Save theme to another directory as...
-                        DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme and directory name...");
-                        string DirectoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETODIRPROMPT") + " [{0}] ", vars: [FilesystemTools.CurrentDir]);
-                        DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? FilesystemTools.CurrentDir : DirectoryName;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", vars: [DirectoryName]);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                        string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT") + " [{0}] ", vars: [themeName]);
-                        AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? themeName : AltThemeName;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
-                        SaveThemeToAnotherDirectory(AltThemeName, DirectoryName);
-                        break;
-                    }
-            }
-        }
-
         internal void Load()
         {
             var choices = new InputChoiceInfo[]
@@ -205,6 +146,66 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
             }
         }
 
+        internal void SaveThemeToCurrentDirectory() =>
+            SaveThemeToCurrentDirectory(themeName);
+
+        internal void SaveThemeToAnotherDirectoryPrompt()
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for directory name...");
+            string DirectoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETODIRPROMPT") + " [{0}] ", vars: [FilesystemTools.CurrentDir]);
+            DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? FilesystemTools.CurrentDir : DirectoryName;
+            DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", vars: [DirectoryName]);
+            SaveThemeToAnotherDirectory(themeName, DirectoryName);
+        }
+
+        internal void SaveThemeToCurrentDirectoryAltPrompt()
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
+            string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT") + " [{0}] ", vars: [themeName]);
+            AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? themeName : AltThemeName;
+            DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
+            SaveThemeToCurrentDirectory(AltThemeName);
+        }
+
+        internal void SaveThemeToAnotherDirectoryAltPrompt()
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme and directory name...");
+            string DirectoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETODIRPROMPT") + " [{0}] ", vars: [FilesystemTools.CurrentDir]);
+            DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? FilesystemTools.CurrentDir : DirectoryName;
+            DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", vars: [DirectoryName]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
+            string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT") + " [{0}] ", vars: [themeName]);
+            AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? themeName : AltThemeName;
+            DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
+            SaveThemeToAnotherDirectory(AltThemeName, DirectoryName);
+        }
+
+        internal void LoadThemeFromFilePrompt()
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
+            string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMEFILEPROMPT")) + ".json";
+            DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
+            LoadThemeFromFile(AltThemeName);
+        }
+
+        internal void LoadThemeFromResourcePrompt()
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
+            string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT"));
+            DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
+            LoadThemeFromResource(AltThemeName);
+        }
+
+        internal void LoadThemeFromCurrentColors()
+        {
+            // Place information to the studio
+            for (int typeIndex = 0; typeIndex < Enum.GetValues<ThemeColorType>().Length; typeIndex++)
+            {
+                string type = originalColors.Keys.ElementAt(typeIndex);
+                originalColors[type] = ThemeColorsTools.GetColor(type);
+            }
+        }
+
         private void SaveThemeToCurrentDirectory(string Theme)
         {
             var ThemeJson = GetThemeJson(Theme);
@@ -230,20 +231,10 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         private void LoadThemeFromThemeInfo(ThemeInfo themeInfo)
         {
             // Place information to the studio
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length; typeIndex++)
+            for (int typeIndex = 0; typeIndex < Enum.GetValues<ThemeColorType>().Length; typeIndex++)
             {
                 string type = originalColors.Keys.ElementAt(typeIndex);
                 originalColors[type] = ThemeTools.GetColorsFromTheme(themeInfo)[type];
-            }
-        }
-
-        private void LoadThemeFromCurrentColors()
-        {
-            // Place information to the studio
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length; typeIndex++)
-            {
-                string type = originalColors.Keys.ElementAt(typeIndex);
-                originalColors[type] = ThemeColorsTools.GetColor(type);
             }
         }
 
@@ -268,7 +259,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
             themeJson.Add(metadata);
 
             // Populate the colors
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(ThemeColorType)).Length; typeIndex++)
+            for (int typeIndex = 0; typeIndex < Enum.GetValues<ThemeColorType>().Length; typeIndex++)
             {
                 // Add the color to the final object
                 string type = originalColors.Keys.ElementAt(typeIndex);
