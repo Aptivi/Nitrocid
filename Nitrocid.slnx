@@ -55,7 +55,6 @@
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Ssh/Nitrocid.Extras.Ssh.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Stocks/Nitrocid.Extras.Stocks.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.ThemeStudio/Nitrocid.Extras.ThemeStudio.csproj" />
-      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Tips/Nitrocid.Extras.Tips.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.ToDoList/Nitrocid.Extras.ToDoList.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.UnitConv/Nitrocid.Extras.UnitConv.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.ShellPacks/Nitrocid.ShellPacks.csproj" />
@@ -105,7 +104,6 @@
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Ssh/Nitrocid.Extras.Ssh.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Stocks/Nitrocid.Extras.Stocks.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.ThemeStudio/Nitrocid.Extras.ThemeStudio.csproj" />
-    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Tips/Nitrocid.Extras.Tips.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.ToDoList/Nitrocid.Extras.ToDoList.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.UnitConv/Nitrocid.Extras.UnitConv.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.ShellPacks/Nitrocid.ShellPacks.csproj" />

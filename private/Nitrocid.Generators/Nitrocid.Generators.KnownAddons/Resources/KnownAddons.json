@@ -85,11 +85,6 @@
         "project": "Extras.Dates"
     },
     {
-        "name": "ExtrasTips",
-        "display": "NKS_KNOWNADDONS_EXTRAS_TIPS",
-        "project": "Extras.Tips"
-    },
-    {
         "name": "ExtrasToDoList",
         "display": "NKS_KNOWNADDONS_EXTRAS_TODO",
         "project": "Extras.ToDoList"
