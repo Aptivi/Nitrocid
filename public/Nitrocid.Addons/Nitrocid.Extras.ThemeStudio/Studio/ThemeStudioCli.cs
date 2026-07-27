@@ -209,13 +209,29 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         private void SaveThemeToCurrentDirectory(string Theme)
         {
             var ThemeJson = GetThemeJson(Theme);
-            FilesystemTools.WriteContentsText(FilesystemTools.NeutralizePath(Theme + ".json"), JsonConvert.SerializeObject(ThemeJson, Formatting.Indented));
+            FilesystemTools.WriteContentsText(FilesystemTools.NeutralizePath(Theme + ".json"), ThemeJson);
         }
 
         private void SaveThemeToAnotherDirectory(string Theme, string Path)
         {
             var ThemeJson = GetThemeJson(Theme);
-            FilesystemTools.WriteContentsText(FilesystemTools.NeutralizePath(Path + "/" + Theme + ".json"), JsonConvert.SerializeObject(ThemeJson, Formatting.Indented));
+            FilesystemTools.WriteContentsText(FilesystemTools.NeutralizePath(Path + "/" + Theme + ".json"), ThemeJson);
+        }
+
+        private string GetThemeJson(string theme)
+        {
+            var ThemeInfo = new ThemeInfo(
+                JToken.Parse($$"""
+                {
+                    "Metadata": {
+                        "Name": "{{theme}}"
+                    }
+                }
+                """));
+            foreach (var originalColor in originalColors.Keys)
+                ThemeInfo.SetColor(originalColor, originalColors[originalColor]);
+            var ThemeJson = ThemeInfo.ExportToJson();
+            return JsonConvert.SerializeObject(ThemeJson, Formatting.Indented);
         }
 
         private void LoadThemeFromResource(string Theme) =>
@@ -236,38 +252,6 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 string type = originalColors.Keys.ElementAt(typeIndex);
                 originalColors[type] = ThemeTools.GetColorsFromTheme(themeInfo)[type];
             }
-        }
-
-        private JObject GetThemeJson(string themeName)
-        {
-            JObject themeJson = [];
-
-            // Populate the metadata
-            JProperty metadata =
-                /*
-                 * Metadata instance with the format of:
-                 * 
-                 *     "Metadata": {
-                 *         "Name": "ThemeName"
-                 *     },
-                 */
-                new("Metadata",
-                    new JObject(
-                        new JProperty("Name", themeName)
-                    )
-                );
-            themeJson.Add(metadata);
-
-            // Populate the colors
-            for (int typeIndex = 0; typeIndex < Enum.GetValues<ThemeColorType>().Length; typeIndex++)
-            {
-                // Add the color to the final object
-                string type = originalColors.Keys.ElementAt(typeIndex);
-                themeJson.Add(new JProperty($"{type}Color", originalColors[type].PlainSequence));
-            }
-
-            // Return the final object with the metadata
-            return themeJson;
         }
     }
 }
