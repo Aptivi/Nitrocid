@@ -1902,8 +1902,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                     ])
                 ], new ThemeSetCommand()),
 
-            new CommandInfo("tip", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC", new TipCommand()),
-
             new CommandInfo("unblockdbgdev", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNBLOCKDBGDEV_DESC",
                 [
                     new CommandArgumentInfo(

@@ -262,10 +262,6 @@ namespace Nitrocid.Base.Kernel
                     RSSTools.ShowHeadlineLogin();
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded headline.");
 
-                    // Show the tip
-                    if (WelcomeMessage.ShowTip)
-                        WelcomeMessage.ShowRandomTip();
-
                     // Show a tip telling users to see license information
                     TextWriterColor.Write("* " + LanguageTools.GetLocalized("NKS_KERNEL_LICENSEINFO"), ThemeColorType.Tip);
 

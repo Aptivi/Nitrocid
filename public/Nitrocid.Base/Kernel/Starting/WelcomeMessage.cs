@@ -35,9 +35,6 @@ namespace Nitrocid.Base.Kernel.Starting
     internal static class WelcomeMessage
     {
         internal static string customBanner = "";
-        internal static string[] tips = [];
-
-        internal static bool ShowTip { get; set; }
 
         internal static string GetCustomBanner()
         {
@@ -117,25 +114,6 @@ namespace Nitrocid.Base.Kernel.Starting
                 TextWriterColor.Write($"* {message}", true, ThemeColorType.Warning);
                 TextWriterColor.Write($"* {message2}", true, ThemeColorType.Warning);
             }
-        }
-
-        internal static string GetRandomTip()
-        {
-            // Get a random tip
-            string tip = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_TIPS_ADDONNEEDED");
-            if (tips.Length > 0)
-            {
-                int tipIdx = RandomDriver.RandomIdx(tips.Length);
-                tip = LanguageTools.GetLocalized(tips[tipIdx]);
-            }
-            return tip;
-        }
-
-        internal static void ShowRandomTip()
-        {
-            // Get a random tip and print it
-            TextWriterColor.Write(
-                "* " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_TIPS_PREFIX") + " " + GetRandomTip(), true, ThemeColorType.Tip);
         }
     }
 }
