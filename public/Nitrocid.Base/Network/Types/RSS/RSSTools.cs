@@ -46,7 +46,7 @@ namespace Nitrocid.Base.Network.Types.RSS
                 try
                 {
 #if NKS_EXTENSIONS
-                    var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.AddonShellPacks, "Nitrocid.ShellPacks.Tools.RSSShellTools");
+                    var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.AddonShellPacks, "Nitrocid.ShellPacks.Shells.RSS.Tools.RSSShellTools");
                     var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.AddonShellPacks, "GetFirstArticle", addonType, Config.MainConfig.RssHeadlineUrl);
                     if (Feed is (string feedTitle, string articleTitle))
                     {
