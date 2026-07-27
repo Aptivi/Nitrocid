@@ -37,7 +37,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Shells.Mail;
 using Nitrocid.ShellPacks.Shells.Mail.Tools;
 using Nitrocid.ShellPacks.Shells.Mail.Tools.Directory;
-using Nitrocid.ShellPacks.Tools.PGP;
+using Nitrocid.ShellPacks.Shells.Mail.Tools.PGP;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 

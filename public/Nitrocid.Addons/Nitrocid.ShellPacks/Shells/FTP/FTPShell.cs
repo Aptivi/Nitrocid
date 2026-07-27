@@ -19,7 +19,6 @@
 
 using System;
 using System.Threading;
-using Nitrocid.ShellPacks.Tools;
 using FluentFTP;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
@@ -33,6 +32,7 @@ using Nitrocid.Base.Network.SpeedDial;
 using Nitrocid.Base.Network.Connections;
 using Terminaux.Inputs;
 using Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer;
+using Nitrocid.ShellPacks.Shells.FTP.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.FTP
 {

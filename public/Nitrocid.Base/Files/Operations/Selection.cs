@@ -23,6 +23,7 @@ using System;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Files.Instances;
 using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Files.Instances.Interactives;
 
 namespace Nitrocid.Base.Files
 {

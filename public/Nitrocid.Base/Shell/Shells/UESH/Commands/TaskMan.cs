@@ -22,6 +22,7 @@ using Nitrocid.Base.Misc.Interactives;
 using Terminaux.Shell.Commands;
 using System;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Kernel.Threading;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
