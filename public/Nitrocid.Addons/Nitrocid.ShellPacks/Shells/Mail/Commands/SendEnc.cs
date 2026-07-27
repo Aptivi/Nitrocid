@@ -18,7 +18,6 @@
 //
 
 using MimeKit;
-using Nitrocid.ShellPacks.Tools.Transfer;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Files;
@@ -28,6 +27,7 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Themes.Colors;
 using Textify.General;
 using Terminaux.Reader;
+using Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 {

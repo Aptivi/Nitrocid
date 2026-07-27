@@ -19,7 +19,7 @@
 
 using System.IO;
 using Newtonsoft.Json.Linq;
-using Nitrocid.ShellPacks.Tools;
+using Nitrocid.ShellPacks.Shells.Json.Tools;
 using Threadify.Manager;
 
 namespace Nitrocid.ShellPacks.Shells.Json

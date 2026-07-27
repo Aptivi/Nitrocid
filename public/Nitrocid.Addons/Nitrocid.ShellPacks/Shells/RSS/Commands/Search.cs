@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ShellPacks.Tools;
 using Nettify.Rss.Instance;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
 using Textify.General;
 using Terminaux.Base.Extensions;
+using Nitrocid.ShellPacks.Shells.RSS.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Commands
 {

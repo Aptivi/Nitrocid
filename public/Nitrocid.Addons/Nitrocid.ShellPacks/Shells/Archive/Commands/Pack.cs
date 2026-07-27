@@ -19,7 +19,7 @@
 
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
-using Nitrocid.ShellPacks.Tools;
+using Nitrocid.ShellPacks.Shells.Archive.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Archive.Commands
 {

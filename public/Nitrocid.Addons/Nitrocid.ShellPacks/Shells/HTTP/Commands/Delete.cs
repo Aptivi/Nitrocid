@@ -18,13 +18,13 @@
 //
 
 using System;
-using Nitrocid.ShellPacks.Tools;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Inputs.Styles.Choice;
 using Terminaux.Themes.Colors;
 using Textify.General;
+using Nitrocid.ShellPacks.Shells.HTTP.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
 {

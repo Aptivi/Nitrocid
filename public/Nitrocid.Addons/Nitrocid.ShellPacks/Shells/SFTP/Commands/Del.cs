@@ -18,13 +18,13 @@
 //
 
 using System;
-using Nitrocid.ShellPacks.Tools.Filesystem;
 using Terminaux.Shell.Commands;
 using Terminaux.Inputs.Styles.Choice;
 using Nitrocid.Base.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
 using Textify.General;
+using Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 {

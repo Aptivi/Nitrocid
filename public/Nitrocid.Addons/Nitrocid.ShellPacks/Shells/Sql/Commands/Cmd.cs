@@ -20,13 +20,13 @@
 using Microsoft.Data.Sqlite;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Textify.General;
 using Terminaux.Reader;
+using Nitrocid.ShellPacks.Shells.Sql.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Sql.Commands
 {

@@ -21,11 +21,11 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using Colorimetry;
-using Nitrocid.ShellPacks.Tools;
 using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Themes.Colors;
 using Terminaux.Base.Extensions;
+using Nitrocid.ShellPacks.Shells.Mail.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Presets
 {

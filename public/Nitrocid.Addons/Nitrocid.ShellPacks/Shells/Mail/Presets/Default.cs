@@ -19,9 +19,9 @@
 
 using System.Text;
 using Terminaux.Themes.Colors;
-using Nitrocid.ShellPacks.Tools;
 using Terminaux.Shell.Prompts;
 using Terminaux.Base.Extensions;
+using Nitrocid.ShellPacks.Shells.Mail.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Presets
 {

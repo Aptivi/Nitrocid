@@ -20,9 +20,9 @@
 using System.IO;
 using System.Text;
 using Terminaux.Themes.Colors;
-using Nitrocid.ShellPacks.Tools;
 using Terminaux.Shell.Prompts;
 using Terminaux.Base.Extensions;
+using Nitrocid.ShellPacks.Shells.Json.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Presets
 {

@@ -19,7 +19,6 @@
 
 using System;
 using System.Threading;
-using Nitrocid.ShellPacks.Tools;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Nitrocid.Base.Kernel.Debugging;
@@ -27,6 +26,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Themes.Colors;
 using Terminaux.Inputs;
+using Nitrocid.ShellPacks.Shells.Sql.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Sql
 {

@@ -22,7 +22,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using Nitrocid.ShellPacks.Tools;
+using Nitrocid.ShellPacks.Shells.Archive.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Archive.Commands
 {

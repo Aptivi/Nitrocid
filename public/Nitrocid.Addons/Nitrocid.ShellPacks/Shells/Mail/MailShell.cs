@@ -21,8 +21,6 @@ using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
 using System.Threading;
 using System;
-using Nitrocid.ShellPacks.Tools;
-using Nitrocid.ShellPacks.Tools.Transfer;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Nitrocid.Base.Kernel.Debugging;
@@ -33,6 +31,8 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
 using Threadify.Manager;
 using Terminaux.Inputs;
+using Nitrocid.ShellPacks.Shells.Mail.Tools;
+using Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer;
 
 namespace Nitrocid.ShellPacks.Shells.Mail
 {

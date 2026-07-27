@@ -20,9 +20,9 @@
 using System;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Nitrocid.ShellPacks.Shells.HTTP.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
 {

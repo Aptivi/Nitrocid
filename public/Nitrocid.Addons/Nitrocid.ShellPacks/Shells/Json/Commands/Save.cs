@@ -18,7 +18,7 @@
 //
 
 using Newtonsoft.Json;
-using Nitrocid.ShellPacks.Tools;
+using Nitrocid.ShellPacks.Shells.Json.Tools;
 using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands

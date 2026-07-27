@@ -18,8 +18,8 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ShellPacks.Tools;
 using Terminaux.Shell.Commands;
+using Nitrocid.ShellPacks.Shells.RSS.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Commands
 {

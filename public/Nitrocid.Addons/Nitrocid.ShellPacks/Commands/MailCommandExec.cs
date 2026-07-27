@@ -20,7 +20,7 @@
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.Base.Network.SpeedDial;
 using Terminaux.Shell.Commands;
-using Nitrocid.ShellPacks.Tools;
+using Nitrocid.ShellPacks.Shells.Mail.Tools;
 
 namespace Nitrocid.ShellPacks.Commands
 {

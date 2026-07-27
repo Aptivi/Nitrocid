@@ -18,8 +18,8 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ShellPacks.Tools.Transfer;
 using Terminaux.Shell.Commands;
+using Nitrocid.ShellPacks.Shells.SFTP.Tools.Transfer;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 {

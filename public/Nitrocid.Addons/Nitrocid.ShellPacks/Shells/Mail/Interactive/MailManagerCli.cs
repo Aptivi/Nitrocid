@@ -29,8 +29,6 @@ using Terminaux.Inputs.Styles.Infobox;
 using Textify.General;
 using MailKit;
 using MimeKit;
-using Nitrocid.ShellPacks.Tools.Directory;
-using Nitrocid.ShellPacks.Tools.Transfer;
 using System.Linq;
 using MailKit.Net.Imap;
 using MimeKit.Cryptography;
@@ -38,6 +36,8 @@ using Terminaux.Inputs.Styles;
 using MimeKit.Text;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.ShellPacks.Shells.Mail.Tools.Directory;
+using Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
 {

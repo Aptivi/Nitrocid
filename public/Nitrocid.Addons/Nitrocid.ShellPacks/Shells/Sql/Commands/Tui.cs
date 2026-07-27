@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
 using Terminaux.Inputs.Styles.Editor;
+using Nitrocid.ShellPacks.Shells.Sql.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Sql.Commands
 {

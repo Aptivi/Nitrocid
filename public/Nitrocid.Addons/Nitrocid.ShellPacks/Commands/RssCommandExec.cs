@@ -26,8 +26,8 @@ using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using System;
 using Nitrocid.Base.Network.Connections;
-using Nitrocid.ShellPacks.Tools;
 using Terminaux.Reader;
+using Nitrocid.ShellPacks.Shells.RSS.Tools;
 
 namespace Nitrocid.ShellPacks.Commands
 {

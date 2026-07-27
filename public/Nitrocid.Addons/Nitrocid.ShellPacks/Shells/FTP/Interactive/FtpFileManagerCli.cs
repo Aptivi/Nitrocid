@@ -36,8 +36,8 @@ using Textify.General;
 using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Themes.Colors;
 using FluentFTP;
-using Nitrocid.ShellPacks.Tools.Filesystem;
-using Nitrocid.ShellPacks.Tools.Transfer;
+using Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem;
+using Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
 {

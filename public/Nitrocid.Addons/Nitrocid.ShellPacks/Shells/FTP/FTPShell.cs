@@ -20,7 +20,6 @@
 using System;
 using System.Threading;
 using Nitrocid.ShellPacks.Tools;
-using Nitrocid.ShellPacks.Tools.Transfer;
 using FluentFTP;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
@@ -33,6 +32,7 @@ using Terminaux.Themes.Colors;
 using Nitrocid.Base.Network.SpeedDial;
 using Nitrocid.Base.Network.Connections;
 using Terminaux.Inputs;
+using Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer;
 
 namespace Nitrocid.ShellPacks.Shells.FTP
 {

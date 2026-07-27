@@ -19,8 +19,8 @@
 
 using System.Collections.Generic;
 using MailKit;
-using Nitrocid.ShellPacks.Tools.Transfer;
 using Nitrocid.Base.Network.Connections;
+using Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer;
 
 namespace Nitrocid.ShellPacks.Shells.Mail
 {

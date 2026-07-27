@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ShellPacks.Tools.Directory;
+using Nitrocid.ShellPacks.Shells.Mail.Tools.Directory;
 using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands

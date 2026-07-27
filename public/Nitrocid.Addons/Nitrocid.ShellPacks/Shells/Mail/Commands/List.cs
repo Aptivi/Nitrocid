@@ -19,13 +19,13 @@
 
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ShellPacks.Tools.Directory;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using System;
 using Textify.General;
+using Nitrocid.ShellPacks.Shells.Mail.Tools.Directory;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 {

@@ -19,8 +19,8 @@
 
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ShellPacks.Tools.Directory;
 using Terminaux.Shell.Commands;
+using Nitrocid.ShellPacks.Shells.Mail.Tools.Directory;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 {

@@ -24,7 +24,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
 using Nitrocid.Base.Misc.Reflection;
-using Nitrocid.ShellPacks.Tools;
+using Nitrocid.ShellPacks.Shells.Archive.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Archive.Commands
 {

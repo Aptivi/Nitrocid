@@ -20,9 +20,9 @@
 using System;
 using System.Net.Http;
 using Nettify.Rss.Instance;
-using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Base.Network.Connections;
 using Threadify.Manager;
+using Nitrocid.ShellPacks.Shells.RSS.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.RSS
 {

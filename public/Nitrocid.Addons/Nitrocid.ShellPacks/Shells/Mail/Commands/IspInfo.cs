@@ -19,7 +19,7 @@
 
 using Nettify.MailAddress;
 using Nitrocid.Base.Languages;
-using Nitrocid.ShellPacks.Tools;
+using Nitrocid.ShellPacks.Shells.Mail.Tools;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
 

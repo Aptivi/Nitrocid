@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ShellPacks.Tools.Filesystem;
+using Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem;
 using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands

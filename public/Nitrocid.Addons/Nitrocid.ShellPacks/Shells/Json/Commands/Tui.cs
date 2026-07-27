@@ -19,12 +19,12 @@
 
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Terminaux.Inputs.Styles.Editor;
+using Nitrocid.ShellPacks.Shells.Json.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
 {

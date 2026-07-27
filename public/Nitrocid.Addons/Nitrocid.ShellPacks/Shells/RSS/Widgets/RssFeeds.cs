@@ -23,9 +23,9 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.Base.Kernel.Debugging;
 using System;
-using Nitrocid.ShellPacks.Tools;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Base.Extensions;
+using Nitrocid.ShellPacks.Shells.RSS.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Widgets
 {
