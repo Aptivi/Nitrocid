@@ -40,14 +40,14 @@ using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Files.Extensions;
 using Nitrocid.Base.Drivers.Encryption;
 
-namespace Nitrocid.Base.Misc.Interactives
+namespace Nitrocid.Base.Files.Instances.Interactives
 {
     /// <summary>
-    /// File selector class, a descendant of the file manager
+    /// Folder selector class, a descendant of the file manager
     /// </summary>
-    public class FileSelectorCli : BaseInteractiveTui<FileSystemEntry>, IInteractiveTui<FileSystemEntry>
+    public class FolderSelectorCli : BaseInteractiveTui<FileSystemEntry>, IInteractiveTui<FileSystemEntry>
     {
-        internal string selectedFile = "";
+        internal string selectedFolder = "";
         internal string firstPanePath = PathsManagement.HomePath;
         internal bool refreshFirstPaneListing = true;
         private List<FileSystemEntry> firstPaneListing = [];
@@ -57,10 +57,10 @@ namespace Nitrocid.Base.Misc.Interactives
         [
             new()
             {
-                HelpTitle = /* Localizable */ "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE",
-                HelpDescription = /* Localizable */ "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_DESC",
+                HelpTitle = /* Localizable */ "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE",
+                HelpDescription = /* Localizable */ "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_DESC",
                 HelpBody =
-                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY") + "\n\n" +
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY") + "\n\n" +
                     LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/fundamentals/simulated-kernel-features/files-and-folders",
             }
         ];
@@ -95,17 +95,19 @@ namespace Nitrocid.Base.Misc.Interactives
         /// <inheritdoc/>
         public override string GetStatusFromItem(FileSystemEntry? item)
         {
+            FileSystemEntry? FileInfoCurrentPane = item;
+
             // Check to see if we're given the file system info
-            if (item == null)
+            if (FileInfoCurrentPane == null)
                 return LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NOINFO");
 
             // Now, populate the info to the status
             try
             {
-                bool infoIsDirectory = item.Type == FileSystemEntryType.Directory;
-                string status = $"[{(infoIsDirectory ? "/" : "*")}] {item.BaseEntry.FullName}";
-                if (!string.IsNullOrEmpty(selectedFile))
-                    status = $"{LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SELECTED")} {selectedFile} - {status}";
+                bool infoIsDirectory = FileInfoCurrentPane.Type == FileSystemEntryType.Directory;
+                string status = $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.FullName}";
+                if (!string.IsNullOrEmpty(selectedFolder))
+                    status = $"{LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SELECTED")} {selectedFolder} - {status}";
                 return status;
             }
             catch (Exception ex)
@@ -119,13 +121,14 @@ namespace Nitrocid.Base.Misc.Interactives
         {
             try
             {
-                if (item is null)
-                    return "";
-                bool isDirectory = item.Type == FileSystemEntryType.Directory;
-                bool isSelected = SelectedFile == item.FilePath;
-                var size = item.FileSize;
-                var path = item.FilePath;
-                string finalRenderedName = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FILENAME") + $": {Path.GetFileName(item.FilePath)}";
+                FileSystemEntry? file = item;
+                if (file is null)
+                    return LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NOINFO");
+                bool isDirectory = file.Type == FileSystemEntryType.Directory;
+                bool isSelected = SelectedFolder == file.FilePath;
+                var size = file.FileSize;
+                var path = file.FilePath;
+                string finalRenderedName = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FILENAME") + $": {Path.GetFileName(file.FilePath)}";
                 string finalRenderedDir = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ISDIRECTORY") + $": {isDirectory}";
                 string finalRenderedSelected = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ISSELECTED") + $": {isSelected}";
                 string finalRenderedSize = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FILESIZE") + $": {size.SizeString()}";
@@ -151,20 +154,21 @@ namespace Nitrocid.Base.Misc.Interactives
         {
             try
             {
-                if (item is null)
-                    return "";
-                bool isDirectory = item.Type == FileSystemEntryType.Directory;
-                bool isSelected = SelectedFile == item.FilePath;
+                FileSystemEntry? file = item;
+                if (file is null)
+                    return LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NOINFO");
+                bool isDirectory = file.Type == FileSystemEntryType.Directory;
+                bool isSelected = SelectedFolder == file.FilePath;
                 if (Config.MainConfig.IfmShowFileSize)
                     return
                         // Name and directory indicator
-                        $"[{(isDirectory ? "/" : "*")}] [{(isSelected ? "+" : " ")}] {item.BaseEntry.Name} | " +
+                        $"[{(isDirectory ? "/" : "*")}] [{(isSelected ? "+" : " ")}] {file.BaseEntry.Name} | " +
 
                         // File size or directory size
-                        $"{(!isDirectory ? ((FileInfo)item.BaseEntry).Length.SizeString() : FilesystemTools.GetAllSizesInFolder((DirectoryInfo)item.BaseEntry).SizeString())}"
+                        $"{(!isDirectory ? ((FileInfo)file.BaseEntry).Length.SizeString() : FilesystemTools.GetAllSizesInFolder((DirectoryInfo)file.BaseEntry).SizeString())}"
                     ;
                 else
-                    return $"[{(isDirectory ? "/" : "*")}] [{(isSelected ? "+" : " ")}] {item.BaseEntry.Name}";
+                    return $"[{(isDirectory ? "/" : "*")}] [{(isSelected ? "+" : " ")}] {file.BaseEntry.Name}";
             }
             catch (Exception ex)
             {
@@ -175,12 +179,12 @@ namespace Nitrocid.Base.Misc.Interactives
         }
 
         /// <summary>
-        /// Selected file. If not selected yet and bailed earlier, this string is empty.
+        /// Selected folder. If not selected yet and bailed earlier, this string is empty.
         /// </summary>
-        public string SelectedFile =>
-            selectedFile;
+        public string SelectedFolder =>
+            selectedFolder;
 
-        internal void SelectOrGoTo(FileSystemEntry? currentFileSystemEntry)
+        internal void Open(FileSystemEntry? currentFileSystemEntry)
         {
             try
             {
@@ -192,7 +196,7 @@ namespace Nitrocid.Base.Misc.Interactives
                 if (!currentFileSystemEntry.Exists)
                     return;
 
-                // Now that the selected file or folder exists, check the type.
+                // Now that the selected folder exists, check the type.
                 if (currentFileSystemEntry.Type == FileSystemEntryType.Directory)
                 {
                     // We're dealing with a folder. Open it in the selected pane.
@@ -200,17 +204,38 @@ namespace Nitrocid.Base.Misc.Interactives
                     InteractiveTuiTools.SelectionMovement(this, 1);
                     refreshFirstPaneListing = true;
                 }
-                else if (currentFileSystemEntry.Type == FileSystemEntryType.File)
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_CANNOTOPENFOLDER") + TextTools.FormatString(": {0}", ex.Message));
+                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
+            }
+        }
+
+        internal void Select(FileSystemEntry? currentFileSystemEntry)
+        {
+            try
+            {
+                // Don't do anything if we haven't been provided anything.
+                if (currentFileSystemEntry is null)
+                    return;
+
+                // Check for existence
+                if (!currentFileSystemEntry.Exists)
+                    return;
+
+                // Now that the selected folder exists, check the type.
+                if (currentFileSystemEntry.Type == FileSystemEntryType.Directory)
                 {
-                    // We're dealing with a file. Clear the screen and open the appropriate editor.
-                    selectedFile = currentFileSystemEntry.FilePath;
-                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS"), Settings.InfoBoxSettings, selectedFile);
+                    selectedFolder = currentFileSystemEntry.FilePath;
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS"), Settings.InfoBoxSettings, selectedFolder);
                 }
             }
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SELECTFAILED") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_CANNOTSELECTFOLDER") + TextTools.FormatString(": {0}", ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
         }

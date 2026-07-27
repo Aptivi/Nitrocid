@@ -19,12 +19,11 @@
 
 using System.Collections.Generic;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Interactive;
 using Textify.General;
 
-namespace Nitrocid.Base.Misc.Interactives
+namespace Nitrocid.Base.Misc.Screensaver
 {
     internal class ScreensaverCli : BaseInteractiveTui<string>, IInteractiveTui<string>
     {

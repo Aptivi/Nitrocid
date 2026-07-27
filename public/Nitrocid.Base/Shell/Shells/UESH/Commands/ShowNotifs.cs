@@ -22,7 +22,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
-using Nitrocid.Base.Misc.Interactives;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {

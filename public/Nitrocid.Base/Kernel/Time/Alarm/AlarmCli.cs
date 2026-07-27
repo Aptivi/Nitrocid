@@ -19,13 +19,12 @@
 
 using System;
 using System.Collections.Generic;
-using Nitrocid.Base.Kernel.Time.Alarm;
 using Nitrocid.Base.Languages;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
 using Textify.General;
 
-namespace Nitrocid.Base.Misc.Interactives
+namespace Nitrocid.Base.Kernel.Time.Alarm
 {
     internal class AlarmCli : BaseInteractiveTui<string>, IInteractiveTui<string>
     {

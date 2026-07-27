@@ -27,7 +27,6 @@ using Nitrocid.Base.Kernel.Time.Alarm;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Misc.Interactives;
 using Nitrocid.Base.Security.Permissions;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands

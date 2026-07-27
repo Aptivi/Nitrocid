@@ -27,7 +27,7 @@ using Nitrocid.Base.Languages;
 using Threadify.Manager;
 using Nitrocid.Base.Kernel.Threading.Watchdog;
 
-namespace Nitrocid.Base.Misc.Interactives
+namespace Nitrocid.Base.Kernel.Threading
 {
     /// <summary>
     /// Task manager class

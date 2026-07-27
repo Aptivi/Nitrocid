@@ -21,11 +21,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Notifications;
 using Terminaux.Inputs.Interactive;
 using Textify.General;
 
-namespace Nitrocid.Base.Misc.Interactives
+namespace Nitrocid.Base.Misc.Notifications
 {
     internal class NotificationsCli : BaseInteractiveTui<Notification>, IInteractiveTui<Notification>
     {

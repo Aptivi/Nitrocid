@@ -29,14 +29,13 @@ using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Kernel.Configuration.Settings;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Configuration.Instances;
 using Nitrocid.Base.Kernel.Configuration.Migration;
 using Nitrocid.Base.Kernel.Exceptions;
 using Magico.Enumeration;
 
-namespace Nitrocid.Base.Misc.Interactives
+namespace Nitrocid.Base.Kernel.Configuration.Settings
 {
     /// <summary>
     /// Settings interactive TUI

@@ -23,7 +23,6 @@ using System.Linq;
 using IOPath = System.IO.Path;
 using System.Threading;
 using Textify.General;
-using Nitrocid.Base.Misc.Interactives;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
@@ -31,6 +30,7 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Files.Instances;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Drivers.Regexp;
+using Nitrocid.Base.Files.Instances.Interactives;
 
 namespace Nitrocid.Base.Files
 {
