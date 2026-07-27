@@ -33,7 +33,6 @@ using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Audio;
 using Nitrocid.Base.Users;
-using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.Base.Misc.Widgets.Canvas;
 using Nitrocid.Base.Misc.Widgets.Implementations;
@@ -54,6 +53,7 @@ using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Base.Kernel.Time.Alarm;
 using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Kernel.Threading;
+using Nitrocid.Base.Login;
 
 namespace Nitrocid.Base.Shell.Homepage
 {
@@ -441,7 +441,7 @@ namespace Nitrocid.Base.Shell.Homepage
                                 else
                                 {
                                     exiting = true;
-                                    Login.LogoutRequested = true;
+                                    LoginTools.LogoutRequested = true;
                                 }
                                 break;
                             case ConsoleKey.S:

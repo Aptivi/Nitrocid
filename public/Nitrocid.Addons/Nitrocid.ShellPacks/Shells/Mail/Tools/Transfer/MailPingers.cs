@@ -22,7 +22,6 @@ using System.Threading;
 using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.ShellPacks.Shells.Mail;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer
 {

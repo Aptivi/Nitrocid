@@ -23,7 +23,6 @@ using System.Linq;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Nitrocid.ShellPacks.Shells.RSS;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Users.Settings;
 

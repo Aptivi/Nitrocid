@@ -31,9 +31,9 @@ using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Login;
 using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Misc.Screensaver;
-using Nitrocid.Base.Users.Login;
 using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
@@ -280,7 +280,7 @@ namespace Nitrocid.Base.Network.Types.RPC
         private static void HandleExec(string value)
         {
             string Command = value.Replace("ExecConfirm, ", "").Replace(CharManager.NewLine, "");
-            if (Login.LoggedIn && KernelEntry.inShell)
+            if (LoginTools.LoggedIn && KernelEntry.inShell)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Exec confirmed from remote access.");
                 TextWriterRaw.Write();

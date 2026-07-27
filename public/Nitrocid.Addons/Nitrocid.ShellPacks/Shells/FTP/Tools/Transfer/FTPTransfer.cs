@@ -26,7 +26,6 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Nitrocid.ShellPacks.Shells.FTP;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer
 {

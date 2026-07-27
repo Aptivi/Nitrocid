@@ -33,7 +33,6 @@ using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Choice;
 using System.Collections.Generic;
 using Terminaux.Inputs.Styles;
-using Nitrocid.ShellPacks.Shells.FTP;
 using Terminaux.Base.Extensions;
 using Terminaux.Reader;
 

@@ -22,7 +22,7 @@ using System.Globalization;
 using System.Linq;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Users.Login;
+using Nitrocid.Base.Login;
 
 namespace Nitrocid.Base.Languages
 {
@@ -38,7 +38,7 @@ namespace Nitrocid.Base.Languages
         /// Current culture
         /// </summary>
         public static CultureInfo CurrentCulture =>
-            Login.LoggedIn ? currentUserCulture : currentCulture;
+            LoginTools.LoggedIn ? currentUserCulture : currentCulture;
 
         /// <summary>
         /// Updates current culture based on selected culture

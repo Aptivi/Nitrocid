@@ -17,16 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
 using System;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Users.Login;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Login;
 using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -58,7 +58,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             bool failed = false;
             try
             {
-                if (Login.ShowPasswordPrompt(currentUsername, "classic"))
+                if (LoginTools.ShowPasswordPrompt(currentUsername, "classic"))
                 {
                     sudoDone = true;
                     DebugWriter.WriteDebug(DebugLevel.I, "Switching to root user...");

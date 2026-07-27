@@ -20,7 +20,6 @@
 using System.Collections.Generic;
 using Terminaux.Inputs.Interactive;
 using System.Linq;
-using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Time.Renderers;
 

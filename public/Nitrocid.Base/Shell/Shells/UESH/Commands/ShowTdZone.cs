@@ -20,7 +20,6 @@
 using Terminaux.Themes.Colors;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Misc.Interactives;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Time.Timezones;

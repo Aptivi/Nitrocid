@@ -44,7 +44,7 @@ namespace Nitrocid.Base.Login
     /// <summary>
     /// Login module
     /// </summary>
-    public static class Login
+    public static class LoginTools
     {
 
         internal static bool LogoutRequested;

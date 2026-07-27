@@ -39,10 +39,10 @@ using Nitrocid.Base.Users;
 using Nitrocid.Base.Misc.Splash;
 using Threadify.Manager;
 using Nitrocid.Base.Drivers.RNG;
-using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Power;
+using Nitrocid.Base.Login;
 
 namespace Nitrocid.Base.Misc.Screensaver
 {
@@ -245,7 +245,7 @@ namespace Nitrocid.Base.Misc.Screensaver
 
                 // Now, show the password prompt
                 if (Config.MainConfig.PasswordLock)
-                    Login.ShowPasswordPrompt(UserManagement.CurrentUser.Username);
+                    LoginTools.ShowPasswordPrompt(UserManagement.CurrentUser.Username);
 
                 // Render the current screen
                 if (ScreenTools.CurrentScreen is not null)

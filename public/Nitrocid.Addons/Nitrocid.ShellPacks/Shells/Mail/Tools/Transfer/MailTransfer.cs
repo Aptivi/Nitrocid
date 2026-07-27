@@ -34,8 +34,6 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
-using Nitrocid.ShellPacks.Shells.Mail;
-using Nitrocid.ShellPacks.Shells.Mail.Tools;
 using Nitrocid.ShellPacks.Shells.Mail.Tools.Directory;
 using Nitrocid.ShellPacks.Shells.Mail.Tools.PGP;
 using Terminaux.Themes.Colors;

@@ -27,7 +27,6 @@ using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Nitrocid.ShellPacks.Shells.Json;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Tools
 {

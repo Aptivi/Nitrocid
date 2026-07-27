@@ -29,13 +29,13 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Threadify.Manager;
-using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Journaling;
 using Nitrocid.Base.Network.Types.RPC;
 using Nitrocid.Core.Environment;
 using SpecProbe.Software.Platform;
+using Nitrocid.Base.Login;
 
 namespace Nitrocid.Base.Kernel.Power
 {
@@ -134,7 +134,7 @@ namespace Nitrocid.Base.Kernel.Power
 
                         // Set appropriate flags
                         RebootRequested = true;
-                        Login.LogoutRequested = true;
+                        LoginTools.LogoutRequested = true;
                         KernelShutdown = true;
 
                         // Kill all shells and interrupt any input
@@ -154,7 +154,7 @@ namespace Nitrocid.Base.Kernel.Power
 
                         // Set appropriate flags
                         RebootRequested = true;
-                        Login.LogoutRequested = true;
+                        LoginTools.LogoutRequested = true;
                         rebootingToSafeMode = PowerMode == PowerMode.RebootSafe;
                         DebugWriter.WriteDebug(DebugLevel.I, "Safe mode changed to {0}", vars: [rebootingToSafeMode]);
                         rebootingToMaintenanceMode = PowerMode == PowerMode.RebootMaintenance;

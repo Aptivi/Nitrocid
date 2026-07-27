@@ -25,7 +25,6 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
-using Nitrocid.ShellPacks.Shells.Mail;
 using SpecProbe.Software.Platform;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;

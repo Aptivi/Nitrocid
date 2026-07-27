@@ -29,7 +29,6 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Base.Extensions;
-using Nitrocid.ShellPacks.Shells.Mail;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Directory
 {

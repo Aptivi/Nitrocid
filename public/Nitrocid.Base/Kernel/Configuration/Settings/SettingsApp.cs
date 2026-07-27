@@ -21,7 +21,6 @@ using System;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Inputs.Interactive;
-using Nitrocid.Base.Misc.Interactives;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Configuration.Instances;
 using Nitrocid.Base.Security.Permissions;

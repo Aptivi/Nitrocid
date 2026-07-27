@@ -28,7 +28,6 @@ using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Drivers.RNG;
 
 namespace Nitrocid.Base.Kernel.Starting
 {

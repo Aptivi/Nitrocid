@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using Microsoft.Data.Sqlite;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.ShellPacks.Shells.Sql;
 
 namespace Nitrocid.ShellPacks.Shells.Sql.Tools
 {

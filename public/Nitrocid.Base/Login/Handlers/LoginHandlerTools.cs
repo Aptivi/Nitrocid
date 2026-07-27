@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Users.Login.Handlers.Logins;
 using System.Collections.Generic;
+using Nitrocid.Base.Login.Handlers.Logins;
 
 namespace Nitrocid.Base.Login.Handlers
 {

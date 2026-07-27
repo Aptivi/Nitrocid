@@ -21,9 +21,9 @@ using System;
 using System.Collections.Generic;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Kernel.Exceptions;
 using System.Globalization;
+using Nitrocid.Base.Login;
 
 namespace Nitrocid.Base.Languages
 {
@@ -41,7 +41,7 @@ namespace Nitrocid.Base.Languages
         /// Current language
         /// </summary>
         public static CultureInfo CurrentLanguageInfo =>
-            Login.LoggedIn ? currentUserLanguage : currentLanguage;
+            LoginTools.LoggedIn ? currentUserLanguage : currentLanguage;
 
         /// <summary>
         /// The installed languages list.

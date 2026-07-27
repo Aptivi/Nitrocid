@@ -26,7 +26,6 @@ using System.Threading.Tasks;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Nitrocid.ShellPacks.Shells.HTTP;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP.Tools
 {

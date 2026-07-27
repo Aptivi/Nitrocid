@@ -26,13 +26,13 @@ using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Kernel.Starting;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Login;
 using Nitrocid.Base.Login.Handlers;
 using Nitrocid.Base.Login.Motd;
 using Nitrocid.Base.Misc.Audio;
 using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Network.Types.RSS;
 using Nitrocid.Base.Shell.Homepage;
-using Nitrocid.Base.Users.Login;
 using SpecProbe.Software.Platform;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
@@ -224,9 +224,9 @@ namespace Nitrocid.Base.Kernel
             {
                 // Initialize login prompt
                 if (!Maintenance)
-                    Login.LoginPrompt();
+                    LoginTools.LoginPrompt();
                 else
-                    Login.PromptMaintenanceLogin();
+                    LoginTools.PromptMaintenanceLogin();
                 CheckErrored();
 
                 // Check to see if login handler requested power action
@@ -235,12 +235,12 @@ namespace Nitrocid.Base.Kernel
 
                 // Initialize shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized.");
-                while (!Login.LogoutRequested)
+                while (!LoginTools.LogoutRequested)
                 {
                     HomepageTools.OpenHomepage();
-                    if (Login.LogoutRequested)
+                    if (LoginTools.LogoutRequested)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", vars: [Login.LogoutRequested]);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", vars: [LoginTools.LogoutRequested]);
                         break;
                     }
 
@@ -276,8 +276,8 @@ namespace Nitrocid.Base.Kernel
                     ShellManager.StartShell("Shell");
                     inShell = false;
                 }
-                Login.LoggedIn = false;
-                Login.LogoutRequested = false;
+                LoginTools.LoggedIn = false;
+                LoginTools.LogoutRequested = false;
             }
         }
     }

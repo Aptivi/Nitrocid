@@ -18,8 +18,8 @@
 //
 
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Login;
 using Nitrocid.Base.Misc.Notifications;
-using Nitrocid.Base.Users.Login;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
 {
@@ -30,7 +30,7 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         public override object TestExpectedValue => true;
         public override void Run()
         {
-            Login.LoggedIn = true;
+            LoginTools.LoggedIn = true;
             if (!NotificationManager.NotifThread.IsAlive)
                 NotificationManager.NotifThread.Start();
             TestActualValue = NotificationManager.NotifThread.IsAlive;

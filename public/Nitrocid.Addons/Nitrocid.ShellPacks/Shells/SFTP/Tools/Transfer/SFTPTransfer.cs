@@ -23,7 +23,6 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Nitrocid.ShellPacks.Shells.SFTP;
 using Renci.SshNet;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Transfer

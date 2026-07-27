@@ -27,7 +27,6 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
-using Nitrocid.ShellPacks.Shells.SFTP;
 using Renci.SshNet;
 using Renci.SshNet.Sftp;
 using Terminaux.Base.Extensions;

@@ -20,7 +20,6 @@
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Terminaux.Inputs.Interactive;
-using Nitrocid.Base.Misc.Interactives;
 using Terminaux.Inputs.Pointer;
 using System;
 using Terminaux.Inputs;

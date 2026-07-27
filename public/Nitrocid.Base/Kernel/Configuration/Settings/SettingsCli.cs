@@ -28,7 +28,6 @@ using Terminaux.Themes.Colors;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Configuration.Instances;
 using Nitrocid.Base.Kernel.Configuration.Migration;

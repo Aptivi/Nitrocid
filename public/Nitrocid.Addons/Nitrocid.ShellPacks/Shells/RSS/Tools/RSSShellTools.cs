@@ -26,7 +26,6 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
-using Nitrocid.ShellPacks.Shells.RSS;
 using Nitrocid.ShellPacks.Shells.RSS.Interactive;
 using Terminaux.Inputs.Interactive;
 

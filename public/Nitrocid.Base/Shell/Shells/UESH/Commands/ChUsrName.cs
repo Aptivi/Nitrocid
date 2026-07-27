@@ -23,8 +23,8 @@ using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
-using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Login;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -56,7 +56,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             UserManagement.ChangeUsername(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHUSRNAME_SUCCESS"), parameters.ArgumentsList[1]);
             if (parameters.ArgumentsList[0] == UserManagement.CurrentUser.Username)
-                Login.LogoutRequested = true;
+                LoginTools.LogoutRequested = true;
             return 0;
         }
 

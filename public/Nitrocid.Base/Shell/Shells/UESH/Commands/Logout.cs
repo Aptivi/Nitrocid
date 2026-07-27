@@ -25,7 +25,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Users.Login;
+using Nitrocid.Base.Login;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -51,7 +51,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
             if (ShellManager.ShellCount == 1)
             {
-                Login.LogoutRequested = true;
+                LoginTools.LogoutRequested = true;
                 ShellManager.KillShell();
                 return 0;
             }

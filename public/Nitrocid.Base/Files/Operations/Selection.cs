@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Inputs.Interactive;
-using Nitrocid.Base.Misc.Interactives;
 using System;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Files.Instances;

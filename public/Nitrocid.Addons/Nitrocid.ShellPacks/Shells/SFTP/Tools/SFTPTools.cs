@@ -29,7 +29,6 @@ using System.Collections.Generic;
 using Textify.General;
 using Nitrocid.Base.Files;
 using Terminaux.Inputs;
-using Nitrocid.ShellPacks.Shells.SFTP;
 using Terminaux.Reader;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Tools
