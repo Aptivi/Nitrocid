@@ -76,6 +76,17 @@ namespace Nitrocid.Extras.BassBoom
                     ])
                 ], new PlaySoundCommand()),
 
+            new CommandInfo("playradio", /* Localizable */ "NKS_BASSBOOM_COMMAND_PLAYRADIO_DESC", // TODO: NKS_BASSBOOM_COMMAND_PLAYRADIO_DESC -> Plays a radio station
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "radioUrl", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "NKS_BASSBOOM_COMMAND_ARGUMENT_RADIOURL_DESC" // TODO: NKS_BASSBOOM_COMMAND_ARGUMENT_RADIOURL_DESC -> Path to a radio station
+                        }),
+                    ])
+                ], new PlayRadioCommand()),
+
             new CommandInfo("netfminfo", /* Localizable */ "NKS_BASSBOOM_COMMAND_NETFMINFO_DESC",
                 [
                     new CommandArgumentInfo(
