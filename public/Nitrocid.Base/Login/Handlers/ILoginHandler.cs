@@ -17,36 +17,29 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Nitrocid.Base.Users.Login
+namespace Nitrocid.Base.Login.Handlers
 {
     /// <summary>
-    /// Enumeration for the login error reasons
+    /// Login handler interface
     /// </summary>
-    public enum LoginErrorReasons
+    public interface ILoginHandler
     {
         /// <summary>
-        /// Unknown reason
+        /// Login screen
         /// </summary>
-        Unknown = 0,
+        /// <returns>True if we need to proceed to the user selector. Otherwise, false.</returns>
+        bool LoginScreen();
+
         /// <summary>
-        /// Spaces not allowed on username
+        /// Username selector
         /// </summary>
-        Spaces = 1,
+        /// <returns>The proposed username to log into</returns>
+        string UserSelector();
+
         /// <summary>
-        /// Special characters not allowed on username
+        /// Password handler
         /// </summary>
-        SpecialCharacters = 2,
-        /// <summary>
-        /// User is disabled
-        /// </summary>
-        Disabled = 4,
-        /// <summary>
-        /// User is not found
-        /// </summary>
-        NotFound = 8,
-        /// <summary>
-        /// User entered the wrong password
-        /// </summary>
-        WrongPassword = 16
+        /// <returns>True if the password if valid. Otherwise, false. Please be honest here, because we don't want failed logins to appear as successful.</returns>
+        bool PasswordHandler(string user, ref string pass);
     }
 }

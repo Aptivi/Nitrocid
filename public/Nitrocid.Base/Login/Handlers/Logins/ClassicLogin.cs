@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Nitrocid.Base.Users.Login.Handlers.Logins
+namespace Nitrocid.Base.Login.Handlers.Logins
 {
     internal class ClassicLogin : BaseLoginHandler, ILoginHandler
     { }

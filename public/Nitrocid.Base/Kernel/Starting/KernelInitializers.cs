@@ -51,7 +51,6 @@ using Nitrocid.Base.Misc.Splash;
 using Threadify.Manager;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Misc.Notifications;
-using Nitrocid.Base.Users.Login.Motd;
 using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Security.Privacy;
@@ -70,6 +69,7 @@ using System.Globalization;
 using SpecProbe.Software.Platform;
 using Terminaux.Inputs;
 using Nitrocid.Base.Kernel.ConsoleBase;
+using Nitrocid.Base.Login.Motd;
 
 #if NKS_EXTENSIONS
 using Nitrocid.Base.Kernel.Extensions;

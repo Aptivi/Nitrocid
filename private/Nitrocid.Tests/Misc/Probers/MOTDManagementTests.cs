@@ -18,12 +18,12 @@
 //
 
 using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Users.Login.Motd;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Textify.Tools.Placeholder;
 using System.IO;
 using Nitrocid.Base.Files;
+using Nitrocid.Base.Login.Motd;
 
 namespace Nitrocid.Tests.Misc.Probers
 {

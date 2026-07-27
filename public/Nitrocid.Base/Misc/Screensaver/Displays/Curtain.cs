@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Users.Login;
+using Nitrocid.Base.Login;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Misc.Screensaver.Displays

@@ -30,9 +30,9 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug;
-using Nitrocid.Base.Users.Login.Motd;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Network.SpeedDial;
+using Nitrocid.Base.Login.Motd;
 
 namespace Nitrocid.Base.Kernel.Configuration.Migration
 {

@@ -25,7 +25,6 @@ using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users.Login.Motd;
 using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.Base.Misc.Widgets.Canvas;
 using Nitrocid.Base.Misc.Widgets.Implementations;
@@ -36,8 +35,9 @@ using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.Data.Figlet;
+using Nitrocid.Base.Login.Motd;
 
-namespace Nitrocid.Base.Users.Login
+namespace Nitrocid.Base.Login
 {
     internal static class ModernLogonScreen
     {

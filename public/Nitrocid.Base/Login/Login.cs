@@ -29,7 +29,6 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Security.Permissions;
-using Nitrocid.Base.Users.Login.Handlers;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Drivers.Encryption;
@@ -37,8 +36,10 @@ using OtpNet;
 using Terminaux.Base;
 using Nitrocid.Base.Users.TwoFactorAuth;
 using Terminaux.Reader;
+using Nitrocid.Base.Login.Handlers;
+using Nitrocid.Base.Users;
 
-namespace Nitrocid.Base.Users.Login
+namespace Nitrocid.Base.Login
 {
     /// <summary>
     /// Login module

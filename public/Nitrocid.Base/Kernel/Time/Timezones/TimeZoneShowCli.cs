@@ -23,9 +23,8 @@ using System.Linq;
 using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Time.Renderers;
-using Nitrocid.Base.Kernel.Time.Timezones;
 
-namespace Nitrocid.Base.Misc.Interactives
+namespace Nitrocid.Base.Kernel.Time.Timezones
 {
     /// <summary>
     /// Time zone showing class

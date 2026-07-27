@@ -26,12 +26,13 @@ using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Screensaver;
-using Nitrocid.Base.Users.Login.Motd;
 using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Drivers.Encryption;
 using Terminaux.Reader;
+using Nitrocid.Base.Users;
+using Nitrocid.Base.Login.Motd;
 
-namespace Nitrocid.Base.Users.Login.Handlers
+namespace Nitrocid.Base.Login.Handlers
 {
     /// <summary>
     /// Abstract class of the base login handler

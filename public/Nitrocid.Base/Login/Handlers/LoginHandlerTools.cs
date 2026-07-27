@@ -20,7 +20,7 @@
 using Nitrocid.Base.Users.Login.Handlers.Logins;
 using System.Collections.Generic;
 
-namespace Nitrocid.Base.Users.Login.Handlers
+namespace Nitrocid.Base.Login.Handlers
 {
     /// <summary>
     /// Login handler tools

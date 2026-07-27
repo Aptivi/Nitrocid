@@ -26,6 +26,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Users;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
@@ -38,7 +39,7 @@ using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
-namespace Nitrocid.Base.Users.Login.Handlers.Logins
+namespace Nitrocid.Base.Login.Handlers.Logins
 {
     internal class ModernLogin : BaseLoginHandler, ILoginHandler
     {

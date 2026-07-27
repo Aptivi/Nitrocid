@@ -24,10 +24,10 @@ using Terminaux.Shell.Shells;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
-using Nitrocid.Base.Users.Login.Motd;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Login.Motd;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {

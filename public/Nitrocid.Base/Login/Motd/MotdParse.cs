@@ -28,7 +28,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Files.Paths;
 
-namespace Nitrocid.Base.Users.Login.Motd
+namespace Nitrocid.Base.Login.Motd
 {
     /// <summary>
     /// Message of the Day (MOTD) parsing module

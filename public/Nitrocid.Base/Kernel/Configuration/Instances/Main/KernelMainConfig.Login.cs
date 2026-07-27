@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Users.Login.Handlers;
+using Nitrocid.Base.Login.Handlers;
 
 namespace Nitrocid.Base.Kernel.Configuration.Instances
 {
