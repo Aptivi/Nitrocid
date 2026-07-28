@@ -20,6 +20,7 @@
 using Newtonsoft.Json;
 using Nitrocid.ShellPacks.Shells.Json.Tools;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
 {
@@ -48,7 +49,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
     class SaveCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var TargetFormatting = Formatting.Indented;
             if (parameters.SwitchesList.Length > 0)

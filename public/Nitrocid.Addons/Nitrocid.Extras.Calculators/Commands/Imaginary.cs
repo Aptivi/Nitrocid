@@ -22,6 +22,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using System;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Calculators.Commands
 {
@@ -35,7 +36,7 @@ namespace Nitrocid.Extras.Calculators.Commands
     class ImaginaryCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Check both the real and the imaginary numbers for verification
             if (!double.TryParse(parameters.ArgumentsList[0], out double Real))

@@ -25,6 +25,7 @@ using System;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Kernel.Exceptions;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -37,7 +38,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     class PreviewSplashCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool splashOut = parameters.ContainsSwitch("-splashout");
             bool customContext = parameters.ContainsSwitch("-context");
@@ -61,7 +62,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
             return 0;
         }
 
-        public override void HelpHelper()
+        public override void HelpHelper(IShell? shell)
         {
             var splashes = SplashManager.GetNamesOfSplashes();
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_PREVIEWSPLASH_HELPER"));

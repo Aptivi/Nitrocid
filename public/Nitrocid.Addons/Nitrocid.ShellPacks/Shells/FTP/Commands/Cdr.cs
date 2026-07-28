@@ -19,6 +19,7 @@
 
 using Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {
@@ -31,7 +32,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
     class CdrCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             FTPFilesystem.FTPChangeRemoteDir(parameters.ArgumentsList[0]);
             return 0;

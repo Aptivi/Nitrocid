@@ -19,6 +19,7 @@
 
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {
@@ -31,7 +32,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
     class MkldirCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string targetDir = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0], FTPShellCommon.FtpCurrentDirectory);
             FilesystemTools.MakeDirectory(targetDir);

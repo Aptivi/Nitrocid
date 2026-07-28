@@ -28,6 +28,7 @@ using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Textify.General;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Dates.Commands
 {
@@ -40,7 +41,7 @@ namespace Nitrocid.Extras.Dates.Commands
     class GetTimeInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool getNow = parameters.SwitchesList.Length > 0 && parameters.ContainsSwitch("-now");
             DateTime DateTimeInfo = TimeDateTools.KernelDateTime;

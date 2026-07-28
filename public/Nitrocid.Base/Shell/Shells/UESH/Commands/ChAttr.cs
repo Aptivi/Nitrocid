@@ -26,6 +26,7 @@ using Terminaux.Shell.Commands;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Security.Permissions;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -63,7 +64,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     {
 
         // Warning: Don't use parameters.SwitchesList to replace parameters.ArgumentsList(1); the removal signs of ChAttr are treated as switches and will cause unexpected behavior if changed.
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string NeutralizedFilePath = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
@@ -114,7 +115,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        public override void HelpHelper()
+        public override void HelpHelper(IShell? shell)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_LIST"));
             TextWriterColor.Write("- Normal: ", false, ThemeColorType.ListEntry);

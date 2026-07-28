@@ -22,6 +22,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Files.Extensions;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -34,7 +35,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class LsExtHandlersCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var handlers = ExtensionHandlerTools.GetExtensionHandlers();
             foreach (var handler in handlers)

@@ -21,6 +21,7 @@ using Terminaux.Themes.Colors;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Time.Timezones;
 
@@ -55,7 +56,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class ShowTdZoneCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool ShowAll = parameters.ContainsSwitch("-all");
             bool useTui = parameters.ContainsSwitch("-selection");

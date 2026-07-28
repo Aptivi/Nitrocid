@@ -23,6 +23,7 @@ using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Textify.Tools;
 
 namespace Nitrocid.ShellPacks.Commands
@@ -36,7 +37,7 @@ namespace Nitrocid.ShellPacks.Commands
     class JsonBeautifyCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string JsonFile = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             string JsonOutputFile;

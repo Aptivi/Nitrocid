@@ -23,6 +23,7 @@ using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Switches;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -35,7 +36,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class WrapTextCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             int columns = 78;
             if (parameters.ContainsSwitch("-columns"))

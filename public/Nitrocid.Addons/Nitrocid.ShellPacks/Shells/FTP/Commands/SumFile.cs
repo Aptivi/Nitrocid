@@ -24,6 +24,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
@@ -37,7 +38,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
     class SumFileCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string RemoteFile = parameters.ArgumentsList[0];
             string Hash = parameters.ArgumentsList[1];

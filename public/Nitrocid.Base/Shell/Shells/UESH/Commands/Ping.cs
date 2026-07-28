@@ -27,6 +27,7 @@ using Textify.General;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Network;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -41,7 +42,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class PingCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // If the pinged address is actually a number of times
             int PingTimes = 4;

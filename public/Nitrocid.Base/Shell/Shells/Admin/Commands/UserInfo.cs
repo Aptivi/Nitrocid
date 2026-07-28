@@ -22,6 +22,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Admin.Commands
 {
@@ -34,7 +35,7 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
     class UserInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Get the requested username
             string userName = parameters.ArgumentsList.Length > 0 ? parameters.ArgumentsList[0] : UserManagement.CurrentUser.Username;

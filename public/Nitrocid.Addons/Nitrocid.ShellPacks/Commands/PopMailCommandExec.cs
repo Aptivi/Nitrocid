@@ -25,15 +25,16 @@ using Nitrocid.Base.Languages;
 // using Nitrocid.Base.Network.Connections;
 // using Nitrocid.Base.Network.SpeedDial;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Commands
 {
     internal class PopMailCommandExec : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            // Implement on 0.1.1.
+            // TODO: Implement on 0.2.1 RC.
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING"), ThemeColorType.Warning);
             // NetworkConnectionTools.OpenConnectionForShell("MailShell", EstablishMailConnection, (_, connection) =>
             // EstablishMailConnectionSpeedDial(connection), parameters.ArgumentsText);

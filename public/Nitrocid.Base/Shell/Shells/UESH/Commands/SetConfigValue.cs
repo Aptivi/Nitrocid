@@ -20,6 +20,7 @@
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Configuration.Settings;
@@ -36,7 +37,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class SetConfigValueCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var configs = Config.GetKernelConfigs();
             string configName = parameters.ArgumentsList[0];
@@ -65,7 +66,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        public override void HelpHelper()
+        public override void HelpHelper(IShell? shell)
         {
             var names = Config.GetKernelConfigs().Select((bkc) => bkc.GetType().Name).ToArray();
             ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_CONFIGTYPES"), string.Join(", ", names));

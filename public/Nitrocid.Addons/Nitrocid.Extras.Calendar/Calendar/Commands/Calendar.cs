@@ -29,6 +29,7 @@ using Calendrier;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Switches;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Commands
 {
@@ -41,7 +42,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
     class CalendarCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string Action = parameters.ArgumentsList[0];
 

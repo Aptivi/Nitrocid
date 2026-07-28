@@ -23,6 +23,7 @@ using Terminaux.Shell.Commands;
 using System.Linq;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Files.Extensions;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -35,7 +36,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class GetExtHandlersCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!ExtensionHandlerTools.IsHandlerRegistered(parameters.ArgumentsList[0]))
             {

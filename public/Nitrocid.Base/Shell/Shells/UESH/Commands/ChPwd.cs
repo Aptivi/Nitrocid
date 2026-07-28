@@ -26,6 +26,7 @@ using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Users;
 using Terminaux.Reader;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -46,7 +47,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class ChPwdCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))

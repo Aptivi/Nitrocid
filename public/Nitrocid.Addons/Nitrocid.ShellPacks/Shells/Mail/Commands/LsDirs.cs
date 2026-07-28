@@ -20,6 +20,7 @@
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.ShellPacks.Shells.Mail.Tools.Directory;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
@@ -33,7 +34,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
     class LsDirsCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(MailDirectory.MailRenderListDirectories(), false, ThemeColorType.NeutralText);
             return 0;

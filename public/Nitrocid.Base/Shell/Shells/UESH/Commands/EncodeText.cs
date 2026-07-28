@@ -25,6 +25,7 @@ using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Drivers.Encoding;
 using Nitrocid.Base.Drivers.EncodingAsymmetric;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -37,7 +38,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class EncodeTextCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool useCustomAlgorithm = parameters.ContainsSwitch("-algorithm");
             string algorithm = useCustomAlgorithm ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-algorithm") : DriverHandler.CurrentEncodingDriverLocal.DriverName;

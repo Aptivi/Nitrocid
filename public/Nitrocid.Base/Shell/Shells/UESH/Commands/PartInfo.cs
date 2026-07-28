@@ -19,6 +19,7 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Drivers.HardwareProber;
 using Nitrocid.Base.Kernel.Exceptions;
@@ -34,7 +35,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class PartInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool isDriveNum = int.TryParse(parameters.ArgumentsList[0], out int driveNum);
             if (isDriveNum)

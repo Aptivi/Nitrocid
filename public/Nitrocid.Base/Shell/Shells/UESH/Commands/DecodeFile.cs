@@ -21,6 +21,7 @@ using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Drivers.Encoding;
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
@@ -34,7 +35,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class DecodeFileCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool useCustomAlgorithm = parameters.ContainsSwitch("-algorithm");
             string algorithm = useCustomAlgorithm ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-algorithm") : DriverHandler.CurrentEncodingDriverLocal.DriverName;

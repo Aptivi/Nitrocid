@@ -22,6 +22,7 @@ using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.ShellPacks.Shells.HTTP.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
@@ -29,7 +30,7 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
     class PutStringCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Print a message
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_PUT_PUTTING_STRING"), true, ThemeColorType.Progress, parameters.ArgumentsList[0]);

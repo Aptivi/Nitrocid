@@ -20,6 +20,7 @@
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Connections;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Base.Network.Transfer;
 using Terminaux.Reader;
 
@@ -28,7 +29,7 @@ namespace Nitrocid.ShellPacks.Commands
     internal class HttpCommandExec : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             NetworkConnectionTools.OpenConnectionForShell("HTTPShell", EstablishHttpConnection, (_, connection) =>
             EstablishHttpConnection(connection.Address), parameters.ArgumentsText);

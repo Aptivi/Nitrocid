@@ -40,7 +40,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class LogoutCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (KernelEntry.Maintenance)
             {

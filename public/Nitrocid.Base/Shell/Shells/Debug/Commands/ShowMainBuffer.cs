@@ -24,6 +24,7 @@ using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Languages;
 using Terminaux.Base.Extensions;
 using SpecProbe.Software.Platform;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -36,7 +37,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     class ShowMainBufferCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (PlatformHelper.IsOnWindows())
             {

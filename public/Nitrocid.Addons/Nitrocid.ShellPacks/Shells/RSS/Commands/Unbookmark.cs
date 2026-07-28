@@ -19,6 +19,7 @@
 
 using Nitrocid.ShellPacks.Shells.RSS.Tools;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Commands
 {
@@ -31,7 +32,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
     class UnbookmarkCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             RSSBookmarkManager.RemoveRSSFeedFromBookmark();
             return 0;

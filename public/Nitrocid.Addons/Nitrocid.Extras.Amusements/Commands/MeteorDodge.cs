@@ -19,6 +19,7 @@
 
 using Nitrocid.Extras.Amusements.Amusements.Games;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Amusements.Commands
 {
@@ -51,7 +52,7 @@ namespace Nitrocid.Extras.Amusements.Commands
     class MeteorDodgeCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             MeteorShooter.InitializeMeteor(false, true);
             return 0;

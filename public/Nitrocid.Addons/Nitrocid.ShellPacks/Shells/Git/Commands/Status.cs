@@ -22,6 +22,7 @@ using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System.Linq;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
@@ -35,7 +36,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     class StatusCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var status = GitShellCommon.Repository.RetrieveStatus();
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_TITLE"), GitShellCommon.BranchName);

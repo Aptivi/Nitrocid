@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Extras.Notes.Management;
 
 namespace Nitrocid.Extras.Notes.Commands
@@ -25,7 +26,7 @@ namespace Nitrocid.Extras.Notes.Commands
     internal class NotesTui : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             NoteManagement.OpenNotesTui();
             return 0;

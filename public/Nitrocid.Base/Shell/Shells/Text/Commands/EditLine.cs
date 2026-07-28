@@ -26,6 +26,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Reader;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Text.Commands
 {
@@ -38,7 +39,7 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
     class EditLineCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
             {

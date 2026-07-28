@@ -27,6 +27,7 @@ using Terminaux.Inputs.Interactive;
 using Nitrocid.Extras.Forecast.Forecast.Interactive;
 using System;
 using Terminaux.Reader;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {
@@ -53,7 +54,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
     class WeatherCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (parameters.ContainsSwitch("-tui"))
             {

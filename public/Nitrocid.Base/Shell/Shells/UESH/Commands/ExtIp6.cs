@@ -19,6 +19,7 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Base.Network.Transfer;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
@@ -32,7 +33,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class ExtIp6Command : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             variableValue = NetworkTransfer.DownloadString("http://ipv6.icanhazip.com/", false).TrimEnd('\n');
             if (!parameters.ContainsSwitch("-quiet"))

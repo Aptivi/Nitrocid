@@ -27,6 +27,7 @@ using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Files.Editors.HexEdit;
 using Nitrocid.Base.Kernel.Exceptions;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 {
@@ -39,7 +40,7 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
     class PrintCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             long ByteNumber;
             if (parameters.ArgumentsList.Length > 0)

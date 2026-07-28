@@ -20,6 +20,7 @@
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Nitrocid.ShellPacks.Shells.SFTP.Tools.Transfer;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 {
@@ -32,7 +33,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
     class CatCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(SFTPTransfer.SFTPDownloadToString(parameters.ArgumentsList[0]));
             return 0;

@@ -35,7 +35,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class FindRegCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string RegexToMatch = parameters.ArgumentsList[0];
             string DirectoryToSearch = FilesystemTools.CurrentDir;

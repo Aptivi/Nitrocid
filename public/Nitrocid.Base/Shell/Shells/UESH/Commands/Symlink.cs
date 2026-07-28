@@ -25,6 +25,7 @@ using System;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Security.Permissions;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -37,7 +38,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class SymlinkCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             string linkName = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);

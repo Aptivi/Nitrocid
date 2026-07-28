@@ -28,6 +28,7 @@ using System.Threading;
 using Terminaux.Inputs;
 using BassBoom.Basolia.Media;
 using BassBoom.Basolia.Media.Playback;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {
@@ -40,7 +41,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
     class PlaySoundCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string path = parameters.ArgumentsList[0];
             var media = new BasoliaMedia();

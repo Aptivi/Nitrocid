@@ -22,6 +22,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System;
 using Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem;
 
@@ -38,7 +39,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
     class PermCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (FTPFilesystem.FTPChangePermissions(parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1])))
             {

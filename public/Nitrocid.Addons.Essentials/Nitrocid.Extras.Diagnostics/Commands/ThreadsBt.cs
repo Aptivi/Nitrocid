@@ -24,6 +24,7 @@ using Nitrocid.Base.Kernel.Threading.Watchdog;
 using Nitrocid.Base.Languages;
 using SpecProbe.Software.Platform;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -38,7 +39,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
     class ThreadsBtCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Check to see if we're running on Windows 8.1 or later
             if (PlatformHelper.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))
@@ -59,7 +60,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
             return 0;
         }
 
-        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
+        public override int ExecuteDumb(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Check to see if we're running on Windows 8.1 or later
             if (PlatformHelper.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))

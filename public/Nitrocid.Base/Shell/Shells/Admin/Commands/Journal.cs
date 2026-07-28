@@ -24,6 +24,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Journaling;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Admin.Commands
 {
@@ -36,7 +37,7 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
     class JournalCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (parameters.ArgumentsList.Length > 0)
             {

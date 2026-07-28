@@ -20,6 +20,7 @@
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
@@ -44,7 +45,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class SetSaverCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
@@ -75,7 +76,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             }
         }
 
-        public override void HelpHelper()
+        public override void HelpHelper(IShell? shell)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETSAVER_LISTING") + " {0}", string.Join(", ", ScreensaverManager.GetScreensaverNames()));
         }

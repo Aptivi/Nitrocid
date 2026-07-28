@@ -19,6 +19,7 @@
 
 using Nitrocid.Base.Misc.Notifications;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -33,7 +34,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class DismissNotifsCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             NotificationManager.NotifRecents.Clear();
             return 0;

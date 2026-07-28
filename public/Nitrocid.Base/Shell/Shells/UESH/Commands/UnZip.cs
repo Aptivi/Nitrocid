@@ -22,6 +22,7 @@ using System.IO;
 using System.IO.Compression;
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -46,7 +47,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class UnZipCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (parameters.ArgumentsList.Length == 1)
             {

@@ -22,6 +22,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
 using System;
 using System.Net.Http;
@@ -41,7 +42,7 @@ namespace Nitrocid.Extras.Pastebin.Commands
     /// </remarks>
     class PastebinCommand : BaseCommand, ICommand
     {
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Check the contents
             string contents = parameters.ArgumentsList[0];

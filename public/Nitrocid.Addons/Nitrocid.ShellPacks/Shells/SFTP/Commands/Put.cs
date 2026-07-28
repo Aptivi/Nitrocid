@@ -24,6 +24,7 @@ using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Textify.General;
 using Nitrocid.ShellPacks.Shells.SFTP.Tools.Transfer;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 {
@@ -40,7 +41,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
     class PutCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_UPLOADINGFILE"), true, ThemeColorType.Progress, parameters.ArgumentsList[0]);
 

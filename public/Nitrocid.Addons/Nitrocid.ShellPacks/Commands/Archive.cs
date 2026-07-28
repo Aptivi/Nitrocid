@@ -37,7 +37,7 @@ namespace Nitrocid.ShellPacks.Commands
     class ArchiveCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             parameters.ArgumentsList[0] = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {0}", vars: [parameters.ArgumentsList[0], FilesystemTools.FileExists(parameters.ArgumentsList[0])]);

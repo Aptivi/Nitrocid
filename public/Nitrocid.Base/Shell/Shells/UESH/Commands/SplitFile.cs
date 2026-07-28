@@ -20,6 +20,7 @@
 using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
@@ -37,7 +38,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class SplitFileCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
 

@@ -19,6 +19,7 @@
 
 using Nitrocid.Extras.Dates.Timers;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Dates.Commands
 {
@@ -31,7 +32,7 @@ namespace Nitrocid.Extras.Dates.Commands
     class TimerCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TimerScreen.OpenTimer();
             return 0;

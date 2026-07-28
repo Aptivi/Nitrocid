@@ -20,12 +20,13 @@
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Users;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Admin.Commands
 {
     class LsUsersCommand : BaseCommand, ICommand
     {
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var users = UserManagement.ListAllUsers();
             ListWriterColor.WriteList(users);
@@ -33,7 +34,7 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
             return 0;
         }
 
-        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
+        public override int ExecuteDumb(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var users = UserManagement.ListAllUsers();
             foreach (var user in users)

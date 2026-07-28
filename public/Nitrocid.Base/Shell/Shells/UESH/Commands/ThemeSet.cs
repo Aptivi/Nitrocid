@@ -30,6 +30,7 @@ using Terminaux.Inputs.Styles;
 using Terminaux.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -42,7 +43,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class ThemeSetCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             int answer = -1;
             string selectedTheme = "";
@@ -183,7 +184,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        public override void HelpHelper() =>
+        public override void HelpHelper(IShell? shell) =>
             TextWriterColor.Write("[Theme]: ThemeName.json, " + string.Join(", ", ThemeTools.GetInstalledThemes().Keys));
 
     }

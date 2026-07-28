@@ -22,6 +22,7 @@ using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {
@@ -34,7 +35,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
     class ExecuteCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write("<<< C: {0}", parameters.ArgumentsText);
             var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance;

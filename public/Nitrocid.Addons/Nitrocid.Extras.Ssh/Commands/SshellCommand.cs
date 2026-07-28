@@ -19,6 +19,7 @@
 
 using Nitrocid.Extras.Ssh.SSH;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System;
 
 namespace Nitrocid.Extras.Ssh.Commands
@@ -34,7 +35,7 @@ namespace Nitrocid.Extras.Ssh.Commands
     class SshellCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var AddressDelimiter = parameters.ArgumentsList[0].Split(':');
             string Address = AddressDelimiter[0];

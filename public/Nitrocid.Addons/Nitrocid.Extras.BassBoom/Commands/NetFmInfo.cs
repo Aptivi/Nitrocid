@@ -22,13 +22,14 @@ using Nitrocid.Base.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
 using BassBoom.Basolia.Media.Radio;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {
     class NetFmInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Get the variables
             bool https = parameters.ContainsSwitch("-secure");

@@ -23,13 +23,14 @@ using Nitrocid.Base.Languages;
 using System;
 using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Exceptions;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Commands
 {
     class LoadContactsCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             try
             {

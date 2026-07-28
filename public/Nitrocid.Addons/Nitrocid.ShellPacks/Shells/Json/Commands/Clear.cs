@@ -19,6 +19,7 @@
 
 using Newtonsoft.Json.Linq;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
 {
@@ -28,7 +29,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
     class ClearCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             JsonShellCommon.FileToken = JToken.Parse("{}");
             return 0;

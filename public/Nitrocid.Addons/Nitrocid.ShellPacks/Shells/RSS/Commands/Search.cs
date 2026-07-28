@@ -19,6 +19,7 @@
 
 using Nettify.Rss.Instance;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
 using Textify.General;
@@ -59,7 +60,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
     class SearchCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool findTitle = parameters.ContainsSwitch("-t");
             bool findDescription = parameters.ContainsSwitch("-d");

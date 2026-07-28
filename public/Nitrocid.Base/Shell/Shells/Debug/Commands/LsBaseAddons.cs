@@ -27,6 +27,7 @@ using Colorimetry;
 using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Extensions;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -39,7 +40,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     class LsBaseAddonsCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSBASEADDONS_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
 

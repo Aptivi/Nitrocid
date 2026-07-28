@@ -25,6 +25,7 @@ using System;
 using Terminaux.Inputs;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Screensaver;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -37,7 +38,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class SaveScreenCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool selectionMode = parameters.ContainsSwitch("-select");
             bool randomMode = parameters.ContainsSwitch("-random");
@@ -60,7 +61,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        public override void HelpHelper()
+        public override void HelpHelper(IShell? shell)
         {
             var screensavers = ScreensaverManager.GetScreensaverNames();
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SAVESCREEN_LISTING"));

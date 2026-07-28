@@ -23,6 +23,7 @@ using Nitrocid.Extras.BassBoom.Animations.Lyrics;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Files;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {
@@ -35,7 +36,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
     class LyricLinesCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string pathToLyrics = parameters.ArgumentsList[0];
 

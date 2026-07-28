@@ -28,7 +28,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
     class ExitNoSaveCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             ShellManager.KillShell();
             return 0;

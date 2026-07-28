@@ -19,6 +19,7 @@
 
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.ShellPacks.Shells.Archive.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Archive.Commands
@@ -32,7 +33,7 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Commands
     class PackCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string Where = "";
             if (parameters.ArgumentsList.Length > 1)

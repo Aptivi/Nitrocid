@@ -19,6 +19,7 @@
 
 using Terminaux.Inputs.Interactive;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Base.Languages;
 using System;
 using Nitrocid.ShellPacks.Shells.Mail.Interactive;
@@ -30,7 +31,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
     class TuiCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var tui = new MailManagerCli();
             tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));

@@ -23,6 +23,7 @@ using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Textify.Tools;
 
 namespace Nitrocid.ShellPacks.Commands
@@ -33,7 +34,7 @@ namespace Nitrocid.ShellPacks.Commands
     class JsonDiffCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var source = JToken.Parse(FilesystemTools.ReadContentsText(parameters.ArgumentsList[0]));
             var target = JToken.Parse(FilesystemTools.ReadContentsText(parameters.ArgumentsList[1]));

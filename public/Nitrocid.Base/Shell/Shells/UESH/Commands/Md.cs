@@ -20,6 +20,7 @@
 using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -34,7 +35,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class MdCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             FilesystemTools.MakeDirectory(parameters.ArgumentsList[0]);

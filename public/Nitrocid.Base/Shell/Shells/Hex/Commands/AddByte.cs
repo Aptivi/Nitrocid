@@ -20,6 +20,7 @@
 using System;
 using Nitrocid.Base.Files.Editors.HexEdit;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 {
@@ -32,7 +33,7 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
     class AddByteCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             byte ByteContent = Convert.ToByte(parameters.ArgumentsText, 16);
             HexEditTools.AddNewByte(ByteContent);

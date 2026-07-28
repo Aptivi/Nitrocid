@@ -21,6 +21,7 @@ using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
 using Terminaux.Inputs.Styles.Editor;
 using Nitrocid.ShellPacks.Shells.Sql.Tools;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Sql.Commands
 {
@@ -33,7 +34,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
     class TuiCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string path = SqlShellCommon.DatabasePath;
             byte[] bytes = FilesystemTools.ReadAllBytesNoBlock(path);

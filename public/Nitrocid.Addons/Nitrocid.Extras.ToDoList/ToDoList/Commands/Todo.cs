@@ -24,6 +24,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
 {
@@ -36,7 +37,7 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
     class TodoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string Action = parameters.ArgumentsList[0];
 

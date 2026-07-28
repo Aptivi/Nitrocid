@@ -20,6 +20,7 @@
 using Newtonsoft.Json.Linq;
 using System.Linq;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Themes.Colors;
@@ -32,7 +33,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
     class JsonInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Base info
             SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.Separator));

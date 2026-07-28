@@ -21,6 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Debugging.Trace;
 using Terminaux.Shell.Commands;
 using System.Diagnostics;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -33,7 +34,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     class CurrentBtCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var trace = new StackTrace(true);
             for (int framenum = 0; framenum < trace.FrameCount; framenum++)

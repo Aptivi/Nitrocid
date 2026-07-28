@@ -25,6 +25,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Drivers.Encoding;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Drivers.EncodingAsymmetric;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -37,7 +38,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class GetKeyIvCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Check the algorithm
             string algorithm = parameters.ArgumentsList.Length > 0 ? parameters.ArgumentsList[0] : DriverHandler.CurrentEncodingDriverLocal.DriverName;

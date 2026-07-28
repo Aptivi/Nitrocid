@@ -19,6 +19,7 @@
 
 using LibGit2Sharp;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -31,7 +32,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     class ResetCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Assume that we want to do a soft reset
             var resetMode = ResetMode.Soft;

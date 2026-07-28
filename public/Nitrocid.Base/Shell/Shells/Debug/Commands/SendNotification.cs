@@ -23,6 +23,7 @@ using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Misc.Notifications;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -32,7 +33,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     class SendNotificationCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string notificationTitle = $"{RandomDriver.Random(1000, 9999)} - {KernelReleaseInfo.VersionFullStr}";
             string notificationDesc = $"{KernelReleaseInfo.ApiVersion} - {TimeDateRenderers.Render()}";

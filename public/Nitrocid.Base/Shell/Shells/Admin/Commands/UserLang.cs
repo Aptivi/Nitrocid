@@ -23,13 +23,14 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Kernel.Exceptions;
 using System.Globalization;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Admin.Commands
 {
     class UserLangCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string userName = parameters.ArgumentsList[0];
             string lang = parameters.ArgumentsList[1];

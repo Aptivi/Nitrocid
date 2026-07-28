@@ -34,11 +34,11 @@ namespace Nitrocid.Extras.ChatbotAI.Shell.Commands
     class DetachCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var shell = (ChatbotShell?)ShellManager.GetShellInfo(ShellManager.CurrentShellType).ShellBase ??
+            var chatbotShell = (ChatbotShell?)shell ??
                 throw new KernelException(KernelExceptionType.ChatbotAI, LanguageTools.GetLocalized("NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH"));
-            shell.detaching = true;
+            chatbotShell.detaching = true;
             ShellManager.KillShell();
             return 0;
         }

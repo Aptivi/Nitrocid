@@ -22,6 +22,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System.Collections.Generic;
 using Terminaux.Inputs.Styles.Editor;
 using Nitrocid.ShellPacks.Shells.Json.Tools;
@@ -37,7 +38,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
     class TuiCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (JsonShellCommon.FileStream is null)
             {

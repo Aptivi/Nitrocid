@@ -20,6 +20,7 @@
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using System.Text;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -32,7 +33,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class ModelineCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Check to see if we need Modeline for monitor or generate a whole Mode block
             bool modelineOneLine = parameters.ContainsSwitch("-oneline");

@@ -24,6 +24,7 @@ using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using System;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Commands
 {
@@ -36,7 +37,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
     class AltDateCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Determine how to show date and time
             bool showDate = true;

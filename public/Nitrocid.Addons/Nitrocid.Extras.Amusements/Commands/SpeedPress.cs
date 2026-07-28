@@ -20,6 +20,7 @@
 using System;
 using Nitrocid.Extras.Amusements.Amusements.Games;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Textify.General;
 
 namespace Nitrocid.Extras.Amusements.Commands
@@ -61,7 +62,7 @@ namespace Nitrocid.Extras.Amusements.Commands
     class SpeedPressCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var Difficulty = SpeedPress.SpeedPressDifficulty.Medium;
             int CustomTimeout = SpeedPress.SpeedPressTimeout;

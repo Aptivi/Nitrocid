@@ -22,6 +22,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Files.Editors.TextEdit;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Text.Commands
 {
@@ -34,7 +35,7 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
     class ReplaceCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextEditTools.Replace(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_REPLACE_SUCCESS"), true, ThemeColorType.Success);

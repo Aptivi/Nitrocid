@@ -19,6 +19,7 @@
 
 using Nitrocid.ShellPacks.Shells.Mail.Tools.Directory;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 {
@@ -31,7 +32,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
     class CdCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             MailDirectory.MailChangeDirectory(parameters.ArgumentsList[0]);
             return 0;

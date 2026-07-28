@@ -21,6 +21,7 @@ using System.Diagnostics;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
@@ -37,7 +38,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class SumTextCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string text = parameters.ArgumentsList[1];
             if (DriverHandler.IsRegistered(DriverTypes.Encryption, parameters.ArgumentsList[0]))

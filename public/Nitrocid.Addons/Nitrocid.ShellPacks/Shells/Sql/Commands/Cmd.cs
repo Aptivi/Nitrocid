@@ -27,6 +27,7 @@ using System.Collections.Generic;
 using Textify.General;
 using Terminaux.Reader;
 using Nitrocid.ShellPacks.Shells.Sql.Tools;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Sql.Commands
 {
@@ -39,7 +40,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
     class CmdCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // First, check to see if we have parameters
             List<SqliteParameter> sqlParameters = [];

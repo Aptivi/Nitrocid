@@ -19,6 +19,7 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.ShellPacks.Shells.Json.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
@@ -32,7 +33,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
     class PrintCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (parameters.ArgumentsList.Length > 0)
             {

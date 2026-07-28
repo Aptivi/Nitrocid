@@ -25,6 +25,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Network.Connections;
 using OpenAI.Chat;
 using Terminaux.Reader;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.ChatbotAI.Commands
 {
@@ -34,7 +35,7 @@ namespace Nitrocid.Extras.ChatbotAI.Commands
     class ChatbotCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Check if user has provided the API key via the switch
             string apiKey = ChatbotAIInit.ChatbotAIConfig.ChatGPTApiKey;

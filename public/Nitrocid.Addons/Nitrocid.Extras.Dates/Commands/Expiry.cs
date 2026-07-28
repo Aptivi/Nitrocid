@@ -23,6 +23,7 @@ using Nitrocid.Extras.Dates.Tools;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using System;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Dates.Commands
 {
@@ -35,7 +36,7 @@ namespace Nitrocid.Extras.Dates.Commands
     class ExpiryCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool implicitExpiry = parameters.ContainsSwitch("-implicit");
             try

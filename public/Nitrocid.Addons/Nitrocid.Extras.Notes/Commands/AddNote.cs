@@ -19,13 +19,14 @@
 
 using Nitrocid.Extras.Notes.Management;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Notes.Commands
 {
     internal class AddNote : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             NoteManagement.NewNote(parameters.ArgumentsText);
             return 0;

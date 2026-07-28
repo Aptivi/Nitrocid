@@ -19,6 +19,7 @@
 
 using Terminaux.Shell.Commands;
 using Terminaux.Inputs.Styles.Editor;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Text.Commands
 {
@@ -31,7 +32,7 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
     class TuiCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextEditInteractive.OpenInteractive(ref TextEditShellCommon.fileLines);
             return 0;

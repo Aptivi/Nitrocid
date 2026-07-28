@@ -20,6 +20,7 @@
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.Base.Network.SpeedDial;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.ShellPacks.Shells.Mail.Tools;
 
 namespace Nitrocid.ShellPacks.Commands
@@ -27,7 +28,7 @@ namespace Nitrocid.ShellPacks.Commands
     internal class MailCommandExec : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             NetworkConnectionTools.OpenConnectionForShell("MailShell", EstablishMailConnection, (_, connection) =>
             EstablishMailConnectionSpeedDial(connection), parameters.ArgumentsText);

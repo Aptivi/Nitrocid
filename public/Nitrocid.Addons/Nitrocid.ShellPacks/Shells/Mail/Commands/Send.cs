@@ -25,6 +25,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Textify.General;
 using Terminaux.Reader;
 using Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer;
@@ -61,7 +62,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
     class SendCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string Receiver, Subject;
             var Body = new BodyBuilder();

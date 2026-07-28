@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
@@ -50,7 +51,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
     class LsrCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool ShowFileDetails = parameters.ContainsSwitch("-showdetails") || ShellsInit.ShellsConfig.FtpShowDetailsInList;
             var Entries = new List<string>();

@@ -24,13 +24,14 @@ using Nitrocid.Base.Languages;
 using System;
 using Renci.SshNet.Sftp;
 using Nitrocid.ShellPacks.Shells.SFTP.Interactive;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 {
     class IfmCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var tui = new SFTPFileManagerCli();
             tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, ISftpFile>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));

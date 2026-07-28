@@ -21,6 +21,7 @@ using Nettify.Rss.Instance;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Textify.General;
 using Terminaux.Base.Extensions;
 
@@ -35,7 +36,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
     class ListCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             foreach (RSSArticle Article in RSSShellCommon.RSSFeedInstance?.FeedArticles ?? [])
             {

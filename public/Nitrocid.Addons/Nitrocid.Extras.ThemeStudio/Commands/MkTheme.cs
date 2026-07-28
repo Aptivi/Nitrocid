@@ -19,6 +19,7 @@
 
 using Nitrocid.Extras.ThemeStudio.Studio;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.ThemeStudio.Commands
 {
@@ -33,7 +34,7 @@ namespace Nitrocid.Extras.ThemeStudio.Commands
     class MkThemeCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             ThemeStudioApp.StartThemeStudio(parameters.ArgumentsList[0]);
             return 0;

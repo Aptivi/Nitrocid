@@ -19,6 +19,7 @@
 
 using Nitrocid.ShellPacks.Shells.HTTP.Tools;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
 {
@@ -28,7 +29,7 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
     class AddHeaderCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string key = parameters.ArgumentsList[0];
             string value = parameters.ArgumentsList[1];

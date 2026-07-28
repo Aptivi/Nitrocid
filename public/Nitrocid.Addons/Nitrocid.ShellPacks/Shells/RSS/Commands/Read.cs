@@ -24,6 +24,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using SpecProbe.Software.Platform;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Commands
@@ -37,7 +38,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
     class ReadCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var articles = RSSShellCommon.RSSFeedInstance?.FeedArticles ?? [];
             int ArticleIndex = (int)Math.Round(Convert.ToDouble(parameters.ArgumentsList[0]) - 1d);

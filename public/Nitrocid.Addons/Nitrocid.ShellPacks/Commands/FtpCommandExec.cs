@@ -21,6 +21,7 @@ using FluentFTP;
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.Base.Network.SpeedDial;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System;
 using Nitrocid.ShellPacks.Shells.FTP.Tools;
 
@@ -29,7 +30,7 @@ namespace Nitrocid.ShellPacks.Commands
     internal class FtpCommandExec : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             NetworkConnectionTools.OpenConnectionForShell("FTPShell", FTPTools.TryToConnect, EstablishFtpConnection, parameters.ArgumentsText);
             return 0;

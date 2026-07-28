@@ -26,6 +26,7 @@ using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Base;
 using Threadify.Manager;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.BeepSynth.Commands
 {
@@ -37,7 +38,7 @@ namespace Nitrocid.Extras.BeepSynth.Commands
     /// </remarks>
     class BeepSynthCommand : BaseCommand, ICommand
     {
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string path = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             if (!FilesystemTools.FileExists(path))

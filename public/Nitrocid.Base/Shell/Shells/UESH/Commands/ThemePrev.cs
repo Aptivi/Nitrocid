@@ -28,6 +28,7 @@ using System.Linq;
 using Terminaux.Inputs.Styles;
 using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -40,7 +41,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class ThemePrevCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string selectedTheme;
             string ThemePath;
@@ -154,7 +155,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        public override void HelpHelper() =>
+        public override void HelpHelper(IShell? shell) =>
             TextWriterColor.Write("<Theme>: ThemeName.json, " + string.Join(", ", ThemeTools.GetInstalledThemes().Keys));
 
     }

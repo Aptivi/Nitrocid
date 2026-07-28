@@ -19,6 +19,7 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.ShellPacks.Shells.RSS.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Commands
@@ -32,7 +33,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
     class ListBookmarkCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var Bookmarks = RSSBookmarkManager.GetBookmarks();
             foreach (var bookmark in Bookmarks)

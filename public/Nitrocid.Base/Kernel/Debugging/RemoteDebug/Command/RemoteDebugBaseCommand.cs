@@ -43,7 +43,8 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug.Command
         /// <summary>
         /// The help helper
         /// </summary>
-        public virtual void HelpHelper() => DebugWriter.WriteDebug(DebugLevel.I, "No additional information found.");
+        public virtual void HelpHelper() =>
+            DebugWriter.WriteDebug(DebugLevel.I, "No additional information found.");
 
     }
 }

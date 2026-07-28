@@ -21,6 +21,7 @@ using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.Base.Misc.Dock;
 
@@ -29,7 +30,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class DockCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Check the dock screen for existence
             if (!DockTools.DoesDockScreenExist(parameters.ArgumentsList[0], out BaseWidget? dock))

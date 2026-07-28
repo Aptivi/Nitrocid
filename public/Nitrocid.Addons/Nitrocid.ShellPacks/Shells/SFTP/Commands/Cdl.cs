@@ -19,6 +19,7 @@
 
 using Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 {
@@ -31,7 +32,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
     class CdlCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             SFTPFilesystem.SFTPChangeLocalDir(parameters.ArgumentsList[0]);
             return 0;

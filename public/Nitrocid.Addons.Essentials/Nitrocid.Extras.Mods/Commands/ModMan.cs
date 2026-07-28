@@ -21,6 +21,7 @@ using System.IO;
 using Nitrocid.Base.Kernel;
 using Terminaux.Shell.Help;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Base.Files;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
@@ -48,7 +49,7 @@ namespace Nitrocid.Extras.Mods.Commands
     class ModManCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
 #pragma warning disable NLOC0001
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&

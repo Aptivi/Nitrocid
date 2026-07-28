@@ -19,6 +19,7 @@
 
 using Nettify.EnglishDictionary;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Base.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
@@ -34,7 +35,7 @@ namespace Nitrocid.Extras.Dictionary.Commands
     class DictCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var Words = DictionaryManager.GetWordInfo(parameters.ArgumentsList[0]);
 

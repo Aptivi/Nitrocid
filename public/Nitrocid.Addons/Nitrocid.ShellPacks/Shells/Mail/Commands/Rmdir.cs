@@ -19,6 +19,7 @@
 
 using Nitrocid.ShellPacks.Shells.Mail.Tools.Directory;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 {
@@ -28,7 +29,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
     class RmdirCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             MailDirectory.DeleteMailDirectory(parameters.ArgumentsList[0]);
             return 0;

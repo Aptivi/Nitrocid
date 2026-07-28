@@ -22,6 +22,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Textify.General;
 using Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem;
 
@@ -40,7 +41,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
     class CpCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COPYING"), parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             if (FTPFilesystem.FTPCopyItem(parameters.ArgumentsList[0], parameters.ArgumentsList[1]))

@@ -19,6 +19,7 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
@@ -32,7 +33,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
     class CatCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(FTPTransfer.FTPDownloadToString(parameters.ArgumentsList[0]));
             return 0;

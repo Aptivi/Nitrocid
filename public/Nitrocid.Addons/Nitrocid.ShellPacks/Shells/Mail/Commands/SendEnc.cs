@@ -19,6 +19,7 @@
 
 using MimeKit;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Files;
 using Terminaux.Writer.ConsoleWriters;
@@ -61,7 +62,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
     class SendEncCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string Receiver, Subject;
             var Body = new BodyBuilder();

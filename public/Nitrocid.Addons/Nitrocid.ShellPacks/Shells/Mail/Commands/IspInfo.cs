@@ -21,6 +21,7 @@ using Nettify.MailAddress;
 using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Shells.Mail.Tools;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
@@ -34,7 +35,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
     class IspInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Determine how to get ISP info
             var ispInfo = IspTools.GetIspConfig(MailLogin.Authentication.UserName);

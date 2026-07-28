@@ -24,6 +24,7 @@ using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using UnitsNet;
 using Nitrocid.Extras.UnitConv.Tools;
 
@@ -40,7 +41,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
     class UnitConvCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool tuiMode = parameters.ContainsSwitch("-tui");
             if (tuiMode)
@@ -62,7 +63,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
             return 0;
         }
 
-        public override void HelpHelper()
+        public override void HelpHelper(IShell? shell)
         {
             var abbreviations = UnitsNetSetup.Default.UnitAbbreviations;
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS"));

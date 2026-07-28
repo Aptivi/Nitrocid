@@ -24,6 +24,7 @@ using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using UnitsNet;
 
 namespace Nitrocid.Extras.UnitConv.Commands
@@ -37,7 +38,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
     class ListUnitsCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var abbreviations = UnitsNetSetup.Default.UnitAbbreviations;
             var Quantities = Quantity.Infos.Where(x => x.Name == parameters.ArgumentsList[0]);
@@ -62,7 +63,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
             }
         }
 
-        public override void HelpHelper()
+        public override void HelpHelper(IShell? shell)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPES"));
             foreach (QuantityInfo QuantityInfo in Quantity.Infos)

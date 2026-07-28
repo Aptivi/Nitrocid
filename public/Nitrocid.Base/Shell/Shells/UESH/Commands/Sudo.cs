@@ -39,7 +39,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class SudoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool sudoDone = false;
             PermissionsTools.Demand(PermissionTypes.UseSudo);

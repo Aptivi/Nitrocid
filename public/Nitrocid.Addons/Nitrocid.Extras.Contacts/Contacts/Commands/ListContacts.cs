@@ -26,13 +26,14 @@ using Nitrocid.Base.Kernel.Exceptions;
 using VisualCard.Parts.Implementations;
 using System.Text;
 using VisualCard.Parts.Enums;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Commands
 {
     class ListContactsCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             try
             {

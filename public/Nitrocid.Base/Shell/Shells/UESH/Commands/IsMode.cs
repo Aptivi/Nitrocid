@@ -22,6 +22,7 @@ using Terminaux.Shell.Commands;
 using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -31,7 +32,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class IsModeCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool safeModeCheck = false;
             bool debugModeCheck = false;

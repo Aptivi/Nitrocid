@@ -26,6 +26,7 @@ using Terminaux.Shell.Commands;
 using System;
 using Textify.General;
 using Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 {
@@ -40,7 +41,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
     class ReadCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Message number is numeric? {0}", vars: [parameters.ArgumentsList[0].IsStringNumeric()]);
             if (parameters.ArgumentsList[0].IsStringNumeric())

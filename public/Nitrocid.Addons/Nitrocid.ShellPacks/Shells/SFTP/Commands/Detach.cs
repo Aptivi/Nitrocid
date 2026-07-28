@@ -34,11 +34,11 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
     class DetachCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var shell = (SFTPShell?)ShellManager.GetShellInfo(ShellManager.CurrentShellType).ShellBase ??
+            var sftpShell = (SFTPShell?)shell ??
                 throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
-            shell.detaching = true;
+            sftpShell.detaching = true;
             ShellManager.KillShell();
             return 0;
         }

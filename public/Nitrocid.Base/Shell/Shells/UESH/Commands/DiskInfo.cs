@@ -22,6 +22,7 @@ using Terminaux.Shell.Commands;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Drivers.HardwareProber;
 using Nitrocid.Base.Kernel.Exceptions;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -34,7 +35,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class DiskInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool isDriveNum = int.TryParse(parameters.ArgumentsList[0], out int driveNum);
             if (isDriveNum)

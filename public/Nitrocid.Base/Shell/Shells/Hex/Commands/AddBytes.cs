@@ -24,6 +24,7 @@ using Terminaux.Shell.Commands;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Files.Editors.HexEdit;
 using Terminaux.Reader;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 {
@@ -36,7 +37,7 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
     class AddBytesCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var FinalBytes = new List<byte>();
             string FinalByte = "";

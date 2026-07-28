@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
 using Textify.General;
@@ -35,7 +36,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
     class SelFeedCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var foundFeeds = SearcherTools.GetRssFeeds(parameters.ArgumentsList[0]);
             foreach (var feed in foundFeeds)

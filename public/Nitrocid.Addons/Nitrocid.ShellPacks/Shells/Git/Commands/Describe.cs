@@ -21,6 +21,7 @@ using LibGit2Sharp;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System.Linq;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
@@ -34,7 +35,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     class DescribeCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (GitShellCommon.Repository is null)
                 return 43;

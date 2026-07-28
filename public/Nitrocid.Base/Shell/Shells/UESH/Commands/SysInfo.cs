@@ -27,6 +27,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Kernel.Hardware;
 using Nitrocid.Base.Login.Motd;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -36,7 +37,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class SysInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool ShowSystemInfo = false;
             bool ShowHardwareInfo = false;

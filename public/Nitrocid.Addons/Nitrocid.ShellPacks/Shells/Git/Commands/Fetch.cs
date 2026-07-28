@@ -21,6 +21,7 @@ using LibGit2Sharp;
 using GitCommand = LibGit2Sharp.Commands;
 using System.Linq;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Themes.Colors;
@@ -36,7 +37,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     class FetchCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var status = GitShellCommon.Repository.RetrieveStatus();
 

@@ -22,6 +22,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Time.Alarm;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -42,7 +43,7 @@ namespace Nitrocid.Extras.Caffeine.Commands
             { "Green Tea",       (LanguageTools.GetLocalized("NKS_CAFFEINE_GREENTEA"), 60 * 10) },
         };
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool abortCurrentAlarm = parameters.ContainsSwitch("-abort");
             if (abortCurrentAlarm)

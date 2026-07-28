@@ -21,6 +21,7 @@ using Terminaux.Shell.Commands;
 using Terminaux.Inputs.Styles.Editor;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 {
@@ -33,7 +34,7 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
     class TuiCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var FileBytes = HexEditShellCommon.FileBytes ??
                 throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));

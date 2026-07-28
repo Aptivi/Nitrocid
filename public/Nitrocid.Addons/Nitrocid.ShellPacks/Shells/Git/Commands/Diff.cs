@@ -19,6 +19,7 @@
 
 using LibGit2Sharp;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
@@ -34,7 +35,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     class DiffCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Get the tree changes and the patch
             if (GitShellCommon.Repository is null)

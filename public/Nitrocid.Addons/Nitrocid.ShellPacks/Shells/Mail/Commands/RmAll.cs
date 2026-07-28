@@ -23,6 +23,7 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Nitrocid.ShellPacks.Shells.Mail.Tools.Directory;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 {
@@ -35,7 +36,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
     class RmAllCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (MailManager.MailRemoveAllBySender(parameters.ArgumentsList[0]))
             {

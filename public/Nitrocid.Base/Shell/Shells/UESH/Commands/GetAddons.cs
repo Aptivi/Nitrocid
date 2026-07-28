@@ -30,6 +30,7 @@ using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Base.Network.Transfer;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Updates;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -42,7 +43,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class GetAddonsCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Bail if there are addons already installed
             if (AddonTools.ListAddons().Count > 0 && !parameters.ContainsSwitch("-reinstall"))

@@ -23,6 +23,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Reader;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {
@@ -49,7 +50,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
     class WeatherOldCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var ListMode = false;
             if (parameters.ContainsSwitch("-list"))
@@ -78,7 +79,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
             return 0;
         }
 
-        public override void HelpHelper()
+        public override void HelpHelper(IShell? shell)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_CITYLISTLINK"));
             TextWriterColor.Write("http://bulk.openweathermap.org/sample/city.list.json.gz");

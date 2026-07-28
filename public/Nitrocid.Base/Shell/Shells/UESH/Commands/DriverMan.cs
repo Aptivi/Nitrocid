@@ -19,6 +19,7 @@
 
 using Terminaux.Shell.Help;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
 using System;
@@ -43,7 +44,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class DriverManCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))

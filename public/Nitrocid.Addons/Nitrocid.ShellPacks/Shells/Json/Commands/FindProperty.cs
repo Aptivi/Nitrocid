@@ -20,6 +20,7 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
 using Nitrocid.ShellPacks.Shells.Json.Tools;
 
@@ -34,7 +35,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
     class FindPropertyCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string parent = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-parentProperty");
             var token = JsonTools.GetTokenSafe(parent, parameters.ArgumentsList[0]);

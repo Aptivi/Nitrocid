@@ -19,6 +19,7 @@
 
 using Nitrocid.Base.Files.Editors.HexEdit;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 {
@@ -31,7 +32,7 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
     class SaveCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             HexEditTools.SaveBinaryFile();
             return 0;

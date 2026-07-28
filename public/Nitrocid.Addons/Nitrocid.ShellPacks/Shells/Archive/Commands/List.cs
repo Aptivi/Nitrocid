@@ -20,6 +20,7 @@
 using System.Collections.Generic;
 using SharpCompress.Archives;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
@@ -37,7 +38,7 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Commands
     class ListCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             List<IArchiveEntry> Entries;
             if (parameters.ArgumentsList.Length > 0)

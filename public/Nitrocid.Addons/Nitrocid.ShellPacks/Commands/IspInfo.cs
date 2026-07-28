@@ -20,6 +20,7 @@
 using Nettify.MailAddress;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Commands
@@ -33,7 +34,7 @@ namespace Nitrocid.ShellPacks.Commands
     class IspInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Get mail or host
             string mailOrHost = parameters.ArgumentsList[0];

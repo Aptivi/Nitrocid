@@ -22,13 +22,14 @@ using Terminaux.Shell.Commands;
 using System;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Threading;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
     class TaskManCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var tui = new TaskManagerCli();
             tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_KEYBINDING_KILL"), ConsoleKey.F1, (thread, _, _, _) => tui.KillThread(thread)));

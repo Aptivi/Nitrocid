@@ -26,6 +26,7 @@ using Terminaux.Shell.Commands;
 using System;
 using Textify.General;
 using Nitrocid.ShellPacks.Shells.Mail.Tools.Directory;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 {
@@ -38,7 +39,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
     class ListCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (parameters.ArgumentsList.Length > 0)
             {

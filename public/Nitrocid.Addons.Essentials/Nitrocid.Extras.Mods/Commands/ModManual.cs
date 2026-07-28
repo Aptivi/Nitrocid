@@ -30,6 +30,7 @@ using System;
 using Nitrocid.Extras.Mods.Modifications;
 using Nitrocid.Extras.Mods.Modifications.ManPages;
 using Nitrocid.Extras.Mods.Modifications.Interactive;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Mods.Commands
 {
@@ -43,7 +44,7 @@ namespace Nitrocid.Extras.Mods.Commands
     class ModManualCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string modName = parameters.ArgumentsList[0];
             if (!ModManager.Mods.TryGetValue(modName, out ModInfo? mod))

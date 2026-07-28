@@ -23,6 +23,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {
@@ -35,7 +36,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
     class TypeCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance;
             if (client is null)

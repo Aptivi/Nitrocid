@@ -19,6 +19,7 @@
 
 using System;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Inputs.Styles.Choice;
@@ -37,7 +38,7 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
     class DeleteCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Print a message
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPHTTPSFTP_DELETING"), true, ThemeColorType.Progress, parameters.ArgumentsList[0]);

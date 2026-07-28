@@ -24,6 +24,7 @@ using Terminaux.Shell.Commands;
 using Nitrocid.Base.Files.Editors.TextEdit;
 using Nitrocid.Base.Languages;
 using Terminaux.Reader;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Text.Commands
 {
@@ -36,7 +37,7 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
     class AddLinesCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var FinalLines = new List<string>();
             string FinalLine = "";

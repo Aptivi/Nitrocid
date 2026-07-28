@@ -24,6 +24,7 @@ using Nitrocid.Extras.Stocks.Interactives;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Transfer;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Reader;
 
@@ -35,7 +36,7 @@ namespace Nitrocid.Extras.Stocks.Commands
     class StockCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Get the symbol and prompt for the API key
             string symbol = string.IsNullOrEmpty(parameters.ArgumentsText) ? StocksInit.StocksConfig.StocksCompany : parameters.ArgumentsText;

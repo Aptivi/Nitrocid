@@ -25,6 +25,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
 using Textify.General;
 using Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 {
@@ -41,7 +42,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
     class DelCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Print a message
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPHTTPSFTP_DELETING"), true, ThemeColorType.Progress, parameters.ArgumentsList[0]);

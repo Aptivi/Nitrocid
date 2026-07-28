@@ -21,6 +21,7 @@ using System.Linq;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Files;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -33,7 +34,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     class CombineStrCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string InputPath = parameters.ArgumentsList[0];
             var CombineInputPaths = parameters.ArgumentsList.Skip(1).ToArray();
