@@ -26,7 +26,6 @@ using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
-using Nitrocid.ShellPacks.Commands;
 using Nitrocid.ShellPacks.Settings;
 using Nitrocid.ShellPacks.Shells.Archive;
 using Nitrocid.ShellPacks.Shells.FTP;
@@ -42,6 +41,14 @@ using System.Linq;
 using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.ShellPacks.Shells.RSS.Widgets;
 using SpecProbe.Software.Platform;
+using Nitrocid.ShellPacks.Shells.Archive.UESHCommands;
+using Nitrocid.ShellPacks.Shells.FTP.UESHCommands;
+using Nitrocid.ShellPacks.Shells.Git.UESHCommands;
+using Nitrocid.ShellPacks.Shells.Json.UESHCommands;
+using Nitrocid.ShellPacks.Shells.Mail.UESHCommands;
+using Nitrocid.ShellPacks.Shells.RSS.UESHCommands;
+using Nitrocid.ShellPacks.Shells.SFTP.UESHCommands;
+using Nitrocid.ShellPacks.Shells.HTTP.UESHCommands;
 
 namespace Nitrocid.ShellPacks
 {

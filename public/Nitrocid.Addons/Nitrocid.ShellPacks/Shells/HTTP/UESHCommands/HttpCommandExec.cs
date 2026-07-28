@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid
@@ -17,30 +17,30 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using FluentFTP;
+using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Connections;
-using Nitrocid.Base.Network.SpeedDial;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using System;
-using Nitrocid.ShellPacks.Shells.FTP.Tools;
+using Nitrocid.Base.Network.Transfer;
+using Terminaux.Reader;
 
-namespace Nitrocid.ShellPacks.Commands
+namespace Nitrocid.ShellPacks.Shells.HTTP.UESHCommands
 {
-    internal class FtpCommandExec : BaseCommand, ICommand
+    internal class HttpCommandExec : BaseCommand, ICommand
     {
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            NetworkConnectionTools.OpenConnectionForShell("FTPShell", FTPTools.TryToConnect, EstablishFtpConnection, parameters.ArgumentsText);
+            NetworkConnectionTools.OpenConnectionForShell("HTTPShell", EstablishHttpConnection, (_, connection) =>
+            EstablishHttpConnection(connection.Address), parameters.ArgumentsText);
             return 0;
         }
 
-        private NetworkConnection? EstablishFtpConnection(string address, SpeedDialEntry connection)
+        private NetworkConnection EstablishHttpConnection(string address)
         {
-            var options = connection.Options;
-            var encMode = options.TryGetValue(nameof(FtpEncryptionMode), out object? value) ? Enum.Parse<FtpEncryptionMode>(value.ToString() ?? "") : FtpEncryptionMode.Auto;
-            return FTPTools.PromptForPassword(null, connection.Username, address, connection.Port, encMode);
+            if (string.IsNullOrEmpty(address))
+                address = TermReader.Read(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT") + " ");
+            return NetworkConnectionTools.EstablishConnection("HTTP connection", address, NetworkConnectionType.HTTP, NetworkTransfer.HttpClientNew);
         }
 
     }

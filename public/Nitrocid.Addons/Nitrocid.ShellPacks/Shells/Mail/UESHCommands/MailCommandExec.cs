@@ -17,21 +17,29 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Files;
+using Nitrocid.Base.Network.Connections;
+using Nitrocid.Base.Network.SpeedDial;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Nitrocid.ShellPacks.Shells.Mail.Tools;
 
-namespace Nitrocid.ShellPacks.Commands
+namespace Nitrocid.ShellPacks.Shells.Mail.UESHCommands
 {
-    internal class GitCommandExec : BaseCommand, ICommand
+    internal class MailCommandExec : BaseCommand, ICommand
     {
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            string path = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
-            ShellManager.StartShell("GitShell", path);
+            NetworkConnectionTools.OpenConnectionForShell("MailShell", EstablishMailConnection, (_, connection) =>
+            EstablishMailConnectionSpeedDial(connection), parameters.ArgumentsText);
             return 0;
         }
+
+        private NetworkConnection? EstablishMailConnection(string username) =>
+            string.IsNullOrEmpty(username) ? MailLogin.PromptUser() : MailLogin.PromptPassword(username);
+
+        private NetworkConnection? EstablishMailConnectionSpeedDial(SpeedDialEntry connection) =>
+            MailLogin.PromptPassword(connection.Username);
 
     }
 }

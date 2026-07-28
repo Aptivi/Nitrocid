@@ -26,7 +26,7 @@ using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 
-namespace Nitrocid.ShellPacks.Commands
+namespace Nitrocid.ShellPacks.Shells.Archive.UESHCommands
 {
     /// <summary>
     /// Opens an archive file to the archive shell

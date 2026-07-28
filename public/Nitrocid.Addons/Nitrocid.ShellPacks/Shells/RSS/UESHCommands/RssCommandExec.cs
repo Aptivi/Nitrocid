@@ -30,7 +30,7 @@ using Nitrocid.Base.Network.Connections;
 using Terminaux.Reader;
 using Nitrocid.ShellPacks.Shells.RSS.Tools;
 
-namespace Nitrocid.ShellPacks.Commands
+namespace Nitrocid.ShellPacks.Shells.RSS.UESHCommands
 {
     internal class RssCommandExec : BaseCommand, ICommand
     {

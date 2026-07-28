@@ -27,7 +27,7 @@ using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 
-namespace Nitrocid.ShellPacks.Commands
+namespace Nitrocid.ShellPacks.Shells.Mail.UESHCommands
 {
     internal class PopMailCommandExec : BaseCommand, ICommand
     {

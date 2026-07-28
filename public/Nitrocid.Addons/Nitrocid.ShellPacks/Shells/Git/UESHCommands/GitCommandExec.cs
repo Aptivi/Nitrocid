@@ -17,30 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Textify.Tools;
 
-namespace Nitrocid.ShellPacks.Commands
+namespace Nitrocid.ShellPacks.Shells.Git.UESHCommands
 {
-    /// <summary>
-    /// Shows a difference between two JSON files
-    /// </summary>
-    class JsonDiffCommand : BaseCommand, ICommand
+    internal class GitCommandExec : BaseCommand, ICommand
     {
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var source = JToken.Parse(FilesystemTools.ReadContentsText(parameters.ArgumentsList[0]));
-            var target = JToken.Parse(FilesystemTools.ReadContentsText(parameters.ArgumentsList[1]));
-            var diff = JsonTools.FindDifferences(source, target);
-            TextWriterColor.Write(diff.ToString(Formatting.Indented), ThemeColorType.NeutralText);
+            string path = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
+            ShellManager.StartShell("GitShell", path);
             return 0;
         }
+
     }
 }

@@ -23,7 +23,7 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace Nitrocid.ShellPacks.Commands
+namespace Nitrocid.ShellPacks.Shells.Mail.UESHCommands
 {
     /// <summary>
     /// Gets an ISP info

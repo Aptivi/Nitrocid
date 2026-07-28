@@ -17,28 +17,30 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Network.Connections;
-using Nitrocid.Base.Network.SpeedDial;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.ShellPacks.Shells.SFTP.Tools;
+using Textify.Tools;
 
-namespace Nitrocid.ShellPacks.Commands
+namespace Nitrocid.ShellPacks.Shells.Json.UESHCommands
 {
-    internal class SftpCommandExec : BaseCommand, ICommand
+    /// <summary>
+    /// Shows a difference between two JSON files
+    /// </summary>
+    class JsonDiffCommand : BaseCommand, ICommand
     {
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            NetworkConnectionTools.OpenConnectionForShell("SFTPShell", SFTPTools.SFTPTryToConnect, EstablishSftpConnection, parameters.ArgumentsText);
+            var source = JToken.Parse(FilesystemTools.ReadContentsText(parameters.ArgumentsList[0]));
+            var target = JToken.Parse(FilesystemTools.ReadContentsText(parameters.ArgumentsList[1]));
+            var diff = JsonTools.FindDifferences(source, target);
+            TextWriterColor.Write(diff.ToString(Formatting.Indented), ThemeColorType.NeutralText);
             return 0;
         }
-
-        private NetworkConnection EstablishSftpConnection(string address, SpeedDialEntry connection)
-        {
-            var info = SFTPTools.GetConnectionInfo(address, connection.Port, connection.Username);
-            return SFTPTools.ConnectSFTP(info);
-        }
-
     }
 }

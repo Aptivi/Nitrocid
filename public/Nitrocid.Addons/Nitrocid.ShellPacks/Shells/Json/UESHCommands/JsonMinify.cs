@@ -26,7 +26,7 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Textify.Tools;
 
-namespace Nitrocid.ShellPacks.Commands
+namespace Nitrocid.ShellPacks.Shells.Json.UESHCommands
 {
     /// <summary>
     /// Minifies a JSON file
