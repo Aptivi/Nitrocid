@@ -23,7 +23,6 @@ using Terminaux.Shell.Commands;
 using System;
 using System.Linq;
 using Textify.General;
-using Nitrocid.Base.Files.Editors.TextEdit;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
@@ -43,18 +42,20 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var textShell = (TextShell?)shell ??
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             if (parameters.ArgumentsList.Length == 2)
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= textShell.FileLines.Count)
                     {
                         int LineIndex = Convert.ToInt32(parameters.ArgumentsList[1]);
-                        var QueriedChars = TextEditTools.QueryChar(Convert.ToChar(parameters.ArgumentsList[0]), LineIndex);
+                        var QueriedChars = textShell.QueryChar(Convert.ToChar(parameters.ArgumentsList[0]), LineIndex);
                         TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineIndex);
 
                         // Process the output
-                        string text = TextEditShellCommon.FileLines[LineIndex - 1];
+                        string text = textShell.FileLines[LineIndex - 1];
                         for (int charIndex = 0; charIndex < text.Length; charIndex++)
                         {
                             char Character = text[charIndex];
@@ -71,14 +72,14 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                 }
                 else if (parameters.ArgumentsList[1].Equals("all", StringComparison.OrdinalIgnoreCase))
                 {
-                    var QueriedChars = TextEditTools.QueryChar(Convert.ToChar(parameters.ArgumentsList[0]));
+                    var QueriedChars = textShell.QueryChar(Convert.ToChar(parameters.ArgumentsList[0]));
                     foreach (var QueriedChar in QueriedChars)
                     {
                         int LineIndex = QueriedChar.Item1;
                         TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineIndex + 1);
 
                         // Process the output
-                        string text = TextEditShellCommon.FileLines[LineIndex];
+                        string text = textShell.FileLines[LineIndex];
                         var queried = QueriedChar.Item2;
                         for (int charIndex = 0; charIndex < text.Length; charIndex++)
                         {
@@ -94,19 +95,19 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]) & TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= textShell.FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[2]) <= textShell.FileLines.Count)
                     {
                         int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[1]);
                         int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[2]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
-                            var QueriedChars = TextEditTools.QueryChar(Convert.ToChar(parameters.ArgumentsList[0]), LineNumber);
+                            var QueriedChars = textShell.QueryChar(Convert.ToChar(parameters.ArgumentsList[0]), LineNumber);
                             int LineIndex = LineNumber - 1;
                             TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineNumber);
 
                             // Process the output
-                            string text = TextEditShellCommon.FileLines[LineIndex];
+                            string text = textShell.FileLines[LineIndex];
                             for (int charIndex = 0; charIndex < text.Length; charIndex++)
                             {
                                 char Character = text[charIndex];

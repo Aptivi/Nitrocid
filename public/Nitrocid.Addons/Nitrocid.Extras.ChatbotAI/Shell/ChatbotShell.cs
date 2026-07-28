@@ -35,6 +35,13 @@ namespace Nitrocid.Extras.ChatbotAI.Shell
     /// </summary>
     public class ChatbotShell : BaseShell, IShell
     {
+        internal NetworkConnection? clientConnection;
+
+        /// <summary>
+        /// The chat client used to connect to ChatGPT
+        /// </summary>
+        public NetworkConnection? ClientChat =>
+            clientConnection;
 
         /// <inheritdoc/>
         public override string ShellType => "ChatbotShell";
@@ -52,7 +59,7 @@ namespace Nitrocid.Extras.ChatbotAI.Shell
 
             // Finalize current connection
             NetworkConnection chatbotConnection = (NetworkConnection)ShellArgs[0];
-            ChatbotShellCommon.clientConnection = chatbotConnection;
+            clientConnection = chatbotConnection;
 
             // Actual shell logic
             while (!Bail)
@@ -82,9 +89,8 @@ namespace Nitrocid.Extras.ChatbotAI.Shell
                     DebugWriter.WriteDebug(DebugLevel.W, "Exiting shell...");
                     if (!detaching)
                     {
-                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(ChatbotShellCommon.clientConnection);
+                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(clientConnection);
                         NetworkConnectionTools.CloseConnection(connectionIndex);
-                        ChatbotShellCommon.clientConnection = null;
                     }
                     detaching = false;
                 }

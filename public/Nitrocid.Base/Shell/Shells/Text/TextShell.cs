@@ -18,23 +18,42 @@
 //
 
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Threading;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
-using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Files.Editors.TextEdit;
+using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Terminaux.Inputs;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Threadify.Manager;
 
 namespace Nitrocid.Base.Shell.Shells.Text
 {
     /// <summary>
     /// The text editor shell
     /// </summary>
-    public class TextShell : BaseShell, IShell
+    public partial class TextShell : BaseShell, IShell
     {
+        internal List<string> fileLines = [];
+        internal FileStream? fileStream;
+        internal List<string> FileLinesOrig = [];
+        internal ThreadInstance AutoSave = new("Text Edit Autosave Thread", false, new ParameterizedThreadStart((shell) => HandleAutoSaveTextFile((TextShell?)shell)));
+
+        /// <summary>
+        /// File lines for text editor
+        /// </summary>
+        public List<string> FileLines =>
+            fileLines;
+
+        /// <summary>
+        /// File stream for text editor
+        /// </summary>
+        public FileStream? FileStream =>
+            fileStream;
 
         /// <inheritdoc/>
         public override string ShellType => "TextShell";
@@ -63,15 +82,15 @@ namespace Nitrocid.Base.Shell.Shells.Text
             }
 
             // Open file if not open
-            if (TextEditShellCommon.FileStream is null)
+            if (FileStream is null)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", vars: [FilePath]);
-                if (!TextEditTools.OpenTextFile(FilePath))
+                if (!OpenTextFile(FilePath))
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEXTEXT_CANTOPEN"), true, ThemeColorType.Error);
                     Bail = true;
                 }
-                TextEditShellCommon.AutoSave.Start();
+                AutoSave.Start(this);
             }
 
             // Actual shell logic
@@ -98,8 +117,8 @@ namespace Nitrocid.Base.Shell.Shells.Text
             }
 
             // Close file
-            TextEditTools.CloseTextFile();
-            TextEditShellCommon.AutoSave.Stop();
+            CloseTextFile();
+            AutoSave.Stop();
         }
 
     }

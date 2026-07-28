@@ -20,7 +20,6 @@
 using System.Text;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Nitrocid.ShellPacks.Shells.Mail.Tools;
 using Terminaux.Base.Extensions;
 using Terminaux.Shell.Prompts;
 using Terminaux.Shell.Shells;

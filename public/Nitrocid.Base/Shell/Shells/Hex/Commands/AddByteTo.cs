@@ -24,7 +24,6 @@ using Terminaux.Shell.Commands;
 using Textify.General;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Files.Editors.HexEdit;
 using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Shell.Shells;
 
@@ -41,14 +40,16 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var hexShell = (HexShell?)shell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             byte ByteContent = Convert.ToByte(parameters.ArgumentsList[0], 16);
             if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
             {
-                var FileBytes = HexEditShellCommon.FileBytes ??
+                var FileBytes = hexShell.FileBytes ??
                     throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
                 if (Convert.ToInt32(parameters.ArgumentsList[1]) <= FileBytes.LongLength)
                 {
-                    HexEditTools.AddNewByte(ByteContent, Convert.ToInt64(parameters.ArgumentsList[1]));
+                    hexShell.AddNewByte(ByteContent, Convert.ToInt64(parameters.ArgumentsList[1]));
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_DELBYTE_SUCCESS"), true, ThemeColorType.Success);
                     return 0;
                 }

@@ -17,14 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Collections.Generic;
 using Colorimetry;
-using Terminaux.Shell.Prompts;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Themes.Colors;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Base.Extensions;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.Base.Shell.Shells.Text.Presets
 {
@@ -58,10 +61,13 @@ namespace Nitrocid.Base.Shell.Shells.Text.Presets
 
         private string PresetPromptBuilder()
         {
+            var textShell = (TextShell?)ShellManager.CurrentShell ??
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // PowerLine presets
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), Path.GetFileName(TextEditShellCommon.FileStream?.Name) ?? "???")
+                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), Path.GetFileName(textShell.FileStream?.Name) ?? "???")
             ];
 
             // Builder

@@ -41,15 +41,17 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var textShell = (TextShell?)shell ??
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
             {
                 int lineNum = Convert.ToInt32(parameters.ArgumentsList[0]);
-                if (lineNum <= TextEditShellCommon.FileLines.Count)
+                if (lineNum <= textShell.FileLines.Count)
                 {
-                    string OriginalLine = TextEditShellCommon.FileLines[lineNum - 1];
+                    string OriginalLine = textShell.FileLines[lineNum - 1];
                     TextWriterColor.Write(">> ", false, ThemeColorType.Input);
                     string EditedLine = TermReader.Read("", OriginalLine);
-                    TextEditShellCommon.FileLines[lineNum - 1] = EditedLine;
+                    textShell.FileLines[lineNum - 1] = EditedLine;
                     return 0;
                 }
                 else

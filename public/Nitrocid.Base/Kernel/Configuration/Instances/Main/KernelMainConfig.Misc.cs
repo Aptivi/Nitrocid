@@ -17,12 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Newtonsoft.Json;
 using Nitrocid.Base.Kernel.ConsoleBase;
 using Nitrocid.Base.Kernel.Threading.Performance;
 using Nitrocid.Base.Misc.Notifications;
-using Nitrocid.Base.Shell.Shells.Hex;
-using Nitrocid.Base.Shell.Shells.Text;
 using Terminaux.Inputs;
 using Terminaux.Reader;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
@@ -35,8 +32,9 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
     /// </summary>
     public partial class KernelMainConfig : BaseKernelConfig
     {
-        [JsonIgnore]
         private string defaultFigletFontName = "speed";
+        private int textAutoSaveInterval = 60;
+        private int hexAutoSaveInterval = 60;
 
         /// <summary>
         /// Enables eyecandy on startup
@@ -55,8 +53,8 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// </summary>
         public int TextEditAutoSaveInterval
         {
-            get => TextEditShellCommon.autoSaveInterval;
-            set => TextEditShellCommon.autoSaveInterval = value < 0 ? 60 : value;
+            get => textAutoSaveInterval;
+            set => textAutoSaveInterval = value < 0 ? 60 : value;
         }
         /// <summary>
         /// Turns on or off the hex editor autosave feature
@@ -67,8 +65,8 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// </summary>
         public int HexEditAutoSaveInterval
         {
-            get => HexEditShellCommon.autoSaveInterval;
-            set => HexEditShellCommon.autoSaveInterval = value < 0 ? 60 : value;
+            get => hexAutoSaveInterval;
+            set => hexAutoSaveInterval = value < 0 ? 60 : value;
         }
         /// <summary>
         /// Covers the notification with the border

@@ -17,13 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Text;
 using System.Collections.Generic;
+using System.Text;
 using Colorimetry;
-using Terminaux.Shell.Prompts;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Themes.Colors;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Base.Extensions;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Presets
 {
@@ -57,10 +60,13 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Presets
 
         private string PresetPromptBuilder()
         {
+            var hexShell = (HexShell?)ShellManager.CurrentShell ??
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // Segments
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), HexEditShellCommon.FileStream?.Name ?? "???")
+                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), hexShell.FileStream?.Name ?? "???")
             ];
 
             // Builder

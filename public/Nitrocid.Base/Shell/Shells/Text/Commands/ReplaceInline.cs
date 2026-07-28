@@ -23,7 +23,6 @@ using Terminaux.Shell.Commands;
 using System;
 using Textify.General;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Files.Editors.TextEdit;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
@@ -42,13 +41,15 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var textShell = (TextShell?)shell ??
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             if (parameters.ArgumentsList.Length == 3)
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[2]) <= textShell.FileLines.Count)
                     {
-                        TextEditTools.Replace(parameters.ArgumentsList[0], parameters.ArgumentsList[1], Convert.ToInt32(parameters.ArgumentsList[2]));
+                        textShell.Replace(parameters.ArgumentsList[0], parameters.ArgumentsList[1], Convert.ToInt32(parameters.ArgumentsList[2]));
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_REPLACE_SUCCESS"), true, ThemeColorType.Success);
                         return 0;
                     }
@@ -69,14 +70,14 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[2]) & TextTools.IsStringNumeric(parameters.ArgumentsList[3]))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[3]) <= TextEditShellCommon.FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[2]) <= textShell.FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[3]) <= textShell.FileLines.Count)
                     {
                         int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[2]);
                         int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[3]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
-                            TextEditTools.Replace(parameters.ArgumentsList[0], parameters.ArgumentsList[1], LineNumber);
+                            textShell.Replace(parameters.ArgumentsList[0], parameters.ArgumentsList[1], LineNumber);
                             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_REPLACEINLINE_SUCCESSINLINE"), true, ThemeColorType.Success, LineNumber);
                         }
                         return 0;

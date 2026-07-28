@@ -19,10 +19,13 @@
 
 using System.IO;
 using System.Text;
-using Terminaux.Themes.Colors;
-using Terminaux.Shell.Prompts;
 using Nitrocid.Base.Files.Editors.HexEdit;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Base.Extensions;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Presets
 {
@@ -48,6 +51,9 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Presets
 
         private string PresetPromptBuilder()
         {
+            var hexShell = (HexShell?)ShellManager.CurrentShell ??
+                throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // Build the preset
             var PresetStringBuilder = new StringBuilder();
 
@@ -57,11 +63,11 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Presets
 
             // File name
             PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground());
-            PresetStringBuilder.AppendFormat(Path.GetFileName(HexEditShellCommon.FileStream?.Name ?? "???"));
+            PresetStringBuilder.AppendFormat(Path.GetFileName(hexShell.FileStream?.Name ?? "???"));
 
             // Was file edited?
             PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground());
-            PresetStringBuilder.AppendFormat("{0}", HexEditTools.WasHexEdited() ? "*" : "");
+            PresetStringBuilder.AppendFormat("{0}", hexShell.WasHexEdited() ? "*" : "");
 
             // Closing
             PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());

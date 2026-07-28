@@ -25,7 +25,6 @@ using Textify.General;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Files.Editors.HexEdit;
 using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Shell.Shells;
 
@@ -42,7 +41,9 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var FileBytes = HexEditShellCommon.FileBytes ??
+            var hexShell = (HexShell?)shell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            var FileBytes = hexShell.FileBytes ??
                 throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
             if (parameters.ArgumentsList.Length == 1)
             {
@@ -50,7 +51,7 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
                 {
                     if (Convert.ToInt64(parameters.ArgumentsList[0]) <= FileBytes.LongLength)
                     {
-                        HexEditTools.DeleteBytes(Convert.ToInt64(parameters.ArgumentsList[0]));
+                        hexShell.DeleteBytes(Convert.ToInt64(parameters.ArgumentsList[0]));
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_DELBYTES_SUCCESS"), true, ThemeColorType.Success);
                         return 0;
                     }
@@ -71,12 +72,12 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]) & TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
                 {
-                    if (Convert.ToInt64(parameters.ArgumentsList[0]) <= FileBytes.LongLength & Convert.ToInt64(parameters.ArgumentsList[1]) <= HexEditShellCommon.FileBytes.LongLength)
+                    if (Convert.ToInt64(parameters.ArgumentsList[0]) <= FileBytes.LongLength & Convert.ToInt64(parameters.ArgumentsList[1]) <= hexShell.FileBytes.LongLength)
                     {
                         long ByteNumberStart = Convert.ToInt64(parameters.ArgumentsList[0]);
                         long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[1]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
-                        HexEditTools.DeleteBytes(ByteNumberStart, ByteNumberEnd);
+                        hexShell.DeleteBytes(ByteNumberStart, ByteNumberEnd);
                         return 0;
                     }
                     else

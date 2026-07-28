@@ -23,7 +23,6 @@ using Terminaux.Shell.Commands;
 using System;
 using Textify.General;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Files.Editors.TextEdit;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Shell.Shells;
@@ -41,11 +40,13 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var textShell = (TextShell?)shell ??
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]) & TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
             {
-                if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.FileLines.Count)
+                if (Convert.ToInt32(parameters.ArgumentsList[1]) <= textShell.FileLines.Count)
                 {
-                    TextEditTools.DeleteChar(Convert.ToInt32(parameters.ArgumentsList[0]), Convert.ToInt32(parameters.ArgumentsList[1]));
+                    textShell.DeleteChar(Convert.ToInt32(parameters.ArgumentsList[0]), Convert.ToInt32(parameters.ArgumentsList[1]));
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS"), true, ThemeColorType.Success);
                     return 0;
                 }

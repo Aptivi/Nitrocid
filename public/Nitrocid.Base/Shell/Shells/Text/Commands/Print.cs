@@ -41,6 +41,8 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var textShell = (TextShell?)shell ??
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             int LineNumber = 1;
             if (parameters.ArgumentsList.Length > 0)
             {
@@ -52,10 +54,10 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                     if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
                     {
                         LineNumber = Convert.ToInt32(parameters.ArgumentsList[0]);
-                        DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [TextEditShellCommon.FileLines.Count]);
-                        if (Convert.ToInt32(parameters.ArgumentsList[0]) <= TextEditShellCommon.FileLines.Count)
+                        DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [textShell.FileLines.Count]);
+                        if (Convert.ToInt32(parameters.ArgumentsList[0]) <= textShell.FileLines.Count)
                         {
-                            string Line = TextEditShellCommon.FileLines[LineNumber - 1];
+                            string Line = textShell.FileLines[LineNumber - 1];
                             DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", vars: [LineNumber, Line]);
                             TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineNumber);
                             TextWriterColor.Write(Line, true, ThemeColorType.ListValue);
@@ -84,12 +86,12 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                         int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[0]);
                         int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[1]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
-                        DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [TextEditShellCommon.FileLines.Count]);
-                        if (LineNumberStart <= TextEditShellCommon.FileLines.Count & LineNumberEnd <= TextEditShellCommon.FileLines.Count)
+                        DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [textShell.FileLines.Count]);
+                        if (LineNumberStart <= textShell.FileLines.Count & LineNumberEnd <= textShell.FileLines.Count)
                         {
                             for (LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                             {
-                                string Line = TextEditShellCommon.FileLines[LineNumber - 1];
+                                string Line = textShell.FileLines[LineNumber - 1];
                                 DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", vars: [LineNumber, Line]);
                                 TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineNumber);
                                 TextWriterColor.Write(Line, true, ThemeColorType.ListValue);
@@ -112,7 +114,7 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
             }
             else
             {
-                foreach (string Line in TextEditShellCommon.FileLines)
+                foreach (string Line in textShell.FileLines)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", vars: [LineNumber, Line]);
                     TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineNumber);

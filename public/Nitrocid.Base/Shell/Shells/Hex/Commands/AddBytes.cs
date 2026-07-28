@@ -18,13 +18,13 @@
 //
 
 using System.Collections.Generic;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Reader;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Files.Editors.HexEdit;
-using Terminaux.Reader;
-using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 {
@@ -39,6 +39,8 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var hexShell = (HexShell?)shell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             var FinalBytes = new List<byte>();
             string FinalByte = "";
 
@@ -62,7 +64,7 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
             }
 
             // Add the new bytes
-            HexEditTools.AddNewBytes([.. FinalBytes]);
+            hexShell.AddNewBytes([.. FinalBytes]);
             return 0;
         }
 

@@ -22,7 +22,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using System;
 using Textify.General;
-using Nitrocid.Base.Files.Editors.TextEdit;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
@@ -42,18 +41,20 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var textShell = (TextShell?)shell ??
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             if (parameters.ArgumentsList.Length == 2)
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= textShell.FileLines.Count)
                     {
                         int LineIndex = Convert.ToInt32(parameters.ArgumentsList[1]);
-                        var QueriedChars = TextEditTools.QueryWordRegex(parameters.ArgumentsList[0], LineIndex);
+                        var QueriedChars = textShell.QueryWordRegex(parameters.ArgumentsList[0], LineIndex);
                         TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineIndex);
 
                         // Process the output
-                        string text = TextEditShellCommon.FileLines[LineIndex - 1];
+                        string text = textShell.FileLines[LineIndex - 1];
                         var Words = text.Split(' ');
                         for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                         {
@@ -71,15 +72,15 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                 }
                 else if (parameters.ArgumentsList[1].Equals("all", StringComparison.OrdinalIgnoreCase))
                 {
-                    var QueriedWords = TextEditTools.QueryWordRegex(parameters.ArgumentsList[0]);
+                    var QueriedWords = textShell.QueryWordRegex(parameters.ArgumentsList[0]);
                     foreach (var QueriedWord in QueriedWords)
                     {
                         int LineIndex = QueriedWord.Item1;
-                        var QueriedChars = TextEditTools.QueryWordRegex(parameters.ArgumentsList[0], LineIndex + 1);
+                        var QueriedChars = textShell.QueryWordRegex(parameters.ArgumentsList[0], LineIndex + 1);
                         TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineIndex + 1);
 
                         // Process the output
-                        string text = TextEditShellCommon.FileLines[LineIndex];
+                        string text = textShell.FileLines[LineIndex];
                         var Words = text.Split(' ');
                         for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                         {
@@ -95,19 +96,19 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]) & TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= textShell.FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[2]) <= textShell.FileLines.Count)
                     {
                         int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[1]);
                         int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[2]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
-                            var QueriedChars = TextEditTools.QueryWordRegex(parameters.ArgumentsList[0], LineNumber);
+                            var QueriedChars = textShell.QueryWordRegex(parameters.ArgumentsList[0], LineNumber);
                             int LineIndex = LineNumber - 1;
                             TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineIndex);
 
                             // Process the output
-                            string text = TextEditShellCommon.FileLines[LineIndex];
+                            string text = textShell.FileLines[LineIndex];
                             var Words = text.Split(' ');
                             for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                             {

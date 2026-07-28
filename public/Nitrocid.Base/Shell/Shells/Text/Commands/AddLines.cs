@@ -18,13 +18,13 @@
 //
 
 using System.Collections.Generic;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.Files.Editors.TextEdit;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Reader;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.Text.Commands
 {
@@ -39,6 +39,8 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var textShell = (TextShell?)shell ??
+                throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             var FinalLines = new List<string>();
             string FinalLine = "";
 
@@ -55,7 +57,7 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
             }
 
             // Add the new lines
-            TextEditTools.AddNewLines([.. FinalLines]);
+            textShell.AddNewLines([.. FinalLines]);
             return 0;
         }
 

@@ -18,24 +18,29 @@
 //
 
 using System;
+using System.IO;
 using System.Threading;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
-using Textify.General;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Files.Editors.HexEdit;
 using Terminaux.Inputs;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
+using Threadify.Manager;
 
 namespace Nitrocid.Base.Shell.Shells.Hex
 {
     /// <summary>
     /// The hex editor class
     /// </summary>
-    public class HexShell : BaseShell, IShell
+    public partial class HexShell : BaseShell, IShell
     {
+        internal byte[]? FileBytesOrig;
+        internal FileStream? FileStream;
+        internal byte[]? FileBytes;
+        internal ThreadInstance AutoSave = new("Hex Edit Autosave Thread", false, new ParameterizedThreadStart((shell) => HandleAutoSaveBinaryFile((HexShell?)shell)));
 
         /// <inheritdoc/>
         public override string ShellType => "HexShell";
@@ -68,15 +73,15 @@ namespace Nitrocid.Base.Shell.Shells.Hex
                 , true, ThemeColorType.Warning);
 
             // Open file if not open
-            if (HexEditShellCommon.FileStream is null)
+            if (FileStream is null)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", vars: [FilePath]);
-                if (!HexEditTools.OpenBinaryFile(FilePath))
+                if (!OpenBinaryFile(FilePath))
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEXTEXT_CANTOPEN"), true, ThemeColorType.Error);
                     Bail = true;
                 }
-                HexEditShellCommon.AutoSave.Start();
+                AutoSave.Start(this);
             }
 
             // Actual shell logic
@@ -103,8 +108,8 @@ namespace Nitrocid.Base.Shell.Shells.Hex
             }
 
             // Close file
-            HexEditTools.CloseBinaryFile();
-            HexEditShellCommon.AutoSave.Stop();
+            CloseBinaryFile();
+            AutoSave.Stop();
         }
 
     }

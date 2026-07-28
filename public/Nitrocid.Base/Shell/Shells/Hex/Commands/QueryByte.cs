@@ -24,7 +24,6 @@ using Terminaux.Shell.Commands;
 using Textify.General;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Files.Editors.HexEdit;
 using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Shell.Shells;
 
@@ -41,12 +40,14 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var FileBytes = HexEditShellCommon.FileBytes ??
+            var hexShell = (HexShell?)shell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            var FileBytes = hexShell.FileBytes ??
                 throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
             if (parameters.ArgumentsList.Length == 1)
             {
                 byte ByteContent = Convert.ToByte(parameters.ArgumentsList[0], 16);
-                HexEditTools.QueryByteAndDisplay(ByteContent);
+                hexShell.QueryByteAndDisplay(ByteContent);
                 return 0;
             }
             else if (parameters.ArgumentsList.Length == 2)
@@ -56,7 +57,7 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
                     if (Convert.ToInt64(parameters.ArgumentsList[1]) <= FileBytes.LongLength)
                     {
                         byte ByteContent = Convert.ToByte(parameters.ArgumentsList[0], 16);
-                        HexEditTools.QueryByteAndDisplay(ByteContent, Convert.ToInt64(parameters.ArgumentsList[1]));
+                        hexShell.QueryByteAndDisplay(ByteContent, Convert.ToInt64(parameters.ArgumentsList[1]));
                         return 0;
                     }
                     else
@@ -70,13 +71,13 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]) & TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
                 {
-                    if (Convert.ToInt64(parameters.ArgumentsList[1]) <= FileBytes.LongLength & Convert.ToInt64(parameters.ArgumentsList[2]) <= HexEditShellCommon.FileBytes.LongLength)
+                    if (Convert.ToInt64(parameters.ArgumentsList[1]) <= FileBytes.LongLength & Convert.ToInt64(parameters.ArgumentsList[2]) <= hexShell.FileBytes.LongLength)
                     {
                         byte ByteContent = Convert.ToByte(parameters.ArgumentsList[0], 16);
                         long ByteNumberStart = Convert.ToInt64(parameters.ArgumentsList[1]);
                         long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[2]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
-                        HexEditTools.QueryByteAndDisplay(ByteContent, ByteNumberStart, ByteNumberEnd);
+                        hexShell.QueryByteAndDisplay(ByteContent, ByteNumberStart, ByteNumberEnd);
                         return 0;
                     }
                     else

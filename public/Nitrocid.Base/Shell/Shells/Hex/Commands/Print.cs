@@ -25,7 +25,6 @@ using Textify.General;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Files.Editors.HexEdit;
 using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Shell.Shells;
 
@@ -42,6 +41,8 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var hexShell = (HexShell?)shell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             long ByteNumber;
             if (parameters.ArgumentsList.Length > 0)
             {
@@ -53,7 +54,7 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
                     if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
                     {
                         ByteNumber = Convert.ToInt64(parameters.ArgumentsList[0]);
-                        HexEditTools.DisplayHex(ByteNumber);
+                        hexShell.DisplayHex(ByteNumber);
                         return 0;
                     }
                     else
@@ -73,7 +74,7 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
                         long ByteNumberStart = Convert.ToInt64(parameters.ArgumentsList[0]);
                         long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[1]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
-                        HexEditTools.DisplayHex(ByteNumberStart, ByteNumberEnd);
+                        hexShell.DisplayHex(ByteNumberStart, ByteNumberEnd);
                         return 0;
                     }
                     else
@@ -86,7 +87,7 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
             }
             else
             {
-                HexEditTools.DisplayHex();
+                hexShell.DisplayHex();
                 return 0;
             }
         }

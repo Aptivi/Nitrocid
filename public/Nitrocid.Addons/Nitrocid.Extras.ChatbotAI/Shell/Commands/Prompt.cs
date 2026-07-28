@@ -35,8 +35,11 @@ namespace Nitrocid.Extras.ChatbotAI.Shell.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var chatbotShell = (ChatbotShell?)shell ??
+                throw new KernelException(KernelExceptionType.ChatbotAI, LanguageTools.GetLocalized("NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // Try to get the chat client
-            ChatClient? clientChat = (ChatClient?)ChatbotShellCommon.ClientChat?.ConnectionInstance ??
+            ChatClient? clientChat = (ChatClient?)chatbotShell.ClientChat?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.ChatbotAI, LanguageTools.GetLocalized("NKS_CHATBOTAI_EXCEPTION_NOCLIENT"));
 
             // Now, use streaming to generate a response
