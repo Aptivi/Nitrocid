@@ -19,13 +19,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
 using Nettify.Rss.Instance;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.ShellPacks.Shells.RSS.Interactive;
 using Terminaux.Inputs.Interactive;
 
@@ -34,7 +31,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Tools
     /// <summary>
     /// RSS tools module
     /// </summary>
-    public static class RSSShellTools
+    public static class RSSTools
     {
         /// <summary>
         /// Gets the first article
@@ -90,16 +87,15 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Tools
         /// <summary>
         /// Searches for articles
         /// </summary>
+        /// <param name="feedArticles">Feed articles to search within the list</param>
         /// <param name="phrase">Phrase to look for</param>
         /// <param name="searchTitle">Whether to search the title or not</param>
         /// <param name="searchDescription">Whether to search the description or not</param>
         /// <param name="caseSensitive">Case sensitivity</param>
         /// <returns>List of articles containing the phrase</returns>
-        public static List<RSSArticle> SearchArticles(string phrase, bool searchTitle = true, bool searchDescription = false, bool caseSensitive = false)
+        public static List<RSSArticle> SearchArticles(RSSArticle[] feedArticles, string phrase, bool searchTitle = true, bool searchDescription = false, bool caseSensitive = false)
         {
-            var articles = RSSShellCommon.RSSFeedInstance?.FeedArticles ?? [];
             var foundArticles = new List<RSSArticle>();
-            var feedArticles = articles;
 
             // If not searching title and description, assume that we're searching for title
             if (!searchTitle && !searchDescription)
@@ -161,47 +157,6 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Tools
 
             // Open the TUI
             InteractiveTuiTools.OpenInteractiveTui(tui);
-        }
-
-        /// <summary>
-        /// Refreshes the feeds
-        /// </summary>
-        internal static void RefreshFeeds()
-        {
-            try
-            {
-                var articles = RSSShellCommon.RSSFeedInstance?.FeedArticles ?? [];
-                var OldFeedsList = new List<RSSArticle>(articles);
-                List<RSSArticle> NewFeedsList;
-                while (RSSShellCommon.RSSFeedInstance is not null)
-                {
-                    if (RSSShellCommon.RSSFeedInstance is not null)
-                    {
-                        // Refresh the feed
-                        RSSShellCommon.RSSFeedInstance.Refresh();
-
-                        // Check for new feeds
-                        NewFeedsList = articles.Except(OldFeedsList).ToList();
-                        string OldFeedTitle = OldFeedsList.Count == 0 ? "" : OldFeedsList[0].ArticleTitle;
-                        if (NewFeedsList.Count > 0 && NewFeedsList[0].ArticleTitle != OldFeedTitle)
-                        {
-                            // Update the list
-                            DebugWriter.WriteDebug(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", vars: [articles.Length, OldFeedsList.Count]);
-                            OldFeedsList = new List<RSSArticle>(articles);
-                            foreach (RSSArticle NewFeed in NewFeedsList)
-                            {
-                                var FeedNotif = new Notification(NewFeed.ArticleTitle, NewFeed.ArticleDescription, NotificationPriority.Low, NotificationType.Normal);
-                                NotificationManager.NotifySend(FeedNotif);
-                            }
-                        }
-                    }
-                    Thread.Sleep(ShellsInit.ShellsConfig.RSSRefreshInterval);
-                }
-            }
-            catch (ThreadInterruptedException)
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Aborting refresher...");
-            }
         }
     }
 }

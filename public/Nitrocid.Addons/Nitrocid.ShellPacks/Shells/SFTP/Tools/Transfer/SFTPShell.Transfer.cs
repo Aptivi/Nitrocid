@@ -24,13 +24,14 @@ using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Renci.SshNet;
+using Terminaux.Shell.Shells;
 
-namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Transfer
+namespace Nitrocid.ShellPacks.Shells.SFTP
 {
     /// <summary>
     /// SFTP transfer module
     /// </summary>
-    public static class SFTPTransfer
+    public partial class SFTPShell : BaseShell, IShell
     {
 
         /// <summary>
@@ -38,7 +39,8 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Transfer
         /// </summary>
         /// <param name="File">A remote file</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool SFTPGetFile(string File) => SFTPGetFile(File, File);
+        public bool SFTPGetFile(string File) =>
+            SFTPGetFile(File, File);
 
         /// <summary>
         /// Downloads a file from the currently connected SFTP server
@@ -46,11 +48,11 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Transfer
         /// <param name="File">A remote file</param>
         /// <param name="LocalFile">A name of the local file</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool SFTPGetFile(string File, string LocalFile)
+        public bool SFTPGetFile(string File, string LocalFile)
         {
             try
             {
-                var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                var client = (SftpClient?)ClientSFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
 
                 // Show a message to download
@@ -58,7 +60,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Transfer
                 DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", vars: [File]);
 
                 // Try to download
-                string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile, SFTPShellCommon.SFTPCurrDirect);
+                string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile, SFTPCurrDirect);
                 var DownloadFileStream = new System.IO.FileStream(LocalFilePath, System.IO.FileMode.OpenOrCreate);
                 client.DownloadFile(File, DownloadFileStream);
 
@@ -80,7 +82,8 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Transfer
         /// </summary>
         /// <param name="File">A remote file</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool SFTPUploadFile(string File) => SFTPUploadFile(File, File);
+        public bool SFTPUploadFile(string File) =>
+            SFTPUploadFile(File, File);
 
         /// <summary>
         /// Uploads a file to the currently connected SFTP server
@@ -88,11 +91,11 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Transfer
         /// <param name="File">A remote file</param>
         /// <param name="LocalFile">A name of the local file</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool SFTPUploadFile(string File, string LocalFile)
+        public bool SFTPUploadFile(string File, string LocalFile)
         {
             try
             {
-                var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                var client = (SftpClient?)ClientSFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
 
                 // Show a message to download
@@ -100,7 +103,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Transfer
                 DebugWriter.WriteDebug(DebugLevel.I, "Uploading file {0}...", vars: [File]);
 
                 // Try to upload
-                string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile, SFTPShellCommon.SFTPCurrDirect);
+                string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile, SFTPCurrDirect);
                 var UploadFileStream = new System.IO.FileStream(LocalFilePath, System.IO.FileMode.Open);
                 client.UploadFile(UploadFileStream, File);
                 DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0}", vars: [File]);
@@ -120,11 +123,11 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Transfer
         /// </summary>
         /// <param name="File">A text file.</param>
         /// <returns>Contents of the file</returns>
-        public static string SFTPDownloadToString(string File)
+        public string SFTPDownloadToString(string File)
         {
             try
             {
-                var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                var client = (SftpClient?)ClientSFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
 
                 // Show a message to download

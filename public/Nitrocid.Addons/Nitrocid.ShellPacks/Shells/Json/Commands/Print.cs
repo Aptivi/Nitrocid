@@ -17,10 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.ShellPacks.Shells.Json.Tools;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
 {
@@ -35,14 +36,12 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var jsonShell = (JsonShell?)shell ??
+                throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             if (parameters.ArgumentsList.Length > 0)
-            {
-                TextWriterColor.Write(JsonTools.SerializeToString(parameters.ArgumentsText));
-            }
+                TextWriterColor.Write(jsonShell.SerializeToString(parameters.ArgumentsText));
             else
-            {
-                TextWriterColor.Write(JsonTools.SerializeToString("$"));
-            }
+                TextWriterColor.Write(jsonShell.SerializeToString("$"));
             return 0;
         }
 

@@ -17,7 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 
@@ -34,7 +35,9 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            FTPFilesystem.FTPMakeDirectory(parameters.ArgumentsList[0]);
+            var ftpShell = (FTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            ftpShell.FTPMakeDirectory(parameters.ArgumentsList[0]);
             return 0;
         }
     }

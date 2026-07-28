@@ -17,14 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using LibGit2Sharp;
-using GitCommand = LibGit2Sharp.Commands;
 using System.Linq;
+using LibGit2Sharp;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using GitCommand = LibGit2Sharp.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -39,7 +40,9 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var status = GitShellCommon.Repository.RetrieveStatus();
+            var gitShell = (GitShell?)shell ??
+                throw new KernelException(KernelExceptionType.Git, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            var status = gitShell.Repository.RetrieveStatus();
 
             // Check to see if the repo has been modified
             if (status.IsDirty)
@@ -49,9 +52,9 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             }
 
             // Check for existence if the remote is provided, or check for remotes and select the default one
-            if (GitShellCommon.Repository is null)
+            if (gitShell.Repository is null)
                 return 43;
-            var remotes = GitShellCommon.Repository.Network.Remotes;
+            var remotes = gitShell.Repository.Network.Remotes;
             var remoteNames = remotes.Select((remote) => remote.Name).ToArray();
             string selectedRemote = "origin";
             if (parameters.ArgumentsList.Length > 0)
@@ -85,7 +88,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
                 Prune = true,
                 TagFetchMode = TagFetchMode.All
             };
-            GitCommand.Fetch(GitShellCommon.Repository, selectedRemote, remoteRefSpecs, remoteFetchOptions, $"GitShell is fetching from {selectedRemote}...");
+            GitCommand.Fetch(gitShell.Repository, selectedRemote, remoteRefSpecs, remoteFetchOptions, $"GitShell is fetching from {selectedRemote}...");
             return 0;
         }
 

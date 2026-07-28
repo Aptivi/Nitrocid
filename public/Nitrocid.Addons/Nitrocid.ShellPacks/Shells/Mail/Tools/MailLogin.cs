@@ -26,27 +26,24 @@ using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
 using MimeKit.Cryptography;
 using Nettify.MailAddress;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Languages;
-using Textify.Tools.Placeholder;
-using Nitrocid.Base.Network.Connections;
 using Nitrocid.Base.Kernel.Exceptions;
-using Terminaux.Reader;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Network.Connections;
+using Nitrocid.Base.Network.SpeedDial;
 using Nitrocid.ShellPacks.Shells.Mail.Tools.PGP;
+using SpecProbe.Software.Platform;
+using Terminaux.Reader;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.Tools.Placeholder;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Tools
 {
     internal static class MailLogin
     {
-        // Variables
-        public static ImapClient IMAP_Client = new();
-        public static SmtpClient SMTP_Client = new();
-        internal static NetworkCredential Authentication = new();
-
         /// <summary>
         /// Mail server type
         /// </summary>
@@ -84,6 +81,8 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// <param name="Username">Specified username</param>
         public static NetworkConnection? PromptPassword(string Username)
         {
+            NetworkCredential Authentication = new();
+
             // Password
             DebugWriter.WriteDebug(DebugLevel.I, "Username: {0}", vars: [Username]);
             Authentication.UserName = Username;
@@ -101,15 +100,15 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
             string DynamicAddressSMTP = ShellsInit.ShellsConfig.MailAutoDetectServer ? ServerDetect(Username, ServerType.SMTP) : "";
 
             if (!string.IsNullOrEmpty(DynamicAddressIMAP) && !string.IsNullOrEmpty(DynamicAddressSMTP))
-                return ParseAddresses(DynamicAddressIMAP, 0, DynamicAddressSMTP, 0);
+                return ParseAddresses(DynamicAddressIMAP, 0, DynamicAddressSMTP, 0, Authentication);
             else
-                return PromptServer();
+                return PromptServer(Authentication);
         }
 
         /// <summary>
         /// Prompts for server
         /// </summary>
-        public static NetworkConnection? PromptServer()
+        public static NetworkConnection? PromptServer(NetworkCredential authentication)
         {
             string IMAP_Address;
             var IMAP_Port = 0;
@@ -133,15 +132,15 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
             DebugWriter.WriteDebug(DebugLevel.I, "SMTP Server: \"{0}\"", vars: [SMTP_Address]);
 
             // Parse addresses to connect
-            return ParseAddresses(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port);
+            return ParseAddresses(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port, authentication);
         }
 
-        public static NetworkConnection? ParseAddresses(string IMAP_Address, int IMAP_Port, string SMTP_Address, int SMTP_Port)
+        public static NetworkConnection? ParseAddresses(string IMAP_Address, int IMAP_Port, string SMTP_Address, int SMTP_Port, NetworkCredential authentication)
         {
             // If the address is <address>:[port]
             if (IMAP_Address.Contains(':'))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...", vars: [Authentication.UserName]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...");
                 IMAP_Port = Convert.ToInt32(IMAP_Address[(IMAP_Address.IndexOf(":") + 1)..]);
                 IMAP_Address = IMAP_Address.Remove(IMAP_Address.IndexOf(":"));
                 DebugWriter.WriteDebug(DebugLevel.I, "Final address: {0}, Final port: {1}", vars: [IMAP_Address, IMAP_Port]);
@@ -150,15 +149,15 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
             // If the address is <address>:[port]
             if (SMTP_Address.Contains(':'))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...", vars: [Authentication.UserName]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...");
                 SMTP_Port = Convert.ToInt32(SMTP_Address[(SMTP_Address.IndexOf(":") + 1)..]);
                 SMTP_Address = SMTP_Address.Remove(SMTP_Address.IndexOf(":"));
                 DebugWriter.WriteDebug(DebugLevel.I, "Final address: {0}, Final port: {1}", vars: [SMTP_Address, SMTP_Port]);
             }
 
             // Try to connect
-            Authentication.Domain = IMAP_Address;
-            return ConnectShell(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port);
+            authentication.Domain = IMAP_Address;
+            return ConnectShell(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port, authentication);
         }
 
         /// <summary>
@@ -212,23 +211,30 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// <param name="Port">A port of the IMAP server</param>
         /// <param name="SmtpAddress">An IP address of the SMTP server</param>
         /// <param name="SmtpPort">A port of the SMTP server</param>
-        public static NetworkConnection? ConnectShell(string Address, int Port, string SmtpAddress, int SmtpPort)
+        /// <param name="authentication">Authentication credentials</param>
+        public static NetworkConnection? ConnectShell(string Address, int Port, string SmtpAddress, int SmtpPort, NetworkCredential authentication)
         {
+            // Make new clients
+            ImapClient IMAP_Client = new();
+            SmtpClient SMTP_Client = new();
+
+            // Initialize the loggers if debug mode is on
+            if (KernelEntry.DebugMode & ShellsInit.ShellsConfig.MailDebug)
+            {
+                IMAP_Client = new ImapClient(new ProtocolLogger(PathsManagement.HomePath + "/ImapDebug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });
+                SMTP_Client = new SmtpClient(new ProtocolLogger(PathsManagement.HomePath + "/SmtpDebug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });
+            }
+
             try
             {
-                // Register the context and initialize the loggers if debug mode is on
-                if (KernelEntry.DebugMode & ShellsInit.ShellsConfig.MailDebug)
-                {
-                    IMAP_Client = new ImapClient(new ProtocolLogger(PathsManagement.HomePath + "/ImapDebug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });
-                    SMTP_Client = new SmtpClient(new ProtocolLogger(PathsManagement.HomePath + "/SmtpDebug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });
-                }
+                // Register the PGP context
                 CryptographyContext.Register(typeof(PGPContext));
 
                 // IMAP Connection
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTING"), Address);
                 DebugWriter.WriteDebug(DebugLevel.I, "Connecting to IMAP Server {0}:{1} with SSL...", vars: [Address, Port]);
                 IMAP_Client.Connect(Address, Port, MailKit.Security.SecureSocketOptions.SslOnConnect);
-                IMAP_Client.WebAlert += MailHandlers.HandleWebAlert;
+                IMAP_Client.WebAlert += HandleWebAlert;
 
                 // SMTP Connection
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTING"), SmtpAddress);
@@ -237,17 +243,18 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
 
                 // IMAP Authentication
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_AUTHENTICATING"));
-                DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to IMAP server {1}...", vars: [Authentication.UserName, Address]);
-                IMAP_Client.Authenticate(Authentication);
+                DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to IMAP server {1}...", vars: [authentication.UserName, Address]);
+                IMAP_Client.Authenticate(authentication);
 
                 // SMTP Authentication
-                DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to SMTP server {1}...", vars: [Authentication.UserName, SmtpAddress]);
-                SMTP_Client.Authenticate(Authentication);
-                IMAP_Client.WebAlert -= MailHandlers.HandleWebAlert;
+                DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to SMTP server {1}...", vars: [authentication.UserName, SmtpAddress]);
+                SMTP_Client.Authenticate(authentication);
+                IMAP_Client.WebAlert -= HandleWebAlert;
 
                 // Initialize shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Authentication succeeded. Opening shell...");
-                var Client = NetworkConnectionTools.EstablishConnection("Mail client", $"mailto:{Authentication.UserName}", NetworkConnectionType.Mail, new object[] { IMAP_Client, SMTP_Client });
+                var Client = NetworkConnectionTools.EstablishConnection("Mail client", $"mailto:{authentication.UserName}", NetworkConnectionType.Mail, new object?[] { IMAP_Client, SMTP_Client, null, authentication });
+                SpeedDialTools.TryAddEntryToSpeedDial(Client.ConnectionUri.AbsoluteUri, Client.ConnectionUri.Port, NetworkConnectionType.Mail, authentication.UserName, authentication.Password, false);
                 return Client;
             }
             catch (Exception ex)
@@ -258,6 +265,17 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
                 SMTP_Client.Disconnect(true);
                 return null;
             }
+        }
+
+        /// <summary>
+        /// Handles WebAlert sent by Gmail
+        /// </summary>
+        public static void HandleWebAlert(object? sender, WebAlertEventArgs e)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "WebAlert URI: {0}", vars: [e.WebUri.AbsoluteUri]);
+            TextWriterColor.Write(e.Message, true, ThemeColorType.Warning);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_WEBALERT_OPENING"));
+            PlatformHelper.PlatformOpen(e.WebUri.AbsoluteUri);
         }
     }
 }

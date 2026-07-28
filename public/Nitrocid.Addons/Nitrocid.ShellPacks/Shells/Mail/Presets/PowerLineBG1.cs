@@ -18,14 +18,17 @@
 //
 
 using System;
-using System.Text;
 using System.Collections.Generic;
+using System.Text;
 using Colorimetry;
-using Terminaux.Shell.Prompts;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Themes.Colors;
-using Terminaux.Base.Extensions;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Shells.Mail.Tools;
+using Terminaux.Base.Extensions;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Presets
 {
@@ -59,14 +62,17 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Presets
 
         private string PresetPromptBuilder()
         {
+            var mailShell = (MailShell?)ShellManager.CurrentShell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // PowerLine glyphs
             char TransitionPartChar = Convert.ToChar(0xE0B1);
 
             // Segments
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), MailLogin.Authentication.UserName, default, TransitionPartChar),
-                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), MailShellCommon.IMAP_CurrentDirectory, default, TransitionPartChar),
+                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), mailShell.NetworkCredential.UserName, default, TransitionPartChar),
+                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), mailShell.IMAP_CurrentDirectory, default, TransitionPartChar),
             ];
 
             // Builder

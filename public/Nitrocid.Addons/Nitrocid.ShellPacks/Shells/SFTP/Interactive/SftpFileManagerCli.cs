@@ -20,25 +20,23 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Reflection;
+using System.Text;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Files.Extensions;
+using Nitrocid.Base.Files.Instances;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Files;
-using Nitrocid.Base.Misc.Reflection;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
-using Terminaux.Inputs.Interactive;
-using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.Base.Files.Instances;
-using Nitrocid.Base.Files.Extensions;
-using Textify.General;
-using Nitrocid.Base.Kernel.Exceptions;
-using Terminaux.Themes.Colors;
+using Nitrocid.Base.Misc.Reflection;
 using Renci.SshNet;
 using Renci.SshNet.Sftp;
-using Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem;
-using Nitrocid.ShellPacks.Shells.SFTP.Tools.Transfer;
+using Terminaux.Inputs.Interactive;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Themes.Colors;
+using Textify.General;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
 {
@@ -46,6 +44,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
     {
         internal bool refreshFirstPaneListing = true;
         internal bool refreshSecondPaneListing = true;
+        internal SFTPShell sftpShell;
         private List<FileSystemEntry> firstPaneListing = [];
         private List<ISftpFile> secondPaneListing = [];
 
@@ -80,13 +79,13 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     if (refreshFirstPaneListing)
                     {
                         refreshFirstPaneListing = false;
-                        firstPaneListing = FilesystemTools.CreateList(SFTPShellCommon.SFTPCurrDirect, true);
+                        firstPaneListing = FilesystemTools.CreateList(sftpShell.SFTPCurrDirect, true);
                     }
                     return firstPaneListing;
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get current directory list for the first pane [{0}]: {1}", vars: [SFTPShellCommon.SFTPCurrDirect, ex.Message]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get current directory list for the first pane [{0}]: {1}", vars: [sftpShell.SFTPCurrDirect, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     return [];
                 }
@@ -103,16 +102,16 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     if (refreshSecondPaneListing)
                     {
                         refreshSecondPaneListing = false;
-                        var instance = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                        var instance = (SftpClient?)sftpShell.ClientSFTP?.ConnectionInstance ??
                             throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
-                        SFTPShellCommon.SFTPCurrentRemoteDir = SFTPShellCommon.SFTPCurrentRemoteDir;
-                        secondPaneListing = [.. instance.ListDirectory(SFTPShellCommon.SFTPCurrentRemoteDir)];
+                        sftpShell.SFTPCurrentRemoteDir = sftpShell.SFTPCurrentRemoteDir;
+                        secondPaneListing = [.. instance.ListDirectory(sftpShell.SFTPCurrentRemoteDir)];
                     }
                     return secondPaneListing;
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get current directory list for the second pane [{0}]: {1}", vars: [SFTPShellCommon.SFTPCurrentRemoteDir, ex.Message]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get current directory list for the second pane [{0}]: {1}", vars: [sftpShell.SFTPCurrentRemoteDir, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     return [];
                 }
@@ -237,7 +236,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     if (currentEntry.IsDirectory)
                     {
                         // We're dealing with a folder. Open it in the selected pane.
-                        SFTPFilesystem.SFTPChangeRemoteDir(currentEntry.FullName + "/");
+                        sftpShell.SFTPChangeRemoteDir(currentEntry.FullName + "/");
                         refreshSecondPaneListing = true;
                         InteractiveTuiTools.SelectionMovement(this, 1);
                     }
@@ -253,7 +252,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     if (currentEntry.Type == FileSystemEntryType.Directory)
                     {
                         // We're dealing with a folder. Open it in the selected pane.
-                        SFTPFilesystem.SFTPChangeLocalDir(FilesystemTools.NeutralizePath(currentEntry.FilePath + "/"));
+                        sftpShell.SFTPChangeLocalDir(FilesystemTools.NeutralizePath(currentEntry.FilePath + "/"));
                         refreshFirstPaneListing = true;
                         InteractiveTuiTools.SelectionMovement(this, 1);
                     }
@@ -278,12 +277,12 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
         {
             if (CurrentPane == 2)
             {
-                SFTPFilesystem.SFTPChangeRemoteDir("..");
+                sftpShell.SFTPChangeRemoteDir("..");
                 refreshSecondPaneListing = true;
             }
             else
             {
-                SFTPFilesystem.SFTPChangeLocalDir("..");
+                sftpShell.SFTPChangeLocalDir("..");
                 refreshFirstPaneListing = true;
             }
             InteractiveTuiTools.SelectionMovement(this, 1);
@@ -313,7 +312,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     if (!currentEntry.IsDirectory)
                         finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILESIZE").FormatString(currentEntry.Length.SizeString()));
                     else if (currentEntry.IsSymbolicLink)
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_SYMLINK").FormatString(SFTPFilesystem.SFTPGetCanonicalPath(currentEntry.FullName)));
+                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_SYMLINK").FormatString(sftpShell.SFTPGetCanonicalPath(currentEntry.FullName)));
                     finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME").FormatString(TimeDateRenderers.Render(currentEntry.LastWriteTime)));
                 }
                 else
@@ -413,12 +412,12 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     if (currentEntry is null)
                         return;
 
-                    string dest = FilesystemTools.NeutralizePath(SFTPShellCommon.SFTPCurrDirect + "/" + currentEntry.Name, SFTPShellCommon.SFTPCurrDirect);
+                    string dest = FilesystemTools.NeutralizePath(sftpShell.SFTPCurrDirect + "/" + currentEntry.Name, sftpShell.SFTPCurrDirect);
                     DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                     DebugCheck.AssertNull(dest, "destination is null!");
                     DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
                     if (!currentEntry.IsDirectory)
-                        SFTPTransfer.SFTPGetFile(currentEntry.FullName, dest);
+                        sftpShell.SFTPGetFile(currentEntry.FullName, dest);
                 }
                 else
                 {
@@ -427,12 +426,12 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     if (currentEntry is null || !currentEntry.Exists)
                         return;
 
-                    string dest = SFTPShellCommon.SFTPCurrentRemoteDir + "/" + Path.GetFileName(currentEntry.FilePath);
+                    string dest = sftpShell.SFTPCurrentRemoteDir + "/" + Path.GetFileName(currentEntry.FilePath);
                     DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                     DebugCheck.AssertNull(dest, "destination is null!");
                     DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
                     if (currentEntry.Type == FileSystemEntryType.File)
-                        SFTPTransfer.SFTPUploadFile(dest, currentEntry.FilePath);
+                        sftpShell.SFTPUploadFile(dest, currentEntry.FilePath);
                 }
 
                 if (CurrentPane == 2)
@@ -464,14 +463,14 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     if (currentEntry is null)
                         return;
 
-                    string dest = FilesystemTools.NeutralizePath(SFTPShellCommon.SFTPCurrDirect + "/" + currentEntry.Name, SFTPShellCommon.SFTPCurrDirect);
+                    string dest = FilesystemTools.NeutralizePath(sftpShell.SFTPCurrDirect + "/" + currentEntry.Name, sftpShell.SFTPCurrDirect);
                     DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                     DebugCheck.AssertNull(dest, "destination is null!");
                     DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
                     if (!currentEntry.IsDirectory)
                     {
-                        SFTPTransfer.SFTPGetFile(currentEntry.FullName, dest);
-                        SFTPFilesystem.SFTPDeleteRemote(dest);
+                        sftpShell.SFTPGetFile(currentEntry.FullName, dest);
+                        sftpShell.SFTPDeleteRemote(dest);
                     }
                 }
                 else
@@ -481,13 +480,13 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     if (currentEntry is null || !currentEntry.Exists)
                         return;
 
-                    string dest = SFTPShellCommon.SFTPCurrentRemoteDir + "/" + Path.GetFileName(currentEntry.FilePath);
+                    string dest = sftpShell.SFTPCurrentRemoteDir + "/" + Path.GetFileName(currentEntry.FilePath);
                     DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                     DebugCheck.AssertNull(dest, "destination is null!");
                     DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
                     if (currentEntry.Type == FileSystemEntryType.File)
                     {
-                        SFTPTransfer.SFTPUploadFile(dest, currentEntry.FilePath);
+                        sftpShell.SFTPUploadFile(dest, currentEntry.FilePath);
                         FilesystemTools.RemoveFileOrDir(currentEntry.FilePath);
                     }
                 }
@@ -519,7 +518,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     if (currentEntry is null)
                         return;
 
-                    SFTPFilesystem.SFTPDeleteRemote(currentEntry.FullName);
+                    sftpShell.SFTPDeleteRemote(currentEntry.FullName);
                 }
                 else
                 {
@@ -562,14 +561,14 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     if (currentEntry is null)
                         return;
 
-                    path = FilesystemTools.NeutralizePath(SFTPShellCommon.SFTPCurrDirect + "/" + currentEntry.Name, SFTPShellCommon.SFTPCurrDirect);
+                    path = FilesystemTools.NeutralizePath(sftpShell.SFTPCurrDirect + "/" + currentEntry.Name, sftpShell.SFTPCurrDirect);
                     DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                     DebugCheck.AssertNull(path, "destination is null!");
                     DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
-                    if (SFTPFilesystem.SFTPExists(path))
+                    if (sftpShell.SFTPExists(path))
                     {
                         if (!currentEntry.IsDirectory)
-                            SFTPTransfer.SFTPGetFile(currentEntry.FullName, path);
+                            sftpShell.SFTPGetFile(currentEntry.FullName, path);
                         refreshFirstPaneListing = true;
                     }
                     else
@@ -582,7 +581,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     if (currentEntry is null || !currentEntry.Exists)
                         return;
 
-                    path = SFTPShellCommon.SFTPCurrentRemoteDir + "/" + Path.GetFileName(currentEntry.FilePath);
+                    path = sftpShell.SFTPCurrentRemoteDir + "/" + Path.GetFileName(currentEntry.FilePath);
                     DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                     DebugCheck.AssertNull(path, "destination is null!");
                     DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
@@ -591,7 +590,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                         if (FilesystemTools.TryParsePath(path))
                         {
                             if (currentEntry.Type == FileSystemEntryType.File)
-                                SFTPTransfer.SFTPUploadFile(path, currentEntry.FilePath);
+                                sftpShell.SFTPUploadFile(path, currentEntry.FilePath);
                             refreshSecondPaneListing = true;
                         }
                         else
@@ -627,16 +626,16 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     if (currentEntry is null)
                         return;
 
-                    path = FilesystemTools.NeutralizePath(SFTPShellCommon.SFTPCurrDirect + "/" + currentEntry.Name, SFTPShellCommon.SFTPCurrDirect);
+                    path = FilesystemTools.NeutralizePath(sftpShell.SFTPCurrDirect + "/" + currentEntry.Name, sftpShell.SFTPCurrDirect);
                     DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                     DebugCheck.AssertNull(path, "destination is null!");
                     DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
-                    if (SFTPFilesystem.SFTPExists(path))
+                    if (sftpShell.SFTPExists(path))
                     {
                         if (!currentEntry.IsDirectory)
                         {
-                            SFTPTransfer.SFTPGetFile(currentEntry.FullName, path);
-                            SFTPFilesystem.SFTPDeleteRemote(path);
+                            sftpShell.SFTPGetFile(currentEntry.FullName, path);
+                            sftpShell.SFTPDeleteRemote(path);
                         }
                         refreshSecondPaneListing = true;
                         refreshFirstPaneListing = true;
@@ -651,7 +650,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     if (currentEntry is null || !currentEntry.Exists)
                         return;
 
-                    path = SFTPShellCommon.SFTPCurrentRemoteDir + "/" + Path.GetFileName(currentEntry.FilePath);
+                    path = sftpShell.SFTPCurrentRemoteDir + "/" + Path.GetFileName(currentEntry.FilePath);
                     DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                     DebugCheck.AssertNull(path, "destination is null!");
                     DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
@@ -661,7 +660,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                         {
                             if (currentEntry.Type == FileSystemEntryType.File)
                             {
-                                SFTPTransfer.SFTPUploadFile(path, currentEntry.FilePath);
+                                sftpShell.SFTPUploadFile(path, currentEntry.FilePath);
                                 FilesystemTools.RemoveFileOrDir(currentEntry.FilePath);
                             }
                             refreshSecondPaneListing = true;
@@ -690,9 +689,9 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
             if (CurrentPane == 2)
             {
                 // We are dealing with the remote side.
-                if (!SFTPFilesystem.SFTPExists(path))
+                if (!sftpShell.SFTPExists(path))
                 {
-                    SFTPFilesystem.SFTPMakeDirectory(path);
+                    sftpShell.SFTPMakeDirectory(path);
                     refreshFirstPaneListing = true;
                 }
                 else
@@ -701,7 +700,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
             else
             {
                 // We are dealing with the local side.
-                path = FilesystemTools.NeutralizePath(path, SFTPShellCommon.SFTPCurrDirect);
+                path = FilesystemTools.NeutralizePath(path, sftpShell.SFTPCurrDirect);
                 if (!FilesystemTools.FolderExists(path))
                 {
                     FilesystemTools.TryMakeDirectory(path);
@@ -710,6 +709,11 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                 else
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FOLDERFOUND"), Settings.InfoBoxSettings);
             }
+        }
+
+        public SFTPFileManagerCli(SFTPShell sftpShell)
+        {
+            this.sftpShell = sftpShell;
         }
     }
 }

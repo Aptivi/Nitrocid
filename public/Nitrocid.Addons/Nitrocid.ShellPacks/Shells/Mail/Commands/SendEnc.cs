@@ -28,7 +28,6 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Themes.Colors;
 using Textify.General;
 using Terminaux.Reader;
-using Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 {
@@ -64,6 +63,8 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var mailShell = (MailShell?)shell ??
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             string Receiver, Subject;
             var Body = new BodyBuilder();
 
@@ -115,7 +116,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 
                 // Send the message
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_SENDING"), true, ThemeColorType.Progress);
-                if (MailTransfer.MailSendEncryptedMessage(Receiver, Subject, Body.ToMessageBody()))
+                if (mailShell.MailSendEncryptedMessage(Receiver, Subject, Body.ToMessageBody()))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Message sent.");
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_SENT"), true, ThemeColorType.Success);

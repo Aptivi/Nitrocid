@@ -35,8 +35,26 @@ namespace Nitrocid.ShellPacks.Shells.HTTP
     /// <summary>
     /// The HTTP shell
     /// </summary>
-    public class HTTPShell : BaseShell, IShell
+    public partial class HTTPShell : BaseShell, IShell
     {
+        internal bool detaching = false;
+        internal NetworkConnection? clientConnection;
+
+        /// <summary>
+        /// HTTP site URL
+        /// </summary>
+        public string HTTPSite { get; set; } = "";
+
+        /// <summary>
+        /// HTTP shell prompt style
+        /// </summary>
+        public string HTTPShellPromptStyle { get; set; } = "";
+
+        /// <summary>
+        /// An HTTP client
+        /// </summary>
+        public NetworkConnection? ClientHTTP =>
+            clientConnection;
 
         /// <inheritdoc/>
         public override string ShellType => "HTTPShell";
@@ -44,18 +62,16 @@ namespace Nitrocid.ShellPacks.Shells.HTTP
         /// <inheritdoc/>
         public override bool Bail { get; set; }
 
-        internal bool detaching = false;
-
         /// <inheritdoc/>
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Parse shell arguments
             NetworkConnection httpConnection = (NetworkConnection)ShellArgs[0];
-            HTTPShellCommon.clientConnection = httpConnection;
-            HTTPShellCommon.HTTPSite = httpConnection.ConnectionUri.OriginalString;
+            clientConnection = httpConnection;
+            HTTPSite = httpConnection.ConnectionUri.OriginalString;
 
             // Write connection information to Speed Dial file if it doesn't exist there
-            SpeedDialTools.TryAddEntryToSpeedDial(HTTPShellCommon.HTTPSite, httpConnection.ConnectionUri.Port, NetworkConnectionType.HTTP, "", "", false);
+            SpeedDialTools.TryAddEntryToSpeedDial(HTTPSite, httpConnection.ConnectionUri.Port, NetworkConnectionType.HTTP, "", "", false);
 
             while (!Bail)
             {
@@ -83,13 +99,13 @@ namespace Nitrocid.ShellPacks.Shells.HTTP
                 {
                     if (!detaching)
                     {
-                        ((HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance)?.Dispose();
-                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(HTTPShellCommon.ClientHTTP);
+                        ((HttpClient?)ClientHTTP?.ConnectionInstance)?.Dispose();
+                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(ClientHTTP);
                         NetworkConnectionTools.CloseConnection(connectionIndex);
-                        HTTPShellCommon.clientConnection = null;
+                        clientConnection = null;
                     }
                     detaching = false;
-                    HTTPShellCommon.HTTPSite = "";
+                    HTTPSite = "";
                 }
             }
         }

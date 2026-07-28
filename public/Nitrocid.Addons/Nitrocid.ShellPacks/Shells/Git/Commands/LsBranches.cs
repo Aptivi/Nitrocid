@@ -17,10 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -35,9 +37,11 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (GitShellCommon.Repository is null)
+            var gitShell = (GitShell?)shell ??
+                throw new KernelException(KernelExceptionType.Git, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            if (gitShell.Repository is null)
                 return 43;
-            var branches = GitShellCommon.Repository.Branches;
+            var branches = gitShell.Repository.Branches;
             foreach (var branch in branches)
             {
                 TextWriterColor.Write($"- [{(branch.IsRemote ? "R" : " ")}-{(branch.IsTracking ? "T" : " ")}-{(branch.IsCurrentRepositoryHead ? "H" : " ")}] {branch.CanonicalName} [{branch.FriendlyName}]", true, ThemeColorType.ListEntry);

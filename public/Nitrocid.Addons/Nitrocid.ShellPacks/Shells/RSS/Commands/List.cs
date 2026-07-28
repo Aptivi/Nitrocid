@@ -18,12 +18,14 @@
 //
 
 using Nettify.Rss.Instance;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Base.Extensions;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
-using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Commands
 {
@@ -38,7 +40,9 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            foreach (RSSArticle Article in RSSShellCommon.RSSFeedInstance?.FeedArticles ?? [])
+            var rssShell = (RSSShell?)shell ??
+                throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            foreach (RSSArticle Article in rssShell.RSSFeedInstance?.FeedArticles ?? [])
             {
                 TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, Article.ArticleTitle);
                 TextWriterColor.Write(Article.ArticleLink, true, ThemeColorType.ListValue);

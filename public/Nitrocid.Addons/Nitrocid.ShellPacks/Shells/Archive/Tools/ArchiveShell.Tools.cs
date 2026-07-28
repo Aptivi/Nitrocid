@@ -18,7 +18,6 @@
 //
 
 using System.Collections.Generic;
-using System.Data;
 using System.IO;
 using System.Linq;
 using Nitrocid.Base.Files;
@@ -34,25 +33,25 @@ using SharpCompress.Readers;
 using SharpCompress.Writers.GZip;
 using SharpCompress.Writers.Tar;
 using SharpCompress.Writers.Zip;
+using Terminaux.Shell.Shells;
 
-namespace Nitrocid.ShellPacks.Shells.Archive.Tools
+namespace Nitrocid.ShellPacks.Shells.Archive
 {
     /// <summary>
-    /// Archive shell tools
+    /// Archive shell class
     /// </summary>
-    public static class ArchiveTools
+    public partial class ArchiveShell : BaseShell, IShell
     {
-
         /// <summary>
         /// Lists all entries according to the target directory or the current directory
         /// </summary>
         /// <param name="Target">Target directory in an archive</param>
-        public static List<IArchiveEntry> ListArchiveEntries(string Target)
+        public List<IArchiveEntry> ListArchiveEntries(string Target)
         {
             if (string.IsNullOrWhiteSpace(Target))
-                Target = ArchiveShellCommon.CurrentArchiveDirectory ?? "";
+                Target = CurrentArchiveDirectory ?? "";
             var Entries = new List<IArchiveEntry>();
-            var archiveEntries = ArchiveShellCommon.Archive?.Entries ??
+            var archiveEntries = Archive?.Entries ??
                 throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_CANTGETENTRIES"));
             foreach (IArchiveEntry ArchiveEntry in archiveEntries)
             {
@@ -82,26 +81,26 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Tools
         /// <param name="Target">Target file in an archive</param>
         /// <param name="Where">Where in the local filesystem to extract?</param>
         /// <param name="FullTargetPath">Whether to use the full target path</param>
-        public static bool ExtractFileEntry(string Target, string Where, bool FullTargetPath = false)
+        public bool ExtractFileEntry(string Target, string Where, bool FullTargetPath = false)
         {
-            if (ArchiveShellCommon.Archive is null)
+            if (Archive is null)
                 throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED"));
-            if (ArchiveShellCommon.FileStream is null)
+            if (FileStream is null)
                 throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED"));
             if (string.IsNullOrWhiteSpace(Target))
                 throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT"));
             if (string.IsNullOrWhiteSpace(Where))
-                Where = ArchiveShellCommon.CurrentDirectory ?? "";
+                Where = CurrentDirectory ?? "";
 
             // Define absolute target
-            string AbsoluteTarget = ArchiveShellCommon.CurrentArchiveDirectory + "/" + Target;
+            string AbsoluteTarget = CurrentArchiveDirectory + "/" + Target;
             if (AbsoluteTarget.StartsWith("/"))
                 AbsoluteTarget = AbsoluteTarget[1..];
             DebugWriter.WriteDebug(DebugLevel.I, "Target: {0}, AbsoluteTarget: {1}", vars: [Target, AbsoluteTarget]);
 
             // Define local destination while getting an entry from target
             string LocalDestination = Where + "/";
-            var ArchiveEntry = ArchiveShellCommon.Archive.Entries.Where(x => x.Key == AbsoluteTarget).ToArray()[0];
+            var ArchiveEntry = Archive.Entries.Where(x => x.Key == AbsoluteTarget).ToArray()[0];
             string localDirDestination = Path.GetDirectoryName(ArchiveEntry.Key) ?? "";
             if (FullTargetPath)
                 LocalDestination += ArchiveEntry.Key;
@@ -112,8 +111,8 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Tools
             if (!FilesystemTools.FolderExists(LocalDestination + "/" + localDirDestination))
                 FilesystemTools.MakeDirectory(LocalDestination + "/" + localDirDestination);
             FilesystemTools.MakeFile(LocalDestination + ArchiveEntry.Key);
-            ArchiveShellCommon.FileStream.Seek(0L, SeekOrigin.Begin);
-            var ArchiveReader = ReaderFactory.OpenReader(ArchiveShellCommon.FileStream);
+            FileStream.Seek(0L, SeekOrigin.Begin);
+            var ArchiveReader = ReaderFactory.OpenReader(FileStream);
             while (ArchiveReader.MoveToNextEntry())
             {
                 if (ArchiveReader.Entry.Key == ArchiveEntry.Key & !ArchiveReader.Entry.IsDirectory)
@@ -130,28 +129,28 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Tools
         /// </summary>
         /// <param name="Target">Target local file</param>
         /// <param name="Where">Where in the archive to extract?</param>
-        public static bool PackFile(string Target, string Where)
+        public bool PackFile(string Target, string Where)
         {
-            if (ArchiveShellCommon.Archive is null)
+            if (Archive is null)
                 throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED"));
-            if (ArchiveShellCommon.FileStream is null)
+            if (FileStream is null)
                 throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED"));
             if (string.IsNullOrWhiteSpace(Target))
                 throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_PACK"));
             if (string.IsNullOrWhiteSpace(Where))
-                Where = ArchiveShellCommon.CurrentDirectory ?? "";
-            if (ArchiveShellCommon.Archive is not IWritableArchive)
-                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK") + " {0}.", ArchiveShellCommon.Archive.Type);
+                Where = CurrentDirectory ?? "";
+            if (Archive is not IWritableArchive)
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK") + " {0}.", Archive.Type);
 
             // Define absolute archive target
-            string ArchiveTarget = ArchiveShellCommon.CurrentArchiveDirectory + "/" + Target;
+            string ArchiveTarget = CurrentArchiveDirectory + "/" + Target;
             if (ArchiveTarget.StartsWith("/"))
                 ArchiveTarget = ArchiveTarget[1..];
             DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}, ArchiveTarget: {1}", vars: [Where, ArchiveTarget]);
 
             // Select compression type
             CompressionType compression = CompressionType.None;
-            switch (ArchiveShellCommon.Archive.Type)
+            switch (Archive.Type)
             {
                 case ArchiveType.Zip:
                     compression = CompressionType.Deflate;
@@ -161,13 +160,13 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Tools
             // Define local destination while getting an entry from target
             Target = FilesystemTools.NeutralizePath(Target, Where);
             DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}", vars: [Target]);
-            ((IWritableArchive)ArchiveShellCommon.Archive).AddEntry(ArchiveTarget, Target);
-            if (ArchiveShellCommon.Archive is ZipArchive zipArchive)
-                zipArchive.SaveTo(ArchiveShellCommon.FileStream, new ZipWriterOptions(compression));
-            if (ArchiveShellCommon.Archive is TarArchive tarArchive)
-                tarArchive.SaveTo(ArchiveShellCommon.FileStream, new TarWriterOptions(compression));
-            if (ArchiveShellCommon.Archive is GZipArchive gzipArchive)
-                gzipArchive.SaveTo(ArchiveShellCommon.FileStream, new GZipWriterOptions(compression));
+            ((IWritableArchive)Archive).AddEntry(ArchiveTarget, Target);
+            if (Archive is ZipArchive zipArchive)
+                zipArchive.SaveTo(FileStream, new ZipWriterOptions(compression));
+            if (Archive is TarArchive tarArchive)
+                tarArchive.SaveTo(FileStream, new TarWriterOptions(compression));
+            if (Archive is GZipArchive gzipArchive)
+                gzipArchive.SaveTo(FileStream, new GZipWriterOptions(compression));
             return true;
         }
 
@@ -175,12 +174,12 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Tools
         /// Changes the working archive directory
         /// </summary>
         /// <param name="Target">Target directory</param>
-        public static bool ChangeWorkingArchiveDirectory(string Target)
+        public bool ChangeWorkingArchiveDirectory(string Target)
         {
             if (string.IsNullOrWhiteSpace(Target))
-                Target = ArchiveShellCommon.CurrentArchiveDirectory ??
+                Target = CurrentArchiveDirectory ??
                     throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_ARCHIVEDIRUNDETERMINABLE"));
-            string archiveDir = ArchiveShellCommon.CurrentArchiveDirectory ?? "";
+            string archiveDir = CurrentArchiveDirectory ?? "";
 
             // Check to see if we're going back
             if (Target.Contains(".."))
@@ -219,14 +218,14 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Tools
                 }
 
                 // Set current archive directory and target
-                ArchiveShellCommon.CurrentArchiveDirectory = string.Join("/", CADSplit);
-                DebugWriter.WriteDebug(DebugLevel.I, "Setting CAD to {0}...", vars: [ArchiveShellCommon.CurrentArchiveDirectory ?? ""]);
+                CurrentArchiveDirectory = string.Join("/", CADSplit);
+                DebugWriter.WriteDebug(DebugLevel.I, "Setting CAD to {0}...", vars: [CurrentArchiveDirectory ?? ""]);
                 Target = string.Join("/", TargetSplit);
                 DebugWriter.WriteDebug(DebugLevel.I, "Setting target to {0}...", vars: [Target]);
             }
 
             // Prepare the target
-            Target = ArchiveShellCommon.CurrentArchiveDirectory + "/" + Target;
+            Target = CurrentArchiveDirectory + "/" + Target;
             if (Target.StartsWith("/"))
                 Target = Target[1..];
             DebugWriter.WriteDebug(DebugLevel.I, "Setting target to {0}...", vars: [Target]);
@@ -239,8 +238,8 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Tools
                 if (key.StartsWith(Target))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "{0} found ({1}). Changing...", vars: [Target, key]);
-                    ArchiveShellCommon.CurrentArchiveDirectory = key[..^1];
-                    DebugWriter.WriteDebug(DebugLevel.I, "Setting CAD to {0}...", vars: [ArchiveShellCommon.CurrentArchiveDirectory ?? ""]);
+                    CurrentArchiveDirectory = key[..^1];
+                    DebugWriter.WriteDebug(DebugLevel.I, "Setting CAD to {0}...", vars: [CurrentArchiveDirectory ?? ""]);
                     return true;
                 }
             }
@@ -254,15 +253,15 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Tools
         /// Changes the working local directory
         /// </summary>
         /// <param name="Target">Target directory</param>
-        public static bool ChangeWorkingArchiveLocalDirectory(string Target)
+        public bool ChangeWorkingArchiveLocalDirectory(string Target)
         {
             if (string.IsNullOrWhiteSpace(Target))
-                Target = ArchiveShellCommon.CurrentArchiveDirectory ??
+                Target = CurrentArchiveDirectory ??
                     throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_ARCHIVEDIRUNDETERMINABLE"));
-            if (FilesystemTools.FolderExists(FilesystemTools.NeutralizePath(Target, ArchiveShellCommon.CurrentDirectory)))
+            if (FilesystemTools.FolderExists(FilesystemTools.NeutralizePath(Target, CurrentDirectory)))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} found. Changing...", vars: [Target]);
-                ArchiveShellCommon.CurrentDirectory = Target;
+                CurrentDirectory = Target;
                 return true;
             }
             else
@@ -271,6 +270,5 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Tools
                 return false;
             }
         }
-
     }
 }

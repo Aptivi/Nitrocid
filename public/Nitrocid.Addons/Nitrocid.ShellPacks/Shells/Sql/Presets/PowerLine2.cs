@@ -24,6 +24,9 @@ using Terminaux.Themes.Colors;
 using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Base.Extensions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Shells;
+using Nitrocid.Base.Kernel.Exceptions;
 
 namespace Nitrocid.ShellPacks.Shells.Sql.Presets
 {
@@ -57,10 +60,13 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Presets
 
         private string PresetPromptBuilder()
         {
+            var sqlShell = (SqlShell?)ShellManager.CurrentShell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // PowerLine presets
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), SqlShellCommon.DatabaseFileName)
+                new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), sqlShell.DatabaseFileName)
             ];
 
             // Builder

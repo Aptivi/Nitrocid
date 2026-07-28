@@ -18,14 +18,17 @@
 //
 
 using System;
+using System.IO;
 using System.Threading;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using LibGit2Sharp;
+using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
+using Terminaux.Inputs;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Terminaux.Inputs;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Git
 {
@@ -34,6 +37,36 @@ namespace Nitrocid.ShellPacks.Shells.Git
     /// </summary>
     public class GitShell : BaseShell, IShell
     {
+        internal string branchName = "";
+        internal string repoPath = "";
+        internal Repository? repo = null;
+        internal string name = "";
+        internal string email = "";
+        internal bool isIdentified = false;
+
+        /// <summary>
+        /// Branch name for Git
+        /// </summary>
+        public string BranchName =>
+            branchName;
+
+        /// <summary>
+        /// Repository path for Git
+        /// </summary>
+        public string RepoPath =>
+            repoPath;
+
+        /// <summary>
+        /// Repository instance for Git
+        /// </summary>
+        public Repository? Repository =>
+            repo;
+
+        /// <summary>
+        /// Repository name for Git
+        /// </summary>
+        public string RepoName =>
+            Path.GetFileName(RepoPath);
 
         /// <inheritdoc/>
         public override string ShellType => "GitShell";
@@ -62,10 +95,10 @@ namespace Nitrocid.ShellPacks.Shells.Git
             }
 
             // Open repo
-            if (GitShellCommon.repo is null)
+            if (repo is null)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Repo not open yet. Trying to open {0}...", vars: [RepoPath]);
-                if (!GitShellCommon.OpenRepository(RepoPath))
+                if (!OpenRepository(RepoPath))
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_REPOFAILED"), true, ThemeColorType.Error);
                     Bail = true;
@@ -96,8 +129,36 @@ namespace Nitrocid.ShellPacks.Shells.Git
             }
 
             // Close repo
-            GitShellCommon.CloseRepository();
+            CloseRepository();
         }
 
+        private bool OpenRepository(string path)
+        {
+            // Check to see if the specified path exists
+            if (!FilesystemTools.FolderExists(path))
+                return false;
+
+            // Now, check to see if we have the .git folder
+            string repoGitPath = path + "/.git";
+            if (!FilesystemTools.FolderExists(repoGitPath))
+                return false;
+
+            // Initialize the repository
+            var repository = new Repository(repoGitPath);
+            repo = repository;
+            branchName = repo.Head.CanonicalName;
+            return true;
+        }
+
+        private bool CloseRepository()
+        {
+            // Check to see if we're open
+            if (repo is null)
+                return false;
+
+            // Close it.
+            repo.Dispose();
+            return true;
+        }
     }
 }

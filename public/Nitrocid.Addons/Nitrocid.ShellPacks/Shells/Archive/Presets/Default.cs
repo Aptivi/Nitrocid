@@ -19,9 +19,13 @@
 
 using System.IO;
 using System.Text;
-using Terminaux.Themes.Colors;
-using Terminaux.Shell.Prompts;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Renci.SshNet;
 using Terminaux.Base.Extensions;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
 
 namespace Nitrocid.ShellPacks.Shells.Archive.Presets
 {
@@ -47,6 +51,9 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Presets
 
         private string PresetPromptBuilder()
         {
+            var archiveShell = (ArchiveShell?)ShellManager.CurrentShell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // Build the preset
             var PresetStringBuilder = new StringBuilder();
 
@@ -56,11 +63,11 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Presets
 
             // File name
             PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground());
-            PresetStringBuilder.AppendFormat(Path.GetFileName(ArchiveShellCommon.FileStream?.Name ?? ""));
+            PresetStringBuilder.AppendFormat(Path.GetFileName(archiveShell.FileStream?.Name ?? ""));
 
             // Current archive directory
             PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground());
-            PresetStringBuilder.AppendFormat("{0}", ArchiveShellCommon.CurrentArchiveDirectory ?? "");
+            PresetStringBuilder.AppendFormat("{0}", archiveShell.CurrentArchiveDirectory ?? "");
 
             // Closing
             PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());

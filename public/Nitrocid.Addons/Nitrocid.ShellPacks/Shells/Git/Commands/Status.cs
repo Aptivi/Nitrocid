@@ -17,13 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Linq;
 using LibGit2Sharp;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using System.Linq;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -38,8 +39,10 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var status = GitShellCommon.Repository.RetrieveStatus();
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_TITLE"), GitShellCommon.BranchName);
+            var gitShell = (GitShell?)shell ??
+                throw new KernelException(KernelExceptionType.Git, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            var status = gitShell.Repository.RetrieveStatus();
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_TITLE"), gitShell.BranchName);
 
             // Check to see if the repo has been modified
             if (!status.IsDirty)

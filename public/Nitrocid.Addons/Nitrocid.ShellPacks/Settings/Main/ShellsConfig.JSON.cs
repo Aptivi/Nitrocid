@@ -20,7 +20,6 @@
 using Newtonsoft.Json;
 using Nitrocid.Base.Kernel.Configuration.Instances;
 using Terminaux.Shell.Prompts;
-using Nitrocid.ShellPacks.Shells.Json;
 
 namespace Nitrocid.ShellPacks.Settings
 {
@@ -29,6 +28,8 @@ namespace Nitrocid.ShellPacks.Settings
     /// </summary>
     public partial class ShellsConfig : BaseKernelConfig
     {
+        internal static int jsonAutoSaveInterval = 60;
+
         /// <summary>
         /// Prompt Preset
         /// </summary>
@@ -46,8 +47,8 @@ namespace Nitrocid.ShellPacks.Settings
         /// </summary>
         public int JsonEditAutoSaveInterval
         {
-            get => JsonShellCommon.autoSaveInterval;
-            set => JsonShellCommon.autoSaveInterval = value < 0 ? 60 : value;
+            get => jsonAutoSaveInterval;
+            set => jsonAutoSaveInterval = value < 0 ? 60 : value;
         }
         /// <summary>
         /// Selects the default JSON formatting (beautified or minified) for the JSON shell to save

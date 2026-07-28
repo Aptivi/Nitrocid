@@ -25,7 +25,6 @@ using System.Linq;
 using System.Text;
 using FluentFTP;
 using FluentFTP.Helpers;
-using Terminaux.Themes.Colors;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Debugging;
@@ -33,13 +32,15 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
 using Terminaux.Base.Extensions;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
 
-namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
+namespace Nitrocid.ShellPacks.Shells.FTP
 {
     /// <summary>
     /// FTP filesystem tools module
     /// </summary>
-    public static class FTPFilesystem
+    public partial class FTPShell : BaseShell, IShell
     {
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
         /// <param name="Path">Path to folder</param>
         /// <returns>The list if successful; null if unsuccessful</returns>
         /// <exception cref="InvalidOperationException"></exception>
-        public static List<string> FTPListRemote(string Path) =>
+        public List<string> FTPListRemote(string Path) =>
             FTPListRemote(Path, ShellsInit.ShellsConfig.FtpShowDetailsInList);
 
         /// <summary>
@@ -58,7 +59,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
         /// <param name="ShowDetails">Shows the details of the file</param>
         /// <returns>The list if successful; null if unsuccessful</returns>
         /// <exception cref="InvalidOperationException"></exception>
-        public static List<string> FTPListRemote(string Path, bool ShowDetails)
+        public List<string> FTPListRemote(string Path, bool ShowDetails)
         {
             var EntryBuilder = new StringBuilder();
             var Entries = new List<string>();
@@ -68,12 +69,12 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
 
             try
             {
-                var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
                 if (!string.IsNullOrEmpty(Path))
                     Listing = instance.GetListing(Path, FtpListOption.Auto);
                 else
-                    Listing = instance.GetListing(FTPShellCommon.FtpCurrentRemoteDir, FtpListOption.Auto);
+                    Listing = instance.GetListing(FtpCurrentRemoteDir, FtpListOption.Auto);
                 foreach (FtpListItem DirListFTP in Listing)
                 {
                     FtpListItem finalDirListFTP = DirListFTP;
@@ -125,12 +126,12 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
         /// </summary>
         /// <param name="Target">Target folder or file</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FTPDeleteRemote(string Target)
+        public bool FTPDeleteRemote(string Target)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", vars: [Target]);
 
             // Delete a file or folder
-            var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+            var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
             if (instance.FileExists(Target))
             {
@@ -158,17 +159,17 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
-        public static bool FTPChangeRemoteDir(string Directory)
+        public bool FTPChangeRemoteDir(string Directory)
         {
             if (!string.IsNullOrEmpty(Directory))
             {
-                var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
                 if (instance.DirectoryExists(Directory))
                 {
                     // Directory exists, go to the new directory
                     instance.SetWorkingDirectory(Directory);
-                    FTPShellCommon.FtpCurrentRemoteDir = instance.GetWorkingDirectory();
+                    FtpCurrentRemoteDir = instance.GetWorkingDirectory();
                     return true;
                 }
                 else
@@ -189,19 +190,19 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
         /// <param name="Directory">Local directory to change to</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="ArgumentNullException"></exception>
-        public static bool FTPChangeLocalDir(string Directory)
+        public bool FTPChangeLocalDir(string Directory)
         {
             if (!string.IsNullOrEmpty(Directory))
             {
                 string targetDir;
-                targetDir = FilesystemTools.NeutralizePath(Directory, FTPShellCommon.FtpCurrentDirectory);
+                targetDir = FilesystemTools.NeutralizePath(Directory, FtpCurrentDirectory);
 
                 // Check if folder exists
                 if (FilesystemTools.FolderExists(targetDir))
                 {
                     // Parse written directory
                     var parser = new DirectoryInfo(targetDir);
-                    FTPShellCommon.FtpCurrentDirectory = parser.FullName;
+                    FtpCurrentDirectory = parser.FullName;
                     return true;
                 }
                 else
@@ -222,10 +223,10 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
         /// <param name="Target">Target file or folder</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="InvalidOperationException"></exception>
-        public static bool FTPMoveItem(string Source, string Target)
+        public bool FTPMoveItem(string Source, string Target)
         {
             var Success = false;
-            var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+            var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
 
             // Begin the moving process
@@ -248,11 +249,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
         /// <param name="Target">Target file or folder</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="InvalidOperationException"></exception>
-        public static bool FTPCopyItem(string Source, string Target)
+        public bool FTPCopyItem(string Source, string Target)
         {
             bool Success = true;
             object? Result = null;
-            var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+            var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
 
             // Begin the copying process
@@ -311,11 +312,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
         /// <param name="Target">Target file</param>
         /// <param name="Chmod">Permissions in CHMOD format. See https://man7.org/linux/man-pages/man2/chmod.2.html chmod(2) for more info.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FTPChangePermissions(string Target, int Chmod)
+        public bool FTPChangePermissions(string Target, int Chmod)
         {
             try
             {
-                var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
                 instance.Chmod(Target, Chmod);
                 return true;
@@ -333,11 +334,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
         /// </summary>
         /// <param name="name">New directory name</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FTPMakeDirectory(string name)
+        public bool FTPMakeDirectory(string name)
         {
             try
             {
-                var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
                 return instance.CreateDirectory(name);
             }
@@ -354,7 +355,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
         /// </summary>
         /// <param name="name">Path to file or directory</param>
         /// <returns>True if found; False otherwise</returns>
-        public static bool FTPExists(string name) =>
+        public bool FTPExists(string name) =>
             FTPFileExists(name) || FTPDirectoryExists(name);
 
         /// <summary>
@@ -362,11 +363,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
         /// </summary>
         /// <param name="name">Path to file</param>
         /// <returns>True if found; False otherwise</returns>
-        public static bool FTPFileExists(string name)
+        public bool FTPFileExists(string name)
         {
             try
             {
-                var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
                 return instance.FileExists(name);
             }
@@ -383,11 +384,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
         /// </summary>
         /// <param name="name">Path to file</param>
         /// <returns>True if found; False otherwise</returns>
-        public static bool FTPDirectoryExists(string name)
+        public bool FTPDirectoryExists(string name)
         {
             try
             {
-                var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
                 return instance.DirectoryExists(name);
             }

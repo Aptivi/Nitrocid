@@ -33,18 +33,6 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Tools
     /// </summary>
     public static class RSSBookmarkManager
     {
-
-        /// <summary>
-        /// Adds the current RSS feed to the bookmarks
-        /// </summary>
-        public static void AddRSSFeedToBookmark()
-        {
-            if (!string.IsNullOrEmpty(RSSShellCommon.RSSFeedLink))
-                AddRSSFeedToBookmark(RSSShellCommon.RSSFeedLink);
-            else
-                DebugWriter.WriteDebug(DebugLevel.W, "Trying to add null feed link to bookmarks. Ignored.");
-        }
-
         /// <summary>
         /// Adds the RSS feed URL to the bookmarks
         /// </summary>
@@ -83,17 +71,6 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Tools
             }
             else
                 DebugWriter.WriteDebug(DebugLevel.W, "Trying to add null feed link to bookmarks. Ignored.");
-        }
-
-        /// <summary>
-        /// Removes the current RSS feed from the bookmarks
-        /// </summary>
-        public static void RemoveRSSFeedFromBookmark()
-        {
-            if (!string.IsNullOrEmpty(RSSShellCommon.RSSFeedLink))
-                RemoveRSSFeedFromBookmark(RSSShellCommon.RSSFeedLink);
-            else
-                DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove null feed link from bookmarks. Ignored.");
         }
 
         /// <summary>

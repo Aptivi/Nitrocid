@@ -18,11 +18,12 @@
 //
 
 using System.Collections.Generic;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem;
-using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 {
@@ -53,17 +54,17 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var sftpShell = (SFTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             bool ShowFileDetails = parameters.ContainsSwitch("-showdetails") || ShellsInit.ShellsConfig.SFTPShowDetailsInList;
             var Entries = new List<string>();
             if (parameters.ArgumentsList.Length != 0)
             {
                 foreach (string TargetDirectory in parameters.ArgumentsList)
-                    Entries = SFTPFilesystem.SFTPListRemote(TargetDirectory, ShowFileDetails);
+                    Entries = sftpShell.SFTPListRemote(TargetDirectory, ShowFileDetails);
             }
             else
-            {
-                Entries = SFTPFilesystem.SFTPListRemote("", ShowFileDetails);
-            }
+                Entries = sftpShell.SFTPListRemote("", ShowFileDetails);
             Entries.Sort();
             foreach (string Entry in Entries)
                 TextWriterColor.Write(Entry, true, ThemeColorType.ListEntry);

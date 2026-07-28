@@ -17,14 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using MailKit;
+using MimeKit;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Shells.Mail.Interactive;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.Base.Languages;
-using System;
-using Nitrocid.ShellPacks.Shells.Mail.Interactive;
-using MailKit;
-using MimeKit;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 {
@@ -33,7 +34,9 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var tui = new MailManagerCli();
+            var mailShell = (MailShell?)shell ??
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            var tui = new MailManagerCli(mailShell);
             tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
             tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_CREATEFOLDER"), ConsoleKey.F1, (_, _, _, _) => tui.MakeFolder()));
             tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVE"), ConsoleKey.F2, (_, _, _, index) => tui.MoveMessage(index)));

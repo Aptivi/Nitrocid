@@ -18,6 +18,8 @@
 //
 
 using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 
@@ -34,7 +36,9 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            string targetDir = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0], SFTPShellCommon.SFTPCurrDirect);
+            var sftpShell = (SFTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            string targetDir = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0], sftpShell.SFTPCurrDirect);
             FilesystemTools.MakeDirectory(targetDir);
             return 0;
         }

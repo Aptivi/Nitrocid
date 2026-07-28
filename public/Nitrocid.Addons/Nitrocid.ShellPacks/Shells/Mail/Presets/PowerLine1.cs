@@ -17,14 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Text;
 using System.Collections.Generic;
+using System.Text;
 using Colorimetry;
-using Terminaux.Shell.Prompts;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Themes.Colors;
-using Terminaux.Base.Extensions;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Shells.Mail.Tools;
+using Terminaux.Base.Extensions;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Presets
 {
@@ -58,11 +61,14 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Presets
 
         private string PresetPromptBuilder()
         {
+            var mailShell = (MailShell?)ShellManager.CurrentShell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // Segments
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), MailLogin.Authentication.UserName),
-                new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), MailShellCommon.IMAP_CurrentDirectory),
+                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), mailShell.NetworkCredential.UserName),
+                new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), mailShell.IMAP_CurrentDirectory),
             ];
 
             // Builder

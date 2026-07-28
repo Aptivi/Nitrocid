@@ -480,5 +480,9 @@ namespace Nitrocid.Base.Kernel.Exceptions
         /// There was an error when trying to process your prompt for the AI chatbot.
         /// </summary>
         ChatbotAI,
+        /// <summary>
+        /// There was an error when trying to process your request for Git operations.
+        /// </summary>
+        Git,
     }
 }

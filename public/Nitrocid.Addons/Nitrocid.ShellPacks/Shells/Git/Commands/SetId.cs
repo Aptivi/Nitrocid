@@ -17,11 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -36,10 +37,12 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            GitShellCommon.email = parameters.ArgumentsList[0];
-            GitShellCommon.name = parameters.ArgumentsList[1];
-            GitShellCommon.isIdentified = true;
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_SETID_SUCCESS") + $": {GitShellCommon.name} <{GitShellCommon.email}>", true, ThemeColorType.Success);
+            var gitShell = (GitShell?)shell ??
+                throw new KernelException(KernelExceptionType.Git, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            gitShell.email = parameters.ArgumentsList[0];
+            gitShell.name = parameters.ArgumentsList[1];
+            gitShell.isIdentified = true;
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_SETID_SUCCESS") + $": {gitShell.name} <{gitShell.email}>", true, ThemeColorType.Success);
             return 0;
         }
 

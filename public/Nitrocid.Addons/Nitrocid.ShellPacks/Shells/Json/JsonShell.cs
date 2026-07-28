@@ -18,23 +18,34 @@
 //
 
 using System;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using System.IO;
+using System.Threading;
+using Newtonsoft.Json.Linq;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
-using Terminaux.Shell.Shells;
-using System.Threading;
-using Terminaux.Shell.Commands;
 using Terminaux.Inputs;
-using Nitrocid.ShellPacks.Shells.Json.Tools;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Threadify.Manager;
 
 namespace Nitrocid.ShellPacks.Shells.Json
 {
     /// <summary>
     /// The JSON editor shell
     /// </summary>
-    public class JsonShell : BaseShell, IShell
+    public partial class JsonShell : BaseShell, IShell
     {
+        internal JToken FileTokenOrig = JToken.Parse("{}");
+        internal FileStream? FileStream;
+        internal ThreadInstance AutoSave = new("JSON Shell Autosave Thread", false, new ParameterizedThreadStart((shell) => HandleAutoSaveJsonFile((JsonShell?)shell)));
+        internal int autoSaveInterval = 60;
+
+        /// <summary>
+        /// JSON shell file token
+        /// </summary>
+        public JToken FileToken { get; set; } = JToken.Parse("{}");
 
         /// <inheritdoc/>
         public override string ShellType => "JsonShell";
@@ -63,15 +74,15 @@ namespace Nitrocid.ShellPacks.Shells.Json
             }
 
             // Open file if not open
-            if (JsonShellCommon.FileStream is null)
+            if (FileStream is null)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", vars: [FilePath]);
-                if (!JsonTools.OpenJsonFile(FilePath))
+                if (!OpenJsonFile(FilePath))
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_OPENFAILED"), true, ThemeColorType.Error);
                     Bail = true;
                 }
-                JsonShellCommon.AutoSave.Start();
+                AutoSave.Start(this);
             }
 
             while (!Bail)
@@ -97,8 +108,8 @@ namespace Nitrocid.ShellPacks.Shells.Json
             }
 
             // Close file
-            JsonTools.CloseJsonFile();
-            JsonShellCommon.AutoSave.Stop();
+            CloseJsonFile();
+            AutoSave.Stop();
         }
 
     }

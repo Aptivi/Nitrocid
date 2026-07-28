@@ -18,6 +18,8 @@
 //
 
 using LibGit2Sharp;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 
@@ -34,6 +36,9 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var gitShell = (GitShell?)shell ??
+                throw new KernelException(KernelExceptionType.Git, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // Assume that we want to do a soft reset
             var resetMode = ResetMode.Soft;
             if (parameters.SwitchesList.Length > 0)
@@ -51,7 +56,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             }
 
             // Now, reset.
-            GitShellCommon.Repository.Reset(resetMode);
+            gitShell.Repository.Reset(resetMode);
             return 0;
         }
 

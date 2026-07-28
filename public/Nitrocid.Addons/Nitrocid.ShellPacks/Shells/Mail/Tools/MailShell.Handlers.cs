@@ -19,31 +19,27 @@
 
 using System;
 using System.Linq;
-using MailKit;
 using MailKit.Net.Imap;
-using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
-using SpecProbe.Software.Platform;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Shell.Shells;
 using Textify.General;
 
-namespace Nitrocid.ShellPacks.Shells.Mail.Tools
+namespace Nitrocid.ShellPacks.Shells.Mail
 {
     /// <summary>
     /// Mail event handlers
     /// </summary>
-    public static class MailHandlers
+    public partial class MailShell : BaseShell, IShell
     {
 
         /// <summary>
         /// Initializes the CountChanged handlers. Currently, it only supports inbox.
         /// </summary>
-        public static void InitializeHandlers()
+        public void InitializeHandlers()
         {
-            var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
+            var client = (ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0];
             var inbox = client.Inbox ??
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
             inbox.CountChanged += OnCountChanged;
@@ -52,23 +48,12 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// <summary>
         /// Releases the CountChanged handlers. Currently, it only supports inbox.
         /// </summary>
-        public static void ReleaseHandlers()
+        public void ReleaseHandlers()
         {
-            var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
+            var client = (ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0];
             var inbox = client.Inbox ??
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
             inbox.CountChanged -= OnCountChanged;
-        }
-
-        /// <summary>
-        /// Handles WebAlert sent by Gmail
-        /// </summary>
-        public static void HandleWebAlert(object? sender, WebAlertEventArgs e)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "WebAlert URI: {0}", vars: [e.WebUri.AbsoluteUri]);
-            TextWriterColor.Write(e.Message, true, ThemeColorType.Warning);
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_WEBALERT_OPENING"));
-            PlatformHelper.PlatformOpen(e.WebUri.AbsoluteUri);
         }
 
         /// <summary>
@@ -76,11 +61,11 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// </summary>
         /// <param name="sender">A folder</param>
         /// <param name="e">Event arguments</param>
-        public static void OnCountChanged(object? sender, EventArgs e)
+        public void OnCountChanged(object? sender, EventArgs e)
         {
             if (sender is not ImapFolder folder)
                 return;
-            var messages = MailShellCommon.IMAP_Messages ?? [];
+            var messages = IMAP_Messages ?? [];
             if (folder.Count > messages.Count())
             {
                 int NewMessagesCount = folder.Count - messages.Count();

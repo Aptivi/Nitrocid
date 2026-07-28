@@ -18,13 +18,14 @@
 //
 
 using LibGit2Sharp;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Time.Timezones;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -39,7 +40,9 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (!GitShellCommon.isIdentified)
+            var gitShell = (GitShell?)shell ??
+                throw new KernelException(KernelExceptionType.Git, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            if (!gitShell.isIdentified)
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1") + " 'setid' " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2"), true, ThemeColorType.Error);
                 return 15;
@@ -47,8 +50,8 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
 
             string tagName = parameters.ArgumentsList[0];
             string message = parameters.ArgumentsList.Length > 1 ? parameters.ArgumentsList[1] : "";
-            var author = new Signature(GitShellCommon.name, GitShellCommon.email, new(TimeDateTools.KernelDateTime, TimeZoneRenderers.ShowTimeZoneUtcOffsetLocal()));
-            var tag = GitShellCommon.Repository.ApplyTag(tagName, author, message);
+            var author = new Signature(gitShell.name, gitShell.email, new(TimeDateTools.KernelDateTime, TimeZoneRenderers.ShowTimeZoneUtcOffsetLocal()));
+            var tag = gitShell.Repository.ApplyTag(tagName, author, message);
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_MAKETAG_CREATED"));
             TextWriterColor.Write($"- [{(tag.IsAnnotated ? "A" : " ")}] {tag.CanonicalName} [{tag.FriendlyName}]", true, ThemeColorType.ListEntry);
             TextWriterColor.Write($"  {tag.Target.Sha}", true, ThemeColorType.ListValue);

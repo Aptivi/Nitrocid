@@ -21,7 +21,6 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
-using Terminaux.Themes.Colors;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
@@ -30,10 +29,12 @@ using Nitrocid.Base.Misc.Reflection;
 using Renci.SshNet;
 using Renci.SshNet.Sftp;
 using Terminaux.Base.Extensions;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
 
-namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem
+namespace Nitrocid.ShellPacks.Shells.SFTP
 {
-    static class SFTPFilesystem
+    public partial class SFTPShell : BaseShell, IShell
     {
 
         /// <summary>
@@ -42,7 +43,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem
         /// <param name="Path">Path to folder</param>
         /// <returns>The list if successful; null if unsuccessful</returns>
         /// <exception cref="InvalidOperationException"></exception>
-        public static List<string> SFTPListRemote(string Path) =>
+        public List<string> SFTPListRemote(string Path) =>
             SFTPListRemote(Path, ShellsInit.ShellsConfig.SFTPShowDetailsInList);
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem
         /// <param name="ShowDetails">Shows the details of the file</param>
         /// <returns>The list if successful; null if unsuccessful</returns>
         /// <exception cref="InvalidOperationException"></exception>
-        public static List<string> SFTPListRemote(string Path, bool ShowDetails)
+        public List<string> SFTPListRemote(string Path, bool ShowDetails)
         {
             var EntryBuilder = new StringBuilder();
             var Entries = new List<string>();
@@ -62,12 +63,12 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem
 
             try
             {
-                var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                var client = (SftpClient?)ClientSFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
                 if (!string.IsNullOrEmpty(Path))
                     Listing = client.ListDirectory(Path);
                 else
-                    Listing = client.ListDirectory(SFTPShellCommon.SFTPCurrentRemoteDir ?? "");
+                    Listing = client.ListDirectory(SFTPCurrentRemoteDir ?? "");
                 foreach (ISftpFile DirListSFTP in Listing)
                 {
                     EntryBuilder.Append($"- {DirListSFTP.Name}");
@@ -110,9 +111,9 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem
         /// </summary>
         /// <param name="Target">Target folder or file</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool SFTPDeleteRemote(string Target)
+        public bool SFTPDeleteRemote(string Target)
         {
-            var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+            var client = (SftpClient?)ClientSFTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
             DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", vars: [Target]);
 
@@ -138,9 +139,9 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
-        public static bool SFTPChangeRemoteDir(string Directory)
+        public bool SFTPChangeRemoteDir(string Directory)
         {
-            var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+            var client = (SftpClient?)ClientSFTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
             if (!string.IsNullOrEmpty(Directory))
             {
@@ -148,7 +149,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem
                 {
                     // Directory exists, go to the new directory
                     client.ChangeDirectory(Directory);
-                    SFTPShellCommon.SFTPCurrentRemoteDir = client.WorkingDirectory;
+                    SFTPCurrentRemoteDir = client.WorkingDirectory;
                     return true;
                 }
                 else
@@ -170,17 +171,17 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
-        public static bool SFTPChangeLocalDir(string Directory)
+        public bool SFTPChangeLocalDir(string Directory)
         {
             string targetDir;
-            targetDir = FilesystemTools.NeutralizePath(Directory, SFTPShellCommon.SFTPCurrDirect);
+            targetDir = FilesystemTools.NeutralizePath(Directory, SFTPCurrDirect);
 
             // Check if folder exists
             if (FilesystemTools.FolderExists(targetDir))
             {
                 // Parse written directory
                 var parser = new System.IO.DirectoryInfo(targetDir);
-                SFTPShellCommon.SFTPCurrDirect = parser.FullName;
+                SFTPCurrDirect = parser.FullName;
                 return true;
             }
             else
@@ -194,9 +195,9 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem
         /// </summary>
         /// <param name="Path">The remote path</param>
         /// <returns>Absolute path for a remote path</returns>
-        public static string SFTPGetCanonicalPath(string Path)
+        public string SFTPGetCanonicalPath(string Path)
         {
-            var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+            var client = (SftpClient?)ClientSFTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
 
             // GetCanonicalPath was supposed to be public, but it's in a private class called SftpSession. It should be in SftpClient, which is public.
@@ -217,11 +218,11 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem
         /// </summary>
         /// <param name="name">New directory name</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool SFTPMakeDirectory(string name)
+        public bool SFTPMakeDirectory(string name)
         {
             try
             {
-                var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                var client = (SftpClient?)ClientSFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
                 client.CreateDirectory(name);
                 return true;
@@ -239,7 +240,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem
         /// </summary>
         /// <param name="name">Path to file or directory</param>
         /// <returns>True if found; False otherwise</returns>
-        public static bool SFTPExists(string name) =>
+        public bool SFTPExists(string name) =>
             SFTPFileExists(name) || SFTPDirectoryExists(name);
 
         /// <summary>
@@ -247,11 +248,11 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem
         /// </summary>
         /// <param name="name">Path to file</param>
         /// <returns>True if found; False otherwise</returns>
-        public static bool SFTPFileExists(string name)
+        public bool SFTPFileExists(string name)
         {
             try
             {
-                var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                var client = (SftpClient?)ClientSFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
                 return client.Exists(name) && !client.Get(name).IsDirectory;
             }
@@ -268,11 +269,11 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem
         /// </summary>
         /// <param name="name">Path to file</param>
         /// <returns>True if found; False otherwise</returns>
-        public static bool SFTPDirectoryExists(string name)
+        public bool SFTPDirectoryExists(string name)
         {
             try
             {
-                var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                var client = (SftpClient?)ClientSFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
                 return client.Exists(name) && client.Get(name).IsDirectory;
             }

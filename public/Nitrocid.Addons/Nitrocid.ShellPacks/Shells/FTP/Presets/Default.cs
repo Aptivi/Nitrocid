@@ -18,10 +18,13 @@
 //
 
 using System.Text;
-using Terminaux.Themes.Colors;
+using FluentFTP;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Terminaux.Shell.Prompts;
 using Terminaux.Base.Extensions;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Presets
 {
@@ -47,6 +50,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Presets
 
         private string PresetPromptBuilder()
         {
+            var ftpShell = (FTPShell?)ShellManager.CurrentShell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            FtpClient? clientFTP = (FtpClient?)ftpShell.ClientFTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT"));
+
             // Build the preset
             var PresetStringBuilder = new StringBuilder();
 
@@ -56,7 +64,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Presets
 
             // SFTP user
             PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground());
-            PresetStringBuilder.AppendFormat("{0}", FTPShellCommon.FtpUser);
+            PresetStringBuilder.AppendFormat("{0}", clientFTP.Credentials.UserName);
 
             // "at" sign
             PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
@@ -64,11 +72,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Presets
 
             // SFTP site
             PresetStringBuilder.Append(ThemeColorsTools.GetColor("HostNameShellColor").VTSequenceForeground());
-            PresetStringBuilder.AppendFormat("{0}", FTPShellCommon.FtpSite);
+            PresetStringBuilder.AppendFormat("{0}", clientFTP.Host);
 
             // Closing
             PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
-            PresetStringBuilder.AppendFormat("]{0}> ", FTPShellCommon.FtpCurrentRemoteDir);
+            PresetStringBuilder.AppendFormat("]{0}> ", ftpShell.FtpCurrentRemoteDir);
             PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground());
 
             // Present final string

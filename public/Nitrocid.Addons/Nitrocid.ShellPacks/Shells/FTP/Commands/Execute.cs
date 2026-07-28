@@ -23,6 +23,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {
@@ -37,8 +38,10 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var ftpShell = (FTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             TextWriterColor.Write("<<< C: {0}", parameters.ArgumentsText);
-            var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance;
+            var client = (FtpClient?)ftpShell.ClientFTP?.ConnectionInstance;
             if (client is null)
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPShell);
             var ExecutedReply = client.Execute(parameters.ArgumentsText);

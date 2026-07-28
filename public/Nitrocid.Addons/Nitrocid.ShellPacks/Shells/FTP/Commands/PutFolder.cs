@@ -24,7 +24,6 @@ using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Textify.General;
-using Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {
@@ -43,10 +42,12 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var ftpShell = (FTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             string LocalFolder = parameters.ArgumentsList[0];
             string RemoteFolder = parameters.ArgumentsList.Length > 1 ? parameters.ArgumentsList[1] : "";
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADING"), true, ThemeColorType.Progress, parameters.ArgumentsList[0]);
-            bool Result = !string.IsNullOrWhiteSpace(LocalFolder) ? FTPTransfer.FTPUploadFolder(RemoteFolder, LocalFolder) : FTPTransfer.FTPUploadFolder(RemoteFolder);
+            bool Result = !string.IsNullOrWhiteSpace(LocalFolder) ? ftpShell.FTPUploadFolder(RemoteFolder, LocalFolder) : ftpShell.FTPUploadFolder(RemoteFolder);
             if (Result)
             {
                 TextWriterRaw.Write();

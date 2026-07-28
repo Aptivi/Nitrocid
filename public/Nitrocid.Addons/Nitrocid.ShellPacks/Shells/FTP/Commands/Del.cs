@@ -18,14 +18,14 @@
 //
 
 using System;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Inputs.Styles.Choice;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
-using Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {
@@ -44,6 +44,9 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var ftpShell = (FTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // Print a message
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPHTTPSFTP_DELETING"), true, ThemeColorType.Progress, parameters.ArgumentsList[0]);
 
@@ -54,7 +57,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 
             try
             {
-                FTPFilesystem.FTPDeleteRemote(parameters.ArgumentsList[0]);
+                ftpShell.FTPDeleteRemote(parameters.ArgumentsList[0]);
                 return 0;
             }
             catch (Exception ex)

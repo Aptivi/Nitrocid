@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 
@@ -33,9 +35,11 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (GitShellCommon.Repository is null)
+            var gitShell = (GitShell?)shell ??
+                throw new KernelException(KernelExceptionType.Git, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            if (gitShell.Repository is null)
                 return 43;
-            GitShellCommon.Repository.Network.Push(GitShellCommon.Repository.Branches[GitShellCommon.BranchName]);
+            gitShell.Repository.Network.Push(gitShell.Repository.Branches[gitShell.BranchName]);
             return 0;
         }
 

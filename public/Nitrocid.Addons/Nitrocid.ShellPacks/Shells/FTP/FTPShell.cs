@@ -31,7 +31,6 @@ using Terminaux.Themes.Colors;
 using Nitrocid.Base.Network.SpeedDial;
 using Nitrocid.Base.Network.Connections;
 using Terminaux.Inputs;
-using Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer;
 using Nitrocid.ShellPacks.Shells.FTP.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.FTP
@@ -39,8 +38,25 @@ namespace Nitrocid.ShellPacks.Shells.FTP
     /// <summary>
     /// The FTP shell
     /// </summary>
-    public class FTPShell : BaseShell, IShell
+    public partial class FTPShell : BaseShell, IShell
     {
+        internal NetworkConnection? clientConnection;
+
+        /// <summary>
+        /// The FTP client used to connect to the FTP server
+        /// </summary>
+        public NetworkConnection? ClientFTP =>
+            clientConnection;
+
+        /// <summary>
+        /// FTP current local directory
+        /// </summary>
+        public string FtpCurrentDirectory { get; set; } = "";
+
+        /// <summary>
+        /// FTP current remote directory
+        /// </summary>
+        public string FtpCurrentRemoteDir { get; set; } = "";
 
         /// <inheritdoc/>
         public override string ShellType => "FTPShell";
@@ -59,25 +75,23 @@ namespace Nitrocid.ShellPacks.Shells.FTP
                 throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT"));
 
             // Finalize current connection
-            FTPShellCommon.clientConnection = ftpConnection;
+            clientConnection = ftpConnection;
 
             // If MOTD exists, show it
             if (ShellsInit.ShellsConfig.FtpShowMotd)
             {
                 if (clientFTP.FileExists("welcome.msg"))
-                    TextWriterColor.Write(FTPTransfer.FTPDownloadToString("welcome.msg"), true, ThemeColorType.Banner);
+                    TextWriterColor.Write(FTPDownloadToString("welcome.msg"), true, ThemeColorType.Banner);
                 else if (clientFTP.FileExists(".message"))
-                    TextWriterColor.Write(FTPTransfer.FTPDownloadToString(".message"), true, ThemeColorType.Banner);
+                    TextWriterColor.Write(FTPDownloadToString(".message"), true, ThemeColorType.Banner);
             }
 
             // Prepare to print current FTP directory
-            FTPShellCommon.FtpCurrentRemoteDir = clientFTP.GetWorkingDirectory();
-            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", vars: [FTPShellCommon.FtpCurrentRemoteDir]);
-            FTPShellCommon.FtpSite = clientFTP.Host;
-            FTPShellCommon.FtpUser = clientFTP.Credentials.UserName;
+            FtpCurrentRemoteDir = clientFTP.GetWorkingDirectory();
+            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", vars: [FtpCurrentRemoteDir]);
 
             // Write connection information to Speed Dial file if it doesn't exist there
-            SpeedDialTools.TryAddEntryToSpeedDial(FTPShellCommon.FtpSite, clientFTP.Port, NetworkConnectionType.FTP, clientFTP.Credentials.UserName, clientFTP.Credentials.Password, false, new()
+            SpeedDialTools.TryAddEntryToSpeedDial(clientFTP.Host, clientFTP.Port, NetworkConnectionType.FTP, clientFTP.Credentials.UserName, clientFTP.Credentials.Password, false, new()
             {
                 { "FtpEncryptionMode", (long)clientFTP.Config.EncryptionMode }
             });
@@ -91,7 +105,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP
             clientFTP.Config.LogPassword = false;
 
             // Populate FTP current directory
-            FTPShellCommon.FtpCurrentDirectory = PathsManagement.HomePath;
+            FtpCurrentDirectory = PathsManagement.HomePath;
 
             // Actual shell logic
             while (!Bail)
@@ -121,16 +135,10 @@ namespace Nitrocid.ShellPacks.Shells.FTP
                     if (!detaching)
                     {
                         clientFTP?.Disconnect();
-                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(FTPShellCommon.ClientFTP);
+                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(ClientFTP);
                         NetworkConnectionTools.CloseConnection(connectionIndex);
-                        FTPShellCommon.clientConnection = null;
                     }
                     detaching = false;
-                    FTPShellCommon.FtpSite = "";
-                    FTPShellCommon.FtpCurrentDirectory = "";
-                    FTPShellCommon.FtpCurrentRemoteDir = "";
-                    FTPShellCommon.FtpUser = "";
-                    FTPShellCommon.FtpPass = "";
                 }
             }
         }

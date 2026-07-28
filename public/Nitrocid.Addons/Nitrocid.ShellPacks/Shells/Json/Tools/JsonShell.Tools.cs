@@ -27,13 +27,14 @@ using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Shells;
 
-namespace Nitrocid.ShellPacks.Shells.Json.Tools
+namespace Nitrocid.ShellPacks.Shells.Json
 {
     /// <summary>
     /// JSON shell tools
     /// </summary>
-    public static class JsonTools
+    public partial class JsonShell : BaseShell, IShell
     {
 
         /// <summary>
@@ -41,17 +42,17 @@ namespace Nitrocid.ShellPacks.Shells.Json.Tools
         /// </summary>
         /// <param name="File">Target file. We recommend you to use <see cref="FilesystemTools.NeutralizePath(string, bool)"></see> to neutralize path.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool OpenJsonFile(string File)
+        public bool OpenJsonFile(string File)
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", vars: [File]);
-                JsonShellCommon.FileStream = new FileStream(File, FileMode.Open);
-                var JsonFileReader = new StreamReader(JsonShellCommon.FileStream);
+                FileStream = new FileStream(File, FileMode.Open);
+                var JsonFileReader = new StreamReader(FileStream);
                 string JsonFileContents = FilesystemTools.ReadToEndAndSeek(ref JsonFileReader);
-                JsonShellCommon.FileToken = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
-                JsonShellCommon.FileTokenOrig = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
-                DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", vars: [File, JsonShellCommon.FileStream.Length, JsonShellCommon.FileStream.Position]);
+                FileToken = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
+                FileTokenOrig = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
+                DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", vars: [File, FileStream.Length, FileStream.Position]);
                 return true;
             }
             catch (Exception ex)
@@ -66,16 +67,16 @@ namespace Nitrocid.ShellPacks.Shells.Json.Tools
         /// Closes the JSON file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool CloseJsonFile()
+        public bool CloseJsonFile()
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to close file...");
-                JsonShellCommon.FileStream?.Close();
-                JsonShellCommon.FileStream = null;
+                FileStream?.Close();
+                FileStream = null;
                 DebugWriter.WriteDebug(DebugLevel.I, "File is no longer open.");
-                JsonShellCommon.FileToken = JToken.Parse("{}");
-                JsonShellCommon.FileTokenOrig = JToken.Parse("{}");
+                FileToken = JToken.Parse("{}");
+                FileTokenOrig = JToken.Parse("{}");
                 return true;
             }
             catch (Exception ex)
@@ -90,31 +91,31 @@ namespace Nitrocid.ShellPacks.Shells.Json.Tools
         /// Saves JSON file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool SaveFile(bool ClearJson) =>
+        public bool SaveFile(bool ClearJson) =>
             SaveFile(ClearJson, (Formatting)ShellsInit.ShellsConfig.JsonShellFormatting);
 
         /// <summary>
         /// Saves JSON file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool SaveFile(bool ClearJson, Formatting Formatting)
+        public bool SaveFile(bool ClearJson, Formatting Formatting)
         {
             try
             {
-                if (JsonShellCommon.FileStream is null)
+                if (FileStream is null)
                     throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NOTOPEN"));
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to save file...");
-                JsonShellCommon.FileStream.SetLength(0L);
+                FileStream.SetLength(0L);
                 DebugWriter.WriteDebug(DebugLevel.I, "Length set to 0.");
-                var FileLinesByte = Encoding.Default.GetBytes(JsonConvert.SerializeObject(JsonShellCommon.FileToken, Formatting));
+                var FileLinesByte = Encoding.Default.GetBytes(JsonConvert.SerializeObject(FileToken, Formatting));
                 DebugWriter.WriteDebug(DebugLevel.I, "Converted lines to bytes. Length: {0}", vars: [FileLinesByte.Length]);
-                JsonShellCommon.FileStream.Write(FileLinesByte, 0, FileLinesByte.Length);
-                JsonShellCommon.FileStream.Flush();
+                FileStream.Write(FileLinesByte, 0, FileLinesByte.Length);
+                FileStream.Flush();
                 DebugWriter.WriteDebug(DebugLevel.I, "File is saved.");
                 if (ClearJson)
-                    JsonShellCommon.FileToken = JToken.Parse("{}");
-                JsonShellCommon.FileTokenOrig = JToken.Parse("{}");
-                JsonShellCommon.FileTokenOrig = JsonShellCommon.FileToken;
+                    FileToken = JToken.Parse("{}");
+                FileTokenOrig = JToken.Parse("{}");
+                FileTokenOrig = FileToken;
                 return true;
             }
             catch (Exception ex)
@@ -128,15 +129,17 @@ namespace Nitrocid.ShellPacks.Shells.Json.Tools
         /// <summary>
         /// Handles autosave
         /// </summary>
-        public static void HandleAutoSaveJsonFile()
+        public static void HandleAutoSaveJsonFile(JsonShell? shell)
         {
+            if (shell is null)
+                throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             if (ShellsInit.ShellsConfig.JsonEditAutoSaveFlag)
             {
                 try
                 {
                     Thread.Sleep(ShellsInit.ShellsConfig.JsonEditAutoSaveInterval * 1000);
-                    if (JsonShellCommon.FileStream is not null)
-                        SaveFile(false);
+                    if (shell.FileStream is not null)
+                        shell.SaveFile(false);
                 }
                 catch (Exception ex)
                 {
@@ -148,22 +151,22 @@ namespace Nitrocid.ShellPacks.Shells.Json.Tools
         /// <summary>
         /// Was JSON edited?
         /// </summary>
-        public static bool WasJsonEdited() =>
-            !JToken.DeepEquals(JsonShellCommon.FileToken, JsonShellCommon.FileTokenOrig);
+        public bool WasJsonEdited() =>
+            !JToken.DeepEquals(FileToken, FileTokenOrig);
 
         /// <summary>
         /// Gets the root type
         /// </summary>
         /// <returns>Root JToken type</returns>
-        public static JTokenType DetermineRootType() =>
-            JsonShellCommon.FileToken.Root.Type;
+        public JTokenType DetermineRootType() =>
+            FileToken.Root.Type;
 
         /// <summary>
         /// Gets the root type
         /// </summary>
         /// <param name="path">Path to the target object, array, or property</param>
         /// <returns>Root JToken type</returns>
-        public static JTokenType DetermineType(string path)
+        public JTokenType DetermineType(string path)
         {
             var token = GetTokenSafe(path);
             if (token is null)
@@ -175,11 +178,11 @@ namespace Nitrocid.ShellPacks.Shells.Json.Tools
         /// Gets a token in the JSON file
         /// </summary>
         /// <param name="path">The path to a token. You can use JSONPath.</param>
-        public static JToken GetToken(string path)
+        public JToken GetToken(string path)
         {
-            if (JsonShellCommon.FileStream is not null)
+            if (FileStream is not null)
             {
-                var TargetToken = JsonShellCommon.FileToken.SelectToken(path);
+                var TargetToken = FileToken.SelectToken(path);
                 if (TargetToken is not null)
                     return TargetToken;
                 else
@@ -193,11 +196,11 @@ namespace Nitrocid.ShellPacks.Shells.Json.Tools
         /// Gets a token in the JSON file. It returns null if not found.
         /// </summary>
         /// <param name="path">The path to a token. You can use JSONPath.</param>
-        public static JToken? GetTokenSafe(string path)
+        public JToken? GetTokenSafe(string path)
         {
-            if (JsonShellCommon.FileStream is not null)
+            if (FileStream is not null)
             {
-                var TargetToken = JsonShellCommon.FileToken.SelectToken(path);
+                var TargetToken = FileToken.SelectToken(path);
                 if (TargetToken is not null)
                     return TargetToken;
                 else
@@ -212,9 +215,9 @@ namespace Nitrocid.ShellPacks.Shells.Json.Tools
         /// </summary>
         /// <param name="parentToken">Where is the target token found?</param>
         /// <param name="path">The path to a token. You can use JSONPath.</param>
-        public static JToken? GetTokenSafe(string parentToken, string path)
+        public JToken? GetTokenSafe(string parentToken, string path)
         {
-            if (JsonShellCommon.FileStream is not null)
+            if (FileStream is not null)
             {
                 var TargetToken = GetToken(parentToken);
                 TargetToken = TargetToken.SelectToken(path);
@@ -234,7 +237,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Tools
         /// <param name="type">Either object, array, property, or raw</param>
         /// <param name="propName">Property name. Must be empty for non-object parent token type</param>
         /// <param name="value">Value. It'll be automatically processed into the form of ["value"] for arrays, {} for objects, "value" for properties, and value for raw.</param>
-        public static void Add(string parent, string type, string propName, string value)
+        public void Add(string parent, string type, string propName, string value)
         {
             // First, do some sanity checks, starting from the parent token
             var parentToken = GetTokenSafe(parent) ??
@@ -306,7 +309,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Tools
         /// <param name="type">Either object, array, property, or raw</param>
         /// <param name="propName">Property name. Must be empty for non-object parent token type</param>
         /// <param name="value">Value. It'll be automatically processed into the form of ["value"] for arrays, {} for objects, "value" for properties, and value for raw.</param>
-        public static void Set(string parent, string type, string propName, string value)
+        public void Set(string parent, string type, string propName, string value)
         {
             // First, do some sanity checks, starting from the parent token
             var parentToken = GetTokenSafe(parent) ??
@@ -377,7 +380,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Tools
         /// Removes an object, array, or property from the current JSON file
         /// </summary>
         /// <param name="parent">Where is the target to perform an operation on? Use JSONPath.</param>
-        public static void Remove(string parent)
+        public void Remove(string parent)
         {
             // First, do some sanity checks, starting from the parent token
             var parentToken = GetTokenSafe(parent) ??
@@ -397,7 +400,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Tools
         /// Serializes the property to the string
         /// </summary>
         /// <param name="Property">The property. You can use JSONPath.</param>
-        public static string SerializeToString(string Property)
+        public string SerializeToString(string Property)
         {
             var TargetToken = GetToken(Property);
             return JsonConvert.SerializeObject(TargetToken, Formatting.Indented);

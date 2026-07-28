@@ -26,26 +26,24 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer;
+using Terminaux.Shell.Shells;
 
-namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer
+namespace Nitrocid.ShellPacks.Shells.FTP
 {
     /// <summary>
     /// FTP transfer class
     /// </summary>
-    public static class FTPTransfer
+    public partial class FTPShell : BaseShell, IShell
     {
-
-        // Progress Bar Enabled
-        internal static bool progressFlag = true;
-        internal static int ConsoleOriginalPositionLeft;
-        internal static int ConsoleOriginalPositionTop;
 
         /// <summary>
         /// Downloads a file from the currently connected FTP server
         /// </summary>
         /// <param name="File">A remote file</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FTPGetFile(string File) => FTPGetFile(File, File);
+        public bool FTPGetFile(string File) =>
+            FTPGetFile(File, File);
 
         /// <summary>
         /// Downloads a file from the currently connected FTP server
@@ -53,11 +51,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer
         /// <param name="File">A remote file</param>
         /// <param name="LocalFile">A name of the local file</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FTPGetFile(string File, string LocalFile)
+        public bool FTPGetFile(string File, string LocalFile)
         {
             try
             {
-                var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                var client = (FtpClient?)ClientFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION"));
 
                 // Show a message to download
@@ -65,7 +63,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer
                 DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", vars: [File]);
 
                 // Try to download 3 times
-                string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
+                string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile, FtpCurrentDirectory);
                 var Result = client.DownloadFile(LocalFilePath, File, FtpLocalExists.Resume, (FtpVerify)((int)FtpVerify.Retry + (int)FtpVerify.Throw), FTPTransferProgress.FileProgress);
 
                 // Show a message that it's downloaded
@@ -87,7 +85,8 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer
         /// </summary>
         /// <param name="Folder">A remote folder</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FTPGetFolder(string Folder) => FTPGetFolder(Folder, "");
+        public bool FTPGetFolder(string Folder) =>
+            FTPGetFolder(Folder, "");
 
         /// <summary>
         /// Downloads a folder from the currently connected FTP server
@@ -95,11 +94,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer
         /// <param name="Folder">A remote folder</param>
         /// <param name="LocalFolder">A local folder</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FTPGetFolder(string Folder, string LocalFolder)
+        public bool FTPGetFolder(string Folder, string LocalFolder)
         {
             try
             {
-                var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                var client = (FtpClient?)ClientFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION"));
 
                 // Show a message to download
@@ -107,7 +106,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer
                 DebugWriter.WriteDebug(DebugLevel.I, "Downloading folder {0}...", vars: [Folder]);
 
                 // Try to download folder
-                string LocalFolderPath = FilesystemTools.NeutralizePath(LocalFolder, FTPShellCommon.FtpCurrentDirectory);
+                string LocalFolderPath = FilesystemTools.NeutralizePath(LocalFolder, FtpCurrentDirectory);
                 var Results = client.DownloadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpLocalExists.Resume, (FtpVerify)((int)FtpVerify.Retry + (int)FtpVerify.Throw), null, FTPTransferProgress.MultipleProgress);
 
                 // Print download results to debugger
@@ -162,7 +161,8 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer
         /// </summary>
         /// <param name="File">A local file</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FTPUploadFile(string File) => FTPUploadFile(File, File);
+        public bool FTPUploadFile(string File) =>
+            FTPUploadFile(File, File);
 
         /// <summary>
         /// Uploads a file to the currently connected FTP server
@@ -170,9 +170,9 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer
         /// <param name="File">A local file</param>
         /// <param name="LocalFile">A name of the local file</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FTPUploadFile(string File, string LocalFile)
+        public bool FTPUploadFile(string File, string LocalFile)
         {
-            var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+            var client = (FtpClient?)ClientFTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION"));
 
             // Show a message to download
@@ -181,7 +181,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer
             DebugWriter.WriteDebug(DebugLevel.I, "Where in the remote: {0}", vars: [File]);
 
             // Try to upload
-            string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
+            string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile, FtpCurrentDirectory);
             bool Success = Convert.ToBoolean(client.UploadFile(LocalFilePath, File, FtpRemoteExists.Resume, true, FtpVerify.Retry, FTPTransferProgress.FileProgress));
             DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0} to {1} with status {2}.", vars: [LocalFile, File, Success]);
             EventsManager.FireEvent(EventType.FTPPostUpload, File, Success);
@@ -193,7 +193,8 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer
         /// </summary>
         /// <param name="Folder">A local folder</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FTPUploadFolder(string Folder) => FTPUploadFolder(Folder, Folder);
+        public bool FTPUploadFolder(string Folder) =>
+            FTPUploadFolder(Folder, Folder);
 
         /// <summary>
         /// Uploads a folder to the currently connected FTP server
@@ -201,9 +202,9 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer
         /// <param name="Folder">A remote folder</param>
         /// <param name="LocalFolder">A local folder</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool FTPUploadFolder(string Folder, string LocalFolder)
+        public bool FTPUploadFolder(string Folder, string LocalFolder)
         {
-            var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+            var client = (FtpClient?)ClientFTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION"));
 
             // Show a message to download
@@ -211,7 +212,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer
             DebugWriter.WriteDebug(DebugLevel.I, "Uploading folder {0}...", vars: [Folder]);
 
             // Try to upload
-            string LocalFolderPath = FilesystemTools.NeutralizePath(LocalFolder, FTPShellCommon.FtpCurrentDirectory);
+            string LocalFolderPath = FilesystemTools.NeutralizePath(LocalFolder, FtpCurrentDirectory);
             var Results = client.UploadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpRemoteExists.Resume, FtpVerify.Retry, null, FTPTransferProgress.MultipleProgress);
 
             // Print upload results to debugger
@@ -258,11 +259,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer
         /// </summary>
         /// <param name="File">A text file.</param>
         /// <returns>Contents of the file</returns>
-        public static string FTPDownloadToString(string File)
+        public string FTPDownloadToString(string File)
         {
             try
             {
-                var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                var client = (FtpClient?)ClientFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION"));
 
                 // Show a message to download

@@ -68,7 +68,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Widgets
         {
             try
             {
-                articles ??= RSSShellTools.GetArticles(HeadlineUrl);
+                articles ??= RSSTools.GetArticles(HeadlineUrl);
                 if (articles is not null)
                 {
                     var headlines = new StringBuilder();

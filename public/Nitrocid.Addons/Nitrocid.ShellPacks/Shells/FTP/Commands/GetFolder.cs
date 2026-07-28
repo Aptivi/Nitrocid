@@ -23,7 +23,6 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {
@@ -38,10 +37,12 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var ftpShell = (FTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             string RemoteFolder = parameters.ArgumentsList[0];
             string LocalFolder = parameters.ArgumentsList.Length > 1 ? parameters.ArgumentsList[1] : "";
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADING"), true, ThemeColorType.Progress, RemoteFolder);
-            bool Result = !string.IsNullOrWhiteSpace(LocalFolder) ? FTPTransfer.FTPGetFolder(RemoteFolder, LocalFolder) : FTPTransfer.FTPGetFolder(RemoteFolder);
+            bool Result = !string.IsNullOrWhiteSpace(LocalFolder) ? ftpShell.FTPGetFolder(RemoteFolder, LocalFolder) : ftpShell.FTPGetFolder(RemoteFolder);
             if (Result)
             {
                 TextWriterRaw.Write();

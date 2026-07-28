@@ -17,13 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Text;
 using System.Collections.Generic;
+using System.Text;
 using Colorimetry;
-using Terminaux.Themes.Colors;
-using Terminaux.Shell.Prompts;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Base.Extensions;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Presets
 {
@@ -57,10 +60,13 @@ namespace Nitrocid.ShellPacks.Shells.Git.Presets
 
         private string PresetPromptBuilder()
         {
+            var gitShell = (GitShell?)ShellManager.CurrentShell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // PowerLine presets
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), GitShellCommon.BranchName)
+                new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), gitShell.BranchName)
             ];
 
             // Builder

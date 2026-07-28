@@ -26,28 +26,29 @@ using MailKit.Net.Imap;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Shells;
 
-namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Directory
+namespace Nitrocid.ShellPacks.Shells.Mail
 {
     /// <summary>
     /// Mail directory module
     /// </summary>
-    public static class MailDirectory
+    public partial class MailShell : BaseShell, IShell
     {
 
         /// <summary>
         /// Creates mail folder
         /// </summary>
         /// <param name="Directory">Directory name</param>
-        public static void CreateMailDirectory(string Directory)
+        public void CreateMailDirectory(string Directory)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Creating folder: {0}", vars: [Directory]);
             try
             {
                 MailFolder MailFolder;
-                lock (((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]).SyncRoot)
+                lock (ImapClient.SyncRoot)
                 {
-                    MailFolder = OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
+                    MailFolder = OpenFolder(IMAP_CurrentDirectory);
                     MailFolder.Create(Directory, true);
                 }
             }
@@ -63,13 +64,13 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Directory
         /// Deletes mail folder
         /// </summary>
         /// <param name="Directory">Directory name</param>
-        public static void DeleteMailDirectory(string Directory)
+        public void DeleteMailDirectory(string Directory)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Deleting folder: {0}", vars: [Directory]);
             try
             {
                 MailFolder MailFolder;
-                lock (((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]).SyncRoot)
+                lock (((ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0]).SyncRoot)
                 {
                     MailFolder = OpenFolder(Directory);
                     MailFolder.Delete();
@@ -88,13 +89,13 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Directory
         /// </summary>
         /// <param name="Directory">Directory name</param>
         /// <param name="NewName">New mail directory name</param>
-        public static void RenameMailDirectory(string Directory, string NewName)
+        public void RenameMailDirectory(string Directory, string NewName)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Renaming folder {0} to {1}", vars: [Directory, NewName]);
             try
             {
                 MailFolder MailFolder;
-                lock (((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]).SyncRoot)
+                lock (((ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0]).SyncRoot)
                 {
                     MailFolder = OpenFolder(Directory);
                     MailFolder.Rename(MailFolder.ParentFolder ?? MailFolder, NewName);
@@ -112,14 +113,14 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Directory
         /// Changes current mail directory
         /// </summary>
         /// <param name="Directory">A mail directory</param>
-        public static void MailChangeDirectory(string Directory)
+        public void MailChangeDirectory(string Directory)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Opening folder: {0}", vars: [Directory]);
             try
             {
-                lock (((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]).SyncRoot)
+                lock (((ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0]).SyncRoot)
                     OpenFolder(Directory);
-                MailShellCommon.IMAP_CurrentDirectory = Directory;
+                IMAP_CurrentDirectory = Directory;
                 DebugWriter.WriteDebug(DebugLevel.I, "Current directory changed.");
             }
             catch (Exception ex)
@@ -136,10 +137,10 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Directory
         /// <param name="FolderString">A folder to open (not a path)</param>
         /// <param name="FolderMode">Folder mode</param>
         /// <returns>A folder</returns>
-        public static MailFolder OpenFolder(string FolderString, FolderAccess FolderMode = FolderAccess.ReadWrite)
+        public MailFolder OpenFolder(string FolderString, FolderAccess FolderMode = FolderAccess.ReadWrite)
         {
             var Opened = default(MailFolder);
-            var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
+            var client = (ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0];
             DebugWriter.WriteDebug(DebugLevel.I, "Personal namespace collection parsing started.");
             foreach (FolderNamespace nmspc in client.PersonalNamespaces)
             {
@@ -196,9 +197,9 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Directory
         /// Lists directories
         /// </summary>
         /// <returns>A list of mail folder instances</returns>
-        public static MailFolder[] MailListDirectories()
+        public MailFolder[] MailListDirectories()
         {
-            var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
+            var client = (ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0];
             List<MailFolder> folders = [];
             lock (client.SyncRoot)
             {
@@ -242,10 +243,10 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Directory
         /// Renders a list of directories
         /// </summary>
         /// <returns>String list</returns>
-        public static string MailRenderListDirectories()
+        public string MailRenderListDirectories()
         {
             var EntryBuilder = new StringBuilder();
-            var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
+            var client = (ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0];
             lock (client.SyncRoot)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Personal namespace collection parsing started.");

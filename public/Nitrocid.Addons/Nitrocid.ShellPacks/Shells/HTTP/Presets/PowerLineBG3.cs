@@ -18,14 +18,17 @@
 //
 
 using System;
-using System.Text;
 using System.Collections.Generic;
+using System.Text;
 using Colorimetry;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Terminaux.Shell.Prompts;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Themes.Colors;
+using Nitrocid.ShellPacks.Shells.Git;
 using Terminaux.Base.Extensions;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP.Presets
 {
@@ -59,13 +62,16 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Presets
 
         private string PresetPromptBuilder()
         {
+            var httpShell = (HTTPShell?)ShellManager.CurrentShell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // PowerLine glyphs
             char PadlockChar = Convert.ToChar(0xE0A2);
 
             // Segments
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), HTTPShellCommon.HTTPSite, PadlockChar)
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), httpShell.HTTPSite, PadlockChar)
             ];
 
             // Builder

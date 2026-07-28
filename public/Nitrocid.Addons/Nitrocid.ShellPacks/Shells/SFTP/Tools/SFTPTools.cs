@@ -65,15 +65,15 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools
                     TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.SFTPUserPromptStyle), false, ThemeColorType.Input, address);
                 else
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME"), false, ThemeColorType.Input, address);
-                SFTPShellCommon.SFTPUser = TermReader.Read();
-                if (string.IsNullOrEmpty(SFTPShellCommon.SFTPUser))
+                string sftpUser = TermReader.Read();
+                if (string.IsNullOrEmpty(sftpUser))
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "User is not provided. Fallback to \"anonymous\"");
-                    SFTPShellCommon.SFTPUser = "anonymous";
+                    sftpUser = "anonymous";
                 }
 
                 // Check to see if we're aborting or not
-                var client = GetConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), SFTPShellCommon.SFTPUser);
+                var client = GetConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), sftpUser);
 
                 // Connect to SFTP
                 return ConnectSFTP(client);

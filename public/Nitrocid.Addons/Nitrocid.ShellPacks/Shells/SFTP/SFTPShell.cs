@@ -37,8 +37,25 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
     /// <summary>
     /// The SFTP shell
     /// </summary>
-    public class SFTPShell : BaseShell, IShell
+    public partial class SFTPShell : BaseShell, IShell
     {
+        internal NetworkConnection? clientConnection;
+
+        /// <summary>
+        /// The SFTP client used to connect to the SFTP server
+        /// </summary>
+        public NetworkConnection? ClientSFTP =>
+            clientConnection;
+
+        /// <summary>
+        /// SFTP current local directory
+        /// </summary>
+        public string SFTPCurrDirect { get; set; } = "";
+
+        /// <summary>
+        /// SFTP current remote directory
+        /// </summary>
+        public string SFTPCurrentRemoteDir { get; set; } = "";
 
         /// <inheritdoc/>
         public override string ShellType => "SFTPShell";
@@ -57,19 +74,17 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
                 throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT"));
 
             // Finalize current connection
-            SFTPShellCommon.clientConnection = sftpConnection;
+            clientConnection = sftpConnection;
 
             // Prepare to print current SFTP directory
-            SFTPShellCommon.SFTPCurrentRemoteDir = client.WorkingDirectory;
-            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", vars: [SFTPShellCommon.SFTPCurrentRemoteDir ?? ""]);
-            SFTPShellCommon.SFTPSite = client.ConnectionInfo.Host;
-            SFTPShellCommon.SFTPUser = client.ConnectionInfo.Username;
+            SFTPCurrentRemoteDir = client.WorkingDirectory;
+            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", vars: [SFTPCurrentRemoteDir ?? ""]);
 
             // Write connection information to Speed Dial file if it doesn't exist there
-            SpeedDialTools.TryAddEntryToSpeedDial(SFTPShellCommon.SFTPSite, client.ConnectionInfo.Port, NetworkConnectionType.SFTP, SFTPShellCommon.SFTPUser, "", false);
+            SpeedDialTools.TryAddEntryToSpeedDial(client.ConnectionInfo.Host, client.ConnectionInfo.Port, NetworkConnectionType.SFTP, client.ConnectionInfo.Username, "", false);
 
             // Populate SFTP current directory
-            SFTPShellCommon.SFTPCurrDirect = PathsManagement.HomePath;
+            SFTPCurrDirect = PathsManagement.HomePath;
 
             // Actual shell logic
             while (!Bail)
@@ -98,16 +113,12 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
                     DebugWriter.WriteDebug(DebugLevel.W, "Exiting shell...");
                     if (!detaching)
                     {
-                        ((SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance)?.Disconnect();
-                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(SFTPShellCommon.ClientSFTP);
+                        ((SftpClient?)ClientSFTP?.ConnectionInstance)?.Disconnect();
+                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(ClientSFTP);
                         NetworkConnectionTools.CloseConnection(connectionIndex);
-                        SFTPShellCommon.clientConnection = null;
+                        clientConnection = null;
                     }
                     detaching = false;
-                    SFTPShellCommon.SFTPSite = "";
-                    SFTPShellCommon.SFTPCurrDirect = "";
-                    SFTPShellCommon.SFTPCurrentRemoteDir = "";
-                    SFTPShellCommon.SFTPUser = "";
                 }
             }
         }

@@ -18,23 +18,44 @@
 //
 
 using System;
+using System.IO;
 using System.Threading;
+using Microsoft.Data.Sqlite;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Languages;
+using Terminaux.Inputs;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.Base.Kernel.Debugging;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
 using Terminaux.Themes.Colors;
-using Terminaux.Inputs;
-using Nitrocid.ShellPacks.Shells.Sql.Tools;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Sql
 {
     /// <summary>
     /// The SQL editor shell
     /// </summary>
-    public class SqlShell : BaseShell, IShell
+    public partial class SqlShell : BaseShell, IShell
     {
+        internal string sqliteDatabasePath = "";
+        internal SqliteConnection? sqliteConnection;
+
+        /// <summary>
+        /// Current connection for the SQL
+        /// </summary>
+        public SqliteConnection? Connection =>
+            sqliteConnection;
+
+        /// <summary>
+        /// Database path for the SQL
+        /// </summary>
+        public string DatabasePath =>
+            sqliteDatabasePath;
+
+        /// <summary>
+        /// Database file name for the SQL
+        /// </summary>
+        public string DatabaseFileName =>
+            Path.GetFileName(DatabasePath);
 
         /// <inheritdoc/>
         public override string ShellType => "SqlShell";
@@ -58,10 +79,10 @@ namespace Nitrocid.ShellPacks.Shells.Sql
             }
 
             // Open file if not open
-            if (SqlShellCommon.sqliteConnection is null)
+            if (sqliteConnection is null)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", vars: [FilePath]);
-                if (!SqlEditTools.SqlEdit_OpenSqlFile(FilePath))
+                if (!SqlEdit_OpenSqlFile(FilePath))
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_OPENFAILED"), true, ThemeColorType.Error);
                     Bail = true;
@@ -92,7 +113,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql
             }
 
             // Close file
-            SqlEditTools.SqlEdit_CloseSqlFile();
+            SqlEdit_CloseSqlFile();
         }
 
     }

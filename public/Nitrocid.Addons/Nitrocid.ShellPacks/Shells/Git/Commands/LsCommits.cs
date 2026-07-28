@@ -17,11 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -36,10 +37,12 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (GitShellCommon.Repository is null)
+            var gitShell = (GitShell?)shell ??
+                throw new KernelException(KernelExceptionType.Git, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            if (gitShell.Repository is null)
                 return 43;
-            var commits = GitShellCommon.Repository.Commits;
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_LSCOMMITS_TITLE") + $" {GitShellCommon.BranchName}:");
+            var commits = gitShell.Repository.Commits;
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_LSCOMMITS_TITLE") + $" {gitShell.BranchName}:");
             foreach (var commit in commits)
             {
                 TextWriterColor.Write($"- {commit.Sha[..7]}, {commit.Committer.Name} <{commit.Committer.Email}>", true, ThemeColorType.ListEntry);

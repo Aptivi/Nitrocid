@@ -40,7 +40,9 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var articles = RSSShellCommon.RSSFeedInstance?.FeedArticles ?? [];
+            var rssShell = (RSSShell?)shell ??
+                throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            var articles = rssShell.RSSFeedInstance?.FeedArticles ?? [];
             int ArticleIndex = (int)Math.Round(Convert.ToDouble(parameters.ArgumentsList[0]) - 1d);
             int articleCount = articles.Length;
             var article = articles[ArticleIndex];

@@ -56,7 +56,7 @@ namespace Nitrocid.ShellPacks.Commands
                     var connection = EstablishRssConnection(address);
                     feed = GetFeed(connection);
                 }
-                RSSShellTools.OpenFeedTui(feed);
+                RSSTools.OpenFeedTui(feed);
             }
             else
                 NetworkConnectionTools.OpenConnectionForShell("RSSShell", EstablishRssConnection, (_, connection) =>

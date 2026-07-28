@@ -17,15 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using GitCommand = LibGit2Sharp.Commands;
 using LibGit2Sharp;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
-using Nitrocid.Base.Languages;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Time.Timezones;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using GitCommand = LibGit2Sharp.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -40,14 +41,16 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (!GitShellCommon.isIdentified)
+            var gitShell = (GitShell?)shell ??
+                throw new KernelException(KernelExceptionType.Git, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            if (!gitShell.isIdentified)
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1") + " 'setid' " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2"), true, ThemeColorType.Error);
                 return 14;
             }
-            var merger = new Signature(GitShellCommon.name, GitShellCommon.email, new(TimeDateTools.KernelDateTime, TimeZoneRenderers.ShowTimeZoneUtcOffsetLocal()));
+            var merger = new Signature(gitShell.name, gitShell.email, new(TimeDateTools.KernelDateTime, TimeZoneRenderers.ShowTimeZoneUtcOffsetLocal()));
             var pullOptions = new PullOptions();
-            var pullResult = GitCommand.Pull(GitShellCommon.Repository, merger, pullOptions);
+            var pullResult = GitCommand.Pull(gitShell.Repository, merger, pullOptions);
             switch (pullResult.Status)
             {
                 case MergeStatus.UpToDate:

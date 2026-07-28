@@ -34,17 +34,17 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
-using Nitrocid.ShellPacks.Shells.Mail.Tools.Directory;
 using Nitrocid.ShellPacks.Shells.Mail.Tools.PGP;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer
+namespace Nitrocid.ShellPacks.Shells.Mail
 {
     /// <summary>
     /// Mail transfer module
     /// </summary>
-    public static class MailTransfer
+    public partial class MailShell : BaseShell, IShell
     {
 
         /// <summary>
@@ -52,11 +52,10 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer
         /// </summary>
         /// <param name="MessageNum">Message number</param>
         /// <param name="Decrypt">Whether to decrypt messages or not</param>
-        public static void MailPrintMessage(int MessageNum, bool Decrypt = false)
+        public void MailPrintMessage(int MessageNum, bool Decrypt = false)
         {
-            var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
             int Message = MessageNum - 1;
-            var messages = MailShellCommon.IMAP_Messages ?? [];
+            var messages = IMAP_Messages ?? [];
             int MaxMessagesIndex = messages.Count() - 1;
             DebugWriter.WriteDebug(DebugLevel.I, "Message number {0}", vars: [Message]);
             if (Message < 0)
@@ -72,22 +71,22 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer
                 return;
             }
 
-            lock (client.SyncRoot)
+            lock (ImapClient.SyncRoot)
             {
                 // Get message
                 DebugWriter.WriteDebug(DebugLevel.I, "Getting message...");
                 MimeMessage Msg;
-                var finalMessages = MailShellCommon.IMAP_Messages ?? [];
-                if (!string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) & !(MailShellCommon.IMAP_CurrentDirectory == "Inbox"))
+                var finalMessages = IMAP_Messages ?? [];
+                if (!string.IsNullOrEmpty(IMAP_CurrentDirectory) & !(IMAP_CurrentDirectory == "Inbox"))
                 {
-                    var Dir = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
-                    Msg = Dir.GetMessage(finalMessages.ElementAtOrDefault(Message), default, MailShellCommon.Progress);
+                    var Dir = OpenFolder(IMAP_CurrentDirectory);
+                    Msg = Dir.GetMessage(finalMessages.ElementAtOrDefault(Message), default, Progress);
                 }
                 else
                 {
-                    var inbox = client.Inbox ??
+                    var inbox = ImapClient.Inbox ??
                         throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
-                    Msg = inbox.GetMessage(finalMessages.ElementAtOrDefault(Message), default, MailShellCommon.Progress);
+                    Msg = inbox.GetMessage(finalMessages.ElementAtOrDefault(Message), default, Progress);
                 }
 
                 // Prepare view
@@ -251,7 +250,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer
         /// </summary>
         /// <param name="Text">Text part</param>
         /// <returns>A decrypted message, or null if unsuccessful.</returns>
-        public static Dictionary<string, MimeEntity> DecryptMessage(MimeMessage Text)
+        public Dictionary<string, MimeEntity> DecryptMessage(MimeMessage Text)
         {
             var EncryptedDict = new Dictionary<string, MimeEntity>();
             DebugWriter.WriteDebug(DebugLevel.I, $"Encrypted message type: {(Text.Body is MultipartEncrypted ? "Multipart" : "Singlepart")}");
@@ -294,13 +293,11 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer
         /// <param name="Subject">Subject</param>
         /// <param name="Body">Body (only text. See <see cref="MailSendMessage(string, string, MimeEntity)"/> for more.)</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        public static bool MailSendMessage(string Recipient, string Subject, string Body)
+        public bool MailSendMessage(string Recipient, string Subject, string Body)
         {
-            var client = (SmtpClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[1];
-
             // Construct a message
             var FinalMessage = new MimeMessage();
-            FinalMessage.From.Add(MailboxAddress.Parse(MailLogin.Authentication.UserName));
+            FinalMessage.From.Add(MailboxAddress.Parse(NetworkCredential.UserName));
             DebugWriter.WriteDebug(DebugLevel.I, "Added sender to FinalMessage.From.");
             FinalMessage.To.Add(MailboxAddress.Parse(Recipient));
             DebugWriter.WriteDebug(DebugLevel.I, "Added address to FinalMessage.To.");
@@ -310,11 +307,11 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer
             DebugWriter.WriteDebug(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
 
             // Send the message
-            lock (client.SyncRoot)
+            lock (SmtpClient.SyncRoot)
             {
                 try
                 {
-                    client.Send(FinalMessage, default, MailShellCommon.Progress);
+                    SmtpClient.Send(FinalMessage, default, Progress);
                     return true;
                 }
                 catch (Exception ex)
@@ -333,13 +330,11 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer
         /// <param name="Subject">Subject</param>
         /// <param name="Body">Body</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        public static bool MailSendMessage(string Recipient, string Subject, MimeEntity Body)
+        public bool MailSendMessage(string Recipient, string Subject, MimeEntity Body)
         {
-            var client = (SmtpClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[1];
-
             // Construct a message
             var FinalMessage = new MimeMessage();
-            FinalMessage.From.Add(MailboxAddress.Parse(MailLogin.Authentication.UserName));
+            FinalMessage.From.Add(MailboxAddress.Parse(NetworkCredential.UserName));
             DebugWriter.WriteDebug(DebugLevel.I, "Added sender to FinalMessage.From.");
             FinalMessage.To.Add(MailboxAddress.Parse(Recipient));
             DebugWriter.WriteDebug(DebugLevel.I, "Added address to FinalMessage.To.");
@@ -349,11 +344,11 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer
             DebugWriter.WriteDebug(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
 
             // Send the message
-            lock (client.SyncRoot)
+            lock (SmtpClient.SyncRoot)
             {
                 try
                 {
-                    client.Send(FinalMessage, default, MailShellCommon.Progress);
+                    SmtpClient.Send(FinalMessage, default, Progress);
                     return true;
                 }
                 catch (Exception ex)
@@ -372,13 +367,11 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer
         /// <param name="Subject">Subject</param>
         /// <param name="Body">Body</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        public static bool MailSendEncryptedMessage(string Recipient, string Subject, MimeEntity Body)
+        public bool MailSendEncryptedMessage(string Recipient, string Subject, MimeEntity Body)
         {
-            var client = (SmtpClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[1];
-
             // Construct a message
             var FinalMessage = new MimeMessage();
-            FinalMessage.From.Add(MailboxAddress.Parse(MailLogin.Authentication.UserName));
+            FinalMessage.From.Add(MailboxAddress.Parse(NetworkCredential.UserName));
             DebugWriter.WriteDebug(DebugLevel.I, "Added sender to FinalMessage.From.");
             FinalMessage.To.Add(MailboxAddress.Parse(Recipient));
             DebugWriter.WriteDebug(DebugLevel.I, "Added address to FinalMessage.To.");
@@ -388,11 +381,11 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer
             DebugWriter.WriteDebug(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
 
             // Send the message
-            lock (client.SyncRoot)
+            lock (SmtpClient.SyncRoot)
             {
                 try
                 {
-                    client.Send(FinalMessage, default, MailShellCommon.Progress);
+                    SmtpClient.Send(FinalMessage, default, Progress);
                     return true;
                 }
                 catch (Exception ex)
@@ -407,28 +400,27 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer
         /// <summary>
         /// Populates e-mail messages
         /// </summary>
-        public static void PopulateMessages()
+        public void PopulateMessages()
         {
-            var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
-            if (client.IsConnected)
+            if (ImapClient.IsConnected)
             {
-                lock (client.SyncRoot)
+                lock (ImapClient.SyncRoot)
                 {
-                    if (string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) || MailShellCommon.IMAP_CurrentDirectory == "Inbox")
+                    if (string.IsNullOrEmpty(IMAP_CurrentDirectory) || IMAP_CurrentDirectory == "Inbox")
                     {
-                        var inbox = client.Inbox ??
+                        var inbox = ImapClient.Inbox ??
                             throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
                         inbox.Open(FolderAccess.ReadWrite);
                         DebugWriter.WriteDebug(DebugLevel.I, "Opened inbox");
-                        MailShellCommon.IMAP_Messages = inbox.Search(SearchQuery.All).Reverse();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", vars: [MailShellCommon.IMAP_Messages.LongCount()]);
+                        IMAP_Messages = inbox.Search(SearchQuery.All).Reverse();
+                        DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", vars: [IMAP_Messages.LongCount()]);
                     }
                     else
                     {
-                        var Folder = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}", vars: [MailShellCommon.IMAP_CurrentDirectory]);
-                        MailShellCommon.IMAP_Messages = Folder.Search(SearchQuery.All).Reverse();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", vars: [MailShellCommon.IMAP_Messages.LongCount()]);
+                        var Folder = OpenFolder(IMAP_CurrentDirectory);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}", vars: [IMAP_CurrentDirectory]);
+                        IMAP_Messages = Folder.Search(SearchQuery.All).Reverse();
+                        DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", vars: [IMAP_Messages.LongCount()]);
                     }
                 }
             }

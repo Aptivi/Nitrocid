@@ -18,13 +18,14 @@
 //
 
 using LibGit2Sharp;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Time.Timezones;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -39,13 +40,15 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (!GitShellCommon.isIdentified)
+            var gitShell = (GitShell?)shell ??
+                throw new KernelException(KernelExceptionType.Git, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            if (!gitShell.isIdentified)
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1") + " 'setid' " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2"), true, ThemeColorType.Error);
                 return 15;
             }
-            var author = new Signature(GitShellCommon.name, GitShellCommon.email, new(TimeDateTools.KernelDateTime, TimeZoneRenderers.ShowTimeZoneUtcOffsetLocal()));
-            var newCommit = GitShellCommon.Repository.Commit(parameters.ArgumentsList[0], author, author);
+            var author = new Signature(gitShell.name, gitShell.email, new(TimeDateTools.KernelDateTime, TimeZoneRenderers.ShowTimeZoneUtcOffsetLocal()));
+            var newCommit = gitShell.Repository.Commit(parameters.ArgumentsList[0], author, author);
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMIT_SUCCESS") + $":");
             TextWriterColor.Write($"  {newCommit.Sha[..7]}: {newCommit.MessageShort}", true, ThemeColorType.ListValue);
             return 0;

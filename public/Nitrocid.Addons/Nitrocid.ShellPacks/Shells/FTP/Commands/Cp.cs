@@ -24,7 +24,6 @@ using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Textify.General;
-using Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {
@@ -43,8 +42,10 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var ftpShell = (FTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COPYING"), parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
-            if (FTPFilesystem.FTPCopyItem(parameters.ArgumentsList[0], parameters.ArgumentsList[1]))
+            if (ftpShell.FTPCopyItem(parameters.ArgumentsList[0], parameters.ArgumentsList[1]))
             {
                 TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COPIED"), true, ThemeColorType.Success);
                 return 0;

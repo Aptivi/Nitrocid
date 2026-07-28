@@ -26,7 +26,6 @@ using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Textify.General;
 using Terminaux.Reader;
-using Nitrocid.ShellPacks.Shells.Sql.Tools;
 using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Sql.Commands
@@ -42,6 +41,9 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var sqlShell = (SqlShell?)shell ??
+                throw new KernelException(KernelExceptionType.SqlEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // First, check to see if we have parameters
             List<SqliteParameter> sqlParameters = [];
             foreach (string StringArg in parameters.ArgumentsList)
@@ -55,7 +57,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
 
             // Now, get a group of replies and print them
             string[] replies = [];
-            if (SqlEditTools.SqlEdit_SqlCommand(parameters.ArgumentsText, ref replies, out var error, [.. sqlParameters]))
+            if (sqlShell.SqlEdit_SqlCommand(parameters.ArgumentsText, ref replies, out var error, [.. sqlParameters]))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDSUCCESS"), true, ThemeColorType.Success);
                 foreach (string reply in replies)

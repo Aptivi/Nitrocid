@@ -17,7 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ShellPacks.Shells.Mail.Tools.Directory;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 
@@ -31,7 +32,9 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            MailDirectory.DeleteMailDirectory(parameters.ArgumentsList[0]);
+            var mailShell = (MailShell?)shell ??
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            mailShell.DeleteMailDirectory(parameters.ArgumentsList[0]);
             return 0;
         }
     }

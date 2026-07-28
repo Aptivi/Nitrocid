@@ -23,13 +23,14 @@ using FluentFTP;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Shells;
 
-namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
+namespace Nitrocid.ShellPacks.Shells.FTP
 {
     /// <summary>
     /// FTP hashing module
     /// </summary>
-    public static class FTPHashing
+    public partial class FTPShell : BaseShell, IShell
     {
 
         /// <summary>
@@ -40,11 +41,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
         /// <returns>The <see cref="FtpHash"/> instance containing computed hash of remote file</returns>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
-        public static FtpHash FTPGetHash(string File, FtpHashAlgorithm HashAlgorithm)
+        public FtpHash FTPGetHash(string File, FtpHashAlgorithm HashAlgorithm)
         {
             if (!string.IsNullOrEmpty(File))
             {
-                var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                var client = (FtpClient?)ClientFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION"));
                 if (client.FileExists(File))
                 {
@@ -70,7 +71,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
         /// <param name="HashAlgorithm">A hash algorithm supported by the FTP server</param>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
-        public static Dictionary<string, FtpHash> FTPGetHashes(string Directory, FtpHashAlgorithm HashAlgorithm) => FTPGetHashes(Directory, HashAlgorithm, ShellsInit.ShellsConfig.FtpRecursiveHashing);
+        public Dictionary<string, FtpHash> FTPGetHashes(string Directory, FtpHashAlgorithm HashAlgorithm) => FTPGetHashes(Directory, HashAlgorithm, ShellsInit.ShellsConfig.FtpRecursiveHashing);
 
         /// <summary>
         /// Gets a hash for files in a directory
@@ -80,11 +81,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem
         /// <param name="Recurse">Whether to hash the files within the subdirectories too.</param>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
-        public static Dictionary<string, FtpHash> FTPGetHashes(string Directory, FtpHashAlgorithm HashAlgorithm, bool Recurse)
+        public Dictionary<string, FtpHash> FTPGetHashes(string Directory, FtpHashAlgorithm HashAlgorithm, bool Recurse)
         {
             if (!string.IsNullOrEmpty(Directory))
             {
-                var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                var client = (FtpClient?)ClientFTP?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION"));
                 if (client.DirectoryExists(Directory))
                 {

@@ -36,8 +36,6 @@ using Textify.General;
 using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Themes.Colors;
 using FluentFTP;
-using Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem;
-using Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
 {
@@ -45,6 +43,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
     {
         internal bool refreshFirstPaneListing = true;
         internal bool refreshSecondPaneListing = true;
+        internal FTPShell ftpShell;
         private List<FileSystemEntry> firstPaneListing = [];
         private List<FtpListItem> secondPaneListing = [];
 
@@ -79,13 +78,13 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                     if (refreshFirstPaneListing)
                     {
                         refreshFirstPaneListing = false;
-                        firstPaneListing = FilesystemTools.CreateList(FTPShellCommon.FtpCurrentDirectory, true);
+                        firstPaneListing = FilesystemTools.CreateList(ftpShell.FtpCurrentDirectory, true);
                     }
                     return firstPaneListing;
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get current directory list for the first pane [{0}]: {1}", vars: [FTPShellCommon.FtpCurrentDirectory, ex.Message]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get current directory list for the first pane [{0}]: {1}", vars: [ftpShell.FtpCurrentDirectory, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     return [];
                 }
@@ -102,16 +101,16 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                     if (refreshSecondPaneListing)
                     {
                         refreshSecondPaneListing = false;
-                        var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                        var instance = (FtpClient?)ftpShell.ClientFTP?.ConnectionInstance ??
                             throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
-                        FTPShellCommon.FtpCurrentRemoteDir = FTPShellCommon.FtpCurrentRemoteDir;
-                        secondPaneListing = [.. instance.GetListing(FTPShellCommon.FtpCurrentRemoteDir, FtpListOption.Auto)];
+                        ftpShell.FtpCurrentRemoteDir = ftpShell.FtpCurrentRemoteDir;
+                        secondPaneListing = [.. instance.GetListing(ftpShell.FtpCurrentRemoteDir, FtpListOption.Auto)];
                     }
                     return secondPaneListing;
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get current directory list for the second pane [{0}]: {1}", vars: [FTPShellCommon.FtpCurrentRemoteDir, ex.Message]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get current directory list for the second pane [{0}]: {1}", vars: [ftpShell.FtpCurrentRemoteDir, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     return [];
                 }
@@ -236,7 +235,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                     if (currentEntry.Type == FtpObjectType.Directory)
                     {
                         // We're dealing with a folder. Open it in the selected pane.
-                        FTPFilesystem.FTPChangeRemoteDir(currentEntry.FullName + "/");
+                        ftpShell.FTPChangeRemoteDir(currentEntry.FullName + "/");
                         refreshSecondPaneListing = true;
                         InteractiveTuiTools.SelectionMovement(this, 1);
                     }
@@ -252,7 +251,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                     if (currentEntry.Type == FileSystemEntryType.Directory)
                     {
                         // We're dealing with a folder. Open it in the selected pane.
-                        FTPFilesystem.FTPChangeLocalDir(FilesystemTools.NeutralizePath(currentEntry.FilePath + "/"));
+                        ftpShell.FTPChangeLocalDir(FilesystemTools.NeutralizePath(currentEntry.FilePath + "/"));
                         refreshFirstPaneListing = true;
                         InteractiveTuiTools.SelectionMovement(this, 1);
                     }
@@ -277,12 +276,12 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
         {
             if (CurrentPane == 2)
             {
-                FTPFilesystem.FTPChangeRemoteDir("..");
+                ftpShell.FTPChangeRemoteDir("..");
                 refreshSecondPaneListing = true;
             }
             else
             {
-                FTPFilesystem.FTPChangeLocalDir("..");
+                ftpShell.FTPChangeLocalDir("..");
                 refreshFirstPaneListing = true;
             }
             InteractiveTuiTools.SelectionMovement(this, 1);
@@ -413,14 +412,14 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                     if (currentEntry is null)
                         return;
 
-                    string dest = FilesystemTools.NeutralizePath(FTPShellCommon.FtpCurrentDirectory + "/" + currentEntry.Name, FTPShellCommon.FtpCurrentDirectory);
+                    string dest = FilesystemTools.NeutralizePath(ftpShell.FtpCurrentDirectory + "/" + currentEntry.Name, ftpShell.FtpCurrentDirectory);
                     DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                     DebugCheck.AssertNull(dest, "destination is null!");
                     DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
                     if (currentEntry.Type == FtpObjectType.Directory)
-                        FTPTransfer.FTPGetFolder(currentEntry.FullName, dest);
+                        ftpShell.FTPGetFolder(currentEntry.FullName, dest);
                     else
-                        FTPTransfer.FTPGetFile(currentEntry.FullName, dest);
+                        ftpShell.FTPGetFile(currentEntry.FullName, dest);
                 }
                 else
                 {
@@ -429,14 +428,14 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                     if (currentEntry is null || !currentEntry.Exists)
                         return;
 
-                    string dest = FTPShellCommon.FtpCurrentRemoteDir + "/" + Path.GetFileName(currentEntry.FilePath);
+                    string dest = ftpShell.FtpCurrentRemoteDir + "/" + Path.GetFileName(currentEntry.FilePath);
                     DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                     DebugCheck.AssertNull(dest, "destination is null!");
                     DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
                     if (currentEntry.Type == FileSystemEntryType.Directory)
-                        FTPTransfer.FTPUploadFolder(dest, currentEntry.FilePath);
+                        ftpShell.FTPUploadFolder(dest, currentEntry.FilePath);
                     else
-                        FTPTransfer.FTPUploadFile(dest, currentEntry.FilePath);
+                        ftpShell.FTPUploadFile(dest, currentEntry.FilePath);
                 }
 
                 if (CurrentPane == 2)
@@ -468,15 +467,15 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                     if (currentEntry is null)
                         return;
 
-                    string dest = FilesystemTools.NeutralizePath(FTPShellCommon.FtpCurrentDirectory + "/" + currentEntry.Name, FTPShellCommon.FtpCurrentDirectory);
+                    string dest = FilesystemTools.NeutralizePath(ftpShell.FtpCurrentDirectory + "/" + currentEntry.Name, ftpShell.FtpCurrentDirectory);
                     DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                     DebugCheck.AssertNull(dest, "destination is null!");
                     DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
                     if (currentEntry.Type == FtpObjectType.Directory)
-                        FTPTransfer.FTPGetFolder(currentEntry.FullName, dest);
+                        ftpShell.FTPGetFolder(currentEntry.FullName, dest);
                     else
-                        FTPTransfer.FTPGetFile(currentEntry.FullName, dest);
-                    FTPFilesystem.FTPDeleteRemote(dest);
+                        ftpShell.FTPGetFile(currentEntry.FullName, dest);
+                    ftpShell.FTPDeleteRemote(dest);
                 }
                 else
                 {
@@ -485,14 +484,14 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                     if (currentEntry is null || !currentEntry.Exists)
                         return;
 
-                    string dest = FTPShellCommon.FtpCurrentRemoteDir + "/" + Path.GetFileName(currentEntry.FilePath);
+                    string dest = ftpShell.FtpCurrentRemoteDir + "/" + Path.GetFileName(currentEntry.FilePath);
                     DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                     DebugCheck.AssertNull(dest, "destination is null!");
                     DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
                     if (currentEntry.Type == FileSystemEntryType.Directory)
-                        FTPTransfer.FTPUploadFolder(dest, currentEntry.FilePath);
+                        ftpShell.FTPUploadFolder(dest, currentEntry.FilePath);
                     else
-                        FTPTransfer.FTPUploadFile(dest, currentEntry.FilePath);
+                        ftpShell.FTPUploadFile(dest, currentEntry.FilePath);
                     FilesystemTools.RemoveFileOrDir(currentEntry.FilePath);
                 }
 
@@ -523,7 +522,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                     if (currentEntry is null)
                         return;
 
-                    FTPFilesystem.FTPDeleteRemote(currentEntry.FullName);
+                    ftpShell.FTPDeleteRemote(currentEntry.FullName);
                 }
                 else
                 {
@@ -566,16 +565,16 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                     if (currentEntry is null)
                         return;
 
-                    path = FilesystemTools.NeutralizePath(FTPShellCommon.FtpCurrentDirectory + "/" + currentEntry.Name, FTPShellCommon.FtpCurrentDirectory);
+                    path = FilesystemTools.NeutralizePath(ftpShell.FtpCurrentDirectory + "/" + currentEntry.Name, ftpShell.FtpCurrentDirectory);
                     DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                     DebugCheck.AssertNull(path, "destination is null!");
                     DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
-                    if (FTPFilesystem.FTPExists(path))
+                    if (ftpShell.FTPExists(path))
                     {
                         if (currentEntry.Type == FtpObjectType.Directory)
-                            FTPTransfer.FTPGetFolder(currentEntry.FullName, path);
+                            ftpShell.FTPGetFolder(currentEntry.FullName, path);
                         else
-                            FTPTransfer.FTPGetFile(currentEntry.FullName, path);
+                            ftpShell.FTPGetFile(currentEntry.FullName, path);
                         refreshFirstPaneListing = true;
                     }
                     else
@@ -588,7 +587,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                     if (currentEntry is null || !currentEntry.Exists)
                         return;
 
-                    path = FTPShellCommon.FtpCurrentRemoteDir + "/" + Path.GetFileName(currentEntry.FilePath);
+                    path = ftpShell.FtpCurrentRemoteDir + "/" + Path.GetFileName(currentEntry.FilePath);
                     DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                     DebugCheck.AssertNull(path, "destination is null!");
                     DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
@@ -597,9 +596,9 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                         if (FilesystemTools.TryParsePath(path))
                         {
                             if (currentEntry.Type == FileSystemEntryType.Directory)
-                                FTPTransfer.FTPUploadFolder(path, currentEntry.FilePath);
+                                ftpShell.FTPUploadFolder(path, currentEntry.FilePath);
                             else
-                                FTPTransfer.FTPUploadFile(path, currentEntry.FilePath);
+                                ftpShell.FTPUploadFile(path, currentEntry.FilePath);
                             refreshSecondPaneListing = true;
                         }
                         else
@@ -635,17 +634,17 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                     if (currentEntry is null)
                         return;
 
-                    path = FilesystemTools.NeutralizePath(FTPShellCommon.FtpCurrentDirectory + "/" + currentEntry.Name, FTPShellCommon.FtpCurrentDirectory);
+                    path = FilesystemTools.NeutralizePath(ftpShell.FtpCurrentDirectory + "/" + currentEntry.Name, ftpShell.FtpCurrentDirectory);
                     DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                     DebugCheck.AssertNull(path, "destination is null!");
                     DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
-                    if (FTPFilesystem.FTPExists(path))
+                    if (ftpShell.FTPExists(path))
                     {
                         if (currentEntry.Type == FtpObjectType.Directory)
-                            FTPTransfer.FTPGetFolder(currentEntry.FullName, path);
+                            ftpShell.FTPGetFolder(currentEntry.FullName, path);
                         else
-                            FTPTransfer.FTPGetFile(currentEntry.FullName, path);
-                        FTPFilesystem.FTPDeleteRemote(path);
+                            ftpShell.FTPGetFile(currentEntry.FullName, path);
+                        ftpShell.FTPDeleteRemote(path);
                         refreshSecondPaneListing = true;
                         refreshFirstPaneListing = true;
                     }
@@ -659,7 +658,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                     if (currentEntry is null || !currentEntry.Exists)
                         return;
 
-                    path = FTPShellCommon.FtpCurrentRemoteDir + "/" + Path.GetFileName(currentEntry.FilePath);
+                    path = ftpShell.FtpCurrentRemoteDir + "/" + Path.GetFileName(currentEntry.FilePath);
                     DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                     DebugCheck.AssertNull(path, "destination is null!");
                     DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
@@ -668,9 +667,9 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                         if (FilesystemTools.TryParsePath(path))
                         {
                             if (currentEntry.Type == FileSystemEntryType.Directory)
-                                FTPTransfer.FTPUploadFolder(path, currentEntry.FilePath);
+                                ftpShell.FTPUploadFolder(path, currentEntry.FilePath);
                             else
-                                FTPTransfer.FTPUploadFile(path, currentEntry.FilePath);
+                                ftpShell.FTPUploadFile(path, currentEntry.FilePath);
                             FilesystemTools.RemoveFileOrDir(currentEntry.FilePath);
                             refreshSecondPaneListing = true;
                             refreshFirstPaneListing = true;
@@ -709,9 +708,9 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                     if (currentEntry is null)
                         return;
 
-                    if (!FTPFilesystem.FTPExists(currentEntry.FullName.RemoveSuffix(currentEntry.Name) + $"/{filename}"))
+                    if (!ftpShell.FTPExists(currentEntry.FullName.RemoveSuffix(currentEntry.Name) + $"/{filename}"))
                     {
-                        FTPFilesystem.FTPMoveItem(currentEntry.FullName, currentEntry.FullName.RemoveSuffix(currentEntry.Name) + $"/{filename}");
+                        ftpShell.FTPMoveItem(currentEntry.FullName, currentEntry.FullName.RemoveSuffix(currentEntry.Name) + $"/{filename}");
                         refreshSecondPaneListing = true;
                     }
                     else
@@ -754,9 +753,9 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
             if (CurrentPane == 2)
             {
                 // We are dealing with the remote side.
-                if (!FTPFilesystem.FTPExists(path))
+                if (!ftpShell.FTPExists(path))
                 {
-                    FTPFilesystem.FTPMakeDirectory(path);
+                    ftpShell.FTPMakeDirectory(path);
                     refreshFirstPaneListing = true;
                 }
                 else
@@ -765,7 +764,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
             else
             {
                 // We are dealing with the local side.
-                path = FilesystemTools.NeutralizePath(path, FTPShellCommon.FtpCurrentDirectory);
+                path = FilesystemTools.NeutralizePath(path, ftpShell.FtpCurrentDirectory);
                 if (!FilesystemTools.FolderExists(path))
                 {
                     FilesystemTools.TryMakeDirectory(path);
@@ -774,6 +773,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                 else
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_FOLDERFOUND"), Settings.InfoBoxSettings);
             }
+        }
+
+        public FtpFileManagerCli(FTPShell ftpShell)
+        {
+            this.ftpShell = ftpShell;
         }
     }
 }

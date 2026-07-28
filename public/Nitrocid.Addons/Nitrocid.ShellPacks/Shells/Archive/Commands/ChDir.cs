@@ -23,7 +23,6 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.ShellPacks.Shells.Archive.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Archive.Commands
 {
@@ -38,7 +37,9 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (!ArchiveTools.ChangeWorkingArchiveLocalDirectory(parameters.ArgumentsList[0]))
+            var archiveShell = (ArchiveShell?)shell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            if (!archiveShell.ChangeWorkingArchiveLocalDirectory(parameters.ArgumentsList[0]))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_LOCALDIRNOTFOUND"), true, ThemeColorType.Error, parameters.ArgumentsList[0]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Archive);

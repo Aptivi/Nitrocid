@@ -18,9 +18,10 @@
 //
 
 using Nitrocid.Base.Files;
-using Terminaux.Shell.Commands;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Inputs.Styles.Editor;
-using Nitrocid.ShellPacks.Shells.Sql.Tools;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Sql.Commands
@@ -36,14 +37,16 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            string path = SqlShellCommon.DatabasePath;
+            var sqlShell = (SqlShell?)shell ??
+                throw new KernelException(KernelExceptionType.SqlEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            string path = sqlShell.DatabasePath;
             byte[] bytes = FilesystemTools.ReadAllBytesNoBlock(path);
             HexEditInteractive.OpenInteractive(ref bytes);
 
             // Save the results
-            SqlEditTools.SqlEdit_CloseSqlFile();
+            sqlShell.SqlEdit_CloseSqlFile();
             FilesystemTools.WriteAllBytesNoBlock(path, bytes);
-            SqlEditTools.SqlEdit_OpenSqlFile(path);
+            sqlShell.SqlEdit_OpenSqlFile(path);
             return 0;
         }
     }

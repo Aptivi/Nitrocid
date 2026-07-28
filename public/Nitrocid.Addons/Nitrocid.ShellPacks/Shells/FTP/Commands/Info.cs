@@ -38,7 +38,9 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance;
+            var ftpShell = (FTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            var client = (FtpClient?)ftpShell.ClientFTP?.ConnectionInstance;
             if (client is null)
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPShell);
             SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.ListTitle));

@@ -19,10 +19,12 @@
 
 using System.IO;
 using System.Text;
-using Terminaux.Themes.Colors;
-using Terminaux.Shell.Prompts;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Base.Extensions;
-using Nitrocid.ShellPacks.Shells.Json.Tools;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Presets
 {
@@ -48,6 +50,9 @@ namespace Nitrocid.ShellPacks.Shells.Json.Presets
 
         private string PresetPromptBuilder()
         {
+            var jsonShell = (JsonShell?)ShellManager.CurrentShell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // Build the preset
             var PresetStringBuilder = new StringBuilder();
 
@@ -57,11 +62,11 @@ namespace Nitrocid.ShellPacks.Shells.Json.Presets
 
             // File name
             PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground());
-            PresetStringBuilder.AppendFormat(JsonShellCommon.FileStream is not null ? Path.GetFileName(JsonShellCommon.FileStream.Name) : "???");
+            PresetStringBuilder.AppendFormat(jsonShell.FileStream is not null ? Path.GetFileName(jsonShell.FileStream.Name) : "???");
 
             // Was file edited?
             PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground());
-            PresetStringBuilder.AppendFormat("{0}", JsonTools.WasJsonEdited() ? "*" : "");
+            PresetStringBuilder.AppendFormat("{0}", jsonShell.WasJsonEdited() ? "*" : "");
 
             // Closing
             PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());

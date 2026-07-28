@@ -67,7 +67,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Widgets
         {
             try
             {
-                article ??= RSSShellTools.GetFirstArticle(HeadlineUrl);
+                article ??= RSSTools.GetFirstArticle(HeadlineUrl);
                 if (article is (string feedTitle, string articleTitle))
                     return (ShowFeedTitle ? (LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_RSSFEED_FROM") + $" {feedTitle}: ") : "") + articleTitle;
                 return LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_RSSFEED_NOFEED");

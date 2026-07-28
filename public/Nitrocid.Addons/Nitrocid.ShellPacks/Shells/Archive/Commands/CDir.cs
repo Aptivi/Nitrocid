@@ -17,9 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Archive.Commands
 {
@@ -34,7 +36,9 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(ArchiveShellCommon.CurrentDirectory ?? "");
+            var archiveShell = (ArchiveShell?)shell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            TextWriterColor.Write(archiveShell.CurrentDirectory ?? "");
             return 0;
         }
     }

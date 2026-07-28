@@ -17,12 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Linq;
 using LibGit2Sharp;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using System.Linq;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -37,12 +38,14 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (GitShellCommon.Repository is null)
+            var gitShell = (GitShell?)shell ??
+                throw new KernelException(KernelExceptionType.Git, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            if (gitShell.Repository is null)
                 return 43;
             string commitish = parameters.ArgumentsList[0];
-            var commit = GitShellCommon.Repository.Commits.Single((c) => c.Sha.StartsWith(commitish));
+            var commit = gitShell.Repository.Commits.Single((c) => c.Sha.StartsWith(commitish));
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMIT_DESC") + $" {commit.Sha}:");
-            TextWriterColor.Write(GitShellCommon.Repository.Describe(commit, new DescribeOptions()));
+            TextWriterColor.Write(gitShell.Repository.Describe(commit, new DescribeOptions()));
             return 0;
         }
 

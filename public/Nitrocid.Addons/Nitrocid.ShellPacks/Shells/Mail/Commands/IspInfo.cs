@@ -18,8 +18,8 @@
 //
 
 using Nettify.MailAddress;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Nitrocid.ShellPacks.Shells.Mail.Tools;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
@@ -37,11 +37,14 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var mailShell = (MailShell?)shell ??
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // Determine how to get ISP info
-            var ispInfo = IspTools.GetIspConfig(MailLogin.Authentication.UserName);
+            var ispInfo = IspTools.GetIspConfig(mailShell.NetworkCredential.UserName);
 
             // Print ISP info
-            SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER") + $" {MailLogin.Authentication.UserName}", true);
+            SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER") + $" {mailShell.NetworkCredential.UserName}", true);
             ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYNAME"), ispInfo.EmailProvider?.DisplayName ?? "");
             ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYSHORTNAME"), ispInfo.EmailProvider?.DisplayShortName ?? "");
             ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMAIN"), string.Join(", ", ispInfo.EmailProvider?.Domain ?? []));
@@ -49,7 +52,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
             TextWriterRaw.Write();
 
             // Print server info
-            SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER") + $" {MailLogin.Authentication.UserName}", true);
+            SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER") + $" {mailShell.NetworkCredential.UserName}", true);
             foreach (var server in ispInfo.EmailProvider?.IncomingServer ?? [])
             {
                 ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_HOSTNAME"), server.Hostname);

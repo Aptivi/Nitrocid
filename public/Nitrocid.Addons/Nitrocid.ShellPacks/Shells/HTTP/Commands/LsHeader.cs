@@ -17,11 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.ShellPacks.Shells.HTTP.Tools;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
 {
@@ -33,7 +34,9 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var headers = HttpTools.HttpListHeaders();
+            var httpShell = (HTTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            var headers = httpShell.HttpListHeaders();
             foreach (var header in headers)
             {
                 TextWriterColor.Write("  - {0}: ", false, ThemeColorType.ListEntry, header.Item1);

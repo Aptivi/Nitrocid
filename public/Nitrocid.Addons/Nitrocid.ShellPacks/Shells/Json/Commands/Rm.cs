@@ -24,7 +24,6 @@ using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using System;
-using Nitrocid.ShellPacks.Shells.Json.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
 {
@@ -39,9 +38,11 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var jsonShell = (JsonShell?)shell ??
+                throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             try
             {
-                JsonTools.Remove(parameters.ArgumentsList[0]);
+                jsonShell.Remove(parameters.ArgumentsList[0]);
             }
             catch (KernelException kex)
             {

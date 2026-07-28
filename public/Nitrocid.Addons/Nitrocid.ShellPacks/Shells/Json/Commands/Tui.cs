@@ -17,15 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using System.Collections.Generic;
 using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Terminaux.Inputs.Styles.Editor;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using System.Collections.Generic;
-using Terminaux.Inputs.Styles.Editor;
-using Nitrocid.ShellPacks.Shells.Json.Tools;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
 {
@@ -40,19 +40,21 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (JsonShellCommon.FileStream is null)
+            var jsonShell = (JsonShell?)shell ??
+                throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            if (jsonShell.FileStream is null)
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_STREAMNOTOPEN"), ThemeColorType.Error);
                 return 42;
             }
-            string path = JsonShellCommon.FileStream.Name;
+            string path = jsonShell.FileStream.Name;
             List<string> lines = [.. FilesystemTools.ReadAllLinesNoBlock(path)];
             TextEditInteractive.OpenInteractive(ref lines);
 
             // Save the changes
-            JsonTools.CloseJsonFile();
+            jsonShell.CloseJsonFile();
             FilesystemTools.WriteAllLinesNoBlock(path, [.. lines]);
-            JsonTools.OpenJsonFile(path);
+            jsonShell.OpenJsonFile(path);
             return 0;
         }
     }

@@ -42,16 +42,18 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var rssShell = (RSSShell?)shell ??
+                throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             int ArticleIndex = (int)Math.Round(Convert.ToDouble(parameters.ArgumentsList[0]) - 1d);
-            if (ArticleIndex > RSSShellCommon.RSSFeedInstance?.FeedArticles.Length - 1)
+            if (ArticleIndex > rssShell.RSSFeedInstance?.FeedArticles.Length - 1)
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE"), true, ThemeColorType.Error);
-                DebugWriter.WriteDebug(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", vars: [ArticleIndex, RSSShellCommon.RSSFeedInstance?.FeedArticles.Length - 1]);
+                DebugWriter.WriteDebug(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", vars: [ArticleIndex, rssShell.RSSFeedInstance?.FeedArticles.Length - 1]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.RSSShell);
             }
             else
             {
-                var Article = RSSShellCommon.RSSFeedInstance?.FeedArticles[ArticleIndex] ??
+                var Article = rssShell.RSSFeedInstance?.FeedArticles[ArticleIndex] ??
                     throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_NOARTICLE"));
                 TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE") + " ", false, ThemeColorType.ListEntry);
                 TextWriterColor.Write(Article.ArticleTitle, true, ThemeColorType.ListValue);

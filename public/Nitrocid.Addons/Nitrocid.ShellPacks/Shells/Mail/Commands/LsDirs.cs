@@ -17,11 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.ShellPacks.Shells.Mail.Tools.Directory;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 {
@@ -36,7 +37,9 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(MailDirectory.MailRenderListDirectories(), false, ThemeColorType.NeutralText);
+            var mailShell = (MailShell?)shell ??
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            TextWriterColor.Write(mailShell.MailRenderListDirectories(), false, ThemeColorType.NeutralText);
             return 0;
         }
     }

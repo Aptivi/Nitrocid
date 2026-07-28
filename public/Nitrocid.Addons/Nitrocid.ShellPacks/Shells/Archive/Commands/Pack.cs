@@ -18,9 +18,10 @@
 //
 
 using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.ShellPacks.Shells.Archive.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Archive.Commands
 {
@@ -35,12 +36,12 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var archiveShell = (ArchiveShell?)shell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             string Where = "";
             if (parameters.ArgumentsList.Length > 1)
-            {
-                Where = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1], ArchiveShellCommon.CurrentDirectory);
-            }
-            ArchiveTools.PackFile(parameters.ArgumentsList[0], Where);
+                Where = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1], archiveShell.CurrentDirectory);
+            archiveShell.PackFile(parameters.ArgumentsList[0], Where);
             return 0;
         }
 

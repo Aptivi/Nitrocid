@@ -22,13 +22,14 @@ using System.Collections.Generic;
 using Microsoft.Data.Sqlite;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
+using Terminaux.Shell.Shells;
 
-namespace Nitrocid.ShellPacks.Shells.Sql.Tools
+namespace Nitrocid.ShellPacks.Shells.Sql
 {
     /// <summary>
     /// Sql editor tools module
     /// </summary>
-    public static class SqlEditTools
+    public partial class SqlShell : BaseShell, IShell
     {
 
         /// <summary>
@@ -36,14 +37,14 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Tools
         /// </summary>
         /// <param name="File">Target file. We recommend you to use <see cref="FilesystemTools.NeutralizePath(string, bool)"></see> to neutralize path.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool SqlEdit_OpenSqlFile(string File)
+        public bool SqlEdit_OpenSqlFile(string File)
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", vars: [File]);
-                SqlShellCommon.sqliteConnection = new SqliteConnection($"Data Source={File}");
-                SqlShellCommon.sqliteConnection.Open();
-                SqlShellCommon.sqliteDatabasePath = File;
+                sqliteConnection = new SqliteConnection($"Data Source={File}");
+                sqliteConnection.Open();
+                sqliteDatabasePath = File;
                 return FilesystemTools.IsSql(File);
             }
             catch (Exception ex)
@@ -58,14 +59,14 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Tools
         /// Closes SQL file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool SqlEdit_CloseSqlFile()
+        public bool SqlEdit_CloseSqlFile()
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to close file...");
-                SqlShellCommon.sqliteConnection?.Close();
-                SqlShellCommon.sqliteConnection = null;
-                SqlShellCommon.sqliteDatabasePath = "";
+                sqliteConnection?.Close();
+                sqliteConnection = null;
+                sqliteDatabasePath = "";
                 return true;
             }
             catch (Exception ex)
@@ -84,13 +85,13 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Tools
         /// <param name="error">Error during query (null if there are no errors)</param>
         /// <param name="parameters">SQL query parameters</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool SqlEdit_SqlCommand(string query, ref string[] replies, out Exception? error, params SqliteParameter[] parameters)
+        public bool SqlEdit_SqlCommand(string query, ref string[] replies, out Exception? error, params SqliteParameter[] parameters)
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to execute query {0}...", vars: [query]);
                 List<string> replyList = [];
-                using var sqlCommand = new SqliteCommand(query, SqlShellCommon.sqliteConnection);
+                using var sqlCommand = new SqliteCommand(query, sqliteConnection);
 
                 // Add parameters
                 foreach (SqliteParameter parameter in parameters)

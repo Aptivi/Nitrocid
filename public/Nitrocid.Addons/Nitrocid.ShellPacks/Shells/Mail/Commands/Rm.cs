@@ -25,7 +25,6 @@ using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using System;
 using Textify.General;
-using Nitrocid.ShellPacks.Shells.Mail.Tools.Directory;
 using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
@@ -41,10 +40,12 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var mailShell = (MailShell?)shell ??
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             DebugWriter.WriteDebug(DebugLevel.I, "Message number is numeric? {0}", vars: [parameters.ArgumentsList[0].IsStringNumeric()]);
             if (parameters.ArgumentsList[0].IsStringNumeric())
             {
-                MailManager.MailRemoveMessage(Convert.ToInt32(parameters.ArgumentsList[0]));
+                mailShell.MailRemoveMessage(Convert.ToInt32(parameters.ArgumentsList[0]));
                 return 0;
             }
             else

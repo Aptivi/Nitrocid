@@ -22,29 +22,26 @@ using System.Threading;
 using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
 using Nitrocid.Base.Kernel.Debugging;
+using Terminaux.Shell.Shells;
 
-namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer
+namespace Nitrocid.ShellPacks.Shells.Mail
 {
-    static class MailPingers
+    public partial class MailShell : BaseShell, IShell
     {
 
-        /// <summary>
-        /// [IMAP] Tries to keep the connection going
-        /// </summary>
-        public static void IMAPKeepConnection()
+        private void IMAPKeepConnection()
         {
             try
             {
                 // Every 30 seconds, send a ping to IMAP server
-                var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
-                while (client.IsConnected)
+                while (ImapClient.IsConnected)
                 {
                     Thread.Sleep(ShellsInit.ShellsConfig.MailImapPingInterval);
-                    if (client.IsConnected)
+                    if (ImapClient.IsConnected)
                     {
-                        lock (client.SyncRoot)
-                            client.NoOp();
-                        MailTransfer.PopulateMessages();
+                        lock (ImapClient.SyncRoot)
+                            ImapClient.NoOp();
+                        PopulateMessages();
                     }
                     else
                     {
@@ -60,22 +57,18 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer
             }
         }
 
-        /// <summary>
-        /// [SMTP] Tries to keep the connection going
-        /// </summary>
-        public static void SMTPKeepConnection()
+        private void SMTPKeepConnection()
         {
             try
             {
                 // Every 30 seconds, send a ping to SMTP server
-                var client = (SmtpClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[1];
-                while (client.IsConnected)
+                while (SmtpClient.IsConnected)
                 {
                     Thread.Sleep(ShellsInit.ShellsConfig.MailSmtpPingInterval);
-                    if (client.IsConnected)
+                    if (SmtpClient.IsConnected)
                     {
-                        lock (client.SyncRoot)
-                            client.NoOp();
+                        lock (SmtpClient.SyncRoot)
+                            SmtpClient.NoOp();
                     }
                     else
                     {

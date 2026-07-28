@@ -19,6 +19,8 @@
 
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 
@@ -53,12 +55,12 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var sftpShell = (SFTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             bool ShowFileDetails = parameters.ContainsSwitch("-showdetails") || Config.MainConfig.ShowFileDetailsList;
             bool SuppressUnauthorizedMessage = parameters.ContainsSwitch("-suppressmessages") || Config.MainConfig.SuppressUnauthorizedMessages;
             if (parameters.ArgumentsList?.Length == 0)
-            {
-                FilesystemTools.List(SFTPShellCommon.SFTPCurrDirect ?? "", ShowFileDetails, SuppressUnauthorizedMessage);
-            }
+                FilesystemTools.List(sftpShell.SFTPCurrDirect ?? "", ShowFileDetails, SuppressUnauthorizedMessage);
             else
             {
                 foreach (string Directory in parameters.ArgumentsList ?? [])

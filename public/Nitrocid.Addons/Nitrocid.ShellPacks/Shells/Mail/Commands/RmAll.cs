@@ -22,7 +22,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using Nitrocid.ShellPacks.Shells.Mail.Tools.Directory;
 using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
@@ -38,7 +37,9 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (MailManager.MailRemoveAllBySender(parameters.ArgumentsList[0]))
+            var mailShell = (MailShell?)shell ??
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            if (mailShell.MailRemoveAllBySender(parameters.ArgumentsList[0]))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_RMALL_SUCCESS"), true, ThemeColorType.Success, parameters.ArgumentsList[0]);
                 return 0;

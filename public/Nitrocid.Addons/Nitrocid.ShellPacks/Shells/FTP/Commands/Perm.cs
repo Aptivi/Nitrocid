@@ -24,7 +24,6 @@ using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using System;
-using Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {
@@ -41,7 +40,9 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (FTPFilesystem.FTPChangePermissions(parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1])))
+            var ftpShell = (FTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            if (ftpShell.FTPChangePermissions(parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1])))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_PERM_SETSUCCEEDED") + " {0}", true, ThemeColorType.Success, parameters.ArgumentsList[0]);
                 return 0;

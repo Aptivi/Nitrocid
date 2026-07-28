@@ -18,14 +18,17 @@
 //
 
 using System;
-using System.Text;
 using System.Collections.Generic;
+using System.Text;
 using Colorimetry;
+using FluentFTP;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Terminaux.Shell.Prompts;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Themes.Colors;
 using Terminaux.Base.Extensions;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Presets
 {
@@ -59,15 +62,20 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Presets
 
         private string PresetPromptBuilder()
         {
+            var ftpShell = (FTPShell?)ShellManager.CurrentShell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            FtpClient? clientFTP = (FtpClient?)ftpShell.ClientFTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT"));
+
             // PowerLine glyphs
             char PadlockChar = Convert.ToChar(0xE0A2);
 
             // Segments
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), FTPShellCommon.FtpUser),
-                new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), FTPShellCommon.FtpSite, PadlockChar),
-                new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), FTPShellCommon.FtpCurrentRemoteDir),
+                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), clientFTP.Credentials.UserName),
+                new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), clientFTP.Host, PadlockChar),
+                new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), ftpShell.FtpCurrentRemoteDir),
             ];
 
             // Builder

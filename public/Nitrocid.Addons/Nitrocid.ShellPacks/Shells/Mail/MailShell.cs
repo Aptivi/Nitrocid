@@ -17,30 +17,61 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Threading;
+using MailKit;
 using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
-using System.Threading;
-using System;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Network.SpeedDial;
 using Nitrocid.Base.Network.Connections;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
-using Threadify.Manager;
-using Terminaux.Inputs;
-using Nitrocid.ShellPacks.Shells.Mail.Tools;
 using Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer;
+using Terminaux.Inputs;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Threadify.Manager;
 
 namespace Nitrocid.ShellPacks.Shells.Mail
 {
     /// <summary>
     /// The mail shell
     /// </summary>
-    public class MailShell : BaseShell, IShell
+    public partial class MailShell : BaseShell, IShell
     {
+        internal IEnumerable<UniqueId>? IMAP_Messages;
+        internal NetworkConnection? Client;
+
+        /// <summary>
+        /// IMAP current directory name
+        /// </summary>
+        public string IMAP_CurrentDirectory { get; set; } = "Inbox";
+
+        /// <summary>
+        /// The mail progress
+        /// </summary>
+        public readonly MailTransferProgress Progress = new();
+
+        /// <summary>
+        /// IMAP client
+        /// </summary>
+        public ImapClient ImapClient =>
+            (ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0];
+
+        /// <summary>
+        /// SMTP client
+        /// </summary>
+        public SmtpClient SmtpClient =>
+            (SmtpClient)((object[]?)Client?.ConnectionInstance ?? [])[1];
+
+        /// <summary>
+        /// Network credentials
+        /// </summary>
+        public NetworkCredential NetworkCredential =>
+            (NetworkCredential)((object[]?)Client?.ConnectionInstance ?? [])[3];
 
         /// <inheritdoc/>
         public override string ShellType => "MailShell";
@@ -55,29 +86,24 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         {
             // Parse shell arguments
             NetworkConnection connection = (NetworkConnection)ShellArgs[0];
-            ImapClient imapLink = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
-            SmtpClient smtpLink = (SmtpClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[1];
-            MailShellCommon.Client = connection;
+            Client = connection;
 
             // Send ping to keep the connection alive
-            var IMAP_NoOp = new ThreadInstance("IMAP Keep Connection", false, MailPingers.IMAPKeepConnection);
+            var IMAP_NoOp = new ThreadInstance("IMAP Keep Connection", false, IMAPKeepConnection);
             IMAP_NoOp.Start();
             DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about IMAPKeepConnection()");
-            var SMTP_NoOp = new ThreadInstance("SMTP Keep Connection", false, MailPingers.SMTPKeepConnection);
+            var SMTP_NoOp = new ThreadInstance("SMTP Keep Connection", false, SMTPKeepConnection);
             SMTP_NoOp.Start();
             DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about SMTPKeepConnection()");
-
-            // Write connection information to Speed Dial file if it doesn't exist there
-            SpeedDialTools.TryAddEntryToSpeedDial(connection.ConnectionUri.AbsoluteUri, connection.ConnectionUri.Port, NetworkConnectionType.Mail, MailLogin.Authentication.UserName, MailLogin.Authentication.Password, false);
 
             while (!Bail)
             {
                 try
                 {
                     // Populate messages
-                    MailTransfer.PopulateMessages();
+                    PopulateMessages();
                     if (ShellsInit.ShellsConfig.MailNotifyNewMail)
-                        MailHandlers.InitializeHandlers();
+                        InitializeHandlers();
 
                     // Prompt for the command
                     ShellManager.GetLine();
@@ -99,19 +125,19 @@ namespace Nitrocid.ShellPacks.Shells.Mail
                 // Exiting, so reset the site
                 if (Bail)
                 {
-                    MailShellCommon.IMAP_CurrentDirectory = "Inbox";
+                    IMAP_CurrentDirectory = "Inbox";
                     if (!detaching)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Exit requested. Disconnecting host...");
                         if (ShellsInit.ShellsConfig.MailNotifyNewMail)
-                            MailHandlers.ReleaseHandlers();
+                            ReleaseHandlers();
                         IMAP_NoOp.Stop();
                         SMTP_NoOp.Stop();
-                        imapLink.Disconnect(true);
-                        smtpLink.Disconnect(true);
-                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(MailShellCommon.Client);
+                        ImapClient.Disconnect(true);
+                        SmtpClient.Disconnect(true);
+                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(Client);
                         NetworkConnectionTools.CloseConnection(connectionIndex);
-                        MailShellCommon.Client = null;
+                        Client = null;
                     }
                     detaching = false;
                 }

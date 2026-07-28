@@ -18,9 +18,12 @@
 //
 
 using System.Text;
-using Terminaux.Themes.Colors;
-using Terminaux.Shell.Prompts;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Base.Extensions;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
 
 namespace Nitrocid.ShellPacks.Shells.Sql.Presets
 {
@@ -46,6 +49,9 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Presets
 
         private string PresetPromptBuilder()
         {
+            var sqlShell = (SqlShell?)ShellManager.CurrentShell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // Build the preset
             var PresetStringBuilder = new StringBuilder();
 
@@ -55,7 +61,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Presets
 
             // File name
             PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground());
-            PresetStringBuilder.AppendFormat(SqlShellCommon.DatabaseFileName);
+            PresetStringBuilder.AppendFormat(sqlShell.DatabaseFileName);
 
             // Closing
             PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());

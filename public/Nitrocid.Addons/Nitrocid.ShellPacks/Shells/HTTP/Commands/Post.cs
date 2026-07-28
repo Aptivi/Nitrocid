@@ -18,12 +18,12 @@
 //
 
 using System;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.ShellPacks.Shells.HTTP.Tools;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
 {
@@ -32,12 +32,15 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var httpShell = (HTTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // Print a message
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_POST_POSTING_FILE"), true, ThemeColorType.Progress, parameters.ArgumentsList[1]);
 
             try
             {
-                var ResponseTask = HttpTools.HttpPostFile(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+                var ResponseTask = httpShell.HttpPostFile(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
                 ResponseTask.Wait();
                 var Response = ResponseTask.Result;
                 string ResponseContent = Response.Content.ReadAsStringAsync().Result;

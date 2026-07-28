@@ -20,40 +20,77 @@
 using System;
 using System.IO;
 using System.Threading;
-using SharpCompress.Archives.Rar;
-using SharpCompress.Common;
-using SharpCompress.Readers;
-using SharpCompress.Archives.Zip;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using SharpCompress.Archives;
 using SharpCompress.Archives.GZip;
+using SharpCompress.Archives.Rar;
 using SharpCompress.Archives.SevenZip;
 using SharpCompress.Archives.Tar;
+using SharpCompress.Archives.Zip;
+using SharpCompress.Common;
+using SharpCompress.Readers;
+using Terminaux.Inputs;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.Base.Languages;
-using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Files;
-using Terminaux.Inputs;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Archive
 {
     /// <summary>
     /// Archive shell class
     /// </summary>
-    public class ArchiveShell : BaseShell, IShell
+    public partial class ArchiveShell : BaseShell, IShell
     {
+        private FileStream? fileStream;
+        private IArchive? archive;
+        private string? currentDirectory;
+        private string? currentArchiveDirectory;
+
         /// <inheritdoc/>
         public override string ShellType => "ArchiveShell";
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }
 
+        /// <summary>
+        /// Current directory
+        /// </summary>
+        public string? CurrentDirectory
+        {
+            get => currentDirectory;
+            set => currentDirectory = value;
+        }
+
+        /// <summary>
+        /// Current archive directory
+        /// </summary>
+        public string? CurrentArchiveDirectory
+        {
+            get => currentArchiveDirectory;
+            set => currentArchiveDirectory = value;
+        }
+
+        /// <summary>
+        /// Archive instance
+        /// </summary>
+        public IArchive? Archive =>
+            archive;
+
+        /// <summary>
+        /// File stream
+        /// </summary>
+        public FileStream? FileStream =>
+            fileStream;
+
         /// <inheritdoc/>
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Set current directory for RAR shell
-            ArchiveShellCommon.CurrentDirectory = FilesystemTools.CurrentDir;
+            CurrentDirectory = FilesystemTools.CurrentDir;
 
             // Get file path
             string ArchiveFile = "";
@@ -73,26 +110,29 @@ namespace Nitrocid.ShellPacks.Shells.Archive
             }
 
             // Open file if not open
-            ArchiveShellCommon.FileStream ??= new FileStream(ArchiveFile, FileMode.Open);
-            ArchiveType type = ReaderFactory.OpenReader(ArchiveShellCommon.FileStream).Type;
+            // TODO: NKS_SHELLPACKS_ARCHIVE_EXCEPTION_FILESTREAMFAILED -> Opening archive file stream failed
+            fileStream ??= new FileStream(ArchiveFile, FileMode.Open);
+            if (FileStream is null)
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_FILESTREAMFAILED"));
+            ArchiveType type = ReaderFactory.OpenReader(FileStream).Type;
 
             // Select archive type and open it
             switch (type)
             {
                 case ArchiveType.Rar:
-                    ArchiveShellCommon.Archive ??= RarArchive.OpenArchive(ArchiveShellCommon.FileStream);
+                    archive ??= RarArchive.OpenArchive(FileStream);
                     break;
                 case ArchiveType.Zip:
-                    ArchiveShellCommon.Archive ??= ZipArchive.OpenArchive(ArchiveShellCommon.FileStream);
+                    archive ??= ZipArchive.OpenArchive(FileStream);
                     break;
                 case ArchiveType.GZip:
-                    ArchiveShellCommon.Archive ??= GZipArchive.OpenArchive(ArchiveShellCommon.FileStream);
+                    archive ??= GZipArchive.OpenArchive(FileStream);
                     break;
                 case ArchiveType.SevenZip:
-                    ArchiveShellCommon.Archive ??= SevenZipArchive.OpenArchive(ArchiveShellCommon.FileStream);
+                    archive ??= SevenZipArchive.OpenArchive(FileStream);
                     break;
                 case ArchiveType.Tar:
-                    ArchiveShellCommon.Archive ??= TarArchive.OpenArchive(ArchiveShellCommon.FileStream);
+                    archive ??= TarArchive.OpenArchive(FileStream);
                     break;
                 default:
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED") + $" {type}", true, ThemeColorType.Error);
@@ -123,12 +163,8 @@ namespace Nitrocid.ShellPacks.Shells.Archive
             }
 
             // Close file stream
-            ArchiveShellCommon.Archive?.Dispose();
-            ArchiveShellCommon.FileStream?.Close();
-            ArchiveShellCommon.CurrentDirectory = "";
-            ArchiveShellCommon.CurrentArchiveDirectory = "";
-            ArchiveShellCommon.Archive = null;
-            ArchiveShellCommon.FileStream = null;
+            Archive?.Dispose();
+            FileStream?.Close();
         }
     }
 }

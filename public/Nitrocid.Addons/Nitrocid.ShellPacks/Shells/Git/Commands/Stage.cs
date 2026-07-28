@@ -17,15 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using LibGit2Sharp;
-using GitCommand = LibGit2Sharp.Commands;
-using System.Linq;
 using System;
+using System.Linq;
+using LibGit2Sharp;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using GitCommand = LibGit2Sharp.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -40,7 +41,9 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var status = GitShellCommon.Repository.RetrieveStatus();
+            var gitShell = (GitShell?)shell ??
+                throw new KernelException(KernelExceptionType.Git, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            var status = gitShell.Repository.RetrieveStatus();
 
             // Check to see if the repo has been modified
             if (!status.IsDirty)
@@ -53,7 +56,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             var modified = status.Modified.Single((se) => se.FilePath == parameters.ArgumentsList[0]);
             try
             {
-                GitCommand.Stage(GitShellCommon.Repository, modified.FilePath);
+                GitCommand.Stage(gitShell.Repository, modified.FilePath);
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STAGE_SUCCESS"), true, ThemeColorType.Success, modified.FilePath);
             }
             catch (Exception ex)

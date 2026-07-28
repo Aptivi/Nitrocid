@@ -17,14 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using FluentFTP;
+using Nitrocid.Base.Files.Instances;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Shells.FTP.Interactive;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.Base.Files.Instances;
-using Nitrocid.Base.Languages;
-using System;
-using Nitrocid.ShellPacks.Shells.FTP.Interactive;
-using FluentFTP;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {
@@ -33,7 +34,9 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var tui = new FtpFileManagerCli();
+            var ftpShell = (FTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            var tui = new FtpFileManagerCli(ftpShell);
             tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
             tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPY"), ConsoleKey.F1, (entry1, _, entry2, _) => tui.CopyFileOrDir(entry1, entry2)));
             tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVE"), ConsoleKey.F2, (entry1, _, entry2, _) => tui.MoveFileOrDir(entry1, entry2)));

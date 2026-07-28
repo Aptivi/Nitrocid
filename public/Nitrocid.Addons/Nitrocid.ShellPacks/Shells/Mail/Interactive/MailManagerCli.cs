@@ -30,14 +30,11 @@ using Textify.General;
 using MailKit;
 using MimeKit;
 using System.Linq;
-using MailKit.Net.Imap;
 using MimeKit.Cryptography;
 using Terminaux.Inputs.Styles;
 using MimeKit.Text;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.ShellPacks.Shells.Mail.Tools.Directory;
-using Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
 {
@@ -45,6 +42,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
     {
         internal bool refreshFirstPaneListing = true;
         internal bool refreshSecondPaneListing = true;
+        internal MailShell mailShell;
         private List<MailFolder> firstPaneListing = [];
         private List<MimeMessage> secondPaneListing = [];
         private int pageNum = 1;
@@ -87,7 +85,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                     if (refreshFirstPaneListing)
                     {
                         refreshFirstPaneListing = false;
-                        firstPaneListing = [.. MailDirectory.MailListDirectories()];
+                        firstPaneListing = [.. mailShell.MailListDirectories()];
                     }
                     return firstPaneListing;
                 }
@@ -111,13 +109,12 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                     {
                         refreshSecondPaneListing = false;
                         secondPaneListing.Clear();
-                        MailTransfer.PopulateMessages();
+                        mailShell.PopulateMessages();
                         int MsgsLimitForPg = ShellsInit.ShellsConfig.MailMaxMessagesInPage;
                         int FirstIndex = MsgsLimitForPg * pageNum - 10;
                         int LastIndex = MsgsLimitForPg * pageNum - 1;
-                        var messages = MailShellCommon.IMAP_Messages ?? [];
+                        var messages = mailShell.IMAP_Messages ?? [];
                         int MaxMessagesIndex = messages.Count() - 1;
-                        var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
 
                         for (int i = FirstIndex; i <= LastIndex; i++)
                         {
@@ -125,16 +122,16 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                             {
                                 // Getting information about the message is vital to display them.
                                 DebugWriter.WriteDebug(DebugLevel.I, "Getting message {0}...", vars: [i]);
-                                lock (client.SyncRoot)
+                                lock (mailShell.ImapClient.SyncRoot)
                                 {
                                     MimeMessage Msg;
-                                    if (!string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) & !(MailShellCommon.IMAP_CurrentDirectory == "Inbox"))
+                                    if (!string.IsNullOrEmpty(mailShell.IMAP_CurrentDirectory) & !(mailShell.IMAP_CurrentDirectory == "Inbox"))
                                     {
-                                        var Dir = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
-                                        Msg = Dir.GetMessage(messages.ElementAtOrDefault(i), default, MailShellCommon.Progress);
+                                        var Dir = mailShell.OpenFolder(mailShell.IMAP_CurrentDirectory);
+                                        Msg = Dir.GetMessage(messages.ElementAtOrDefault(i), default, mailShell.Progress);
                                     }
                                     else
-                                        Msg = client.Inbox?.GetMessage(messages.ElementAtOrDefault(i), default, MailShellCommon.Progress) ??
+                                        Msg = mailShell.ImapClient.Inbox?.GetMessage(messages.ElementAtOrDefault(i), default, mailShell.Progress) ??
                                             throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED"));
                                     secondPaneListing.Add(Msg);
                                 }
@@ -147,7 +144,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get mail message list for the second pane [{0}]: {1}", vars: [MailShellCommon.IMAP_CurrentDirectory, ex.Message]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get mail message list for the second pane [{0}]: {1}", vars: [mailShell.IMAP_CurrentDirectory, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     return [];
                 }
@@ -272,7 +269,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                     var DecryptedMessage = default(Dictionary<string, MimeEntity>);
                     if (currentEntry.Body is MultipartEncrypted)
                     {
-                        DecryptedMessage = MailTransfer.DecryptMessage(currentEntry);
+                        DecryptedMessage = mailShell.DecryptMessage(currentEntry);
                         DebugWriter.WriteDebug(DebugLevel.I, "Decrypted messages length: {0}", vars: [DecryptedMessage.Count]);
                         var DecryptedEntity = DecryptedMessage["Body"];
                         var DecryptedStream = new MemoryStream();
@@ -390,7 +387,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                         return;
 
                     // We're dealing with a folder. Open it in the selected pane.
-                    MailDirectory.MailChangeDirectory(currentEntry.FullName);
+                    mailShell.MailChangeDirectory(currentEntry.FullName);
                     InteractiveTuiTools.SelectionMovement(this, 1);
                     refreshFirstPaneListing = true;
                     refreshSecondPaneListing = true;
@@ -413,7 +410,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                 {
                     string directoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMEPROMPT"), Settings.InfoBoxSettings);
                     InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_CREATINGDIR"), Settings.InfoBoxSettings);
-                    MailDirectory.CreateMailDirectory(directoryName);
+                    mailShell.CreateMailDirectory(directoryName);
                     refreshFirstPaneListing = true;
                     refreshSecondPaneListing = true;
                 }
@@ -440,7 +437,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
 
                     // Move the message to a specified directory
                     InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGE"), Settings.InfoBoxSettings);
-                    MailManager.MailMoveMessage(messageIdx + 1, firstPaneListing[directoryIdx].Name);
+                    mailShell.MailMoveMessage(messageIdx + 1, firstPaneListing[directoryIdx].Name);
                     refreshFirstPaneListing = true;
                     refreshSecondPaneListing = true;
                 }
@@ -470,7 +467,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                     foreach (var address in addresses)
                     {
                         InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDER"), Settings.InfoBoxSettings, address.Name ?? "");
-                        MailManager.MailMoveAllBySender(address.Name ?? "", firstPaneListing[directoryIdx].Name);
+                        mailShell.MailMoveAllBySender(address.Name ?? "", firstPaneListing[directoryIdx].Name);
                     }
                     refreshFirstPaneListing = true;
                     refreshSecondPaneListing = true;
@@ -497,7 +494,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                 {
                     string directoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMERENAMEPROMPT"), Settings.InfoBoxSettings, InfoBoxInputType.Text, folder.Name);
                     InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIR"), Settings.InfoBoxSettings);
-                    MailDirectory.RenameMailDirectory(folder.Name, directoryName);
+                    mailShell.RenameMailDirectory(folder.Name, directoryName);
                     refreshFirstPaneListing = true;
                     refreshSecondPaneListing = true;
                 }
@@ -522,7 +519,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                 if (CurrentPane == 1)
                 {
                     InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIR"), Settings.InfoBoxSettings);
-                    MailDirectory.DeleteMailDirectory(folder.Name);
+                    mailShell.DeleteMailDirectory(folder.Name);
                     InteractiveTuiTools.SelectionMovement(this, FirstPaneCurrentSelection - 1);
                     refreshFirstPaneListing = true;
                     refreshSecondPaneListing = true;
@@ -544,7 +541,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                 if (CurrentPane == 2)
                 {
                     InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGE"), Settings.InfoBoxSettings);
-                    MailManager.MailRemoveMessage(msgIdx + 1);
+                    mailShell.MailRemoveMessage(msgIdx + 1);
                     InteractiveTuiTools.SelectionMovement(this, SecondPaneCurrentSelection - 1);
                     refreshFirstPaneListing = true;
                     refreshSecondPaneListing = true;
@@ -569,7 +566,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                     foreach (var address in addresses)
                     {
                         InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDER"), Settings.InfoBoxSettings, address.Name ?? "");
-                        MailManager.MailRemoveAllBySender(address.Name ?? "");
+                        mailShell.MailRemoveAllBySender(address.Name ?? "");
                     }
                     InteractiveTuiTools.SelectionMovement(this, SecondPaneCurrentSelection - 1);
                     refreshFirstPaneListing = true;
@@ -582,6 +579,11 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                 finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDERFAILED") + ": {0}".FormatString(ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
+        }
+
+        public MailManagerCli(MailShell mailShell)
+        {
+            this.mailShell = mailShell;
         }
     }
 }

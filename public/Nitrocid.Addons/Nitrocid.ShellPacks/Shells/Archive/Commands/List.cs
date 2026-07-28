@@ -18,14 +18,15 @@
 //
 
 using System.Collections.Generic;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
 using SharpCompress.Archives;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.Base.Kernel.Debugging;
-using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
-using Nitrocid.Base.Misc.Reflection;
-using Nitrocid.ShellPacks.Shells.Archive.Tools;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Archive.Commands
 {
@@ -40,28 +41,26 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var archiveShell = (ArchiveShell?)shell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             List<IArchiveEntry> Entries;
             if (parameters.ArgumentsList.Length > 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Listing entries with {0} as target directory", vars: [parameters.ArgumentsList[0]]);
-                Entries = ArchiveTools.ListArchiveEntries(parameters.ArgumentsList[0]);
+                Entries = archiveShell.ListArchiveEntries(parameters.ArgumentsList[0]);
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Listing entries with current directory as target directory");
-                Entries = ArchiveTools.ListArchiveEntries(ArchiveShellCommon.CurrentArchiveDirectory ?? "");
+                Entries = archiveShell.ListArchiveEntries(archiveShell.CurrentArchiveDirectory ?? "");
             }
             foreach (IArchiveEntry Entry in Entries)
             {
                 TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, Entry.Key ?? "");
                 if (!Entry.IsDirectory) // Entry is a file
-                {
                     TextWriterColor.Write("{0} ({1})", true, ThemeColorType.ListValue, Entry.CompressedSize.SizeString(), Entry.Size.SizeString());
-                }
                 else
-                {
                     TextWriterRaw.Write();
-                }
             }
             return 0;
         }

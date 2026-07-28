@@ -18,10 +18,13 @@
 //
 
 using System.Text;
-using Terminaux.Themes.Colors;
-using Terminaux.Shell.Prompts;
-using Terminaux.Base.Extensions;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Shells.Mail.Tools;
+using Terminaux.Base.Extensions;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Presets
 {
@@ -47,6 +50,9 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Presets
 
         private string PresetPromptBuilder()
         {
+            var mailShell = (MailShell?)ShellManager.CurrentShell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // Build the preset
             var PresetStringBuilder = new StringBuilder();
 
@@ -56,7 +62,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Presets
 
             // Mail username
             PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground());
-            PresetStringBuilder.AppendFormat("{0}", MailLogin.Authentication.UserName);
+            PresetStringBuilder.AppendFormat("{0}", mailShell.NetworkCredential.UserName);
 
             // Closing
             PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
@@ -64,7 +70,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Presets
 
             // Closing
             PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
-            PresetStringBuilder.AppendFormat("{0} > ", MailShellCommon.IMAP_CurrentDirectory);
+            PresetStringBuilder.AppendFormat("{0} > ", mailShell.IMAP_CurrentDirectory);
             PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground());
 
             // Present final string

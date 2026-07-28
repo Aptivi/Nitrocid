@@ -18,13 +18,16 @@
 //
 
 using System;
-using System.Text;
 using System.Collections.Generic;
+using System.Text;
 using Colorimetry;
-using Terminaux.Themes.Colors;
-using Terminaux.Shell.Prompts;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Base.Extensions;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Sql.Presets
 {
@@ -58,13 +61,16 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Presets
 
         private string PresetPromptBuilder()
         {
+            var sqlShell = (SqlShell?)ShellManager.CurrentShell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // PowerLine glyphs
             char TransitionPartChar = Convert.ToChar(0xE0B1);
 
             // PowerLine presets
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), SqlShellCommon.DatabaseFileName, default, TransitionPartChar)
+                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), sqlShell.DatabaseFileName, default, TransitionPartChar)
             ];
 
             // Builder

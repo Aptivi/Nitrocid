@@ -25,7 +25,6 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {
@@ -40,13 +39,15 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var ftpShell = (FTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             string RemoteFile = parameters.ArgumentsList[0];
             string Hash = parameters.ArgumentsList[1];
 
             // Check to see if hash is found
             if (Enum.IsDefined(typeof(FtpHashAlgorithm), Hash))
             {
-                var HashResult = FTPHashing.FTPGetHash(RemoteFile, (FtpHashAlgorithm)Convert.ToInt32(Enum.Parse(typeof(FtpHashAlgorithm), Hash)));
+                var HashResult = ftpShell.FTPGetHash(RemoteFile, (FtpHashAlgorithm)Convert.ToInt32(Enum.Parse(typeof(FtpHashAlgorithm), Hash)));
                 TextWriterColor.Write(HashResult.Value);
                 return 0;
             }

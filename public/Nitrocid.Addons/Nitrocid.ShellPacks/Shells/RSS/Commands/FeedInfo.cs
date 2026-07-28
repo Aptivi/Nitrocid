@@ -37,7 +37,9 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var feed = RSSShellCommon.RSSFeedInstance ??
+            var rssShell = (RSSShell?)shell ??
+                throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            var feed = rssShell.RSSFeedInstance ??
                 throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FEEDINFO_NOFEED"));
             TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE") + " ", false, ThemeColorType.ListEntry);
             TextWriterColor.Write(feed.FeedTitle, true, ThemeColorType.ListValue);

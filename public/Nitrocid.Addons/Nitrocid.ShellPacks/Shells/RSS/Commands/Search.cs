@@ -18,13 +18,15 @@
 //
 
 using Nettify.Rss.Instance;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Shells.RSS.Tools;
+using Terminaux.Base.Extensions;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
-using Terminaux.Base.Extensions;
-using Nitrocid.ShellPacks.Shells.RSS.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Commands
 {
@@ -62,6 +64,8 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var rssShell = (RSSShell?)shell ??
+                throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             bool findTitle = parameters.ContainsSwitch("-t");
             bool findDescription = parameters.ContainsSwitch("-d");
             bool findAll = parameters.ContainsSwitch("-a");
@@ -70,7 +74,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
             if (findAll)
                 findTitle = findDescription = true;
 
-            var foundArticles = RSSShellTools.SearchArticles(parameters.ArgumentsList[0], findTitle, findDescription, caseSensitive);
+            var foundArticles = RSSTools.SearchArticles(rssShell.RSSFeedInstance?.FeedArticles ?? [], parameters.ArgumentsList[0], findTitle, findDescription, caseSensitive);
             foreach (RSSArticle Article in foundArticles)
             {
                 TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, Article.ArticleTitle);

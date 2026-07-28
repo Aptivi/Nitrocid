@@ -25,7 +25,6 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
 using System;
-using Nitrocid.ShellPacks.Shells.Json.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
 {
@@ -40,13 +39,15 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var jsonShell = (JsonShell?)shell ??
+                throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             string parent = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-parentPath");
             string type = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type");
             string propName = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-propName");
 
             try
             {
-                JsonTools.Set(parent, type, propName, parameters.ArgumentsList[0]);
+                jsonShell.Set(parent, type, propName, parameters.ArgumentsList[0]);
             }
             catch (KernelException kex)
             {

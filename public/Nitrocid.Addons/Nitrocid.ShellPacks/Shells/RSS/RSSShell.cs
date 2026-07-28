@@ -18,18 +18,23 @@
 //
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
 using System.Threading;
 using Nettify.Rss.Instance;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Notifications;
+using Nitrocid.Base.Network.Connections;
+using Nitrocid.Base.Network.SpeedDial;
+using Terminaux.Inputs;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.Base.Kernel.Debugging;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
 using Terminaux.Themes.Colors;
-using Nitrocid.Base.Network.SpeedDial;
-using Nitrocid.Base.Network.Connections;
-using Nitrocid.Base.Kernel.Exceptions;
-using Terminaux.Inputs;
+using Terminaux.Writer.ConsoleWriters;
+using Threadify.Manager;
 
 namespace Nitrocid.ShellPacks.Shells.RSS
 {
@@ -38,6 +43,23 @@ namespace Nitrocid.ShellPacks.Shells.RSS
     /// </summary>
     public class RSSShell : BaseShell, IShell
     {
+        internal NetworkConnection? clientConnection;
+        internal RSSFeed? feedInstance;
+        internal int fetchTimeout = 60000;
+        internal int refreshInterval = 60000;
+        internal ThreadInstance RSSRefresher = new("RSS Feed Refresher", false, new ParameterizedThreadStart((shell) => ((RSSShell?)shell)?.RefreshFeeds()));
+        internal HttpClient RSSRefresherClient = new() { Timeout = TimeSpan.FromMilliseconds(ShellsInit.ShellsConfig.RSSFetchTimeout) };
+
+        /// <summary>
+        /// RSS feed instance
+        /// </summary>
+        public RSSFeed? RSSFeedInstance =>
+            feedInstance;
+
+        /// <summary>
+        /// Whether to keep the connection alive or not
+        /// </summary>
+        public bool RSSKeepAlive { get; set; }
 
         /// <inheritdoc/>
         public override string ShellType => "RSSShell";
@@ -54,13 +76,12 @@ namespace Nitrocid.ShellPacks.Shells.RSS
             NetworkConnection rssConnection = (NetworkConnection)ShellArgs[0];
             RSSFeed? rssFeed = (RSSFeed?)rssConnection.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT"));
-            RSSShellCommon.feedInstance = rssFeed;
-            RSSShellCommon.rssFeedLink = rssFeed.FeedUrl;
+            feedInstance = rssFeed;
 
             // Send ping to keep the connection alive
-            if (!RSSShellCommon.RSSKeepAlive & !RSSShellCommon.RSSRefresher.IsAlive & ShellsInit.ShellsConfig.RSSRefreshFeeds)
+            if (!RSSKeepAlive & !RSSRefresher.IsAlive & ShellsInit.ShellsConfig.RSSRefreshFeeds)
             {
-                RSSShellCommon.RSSRefresher.Start();
+                RSSRefresher.Start(this);
                 DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about RefreshFeeds()");
             }
 
@@ -95,17 +116,56 @@ namespace Nitrocid.ShellPacks.Shells.RSS
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Exit requested. Disconnecting host...");
                         if (ShellsInit.ShellsConfig.RSSRefreshFeeds)
-                            RSSShellCommon.RSSRefresher.Stop();
+                            RSSRefresher.Stop();
                         int connectionIndex = NetworkConnectionTools.GetConnectionIndex(rssConnection);
                         NetworkConnectionTools.CloseConnection(connectionIndex);
-                        RSSShellCommon.clientConnection = null;
+                        clientConnection = null;
                     }
                     detaching = false;
-                    RSSShellCommon.rssFeedLink = "";
-                    RSSShellCommon.feedInstance = null;
+                    feedInstance = null;
                 }
             }
         }
 
+        /// <summary>
+        /// Refreshes the feeds
+        /// </summary>
+        internal void RefreshFeeds()
+        {
+            try
+            {
+                var articles = RSSFeedInstance?.FeedArticles ?? [];
+                var OldFeedsList = new List<RSSArticle>(articles);
+                List<RSSArticle> NewFeedsList;
+                while (RSSFeedInstance is not null)
+                {
+                    if (RSSFeedInstance is not null)
+                    {
+                        // Refresh the feed
+                        RSSFeedInstance.Refresh();
+
+                        // Check for new feeds
+                        NewFeedsList = [.. articles.Except(OldFeedsList)];
+                        string OldFeedTitle = OldFeedsList.Count == 0 ? "" : OldFeedsList[0].ArticleTitle;
+                        if (NewFeedsList.Count > 0 && NewFeedsList[0].ArticleTitle != OldFeedTitle)
+                        {
+                            // Update the list
+                            DebugWriter.WriteDebug(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", vars: [articles.Length, OldFeedsList.Count]);
+                            OldFeedsList = [.. articles];
+                            foreach (RSSArticle NewFeed in NewFeedsList)
+                            {
+                                var FeedNotif = new Notification(NewFeed.ArticleTitle, NewFeed.ArticleDescription, NotificationPriority.Low, NotificationType.Normal);
+                                NotificationManager.NotifySend(FeedNotif);
+                            }
+                        }
+                    }
+                    Thread.Sleep(ShellsInit.ShellsConfig.RSSRefreshInterval);
+                }
+            }
+            catch (ThreadInterruptedException)
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Aborting refresher...");
+            }
+        }
     }
 }

@@ -20,7 +20,6 @@
 using FluentFTP;
 using Nitrocid.Base.Kernel.Configuration.Instances;
 using Terminaux.Shell.Prompts;
-using Nitrocid.ShellPacks.Shells.FTP;
 
 namespace Nitrocid.ShellPacks.Settings
 {
@@ -29,6 +28,10 @@ namespace Nitrocid.ShellPacks.Settings
     /// </summary>
     public partial class ShellsConfig : BaseKernelConfig
     {
+        internal static int verifyRetryAttempts = 3;
+        internal static int connectTimeout = 15000;
+        internal static int dataConnectTimeout = 15000;
+
         /// <summary>
         /// FTP Prompt Preset
         /// </summary>
@@ -42,24 +45,24 @@ namespace Nitrocid.ShellPacks.Settings
         /// </summary>
         public int FtpVerifyRetryAttempts
         {
-            get => FTPShellCommon.verifyRetryAttempts;
-            set => FTPShellCommon.verifyRetryAttempts = value < 0 ? 3 : value;
+            get => verifyRetryAttempts;
+            set => verifyRetryAttempts = value < 0 ? 3 : value;
         }
         /// <summary>
         /// How many milliseconds to wait before the FTP connection timeout?
         /// </summary>
         public int FtpConnectTimeout
         {
-            get => FTPShellCommon.connectTimeout;
-            set => FTPShellCommon.connectTimeout = value < 0 ? 15000 : value;
+            get => connectTimeout;
+            set => connectTimeout = value < 0 ? 15000 : value;
         }
         /// <summary>
         /// How many milliseconds to wait before the FTP data connection timeout?
         /// </summary>
         public int FtpDataConnectTimeout
         {
-            get => FTPShellCommon.dataConnectTimeout;
-            set => FTPShellCommon.dataConnectTimeout = value < 0 ? 15000 : value;
+            get => dataConnectTimeout;
+            set => dataConnectTimeout = value < 0 ? 15000 : value;
         }
         /// <summary>
         /// Choose the version of Internet Protocol that the FTP server supports and that the FTP client uses

@@ -19,7 +19,6 @@
 
 using Nitrocid.Base.Kernel.Configuration.Instances;
 using Terminaux.Shell.Prompts;
-using Nitrocid.ShellPacks.Shells.RSS;
 
 namespace Nitrocid.ShellPacks.Settings
 {
@@ -28,6 +27,9 @@ namespace Nitrocid.ShellPacks.Settings
     /// </summary>
     public partial class ShellsConfig : BaseKernelConfig
     {
+        internal static int fetchTimeout = 60000;
+        internal static int refreshInterval = 60000;
+
         /// <summary>
         /// RSS Prompt Preset
         /// </summary>
@@ -49,16 +51,16 @@ namespace Nitrocid.ShellPacks.Settings
         /// </summary>
         public int RSSRefreshInterval
         {
-            get => RSSShellCommon.refreshInterval;
-            set => RSSShellCommon.refreshInterval = value < 0 ? 60000 : value;
+            get => refreshInterval;
+            set => refreshInterval = value < 0 ? 60000 : value;
         }
         /// <summary>
         /// How many milliseconds to wait before RSS feed fetch timeout?
         /// </summary>
         public int RSSFetchTimeout
         {
-            get => RSSShellCommon.fetchTimeout;
-            set => RSSShellCommon.fetchTimeout = value < 0 ? 60000 : value;
+            get => fetchTimeout;
+            set => fetchTimeout = value < 0 ? 60000 : value;
         }
     }
 }

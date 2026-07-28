@@ -17,13 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Newtonsoft.Json.Linq;
 using System.Linq;
+using Newtonsoft.Json.Linq;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
 {
@@ -35,18 +36,21 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var jsonShell = (JsonShell?)shell ??
+                throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // Base info
             SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.Separator));
-            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_TYPE"), $"{JsonShellCommon.FileToken.Type}");
-            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_VALUES"), $"{JsonShellCommon.FileToken.HasValues}");
-            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS"), $"{JsonShellCommon.FileToken.Count()}");
-            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_BASEPATH"), JsonShellCommon.FileToken.Path);
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_TYPE"), $"{jsonShell.FileToken.Type}");
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_VALUES"), $"{jsonShell.FileToken.HasValues}");
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS"), $"{jsonShell.FileToken.Count()}");
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_BASEPATH"), jsonShell.FileToken.Path);
             TextWriterRaw.Write();
 
             // Individual properties
             if (!parameters.ContainsSwitch("-simplified"))
             {
-                foreach (var token in JsonShellCommon.FileToken)
+                foreach (var token in jsonShell.FileToken)
                 {
                     SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TITLE") + " [{0}]", ThemeColorsTools.GetColor(ThemeColorType.Separator), true, token.Path);
                     ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TYPE"), $"{token.Type}");

@@ -18,11 +18,12 @@
 //
 
 using System.Collections.Generic;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.ShellPacks.Shells.FTP.Tools.Filesystem;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {
@@ -53,17 +54,17 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var ftpShell = (FTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             bool ShowFileDetails = parameters.ContainsSwitch("-showdetails") || ShellsInit.ShellsConfig.FtpShowDetailsInList;
             var Entries = new List<string>();
             if (parameters.ArgumentsList.Length != 0)
             {
                 foreach (string TargetDirectory in parameters.ArgumentsList)
-                    Entries = FTPFilesystem.FTPListRemote(TargetDirectory, ShowFileDetails);
+                    Entries = ftpShell.FTPListRemote(TargetDirectory, ShowFileDetails);
             }
             else
-            {
-                Entries = FTPFilesystem.FTPListRemote("", ShowFileDetails);
-            }
+                Entries = ftpShell.FTPListRemote("", ShowFileDetails);
             Entries.Sort();
             foreach (string Entry in Entries)
                 TextWriterColor.Write(Entry, true, ThemeColorType.ListEntry);

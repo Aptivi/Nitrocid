@@ -18,14 +18,18 @@
 //
 
 using System;
-using System.Text;
 using System.Collections.Generic;
+using System.Text;
 using Colorimetry;
+using FluentFTP;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Terminaux.Shell.Prompts;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Themes.Colors;
+using Nitrocid.ShellPacks.Shells.Archive;
 using Terminaux.Base.Extensions;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Presets
 {
@@ -59,6 +63,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Presets
 
         private string PresetPromptBuilder()
         {
+            var ftpShell = (FTPShell?)ShellManager.CurrentShell ??
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            FtpClient? clientFTP = (FtpClient?)ftpShell.ClientFTP?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT"));
+
             // PowerLine glyphs
             char TransitionPartChar = Convert.ToChar(0xE0B1);
             char PadlockChar = Convert.ToChar(0xE0A2);
@@ -66,9 +75,9 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Presets
             // Segments
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), FTPShellCommon.FtpUser, default, TransitionPartChar),
-                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), FTPShellCommon.FtpSite, PadlockChar, TransitionPartChar),
-                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), FTPShellCommon.FtpCurrentRemoteDir, default, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), clientFTP.Credentials.UserName, default, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), clientFTP.Host, PadlockChar, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), ftpShell.FtpCurrentRemoteDir, default, TransitionPartChar),
             ];
 
             // Builder

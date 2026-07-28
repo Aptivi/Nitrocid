@@ -21,7 +21,6 @@ using System;
 using FluentFTP;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Base;
 using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer
@@ -46,21 +45,10 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer
         /// </summary>
         private static void FileProgressHandler(FtpProgress Percentage)
         {
-            // If the progress is not defined, disable progress bar
-            if (Percentage.Progress < 0d)
+            if (Percentage.Progress >= 0d)
             {
-                FTPTransfer.progressFlag = false;
-            }
-            else
-            {
-                FTPTransfer.ConsoleOriginalPositionLeft = ConsoleWrapper.CursorLeft;
-                FTPTransfer.ConsoleOriginalPositionTop = ConsoleWrapper.CursorTop;
-                if (FTPTransfer.progressFlag & Percentage.Progress != 100d)
-                {
-                    TextWriterColor.Write(" {0}% (ETA: {1}d {2}:{3}:{4} @ {5})", false, ThemeColorType.Progress, Percentage.Progress.ToString("N2"), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString());
-                    ConsoleClearing.ClearLineToRight();
-                }
-                ConsoleWrapper.SetCursorPosition(FTPTransfer.ConsoleOriginalPositionLeft, FTPTransfer.ConsoleOriginalPositionTop);
+                TextWriterColor.Write("\r {0}% (ETA: {1}d {2}:{3}:{4} @ {5})", false, ThemeColorType.Progress, Percentage.Progress.ToString("N2"), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString());
+                ConsoleClearing.ClearLineToRight();
             }
         }
 
@@ -69,22 +57,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer
         /// </summary>
         private static void MultipleProgressHandler(FtpProgress Percentage)
         {
-            // If the progress is not defined, disable progress bar
-            if (Percentage.Progress < 0d)
+            if (Percentage.Progress >= 0d)
             {
-                FTPTransfer.progressFlag = false;
-            }
-            else
-            {
-                FTPTransfer.ConsoleOriginalPositionLeft = ConsoleWrapper.CursorLeft;
-                FTPTransfer.ConsoleOriginalPositionTop = ConsoleWrapper.CursorTop;
-                if (FTPTransfer.progressFlag & Percentage.Progress != 100d)
-                {
-                    TextWriterColor.Write("- [{0}/{1}] {2}: ", false, ThemeColorType.ListEntry, Percentage.FileIndex + 1, Percentage.FileCount, Percentage.RemotePath);
-                    TextWriterColor.Write("{0}% (ETA: {1}d {2}:{3}:{4} @ {5})", false, ThemeColorType.Progress, Percentage.Progress.ToString("N2"), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString());
-                    ConsoleClearing.ClearLineToRight();
-                }
-                ConsoleWrapper.SetCursorPosition(FTPTransfer.ConsoleOriginalPositionLeft, FTPTransfer.ConsoleOriginalPositionTop);
+                TextWriterColor.Write("\r - [{0}/{1}] {2}: ", false, ThemeColorType.ListEntry, Percentage.FileIndex + 1, Percentage.FileCount, Percentage.RemotePath);
+                TextWriterColor.Write("{0}% (ETA: {1}d {2}:{3}:{4} @ {5})", false, ThemeColorType.Progress, Percentage.Progress.ToString("N2"), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString());
+                ConsoleClearing.ClearLineToRight();
             }
         }
 

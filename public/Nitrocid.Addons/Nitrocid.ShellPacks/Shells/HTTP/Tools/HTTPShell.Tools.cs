@@ -26,22 +26,23 @@ using System.Threading.Tasks;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Shells;
 
-namespace Nitrocid.ShellPacks.Shells.HTTP.Tools
+namespace Nitrocid.ShellPacks.Shells.HTTP
 {
     /// <summary>
     /// HTTP tools
     /// </summary>
-    public static class HttpTools
+    public partial class HTTPShell : BaseShell, IShell
     {
 
         /// <summary>
         /// Deletes the specified content from HTTP server
         /// </summary>
         /// <param name="ContentUri">Content URI (starts after the HTTP hostname, e.g. "filetodelete.html")</param>
-        public async static Task HttpDelete(string ContentUri)
+        public async Task HttpDelete(string ContentUri)
         {
-            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+            var client = (HttpClient?)ClientHTTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             await client.DeleteAsync(TargetUri);
@@ -51,9 +52,9 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Tools
         /// Gets the specified content string from HTTP server
         /// </summary>
         /// <param name="ContentUri">Content URI (starts after the HTTP hostname, e.g. "filetoget.html")</param>
-        public async static Task<string> HttpGetString(string ContentUri)
+        public async Task<string> HttpGetString(string ContentUri)
         {
-            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+            var client = (HttpClient?)ClientHTTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             return await client.GetStringAsync(TargetUri);
@@ -63,9 +64,9 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Tools
         /// Gets the specified content from HTTP server
         /// </summary>
         /// <param name="ContentUri">Content URI (starts after the HTTP hostname, e.g. "filetoget.html")</param>
-        public async static Task<HttpResponseMessage> HttpGet(string ContentUri)
+        public async Task<HttpResponseMessage> HttpGet(string ContentUri)
         {
-            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+            var client = (HttpClient?)ClientHTTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             return await client.GetAsync(TargetUri);
@@ -76,9 +77,9 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Tools
         /// </summary>
         /// <param name="ContentUri">Content URI (starts after the HTTP hostname)</param>
         /// <param name="ContentString">String to put to the HTTP server</param>
-        public async static Task<HttpResponseMessage> HttpPutString(string ContentUri, string ContentString)
+        public async Task<HttpResponseMessage> HttpPutString(string ContentUri, string ContentString)
         {
-            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+            var client = (HttpClient?)ClientHTTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             var stringContent = new StringContent(ContentString);
@@ -90,9 +91,9 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Tools
         /// </summary>
         /// <param name="ContentUri">Content URI (starts after the HTTP hostname)</param>
         /// <param name="ContentPath">Path to the file to open a stream and put it to the HTTP server</param>
-        public async static Task<HttpResponseMessage> HttpPutFile(string ContentUri, string ContentPath)
+        public async Task<HttpResponseMessage> HttpPutFile(string ContentUri, string ContentPath)
         {
-            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+            var client = (HttpClient?)ClientHTTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             ContentPath = FilesystemTools.NeutralizePath(ContentPath);
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
@@ -106,9 +107,9 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Tools
         /// </summary>
         /// <param name="ContentUri">Content URI (starts after the HTTP hostname)</param>
         /// <param name="ContentString">String to post to the HTTP server</param>
-        public async static Task<HttpResponseMessage> HttpPostString(string ContentUri, string ContentString)
+        public async Task<HttpResponseMessage> HttpPostString(string ContentUri, string ContentString)
         {
-            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+            var client = (HttpClient?)ClientHTTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             var stringContent = new StringContent(ContentString);
@@ -120,9 +121,9 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Tools
         /// </summary>
         /// <param name="ContentUri">Content URI (starts after the HTTP hostname)</param>
         /// <param name="ContentPath">Path to the file to open a stream and post it to the HTTP server</param>
-        public async static Task<HttpResponseMessage> HttpPostFile(string ContentUri, string ContentPath)
+        public async Task<HttpResponseMessage> HttpPostFile(string ContentUri, string ContentPath)
         {
-            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+            var client = (HttpClient?)ClientHTTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             ContentPath = FilesystemTools.NeutralizePath(ContentPath);
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
@@ -136,9 +137,9 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Tools
         /// </summary>
         /// <param name="key">Key to assign a value to</param>
         /// <param name="value">Value to assign to this key</param>
-        public static void HttpAddHeader(string key, string value)
+        public void HttpAddHeader(string key, string value)
         {
-            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+            var client = (HttpClient?)ClientHTTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             if (!HttpHeaderExists(key))
                 client.DefaultRequestHeaders.Add(key, value);
@@ -150,9 +151,9 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Tools
         /// Adds a request header to the future requests
         /// </summary>
         /// <param name="key">Key to remove</param>
-        public static void HttpRemoveHeader(string key)
+        public void HttpRemoveHeader(string key)
         {
-            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+            var client = (HttpClient?)ClientHTTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             if (HttpHeaderExists(key))
                 client.DefaultRequestHeaders.Remove(key);
@@ -165,7 +166,7 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Tools
         /// </summary>
         /// <param name="key">Key to assign a value to</param>
         /// <param name="value">Value to assign to this key</param>
-        public static void HttpEditHeader(string key, string value)
+        public void HttpEditHeader(string key, string value)
         {
             if (HttpHeaderExists(key))
             {
@@ -182,9 +183,9 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Tools
         /// Makes a list of headers
         /// </summary>
         /// <returns>An array of tuples containing keys and values from the HTTP request headers</returns>
-        public static (string, string)[] HttpListHeaders()
+        public (string, string)[] HttpListHeaders()
         {
-            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+            var client = (HttpClient?)ClientHTTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             var headers = client.DefaultRequestHeaders;
             var finalHeaders = new List<(string, string)>();
@@ -204,9 +205,9 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Tools
         /// </summary>
         /// <param name="key">Key to query</param>
         /// <returns>True if found; false otherwise.</returns>
-        public static bool HttpHeaderExists(string key)
+        public bool HttpHeaderExists(string key)
         {
-            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+            var client = (HttpClient?)ClientHTTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             return client.DefaultRequestHeaders.Contains(key);
         }
@@ -218,9 +219,9 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Tools
         /// The current user agent. If there are two or more user agents set in the same header (by somehow adding the same
         /// key with different UA), returns the last user agent value.
         /// </returns>
-        public static string HttpGetCurrentUserAgent()
+        public string HttpGetCurrentUserAgent()
         {
-            var client = (HttpClient?)HTTPShellCommon.ClientHTTP?.ConnectionInstance ??
+            var client = (HttpClient?)ClientHTTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
             var userAgents = client.DefaultRequestHeaders.UserAgent;
             if (userAgents.Count > 0)
@@ -233,7 +234,7 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Tools
         /// Sets the current user agent
         /// </summary>
         /// <param name="userAgent">Target user agent</param>
-        public static void HttpSetUserAgent(string userAgent)
+        public void HttpSetUserAgent(string userAgent)
         {
             // Remove all user agent strings in case we have more than one instance
             while (HttpHeaderExists("User-Agent"))
@@ -244,14 +245,14 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Tools
         }
 
         /// <summary>
-        /// Neutralize the URI so the host name, <see cref="HTTPShellCommon.HTTPSite"/>, doesn't appear twice.
+        /// Neutralize the URI so the host name, <see cref="HTTPSite"/>, doesn't appear twice.
         /// </summary>
         /// <param name="ContentUri">Content URI (starts after the HTTP hostname, e.g. "filetoget.html")</param>
-        public static string NeutralizeUri(string ContentUri)
+        public string NeutralizeUri(string ContentUri)
         {
             string NeutralizedUri = "";
-            if (!ContentUri.StartsWith(HTTPShellCommon.HTTPSite))
-                NeutralizedUri += HTTPShellCommon.HTTPSite;
+            if (!ContentUri.StartsWith(HTTPSite))
+                NeutralizedUri += HTTPSite;
             NeutralizedUri += ContentUri;
             return NeutralizedUri;
         }

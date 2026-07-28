@@ -18,14 +18,14 @@
 //
 
 using System;
-using Terminaux.Shell.Commands;
-using Terminaux.Inputs.Styles.Choice;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
-using Textify.General;
-using Nitrocid.ShellPacks.Shells.SFTP.Tools.Filesystem;
+using Terminaux.Inputs.Styles.Choice;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 {
@@ -44,6 +44,9 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var sftpShell = (SFTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // Print a message
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPHTTPSFTP_DELETING"), true, ThemeColorType.Progress, parameters.ArgumentsList[0]);
 
@@ -54,7 +57,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 
             try
             {
-                SFTPFilesystem.SFTPDeleteRemote(parameters.ArgumentsList[0]);
+                sftpShell.SFTPDeleteRemote(parameters.ArgumentsList[0]);
                 return 0;
             }
             catch (Exception ex)

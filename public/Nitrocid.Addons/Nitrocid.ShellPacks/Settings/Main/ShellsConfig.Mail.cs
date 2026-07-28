@@ -20,7 +20,6 @@
 using MimeKit.Text;
 using Nitrocid.Base.Kernel.Configuration.Instances;
 using Terminaux.Shell.Prompts;
-using Nitrocid.ShellPacks.Shells.Mail;
 
 namespace Nitrocid.ShellPacks.Settings
 {
@@ -29,6 +28,10 @@ namespace Nitrocid.ShellPacks.Settings
     /// </summary>
     public partial class ShellsConfig : BaseKernelConfig
     {
+        internal static int imapPingInterval = 30000;
+        internal static int smtpPingInterval = 30000;
+        internal static int maxMessagesInPage = 10;
+
         /// <summary>
         /// Mail Shell Prompt Preset
         /// </summary>
@@ -78,16 +81,16 @@ namespace Nitrocid.ShellPacks.Settings
         /// </summary>
         public int MailImapPingInterval
         {
-            get => MailShellCommon.imapPingInterval;
-            set => MailShellCommon.imapPingInterval = value < 0 ? 30000 : value;
+            get => imapPingInterval;
+            set => imapPingInterval = value < 0 ? 30000 : value;
         }
         /// <summary>
         /// How many milliseconds to send the SMTP ping?
         /// </summary>
         public int MailSmtpPingInterval
         {
-            get => MailShellCommon.smtpPingInterval;
-            set => MailShellCommon.smtpPingInterval = value < 0 ? 30000 : value;
+            get => smtpPingInterval;
+            set => smtpPingInterval = value < 0 ? 30000 : value;
         }
         /// <summary>
         /// Controls how the mail text will be shown
@@ -98,8 +101,8 @@ namespace Nitrocid.ShellPacks.Settings
         /// </summary>
         public int MailMaxMessagesInPage
         {
-            get => MailShellCommon.maxMessagesInPage;
-            set => MailShellCommon.maxMessagesInPage = value < 0 ? 10 : value;
+            get => maxMessagesInPage;
+            set => maxMessagesInPage = value < 0 ? 10 : value;
         }
         /// <summary>
         /// If enabled, the mail shell will show how many bytes transmitted when downloading mail.

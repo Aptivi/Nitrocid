@@ -18,23 +18,23 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Security;
 using FluentFTP;
 using FluentFTP.Client.BaseClient;
 using Nitrocid.Base.Kernel.Debugging;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
-using Textify.Tools.Placeholder;
-using Terminaux.Themes.Colors;
-using Textify.General;
 using Nitrocid.Base.Network.Connections;
-using Terminaux.Inputs;
-using Terminaux.Inputs.Styles.Choice;
-using System.Collections.Generic;
-using Terminaux.Inputs.Styles;
 using Terminaux.Base.Extensions;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Choice;
 using Terminaux.Reader;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
+using Textify.Tools.Placeholder;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Tools
 {
@@ -79,10 +79,10 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD"), false, ThemeColorType.Input, user);
 
             // Get input
-            FTPShellCommon.FtpPass = TermReader.Read(password: true);
+            string ftpPass = TermReader.Read(password: true);
 
             // Set up credentials
-            clientFTP.Credentials = new NetworkCredential(user, FTPShellCommon.FtpPass);
+            clientFTP.Credentials = new NetworkCredential(user, ftpPass);
 
             // Connect to FTP
             return ConnectFTP(clientFTP);
@@ -134,15 +134,15 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools
                     TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.FtpUserPromptStyle), false, ThemeColorType.Input, address);
                 else
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME"), false, ThemeColorType.Input, address);
-                FTPShellCommon.FtpUser = TermReader.Read();
-                if (string.IsNullOrEmpty(FTPShellCommon.FtpUser))
+                string ftpUser = TermReader.Read();
+                if (string.IsNullOrEmpty(ftpUser))
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "User is not provided. Fallback to \"anonymous\"");
-                    FTPShellCommon.FtpUser = "anonymous";
+                    ftpUser = "anonymous";
                 }
 
                 // If we didn't abort, prompt for password
-                return PromptForPassword(_clientFTP, FTPShellCommon.FtpUser);
+                return PromptForPassword(_clientFTP, ftpUser);
             }
             catch (Exception ex)
             {

@@ -301,7 +301,7 @@ namespace Nitrocid.Base.Shell.Homepage
                                     else if (!Config.MainConfig.ShowHeadlineOnLogin)
                                         InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES"));
                                     else
-                                        InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.AddonShellPacks, "OpenFeedTui", "Nitrocid.ShellPacks.Shells.RSS.Tools.RSSShellTools", Config.MainConfig.RssHeadlineUrl);
+                                        InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.AddonShellPacks, "OpenFeedTui", "Nitrocid.ShellPacks.Shells.RSS.Tools.RSSTools", Config.MainConfig.RssHeadlineUrl);
 #else
                                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON"));
 #endif
@@ -731,7 +731,7 @@ namespace Nitrocid.Base.Shell.Homepage
                             rssSequence = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES");
                         else
                         {
-                            articles ??= ((string feedTitle, string articleTitle)[]?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.AddonShellPacks, "GetArticles", "Nitrocid.ShellPacks.Shells.RSS.Tools.RSSShellTools", Config.MainConfig.RssHeadlineUrl) ?? [];
+                            articles ??= ((string feedTitle, string articleTitle)[]?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.AddonShellPacks, "GetArticles", "Nitrocid.ShellPacks.Shells.RSS.Tools.RSSTools", Config.MainConfig.RssHeadlineUrl) ?? [];
                             if (articles is not null && articles.Length > 0)
                             {
                                 var headlines = new StringBuilder();

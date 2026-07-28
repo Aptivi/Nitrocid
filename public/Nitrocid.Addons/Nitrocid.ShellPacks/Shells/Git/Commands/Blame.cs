@@ -17,14 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using LibGit2Sharp;
 using System.IO;
 using System.Linq;
+using LibGit2Sharp;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.Base.Languages;
-using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -39,6 +40,8 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var gitShell = (GitShell?)shell ??
+                throw new KernelException(KernelExceptionType.Git, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             string file = parameters.ArgumentsList[0];
             int start = 0;
             int end = 0;
@@ -48,10 +51,10 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
                 end = int.Parse(parameters.ArgumentsList[2]);
 
             // Get the list of blame hunks
-            if (GitShellCommon.Repository is null)
+            if (gitShell.Repository is null)
                 return 43;
             int hunkNum = 1;
-            var blameHunks = GitShellCommon.Repository.Blame(file, new BlameOptions()
+            var blameHunks = gitShell.Repository.Blame(file, new BlameOptions()
             {
                 MinLine = start,
                 MaxLine = end,

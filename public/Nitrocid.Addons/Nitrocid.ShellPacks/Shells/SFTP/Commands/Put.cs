@@ -23,7 +23,6 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Textify.General;
-using Nitrocid.ShellPacks.Shells.SFTP.Tools.Transfer;
 using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
@@ -43,10 +42,12 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var sftpShell = (SFTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_UPLOADINGFILE"), true, ThemeColorType.Progress, parameters.ArgumentsList[0]);
 
             // Begin the uploading process
-            if (SFTPTransfer.SFTPUploadFile(parameters.ArgumentsList[0]))
+            if (sftpShell.SFTPUploadFile(parameters.ArgumentsList[0]))
             {
                 TextWriterRaw.Write();
                 TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_UPLOADEDFILE"), true, ThemeColorType.Success, parameters.ArgumentsList[0]);

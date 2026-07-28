@@ -17,7 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ShellPacks.Shells.HTTP.Tools;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 
@@ -31,9 +32,11 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var httpShell = (HTTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             string key = parameters.ArgumentsList[0];
             string value = parameters.ArgumentsList[1];
-            HttpTools.HttpAddHeader(key, value);
+            httpShell.HttpAddHeader(key, value);
             return 0;
         }
 
