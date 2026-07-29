@@ -27,7 +27,6 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.Base.Network.SpeedDial;
 using Nitrocid.ShellPacks.Shells.FTP.Tools;
-using Renci.SshNet;
 using Terminaux.Inputs;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;

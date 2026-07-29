@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Shell.Commands;
-using System;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Debugging;
@@ -27,7 +26,6 @@ using Nitrocid.Base.Users;
 using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Network.Types.RPC;
 using Terminaux.Shell.Shells;
-using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {

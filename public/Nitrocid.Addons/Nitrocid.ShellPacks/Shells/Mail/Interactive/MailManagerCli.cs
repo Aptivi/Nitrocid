@@ -35,6 +35,7 @@ using Terminaux.Inputs.Styles;
 using MimeKit.Text;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.ShellPacks.Shells.Mail.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
 {
@@ -128,10 +129,10 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                                     if (!string.IsNullOrEmpty(mailShell.IMAP_CurrentDirectory) & !(mailShell.IMAP_CurrentDirectory == "Inbox"))
                                     {
                                         var Dir = mailShell.OpenFolder(mailShell.IMAP_CurrentDirectory);
-                                        Msg = Dir.GetMessage(messages.ElementAtOrDefault(i), default, mailShell.Progress);
+                                        Msg = Dir.GetMessage(messages.ElementAtOrDefault(i), default, MailTools.Progress);
                                     }
                                     else
-                                        Msg = mailShell.ImapClient.Inbox?.GetMessage(messages.ElementAtOrDefault(i), default, mailShell.Progress) ??
+                                        Msg = mailShell.ImapClient.Inbox?.GetMessage(messages.ElementAtOrDefault(i), default, MailTools.Progress) ??
                                             throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED"));
                                     secondPaneListing.Add(Msg);
                                 }
@@ -214,7 +215,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
             }
         }
 
-        internal void Open(MailFolder? entry1, MimeMessage? entry2)
+        internal void Open(MailFolder? entry1, MimeMessage? entry2, int messageNum)
         {
             try
             {
@@ -225,168 +226,24 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                 // Determine whether to deal with the message or with the folder
                 if (CurrentPane == 2)
                 {
-                    // We are dealing with the remote side.
+                    // We are dealing with the message.
                     var currentEntry = entry2;
                     if (currentEntry is null)
                         return;
 
-                    // We're dealing with a message. Open it in a separate infobox.
-                    var messageBuilder = new StringBuilder();
-                    DebugWriter.WriteDebug(DebugLevel.I, "{0} senders.", vars: [currentEntry.From.Count]);
-                    foreach (InternetAddress Address in currentEntry.From)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", vars: [Address.Name, Address.Encoding.EncodingName]);
-                        messageBuilder.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM").FormatString(Address.ToString()));
-                    }
-
-                    // Print all the addresses that received the mail
-                    DebugWriter.WriteDebug(DebugLevel.I, "{0} receivers.", vars: [currentEntry.To.Count]);
-                    foreach (InternetAddress Address in currentEntry.To)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", vars: [Address.Name, Address.Encoding.EncodingName]);
-                        messageBuilder.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO").FormatString(Address.ToString()));
-                    }
-
-                    // Print the date and time when the user received the mail
-                    DebugWriter.WriteDebug(DebugLevel.I, "Rendering time and date of {0}.", vars: [currentEntry.Date.DateTime.ToString()]);
-                    messageBuilder.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN").FormatString(TimeDateRenderers.RenderTime(currentEntry.Date.DateTime), TimeDateRenderers.RenderDate(currentEntry.Date.DateTime)));
-
-                    // Prepare subject
-                    messageBuilder.AppendLine();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Subject length: {0}, {1}", vars: [currentEntry.Subject?.Length, currentEntry.Subject]);
-                    messageBuilder.Append($"- {currentEntry.Subject}");
-
-                    // Write a sign after the subject if attachments are found
-                    DebugWriter.WriteDebug(DebugLevel.I, "Attachments count: {0}", vars: [currentEntry.Attachments.Count()]);
-                    if (currentEntry.Attachments.Any())
-                        messageBuilder.AppendLine(" - [*]");
-                    else
-                        messageBuilder.AppendLine();
-
-                    // Prepare body
-                    messageBuilder.AppendLine();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Displaying body...");
-                    var DecryptedMessage = default(Dictionary<string, MimeEntity>);
-                    if (currentEntry.Body is MultipartEncrypted)
-                    {
-                        DecryptedMessage = mailShell.DecryptMessage(currentEntry);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Decrypted messages length: {0}", vars: [DecryptedMessage.Count]);
-                        var DecryptedEntity = DecryptedMessage["Body"];
-                        var DecryptedStream = new MemoryStream();
-                        DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message type: {(DecryptedEntity is Multipart ? "Multipart" : "Singlepart")}");
-                        if (DecryptedEntity is Multipart)
-                        {
-                            Multipart MultiEntity = (Multipart)DecryptedEntity;
-                            DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message entity is {(MultiEntity is not null ? "multipart" : "nothing")}");
-                            if (MultiEntity is not null)
-                            {
-                                for (int EntityNumber = 0; EntityNumber <= MultiEntity.Count - 1; EntityNumber++)
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.I, $"Entity number {EntityNumber} is {(MultiEntity[EntityNumber].IsAttachment ? "an attachment" : "not an attachment")}");
-                                    if (!MultiEntity[EntityNumber].IsAttachment)
-                                    {
-                                        MultiEntity[EntityNumber].WriteTo(DecryptedStream, true);
-                                        DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to stream.", vars: [DecryptedStream.Length]);
-                                        DecryptedStream.Position = 0L;
-                                        var DecryptedByte = new byte[(int)(DecryptedStream.Length + 1)];
-                                        DecryptedStream.Read(DecryptedByte, 0, (int)DecryptedStream.Length);
-                                        DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", vars: [DecryptedByte.Length]);
-                                        messageBuilder.AppendLine(Encoding.Default.GetString(DecryptedByte));
-                                    }
-                                }
-                            }
-                        }
-                        else
-                        {
-                            DecryptedEntity.WriteTo(DecryptedStream, true);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to stream.", vars: [DecryptedStream.Length]);
-                            DecryptedStream.Position = 0L;
-                            var DecryptedByte = new byte[(int)(DecryptedStream.Length + 1)];
-                            DecryptedStream.Read(DecryptedByte, 0, (int)DecryptedStream.Length);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", vars: [DecryptedByte.Length]);
-                            messageBuilder.AppendLine(Encoding.Default.GetString(DecryptedByte));
-                        }
-                    }
-                    else
-                        messageBuilder.AppendLine(currentEntry.GetTextBody((TextFormat)ShellsInit.ShellsConfig.MailTextFormat));
-                    messageBuilder.AppendLine();
-
-                    // Populate attachments
-                    if (currentEntry.Attachments.Any())
-                    {
-                        messageBuilder.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_ATTACHMENTS"));
-                        var AttachmentEntities = new List<MimeEntity>();
-                        if (currentEntry.Body is MultipartEncrypted)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Parsing attachments...");
-                            if (DecryptedMessage is null)
-                                return;
-                            for (int DecryptedEntityNumber = 0; DecryptedEntityNumber <= DecryptedMessage.Count - 1; DecryptedEntityNumber++)
-                            {
-                                var decryptedString = DecryptedMessage.Keys.ElementAtOrDefault(DecryptedEntityNumber);
-                                var decryptedEntity = DecryptedMessage.Values.ElementAtOrDefault(DecryptedEntityNumber);
-                                if (decryptedString is null)
-                                    continue;
-                                if (decryptedEntity is null)
-                                    continue;
-                                DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} an attachment? {1}", vars: [DecryptedEntityNumber, decryptedString.Contains("Attachment")]);
-                                DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} a body that is a multipart? {1}", vars: [DecryptedEntityNumber, decryptedString == "Body" & DecryptedMessage["Body"] is Multipart]);
-                                if (decryptedString.Contains("Attachment"))
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Adding entity {0} to attachment entities...", vars: [DecryptedEntityNumber]);
-                                    AttachmentEntities.Add(decryptedEntity);
-                                }
-                                else if (decryptedString == "Body" & DecryptedMessage["Body"] is Multipart)
-                                {
-                                    Multipart MultiEntity = (Multipart)DecryptedMessage["Body"];
-                                    DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message entity is {(MultiEntity is not null ? "multipart" : "nothing")}");
-                                    if (MultiEntity is not null)
-                                    {
-                                        DebugWriter.WriteDebug(DebugLevel.I, "{0} entities found.", vars: [MultiEntity.Count]);
-                                        for (int EntityNumber = 0; EntityNumber <= MultiEntity.Count - 1; EntityNumber++)
-                                        {
-                                            DebugWriter.WriteDebug(DebugLevel.I, $"Entity number {EntityNumber} is {(MultiEntity[EntityNumber].IsAttachment ? "an attachment" : "not an attachment")}");
-                                            if (MultiEntity[EntityNumber].IsAttachment)
-                                            {
-                                                DebugWriter.WriteDebug(DebugLevel.I, "Adding entity {0} to attachment list...", vars: [EntityNumber]);
-                                                AttachmentEntities.Add(MultiEntity[EntityNumber]);
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        else
-                            AttachmentEntities = (List<MimeEntity>)currentEntry.Attachments;
-
-                        foreach (MimeEntity Attachment in AttachmentEntities)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Attachment ID: {0}", vars: [Attachment.ContentId]);
-                            if (Attachment is MessagePart)
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Attachment is a message.");
-                                messageBuilder.AppendLine($"- {Attachment.ContentDisposition?.FileName}");
-                            }
-                            else
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Attachment is a file.");
-                                MimePart AttachmentPart = (MimePart)Attachment;
-                                messageBuilder.AppendLine($"- {AttachmentPart.FileName}");
-                            }
-                        }
-                    }
-
-                    InfoBoxModalColor.WriteInfoBoxModal(messageBuilder.ToString());
+                    // Open it in a separate infobox.
+                    var messageBuilder = MailTools.MailRenderMessage(mailShell.ImapClient, entry1?.FullName ?? "", messageNum + 1);
+                    InfoBoxModalColor.WriteInfoBoxModal(messageBuilder);
                     refreshSecondPaneListing = true;
                 }
                 else
                 {
-                    // We are dealing with the local side.
+                    // We are dealing with the folder.
                     var currentEntry = entry1;
                     if (currentEntry is null || !currentEntry.Exists)
                         return;
 
-                    // We're dealing with a folder. Open it in the selected pane.
+                    // Open it in the selected pane.
                     mailShell.MailChangeDirectory(currentEntry.FullName);
                     InteractiveTuiTools.SelectionMovement(this, 1);
                     refreshFirstPaneListing = true;

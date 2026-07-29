@@ -17,19 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-using System.Text;
-using FluentFTP;
-using FluentFTP.Helpers;
 using Nitrocid.Base.Files;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Events;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Shells.FTP.Tools;
-using Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer;
-using Nitrocid.ShellPacks.Shells.SFTP.Tools;
-using Renci.SshNet;
 using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.FTP

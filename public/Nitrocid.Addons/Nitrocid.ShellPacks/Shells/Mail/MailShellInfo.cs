@@ -120,18 +120,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail
                     ])
                 ], new ReadCommand()),
 
-            new CommandInfo("readenc", /* Localizable */ "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC"
-                        })
-                    ])
-                ], new ReadEncCommand()),
-
             new CommandInfo("ren", /* Localizable */ "NKS_SHELLPACKS_MAIL_COMMAND_REN_DESC",
                 [
                     new CommandArgumentInfo(

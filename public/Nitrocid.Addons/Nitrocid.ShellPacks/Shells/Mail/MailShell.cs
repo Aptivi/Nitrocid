@@ -27,7 +27,6 @@ using MailKit.Net.Smtp;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Connections;
-using Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer;
 using Terminaux.Inputs;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
@@ -49,11 +48,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// IMAP current directory name
         /// </summary>
         public string IMAP_CurrentDirectory { get; set; } = "Inbox";
-
-        /// <summary>
-        /// The mail progress
-        /// </summary>
-        public readonly MailTransferProgress Progress = new();
 
         /// <summary>
         /// IMAP client

@@ -33,7 +33,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer
     /// </summary>
     public class MailTransferProgress : ITransferProgress
     {
-
         /// <inheritdoc/>
         public void Report(long bytesTransferred, long totalSize)
         {
@@ -57,6 +56,5 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer
                     TextWriterColor.Write("\r{0} " + LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TRANSFERPROGRESS") + $"{ConsoleClearing.GetClearLineToRightSequence()}", ThemeColorType.Progress, bytesTransferred.SizeString());
             }
         }
-
     }
 }

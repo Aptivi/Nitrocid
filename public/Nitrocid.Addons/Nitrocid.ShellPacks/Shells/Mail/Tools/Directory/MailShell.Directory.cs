@@ -17,15 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using MailKit;
-using MailKit.Net.Imap;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Shells.Mail.Tools;
 using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Mail
@@ -35,79 +28,27 @@ namespace Nitrocid.ShellPacks.Shells.Mail
     /// </summary>
     public partial class MailShell : BaseShell, IShell
     {
-
         /// <summary>
         /// Creates mail folder
         /// </summary>
         /// <param name="Directory">Directory name</param>
-        public void CreateMailDirectory(string Directory)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Creating folder: {0}", vars: [Directory]);
-            try
-            {
-                MailFolder MailFolder;
-                lock (ImapClient.SyncRoot)
-                {
-                    MailFolder = OpenFolder(IMAP_CurrentDirectory);
-                    MailFolder.Create(Directory, true);
-                }
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to create folder {0}: {1}", vars: [Directory, ex.Message]);
-                DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MAILDIR_CREATEFAILED"), ex, Directory, ex.Message);
-            }
-        }
+        public void CreateMailDirectory(string Directory) =>
+            MailTools.CreateMailDirectory(ImapClient, Directory, IMAP_CurrentDirectory);
 
         /// <summary>
         /// Deletes mail folder
         /// </summary>
         /// <param name="Directory">Directory name</param>
-        public void DeleteMailDirectory(string Directory)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Deleting folder: {0}", vars: [Directory]);
-            try
-            {
-                MailFolder MailFolder;
-                lock (((ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0]).SyncRoot)
-                {
-                    MailFolder = OpenFolder(Directory);
-                    MailFolder.Delete();
-                }
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to delete folder {0}: {1}", vars: [Directory, ex.Message]);
-                DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MAILDIR_DELETEFAILED"), ex, Directory, ex.Message);
-            }
-        }
+        public void DeleteMailDirectory(string Directory) =>
+            MailTools.DeleteMailDirectory(ImapClient, Directory);
 
         /// <summary>
         /// Deletes mail folder
         /// </summary>
         /// <param name="Directory">Directory name</param>
         /// <param name="NewName">New mail directory name</param>
-        public void RenameMailDirectory(string Directory, string NewName)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Renaming folder {0} to {1}", vars: [Directory, NewName]);
-            try
-            {
-                MailFolder MailFolder;
-                lock (((ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0]).SyncRoot)
-                {
-                    MailFolder = OpenFolder(Directory);
-                    MailFolder.Rename(MailFolder.ParentFolder ?? MailFolder, NewName);
-                }
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to delete folder {0}: {1}", vars: [Directory, ex.Message]);
-                DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MAILDIR_DELETEFAILED"), ex, Directory, ex.Message);
-            }
-        }
+        public void RenameMailDirectory(string Directory, string NewName) =>
+            MailTools.RenameMailDirectory(ImapClient, Directory, NewName);
 
         /// <summary>
         /// Changes current mail directory
@@ -115,20 +56,8 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <param name="Directory">A mail directory</param>
         public void MailChangeDirectory(string Directory)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Opening folder: {0}", vars: [Directory]);
-            try
-            {
-                lock (((ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0]).SyncRoot)
-                    OpenFolder(Directory);
-                IMAP_CurrentDirectory = Directory;
-                DebugWriter.WriteDebug(DebugLevel.I, "Current directory changed.");
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to open folder {0}: {1}", vars: [Directory, ex.Message]);
-                DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_CANTOPENMAILFOLDER"), ex, Directory, ex.Message);
-            }
+            MailTools.MailChangeDirectory(ImapClient, Directory);
+            IMAP_CurrentDirectory = Directory;
         }
 
         /// <summary>
@@ -137,156 +66,14 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <param name="FolderString">A folder to open (not a path)</param>
         /// <param name="FolderMode">Folder mode</param>
         /// <returns>A folder</returns>
-        public MailFolder OpenFolder(string FolderString, FolderAccess FolderMode = FolderAccess.ReadWrite)
-        {
-            var Opened = default(MailFolder);
-            var client = (ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0];
-            DebugWriter.WriteDebug(DebugLevel.I, "Personal namespace collection parsing started.");
-            foreach (FolderNamespace nmspc in client.PersonalNamespaces)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
-                foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
-                {
-                    if (dir.Name.Equals(FolderString, StringComparison.OrdinalIgnoreCase))
-                    {
-                        dir.Open(FolderMode);
-                        Opened = dir;
-                    }
-                }
-            }
-
-            DebugWriter.WriteDebug(DebugLevel.I, "Shared namespace collection parsing started.");
-            foreach (FolderNamespace nmspc in client.SharedNamespaces)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
-                foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
-                {
-                    if (dir.Name.Equals(FolderString, StringComparison.OrdinalIgnoreCase))
-                    {
-                        dir.Open(FolderMode);
-                        Opened = dir;
-                    }
-                }
-            }
-
-            DebugWriter.WriteDebug(DebugLevel.I, "Other namespace collection parsing started.");
-            foreach (FolderNamespace nmspc in client.OtherNamespaces)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
-                foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
-                {
-                    if (dir.Name.Equals(FolderString, StringComparison.OrdinalIgnoreCase))
-                    {
-                        dir.Open(FolderMode);
-                        Opened = dir;
-                    }
-                }
-            }
-
-            if (Opened is not null)
-            {
-                return Opened;
-            }
-            else
-            {
-                throw new KernelException(KernelExceptionType.NoSuchMailDirectory, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MAILDIR_DIRNOTFOUND"), FolderString);
-            }
-        }
+        public MailFolder OpenFolder(string FolderString, FolderAccess FolderMode = FolderAccess.ReadWrite) =>
+            MailTools.OpenFolder(ImapClient, FolderString, FolderMode);
 
         /// <summary>
         /// Lists directories
         /// </summary>
         /// <returns>A list of mail folder instances</returns>
-        public MailFolder[] MailListDirectories()
-        {
-            var client = (ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0];
-            List<MailFolder> folders = [];
-            lock (client.SyncRoot)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Personal namespace collection parsing started.");
-                foreach (FolderNamespace nmspc in client.PersonalNamespaces)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
-                    foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", vars: [dir.Name]);
-                        folders.Add(dir);
-                    }
-                }
-
-                DebugWriter.WriteDebug(DebugLevel.I, "Shared namespace collection parsing started.");
-                foreach (FolderNamespace nmspc in client.SharedNamespaces)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
-                    foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", vars: [dir.Name]);
-                        folders.Add(dir);
-                    }
-                }
-
-                DebugWriter.WriteDebug(DebugLevel.I, "Other namespace collection parsing started.");
-                foreach (FolderNamespace nmspc in client.OtherNamespaces)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
-                    foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", vars: [dir.Name]);
-                        folders.Add(dir);
-                    }
-                }
-            }
-            return [.. folders];
-        }
-
-        /// <summary>
-        /// Renders a list of directories
-        /// </summary>
-        /// <returns>String list</returns>
-        public string MailRenderListDirectories()
-        {
-            var EntryBuilder = new StringBuilder();
-            var client = (ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0];
-            lock (client.SyncRoot)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Personal namespace collection parsing started.");
-                foreach (FolderNamespace nmspc in client.PersonalNamespaces)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
-                    EntryBuilder.AppendLine($"- {nmspc.Path}");
-                    foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", vars: [dir.Name]);
-                        EntryBuilder.AppendLine($"  - {dir.Name}");
-                    }
-                }
-
-                DebugWriter.WriteDebug(DebugLevel.I, "Shared namespace collection parsing started.");
-                foreach (FolderNamespace nmspc in client.SharedNamespaces)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
-                    EntryBuilder.AppendLine($"- {nmspc.Path}");
-                    foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", vars: [dir.Name]);
-                        EntryBuilder.AppendLine($"  - {dir.Name}");
-                    }
-                }
-
-                DebugWriter.WriteDebug(DebugLevel.I, "Other namespace collection parsing started.");
-                foreach (FolderNamespace nmspc in client.OtherNamespaces)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Namespace: {0}", vars: [nmspc.Path]);
-                    EntryBuilder.AppendLine($"- {nmspc.Path}");
-                    foreach (MailFolder dir in client.GetFolders(nmspc).Cast<MailFolder>())
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Folder: {0}", vars: [dir.Name]);
-                        EntryBuilder.AppendLine($"  - {dir.Name}");
-                    }
-                }
-            }
-            return EntryBuilder.ToString();
-        }
-
+        public MailFolder[] MailListDirectories() =>
+            MailTools.MailListDirectories(ImapClient);
     }
 }

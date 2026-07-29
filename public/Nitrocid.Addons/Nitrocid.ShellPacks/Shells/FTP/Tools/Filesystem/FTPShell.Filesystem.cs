@@ -18,26 +18,14 @@
 //
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using FluentFTP;
-using FluentFTP.Helpers;
 using Nitrocid.Base.Files;
-using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.ShellPacks.Shells.FTP.Tools;
-using Nitrocid.ShellPacks.Shells.SFTP.Tools;
-using Org.BouncyCastle.Asn1.X509;
-using Renci.SshNet;
-using Terminaux.Base.Extensions;
 using Terminaux.Shell.Shells;
-using Terminaux.Themes.Colors;
 
 namespace Nitrocid.ShellPacks.Shells.FTP
 {

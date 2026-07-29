@@ -17,27 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using System.Collections.Generic;
-using System.Data;
-using System.IO;
-using System.Linq;
-using System.Text;
 using MailKit;
-using MailKit.Net.Imap;
-using MailKit.Net.Smtp;
-using MailKit.Search;
 using MimeKit;
-using MimeKit.Cryptography;
-using MimeKit.Text;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Time.Renderers;
-using Nitrocid.Base.Languages;
-using Nitrocid.ShellPacks.Shells.Mail.Tools.PGP;
+using Nitrocid.ShellPacks.Shells.Mail.Tools;
 using Terminaux.Shell.Shells;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Mail
 {
@@ -46,245 +30,12 @@ namespace Nitrocid.ShellPacks.Shells.Mail
     /// </summary>
     public partial class MailShell : BaseShell, IShell
     {
-
         /// <summary>
         /// Prints content of message to console
         /// </summary>
         /// <param name="MessageNum">Message number</param>
-        /// <param name="Decrypt">Whether to decrypt messages or not</param>
-        public void MailPrintMessage(int MessageNum, bool Decrypt = false)
-        {
-            int Message = MessageNum - 1;
-            var messages = IMAP_Messages ?? [];
-            int MaxMessagesIndex = messages.Count() - 1;
-            DebugWriter.WriteDebug(DebugLevel.I, "Message number {0}", vars: [Message]);
-            if (Message < 0)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Trying to access message 0 or less than 0.");
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO"), true, ThemeColorType.Error);
-                return;
-            }
-            else if (Message > MaxMessagesIndex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", vars: [Message, MaxMessagesIndex]);
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND"), true, ThemeColorType.Error);
-                return;
-            }
-
-            lock (ImapClient.SyncRoot)
-            {
-                // Get message
-                DebugWriter.WriteDebug(DebugLevel.I, "Getting message...");
-                MimeMessage Msg;
-                var finalMessages = IMAP_Messages ?? [];
-                if (!string.IsNullOrEmpty(IMAP_CurrentDirectory) & !(IMAP_CurrentDirectory == "Inbox"))
-                {
-                    var Dir = OpenFolder(IMAP_CurrentDirectory);
-                    Msg = Dir.GetMessage(finalMessages.ElementAtOrDefault(Message), default, Progress);
-                }
-                else
-                {
-                    var inbox = ImapClient.Inbox ??
-                        throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
-                    Msg = inbox.GetMessage(finalMessages.ElementAtOrDefault(Message), default, Progress);
-                }
-
-                // Prepare view
-                TextWriterRaw.Write();
-
-                // Print all the addresses that sent the mail
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} senders.", vars: [Msg.From.Count]);
-                foreach (InternetAddress Address in Msg.From)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", vars: [Address.Name, Address.Encoding.EncodingName]);
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM"), true, ThemeColorType.ListEntry, Address.ToString());
-                }
-
-                // Print all the addresses that received the mail
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} receivers.", vars: [Msg.To.Count]);
-                foreach (InternetAddress Address in Msg.To)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", vars: [Address.Name, Address.Encoding.EncodingName]);
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO"), true, ThemeColorType.ListEntry, Address.ToString());
-                }
-
-                // Print the date and time when the user received the mail
-                DebugWriter.WriteDebug(DebugLevel.I, "Rendering time and date of {0}.", vars: [Msg.Date.DateTime.ToString()]);
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN"), true, ThemeColorType.ListEntry, TimeDateRenderers.RenderTime(Msg.Date.DateTime), TimeDateRenderers.RenderDate(Msg.Date.DateTime));
-
-                // Prepare subject
-                TextWriterRaw.Write();
-                DebugWriter.WriteDebug(DebugLevel.I, "Subject length: {0}, {1}", vars: [Msg.Subject?.Length, Msg.Subject]);
-                TextWriterColor.Write($"- {Msg.Subject}", false, ThemeColorType.ListEntry);
-
-                // Write a sign after the subject if attachments are found
-                DebugWriter.WriteDebug(DebugLevel.I, "Attachments count: {0}", vars: [Msg.Attachments.Count()]);
-                if (Msg.Attachments.Any())
-                {
-                    TextWriterColor.Write(" - [*]", true, ThemeColorType.ListEntry);
-                }
-                else
-                {
-                    TextWriterRaw.Write();
-                }
-
-                // Prepare body
-                TextWriterRaw.Write();
-                DebugWriter.WriteDebug(DebugLevel.I, "Displaying body...");
-                var DecryptedMessage = default(Dictionary<string, MimeEntity>);
-                DebugWriter.WriteDebug(DebugLevel.I, "To decrypt: {0}", vars: [Decrypt]);
-                if (Decrypt)
-                {
-                    DecryptedMessage = DecryptMessage(Msg);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Decrypted messages length: {0}", vars: [DecryptedMessage.Count]);
-                    var DecryptedEntity = DecryptedMessage["Body"];
-                    var DecryptedStream = new MemoryStream();
-                    DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message type: {(DecryptedEntity is Multipart ? "Multipart" : "Singlepart")}");
-                    if (DecryptedEntity is Multipart)
-                    {
-                        Multipart MultiEntity = (Multipart)DecryptedEntity;
-                        DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message entity is {(MultiEntity is not null ? "multipart" : "nothing")}");
-                        if (MultiEntity is not null)
-                        {
-                            for (int EntityNumber = 0; EntityNumber <= MultiEntity.Count - 1; EntityNumber++)
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.I, $"Entity number {EntityNumber} is {(MultiEntity[EntityNumber].IsAttachment ? "an attachment" : "not an attachment")}");
-                                if (!MultiEntity[EntityNumber].IsAttachment)
-                                {
-                                    MultiEntity[EntityNumber].WriteTo(DecryptedStream, true);
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to stream.", vars: [DecryptedStream.Length]);
-                                    DecryptedStream.Position = 0L;
-                                    var DecryptedByte = new byte[(int)(DecryptedStream.Length + 1)];
-                                    DecryptedStream.Read(DecryptedByte, 0, (int)DecryptedStream.Length);
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", vars: [DecryptedByte.Length]);
-                                    TextWriterColor.Write(Encoding.Default.GetString(DecryptedByte), true, ThemeColorType.ListValue);
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        DecryptedEntity.WriteTo(DecryptedStream, true);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to stream.", vars: [DecryptedStream.Length]);
-                        DecryptedStream.Position = 0L;
-                        var DecryptedByte = new byte[(int)(DecryptedStream.Length + 1)];
-                        DecryptedStream.Read(DecryptedByte, 0, (int)DecryptedStream.Length);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", vars: [DecryptedByte.Length]);
-                        TextWriterColor.Write(Encoding.Default.GetString(DecryptedByte), true, ThemeColorType.ListValue);
-                    }
-                }
-                else
-                    TextWriterColor.Write(Msg.GetTextBody((TextFormat)ShellsInit.ShellsConfig.MailTextFormat) ?? "", true, ThemeColorType.ListValue);
-                TextWriterRaw.Write();
-
-                // Populate attachments
-                if (Msg.Attachments.Any())
-                {
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_ATTACHMENTS"));
-                    var AttachmentEntities = new List<MimeEntity>();
-                    if (Decrypt)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Parsing attachments...");
-                        if (DecryptedMessage is null)
-                            return;
-                        for (int DecryptedEntityNumber = 0; DecryptedEntityNumber <= DecryptedMessage.Count - 1; DecryptedEntityNumber++)
-                        {
-                            var decryptedString = DecryptedMessage.Keys.ElementAtOrDefault(DecryptedEntityNumber);
-                            var decryptedEntity = DecryptedMessage.Values.ElementAtOrDefault(DecryptedEntityNumber);
-                            if (decryptedString is null)
-                                continue;
-                            if (decryptedEntity is null)
-                                continue;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} an attachment? {1}", vars: [DecryptedEntityNumber, decryptedString.Contains("Attachment")]);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} a body that is a multipart? {1}", vars: [DecryptedEntityNumber, decryptedString == "Body" & DecryptedMessage["Body"] is Multipart]);
-                            if (decryptedString.Contains("Attachment"))
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Adding entity {0} to attachment entities...", vars: [DecryptedEntityNumber]);
-                                AttachmentEntities.Add(decryptedEntity);
-                            }
-                            else if (decryptedString == "Body" & DecryptedMessage["Body"] is Multipart)
-                            {
-                                Multipart MultiEntity = (Multipart)DecryptedMessage["Body"];
-                                DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message entity is {(MultiEntity is not null ? "multipart" : "nothing")}");
-                                if (MultiEntity is not null)
-                                {
-                                    DebugWriter.WriteDebug(DebugLevel.I, "{0} entities found.", vars: [MultiEntity.Count]);
-                                    for (int EntityNumber = 0; EntityNumber <= MultiEntity.Count - 1; EntityNumber++)
-                                    {
-                                        DebugWriter.WriteDebug(DebugLevel.I, $"Entity number {EntityNumber} is {(MultiEntity[EntityNumber].IsAttachment ? "an attachment" : "not an attachment")}");
-                                        if (MultiEntity[EntityNumber].IsAttachment)
-                                        {
-                                            DebugWriter.WriteDebug(DebugLevel.I, "Adding entity {0} to attachment list...", vars: [EntityNumber]);
-                                            AttachmentEntities.Add(MultiEntity[EntityNumber]);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        AttachmentEntities = (List<MimeEntity>)Msg.Attachments;
-                    }
-                    foreach (MimeEntity Attachment in AttachmentEntities)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Attachment ID: {0}", vars: [Attachment.ContentId]);
-                        if (Attachment is MessagePart)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Attachment is a message.");
-                            TextWriterColor.Write($"- {Attachment.ContentDisposition?.FileName}");
-                        }
-                        else
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Attachment is a file.");
-                            MimePart AttachmentPart = (MimePart)Attachment;
-                            TextWriterColor.Write($"- {AttachmentPart.FileName}");
-                        }
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// Decrypts a message
-        /// </summary>
-        /// <param name="Text">Text part</param>
-        /// <returns>A decrypted message, or null if unsuccessful.</returns>
-        public Dictionary<string, MimeEntity> DecryptMessage(MimeMessage Text)
-        {
-            var EncryptedDict = new Dictionary<string, MimeEntity>();
-            DebugWriter.WriteDebug(DebugLevel.I, $"Encrypted message type: {(Text.Body is MultipartEncrypted ? "Multipart" : "Singlepart")}");
-            if (Text.Body is MultipartEncrypted encrypted)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Message type: MultipartEncrypted");
-                DebugWriter.WriteDebug(DebugLevel.I, "Decrypting...");
-                EncryptedDict.Add("Body", encrypted.Decrypt(new PGPContext()));
-            }
-            else if (Text.Body is not null)
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Trying to decrypt plain text. Returning body...");
-                EncryptedDict.Add("Body", Text.Body);
-            }
-            int AttachmentNumber = 1;
-            foreach (MimeEntity TextAttachment in Text.Attachments)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Attachment number {0}", vars: [AttachmentNumber]);
-                DebugWriter.WriteDebug(DebugLevel.I, $"Encrypted attachment type: {(TextAttachment is MultipartEncrypted ? "Multipart" : "Singlepart")}");
-                if (TextAttachment is MultipartEncrypted attachmentEncrypted)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Attachment type: MultipartEncrypted");
-                    DebugWriter.WriteDebug(DebugLevel.I, "Decrypting...");
-                    EncryptedDict.Add("Attachment " + AttachmentNumber, attachmentEncrypted.Decrypt(new PGPContext()));
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Trying to decrypt plain attachment. Returning body...");
-                    EncryptedDict.Add("Attachment " + AttachmentNumber, TextAttachment);
-                }
-                AttachmentNumber += 1;
-            }
-            return EncryptedDict;
-        }
+        public void MailPrintMessage(int MessageNum) =>
+            MailTools.MailPrintMessage(ImapClient, IMAP_CurrentDirectory, MessageNum);
 
         /// <summary>
         /// Sends a message
@@ -293,35 +44,8 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <param name="Subject">Subject</param>
         /// <param name="Body">Body (only text. See <see cref="MailSendMessage(string, string, MimeEntity)"/> for more.)</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        public bool MailSendMessage(string Recipient, string Subject, string Body)
-        {
-            // Construct a message
-            var FinalMessage = new MimeMessage();
-            FinalMessage.From.Add(MailboxAddress.Parse(NetworkCredential.UserName));
-            DebugWriter.WriteDebug(DebugLevel.I, "Added sender to FinalMessage.From.");
-            FinalMessage.To.Add(MailboxAddress.Parse(Recipient));
-            DebugWriter.WriteDebug(DebugLevel.I, "Added address to FinalMessage.To.");
-            FinalMessage.Subject = Subject;
-            DebugWriter.WriteDebug(DebugLevel.I, "Added subject to FinalMessage.Subject.");
-            FinalMessage.Body = new TextPart(TextFormat.Plain) { Text = Body };
-            DebugWriter.WriteDebug(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
-
-            // Send the message
-            lock (SmtpClient.SyncRoot)
-            {
-                try
-                {
-                    SmtpClient.Send(FinalMessage, default, Progress);
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to send message: {0}", vars: [ex.Message]);
-                    DebugWriter.WriteDebugStackTrace(ex);
-                }
-                return false;
-            }
-        }
+        public bool MailSendMessage(string Recipient, string Subject, string Body) =>
+            MailTools.MailSendMessage(SmtpClient, NetworkCredential.UserName, Recipient, Subject, Body);
 
         /// <summary>
         /// Sends a message with advanced features like attachments
@@ -330,35 +54,8 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <param name="Subject">Subject</param>
         /// <param name="Body">Body</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        public bool MailSendMessage(string Recipient, string Subject, MimeEntity Body)
-        {
-            // Construct a message
-            var FinalMessage = new MimeMessage();
-            FinalMessage.From.Add(MailboxAddress.Parse(NetworkCredential.UserName));
-            DebugWriter.WriteDebug(DebugLevel.I, "Added sender to FinalMessage.From.");
-            FinalMessage.To.Add(MailboxAddress.Parse(Recipient));
-            DebugWriter.WriteDebug(DebugLevel.I, "Added address to FinalMessage.To.");
-            FinalMessage.Subject = Subject;
-            DebugWriter.WriteDebug(DebugLevel.I, "Added subject to FinalMessage.Subject.");
-            FinalMessage.Body = Body;
-            DebugWriter.WriteDebug(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
-
-            // Send the message
-            lock (SmtpClient.SyncRoot)
-            {
-                try
-                {
-                    SmtpClient.Send(FinalMessage, default, Progress);
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to send message: {0}", vars: [ex.Message]);
-                    DebugWriter.WriteDebugStackTrace(ex);
-                }
-                return false;
-            }
-        }
+        public bool MailSendMessage(string Recipient, string Subject, MimeEntity Body) =>
+            MailTools.MailSendMessage(SmtpClient, NetworkCredential.UserName, Recipient, Subject, Body);
 
         /// <summary>
         /// Sends an encrypted message with advanced features like attachments
@@ -367,64 +64,13 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <param name="Subject">Subject</param>
         /// <param name="Body">Body</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        public bool MailSendEncryptedMessage(string Recipient, string Subject, MimeEntity Body)
-        {
-            // Construct a message
-            var FinalMessage = new MimeMessage();
-            FinalMessage.From.Add(MailboxAddress.Parse(NetworkCredential.UserName));
-            DebugWriter.WriteDebug(DebugLevel.I, "Added sender to FinalMessage.From.");
-            FinalMessage.To.Add(MailboxAddress.Parse(Recipient));
-            DebugWriter.WriteDebug(DebugLevel.I, "Added address to FinalMessage.To.");
-            FinalMessage.Subject = Subject;
-            DebugWriter.WriteDebug(DebugLevel.I, "Added subject to FinalMessage.Subject.");
-            FinalMessage.Body = MultipartEncrypted.Encrypt(new PGPContext(), FinalMessage.To.Mailboxes, Body);
-            DebugWriter.WriteDebug(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...");
-
-            // Send the message
-            lock (SmtpClient.SyncRoot)
-            {
-                try
-                {
-                    SmtpClient.Send(FinalMessage, default, Progress);
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to send message: {0}", vars: [ex.Message]);
-                    DebugWriter.WriteDebugStackTrace(ex);
-                }
-                return false;
-            }
-        }
+        public bool MailSendEncryptedMessage(string Recipient, string Subject, MimeEntity Body) =>
+            MailTools.MailSendEncryptedMessage(SmtpClient, NetworkCredential.UserName, Recipient, Subject, Body);
 
         /// <summary>
         /// Populates e-mail messages
         /// </summary>
-        public void PopulateMessages()
-        {
-            if (ImapClient.IsConnected)
-            {
-                lock (ImapClient.SyncRoot)
-                {
-                    if (string.IsNullOrEmpty(IMAP_CurrentDirectory) || IMAP_CurrentDirectory == "Inbox")
-                    {
-                        var inbox = ImapClient.Inbox ??
-                            throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
-                        inbox.Open(FolderAccess.ReadWrite);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Opened inbox");
-                        IMAP_Messages = inbox.Search(SearchQuery.All).Reverse();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", vars: [IMAP_Messages.LongCount()]);
-                    }
-                    else
-                    {
-                        var Folder = OpenFolder(IMAP_CurrentDirectory);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}", vars: [IMAP_CurrentDirectory]);
-                        IMAP_Messages = Folder.Search(SearchQuery.All).Reverse();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", vars: [IMAP_Messages.LongCount()]);
-                    }
-                }
-            }
-        }
-
+        public IEnumerable<UniqueId>? PopulateMessages() =>
+            MailTools.PopulateMessages(ImapClient, IMAP_CurrentDirectory);
     }
 }
