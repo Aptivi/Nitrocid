@@ -19,7 +19,6 @@
 
 using System.IO;
 using System.Text;
-using Nitrocid.Base.Files.Editors.TextEdit;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Base.Extensions;

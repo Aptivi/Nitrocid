@@ -18,13 +18,11 @@
 //
 
 using System.Net.Sockets;
-using System.Threading;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Threadify.Manager;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Splash;
 
 namespace Nitrocid.Base.Network.Types.RPC
 {
@@ -68,30 +66,6 @@ namespace Nitrocid.Base.Network.Types.RPC
             else
             {
                 throw new KernelException(KernelExceptionType.RemoteProcedure, LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_EXCEPTION_DISABLED"));
-            }
-        }
-
-        /// <summary>
-        /// The wrapper for <see cref="StartRPC"/>
-        /// </summary>
-        public static void WrapperStartRPC()
-        {
-            if (Config.MainConfig.RPCEnabled)
-            {
-                try
-                {
-                    StartRPC();
-                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_RUNNING"), 5, Config.MainConfig.RPCPort);
-                }
-                catch (ThreadStateException ex)
-                {
-                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_ALREADYRUNNING"));
-                    DebugWriter.WriteDebugStackTrace(ex);
-                }
-            }
-            else
-            {
-                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_EXCEPTION_DISABLED"), 3);
             }
         }
 

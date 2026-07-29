@@ -22,7 +22,6 @@ using System.Text;
 using Colorimetry;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Shell.Shells.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Shell.Prompts;
 using Terminaux.Shell.Shells;

@@ -18,7 +18,10 @@
 //
 
 extern alias TextifyDep;
+
+using System.Threading;
 using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug;
 using Nitrocid.Base.Kernel.Hardware;
 using Nitrocid.Base.Kernel.Power;
@@ -70,7 +73,23 @@ namespace Nitrocid.Base.Kernel.Starting
 
             // Try to start the remote procedure call server
             SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STAGE1_RPCSTARTED"), 3);
-            RemoteProcedure.WrapperStartRPC();
+            if (Config.MainConfig.RPCEnabled)
+            {
+                try
+                {
+                    RemoteProcedure.StartRPC();
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_RUNNING"), 5, Config.MainConfig.RPCPort);
+                }
+                catch (ThreadStateException ex)
+                {
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_ALREADYRUNNING"));
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
+            }
+            else
+            {
+                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_EXCEPTION_DISABLED"), 3);
+            }
         }
 
         internal static void Stage02KernelUpdates()

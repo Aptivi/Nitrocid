@@ -19,23 +19,16 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Login;
-using Nitrocid.Base.Misc.Notifications;
-using Nitrocid.Base.Misc.Screensaver;
-using Terminaux.Shell.Shells;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Network.Types.RPC.Commands;
 using Textify.General;
 
 namespace Nitrocid.Base.Network.Types.RPC
@@ -47,54 +40,21 @@ namespace Nitrocid.Base.Network.Types.RPC
     {
         internal static ManualResetEvent rpcStopTrigger = new(false);
 
-        /// <summary>
-        /// List of RPC commands.<br/>
-        /// <br/>&lt;Request:Shutdown&gt;: Shuts down the remote kernel. Usage: &lt;Request:Shutdown&gt;(IP)
-        /// <br/>&lt;Request:Reboot&gt;: Reboots the remote kernel. Usage: &lt;Request:Reboot&gt;(IP)
-        /// <br/>&lt;Request:RebootSafe&gt;: Reboots the remote kernel to safe mode. Usage: &lt;Request:RebootSafe&gt;(IP)
-        /// <br/>&lt;Request:RebootMaintenance&gt;: Reboots the remote kernel to maintenance mode. Usage: &lt;Request:RebootMaintenance&gt;(IP)
-        /// <br/>&lt;Request:RebootDebug&gt;: Reboots the remote kernel to debug. Usage: &lt;Request:RebootDebug&gt;(IP)
-        /// <br/>&lt;Request:SaveScr&gt;: Saves the screen remotely. Usage: &lt;Request:SaveScr&gt;(IP)
-        /// <br/>&lt;Request:Exec&gt;: Executes a command remotely. Usage: &lt;Request:Exec&gt;(Command)
-        /// <br/>&lt;Request:Acknowledge&gt;: Pings the remote kernel silently. Usage: &lt;Request:Acknowledge&gt;(IP)
-        /// <br/>&lt;Request:Ping&gt;: Pings the remote kernel with notification. Usage: &lt;Request:Ping&gt;(IP)
-        /// <br/>&lt;Request:Version&gt;: Returns the Nitrocid version. Usage: &lt;Request:Version&gt;(IP)
-        /// <br/>&lt;Request:VersionCode&gt;: Returns the Nitrocid version code. Usage: &lt;Request:VersionCode&gt;(IP)
-        /// <br/>&lt;Request:ApiVersion&gt;: Returns the Nitrocid mod API version. Usage: &lt;Request:ApiVersion&gt;(IP)
-        /// <br/>&lt;Request:ApiVersionCode&gt;: Returns the Nitrocid mod API version code. Usage: &lt;Request:ApiVersionCode&gt;(IP)
-        /// </summary>
-        private readonly static List<string> RPCCommandsField =
-        [
-            "Shutdown",
-            "Reboot",
-            "RebootSafe",
-            "RebootMaintenance",
-            "RebootDebug",
-            "SaveScr",
-            "Exec",
-            "Acknowledge",
-            "Ping",
-            "Version",
-            "VersionCode",
-            "ApiVersion",
-            "ApiVersionCode",
-        ];
-
-        private readonly static Dictionary<string, Action<string, IPEndPoint>> RPCCommandReplyActions = new()
+        private readonly static Dictionary<RPCCommandEnum, IRPCCommand> RPCCommandReplyActions = new()
         {
-            { "ShutdownConfirm",            (_, _)          => HandleShutdown() },
-            { "RebootConfirm",              (_, _)          => HandleReboot() },
-            { "RebootSafeConfirm",          (_, _)          => HandleRebootSafe() },
-            { "RebootMaintenanceConfirm",   (_, _)          => HandleRebootMaintenance() },
-            { "RebootDebugConfirm",         (_, _)          => HandleRebootDebug() },
-            { "SaveScrConfirm",             (_, _)          => HandleSaveScr() },
-            { "ExecConfirm",                (value, _)      => HandleExec(value) },
-            { "AcknowledgeConfirm",         (_, endpoint)   => HandleAcknowledge(endpoint) },
-            { "PingConfirm",                (value, _)      => HandlePing(value) },
-            { "VersionConfirm",             (_, endpoint)   => HandleVersion(endpoint) },
-            { "VersionCodeConfirm",         (_, endpoint)   => HandleVersionCode(endpoint) },
-            { "ApiVersionConfirm",          (_, endpoint)   => HandleApiVersion(endpoint) },
-            { "ApiVersionCodeConfirm",      (_, endpoint)   => HandleApiVersionCode(endpoint) },
+            { RPCCommandEnum.Shutdown,            new ShutdownCommand() },
+            { RPCCommandEnum.Reboot,              new RebootCommand() },
+            { RPCCommandEnum.RebootSafe,          new RebootSafeCommand() },
+            { RPCCommandEnum.RebootMaintenance,   new RebootMaintenanceCommand() },
+            { RPCCommandEnum.RebootDebug,         new RebootDebugCommand() },
+            { RPCCommandEnum.SaveScr,             new SaveScreenCommand() },
+            { RPCCommandEnum.Exec,                new ExecCommand() },
+            { RPCCommandEnum.Acknowledge,         new AcknowledgeCommand() },
+            { RPCCommandEnum.Ping,                new PingCommand() },
+            { RPCCommandEnum.Version,             new VersionCommand() },
+            { RPCCommandEnum.VersionCode,         new VersionCodeCommand() },
+            { RPCCommandEnum.ApiVersion,          new ApiVersionCommand() },
+            { RPCCommandEnum.ApiVersionCode,      new ApiVersionCodeCommand() },
         };
 
         /// <summary>
@@ -103,6 +63,30 @@ namespace Nitrocid.Base.Network.Types.RPC
         /// <param name="Request">A request</param>
         /// <param name="IP">An IP address which the RPC is hosted</param>
         /// <param name="clientMode">Client mode (if true, doesn't require RPC server to be running)</param>
+        /// <param name="additionalArgs">Additional arguments. If not provided, the IP address will be provided automatically.</param>
+        /// <exception cref="InvalidOperationException"></exception>
+        public static void SendCommand(RPCCommandEnum Request, string IP, bool clientMode = false, string additionalArgs = "") =>
+            SendCommand(Request, IP, Config.MainConfig.RPCPort, clientMode, additionalArgs);
+
+        /// <summary>
+        /// Send an RPC command to another instance of KS using the specified address
+        /// </summary>
+        /// <param name="Request">A request</param>
+        /// <param name="IP">An IP address which the RPC is hosted</param>
+        /// <param name="Port">A port which the RPC is hosted</param>
+        /// <param name="clientMode">Client mode (if true, doesn't require RPC server to be running)</param>
+        /// <param name="additionalArgs">Additional arguments. If not provided, the IP address will be provided automatically.</param>
+        /// <exception cref="InvalidOperationException"></exception>
+        public static void SendCommand(RPCCommandEnum Request, string IP, int Port, bool clientMode = false, string additionalArgs = "") =>
+            SendCommand($"<Request:{Request}>({(!string.IsNullOrEmpty(additionalArgs) ? additionalArgs : IP)})", IP, Port, clientMode);
+
+        /// <summary>
+        /// Send an RPC command to another instance of KS using the specified address
+        /// </summary>
+        /// <param name="Request">A request</param>
+        /// <param name="IP">An IP address which the RPC is hosted</param>
+        /// <param name="clientMode">Client mode (if true, doesn't require RPC server to be running)</param>
+        /// <exception cref="InvalidOperationException"></exception>
         public static void SendCommand(string Request, string IP, bool clientMode = false) =>
             SendCommand(Request, IP, Config.MainConfig.RPCPort, clientMode);
 
@@ -119,25 +103,27 @@ namespace Nitrocid.Base.Network.Types.RPC
             if (Config.MainConfig.RPCEnabled || clientMode)
             {
                 // Get the command and the argument
-                string Cmd = Request.Remove(Request.IndexOf("("));
+                int argIdx = Request.IndexOf('(');
+                string Cmd = Request[..argIdx];
+                string RequestType = Cmd[(Cmd.IndexOf(":") + 1)..Cmd.IndexOf(">")];
+                var commandEnum = Enum.Parse<RPCCommandEnum>(RequestType);
                 DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", vars: [Cmd]);
-                string Arg = Request[(Request.IndexOf("(") + 1)..];
+                string Arg = Request[(argIdx + 1)..];
                 DebugWriter.WriteDebug(DebugLevel.I, "Prototype Arg: {0}", vars: [Arg]);
                 Arg = Arg.Remove(Arg.Length - 1);
                 DebugWriter.WriteDebug(DebugLevel.I, "Finished Arg: {0}", vars: [Arg]);
 
                 // Check the command
-                if (RPCCommandsField.Any(Cmd.Contains))
+                if (RPCCommandReplyActions.ContainsKey(commandEnum))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Command found.");
 
                     // Check the request type
-                    string RequestType = Cmd[(Cmd.IndexOf(":") + 1)..Cmd.IndexOf(">")];
                     var ByteMsg = Array.Empty<byte>();
 
                     // Populate the byte message to send the confirmation to
                     DebugWriter.WriteDebug(DebugLevel.I, "Stream opened for device {0}", vars: [Arg]);
-                    ByteMsg = Encoding.Default.GetBytes($"{RequestType}Confirm, " + Arg + CharManager.NewLine);
+                    ByteMsg = Encoding.Default.GetBytes($"{RequestType}, " + Arg + CharManager.NewLine);
 
                     // Send the response
                     DebugWriter.WriteDebug(DebugLevel.I, "Sending response to device...");
@@ -166,6 +152,12 @@ namespace Nitrocid.Base.Network.Types.RPC
             rpcStopTrigger.Reset();
         }
 
+        internal static void ReplyTo(string message, IPEndPoint endpoint)
+        {
+            byte[] messageData = Encoding.UTF8.GetBytes(message);
+            RemoteProcedure.RPCListen?.Send(messageData, messageData.Length, endpoint);
+        }
+
         private static void StartReceivingCommand()
         {
             try
@@ -188,12 +180,14 @@ namespace Nitrocid.Base.Network.Types.RPC
                     return;
                 var endpoint = new IPEndPoint(IPAddress.Any, Config.MainConfig.RPCPort);
                 byte[] MessageBuffer = RemoteProcedure.RPCListen.EndReceive(asyncResult, ref endpoint);
-                string Message = Encoding.Default.GetString(MessageBuffer);
+                string Message = Encoding.Default.GetString(MessageBuffer).TrimNewLines();
 
-                // Get the command and the argument
-                string Cmd = Message.Remove(Message.IndexOf(","));
+                // Get the command and the argument. Remove the "Confirm" suffix for backwards compatibility
+                int separatorIdx = Message.IndexOf(',');
+                string Cmd = Message[..separatorIdx].RemoveSuffix("Confirm");
+                var commandEnum = Enum.Parse<RPCCommandEnum>(Cmd);
                 DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", vars: [Cmd]);
-                string Arg = Message[(Message.IndexOf(",") + 2)..].Replace(Environment.NewLine, "");
+                string Arg = Message[(separatorIdx + 2)..];
                 DebugWriter.WriteDebug(DebugLevel.I, "Final Arg: {0}", vars: [Arg]);
 
                 // If the message is not empty, parse it
@@ -203,8 +197,8 @@ namespace Nitrocid.Base.Network.Types.RPC
                     EventsManager.FireEvent(EventType.RPCCommandReceived, Message, endpoint.Address.ToString(), endpoint.Port);
 
                     // Invoke the action based on message
-                    if (RPCCommandReplyActions.TryGetValue(Cmd, out Action<string, IPEndPoint>? replyAction))
-                        replyAction.Invoke(Arg, endpoint);
+                    if (RPCCommandReplyActions.TryGetValue(commandEnum, out IRPCCommand? replyAction))
+                        replyAction.Execute(Arg, endpoint);
                     else
                         DebugWriter.WriteDebug(DebugLevel.W, "Not found. Message was {0}", vars: [Message]);
                 }
@@ -231,113 +225,6 @@ namespace Nitrocid.Base.Network.Types.RPC
             {
                 StartReceivingCommand();
             }
-        }
-
-        private static void ReplyTo(string message, IPEndPoint endpoint)
-        {
-            byte[] versionData = Encoding.UTF8.GetBytes(message);
-            RemoteProcedure.RPCListen?.Send(versionData, versionData.Length, endpoint);
-        }
-
-        private static void HandleShutdown()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Shutdown confirmed from remote access.");
-            PowerManager.RPCPowerListener.Start(PowerMode.Shutdown);
-        }
-
-        private static void HandleReboot()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Reboot confirmed from remote access.");
-            PowerManager.RPCPowerListener.Start(PowerMode.Reboot);
-        }
-
-        private static void HandleRebootSafe()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Reboot to safe mode confirmed from remote access.");
-            PowerManager.RPCPowerListener.Start(PowerMode.RebootSafe);
-        }
-
-        private static void HandleRebootMaintenance()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Reboot to maintenance mode confirmed from remote access.");
-            PowerManager.RPCPowerListener.Start(PowerMode.RebootMaintenance);
-        }
-
-        private static void HandleRebootDebug()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Reboot to debug confirmed from remote access.");
-            PowerManager.RPCPowerListener.Start(PowerMode.RebootDebug);
-        }
-
-        private static void HandleSaveScr()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Save screen confirmed from remote access.");
-            ScreensaverManager.ShowSavers();
-            while (ScreensaverManager.inSaver)
-                Thread.Sleep(1);
-        }
-
-        private static void HandleExec(string value)
-        {
-            string Command = value.Replace("ExecConfirm, ", "").Replace(CharManager.NewLine, "");
-            if (LoginTools.LoggedIn && KernelEntry.inShell)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Exec confirmed from remote access.");
-                TextWriterRaw.Write();
-                ShellManager.GetLine(Command);
-            }
-            else
-                DebugWriter.WriteDebug(DebugLevel.W, "Tried to exec from remote access while not logged in or not in shell. Dropping packet...");
-        }
-
-        private static void HandleAcknowledge(IPEndPoint endpoint)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} says \"Hello.\"", vars: [endpoint.Address.ToString()]);
-            ReplyTo("N-KS-ACK", endpoint);
-        }
-
-        private static void HandlePing(string value)
-        {
-            string ipAddr = value.Replace("PingConfirm, ", "").Replace(CharManager.NewLine, "");
-            var testNotification = new Notification(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_PINGACK_TITLE"), TextTools.FormatString(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_PINGACK_DESC"), ipAddr), NotificationPriority.Low, NotificationType.Normal);
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} pinged this device!", vars: [ipAddr]);
-            NotificationManager.NotifySend(testNotification);
-        }
-
-        private static void HandleVersion(IPEndPoint endpoint)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} tried to get version, sending it to the requester...", vars: [endpoint.Address.ToString()]);
-            ReplyTo(KernelReleaseInfo.VersionFullStr, endpoint);
-        }
-
-        private static void HandleVersionCode(IPEndPoint endpoint)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} tried to get version code, sending it to the requester...", vars: [endpoint.Address.ToString()]);
-            var version = KernelReleaseInfo.Version ?? new();
-            long versionCode =
-                ((long)version.Major << 48) |
-                ((long)version.Minor << 32) |
-                ((long)version.Build << 16) |
-                (long)version.Revision;
-            ReplyTo($"{versionCode}", endpoint);
-        }
-
-        private static void HandleApiVersion(IPEndPoint endpoint)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} tried to get API version, sending it to the requester...", vars: [endpoint.Address.ToString()]);
-            ReplyTo(KernelReleaseInfo.ApiVersion.ToString(), endpoint);
-        }
-
-        private static void HandleApiVersionCode(IPEndPoint endpoint)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} tried to get API version code, sending it to the requester...", vars: [endpoint.Address.ToString()]);
-            var version = KernelReleaseInfo.ApiVersion ?? new();
-            long versionCode =
-                ((long)version.Major << 48) |
-                ((long)version.Minor << 32) |
-                ((long)version.Build << 16) |
-                (long)version.Revision;
-            ReplyTo($"{versionCode}", endpoint);
         }
     }
 }

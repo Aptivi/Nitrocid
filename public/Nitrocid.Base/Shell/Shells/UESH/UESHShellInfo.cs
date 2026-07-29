@@ -1436,14 +1436,15 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC"
                         }),
-                        new CommandArgumentPart(true, "port", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC"
-                        }),
-                        new CommandArgumentPart(false, "command", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC"
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("port", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC", new()
+                        {
+                            IsNumeric = true,
                         }),
                     ])
                 ], new RexecCommand()),

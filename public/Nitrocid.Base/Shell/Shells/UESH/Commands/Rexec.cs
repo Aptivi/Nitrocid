@@ -27,6 +27,7 @@ using Nitrocid.Base.Users;
 using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Network.Types.RPC;
 using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -51,10 +52,13 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            if (parameters.ArgumentsList.Length == 2)
-                RPCCommands.SendCommand("<Request:Exec>(" + parameters.ArgumentsList[1] + ")", parameters.ArgumentsList[0]);
+            string hostName = parameters.ArgumentsList[0];
+            string command = parameters.ArgumentsList[1];
+            int port = parameters.ContainsSwitch("-port") ? int.Parse(parameters.GetSwitchValue("-port")) : 0;
+            if (port == 0)
+                RPCCommands.SendCommand(RPCCommandEnum.Exec, hostName, additionalArgs: command);
             else
-                RPCCommands.SendCommand("<Request:Exec>(" + parameters.ArgumentsList[2] + ")", parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1]));
+                RPCCommands.SendCommand(RPCCommandEnum.Exec, hostName, port, additionalArgs: command);
             return 0;
         }
 

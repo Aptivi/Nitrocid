@@ -168,33 +168,19 @@ namespace Nitrocid.Base.Kernel.Power
                         break;
                     }
                 case PowerMode.RemoteShutdown:
-                    {
-                        JournalManager.WriteJournal(LanguageTools.GetLocalized("NKS_KERNEL_POWER_INVOKING") + $" {IP}:{Port} => {PowerMode}");
-                        RPCCommands.SendCommand("<Request:Shutdown>(" + IP + ")", IP, Port);
-                        break;
-                    }
                 case PowerMode.RemoteRestart:
-                    {
-                        JournalManager.WriteJournal(LanguageTools.GetLocalized("NKS_KERNEL_POWER_INVOKING") + $" {IP}:{Port} => {PowerMode}");
-                        RPCCommands.SendCommand("<Request:Reboot>(" + IP + ")", IP, Port);
-                        break;
-                    }
                 case PowerMode.RemoteRestartSafe:
-                    {
-                        JournalManager.WriteJournal(LanguageTools.GetLocalized("NKS_KERNEL_POWER_INVOKING") + $" {IP}:{Port} => {PowerMode}");
-                        RPCCommands.SendCommand("<Request:RebootSafe>(" + IP + ")", IP, Port);
-                        break;
-                    }
                 case PowerMode.RemoteRestartDebug:
-                    {
-                        JournalManager.WriteJournal(LanguageTools.GetLocalized("NKS_KERNEL_POWER_INVOKING") + $" {IP}:{Port} => {PowerMode}");
-                        RPCCommands.SendCommand("<Request:RebootDebug>(" + IP + ")", IP, Port);
-                        break;
-                    }
                 case PowerMode.RemoteRestartMaintenance:
                     {
                         JournalManager.WriteJournal(LanguageTools.GetLocalized("NKS_KERNEL_POWER_INVOKING") + $" {IP}:{Port} => {PowerMode}");
-                        RPCCommands.SendCommand("<Request:RebootMaintenance>(" + IP + ")", IP, Port);
+                        RPCCommandEnum rpcCommand =
+                            PowerMode == PowerMode.RemoteRestart ? RPCCommandEnum.Reboot :
+                            PowerMode == PowerMode.RemoteRestartSafe ? RPCCommandEnum.RebootSafe :
+                            PowerMode == PowerMode.RemoteRestartDebug ? RPCCommandEnum.RebootDebug :
+                            PowerMode == PowerMode.RemoteRestartMaintenance ? RPCCommandEnum.RebootMaintenance :
+                            RPCCommandEnum.Shutdown;
+                        RPCCommands.SendCommand(rpcCommand, IP, Port);
                         break;
                     }
             }

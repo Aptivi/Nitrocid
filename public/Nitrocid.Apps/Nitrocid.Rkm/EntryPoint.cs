@@ -110,7 +110,7 @@ namespace Nitrocid.Rkm
                     LogTools.Info(abstractLogger, "Connecting to Nitrocid RPC at {0}:{1}...", hostName, hostPort);
                 if (verbose)
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_RKM_CONNECTING"), ThemeColorType.Progress);
-                RPCCommands.SendCommand($"<Request:Acknowledge>({hostName})", hostName, hostPort, true);
+                RPCCommands.SendCommand(RPCCommandEnum.Acknowledge, hostName, hostPort, true);
 
                 // Ensure that we got a reply
                 var endPoint = new IPEndPoint(IPAddress.Any, 0);
@@ -134,46 +134,46 @@ namespace Nitrocid.Rkm
                 switch (command)
                 {
                     case "shutdown":
-                        RPCCommands.SendCommand($"<Request:Shutdown>({hostName})", hostName, hostPort, true);
+                        RPCCommands.SendCommand(RPCCommandEnum.Shutdown, hostName, hostPort, true);
                         break;
                     case "reboot":
-                        RPCCommands.SendCommand($"<Request:Reboot>({hostName})", hostName, hostPort, true);
+                        RPCCommands.SendCommand(RPCCommandEnum.Reboot, hostName, hostPort, true);
                         break;
                     case "rebootsafe":
-                        RPCCommands.SendCommand($"<Request:RebootSafe>({hostName})", hostName, hostPort, true);
+                        RPCCommands.SendCommand(RPCCommandEnum.RebootSafe, hostName, hostPort, true);
                         break;
                     case "rebootmaintenance":
-                        RPCCommands.SendCommand($"<Request:RebootMaintenance>({hostName})", hostName, hostPort, true);
+                        RPCCommands.SendCommand(RPCCommandEnum.RebootMaintenance, hostName, hostPort, true);
                         break;
                     case "rebootdebug":
-                        RPCCommands.SendCommand($"<Request:RebootDebug>({hostName})", hostName, hostPort, true);
+                        RPCCommands.SendCommand(RPCCommandEnum.RebootDebug, hostName, hostPort, true);
                         break;
                     case "savescr":
-                        RPCCommands.SendCommand($"<Request:SaveScr>({hostName})", hostName, hostPort, true);
+                        RPCCommands.SendCommand(RPCCommandEnum.SaveScr, hostName, hostPort, true);
                         break;
                     case "exec":
-                        RPCCommands.SendCommand($"<Request:Exec>({commandArguments})", hostName, hostPort, true);
+                        RPCCommands.SendCommand(RPCCommandEnum.Exec, hostName, hostPort, true, commandArguments);
                         break;
                     case "test":
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_RKM_CONNECTIONSUCCESS"), ThemeColorType.Success);
                         break;
                     case "ping":
-                        RPCCommands.SendCommand($"<Request:Ping>({hostName})", hostName, hostPort, true);
+                        RPCCommands.SendCommand(RPCCommandEnum.Ping, hostName, hostPort, true);
                         break;
                     case "version":
-                        RPCCommands.SendCommand($"<Request:Version>({hostName})", hostName, hostPort, true);
+                        RPCCommands.SendCommand(RPCCommandEnum.Version, hostName, hostPort, true);
                         processReply = true;
                         break;
                     case "versioncode":
-                        RPCCommands.SendCommand($"<Request:VersionCode>({hostName})", hostName, hostPort, true);
+                        RPCCommands.SendCommand(RPCCommandEnum.VersionCode, hostName, hostPort, true);
                         processReply = true;
                         break;
                     case "apiversion":
-                        RPCCommands.SendCommand($"<Request:ApiVersion>({hostName})", hostName, hostPort, true);
+                        RPCCommands.SendCommand(RPCCommandEnum.ApiVersion, hostName, hostPort, true);
                         processReply = true;
                         break;
                     case "apiversioncode":
-                        RPCCommands.SendCommand($"<Request:ApiVersionCode>({hostName})", hostName, hostPort, true);
+                        RPCCommands.SendCommand(RPCCommandEnum.ApiVersionCode, hostName, hostPort, true);
                         processReply = true;
                         break;
                     default:

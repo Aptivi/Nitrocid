@@ -20,7 +20,6 @@
 using Nettify.Rss.Instance;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Interactive;
-using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using System;
 using System.Collections.Generic;
