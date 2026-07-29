@@ -21,14 +21,15 @@ using System;
 using System.Net.Http;
 using System.Threading;
 using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.Base.Network.SpeedDial;
-using Terminaux.Themes.Colors;
+using Terminaux.Inputs;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Inputs;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP
 {
@@ -53,7 +54,14 @@ namespace Nitrocid.ShellPacks.Shells.HTTP
         /// <summary>
         /// An HTTP client
         /// </summary>
-        public NetworkConnection? ClientHTTP =>
+        public HttpClient HTTPClient =>
+            (HttpClient?)HTTPNetwork?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
+
+        /// <summary>
+        /// An HTTP network
+        /// </summary>
+        public NetworkConnection? HTTPNetwork =>
             clientConnection;
 
         /// <inheritdoc/>
@@ -99,8 +107,8 @@ namespace Nitrocid.ShellPacks.Shells.HTTP
                 {
                     if (!detaching)
                     {
-                        ((HttpClient?)ClientHTTP?.ConnectionInstance)?.Dispose();
-                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(ClientHTTP);
+                        ((HttpClient?)HTTPNetwork?.ConnectionInstance)?.Dispose();
+                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(HTTPNetwork);
                         NetworkConnectionTools.CloseConnection(connectionIndex);
                         clientConnection = null;
                     }
