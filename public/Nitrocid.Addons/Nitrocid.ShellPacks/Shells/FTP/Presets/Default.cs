@@ -52,7 +52,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Presets
         {
             var ftpShell = (FTPShell?)ShellManager.CurrentShell ??
                 throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
-            FtpClient? clientFTP = (FtpClient?)ftpShell.ClientFTP?.ConnectionInstance ??
+            FtpClient? clientFTP = (FtpClient?)ftpShell.FTPNetwork?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT"));
 
             // Build the preset

@@ -31,6 +31,10 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
+using Nitrocid.ShellPacks.Shells.FTP.Tools;
+using Nitrocid.ShellPacks.Shells.SFTP.Tools;
+using Org.BouncyCastle.Asn1.X509;
+using Renci.SshNet;
 using Terminaux.Base.Extensions;
 using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
@@ -50,7 +54,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         /// <returns>The list if successful; null if unsuccessful</returns>
         /// <exception cref="InvalidOperationException"></exception>
         public List<string> FTPListRemote(string Path) =>
-            FTPListRemote(Path, ShellsInit.ShellsConfig.FtpShowDetailsInList);
+            FTPTools.FTPListRemote(FTPClient, !string.IsNullOrEmpty(Path) ? Path : FtpCurrentRemoteDir ?? "", ShellsInit.ShellsConfig.FtpShowDetailsInList);
 
         /// <summary>
         /// Lists remote folders and files
@@ -59,98 +63,16 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         /// <param name="ShowDetails">Shows the details of the file</param>
         /// <returns>The list if successful; null if unsuccessful</returns>
         /// <exception cref="InvalidOperationException"></exception>
-        public List<string> FTPListRemote(string Path, bool ShowDetails)
-        {
-            var EntryBuilder = new StringBuilder();
-            var Entries = new List<string>();
-            long FileSize;
-            DateTime ModDate;
-            FtpListItem[] Listing;
-
-            try
-            {
-                var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
-                if (!string.IsNullOrEmpty(Path))
-                    Listing = instance.GetListing(Path, FtpListOption.Auto);
-                else
-                    Listing = instance.GetListing(FtpCurrentRemoteDir, FtpListOption.Auto);
-                foreach (FtpListItem DirListFTP in Listing)
-                {
-                    FtpListItem finalDirListFTP = DirListFTP;
-                    EntryBuilder.Append($"- {finalDirListFTP.Name}");
-
-                    // Check to see if the file that we're dealing with is a symbolic link
-                    if (finalDirListFTP.Type == FtpObjectType.Link)
-                    {
-                        EntryBuilder.Append(" >> ");
-                        if (!string.IsNullOrEmpty(finalDirListFTP.LinkTarget))
-                            EntryBuilder.Append(finalDirListFTP.LinkTarget);
-                        else
-                            EntryBuilder.Append(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_FSENTRY_NOSYMLINKINFO"));
-                        finalDirListFTP = finalDirListFTP.LinkObject;
-                    }
-
-                    if (finalDirListFTP is not null)
-                    {
-                        if (finalDirListFTP.Type == FtpObjectType.File)
-                        {
-                            if (ShowDetails)
-                            {
-                                EntryBuilder.Append(": ");
-                                FileSize = instance.GetFileSize(finalDirListFTP.FullName);
-                                ModDate = instance.GetModifiedTime(finalDirListFTP.FullName);
-                                EntryBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.ListValue).VTSequenceForeground() +
-                                    $"{FileSize.SizeString()} | {LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_FSENTRY_MODIFIEDON")} {ModDate}");
-                            }
-                        }
-                        else if (finalDirListFTP.Type == FtpObjectType.Directory)
-                        {
-                            EntryBuilder.Append('/');
-                        }
-                    }
-                    Entries.Add(EntryBuilder.ToString());
-                    EntryBuilder.Clear();
-                }
-                return Entries;
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_LIST_FAILED"), ex, ex.Message);
-            }
-        }
+        public List<string> FTPListRemote(string Path, bool ShowDetails) =>
+            FTPTools.FTPListRemote(FTPClient, !string.IsNullOrEmpty(Path) ? Path : FtpCurrentRemoteDir ?? "", ShowDetails);
 
         /// <summary>
         /// Removes remote file or folder
         /// </summary>
         /// <param name="Target">Target folder or file</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public bool FTPDeleteRemote(string Target)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", vars: [Target]);
-
-            // Delete a file or folder
-            var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
-            if (instance.FileExists(Target))
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} is a file.", vars: [Target]);
-                instance.DeleteFile(Target);
-            }
-            else if (instance.DirectoryExists(Target))
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} is a folder.", vars: [Target]);
-                instance.DeleteDirectory(Target);
-            }
-            else
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", vars: [Target]);
-                throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_NOTFOUND"), Target);
-            }
-            DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", vars: [Target]);
-            return true;
-        }
+        public bool FTPDeleteRemote(string Target) =>
+            FTPTools.FTPDeleteRemote(FTPClient, Target);
 
         /// <summary>
         /// Changes FTP remote directory
@@ -163,7 +85,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         {
             if (!string.IsNullOrEmpty(Directory))
             {
-                var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
+                var instance = (FtpClient?)FTPNetwork?.ConnectionInstance ??
                     throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
                 if (instance.DirectoryExists(Directory))
                 {
@@ -223,24 +145,8 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         /// <param name="Target">Target file or folder</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="InvalidOperationException"></exception>
-        public bool FTPMoveItem(string Source, string Target)
-        {
-            var Success = false;
-            var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
-
-            // Begin the moving process
-            string SourceFile = Source.Split('/').Last();
-            DebugWriter.WriteDebug(DebugLevel.I, "Moving from {0} to {1} with the source file of {2}...", vars: [Source, Target, SourceFile]);
-            if (instance.DirectoryExists(Source))
-                Success = instance.MoveDirectory(Source, Target);
-            else if (instance.FileExists(Source) & instance.DirectoryExists(Target))
-                Success = instance.MoveFile(Source, Target + SourceFile);
-            else if (instance.FileExists(Source))
-                Success = instance.MoveFile(Source, Target);
-            DebugWriter.WriteDebug(DebugLevel.I, "Moved. Result: {0}", vars: [Success]);
-            return Success;
-        }
+        public bool FTPMoveItem(string Source, string Target) =>
+            FTPTools.FTPMoveItem(FTPClient, Source, Target);
 
         /// <summary>
         /// Copy file or directory to another area, or rename the file
@@ -249,62 +155,8 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         /// <param name="Target">Target file or folder</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="InvalidOperationException"></exception>
-        public bool FTPCopyItem(string Source, string Target)
-        {
-            bool Success = true;
-            object? Result = null;
-            var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
-
-            // Begin the copying process
-            string SourceFile = Source.Split('/').Last();
-            DebugWriter.WriteDebug(DebugLevel.I, "Copying from {0} to {1} with the source file of {2}...", vars: [Source, Target, SourceFile]);
-            if (instance.DirectoryExists(Source))
-            {
-                instance.DownloadDirectory(PathsManagement.TempPath + "/FTPTransfer", Source);
-                Result = instance.UploadDirectory(PathsManagement.TempPath + "/FTPTransfer/" + Source, Target);
-            }
-            else if (instance.FileExists(Source) & instance.DirectoryExists(Target))
-            {
-                instance.DownloadFile(PathsManagement.TempPath + "/FTPTransfer/" + SourceFile, Source);
-                Result = instance.UploadFile(PathsManagement.TempPath + "/FTPTransfer/" + SourceFile, Target + "/" + SourceFile);
-            }
-            else if (instance.FileExists(Source))
-            {
-                instance.DownloadFile(PathsManagement.TempPath + "/FTPTransfer/" + SourceFile, Source);
-                Result = instance.UploadFile(PathsManagement.TempPath + "/FTPTransfer/" + SourceFile, Target);
-            }
-            FilesystemTools.RemoveDirectory(PathsManagement.TempPath + "/FTPTransfer");
-
-            // See if copied successfully
-            if (Result is null)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Copied, but result is inconclusive. Assuming failure...");
-                return false;
-            }
-            if (Result.GetType() == typeof(List<FtpResult>))
-            {
-                foreach (FtpResult FileResult in (IEnumerable)Result)
-                {
-                    if (FileResult.IsFailed)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Transfer for {0} failed: {1}", vars: [FileResult.Name, FileResult.Exception.Message]);
-                        DebugWriter.WriteDebugStackTrace(FileResult.Exception);
-                        Success = false;
-                    }
-                }
-            }
-            else if (Result.GetType() == typeof(FtpStatus))
-            {
-                if (((FtpStatus)Convert.ToInt32(Result)).IsFailure())
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Transfer failed");
-                    Success = false;
-                }
-            }
-            DebugWriter.WriteDebug(DebugLevel.I, "Copied. Result: {0}", vars: [Success]);
-            return Success;
-        }
+        public bool FTPCopyItem(string Source, string Target) =>
+            FTPTools.FTPCopyItem(FTPClient, Source, Target);
 
         /// <summary>
         /// Changes the permissions of a remote file
@@ -312,43 +164,16 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         /// <param name="Target">Target file</param>
         /// <param name="Chmod">Permissions in CHMOD format. See https://man7.org/linux/man-pages/man2/chmod.2.html chmod(2) for more info.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public bool FTPChangePermissions(string Target, int Chmod)
-        {
-            try
-            {
-                var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
-                instance.Chmod(Target, Chmod);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error setting permissions ({0}) to file {1}: {2}", vars: [Chmod, Target, ex.Message]);
-                DebugWriter.WriteDebugStackTrace(ex);
-            }
-            return false;
-        }
+        public bool FTPChangePermissions(string Target, int Chmod) =>
+            FTPTools.FTPChangePermissions(FTPClient, Target, Chmod);
 
         /// <summary>
         /// Makes a directory in the remote
         /// </summary>
         /// <param name="name">New directory name</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public bool FTPMakeDirectory(string name)
-        {
-            try
-            {
-                var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
-                return instance.CreateDirectory(name);
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error creating FTP directory {0}: {1}", vars: [name, ex.Message]);
-                DebugWriter.WriteDebugStackTrace(ex);
-            }
-            return false;
-        }
+        public bool FTPMakeDirectory(string name) =>
+            FTPTools.FTPMakeDirectory(FTPClient, name);
 
         /// <summary>
         /// Checks to see if an FTP file or directory exists
@@ -356,48 +181,22 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         /// <param name="name">Path to file or directory</param>
         /// <returns>True if found; False otherwise</returns>
         public bool FTPExists(string name) =>
-            FTPFileExists(name) || FTPDirectoryExists(name);
+            FTPTools.FTPExists(FTPClient, name);
 
         /// <summary>
         /// Checks to see if an FTP file exists
         /// </summary>
         /// <param name="name">Path to file</param>
         /// <returns>True if found; False otherwise</returns>
-        public bool FTPFileExists(string name)
-        {
-            try
-            {
-                var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
-                return instance.FileExists(name);
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error getting file state {0}: {1}", vars: [name, ex.Message]);
-                DebugWriter.WriteDebugStackTrace(ex);
-            }
-            return false;
-        }
+        public bool FTPFileExists(string name) =>
+            FTPTools.FTPFileExists(FTPClient, name);
 
         /// <summary>
         /// Checks to see if an FTP directory exists
         /// </summary>
         /// <param name="name">Path to file</param>
         /// <returns>True if found; False otherwise</returns>
-        public bool FTPDirectoryExists(string name)
-        {
-            try
-            {
-                var instance = (FtpClient?)ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
-                return instance.DirectoryExists(name);
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error getting file state {0}: {1}", vars: [name, ex.Message]);
-                DebugWriter.WriteDebugStackTrace(ex);
-            }
-            return false;
-        }
+        public bool FTPDirectoryExists(string name) =>
+            FTPTools.FTPDirectoryExists(FTPClient, name);
     }
 }

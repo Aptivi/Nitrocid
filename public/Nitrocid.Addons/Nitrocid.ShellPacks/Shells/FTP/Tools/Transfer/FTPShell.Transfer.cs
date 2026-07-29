@@ -26,7 +26,10 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Shells.FTP.Tools;
 using Nitrocid.ShellPacks.Shells.FTP.Tools.Transfer;
+using Nitrocid.ShellPacks.Shells.SFTP.Tools;
+using Renci.SshNet;
 using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.FTP
@@ -53,31 +56,8 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         /// <returns>True if successful; False if unsuccessful</returns>
         public bool FTPGetFile(string File, string LocalFile)
         {
-            try
-            {
-                var client = (FtpClient?)ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION"));
-
-                // Show a message to download
-                EventsManager.FireEvent(EventType.FTPPreDownload, File);
-                DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", vars: [File]);
-
-                // Try to download 3 times
-                string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile, FtpCurrentDirectory);
-                var Result = client.DownloadFile(LocalFilePath, File, FtpLocalExists.Resume, (FtpVerify)((int)FtpVerify.Retry + (int)FtpVerify.Throw), FTPTransferProgress.FileProgress);
-
-                // Show a message that it's downloaded
-                DebugWriter.WriteDebug(DebugLevel.I, "Downloaded file {0}.", vars: [File]);
-                EventsManager.FireEvent(EventType.FTPPostDownload, File, Result.IsSuccess());
-                return true;
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for file {0}: {1}", vars: [File, ex.Message]);
-                EventsManager.FireEvent(EventType.FTPPostDownload, File, false);
-            }
-            return false;
+            string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile, FtpCurrentDirectory);
+            return FTPTools.FTPGetFile(FTPClient, File, LocalFilePath);
         }
 
         /// <summary>
@@ -96,64 +76,8 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         /// <returns>True if successful; False if unsuccessful</returns>
         public bool FTPGetFolder(string Folder, string LocalFolder)
         {
-            try
-            {
-                var client = (FtpClient?)ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION"));
-
-                // Show a message to download
-                EventsManager.FireEvent(EventType.FTPPreDownload, Folder);
-                DebugWriter.WriteDebug(DebugLevel.I, "Downloading folder {0}...", vars: [Folder]);
-
-                // Try to download folder
-                string LocalFolderPath = FilesystemTools.NeutralizePath(LocalFolder, FtpCurrentDirectory);
-                var Results = client.DownloadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpLocalExists.Resume, (FtpVerify)((int)FtpVerify.Retry + (int)FtpVerify.Throw), null, FTPTransferProgress.MultipleProgress);
-
-                // Print download results to debugger
-                var Failed = false;
-                DebugWriter.WriteDebug(DebugLevel.I, "Folder download result:");
-                foreach (FtpResult Result in Results)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "-- {0} --", vars: [Result.Name]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Success: {0}", vars: [Result.IsSuccess]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Skipped: {0}", vars: [Result.IsSkipped]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Failure: {0}", vars: [Result.IsFailed]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Size: {0}", vars: [Result.Size]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Type: {0}", vars: [Result.Type]);
-                    if (Result.IsFailed)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}", vars: [Result.Name]);
-
-                        // Download could fail with no exception in very rare cases.
-                        if (Result.Exception is not null)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Exception {0}", vars: [Result.Exception.Message]);
-                            DebugWriter.WriteDebugStackTrace(Result.Exception);
-                        }
-                        Failed = true;
-                    }
-                    EventsManager.FireEvent(EventType.FTPPostDownload, Result.Name, !Failed);
-                }
-
-                // Show a message that it's downloaded
-                if (!Failed)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Downloaded folder {0}.", vars: [Folder]);
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Downloaded folder {0} partially due to failure.", vars: [Folder]);
-                }
-                EventsManager.FireEvent(EventType.FTPPostDownload, Folder, !Failed);
-                return !Failed;
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for folder {0}: {1}", vars: [Folder, ex.Message]);
-                EventsManager.FireEvent(EventType.FTPPostDownload, Folder, false);
-            }
-            return false;
+            string LocalFilePath = FilesystemTools.NeutralizePath(LocalFolder, FtpCurrentDirectory);
+            return FTPTools.FTPGetFolder(FTPClient, Folder, LocalFilePath);
         }
 
         /// <summary>
@@ -172,20 +96,8 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         /// <returns>True if successful; False if unsuccessful</returns>
         public bool FTPUploadFile(string File, string LocalFile)
         {
-            var client = (FtpClient?)ClientFTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION"));
-
-            // Show a message to download
-            EventsManager.FireEvent(EventType.FTPPreUpload, File);
-            DebugWriter.WriteDebug(DebugLevel.I, "Uploading file {0}...", vars: [LocalFile]);
-            DebugWriter.WriteDebug(DebugLevel.I, "Where in the remote: {0}", vars: [File]);
-
-            // Try to upload
             string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile, FtpCurrentDirectory);
-            bool Success = Convert.ToBoolean(client.UploadFile(LocalFilePath, File, FtpRemoteExists.Resume, true, FtpVerify.Retry, FTPTransferProgress.FileProgress));
-            DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0} to {1} with status {2}.", vars: [LocalFile, File, Success]);
-            EventsManager.FireEvent(EventType.FTPPostUpload, File, Success);
-            return Success;
+            return FTPTools.FTPUploadFile(FTPClient, File, LocalFilePath);
         }
 
         /// <summary>
@@ -204,54 +116,8 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         /// <returns>True if successful; False if unsuccessful</returns>
         public bool FTPUploadFolder(string Folder, string LocalFolder)
         {
-            var client = (FtpClient?)ClientFTP?.ConnectionInstance ??
-                throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION"));
-
-            // Show a message to download
-            EventsManager.FireEvent(EventType.FTPPreUpload, Folder);
-            DebugWriter.WriteDebug(DebugLevel.I, "Uploading folder {0}...", vars: [Folder]);
-
-            // Try to upload
-            string LocalFolderPath = FilesystemTools.NeutralizePath(LocalFolder, FtpCurrentDirectory);
-            var Results = client.UploadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpRemoteExists.Resume, FtpVerify.Retry, null, FTPTransferProgress.MultipleProgress);
-
-            // Print upload results to debugger
-            var Failed = false;
-            DebugWriter.WriteDebug(DebugLevel.I, "Folder upload result:");
-            foreach (FtpResult Result in Results)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "-- {0} --", vars: [Result.Name]);
-                DebugWriter.WriteDebug(DebugLevel.I, "Success: {0}", vars: [Result.IsSuccess]);
-                DebugWriter.WriteDebug(DebugLevel.I, "Skipped: {0}", vars: [Result.IsSkipped]);
-                DebugWriter.WriteDebug(DebugLevel.I, "Failure: {0}", vars: [Result.IsFailed]);
-                DebugWriter.WriteDebug(DebugLevel.I, "Size: {0}", vars: [Result.Size]);
-                DebugWriter.WriteDebug(DebugLevel.I, "Type: {0}", vars: [Result.Type]);
-                if (Result.IsFailed)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Upload failed for {0}", vars: [Result.Name]);
-
-                    // Upload could fail with no exception in very rare cases.
-                    if (Result.Exception is not null)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Exception {0}", vars: [Result.Exception.Message]);
-                        DebugWriter.WriteDebugStackTrace(Result.Exception);
-                    }
-                    Failed = true;
-                }
-                EventsManager.FireEvent(EventType.FTPPostUpload, Result.Name, !Failed);
-            }
-
-            // Show a message that it's downloaded
-            if (!Failed)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Uploaded folder {0}.", vars: [Folder]);
-            }
-            else
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Uploaded folder {0} partially due to failure.", vars: [Folder]);
-            }
-            EventsManager.FireEvent(EventType.FTPPostUpload, Folder, !Failed);
-            return !Failed;
+            string LocalFilePath = FilesystemTools.NeutralizePath(LocalFolder, FtpCurrentDirectory);
+            return FTPTools.FTPUploadFolder(FTPClient, Folder, LocalFilePath);
         }
 
         /// <summary>
@@ -259,37 +125,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         /// </summary>
         /// <param name="File">A text file.</param>
         /// <returns>Contents of the file</returns>
-        public string FTPDownloadToString(string File)
-        {
-            try
-            {
-                var client = (FtpClient?)ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION"));
-
-                // Show a message to download
-                EventsManager.FireEvent(EventType.FTPPreDownload, File);
-                DebugWriter.WriteDebug(DebugLevel.I, "Downloading {0}...", vars: [File]);
-
-                // Try to download 3 times
-                var DownloadedBytes = Array.Empty<byte>();
-                var DownloadedContent = new StringBuilder();
-                bool Downloaded = client.DownloadBytes(out DownloadedBytes, File);
-                foreach (byte DownloadedByte in DownloadedBytes)
-                    DownloadedContent.Append(Convert.ToChar(DownloadedByte));
-
-                // Show a message that it's downloaded
-                DebugWriter.WriteDebug(DebugLevel.I, "Downloaded {0}.", vars: [File]);
-                EventsManager.FireEvent(EventType.FTPPostDownload, File, Downloaded);
-                return DownloadedContent.ToString();
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}: {1}", vars: [File, ex.Message]);
-                EventsManager.FireEvent(EventType.FTPPostDownload, File, false);
-                throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_GET_FAILED") + " {1}", File, ex.Message);
-            }
-        }
-
+        public string FTPDownloadToString(string File) =>
+            FTPTools.FTPDownloadToString(FTPClient, File);
     }
 }

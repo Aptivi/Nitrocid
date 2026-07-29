@@ -23,6 +23,7 @@ using FluentFTP;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Shells.FTP.Tools;
 using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.FTP
@@ -32,7 +33,6 @@ namespace Nitrocid.ShellPacks.Shells.FTP
     /// </summary>
     public partial class FTPShell : BaseShell, IShell
     {
-
         /// <summary>
         /// Gets a hash for file
         /// </summary>
@@ -41,28 +41,8 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         /// <returns>The <see cref="FtpHash"/> instance containing computed hash of remote file</returns>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
-        public FtpHash FTPGetHash(string File, FtpHashAlgorithm HashAlgorithm)
-        {
-            if (!string.IsNullOrEmpty(File))
-            {
-                var client = (FtpClient?)ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION"));
-                if (client.FileExists(File))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Hashing {0} using {1}...", vars: [File, HashAlgorithm.ToString()]);
-                    return client.GetChecksum(File, HashAlgorithm);
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", vars: [File]);
-                    throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_NOTFOUND"), File);
-                }
-            }
-            else
-            {
-                throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEFILENEEDED_HASH"));
-            }
-        }
+        public FtpHash FTPGetHash(string File, FtpHashAlgorithm HashAlgorithm) =>
+            FTPTools.FTPGetHash(FTPClient, File, HashAlgorithm);
 
         /// <summary>
         /// Gets a hash for files in a directory
@@ -71,7 +51,8 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         /// <param name="HashAlgorithm">A hash algorithm supported by the FTP server</param>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
-        public Dictionary<string, FtpHash> FTPGetHashes(string Directory, FtpHashAlgorithm HashAlgorithm) => FTPGetHashes(Directory, HashAlgorithm, ShellsInit.ShellsConfig.FtpRecursiveHashing);
+        public Dictionary<string, FtpHash> FTPGetHashes(string Directory, FtpHashAlgorithm HashAlgorithm) =>
+            FTPGetHashes(Directory, HashAlgorithm, ShellsInit.ShellsConfig.FtpRecursiveHashing);
 
         /// <summary>
         /// Gets a hash for files in a directory
@@ -81,42 +62,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         /// <param name="Recurse">Whether to hash the files within the subdirectories too.</param>
         /// <exception cref="InvalidOperationException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
-        public Dictionary<string, FtpHash> FTPGetHashes(string Directory, FtpHashAlgorithm HashAlgorithm, bool Recurse)
-        {
-            if (!string.IsNullOrEmpty(Directory))
-            {
-                var client = (FtpClient?)ClientFTP?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION"));
-                if (client.DirectoryExists(Directory))
-                {
-                    var Hashes = new Dictionary<string, FtpHash>();
-                    FtpListItem[] Items;
-                    if (Recurse)
-                    {
-                        Items = client.GetListing(Directory, FtpListOption.Recursive);
-                    }
-                    else
-                    {
-                        Items = client.GetListing(Directory);
-                    }
-                    foreach (FtpListItem Item in Items)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Hashing {0} using {1}...", vars: [Item.FullName, HashAlgorithm.ToString()]);
-                        Hashes.Add(Item.FullName, FTPGetHash(Item.FullName, HashAlgorithm));
-                    }
-                    return Hashes;
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", vars: [Directory]);
-                    throw new KernelException(KernelExceptionType.FTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_NOTFOUND"), Directory);
-                }
-            }
-            else
-            {
-                throw new KernelException(KernelExceptionType.FTPNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEDIRECTORYNEEDED"));
-            }
-        }
-
+        public Dictionary<string, FtpHash> FTPGetHashes(string Directory, FtpHashAlgorithm HashAlgorithm, bool Recurse) =>
+            FTPTools.FTPGetHashes(FTPClient, Directory, HashAlgorithm, Recurse);
     }
 }

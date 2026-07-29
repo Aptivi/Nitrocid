@@ -20,18 +20,19 @@
 using System;
 using System.Threading;
 using FluentFTP;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Network.Connections;
+using Nitrocid.Base.Network.SpeedDial;
+using Nitrocid.ShellPacks.Shells.FTP.Tools;
+using Renci.SshNet;
+using Terminaux.Inputs;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.Base.Kernel.Debugging;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Files.Paths;
 using Terminaux.Themes.Colors;
-using Nitrocid.Base.Network.SpeedDial;
-using Nitrocid.Base.Network.Connections;
-using Terminaux.Inputs;
-using Nitrocid.ShellPacks.Shells.FTP.Tools;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.FTP
 {
@@ -43,10 +44,17 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         internal NetworkConnection? clientConnection;
 
         /// <summary>
+        /// The FTP network connection instance
+        /// </summary>
+        public NetworkConnection? FTPNetwork =>
+            clientConnection;
+
+        /// <summary>
         /// The FTP client used to connect to the FTP server
         /// </summary>
-        public NetworkConnection? ClientFTP =>
-            clientConnection;
+        public FtpClient FTPClient =>
+            (FtpClient?)FTPNetwork?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
 
         /// <summary>
         /// FTP current local directory
@@ -135,7 +143,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP
                     if (!detaching)
                     {
                         clientFTP?.Disconnect();
-                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(ClientFTP);
+                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(FTPNetwork);
                         NetworkConnectionTools.CloseConnection(connectionIndex);
                     }
                     detaching = false;
