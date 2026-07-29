@@ -22,103 +22,75 @@ using System.Collections.Generic;
 using Microsoft.Data.Sqlite;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
-using Terminaux.Shell.Shells;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 
-namespace Nitrocid.ShellPacks.Shells.Sql
+namespace Nitrocid.ShellPacks.Shells.Sql.Tools
 {
     /// <summary>
     /// Sql editor tools module
     /// </summary>
-    public partial class SqlShell : BaseShell, IShell
+    public static class SqlEditTools
     {
-
         /// <summary>
         /// Opens the SQL file
         /// </summary>
         /// <param name="File">Target file. We recommend you to use <see cref="FilesystemTools.NeutralizePath(string, bool)"></see> to neutralize path.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public bool SqlEdit_OpenSqlFile(string File)
+        public static SqliteConnection OpenSqlFile(string File)
         {
-            try
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", vars: [File]);
-                sqliteConnection = new SqliteConnection($"Data Source={File}");
-                sqliteConnection.Open();
-                sqliteDatabasePath = File;
-                return FilesystemTools.IsSql(File);
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Open file {0} failed: {1}", vars: [File, ex.Message]);
-                DebugWriter.WriteDebugStackTrace(ex);
-                return false;
-            }
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to open SQL database file {0}...", vars: [File]);
+            // TODO: NKS_SHELLPACKS_SQL_EXCEPTION_NOTSQL -> Not an SQL database file
+            if (!FilesystemTools.IsSql(File))
+                throw new KernelException(KernelExceptionType.SqlEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_EXCEPTION_NOTSQL"));
+            var sqliteConnection = new SqliteConnection($"Data Source={File}");
+            sqliteConnection.Open();
+            return sqliteConnection;
         }
 
         /// <summary>
         /// Closes SQL file
         /// </summary>
+        /// <param name="connection">SQL connection</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public bool SqlEdit_CloseSqlFile()
+        public static void CloseSqlFile(SqliteConnection? connection)
         {
-            try
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to close file...");
-                sqliteConnection?.Close();
-                sqliteConnection = null;
-                sqliteDatabasePath = "";
-                return true;
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Closing file failed: {0}", vars: [ex.Message]);
-                DebugWriter.WriteDebugStackTrace(ex);
-                return false;
-            }
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to close SQL database file...");
+            connection?.Close();
         }
 
         /// <summary>
         /// Executes an SQL command
         /// </summary>
+        /// <param name="connection">SQL connection</param>
         /// <param name="query">An SQL query</param>
         /// <param name="replies">Replies array to be filled</param>
         /// <param name="error">Error during query (null if there are no errors)</param>
         /// <param name="parameters">SQL query parameters</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public bool SqlEdit_SqlCommand(string query, ref string[] replies, out Exception? error, params SqliteParameter[] parameters)
+        public static bool SqlCommand(SqliteConnection? connection, string query, out string[] replies, out Exception? error, params SqliteParameter[] parameters)
         {
-            try
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to execute query {0}...", vars: [query]);
+            List<string> replyList = [];
+            using var sqlCommand = new SqliteCommand(query, connection);
+
+            // Add parameters
+            foreach (SqliteParameter parameter in parameters)
+                sqlCommand.Parameters.Add(parameter);
+
+            // Try to execute the command
+            using var sqlReader = sqlCommand.ExecuteReader();
+            while (sqlReader.Read())
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to execute query {0}...", vars: [query]);
-                List<string> replyList = [];
-                using var sqlCommand = new SqliteCommand(query, sqliteConnection);
-
-                // Add parameters
-                foreach (SqliteParameter parameter in parameters)
-                    sqlCommand.Parameters.Add(parameter);
-
-                // Try to execute the command
-                using var sqlReader = sqlCommand.ExecuteReader();
-                while (sqlReader.Read())
+                for (int i = 0; i < sqlReader.FieldCount; i++)
                 {
-                    for (int i = 0; i < sqlReader.FieldCount; i++)
-                    {
-                        string reply = !sqlReader.IsDBNull(i) ? sqlReader.GetString(i) : "";
-                        replyList.Add(reply);
-                    }
+                    string reply = !sqlReader.IsDBNull(i) ? sqlReader.GetString(i) : "";
+                    replyList.Add(reply);
                 }
-                replies = [.. replyList];
-                error = null;
-                return true;
             }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "SQL command failed: {0}", vars: [ex.Message]);
-                DebugWriter.WriteDebugStackTrace(ex);
-                error = ex;
-                return false;
-            }
+            replies = [.. replyList];
+            error = null;
+            return true;
         }
-
     }
 }

@@ -44,9 +44,9 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
             HexEditInteractive.OpenInteractive(ref bytes);
 
             // Save the results
-            sqlShell.SqlEdit_CloseSqlFile();
+            sqlShell.CloseSqlFile();
             FilesystemTools.WriteAllBytesNoBlock(path, bytes);
-            sqlShell.SqlEdit_OpenSqlFile(path);
+            sqlShell.OpenSqlFile(path);
             return 0;
         }
     }

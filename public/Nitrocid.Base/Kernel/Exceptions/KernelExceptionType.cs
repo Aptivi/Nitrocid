@@ -484,5 +484,9 @@ namespace Nitrocid.Base.Kernel.Exceptions
         /// There was an error when trying to process your request for Git operations.
         /// </summary>
         Git,
+        /// <summary>
+        /// An invalid SQL operation is being performed.
+        /// </summary>
+        Sql,
     }
 }

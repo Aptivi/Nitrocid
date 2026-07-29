@@ -56,8 +56,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
             }
 
             // Now, get a group of replies and print them
-            string[] replies = [];
-            if (sqlShell.SqlEdit_SqlCommand(parameters.ArgumentsText, ref replies, out var error, [.. sqlParameters]))
+            if (sqlShell.SqlCommand(parameters.ArgumentsText, out string[] replies, out var error, [.. sqlParameters]))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDSUCCESS"), true, ThemeColorType.Success);
                 foreach (string reply in replies)

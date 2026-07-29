@@ -82,7 +82,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql
             if (sqliteConnection is null)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", vars: [FilePath]);
-                if (!SqlEdit_OpenSqlFile(FilePath))
+                if (!OpenSqlFile(FilePath))
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_OPENFAILED"), true, ThemeColorType.Error);
                     Bail = true;
@@ -113,7 +113,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql
             }
 
             // Close file
-            SqlEdit_CloseSqlFile();
+            CloseSqlFile();
         }
 
     }

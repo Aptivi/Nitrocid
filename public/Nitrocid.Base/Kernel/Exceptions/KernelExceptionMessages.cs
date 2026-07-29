@@ -146,6 +146,7 @@ namespace Nitrocid.Base.Kernel.Exceptions
                 { KernelExceptionType.AudioCue,                         LanguageTools.GetLocalized("NKS_KERNEL_EXCEPTIONS_MESSAGE_AUDIOCUE") },
                 { KernelExceptionType.ChatbotAI,                        LanguageTools.GetLocalized("NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI") },
                 { KernelExceptionType.Git,                              LanguageTools.GetLocalized("NKS_KERNEL_EXCEPTIONS_MESSAGE_GIT") }, // TODO: NKS_KERNEL_EXCEPTIONS_MESSAGE_GIT -> There was an error when trying to process your request for Git operations.
+                { KernelExceptionType.Sql,                              LanguageTools.GetLocalized("NKS_KERNEL_EXCEPTIONS_MESSAGE_SQL") }, // TODO: NKS_KERNEL_EXCEPTIONS_MESSAGE_SQL -> An invalid SQL operation is being performed.
             };
 
         internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception? e, params object[] vars)
