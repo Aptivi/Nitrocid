@@ -18,18 +18,25 @@
 //
 
 using System;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Languages;
-using Textify.Tools.Placeholder;
-using Renci.SshNet;
-using Nitrocid.Base.Network.Connections;
 using System.Collections.Generic;
-using Textify.General;
+using System.Reflection;
+using System.Text;
 using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
+using Nitrocid.Base.Network.Connections;
+using Renci.SshNet;
+using Renci.SshNet.Sftp;
+using Terminaux.Base.Extensions;
 using Terminaux.Inputs;
 using Terminaux.Reader;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
+using Textify.Tools.Placeholder;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Tools
 {
@@ -38,6 +45,298 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools
     /// </summary>
     public static class SFTPTools
     {
+        /// <summary>
+        /// Lists remote folders and files
+        /// </summary>
+        /// <param name="client">SFTP client</param>
+        /// <param name="Path">Path to folder</param>
+        /// <returns>The list if successful; null if unsuccessful</returns>
+        /// <exception cref="InvalidOperationException"></exception>
+        public static List<string> SFTPListRemote(SftpClient client, string Path) =>
+            SFTPListRemote(client, Path, ShellsInit.ShellsConfig.SFTPShowDetailsInList);
+
+        /// <summary>
+        /// Lists remote folders and files
+        /// </summary>
+        /// <param name="client">SFTP client</param>
+        /// <param name="Path">Path to folder</param>
+        /// <param name="ShowDetails">Shows the details of the file</param>
+        /// <returns>The list if successful; null if unsuccessful</returns>
+        /// <exception cref="InvalidOperationException"></exception>
+        public static List<string> SFTPListRemote(SftpClient client, string Path, bool ShowDetails)
+        {
+            var Entries = new List<string>();
+
+            try
+            {
+                var EntryBuilder = new StringBuilder();
+                IEnumerable<ISftpFile> Listing = client.ListDirectory(Path);
+                foreach (ISftpFile DirListSFTP in Listing)
+                {
+                    EntryBuilder.Append($"- {DirListSFTP.Name}");
+
+                    // Check to see if the file that we're dealing with is a symbolic link
+                    if (DirListSFTP.IsSymbolicLink)
+                    {
+                        EntryBuilder.Append(" >> ");
+                        EntryBuilder.Append(SFTPGetCanonicalPath(client, DirListSFTP.FullName));
+                    }
+
+                    if (DirListSFTP.IsRegularFile)
+                    {
+                        EntryBuilder.Append(": ");
+                        if (ShowDetails)
+                        {
+                            long FileSize = DirListSFTP.Length;
+                            DateTime ModDate = DirListSFTP.LastWriteTime;
+                            EntryBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.ListValue).VTSequenceForeground() + $"{FileSize.SizeString()} | {LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_LSREMOTE_MODIFIED")} {ModDate}");
+                        }
+                    }
+                    else if (DirListSFTP.IsDirectory)
+                    {
+                        EntryBuilder.Append('/');
+                    }
+                    Entries.Add(EntryBuilder.ToString());
+                    EntryBuilder.Clear();
+                }
+                return Entries;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                throw new KernelException(KernelExceptionType.SFTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_LIST_FAILED"), ex, ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Removes remote file or folder
+        /// </summary>
+        /// <param name="client">SFTP client</param>
+        /// <param name="Target">Target folder or file</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool SFTPDeleteRemote(SftpClient client, string Target)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", vars: [Target]);
+
+            // Delete a file or folder
+            if (client.Exists(Target))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", vars: [Target]);
+                client.Delete(Target);
+            }
+            else
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", vars: [Target]);
+                throw new KernelException(KernelExceptionType.SFTPFilesystem, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_NOTFOUND"), Target);
+            }
+            DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", vars: [Target]);
+            return true;
+        }
+
+        /// <summary>
+        /// Gets the absolute path for the given path
+        /// </summary>
+        /// <param name="client">SFTP client</param>
+        /// <param name="Path">The remote path</param>
+        /// <returns>Absolute path for a remote path</returns>
+        public static string SFTPGetCanonicalPath(SftpClient client, string Path)
+        {
+            // GetCanonicalPath was supposed to be public, but it's in a private class called SftpSession. It should be in SftpClient, which is public.
+            var SFTPType = client.GetType();
+            var SFTPSessionField = SFTPType.GetField("_sftpSession", BindingFlags.Instance | BindingFlags.NonPublic);
+            var SFTPSession = SFTPSessionField?.GetValue(client);
+            var SFTPSessionType = SFTPSession?.GetType();
+            var SFTPSessionCanon = SFTPSessionType?.GetMethod("GetCanonicalPath");
+            if (SFTPSessionCanon is null)
+                return "";
+            string CanonicalPath = Convert.ToString(SFTPSessionCanon.Invoke(SFTPSession, [Path])) ?? "";
+            DebugWriter.WriteDebug(DebugLevel.I, "Canonical path: {0}", vars: [CanonicalPath]);
+            return CanonicalPath;
+        }
+
+        /// <summary>
+        /// Makes a directory in the remote
+        /// </summary>
+        /// <param name="client">SFTP client</param>
+        /// <param name="name">New directory name</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool SFTPMakeDirectory(SftpClient client, string name)
+        {
+            try
+            {
+                client.CreateDirectory(name);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Error creating SFTP directory {0}: {1}", vars: [name, ex.Message]);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Checks to see if an SFTP file or directory exists
+        /// </summary>
+        /// <param name="client">SFTP client</param>
+        /// <param name="name">Path to file or directory</param>
+        /// <returns>True if found; False otherwise</returns>
+        public static bool SFTPExists(SftpClient client, string name) =>
+            SFTPFileExists(client, name) || SFTPDirectoryExists(client, name);
+
+        /// <summary>
+        /// Checks to see if an SFTP file exists
+        /// </summary>
+        /// <param name="client">SFTP client</param>
+        /// <param name="name">Path to file</param>
+        /// <returns>True if found; False otherwise</returns>
+        public static bool SFTPFileExists(SftpClient client, string name)
+        {
+            try
+            {
+                return client.Exists(name) && !client.Get(name).IsDirectory;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Error getting file state {0}: {1}", vars: [name, ex.Message]);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Checks to see if an SFTP directory exists
+        /// </summary>
+        /// <param name="client">SFTP client</param>
+        /// <param name="name">Path to file</param>
+        /// <returns>True if found; False otherwise</returns>
+        public static bool SFTPDirectoryExists(SftpClient client, string name)
+        {
+            try
+            {
+                return client.Exists(name) && client.Get(name).IsDirectory;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Error getting file state {0}: {1}", vars: [name, ex.Message]);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Downloads a file from the currently connected SFTP server
+        /// </summary>
+        /// <param name="client">SFTP client</param>
+        /// <param name="File">A remote file</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool SFTPGetFile(SftpClient client, string File) =>
+            SFTPGetFile(client, File, File);
+
+        /// <summary>
+        /// Downloads a file from the currently connected SFTP server
+        /// </summary>
+        /// <param name="client">SFTP client</param>
+        /// <param name="File">A remote file</param>
+        /// <param name="LocalFile">A name of the local file</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool SFTPGetFile(SftpClient client, string File, string LocalFile)
+        {
+            try
+            {
+                // Show a message to download
+                EventsManager.FireEvent(EventType.SFTPPreDownload, File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", vars: [File]);
+
+                // Try to download
+                string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile);
+                var DownloadFileStream = new System.IO.FileStream(LocalFilePath, System.IO.FileMode.OpenOrCreate);
+                client.DownloadFile(File, DownloadFileStream);
+
+                // Show a message that it's downloaded
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloaded file {0}.", vars: [File]);
+                EventsManager.FireEvent(EventType.SFTPPostDownload, File);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for file {0}: {1}", vars: [File, ex.Message]);
+                EventsManager.FireEvent(EventType.SFTPDownloadError, File, ex);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Uploads a file to the currently connected SFTP server
+        /// </summary>
+        /// <param name="client">SFTP client</param>
+        /// <param name="File">A remote file</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool SFTPUploadFile(SftpClient client, string File) =>
+            SFTPUploadFile(client, File, File);
+
+        /// <summary>
+        /// Uploads a file to the currently connected SFTP server
+        /// </summary>
+        /// <param name="client">SFTP client</param>
+        /// <param name="File">A remote file</param>
+        /// <param name="LocalFile">A name of the local file</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool SFTPUploadFile(SftpClient client, string File, string LocalFile)
+        {
+            try
+            {
+                // Show a message to download
+                EventsManager.FireEvent(EventType.SFTPPreUpload, File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Uploading file {0}...", vars: [File]);
+
+                // Try to upload
+                string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile);
+                var UploadFileStream = new System.IO.FileStream(LocalFilePath, System.IO.FileMode.Open);
+                client.UploadFile(UploadFileStream, File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0}", vars: [File]);
+                EventsManager.FireEvent(EventType.SFTPPostUpload, File);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Upload failed for file {0}: {1}", vars: [File, ex.Message]);
+                EventsManager.FireEvent(EventType.SFTPUploadError, File, ex);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Downloads a file to string
+        /// </summary>
+        /// <param name="client">SFTP client</param>
+        /// <param name="File">A text file.</param>
+        /// <returns>Contents of the file</returns>
+        public static string SFTPDownloadToString(SftpClient client, string File)
+        {
+            try
+            {
+                // Show a message to download
+                EventsManager.FireEvent(EventType.SFTPPreDownload, File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloading {0}...", vars: [File]);
+
+                // Try to download 3 times
+                var DownloadedBytes = Array.Empty<byte>();
+                string DownloadedContent = client.ReadAllText(File);
+
+                // Show a message that it's downloaded
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloaded {0}.", vars: [File]);
+                EventsManager.FireEvent(EventType.SFTPPostDownload, File, DownloadedContent);
+                return DownloadedContent;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}: {1}", vars: [File, ex.Message]);
+                EventsManager.FireEvent(EventType.SFTPPostDownload, File, false);
+            }
+            return "";
+        }
 
         /// <summary>
         /// Tries to connect to the FTP server

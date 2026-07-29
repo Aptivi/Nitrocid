@@ -102,7 +102,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
                     if (refreshSecondPaneListing)
                     {
                         refreshSecondPaneListing = false;
-                        var instance = (SftpClient?)sftpShell.ClientSFTP?.ConnectionInstance ??
+                        var instance = (SftpClient?)sftpShell.SFTPNetwork?.ConnectionInstance ??
                             throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
                         sftpShell.SFTPCurrentRemoteDir = sftpShell.SFTPCurrentRemoteDir;
                         secondPaneListing = [.. instance.ListDirectory(sftpShell.SFTPCurrentRemoteDir)];

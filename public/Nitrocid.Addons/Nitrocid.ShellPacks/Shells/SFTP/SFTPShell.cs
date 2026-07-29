@@ -42,10 +42,17 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
         internal NetworkConnection? clientConnection;
 
         /// <summary>
+        /// The SFTP network connection instance
+        /// </summary>
+        public NetworkConnection? SFTPNetwork =>
+            clientConnection;
+
+        /// <summary>
         /// The SFTP client used to connect to the SFTP server
         /// </summary>
-        public NetworkConnection? ClientSFTP =>
-            clientConnection;
+        public SftpClient SFTPClient =>
+            (SftpClient?)SFTPNetwork?.ConnectionInstance ??
+                throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
 
         /// <summary>
         /// SFTP current local directory
@@ -113,8 +120,8 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
                     DebugWriter.WriteDebug(DebugLevel.W, "Exiting shell...");
                     if (!detaching)
                     {
-                        ((SftpClient?)ClientSFTP?.ConnectionInstance)?.Disconnect();
-                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(ClientSFTP);
+                        ((SftpClient?)SFTPNetwork?.ConnectionInstance)?.Disconnect();
+                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(SFTPNetwork);
                         NetworkConnectionTools.CloseConnection(connectionIndex);
                         clientConnection = null;
                     }
