@@ -143,17 +143,21 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Tools
         {
             // Check the feed class
             if (feedClass is null)
-                throw new KernelException(KernelExceptionType.RSSNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE"));
+                throw new KernelException(KernelExceptionType.RSSNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
 
             // Initialize the RSS reader TUI
+            // TODO: NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED -> Adds a feed
+            // TODO: NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESHALL -> Refresh all
             var tui = new RssReaderCli();
-            tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO"), ConsoleKey.F1, (article, _, _, _) => tui.ShowArticleInfo(article)));
-            tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE"), ConsoleKey.F2, (article, _, _, _) => tui.OpenArticleLink(article)));
-            tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESH"), ConsoleKey.F3, (article, _, _, _) => tui.RefreshFeed()));
+            tui.BindingsSecondPane.Add(new InteractiveTuiBinding<RSSFeed, RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO"), ConsoleKey.F1, (_, _, article, _) => tui.ShowArticleInfo(article)));
+            tui.BindingsSecondPane.Add(new InteractiveTuiBinding<RSSFeed, RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE"), ConsoleKey.F2, (_, _, article, _) => tui.OpenArticleLink(article)));
+            tui.BindingsFirstPane.Add(new InteractiveTuiBinding<RSSFeed, RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESH"), ConsoleKey.F3, (feed, _, _, _) => tui.RefreshFeed(feed)));
+            tui.Bindings.Add(new InteractiveTuiBinding<RSSFeed, RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESHALL"), ConsoleKey.F4, (_, _, _, _) => tui.RefreshAllFeeds()));
+            tui.BindingsFirstPane.Add(new InteractiveTuiBinding<RSSFeed, RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED"), ConsoleKey.F5, (_, _, _, _) => tui.AddFeedPrompt()));
 
             // Set the feed and refresh it
-            tui.Feed = feedClass;
-            tui.Feed.Refresh();
+            feedClass.Refresh();
+            tui.feeds.Add(feedClass);
 
             // Open the TUI
             InteractiveTuiTools.OpenInteractiveTui(tui);

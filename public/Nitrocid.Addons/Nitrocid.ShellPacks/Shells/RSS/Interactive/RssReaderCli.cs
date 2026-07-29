@@ -35,20 +35,9 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
     /// <summary>
     /// RSS Reader TUI class
     /// </summary>
-    public class RssReaderCli : BaseInteractiveTui<RSSArticle>, IInteractiveTui<RSSArticle>
+    public class RssReaderCli : BaseInteractiveTui<RSSFeed, RSSArticle>, IInteractiveTui<RSSFeed, RSSArticle>
     {
-        private RSSFeed? feed;
-
-        internal RSSFeed Feed
-        {
-            get
-            {
-                if (feed is null)
-                    throw new KernelException(KernelExceptionType.RSSNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
-                return feed;
-            }
-            set => feed = value;
-        }
+        internal List<RSSFeed> feeds = [];
 
         /// <inheritdoc/>
         public override InteractiveTuiHelpPage[] HelpPages =>
@@ -66,11 +55,26 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
         ];
 
         /// <inheritdoc/>
-        public override IEnumerable<RSSArticle> PrimaryDataSource =>
-            Feed.FeedArticles;
+        public override bool SecondPaneInteractable =>
+            true;
 
         /// <inheritdoc/>
-        public override string GetInfoFromItem(RSSArticle item)
+        public override IEnumerable<RSSFeed> PrimaryDataSource =>
+            feeds;
+
+        /// <inheritdoc/>
+        public override IEnumerable<RSSArticle> SecondaryDataSource
+        {
+            get
+            {
+                if (feeds.Count > 0)
+                    return feeds[FirstPaneCurrentSelection - 1].FeedArticles;
+                return [];
+            }
+        }
+
+        /// <inheritdoc/>
+        public override string GetInfoFromItemSecondary(RSSArticle item)
         {
             // Get some info from the article
             RSSArticle selectedArticle = item;
@@ -97,18 +101,20 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
         }
 
         /// <inheritdoc/>
-        public override string GetStatusFromItem(RSSArticle item)
-        {
-            RSSArticle article = item;
-            return article.ArticleTitle;
-        }
+        public override string GetStatusFromItem(RSSFeed item) =>
+            item.FeedTitle;
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(RSSArticle item)
-        {
-            RSSArticle article = item;
-            return article.ArticleTitle;
-        }
+        public override string GetEntryFromItem(RSSFeed item) =>
+            item.FeedTitle;
+
+        /// <inheritdoc/>
+        public override string GetStatusFromItemSecondary(RSSArticle item) =>
+            item.ArticleTitle;
+
+        /// <inheritdoc/>
+        public override string GetEntryFromItemSecondary(RSSArticle item) =>
+            item.ArticleTitle;
 
         internal void ShowArticleInfo(RSSArticle? item)
         {
@@ -163,8 +169,31 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             }
         }
 
-        internal void RefreshFeed() =>
-            Feed.Refresh();
+        internal void RefreshFeed(RSSFeed? feed) =>
+            feed?.Refresh();
 
+        internal void AddFeedPrompt()
+        {
+            // Prompt for new feed
+            // TODO: NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT -> Write an RSS feed link for your news site.
+            string feedLink = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT"), Settings.InfoBoxSettings);
+            try
+            {
+                var feed = new RSSFeed(feedLink, RSSFeedType.Infer);
+                feed.Refresh();
+                feeds.Add(feed);
+            }
+            catch (Exception e)
+            {
+                // TODO: NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDFAILED -> Adding new feed has failed.
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDFAILED") + $" {e.Message}", Settings.InfoBoxSettings);
+            }
+        }
+
+        internal void RefreshAllFeeds()
+        {
+            foreach (var feed in feeds)
+                feed.Refresh();
+        }
     }
 }
