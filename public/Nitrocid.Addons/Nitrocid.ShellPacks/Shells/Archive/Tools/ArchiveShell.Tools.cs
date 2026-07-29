@@ -83,31 +83,22 @@ namespace Nitrocid.ShellPacks.Shells.Archive
         /// <param name="FullTargetPath">Whether to use the full target path</param>
         public bool ExtractFileEntry(string Target, string Where, bool FullTargetPath = false)
         {
+            (string target, string where, string absoluteTarget) = DetermineAbsoluteTarget(Target, Where);
             if (Archive is null)
                 throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED"));
             if (FileStream is null)
                 throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED"));
-            if (string.IsNullOrWhiteSpace(Target))
-                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT"));
-            if (string.IsNullOrWhiteSpace(Where))
-                Where = CurrentDirectory ?? "";
-
-            // Define absolute target
-            string AbsoluteTarget = CurrentArchiveDirectory + "/" + Target;
-            if (AbsoluteTarget.StartsWith("/"))
-                AbsoluteTarget = AbsoluteTarget[1..];
-            DebugWriter.WriteDebug(DebugLevel.I, "Target: {0}, AbsoluteTarget: {1}", vars: [Target, AbsoluteTarget]);
 
             // Define local destination while getting an entry from target
-            string LocalDestination = Where + "/";
-            var ArchiveEntry = Archive.Entries.Where(x => x.Key == AbsoluteTarget).ToArray()[0];
+            string LocalDestination = where + "/";
+            var ArchiveEntry = Archive.Entries.Where(x => x.Key == absoluteTarget).ToArray()[0];
             string localDirDestination = Path.GetDirectoryName(ArchiveEntry.Key) ?? "";
             if (FullTargetPath)
                 LocalDestination += ArchiveEntry.Key;
             DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}", vars: [LocalDestination]);
 
             // Try to extract file
-            FilesystemTools.MakeDirectory(LocalDestination);
+            FilesystemTools.MakeDirectory(LocalDestination, false);
             if (!FilesystemTools.FolderExists(LocalDestination + "/" + localDirDestination))
                 FilesystemTools.MakeDirectory(LocalDestination + "/" + localDirDestination);
             FilesystemTools.MakeFile(LocalDestination + ArchiveEntry.Key);
@@ -131,22 +122,11 @@ namespace Nitrocid.ShellPacks.Shells.Archive
         /// <param name="Where">Where in the archive to extract?</param>
         public bool PackFile(string Target, string Where)
         {
-            if (Archive is null)
-                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED"));
+            (string target, string where, string absoluteTarget) = DetermineAbsoluteTarget(Target, Where);
             if (FileStream is null)
                 throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED"));
-            if (string.IsNullOrWhiteSpace(Target))
-                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_PACK"));
-            if (string.IsNullOrWhiteSpace(Where))
-                Where = CurrentDirectory ?? "";
             if (Archive is not IWritableArchive)
-                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK") + " {0}.", Archive.Type);
-
-            // Define absolute archive target
-            string ArchiveTarget = CurrentArchiveDirectory + "/" + Target;
-            if (ArchiveTarget.StartsWith("/"))
-                ArchiveTarget = ArchiveTarget[1..];
-            DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}, ArchiveTarget: {1}", vars: [Where, ArchiveTarget]);
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK") + " {0}.", Archive?.Type ?? (ArchiveType)(-1));
 
             // Select compression type
             CompressionType compression = CompressionType.None;
@@ -158,9 +138,9 @@ namespace Nitrocid.ShellPacks.Shells.Archive
             }
 
             // Define local destination while getting an entry from target
-            Target = FilesystemTools.NeutralizePath(Target, Where);
-            DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}", vars: [Target]);
-            ((IWritableArchive)Archive).AddEntry(ArchiveTarget, Target);
+            target = FilesystemTools.NeutralizePath(target, where);
+            DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}", vars: [target]);
+            ((IWritableArchive)Archive).AddEntry(absoluteTarget, target);
             if (Archive is ZipArchive zipArchive)
                 zipArchive.SaveTo(FileStream, new ZipWriterOptions(compression));
             if (Archive is TarArchive tarArchive)
@@ -168,6 +148,28 @@ namespace Nitrocid.ShellPacks.Shells.Archive
             if (Archive is GZipArchive gzipArchive)
                 gzipArchive.SaveTo(FileStream, new GZipWriterOptions(compression));
             return true;
+        }
+
+        /// <summary>
+        /// Determines the archive target directory
+        /// </summary>
+        /// <param name="Target">Target file</param>
+        /// <param name="Where">Specifies the directory to extract/pack</param>
+        /// <returns>Archive target tuple</returns>
+        /// <exception cref="KernelException"></exception>
+        public (string target, string where, string absoluteTarget) DetermineAbsoluteTarget(string Target, string Where)
+        {
+            if (string.IsNullOrWhiteSpace(Target))
+                throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_PACK"));
+            if (string.IsNullOrWhiteSpace(Where))
+                Where = CurrentDirectory ?? "";
+
+            // Define absolute archive target
+            string AbsoluteTarget = CurrentArchiveDirectory + "/" + Target;
+            if (AbsoluteTarget.StartsWith("/"))
+                AbsoluteTarget = AbsoluteTarget[1..];
+            DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}, AbsoluteTarget: {1}", vars: [Where, AbsoluteTarget]);
+            return (Target, Where, AbsoluteTarget);
         }
 
         /// <summary>
