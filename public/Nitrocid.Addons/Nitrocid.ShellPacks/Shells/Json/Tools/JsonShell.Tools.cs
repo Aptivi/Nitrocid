@@ -243,61 +243,21 @@ namespace Nitrocid.ShellPacks.Shells.Json
             var parentToken = GetTokenSafe(parent) ??
                 throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NOPARENTTOKEN"), parent);
 
-            // Then, the new object type
-            if (!type.Equals("array", StringComparison.OrdinalIgnoreCase) &&
-                !type.Equals("object", StringComparison.OrdinalIgnoreCase) &&
-                !type.Equals("property", StringComparison.OrdinalIgnoreCase) &&
-                !type.Equals("raw", StringComparison.OrdinalIgnoreCase))
-                throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE"), type);
-
             // Then, the new object's property name (if applicable)
             var parentTokenType = DetermineType(parent);
             if (parentTokenType != JTokenType.Object && !string.IsNullOrEmpty(propName))
                 throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED"), parentTokenType.ToString());
 
-            // Finally, parse the string JSON token
-            JToken? newToken = default;
-            switch (type.ToLower())
-            {
-                case "array":
-                    if (parentTokenType == JTokenType.Object && !string.IsNullOrEmpty(propName))
-                        newToken = JToken.Parse($"[\"{value}\"]");
-                    else if (parentTokenType != JTokenType.Object && string.IsNullOrEmpty(propName))
-                        newToken = JToken.Parse($"[\"{value}\"]");
-                    else
-                        throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED"), propName, parentTokenType.ToString());
-                    break;
-                case "object":
-                    if (parentTokenType == JTokenType.Object && !string.IsNullOrEmpty(propName))
-                        newToken = JToken.Parse($"{{}}");
-                    else if (parentTokenType != JTokenType.Object && string.IsNullOrEmpty(propName))
-                        newToken = JToken.Parse($"{{}}");
-                    else
-                        throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED"), propName, parentTokenType.ToString());
-                    break;
-                case "property":
-                    if (parentTokenType == JTokenType.Object && !string.IsNullOrEmpty(propName))
-                        newToken = JToken.Parse($"\"{value}\"");
-                    else
-                        throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED"), parentTokenType.ToString());
-                    break;
-                case "raw":
-                    if (parentTokenType == JTokenType.Object && !string.IsNullOrEmpty(propName))
-                        newToken = JToken.Parse($"{value}");
-                    else if (parentTokenType != JTokenType.Object && string.IsNullOrEmpty(propName))
-                        newToken = JToken.Parse($"{value}");
-                    else
-                        throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED"), propName, parentTokenType.ToString());
-                    break;
-            }
+            // Make token from...
+            var token = MakeTokenFrom(parent, type, propName, value);
             switch (parentTokenType)
             {
                 case JTokenType.Array:
-                    if (newToken is not null)
-                        ((JArray)parentToken).Add(newToken);
+                    if (token is not null)
+                        ((JArray)parentToken).Add(token);
                     break;
                 case JTokenType.Object:
-                    ((JObject)parentToken).Add(propName, newToken);
+                    ((JObject)parentToken).Add(propName, token);
                     break;
             }
         }
@@ -315,63 +275,23 @@ namespace Nitrocid.ShellPacks.Shells.Json
             var parentToken = GetTokenSafe(parent) ??
                 throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NOPARENTTOKEN"), parent);
 
-            // Then, the new object type
-            if (!type.Equals("array", StringComparison.OrdinalIgnoreCase) &&
-                !type.Equals("object", StringComparison.OrdinalIgnoreCase) &&
-                !type.Equals("property", StringComparison.OrdinalIgnoreCase) &&
-                !type.Equals("raw", StringComparison.OrdinalIgnoreCase))
-                throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE"), type);
-
             // Then, the new object's property name (if applicable)
             var parentTokenType = DetermineType(parent);
             if (parentTokenType != JTokenType.Object && !string.IsNullOrEmpty(propName))
                 throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED"), parentTokenType.ToString());
 
-            // Finally, parse the string JSON token
-            JToken? newToken = default;
-            switch (type.ToLower())
-            {
-                case "array":
-                    if (parentTokenType == JTokenType.Object && !string.IsNullOrEmpty(propName))
-                        newToken = JToken.Parse($"[\"{value}\"]");
-                    else if (parentTokenType != JTokenType.Object && string.IsNullOrEmpty(propName))
-                        newToken = JToken.Parse($"[\"{value}\"]");
-                    else
-                        throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED"), propName, parentTokenType.ToString());
-                    break;
-                case "object":
-                    if (parentTokenType == JTokenType.Object && !string.IsNullOrEmpty(propName))
-                        newToken = JToken.Parse($"{{}}");
-                    else if (parentTokenType != JTokenType.Object && string.IsNullOrEmpty(propName))
-                        newToken = JToken.Parse($"{{}}");
-                    else
-                        throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED"), propName, parentTokenType.ToString());
-                    break;
-                case "property":
-                    if (parentTokenType == JTokenType.Object && !string.IsNullOrEmpty(propName))
-                        newToken = JToken.Parse($"\"{value}\"");
-                    else
-                        throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED"), parentTokenType.ToString());
-                    break;
-                case "raw":
-                    if (parentTokenType == JTokenType.Object && !string.IsNullOrEmpty(propName))
-                        newToken = JToken.Parse($"{value}");
-                    else if (parentTokenType != JTokenType.Object && string.IsNullOrEmpty(propName))
-                        newToken = JToken.Parse($"{value}");
-                    else
-                        throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED"), propName, parentTokenType.ToString());
-                    break;
-            }
+            // Make token from...
+            var token = MakeTokenFrom(parent, type, propName, value);
             switch (parentTokenType)
             {
                 case JTokenType.Object:
                     if (parentToken[propName] is null)
                         throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NOPROPWITHINPARENT"), propName, parent, parentTokenType.ToString());
-                    parentToken[propName] = newToken;
+                    parentToken[propName] = token;
                     break;
                 default:
-                    if (newToken is not null)
-                        parentToken.Replace(newToken);
+                    if (token is not null)
+                        parentToken.Replace(token);
                     break;
             }
         }
@@ -406,5 +326,56 @@ namespace Nitrocid.ShellPacks.Shells.Json
             return JsonConvert.SerializeObject(TargetToken, Formatting.Indented);
         }
 
+        private JToken? MakeTokenFrom(string parent, string type, string propName, string value)
+        {
+            // First, sanity checks for the new object type
+            if (!type.Equals("array", StringComparison.OrdinalIgnoreCase) &&
+                !type.Equals("object", StringComparison.OrdinalIgnoreCase) &&
+                !type.Equals("property", StringComparison.OrdinalIgnoreCase) &&
+                !type.Equals("raw", StringComparison.OrdinalIgnoreCase))
+                throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE"), type);
+
+            // Then, the new object's property name (if applicable)
+            var parentTokenType = DetermineType(parent);
+            if (parentTokenType != JTokenType.Object && !string.IsNullOrEmpty(propName))
+                throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED"), parentTokenType.ToString());
+
+            // Finally, parse the string JSON token
+            JToken? newToken = default;
+            switch (type.ToLower())
+            {
+                case "array":
+                    if (parentTokenType == JTokenType.Object && !string.IsNullOrEmpty(propName))
+                        newToken = JToken.Parse($"[\"{value}\"]");
+                    else if (parentTokenType != JTokenType.Object && string.IsNullOrEmpty(propName))
+                        newToken = JToken.Parse($"[\"{value}\"]");
+                    else
+                        throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED"), propName, parentTokenType.ToString());
+                    break;
+                case "object":
+                    if (parentTokenType == JTokenType.Object && !string.IsNullOrEmpty(propName))
+                        newToken = JToken.Parse($"{{}}");
+                    else if (parentTokenType != JTokenType.Object && string.IsNullOrEmpty(propName))
+                        newToken = JToken.Parse($"{{}}");
+                    else
+                        throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED"), propName, parentTokenType.ToString());
+                    break;
+                case "property":
+                    if (parentTokenType == JTokenType.Object && !string.IsNullOrEmpty(propName))
+                        newToken = JToken.Parse($"\"{value}\"");
+                    else
+                        throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED"), parentTokenType.ToString());
+                    break;
+                case "raw":
+                    if (parentTokenType == JTokenType.Object && !string.IsNullOrEmpty(propName))
+                        newToken = JToken.Parse($"{value}");
+                    else if (parentTokenType != JTokenType.Object && string.IsNullOrEmpty(propName))
+                        newToken = JToken.Parse($"{value}");
+                    else
+                        throw new KernelException(KernelExceptionType.JsonEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED"), propName, parentTokenType.ToString());
+                    break;
+            }
+            return newToken;
+        }
     }
 }
