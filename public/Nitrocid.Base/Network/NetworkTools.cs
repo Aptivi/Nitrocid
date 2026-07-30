@@ -18,13 +18,15 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
+using System.Net.Sockets;
 using System.Text;
-using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Network.Transfer;
 using SpecProbe.Software.Platform;
 
@@ -35,11 +37,9 @@ namespace Nitrocid.Base.Network
     /// </summary>
     public static class NetworkTools
     {
-
         internal static int downloadRetries = 3;
         internal static int uploadRetries = 3;
         internal static int pingTimeout = 60000;
-        internal static bool TransferFinished;
 
         /// <summary>
         /// Checks to see if the network is available. On Android systems, if there is no Internet connection, the network is considered
@@ -152,9 +152,7 @@ namespace Nitrocid.Base.Network
             string FileName = Url.Split('/').Last();
             DebugWriter.WriteDebug(DebugLevel.I, "Prototype Filename: {0}", vars: [FileName]);
             if (FileName.Contains('?'))
-            {
                 FileName = FileName.Remove(FileName.IndexOf('?'));
-            }
             DebugWriter.WriteDebug(DebugLevel.I, "Finished Filename: {0}", vars: [FileName]);
             return FileName;
         }
@@ -162,8 +160,54 @@ namespace Nitrocid.Base.Network
         /// <summary>
         /// Gets the online devices in your network, including the router and the broadcast address
         /// </summary>
-        public static IPAddress[] GetOnlineDevicesInNetwork() =>
-            DriverHandler.CurrentNetworkDriverLocal.GetOnlineDevicesInNetwork();
+        public static IPAddress[] GetOnlineDevicesInNetwork()
+        {
+            if (!NetworkAvailable)
+                throw new KernelException(KernelExceptionType.NetworkOffline);
+
+            // Get the local hostname and get its IP address information from the list
+            List<IPAddress> onlineAddresses = [];
+            string hostname = Dns.GetHostName();
+            var hostnameEntry = Dns.GetHostEntry(hostname);
+
+            // Enumerate through different addresses
+            for (int i = 0; i < hostnameEntry.AddressList.Length; i++)
+            {
+                var address = hostnameEntry.AddressList[i];
+
+                // If IPv4 or IPv6 (not implemented), go ahead
+                if (address.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    // Get the octets
+                    byte[] addressBytes = address.GetAddressBytes();
+
+                    // Now, scan the entire network
+                    for (byte fourthOctet = 0; fourthOctet <= 255; fourthOctet++)
+                    {
+                        // Get the address to be scanned
+                        byte[] bytes = [addressBytes[0], addressBytes[1], addressBytes[2], fourthOctet];
+                        string addressString = string.Join(".", bytes);
+
+                        // Ping it and time it out to 10 milliseconds
+                        var reply = PingAddress(addressString, 10);
+
+                        // Check the reply
+                        if (reply.Status == IPStatus.Success)
+                            onlineAddresses.Add(new IPAddress(bytes));
+                    }
+                }
+                else if (address.AddressFamily == AddressFamily.InterNetworkV6)
+                {
+                    var reply = PingAddress("ff02::1", 10);
+
+                    // Check the reply
+                    if (reply.Status == IPStatus.Success)
+                        onlineAddresses.Add(reply.Address);
+                }
+            }
+
+            return [.. onlineAddresses];
+        }
 
         private static bool IsInternetAvailable()
         {

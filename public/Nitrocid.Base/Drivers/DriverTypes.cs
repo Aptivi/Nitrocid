@@ -29,13 +29,9 @@ namespace Nitrocid.Base.Drivers
         /// </summary>
         RNG,
         /// <summary>
-        /// Network drivers
-        /// </summary>
-        Network = 2,
-        /// <summary>
         /// Filesystem drivers
         /// </summary>
-        Filesystem,
+        Filesystem = 3,
         /// <summary>
         /// Encryption drivers
         /// </summary>

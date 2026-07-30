@@ -77,7 +77,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 }
                 catch (Exception ex)
                 {
-                    NetworkTools.TransferFinished = false;
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PUT_FAILED"), true, ThemeColorType.Error, RetryCount, ex.Message);
                     RetryCount += 1;
                     DebugWriter.WriteDebug(DebugLevel.I, "Try count: {0}", vars: [RetryCount]);

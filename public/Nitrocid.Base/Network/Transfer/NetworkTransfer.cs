@@ -18,20 +18,23 @@
 //
 
 using System;
+using System.IO;
 using System.Net.Http;
 using System.Threading;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using System.Threading.Tasks;
 using Nitrocid.Base.Files;
-using Textify.Tools.Placeholder;
-using Terminaux.Base;
-using Terminaux.Base.Extensions;
-using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Misc.Reflection;
-using Nitrocid.Base.Drivers;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
+using Nitrocid.Base.Misc.Progress;
+using Nitrocid.Base.Misc.Reflection;
+using Terminaux.Base.Extensions;
+using Terminaux.Shell.Commands;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.Tools.Placeholder;
 
 namespace Nitrocid.Base.Network.Transfer
 {
@@ -40,14 +43,6 @@ namespace Nitrocid.Base.Network.Transfer
     /// </summary>
     public static class NetworkTransfer
     {
-        internal static bool IsError;
-        internal static Exception? ReasonError;
-        internal static CancellationTokenSource CancellationToken = new();
-        internal static string DownloadedString = "";
-        internal static Notification? DownloadNotif;
-        internal static Notification? UploadNotif;
-        internal static bool SuppressDownloadMessage;
-        internal static bool SuppressUploadMessage;
         internal static HttpClient httpClientNormal = new();
         internal static HttpClient httpClientIgnoreCertErrors = new(new HttpClientHandler
         {
@@ -78,7 +73,7 @@ namespace Nitrocid.Base.Network.Transfer
         /// <param name="URL">A URL to a file</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
         public static bool DownloadFile(string URL) =>
-            DriverHandler.CurrentNetworkDriverLocal.DownloadFile(URL);
+            DownloadFile(URL, Config.MainConfig.ShowProgress);
 
         /// <summary>
         /// Downloads a file to the current working directory.
@@ -86,8 +81,11 @@ namespace Nitrocid.Base.Network.Transfer
         /// <param name="URL">A URL to a file</param>
         /// <param name="ShowProgress">Whether or not to show progress bar</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static bool DownloadFile(string URL, bool ShowProgress) =>
-            DriverHandler.CurrentNetworkDriverLocal.DownloadFile(URL, ShowProgress);
+        public static bool DownloadFile(string URL, bool ShowProgress)
+        {
+            string FileName = NetworkTools.GetFilenameFromUrl(URL);
+            return DownloadFile(URL, ShowProgress, FileName);
+        }
 
         /// <summary>
         /// Downloads a file to the current working directory.
@@ -96,7 +94,7 @@ namespace Nitrocid.Base.Network.Transfer
         /// <param name="FileName">File name to download to</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
         public static bool DownloadFile(string URL, string FileName) =>
-            DriverHandler.CurrentNetworkDriverLocal.DownloadFile(URL, FileName);
+            DownloadFile(URL, Config.MainConfig.ShowProgress, FileName);
 
         /// <summary>
         /// Downloads a file to the current working directory.
@@ -105,8 +103,98 @@ namespace Nitrocid.Base.Network.Transfer
         /// <param name="ShowProgress">Whether or not to show progress bar</param>
         /// <param name="FileName">File name to download to</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static bool DownloadFile(string URL, bool ShowProgress, string FileName) =>
-            DriverHandler.CurrentNetworkDriverLocal.DownloadFile(URL, ShowProgress, FileName);
+        public static bool DownloadFile(string URL, bool ShowProgress, string FileName)
+        {
+            // Reset cancellation token
+            var cancellationToken = new CancellationTokenSource();
+
+            // Intialize variables
+            var FileUri = new Uri(URL);
+
+            // Initialize the progress bar indicator and the file completed event handler
+            var downloadNotification = new Notification(LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_DOWNLOADING"), FileUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
+            if (Config.MainConfig.DownloadNotificationProvoke)
+                NotificationManager.NotifySend(downloadNotification);
+            var builtinHandler = new ProgressHandler((_, message) => HttpReceiveProgressWatch(message, downloadNotification), "Download");
+            if (ShowProgress)
+                ProgressManager.RegisterProgressHandler(builtinHandler);
+
+            // Send the GET request to the server for the file
+            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", vars: [FilesystemTools.CurrentDir]);
+            var Response = HttpClient.GetAsync(FileUri, HttpCompletionOption.ResponseHeadersRead, cancellationToken.Token).Result;
+            Response.EnsureSuccessStatusCode();
+
+            // Get the file path
+            string FilePath = FilesystemTools.NeutralizePath(FileName);
+
+            // Try to download the file asynchronously
+            bool isFailed = false;
+            Exception? failureReason = null;
+            Task.Run(() =>
+            {
+                try
+                {
+                    int size = 16384;
+                    var length = Response.Content.Headers.ContentLength;
+                    long fileSize = length ?? 0;
+                    long totalRead = 0;
+                    using var outputFileStream = File.Create(FilePath, size);
+                    using var responseStream = Response.Content.ReadAsStream();
+                    var buffer = new byte[size];
+                    int bytesRead = 0;
+                    do
+                    {
+                        if (CancellationHandlers.CancelRequested)
+                            cancellationToken.Cancel();
+                        cancellationToken.Token.ThrowIfCancellationRequested();
+                        bytesRead = responseStream.Read(buffer, 0, size);
+                        outputFileStream.Write(buffer, 0, bytesRead);
+                        totalRead += bytesRead;
+                        if (ShowProgress)
+                        {
+                            if (fileSize <= 0)
+                                ProgressManager.ReportProgress(0, "Download", $"{totalRead}");
+                            else
+                            {
+                                double prog = 100d * ((double)totalRead / fileSize);
+                                ProgressManager.ReportProgress(prog, "Download", $"{totalRead} / {fileSize} | {prog:000.00}%");
+                            }
+                        }
+                    } while (bytesRead > 0);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Download complete. Error: {0}", vars: [ex.Message]);
+                    failureReason = ex;
+                    isFailed = true;
+                }
+            }, cancellationToken.Token);
+
+            // Unregister the handler
+            if (ShowProgress)
+                ProgressManager.UnregisterProgressHandler(builtinHandler);
+
+            // We're done downloading. Check to see if it's actually an error
+            if (ShowProgress)
+                TextWriterRaw.Write();
+            if (isFailed)
+            {
+                if (Config.MainConfig.DownloadNotificationProvoke)
+                    downloadNotification.ProgressState = NotificationProgressState.Failure;
+                cancellationToken.Cancel();
+                throw failureReason ??
+                    new KernelException(KernelExceptionType.Network, LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_EXCEPTION_TRANSFERFAILURE"));
+            }
+            else
+            {
+                if (Config.MainConfig.DownloadNotificationProvoke)
+                {
+                    downloadNotification.Progress = 100;
+                    downloadNotification.ProgressState = NotificationProgressState.Success;
+                }
+                return true;
+            }
+        }
 
         /// <summary>
         /// Uploads a file to the current working directory.
@@ -115,7 +203,7 @@ namespace Nitrocid.Base.Network.Transfer
         /// <param name="URL">A URL to a file</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
         public static bool UploadFile(string FileName, string URL) =>
-            DriverHandler.CurrentNetworkDriverLocal.UploadFile(FileName, URL);
+            UploadFile(FileName, URL, Config.MainConfig.ShowProgress);
 
         /// <summary>
         /// Uploads a file from the current working directory.
@@ -124,8 +212,82 @@ namespace Nitrocid.Base.Network.Transfer
         /// <param name="URL">A URL</param>
         /// <param name="ShowProgress">Whether or not to show progress bar</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
-        public static bool UploadFile(string FileName, string URL, bool ShowProgress) =>
-            DriverHandler.CurrentNetworkDriverLocal.UploadFile(FileName, URL, ShowProgress);
+        public static bool UploadFile(string FileName, string URL, bool ShowProgress)
+        {
+            // Reset cancellation token
+            var cancellationToken = new CancellationTokenSource();
+
+            // Intialize variables
+            var FileUri = new Uri(URL);
+
+            // Initialize the progress bar indicator and the file completed event handler
+            var uploadNotification = new Notification(LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_UPLOADING"), FileUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
+            if (Config.MainConfig.UploadNotificationProvoke)
+                NotificationManager.NotifySend(uploadNotification);
+            var builtinHandler = new ProgressHandler((_, message) => HttpSendProgressWatch(message, uploadNotification), "Upload");
+            if (ShowProgress)
+                ProgressManager.RegisterProgressHandler(builtinHandler);
+
+            // Send the GET request to the server for the file after getting the stream and target file stream
+            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", vars: [FilesystemTools.CurrentDir]);
+            string FilePath = FilesystemTools.NeutralizePath(FileName);
+            var stream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
+            var Content = new StreamContent(stream);
+
+            // Upload now
+            bool uploaded = false;
+            bool isFailed = false;
+            Exception? failureReason = null;
+            try
+            {
+                var progressTask = new Task(() =>
+                {
+                    double previousPercentage = 0.0;
+                    while (!uploaded)
+                    {
+                        long uploadedBytes = stream.Position;
+                        long totalBytes = stream.Length;
+                        double percentage = 100 * (uploadedBytes / (double)totalBytes);
+                        if (percentage != previousPercentage)
+                            ProgressManager.ReportProgress(percentage, "Upload", $"{uploadedBytes} / {totalBytes} | {percentage:000.00}%");
+                        previousPercentage = percentage;
+                    }
+                });
+                progressTask.Start();
+                var Response = HttpClient.PutAsync(URL, Content, cancellationToken.Token).Result;
+                Response.EnsureSuccessStatusCode();
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Upload complete. Error: {0}", vars: [ex.Message]);
+                failureReason = ex;
+                isFailed = true;
+            }
+            uploaded = true;
+
+            // Unregister the handler
+            if (ShowProgress)
+                ProgressManager.UnregisterProgressHandler(builtinHandler);
+
+            // We're done uploading. Check to see if it's actually an error
+            if (isFailed)
+            {
+                if (Config.MainConfig.UploadNotificationProvoke)
+                    uploadNotification.ProgressState = NotificationProgressState.Failure;
+                cancellationToken.Cancel();
+                throw failureReason ??
+                    new KernelException(KernelExceptionType.Network, LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_EXCEPTION_TRANSFERFAILURE"));
+            }
+            else
+            {
+                if (Config.MainConfig.UploadNotificationProvoke)
+                {
+                    uploadNotification.Progress = 100;
+                    uploadNotification.ProgressState = NotificationProgressState.Success;
+                }
+                return true;
+            }
+        }
 
         /// <summary>
         /// Downloads a resource from URL as a string.
@@ -133,7 +295,7 @@ namespace Nitrocid.Base.Network.Transfer
         /// <param name="URL">A URL to a file</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
         public static string DownloadString(string URL) =>
-            DriverHandler.CurrentNetworkDriverLocal.DownloadString(URL);
+            DownloadString(URL, Config.MainConfig.ShowProgress);
 
         /// <summary>
         /// Downloads a resource from URL as a string.
@@ -141,8 +303,89 @@ namespace Nitrocid.Base.Network.Transfer
         /// <param name="URL">A URL</param>
         /// <param name="ShowProgress">Whether or not to show progress bar</param>
         /// <returns>A resource string if successful; Throws exception if unsuccessful.</returns>
-        public static string DownloadString(string URL, bool ShowProgress) =>
-            DriverHandler.CurrentNetworkDriverLocal.DownloadString(URL, ShowProgress);
+        public static string DownloadString(string URL, bool ShowProgress)
+        {
+            // Reset cancellation token
+            var cancellationToken = new CancellationTokenSource();
+
+            // Intialize variables
+            var StringUri = new Uri(URL);
+
+            // Initialize the progress bar indicator and the file completed event handler
+            var downloadNotification = new Notification(LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_DOWNLOADING"), StringUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
+            if (Config.MainConfig.DownloadNotificationProvoke)
+                NotificationManager.NotifySend(downloadNotification);
+            var builtinHandler = new ProgressHandler((_, message) => HttpReceiveProgressWatch(message, downloadNotification), "Download");
+            if (ShowProgress)
+                ProgressManager.RegisterProgressHandler(builtinHandler);
+
+            // Send the GET request to the server for the file
+            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", vars: [FilesystemTools.CurrentDir]);
+            var Response = HttpClient.GetAsync(StringUri, HttpCompletionOption.ResponseHeadersRead, cancellationToken.Token).Result;
+            Response.EnsureSuccessStatusCode();
+
+            // Try to download the string asynchronously
+            string downloaded = "";
+            bool isFailed = false;
+            Exception? failureReason = null;
+            Task.Run(() =>
+            {
+                try
+                {
+                    int size = 16384;
+                    var length = Response.Content.Headers.ContentLength;
+                    long fileSize = length ?? 0;
+                    long totalRead = 0;
+                    using var ContentStream = new MemoryStream();
+                    if (CancellationHandlers.CancelRequested)
+                        cancellationToken.Cancel();
+                    cancellationToken.Token.ThrowIfCancellationRequested();
+                    using var responseStream = Response.Content.ReadAsStream();
+                    var buffer = new byte[size];
+                    int bytesRead = 0;
+                    do
+                    {
+                        bytesRead = responseStream.Read(buffer, 0, size);
+                        ContentStream.Write(buffer, 0, bytesRead);
+                        totalRead += bytesRead;
+                        double prog = 100d * ((double)totalRead / fileSize);
+                        if (ShowProgress)
+                            ProgressManager.ReportProgress(prog, "Download", $"{totalRead} / {fileSize} | {prog:000.00}%");
+                    } while (bytesRead > 0);
+                    ContentStream.Seek(0L, SeekOrigin.Begin);
+                    downloaded = new StreamReader(ContentStream).ReadToEnd();
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Download complete. Error: {0}", vars: [ex.Message]);
+                    failureReason = ex;
+                    isFailed = true;
+                }
+            }, cancellationToken.Token);
+
+            // Unregister the handler
+            if (ShowProgress)
+                ProgressManager.UnregisterProgressHandler(builtinHandler);
+
+            // We're done downloading. Check to see if it's actually an error
+            if (isFailed)
+            {
+                if (Config.MainConfig.DownloadNotificationProvoke)
+                    downloadNotification.ProgressState = NotificationProgressState.Failure;
+                cancellationToken.Cancel();
+                throw failureReason ??
+                    new KernelException(KernelExceptionType.Network, LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_EXCEPTION_TRANSFERFAILURE"));
+            }
+            else
+            {
+                if (Config.MainConfig.DownloadNotificationProvoke)
+                {
+                    downloadNotification.Progress = 100;
+                    downloadNotification.ProgressState = NotificationProgressState.Success;
+                }
+                return downloaded;
+            }
+        }
 
         /// <summary>
         /// Uploads a resource from URL as a string.
@@ -151,7 +394,7 @@ namespace Nitrocid.Base.Network.Transfer
         /// <param name="Data">Content to upload</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
         public static bool UploadString(string URL, string Data) =>
-            DriverHandler.CurrentNetworkDriverLocal.UploadString(URL, Data);
+            UploadString(URL, Data, Config.MainConfig.ShowProgress);
 
         /// <summary>
         /// Uploads a resource from URL as a string.
@@ -160,101 +403,115 @@ namespace Nitrocid.Base.Network.Transfer
         /// <param name="Data">Content to upload</param>
         /// <param name="ShowProgress">Whether or not to show progress bar</param>
         /// <returns>A resource string if successful; Throws exception if unsuccessful.</returns>
-        public static bool UploadString(string URL, string Data, bool ShowProgress) =>
-            DriverHandler.CurrentNetworkDriverLocal.UploadString(URL, Data, ShowProgress);
-
-        /// <summary>
-        /// Check for errors on download completion.
-        /// </summary>
-        internal static void DownloadChecker(Exception? e)
+        public static bool UploadString(string URL, string Data, bool ShowProgress)
         {
-            if (e is not null)
+            // Reset cancellation token
+            var cancellationToken = new CancellationTokenSource();
+
+            // Intialize variables
+            var StringUri = new Uri(URL);
+
+            // Initialize the progress bar indicator and the file completed event handler
+            var uploadNotification = new Notification(LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_UPLOADING"), StringUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
+            if (Config.MainConfig.UploadNotificationProvoke)
+                NotificationManager.NotifySend(uploadNotification);
+            var builtinHandler = new ProgressHandler((_, message) => HttpSendProgressWatch(message, uploadNotification), "Upload");
+            if (ShowProgress)
+                ProgressManager.RegisterProgressHandler(builtinHandler);
+
+            // Send the GET request to the server for the file
+            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", vars: [FilesystemTools.CurrentDir]);
+            var StringContent = new StringContent(Data);
+
+            // Upload now
+            bool isFailed = false;
+            Exception? failureReason = null;
+            try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Download complete. Error: {0}", vars: [e.Message]);
-                if (Config.MainConfig.DownloadNotificationProvoke && DownloadNotif is not null)
-                    DownloadNotif.ProgressState = NotificationProgressState.Failure;
-                ReasonError = e;
-                IsError = true;
+                var Response = HttpClient.PutAsync(URL, StringContent, cancellationToken.Token).Result;
+                Response.EnsureSuccessStatusCode();
             }
-            else if (Config.MainConfig.DownloadNotificationProvoke && DownloadNotif is not null)
-                DownloadNotif.ProgressState = NotificationProgressState.Success;
-            DebugWriter.WriteDebug(DebugLevel.I, "Download complete.");
-            NetworkTools.TransferFinished = true;
-        }
-
-        /// <summary>
-        /// Thread to check for errors on download completion.
-        /// </summary>
-        internal static void UploadChecker(Exception? e)
-        {
-            if (e is not null)
+            catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Upload complete. Error: {0}", vars: [e.Message]);
-                if (Config.MainConfig.UploadNotificationProvoke && UploadNotif is not null)
-                    UploadNotif.ProgressState = NotificationProgressState.Failure;
-                ReasonError = e;
-                IsError = true;
+                DebugWriter.WriteDebug(DebugLevel.I, "Upload complete. Error: {0}", vars: [ex.Message]);
+                failureReason = ex;
+                isFailed = true;
             }
-            else if (Config.MainConfig.UploadNotificationProvoke && UploadNotif is not null)
-                UploadNotif.ProgressState = NotificationProgressState.Success;
-            DebugWriter.WriteDebug(DebugLevel.I, "Upload complete.");
-            NetworkTools.TransferFinished = true;
+
+            // Unregister the handler
+            if (ShowProgress)
+                ProgressManager.UnregisterProgressHandler(builtinHandler);
+
+            // We're done uploading. Check to see if it's actually an error
+            if (isFailed)
+            {
+                if (Config.MainConfig.UploadNotificationProvoke)
+                    uploadNotification.ProgressState = NotificationProgressState.Failure;
+                cancellationToken.Cancel();
+                throw failureReason ??
+                    new KernelException(KernelExceptionType.Network, LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_EXCEPTION_TRANSFERFAILURE"));
+            }
+            else
+            {
+                if (Config.MainConfig.UploadNotificationProvoke)
+                {
+                    uploadNotification.Progress = 100;
+                    uploadNotification.ProgressState = NotificationProgressState.Success;
+                }
+                return true;
+            }
         }
 
-        internal static void HttpReceiveProgressWatch(string message)
+        internal static void HttpReceiveProgressWatch(string message, Notification downloadNotification)
         {
-            string totalReadStr = message[0..message.IndexOf(" / ")];
-            string fileSizeStr = message[(message.IndexOf(" / ") + 3)..message.IndexOf(" | ")];
-            long totalRead = long.Parse(totalReadStr);
-            long fileSize = long.Parse(fileSizeStr);
-            var TransferInfo = new NetworkTransferInfo(totalRead, fileSize, NetworkTransferType.Download);
-            SuppressDownloadMessage = fileSize == 0;
-            TransferProgress(TransferInfo);
+            long totalRead;
+            long fileSize = 0;
+            if (message.Contains(" | "))
+            {
+                string totalReadStr = message[0..message.IndexOf(" / ")];
+                string fileSizeStr = message[(message.IndexOf(" / ") + 3)..message.IndexOf(" | ")];
+                totalRead = long.Parse(totalReadStr);
+                fileSize = long.Parse(fileSizeStr);
+            }
+            else
+                totalRead = long.Parse(message);
+            TransferProgress(totalRead, fileSize, downloadNotification, Config.MainConfig.DownloadNotificationProvoke, LanguageTools.GetLocalized("NKS_NETWORK_TRANSFER_DOWNLOADINDICATOR"), Config.MainConfig.DownloadPercentagePrint);
         }
 
-        internal static void HttpSendProgressWatch(string message)
+        internal static void HttpSendProgressWatch(string message, Notification uploadNotification)
         {
-            string totalReadStr = message[0..message.IndexOf(" / ")];
-            string fileSizeStr = message[(message.IndexOf(" / ") + 3)..message.IndexOf(" | ")];
-            long totalRead = long.Parse(totalReadStr);
-            long fileSize = long.Parse(fileSizeStr);
-            var TransferInfo = new NetworkTransferInfo(totalRead, fileSize, NetworkTransferType.Upload);
-            SuppressUploadMessage = fileSize == 0;
-            TransferProgress(TransferInfo);
+            long totalRead;
+            long fileSize = 0;
+            if (message.Contains(" | "))
+            {
+                string totalReadStr = message[0..message.IndexOf(" / ")];
+                string fileSizeStr = message[(message.IndexOf(" / ") + 3)..message.IndexOf(" | ")];
+                totalRead = long.Parse(totalReadStr);
+                fileSize = long.Parse(fileSizeStr);
+            }
+            else
+                totalRead = long.Parse(message);
+            TransferProgress(totalRead, fileSize, uploadNotification, Config.MainConfig.UploadNotificationProvoke, LanguageTools.GetLocalized("NKS_NETWORK_TRANSFER_UPLOADINDICATOR"), Config.MainConfig.UploadPercentagePrint);
         }
 
-        /// <summary>
-        /// Report the progress to the console.
-        /// </summary>
-        internal static void TransferProgress(NetworkTransferInfo TransferInfo)
+        internal static void TransferProgress(long totalRead, long fileSize, Notification notification, bool showNotification, string indicatorBuiltin, string customIndicator)
         {
             try
             {
-                // Distinguish download from upload
-                bool NotificationProvoke = TransferInfo.TransferType == NetworkTransferType.Download ? Config.MainConfig.DownloadNotificationProvoke : Config.MainConfig.UploadNotificationProvoke;
-                var NotificationInstance = TransferInfo.TransferType == NetworkTransferType.Download ? DownloadNotif : UploadNotif;
-                string indicator = TransferInfo.TransferType == NetworkTransferType.Download ? LanguageTools.GetLocalized("NKS_NETWORK_TRANSFER_DOWNLOADINDICATOR") : LanguageTools.GetLocalized("NKS_NETWORK_TRANSFER_UPLOADINDICATOR");
-
-                // Report the progress
-                if (!NetworkTools.TransferFinished)
+                if (fileSize >= 0L)
                 {
-                    if (TransferInfo.FileSize >= 0L & !TransferInfo.MessageSuppressed)
-                    {
-                        // We know the total bytes. Print it out.
-                        double Progress = 100d * (TransferInfo.DoneSize / (double)TransferInfo.FileSize);
-                        if (NotificationProvoke && NotificationInstance is not null)
-                            NotificationInstance.Progress = (int)Math.Round(Progress);
-                        else
-                        {
-                            if (!string.IsNullOrWhiteSpace(Config.MainConfig.DownloadPercentagePrint))
-                                TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(Config.MainConfig.DownloadPercentagePrint), 0, ConsoleWrapper.CursorTop, false, ThemeColorType.NeutralText, TransferInfo.DoneSize.SizeString(), TransferInfo.FileSize.SizeString(), Progress);
-                            else
-                                TextWriterWhereColor.WriteWhere(" {2:000.00}% | " + indicator, 0, ConsoleWrapper.CursorTop, false, ThemeColorType.NeutralText, TransferInfo.DoneSize.SizeString(), TransferInfo.FileSize.SizeString(), Progress);
-                            ConsoleClearing.ClearLineToRight();
-                        }
-                    }
+                    // We know the total bytes. Print it out.
+                    double Progress = fileSize > 0 ? 100d * (totalRead / (double)fileSize) : 0;
+                    if (showNotification && notification is not null)
+                        notification.Progress = (int)Math.Round(Progress);
                     else
-                        TransferInfo.MessageSuppressed = true;
+                    {
+                        if (!string.IsNullOrWhiteSpace(customIndicator))
+                            TextWriterColor.Write("\r" + PlaceParse.ProbePlaces(customIndicator), false, ThemeColorType.NeutralText, totalRead.SizeString(), fileSize.SizeString(), Progress);
+                        else
+                            TextWriterColor.Write("\r {2:000.00}% | " + indicatorBuiltin, false, ThemeColorType.NeutralText, totalRead.SizeString(), fileSize.SizeString(), Progress);
+                        ConsoleClearing.ClearLineToRight();
+                    }
                 }
             }
             catch (Exception ex)
@@ -263,6 +520,5 @@ namespace Nitrocid.Base.Network.Transfer
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
-
     }
 }

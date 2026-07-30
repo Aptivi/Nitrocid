@@ -22,7 +22,6 @@ using Nitrocid.Base.Kernel.Configuration.Settings;
 using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Drivers.Encoding;
-using Nitrocid.Base.Drivers.Network;
 using Nitrocid.Base.Drivers.HardwareProber;
 using Nitrocid.Base.Misc.Reflection.Internal;
 using Nitrocid.Base.Drivers.RNG;
@@ -66,14 +65,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         {
             get => DriverHandler.GetDriverName<IRandomDriver>(DriverHandler.CurrentRandomDriver);
             set => RandomDriverTools.SetRandomDriver(value);
-        }
-        /// <summary>
-        /// Current network driver
-        /// </summary>
-        public string CurrentNetworkDriver
-        {
-            get => DriverHandler.GetDriverName<INetworkDriver>(DriverHandler.CurrentNetworkDriver);
-            set => NetworkDriverTools.SetNetworkDriver(value);
         }
         /// <summary>
         /// Current filesystem driver

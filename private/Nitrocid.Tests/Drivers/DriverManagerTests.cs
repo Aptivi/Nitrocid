@@ -26,7 +26,6 @@ using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Drivers.Filesystem;
 using Nitrocid.Base.Drivers.Encoding;
 using Nitrocid.Base.Drivers.HardwareProber;
-using Nitrocid.Base.Drivers.Network;
 using Nitrocid.Base.Drivers.Sorting;
 using Nitrocid.Base.Drivers.Regexp;
 using Nitrocid.Base.Drivers.Encryption;
@@ -45,8 +44,6 @@ namespace Nitrocid.Tests.Drivers
                 [DriverTypes.Encryption, DriverHandler.CurrentEncryptionDriverLocal,                    "Default"],
                 [DriverTypes.Filesystem, DriverHandler.CurrentFilesystemDriver,                         "Default"],
                 [DriverTypes.Filesystem, DriverHandler.CurrentFilesystemDriverLocal,                    "Default"],
-                [DriverTypes.Network, DriverHandler.CurrentNetworkDriver,                               "Default"],
-                [DriverTypes.Network, DriverHandler.CurrentNetworkDriverLocal,                          "Default"],
                 [DriverTypes.RNG, DriverHandler.CurrentRandomDriver,                                    "Default"],
                 [DriverTypes.RNG, DriverHandler.CurrentRandomDriverLocal,                               "Default"],
                 [DriverTypes.Regexp, DriverHandler.CurrentRegexpDriver,                                 "Default"],
@@ -73,12 +70,6 @@ namespace Nitrocid.Tests.Drivers
             [
                 //                        ---------- Provided ----------
                 [DriverTypes.Filesystem, new MyCustomFilesystemDriver()],
-            ];
-
-        public static IEnumerable<object[]> RegisteredNetworkDriver =>
-            [
-                //                     ---------- Provided ----------
-                [DriverTypes.Network, new MyCustomNetworkDriver()],
             ];
 
         public static IEnumerable<object[]> RegisteredRNGDriver =>
@@ -130,7 +121,6 @@ namespace Nitrocid.Tests.Drivers
         [TestMethod]
         [DynamicData(nameof(RegisteredEncryptionDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
         [DynamicData(nameof(RegisteredFilesystemDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
-        [DynamicData(nameof(RegisteredNetworkDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
         [DynamicData(nameof(RegisteredRNGDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
         [DynamicData(nameof(RegisteredRegexpDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
         [DynamicData(nameof(RegisteredDebugLoggerDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
@@ -148,7 +138,6 @@ namespace Nitrocid.Tests.Drivers
         [TestMethod]
         [DataRow("SHA512", DriverTypes.Encryption)]
         [DataRow("Default", DriverTypes.Filesystem)]
-        [DataRow("Default", DriverTypes.Network)]
         [DataRow("Standard", DriverTypes.RNG)]
         [DataRow("Default", DriverTypes.Regexp)]
         [DataRow("Default", DriverTypes.DebugLogger)]
@@ -176,7 +165,6 @@ namespace Nitrocid.Tests.Drivers
         [TestMethod]
         [DataRow(DriverTypes.Encryption)]
         [DataRow(DriverTypes.Filesystem)]
-        [DataRow(DriverTypes.Network)]
         [DataRow(DriverTypes.RNG)]
         [DataRow(DriverTypes.Regexp)]
         [DataRow(DriverTypes.DebugLogger)]
@@ -194,7 +182,6 @@ namespace Nitrocid.Tests.Drivers
         [TestMethod]
         [DataRow(DriverTypes.Encryption)]
         [DataRow(DriverTypes.Filesystem)]
-        [DataRow(DriverTypes.Network)]
         [DataRow(DriverTypes.RNG)]
         [DataRow(DriverTypes.Regexp)]
         [DataRow(DriverTypes.DebugLogger)]
@@ -212,7 +199,6 @@ namespace Nitrocid.Tests.Drivers
         [TestMethod]
         [DataRow(DriverTypes.Encryption, "Default")]
         [DataRow(DriverTypes.Filesystem, "Default")]
-        [DataRow(DriverTypes.Network, "Default")]
         [DataRow(DriverTypes.RNG, "Default")]
         [DataRow(DriverTypes.Regexp, "Default")]
         [DataRow(DriverTypes.DebugLogger, "Default")]
@@ -231,7 +217,6 @@ namespace Nitrocid.Tests.Drivers
         [TestMethod]
         [DataRow(DriverTypes.Encryption, "Default")]
         [DataRow(DriverTypes.Filesystem, "Default")]
-        [DataRow(DriverTypes.Network, "Default")]
         [DataRow(DriverTypes.RNG, "Default")]
         [DataRow(DriverTypes.Regexp, "Default")]
         [DataRow(DriverTypes.DebugLogger, "Default")]
@@ -251,7 +236,6 @@ namespace Nitrocid.Tests.Drivers
         [TestMethod]
         [DataRow(DriverTypes.Encryption, "Default")]
         [DataRow(DriverTypes.Filesystem, "Default")]
-        [DataRow(DriverTypes.Network, "Default")]
         [DataRow(DriverTypes.RNG, "Default")]
         [DataRow(DriverTypes.Regexp, "Default")]
         [DataRow(DriverTypes.DebugLogger, "Default")]
@@ -269,7 +253,6 @@ namespace Nitrocid.Tests.Drivers
         [TestMethod]
         [DataRow(DriverTypes.Encryption, "Default")]
         [DataRow(DriverTypes.Filesystem, "Default")]
-        [DataRow(DriverTypes.Network, "Default")]
         [DataRow(DriverTypes.RNG, "Default")]
         [DataRow(DriverTypes.Regexp, "Default")]
         [DataRow(DriverTypes.DebugLogger, "Default")]
@@ -287,7 +270,6 @@ namespace Nitrocid.Tests.Drivers
         [TestMethod]
         [DataRow(DriverTypes.Encryption, "SHA512", "SHA512", "Default")]
         [DataRow(DriverTypes.Filesystem, "Default", "Default", "Default")]
-        [DataRow(DriverTypes.Network, "Default", "Default", "Default")]
         [DataRow(DriverTypes.RNG, "Standard", "Standard", "Default")]
         [DataRow(DriverTypes.Regexp, "Default", "Default", "Default")]
         [DataRow(DriverTypes.DebugLogger, "UnitTest", "UnitTest", "Default")]
@@ -309,7 +291,6 @@ namespace Nitrocid.Tests.Drivers
         [TestMethod]
         [DataRow(DriverTypes.Encryption, "SHA512", "SHA512", "Default")]
         [DataRow(DriverTypes.Filesystem, "Default", "Default", "Default")]
-        [DataRow(DriverTypes.Network, "Default", "Default", "Default")]
         [DataRow(DriverTypes.RNG, "Standard", "Standard", "Default")]
         [DataRow(DriverTypes.Regexp, "Default", "Default", "Default")]
         [DataRow(DriverTypes.DebugLogger, "UnitTest", "Default", "Default")]
@@ -375,31 +356,6 @@ namespace Nitrocid.Tests.Drivers
         public void TestGetFilesystemDriverNames()
         {
             var drivers = FilesystemDriverTools.GetFilesystemDriverNames();
-            drivers.ShouldNotBeEmpty();
-        }
-
-        [TestMethod]
-        [Description("Management")]
-        public void TestSetNetworkDriver()
-        {
-            NetworkDriverTools.SetNetworkDriver("Default");
-            DriverHandler.CurrentNetworkDriver.DriverName.ShouldBe("Default");
-            DriverHandler.CurrentNetworkDriverLocal.DriverName.ShouldBe("Default");
-        }
-
-        [TestMethod]
-        [Description("Management")]
-        public void TestGetNetworkDrivers()
-        {
-            var drivers = NetworkDriverTools.GetNetworkDrivers();
-            drivers.ShouldNotBeEmpty();
-        }
-
-        [TestMethod]
-        [Description("Management")]
-        public void TestGetNetworkDriverNames()
-        {
-            var drivers = NetworkDriverTools.GetNetworkDriverNames();
             drivers.ShouldNotBeEmpty();
         }
 
@@ -556,7 +512,6 @@ namespace Nitrocid.Tests.Drivers
         [TestMethod]
         [DataRow(DriverTypes.Encryption, "MyCustom")]
         [DataRow(DriverTypes.Filesystem, "MyCustom")]
-        [DataRow(DriverTypes.Network, "MyCustom")]
         [DataRow(DriverTypes.RNG, "MyCustom")]
         [DataRow(DriverTypes.Regexp, "MyCustom")]
         [DataRow(DriverTypes.DebugLogger, "MyCustom")]
@@ -574,7 +529,6 @@ namespace Nitrocid.Tests.Drivers
         [TestMethod]
         [DataRow(DriverTypes.Encryption, "SHA512", "SHA512")]
         [DataRow(DriverTypes.Filesystem, "Default", "Default")]
-        [DataRow(DriverTypes.Network, "Default", "Default")]
         [DataRow(DriverTypes.RNG, "Standard", "Standard")]
         [DataRow(DriverTypes.Regexp, "Default", "Default")]
         [DataRow(DriverTypes.DebugLogger, "Default", "Default")]
@@ -593,7 +547,6 @@ namespace Nitrocid.Tests.Drivers
         [TestMethod]
         [DataRow(DriverTypes.Encryption, "SHA512", "SHA512")]
         [DataRow(DriverTypes.Filesystem, "Default", "Default")]
-        [DataRow(DriverTypes.Network, "Default", "Default")]
         [DataRow(DriverTypes.RNG, "Standard", "Standard")]
         [DataRow(DriverTypes.Regexp, "Default", "Default")]
         [DataRow(DriverTypes.DebugLogger, "Default", "Default")]

@@ -20,7 +20,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System;
-using Nitrocid.Base.Drivers.Network.Bases;
 using Nitrocid.Base.Drivers.RNG.Bases;
 using Nitrocid.Base.Drivers.Filesystem.Bases;
 using Nitrocid.Base.Drivers.Encryption.Bases;
@@ -33,7 +32,6 @@ using Nitrocid.Base.Drivers.EncodingAsymmetric.Bases;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Drivers.Encoding;
-using Nitrocid.Base.Drivers.Network;
 using Nitrocid.Base.Drivers.HardwareProber;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Drivers.Filesystem;
@@ -66,12 +64,6 @@ namespace Nitrocid.Base.Drivers
                     new DefaultRandomDebug(),
                     new StandardRandomDebug()
 #endif
-                }
-            },
-            {
-                DriverTypes.Network, new()
-                {
-                    new DefaultNetwork()
                 }
             },
             {
@@ -147,7 +139,6 @@ namespace Nitrocid.Base.Drivers
         internal static Dictionary<Type, DriverTypes> knownTypes = new()
         {
             { typeof(IRandomDriver),                DriverTypes.RNG },
-            { typeof(INetworkDriver),               DriverTypes.Network },
             { typeof(IFilesystemDriver),            DriverTypes.Filesystem },
             { typeof(IEncryptionDriver),            DriverTypes.Encryption },
             { typeof(IRegexpDriver),                DriverTypes.Regexp },
@@ -161,7 +152,6 @@ namespace Nitrocid.Base.Drivers
         internal static Dictionary<DriverTypes, List<IDriver>> customDrivers = new()
         {
             { DriverTypes.RNG,                  new() },
-            { DriverTypes.Network,              new() },
             { DriverTypes.Filesystem,           new() },
             { DriverTypes.Encryption,           new() },
             { DriverTypes.Regexp,               new() },
@@ -175,7 +165,6 @@ namespace Nitrocid.Base.Drivers
         internal static Dictionary<DriverTypes, IDriver> currentDrivers = new()
         {
             { DriverTypes.RNG,                  GetDriver<IRandomDriver>("Default") },
-            { DriverTypes.Network,              GetDriver<INetworkDriver>("Default") },
             { DriverTypes.Filesystem,           GetDriver<IFilesystemDriver>("Default") },
             { DriverTypes.Encryption,           GetDriver<IEncryptionDriver>("Default") },
             { DriverTypes.Regexp,               GetDriver<IRegexpDriver>("Default") },
@@ -193,12 +182,6 @@ namespace Nitrocid.Base.Drivers
         /// </summary>
         public static IRandomDriver CurrentRandomDriverLocal =>
             begunLocal ? (IRandomDriver)currentDriversLocal[DriverTypes.RNG] : CurrentRandomDriver;
-
-        /// <summary>
-        /// Gets the current network driver (use this when possible)
-        /// </summary>
-        public static INetworkDriver CurrentNetworkDriverLocal =>
-            begunLocal ? (INetworkDriver)currentDriversLocal[DriverTypes.Network] : CurrentNetworkDriver;
 
         /// <summary>
         /// Gets the current filesystem driver (use this when possible)
@@ -253,12 +236,6 @@ namespace Nitrocid.Base.Drivers
         /// </summary>
         public static IRandomDriver CurrentRandomDriver =>
             (IRandomDriver)currentDrivers[DriverTypes.RNG];
-
-        /// <summary>
-        /// Gets the system-wide current network driver
-        /// </summary>
-        public static INetworkDriver CurrentNetworkDriver =>
-            (INetworkDriver)currentDrivers[DriverTypes.Network];
 
         /// <summary>
         /// Gets the system-wide current filesystem driver
