@@ -15,16 +15,6 @@
                 "Description": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC"
             },
             {
-                "Name": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME",
-                "Type": "SSelection",
-                "Variable": "CurrentNetworkDriver",
-                "IsEnumeration": false,
-                "SelectionFunctionName": "GetNetworkDriverNames",
-                "SelectionFunctionType": "NetworkDriverTools",
-                "SelectionFallback": [ "Default" ],
-                "Description": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC"
-            },
-            {
                 "Name": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME",
                 "Type": "SSelection",
                 "Variable": "CurrentFilesystemDriver",

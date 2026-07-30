@@ -22,19 +22,20 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Textify.General;
-using Nitrocid.Base.Files;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Drivers;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Security.Permissions;
-using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Drivers.Encryption;
 using Nitrocid.Base.Drivers.Regexp;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.Base.Login;
+using Nitrocid.Base.Security.Permissions;
+using Terminaux.Base.TermInfo.Tabsets;
+using Textify.General;
 
 namespace Nitrocid.Base.Users
 {
@@ -43,7 +44,6 @@ namespace Nitrocid.Base.Users
     /// </summary>
     public static class UserManagement
     {
-
         internal static readonly UserInfo fallbackRootAccount = new("root", Encryption.GetEncryptedString("", "SHA256"), [], "System Account", "", "", [], UserFlags.Administrator, false, "", "", "", []);
         internal static UserInfo CurrentUserInfo = fallbackRootAccount;
         internal static List<UserInfo> Users = [CurrentUserInfo];
@@ -54,118 +54,6 @@ namespace Nitrocid.Base.Users
         /// </summary>
         public static UserInfo CurrentUser =>
             CurrentUserInfo;
-
-        /// <summary>
-        /// Initializes the uninitialized user (usually a new user)
-        /// </summary>
-        /// <param name="uninitUser">A new user</param>
-        /// <param name="unpassword">A password of a user in encrypted form</param>
-        /// <param name="ComputationNeeded">Whether or not a password encryption is needed</param>
-        /// <param name="ModifyExisting">Changes the password of the existing user</param>
-        /// <returns>True if successful; False if successful</returns>
-        public static bool InitializeUser(string uninitUser, string unpassword = "", bool ComputationNeeded = true, bool ModifyExisting = false)
-        {
-            try
-            {
-                // Check the current login for permissions
-                PermissionsTools.Demand(PermissionTypes.ManageUsers);
-
-                // Check the lock
-                if (IsLocked(uninitUser))
-                    throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERLOCKED"));
-
-                // Compute hash of a password
-                var Regexp = DriverHandler.GetDriver<IEncryptionDriver>("SHA256").HashRegex;
-                if (ComputationNeeded)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Computing hash...");
-                    unpassword = Encryption.GetEncryptedString(unpassword, "SHA256");
-                    DebugWriter.WriteDebug(DebugLevel.I, "Hash computed.");
-                }
-                else if (!Regexp.IsMatch(unpassword))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Unencrypted password!");
-                    throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_UNENCRYPTEDPASS"));
-                }
-
-                // Add user locally
-                var initedUser = new UserInfo(uninitUser, unpassword, [], "", "", "", [], UserFlags.None, false, "", "", "", []);
-                if (!UserExists(uninitUser))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Added user {0}!", vars: [uninitUser]);
-                    Users.Add(initedUser);
-                }
-                else if (UserExists(uninitUser) & ModifyExisting)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Modifying user {0}...", vars: [uninitUser]);
-                    int userIndex = GetUserIndex(uninitUser);
-                    Users[userIndex] = initedUser;
-                }
-
-                // Add user globally
-                SaveUsers();
-
-                // Ready permissions
-                DebugWriter.WriteDebug(DebugLevel.I, "Username {0} added. Readying permissions...", vars: [uninitUser]);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.UserCreation, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_ADDERROR") + CharManager.NewLine + LanguageTools.GetLocalized("NKS_COMMON_ERRORDESC"), ex, ex.GetType().FullName ?? "<null>", ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// Reads the user file and adds them to the list.
-        /// </summary>
-        public static void InitializeUsers()
-        {
-            // Check the current login for permissions
-            PermissionsTools.Demand(PermissionTypes.ManageUsers);
-
-            // First, check to see if we have the file
-            string UsersPath = PathsManagement.GetKernelPath(KernelPathType.Users);
-            if (!FilesystemTools.FileExists(UsersPath))
-                SaveUsers();
-
-            // Get the content and parse it
-            string UsersTokenContent = FilesystemTools.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.Users));
-            JArray? userInfoArrays = (JArray?)JsonConvert.DeserializeObject(UsersTokenContent) ??
-                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERINFOARRAY"));
-
-            // Now, get each user from the config file
-            List<UserInfo> users = [];
-            int rootIdx = 0;
-            bool sawRoot = false;
-            foreach (var userInfoArray in userInfoArrays)
-            {
-                // Add the user info to the users list after populating it
-                UserInfo? userInfo = JsonConvert.DeserializeObject<UserInfo>(userInfoArray.ToString()) ??
-                    throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERINFO"));
-                users.Add(userInfo);
-                if (userInfo.Username == "root")
-                    sawRoot = true;
-                if (!sawRoot)
-                    rootIdx++;
-            }
-
-            // Check the root user for administrator status
-            if (users.Count > 0)
-            {
-                // Get root account
-                var root = users[rootIdx];
-                if (!root.Flags.HasFlag(UserFlags.Administrator))
-                {
-                    // Either it's an upgrade from the old user format, or a malicious mod removed admin from root.
-                    DebugWriter.WriteDebug(DebugLevel.W, "Root account doesn't have admin status. Setting...");
-                    root.Flags |= UserFlags.Administrator;
-                }
-            }
-
-            // Install values
-            Users = users;
-        }
 
         /// <summary>
         /// Adds a new user
@@ -183,16 +71,22 @@ namespace Nitrocid.Base.Users
             {
                 try
                 {
-                    if (string.IsNullOrEmpty(newPassword))
+                    // Compute hash of a password
+                    DebugWriter.WriteDebug(DebugLevel.I, "Computing hash...");
+                    newPassword = Encryption.GetEncryptedString(newPassword, "SHA256");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Hash computed.");
+
+                    // Add user locally
+                    var initedUser = new UserInfo(newUser, newPassword, [], "", "", "", [], UserFlags.None, false, "", "", "", []);
+                    if (!UserExists(newUser))
                     {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Initializing user with no password");
-                        InitializeUser(newUser);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Added user {0}!", vars: [newUser]);
+                        Users.Add(initedUser);
                     }
-                    else
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Initializing user with password");
-                        InitializeUser(newUser, newPassword);
-                    }
+
+                    // Add user globally
+                    SaveUsers();
+                    DebugWriter.WriteDebug(DebugLevel.I, "Username {0} added.", vars: [newUser]);
                     EventsManager.FireEvent(EventType.UserAdded, newUser);
                 }
                 catch (Exception ex)
@@ -298,13 +192,8 @@ namespace Nitrocid.Base.Users
                     try
                     {
                         // Store user info
-                        var oldInfo = GetUser(OldName) ??
-                            throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CANTGETUSER") + $" {OldName}");
-                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName, oldInfo.PreferredLanguage ?? "", oldInfo.PreferredCulture ?? "", oldInfo.Groups, oldInfo.Flags, oldInfo.TwoFactorEnabled, oldInfo.TwoFactorSecret, oldInfo.TwoFactorKey, oldInfo.TwoFactorIv, oldInfo.CustomSettings);
-
-                        // Rename username in dictionary
-                        Users.Remove(oldInfo);
-                        Users.Add(newInfo);
+                        int userIndex = GetUserIndex(OldName);
+                        Users[userIndex].Username = Username;
 
                         // Rename username in Users.json
                         SaveUsers();
@@ -319,14 +208,10 @@ namespace Nitrocid.Base.Users
                     }
                 }
                 else
-                {
                     throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_NEWNAMEALREADYEXISTS"));
-                }
             }
             else
-            {
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERNOTFOUND"), OldName);
-            }
         }
 
         /// <summary>
@@ -390,14 +275,10 @@ namespace Nitrocid.Base.Users
                     EventsManager.FireEvent(EventType.UserPasswordChanged, Target);
                 }
                 else if (targetUserAdmin & !currentUserAdmin)
-                {
                     throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CHANGEPASSWORDADMIN"), Target);
-                }
             }
             else
-            {
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_WRONGUSERPASSWORD"));
-            }
         }
 
         /// <summary>
@@ -433,13 +314,13 @@ namespace Nitrocid.Base.Users
         /// <param name="IncludeDisabled">Include disabled users</param>
         public static List<string> ListAllUsers(bool IncludeAnonymous = false, bool IncludeDisabled = false)
         {
-            var UsersList = new List<string>(Users.Select((userInfo) => userInfo.Username));
+            var UsersList = new List<UserInfo>(Users);
             if (!IncludeAnonymous)
-                UsersList.RemoveAll(x => GetUser(x)?.Flags.HasFlag(UserFlags.Anonymous) ?? false);
+                UsersList.RemoveAll(x => x.Flags.HasFlag(UserFlags.Anonymous));
             if (!IncludeDisabled)
-                UsersList.RemoveAll(x => GetUser(x)?.Flags.HasFlag(UserFlags.Disabled) ?? false);
+                UsersList.RemoveAll(x => x.Flags.HasFlag(UserFlags.Disabled));
 
-            return UsersList;
+            return [.. UsersList.Select(x => x.Username)];
         }
 
         /// <summary>
@@ -478,13 +359,14 @@ namespace Nitrocid.Base.Users
         /// </summary>
         /// <param name="userName">The user</param>
         /// <returns>User information</returns>
-        public static UserInfo? GetUser(string userName)
+        public static UserInfo GetUser(string userName)
         {
             // Check to see if we have the target user
             if (!UserExists(userName))
-                throw new KernelException(KernelExceptionType.NoSuchUser);
+                throw new KernelException(KernelExceptionType.NoSuchUser, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CANTGETUSER") + $" {userName}");
 
-            return Users.FirstOrDefault(x => x.Username == userName);
+            int userIdx = GetUserIndex(userName);
+            return Users[userIdx];
         }
 
         /// <summary>
@@ -496,7 +378,7 @@ namespace Nitrocid.Base.Users
         {
             // Check to see if we have the target user
             if (!UserExists(userName))
-                throw new KernelException(KernelExceptionType.NoSuchUser);
+                throw new KernelException(KernelExceptionType.NoSuchUser, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CANTGETUSER") + $" {userName}");
 
             return Users.FindIndex(x => x.Username == userName);
         }
@@ -648,6 +530,44 @@ namespace Nitrocid.Base.Users
             // Make a JSON file to save all user information files
             string userInfosSerialized = JsonConvert.SerializeObject(Users.ToArray(), Formatting.Indented);
             FilesystemTools.WriteContentsText(PathsManagement.UsersPath, userInfosSerialized);
+        }
+
+        internal static void InitializeUsers()
+        {
+            // Check the current login for permissions
+            PermissionsTools.Demand(PermissionTypes.ManageUsers);
+
+            // First, check to see if we have the file
+            string UsersPath = PathsManagement.GetKernelPath(KernelPathType.Users);
+            if (!FilesystemTools.FileExists(UsersPath))
+                SaveUsers();
+
+            // Get the content and parse it
+            string UsersTokenContent = FilesystemTools.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.Users));
+            JArray? userInfoArrays = (JArray?)JsonConvert.DeserializeObject(UsersTokenContent) ??
+                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERINFOARRAY"));
+
+            // Now, get each user from the config file
+            List<UserInfo> users = [];
+            foreach (var userInfoArray in userInfoArrays)
+            {
+                // Add the user info to the users list after populating it
+                UserInfo? userInfo = JsonConvert.DeserializeObject<UserInfo>(userInfoArray.ToString()) ??
+                    throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERINFO"));
+                if (userInfo.Username == "root")
+                {
+                    if (!userInfo.Flags.HasFlag(UserFlags.Administrator))
+                    {
+                        // Either it's an upgrade from the old user format, or a malicious mod removed admin from root.
+                        DebugWriter.WriteDebug(DebugLevel.W, "Root account doesn't have admin status. Setting...");
+                        userInfo.Flags |= UserFlags.Administrator;
+                    }
+                }
+                users.Add(userInfo);
+            }
+
+            // Install values
+            Users = users;
         }
     }
 }
