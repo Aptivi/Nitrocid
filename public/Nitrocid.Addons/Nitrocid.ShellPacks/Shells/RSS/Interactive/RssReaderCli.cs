@@ -28,6 +28,7 @@ using System.Text;
 using Textify.General;
 using SpecProbe.Software.Platform;
 using Terminaux.Base.Extensions;
+using System.Threading;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
 {
@@ -37,6 +38,8 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
     public class RssReaderCli : BaseInteractiveTui<RSSFeed, RSSArticle>, IInteractiveTui<RSSFeed, RSSArticle>
     {
         internal List<RSSFeed> feeds = [];
+        internal Timer? timer;
+        internal ManualResetEvent mre = new(false);
 
         /// <inheritdoc/>
         public override InteractiveTuiHelpPage[] HelpPages =>
@@ -100,16 +103,27 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
         }
 
         /// <inheritdoc/>
-        public override string GetStatusFromItem(RSSFeed item) =>
-            item.FeedTitle;
+        public override string GetStatusFromItem(RSSFeed item)
+        {
+            var statusBuilder = new StringBuilder();
+            statusBuilder.Append($"{item.FeedUrl} - ");
+            statusBuilder.Append($"{item.FeedTitle} - ");
+            statusBuilder.Append(item.FeedDescription);
+            return statusBuilder.ToString();
+        }
 
         /// <inheritdoc/>
         public override string GetEntryFromItem(RSSFeed item) =>
             item.FeedTitle;
 
         /// <inheritdoc/>
-        public override string GetStatusFromItemSecondary(RSSArticle item) =>
-            item.ArticleTitle;
+        public override string GetStatusFromItemSecondary(RSSArticle item)
+        {
+            var statusBuilder = new StringBuilder();
+            statusBuilder.Append($"{item.ArticleLink} - ");
+            statusBuilder.Append(item.ArticleTitle);
+            return statusBuilder.ToString();
+        }
 
         /// <inheritdoc/>
         public override string GetEntryFromItemSecondary(RSSArticle item) =>
@@ -168,6 +182,31 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             }
         }
 
+        internal void OpenFeedLink(RSSFeed? item)
+        {
+            // Check to see if we have a link
+            if (item is null)
+                return;
+            bool hasLink = !string.IsNullOrEmpty(item.FeedUrl);
+            if (!hasLink)
+            {
+                // TODO: NKS_SHELLPACKS_RSS_READERCLI_NOFEEDLINK -> This feed doesn't have a link.
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_NOFEEDLINK"), Settings.InfoBoxSettings);
+                return;
+            }
+
+            // Now, open the host browser
+            try
+            {
+                PlatformHelper.PlatformOpen(item.FeedUrl);
+            }
+            catch (Exception e)
+            {
+                // TODO: NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFEEDFAILED -> Can't open the host browser to the article link.
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFEEDFAILED") + $" {e.Message}", Settings.InfoBoxSettings);
+            }
+        }
+
         internal void RefreshFeed(RSSFeed? feed) =>
             feed?.Refresh();
 
@@ -191,8 +230,10 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
 
         internal void RefreshAllFeeds()
         {
+            mre.Reset();
             foreach (var feed in feeds)
                 feed.Refresh();
+            mre.Set();
         }
     }
 }

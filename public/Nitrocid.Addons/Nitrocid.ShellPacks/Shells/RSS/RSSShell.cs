@@ -45,10 +45,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS
     {
         internal NetworkInstanceConnection<RSSFeed>? clientConnection;
         internal RSSFeed? feedInstance;
-        internal int fetchTimeout = 60000;
-        internal int refreshInterval = 60000;
         internal ThreadInstance RSSRefresher = new("RSS Feed Refresher", false, new ParameterizedThreadStart((shell) => ((RSSShell?)shell)?.RefreshFeeds()));
-        internal HttpClient RSSRefresherClient = new() { Timeout = TimeSpan.FromMilliseconds(ShellsInit.ShellsConfig.RSSFetchTimeout) };
 
         /// <summary>
         /// RSS feed instance
