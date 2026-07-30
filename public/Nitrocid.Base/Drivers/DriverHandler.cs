@@ -136,6 +136,20 @@ namespace Nitrocid.Base.Drivers
             },
         };
 
+        internal static Dictionary<Type, DriverTypes> knownTypes = new()
+        {
+            { typeof(IRandomDriver),                DriverTypes.RNG },
+            { typeof(INetworkDriver),               DriverTypes.Network },
+            { typeof(IFilesystemDriver),            DriverTypes.Filesystem },
+            { typeof(IEncryptionDriver),            DriverTypes.Encryption },
+            { typeof(IRegexpDriver),                DriverTypes.Regexp },
+            { typeof(IDebugLoggerDriver),           DriverTypes.DebugLogger },
+            { typeof(IEncodingDriver),              DriverTypes.Encoding },
+            { typeof(IHardwareProberDriver),        DriverTypes.HardwareProber },
+            { typeof(ISortingDriver),               DriverTypes.Sorting },
+            { typeof(IEncodingAsymmetricDriver),    DriverTypes.EncodingAsymmetric },
+        };
+
         internal static Dictionary<DriverTypes, List<IDriver>> customDrivers = new()
         {
             { DriverTypes.RNG,                  new() },
@@ -152,30 +166,16 @@ namespace Nitrocid.Base.Drivers
 
         internal static Dictionary<DriverTypes, IDriver> currentDrivers = new()
         {
-            { DriverTypes.RNG,                  drivers[DriverTypes.RNG][0] },
-            { DriverTypes.Network,              drivers[DriverTypes.Network][0] },
-            { DriverTypes.Filesystem,           drivers[DriverTypes.Filesystem][0] },
-            { DriverTypes.Encryption,           drivers[DriverTypes.Encryption][0] },
-            { DriverTypes.Regexp,               drivers[DriverTypes.Regexp][0] },
-            { DriverTypes.DebugLogger,          drivers[DriverTypes.DebugLogger][0] },
-            { DriverTypes.Encoding,             drivers[DriverTypes.Encoding][0] },
-            { DriverTypes.HardwareProber,       drivers[DriverTypes.HardwareProber][0] },
-            { DriverTypes.Sorting,              drivers[DriverTypes.Sorting][0] },
-            { DriverTypes.EncodingAsymmetric,   drivers[DriverTypes.EncodingAsymmetric][0] },
-        };
-
-        internal static Dictionary<Type, DriverTypes> knownTypes = new()
-        {
-            { typeof(IRandomDriver),                DriverTypes.RNG },
-            { typeof(INetworkDriver),               DriverTypes.Network },
-            { typeof(IFilesystemDriver),            DriverTypes.Filesystem },
-            { typeof(IEncryptionDriver),            DriverTypes.Encryption },
-            { typeof(IRegexpDriver),                DriverTypes.Regexp },
-            { typeof(IDebugLoggerDriver),           DriverTypes.DebugLogger },
-            { typeof(IEncodingDriver),              DriverTypes.Encoding },
-            { typeof(IHardwareProberDriver),        DriverTypes.HardwareProber },
-            { typeof(ISortingDriver),               DriverTypes.Sorting },
-            { typeof(IEncodingAsymmetricDriver),    DriverTypes.EncodingAsymmetric },
+            { DriverTypes.RNG,                  GetDriver<IRandomDriver>("Default") },
+            { DriverTypes.Network,              GetDriver<INetworkDriver>("Default") },
+            { DriverTypes.Filesystem,           GetDriver<IFilesystemDriver>("Default") },
+            { DriverTypes.Encryption,           GetDriver<IEncryptionDriver>("Default") },
+            { DriverTypes.Regexp,               GetDriver<IRegexpDriver>("Default") },
+            { DriverTypes.DebugLogger,          GetDriver<IDebugLoggerDriver>("Default") },
+            { DriverTypes.Encoding,             GetDriver<IEncodingDriver>("Default") },
+            { DriverTypes.HardwareProber,       GetDriver<IHardwareProberDriver>("Default") },
+            { DriverTypes.Sorting,              GetDriver<ISortingDriver>("Default") },
+            { DriverTypes.EncodingAsymmetric,   GetDriver<IEncodingAsymmetricDriver>("Default") },
         };
 
         internal static Dictionary<DriverTypes, IDriver> currentDriversLocal = new(currentDrivers);
@@ -479,7 +479,7 @@ namespace Nitrocid.Base.Drivers
             if (IsBuiltin(driverType, "Default"))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver, type {0}, fallback.", vars: [driverType.ToString()]);
-                return drivers[driverType][0];
+                return GetDriver(driverType, "Default");
             }
             else
             {
