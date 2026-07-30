@@ -25,36 +25,25 @@ using System;
 namespace Nitrocid.Base.Network.Connections
 {
     /// <summary>
-    /// A class for network connection information
+    /// A class for thread-based network connection information
     /// </summary>
-    public abstract class NetworkConnection
+    public class NetworkThreadConnection : NetworkConnection
     {
         /// <summary>
-        /// Connection name
+        /// Is the connection alive?
         /// </summary>
-        public string ConnectionName { get; }
+        public bool ConnectionAlive =>
+            ConnectionThread.IsAlive;
 
         /// <summary>
-        /// Connection URL
+        /// Connection thread
         /// </summary>
-        public Uri ConnectionUri { get; }
+        public ThreadInstance ConnectionThread { get; }
 
-        /// <summary>
-        /// Connection original URL, in case the URI method didn't work
-        /// </summary>
-        public string ConnectionOriginalUrl { get; }
-
-        /// <summary>
-        /// Connection type
-        /// </summary>
-        public string ConnectionType { get; }
-
-        internal NetworkConnection(string connectionName, Uri connectionUri, string connectionType, string connectionOriginalUrl)
+        internal NetworkThreadConnection(string connectionName, Uri connectionUri, string connectionType, string connectionOriginalUrl, ThreadInstance connectionThread) :
+            base(connectionName, connectionUri, connectionType, connectionOriginalUrl)
         {
-            ConnectionName = connectionName;
-            ConnectionUri = connectionUri;
-            ConnectionType = connectionType;
-            ConnectionOriginalUrl = connectionOriginalUrl;
+            ConnectionThread = connectionThread;
         }
     }
 }

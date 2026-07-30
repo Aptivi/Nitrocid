@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading;
+using FluentFTP;
 using MailKit;
 using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
@@ -42,7 +43,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail
     public partial class MailShell : BaseShell, IShell
     {
         internal IEnumerable<UniqueId>? IMAP_Messages;
-        internal NetworkConnection? Client;
+        internal NetworkInstanceConnection<object[]>? Client;
 
         /// <summary>
         /// IMAP current directory name
@@ -53,19 +54,19 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// IMAP client
         /// </summary>
         public ImapClient ImapClient =>
-            (ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0];
+            (ImapClient)((Client?.ConnectionInstance) ?? [])[0];
 
         /// <summary>
         /// SMTP client
         /// </summary>
         public SmtpClient SmtpClient =>
-            (SmtpClient)((object[]?)Client?.ConnectionInstance ?? [])[1];
+            (SmtpClient)((Client?.ConnectionInstance) ?? [])[1];
 
         /// <summary>
         /// Network credentials
         /// </summary>
         public NetworkCredential NetworkCredential =>
-            (NetworkCredential)((object[]?)Client?.ConnectionInstance ?? [])[3];
+            (NetworkCredential)((Client?.ConnectionInstance) ?? [])[3];
 
         /// <inheritdoc/>
         public override string ShellType => "MailShell";
@@ -79,7 +80,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Parse shell arguments
-            NetworkConnection connection = (NetworkConnection)ShellArgs[0];
+            var connection = (NetworkInstanceConnection<object[]>)ShellArgs[0];
             Client = connection;
 
             // Send ping to keep the connection alive

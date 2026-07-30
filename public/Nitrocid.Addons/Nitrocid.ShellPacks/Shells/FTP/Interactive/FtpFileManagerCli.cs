@@ -101,7 +101,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Interactive
                     if (refreshSecondPaneListing)
                     {
                         refreshSecondPaneListing = false;
-                        var instance = (FtpClient?)ftpShell.FTPNetwork?.ConnectionInstance ??
+                        var instance = (ftpShell.FTPNetwork?.ConnectionInstance) ??
                             throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
                         ftpShell.FtpCurrentRemoteDir = ftpShell.FtpCurrentRemoteDir;
                         secondPaneListing = [.. instance.GetListing(ftpShell.FtpCurrentRemoteDir, FtpListOption.Auto)];

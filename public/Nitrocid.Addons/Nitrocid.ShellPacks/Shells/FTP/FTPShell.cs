@@ -40,19 +40,19 @@ namespace Nitrocid.ShellPacks.Shells.FTP
     /// </summary>
     public partial class FTPShell : BaseShell, IShell
     {
-        internal NetworkConnection? clientConnection;
+        internal NetworkInstanceConnection<FtpClient>? clientConnection;
 
         /// <summary>
         /// The FTP network connection instance
         /// </summary>
-        public NetworkConnection? FTPNetwork =>
+        public NetworkInstanceConnection<FtpClient>? FTPNetwork =>
             clientConnection;
 
         /// <summary>
         /// The FTP client used to connect to the FTP server
         /// </summary>
         public FtpClient FTPClient =>
-            (FtpClient?)FTPNetwork?.ConnectionInstance ??
+            (FTPNetwork?.ConnectionInstance) ??
                 throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
 
         /// <summary>
@@ -77,8 +77,8 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Parse shell arguments
-            NetworkConnection ftpConnection = (NetworkConnection)ShellArgs[0];
-            FtpClient? clientFTP = (FtpClient?)ftpConnection.ConnectionInstance ??
+            var ftpConnection = (NetworkInstanceConnection<FtpClient>)ShellArgs[0];
+            FtpClient? clientFTP = ftpConnection.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT"));
 
             // Finalize current connection

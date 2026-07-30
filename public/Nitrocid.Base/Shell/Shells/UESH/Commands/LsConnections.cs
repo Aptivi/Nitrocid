@@ -49,18 +49,22 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            var shellTypes = Enum.GetNames<NetworkConnectionType>();
-            foreach (var shellType in shellTypes)
+            var connectionTypes = NetworkConnectionTools.GetConnectionTypes();
+            foreach (var connectionType in connectionTypes)
             {
-                var connections = NetworkConnectionTools.GetNetworkConnections(shellType);
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONNECTIONS_LISTING") + $" {shellType}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                foreach (var connection in connections)
+                var connections = NetworkConnectionTools.GetNetworkConnections(connectionType);
+                if (connections.Length > 0)
                 {
-                    TextWriterColor.Write($"- {connection.ConnectionName} -> {connection.ConnectionOriginalUrl}");
-                    TextWriterColor.Write($"  {connection.ConnectionUri}");
-                    if (!connection.ConnectionIsInstance)
-                        ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_KERNELALIVE"), $"{connection.ConnectionAlive}", indent: 1);
-                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONNECTIONS_INSTANCE"), $"{connection.ConnectionInstance}", indent: 1);
+                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONNECTIONS_LISTING") + $" {connectionType}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+                    foreach (var connection in connections)
+                    {
+                        TextWriterColor.Write($"- {connection.ConnectionName} -> {connection.ConnectionOriginalUrl}");
+                        TextWriterColor.Write($"  {connection.ConnectionUri}");
+                        if (connection is NetworkThreadConnection networkThreadConnection)
+                            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_KERNELALIVE"), $"{networkThreadConnection.ConnectionAlive}", indent: 1);
+                        else if (connection is NetworkInstanceConnection networkInstanceConnection)
+                            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONNECTIONS_INSTANCE"), $"{networkInstanceConnection.ConnectionInstance}", indent: 1);
+                    }
                 }
             }
             return 0;

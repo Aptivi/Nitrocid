@@ -20,17 +20,18 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Terminaux.Shell.Shells;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Inputs.Styles.Selection;
-using Terminaux.Themes.Colors;
-using Terminaux.Inputs.Styles;
+using System.Reflection;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Languages;
-using Threadify.Manager;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.SpeedDial;
+using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Reader;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Threadify.Manager;
 
 namespace Nitrocid.Base.Network.Connections
 {
@@ -94,8 +95,8 @@ namespace Nitrocid.Base.Network.Connections
 
             // Now, try to close this connection
             DebugWriter.WriteDebug(DebugLevel.I, "Closing connection {0}...", vars: [connectionIndex]);
-            if (!networkConnections[connectionIndex].ConnectionIsInstance)
-                networkConnections[connectionIndex].ConnectionThread?.Stop();
+            if (networkConnections[connectionIndex] is NetworkThreadConnection networkThreadConnection)
+                networkThreadConnection.ConnectionThread.Stop();
             networkConnections.RemoveAt(connectionIndex);
             DebugWriter.WriteDebug(DebugLevel.I, "Connection {0} closed...", vars: [connectionIndex]);
         }
@@ -155,7 +156,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="connectionThread">Thread which holds a loop for connection (usually send/receive)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
-        public static NetworkConnection EstablishConnection(string name, Uri uri, string connectionType, ThreadInstance connectionThread)
+        public static NetworkThreadConnection EstablishConnection(string name, Uri uri, string connectionType, ThreadInstance connectionThread)
         {
             if (!networkTypes.Contains(connectionType))
                 throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTYPE"));
@@ -163,8 +164,8 @@ namespace Nitrocid.Base.Network.Connections
             // Now, make a connection and start the connection thread
             try
             {
-                NetworkConnection connection = new(name, uri, connectionType, connectionThread, null, uri.OriginalString);
-                connection.ConnectionThread?.Start();
+                NetworkThreadConnection connection = new(name, uri, connectionType, uri.OriginalString, connectionThread);
+                connection.ConnectionThread.Start();
                 networkConnections.Add(connection);
                 DebugWriter.WriteDebug(DebugLevel.I, "Added connection {0} for URI {1} to {2} list with thread name {3}", vars: [name, uri.ToString(), connectionType.ToString(), connectionThread.Name]);
                 return connection;
@@ -185,7 +186,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="connectionInstance">Instance which holds this connection (if threads are unsuitable)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
-        public static NetworkConnection EstablishConnection(string name, string url, NetworkConnectionType connectionType, object connectionInstance) =>
+        public static NetworkInstanceConnection<T> EstablishConnection<T>(string name, string url, NetworkConnectionType connectionType, T? connectionInstance) =>
             EstablishConnection(name, url, connectionType.ToString(), connectionInstance);
 
         /// <summary>
@@ -197,7 +198,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="connectionInstance">Instance which holds this connection (if threads are unsuitable)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
-        public static NetworkConnection EstablishConnection(string name, Uri uri, NetworkConnectionType connectionType, object connectionInstance) =>
+        public static NetworkInstanceConnection<T> EstablishConnection<T>(string name, Uri uri, NetworkConnectionType connectionType, T? connectionInstance) =>
             EstablishConnection(name, uri, connectionType.ToString(), connectionInstance);
 
         /// <summary>
@@ -209,7 +210,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="connectionInstance">Instance which holds this connection (if threads are unsuitable)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
-        public static NetworkConnection EstablishConnection(string name, string url, string connectionType, object connectionInstance)
+        public static NetworkInstanceConnection<T> EstablishConnection<T>(string name, string url, string connectionType, T? connectionInstance)
         {
             if (!networkTypes.Contains(connectionType))
                 throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTYPE"));
@@ -231,7 +232,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="connectionInstance">Instance which holds this connection (if threads are unsuitable)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
-        public static NetworkConnection EstablishConnection(string name, Uri uri, string connectionType, object connectionInstance)
+        public static NetworkInstanceConnection<T> EstablishConnection<T>(string name, Uri uri, string connectionType, T? connectionInstance)
         {
             if (!networkTypes.Contains(connectionType))
                 throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTYPE"));
@@ -239,7 +240,7 @@ namespace Nitrocid.Base.Network.Connections
             // Now, make a connection and start the connection thread
             try
             {
-                NetworkConnection connection = new(name, uri, connectionType, null, connectionInstance, uri.OriginalString);
+                NetworkInstanceConnection<T> connection = new(name, uri, connectionType, uri.OriginalString, connectionInstance);
 
                 // Just return the connection. This instance is an object and could be anything that represents a network connection.
                 networkConnections.Add(connection);
@@ -384,6 +385,13 @@ namespace Nitrocid.Base.Network.Connections
         /// <returns>True if found; false otherwise.</returns>
         public static bool ConnectionTypeExists(string connectionType) =>
             networkTypes.Contains(connectionType);
+
+        /// <summary>
+        /// Gets connection types
+        /// </summary>
+        /// <returns>Registered connection types</returns>
+        public static string[] GetConnectionTypes() =>
+            [.. networkTypes];
 
         /// <summary>
         /// Opens a connection for the selected shell

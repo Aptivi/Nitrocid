@@ -64,7 +64,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Presets
         {
             var sftpShell = (SFTPShell?)ShellManager.CurrentShell ??
                 throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
-            SftpClient? client = (SftpClient?)sftpShell.SFTPNetwork?.ConnectionInstance ??
+            SftpClient? client = (sftpShell.SFTPNetwork?.ConnectionInstance) ??
                 throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT"));
 
             // PowerLine glyphs

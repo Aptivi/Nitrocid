@@ -73,7 +73,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         {
             if (!string.IsNullOrEmpty(Directory))
             {
-                var instance = (FtpClient?)FTPNetwork?.ConnectionInstance ??
+                var instance = (FTPNetwork?.ConnectionInstance) ??
                     throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT"));
                 if (instance.DirectoryExists(Directory))
                 {

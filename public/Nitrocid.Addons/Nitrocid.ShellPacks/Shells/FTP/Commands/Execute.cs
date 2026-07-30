@@ -41,7 +41,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
             var ftpShell = (FTPShell?)shell ??
                 throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             TextWriterColor.Write("<<< C: {0}", parameters.ArgumentsText);
-            var client = (FtpClient?)ftpShell.FTPNetwork?.ConnectionInstance;
+            var client = ftpShell.FTPNetwork?.ConnectionInstance;
             if (client is null)
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPShell);
             var ExecutedReply = client.Execute(parameters.ArgumentsText);

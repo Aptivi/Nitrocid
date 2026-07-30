@@ -27,6 +27,7 @@ using Nitrocid.Base.Languages;
 using Terminaux.Themes.Colors;
 using Nitrocid.Base.Network.Connections;
 using Terminaux.Inputs;
+using OpenAI.Chat;
 
 namespace Nitrocid.Extras.ChatbotAI.Shell
 {
@@ -35,12 +36,12 @@ namespace Nitrocid.Extras.ChatbotAI.Shell
     /// </summary>
     public class ChatbotShell : BaseShell, IShell
     {
-        internal NetworkConnection? clientConnection;
+        internal NetworkInstanceConnection<ChatClient>? clientConnection;
 
         /// <summary>
         /// The chat client used to connect to ChatGPT
         /// </summary>
-        public NetworkConnection? ClientChat =>
+        public NetworkInstanceConnection<ChatClient>? ClientChat =>
             clientConnection;
 
         /// <inheritdoc/>
@@ -58,7 +59,7 @@ namespace Nitrocid.Extras.ChatbotAI.Shell
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CHATBOTAI_SHELL_DISCLAIMER"), ThemeColorType.Warning);
 
             // Finalize current connection
-            NetworkConnection chatbotConnection = (NetworkConnection)ShellArgs[0];
+            var chatbotConnection = (NetworkInstanceConnection<ChatClient>)ShellArgs[0];
             clientConnection = chatbotConnection;
 
             // Actual shell logic

@@ -43,7 +43,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS
     /// </summary>
     public class RSSShell : BaseShell, IShell
     {
-        internal NetworkConnection? clientConnection;
+        internal NetworkInstanceConnection<RSSFeed>? clientConnection;
         internal RSSFeed? feedInstance;
         internal int fetchTimeout = 60000;
         internal int refreshInterval = 60000;
@@ -73,8 +73,8 @@ namespace Nitrocid.ShellPacks.Shells.RSS
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Parse shell arguments
-            NetworkConnection rssConnection = (NetworkConnection)ShellArgs[0];
-            RSSFeed? rssFeed = (RSSFeed?)rssConnection.ConnectionInstance ??
+            var rssConnection = (NetworkInstanceConnection<RSSFeed>)ShellArgs[0];
+            RSSFeed? rssFeed = rssConnection.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT"));
             feedInstance = rssFeed;
 

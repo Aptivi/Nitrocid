@@ -64,14 +64,14 @@ namespace Nitrocid.ShellPacks.Shells.RSS.UESHCommands
             return 0;
         }
 
-        private NetworkConnection EstablishRssConnection(string address)
+        private NetworkInstanceConnection<RSSFeed> EstablishRssConnection(string address)
         {
             if (string.IsNullOrEmpty(address))
                 address = TermReader.Read(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT") + " ");
             return NetworkConnectionTools.EstablishConnection("RSS connection", address, NetworkConnectionType.RSS, new RSSFeed(address, RSSFeedType.Infer));
         }
 
-        private RSSFeed GetFeed(NetworkConnection connection)
+        private RSSFeed GetFeed(NetworkInstanceConnection<RSSFeed> connection)
         {
             if (connection is null || connection.ConnectionInstance is not RSSFeed feed)
                 throw new KernelException(KernelExceptionType.RSSNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE"));

@@ -67,7 +67,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
         /// <exception cref="ArgumentNullException"></exception>
         public bool SFTPChangeRemoteDir(string Directory)
         {
-            var client = (SftpClient?)SFTPNetwork?.ConnectionInstance ??
+            var client = (SFTPNetwork?.ConnectionInstance) ??
                 throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
             if (!string.IsNullOrEmpty(Directory))
             {

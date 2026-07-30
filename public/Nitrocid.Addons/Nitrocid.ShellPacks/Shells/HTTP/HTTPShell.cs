@@ -25,6 +25,7 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.Base.Network.SpeedDial;
+using Renci.SshNet;
 using Terminaux.Inputs;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
@@ -39,7 +40,7 @@ namespace Nitrocid.ShellPacks.Shells.HTTP
     public partial class HTTPShell : BaseShell, IShell
     {
         internal bool detaching = false;
-        internal NetworkConnection? clientConnection;
+        internal NetworkInstanceConnection<HttpClient>? clientConnection;
 
         /// <summary>
         /// HTTP site URL
@@ -55,13 +56,13 @@ namespace Nitrocid.ShellPacks.Shells.HTTP
         /// An HTTP client
         /// </summary>
         public HttpClient HTTPClient =>
-            (HttpClient?)HTTPNetwork?.ConnectionInstance ??
+            (HTTPNetwork?.ConnectionInstance) ??
                 throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
 
         /// <summary>
         /// An HTTP network
         /// </summary>
-        public NetworkConnection? HTTPNetwork =>
+        public NetworkInstanceConnection<HttpClient>? HTTPNetwork =>
             clientConnection;
 
         /// <inheritdoc/>
@@ -74,7 +75,7 @@ namespace Nitrocid.ShellPacks.Shells.HTTP
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Parse shell arguments
-            NetworkConnection httpConnection = (NetworkConnection)ShellArgs[0];
+            var httpConnection = (NetworkInstanceConnection<HttpClient>)ShellArgs[0];
             clientConnection = httpConnection;
             HTTPSite = httpConnection.ConnectionUri.OriginalString;
 
@@ -107,7 +108,7 @@ namespace Nitrocid.ShellPacks.Shells.HTTP
                 {
                     if (!detaching)
                     {
-                        ((HttpClient?)HTTPNetwork?.ConnectionInstance)?.Dispose();
+                        (HTTPNetwork?.ConnectionInstance)?.Dispose();
                         int connectionIndex = NetworkConnectionTools.GetConnectionIndex(HTTPNetwork);
                         NetworkConnectionTools.CloseConnection(connectionIndex);
                         clientConnection = null;

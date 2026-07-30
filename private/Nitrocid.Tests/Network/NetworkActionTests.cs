@@ -63,7 +63,6 @@ namespace Nitrocid.Tests.Network
             connection.ConnectionName.ShouldContain(type.ToString());
             connection.ConnectionOriginalUrl.ShouldBe(url);
             connection.ConnectionUri.OriginalString.ShouldBe(url);
-            connection.ConnectionIsInstance.ShouldBeTrue();
             connection.ConnectionInstance.ShouldBeNull();
             NetworkConnectionTools.GetNetworkConnections(type).ShouldContain(connection);
         }
@@ -82,8 +81,6 @@ namespace Nitrocid.Tests.Network
             connection.ConnectionName.ShouldContain(type.ToString());
             connection.ConnectionOriginalUrl.ShouldBe(url);
             connection.ConnectionUri.OriginalString.ShouldBe(url);
-            connection.ConnectionIsInstance.ShouldBeFalse();
-            connection.ConnectionInstance.ShouldBeNull();
             NetworkConnectionTools.GetNetworkConnections(type).ShouldContain(connection);
         }
 
@@ -177,8 +174,6 @@ namespace Nitrocid.Tests.Network
             connection.ConnectionName.ShouldContain("MyConnection");
             connection.ConnectionOriginalUrl.ShouldBe("rest.fabrikam.com");
             connection.ConnectionUri.OriginalString.ShouldBe("rest.fabrikam.com");
-            connection.ConnectionIsInstance.ShouldBeFalse();
-            connection.ConnectionInstance.ShouldBeNull();
             NetworkConnectionTools.GetNetworkConnections(typeName).ShouldContain(connection);
             int index = NetworkConnectionTools.GetConnectionIndex(connection);
             Thread.Sleep(3000);

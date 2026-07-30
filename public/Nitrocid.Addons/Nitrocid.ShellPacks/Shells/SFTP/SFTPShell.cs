@@ -39,19 +39,19 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
     /// </summary>
     public partial class SFTPShell : BaseShell, IShell
     {
-        internal NetworkConnection? clientConnection;
+        internal NetworkInstanceConnection<SftpClient>? clientConnection;
 
         /// <summary>
         /// The SFTP network connection instance
         /// </summary>
-        public NetworkConnection? SFTPNetwork =>
+        public NetworkInstanceConnection<SftpClient>? SFTPNetwork =>
             clientConnection;
 
         /// <summary>
         /// The SFTP client used to connect to the SFTP server
         /// </summary>
         public SftpClient SFTPClient =>
-            (SftpClient?)SFTPNetwork?.ConnectionInstance ??
+            (SFTPNetwork?.ConnectionInstance) ??
                 throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2"));
 
         /// <summary>
@@ -76,8 +76,8 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Parse shell arguments
-            NetworkConnection sftpConnection = (NetworkConnection)ShellArgs[0];
-            SftpClient? client = (SftpClient?)sftpConnection.ConnectionInstance ??
+            var sftpConnection = (NetworkInstanceConnection<SftpClient>)ShellArgs[0];
+            SftpClient? client = sftpConnection.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT"));
 
             // Finalize current connection
@@ -120,7 +120,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
                     DebugWriter.WriteDebug(DebugLevel.W, "Exiting shell...");
                     if (!detaching)
                     {
-                        ((SftpClient?)SFTPNetwork?.ConnectionInstance)?.Disconnect();
+                        (SFTPNetwork?.ConnectionInstance)?.Disconnect();
                         int connectionIndex = NetworkConnectionTools.GetConnectionIndex(SFTPNetwork);
                         NetworkConnectionTools.CloseConnection(connectionIndex);
                         clientConnection = null;

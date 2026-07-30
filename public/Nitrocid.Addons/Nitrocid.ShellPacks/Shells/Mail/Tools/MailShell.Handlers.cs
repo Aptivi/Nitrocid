@@ -39,7 +39,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// </summary>
         public void InitializeHandlers()
         {
-            var client = (ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0];
+            var client = (ImapClient)((Client?.ConnectionInstance) ?? [])[0];
             var inbox = client.Inbox ??
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
             inbox.CountChanged += OnCountChanged;
@@ -50,7 +50,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// </summary>
         public void ReleaseHandlers()
         {
-            var client = (ImapClient)((object[]?)Client?.ConnectionInstance ?? [])[0];
+            var client = (ImapClient)((Client?.ConnectionInstance) ?? [])[0];
             var inbox = client.Inbox ??
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
             inbox.CountChanged -= OnCountChanged;

@@ -248,9 +248,9 @@ namespace Nitrocid.Extras.Ssh.SSH
         /// Opens an SSH shell
         /// </summary>
         /// <param name="sshConnection">SSH connection</param>
-        public static void OpenShell(NetworkConnection sshConnection)
+        public static void OpenShell(NetworkInstanceConnection<SshClient> sshConnection)
         {
-            OpenShell((SshClient?)sshConnection.ConnectionInstance);
+            OpenShell(sshConnection.ConnectionInstance);
             int connectionIndex = NetworkConnectionTools.GetConnectionIndex(sshConnection);
             NetworkConnectionTools.CloseConnection(connectionIndex);
         }
@@ -322,9 +322,9 @@ namespace Nitrocid.Extras.Ssh.SSH
         /// </summary>
         /// <param name="sshConnection">SSH connection</param>
         /// <param name="Command">Command to sent to remote system (usually a UNIX command)</param>
-        public static void OpenCommand(NetworkConnection sshConnection, string Command)
+        public static void OpenCommand(NetworkInstanceConnection<SshClient> sshConnection, string Command)
         {
-            OpenCommand((SshClient?)sshConnection.ConnectionInstance, Command);
+            OpenCommand(sshConnection.ConnectionInstance, Command);
             int connectionIndex = NetworkConnectionTools.GetConnectionIndex(sshConnection);
             NetworkConnectionTools.CloseConnection(connectionIndex);
         }
