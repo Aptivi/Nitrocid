@@ -288,10 +288,10 @@ namespace Nitrocid.Base.Drivers.Network
             var builtinHandler = new ProgressHandler((_, message) => NetworkTransfer.HttpSendProgressWatch(message), "Upload");
 
             // Initialize the progress bar indicator and the file completed event handler
-            if (Config.MainConfig.UploadNotificationProvoke && NetworkTransfer.DownloadNotif is not null)
+            if (Config.MainConfig.UploadNotificationProvoke && NetworkTransfer.UploadNotif is not null)
             {
                 NetworkTransfer.UploadNotif = new Notification(LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_UPLOADING"), FileUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
-                NotificationManager.NotifySend(NetworkTransfer.DownloadNotif);
+                NotificationManager.NotifySend(NetworkTransfer.UploadNotif);
             }
             if (ShowProgress)
                 ProgressManager.RegisterProgressHandler(builtinHandler);
