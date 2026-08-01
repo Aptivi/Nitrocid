@@ -30,10 +30,12 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Misc.Progress;
 using Nitrocid.Base.Misc.Reflection;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Shell.Commands;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.Tools.Placeholder;
 
 namespace Nitrocid.Base.Network.Transfer
@@ -509,7 +511,14 @@ namespace Nitrocid.Base.Network.Transfer
                         if (!string.IsNullOrWhiteSpace(customIndicator))
                             TextWriterColor.Write("\r" + PlaceParse.ProbePlaces(customIndicator), false, ThemeColorType.NeutralText, totalRead.SizeString(), fileSize.SizeString(), Progress);
                         else
-                            TextWriterColor.Write("\r {2:000.00}% | " + indicatorBuiltin, false, ThemeColorType.NeutralText, totalRead.SizeString(), fileSize.SizeString(), Progress);
+                        {
+                            var progress = new ProgressBar(indicatorBuiltin, (int)((double)totalRead / fileSize * 100), 100)
+                            {
+                                Accurate = true,
+                                Width = ConsoleWrapper.WindowWidth - 1
+                            };
+                            TextWriterColor.Write($"\r{progress.Render()}", false, ThemeColorType.NeutralText);
+                        }
                         ConsoleClearing.ClearLineToRight();
                     }
                 }
