@@ -544,6 +544,23 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                     ])
                 ], new ConvertLineEndingsCommand()),
 
+            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_DESC -> Renders text in a nice ASCII cow
+            new CommandInfo("cowsay", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC -> Text to print in a conversation bubble
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC"
+                        }),
+                    ],
+                    [
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC -> Cow name to render with
+                        new SwitchInfo("cow", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC"),
+                    ], true)
+                ], new CowsayCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+
             new CommandInfo("copy", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_COPY_DESC",
                 [
                     new CommandArgumentInfo(
@@ -843,6 +860,23 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                         }),
                     ], true)
                 ], new ExtIp6Command()),
+
+            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_DESC -> Renders text in a nice ASCII figlet
+            new CommandInfo("figlet", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "text", new()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_ARGUMENT_TEXT_DESC -> Text to print in a conversation bubble
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_ARGUMENT_TEXT_DESC"
+                        }),
+                    ],
+                    [
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_SWITCH_FIGLET_DESC -> Figlet font to render with
+                        new SwitchInfo("figlet", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_SWITCH_FIGLET_DESC"),
+                    ], true)
+                ], new FigletCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("fileinfo", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_FILEINFO_DESC",
                 [
