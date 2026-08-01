@@ -32,6 +32,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
+using Nitrocid.Base.Security.Permissions;
 
 namespace Nitrocid.Base.Kernel
 {
@@ -166,6 +167,7 @@ namespace Nitrocid.Base.Kernel
                                         Description = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_USERNAME_PROMPT_DESC"),
                                     }, true
                                 ),
+
                                 new PresentationInputInfo(
                                     LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PASSWORD_PROMPT"), LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PASSWORDPROMPT"),
                                     new MaskedTextBoxModule()
@@ -174,24 +176,87 @@ namespace Nitrocid.Base.Kernel
                                         Description = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PASSWORD_PROMPT_DESC"),
                                         Mask = !string.IsNullOrEmpty(Config.MainConfig.CurrentMask) ? Config.MainConfig.CurrentMask[0] : '\0',
                                     }
-                                )
+                                ),
+
+                                // TODO: NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT -> Attributes
+                                // TODO: NKS_KERNEL_FIRSTRUN_PRESENTATION_FLAGSPROMPT -> Choose the attributes
+                                // TODO: NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT_DESC -> Choose the attributes of this user
+                                // TODO: NKS_USERS_FLAGS_ADMIN -> Administrator
+                                // TODO: NKS_USERS_FLAGS_ADMIN_DESC -> This user can execute privileged operations
+                                // TODO: NKS_USERS_FLAGS_ANONYMOUS -> Anonymous
+                                // TODO: NKS_USERS_FLAGS_ANONYMOUS_DESC -> This user won't show up in the list of usernames
+                                // TODO: NKS_USERS_FLAGS_DISABLED -> Disabled
+                                // TODO: NKS_USERS_FLAGS_DISABLED_DESC -> This user is disabled and can't be used to sign in
+                                new PresentationInputInfo(
+                                    LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT"), LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_FLAGSPROMPT"),
+                                    new MultiComboBoxModule()
+                                    {
+                                        Name = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT"),
+                                        Description = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT_DESC"),
+                                        Choices =
+                                        [
+                                            new("",
+                                            [
+                                                new("",
+                                                [
+                                                    new(LanguageTools.GetLocalized("NKS_USERS_FLAGS_ADMIN"), LanguageTools.GetLocalized("NKS_USERS_FLAGS_ADMIN_DESC")),
+                                                    new(LanguageTools.GetLocalized("NKS_USERS_FLAGS_ANONYMOUS"), LanguageTools.GetLocalized("NKS_USERS_FLAGS_ANONYMOUS_DESC")),
+                                                    new(LanguageTools.GetLocalized("NKS_USERS_FLAGS_DISABLED"), LanguageTools.GetLocalized("NKS_USERS_FLAGS_DISABLED_DESC")),
+                                                ])
+                                            ])
+                                        ],
+                                    }
+                                ),
+
+                                // TODO: NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT -> Attributes
+                                // TODO: NKS_KERNEL_FIRSTRUN_PRESENTATION_EXTRAUSERPROMPT -> Choose the attributes
+                                // TODO: NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_DESC -> Choose the attributes of this user
+                                // TODO: NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_YES_DESC -> Add an extra user
+                                // TODO: NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_NO_DESC -> Don't add an extra user
+                                new PresentationInputInfo(
+                                    LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT"), LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_EXTRAUSERPROMPT"),
+                                    new ComboBoxModule()
+                                    {
+                                        Name = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT"),
+                                        Description = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_DESC"),
+                                        Choices =
+                                        [
+                                            new("",
+                                            [
+                                                new("",
+                                                [
+                                                    new(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMESET_YES"), LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_YES_DESC")),
+                                                    new(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMESET_NO"), LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_NO_DESC"), "", true, true),
+                                                ])
+                                            ])
+                                        ],
+                                    }, true
+                                ),
                             ]
                         )
                     ]
                 );
-                string user = "owner";
                 while (!moveOn)
                 {
                     PresentationTools.Present(firstRunPresUser, true, true);
-                    string inputUser = firstRunPresUser.Pages[0].Inputs[0].InputMethod.GetValue<string?>() ?? user;
-                    user = string.IsNullOrEmpty(inputUser) ? user : inputUser;
+                    string inputUser = firstRunPresUser.Pages[0].Inputs[0].InputMethod.GetValue<string?>() ?? "";
+                    inputUser = string.IsNullOrEmpty(inputUser) ? "owner" : inputUser;
                     string pass = firstRunPresUser.Pages[0].Inputs[1].InputMethod.GetValue<string?>() ?? "";
+                    int[] flagIndexes = firstRunPresUser.Pages[0].Inputs[2].InputMethod.GetValue<int[]?>() ?? [];
+                    int addAnotherFlag = firstRunPresUser.Pages[0].Inputs[3].InputMethod.GetValue<int>();
+                    UserFlags[] allFlags = [.. Enum.GetValues<UserFlags>().Where(uf => uf > 0)];
+                    var selectedFlags = flagIndexes.Select(idx => allFlags[idx]);
                     try
                     {
-                        UserManagement.AddUser(user, pass);
+                        UserManagement.AddUser(inputUser, pass);
+                        foreach (var selectedFlag in selectedFlags)
+                        {
+                            var user = UserManagement.GetUser(inputUser);
+                            user.Flags |= selectedFlag;
+                        }
                         DebugWriter.WriteDebug(DebugLevel.I, "We shall move on.");
                         userStepFailureReason = "";
-                        moveOn = true;
+                        moveOn = addAnotherFlag == 1;
                         DebugWriter.WriteDebug(DebugLevel.I, "Let's move on!");
                     }
                     catch (Exception ex)
@@ -235,8 +300,8 @@ namespace Nitrocid.Base.Kernel
                                         Name = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_AUTOUPDATECHECK_PROMPT"),
                                         Description = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_CHECKUPDATESPROMPT"),
                                         Choices = [new("Choices", [new("Choices", [
-                                            new InputChoiceInfo("y", LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_AUTOUPDATECHECK_AGREE")),
-                                            new InputChoiceInfo("n", LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_AUTOUPDATECHECK_DISAGREE")),
+                                            new InputChoiceInfo(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMESET_YES"), LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_AUTOUPDATECHECK_AGREE")),
+                                            new InputChoiceInfo(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMESET_NO"), LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_AUTOUPDATECHECK_DISAGREE")),
                                         ])])]
                                     }, true
                                 ),
@@ -265,7 +330,8 @@ namespace Nitrocid.Base.Kernel
                                 {
                                     Arguments =
                                     [
-                                        () => TextTools.FormatString(LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1"), user)
+                                        // TODO: NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1_NEW -> You're now ready to use the Nitrocid operating system!
+                                        () => TextTools.FormatString(LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1_NEW"))
                                     ]
                                 },
                                 new TextElement()
