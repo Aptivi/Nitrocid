@@ -30,12 +30,14 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Misc.Progress;
 using Nitrocid.Base.Misc.Reflection;
+using Serilog.Sinks.File;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Shell.Commands;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Textify.General;
 using Textify.Tools.Placeholder;
 
 namespace Nitrocid.Base.Network.Transfer
@@ -115,9 +117,10 @@ namespace Nitrocid.Base.Network.Transfer
 
             // Initialize the progress bar indicator and the file completed event handler
             var downloadNotification = new Notification(LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_DOWNLOADING"), FileUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
+            var downloadProgressBar = new ProgressBar("", 0, 0);
             if (Config.MainConfig.DownloadNotificationProvoke)
                 NotificationManager.NotifySend(downloadNotification);
-            var builtinHandler = new ProgressHandler((_, message) => HttpReceiveProgressWatch(message, downloadNotification), "Download");
+            var builtinHandler = new ProgressHandler((_, message) => HttpReceiveProgressWatch(message, downloadNotification, downloadProgressBar), "Download");
             if (ShowProgress)
                 ProgressManager.RegisterProgressHandler(builtinHandler);
 
@@ -132,14 +135,14 @@ namespace Nitrocid.Base.Network.Transfer
             // Try to download the file asynchronously
             bool isFailed = false;
             Exception? failureReason = null;
+            var length = Response.Content.Headers.ContentLength;
+            long fileSize = length ?? 0;
+            long totalRead = 0;
             Task.Run(() =>
             {
                 try
                 {
                     int size = 16384;
-                    var length = Response.Content.Headers.ContentLength;
-                    long fileSize = length ?? 0;
-                    long totalRead = 0;
                     using var outputFileStream = File.Create(FilePath, size);
                     using var responseStream = Response.Content.ReadAsStream();
                     var buffer = new byte[size];
@@ -171,6 +174,7 @@ namespace Nitrocid.Base.Network.Transfer
                     isFailed = true;
                 }
             }, cancellationToken.Token);
+            SpinWait.SpinUntil(() => totalRead >= fileSize);
 
             // Unregister the handler
             if (ShowProgress)
@@ -224,9 +228,10 @@ namespace Nitrocid.Base.Network.Transfer
 
             // Initialize the progress bar indicator and the file completed event handler
             var uploadNotification = new Notification(LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_UPLOADING"), FileUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
+            var uploadProgressBar = new ProgressBar("", 0, 0);
             if (Config.MainConfig.UploadNotificationProvoke)
                 NotificationManager.NotifySend(uploadNotification);
-            var builtinHandler = new ProgressHandler((_, message) => HttpSendProgressWatch(message, uploadNotification), "Upload");
+            var builtinHandler = new ProgressHandler((_, message) => HttpSendProgressWatch(message, uploadNotification, uploadProgressBar), "Upload");
             if (ShowProgress)
                 ProgressManager.RegisterProgressHandler(builtinHandler);
 
@@ -240,6 +245,8 @@ namespace Nitrocid.Base.Network.Transfer
             bool uploaded = false;
             bool isFailed = false;
             Exception? failureReason = null;
+            long uploadedBytes = 0;
+            long totalBytes = 0;
             try
             {
                 var progressTask = new Task(() =>
@@ -247,8 +254,8 @@ namespace Nitrocid.Base.Network.Transfer
                     double previousPercentage = 0.0;
                     while (!uploaded)
                     {
-                        long uploadedBytes = stream.Position;
-                        long totalBytes = stream.Length;
+                        uploadedBytes = stream.Position;
+                        totalBytes = stream.Length;
                         double percentage = 100 * (uploadedBytes / (double)totalBytes);
                         if (percentage != previousPercentage)
                             ProgressManager.ReportProgress(percentage, "Upload", $"{uploadedBytes} / {totalBytes} | {percentage:000.00}%");
@@ -265,7 +272,7 @@ namespace Nitrocid.Base.Network.Transfer
                 failureReason = ex;
                 isFailed = true;
             }
-            uploaded = true;
+            SpinWait.SpinUntil(() => uploadedBytes >= totalBytes);
 
             // Unregister the handler
             if (ShowProgress)
@@ -315,9 +322,10 @@ namespace Nitrocid.Base.Network.Transfer
 
             // Initialize the progress bar indicator and the file completed event handler
             var downloadNotification = new Notification(LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_DOWNLOADING"), StringUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
+            var downloadProgressBar = new ProgressBar("", 0, 0);
             if (Config.MainConfig.DownloadNotificationProvoke)
                 NotificationManager.NotifySend(downloadNotification);
-            var builtinHandler = new ProgressHandler((_, message) => HttpReceiveProgressWatch(message, downloadNotification), "Download");
+            var builtinHandler = new ProgressHandler((_, message) => HttpReceiveProgressWatch(message, downloadNotification, downloadProgressBar), "Download");
             if (ShowProgress)
                 ProgressManager.RegisterProgressHandler(builtinHandler);
 
@@ -330,14 +338,14 @@ namespace Nitrocid.Base.Network.Transfer
             string downloaded = "";
             bool isFailed = false;
             Exception? failureReason = null;
+            var length = Response.Content.Headers.ContentLength;
+            long fileSize = length ?? 0;
+            long totalRead = 0;
             Task.Run(() =>
             {
                 try
                 {
                     int size = 16384;
-                    var length = Response.Content.Headers.ContentLength;
-                    long fileSize = length ?? 0;
-                    long totalRead = 0;
                     using var ContentStream = new MemoryStream();
                     if (CancellationHandlers.CancelRequested)
                         cancellationToken.Cancel();
@@ -364,6 +372,7 @@ namespace Nitrocid.Base.Network.Transfer
                     isFailed = true;
                 }
             }, cancellationToken.Token);
+            SpinWait.SpinUntil(() => totalRead >= fileSize);
 
             // Unregister the handler
             if (ShowProgress)
@@ -415,9 +424,10 @@ namespace Nitrocid.Base.Network.Transfer
 
             // Initialize the progress bar indicator and the file completed event handler
             var uploadNotification = new Notification(LanguageTools.GetLocalized("NKS_DRIVERS_NETWORK_BASE_UPLOADING"), StringUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
+            var uploadProgressBar = new ProgressBar("", 0, 0);
             if (Config.MainConfig.UploadNotificationProvoke)
                 NotificationManager.NotifySend(uploadNotification);
-            var builtinHandler = new ProgressHandler((_, message) => HttpSendProgressWatch(message, uploadNotification), "Upload");
+            var builtinHandler = new ProgressHandler((_, message) => HttpSendProgressWatch(message, uploadNotification, uploadProgressBar), "Upload");
             if (ShowProgress)
                 ProgressManager.RegisterProgressHandler(builtinHandler);
 
@@ -464,7 +474,7 @@ namespace Nitrocid.Base.Network.Transfer
             }
         }
 
-        internal static void HttpReceiveProgressWatch(string message, Notification downloadNotification)
+        internal static void HttpReceiveProgressWatch(string message, Notification downloadNotification, ProgressBar downloadProgressBar)
         {
             long totalRead;
             long fileSize = 0;
@@ -477,10 +487,10 @@ namespace Nitrocid.Base.Network.Transfer
             }
             else
                 totalRead = long.Parse(message);
-            TransferProgress(totalRead, fileSize, downloadNotification, Config.MainConfig.DownloadNotificationProvoke, LanguageTools.GetLocalized("NKS_NETWORK_TRANSFER_DOWNLOADINDICATOR"), Config.MainConfig.DownloadPercentagePrint);
+            TransferProgress(totalRead, fileSize, downloadProgressBar, downloadNotification, Config.MainConfig.DownloadNotificationProvoke, LanguageTools.GetLocalized("NKS_NETWORK_TRANSFER_DOWNLOADINDICATOR"), Config.MainConfig.DownloadPercentagePrint);
         }
 
-        internal static void HttpSendProgressWatch(string message, Notification uploadNotification)
+        internal static void HttpSendProgressWatch(string message, Notification uploadNotification, ProgressBar uploadProgressBar)
         {
             long totalRead;
             long fileSize = 0;
@@ -493,10 +503,10 @@ namespace Nitrocid.Base.Network.Transfer
             }
             else
                 totalRead = long.Parse(message);
-            TransferProgress(totalRead, fileSize, uploadNotification, Config.MainConfig.UploadNotificationProvoke, LanguageTools.GetLocalized("NKS_NETWORK_TRANSFER_UPLOADINDICATOR"), Config.MainConfig.UploadPercentagePrint);
+            TransferProgress(totalRead, fileSize, uploadProgressBar, uploadNotification, Config.MainConfig.UploadNotificationProvoke, LanguageTools.GetLocalized("NKS_NETWORK_TRANSFER_UPLOADINDICATOR"), Config.MainConfig.UploadPercentagePrint);
         }
 
-        internal static void TransferProgress(long totalRead, long fileSize, Notification notification, bool showNotification, string indicatorBuiltin, string customIndicator)
+        internal static void TransferProgress(long totalRead, long fileSize, ProgressBar downloadProgressBar, Notification notification, bool showNotification, string indicatorBuiltin, string customIndicator)
         {
             try
             {
@@ -512,12 +522,12 @@ namespace Nitrocid.Base.Network.Transfer
                             TextWriterColor.Write("\r" + PlaceParse.ProbePlaces(customIndicator), false, ThemeColorType.NeutralText, totalRead.SizeString(), fileSize.SizeString(), Progress);
                         else
                         {
-                            var progress = new ProgressBar(indicatorBuiltin, (int)((double)totalRead / fileSize * 100), 100)
-                            {
-                                Accurate = true,
-                                Width = ConsoleWrapper.WindowWidth - 1
-                            };
-                            TextWriterColor.Write($"\r{progress.Render()}", false, ThemeColorType.NeutralText);
+                            downloadProgressBar.Text = indicatorBuiltin.FormatString(totalRead.SizeString(), fileSize.SizeString());
+                            downloadProgressBar.Position = (int)((double)totalRead / fileSize * 100);
+                            downloadProgressBar.MaxPosition = 100;
+                            downloadProgressBar.Width = ConsoleWrapper.WindowWidth - 1;
+                            downloadProgressBar.Accurate = true;
+                            TextWriterColor.Write($"\r{downloadProgressBar.Render()}", false, ThemeColorType.NeutralText);
                         }
                         ConsoleClearing.ClearLineToRight();
                     }
