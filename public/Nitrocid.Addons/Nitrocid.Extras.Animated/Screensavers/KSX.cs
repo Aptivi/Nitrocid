@@ -422,6 +422,7 @@ namespace Nitrocid.Extras.Animated.Screensavers
                             var progress = new SimpleProgress((int)currentProg, 100)
                             {
                                 Width = ConsoleWrapper.WindowWidth - 10,
+                                Accurate = true,
                                 ProgressActiveForegroundColor = green,
                                 ProgressForegroundColor = black,
                                 ProgressBackgroundColor = darkGreen,
@@ -510,6 +511,7 @@ namespace Nitrocid.Extras.Animated.Screensavers
                             var progress = new SimpleProgress((int)currentProg, 100)
                             {
                                 Width = ConsoleWrapper.WindowWidth - 10,
+                                Accurate = true,
                                 ProgressActiveForegroundColor = green,
                                 ProgressForegroundColor = black,
                                 ProgressBackgroundColor = darkGreen,

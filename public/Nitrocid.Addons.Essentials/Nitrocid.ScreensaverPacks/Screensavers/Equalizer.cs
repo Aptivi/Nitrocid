@@ -75,6 +75,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 Vertical = true,
                 Height = ConsoleWrapper.WindowHeight - 4,
+                Accurate = true,
                 ProgressActiveForegroundColor = ConsoleColors.Red1,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Red1),
             };
@@ -85,6 +86,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 Vertical = true,
                 Height = ConsoleWrapper.WindowHeight - 4,
+                Accurate = true,
                 ProgressActiveForegroundColor = ConsoleColors.Pink1,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Pink1),
             };
@@ -95,6 +97,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 Vertical = true,
                 Height = ConsoleWrapper.WindowHeight - 4,
+                Accurate = true,
                 ProgressActiveForegroundColor = ConsoleColors.Blue1,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Blue1),
             };

@@ -267,6 +267,7 @@ namespace Nitrocid.Base.Misc.Notifications
                                         var progress = new SimpleProgress(NewNotification.Progress, 100)
                                         {
                                             Indeterminate = indeterminate,
+                                            Accurate = true,
                                             Width = 38,
                                             ProgressActiveForegroundColor = NotifyProgressColor,
                                             ProgressForegroundColor = TransformationTools.GetDarkBackground(NotifyProgressColor),

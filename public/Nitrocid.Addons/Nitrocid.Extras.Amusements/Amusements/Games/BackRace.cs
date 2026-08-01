@@ -104,6 +104,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     var progress = new SimpleProgress(horse.HorseProgress, 100)
                     {
                         Width = ConsoleWrapper.WindowWidth - 10,
+                        Accurate = true,
                         ProgressActiveForegroundColor = finalColor,
                         ProgressForegroundColor = TransformationTools.GetDarkBackground(finalColor),
                     };

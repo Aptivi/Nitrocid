@@ -81,6 +81,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         Vertical = true,
                         Height = ConsoleWrapper.WindowHeight,
+                        Accurate = true,
                         ProgressActiveForegroundColor = ColorStorage,
                         ProgressForegroundColor = TransformationTools.GetDarkBackground(ColorStorage),
                         ProgressBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background),
