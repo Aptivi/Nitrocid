@@ -1006,6 +1006,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                     ])
                 ], new GroupFileCommand()),
 
+            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_GROUPMANTUI_DESC -> Opens the group management TUI
+            new CommandInfo("groupmantui", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPMANTUI_DESC", new GroupManTuiCommand()),
+
             new CommandInfo("host", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_HOST_DESC",
                 [
                     new CommandArgumentInfo(true)
@@ -1943,6 +1946,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                 [
                     new CommandArgumentInfo(true)
                 ], new UptimeCommand()),
+
+            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC -> Opens the user management TUI
+            new CommandInfo("usermantui", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC", new UserManTuiCommand()),
 
             new CommandInfo("usermanual", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANUAL_DESC", new UserManualCommand()),
 

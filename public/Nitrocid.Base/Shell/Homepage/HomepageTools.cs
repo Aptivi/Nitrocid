@@ -54,6 +54,8 @@ using Nitrocid.Base.Kernel.Time.Alarm;
 using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Login;
+using Nitrocid.Base.Users.Interactives;
+using Nitrocid.Base.Users.Groups.Interactives;
 
 namespace Nitrocid.Base.Shell.Homepage
 {
@@ -75,6 +77,11 @@ namespace Nitrocid.Base.Shell.Homepage
             { /* Localizable */ "NKS_SHELL_HOMEPAGE_ALARMMANAGER", AlarmCli.OpenAlarmCli },
             { /* Localizable */ "NKS_SHELL_HOMEPAGE_NOTIFICATIONS", NotificationsCli.OpenNotificationsCli },
             { /* Localizable */ "NKS_SHELL_HOMEPAGE_TASKMANAGER", TaskManagerCli.OpenTaskManagerCli },
+
+            // TODO: NKS_SHELL_HOMEPAGE_USERMANAGER -> User manager
+            // TODO: NKS_SHELL_HOMEPAGE_GROUPMANAGER -> Group manager
+            { /* Localizable */ "NKS_SHELL_HOMEPAGE_USERMANAGER", UsersTui.OpenUsersTui },
+            { /* Localizable */ "NKS_SHELL_HOMEPAGE_GROUPMANAGER", GroupsTui.OpenGroupsTui },
         };
 
         private static Keybinding[] Bindings =>
