@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Terminaux.Images.Icons" Version="8.7.0-20260801150216" />
-    <PackageReference Include="Terminaux.Images" Version="8.7.0-20260801150216" />
-    <PackageReference Include="Terminaux" Version="8.7.0-20260801150216" />
+    <PackageReference Include="Terminaux.Images.Icons" Version="8.7.0-20260802103849" />
+    <PackageReference Include="Terminaux.Images" Version="8.7.0-20260802103849" />
+    <PackageReference Include="Terminaux" Version="8.7.0-20260802103849" />
   </ItemGroup>
 
   <ItemGroup>
