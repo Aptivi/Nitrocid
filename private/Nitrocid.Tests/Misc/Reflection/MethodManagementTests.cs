@@ -75,7 +75,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         public void TestInvokeMethod()
         {
             var instance = new ReflectedCommand();
-            var value = MethodManager.InvokeMethod(nameof(instance.HelpHelper), instance, []);
+            var value = MethodManager.InvokeMethod(nameof(instance.HelpHelper), instance, [null]);
             instance.doSet.ShouldBe("yes");
         }
 

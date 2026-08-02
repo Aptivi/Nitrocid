@@ -26,6 +26,7 @@ using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Kernel.Starting;
 
 [assembly: DoNotParallelize]
@@ -80,6 +81,7 @@ namespace Nitrocid.Tests
         [AssemblyCleanup]
         public static void CleanEverything()
         {
+            PowerManager.KernelShutdown = true;
             if (FilesystemTools.FolderExists(Path.GetFullPath("ResultSlot")))
                 FilesystemTools.RemoveDirectory(Path.GetFullPath("ResultSlot"));
             Directory.Move(PathToTestSlotFolder, Path.GetFullPath("ResultSlot"));
