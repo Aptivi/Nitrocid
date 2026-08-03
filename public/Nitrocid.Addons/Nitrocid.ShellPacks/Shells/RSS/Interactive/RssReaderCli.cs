@@ -80,26 +80,29 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
                 if (feeds.Count > 0)
                 {
                     articles = feeds[FirstPaneCurrentSelection - 1].FeedArticles;
-                    try
+                    if (!string.IsNullOrEmpty(filterRegex))
                     {
-                        switch (filterType)
+                        try
                         {
-                            case RSSFilterType.Name:
-                                articles = articles.Where((article) => RegexpTools.IsMatch(article.ArticleTitle, filterRegex));
-                                break;
-                            case RSSFilterType.Desc:
-                                articles = articles.Where((article) => RegexpTools.IsMatch(article.ArticleDescription, filterRegex));
-                                break;
-                            case RSSFilterType.NameDesc:
-                                articles = articles.Where((article) => RegexpTools.IsMatch(article.ArticleTitle, filterRegex) || RegexpTools.IsMatch(article.ArticleDescription, filterRegex));
-                                break;
+                            switch (filterType)
+                            {
+                                case RSSFilterType.Name:
+                                    articles = articles.Where((article) => !RegexpTools.IsMatch(article.ArticleTitle, filterRegex));
+                                    break;
+                                case RSSFilterType.Desc:
+                                    articles = articles.Where((article) => !RegexpTools.IsMatch(article.ArticleDescription, filterRegex));
+                                    break;
+                                case RSSFilterType.NameDesc:
+                                    articles = articles.Where((article) => !RegexpTools.IsMatch(article.ArticleTitle, filterRegex) && !RegexpTools.IsMatch(article.ArticleDescription, filterRegex));
+                                    break;
+                            }
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, $"Failed to filter RSS articles with pattern {filterRegex}");
-                        DebugWriter.WriteDebugStackTrace(ex);
-                        filterRegex = "";
+                        catch (Exception ex)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.E, $"Failed to filter RSS articles with pattern {filterRegex}");
+                            DebugWriter.WriteDebugStackTrace(ex);
+                            filterRegex = "";
+                        }
                     }
                 }
                 return articles;

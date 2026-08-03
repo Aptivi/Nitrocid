@@ -159,7 +159,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Tools
             tui.Bindings.Add(new InteractiveTuiBinding<RSSFeed, RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESHALL"), ConsoleKey.F1, (_, _, _, _) => tui.RefreshAllFeeds()));
             tui.BindingsFirstPane.Add(new InteractiveTuiBinding<RSSFeed, RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED"), ConsoleKey.F2, (_, _, _, _) => tui.AddFeedPrompt()));
             tui.BindingsSecondPane.Add(new InteractiveTuiBinding<RSSFeed, RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERARTICLES"), ConsoleKey.F3, (_, _, _, _) => tui.FilterArticlesPrompt()));
-            tui.BindingsSecondPane.Add(new InteractiveTuiBinding<RSSFeed, RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERRESET"), ConsoleKey.F3, (_, _, _, _) => tui.ResetFilter()));
+            tui.BindingsSecondPane.Add(new InteractiveTuiBinding<RSSFeed, RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERRESET"), ConsoleKey.F4, (_, _, _, _) => tui.ResetFilter()));
 
             // Set the feed and run auto refresh
             tui.feeds.Add(feedClass);
