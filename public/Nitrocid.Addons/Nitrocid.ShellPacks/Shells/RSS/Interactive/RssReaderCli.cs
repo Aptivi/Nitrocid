@@ -29,6 +29,11 @@ using Textify.General;
 using SpecProbe.Software.Platform;
 using Terminaux.Base.Extensions;
 using System.Threading;
+using Nitrocid.ShellPacks.Shells.RSS.Tools;
+using Nitrocid.Base.Drivers.Regexp;
+using Nitrocid.Base.Kernel.Debugging;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Modules;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
 {
@@ -38,6 +43,8 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
     public class RssReaderCli : BaseInteractiveTui<RSSFeed, RSSArticle>, IInteractiveTui<RSSFeed, RSSArticle>
     {
         internal List<RSSFeed> feeds = [];
+        internal string filterRegex = "";
+        internal RSSFilterType filterType;
         internal Timer? timer;
         internal ManualResetEvent mre = new(false);
 
@@ -69,9 +76,33 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
         {
             get
             {
+                IEnumerable<RSSArticle> articles = [];
                 if (feeds.Count > 0)
-                    return feeds[FirstPaneCurrentSelection - 1].FeedArticles;
-                return [];
+                {
+                    articles = feeds[FirstPaneCurrentSelection - 1].FeedArticles;
+                    try
+                    {
+                        switch (filterType)
+                        {
+                            case RSSFilterType.Name:
+                                articles = articles.Where((article) => RegexpTools.IsMatch(article.ArticleTitle, filterRegex));
+                                break;
+                            case RSSFilterType.Desc:
+                                articles = articles.Where((article) => RegexpTools.IsMatch(article.ArticleDescription, filterRegex));
+                                break;
+                            case RSSFilterType.NameDesc:
+                                articles = articles.Where((article) => RegexpTools.IsMatch(article.ArticleTitle, filterRegex) || RegexpTools.IsMatch(article.ArticleDescription, filterRegex));
+                                break;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.E, $"Failed to filter RSS articles with pattern {filterRegex}");
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        filterRegex = "";
+                    }
+                }
+                return articles;
             }
         }
 
@@ -106,6 +137,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
         public override string GetStatusFromItem(RSSFeed item)
         {
             var statusBuilder = new StringBuilder();
+            statusBuilder.Append($"{(!string.IsNullOrEmpty(filterRegex) ? "[*] " : "")}");
             statusBuilder.Append($"{item.FeedUrl} - ");
             statusBuilder.Append($"{item.FeedTitle} - ");
             statusBuilder.Append(item.FeedDescription);
@@ -120,6 +152,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
         public override string GetStatusFromItemSecondary(RSSArticle item)
         {
             var statusBuilder = new StringBuilder();
+            statusBuilder.Append($"{(!string.IsNullOrEmpty(filterRegex) ? "[*] " : "")}");
             statusBuilder.Append($"{item.ArticleLink} - ");
             statusBuilder.Append(item.ArticleTitle);
             return statusBuilder.ToString();
@@ -234,6 +267,70 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             foreach (var feed in feeds)
                 feed.Refresh();
             mre.Set();
+        }
+
+        internal void FilterArticlesPrompt()
+        {
+            // Prompt for regex and filter type
+            try
+            {
+                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_NAME -> Filter criteria
+                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_DESC -> Write a regular expression for RSS feed article filtering. Articles that meet your criteria will be hidden from view. For example, (deal|offer|sale) will hide deals, offers, and sales.
+                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME -> Filter type
+                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC -> Specify the filter target, whether you want to filter articles by name, by description, or by both.
+                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME_NAME -> Filter by name
+                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC_NAME -> Filter by description
+                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAMEDESC_NAME -> Filter by name and description
+                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT -> Specify how you want to filter articles.
+                InputModule[] modules = [
+                    new TextBoxModule()
+                    {
+                        Name = LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_NAME"),
+                        Description = LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_DESC"),
+                        Value = filterRegex
+                    },
+                    new ComboBoxModule()
+                    {
+                        Name = LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME"),
+                        Description = LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC"),
+                        Choices = [new("", [new("",
+                        [
+                            new(nameof(RSSFilterType.Name), LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME_NAME"), "", true, true),
+                            new(nameof(RSSFilterType.Desc), LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC_NAME")),
+                            new(nameof(RSSFilterType.NameDesc), LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAMEDESC_NAME")),
+                        ])])],
+                        Value = 0,
+                    }
+                ];
+                bool provided = InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT"), Settings.InfoBoxSettings);
+                if (!provided)
+                    return;
+
+                // Validate regex before setting one
+                // NKS_SHELLPACKS_RSS_READERCLI_INVALIDFILTER -> Invalid filter criteria.
+                string finalRegex = (string?)modules[0].Value ?? "";
+                if (!RegexpTools.IsValidRegex(finalRegex))
+                {
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_INVALIDFILTER"), Settings.InfoBoxSettings);
+                    return;
+                }
+
+                // Set the regex filter
+                RSSFilterType regexFilterType = (RSSFilterType)((int?)modules[1].Value ?? 0);
+                filterRegex = finalRegex;
+                filterType = regexFilterType;
+            }
+            catch (Exception e)
+            {
+                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERFAILED -> Filtering articles has failed.
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERFAILED") + $" {e.Message}", Settings.InfoBoxSettings);
+            }
+        }
+
+        internal void ResetFilter()
+        {
+            filterRegex = "";
+            filterType = RSSFilterType.Name;
         }
     }
 }
