@@ -1951,6 +1951,49 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                     ])
                 ], new UnblockDbgDevCommand()),
 
+            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_DESC -> Calculates Unix permissions
+            new CommandInfo("unixpermcalc", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "mode", new()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC -> Specify conversion method
+                            ExactWording = ["tonum"],
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC"
+                        }),
+                        new CommandArgumentPart(true, "userRep", new()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_USERREP_DESC -> Read, write, or execute permissions for user representation
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_USERREP_DESC"
+                        }),
+                        new CommandArgumentPart(true, "groupRep", new()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_GROUPREP_DESC -> Read, write, or execute permissions for group representation
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_GROUPREP_DESC"
+                        }),
+                        new CommandArgumentPart(true, "otherRep", new()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_OTHERREP_DESC -> Read, write, or execute permissions for other representation
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_OTHERREP_DESC"
+                        }),
+                    ]),
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "mode", new()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC -> Specify conversion method
+                            ExactWording = ["torep"],
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC"
+                        }),
+                        new CommandArgumentPart(true, "num", new()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC -> Read, write, or execute permissions as "chmod" number
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC"
+                        }),
+                    ]),
+                ], new UnixPermCalcCommand()),
+
             new CommandInfo("unzip", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_DESC",
                 [
                     new CommandArgumentInfo(
