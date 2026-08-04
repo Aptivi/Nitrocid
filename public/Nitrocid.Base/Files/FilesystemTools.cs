@@ -250,6 +250,9 @@ namespace Nitrocid.Base.Files
                 tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_HASHTO"), ConsoleKey.F11, (entry1, _, _, _) => ((FileManagerSingleCli)tui).Hash(entry1)));
                 tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_VERIFYTO"), ConsoleKey.F12, (entry1, _, _, _) => ((FileManagerSingleCli)tui).Verify(entry1)));
                 tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_PREVIEW"), ConsoleKey.P, (entry1, _, _, _) => ((FileManagerSingleCli)tui).Preview(entry1)));
+
+                // TODO: NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS -> Change Unix permissions
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS"), ConsoleKey.U, (entry1, _, _, _) => ((FileManagerSingleCli)tui).ShowUnixPermissionChangeInfoBoxInstance(entry1)));
             }
             else
             {
@@ -273,6 +276,9 @@ namespace Nitrocid.Base.Files
                 tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_HASHTO"), ConsoleKey.F11, (entry1, _, entry2, _) => ((FileManagerCli)tui).Hash(entry1, entry2)));
                 tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_VERIFYTO"), ConsoleKey.F12, (entry1, _, entry2, _) => ((FileManagerCli)tui).Verify(entry1, entry2)));
                 tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_PREVIEW"), ConsoleKey.P, (entry1, _, entry2, _) => ((FileManagerCli)tui).Preview(entry1, entry2)));
+
+                // TODO: NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS -> Change Unix permissions
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS"), ConsoleKey.U, (entry1, _, entry2, _) => ((FileManagerCli)tui).ShowUnixPermissionChangeInfoBoxInstance(entry1, entry2)));
             }
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }

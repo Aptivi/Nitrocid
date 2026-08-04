@@ -34,8 +34,12 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
+using Terminaux.Inputs;
 using Terminaux.Inputs.Interactive;
+using Terminaux.Inputs.Modules;
+using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Sequences;
 using Terminaux.Themes.Colors;
 using Textify.General;
@@ -659,6 +663,186 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             string preview = FilesystemTools.RenderContents(currentEntry.FilePath, false);
             string filtered = FilesystemTools.IsBinaryFile(currentEntry.FilePath) ? preview : VtSequenceTools.FilterVTSequences(preview);
             InfoBoxModalColor.WriteInfoBoxModal(filtered, Settings.InfoBoxSettings);
+        }
+
+        internal void ShowUnixPermissionChangeInfoBoxInstance(FileSystemEntry? entry1, FileSystemEntry? entry2)
+        {
+            // Don't do anything if we haven't been provided anything.
+            if (entry1 is null && entry2 is null)
+                return;
+
+            // Get the current entry
+            var currentEntry = CurrentPane == 2 ? entry2 : entry1;
+            if (currentEntry is null || !currentEntry.Exists)
+                return;
+
+            // Show this infobox
+            ShowUnixPermissionChangeInfoBox(currentEntry, Settings.InfoBoxSettings);
+        }
+
+        internal static void ShowUnixPermissionChangeInfoBox(FileSystemEntry fileSystemEntry, InfoBoxSettings infoBoxSettings)
+        {
+            try
+            {
+                // Input choices for permissions
+                InputChoiceCategoryInfo[] permissionsInputs = [new("", [new("", [
+                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_NAME -> Read
+                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_TITLE -> File can be read or directory can be queried
+                    new(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_NAME"), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_TITLE")),
+
+                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_NAME -> Write
+                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_TITLE -> File can be write or directory can be modified
+                    new(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_NAME"), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_TITLE")),
+
+                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_NAME -> Execute
+                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_TITLE -> File can be execute or directory can be traversed
+                    new(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_NAME"), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_TITLE")),
+                ])])];
+                
+                // Input choices for special permissions
+                InputChoiceCategoryInfo[] specialPermissionsInputs = [new("", [new("", [
+                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_NAME -> Setuid
+                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_TITLE -> File can be executed with the privileges of the file owner, usually a root user
+                    new(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_NAME"), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_TITLE")),
+
+                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_NAME -> Setgid
+                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_TITLE -> File can be executed with the privileges of the file group, usually an administrative group
+                    new(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_NAME"), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_TITLE")),
+
+                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_NAME -> Sticky
+                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_TITLE -> Files inside a directory with this bit set can only be manipulated with by file owner, directory owner, and a root user
+                    new(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_NAME"), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_TITLE")),
+                ])])];
+
+                // Get current permissions
+                var permissionDescriptors = fileSystemEntry.UnixPermissions;
+                var specialPermissions = fileSystemEntry.UnixSpecial;
+
+                // Get current user permissions
+                List<int> userPerms = [];
+                if (permissionDescriptors[0].Types.HasFlag(UnixPermissionType.Read))
+                    userPerms.Add(0);
+                if (permissionDescriptors[0].Types.HasFlag(UnixPermissionType.Write))
+                    userPerms.Add(1);
+                if (permissionDescriptors[0].Types.HasFlag(UnixPermissionType.Execute))
+                    userPerms.Add(2);
+
+                // Get current group permissions
+                List<int> groupPerms = [];
+                if (permissionDescriptors[1].Types.HasFlag(UnixPermissionType.Read))
+                    groupPerms.Add(0);
+                if (permissionDescriptors[1].Types.HasFlag(UnixPermissionType.Write))
+                    groupPerms.Add(1);
+                if (permissionDescriptors[1].Types.HasFlag(UnixPermissionType.Execute))
+                    groupPerms.Add(2);
+
+                // Get current other permissions
+                List<int> otherPerms = [];
+                if (permissionDescriptors[2].Types.HasFlag(UnixPermissionType.Read))
+                    otherPerms.Add(0);
+                if (permissionDescriptors[2].Types.HasFlag(UnixPermissionType.Write))
+                    otherPerms.Add(1);
+                if (permissionDescriptors[2].Types.HasFlag(UnixPermissionType.Execute))
+                    otherPerms.Add(2);
+
+                // Get current special permissions
+                List<int> specialPerms = [];
+                if (specialPermissions.HasFlag(UnixPermissionSpecial.SetUid))
+                    specialPerms.Add(0);
+                if (specialPermissions.HasFlag(UnixPermissionSpecial.SetGid))
+                    specialPerms.Add(1);
+                if (specialPermissions.HasFlag(UnixPermissionSpecial.Sticky))
+                    specialPerms.Add(2);
+
+                // Permission change input modules
+                InputModule[] modules =
+                [
+                    new MultiComboBoxModule()
+                    {
+                        // TODO: NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_NAME -> User permissions
+                        // TODO: NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_DESC -> You can set file permissions for the owner here
+                        Name = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_NAME"),
+                        Description = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_DESC"),
+                        Choices = permissionsInputs,
+                        Value = userPerms.ToArray(),
+                    },
+                    new MultiComboBoxModule()
+                    {
+                        // TODO: NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_NAME -> Group permissions
+                        // TODO: NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_DESC -> You can set file permissions for the group here
+                        Name = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_NAME"),
+                        Description = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_DESC"),
+                        Choices = permissionsInputs,
+                        Value = groupPerms.ToArray(),
+                    },
+                    new MultiComboBoxModule()
+                    {
+                        // TODO: NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_NAME -> Other permissions
+                        // TODO: NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_DESC -> You can set file permissions for others here
+                        Name = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_NAME"),
+                        Description = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_DESC"),
+                        Choices = permissionsInputs,
+                        Value = otherPerms.ToArray(),
+                    },
+                    new MultiComboBoxModule()
+                    {
+                        // TODO: NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_NAME -> Special permissions
+                        // TODO: NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_DESC -> You can set special permissions for files or directories
+                        Name = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_NAME"),
+                        Description = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_DESC"),
+                        Choices = specialPermissionsInputs,
+                        Value = specialPerms.ToArray(),
+                    },
+                ];
+
+                // Open an infobox
+                // TODO: NKS_MISC_INTERACTIVES_FMTUI_PERMSINFOBOX_NAME -> You can change the permissions for this file or directory here.
+                bool done = InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERMSINFOBOX_NAME") + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", infoBoxSettings);
+                if (!done)
+                    return;
+
+                // Grab the changed permissions
+                var finalUserPerms = modules[0].GetValue<int[]>() ?? [];
+                var finalGroupPerms = modules[1].GetValue<int[]>() ?? [];
+                var finalOtherPerms = modules[2].GetValue<int[]>() ?? [];
+                var finalSpecialPerms = modules[3].GetValue<int[]>() ?? [];
+
+                // Convert them to actual enum values
+                var typeUser = GetUnixPermissionTypeFromArray(finalUserPerms);
+                var typeGroup = GetUnixPermissionTypeFromArray(finalGroupPerms);
+                var typeOther = GetUnixPermissionTypeFromArray(finalOtherPerms);
+                var typeSpecial = GetUnixPermissionSpecialFromArray(finalSpecialPerms);
+
+                // Update descriptors
+                permissionDescriptors[0].Types = typeUser;
+                permissionDescriptors[1].Types = typeGroup;
+                permissionDescriptors[2].Types = typeOther;
+
+                // Set permissions
+                FilesystemTools.SetUnixFileMode(fileSystemEntry.FilePath, permissionDescriptors, typeSpecial);
+            }
+            catch (Exception ex)
+            {
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERMSSETFAILURE") + $": {ex.Message}", infoBoxSettings);
+            }
+        }
+
+        private static UnixPermissionType GetUnixPermissionTypeFromArray(int[] indexes)
+        {
+            var permissionsEnum = Enum.GetValues<UnixPermissionType>();
+            var type = UnixPermissionType.None;
+            foreach (var i in indexes)
+                type |= permissionsEnum[i + 1];
+            return type;
+        }
+
+        private static UnixPermissionSpecial GetUnixPermissionSpecialFromArray(int[] indexes)
+        {
+            var permissionsEnum = Enum.GetValues<UnixPermissionSpecial>();
+            var type = UnixPermissionSpecial.None;
+            foreach (var i in indexes)
+                type |= permissionsEnum[i + 1];
+            return type;
         }
     }
 }

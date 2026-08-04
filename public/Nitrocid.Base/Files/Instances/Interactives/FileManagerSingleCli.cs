@@ -36,6 +36,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Sequences;
 using Terminaux.Themes.Colors;
 using Textify.General;
@@ -568,6 +569,16 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             string preview = FilesystemTools.RenderContents(currentEntry.FilePath);
             string filtered = VtSequenceTools.FilterVTSequences(preview);
             InfoBoxModalColor.WriteInfoBoxModal(filtered, Settings.InfoBoxSettings);
+        }
+
+        internal void ShowUnixPermissionChangeInfoBoxInstance(FileSystemEntry? entry)
+        {
+            // Don't do anything if we haven't been provided anything.
+            if (entry is null)
+                return;
+
+            // Show this infobox
+            FileManagerCli.ShowUnixPermissionChangeInfoBox(entry, Settings.InfoBoxSettings);
         }
     }
 }
