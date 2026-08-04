@@ -23,6 +23,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using Nitrocid.Base.Files.Instances;
 using Nitrocid.Base.Files.LineEndings;
+using Nitrocid.Base.Files.Unix;
 using Nitrocid.Base.Kernel.Configuration;
 
 namespace Nitrocid.Base.Drivers.Filesystem
@@ -640,5 +641,25 @@ namespace Nitrocid.Base.Drivers.Filesystem
         /// <param name="outputDirectory">Output directory</param>
         string GroupFile(string inputFile, string outputDirectory);
 
+        /// <summary>
+        /// Gets Unix file mode for a file. For Windows, it's always 777.
+        /// </summary>
+        /// <param name="inputFile">Input file</param>
+        UnixFileMode GetUnixFileMode(string inputFile);
+
+        /// <summary>
+        /// Sets Unix file mode for a file. Throws exception on Windows.
+        /// </summary>
+        /// <param name="inputFile">Input file</param>
+        /// <param name="descriptors">Permission descriptors. Must be three.</param>
+        /// <param name="special">Special permissions</param>
+        void SetUnixFileMode(string inputFile, UnixPermissionDescriptor[] descriptors, UnixPermissionSpecial special);
+
+        /// <summary>
+        /// Sets Unix file mode for a file. Throws exception on Windows.
+        /// </summary>
+        /// <param name="inputFile">Input file</param>
+        /// <param name="fileMode">File mode</param>
+        void SetUnixFileMode(string inputFile, UnixFileMode fileMode);
     }
 }

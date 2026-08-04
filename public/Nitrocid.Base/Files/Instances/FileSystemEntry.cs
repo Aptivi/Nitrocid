@@ -17,8 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Files.Unix;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using System;
 using System.Diagnostics;
 using System.IO;
 
@@ -34,6 +36,8 @@ namespace Nitrocid.Base.Files.Instances
         private readonly string filePathUnneutralized;
         private readonly long fileSize;
         private readonly FileSystemEntryType fileType;
+        private readonly UnixPermissionDescriptor[] unixPermissions;
+        private readonly UnixPermissionSpecial unixSpecial;
 
         /// <summary>
         /// Does this file or directory entry exist?
@@ -82,6 +86,18 @@ namespace Nitrocid.Base.Files.Instances
             throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_INSTANCES_EXCEPTION_BASEENTRYFAILED") + $" {FilePath}");
 
         /// <summary>
+        /// Unix permission descriptors for user, group, and other
+        /// </summary>
+        public UnixPermissionDescriptor[] UnixPermissions =>
+            unixPermissions;
+
+        /// <summary>
+        /// Unix special permission descriptors for set user, set group, and sticky bit
+        /// </summary>
+        public UnixPermissionSpecial UnixSpecial =>
+            unixSpecial;
+
+        /// <summary>
         /// Makes a new instance of this class
         /// </summary>
         /// <param name="filePath">File path (will be neutralized by <see cref="FilesystemTools.NeutralizePath(string, bool)"/>)</param>
@@ -96,6 +112,11 @@ namespace Nitrocid.Base.Files.Instances
                 FileSystemEntryType.Nonexistent;
             if (Type == FileSystemEntryType.File)
                 fileSize = new FileInfo(FilePath).Length;
+
+            // Get Unix file permissions using .NET, then translate it to our implementation. Assume 777 on Windows.
+            var unixFilePerms = FilesystemTools.GetUnixFileMode(filePath);
+            unixPermissions = UnixPermissionManager.GetFromUnixFileMode(unixFilePerms);
+            unixSpecial = UnixPermissionManager.GetSpecialFromUnixFileMode(unixFilePerms);
         }
     }
 }

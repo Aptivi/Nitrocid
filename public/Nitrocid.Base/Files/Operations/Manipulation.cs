@@ -17,7 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.IO;
 using Nitrocid.Base.Drivers;
+using Nitrocid.Base.Files.Unix;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Security.Privacy;
@@ -123,6 +125,42 @@ namespace Nitrocid.Base.Files
             if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
                 throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
             return DriverHandler.CurrentFilesystemDriverLocal.GroupFile(inputFile, outputDirectory);
+        }
+
+        /// <summary>
+        /// Gets Unix file mode for a file
+        /// </summary>
+        /// <param name="inputFile">Input file</param>
+        public static UnixFileMode GetUnixFileMode(string inputFile)
+        {
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemRead))
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
+            return DriverHandler.CurrentFilesystemDriverLocal.GetUnixFileMode(inputFile);
+        }
+
+        /// <summary>
+        /// Sets Unix file mode for a file. Throws exception on Windows.
+        /// </summary>
+        /// <param name="inputFile">Input file</param>
+        /// <param name="descriptors">Permission descriptors. Must be three.</param>
+        /// <param name="special">Special permissions</param>
+        public static void SetUnixFileMode(string inputFile, UnixPermissionDescriptor[] descriptors, UnixPermissionSpecial special)
+        {
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemRead))
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
+            DriverHandler.CurrentFilesystemDriverLocal.SetUnixFileMode(inputFile, descriptors, special);
+        }
+
+        /// <summary>
+        /// Sets Unix file mode for a file. Throws exception on Windows.
+        /// </summary>
+        /// <param name="inputFile">Input file</param>
+        /// <param name="fileMode">File mode</param>
+        public static void SetUnixFileMode(string inputFile, UnixFileMode fileMode)
+        {
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemRead))
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
+            DriverHandler.CurrentFilesystemDriverLocal.SetUnixFileMode(inputFile, fileMode);
         }
     }
 }

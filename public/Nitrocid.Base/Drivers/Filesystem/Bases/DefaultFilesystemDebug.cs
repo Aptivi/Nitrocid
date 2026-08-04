@@ -173,6 +173,14 @@ namespace Nitrocid.Base.Drivers.Filesystem.Bases
             return result;
         }
 
+        public override string RenderContentsInHex(long ByteHighlight, long StartByte, long EndByte, byte[] FileByte, bool colors = true)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContentsInHex)}({ByteHighlight}, {StartByte}, {EndByte}, {FileByte.Length}, {colors}) entry");
+            string result = base.RenderContentsInHex(ByteHighlight, StartByte, EndByte, FileByte, colors);
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContentsInHex)}({ByteHighlight}, {StartByte}, {EndByte}, {FileByte.Length}, {colors}) exit with result length [{result.Length}]");
+            return result;
+        }
+
         public override bool Exists(string Path, bool Neutralize = false)
         {
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(Exists)}({Path}, {Neutralize}) entry");
@@ -606,6 +614,14 @@ namespace Nitrocid.Base.Drivers.Filesystem.Bases
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(WrapTextFile)}({path}, {columns}) entry");
             base.WrapTextFile(path, columns);
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(WrapTextFile)}({path}, {columns}) exit");
+        }
+
+        public override UnixFileMode GetUnixFileMode(string inputFile)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(GetUnixFileMode)}({inputFile}) entry");
+            var fileMode = base.GetUnixFileMode(inputFile);
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(GetUnixFileMode)}({inputFile}) exit = {fileMode}");
+            return fileMode;
         }
     }
 }

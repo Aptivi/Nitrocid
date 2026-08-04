@@ -70,9 +70,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                         UnixPermissionType types = descriptor.Types;
 
                         // Process all permission types
-                        representationBuilder.Append(types.HasFlag(UnixPermissionType.Read) ? 'r' : '-');
-                        representationBuilder.Append(types.HasFlag(UnixPermissionType.Write) ? 'w' : '-');
-                        representationBuilder.Append(types.HasFlag(UnixPermissionType.Execute) ? 'x' : '-');
+                        representationBuilder.Append(UnixPermissionManager.BuildPermissionRepresentation(types));
                         
                         // Add a space if desired
                         if (i < descriptors.Length - 1)

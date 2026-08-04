@@ -18,6 +18,8 @@
 //
 
 using System;
+using System.IO;
+using System.Text;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 
@@ -104,6 +106,22 @@ namespace Nitrocid.Base.Files.Unix
         }
 
         /// <summary>
+        /// Build a permission representation string for a single scope
+        /// </summary>
+        /// <param name="permissionType">Permission types</param>
+        /// <returns>A permission representation string</returns>
+        public static string BuildPermissionRepresentation(UnixPermissionType permissionType)
+        {
+            StringBuilder representationBuilder = new();
+
+            // Process all permission types
+            representationBuilder.Append(permissionType.HasFlag(UnixPermissionType.Read) ? 'r' : '-');
+            representationBuilder.Append(permissionType.HasFlag(UnixPermissionType.Write) ? 'w' : '-');
+            representationBuilder.Append(permissionType.HasFlag(UnixPermissionType.Execute) ? 'x' : '-');
+            return representationBuilder.ToString();
+        }
+
+        /// <summary>
         /// Gets permission descriptors from a chmod number
         /// </summary>
         /// <param name="chmodNum">chmod permission number (for example, 755 or 644)</param>
@@ -135,6 +153,137 @@ namespace Nitrocid.Base.Files.Unix
                 chmodNum /= 10;
             }
             return descriptors;
+        }
+
+        /// <summary>
+        /// Get permission descriptors from Unix file mode enum
+        /// </summary>
+        /// <param name="unixFileMode">Unix file mode obtained from <see cref="File.GetUnixFileMode(string)"/></param>
+        /// <returns>Permission descriptor array</returns>
+        public static UnixPermissionDescriptor[] GetFromUnixFileMode(UnixFileMode unixFileMode)
+        {
+            // Determine the permission types for user
+            int userPermNum = 0;
+            if (unixFileMode.HasFlag(UnixFileMode.UserExecute))
+                userPermNum += (int)UnixPermissionType.Execute;
+            if (unixFileMode.HasFlag(UnixFileMode.UserWrite))
+                userPermNum += (int)UnixPermissionType.Write;
+            if (unixFileMode.HasFlag(UnixFileMode.UserRead))
+                userPermNum += (int)UnixPermissionType.Read;
+
+            // Determine the permission types for group
+            int groupPermNum = 0;
+            if (unixFileMode.HasFlag(UnixFileMode.GroupExecute))
+                groupPermNum += (int)UnixPermissionType.Execute;
+            if (unixFileMode.HasFlag(UnixFileMode.GroupWrite))
+                groupPermNum += (int)UnixPermissionType.Write;
+            if (unixFileMode.HasFlag(UnixFileMode.GroupRead))
+                groupPermNum += (int)UnixPermissionType.Read;
+
+            // Determine the permission types for other
+            int otherPermNum = 0;
+            if (unixFileMode.HasFlag(UnixFileMode.OtherExecute))
+                otherPermNum += (int)UnixPermissionType.Execute;
+            if (unixFileMode.HasFlag(UnixFileMode.OtherWrite))
+                otherPermNum += (int)UnixPermissionType.Write;
+            if (unixFileMode.HasFlag(UnixFileMode.OtherRead))
+                otherPermNum += (int)UnixPermissionType.Read;
+
+            // Add those as digits and return an array of descriptors
+            int chmodNum = userPermNum * 100 + groupPermNum * 10 + otherPermNum;
+            var representations = GetDescriptors(chmodNum);
+            return representations;
+        }
+
+        /// <summary>
+        /// Get special permission from Unix file mode enum
+        /// </summary>
+        /// <param name="unixFileMode">Unix file mode obtained from <see cref="File.GetUnixFileMode(string)"/></param>
+        /// <returns>Special Unix permissions enum</returns>
+        public static UnixPermissionSpecial GetSpecialFromUnixFileMode(UnixFileMode unixFileMode)
+        {
+            // Determine the special permission types
+            UnixPermissionSpecial specialPermNum = 0;
+            if (unixFileMode.HasFlag(UnixFileMode.SetUser))
+                specialPermNum += (int)UnixPermissionSpecial.SetUid;
+            if (unixFileMode.HasFlag(UnixFileMode.SetGroup))
+                specialPermNum += (int)UnixPermissionSpecial.SetGid;
+            if (unixFileMode.HasFlag(UnixFileMode.StickyBit))
+                specialPermNum += (int)UnixPermissionSpecial.Sticky;
+            return specialPermNum;
+        }
+
+        /// <summary>
+        /// Gets Unix file mode (<see cref="UnixFileMode"/> from .NET) from...
+        /// </summary>
+        /// <param name="descriptors">Permission descriptors. Must be three (one for user, one for group, and one for other).</param>
+        /// <param name="special"></param>
+        /// <returns></returns>
+        /// <exception cref="KernelException"></exception>
+        public static UnixFileMode GetUnixFileModeFrom(UnixPermissionDescriptor[] descriptors, UnixPermissionSpecial special)
+        {
+            var fileMode = UnixFileMode.None;
+
+            // Iterate through descriptors
+            // TODO: NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTHARRAY -> Permission representation length must be three.
+            if (descriptors.Length != 3)
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTHARRAY"));
+            bool userProcessed = false, groupProcessed = false, otherProcessed = false;
+            foreach (UnixPermissionDescriptor descriptor in descriptors)
+            {
+                // Some necessary variables
+                var types = descriptor.Types;
+                var scope = descriptor.Scope;
+
+                // Add necessary Unix file mode
+                switch (scope)
+                {
+                    case UnixPermissionScope.User:
+                        if (userProcessed)
+                            continue;
+                        userProcessed = true;
+                        if (types.HasFlag(UnixPermissionType.Execute))
+                            fileMode |= UnixFileMode.UserExecute;
+                        if (types.HasFlag(UnixPermissionType.Write))
+                            fileMode |= UnixFileMode.UserWrite;
+                        if (types.HasFlag(UnixPermissionType.Read))
+                            fileMode |= UnixFileMode.UserRead;
+                        break;
+                    case UnixPermissionScope.Group:
+                        if (groupProcessed)
+                            continue;
+                        groupProcessed = true;
+                        if (types.HasFlag(UnixPermissionType.Execute))
+                            fileMode |= UnixFileMode.GroupExecute;
+                        if (types.HasFlag(UnixPermissionType.Write))
+                            fileMode |= UnixFileMode.GroupWrite;
+                        if (types.HasFlag(UnixPermissionType.Read))
+                            fileMode |= UnixFileMode.GroupRead;
+                        break;
+                    case UnixPermissionScope.Other:
+                        if (otherProcessed)
+                            continue;
+                        otherProcessed = true;
+                        if (types.HasFlag(UnixPermissionType.Execute))
+                            fileMode |= UnixFileMode.OtherExecute;
+                        if (types.HasFlag(UnixPermissionType.Write))
+                            fileMode |= UnixFileMode.OtherWrite;
+                        if (types.HasFlag(UnixPermissionType.Read))
+                            fileMode |= UnixFileMode.OtherRead;
+                        break;
+                }
+            }
+
+            // Process special permissions
+            if (special.HasFlag(UnixPermissionSpecial.SetUid))
+                fileMode |= UnixFileMode.SetUser;
+            if (special.HasFlag(UnixPermissionSpecial.SetGid))
+                fileMode |= UnixFileMode.SetGroup;
+            if (special.HasFlag(UnixPermissionSpecial.Sticky))
+                fileMode |= UnixFileMode.StickyBit;
+
+            // Return file mode
+            return fileMode;
         }
     }
 }

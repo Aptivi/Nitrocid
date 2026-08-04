@@ -31,6 +31,7 @@ using Nitrocid.Base.Files.Folders;
 using Nitrocid.Base.Files.Instances;
 using Nitrocid.Base.Files.LineEndings;
 using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Files.Unix;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Events;
@@ -1290,7 +1291,14 @@ namespace Nitrocid.Base.Drivers.Filesystem
                 // Print information
                 if (finalDirInfo.Attributes == FileAttributes.Hidden & Config.MainConfig.HiddenFiles | !finalDirInfo.Attributes.HasFlag(FileAttributes.Hidden))
                 {
-                    TextWriterColor.Write("- " + finalDirInfo.Name + "/", false, ThemeColorType.ListEntry);
+                    UnixPermissionType permissionTypeUser = DirectoryInfo.UnixPermissions[0].Types;
+                    UnixPermissionType permissionTypeGroup = DirectoryInfo.UnixPermissions[1].Types;
+                    UnixPermissionType permissionTypeOther = DirectoryInfo.UnixPermissions[2].Types;
+                    TextWriterColor.Write("- [{0} {1} {2}] {3}/", false, ThemeColorType.ListEntry,
+                        UnixPermissionManager.BuildPermissionRepresentation(permissionTypeUser),
+                        UnixPermissionManager.BuildPermissionRepresentation(permissionTypeGroup),
+                        UnixPermissionManager.BuildPermissionRepresentation(permissionTypeOther),
+                        finalDirInfo.Name);
                     if (ShowDirectoryDetails)
                     {
                         TextWriterColor.Write(": ", false, ThemeColorType.ListEntry);
@@ -1315,24 +1323,23 @@ namespace Nitrocid.Base.Drivers.Filesystem
         {
             if (FileInfo.Type == FileSystemEntryType.File)
             {
-                var finalDirInfo = FileInfo.BaseEntry as FileInfo ??
+                var finalFileInfo = FileInfo.BaseEntry as FileInfo ??
                     throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FILEINFONEEDED"));
-                if (finalDirInfo.Attributes == FileAttributes.Hidden & Config.MainConfig.HiddenFiles | !finalDirInfo.Attributes.HasFlag(FileAttributes.Hidden))
+                if (finalFileInfo.Attributes == FileAttributes.Hidden & Config.MainConfig.HiddenFiles | !finalFileInfo.Attributes.HasFlag(FileAttributes.Hidden))
                 {
-                    if (finalDirInfo.Name.EndsWith(".mesh"))
-                    {
-                        TextWriterColor.Write("- " + finalDirInfo.Name, false, ThemeColorType.Stage);
-                        if (ShowFileDetails)
-                            TextWriterColor.Write(": ", false, ThemeColorType.Stage);
-                    }
-                    else
-                    {
-                        TextWriterColor.Write("- " + finalDirInfo.Name, false, ThemeColorType.ListEntry);
-                        if (ShowFileDetails)
-                            TextWriterColor.Write(": ", false, ThemeColorType.ListEntry);
-                    }
+                    bool isMeshScript = finalFileInfo.Name.EndsWith(".mesh");
+                    var entryColor = isMeshScript ? ThemeColorType.Stage : ThemeColorType.ListEntry;
+                    UnixPermissionType permissionTypeUser = FileInfo.UnixPermissions[0].Types;
+                    UnixPermissionType permissionTypeGroup = FileInfo.UnixPermissions[1].Types;
+                    UnixPermissionType permissionTypeOther = FileInfo.UnixPermissions[2].Types;
+                    TextWriterColor.Write("- [{0} {1} {2}] {3}", false, entryColor,
+                        UnixPermissionManager.BuildPermissionRepresentation(permissionTypeUser),
+                        UnixPermissionManager.BuildPermissionRepresentation(permissionTypeGroup),
+                        UnixPermissionManager.BuildPermissionRepresentation(permissionTypeOther),
+                        finalFileInfo.Name);
                     if (ShowFileDetails)
                     {
+                        TextWriterColor.Write(": ", false, entryColor);
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_INFODATE"), false, ThemeColorType.ListValue, ((FileInfo)FileInfo.BaseEntry).Length.SizeString(), FileInfo.BaseEntry.CreationTime.ToShortDateString(), FileInfo.BaseEntry.CreationTime.ToShortTimeString(), FileInfo.BaseEntry.LastWriteTime.ToShortDateString(), FileInfo.BaseEntry.LastWriteTime.ToShortTimeString());
                     }
                     TextWriterRaw.Write();
@@ -1898,6 +1905,45 @@ namespace Nitrocid.Base.Drivers.Filesystem
             fileStream.Flush();
             fileStream.Close();
             return finalOutputFile;
+        }
+
+        /// <inheritdoc/>
+        public virtual UnixFileMode GetUnixFileMode(string inputFile)
+        {
+            inputFile = FS.NeutralizePath(inputFile);
+            if (!FS.Exists(inputFile))
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_FILENOTFOUND2"), inputFile);
+            var unixFilePerms =
+                PlatformHelper.IsOnWindows() && OperatingSystem.IsWindows() ?
+                UnixFileMode.UserExecute | UnixFileMode.UserWrite | UnixFileMode.UserRead |
+                UnixFileMode.GroupExecute | UnixFileMode.GroupWrite | UnixFileMode.GroupRead |
+                UnixFileMode.OtherExecute | UnixFileMode.OtherWrite | UnixFileMode.OtherRead :
+                File.GetUnixFileMode(inputFile);
+            return unixFilePerms;
+        }
+
+        /// <inheritdoc/>
+        public virtual void SetUnixFileMode(string inputFile, UnixPermissionDescriptor[] descriptors, UnixPermissionSpecial special)
+        {
+            inputFile = FS.NeutralizePath(inputFile);
+            if (!FS.Exists(inputFile))
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_FILENOTFOUND2"), inputFile);
+            var fileMode = UnixPermissionManager.GetUnixFileModeFrom(descriptors, special);
+            SetUnixFileMode(inputFile, fileMode);
+        }
+
+        /// <inheritdoc/>
+        public virtual void SetUnixFileMode(string inputFile, UnixFileMode fileMode)
+        {
+            inputFile = FS.NeutralizePath(inputFile);
+            if (!FS.Exists(inputFile))
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_FILENOTFOUND2"), inputFile);
+
+            // TODO: NKS_FILES_EXCEPTION_UNIXPERMWINDOWS -> You can't use Unix permission tools on Windows.
+            if (PlatformHelper.IsOnWindows() && OperatingSystem.IsWindows())
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_UNIXPERMWINDOWS"));
+
+            File.SetUnixFileMode(inputFile, fileMode);
         }
     }
 }
