@@ -298,14 +298,14 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
                         Description = LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC"),
                         Choices = [new("", [new("",
                         [
-                            new(nameof(RSSFilterType.Name), LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME_NAME"), "", true, true),
+                            new(nameof(RSSFilterType.Name), LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME_NAME")),
                             new(nameof(RSSFilterType.Desc), LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC_NAME")),
                             new(nameof(RSSFilterType.NameDesc), LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAMEDESC_NAME")),
                         ])])],
                         Value = 0,
                     }
                 ];
-                bool provided = InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT"), Settings.InfoBoxSettings);
+                bool provided = InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT") + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", Settings.InfoBoxSettings);
                 if (!provided)
                     return;
 
