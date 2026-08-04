@@ -21,22 +21,23 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Reflection;
-using Terminaux.Sequences;
-using Terminaux.Inputs.Interactive;
-using Terminaux.Inputs.Styles.Infobox;
-using Textify.General;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Misc.Reflection;
+using System.Text;
 using Nitrocid.Base.Drivers;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Time.Renderers;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Files.Extensions;
 using Nitrocid.Base.Drivers.Encryption;
+using Nitrocid.Base.Files.Extensions;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Time.Renderers;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
+using Terminaux.Inputs.Interactive;
+using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Sequences;
+using Textify.General;
 
 namespace Nitrocid.Base.Files.Instances.Interactives
 {
@@ -487,18 +488,13 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             }
 
             // Render the hash box
+            // TODO: NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW -> Select a hash driver from the list below.
             string[] hashDrivers = EncryptionDriverTools.GetEncryptionDriverNames();
-            string hashDriver = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT") + $" {string.Join(", ", hashDrivers)}", Settings.InfoBoxSettings);
-            string hash;
-            if (string.IsNullOrEmpty(hashDriver))
-                hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, DriverHandler.CurrentEncryptionDriver.DriverName);
-            else if (hashDrivers.Contains(hashDriver))
-                hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, hashDriver);
-            else
-            {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERNOTFOUND"), Settings.InfoBoxSettings);
+            int hashDriverIdx = InfoBoxSelectionColor.WriteInfoBoxSelection(InputChoiceTools.GetInputChoices(hashDrivers), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW"), Settings.InfoBoxSettings);
+            if (hashDriverIdx < 0)
                 return;
-            }
+            string hashDriver = hashDrivers[hashDriverIdx];
+            string hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, hashDriver);
             InfoBoxModalColor.WriteInfoBoxModal(hash, Settings.InfoBoxSettings);
         }
 
@@ -516,18 +512,13 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             }
 
             // Render the hash box
+            // TODO: NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW -> Select a hash driver from the list below.
             string[] hashDrivers = EncryptionDriverTools.GetEncryptionDriverNames();
-            string hashDriver = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT") + $" {string.Join(", ", hashDrivers)}", Settings.InfoBoxSettings);
-            string hash;
-            if (string.IsNullOrEmpty(hashDriver))
-                hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, DriverHandler.CurrentEncryptionDriver.DriverName);
-            else if (hashDrivers.Contains(hashDriver))
-                hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, hashDriver);
-            else
-            {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERNOTFOUND"), Settings.InfoBoxSettings);
+            int hashDriverIdx = InfoBoxSelectionColor.WriteInfoBoxSelection(InputChoiceTools.GetInputChoices(hashDrivers), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW"), Settings.InfoBoxSettings);
+            if (hashDriverIdx < 0)
                 return;
-            }
+            string hashDriver = hashDrivers[hashDriverIdx];
+            string hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, hashDriver);
 
             // Now, let the user write the expected hash
             string expectedHash = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_EXPECTEDHASHPROMPT"), Settings.InfoBoxSettings);
