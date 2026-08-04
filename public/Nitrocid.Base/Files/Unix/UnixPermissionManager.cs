@@ -122,6 +122,22 @@ namespace Nitrocid.Base.Files.Unix
         }
 
         /// <summary>
+        /// Build a special permission representation string
+        /// </summary>
+        /// <param name="permissionSpecial">Special permission types</param>
+        /// <returns>A special permission representation string</returns>
+        public static string BuildSpecialPermissionRepresentation(UnixPermissionSpecial permissionSpecial)
+        {
+            StringBuilder representationBuilder = new();
+
+            // Process all permission types
+            representationBuilder.Append(permissionSpecial.HasFlag(UnixPermissionSpecial.SetUid) ? 'u' : '-');
+            representationBuilder.Append(permissionSpecial.HasFlag(UnixPermissionSpecial.SetGid) ? 'g' : '-');
+            representationBuilder.Append(permissionSpecial.HasFlag(UnixPermissionSpecial.Sticky) ? 't' : '-');
+            return representationBuilder.ToString();
+        }
+
+        /// <summary>
         /// Gets permission descriptors from a chmod number
         /// </summary>
         /// <param name="chmodNum">chmod permission number (for example, 755 or 644)</param>

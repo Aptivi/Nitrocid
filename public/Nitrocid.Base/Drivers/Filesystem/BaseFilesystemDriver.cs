@@ -1294,10 +1294,11 @@ namespace Nitrocid.Base.Drivers.Filesystem
                     UnixPermissionType permissionTypeUser = DirectoryInfo.UnixPermissions[0].Types;
                     UnixPermissionType permissionTypeGroup = DirectoryInfo.UnixPermissions[1].Types;
                     UnixPermissionType permissionTypeOther = DirectoryInfo.UnixPermissions[2].Types;
-                    TextWriterColor.Write("- [{0} {1} {2}] {3}/", false, ThemeColorType.ListEntry,
+                    TextWriterColor.Write("- [{0} {1} {2}] [{3}] {4}/", false, ThemeColorType.ListEntry,
                         UnixPermissionManager.BuildPermissionRepresentation(permissionTypeUser),
                         UnixPermissionManager.BuildPermissionRepresentation(permissionTypeGroup),
                         UnixPermissionManager.BuildPermissionRepresentation(permissionTypeOther),
+                        UnixPermissionManager.BuildSpecialPermissionRepresentation(DirectoryInfo.UnixSpecial),
                         finalDirInfo.Name);
                     if (ShowDirectoryDetails)
                     {
@@ -1332,10 +1333,11 @@ namespace Nitrocid.Base.Drivers.Filesystem
                     UnixPermissionType permissionTypeUser = FileInfo.UnixPermissions[0].Types;
                     UnixPermissionType permissionTypeGroup = FileInfo.UnixPermissions[1].Types;
                     UnixPermissionType permissionTypeOther = FileInfo.UnixPermissions[2].Types;
-                    TextWriterColor.Write("- [{0} {1} {2}] {3}", false, entryColor,
+                    TextWriterColor.Write("- [{0} {1} {2}] [{3}] {4}", false, entryColor,
                         UnixPermissionManager.BuildPermissionRepresentation(permissionTypeUser),
                         UnixPermissionManager.BuildPermissionRepresentation(permissionTypeGroup),
                         UnixPermissionManager.BuildPermissionRepresentation(permissionTypeOther),
+                        UnixPermissionManager.BuildSpecialPermissionRepresentation(FileInfo.UnixSpecial),
                         finalFileInfo.Name);
                     if (ShowFileDetails)
                     {

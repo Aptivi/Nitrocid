@@ -21,23 +21,24 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Reflection;
-using Terminaux.Sequences;
+using System.Text;
+using Nitrocid.Base.Drivers;
+using Nitrocid.Base.Drivers.Encryption;
+using Nitrocid.Base.Files.Extensions;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Files.Unix;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Time.Renderers;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
-using Textify.General;
+using Terminaux.Sequences;
 using Terminaux.Themes.Colors;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Misc.Reflection;
-using Nitrocid.Base.Drivers;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Time.Renderers;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Files.Extensions;
-using Nitrocid.Base.Drivers.Encryption;
+using Textify.General;
 
 namespace Nitrocid.Base.Files.Instances.Interactives
 {
@@ -135,7 +136,17 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             try
             {
                 bool infoIsDirectory = FileInfoCurrentPane.Type == FileSystemEntryType.Directory;
-                return $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.FullName}";
+                UnixPermissionType permissionTypeUser = item.UnixPermissions[0].Types;
+                UnixPermissionType permissionTypeGroup = item.UnixPermissions[1].Types;
+                UnixPermissionType permissionTypeOther = item.UnixPermissions[2].Types;
+                string finalRenderedPermissions =
+                    $"[{UnixPermissionManager.BuildPermissionRepresentation(permissionTypeUser)}" +
+                    $" {UnixPermissionManager.BuildPermissionRepresentation(permissionTypeGroup)}" +
+                    $" {UnixPermissionManager.BuildPermissionRepresentation(permissionTypeOther)}]";
+                string finalRenderedSpecialPermissions = $"[{UnixPermissionManager.BuildSpecialPermissionRepresentation(item.UnixSpecial)}]";
+                return
+                    $"[{(infoIsDirectory ? "/" : "*")}] {finalRenderedPermissions} {finalRenderedSpecialPermissions} " +
+                    FileInfoCurrentPane.BaseEntry.FullName;
             }
             catch (Exception ex)
             {
