@@ -548,5 +548,15 @@ namespace Nitrocid.Base.Files.Instances.Interactives
                 LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NOSELECTIONS");
             InfoBoxModalColor.WriteInfoBoxModal(selected, Settings.InfoBoxSettings);
         }
+
+        internal void ShowUnixPermissionChangeInfoBoxInstance(FileSystemEntry? entry)
+        {
+            // Don't do anything if we haven't been provided anything.
+            if (entry is null)
+                return;
+
+            // Show this infobox
+            FileManagerCli.ShowUnixPermissionChangeInfoBox(entry, Settings.InfoBoxSettings);
+        }
     }
 }
