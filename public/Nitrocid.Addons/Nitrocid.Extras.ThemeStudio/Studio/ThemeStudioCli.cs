@@ -27,7 +27,9 @@ using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Terminaux.Base.Extensions;
+using Terminaux.Inputs;
 using Terminaux.Inputs.Interactive;
+using Terminaux.Inputs.Modules;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Themes;
@@ -169,13 +171,35 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
 
         internal void SaveThemeToAnotherDirectoryAltPrompt()
         {
+            // TODO: NKS_THEMESTUDIO_APP_THEMEDIR -> Enter target directory and theme name below.
             DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme and directory name...");
-            string DirectoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETODIRPROMPT") + " [{0}] ", vars: [FilesystemTools.CurrentDir]);
+            InputModule[] dirTheme =
+            [
+                new TextBoxModule()
+                {
+                    // TODO: NKS_THEMESTUDIO_APP_SAVETODIR -> Target directory
+                    Name = LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETODIR"),
+                    Description = LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETODIRPROMPT"),
+                    Value = FilesystemTools.CurrentDir,
+                },
+                new TextBoxModule()
+                {
+                    // TODO: NKS_THEMESTUDIO_APP_THEMENAME -> Theme name
+                    Name = LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAME"),
+                    Description = LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT"),
+                    Value = themeName,
+                },
+            ];
+            bool done = InfoBoxMultiInputColor.WriteInfoBoxMultiInput(dirTheme, LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMEDIR"), Settings.InfoBoxSettings);
+            if (!done)
+                return;
+
+            // Parse the directory name and alt theme name
+            string DirectoryName = dirTheme[0].GetValue<string>() ?? "";
+            string AltThemeName = dirTheme[1].GetValue<string>() ?? "";
             DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? FilesystemTools.CurrentDir : DirectoryName;
-            DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", vars: [DirectoryName]);
-            DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-            string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT") + " [{0}] ", vars: [themeName]);
             AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? themeName : AltThemeName;
+            DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", vars: [DirectoryName]);
             DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
             SaveThemeToAnotherDirectory(AltThemeName, DirectoryName);
         }

@@ -26,6 +26,8 @@ using Terminaux.Inputs.Styles.Infobox;
 using Nettify.Weather;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Modules;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Interactive
 {
@@ -173,8 +175,29 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
             CheckApiKey();
 
             // Let the user input the latitude and the longitude data
-            string latString = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LATPROMPT"), Settings.InfoBoxSettings);
-            string lngString = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LONPROMPT"), Settings.InfoBoxSettings);
+            // TODO: NKS_FORECAST_WEATHER_TUI_LATLON -> Enter latitude and longitude of a city or a region below.
+            InputModule[] latLon =
+            [
+                new TextBoxModule()
+                {
+                    // TODO: NKS_FORECAST_WEATHER_TUI_LAT -> Latitude
+                    Name = LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LAT"),
+                    Description = LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LATPROMPT"),
+                },
+                new TextBoxModule()
+                {
+                    // TODO: NKS_FORECAST_WEATHER_TUI_LAT -> Latitude
+                    Name = LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LON"),
+                    Description = LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LONPROMPT"),
+                },
+            ];
+            bool done = InfoBoxMultiInputColor.WriteInfoBoxMultiInput(latLon, LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LATLON"), Settings.InfoBoxSettings);
+            if (!done)
+                return;
+
+            // Parse the latitude and the longitude
+            string latString = latLon[0].GetValue<string>() ?? "";
+            string lngString = latLon[1].GetValue<string>() ?? "";
             if (!double.TryParse(latString, out var lat))
             {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LATINVALID"), Settings.InfoBoxSettings);
