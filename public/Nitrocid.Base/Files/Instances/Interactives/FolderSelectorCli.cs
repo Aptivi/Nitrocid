@@ -94,17 +94,14 @@ namespace Nitrocid.Base.Files.Instances.Interactives
         /// <inheritdoc/>
         public override string GetStatusFromItem(FileSystemEntry? item)
         {
-            FileSystemEntry? FileInfoCurrentPane = item;
-
             // Check to see if we're given the file system info
-            if (FileInfoCurrentPane == null)
+            if (item == null)
                 return LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NOINFO");
 
             // Now, populate the info to the status
             try
             {
-                bool infoIsDirectory = FileInfoCurrentPane.Type == FileSystemEntryType.Directory;
-                string status = $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.FullName}";
+                string status = FileManagerTuiCommon.GetStatusStringFrom(item);
                 if (!string.IsNullOrEmpty(selectedFolder))
                     status = $"{LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SELECTED")} {selectedFolder} - {status}";
                 return status;
@@ -120,25 +117,9 @@ namespace Nitrocid.Base.Files.Instances.Interactives
         {
             try
             {
-                FileSystemEntry? file = item;
-                if (file is null)
+                if (item == null)
                     return LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NOINFO");
-                bool isDirectory = file.Type == FileSystemEntryType.Directory;
-                bool isSelected = SelectedFolder == file.FilePath;
-                var size = file.FileSize;
-                var path = file.FilePath;
-                string finalRenderedName = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FILENAME") + $": {Path.GetFileName(file.FilePath)}";
-                string finalRenderedDir = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ISDIRECTORY") + $": {isDirectory}";
-                string finalRenderedSelected = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ISSELECTED") + $": {isSelected}";
-                string finalRenderedSize = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FILESIZE") + $": {size.SizeString()}";
-                string finalRenderedPath = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FILEPATH") + $": {path}";
-                return
-                    finalRenderedName + CharManager.NewLine +
-                    finalRenderedDir + CharManager.NewLine +
-                    finalRenderedSelected + CharManager.NewLine +
-                    finalRenderedSize + CharManager.NewLine +
-                    finalRenderedPath
-                ;
+                return FileManagerTuiCommon.GetInfoStringFrom(item);
             }
             catch (Exception ex)
             {
@@ -153,21 +134,10 @@ namespace Nitrocid.Base.Files.Instances.Interactives
         {
             try
             {
-                FileSystemEntry? file = item;
-                if (file is null)
+                if (item is null)
                     return LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NOINFO");
-                bool isDirectory = file.Type == FileSystemEntryType.Directory;
-                bool isSelected = SelectedFolder == file.FilePath;
-                if (Config.MainConfig.IfmShowFileSize)
-                    return
-                        // Name and directory indicator
-                        $"[{(isDirectory ? "/" : "*")}] [{(isSelected ? "+" : " ")}] {file.BaseEntry.Name} | " +
-
-                        // File size or directory size
-                        $"{(!isDirectory ? ((FileInfo)file.BaseEntry).Length.SizeString() : FilesystemTools.GetAllSizesInFolder((DirectoryInfo)file.BaseEntry).SizeString())}"
-                    ;
-                else
-                    return $"[{(isDirectory ? "/" : "*")}] [{(isSelected ? "+" : " ")}] {file.BaseEntry.Name}";
+                bool isSelected = SelectedFolder == item.FilePath;
+                return $"[{(isSelected ? "+" : " ")}] " + FileManagerTuiCommon.GetEntryStringFrom(item);
             }
             catch (Exception ex)
             {
@@ -251,80 +221,7 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             // Don't do anything if we haven't been provided anything.
             if (currentFileSystemEntry is null)
                 return;
-
-            // Render the final information string
-            try
-            {
-                var finalInfoRendered = new StringBuilder();
-                string fullPath = currentFileSystemEntry.FilePath;
-                if (FilesystemTools.FolderExists(fullPath))
-                {
-                    // The file system info instance points to a folder
-                    var DirInfo = new DirectoryInfo(fullPath);
-                    finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ENTRYNAME"), DirInfo.Name));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_FULLNAME"), FilesystemTools.NeutralizePath(DirInfo.FullName)));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ENTRYSIZE"), FilesystemTools.GetAllSizesInFolder(DirInfo).SizeString()));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_CREATIONTIME"), TimeDateRenderers.Render(DirInfo.CreationTime)));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_LASTACCESSTIME"), TimeDateRenderers.Render(DirInfo.LastAccessTime)));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_LASTWRITETIME"), TimeDateRenderers.Render(DirInfo.LastWriteTime)));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_ATTRIBUTES"), DirInfo.Attributes));
-                    if (DirInfo.Parent is not null)
-                        finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_PARENTDIRECTORY"), FilesystemTools.NeutralizePath(DirInfo.Parent.FullName)));
-                }
-                else
-                {
-                    // The file system info instance points to a file
-                    FileInfo fileInfo = new(fullPath);
-                    bool isBinary = FilesystemTools.IsBinaryFile(fileInfo.FullName);
-                    finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ENTRYNAME"), fileInfo.Name));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_FULLNAME"), FilesystemTools.NeutralizePath(fileInfo.FullName)));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_FILESIZE"), fileInfo.Length.SizeString()));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_CREATIONTIME"), TimeDateRenderers.Render(fileInfo.CreationTime)));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_LASTACCESSTIME"), TimeDateRenderers.Render(fileInfo.LastAccessTime)));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_LASTWRITETIME"), TimeDateRenderers.Render(fileInfo.LastWriteTime)));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_ATTRIBUTES"), fileInfo.Attributes));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INFO_WHERETOFIND"), FilesystemTools.NeutralizePath(fileInfo.DirectoryName)));
-                    if (!isBinary)
-                    {
-                        var Style = FilesystemTools.GetLineEndingFromFile(fullPath);
-                        finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NEWLINESTYLE") + " {0}", Style.ToString()));
-                    }
-                    finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_BINARYFILE") + " {0}", isBinary));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATA") + " {0}\n", MimeTypes.GetMimeType(fileInfo.Extension)));
-
-                    // .NET managed info
-                    if (ReflectionCommon.IsDotnetAssemblyFile(fullPath, out AssemblyName? asmName) && asmName is not null)
-                    {
-                        finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ENTRYNAME"), asmName.Name));
-                        finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FULLNAME") + ": {0}", asmName.FullName));
-                        if (asmName.Version is not null)
-                            finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_VERSION") + ": {0}", asmName.Version.ToString()));
-                        finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_CULTURENAME") + ": {0}", asmName.CultureName));
-                        finalInfoRendered.AppendLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_CONTENTTYPE") + ": {0}\n", asmName.ContentType.ToString()));
-                    }
-                    else
-                    {
-                        finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NOTDOTNETASM"));
-                    }
-
-                    // Other info handled by the extension handler
-                    if (ExtensionHandlerTools.IsHandlerRegistered(fileInfo.Extension))
-                    {
-                        var handler = ExtensionHandlerTools.GetExtensionHandler(fileInfo.Extension) ??
-                            throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_EXCEPTION_HANDLERFAILED") + $" {fileInfo.Extension}");
-                        finalInfoRendered.AppendLine(handler.InfoHandler(fullPath));
-                    }
-                }
-
-                // Now, render the info box
-                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
-            }
-            catch (Exception ex)
-            {
-                var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_CANTGETFSINFO") + TextTools.FormatString(": {0}", ex.Message));
-                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
-            }
+            FileManagerTuiCommon.PrintFileSystemEntry(currentFileSystemEntry, Settings.InfoBoxSettings);
         }
 
         internal void RemoveFileOrDir(FileSystemEntry? currentFileSystemEntry)
@@ -333,17 +230,9 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             if (currentFileSystemEntry is null)
                 return;
 
-            try
-            {
-                FilesystemTools.RemoveFileOrDir(currentFileSystemEntry.FilePath);
-                refreshFirstPaneListing = true;
-            }
-            catch (Exception ex)
-            {
-                var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_CANTREMOVE") + TextTools.FormatString(": {0}", ex.Message));
-                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
-            }
+            // Remove target
+            FileManagerTuiCommon.RemoveFileOrDir(currentFileSystemEntry, Settings.InfoBoxSettings);
+            refreshFirstPaneListing = true;
         }
 
         internal void GoTo()
@@ -367,32 +256,9 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             if (currentFileSystemEntry is null)
                 return;
 
-            try
-            {
-                string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_TARGETPATHCOPY"), Settings.InfoBoxSettings);
-                path = FilesystemTools.NeutralizePath(path, firstPanePath) + "/";
-                DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
-                DebugCheck.AssertNull(path, "destination is null!");
-                DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
-                if (FilesystemTools.FolderExists(path))
-                {
-                    if (FilesystemTools.TryParsePath(path))
-                    {
-                        FilesystemTools.CopyFileOrDir(currentFileSystemEntry.FilePath, path);
-                        refreshFirstPaneListing = true;
-                    }
-                    else
-                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INVALIDPATH"), Settings.InfoBoxSettings);
-                }
-                else
-                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FILENOTFOUND"), Settings.InfoBoxSettings);
-            }
-            catch (Exception ex)
-            {
-                var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_CANTCOPY") + TextTools.FormatString(": {0}", ex.Message));
-                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
-            }
+            // Prompt and copy
+            FileManagerTuiCommon.CopyTo(currentFileSystemEntry, firstPanePath, Settings.InfoBoxSettings);
+            refreshFirstPaneListing = true;
         }
 
         internal void MoveTo(FileSystemEntry? currentFileSystemEntry)
@@ -401,32 +267,9 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             if (currentFileSystemEntry is null)
                 return;
 
-            try
-            {
-                string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_TARGETPATHMOVE"), Settings.InfoBoxSettings);
-                path = FilesystemTools.NeutralizePath(path, firstPanePath) + "/";
-                DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
-                DebugCheck.AssertNull(path, "destination is null!");
-                DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
-                if (FilesystemTools.FolderExists(path))
-                {
-                    if (FilesystemTools.TryParsePath(path))
-                    {
-                        FilesystemTools.MoveFileOrDir(currentFileSystemEntry.FilePath, path);
-                        refreshFirstPaneListing = true;
-                    }
-                    else
-                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INVALIDPATH"), Settings.InfoBoxSettings);
-                }
-                else
-                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FILENOTFOUND"), Settings.InfoBoxSettings);
-            }
-            catch (Exception ex)
-            {
-                var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_CANTMOVE") + TextTools.FormatString(": {0}", ex.Message));
-                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
-            }
+            // Prompt and copy
+            FileManagerTuiCommon.MoveTo(currentFileSystemEntry, firstPanePath, Settings.InfoBoxSettings);
+            refreshFirstPaneListing = true;
         }
 
         internal void Rename(FileSystemEntry? currentFileSystemEntry)
@@ -435,43 +278,16 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             if (currentFileSystemEntry is null)
                 return;
 
-            try
-            {
-                string filename = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NEWFILENAMEPROMPT"), Settings.InfoBoxSettings);
-                DebugWriter.WriteDebug(DebugLevel.I, $"New filename is {filename}");
-                if (!FilesystemTools.FileExists(filename))
-                {
-                    if (FilesystemTools.TryParseFileName(filename))
-                    {
-                        FilesystemTools.MoveFileOrDir(currentFileSystemEntry.FilePath, Path.GetDirectoryName(currentFileSystemEntry.FilePath) + $"/{filename}");
-                        refreshFirstPaneListing = true;
-                    }
-                    else
-                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_INVALIDFILENAME"), Settings.InfoBoxSettings);
-                }
-                else
-                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FILEEXISTS"), Settings.InfoBoxSettings);
-            }
-            catch (Exception ex)
-            {
-                var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_CANTMOVE") + TextTools.FormatString(": {0}", ex.Message));
-                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
-            }
+            // Prompt and rename
+            FileManagerTuiCommon.Rename(currentFileSystemEntry, Settings.InfoBoxSettings);
+            refreshFirstPaneListing = true;
         }
 
         internal void MakeDir()
         {
-            // Now, render the search box
-            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NEWFOLDERNAMEPROMPT"), Settings.InfoBoxSettings);
-            path = FilesystemTools.NeutralizePath(path, firstPanePath);
-            if (!FilesystemTools.FolderExists(path))
-            {
-                FilesystemTools.TryMakeDirectory(path);
-                refreshFirstPaneListing = true;
-            }
-            else
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FOLDEREXISTS"), Settings.InfoBoxSettings);
+            // Make the directory after prompting the user
+            FileManagerTuiCommon.MakeDir(firstPanePath, Settings.InfoBoxSettings);
+            refreshFirstPaneListing = true;
         }
 
         internal void Hash(FileSystemEntry? currentFileSystemEntry)
@@ -479,23 +295,7 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             // Don't do anything if we haven't been provided anything.
             if (currentFileSystemEntry is null)
                 return;
-
-            // First, check to see if it's a file
-            if (!FilesystemTools.FileExists(currentFileSystemEntry.FilePath))
-            {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NOTAFILE"), Settings.InfoBoxSettings);
-                return;
-            }
-
-            // Render the hash box
-            // TODO: NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW -> Select a hash driver from the list below.
-            string[] hashDrivers = EncryptionDriverTools.GetEncryptionDriverNames();
-            int hashDriverIdx = InfoBoxSelectionColor.WriteInfoBoxSelection(InputChoiceTools.GetInputChoices(hashDrivers), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW"), Settings.InfoBoxSettings);
-            if (hashDriverIdx < 0)
-                return;
-            string hashDriver = hashDrivers[hashDriverIdx];
-            string hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, hashDriver);
-            InfoBoxModalColor.WriteInfoBoxModal(hash, Settings.InfoBoxSettings);
+            FileManagerTuiCommon.Hash(currentFileSystemEntry, Settings.InfoBoxSettings);
         }
 
         internal void Verify(FileSystemEntry? currentFileSystemEntry)
@@ -503,29 +303,7 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             // Don't do anything if we haven't been provided anything.
             if (currentFileSystemEntry is null)
                 return;
-
-            // First, check to see if it's a file
-            if (!FilesystemTools.FileExists(currentFileSystemEntry.FilePath))
-            {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NOTAFILE"), Settings.InfoBoxSettings);
-                return;
-            }
-
-            // Render the hash box
-            // TODO: NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW -> Select a hash driver from the list below.
-            string[] hashDrivers = EncryptionDriverTools.GetEncryptionDriverNames();
-            int hashDriverIdx = InfoBoxSelectionColor.WriteInfoBoxSelection(InputChoiceTools.GetInputChoices(hashDrivers), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW"), Settings.InfoBoxSettings);
-            if (hashDriverIdx < 0)
-                return;
-            string hashDriver = hashDrivers[hashDriverIdx];
-            string hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, hashDriver);
-
-            // Now, let the user write the expected hash
-            string expectedHash = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_EXPECTEDHASHPROMPT"), Settings.InfoBoxSettings);
-            if (expectedHash == hash)
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_HASHESMATCH"), Settings.InfoBoxSettings);
-            else
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_HASHESNOMATCH"), Settings.InfoBoxSettings);
+            FileManagerTuiCommon.Verify(currentFileSystemEntry, Settings.InfoBoxSettings);
         }
 
         internal void Preview(FileSystemEntry? currentFileSystemEntry)
@@ -533,18 +311,7 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             // Don't do anything if we haven't been provided anything.
             if (currentFileSystemEntry is null)
                 return;
-
-            // First, check to see if it's a file
-            if (!FilesystemTools.FileExists(currentFileSystemEntry.FilePath))
-            {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NOTAFILE"), Settings.InfoBoxSettings);
-                return;
-            }
-
-            // Render the preview box
-            string preview = FilesystemTools.RenderContents(currentFileSystemEntry.FilePath);
-            string filtered = VtSequenceTools.FilterVTSequences(preview);
-            InfoBoxModalColor.WriteInfoBoxModal(filtered, Settings.InfoBoxSettings);
+            FileManagerTuiCommon.Preview(currentFileSystemEntry, Settings.InfoBoxSettings);
         }
 
         internal void ShowUnixPermissionChangeInfoBoxInstance(FileSystemEntry? entry)
@@ -554,7 +321,7 @@ namespace Nitrocid.Base.Files.Instances.Interactives
                 return;
 
             // Show this infobox
-            FileManagerCli.ShowUnixPermissionChangeInfoBox(entry, Settings.InfoBoxSettings);
+            FileManagerTuiCommon.ShowUnixPermissionChangeInfoBox(entry, Settings.InfoBoxSettings);
         }
     }
 }
