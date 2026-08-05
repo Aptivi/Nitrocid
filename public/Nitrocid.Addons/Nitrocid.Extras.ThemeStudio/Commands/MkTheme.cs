@@ -17,9 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Languages;
 using Nitrocid.Extras.ThemeStudio.Studio;
+using Terminaux.Inputs.Interactive;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
 
 namespace Nitrocid.Extras.ThemeStudio.Commands
 {
@@ -36,7 +42,29 @@ namespace Nitrocid.Extras.ThemeStudio.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            ThemeStudioApp.StartThemeStudio(parameters.ArgumentsList[0]);
+            // Inform user that we're on the studio
+            string themeName = parameters.ArgumentsList[0];
+            EventsManager.FireEvent(EventType.ThemeStudioStarted);
+            DebugWriter.WriteDebug(DebugLevel.I, "Starting theme studio with theme name {0}", vars: [themeName]);
+
+            var tui = new ThemeStudioCli()
+            {
+                themeName = themeName,
+            };
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TUI_KEYBINDING_CHANGE"), ConsoleKey.Enter, (colorType, _, _, _) => tui.Change(colorType ?? ThemeColorType.NeutralText.ToString())));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TUI_KEYBINDING_COPY"), ConsoleKey.F1, (colorType, _, _, _) => tui.Copy(colorType ?? ThemeColorType.NeutralText.ToString())));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TUI_KEYBINDING_SAVE"), ConsoleKey.F2, (_, _, _, _) => tui.SaveThemeToCurrentDirectory()));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TUI_KEYBINDING_LOAD"), ConsoleKey.F3, (_, _, _, _) => tui.Load()));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETOOTHER"), ConsoleKey.F4, (_, _, _, _) => tui.SaveThemeToAnotherDirectoryPrompt()));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETOCURRENTAS"), ConsoleKey.F5, (_, _, _, _) => tui.SaveThemeToCurrentDirectoryAltPrompt()));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETOOTHERAS"), ConsoleKey.F6, (_, _, _, _) => tui.SaveThemeToAnotherDirectoryAltPrompt()));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_LOADFROM"), ConsoleKey.F7, (_, _, _, _) => tui.LoadThemeFromFilePrompt()));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_LOADFROMBUILTIN"), ConsoleKey.F8, (_, _, _, _) => tui.LoadThemeFromResourcePrompt()));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_LOADCURRENT"), ConsoleKey.F9, (_, _, _, _) => tui.LoadThemeFromCurrentColors()));
+            InteractiveTuiTools.OpenInteractiveTui(tui);
+
+            // Raise event
+            EventsManager.FireEvent(EventType.ThemeStudioExit);
             return 0;
         }
     }
