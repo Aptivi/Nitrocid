@@ -244,14 +244,10 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
 
         private string GetThemeJson(string theme)
         {
-            var ThemeInfo = new ThemeInfo(
-                JToken.Parse($$"""
-                {
-                    "Metadata": {
-                        "Name": "{{theme}}"
-                    }
-                }
-                """));
+            var ThemeInfo = new ThemeInfo()
+            {
+                Name = theme,
+            };
             foreach (var originalColor in originalColors.Keys)
                 ThemeInfo.SetColor(originalColor, originalColors[originalColor]);
             var ThemeJson = ThemeInfo.ExportToJson();
