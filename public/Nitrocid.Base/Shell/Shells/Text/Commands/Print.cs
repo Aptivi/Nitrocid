@@ -48,14 +48,16 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
             {
                 if (parameters.ArgumentsList.Length == 1)
                 {
+                    string lineNumStr = parameters.ArgumentsList[0];
+
                     // We've only provided one line number
-                    DebugWriter.WriteDebug(DebugLevel.I, "Line number provided: {0}", vars: [parameters.ArgumentsList[0]]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", vars: [TextTools.IsStringNumeric(parameters.ArgumentsList[0])]);
-                    if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
+                    DebugWriter.WriteDebug(DebugLevel.I, "Line number provided: {0}", vars: [lineNumStr]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", vars: [TextTools.IsStringNumeric(lineNumStr)]);
+                    if (TextTools.IsStringNumeric(lineNumStr))
                     {
-                        LineNumber = Convert.ToInt32(parameters.ArgumentsList[0]);
+                        LineNumber = Convert.ToInt32(lineNumStr);
                         DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [textShell.FileLines.Count]);
-                        if (Convert.ToInt32(parameters.ArgumentsList[0]) <= textShell.FileLines.Count)
+                        if (Convert.ToInt32(lineNumStr) <= textShell.FileLines.Count)
                         {
                             string Line = textShell.FileLines[LineNumber - 1];
                             DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", vars: [LineNumber, Line]);
@@ -71,20 +73,23 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                     }
                     else
                     {
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, ThemeColorType.Error, parameters.ArgumentsList[0]);
-                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[0]]);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, ThemeColorType.Error, lineNumStr);
+                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [lineNumStr]);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }
                 }
                 else
                 {
+                    string lineNumStr = parameters.ArgumentsList[0];
+                    string lineNumSecondStr = parameters.ArgumentsList[1];
+
                     // We've provided two line numbers in the range
-                    DebugWriter.WriteDebug(DebugLevel.I, "Line numbers provided: {0}, {1}", vars: [parameters.ArgumentsList[0], parameters.ArgumentsList[1]]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", vars: [TextTools.IsStringNumeric(parameters.ArgumentsList[0]), TextTools.IsStringNumeric(parameters.ArgumentsList[1])]);
-                    if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]) & TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
+                    DebugWriter.WriteDebug(DebugLevel.I, "Line numbers provided: {0}, {1}", vars: [lineNumStr, lineNumSecondStr]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", vars: [TextTools.IsStringNumeric(lineNumStr), TextTools.IsStringNumeric(lineNumSecondStr)]);
+                    if (TextTools.IsStringNumeric(lineNumStr) & TextTools.IsStringNumeric(lineNumSecondStr))
                     {
-                        int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[0]);
-                        int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[1]);
+                        int LineNumberStart = Convert.ToInt32(lineNumStr);
+                        int LineNumberEnd = Convert.ToInt32(lineNumSecondStr);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [textShell.FileLines.Count]);
                         if (LineNumberStart <= textShell.FileLines.Count & LineNumberEnd <= textShell.FileLines.Count)
@@ -106,8 +111,8 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                     }
                     else
                     {
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, ThemeColorType.Error, parameters.ArgumentsList[0]);
-                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[0]]);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, ThemeColorType.Error, lineNumStr);
+                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [lineNumStr]);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }
                 }

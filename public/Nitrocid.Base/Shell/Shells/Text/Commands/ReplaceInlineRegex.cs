@@ -41,15 +41,18 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            string regexStr = parameters.ArgumentsList[0];
+            string replacementStr = parameters.ArgumentsList[1];
+            string lineNumStr = parameters.ArgumentsList[2];
             var textShell = (TextShell?)shell ??
                 throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             if (parameters.ArgumentsList.Length == 3)
             {
-                if (TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
+                if (TextTools.IsStringNumeric(lineNumStr))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[2]) <= textShell.FileLines.Count)
+                    if (Convert.ToInt32(lineNumStr) <= textShell.FileLines.Count)
                     {
-                        textShell.ReplaceRegex(parameters.ArgumentsList[0], parameters.ArgumentsList[1], Convert.ToInt32(parameters.ArgumentsList[2]));
+                        textShell.ReplaceRegex(regexStr, replacementStr, Convert.ToInt32(lineNumStr));
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_REPLACE_SUCCESS"), true, ThemeColorType.Success);
                         return 0;
                     }
@@ -61,23 +64,24 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, ThemeColorType.Error, parameters.ArgumentsList[2]);
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[2]]);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, ThemeColorType.Error, lineNumStr);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [lineNumStr]);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                 }
             }
             else if (parameters.ArgumentsList.Length > 3)
             {
-                if (TextTools.IsStringNumeric(parameters.ArgumentsList[2]) & TextTools.IsStringNumeric(parameters.ArgumentsList[3]))
+                string lineNumSecondStr = parameters.ArgumentsList[2];
+                if (TextTools.IsStringNumeric(lineNumStr) & TextTools.IsStringNumeric(lineNumSecondStr))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[2]) <= textShell.FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[3]) <= textShell.FileLines.Count)
+                    if (Convert.ToInt32(lineNumStr) <= textShell.FileLines.Count & Convert.ToInt32(lineNumSecondStr) <= textShell.FileLines.Count)
                     {
-                        int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[2]);
-                        int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[3]);
+                        int LineNumberStart = Convert.ToInt32(lineNumStr);
+                        int LineNumberEnd = Convert.ToInt32(lineNumSecondStr);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
-                            textShell.ReplaceRegex(parameters.ArgumentsList[0], parameters.ArgumentsList[1], LineNumber);
+                            textShell.ReplaceRegex(regexStr, replacementStr, LineNumber);
                             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_REPLACEINLINE_SUCCESSINLINE"), true, ThemeColorType.Success, LineNumber);
                         }
                         return 0;

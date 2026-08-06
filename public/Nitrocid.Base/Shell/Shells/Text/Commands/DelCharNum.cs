@@ -40,13 +40,15 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            string charNumStr = parameters.ArgumentsList[0];
+            string lineNumStr = parameters.ArgumentsList[1];
             var textShell = (TextShell?)shell ??
                 throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
-            if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]) & TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
+            if (TextTools.IsStringNumeric(lineNumStr) & TextTools.IsStringNumeric(charNumStr))
             {
-                if (Convert.ToInt32(parameters.ArgumentsList[1]) <= textShell.FileLines.Count)
+                if (Convert.ToInt32(lineNumStr) <= textShell.FileLines.Count)
                 {
-                    textShell.DeleteChar(Convert.ToInt32(parameters.ArgumentsList[0]), Convert.ToInt32(parameters.ArgumentsList[1]));
+                    textShell.DeleteChar(Convert.ToInt32(charNumStr), Convert.ToInt32(lineNumStr));
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS"), true, ThemeColorType.Success);
                     return 0;
                 }
@@ -59,7 +61,7 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
             else
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELCHARNUM_NUMINVALID"), true, ThemeColorType.Error);
-                DebugWriter.WriteDebug(DebugLevel.E, "{0} and {1} are not numeric values.", vars: [parameters.ArgumentsList[0], parameters.ArgumentsList[1]]);
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} and {1} are not numeric values.", vars: [charNumStr, lineNumStr]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
             }
         }

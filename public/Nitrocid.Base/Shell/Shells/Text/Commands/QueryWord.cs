@@ -41,16 +41,18 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            string targetStr = parameters.ArgumentsList[0];
+            string lineNumStr = parameters.ArgumentsList[1];
             var textShell = (TextShell?)shell ??
                 throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             if (parameters.ArgumentsList.Length == 2)
             {
-                if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
+                if (TextTools.IsStringNumeric(lineNumStr))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= textShell.FileLines.Count)
+                    if (Convert.ToInt32(lineNumStr) <= textShell.FileLines.Count)
                     {
-                        int LineIndex = Convert.ToInt32(parameters.ArgumentsList[1]);
-                        var QueriedChars = textShell.QueryWord(parameters.ArgumentsList[0], LineIndex);
+                        int LineIndex = Convert.ToInt32(lineNumStr);
+                        var QueriedChars = textShell.QueryWord(targetStr, LineIndex);
                         TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineIndex);
 
                         // Process the output
@@ -70,13 +72,13 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }
                 }
-                else if (parameters.ArgumentsList[1].Equals("all", StringComparison.OrdinalIgnoreCase))
+                else if (lineNumStr.Equals("all", StringComparison.OrdinalIgnoreCase))
                 {
-                    var QueriedWords = textShell.QueryWord(parameters.ArgumentsList[0]);
+                    var QueriedWords = textShell.QueryWord(targetStr);
                     foreach (var QueriedWord in QueriedWords)
                     {
                         int LineIndex = QueriedWord.Item1;
-                        var QueriedChars = textShell.QueryWord(parameters.ArgumentsList[0], LineIndex + 1);
+                        var QueriedChars = textShell.QueryWord(targetStr, LineIndex + 1);
                         TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineIndex + 1);
 
                         // Process the output
@@ -94,16 +96,17 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
             }
             else if (parameters.ArgumentsList.Length > 2)
             {
-                if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]) & TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
+                string lineNumSecondStr = parameters.ArgumentsList[2];
+                if (TextTools.IsStringNumeric(lineNumStr) & TextTools.IsStringNumeric(lineNumSecondStr))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= textShell.FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[2]) <= textShell.FileLines.Count)
+                    if (Convert.ToInt32(lineNumStr) <= textShell.FileLines.Count & Convert.ToInt32(lineNumSecondStr) <= textShell.FileLines.Count)
                     {
-                        int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[1]);
-                        int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[2]);
+                        int LineNumberStart = Convert.ToInt32(lineNumStr);
+                        int LineNumberEnd = Convert.ToInt32(lineNumSecondStr);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
-                            var QueriedChars = textShell.QueryWord(parameters.ArgumentsList[0], LineNumber);
+                            var QueriedChars = textShell.QueryWord(targetStr, LineNumber);
                             int LineIndex = LineNumber - 1;
                             TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineIndex);
 

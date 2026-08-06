@@ -41,15 +41,17 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            string targetStr = parameters.ArgumentsList[0];
+            string lineNumStr = parameters.ArgumentsList[1];
             var textShell = (TextShell?)shell ??
                 throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             if (parameters.ArgumentsList.Length == 2)
             {
-                if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
+                if (TextTools.IsStringNumeric(lineNumStr))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= textShell.FileLines.Count)
+                    if (Convert.ToInt32(lineNumStr) <= textShell.FileLines.Count)
                     {
-                        textShell.DeleteWord(parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1]));
+                        textShell.DeleteWord(targetStr, Convert.ToInt32(lineNumStr));
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELWORD_SUCCESS"), true, ThemeColorType.Success);
                         return 0;
                     }
@@ -61,23 +63,24 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, ThemeColorType.Error, parameters.ArgumentsList[1]);
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[1]]);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, ThemeColorType.Error, lineNumStr);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [lineNumStr]);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                 }
             }
             else if (parameters.ArgumentsList.Length > 2)
             {
-                if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]) & TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
+                string lineNumSecondStr = parameters.ArgumentsList[2];
+                if (TextTools.IsStringNumeric(lineNumStr) & TextTools.IsStringNumeric(lineNumSecondStr))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= textShell.FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[2]) <= textShell.FileLines.Count)
+                    if (Convert.ToInt32(lineNumStr) <= textShell.FileLines.Count & Convert.ToInt32(lineNumSecondStr) <= textShell.FileLines.Count)
                     {
-                        int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[1]);
-                        int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[2]);
+                        int LineNumberStart = Convert.ToInt32(lineNumStr);
+                        int LineNumberEnd = Convert.ToInt32(lineNumSecondStr);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
-                            textShell.DeleteWord(parameters.ArgumentsList[0], LineNumber);
+                            textShell.DeleteWord(targetStr, LineNumber);
                             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELWORD_SUCCESSINLINE"), true, ThemeColorType.Success, LineNumber);
                         }
                         return 0;
@@ -90,8 +93,8 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, ThemeColorType.Error, parameters.ArgumentsList[1]);
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[1]]);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, ThemeColorType.Error, lineNumStr);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [lineNumStr]);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                 }
             }

@@ -42,16 +42,18 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            string targetStr = parameters.ArgumentsList[0];
+            string lineNumStr = parameters.ArgumentsList[1];
             var textShell = (TextShell?)shell ??
                 throw new KernelException(KernelExceptionType.TextEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             if (parameters.ArgumentsList.Length == 2)
             {
-                if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
+                if (TextTools.IsStringNumeric(lineNumStr))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= textShell.FileLines.Count)
+                    if (Convert.ToInt32(lineNumStr) <= textShell.FileLines.Count)
                     {
-                        int LineIndex = Convert.ToInt32(parameters.ArgumentsList[1]);
-                        var QueriedChars = textShell.QueryChar(Convert.ToChar(parameters.ArgumentsList[0]), LineIndex);
+                        int LineIndex = Convert.ToInt32(lineNumStr);
+                        var QueriedChars = textShell.QueryChar(Convert.ToChar(targetStr), LineIndex);
                         TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineIndex);
 
                         // Process the output
@@ -70,9 +72,9 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }
                 }
-                else if (parameters.ArgumentsList[1].Equals("all", StringComparison.OrdinalIgnoreCase))
+                else if (lineNumStr.Equals("all", StringComparison.OrdinalIgnoreCase))
                 {
-                    var QueriedChars = textShell.QueryChar(Convert.ToChar(parameters.ArgumentsList[0]));
+                    var QueriedChars = textShell.QueryChar(Convert.ToChar(targetStr));
                     foreach (var QueriedChar in QueriedChars)
                     {
                         int LineIndex = QueriedChar.Item1;
@@ -93,16 +95,17 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
             }
             else if (parameters.ArgumentsList.Length > 2)
             {
-                if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]) & TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
+                string lineNumSecondStr = parameters.ArgumentsList[2];
+                if (TextTools.IsStringNumeric(lineNumStr) & TextTools.IsStringNumeric(lineNumSecondStr))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= textShell.FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[2]) <= textShell.FileLines.Count)
+                    if (Convert.ToInt32(lineNumStr) <= textShell.FileLines.Count & Convert.ToInt32(lineNumSecondStr) <= textShell.FileLines.Count)
                     {
-                        int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[1]);
-                        int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[2]);
+                        int LineNumberStart = Convert.ToInt32(lineNumStr);
+                        int LineNumberEnd = Convert.ToInt32(lineNumSecondStr);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
-                            var QueriedChars = textShell.QueryChar(Convert.ToChar(parameters.ArgumentsList[0]), LineNumber);
+                            var QueriedChars = textShell.QueryChar(Convert.ToChar(targetStr), LineNumber);
                             int LineIndex = LineNumber - 1;
                             TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineNumber);
 
