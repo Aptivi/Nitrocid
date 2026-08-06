@@ -149,6 +149,16 @@ namespace Nitrocid.Base.Shell.Shells.Hex
                         new CommandArgumentPart(true, "replacebyte", new()
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_REPLACE_ARGUMENT_REPLACEBYTE_DESC"
+                        }),
+                        new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_STARTBYTE_DESC"
+                        }),
+                        new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_ENDBYTE_DESC"
                         })
                     ])
                 ], new ReplaceCommand()),

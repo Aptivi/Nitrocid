@@ -53,13 +53,9 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
                 if (FinalByte != "EOF")
                 {
                     if (byte.TryParse(FinalByte, System.Globalization.NumberStyles.HexNumber, null, out byte ByteContent))
-                    {
                         FinalBytes.Add(ByteContent);
-                    }
                     else
-                    {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTES_INVALIDBYTE"), true, ThemeColorType.Error);
-                    }
                 }
             }
 

@@ -40,27 +40,30 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            string byteStr = parameters.ArgumentsList[0];
+            string replaceByteStr = parameters.ArgumentsList[1];
             var hexShell = (HexShell?)shell ??
                 throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             var FileBytes = hexShell.FileBytes ??
                 throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
             if (parameters.ArgumentsList.Length == 2)
             {
-                byte ByteFrom = Convert.ToByte(parameters.ArgumentsList[0], 16);
-                byte ByteWith = Convert.ToByte(parameters.ArgumentsList[1], 16);
+                byte ByteFrom = Convert.ToByte(byteStr, 16);
+                byte ByteWith = Convert.ToByte(replaceByteStr, 16);
                 hexShell.Replace(ByteFrom, ByteWith);
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_REPLACE_SUCCESS"), true, ThemeColorType.Success);
                 return 0;
             }
             else if (parameters.ArgumentsList.Length == 3)
             {
-                if (TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
+                string startByteStr = parameters.ArgumentsList[2];
+                if (TextTools.IsStringNumeric(startByteStr))
                 {
-                    if (Convert.ToInt64(parameters.ArgumentsList[2]) <= FileBytes.LongLength)
+                    if (Convert.ToInt64(startByteStr) <= FileBytes.LongLength)
                     {
-                        byte ByteFrom = Convert.ToByte(parameters.ArgumentsList[0], 16);
-                        byte ByteWith = Convert.ToByte(parameters.ArgumentsList[1], 16);
-                        hexShell.Replace(ByteFrom, ByteWith, Convert.ToInt64(parameters.ArgumentsList[2]));
+                        byte ByteFrom = Convert.ToByte(byteStr, 16);
+                        byte ByteWith = Convert.ToByte(replaceByteStr, 16);
+                        hexShell.Replace(ByteFrom, ByteWith, Convert.ToInt64(startByteStr));
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_REPLACE_SUCCESS"), true, ThemeColorType.Success);
                         return 0;
                     }
@@ -73,14 +76,16 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
             }
             else if (parameters.ArgumentsList.Length > 3)
             {
-                if (TextTools.IsStringNumeric(parameters.ArgumentsList[2]) & TextTools.IsStringNumeric(parameters.ArgumentsList[3]))
+                string startByteStr = parameters.ArgumentsList[2];
+                string endByteStr = parameters.ArgumentsList[3];
+                if (TextTools.IsStringNumeric(startByteStr) & TextTools.IsStringNumeric(endByteStr))
                 {
-                    if (Convert.ToInt64(parameters.ArgumentsList[2]) <= FileBytes.LongLength & Convert.ToInt64(parameters.ArgumentsList[3]) <= FileBytes.LongLength)
+                    if (Convert.ToInt64(startByteStr) <= FileBytes.LongLength & Convert.ToInt64(endByteStr) <= FileBytes.LongLength)
                     {
-                        byte ByteFrom = Convert.ToByte(parameters.ArgumentsList[0], 16);
-                        byte ByteWith = Convert.ToByte(parameters.ArgumentsList[1], 16);
-                        long ByteNumberStart = Convert.ToInt64(parameters.ArgumentsList[2]);
-                        long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[3]);
+                        byte ByteFrom = Convert.ToByte(byteStr, 16);
+                        byte ByteWith = Convert.ToByte(replaceByteStr, 16);
+                        long ByteNumberStart = Convert.ToInt64(startByteStr);
+                        long ByteNumberEnd = Convert.ToInt64(endByteStr);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
                         hexShell.Replace(ByteFrom, ByteWith, ByteNumberStart, ByteNumberEnd);
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_REPLACE_SUCCESS"), true, ThemeColorType.Success);

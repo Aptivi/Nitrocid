@@ -46,18 +46,21 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
                 throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
             if (parameters.ArgumentsList.Length == 1)
             {
-                byte ByteContent = Convert.ToByte(parameters.ArgumentsList[0], 16);
+                string byteStr = parameters.ArgumentsList[0];
+                byte ByteContent = Convert.ToByte(byteStr, 16);
                 hexShell.QueryByteAndDisplay(ByteContent);
                 return 0;
             }
             else if (parameters.ArgumentsList.Length == 2)
             {
-                if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
+                string byteStr = parameters.ArgumentsList[0];
+                string startByteStr = parameters.ArgumentsList[1];
+                if (TextTools.IsStringNumeric(startByteStr))
                 {
-                    if (Convert.ToInt64(parameters.ArgumentsList[1]) <= FileBytes.LongLength)
+                    if (Convert.ToInt64(startByteStr) <= FileBytes.LongLength)
                     {
-                        byte ByteContent = Convert.ToByte(parameters.ArgumentsList[0], 16);
-                        hexShell.QueryByteAndDisplay(ByteContent, Convert.ToInt64(parameters.ArgumentsList[1]));
+                        byte ByteContent = Convert.ToByte(byteStr, 16);
+                        hexShell.QueryByteAndDisplay(ByteContent, Convert.ToInt64(startByteStr));
                         return 0;
                     }
                     else
@@ -69,13 +72,16 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
             }
             else if (parameters.ArgumentsList.Length > 2)
             {
-                if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]) & TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
+                string byteStr = parameters.ArgumentsList[0];
+                string startByteStr = parameters.ArgumentsList[1];
+                string endByteStr = parameters.ArgumentsList[2];
+                if (TextTools.IsStringNumeric(startByteStr) & TextTools.IsStringNumeric(endByteStr))
                 {
-                    if (Convert.ToInt64(parameters.ArgumentsList[1]) <= FileBytes.LongLength & Convert.ToInt64(parameters.ArgumentsList[2]) <= hexShell.FileBytes.LongLength)
+                    if (Convert.ToInt64(startByteStr) <= FileBytes.LongLength & Convert.ToInt64(endByteStr) <= hexShell.FileBytes.LongLength)
                     {
-                        byte ByteContent = Convert.ToByte(parameters.ArgumentsList[0], 16);
-                        long ByteNumberStart = Convert.ToInt64(parameters.ArgumentsList[1]);
-                        long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[2]);
+                        byte ByteContent = Convert.ToByte(byteStr, 16);
+                        long ByteNumberStart = Convert.ToInt64(startByteStr);
+                        long ByteNumberEnd = Convert.ToInt64(endByteStr);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
                         hexShell.QueryByteAndDisplay(ByteContent, ByteNumberStart, ByteNumberEnd);
                         return 0;

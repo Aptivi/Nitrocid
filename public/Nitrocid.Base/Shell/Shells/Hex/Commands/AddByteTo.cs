@@ -40,16 +40,19 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            string byteStr = parameters.ArgumentsList[0];
+            string posStr = parameters.ArgumentsList[1];
+
             var hexShell = (HexShell?)shell ??
                 throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
-            byte ByteContent = Convert.ToByte(parameters.ArgumentsList[0], 16);
-            if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
+            byte ByteContent = Convert.ToByte(byteStr, 16);
+            if (TextTools.IsStringNumeric(posStr))
             {
                 var FileBytes = hexShell.FileBytes ??
                     throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
-                if (Convert.ToInt32(parameters.ArgumentsList[1]) <= FileBytes.LongLength)
+                if (Convert.ToInt32(posStr) <= FileBytes.LongLength)
                 {
-                    hexShell.AddNewByte(ByteContent, Convert.ToInt64(parameters.ArgumentsList[1]));
+                    hexShell.AddNewByte(ByteContent, Convert.ToInt64(posStr));
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_DELBYTE_SUCCESS"), true, ThemeColorType.Success);
                     return 0;
                 }
@@ -62,7 +65,7 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
             else
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMON_NOTNUMERIC"), true, ThemeColorType.Error);
-                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[1]]);
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [posStr]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
             }
         }
