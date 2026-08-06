@@ -47,12 +47,12 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         {
             foreach (string FileName in parameters.ArgumentsList)
             {
-                string FilePath = FilesystemTools.NeutralizePath(FileName);
-                DebugWriter.WriteDebug(DebugLevel.I, "Neutralized file path: {0} ({1})", vars: [FilePath, FilesystemTools.FileExists(FilePath)]);
+                string filePath = FilesystemTools.NeutralizePath(FileName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Neutralized file path: {0} ({1})", vars: [filePath, FilesystemTools.FileExists(filePath)]);
                 SeparatorWriterColor.WriteSeparatorColor(FileName, ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                if (FilesystemTools.FileExists(FilePath))
+                if (FilesystemTools.FileExists(filePath))
                 {
-                    var FileInfo = new FileInfo(FilePath);
+                    var FileInfo = new FileInfo(filePath);
 
                     // General info
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ENTRYNAME"), FileInfo.Name);
@@ -69,14 +69,14 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FILETYPE") + ": {0}\n", MagicHandler.GetMagicInfo(FileInfo.FullName));
                     if (!FilesystemTools.IsBinaryFile(FileInfo.FullName))
                     {
-                        var Style = FilesystemTools.GetLineEndingFromFile(FilePath);
+                        var Style = FilesystemTools.GetLineEndingFromFile(filePath);
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NEWLINESTYLE") + " {0}", Style.ToString());
                     }
                     TextWriterRaw.Write();
 
                     // .NET managed info
                     SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_ASMINFO"), ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                    if (ReflectionCommon.IsDotnetAssemblyFile(FilePath, out AssemblyName? asmName) && asmName is not null)
+                    if (ReflectionCommon.IsDotnetAssemblyFile(filePath, out AssemblyName? asmName) && asmName is not null)
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ENTRYNAME"), asmName.Name ?? "");
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FULLNAME") + ": {0}", asmName.FullName);
@@ -94,7 +94,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     {
                         var handler = ExtensionHandlerTools.GetExtensionHandler(FileInfo.Extension) ??
                             throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_EXCEPTION_HANDLERFAILED") + $" {FileInfo.Extension}");
-                        TextWriterColor.Write(handler.InfoHandler(FilePath));
+                        TextWriterColor.Write(handler.InfoHandler(filePath));
                     }
                 }
                 else

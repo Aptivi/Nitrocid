@@ -56,7 +56,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             string mode = parameters.ArgumentsList[1];
             string perm = parameters.ArgumentsList[2];
 
-            if (!Enum.TryParse(typeof(PermissionTypes), perm, out object? permission))
+            if (!Enum.TryParse(perm, out PermissionTypes permission))
             {
                 // Permission not found
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PERM_NOPERM"), true, ThemeColorType.Error);
@@ -65,10 +65,10 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
             if (mode == "allow")
                 // Granting permission.
-                PermissionsTools.GrantPermissionGroup(target, (PermissionTypes)permission);
+                PermissionsTools.GrantPermissionGroup(target, permission);
             else if (mode == "revoke")
                 // Revoking permission.
-                PermissionsTools.RevokePermissionGroup(target, (PermissionTypes)permission);
+                PermissionsTools.RevokePermissionGroup(target, permission);
             else
             {
                 // No mode

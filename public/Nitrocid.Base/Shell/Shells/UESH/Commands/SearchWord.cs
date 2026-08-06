@@ -45,15 +45,15 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
             try
             {
-                var Matches = FilesystemTools.SearchFileForString(fileName, lookup);
-                foreach (string Match in Matches)
+                var matches = FilesystemTools.SearchFileForString(fileName, lookup);
+                foreach (string match in matches)
                 {
                     var matchColor = ThemeColorsTools.GetColor(ThemeColorType.Success);
                     var normalColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
-                    string matchLine = Match;
                     string toReplaceWith = $"{matchColor.VTSequenceForeground()}{lookup}{normalColor.VTSequenceForeground()}";
 
                     // We want to avoid repetitions here
+                    string matchLine = match;
                     if (!matchLine.Contains(toReplaceWith))
                         matchLine = matchLine.Replace(lookup, toReplaceWith);
                     TextWriterColor.Write(matchLine);

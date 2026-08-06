@@ -25,6 +25,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Shell.Shells.Admin;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -49,7 +50,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            ShellManager.StartShell("AdminShell");
+            ShellManager.StartShell(nameof(AdminShell));
             return 0;
         }
     }

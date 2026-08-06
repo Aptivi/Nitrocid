@@ -44,20 +44,20 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            int RetryCount = 1;
-            string URL = parameters.ArgumentsList[0];
+            int retryCount = 1;
+            string url = parameters.ArgumentsList[0];
             string outputPath = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-outputpath");
             int failCode = 0;
-            DebugWriter.WriteDebug(DebugLevel.I, "URL: {0}", vars: [URL]);
-            while (RetryCount <= Config.MainConfig.DownloadRetries)
+            DebugWriter.WriteDebug(DebugLevel.I, "URL: {0}", vars: [url]);
+            while (retryCount <= Config.MainConfig.DownloadRetries)
             {
                 try
                 {
-                    if (!URL.StartsWith("ftp://") || !URL.StartsWith("ftps://") || !URL.StartsWith("ftpes://"))
+                    if (!url.StartsWith("ftp://") || !url.StartsWith("ftps://") || !url.StartsWith("ftpes://"))
                     {
-                        if (!string.IsNullOrEmpty(URL))
+                        if (!string.IsNullOrEmpty(url))
                         {
-                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GET_DOWNLOADING"), URL);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GET_DOWNLOADING"), url);
                             if (string.IsNullOrEmpty(outputPath))
                             {
                                 // Use the current output path
@@ -87,9 +87,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GET_FAILEDTRY"), true, ThemeColorType.Error, RetryCount, ex.Message);
-                    RetryCount += 1;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Try count: {0}", vars: [RetryCount]);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GET_FAILEDTRY"), true, ThemeColorType.Error, retryCount, ex.Message);
+                    retryCount += 1;
+                    DebugWriter.WriteDebug(DebugLevel.I, "Try count: {0}", vars: [retryCount]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     failCode = ex.GetHashCode();
                 }

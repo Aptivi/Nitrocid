@@ -51,10 +51,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             }
 
             foreach (RemoteDebugDevice DebugDevice in RemoteDebugger.DebugDevices)
-            {
-                TextWriterColor.Write($"- {DebugDevice.ClientIP}: ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(DebugDevice.ClientName, true, ThemeColorType.ListValue);
-            }
+                ListEntryWriterColor.WriteListEntry(DebugDevice.ClientIP, DebugDevice.ClientName);
             return 0;
         }
 

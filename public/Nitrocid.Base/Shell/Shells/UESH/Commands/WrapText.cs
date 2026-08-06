@@ -39,6 +39,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             int columns = 78;
+            string textFile = parameters.ArgumentsList[0];
             if (parameters.ContainsSwitch("-columns"))
             {
                 string parsedColumns = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-columns");
@@ -48,7 +49,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     return 20;
                 }
             }
-            FilesystemTools.WrapTextFile(parameters.ArgumentsList[0], columns);
+            FilesystemTools.WrapTextFile(textFile, columns);
             return 0;
         }
 

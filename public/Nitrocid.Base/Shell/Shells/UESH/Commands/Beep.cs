@@ -44,12 +44,14 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         {
             if (parameters.ArgumentsList.Length >= 2)
             {
-                if (!int.TryParse(parameters.ArgumentsList[0], out var freq))
+                string freqStr = parameters.ArgumentsList[0];
+                string timeStr = parameters.ArgumentsList[1];
+                if (!int.TryParse(freqStr, out var freq))
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_BEEP_INVALIDFREQ"), ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
                 }
-                if (!int.TryParse(parameters.ArgumentsList[1], out var ms))
+                if (!int.TryParse(timeStr, out var ms))
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_BEEP_INVALIDDURATION"), ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);

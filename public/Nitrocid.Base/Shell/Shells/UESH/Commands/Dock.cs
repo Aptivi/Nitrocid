@@ -33,7 +33,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Check the dock screen for existence
-            if (!DockTools.DoesDockScreenExist(parameters.ArgumentsList[0], out BaseWidget? dock))
+            string dockName = parameters.ArgumentsList[0];
+            if (!DockTools.DoesDockScreenExist(dockName, out BaseWidget? dock))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN"), ThemeColorType.Error);
                 return 34;

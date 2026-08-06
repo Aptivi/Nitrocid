@@ -57,24 +57,22 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 AlarmCli.OpenAlarmCli();
                 return 0;
             }
-            string CommandMode = parameters.ArgumentsList[0].ToLower();
-            string name = "";
-            string interval = "";
+            string commandMode = parameters.ArgumentsList[0].ToLower();
 
             // Now, the actual logic
-            switch (CommandMode)
+            switch (commandMode)
             {
                 case "start":
                     {
-                        name = parameters.ArgumentsList[1];
-                        interval = parameters.ArgumentsList[2];
+                        string name = parameters.ArgumentsList[1];
+                        string interval = parameters.ArgumentsList[2];
                         TimeSpan span = TimeSpan.Parse(interval);
                         AlarmTools.StartAlarm(name, name, (int)span.TotalSeconds);
                         break;
                     }
                 case "stop":
                     {
-                        name = parameters.ArgumentsList[1];
+                        string name = parameters.ArgumentsList[1];
                         AlarmTools.StopAlarm(name);
                         break;
                     }
@@ -83,12 +81,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                         foreach (var alarm in AlarmTools.alarms)
                         {
                             SeparatorWriterColor.WriteSeparatorColor(alarm.Key, ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_NAME") + " ", false, ThemeColorType.ListEntry);
-                            TextWriterColor.Write(alarm.Value.Name, true, ThemeColorType.ListValue);
-                            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_DESC") + " ", false, ThemeColorType.ListEntry);
-                            TextWriterColor.Write(alarm.Value.Description, true, ThemeColorType.ListValue);
-                            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_DUE") + " ", false, ThemeColorType.ListEntry);
-                            TextWriterColor.Write($"{alarm.Value.Length}", true, ThemeColorType.ListValue);
+                            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_NAME"), alarm.Value.Name);
+                            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_DESC"), alarm.Value.Description);
+                            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_DUE"), $"{alarm.Value.Length}");
                         }
 
                         break;
@@ -96,7 +91,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
                 default:
                     {
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_INVALIDCOMMAND_BRANCHED"), true, ThemeColorType.Error, CommandMode);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_INVALIDCOMMAND_BRANCHED"), true, ThemeColorType.Error, commandMode);
                         HelpPrint.ShowHelp("alarm");
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
                     }

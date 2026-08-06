@@ -57,20 +57,12 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         {
             string ZipArchiveName = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             string Destination = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
-            var ZipCompression = CompressionLevel.Optimal;
-            bool ZipBaseDir = true;
-            if (parameters.ContainsSwitch("-fast"))
-            {
-                ZipCompression = CompressionLevel.Fastest;
-            }
-            else if (parameters.ContainsSwitch("-nocomp"))
-            {
-                ZipCompression = CompressionLevel.NoCompression;
-            }
-            if (parameters.ContainsSwitch("-nobasedir"))
-            {
-                ZipBaseDir = false;
-            }
+            var ZipCompression =
+                parameters.ContainsSwitch("-fast") ? CompressionLevel.Fastest :
+                parameters.ContainsSwitch("-nocomp") ? CompressionLevel.NoCompression :
+                parameters.ContainsSwitch("-smallest") ? CompressionLevel.SmallestSize :
+                CompressionLevel.Optimal;
+            bool ZipBaseDir = !parameters.ContainsSwitch("-nobasedir");
             ZipFile.CreateFromDirectory(Destination, ZipArchiveName, ZipCompression, ZipBaseDir);
             return 0;
         }

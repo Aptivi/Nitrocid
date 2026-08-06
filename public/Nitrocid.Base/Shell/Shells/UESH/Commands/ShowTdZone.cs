@@ -58,6 +58,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            string timezone = parameters.ArgumentsList[0];
             bool ShowAll = parameters.ContainsSwitch("-all");
             bool useTui = parameters.ContainsSwitch("-selection");
             if (useTui)
@@ -69,7 +70,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             {
                 if (ShowAll)
                     TimeZoneRenderers.ShowAllTimeZones();
-                else if (!TimeZoneRenderers.ShowTimeZones(parameters.ArgumentsList[0]))
+                else if (!TimeZoneRenderers.ShowTimeZones(timezone))
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SHOWTDZONE_INCORRECT"), true, ThemeColorType.Error);
             }
             return 0;

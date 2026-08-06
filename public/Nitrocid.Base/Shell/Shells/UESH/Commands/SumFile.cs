@@ -19,16 +19,17 @@
 
 using System.Diagnostics;
 using System.IO;
+using System.Reflection.Emit;
 using System.Text;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Drivers;
+using Nitrocid.Base.Drivers.Encryption;
 using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.Base.Drivers;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Drivers.Encryption;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -43,54 +44,20 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            string file = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
-            string @out = "";
-            bool UseRelative = parameters.ContainsSwitch("-relative");
-            var FileBuilder = new StringBuilder();
-            if (parameters.ArgumentsList.Length >= 3)
-            {
-                @out = FilesystemTools.NeutralizePath(parameters.ArgumentsList[2]);
-            }
+            string algorithm = parameters.ArgumentsList[0];
+            string relativeFile = parameters.ArgumentsList[1];
+            string file = FilesystemTools.NeutralizePath(relativeFile);
+            string @out = parameters.ArgumentsList.Length >= 3 ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[2]) : "";
+            bool useRelative = parameters.ContainsSwitch("-relative");
+            var fileBuilder = new StringBuilder();
             if (FilesystemTools.FileExists(file))
             {
-                if (DriverHandler.IsRegistered(DriverTypes.Encryption, parameters.ArgumentsList[0]))
-                {
-                    // Time when you're on a breakpoint is counted
-                    var spent = new Stopwatch();
-                    spent.Start();
-                    string encrypted = Encryption.GetEncryptedFile(file, parameters.ArgumentsList[0]);
-                    TextWriterColor.Write(encrypted);
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_TIMESPENT"), spent.ElapsedMilliseconds);
-                    if (UseRelative)
-                    {
-                        FileBuilder.AppendLine($"- {parameters.ArgumentsList[1]}: {encrypted} ({parameters.ArgumentsList[0]})");
-                    }
-                    else
-                    {
-                        FileBuilder.AppendLine($"- {file}: {encrypted} ({parameters.ArgumentsList[0]})");
-                    }
-                    spent.Stop();
-                }
+                if (DriverHandler.IsRegistered(DriverTypes.Encryption, algorithm))
+                    fileBuilder.AppendLine(ProcessEncryptionDriver(algorithm, file, relativeFile, useRelative));
                 else if (parameters.ArgumentsList[0] == "all")
                 {
                     foreach (string driverName in DriverHandler.GetDriverNames<IEncryptionDriver>())
-                    {
-                        // Time when you're on a breakpoint is counted
-                        var spent = new Stopwatch();
-                        spent.Start();
-                        string encrypted = Encryption.GetEncryptedFile(file, driverName);
-                        TextWriterColor.Write($"{driverName}: {encrypted}");
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_TIMESPENT"), spent.ElapsedMilliseconds);
-                        if (UseRelative)
-                        {
-                            FileBuilder.AppendLine($"- {parameters.ArgumentsList[1]}: {encrypted} ({driverName})");
-                        }
-                        else
-                        {
-                            FileBuilder.AppendLine($"- {file}: {encrypted} ({driverName})");
-                        }
-                        spent.Stop();
-                    }
+                        fileBuilder.AppendLine(ProcessEncryptionDriver(driverName, file, relativeFile, useRelative));
                 }
                 else
                 {
@@ -99,9 +66,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 }
                 if (!string.IsNullOrEmpty(@out))
                 {
-                    var FStream = new StreamWriter(@out);
-                    FStream.Write(FileBuilder.ToString());
-                    FStream.Flush();
+                    var fileStream = new StreamWriter(@out);
+                    fileStream.Write(fileBuilder.ToString());
+                    fileStream.Flush();
                 }
                 return 0;
             }
@@ -110,6 +77,24 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_NOTFOUND"), true, ThemeColorType.Error, file);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encryption);
             }
+        }
+
+        private string ProcessEncryptionDriver(string driverName, string file, string relativeFile, bool useRelative)
+        {
+            if (DriverHandler.IsRegistered(DriverTypes.Encryption, driverName))
+            {
+                // Time when you're on a breakpoint is counted
+                var spent = new Stopwatch();
+                spent.Start();
+                string encrypted = Encryption.GetEncryptedFile(file, driverName);
+                TextWriterColor.Write(encrypted);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_TIMESPENT"), spent.ElapsedMilliseconds);
+                spent.Stop();
+                if (useRelative)
+                    return $"- {relativeFile}: {encrypted} ({driverName})";
+                return $"- {file}: {encrypted} ({driverName})";
+            }
+            return "";
         }
 
     }

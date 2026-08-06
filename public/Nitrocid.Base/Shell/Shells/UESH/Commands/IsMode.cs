@@ -34,19 +34,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            bool safeModeCheck = false;
-            bool debugModeCheck = false;
-            bool maintenanceModeCheck = false;
-            bool verbose = false;
+            bool safeModeCheck = parameters.ContainsSwitch("-s");
+            bool debugModeCheck = parameters.ContainsSwitch("-d");
+            bool maintenanceModeCheck = parameters.ContainsSwitch("-m");
+            bool verbose = parameters.ContainsSwitch("-v");
             bool result = false;
-            if (parameters.ContainsSwitch("-s"))
-                safeModeCheck = true;
-            if (parameters.ContainsSwitch("-d"))
-                debugModeCheck = true;
-            if (parameters.ContainsSwitch("-m"))
-                maintenanceModeCheck = true;
-            if (parameters.ContainsSwitch("-v"))
-                verbose = true;
 
             if (!safeModeCheck && !debugModeCheck && !maintenanceModeCheck)
             {

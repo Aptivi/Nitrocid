@@ -1052,7 +1052,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "HardwareType", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(true, "hardwareType", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => DriverHandler.CurrentHardwareProberDriverLocal.SupportedHardwareTypes.Union(["all"]).ToArray(),
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_HWINFO_ARGUMENT_TYPE_DESC"
@@ -1374,11 +1374,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "Address1", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(true, "address1", new CommandArgumentPartOptions()
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PING_ARGUMENT_FIRSTHOST_DESC"
                         }),
-                        new CommandArgumentPart(false, "Address2", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(false, "address2", new CommandArgumentPartOptions()
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PING_ARGUMENT_SECONDHOST_DESC"
                         }),
@@ -1428,11 +1428,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "FileName", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PUT_ARGUMENT_FILE_DESC"
                         }),
-                        new CommandArgumentPart(true, "URL", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(true, "url", new CommandArgumentPartOptions()
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PUT_ARGUMENT_URL_DESC"
                         }),
@@ -1512,7 +1512,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "Username", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(true, "user", new CommandArgumentPartOptions()
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_ARGUMENT_TARGET_DESC"
                         }),
@@ -1523,7 +1523,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "GroupName", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(true, "group", new CommandArgumentPartOptions()
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RMGROUP_ARGUMENT_TARGET_DESC"
                         }),
@@ -1534,11 +1534,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "UserName", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(true, "user", new CommandArgumentPartOptions()
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSERFROMGROUP_ARGUMENT_USERNAME_DESC"
                         }),
-                        new CommandArgumentPart(true, "GroupName", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(true, "group", new CommandArgumentPartOptions()
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSERFROMGROUP_ARGUMENT_GROUPNAME_DESC"
                         }),
@@ -1621,11 +1621,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "Regexp", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(true, "regexp", new CommandArgumentPartOptions()
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SEARCH_ARGUMENT_REGEXP_DESC"
                         }),
-                        new CommandArgumentPart(true, "File", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SEARCH_ARGUMENT_FILE_DESC"
                         }),
@@ -1636,11 +1636,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "StringEnclosedInDoubleQuotes", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(true, "lookup", new CommandArgumentPartOptions()
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SEARCHWORD_ARGUMENT_STRING_DESC"
                         }),
-                        new CommandArgumentPart(true, "File", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SEARCH_ARGUMENT_FILE_DESC"
                         }),
@@ -1708,7 +1708,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                             AutoCompleter = (arg) => ConfigTools.GetSettingsKeys(arg[0]).Select((sk) => sk.Variable).ToArray(),
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VARIABLE_DESC"
                         }),
-                        new(true, "value")
+                        new(true, "value", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC -> Value to set to
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC"
+                        })
                     })
                 ], new SetConfigValueCommand()),
 
@@ -2151,12 +2155,18 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                     [
                         new SwitchInfo("fast", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_FAST_DESC", new SwitchOptions()
                         {
-                            ConflictsWith = ["nocomp"],
+                            ConflictsWith = ["nocomp", "smallest"],
                             AcceptsValues = false
                         }),
                         new SwitchInfo("nocomp", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_NOCOMP_DESC", new SwitchOptions()
                         {
-                            ConflictsWith = ["fast"],
+                            ConflictsWith = ["fast", "smallest"],
+                            AcceptsValues = false
+                        }),
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC -> High compression
+                        new SwitchInfo("smallest", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["fast", "nocomp"],
                             AcceptsValues = false
                         }),
                         new SwitchInfo("nobasedir", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_NOBASEDIR_DESC", new SwitchOptions()

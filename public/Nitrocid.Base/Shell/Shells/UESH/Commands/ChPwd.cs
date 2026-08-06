@@ -62,12 +62,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 string username = parameters.ArgumentsList[0];
                 string newPass = parameters.ArgumentsList[1];
                 string newPassTwice = parameters.ArgumentsList[2];
-                if (newPassTwice.Contains(' '))
-                {
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES"), true, ThemeColorType.Error);
-                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
-                }
-                else if (newPassTwice != newPass)
+                if (newPassTwice != newPass)
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_MISMATCH"), true, ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);

@@ -28,6 +28,8 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Login.Motd;
+using Nitrocid.Base.Shell.Shells.Text;
+using Nitrocid.Base.Files;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -72,7 +74,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             }
             else
             {
-                ShellManager.StartShell("TextShell", PathsManagement.GetKernelPath(KernelPathType.MOTD));
+                FilesystemTools.OpenEditor(PathsManagement.GetKernelPath(KernelPathType.MOTD));
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHMOTD_PROGRESS"));
                 MotdParse.ReadMotd();
                 return 0;

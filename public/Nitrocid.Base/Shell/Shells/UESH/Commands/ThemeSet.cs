@@ -51,7 +51,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
             bool bail = false;
             int step = 1;
-            string[] categoryNames = Enum.GetNames(typeof(ThemeCategory));
+            string[] categoryNames = Enum.GetNames<ThemeCategory>();
             int categoryIndex = 0;
             while (answer != 0 && !bail)
             {

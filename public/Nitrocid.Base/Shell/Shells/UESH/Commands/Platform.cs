@@ -37,19 +37,20 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            bool ShowName = parameters.SwitchesList.Length > 0 && parameters.ContainsSwitch("-n") || parameters.SwitchesList.Length == 0;
-            bool ShowVersion = parameters.SwitchesList.Length > 0 && parameters.ContainsSwitch("-v");
-            bool ShowBits = parameters.SwitchesList.Length > 0 && parameters.ContainsSwitch("-b");
-            bool ShowCoreClr = parameters.SwitchesList.Length > 0 && parameters.ContainsSwitch("-c");
-            bool ShowRid = parameters.SwitchesList.Length > 0 && parameters.ContainsSwitch("-r");
+            bool ShowName = parameters.ContainsSwitch("-n") || parameters.SwitchesList.Length == 0;
+            bool ShowVersion = parameters.ContainsSwitch("-v");
+            bool ShowBits = parameters.ContainsSwitch("-b");
+            bool ShowCoreClr = parameters.ContainsSwitch("-c");
+            bool ShowRid = parameters.ContainsSwitch("-r");
 
             // Get the platform info according to the provided switches
             if (ShowName)
             {
                 string platform =
                     PlatformHelper.IsOnWindows() ? "Windows" :
-                    PlatformHelper.IsOnUnix() ? "Unix" :
                     PlatformHelper.IsOnMacOS() ? "macOS" :
+                    PlatformHelper.IsOnFreeBSD() ? "FreeBSD" :
+                    PlatformHelper.IsOnUnix() ? "Unix" :
                     "Unknown";
                 TextWriterColor.Write(platform);
                 variableValue = platform;

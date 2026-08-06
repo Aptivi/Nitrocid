@@ -50,8 +50,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            RemoteDebugTools.DisconnectDevice(parameters.ArgumentsList[0]);
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DISCONNDBGDEV_SUCCESS"), parameters.ArgumentsList[0]);
+            string address = parameters.ArgumentsList[0];
+            RemoteDebugTools.DisconnectDevice(address);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DISCONNDBGDEV_SUCCESS"), address);
             return 0;
         }
 

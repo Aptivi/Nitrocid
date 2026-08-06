@@ -37,15 +37,15 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            string RegexToMatch = parameters.ArgumentsList[0];
-            string DirectoryToSearch = FilesystemTools.CurrentDir;
+            string regexToMatch = parameters.ArgumentsList[0];
+            string directoryToSearch = FilesystemTools.CurrentDir;
             bool isRecursive = parameters.ContainsSwitch("-recursive");
             string command = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-exec").ReleaseDoubleQuotes();
             if (parameters.ArgumentsList.Length > 1)
-                DirectoryToSearch = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
+                directoryToSearch = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
 
             // Print the results if found
-            var AllFileEntries = FilesystemTools.GetFilesystemEntriesRegex(DirectoryToSearch, RegexToMatch, isRecursive);
+            var AllFileEntries = FilesystemTools.GetFilesystemEntriesRegex(directoryToSearch, regexToMatch, isRecursive);
 
             // Print or exec, depending on the command
             if (!string.IsNullOrWhiteSpace(command))

@@ -54,9 +54,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            UserManagement.ChangeUsername(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHUSRNAME_SUCCESS"), parameters.ArgumentsList[1]);
-            if (parameters.ArgumentsList[0] == UserManagement.CurrentUser.Username)
+            string oldUserName = parameters.ArgumentsList[0];
+            string newUserName = parameters.ArgumentsList[1];
+            UserManagement.ChangeUsername(oldUserName, newUserName);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHUSRNAME_SUCCESS"), newUserName);
+            if (oldUserName == UserManagement.CurrentUser.Username)
                 LoginTools.LogoutRequested = true;
             return 0;
         }

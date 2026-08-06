@@ -42,18 +42,21 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            string userName = parameters.ArgumentsList[0];
             if (parameters.ArgumentsList.Length == 1)
             {
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDUSER_CREATEPROGRESS"), parameters.ArgumentsList[0]);
-                UserManagement.AddUser(parameters.ArgumentsList[0]);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDUSER_CREATEPROGRESS"), userName);
+                UserManagement.AddUser(userName);
                 return 0;
             }
             else if (parameters.ArgumentsList.Length > 2)
             {
-                if (parameters.ArgumentsList[1] == parameters.ArgumentsList[2])
+                string password = parameters.ArgumentsList[1];
+                string confirmPassword = parameters.ArgumentsList[2];
+                if (password == confirmPassword)
                 {
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDUSER_CREATEPROGRESS"), parameters.ArgumentsList[0]);
-                    UserManagement.AddUser(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDUSER_CREATEPROGRESS"), userName);
+                    UserManagement.AddUser(userName, password);
                     return 0;
                 }
                 else

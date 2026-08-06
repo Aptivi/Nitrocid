@@ -43,21 +43,21 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            int RetryCount = 1;
-            string FileName = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
-            string URL = parameters.ArgumentsList[1];
+            int retryCount = 1;
+            string filePath = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
+            string url = parameters.ArgumentsList[1];
             int failCode = 0;
-            DebugWriter.WriteDebug(DebugLevel.I, "URL: {0}", vars: [URL]);
-            while (RetryCount <= Config.MainConfig.UploadRetries)
+            DebugWriter.WriteDebug(DebugLevel.I, "URL: {0}", vars: [url]);
+            while (retryCount <= Config.MainConfig.UploadRetries)
             {
                 try
                 {
-                    if (!URL.StartsWith("ftp://") || !URL.StartsWith("ftps://") || !URL.StartsWith("ftpes://"))
+                    if (!url.StartsWith("ftp://") || !url.StartsWith("ftps://") || !url.StartsWith("ftpes://"))
                     {
-                        if (!URL.StartsWith(" "))
+                        if (!url.StartsWith(" "))
                         {
-                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PUT_PROGRESS"), FileName, URL);
-                            if (NetworkTransfer.UploadFile(FileName, URL))
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PUT_PROGRESS"), filePath, url);
+                            if (NetworkTransfer.UploadFile(filePath, url))
                             {
                                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PUT_SUCCESS"));
                                 return 0;
@@ -77,9 +77,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PUT_FAILED"), true, ThemeColorType.Error, RetryCount, ex.Message);
-                    RetryCount += 1;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Try count: {0}", vars: [RetryCount]);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PUT_FAILED"), true, ThemeColorType.Error, retryCount, ex.Message);
+                    retryCount += 1;
+                    DebugWriter.WriteDebug(DebugLevel.I, "Try count: {0}", vars: [retryCount]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     failCode = ex.GetHashCode();
                 }

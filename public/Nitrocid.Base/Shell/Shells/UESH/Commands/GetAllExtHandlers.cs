@@ -43,10 +43,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             {
                 ExtensionHandler handler = handlers[i];
                 SeparatorWriterColor.WriteSeparatorColor($"{i + 1}/{handlers.Length}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSION") + ": ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(handler.Extension, ThemeColorType.ListValue);
-                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSIONHANDLER") + ": ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(handler.Implementer, ThemeColorType.ListValue);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSION"), handler.Extension);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSIONHANDLER"), handler.Implementer);
             }
             variableValue = $"[{string.Join(", ", handlers.Select((h) => h.Implementer))}]";
             return 0;

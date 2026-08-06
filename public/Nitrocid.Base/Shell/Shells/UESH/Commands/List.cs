@@ -55,27 +55,18 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            bool ShowFileDetails = parameters.ContainsSwitch("-showdetails") || Config.MainConfig.ShowFileDetailsList;
-            bool SuppressUnauthorizedMessage = parameters.ContainsSwitch("-suppressmessages") || Config.MainConfig.SuppressUnauthorizedMessages;
-            bool Recursive = parameters.ContainsSwitch("-recursive");
+            bool showFileDetails = parameters.ContainsSwitch("-showdetails") || Config.MainConfig.ShowFileDetailsList;
+            bool suppressUnauthorizedMessage = parameters.ContainsSwitch("-suppressmessages") || Config.MainConfig.SuppressUnauthorizedMessages;
+            bool recursive = parameters.ContainsSwitch("-recursive");
             bool tree = parameters.ContainsSwitch("-tree");
-            if (parameters.ArgumentsList.Length == 0)
+            string[] directories = parameters.ArgumentsList.Length > 0 ? parameters.ArgumentsList : [FilesystemTools.CurrentDir];
+            foreach (string Directory in directories)
             {
+                string direct = FilesystemTools.NeutralizePath(Directory);
                 if (tree)
-                    FilesystemTools.ListTree(FilesystemTools.CurrentDir, SuppressUnauthorizedMessage, Config.MainConfig.SortList);
+                    FilesystemTools.ListTree(direct, suppressUnauthorizedMessage, Config.MainConfig.SortList);
                 else
-                    FilesystemTools.List(FilesystemTools.CurrentDir, ShowFileDetails, SuppressUnauthorizedMessage, Config.MainConfig.SortList, Recursive);
-            }
-            else
-            {
-                foreach (string Directory in parameters.ArgumentsList)
-                {
-                    string direct = FilesystemTools.NeutralizePath(Directory);
-                    if (tree)
-                        FilesystemTools.ListTree(direct, SuppressUnauthorizedMessage, Config.MainConfig.SortList);
-                    else
-                        FilesystemTools.List(direct, ShowFileDetails, SuppressUnauthorizedMessage, Config.MainConfig.SortList, Recursive);
-                }
+                    FilesystemTools.List(direct, showFileDetails, suppressUnauthorizedMessage, Config.MainConfig.SortList, recursive);
             }
             return 0;
         }

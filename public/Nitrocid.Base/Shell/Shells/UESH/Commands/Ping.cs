@@ -46,11 +46,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         {
             // If the pinged address is actually a number of times
             int PingTimes = 4;
-            string projectedTimes = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-times");
+            string projectedTimes = parameters.GetSwitchValue("-times");
             if (!string.IsNullOrEmpty(projectedTimes) && TextTools.IsStringNumeric(projectedTimes))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Projected times {0} is numeric.", vars: [projectedTimes]);
-                PingTimes = Convert.ToInt32(projectedTimes);
+                PingTimes = int.Parse(projectedTimes);
             }
 
             // Now, ping the specified addresses
@@ -65,13 +65,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                         {
                             var PingReplied = NetworkTools.PingAddress(PingedAddress);
                             if (PingReplied.Status == IPStatus.Success)
-                            {
                                 TextWriterColor.Write("[{1}] " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_SUCCESS"), PingReplied.RoundtripTime, CurrentTime);
-                            }
                             else
-                            {
                                 TextWriterColor.Write("[{2}] " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_FAILED"), true, ThemeColorType.Error, PingedAddress, PingReplied.Status, CurrentTime);
-                            }
                         }
                         catch (Exception ex)
                         {

@@ -41,14 +41,10 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             foreach (var handler in handlers)
             {
                 SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_INFOFOR") + $" {handler.Extension}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_IMPLEMENTER") + $": ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(handler.Implementer, true, ThemeColorType.ListValue);
-                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_METADATA") + $": ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(handler.MimeType, true, ThemeColorType.ListValue);
-                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_HEADERINFO") + $": ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write($"{handler.Handler is not null}", true, ThemeColorType.ListValue);
-                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_HANDLERFUNCTION") + $": ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write($"{handler.InfoHandler is not null}\n", true, ThemeColorType.ListValue);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_IMPLEMENTER"), handler.Implementer);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_METADATA"), handler.MimeType);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_HEADERINFO"), $"{handler.Handler is not null}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_HANDLERFUNCTION"), $"{handler.InfoHandler is not null}");
             }
             return 0;
         }

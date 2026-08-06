@@ -37,12 +37,14 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            bool isDriveNum = int.TryParse(parameters.ArgumentsList[0], out int driveNum);
+            string diskNumStr = parameters.ArgumentsList[0];
+            string partNumStr = parameters.ArgumentsList[1];
+            bool isDriveNum = int.TryParse(diskNumStr, out int driveNum);
             if (isDriveNum)
             {
                 // Get the drive index and get the partition info
                 int driveIdx = driveNum - 1;
-                bool isPartNum = int.TryParse(parameters.ArgumentsList[1], out int partNum);
+                bool isPartNum = int.TryParse(partNumStr, out int partNum);
                 if (isPartNum)
                 {
                     // Get the part index and get the partition info

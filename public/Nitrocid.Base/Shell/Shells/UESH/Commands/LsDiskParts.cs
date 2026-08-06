@@ -49,7 +49,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            bool isDriveNum = int.TryParse(parameters.ArgumentsList[0], out int driveNum);
+            string driveNumStr = parameters.ArgumentsList[0];
+            bool isDriveNum = int.TryParse(driveNumStr, out int driveNum);
             if (isDriveNum)
             {
                 // Get the drive index and get the disk info

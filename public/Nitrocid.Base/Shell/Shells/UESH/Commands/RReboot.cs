@@ -29,9 +29,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </summary>
     /// <remarks>
     /// This command restarts your simulated kernel in the remote instance and reloads all the config that are not loaded using reloadconfig.
-    /// <br></br>
-    /// > [!WARNING]
-    /// > There is no file system syncing because the current kernel version doesn't have the real file system to sync, and the kernel is not final.
     /// </remarks>
     class RRebootCommand : BaseCommand, ICommand
     {
@@ -46,12 +43,13 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 safe ? PowerMode.RemoteRestartSafe :
                 maintenance ? PowerMode.RemoteRestartMaintenance :
                 PowerMode.RemoteRestart;
-            if (!string.IsNullOrEmpty(parameters.ArgumentsList[0]))
+            string address = parameters.ArgumentsList[0];
+            if (parameters.ArgumentsList.Length == 1)
+                PowerManager.PowerManage(mode, address);
+            else
             {
-                if (parameters.ArgumentsList.Length > 1)
-                    PowerManager.PowerManage(mode, parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1]));
-                else
-                    PowerManager.PowerManage(mode, parameters.ArgumentsList[0]);
+                string portNumStr = parameters.ArgumentsList[1];
+                PowerManager.PowerManage(mode, address, int.Parse(portNumStr));
             }
             return 0;
         }

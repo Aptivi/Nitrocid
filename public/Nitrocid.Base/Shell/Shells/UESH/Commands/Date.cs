@@ -52,33 +52,18 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             if (showDate)
             {
                 if (useUtc)
-                {
-                    string rendered = TimeDateRenderersUtc.RenderDateUtc();
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                    variableValue = TimeDateRenderersUtc.RenderDateUtc();
                 else
-                {
-                    string rendered = TimeDateRenderers.RenderDate();
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                    variableValue = TimeDateRenderers.RenderDate();
             }
             if (showTime)
             {
                 if (useUtc)
-                {
-                    string rendered = TimeDateRenderersUtc.RenderTimeUtc();
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                    variableValue = TimeDateRenderersUtc.RenderTimeUtc();
                 else
-                {
-                    string rendered = TimeDateRenderers.RenderTime();
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                    variableValue = TimeDateRenderers.RenderTime();
             }
+            TextWriterColor.Write(variableValue);
             return 0;
         }
     }

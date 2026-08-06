@@ -42,6 +42,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             var configs = Config.GetKernelConfigs();
             string configName = parameters.ArgumentsList[0];
             string varName = parameters.ArgumentsList[1];
+            string valueSet = parameters.ArgumentsList[1];
             if (ConfigTools.IsCustomSettingRegistered(configName))
             {
                 var config = configs.Single((bkc) => bkc.GetType().Name == configName);
@@ -49,7 +50,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 if (keys.Any((sk) => sk.Variable == varName))
                 {
                     var key = ConfigTools.GetSettingsKey(config, varName);
-                    var finalValue = key.KeyInput.TranslateStringValue(key, parameters.ArgumentsList[2]);
+                    var finalValue = key.KeyInput.TranslateStringValue(key, valueSet);
                     SettingsAppTools.SetPropertyValue(key.Variable, finalValue, config);
                 }
                 else

@@ -36,12 +36,12 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            string InputPath = parameters.ArgumentsList[0];
-            var CombineInputPaths = parameters.ArgumentsList.Skip(1).ToArray();
+            string inputPath = parameters.ArgumentsList[0];
+            var combineInputPaths = parameters.ArgumentsList.Skip(1).ToArray();
 
             // Make a combined content array
-            var CombinedContents = FilesystemTools.CombineTextFiles(InputPath, CombineInputPaths);
-            string combinedContentsStr = string.Join("\n", CombinedContents);
+            var combinedContents = FilesystemTools.CombineTextFiles(inputPath, combineInputPaths);
+            string combinedContentsStr = string.Join("\n", combinedContents);
             TextWriterColor.Write(combinedContentsStr);
             variableValue = combinedContentsStr;
             return 0;

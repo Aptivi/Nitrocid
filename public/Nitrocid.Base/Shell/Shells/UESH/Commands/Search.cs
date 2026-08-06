@@ -42,10 +42,12 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            string regexPattern = parameters.ArgumentsList[0];
+            string file = parameters.ArgumentsList[1];
             try
             {
-                var Matches = FilesystemTools.SearchFileForStringRegexpMatches(parameters.ArgumentsList[1], new Regex(parameters.ArgumentsList[0], RegexOptions.IgnoreCase));
-                foreach ((string, MatchCollection) matchTuple in Matches)
+                var matches = FilesystemTools.SearchFileForStringRegexpMatches(file, new Regex(regexPattern, RegexOptions.IgnoreCase));
+                foreach ((string, MatchCollection) matchTuple in matches)
                 {
                     string matchLine = matchTuple.Item1;
                     var matchCollection = matchTuple.Item2;
@@ -68,9 +70,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to search {0} for {1}", vars: [parameters.ArgumentsList[0], parameters.ArgumentsList[1]]);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to search {0} for {1}", vars: [regexPattern, file]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SEARCH_FAILED") + " {2}", true, ThemeColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1], ex.Message);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SEARCH_FAILED") + " {2}", true, ThemeColorType.Error, regexPattern, file, ex.Message);
                 return ex.GetHashCode();
             }
         }

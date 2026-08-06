@@ -32,13 +32,13 @@ using Terminaux.Inputs;
 namespace Nitrocid.Base.Shell.Shells.Debug
 {
     /// <summary>
-    /// The Debug editor shell
+    /// The debug shell
     /// </summary>
     public class DebugShell : BaseShell, IShell
     {
 
         /// <inheritdoc/>
-        public override string ShellType => "DebugShell";
+        public override string ShellType => nameof(DebugShell);
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }

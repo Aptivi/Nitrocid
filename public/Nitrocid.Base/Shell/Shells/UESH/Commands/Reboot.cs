@@ -28,9 +28,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </summary>
     /// <remarks>
     /// This command restarts your simulated kernel and reloads all the config that are not loaded using reloadconfig.
-    /// <br></br>
-    /// > [!WARNING]
-    /// > There is no file system syncing because the current kernel version doesn't have the real file system to sync, and the kernel is not final.
     /// </remarks>
     class RebootCommand : BaseCommand, ICommand
     {

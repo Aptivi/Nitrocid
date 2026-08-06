@@ -41,8 +41,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            int NotifIndex = (int)Math.Round(Convert.ToDouble(parameters.ArgumentsList[0]) - 1d);
-            if (NotificationManager.NotifDismiss(NotifIndex))
+            int notifIndex = int.Parse(parameters.ArgumentsList[0]) - 1;
+            if (NotificationManager.NotifDismiss(notifIndex))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DISMISSNOTIF_SUCCESS"));
                 return 0;

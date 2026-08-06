@@ -41,7 +41,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         {
             try
             {
-                FilesystemTools.SetCurrDir(parameters.ArgumentsList[0]);
+                string directory = parameters.ArgumentsList[0];
+                FilesystemTools.SetCurrDir(directory);
                 return 0;
             }
             catch (Exception ex)

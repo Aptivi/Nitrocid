@@ -51,9 +51,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            UserManagement.RemoveUser(parameters.ArgumentsList[0]);
-            if (!UserManagement.UserExists(parameters.ArgumentsList[0]))
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_RMUSER_REMOVED"), parameters.ArgumentsList[0]);
+            string user = parameters.ArgumentsList[0];
+            PermissionsTools.Demand(PermissionTypes.ManageUsers);
+            UserManagement.RemoveUser(user);
+            if (!UserManagement.UserExists(user))
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_RMUSER_REMOVED"), user);
             return 0;
         }
 

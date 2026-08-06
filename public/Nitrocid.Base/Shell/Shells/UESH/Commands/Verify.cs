@@ -64,10 +64,14 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         {
             try
             {
-                string HashFile = FilesystemTools.NeutralizePath(parameters.ArgumentsList[2]);
-                if (FilesystemTools.FileExists(HashFile))
+                string algorithm = parameters.ArgumentsList[0];
+                string calculatedHash = parameters.ArgumentsList[1];
+                string pathOrExpectedHash = parameters.ArgumentsList[2];
+                string hashFile = FilesystemTools.NeutralizePath(parameters.ArgumentsList[2]);
+                string targetFile = parameters.ArgumentsList[3];
+                if (FilesystemTools.FileExists(hashFile))
                 {
-                    if (HashVerifier.VerifyHashFromHashesFile(parameters.ArgumentsList[3], parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]))
+                    if (HashVerifier.VerifyHashFromHashesFile(targetFile, algorithm, hashFile, calculatedHash))
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESMATCH"));
                         return 0;
@@ -78,7 +82,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                         return 4;
                     }
                 }
-                else if (HashVerifier.VerifyHashFromHash(parameters.ArgumentsList[3], parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]))
+                else if (HashVerifier.VerifyHashFromHash(targetFile, algorithm, pathOrExpectedHash, calculatedHash))
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESMATCH"));
                     return 0;

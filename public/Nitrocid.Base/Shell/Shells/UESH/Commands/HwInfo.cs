@@ -34,7 +34,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            HardwareList.ListHardware(parameters.ArgumentsList[0]);
+            string hardwareType = parameters.ArgumentsList[0];
+            HardwareList.ListHardware(hardwareType);
             return 0;
         }
 

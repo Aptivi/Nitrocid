@@ -36,8 +36,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
-            FilesystemTools.MakeFile(parameters.ArgumentsList[0]);
-            variableValue = parameters.ArgumentsList[0];
+            string filePath = parameters.ArgumentsList[0];
+            FilesystemTools.MakeFile(filePath);
+            variableValue = filePath;
             return 0;
         }
     }

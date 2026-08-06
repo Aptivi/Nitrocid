@@ -49,16 +49,18 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            string zipFile = parameters.ArgumentsList[0];
+            string path = parameters.ArgumentsList[1];
             if (parameters.ArgumentsList.Length == 1)
             {
-                string ZipArchiveName = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
+                string ZipArchiveName = FilesystemTools.NeutralizePath(zipFile);
                 ZipFile.ExtractToDirectory(ZipArchiveName, FilesystemTools.CurrentDir);
             }
             else if (parameters.ArgumentsList.Length > 1)
             {
                 bool createDir = parameters.ContainsSwitch("-createdir");
-                string ZipArchiveName = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
-                string Destination = createDir ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]) : "";
+                string ZipArchiveName = FilesystemTools.NeutralizePath(zipFile);
+                string Destination = createDir ? FilesystemTools.NeutralizePath(path) : "";
                 string target = createDir ? Path.GetFileNameWithoutExtension(ZipArchiveName) : FilesystemTools.NeutralizePath(Path.GetFileNameWithoutExtension(ZipArchiveName));
                 if (createDir)
                 {

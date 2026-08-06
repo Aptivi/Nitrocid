@@ -42,41 +42,41 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
-            string OutputPath = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
-            string InputPath = parameters.ArgumentsList[1];
-            var CombineInputPaths = parameters.ArgumentsList.Skip(2).ToArray();
+            string outputPath = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
+            string inputPath = parameters.ArgumentsList[1];
+            var combineInputPaths = parameters.ArgumentsList.Skip(2).ToArray();
 
             // Check all inputs
-            bool AreAllInputsBinary = false;
-            bool AreAllInputsText = false;
-            bool IsInputBinary = FilesystemTools.IsBinaryFile(InputPath);
+            bool areAllInputsBinary = false;
+            bool areAllInputsText = false;
+            bool isInputBinary = FilesystemTools.IsBinaryFile(inputPath);
 
             // Get all the input states and make them true if all binary
             List<bool> InputStates = [];
-            foreach (string CombineInputPath in CombineInputPaths)
+            foreach (string CombineInputPath in combineInputPaths)
                 InputStates.Add(FilesystemTools.IsBinaryFile(CombineInputPath));
 
             // Check to see if all inputs are either binary or text.
-            AreAllInputsBinary = InputStates.Count == InputStates.Where((binary) => binary).Count();
-            AreAllInputsText = InputStates.Count == InputStates.Where((binary) => !binary).Count();
-            if (!AreAllInputsBinary && !AreAllInputsText)
+            areAllInputsBinary = InputStates.Count == InputStates.Count((binary) => binary);
+            areAllInputsText = InputStates.Count == InputStates.Count((binary) => !binary);
+            if (!areAllInputsBinary && !areAllInputsText)
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMBINE_MAYNOTMIX"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
 
             // Make a combined content array
-            if (AreAllInputsText)
+            if (areAllInputsText)
             {
-                var CombinedContents = FilesystemTools.CombineTextFiles(InputPath, CombineInputPaths);
-                FilesystemTools.MakeFile(OutputPath, false);
-                FilesystemTools.WriteContents(OutputPath, CombinedContents);
+                var CombinedContents = FilesystemTools.CombineTextFiles(inputPath, combineInputPaths);
+                FilesystemTools.MakeFile(outputPath, false);
+                FilesystemTools.WriteContents(outputPath, CombinedContents);
             }
             else
             {
-                var CombinedContents = FilesystemTools.CombineBinaryFiles(InputPath, CombineInputPaths);
-                FilesystemTools.MakeFile(OutputPath, false);
-                FilesystemTools.WriteAllBytes(OutputPath, CombinedContents);
+                var CombinedContents = FilesystemTools.CombineBinaryFiles(inputPath, combineInputPaths);
+                FilesystemTools.MakeFile(outputPath, false);
+                FilesystemTools.WriteAllBytes(outputPath, CombinedContents);
             }
             return 0;
         }

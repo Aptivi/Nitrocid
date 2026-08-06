@@ -35,10 +35,14 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            string address = parameters.ArgumentsList[0];
             if (parameters.ArgumentsList.Length == 1)
-                PowerManager.PowerManage(PowerMode.RemoteShutdown, parameters.ArgumentsList[0]);
+                PowerManager.PowerManage(PowerMode.RemoteShutdown, address);
             else
-                PowerManager.PowerManage(PowerMode.RemoteShutdown, parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1]));
+            {
+                string portNumStr = parameters.ArgumentsList[1];
+                PowerManager.PowerManage(PowerMode.RemoteShutdown, address, int.Parse(portNumStr));
+            }
             return 0;
         }
 

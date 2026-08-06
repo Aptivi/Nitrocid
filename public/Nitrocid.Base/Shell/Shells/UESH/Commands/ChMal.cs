@@ -17,17 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Login.Motd;
+using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Security.Permissions;
-using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Login.Motd;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -72,7 +73,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             }
             else
             {
-                ShellManager.StartShell("TextShell", PathsManagement.GetKernelPath(KernelPathType.MAL));
+                FilesystemTools.OpenEditor(PathsManagement.GetKernelPath(KernelPathType.MAL));
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHMAL_PROGRESS"));
                 MalParse.ReadMal();
                 return 0;

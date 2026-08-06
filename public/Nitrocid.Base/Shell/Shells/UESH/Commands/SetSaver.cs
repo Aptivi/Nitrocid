@@ -38,7 +38,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// Sets your default screensaver as your own screensaver or built-in savers
     /// </summary>
     /// <remarks>
-    /// You can set your default screensaver as your own screensaver by the modfile or built-in savers such as matrix, disco, colorMix, and so on, whose names found in <see cref="ScreensaverManager.Screensavers"/> can be used as the argument for this command.
+    /// You can set your default screensaver as your own screensaver by savers, such as matrix, disco, colorMix, and so on, whose names found in <see cref="ScreensaverManager.Screensavers"/> can be used as the argument for this command.
     /// <br></br>
     /// The user must have at least the administrative privileges before they can run the below commands.
     /// </remarks>
@@ -55,15 +55,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            string modPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
             string finalSaverName = parameters.ArgumentsText.ToLower();
             if (ScreensaverManager.GetScreensaverNames().Contains(finalSaverName))
-            {
-                ScreensaverManager.SetDefaultScreensaver(finalSaverName);
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETSAVER_SUCCESS"), finalSaverName);
-                return 0;
-            }
-            else if (FilesystemTools.FileExists($"{modPath}{finalSaverName}") & !KernelEntry.SafeMode)
             {
                 ScreensaverManager.SetDefaultScreensaver(finalSaverName);
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETSAVER_SUCCESS"), finalSaverName);

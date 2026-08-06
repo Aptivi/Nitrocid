@@ -18,14 +18,15 @@
 //
 
 using System.Diagnostics;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Drivers;
+using Nitrocid.Base.Drivers.Encryption;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.Base.Drivers;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Drivers.Encryption;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -40,29 +41,14 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            string driverName = parameters.ArgumentsList[0];
             string text = parameters.ArgumentsList[1];
-            if (DriverHandler.IsRegistered(DriverTypes.Encryption, parameters.ArgumentsList[0]))
-            {
-                // Time when you're on a breakpoint is counted
-                var spent = new Stopwatch();
-                spent.Start();
-                string encrypted = Encryption.GetEncryptedString(text, parameters.ArgumentsList[0]);
-                TextWriterColor.Write(encrypted);
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_TIMESPENT"), spent.ElapsedMilliseconds);
-                spent.Stop();
-            }
+            if (DriverHandler.IsRegistered(DriverTypes.Encryption, driverName))
+                ProcessEncryptionDriver(driverName, text);
             else if (parameters.ArgumentsList[0] == "all")
             {
-                foreach (string driverName in DriverHandler.GetDriverNames<IEncryptionDriver>())
-                {
-                    // Time when you're on a breakpoint is counted
-                    var spent = new Stopwatch();
-                    spent.Start();
-                    string encrypted = Encryption.GetEncryptedString(text, driverName);
-                    TextWriterColor.Write($"{driverName}: {encrypted}");
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_TIMESPENT"), spent.ElapsedMilliseconds);
-                    spent.Stop();
-                }
+                foreach (string targetDriverName in DriverHandler.GetDriverNames<IEncryptionDriver>())
+                    ProcessEncryptionDriver(targetDriverName, text);
             }
             else
             {
@@ -70,6 +56,20 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encryption);
             }
             return 0;
+        }
+
+        private void ProcessEncryptionDriver(string driverName, string text)
+        {
+            if (DriverHandler.IsRegistered(DriverTypes.Encryption, driverName))
+            {
+                // Time when you're on a breakpoint is counted
+                var spent = new Stopwatch();
+                spent.Start();
+                string encrypted = Encryption.GetEncryptedString(text, driverName);
+                TextWriterColor.Write(encrypted);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_TIMESPENT"), spent.ElapsedMilliseconds);
+                spent.Stop();
+            }
         }
 
     }

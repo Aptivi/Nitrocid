@@ -24,6 +24,7 @@ using Textify.General;
 using Nitrocid.Base.Languages;
 using SpecProbe.Software.Platform;
 using Terminaux.Shell.Shells;
+using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -36,18 +37,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_MAINLINK"));
-            TextWriterColor.Write(
-                PlatformHelper.IsOnUnix() ?
-                $"    {CharManager.GetEsc()}]8;;https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/{CharManager.GetEsc()}\\Manual page{CharManager.GetEsc()}]8;;{CharManager.GetEsc()}\\" :
-                "    https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/",
-                true, ThemeColorType.Tip
-            );
+            TextWriterColor.Write(MarkupTools.ParseMarkup("    [link=https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/]Manual page[/]"), true, ThemeColorType.Tip);
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_APILINK"));
-            TextWriterColor.Write(
-                PlatformHelper.IsOnUnix() ?
-                $"    {CharManager.GetEsc()}]8;;https://aptivi.github.io/Nitrocid{CharManager.GetEsc()}\\API documentation{CharManager.GetEsc()}]8;;{CharManager.GetEsc()}\\" :
-                "    https://aptivi.github.io/Nitrocid",
-                true, ThemeColorType.Tip);
+            TextWriterColor.Write(MarkupTools.ParseMarkup("    [link=https://aptivi.github.io/Nitrocid/]API documentation[/]"), true, ThemeColorType.Tip);
             return 0;
         }
 

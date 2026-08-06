@@ -38,8 +38,10 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDUSERTOGROUP_PROGRESS"), parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
-            GroupManagement.AddUserToGroup(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            string userName = parameters.ArgumentsList[0];
+            string groupName = parameters.ArgumentsList[1];
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDUSERTOGROUP_PROGRESS"), userName, groupName);
+            GroupManagement.AddUserToGroup(userName, groupName);
             return 0;
         }
 

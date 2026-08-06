@@ -45,10 +45,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 if (handler is null)
                     continue;
                 SeparatorWriterColor.WriteSeparatorColor($"{i + 1}/{handlers.Count}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSION") + ": ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(handler.Extension, ThemeColorType.ListValue);
-                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_DEFAULTHANDLER") + ": ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(handler.Implementer, ThemeColorType.ListValue);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSION"), handler.Extension);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_DEFAULTHANDLER"), handler.Implementer);
             }
             variableValue = $"[{string.Join(", ", handlers.Select((h) => h.Value))}]";
             return 0;

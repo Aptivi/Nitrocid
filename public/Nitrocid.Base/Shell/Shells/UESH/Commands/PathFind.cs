@@ -38,8 +38,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            string fileName = parameters.ArgumentsList[0];
             string? filePath = "";
-            if (PathLookupTools.FileExistsInPath(parameters.ArgumentsList[0], ref filePath) && filePath is not null)
+            if (PathLookupTools.FileExistsInPath(fileName, ref filePath) && filePath is not null)
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PATHFIND_FOUND") + " {0}", true, ThemeColorType.Success, filePath);
                 variableValue = filePath;

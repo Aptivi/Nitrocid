@@ -50,10 +50,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
+            string group = parameters.ArgumentsList[0];
             PermissionsTools.Demand(PermissionTypes.ManageGroups);
-            GroupManagement.RemoveGroup(parameters.ArgumentsList[0]);
-            if (!GroupManagement.DoesGroupExist(parameters.ArgumentsList[0]))
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_RMGROUP_SUCCESS"), parameters.ArgumentsList[0]);
+            GroupManagement.RemoveGroup(group);
+            if (!GroupManagement.DoesGroupExist(group))
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_RMGROUP_SUCCESS"), group);
             return 0;
         }
 

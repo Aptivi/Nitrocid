@@ -38,15 +38,15 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (!ExtensionHandlerTools.IsHandlerRegistered(parameters.ArgumentsList[0]))
+            string extension = parameters.ArgumentsList[0];
+            if (!ExtensionHandlerTools.IsHandlerRegistered(extension))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_NOEXT"), ThemeColorType.Error);
                 return 21;
             }
-            var handler = ExtensionHandlerTools.GetExtensionHandler(parameters.ArgumentsList[0]) ??
-                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_EXCEPTION_HANDLERFAILED") + $" {parameters.ArgumentsList[0]}");
-            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_DEFAULTHANDLER") + ": ", false, ThemeColorType.ListEntry);
-            TextWriterColor.Write(handler.Implementer, ThemeColorType.ListValue);
+            var handler = ExtensionHandlerTools.GetExtensionHandler(extension) ??
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_EXCEPTION_HANDLERFAILED") + $" {extension}");
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_DEFAULTHANDLER"), handler.Implementer);
             variableValue = handler.Implementer;
             return 0;
         }

@@ -58,20 +58,21 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            if (string.IsNullOrEmpty(parameters.ArgumentsList[0]))
+            string newHostName = parameters.ArgumentsList[0];
+            if (string.IsNullOrEmpty(newHostName))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHHOSTNAME_BLANKHOSTNAME"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Network);
             }
-            else if (parameters.ArgumentsList[0].IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
+            else if (newHostName.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Network);
             }
             else
             {
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHHOSTNAME_PROGRESS"), Config.MainConfig.HostName, parameters.ArgumentsList[0]);
-                NetworkTools.ChangeHostname(parameters.ArgumentsList[0]);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHHOSTNAME_PROGRESS"), Config.MainConfig.HostName, newHostName);
+                NetworkTools.ChangeHostname(newHostName);
                 return 0;
             }
         }

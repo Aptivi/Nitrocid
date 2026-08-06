@@ -50,8 +50,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDGROUP_PROGRESS"), parameters.ArgumentsList[0]);
-            GroupManagement.AddGroup(parameters.ArgumentsList[0]);
+            string groupName = parameters.ArgumentsList[0];
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDGROUP_PROGRESS"), groupName);
+            GroupManagement.AddGroup(groupName);
             return 0;
         }
 
