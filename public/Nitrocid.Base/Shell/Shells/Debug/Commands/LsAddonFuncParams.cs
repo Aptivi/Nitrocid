@@ -40,10 +40,13 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_LISTING") + $" {parameters.ArgumentsList[1]}, {parameters.ArgumentsList[0]} -> {parameters.ArgumentsList[2]}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+            string addonName = parameters.ArgumentsList[0];
+            string typeName = parameters.ArgumentsList[1];
+            string functionName = parameters.ArgumentsList[2];
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_LISTING") + $" {typeName}, {addonName} -> {functionName}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
 
             // List all the available addons
-            var list = InterAddonTools.GetFunctionParameters(parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]) ?? [];
+            var list = InterAddonTools.GetFunctionParameters(addonName, functionName, typeName) ?? [];
             var listing = new Listing()
             {
                 Objects = list,
@@ -57,10 +60,13 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 
         public override int ExecuteDumb(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_LISTING") + $" {parameters.ArgumentsList[1]}, {parameters.ArgumentsList[0]} -> {parameters.ArgumentsList[2]}");
+            string addonName = parameters.ArgumentsList[0];
+            string typeName = parameters.ArgumentsList[1];
+            string functionName = parameters.ArgumentsList[2];
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_LISTING") + $" {typeName}, {addonName} -> {functionName}");
 
             // List all the available addons
-            var list = InterAddonTools.GetFunctionParameters(parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]) ?? [];
+            var list = InterAddonTools.GetFunctionParameters(addonName, functionName, typeName) ?? [];
             foreach (var parameter in list)
                 TextWriterColor.Write($"  - [{parameter.ParameterType.FullName ?? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_UNKNOWNTYPE")}] {parameter.Name ?? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_UNKNOWNPARAM")}");
             return 0;

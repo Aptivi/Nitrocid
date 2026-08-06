@@ -38,20 +38,24 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSFUNCS_TITLE") + $" {parameters.ArgumentsList[0]}, {parameters.ArgumentsList[1]}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+            string addonName = parameters.ArgumentsList[0];
+            string typeName = parameters.ArgumentsList[1];
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSFUNCS_TITLE") + $" {addonName}, {typeName}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
 
             // List all the available addons
-            var list = InterAddonTools.ListAvailableFunctions(parameters.ArgumentsList[0], parameters.ArgumentsList[1]).Keys;
+            var list = InterAddonTools.ListAvailableFunctions(addonName, typeName).Keys;
             ListWriterColor.WriteList(list);
             return 0;
         }
 
         public override int ExecuteDumb(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSFUNCS_TITLE") + $" {parameters.ArgumentsList[0]}, {parameters.ArgumentsList[1]}");
+            string addonName = parameters.ArgumentsList[0];
+            string typeName = parameters.ArgumentsList[1];
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSFUNCS_TITLE") + $" {addonName}, {typeName}");
 
             // List all the available addons
-            var list = InterAddonTools.ListAvailableFunctions(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            var list = InterAddonTools.ListAvailableFunctions(addonName, typeName);
             foreach (var function in list)
                 TextWriterColor.Write($"  - {function.Key}");
             return 0;
