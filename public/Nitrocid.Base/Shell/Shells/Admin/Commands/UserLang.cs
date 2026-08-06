@@ -35,34 +35,20 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
             string userName = parameters.ArgumentsList[0];
             string lang = parameters.ArgumentsList[1];
             int userIndex = UserManagement.GetUserIndex(userName);
-            if (lang == "clear")
+            if (LanguageManager.Languages.TryGetValue(lang, out CultureInfo? langInfo) || lang == "clear")
             {
                 // If we're doing this on ourselves, change the kernel language to the system language
-                lang = LanguageManager.currentLanguage.Name;
+                string finalLang = lang == "clear" ? LanguageManager.currentLanguage.Name : lang;
                 if (UserManagement.CurrentUser.Username == userName)
                 {
-                    LanguageManager.currentUserLanguage = LanguageManager.currentLanguage;
-                    UserManagement.CurrentUser.PreferredLanguage = lang;
+                    LanguageManager.currentUserLanguage = lang == "clear" || langInfo is null ? LanguageManager.currentLanguage : langInfo;
+                    UserManagement.CurrentUser.PreferredLanguage = finalLang;
                 }
 
                 // Now, change the language in the user config
-                UserManagement.Users[userIndex].PreferredLanguage = null;
+                UserManagement.Users[userIndex].PreferredLanguage = lang == "clear" ? null : lang;
                 UserManagement.SaveUsers();
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERLANG_SUCCESS"), lang);
-            }
-            else if (LanguageManager.Languages.TryGetValue(lang, out CultureInfo? langInfo))
-            {
-                // Do it locally
-                if (UserManagement.CurrentUser.Username == userName)
-                {
-                    LanguageManager.currentUserLanguage = langInfo;
-                    UserManagement.CurrentUser.PreferredLanguage = lang;
-                }
-
-                // Now, change the language in the user config
-                UserManagement.Users[userIndex].PreferredLanguage = lang;
-                UserManagement.SaveUsers();
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERLANG_SUCCESS"), lang);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERLANG_SUCCESS"), finalLang);
             }
             else
             {

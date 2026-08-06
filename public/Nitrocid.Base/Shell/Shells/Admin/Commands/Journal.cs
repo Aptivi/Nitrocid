@@ -42,7 +42,8 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
             if (parameters.ArgumentsList.Length > 0)
             {
                 // Check to see if invalid number is provided
-                if (!int.TryParse(parameters.ArgumentsList[0], out int sessionNum))
+                string sessionNumStr = parameters.ArgumentsList[0];
+                if (!int.TryParse(sessionNumStr, out int sessionNum))
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID"), ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Journaling);

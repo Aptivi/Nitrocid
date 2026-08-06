@@ -33,20 +33,16 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
         {
             string userName = parameters.ArgumentsList[0];
             string fullName = parameters.ArgumentsList[1];
+            string finalFullName = "";
             int userIndex = UserManagement.GetUserIndex(userName);
-            if (fullName == "clear")
+            if (fullName != "clear")
+                finalFullName = fullName;
+            if (!string.IsNullOrWhiteSpace(fullName))
             {
                 // Now, change the name in the user config
-                UserManagement.Users[userIndex].FullName = "";
+                UserManagement.Users[userIndex].FullName = finalFullName;
                 UserManagement.SaveUsers();
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERFULLNAME_SUCCESS"), fullName);
-            }
-            else if (!string.IsNullOrWhiteSpace(fullName))
-            {
-                // Now, change the name in the user config
-                UserManagement.Users[userIndex].FullName = fullName;
-                UserManagement.SaveUsers();
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERFULLNAME_SUCCESS"), fullName);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERFULLNAME_SUCCESS"), finalFullName);
             }
             else
             {
