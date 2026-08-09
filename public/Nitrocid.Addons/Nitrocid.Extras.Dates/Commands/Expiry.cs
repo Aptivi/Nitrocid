@@ -39,12 +39,14 @@ namespace Nitrocid.Extras.Dates.Commands
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool implicitExpiry = parameters.ContainsSwitch("-implicit");
+            string productionDateStr = parameters.ArgumentsList[0];
+            string expiryDateStr = parameters.ArgumentsList[1];
             try
             {
                 TimeSpan expirySpan = TimeSpan.Zero;
 
                 // Parse the production date
-                if (!DateTimeOffset.TryParse(parameters.ArgumentsList[0], out var production))
+                if (!DateTimeOffset.TryParse(productionDateStr, out var production))
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODDATEINVALID"), ThemeColorType.Error);
                     return 45;
@@ -53,13 +55,13 @@ namespace Nitrocid.Extras.Dates.Commands
                 // Parse the expiry date or time period
                 if (implicitExpiry)
                 {
-                    if (!TimeSpan.TryParse(parameters.ArgumentsList[1], out expirySpan))
+                    if (!TimeSpan.TryParse(expiryDateStr, out expirySpan))
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPTIMEINVALID"), ThemeColorType.Error);
                         return 45;
                     }
                 }
-                else if (DateTimeOffset.TryParse(parameters.ArgumentsList[1], out var expiryDate))
+                else if (DateTimeOffset.TryParse(expiryDateStr, out var expiryDate))
                     expirySpan = expiryDate - production;
                 else
                 {
@@ -76,12 +78,19 @@ namespace Nitrocid.Extras.Dates.Commands
                 ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODHEALTH"), $"{productHealth}");
 
                 // Write the status
+                // TODO: NKS_DATES_EXPIRY_STATUS_PREPRODUCTION -> Pre-production
+                // TODO: NKS_DATES_EXPIRY_STATUS_EXPIRED -> Expired
+                // TODO: NKS_DATES_EXPIRY_STATUS_POOR -> Poor
+                // TODO: NKS_DATES_EXPIRY_STATUS_AVERAGE -> Average
+                // TODO: NKS_DATES_EXPIRY_STATUS_GOOD -> Good
+                // TODO: NKS_DATES_EXPIRY_STATUS_EXCELLENT -> Excellent
                 string status =
-                    productHealth == -1 ? "Pre-production" :
-                    productHealth == 0 ?  "Expired" :
-                    productHealth <= 25 ? "Poor" :
-                    productHealth <= 50 ? "Average" :
-                    productHealth <= 75 ? "Good" : "Excellent";
+                    productHealth == -1 ? LanguageTools.GetLocalized("NKS_DATES_EXPIRY_STATUS_PREPRODUCTION") :
+                    productHealth == 0 ? LanguageTools.GetLocalized("NKS_DATES_EXPIRY_STATUS_EXPIRED") :
+                    productHealth <= 25 ? LanguageTools.GetLocalized("NKS_DATES_EXPIRY_STATUS_POOR") :
+                    productHealth <= 50 ? LanguageTools.GetLocalized("NKS_DATES_EXPIRY_STATUS_AVERAGE") :
+                    productHealth <= 75 ? LanguageTools.GetLocalized("NKS_DATES_EXPIRY_STATUS_GOOD") :
+                    LanguageTools.GetLocalized("NKS_DATES_EXPIRY_STATUS_EXCELLENT");
                 ThemeColorType statusColor =
                     productHealth == -1 ? ThemeColorType.ListValue :
                     productHealth == 0 ? ThemeColorType.Error :
