@@ -64,22 +64,23 @@ namespace Nitrocid.Extras.Amusements.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var Difficulty = SpeedPress.SpeedPressDifficulty.Medium;
-            int CustomTimeout = SpeedPress.SpeedPressTimeout;
-            if (parameters.ContainsSwitch("-e"))
-                Difficulty = SpeedPress.SpeedPressDifficulty.Easy;
-            if (parameters.ContainsSwitch("-m"))
-                Difficulty = SpeedPress.SpeedPressDifficulty.Medium;
-            if (parameters.ContainsSwitch("-h"))
-                Difficulty = SpeedPress.SpeedPressDifficulty.Hard;
-            if (parameters.ContainsSwitch("-v"))
-                Difficulty = SpeedPress.SpeedPressDifficulty.VeryHard;
-            if (parameters.ContainsSwitch("-c") & parameters.ArgumentsList.Length > 0 && TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
+            var difficulty =
+                parameters.ContainsSwitch("-e") ? SpeedPress.SpeedPressDifficulty.Easy :
+                parameters.ContainsSwitch("-h") ? SpeedPress.SpeedPressDifficulty.Hard :
+                parameters.ContainsSwitch("-v") ? SpeedPress.SpeedPressDifficulty.VeryHard :
+                parameters.ContainsSwitch("-c") ? SpeedPress.SpeedPressDifficulty.Custom :
+                SpeedPress.SpeedPressDifficulty.Medium;
+
+            // Set up custom timeout
+            int customTimeout = SpeedPress.SpeedPressTimeout;
+            if (difficulty == SpeedPress.SpeedPressDifficulty.Custom)
             {
-                Difficulty = SpeedPress.SpeedPressDifficulty.Custom;
-                CustomTimeout = Convert.ToInt32(parameters.ArgumentsList[0]);
+                string customTimeoutStr = parameters.GetSwitchValue("-c");
+                customTimeout = int.Parse(customTimeoutStr);
             }
-            SpeedPress.InitializeSpeedPress(Difficulty, CustomTimeout);
+
+            // Initialize the game
+            SpeedPress.InitializeSpeedPress(difficulty, customTimeout);
             return 0;
         }
 

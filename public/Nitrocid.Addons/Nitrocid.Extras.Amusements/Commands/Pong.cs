@@ -60,7 +60,6 @@ namespace Nitrocid.Extras.Amusements.Commands
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             Pong.InitializePong();
-            ConsoleWrapper.Clear();
             return 0;
         }
 

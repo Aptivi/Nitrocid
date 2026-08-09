@@ -60,7 +60,6 @@ namespace Nitrocid.Extras.Amusements.Commands
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             Snaker.InitializeSnaker(false);
-            ConsoleWrapper.Clear();
             return 0;
         }
 
