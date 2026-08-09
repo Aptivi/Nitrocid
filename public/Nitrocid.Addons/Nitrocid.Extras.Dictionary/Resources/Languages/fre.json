@@ -70,7 +70,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "Mot:"
+      "text": "Mot"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -78,15 +78,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "Partie du discours:"
+      "text": "Partie du discours"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "Définition:"
+      "text": "Définition"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "Exemple dans la phrase :"
+      "text": "Exemple dans la phrase "
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -94,11 +94,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "Synonymes :"
+      "text": "Synonymes "
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "Antonymes :"
+      "text": "Antonymes "
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

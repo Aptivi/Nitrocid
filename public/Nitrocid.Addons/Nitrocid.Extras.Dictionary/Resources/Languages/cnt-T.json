@@ -27,7 +27,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "單詞："
+      "text": "單詞"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -35,15 +35,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "部分演講："
+      "text": "部分演講"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "定義："
+      "text": "定義"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "句子中的例子："
+      "text": "句子中的例子"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -51,11 +51,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "同義詞："
+      "text": "同義詞"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "反義詞："
+      "text": "反義詞"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

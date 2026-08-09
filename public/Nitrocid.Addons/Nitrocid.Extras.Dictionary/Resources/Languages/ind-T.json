@@ -24,7 +24,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "शब्द:"
+      "text": "शब्द"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -32,15 +32,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "शब्द भेद:"
+      "text": "शब्द भेद"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "परिभाषा:"
+      "text": "परिभाषा"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "वाक्य में उदाहरण:"
+      "text": "वाक्य में उदाहरण"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -48,11 +48,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "समानार्थी शब्द:"
+      "text": "समानार्थी शब्द"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "विलोम शब्द:"
+      "text": "विलोम शब्द"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

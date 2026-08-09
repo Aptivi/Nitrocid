@@ -27,7 +27,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "perkataan:"
+      "text": "perkataan"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -35,15 +35,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "Bahagian Ucapan:"
+      "text": "Bahagian Ucapan"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "Definisi:"
+      "text": "Definisi"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "Contoh dalam Ayat:"
+      "text": "Contoh dalam Ayat"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -51,11 +51,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "sinonim:"
+      "text": "sinonim"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "Antonim:"
+      "text": "Antonim"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

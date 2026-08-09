@@ -25,7 +25,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "Kelime:"
+      "text": "Kelime"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -33,15 +33,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "Kelimenin Bir Parçası:"
+      "text": "Kelimenin Bir Parçası"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "Tanım:"
+      "text": "Tanım"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "Cümle içinde örnek:"
+      "text": "Cümle içinde örnek"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -49,11 +49,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "Eş anlamlılar:"
+      "text": "Eş anlamlılar"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "Zıt anlamlılar:"
+      "text": "Zıt anlamlılar"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

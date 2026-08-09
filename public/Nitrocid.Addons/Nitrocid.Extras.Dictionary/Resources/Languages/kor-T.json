@@ -25,7 +25,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "단어:"
+      "text": "단어"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -33,15 +33,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "품사:"
+      "text": "품사"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "정의:"
+      "text": "정의"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "문장의 예:"
+      "text": "문장의 예"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -49,11 +49,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "동의어:"
+      "text": "동의어"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "반대말:"
+      "text": "반대말"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

@@ -26,11 +26,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_APILICENSE",
-      "text": "API is gelicentieerd onder:"
+      "text": "API is gelicentieerd onder"
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "Woord:"
+      "text": "Woord"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -38,15 +38,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "Woordsoort:"
+      "text": "Woordsoort"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "Definitie:"
+      "text": "Definitie"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "Voorbeeld in zin:"
+      "text": "Voorbeeld in zin"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -54,11 +54,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "Synoniemen:"
+      "text": "Synoniemen"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "Antoniemen:"
+      "text": "Antoniemen"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

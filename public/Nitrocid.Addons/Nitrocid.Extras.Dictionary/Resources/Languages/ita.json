@@ -27,7 +27,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "Parola:"
+      "text": "Parola"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -35,15 +35,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "Parte del discorso:"
+      "text": "Parte del discorso"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "Definizione:"
+      "text": "Definizione"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "Esempio nella frase:"
+      "text": "Esempio nella frase"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -51,11 +51,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "Sinonimi:"
+      "text": "Sinonimi"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "Contrari:"
+      "text": "Contrari"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

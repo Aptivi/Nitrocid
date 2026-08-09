@@ -25,7 +25,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "Λέξη:"
+      "text": "Λέξη"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -33,15 +33,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "Μέρος του λόγου:"
+      "text": "Μέρος του λόγου"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "Ορισμός:"
+      "text": "Ορισμός"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "Παράδειγμα σε πρόταση:"
+      "text": "Παράδειγμα σε πρόταση"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -49,11 +49,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "Συνώνυμα:"
+      "text": "Συνώνυμα"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "Αντώνυμα:"
+      "text": "Αντώνυμα"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

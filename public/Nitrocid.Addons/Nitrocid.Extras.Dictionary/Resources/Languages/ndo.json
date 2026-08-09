@@ -24,7 +24,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "Kata:"
+      "text": "Kata"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -32,15 +32,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "Bagian dari Pidato:"
+      "text": "Bagian dari Pidato"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "Definisi:"
+      "text": "Definisi"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "Contoh dalam kalimat:"
+      "text": "Contoh dalam kalimat"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -48,11 +48,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "Sinonim:"
+      "text": "Sinonim"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "Antonim:"
+      "text": "Antonim"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

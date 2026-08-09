@@ -23,7 +23,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "Palavra:"
+      "text": "Palavra"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -31,15 +31,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "Parte do discurso:"
+      "text": "Parte do discurso"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "Definição:"
+      "text": "Definição"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "Exemplo em frase:"
+      "text": "Exemplo em frase"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -47,11 +47,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "Sinônimos:"
+      "text": "Sinônimos"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "Antônimos:"
+      "text": "Antônimos"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

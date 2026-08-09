@@ -24,7 +24,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "語："
+      "text": "語"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -32,15 +32,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "品詞："
+      "text": "品詞"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "意味："
+      "text": "意味"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "文の例："
+      "text": "文の例"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -48,11 +48,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "同義語："
+      "text": "同義語"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "反意語："
+      "text": "反意語"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

@@ -50,7 +50,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "كلمة:"
+      "text": "كلمة"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -58,15 +58,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "جزء من الكلام:"
+      "text": "جزء من الكلام"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "تعريف:"
+      "text": "تعريف"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "مثال في الجملة:"
+      "text": "مثال في الجملة"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -74,11 +74,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "المرادفات:"
+      "text": "المرادفات"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "التضاد:"
+      "text": "التضاد"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

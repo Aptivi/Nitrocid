@@ -28,7 +28,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "Ord:"
+      "text": "Ord"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -36,15 +36,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "Del av talen:"
+      "text": "Del av talen"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "Definisjon:"
+      "text": "Definisjon"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "Eksempel i setning:"
+      "text": "Eksempel i setning"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -52,11 +52,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "Synonymer:"
+      "text": "Synonymer"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "Antonymer:"
+      "text": "Antonymer"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

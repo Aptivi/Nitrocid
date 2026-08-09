@@ -25,7 +25,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "Cuvânt:"
+      "text": "Cuvânt"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -33,15 +33,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "Parte de vorbire:"
+      "text": "Parte de vorbire"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "Definiție:"
+      "text": "Definiție"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "Exemplu în propoziție:"
+      "text": "Exemplu în propoziție"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -49,11 +49,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "Sinonime:"
+      "text": "Sinonime"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "Antonime:"
+      "text": "Antonime"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

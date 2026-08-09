@@ -32,7 +32,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "单词："
+      "text": "单词"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -40,15 +40,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "部分演讲："
+      "text": "部分演讲"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "定义："
+      "text": "定义"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "句子中的例子："
+      "text": "句子中的例子"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -56,11 +56,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "同义词："
+      "text": "同义词"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "反义词："
+      "text": "反义词"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

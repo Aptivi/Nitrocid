@@ -24,7 +24,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "Từ:"
+      "text": "Từ"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -32,15 +32,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "Loại từ:"
+      "text": "Loại từ"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "Sự định nghĩa:"
+      "text": "Sự định nghĩa"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "Ví dụ trong câu:"
+      "text": "Ví dụ trong câu"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -48,11 +48,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "Từ đồng nghĩa:"
+      "text": "Từ đồng nghĩa"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "Từ trái nghĩa:"
+      "text": "Từ trái nghĩa"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

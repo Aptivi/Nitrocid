@@ -25,7 +25,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "Focal:"
+      "text": "Focal"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -33,15 +33,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "Cuid den Óráid:"
+      "text": "Cuid den Óráid"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "Sainmhíniú:"
+      "text": "Sainmhíniú"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "Sampla san abairt:"
+      "text": "Sampla san abairt"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -49,11 +49,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "Comhchiallaigh:"
+      "text": "Comhchiallaigh"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "Frithainmneacha:"
+      "text": "Frithainmneacha"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

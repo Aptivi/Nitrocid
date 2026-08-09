@@ -24,7 +24,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "Verbum:"
+      "text": "Verbum"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -32,15 +32,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "Pars Orationis:"
+      "text": "Pars Orationis"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "Definitio:"
+      "text": "Definitio"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "Exemplum in sententia:"
+      "text": "Exemplum in sententia"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -48,11 +48,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "Synonyma:"
+      "text": "Synonyma"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "Antonyms:"
+      "text": "Antonyms"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",

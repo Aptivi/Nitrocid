@@ -24,7 +24,7 @@
     },
     {
       "loc": "NKS_DICTIONARY_WORD",
-      "text": "слово:"
+      "text": "слово"
     },
     {
       "loc": "NKS_DICTIONARY_MEAININGS",
@@ -32,15 +32,15 @@
     },
     {
       "loc": "NKS_DICTIONARY_PARTOFSPEECH",
-      "text": "Частина мови:"
+      "text": "Частина мови"
     },
     {
       "loc": "NKS_DICTIONARY_DEF",
-      "text": "визначення:"
+      "text": "визначення"
     },
     {
       "loc": "NKS_DICTIONARY_EXAMPLE",
-      "text": "Приклад у реченні:"
+      "text": "Приклад у реченні"
     },
     {
       "loc": "NKS_DICTIONARY_SOURCES",
@@ -48,11 +48,11 @@
     },
     {
       "loc": "NKS_DICTIONARY_SYNONYMS",
-      "text": "Синоніми:"
+      "text": "Синоніми"
     },
     {
       "loc": "NKS_DICTIONARY_ANTONYMS",
-      "text": "Антоніми:"
+      "text": "Антоніми"
     },
     {
       "loc": "NKS_DICTIONARY_WORDTODEFINE",
