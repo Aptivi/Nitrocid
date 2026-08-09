@@ -78,32 +78,14 @@ namespace Nitrocid.Extras.Mods.Commands
                     case "reload":
                     case "install":
                     case "uninstall":
+                        TargetMod = parameters.ArgumentsList[1];
+                        TargetModPath = FilesystemTools.NeutralizePath(TargetMod, PathsManagement.GetKernelPath(KernelPathType.Mods));
+                        if (!FilesystemTools.FileExists(TargetModPath))
                         {
-                            if (parameters.ArgumentsList.Length > 1)
-                            {
-                                TargetMod = parameters.ArgumentsList[1];
-                                TargetModPath = FilesystemTools.NeutralizePath(TargetMod, PathsManagement.GetKernelPath(KernelPathType.Mods));
-                                if (!(FilesystemTools.TryParsePath(TargetModPath) && FilesystemTools.FileExists(TargetModPath)))
-                                {
-                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODNOTFOUND"), true, ThemeColorType.Error);
-                                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchMod);
-                                }
-                            }
-                            else
-                            {
-                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILENEEDED"), true, ThemeColorType.Error);
-                                return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchMod);
-                            }
-
-                            break;
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODNOTFOUND"), true, ThemeColorType.Error);
+                            return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchMod);
                         }
-                    case "list":
-                        {
-                            if (parameters.ArgumentsList.Length > 1)
-                                ModListTerm = parameters.ArgumentsList[1];
-
-                            break;
-                        }
+                        break;
                 }
 
                 // Now, the actual logic
@@ -157,6 +139,8 @@ namespace Nitrocid.Extras.Mods.Commands
                         }
                     case "list":
                         {
+                            if (parameters.ArgumentsList.Length > 1)
+                                ModListTerm = parameters.ArgumentsList[1];
                             foreach (string Mod in ModManager.ListMods(ModListTerm).Keys)
                             {
                                 SeparatorWriterColor.WriteSeparatorColor(Mod, ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
@@ -209,7 +193,6 @@ namespace Nitrocid.Extras.Mods.Commands
                     default:
                         {
                             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_NOCOMMAND"), true, ThemeColorType.Error, CommandMode);
-                            HelpPrint.ShowHelp("modman");
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.ModManagement);
                         }
                 }

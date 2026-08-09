@@ -17,15 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Extras.Mods.Commands;
-using Nitrocid.Extras.Mods.Settings;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Kernel.Extensions;
-using Nitrocid.Core.Languages;
-using Terminaux.Shell.Arguments;
-using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using System.Linq;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Shell.Shells.UESH.Commands;
+using Nitrocid.Core.Languages;
+using Nitrocid.Extras.Mods.Commands;
+using Nitrocid.Extras.Mods.Settings;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.Mods
 {
@@ -37,7 +38,7 @@ namespace Nitrocid.Extras.Mods
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "start/stop/info/reload/install/uninstall", new()
+                        new CommandArgumentPart(true, "mode", new()
                         {
                             ExactWording = ["start", "stop", "info", "reload", "install", "uninstall"],
                             ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC"
@@ -49,7 +50,7 @@ namespace Nitrocid.Extras.Mods
                     ]),
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "list/reloadall/stopall/startall/tui", new()
+                        new CommandArgumentPart(true, "mode", new()
                         {
                             ExactWording = ["list", "reloadall", "stopall", "startall", "tui"],
                             ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC"
