@@ -31,6 +31,7 @@ using System.Text;
 using System.Threading;
 using System.Web;
 using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Network.Transfer;
 
 namespace Nitrocid.Extras.Pastebin.Commands
 {
@@ -58,9 +59,9 @@ namespace Nitrocid.Extras.Pastebin.Commands
             string type = parameters.ContainsSwitch("-type") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type") : "https";
             if (provider.Contains(':'))
             {
-                string portStr = provider.Substring(provider.IndexOf(":") + 1);
+                string portStr = provider[(provider.IndexOf(':') + 1)..];
                 port = int.Parse(portStr);
-                provider = provider.Substring(0, provider.IndexOf(':'));
+                provider = provider[..provider.IndexOf(':')];
             }
             if (type != "raw" && type != "http" && type != "https")
             {
@@ -115,11 +116,13 @@ namespace Nitrocid.Extras.Pastebin.Commands
                 var uri = new Uri(url);
 
                 // Open the HTTP client and choose how to post
-                var client = new HttpClient();
+                var client = NetworkTransfer.HttpClientNew;
                 client.DefaultRequestHeaders.Add("User-Agent", $"Nitrocid v{KernelReleaseInfo.Version}");
 
                 // Now, post and return the response.
-                var response = client.PostAsync(uri, new StringContent($"{field}={encoded}{(parameters.ArgumentsList.Length > 1 ? $"&{parameters.ArgumentsList[1]}" : "")}", Encoding.UTF8, format == "json" ? "text/json" : "application/x-www-form-urlencoded")).Result;
+                string arguments = parameters.ArgumentsList.Length > 1 ? $"&{parameters.ArgumentsList[1]}" : "";
+                string mediaType = format == "json" ? "text/json" : "application/x-www-form-urlencoded";
+                var response = client.PostAsync(uri, new StringContent($"{field}={encoded}{arguments}", Encoding.UTF8, mediaType)).Result;
                 string reply = response.Content.ReadAsStringAsync().Result;
                 if (!response.IsSuccessStatusCode)
                 {

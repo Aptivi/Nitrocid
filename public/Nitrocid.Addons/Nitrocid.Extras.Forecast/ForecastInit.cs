@@ -67,6 +67,7 @@ namespace Nitrocid.Extras.Forecast
                         })
                     ])
                 ], new WeatherCommand()),
+
             new CommandInfo("weather-old", /* Localizable */ "NKS_FORECAST_COMMAND_WEATHEROLD_DESC",
                 [
                     new CommandArgumentInfo(
