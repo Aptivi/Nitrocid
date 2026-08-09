@@ -62,7 +62,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                         }),
                     ])
                     {
-                        ArgChecker = (cp) => TwoFactorCommand.CheckArgument(cp, "start")
+                        ArgChecker = (cp) => TwoFactorCommand.CheckArgument(cp, "add")
                     },
                     new CommandArgumentInfo(
                     [
@@ -77,7 +77,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                         }),
                     ])
                     {
-                        ArgChecker = (cp) => TwoFactorCommand.CheckArgument(cp, "stop")
+                        ArgChecker = (cp) => TwoFactorCommand.CheckArgument(cp, "delete")
                     },
                     new CommandArgumentInfo(
                     [
