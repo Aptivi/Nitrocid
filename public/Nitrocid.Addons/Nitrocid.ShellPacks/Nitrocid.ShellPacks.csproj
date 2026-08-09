@@ -15,7 +15,7 @@
     <PackageReference Include="FluentFTP" Version="54.2.0" />
     <PackageReference Include="LibGit2Sharp" Version="0.32.0" />
     <PackageReference Include="MailKit" Version="4.17.0" />
-    <PackageReference Include="SharpCompress" Version="0.50.3" />
+    <PackageReference Include="SharpCompress" Version="0.50.4" />
     <PackageReference Include="SSH.NET" Version="2025.1.0" />
   </ItemGroup>
 
