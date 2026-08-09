@@ -25,29 +25,25 @@ using System;
 namespace Nitrocid.Extras.Ssh.Commands
 {
     /// <summary>
-    /// You can interact with the Secure SHell server (SSH) to remotely interact with the shell.
+    /// You can interact with the Secure SHell server (SSH) to remotely execute commands on the host of another PC.
     /// </summary>
     /// <remarks>
     /// Secure SHell server (SSH) is a type of server which lets another computer connect to it to run commands in it. In the recent iterations, it is bound to support X11 forwarding. Our implementation is pretty basic, and uses the SSH.NET library by Renci.
     /// <br></br>
-    /// This command lets you connect to another computer to remotely interact with the shell.
+    /// This command lets you connect to another computer to remotely execute commands.
     /// </remarks>
-    class SshellCommand : BaseCommand, ICommand
+    class SshcmdCommand : BaseCommand, ICommand
     {
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var AddressDelimiter = parameters.ArgumentsList[0].Split(':');
-            string Address = AddressDelimiter[0];
-            if (AddressDelimiter.Length > 1)
-            {
-                int Port = Convert.ToInt32(AddressDelimiter[1]);
-                SSHTools.InitializeSSH(Address, Port, parameters.ArgumentsList[1], SSHTools.ConnectionType.Shell);
-            }
-            else
-            {
-                SSHTools.InitializeSSH(Address, 22, parameters.ArgumentsList[1], SSHTools.ConnectionType.Shell);
-            }
+            string fullAddress = parameters.ArgumentsList[0];
+            string username = parameters.ArgumentsList[1];
+            string command = parameters.ArgumentsList[2];
+            var splitAddress = fullAddress.Split(':');
+            string address = splitAddress[0];
+            int port = splitAddress.Length > 1 ? int.Parse(splitAddress[1]) : 22;
+            SSHTools.InitializeSSH(address, port, username, SSHTools.ConnectionType.Command, command);
             return 0;
         }
 
