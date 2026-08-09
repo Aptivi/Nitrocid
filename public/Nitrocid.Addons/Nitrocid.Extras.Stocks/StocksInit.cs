@@ -43,6 +43,11 @@ namespace Nitrocid.Extras.Stocks
                         {
                             ArgumentDescription = /* Localizable */ "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC"
                         }),
+                        new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC -> AlphaVantage API key
+                            ArgumentDescription = /* Localizable */ "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC"
+                        }),
                     ])
                 ], new StockCommand()),
         ];
