@@ -92,7 +92,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
-      "text": "-- 天气信息 --"
+      "text": "天气信息"
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",

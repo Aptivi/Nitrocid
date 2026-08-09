@@ -12,7 +12,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
-      "text": "-- Thông tin thời tiết cho {0} --"
+      "text": "Thông tin thời tiết cho {0}"
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
@@ -84,7 +84,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
-      "text": "-- Thông tin thời tiết --"
+      "text": "Thông tin thời tiết"
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",

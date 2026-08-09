@@ -13,7 +13,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
-      "text": "-- {0} için hava durumu bilgisi --"
+      "text": "{0} için hava durumu bilgisi"
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
@@ -85,7 +85,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
-      "text": "-- Hava durumu bilgisi --"
+      "text": "Hava durumu bilgisi"
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",

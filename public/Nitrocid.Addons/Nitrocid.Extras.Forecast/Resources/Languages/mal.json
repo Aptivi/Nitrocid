@@ -15,7 +15,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
-      "text": "-- Maklumat cuaca untuk {0} --"
+      "text": "Maklumat cuaca untuk {0}"
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
@@ -87,7 +87,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
-      "text": "-- Maklumat cuaca --"
+      "text": "Maklumat cuaca"
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",

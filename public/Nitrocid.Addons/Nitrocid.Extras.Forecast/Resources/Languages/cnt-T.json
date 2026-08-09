@@ -15,7 +15,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
-      "text": "-- {0} 的天氣信息 --"
+      "text": "{0} 的天氣信息"
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
@@ -87,7 +87,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
-      "text": "-- 天氣資訊 --"
+      "text": "天氣資訊"
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",

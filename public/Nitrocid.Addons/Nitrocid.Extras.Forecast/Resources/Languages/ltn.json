@@ -12,7 +12,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
-      "text": "-- Tempestas info pro {0} --"
+      "text": "Tempestas info pro {0}"
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
@@ -84,7 +84,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
-      "text": "-- Tempestas info --"
+      "text": "Tempestas info"
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",

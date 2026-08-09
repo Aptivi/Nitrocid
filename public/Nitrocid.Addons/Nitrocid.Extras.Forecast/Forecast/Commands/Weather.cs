@@ -66,36 +66,37 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
                 InteractiveTuiTools.OpenInteractiveTui(tui);
                 return 0;
             }
-            if (parameters.ArgumentsList.Length <= 1)
-            {
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_LATLONPROMPT"), ThemeColorType.Error);
-                return 38;
-            }
-            string APIKey = Forecast.ApiKey;
-            if (parameters.ArgumentsList.Length > 2)
-            {
-                APIKey = parameters.ArgumentsList[2];
-            }
-            else if (string.IsNullOrEmpty(APIKey))
+
+            // Prompt for API key
+            string apiKey =
+                parameters.ArgumentsList.Length > 2 && !string.IsNullOrEmpty(parameters.ArgumentsList[2]) ?
+                parameters.ArgumentsList[2] :
+                Forecast.ApiKey;
+            if (string.IsNullOrEmpty(apiKey))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_APIKEY"));
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_APIKEYPROMPT") + " ", false, ThemeColorType.Input);
-                APIKey = TermReader.Read(password: true);
-                Forecast.ApiKey = APIKey;
+                apiKey = TermReader.Read(password: true);
+                Forecast.ApiKey = apiKey;
             }
-            var ListMode = false;
-            if (parameters.ContainsSwitch("-list"))
-                ListMode = true;
+
+            // Either list or obtain
+            var ListMode = parameters.ContainsSwitch("-list");
             if (ListMode)
             {
-                var Cities = WeatherForecast.ListAllCities(SwitchManager.GetSwitchValue(parameters.SwitchesList, "-list"), APIKey);
+                var Cities = WeatherForecast.ListAllCities(SwitchManager.GetSwitchValue(parameters.SwitchesList, "-list"), apiKey);
                 ListWriterColor.WriteList(Cities);
             }
             else
             {
+                if (parameters.ArgumentsList.Length <= 1)
+                {
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_LATLONPROMPT"), ThemeColorType.Error);
+                    return 38;
+                }
                 double latitude = double.Parse(parameters.ArgumentsList[0]);
                 double longitude = double.Parse(parameters.ArgumentsList[1]);
-                Forecast.PrintWeatherInfo(latitude, longitude, APIKey);
+                Forecast.PrintWeatherInfo(latitude, longitude, apiKey);
             }
             return 0;
         }

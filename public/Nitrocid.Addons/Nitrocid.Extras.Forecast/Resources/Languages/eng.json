@@ -118,7 +118,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
-      "text": "-- Weather info for {0} --"
+      "text": "Weather info for {0}"
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
@@ -190,7 +190,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
-      "text": "-- Weather info --"
+      "text": "Weather info"
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",

@@ -13,7 +13,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
-      "text": "-- Πληροφορίες καιρού για {0} --"
+      "text": "Πληροφορίες καιρού για {0}"
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
@@ -85,7 +85,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
-      "text": "-- Πληροφορίες καιρού --"
+      "text": "Πληροφορίες καιρού"
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",

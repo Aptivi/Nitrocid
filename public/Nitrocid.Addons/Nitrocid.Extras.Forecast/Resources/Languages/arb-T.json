@@ -38,7 +38,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
-      "text": "- معلومات الطقس لـ {0} -"
+      "text": "معلومات الطقس لـ {0}"
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
@@ -110,7 +110,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
-      "text": "- معلومات الطقس -"
+      "text": "معلومات الطقس"
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",

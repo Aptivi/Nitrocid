@@ -58,7 +58,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
-      "text": "- Informations météo pour {0} -"
+      "text": "Informations météo pour {0}"
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
@@ -130,7 +130,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
-      "text": "-- Informations météo --"
+      "text": "Informations météo"
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",

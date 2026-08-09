@@ -13,7 +13,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
-      "text": "-- Eolas aimsire le haghaidh {0} --"
+      "text": "Eolas aimsire le haghaidh {0}"
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
@@ -85,7 +85,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
-      "text": "-- Eolas aimsire --"
+      "text": "Eolas aimsire"
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",

@@ -12,7 +12,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
-      "text": "- {0} के लिए मौसम की जानकारी -"
+      "text": "{0} के लिए मौसम की जानकारी"
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
@@ -84,7 +84,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
-      "text": "-- मौसम की जानकारी --"
+      "text": "मौसम की जानकारी"
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",

@@ -84,7 +84,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
-      "text": "-- 天気情報 --"
+      "text": "天気情報"
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",

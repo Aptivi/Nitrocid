@@ -12,7 +12,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
-      "text": "- {0} ke lie mausam kee jaanakaaree -"
+      "text": "{0} ke lie mausam kee jaanakaaree"
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
@@ -84,7 +84,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
-      "text": "-- mausam kee jaanakaaree --"
+      "text": "mausam kee jaanakaaree"
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",

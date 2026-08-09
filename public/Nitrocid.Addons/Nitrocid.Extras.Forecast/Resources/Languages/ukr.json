@@ -12,7 +12,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_HEADER",
-      "text": "-- Інформація про погоду для {0} --"
+      "text": "Інформація про погоду для {0}"
     },
     {
       "loc": "NKS_FORECAST_WEATHEROLD_INFO_WEATHER",
@@ -84,7 +84,7 @@
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_HEADER",
-      "text": "-- Інформація про погоду --"
+      "text": "Інформація про погоду"
     },
     {
       "loc": "NKS_FORECAST_WEATHER_INFO_LATLON",
