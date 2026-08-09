@@ -37,7 +37,7 @@ namespace Nitrocid.Extras.ToDoList
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "add/remove/done/undone", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(true, "mode", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["add", "remove", "done", "undone"],
                             ArgumentDescription = /* Localizable */ "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC"
@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.ToDoList
                     ]),
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(true, "mode", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["list", "save", "load"],
                             ArgumentDescription = /* Localizable */ "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC"

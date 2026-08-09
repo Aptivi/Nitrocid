@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.ToDoList.ToDoList
         /// <param name="taskName">Task name to remove</param>
         public static void RemoveTask(string taskName)
         {
-            if (!TaskExists(taskName))
+            if (TaskExists(taskName))
                 toDoTasks.Remove(GetTask(taskName));
         }
 
