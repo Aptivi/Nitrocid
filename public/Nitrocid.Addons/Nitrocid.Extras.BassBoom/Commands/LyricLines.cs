@@ -50,10 +50,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
             // Visualize it!
             var lines = Lyrics.GetLyricLines(pathToLyrics);
             foreach (var line in lines)
-            {
-                TextWriterColor.Write($"- [{line.LineSpan.Hours:00}:{line.LineSpan.Minutes:00}:{line.LineSpan.Seconds:00}.{line.LineSpan.Milliseconds:000}] ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(line.Line, ThemeColorType.ListValue);
-            }
+                ListEntryWriterColor.WriteListEntry($"{line.LineSpan.Hours:00}:{line.LineSpan.Minutes:00}:{line.LineSpan.Seconds:00}.{line.LineSpan.Milliseconds:000}", line.Line);
             return 0;
         }
 
