@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.ChatbotAI.Commands
             return 0;
         }
 
-        private NetworkConnection EstablishChatGPTConnection(string apiKey, string model)
+        private NetworkInstanceConnection<ChatClient> EstablishChatGPTConnection(string apiKey, string model)
         {
             // Prompt for API key if needed
             while (string.IsNullOrEmpty(apiKey))

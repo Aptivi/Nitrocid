@@ -65,33 +65,18 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
             if (showDate)
             {
                 if (useUtc)
-                {
-                    string rendered = TimeDateRenderersUtc.RenderDateUtc(cultureInstance);
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                    variableValue = TimeDateRenderersUtc.RenderDateUtc(cultureInstance);
                 else
-                {
-                    string rendered = TimeDateRenderers.RenderDate(cultureInstance);
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                    variableValue = TimeDateRenderers.RenderDate(cultureInstance);
             }
             if (showTime)
             {
                 if (useUtc)
-                {
-                    string rendered = TimeDateRenderersUtc.RenderTimeUtc(cultureInstance);
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                    variableValue = TimeDateRenderersUtc.RenderTimeUtc(cultureInstance);
                 else
-                {
-                    string rendered = TimeDateRenderers.RenderTime(cultureInstance);
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                    variableValue = TimeDateRenderers.RenderTime(cultureInstance);
             }
+            TextWriterColor.Write(variableValue);
             return 0;
         }
     }

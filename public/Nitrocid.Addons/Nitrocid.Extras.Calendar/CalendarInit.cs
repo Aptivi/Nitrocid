@@ -241,10 +241,6 @@ namespace Nitrocid.Extras.Calendar
         internal static CalendarConfig CalendarConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(CalendarConfig)) ? (CalendarConfig)Config.baseConfigurations[nameof(CalendarConfig)] : Config.GetFallbackKernelConfig<CalendarConfig>();
 
-        public void FinalizeAddon()
-        {
-        }
-
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Calendar.Resources.Languages.Output.Localizations", typeof(CalendarInit).Assembly));
