@@ -41,24 +41,25 @@ namespace Nitrocid.Extras.UnitConv.Commands
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var abbreviations = UnitsNetSetup.Default.UnitAbbreviations;
-            var Quantities = Quantity.Infos.Where(x => x.Name == parameters.ArgumentsList[0]);
-            if (Quantities.Any())
+            string type = parameters.ArgumentsList[0];
+            var quantities = Quantity.Infos.Where(x => x.Name == type);
+            if (quantities.Any())
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS"));
-                foreach (QuantityInfo QuantityInfo in Quantities)
+                foreach (QuantityInfo QuantityInfo in quantities)
                 {
-                    TextWriterColor.Write("- {0}:", true, ThemeColorType.ListEntry, QuantityInfo.Name);
+                    SeparatorWriterColor.WriteSeparator(QuantityInfo.Name, true);
                     foreach (Enum UnitValues in QuantityInfo.UnitInfos.Select(x => x.Value))
                     {
-                        TextWriterColor.Write("  - {0}: ", false, ThemeColorType.ListEntry, string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
-                        TextWriterColor.Write(UnitValues.ToString(), true, ThemeColorType.ListValue);
+                        string abbreviationsStr = string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), (int)(object)UnitValues));
+                        ListEntryWriterColor.WriteListEntry(abbreviationsStr, UnitValues.ToString());
                     }
                 }
                 return 0;
             }
             else
             {
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_NOUNITTYPE") + " {0}", true, ThemeColorType.Error, parameters.ArgumentsList[0]);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_NOUNITTYPE") + " {0}", true, ThemeColorType.Error, type);
                 return 3;
             }
         }

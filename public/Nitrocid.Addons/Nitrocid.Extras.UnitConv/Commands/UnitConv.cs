@@ -50,7 +50,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
             {
                 var parser = UnitsNetSetup.Default.UnitParser;
                 string UnitType = parameters.ArgumentsList[0];
-                int QuantityNum = Convert.ToInt32(parameters.ArgumentsList[1]);
+                int QuantityNum = int.Parse(parameters.ArgumentsList[1]);
                 string SourceUnit = parameters.ArgumentsList[2];
                 string TargetUnit = parameters.ArgumentsList[3];
                 var QuantityInfos = Quantity.Infos.Where(x => x.Name == UnitType).ToArray();
@@ -69,11 +69,11 @@ namespace Nitrocid.Extras.UnitConv.Commands
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS"));
             foreach (QuantityInfo QuantityInfo in Quantity.Infos)
             {
-                TextWriterColor.Write("- {0}:", true, ThemeColorType.ListEntry, QuantityInfo.Name);
+                SeparatorWriterColor.WriteSeparator(QuantityInfo.Name, true);
                 foreach (Enum UnitValues in QuantityInfo.UnitInfos.Select(x => x.Value))
                 {
-                    TextWriterColor.Write("  - {0}: ", false, ThemeColorType.ListEntry, string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
-                    TextWriterColor.Write(UnitValues.ToString(), true, ThemeColorType.ListValue);
+                    string abbreviationsStr = string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), (int)(object)UnitValues));
+                    ListEntryWriterColor.WriteListEntry(abbreviationsStr, UnitValues.ToString());
                 }
             }
         }
