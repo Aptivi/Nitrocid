@@ -56,30 +56,15 @@ namespace Nitrocid.Extras.Notes
                     ]),
                 ], new RemoveNote()),
 
-            new CommandInfo("removenotes", /* Localizable */ "NKS_NOTES_COMMAND_REMOVENOTES_DESC",
-                [
-                    new CommandArgumentInfo(),
-                ], new RemoveNotes()),
+            new CommandInfo("removenotes", /* Localizable */ "NKS_NOTES_COMMAND_REMOVENOTES_DESC", new RemoveNotes()),
 
-            new CommandInfo("listnotes", /* Localizable */ "NKS_NOTES_COMMAND_LISTNOTES_DESC",
-                [
-                    new CommandArgumentInfo(),
-                ], new ListNotes()),
+            new CommandInfo("listnotes", /* Localizable */ "NKS_NOTES_COMMAND_LISTNOTES_DESC", new ListNotes()),
 
-            new CommandInfo("savenotes", /* Localizable */ "NKS_NOTES_COMMAND_SAVENOTES_DESC",
-                [
-                    new CommandArgumentInfo(),
-                ], new SaveNotes()),
+            new CommandInfo("savenotes", /* Localizable */ "NKS_NOTES_COMMAND_SAVENOTES_DESC", new SaveNotes()),
 
-            new CommandInfo("reloadnotes", /* Localizable */ "NKS_NOTES_COMMAND_RELOADNOTES_DESC",
-                [
-                    new CommandArgumentInfo(),
-                ], new ReloadNotes()),
+            new CommandInfo("reloadnotes", /* Localizable */ "NKS_NOTES_COMMAND_RELOADNOTES_DESC", new ReloadNotes()),
 
-            new CommandInfo("notestui", /* Localizable */ "NKS_NOTES_COMMAND_NOTESTUI_DESC",
-                [
-                    new CommandArgumentInfo(),
-                ], new NotesTui()),
+            new CommandInfo("notestui", /* Localizable */ "NKS_NOTES_COMMAND_NOTESTUI_DESC", new NotesTui()),
         ];
 
         public string AddonName =>

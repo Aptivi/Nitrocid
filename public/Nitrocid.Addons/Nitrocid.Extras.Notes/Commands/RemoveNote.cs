@@ -24,7 +24,6 @@ using Nitrocid.Extras.Notes.Management;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using System;
 
 namespace Nitrocid.Extras.Notes.Commands
 {
@@ -33,8 +32,9 @@ namespace Nitrocid.Extras.Notes.Commands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (parameters.ArgumentsList[0].IsNumeric())
-                NoteManagement.RemoveNote(Convert.ToInt32(parameters.ArgumentsList[0]) - 1);
+            string noteId = parameters.ArgumentsList[0];
+            if (noteId.IsNumeric())
+                NoteManagement.RemoveNote(int.Parse(noteId) - 1);
             else
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_NOTES_NOTEIDNOTNUMERIC"), true, ThemeColorType.Error);
