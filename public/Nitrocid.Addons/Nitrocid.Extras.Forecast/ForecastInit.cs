@@ -32,63 +32,10 @@ namespace Nitrocid.Extras.Forecast
 {
     internal class ForecastInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly List<BaseCommand> addonCommands =
         [
-            new CommandInfo("weather", /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new SwitchInfo("tui", /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC", new SwitchOptions()
-                        {
-                            AcceptsValues = false,
-                        })
-                    ]),
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "latitude", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC"
-                        }),
-                        new CommandArgumentPart(true, "longitude", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC"
-                        }),
-                        new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC"
-                        }),
-                    ],
-                    [
-                        new SwitchInfo("list", /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC", new SwitchOptions()
-                        {
-                            OptionalizeLastRequiredArguments = 3,
-                            AcceptsValues = true,
-                            ArgumentsRequired = true,
-                        })
-                    ])
-                ], new WeatherCommand()),
-
-            new CommandInfo("weather-old", /* Localizable */ "NKS_FORECAST_COMMAND_WEATHEROLD_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "CityID/CityName", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC"
-                        }),
-                        new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC"
-                        }),
-                    ],
-                    [
-                        new SwitchInfo("list", /* Localizable */ "NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC", new SwitchOptions()
-                        {
-                            OptionalizeLastRequiredArguments = 2,
-                            AcceptsValues = false
-                        })
-                    ])
-                ], new WeatherOldCommand()),
+            new WeatherCommand(),
+            new WeatherOldCommand(),
         ];
 
         public string AddonName =>

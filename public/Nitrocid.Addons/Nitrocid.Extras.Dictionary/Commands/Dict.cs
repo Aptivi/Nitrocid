@@ -18,11 +18,12 @@
 //
 
 using Nettify.EnglishDictionary;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.Base.Languages;
-using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Dictionary.Commands
 {
@@ -34,6 +35,25 @@ namespace Nitrocid.Extras.Dictionary.Commands
     /// </remarks>
     class DictCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "dict";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_DICTIONARY_DICTIONARY");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "word", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_DICTIONARY_WORDTODEFINE"
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

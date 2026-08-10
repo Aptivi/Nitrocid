@@ -19,28 +19,12 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
 using System.Text;
-using Nitrocid.Base.Drivers;
-using Nitrocid.Base.Drivers.Encryption;
-using Nitrocid.Base.Files.Extensions;
 using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Files.Unix;
-using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Reflection;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Interactive;
-using Terminaux.Inputs.Modules;
-using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Inputs.Styles.Infobox.Tools;
-using Terminaux.Sequences;
 using Terminaux.Themes.Colors;
 using Textify.General;
 

@@ -34,6 +34,11 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
     /// </remarks>
     class DbInfoCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "dbinfo";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMAND_DBINFO_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

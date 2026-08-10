@@ -17,13 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Languages;
+using Nitrocid.Extras.BassBoom.Animations.Lyrics;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Extras.BassBoom.Animations.Lyrics;
-using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.Files;
-using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {
@@ -35,6 +36,25 @@ namespace Nitrocid.Extras.BassBoom.Commands
     /// </remarks>
     class LyricLinesCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lyriclines";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_LYRICLINES_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "lyric.lrc", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC"
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

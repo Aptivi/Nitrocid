@@ -17,8 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Files;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Security.Permissions;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 
@@ -32,6 +34,22 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class RmSecCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "rmsec";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RMSEC_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "target", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RM_ARGUMENT_TARGET_DESC"
+                    }),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

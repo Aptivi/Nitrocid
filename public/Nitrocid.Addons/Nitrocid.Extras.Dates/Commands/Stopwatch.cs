@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Languages;
 using Nitrocid.Extras.Dates.Timers;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
@@ -31,6 +32,11 @@ namespace Nitrocid.Extras.Dates.Commands
     /// </remarks>
     class StopwatchCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "stopwatch";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_DATES_COMMAND_STOPWATCH_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

@@ -18,19 +18,21 @@
 //
 
 #if NKS_EXTENSIONS
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
 using System;
 using System.IO.Compression;
+using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Extensions;
-using Nitrocid.Base.Network.Transfer;
-using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Updates;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Network.Transfer;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -42,6 +44,22 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class GetAddonsCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "getaddons";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETADDONS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("reinstall", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GETADDONS_SWITCH_REINSTALL_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

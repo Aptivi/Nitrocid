@@ -17,14 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Kernel.Time.Alarm;
-using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
 using System.Collections.Generic;
 using System.Linq;
+using Nitrocid.Base.Kernel.Time.Alarm;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Caffeine.Commands
 {
@@ -42,6 +44,29 @@ namespace Nitrocid.Extras.Caffeine.Commands
             { "Red Tea",         (LanguageTools.GetLocalized("NKS_CAFFEINE_REDTEA"), 60 * 10) },
             { "Green Tea",       (LanguageTools.GetLocalized("NKS_CAFFEINE_GREENTEA"), 60 * 10) },
         };
+
+        public override string Command =>
+            "caffeine";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_CAFFEINE_COMMAND_CAFFEINE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "secondsOrName", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("abort", /* Localizable */ "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC", new SwitchOptions()
+                    {
+                        OptionalizeLastRequiredArguments = 1
+                    })
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

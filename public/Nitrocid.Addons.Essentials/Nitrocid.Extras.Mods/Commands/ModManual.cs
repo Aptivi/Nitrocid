@@ -17,20 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Exceptions;
-using Terminaux.Inputs.Interactive;
-using Terminaux.Themes.Colors;
+using System;
+using System.IO;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
-using System.IO;
-using System;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.Extras.Mods.Modifications;
-using Nitrocid.Extras.Mods.Modifications.ManPages;
 using Nitrocid.Extras.Mods.Modifications.Interactive;
+using Nitrocid.Extras.Mods.Modifications.ManPages;
+using Terminaux.Inputs.Interactive;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Mods.Commands
 {
@@ -43,6 +44,22 @@ namespace Nitrocid.Extras.Mods.Commands
     /// </remarks>
     class ModManualCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "modmanual";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMANUAL_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "modname", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC"
+                    }),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

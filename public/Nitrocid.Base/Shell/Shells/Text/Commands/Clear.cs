@@ -29,6 +29,11 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
     /// </summary>
     class ClearCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "clear";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_CLEAR_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

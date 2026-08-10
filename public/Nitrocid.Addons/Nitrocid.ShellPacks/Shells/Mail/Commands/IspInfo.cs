@@ -34,6 +34,11 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
     /// </remarks>
     class IspInfoCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "ispinfo";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

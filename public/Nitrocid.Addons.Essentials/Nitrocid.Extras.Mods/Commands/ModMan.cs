@@ -17,24 +17,25 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.IO;
-using Nitrocid.Base.Kernel;
-using Terminaux.Shell.Help;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
 using Nitrocid.Base.Files;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Files.Paths;
-using Terminaux.Themes.Colors;
+using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users;
 using Nitrocid.Extras.Mods.Modifications;
 using Nitrocid.Extras.Mods.Modifications.Interactive;
 using Terminaux.Inputs.Interactive;
-using System;
-using Nitrocid.Base.Users;
-using Nitrocid.Base.Kernel.Debugging;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Help;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Mods.Commands
 {
@@ -48,6 +49,35 @@ namespace Nitrocid.Extras.Mods.Commands
     /// </remarks>
     class ModManCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "modman";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMAN_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "mode", new()
+                    {
+                        ExactWording = ["start", "stop", "info", "reload", "install", "uninstall"],
+                        ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC"
+                    }),
+                    new CommandArgumentPart(true, "modfilename", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC"
+                    }),
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "mode", new()
+                    {
+                        ExactWording = ["list", "reloadall", "stopall", "startall", "tui"],
+                        ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC"
+                    }),
+                ]),
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

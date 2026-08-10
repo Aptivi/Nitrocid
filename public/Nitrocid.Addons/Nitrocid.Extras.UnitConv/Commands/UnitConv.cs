@@ -20,13 +20,15 @@
 using System;
 using System.Data;
 using System.Linq;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
+using Nitrocid.Extras.UnitConv.Tools;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using UnitsNet;
-using Nitrocid.Extras.UnitConv.Tools;
 
 namespace Nitrocid.Extras.UnitConv.Commands
 {
@@ -40,6 +42,43 @@ namespace Nitrocid.Extras.UnitConv.Commands
     /// </remarks>
     class UnitConvCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "unitconv";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "unittype", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => [.. Quantity.Infos.Select((src) => src.Name)],
+                        ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "quantity", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_QUANTITY_DESC"
+                    }),
+                    new CommandArgumentPart(true, "sourceunit", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_SOURCEUNIT_DESC"
+                    }),
+                    new CommandArgumentPart(true, "targetunit", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("tui", /* Localizable */ "NKS_UNITCONV_COMMAND_UNITCONV_SWITCH_TUI_DESC", new SwitchOptions()
+                    {
+                        OptionalizeLastRequiredArguments = 4,
+                        AcceptsValues = false
+                    })
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

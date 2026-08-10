@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Drivers.Encryption;
 using Nitrocid.Base.Drivers.Regexp;
 using Nitrocid.Base.Files;
@@ -34,7 +33,6 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Login;
 using Nitrocid.Base.Security.Permissions;
-using Terminaux.Base.TermInfo.Tabsets;
 using Textify.General;
 
 namespace Nitrocid.Base.Users

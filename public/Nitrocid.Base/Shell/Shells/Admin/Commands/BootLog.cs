@@ -22,6 +22,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Misc.Splash;
 using Terminaux.Shell.Shells;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Shell.Shells.Admin.Commands
 {
@@ -33,6 +34,14 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
     /// </remarks>
     class BootLogCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "bootlog";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_BOOTLOG_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

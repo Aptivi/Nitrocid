@@ -26,6 +26,7 @@ using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Textify.General;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Commands
 {
@@ -39,6 +40,23 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
     /// </remarks>
     class ArticleInfoCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "articleinfo";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_ARTICLEINFO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC"
+                    })
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

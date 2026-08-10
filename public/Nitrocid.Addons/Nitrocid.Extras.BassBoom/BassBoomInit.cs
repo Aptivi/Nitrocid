@@ -41,66 +41,13 @@ namespace Nitrocid.Extras.BassBoom
         internal static Version? outVer;
         internal static Color white = new(ConsoleColors.White);
 
-        private readonly List<CommandInfo> addonCommands =
+        private readonly List<BaseCommand> addonCommands =
         [
-            new CommandInfo("lyriclines", /* Localizable */ "NKS_BASSBOOM_COMMAND_LYRICLINES_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "lyric.lrc", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC"
-                        }),
-                    ])
-                ], new LyricLinesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-
-            new CommandInfo("playlyric", /* Localizable */ "NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "lyric.lrc", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC"
-                        }),
-                    ])
-                ], new PlayLyricCommand()),
-
-            new CommandInfo("playsound", /* Localizable */ "NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "musicFile", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC"
-                        }),
-                    ])
-                ], new PlaySoundCommand()),
-
-            new CommandInfo("playradio", /* Localizable */ "NKS_BASSBOOM_COMMAND_PLAYRADIO_DESC", // TODO: NKS_BASSBOOM_COMMAND_PLAYRADIO_DESC -> Plays a radio station
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "radioUrl", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_BASSBOOM_COMMAND_ARGUMENT_RADIOURL_DESC" // TODO: NKS_BASSBOOM_COMMAND_ARGUMENT_RADIOURL_DESC -> Path to a radio station
-                        }),
-                    ])
-                ], new PlayRadioCommand()),
-
-            new CommandInfo("netfminfo", /* Localizable */ "NKS_BASSBOOM_COMMAND_NETFMINFO_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "hostname", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC"
-                        }),
-                        new CommandArgumentPart(true, "port", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC"
-                        }),
-                    ])
-                ], new NetFmInfoCommand()),
+            new LyricLinesCommand(),
+            new PlayLyricCommand(),
+            new PlaySoundCommand(),
+            new PlayRadioCommand(),
+            new NetFmInfoCommand(),
         ];
 
         public string AddonName =>

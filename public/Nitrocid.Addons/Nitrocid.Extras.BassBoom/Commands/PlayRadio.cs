@@ -17,16 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
 using System;
 using System.Threading;
-using Terminaux.Inputs;
 using BassBoom.Basolia.Media;
 using BassBoom.Basolia.Media.Playback;
+using Nitrocid.Base.Languages;
+using Terminaux.Inputs;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {
@@ -38,6 +39,24 @@ namespace Nitrocid.Extras.BassBoom.Commands
     /// </remarks>
     class PlayRadioCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "playradio";
+
+        // TODO: NKS_BASSBOOM_COMMAND_PLAYRADIO_DESC -> Plays a radio station
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_PLAYRADIO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "radioUrl", new CommandArgumentPartOptions()
+                    {
+                        // TODO: NKS_BASSBOOM_COMMAND_ARGUMENT_RADIOURL_DESC -> Path to a radio station
+                        ArgumentDescription = /* Localizable */ "NKS_BASSBOOM_COMMAND_ARGUMENT_RADIOURL_DESC"
+                    }),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

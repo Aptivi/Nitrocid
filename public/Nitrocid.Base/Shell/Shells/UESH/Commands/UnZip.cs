@@ -21,8 +21,11 @@ using System;
 using System.IO;
 using System.IO.Compression;
 using Nitrocid.Base.Files;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -46,6 +49,32 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class UnZipCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "unzip";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "zipfile", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_ZIPFILE_DESC"
+                    }),
+                    new CommandArgumentPart(false, "path", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_PATH_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("createdir", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_SWITCH_CREATEDIR_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

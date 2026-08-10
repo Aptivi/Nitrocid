@@ -20,6 +20,7 @@
 using System;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
@@ -29,6 +30,29 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
 {
     class PostCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "post";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_POST_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "request", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC"
+                    }),
+                    new CommandArgumentPart(true, "pathtofile", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_FILE_DESC"
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

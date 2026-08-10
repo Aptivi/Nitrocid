@@ -17,16 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Help;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
-using System;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Time.Alarm;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
-using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Security.Permissions;
 using Terminaux.Shell.Shells;
 using Nitrocid.Base.Users.Groups.Interactives;
@@ -38,6 +34,12 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </summary>
     class GroupManTuiCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "groupmantui";
+
+        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_GROUPMANTUI_DESC -> Opens the group management TUI
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GROUPMANTUI_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

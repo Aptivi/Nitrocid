@@ -19,15 +19,16 @@
 
 using System;
 using System.Net.NetworkInformation;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Network;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Network;
-using Nitrocid.Base.Languages;
-using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -41,6 +42,33 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class PingCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "ping";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PING_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "address1", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PING_ARGUMENT_FIRSTHOST_DESC"
+                    }),
+                    new CommandArgumentPart(false, "address2", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PING_ARGUMENT_SECONDHOST_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("times", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PING_SWITCH_TIMES_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true,
+                        IsNumeric = true
+                    })
+                ], false, true)
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

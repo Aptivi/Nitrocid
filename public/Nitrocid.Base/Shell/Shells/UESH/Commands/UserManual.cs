@@ -17,13 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Textify.General;
-using Nitrocid.Base.Languages;
-using SpecProbe.Software.Platform;
-using Terminaux.Shell.Shells;
 using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
@@ -33,6 +31,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </summary>
     class UserManualCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "usermanual";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_USERMANUAL_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

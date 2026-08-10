@@ -32,6 +32,7 @@ using System.Threading;
 using System.Web;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Network.Transfer;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.Extras.Pastebin.Commands
 {
@@ -43,6 +44,54 @@ namespace Nitrocid.Extras.Pastebin.Commands
     /// </remarks>
     class PastebinCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "pastebin";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "file/string", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_FILESTRING_DESC"
+                    }),
+                    new CommandArgumentPart(false, "arguments", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_ARGUMENTS_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("provider", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_PROVIDER_DESC", new()
+                    {
+                        AcceptsValues = true,
+                        ArgumentsRequired = true,
+                    }),
+                    new SwitchInfo("type", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_TYPE_DESC", new()
+                    {
+                        AcceptsValues = true,
+                        ArgumentsRequired = true,
+                    }),
+                    new SwitchInfo("postpage", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTPAGE_DESC", new()
+                    {
+                        AcceptsValues = true,
+                        ArgumentsRequired = true,
+                    }),
+                    new SwitchInfo("postformat", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFORMAT_DESC", new()
+                    {
+                        AcceptsValues = true,
+                        ArgumentsRequired = true,
+                    }),
+                    new SwitchInfo("postfield", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFIELD_DESC", new()
+                    {
+                        AcceptsValues = true,
+                        ArgumentsRequired = true,
+                    }),
+                ]),
+            ];
+
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Check the contents

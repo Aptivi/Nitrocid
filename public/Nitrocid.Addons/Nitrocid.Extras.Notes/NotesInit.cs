@@ -31,40 +31,15 @@ namespace Nitrocid.Extras.Notes
 {
     internal class NotesInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly List<BaseCommand> addonCommands =
         [
-            new CommandInfo("addnote", /* Localizable */ "NKS_NOTES_COMMAND_ADDNOTE_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "noteContents...", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_NOTES_COMMAND_ADDNOTE_ARGUMENT_NOTECONTENTS_DESC"
-                        })
-                    ]),
-                ], new AddNote()),
-
-            new CommandInfo("removenote", /* Localizable */ "NKS_NOTES_COMMAND_REMOVENOTE_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "noteNumber", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC"
-                        })
-                    ]),
-                ], new RemoveNote()),
-
-            new CommandInfo("removenotes", /* Localizable */ "NKS_NOTES_COMMAND_REMOVENOTES_DESC", new RemoveNotes()),
-
-            new CommandInfo("listnotes", /* Localizable */ "NKS_NOTES_COMMAND_LISTNOTES_DESC", new ListNotes()),
-
-            new CommandInfo("savenotes", /* Localizable */ "NKS_NOTES_COMMAND_SAVENOTES_DESC", new SaveNotes()),
-
-            new CommandInfo("reloadnotes", /* Localizable */ "NKS_NOTES_COMMAND_RELOADNOTES_DESC", new ReloadNotes()),
-
-            new CommandInfo("notestui", /* Localizable */ "NKS_NOTES_COMMAND_NOTESTUI_DESC", new NotesTui()),
+            new AddNote(),
+            new RemoveNote(),
+            new RemoveNotes(),
+            new ListNotes(),
+            new SaveNotes(),
+            new ReloadNotes(),
+            new NotesTui(),
         ];
 
         public string AddonName =>

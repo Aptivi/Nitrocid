@@ -22,6 +22,7 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Time.Timezones;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
@@ -37,6 +38,22 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     /// </remarks>
     class CommitCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "commit";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_COMMIT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "summary", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_COMMIT_ARGUMENT_SUMMARY_DESC"
+                    })
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

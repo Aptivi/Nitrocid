@@ -25,6 +25,7 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
 using System;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
 {
@@ -36,6 +37,37 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
     /// </remarks>
     class AddCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "add";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "jsonValue", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ADD_ARGUMENT_JSONVALUE_DESC"
+                    })
+                ],
+                [
+                    new SwitchInfo("parentPath", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true
+                    }),
+                    new SwitchInfo("type", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true,
+                        IsRequired = true
+                    }),
+                    new SwitchInfo("propName", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true
+                    }),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

@@ -20,6 +20,7 @@
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Kernel.Starting;
 using Terminaux.Shell.Shells;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -28,6 +29,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </summary>
     class LicenseCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "license";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

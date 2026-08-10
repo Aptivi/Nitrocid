@@ -33,6 +33,11 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
     /// </remarks>
     class TuiCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "tui";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_TUI_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

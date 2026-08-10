@@ -19,10 +19,13 @@
 
 using System;
 using System.Runtime.InteropServices;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
+using Nitrocid.Base.Languages;
 using SpecProbe.Software.Platform;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -34,6 +37,43 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class PlatformCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "platform";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("n", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_N_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["r", "v", "b", "c"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("v", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_V_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["n", "r", "b", "c"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("b", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_B_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["n", "v", "r", "c"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("c", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_C_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["n", "v", "b", "r"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("r", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_R_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["n", "v", "b", "c"],
+                        AcceptsValues = false
+                    })
+                ], true)
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

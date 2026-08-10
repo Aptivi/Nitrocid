@@ -36,6 +36,11 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     /// </remarks>
     class ShowMainBufferCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "showmainbuffer";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

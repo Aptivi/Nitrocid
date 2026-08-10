@@ -19,18 +19,19 @@
 
 using System.IO;
 using System.Reflection;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.Files;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
 using Magico.Files;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Misc.Reflection;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Time.Renderers;
-using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Files;
 using Nitrocid.Base.Files.Extensions;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Time.Renderers;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -42,6 +43,25 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class FileInfoCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "fileinfo";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FILEINFO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "file", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_FILE_DESC"
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

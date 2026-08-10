@@ -17,15 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Terminaux.Inputs.Interactive;
-using Terminaux.Inputs.Pointer;
 using System;
-using Terminaux.Inputs;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Screensaver;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Interactive;
+using Terminaux.Inputs.Pointer;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -37,6 +39,32 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class SaveScreenCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "savescreen";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "saver", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_ARGUMENT_SAVERNAME_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("select", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_SELECT_DESC", new()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("random", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC", new()
+                    {
+                        AcceptsValues = false
+                    }),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

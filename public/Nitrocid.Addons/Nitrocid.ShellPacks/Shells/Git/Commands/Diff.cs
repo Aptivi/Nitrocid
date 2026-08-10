@@ -20,8 +20,10 @@
 using LibGit2Sharp;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -35,6 +37,33 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     /// </remarks>
     class DiffCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "diff";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_DIFF_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("patch", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_PATCH_DESC", new()
+                    {
+                        ConflictsWith = ["tree", "all"]
+                    }),
+                    new SwitchInfo("tree", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_TREE_DESC", new()
+                    {
+                        ConflictsWith = ["patch", "all"]
+                    }),
+                    new SwitchInfo("all", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_ALL_DESC", new()
+                    {
+                        ConflictsWith = ["tree", "patch"]
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

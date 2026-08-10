@@ -18,6 +18,8 @@
 //
 
 using Nitrocid.Base.Files;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 
@@ -25,6 +27,22 @@ namespace Nitrocid.ShellPacks.Shells.Git.UESHCommands
 {
     internal class GitCommandExec : BaseCommand, ICommand
     {
+        public override string Command =>
+            "gitsh";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_GITSH_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "repoPath", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC"
+                    })
+                ]),
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

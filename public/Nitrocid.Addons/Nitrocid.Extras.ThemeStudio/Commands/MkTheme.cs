@@ -23,6 +23,7 @@ using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Languages;
 using Nitrocid.Extras.ThemeStudio.Studio;
 using Terminaux.Inputs.Interactive;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
@@ -39,6 +40,22 @@ namespace Nitrocid.Extras.ThemeStudio.Commands
     /// </remarks>
     class MkThemeCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "mktheme";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "themeName", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC"
+                    }),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

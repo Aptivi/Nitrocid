@@ -30,6 +30,11 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
     /// </summary>
     class ClearCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "clear";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_CLEAR_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

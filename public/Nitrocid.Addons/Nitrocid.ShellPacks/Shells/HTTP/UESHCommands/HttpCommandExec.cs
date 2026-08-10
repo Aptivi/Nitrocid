@@ -28,6 +28,11 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.UESHCommands
 {
     internal class HttpCommandExec : BaseCommand, ICommand
     {
+        public override string Command =>
+            "http";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

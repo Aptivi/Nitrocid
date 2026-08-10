@@ -21,11 +21,17 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Notes.Management;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.Notes.Commands
 {
     internal class ListNotes : BaseCommand, ICommand
     {
+        public override string Command => 
+            "listnotes";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_NOTES_COMMAND_LISTNOTES_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

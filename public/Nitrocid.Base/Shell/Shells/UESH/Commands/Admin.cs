@@ -39,6 +39,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class AdminCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "admin";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ADMIN_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

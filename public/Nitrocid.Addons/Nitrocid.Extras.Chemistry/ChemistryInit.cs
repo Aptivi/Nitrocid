@@ -31,20 +31,10 @@ namespace Nitrocid.Extras.Chemistry
 {
     internal class ChemistryInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly List<BaseCommand> addonCommands =
         [
-            new CommandInfo("element", /* Localizable */ "NKS_CHEMISTRY_COMMAND_ELEMENT_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "name/symbol/atomicNumber", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_CHEMISTRY_COMMAND_ELEMENT_ARGUMENT_SPECIFIER_DESC"
-                        }),
-                    ])
-                ], new ElementCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
-
-            new CommandInfo("elements", /* Localizable */ "NKS_CHEMISTRY_COMMAND_ELEMENTS_DESC", new ElementsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            new ElementCommand(),
+            new ElementsCommand(),
         ];
 
         public string AddonName =>

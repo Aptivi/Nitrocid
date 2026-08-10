@@ -17,15 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Drivers;
+using Nitrocid.Base.Drivers.Encoding;
+using Nitrocid.Base.Drivers.EncodingAsymmetric;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.Drivers;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Drivers.Encoding;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Drivers.EncodingAsymmetric;
-using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -37,6 +38,23 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class GetKeyIvCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "getkeyiv";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETKEYIV_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "algorithm", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => EncodingDriverTools.GetEncodingDriverNames(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GETKEYIV_ARGUMENT_ALGORITHM_DESC"
+                    }),
+                ], true)
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

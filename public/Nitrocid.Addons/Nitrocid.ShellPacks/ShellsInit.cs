@@ -56,167 +56,48 @@ namespace Nitrocid.ShellPacks
     {
         private static bool gitNativeLibIsSet = false;
 
-        private readonly List<CommandInfo> archiveAddonCommands =
+        private readonly List<BaseCommand> archiveAddonCommands =
         [
-            new CommandInfo("archive", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "archivefile", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC"
-                        }),
-                    ])
-                ], new ArchiveCommand())
+            new ArchiveCommand(),
         ];
 
-        private readonly List<CommandInfo> ftpAddonCommands =
+        private readonly List<BaseCommand> ftpAddonCommands =
         [
-            new CommandInfo("ftp", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_FTP_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "server", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC"
-                        }),
-                    ])
-                ], new FtpCommandExec())
+            new FtpCommandExec(),
         ];
 
-        private readonly List<CommandInfo> gitAddonCommands =
+        private readonly List<BaseCommand> gitAddonCommands =
         [
-            new CommandInfo("gitsh", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_GITSH_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "repoPath", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC"
-                        })
-                    ]),
-                ], new GitCommandExec())
+            new GitCommandExec(),
         ];
 
-        private readonly List<CommandInfo> httpAddonCommands =
+        private readonly List<BaseCommand> httpAddonCommands =
         [
-            new CommandInfo("http", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC", new HttpCommandExec())
+            new HttpCommandExec(),
         ];
 
-        private readonly List<CommandInfo> jsonAddonCommands =
+        private readonly List<BaseCommand> jsonAddonCommands =
         [
-            new CommandInfo("jsondiff", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "file1", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE1_DESC"
-                        }),
-                        new CommandArgumentPart(true, "file2", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE2_DESC"
-                        }),
-                    ])
-                ], new JsonDiffCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-
-            new CommandInfo("jsonbeautify", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_JSONBEAUTIFY_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "jsonfile", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC"
-                        }),
-                        new CommandArgumentPart(true, "output", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC"
-                        }),
-                    ], true)
-                ], new JsonBeautifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-
-            new CommandInfo("jsonminify", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_JSONMINIFY_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "jsonfile", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC"
-                        }),
-                        new CommandArgumentPart(true, "output", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC"
-                        }),
-                    ], true)
-                ], new JsonMinifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new JsonDiffCommand(),
+            new JsonBeautifyCommand(),
+            new JsonMinifyCommand(),
         ];
 
-        private readonly List<CommandInfo> mailAddonCommands =
+        private readonly List<BaseCommand> mailAddonCommands =
         [
-            new CommandInfo("mail", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "emailAddress", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC"
-                        }),
-                    ])
-                ], new MailCommandExec()),
-            new CommandInfo("popmail", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "emailAddress", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC"
-                        }),
-                    ])
-                ], new PopMailCommandExec()),
-            new CommandInfo("ispinfo", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "emailAddressOrHost", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC"
-                        }),
-                    ],
-                    [
-                        new SwitchInfo("host", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC"),
-                    ])
-                ], new IspInfoCommand()),
+            new MailCommandExec(),
+            new PopMailCommandExec(),
+            new IspInfoCommand(),
         ];
 
-        private readonly List<CommandInfo> rssAddonCommands =
+        private readonly List<BaseCommand> rssAddonCommands =
         [
-            new CommandInfo("rss", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_RSS_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "feedlink", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_RSS_ARGUMENT_FEEDLINK_DESC"
-                        }),
-                    ],
-                    [
-                        new SwitchInfo("tui", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC"),
-                    ])
-                ], new RssCommandExec())
+            new RssCommandExec(),
         ];
 
-        private readonly List<CommandInfo> sftpAddonCommands =
+        private readonly List<BaseCommand> sftpAddonCommands =
         [
-            new CommandInfo("sftp", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "server", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_SFTP_ARGUMENT_SERVER_DESC"
-                        }),
-                    ])
-                ], new SftpCommandExec()),
+            new SftpCommandExec(),
         ];
 
         public string AddonName =>

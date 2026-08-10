@@ -38,6 +38,11 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     /// </remarks>
     class PullCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "pull";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_PULL_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

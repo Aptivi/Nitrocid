@@ -26,6 +26,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Shell.Shells;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -37,6 +38,32 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     /// </remarks>
     class PreviewSplashCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "previewsplash";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "splashName", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_ARGUMENT_SPLASHNAME_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("splashout", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_SWITCH_SPLASHOUT_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("context", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_SWITCH_CONTEXT_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true
+                    }),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

@@ -36,136 +36,18 @@ namespace Nitrocid.ShellPacks.Shells.Json
         /// <summary>
         /// JSON commands
         /// </summary>
-        public override List<CommandInfo> Commands =>
+        public override List<BaseCommand> Commands =>
         [
-            new CommandInfo("add", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "jsonValue", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ADD_ARGUMENT_JSONVALUE_DESC"
-                        })
-                    ],
-                    [
-                        new SwitchInfo("parentPath", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC", new SwitchOptions()
-                        {
-                            ArgumentsRequired = true
-                        }),
-                        new SwitchInfo("type", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC", new SwitchOptions()
-                        {
-                            ArgumentsRequired = true,
-                            IsRequired = true
-                        }),
-                        new SwitchInfo("propName", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC", new SwitchOptions()
-                        {
-                            ArgumentsRequired = true
-                        }),
-                    ])
-                ], new AddCommand()),
-
-            new CommandInfo("clear", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_CLEAR_DESC", new ClearCommand()),
-
-            new CommandInfo("exitnosave", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_EXITNOSAVE_DESC", new ExitNoSaveCommand()),
-
-            new CommandInfo("findproperty", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "propertyName", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC"
-                        })
-                    ],
-                    [
-                        new SwitchInfo("parentProperty", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_SWITCH_PARENTPROPERTY_DESC", new SwitchOptions()
-                        {
-                            ArgumentsRequired = true
-                        })
-                    ])
-                ], new FindPropertyCommand()),
-
-            new CommandInfo("jsoninfo", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new SwitchInfo("simplified", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC", new SwitchOptions()
-                        {
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("showvals", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC", new SwitchOptions()
-                        {
-                            AcceptsValues = false
-                        })
-                    ])
-                ], new JsonInfoCommand(), CommandFlags.Wrappable),
-
-            new CommandInfo("print", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_PRINT_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "propertyName", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC"
-                        })
-                    ])
-                ], new PrintCommand(), CommandFlags.Wrappable),
-
-            new CommandInfo("rm", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_RM_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "objectPath", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_RM_ARGUMENT_OBJECTPATH_DESC"
-                        })
-                    ])
-                ], new RmCommand()),
-
-            new CommandInfo("save", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_SAVE_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new SwitchInfo("b", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["m"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("m", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_M_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["b"],
-                            AcceptsValues = false
-                        })
-                    ])
-                ], new SaveCommand()),
-
-            new CommandInfo("set", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_SET_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "jsonValue", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC"
-                        })
-                    ],
-                    [
-                        new SwitchInfo("parentPath", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC", new SwitchOptions()
-                        {
-                            ArgumentsRequired = true
-                        }),
-                        new SwitchInfo("type", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC", new SwitchOptions()
-                        {
-                            ArgumentsRequired = true,
-                            IsRequired = true
-                        }),
-                        new SwitchInfo("propName", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC", new SwitchOptions()
-                        {
-                            ArgumentsRequired = true
-                        }),
-                    ])
-                ], new SetCommand()),
-
-            new CommandInfo("tui", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_TUI_DESC", new TuiCommand()),
+            new AddCommand(),
+            new ClearCommand(),
+            new ExitNoSaveCommand(),
+            new FindPropertyCommand(),
+            new JsonInfoCommand(),
+            new PrintCommand(),
+            new RmCommand(),
+            new SaveCommand(),
+            new SetCommand(),
+            new TuiCommand(),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

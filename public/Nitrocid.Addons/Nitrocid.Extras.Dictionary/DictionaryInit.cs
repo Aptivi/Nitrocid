@@ -29,18 +29,9 @@ namespace Nitrocid.Extras.Dictionary
 {
     internal class DictionaryInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly List<BaseCommand> addonCommands =
         [
-            new CommandInfo("dict", /* Localizable */ "NKS_DICTIONARY_DICTIONARY",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "word", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_DICTIONARY_WORDTODEFINE"
-                        }),
-                    ])
-                ], new DictCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            new DictCommand(),
         ];
 
         public string AddonName =>

@@ -21,7 +21,6 @@ using System.Collections.Generic;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Prompts;
-using Terminaux.Shell.Arguments;
 using Nitrocid.Base.Shell.Shells.Text.Commands;
 using Nitrocid.Base.Shell.Shells.Text.Presets;
 
@@ -35,250 +34,26 @@ namespace Nitrocid.Base.Shell.Shells.Text
         /// <summary>
         /// Text commands
         /// </summary>
-        public override List<CommandInfo> Commands =>
+        public override List<BaseCommand> Commands =>
         [
-            new CommandInfo("addline", /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_ADDLINE_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "text", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_ADDLINE_ARGUMENT_TEXT_DESC"
-                        })
-                    ])
-                ], new AddLineCommand()),
-
-            new CommandInfo("addlines", /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_ADDLINES_DESC", new AddLinesCommand()),
-
-            new CommandInfo("clear", /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_CLEAR_DESC", new ClearCommand()),
-
-            new CommandInfo("delcharnum", /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELCHARNUM_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "charNum", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELCHARNUM_ARGUMENT_CHARNUM_DESC"
-                        }),
-                        new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELCHARNUM_ARGUMENT_LINENUM_DESC"
-                        })
-                    ])
-                ], new DelCharNumCommand()),
-
-            new CommandInfo("delline", /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM_DESC"
-                        }),
-                        new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC"
-                        })
-                    ])
-                ], new DelLineCommand()),
-
-            new CommandInfo("delword", /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELWORD_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELWORD_ARGUMENT_WORD_DESC"
-                        }),
-                        new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM_DESC"
-                        }),
-                        new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC"
-                        })
-                    ])
-                ], new DelWordCommand()),
-
-            new CommandInfo("editline", /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_EDITLINE_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "linenumber", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELCHARNUM_ARGUMENT_LINENUM_DESC"
-                        })
-                    ])
-                ], new EditLineCommand()),
-
-            new CommandInfo("exitnosave", /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_EXITNOSAVE_DESC", new ExitNoSaveCommand()),
-
-            new CommandInfo("print", /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_PRINT_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "lineNum", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM_DESC"
-                        }),
-                        new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC"
-                        })
-                    ])
-                ], new PrintCommand(), CommandFlags.Wrappable),
-
-            new CommandInfo("querychar", /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "char", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_ARGUMENT_CHAR_DESC"
-                        }),
-                        new CommandArgumentPart(true, "lineNum/all", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_ARGUMENT_LINENUM_DESC"
-                        }),
-                        new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC"
-                        })
-                    ])
-                ], new QueryCharCommand(), CommandFlags.Wrappable),
-
-            new CommandInfo("queryword", /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_ARGUMENT_WORD_DESC"
-                        }),
-                        new CommandArgumentPart(true, "lineNum/all", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_ARGUMENT_LINENUM_DESC"
-                        }),
-                        new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC"
-                        })
-                    ])
-                ], new QueryWordCommand(), CommandFlags.Wrappable),
-
-            new CommandInfo("querywordregex", /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORDREGEX_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "regex", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORDREGEX_ARGUMENT_REGEX_DESC"
-                        }),
-                        new CommandArgumentPart(true, "lineNum/all", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_ARGUMENT_LINENUM_DESC"
-                        }),
-                        new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC"
-                        })
-                    ])
-                ], new QueryWordRegexCommand(), CommandFlags.Wrappable),
-
-            new CommandInfo("replace", /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_SOURCE_DESC"
-                        }),
-                        new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_TARGET_DESC"
-                        })
-                    ])
-                ], new ReplaceCommand()),
-
-            new CommandInfo("replaceinline", /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINE_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_SOURCE_DESC"
-                        }),
-                        new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_TARGET_DESC"
-                        }),
-                        new CommandArgumentPart(true, "lineNum/all", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINE_ARGUMENT_LINENUM_DESC"
-                        }),
-                        new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC"
-                        })
-                    ])
-                ], new ReplaceInlineCommand()),
-
-            new CommandInfo("replaceregex", /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "regex", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_ARGUMENT_REGEX_DESC"
-                        }),
-                        new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_TARGET_DESC"
-                        })
-                    ])
-                ], new ReplaceRegexCommand()),
-
-            new CommandInfo("replaceinlineregex", /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINEREGEX_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "regex", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_ARGUMENT_REGEX_DESC"
-                        }),
-                        new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_TARGET_DESC"
-                        }),
-                        new CommandArgumentPart(true, "lineNum/all", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINE_ARGUMENT_LINENUM_DESC"
-                        }),
-                        new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC"
-                        })
-                    ])
-                ], new ReplaceInlineRegexCommand()),
-
-            new CommandInfo("save", /* Localizable */ "NKS_SHELL_SHELLS_HEXTEXT_COMMAND_SAVE_DESC", new SaveCommand()),
-
-            new CommandInfo("tui", /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_TUI_DESC", new TuiCommand()),
+            new AddLineCommand(),
+            new AddLinesCommand(),
+            new ClearCommand(),
+            new DelCharNumCommand(),
+            new DelLineCommand(),
+            new DelWordCommand(),
+            new EditLineCommand(),
+            new ExitNoSaveCommand(),
+            new PrintCommand(),
+            new QueryCharCommand(),
+            new QueryWordCommand(),
+            new QueryWordRegexCommand(),
+            new ReplaceCommand(),
+            new ReplaceInlineCommand(),
+            new ReplaceRegexCommand(),
+            new ReplaceInlineRegexCommand(),
+            new SaveCommand(),
+            new TuiCommand(),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

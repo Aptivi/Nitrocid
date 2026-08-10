@@ -37,6 +37,11 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
     /// </remarks>
     class CdbgLogCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "cdbglog";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_CDBGLOG_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

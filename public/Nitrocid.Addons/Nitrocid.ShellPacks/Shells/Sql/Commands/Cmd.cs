@@ -38,6 +38,11 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
     /// </remarks>
     class CmdCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "cmd";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMAND_CMD_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

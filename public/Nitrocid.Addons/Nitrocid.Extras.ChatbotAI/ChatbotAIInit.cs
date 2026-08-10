@@ -35,17 +35,9 @@ namespace Nitrocid.Extras.ChatbotAI
 {
     internal class ChatbotAIInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly List<BaseCommand> addonCommands =
         [
-            new CommandInfo("chatbot", /* Localizable */ "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new SwitchInfo("apikey", /* Localizable */ "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC"),
-
-                        new SwitchInfo("model", /* Localizable */ "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC"),
-                    ])
-                ], new ChatbotCommand()),
+            new ChatbotCommand(),
         ];
 
         public string AddonName =>

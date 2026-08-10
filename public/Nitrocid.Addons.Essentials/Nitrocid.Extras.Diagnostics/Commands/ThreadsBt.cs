@@ -38,6 +38,14 @@ namespace Nitrocid.Extras.Diagnostics.Commands
     /// </remarks>
     class ThreadsBtCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "threadsbt";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_DIAG_COMMAND_THREADSBT_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

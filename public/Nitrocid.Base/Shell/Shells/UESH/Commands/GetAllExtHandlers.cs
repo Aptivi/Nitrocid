@@ -35,6 +35,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class GetAllExtHandlersCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "getallexthandlers";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETALLEXTHANDLERS_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

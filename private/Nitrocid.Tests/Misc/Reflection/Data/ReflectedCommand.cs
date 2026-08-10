@@ -26,6 +26,12 @@ namespace Nitrocid.Tests.Misc.Reflection.Data
     {
         internal string doSet = "";
 
+        public override string Command => 
+            "reflectedcommand";
+
+        public override string HelpDefinition => 
+            "";
+
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue) =>
             0;
 

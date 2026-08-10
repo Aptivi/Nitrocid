@@ -31,6 +31,11 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 {
     class IfmCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "ifm";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_IFM_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

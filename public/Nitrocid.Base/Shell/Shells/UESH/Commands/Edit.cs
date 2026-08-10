@@ -17,12 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Files;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.Languages;
-using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -36,6 +38,44 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class EditCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "edit";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "file", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_FILE_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("text", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_TEXT_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["sql", "json", "hex"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("hex", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_HEX_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["text", "json", "sql"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("json", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_JSON_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["text", "sql", "hex"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("sql", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_SQL_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["text", "json", "hex"],
+                        AcceptsValues = false
+                    }),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

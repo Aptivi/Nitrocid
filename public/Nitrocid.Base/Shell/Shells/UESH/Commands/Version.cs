@@ -18,10 +18,13 @@
 //
 
 using System;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
 using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -33,6 +36,28 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class VersionCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "version";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_VERSION_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("m", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_VERSION_SWITCH_M_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["k"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("k", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_VERSION_SWITCH_K_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["m"],
+                        AcceptsValues = false
+                    })
+                ], true)
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

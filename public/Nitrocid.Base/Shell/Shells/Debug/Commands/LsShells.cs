@@ -33,6 +33,14 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     /// </remarks>
     class LsShellsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsshells";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSSHELLS_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

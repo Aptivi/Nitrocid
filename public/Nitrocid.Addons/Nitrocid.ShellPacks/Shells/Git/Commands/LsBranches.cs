@@ -34,6 +34,14 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     /// </remarks>
     class LsBranchesCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsbranches";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_LSBRANCHES_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

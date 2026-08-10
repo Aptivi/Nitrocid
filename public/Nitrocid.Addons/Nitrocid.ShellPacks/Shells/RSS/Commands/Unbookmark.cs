@@ -33,6 +33,11 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
     /// </remarks>
     class UnbookmarkCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "unbookmark";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_UNBOOKMARK_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

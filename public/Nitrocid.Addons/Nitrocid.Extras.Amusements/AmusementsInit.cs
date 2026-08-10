@@ -38,138 +38,26 @@ namespace Nitrocid.Extras.Amusements
 {
     internal class AmusementsInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly List<BaseCommand> addonCommands =
         [
-            new CommandInfo("backrace", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_BACKRACE_DESC", new BackRaceCommand()),
-
-            new CommandInfo("clicker", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_CLICKER_DESC", new ClickerCommand()),
-
-            new CommandInfo("hangman", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_HANGMAN_DESC",
-                [
-                    new CommandArgumentInfo([
-                        new SwitchInfo("hardcore", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_HARDCORE_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["practice"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("practice", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_PRACTICE_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["hardcore"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("common", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["uncommon"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("uncommon", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["common"],
-                            AcceptsValues = false
-                        }),
-                    ])
-                ], new HangmanCommand()),
-
-            new CommandInfo("invaders", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_INVADERS_DESC", new InvadersCommand()),
-
-            new CommandInfo("meteor", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_METEOR_DESC", new MeteorCommand()),
-
-            new CommandInfo("meteordodge", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_METERORDODGE_DESC", new MeteorDodgeCommand()),
-
-            new CommandInfo("pong", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_PONG_DESC", new PongCommand()),
-
-            new CommandInfo("quote", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_QUOTE_DESC", new QuoteCommand()),
-
-            new CommandInfo("roulette", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_ROULETTE_DESC", new RouletteCommand()),
-
-            new CommandInfo("scoresim", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_DESC",
-                [
-                    new CommandArgumentInfo([
-                        new SwitchInfo("soccer", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SOCCER_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["basketball"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("basketball", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_BASKETBALL_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["soccer"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("firstTeamName", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_FIRSTTEAMNAME_DESC"),
-                        new SwitchInfo("secondTeamName", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SECONDTEAMNAME_DESC"),
-                    ])
-                ], new ScoreSimCommand()),
-
-            new CommandInfo("shipduet", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SHIPDUET_DESC", new ShipDuetCommand()),
-
-            new CommandInfo("simon", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SIMON_DESC", new SimonCommand()),
-
-            new CommandInfo("snaker", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SNAKER_DESC", new SnakerCommand()),
-
-            new CommandInfo("solver", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SOLVER_DESC", new SolverCommand()),
-
-            new CommandInfo("speedpress", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_DESC",
-                [
-                    new CommandArgumentInfo([
-                        new SwitchInfo("e", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_E_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["m", "h", "v", "c"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("m", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_M_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["v", "h", "e", "c"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("h", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_H_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["m", "v", "e", "c"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("v", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_V_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["m", "h", "e", "c"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("c", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_C_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["m", "h", "v", "e"],
-                            ArgumentsRequired = true
-                        })
-                    ])
-                ], new SpeedPressCommand()),
-
-            new CommandInfo("streetrun", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_STREETRUN_DESC", new StreetRunCommand()),
-
-            new CommandInfo("tictactoe", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_TICTACTOE_DESC",
-                [
-                    new CommandArgumentInfo([
-                        new SwitchInfo("computer", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_TICTACTOE_SWITCH_COMPUTER_DESC", new SwitchOptions()
-                        {
-                            AcceptsValues = false
-                        }),
-                    ])
-                ], new TicTacToeCommand()),
-
-            new CommandInfo("wordle", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_WORDLE_DESC",
-                [
-                    new CommandArgumentInfo([
-                        new SwitchInfo("orig", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC", new SwitchOptions()
-                        {
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("common", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["uncommon"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("uncommon", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC", new SwitchOptions()
-                        {
-                            ConflictsWith = ["common"],
-                            AcceptsValues = false
-                        }),
-                    ])
-                ], new WordleCommand()),
+            new BackRaceCommand(),
+            new ClickerCommand(),
+            new HangmanCommand(),
+            new InvadersCommand(),
+            new MeteorCommand(),
+            new MeteorDodgeCommand(),
+            new PongCommand(),
+            new QuoteCommand(),
+            new RouletteCommand(),
+            new ScoreSimCommand(),
+            new ShipDuetCommand(),
+            new SimonCommand(),
+            new SnakerCommand(),
+            new SolverCommand(),
+            new SpeedPressCommand(),
+            new StreetRunCommand(),
+            new TicTacToeCommand(),
+            new WordleCommand(),
         ];
 
         public string AddonName =>

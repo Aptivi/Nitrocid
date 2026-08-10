@@ -18,16 +18,16 @@
 //
 
 #if NKS_EXTENSIONS
-using System.Linq;
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
 using System;
-using Colorimetry.Data;
+using System.Linq;
 using Colorimetry;
-using Terminaux.Themes.Colors;
-using Nitrocid.Base.Languages;
+using Colorimetry.Data;
 using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -39,6 +39,14 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     /// </remarks>
     class LsBaseAddonsCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "lsbaseaddons";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

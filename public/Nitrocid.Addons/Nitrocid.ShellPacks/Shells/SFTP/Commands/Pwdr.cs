@@ -33,6 +33,11 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
     /// </remarks>
     class PwdrCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "pwdr";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDR_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

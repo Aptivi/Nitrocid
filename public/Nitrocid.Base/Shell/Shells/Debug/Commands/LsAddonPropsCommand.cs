@@ -18,12 +18,14 @@
 //
 
 #if NKS_EXTENSIONS
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
-using Nitrocid.Base.Languages;
+using System.Linq;
 using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -35,6 +37,31 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     /// </remarks>
     class LsAddonPropsCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "lsaddonprops";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONPROPERTIES_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => AddonTools.GetAddons(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_NAME_DESC"
+                    }),
+                    new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (arg) => InterAddonTools.ListAvailableTypes(arg[0]).Select((type) => type.FullName ?? "").ToArray(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_TYPE_DESC"
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

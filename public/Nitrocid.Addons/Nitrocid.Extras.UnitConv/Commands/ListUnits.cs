@@ -20,11 +20,12 @@
 using System;
 using System.Data;
 using System.Linq;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using UnitsNet;
 
 namespace Nitrocid.Extras.UnitConv.Commands
@@ -37,6 +38,26 @@ namespace Nitrocid.Extras.UnitConv.Commands
     /// </remarks>
     class ListUnitsCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "listunits";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_LISTUNITS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => [.. Quantity.Infos.Select((src) => src.Name)],
+                        ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC"
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

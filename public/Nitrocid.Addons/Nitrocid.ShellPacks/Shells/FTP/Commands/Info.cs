@@ -35,6 +35,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
     /// </remarks>
     class InfoCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "info";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_SERVERINFO_TITLE");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

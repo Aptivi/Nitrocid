@@ -18,12 +18,14 @@
 //
 
 using Nettify.Weather;
+using Nitrocid.Base.Languages;
+using Terminaux.Reader;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
-using Terminaux.Reader;
-using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {
@@ -49,6 +51,33 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
     /// </remarks>
     class WeatherOldCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "weather-old";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHEROLD_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "CityID/CityName", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC"
+                    }),
+                    new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("list", /* Localizable */ "NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC", new SwitchOptions()
+                    {
+                        OptionalizeLastRequiredArguments = 2,
+                        AcceptsValues = false
+                    })
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

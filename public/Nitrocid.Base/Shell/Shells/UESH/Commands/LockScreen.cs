@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
@@ -31,6 +32,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class LockScreenCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lockscreen";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LOCKSCREEN_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

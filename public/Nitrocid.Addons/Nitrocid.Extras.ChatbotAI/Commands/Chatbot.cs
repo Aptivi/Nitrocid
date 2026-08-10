@@ -17,15 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Network.Connections;
 using OpenAI.Chat;
 using Terminaux.Reader;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.ChatbotAI.Commands
 {
@@ -34,6 +35,21 @@ namespace Nitrocid.Extras.ChatbotAI.Commands
     /// </summary>
     class ChatbotCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "chatbot";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_CHATBOTAI_COMMAND_CHATBOT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("apikey", /* Localizable */ "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC"),
+
+                    new SwitchInfo("model", /* Localizable */ "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC"),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

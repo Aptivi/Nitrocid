@@ -17,17 +17,22 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using Nitrocid.Base.Kernel.Threading;
+using Nitrocid.Base.Languages;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Shell.Commands;
-using System;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Threading;
 using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
     class TaskManCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "taskman";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_TASKMAN_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

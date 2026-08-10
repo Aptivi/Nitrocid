@@ -34,6 +34,11 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
     /// </remarks>
     class FeedInfoCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "feedinfo";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_FEEDINFO_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

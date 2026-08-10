@@ -23,12 +23,13 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Users.TwoFactorAuth;
-using Terminaux.Themes.Colors;
+using OtpNet;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Help;
-using Terminaux.Writer.ConsoleWriters;
-using OtpNet;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -37,6 +38,90 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </summary>
     class TwoFactorCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "2fa";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "add", new()
+                    {
+                        ExactWording = ["add"],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC"
+                    }),
+                    new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC"
+                    }),
+                ])
+                {
+                    ArgChecker = (cp) => TwoFactorCommand.CheckArgument(cp, "add")
+                },
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "delete", new()
+                    {
+                        ExactWording = ["delete"],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC"
+                    }),
+                ])
+                {
+                    ArgChecker = (cp) => TwoFactorCommand.CheckArgument(cp, "delete")
+                },
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "check", new()
+                    {
+                        ExactWording = ["check"],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC"
+                    }),
+                    new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC"
+                    }),
+                ])
+                {
+                    ArgChecker = (cp) => TwoFactorCommand.CheckArgument(cp, "check")
+                },
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "setupkey", new()
+                    {
+                        ExactWording = ["setupkey"],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC"
+                    }),
+                    new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC"
+                    }),
+                ])
+                {
+                    ArgChecker = (cp) => TwoFactorCommand.CheckArgument(cp, "setupkey")
+                },
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "setupqr", new()
+                    {
+                        ExactWording = ["setupqr"],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC"
+                    }),
+                    new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC"
+                    }),
+                ])
+                {
+                    ArgChecker = (cp) => TwoFactorCommand.CheckArgument(cp, "setupqr")
+                },
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

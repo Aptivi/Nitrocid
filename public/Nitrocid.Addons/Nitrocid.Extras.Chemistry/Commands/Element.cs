@@ -19,16 +19,37 @@
 
 using ChemiStar;
 using ChemiStar.Data;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Chemistry.Commands
 {
     class ElementCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "element";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_CHEMISTRY_COMMAND_ELEMENT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "name/symbol/atomicNumber", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_CHEMISTRY_COMMAND_ELEMENT_ARGUMENT_SPECIFIER_DESC"
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
+
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Get substance from either the name, the symbol, or from the atomic number

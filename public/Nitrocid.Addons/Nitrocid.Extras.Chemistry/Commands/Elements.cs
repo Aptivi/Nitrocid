@@ -29,6 +29,15 @@ namespace Nitrocid.Extras.Chemistry.Commands
 {
     class ElementsCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "elements";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_CHEMISTRY_COMMAND_ELEMENTS_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
+
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Get all substances

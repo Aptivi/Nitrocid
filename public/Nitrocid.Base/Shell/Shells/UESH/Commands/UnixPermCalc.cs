@@ -19,6 +19,8 @@
 
 using System.Text;
 using Nitrocid.Base.Files.Unix;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
@@ -30,6 +32,55 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </summary>
     class UnixPermCalcCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "unixpermcalc";
+
+        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_DESC -> Calculates Unix permissions
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "mode", new()
+                    {
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC -> Specify conversion method
+                        ExactWording = ["tonum"],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "userRep", new()
+                    {
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_USERREP_DESC -> Read, write, or execute permissions for user representation
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_USERREP_DESC"
+                    }),
+                    new CommandArgumentPart(true, "groupRep", new()
+                    {
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_GROUPREP_DESC -> Read, write, or execute permissions for group representation
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_GROUPREP_DESC"
+                    }),
+                    new CommandArgumentPart(true, "otherRep", new()
+                    {
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_OTHERREP_DESC -> Read, write, or execute permissions for other representation
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_OTHERREP_DESC"
+                    }),
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "mode", new()
+                    {
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC -> Specify conversion method
+                        ExactWording = ["torep"],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "num", new()
+                    {
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC -> Read, write, or execute permissions as "chmod" number
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC",
+                        IsNumeric = true,
+                    }),
+                ]),
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

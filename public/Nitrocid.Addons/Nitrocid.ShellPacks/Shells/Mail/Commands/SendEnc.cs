@@ -60,6 +60,11 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
     /// </remarks>
     class SendEncCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "sendenc";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_SENDENC_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

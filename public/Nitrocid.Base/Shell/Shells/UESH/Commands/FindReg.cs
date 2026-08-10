@@ -18,11 +18,13 @@
 //
 
 using Nitrocid.Base.Files;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
-using Textify.General;
 using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -34,6 +36,36 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class FindRegCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "findreg";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FINDREG_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "fileRegex", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_FINDREG_ARGUMENT_REGEXP_DESC"
+                    }),
+                    new CommandArgumentPart(true, "directory", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("recursive", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("exec", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_EXEC_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true
+                    })
+                ], true)
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

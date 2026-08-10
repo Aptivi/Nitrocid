@@ -37,6 +37,14 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
     /// </remarks>
     class ListCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "list";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_LIST_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

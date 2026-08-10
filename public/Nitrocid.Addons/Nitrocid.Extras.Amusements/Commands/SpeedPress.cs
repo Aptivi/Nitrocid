@@ -18,9 +18,12 @@
 //
 
 using System;
+using Nitrocid.Base.Languages;
 using Nitrocid.Extras.Amusements.Amusements.Games;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Textify.General;
 
 namespace Nitrocid.Extras.Amusements.Commands
@@ -61,6 +64,42 @@ namespace Nitrocid.Extras.Amusements.Commands
     /// </remarks>
     class SpeedPressCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "speedpress";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo([
+                    new SwitchInfo("e", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_E_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["m", "h", "v", "c"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("m", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_M_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["v", "h", "e", "c"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("h", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_H_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["m", "v", "e", "c"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("v", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_V_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["m", "h", "e", "c"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("c", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_C_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["m", "h", "v", "e"],
+                        ArgumentsRequired = true
+                    })
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

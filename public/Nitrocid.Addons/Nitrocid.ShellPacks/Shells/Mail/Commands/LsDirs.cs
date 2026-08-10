@@ -35,6 +35,11 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
     /// </remarks>
     class LsDirsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsdirs";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_LSDIRS_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

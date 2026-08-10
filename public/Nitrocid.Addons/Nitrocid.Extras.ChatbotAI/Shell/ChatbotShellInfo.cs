@@ -35,8 +35,10 @@ namespace Nitrocid.Extras.ChatbotAI.Shell
         /// <summary>
         /// Chatbot AI commands
         /// </summary>
-        public override List<CommandInfo> Commands =>
-        [ ];
+        public override List<BaseCommand> Commands =>
+        [
+            new DetachCommand(),
+        ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
         {
@@ -49,21 +51,16 @@ namespace Nitrocid.Extras.ChatbotAI.Shell
             { "PowerLineBG3", new ChatbotPowerLineBG3Preset() }
         };
 
-        public override bool AcceptsNetworkConnection => true;
+        public override bool AcceptsNetworkConnection =>
+            true;
 
-        public override string NetworkConnectionType => "Chatbot";
+        public override string NetworkConnectionType =>
+            "Chatbot";
 
-        public override bool SlashCommand => true;
+        public override bool SlashCommand =>
+            true;
 
-        public override CommandInfo NonSlashCommandInfo => new("prompt", /* Localizable */ "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
-            [
-                new CommandArgumentInfo(
-                [
-                    new CommandArgumentPart(true, "promptString", new CommandArgumentPartOptions()
-                    {
-                        ArgumentDescription = /* Localizable */ "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC"
-                    })
-                ])
-            ], new PromptCommand());
+        public override BaseCommand NonSlashCommandInfo =>
+            new PromptCommand();
     }
 }

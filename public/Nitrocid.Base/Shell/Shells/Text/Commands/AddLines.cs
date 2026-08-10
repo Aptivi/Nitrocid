@@ -36,6 +36,11 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
     /// </remarks>
     class AddLinesCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "addlines";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_ADDLINES_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

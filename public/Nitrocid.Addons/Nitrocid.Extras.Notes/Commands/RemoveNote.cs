@@ -18,17 +18,35 @@
 //
 
 using FluentFTP.Helpers;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Extras.Notes.Management;
 using Nitrocid.Base.Languages;
+using Nitrocid.Extras.Notes.Management;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Notes.Commands
 {
     internal class RemoveNote : BaseCommand, ICommand
     {
+        public override string Command => 
+            "removenote";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_NOTES_COMMAND_REMOVENOTE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+           [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "noteNumber", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC"
+                    })
+                ]),
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

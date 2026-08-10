@@ -17,15 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Files;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.Languages;
-using Terminaux.Shell.Shells;
-using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using System;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -34,6 +35,32 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </summary>
     class CowsayCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "cowsay";
+
+        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_DESC -> Renders text in a nice ASCII cow
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "text", new()
+                    {
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC -> Text to print in a conversation bubble
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC"
+                    }),
+                ],
+                [
+                    // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC -> Cow name to render with
+                    new SwitchInfo("cow", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC"),
+                ], true)
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string cowsayName = parameters.ContainsSwitch("-cow") ? parameters.GetSwitchValue("-cow") : nameof(CowName.Default);

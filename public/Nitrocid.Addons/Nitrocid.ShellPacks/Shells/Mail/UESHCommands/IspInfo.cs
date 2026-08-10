@@ -19,8 +19,10 @@
 
 using Nettify.MailAddress;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.UESHCommands
@@ -33,6 +35,25 @@ namespace Nitrocid.ShellPacks.Shells.Mail.UESHCommands
     /// </remarks>
     class IspInfoCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "ispinfo";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "emailAddressOrHost", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("host", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC"),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

@@ -17,17 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using Nettify.Weather;
+using Nitrocid.Base.Languages;
+using Nitrocid.Extras.Forecast.Forecast.Interactive;
+using Terminaux.Inputs.Interactive;
+using Terminaux.Reader;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
-using Nettify.Weather;
-using Terminaux.Shell.Switches;
-using Terminaux.Inputs.Interactive;
-using Nitrocid.Extras.Forecast.Forecast.Interactive;
-using System;
-using Terminaux.Reader;
-using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {
@@ -53,6 +54,45 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
     /// </remarks>
     class WeatherCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "weather";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("tui", /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false,
+                    })
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "latitude", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "longitude", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC"
+                    }),
+                    new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("list", /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC", new SwitchOptions()
+                    {
+                        OptionalizeLastRequiredArguments = 3,
+                        AcceptsValues = true,
+                        ArgumentsRequired = true,
+                    })
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

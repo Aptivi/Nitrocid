@@ -30,6 +30,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Security.Permissions;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -43,6 +44,54 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class DriverManCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "driverman";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "change", new()
+                    {
+                        ExactWording = ["change"],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "type", new()
+                    {
+                        AutoCompleter = (_) => Enum.GetNames<DriverTypes>(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_TYPE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "driver", new()
+                    {
+                        AutoCompleter = (args) => DriverHandler.GetDriverNames(DriverHandler.InferDriverTypeFromTypeName(args[1])),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_DRIVER_DESC"
+                    }),
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "list", new()
+                    {
+                        ExactWording = ["list"],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_LIST_DESC"
+                    }),
+                    new CommandArgumentPart(true, "type", new()
+                    {
+                        AutoCompleter = (_) => Enum.GetNames<DriverTypes>(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_TYPE_DESC"
+                    }),
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "types", new()
+                    {
+                        ExactWording = ["types"],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_TYPES_DESC"
+                    }),
+                ]),
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

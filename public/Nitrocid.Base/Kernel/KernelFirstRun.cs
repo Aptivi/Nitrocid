@@ -32,7 +32,6 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
-using Nitrocid.Base.Security.Permissions;
 
 namespace Nitrocid.Base.Kernel
 {

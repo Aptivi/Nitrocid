@@ -36,6 +36,14 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     /// </remarks>
     class StatusCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "status";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_STATUS_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

@@ -31,31 +31,9 @@ namespace Nitrocid.Extras.ToDoList
 {
     internal class ToDoListInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly List<BaseCommand> addonCommands =
         [
-            new CommandInfo("todo", /* Localizable */ "NKS_TODO_COMMAND_TODO_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "mode", new CommandArgumentPartOptions()
-                        {
-                            ExactWording = ["add", "remove", "done", "undone"],
-                            ArgumentDescription = /* Localizable */ "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC"
-                        }),
-                        new CommandArgumentPart(true, "taskname", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC"
-                        }),
-                    ]),
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "mode", new CommandArgumentPartOptions()
-                        {
-                            ExactWording = ["list", "save", "load"],
-                            ArgumentDescription = /* Localizable */ "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC"
-                        }),
-                    ]),
-                ], new TodoCommand()),
+            new TodoCommand(),
         ];
 
         public string AddonName =>

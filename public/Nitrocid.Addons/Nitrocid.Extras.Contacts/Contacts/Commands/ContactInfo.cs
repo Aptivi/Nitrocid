@@ -22,6 +22,7 @@ using System.Diagnostics.Metrics;
 using System.Drawing;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
@@ -33,6 +34,24 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
 {
     class ContactInfoCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "contactinfo";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_CONTACTINFO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "contactNum", new()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC"
+                        })
+                    ]
+                )
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

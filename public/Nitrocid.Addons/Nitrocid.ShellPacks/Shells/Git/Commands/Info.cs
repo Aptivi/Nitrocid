@@ -34,6 +34,11 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     /// </remarks>
     class InfoCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "info";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_INFO_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

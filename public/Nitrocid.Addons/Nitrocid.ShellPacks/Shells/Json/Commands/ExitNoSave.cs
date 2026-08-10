@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 
@@ -27,6 +28,11 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
     /// </summary>
     class ExitNoSaveCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "exitnosave";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_EXITNOSAVE_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

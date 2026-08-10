@@ -30,49 +30,9 @@ namespace Nitrocid.Extras.Pastebin
 {
     internal class PastebinInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly List<BaseCommand> addonCommands =
         [
-            new CommandInfo("pastebin", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "file/string", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_FILESTRING_DESC"
-                        }),
-                        new CommandArgumentPart(false, "arguments", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_ARGUMENTS_DESC"
-                        }),
-                    ],
-                    [
-                        new SwitchInfo("provider", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_PROVIDER_DESC", new()
-                        {
-                            AcceptsValues = true,
-                            ArgumentsRequired = true,
-                        }),
-                        new SwitchInfo("type", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_TYPE_DESC", new()
-                        {
-                            AcceptsValues = true,
-                            ArgumentsRequired = true,
-                        }),
-                        new SwitchInfo("postpage", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTPAGE_DESC", new()
-                        {
-                            AcceptsValues = true,
-                            ArgumentsRequired = true,
-                        }),
-                        new SwitchInfo("postformat", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFORMAT_DESC", new()
-                        {
-                            AcceptsValues = true,
-                            ArgumentsRequired = true,
-                        }),
-                        new SwitchInfo("postfield", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFIELD_DESC", new()
-                        {
-                            AcceptsValues = true,
-                            ArgumentsRequired = true,
-                        }),
-                    ]),
-                ], new PastebinCommand()),
+            new PastebinCommand(),
         ];
 
         public string AddonName =>

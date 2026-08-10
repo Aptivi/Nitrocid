@@ -18,15 +18,16 @@
 //
 
 using Newtonsoft.Json.Linq;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Extras.Stocks.Interactives;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Transfer;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
+using Nitrocid.Extras.Stocks.Interactives;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Reader;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Stocks.Commands
 {
@@ -35,6 +36,27 @@ namespace Nitrocid.Extras.Stocks.Commands
     /// </summary>
     class StockCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "stock";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_STOCKS_COMMAND_STOCK_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "company", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC"
+                    }),
+                    new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
+                    {
+                        // TODO: NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC -> AlphaVantage API key
+                        ArgumentDescription = /* Localizable */ "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC"
+                    }),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
@@ -25,6 +26,11 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
 {
     class SaveNotifsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "savenotifs";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_SAVENOTIFS_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

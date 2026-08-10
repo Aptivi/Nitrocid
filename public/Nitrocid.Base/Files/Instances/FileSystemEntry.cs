@@ -20,7 +20,6 @@
 using Nitrocid.Base.Files.Unix;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using System;
 using System.Diagnostics;
 using System.IO;
 

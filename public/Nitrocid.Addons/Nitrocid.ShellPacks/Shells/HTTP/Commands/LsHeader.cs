@@ -31,6 +31,14 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
     /// </summary>
     class LsHeaderCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsheader";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_LSHEADER_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

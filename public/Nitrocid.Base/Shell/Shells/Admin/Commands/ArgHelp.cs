@@ -17,9 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Arguments.Base.Help;
 using Nitrocid.Base.Arguments;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Arguments.Base.Help;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Admin.Commands
@@ -32,6 +34,26 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
     /// </remarks>
     class ArgHelpCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "arghelp";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "argument", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => [.. KernelArguments.AvailableCMDLineArgs.Keys],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_ARGUMENT_ARGUMENT_DESC"
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

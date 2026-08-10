@@ -19,17 +19,18 @@
 
 using System;
 using System.Linq;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Extras.Calendar.Calendar.Events;
-using Nitrocid.Extras.Calendar.Calendar.Reminders;
+using Calendrier;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
-using Calendrier;
 using Nitrocid.Base.Languages;
+using Nitrocid.Extras.Calendar.Calendar.Events;
+using Nitrocid.Extras.Calendar.Calendar.Reminders;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Commands
 {
@@ -41,6 +42,169 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
     /// </remarks>
     class CalendarCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "calendar";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "tui", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["tui"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TUI_DESC"
+                    }),
+                    new CommandArgumentPart(false, "year", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_YEAR_DESC"
+                    }),
+                    new CommandArgumentPart(false, "month", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_MONTH_DESC"
+                    })
+                ],
+                [
+                    new SwitchInfo("calendar", /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_CALENDAR_DESC"),
+                    new SwitchInfo("legacy", /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_LEGACY_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["event"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
+                    }),
+                    new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["add"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_ADD_DESC"
+                    }),
+                    new CommandArgumentPart(true, "date", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_TARGETDATE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "title", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC"
+                    })
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["event"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
+                    }),
+                    new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["remove"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_REMOVE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "eventId", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_EVENTID_DESC"
+                    })
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["event"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
+                    }),
+                    new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["list"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_LIST_DESC"
+                    })
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["event"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
+                    }),
+                    new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["saveall"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_SAVEALL_DESC"
+                    })
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["reminder"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
+                    }),
+                    new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["add"]
+                    }),
+                    new CommandArgumentPart(true, "dateandtime", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_TARGET_DESC"
+                    }),
+                    new CommandArgumentPart(true, "title", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC"
+                    })
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["reminder"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
+                    }),
+                    new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["remove"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMOVE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "reminderid", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMINDERID_DESC"
+                    })
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["reminder"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
+                    }),
+                    new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["list"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_LIST_DESC"
+                    })
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["reminder"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
+                    }),
+                    new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["saveall"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_SAVEALL_DESC"
+                    })
+                ]),
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

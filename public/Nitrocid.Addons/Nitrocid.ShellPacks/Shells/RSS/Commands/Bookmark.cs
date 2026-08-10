@@ -33,6 +33,11 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
     /// </remarks>
     class BookmarkCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "bookmark";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_BOOKMARK_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

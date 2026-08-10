@@ -17,18 +17,36 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Dock;
+using Nitrocid.Base.Misc.Widgets;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.Base.Misc.Widgets;
-using Nitrocid.Base.Misc.Dock;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
     class DockCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "dock";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_DOCKING_COMMAND_DOCK_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "dockName", new()
+                    {
+                        AutoCompleter = (_) => DockTools.GetDockScreenNames(),
+                        ArgumentDescription = /* Localizable */ "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC"
+                    }),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

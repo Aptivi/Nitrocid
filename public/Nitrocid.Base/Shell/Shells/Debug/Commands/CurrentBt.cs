@@ -22,6 +22,7 @@ using Nitrocid.Base.Kernel.Debugging.Trace;
 using Terminaux.Shell.Commands;
 using System.Diagnostics;
 using Terminaux.Shell.Shells;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -33,6 +34,14 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     /// </remarks>
     class CurrentBtCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "currentbt";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_CURRENTBT_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

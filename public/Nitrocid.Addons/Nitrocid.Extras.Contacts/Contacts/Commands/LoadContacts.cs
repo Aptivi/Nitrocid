@@ -17,18 +17,24 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
 using System;
-using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Commands
 {
     class LoadContactsCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "loadcontacts";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

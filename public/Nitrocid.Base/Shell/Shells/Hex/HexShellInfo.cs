@@ -21,7 +21,6 @@ using System.Collections.Generic;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Prompts;
-using Terminaux.Shell.Arguments;
 using Nitrocid.Base.Shell.Shells.Hex.Commands;
 using Nitrocid.Base.Shell.Shells.Hex.Presets;
 
@@ -36,136 +35,20 @@ namespace Nitrocid.Base.Shell.Shells.Hex
         /// <summary>
         /// Hex commands
         /// </summary>
-        public override List<CommandInfo> Commands =>
+        public override List<BaseCommand> Commands =>
         [
-            new CommandInfo("addbyte", /* Localizable */ "NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTE_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "byte", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_ADDBYTE_ARGUMENT_BYTE_DESC"
-                        })
-                    ])
-                ], new AddByteCommand()),
-
-            new CommandInfo("addbytes", /* Localizable */ "NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTES_DESC", new AddBytesCommand()),
-
-            new CommandInfo("addbyteto", /* Localizable */ "NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTESTO_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "byte", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_ADDBYTE_ARGUMENT_BYTE_DESC"
-                        }),
-                        new CommandArgumentPart(true, "pos", new()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_ADDBYTETO_ARGUMENT_BYTEPOS_DESC"
-                        })
-                    ])
-                ], new AddByteToCommand()),
-
-            new CommandInfo("clear", /* Localizable */ "NKS_SHELL_SHELLS_HEX_COMMAND_CLEAR_DESC", new ClearCommand()),
-
-            new CommandInfo("delbyte", /* Localizable */ "NKS_SHELL_SHELLS_HEX_COMMAND_DELBYTE_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "bytenumber", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_ADDBYTETO_ARGUMENT_BYTEPOS_DESC"
-                        })
-                    ])
-                ], new DelByteCommand()),
-
-            new CommandInfo("delbytes", /* Localizable */ "NKS_SHELL_SHELLS_HEX_COMMAND_DELBYTES_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "startbyte", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_STARTBYTE_DESC"
-                        }),
-                        new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_ENDBYTE_DESC"
-                        })
-                    ])
-                ], new DelBytesCommand()),
-
-            new CommandInfo("exitnosave", /* Localizable */ "NKS_SHELL_SHELLS_HEX_COMMAND_EXITNOSAVE_DESC", new ExitNoSaveCommand()),
-
-            new CommandInfo("print", /* Localizable */ "NKS_SHELL_SHELLS_HEX_COMMAND_PRINT_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_STARTBYTE_DESC"
-                        }),
-                        new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_ENDBYTE_DESC"
-                        })
-                    ])
-                ], new PrintCommand(), CommandFlags.Wrappable),
-
-            new CommandInfo("querybyte", /* Localizable */ "NKS_SHELL_SHELLS_HEX_COMMAND_QUERYBYTE_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "byte", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_ADDBYTE_ARGUMENT_BYTE_DESC"
-                        }),
-                        new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_STARTBYTE_DESC"
-                        }),
-                        new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_ENDBYTE_DESC"
-                        })
-                    ])
-                ], new QueryByteCommand(), CommandFlags.Wrappable),
-
-            new CommandInfo("replace", /* Localizable */ "NKS_SHELL_SHELLS_HEX_COMMAND_REPLACE_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "byte", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_REPLACE_ARGUMENT_BYTE_DESC"
-                        }),
-                        new CommandArgumentPart(true, "replacebyte", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_REPLACE_ARGUMENT_REPLACEBYTE_DESC"
-                        }),
-                        new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_STARTBYTE_DESC"
-                        }),
-                        new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_ENDBYTE_DESC"
-                        })
-                    ])
-                ], new ReplaceCommand()),
-
-            new CommandInfo("save", /* Localizable */ "NKS_SHELL_SHELLS_HEXTEXT_COMMAND_SAVE_DESC", new SaveCommand()),
-
-            new CommandInfo("tui", /* Localizable */ "NKS_SHELL_SHELLS_HEX_COMMAND_TUI_DESC", new TuiCommand()),
+            new AddByteCommand(),
+            new AddBytesCommand(),
+            new AddByteToCommand(),
+            new ClearCommand(),
+            new DelByteCommand(),
+            new DelBytesCommand(),
+            new ExitNoSaveCommand(),
+            new PrintCommand(),
+            new QueryByteCommand(),
+            new ReplaceCommand(),
+            new SaveCommand(),
+            new TuiCommand(),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

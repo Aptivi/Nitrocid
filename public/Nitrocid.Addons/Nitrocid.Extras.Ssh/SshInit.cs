@@ -31,41 +31,10 @@ namespace Nitrocid.Extras.Ssh
 {
     internal class SshInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly List<BaseCommand> addonCommands =
         [
-            new CommandInfo("sshell", /* Localizable */ "NKS_SSH_COMMAND_SSHELL_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "address:port", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC"
-                        }),
-                        new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC"
-                        }),
-                    ])
-                ], new SshellCommand()),
-
-            new CommandInfo("sshcmd", /* Localizable */ "NKS_SSH_COMMAND_SSHCMD_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "address:port", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC"
-                        }),
-                        new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC"
-                        }),
-                        new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC"
-                        }),
-                    ])
-                ], new SshcmdCommand()),
+            new SshellCommand(),
+            new SshcmdCommand(),
         ];
 
         public string AddonName =>

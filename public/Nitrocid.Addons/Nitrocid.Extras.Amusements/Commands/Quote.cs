@@ -21,6 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Amusements.Amusements.Quotes;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.Amusements.Commands
 {
@@ -32,6 +33,11 @@ namespace Nitrocid.Extras.Amusements.Commands
     /// </remarks>
     class QuoteCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "quote";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_QUOTE_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

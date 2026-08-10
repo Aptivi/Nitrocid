@@ -30,7 +30,6 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Misc.Progress;
 using Nitrocid.Base.Misc.Reflection;
-using Serilog.Sinks.File;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Shell.Commands;

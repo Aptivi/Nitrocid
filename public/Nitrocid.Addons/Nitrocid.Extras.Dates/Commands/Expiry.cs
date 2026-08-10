@@ -17,13 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using Nitrocid.Base.Languages;
+using Nitrocid.Extras.Dates.Tools;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Extras.Dates.Tools;
-using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
-using System;
-using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Dates.Commands
 {
@@ -35,6 +37,32 @@ namespace Nitrocid.Extras.Dates.Commands
     /// </remarks>
     class ExpiryCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "expiry";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "production", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC"
+                    }),
+                    new CommandArgumentPart(true, "expiry", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC"
+                    })
+                ],
+                [
+                    new SwitchInfo("implicit", /* Localizable */ "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

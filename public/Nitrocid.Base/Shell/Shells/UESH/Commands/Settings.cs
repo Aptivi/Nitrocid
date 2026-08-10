@@ -17,19 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration.Instances;
+using Nitrocid.Base.Kernel.Configuration.Settings;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Kernel.Configuration.Settings;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
-using Nitrocid.Base.Kernel.Configuration.Instances;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Security.Permissions;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -81,6 +82,47 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class SettingsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "settings";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo([
+                    new SwitchInfo("saver", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SCREENSAVER_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["splash", "addonsplash", "type", "addonsaver", "driver"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("addonsaver", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_ADDONSAVER_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["splash", "addonsplash", "type", "saver", "driver"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("splash", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["saver", "addonsplash", "type", "addonsaver", "driver"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("addonsplash", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_ADDONSPLASH_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["saver", "splash", "type", "addonsaver", "driver"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("driver", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_DRIVER_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["saver", "addonsplash", "type", "addonsaver", "splash"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("type", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_TYPE_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["saver", "addonsplash", "splash", "addonsaver", "driver"],
+                        ArgumentsRequired = true
+                    })
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

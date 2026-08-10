@@ -18,14 +18,16 @@
 //
 
 #if NKS_EXTENSIONS
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
+using System.Linq;
 using System.Reflection;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.CyclicWriters.Simple;
-using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -37,6 +39,36 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     /// </remarks>
     class LsAddonFuncParamsCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "lsaddonfuncparams";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => AddonTools.GetAddons(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_NAME_DESC"
+                    }),
+                    new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (arg) => InterAddonTools.ListAvailableTypes(arg[0]).Select((type) => type.FullName ?? "").ToArray(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_TYPE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "function", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (arg) => InterAddonTools.ListAvailableFunctions(arg[0], arg[1]).Keys.ToArray(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_ARGUMENT_FUNCTION_DESC"
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

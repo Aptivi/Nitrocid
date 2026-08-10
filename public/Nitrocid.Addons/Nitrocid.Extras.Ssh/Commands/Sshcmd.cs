@@ -17,10 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using Nitrocid.Base.Languages;
 using Nitrocid.Extras.Ssh.SSH;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using System;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Extras.Ssh.Commands
 {
@@ -34,6 +37,30 @@ namespace Nitrocid.Extras.Ssh.Commands
     /// </remarks>
     class SshcmdCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "sshcmd";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SSH_COMMAND_SSHCMD_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "address:port", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC"
+                    }),
+                    new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC"
+                    }),
+                    new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC"
+                    }),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

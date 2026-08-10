@@ -33,6 +33,11 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Commands
     /// </remarks>
     class CDirCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "cdir";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC");
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

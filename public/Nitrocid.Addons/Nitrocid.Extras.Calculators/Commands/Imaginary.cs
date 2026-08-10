@@ -17,12 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
-using System;
-using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Calculators.Commands
 {
@@ -35,6 +36,28 @@ namespace Nitrocid.Extras.Calculators.Commands
     /// </remarks>
     class ImaginaryCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "imaginary";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_CALCULATORS_COMMAND_IMAGINARY_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "real", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_CALCULATORS_REAL"
+                    }),
+                    new CommandArgumentPart(true, "imaginary", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_CALCULATORS_IMAG"
+                    }),
+                ])
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

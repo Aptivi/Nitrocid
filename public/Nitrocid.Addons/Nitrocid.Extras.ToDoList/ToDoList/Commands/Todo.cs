@@ -19,12 +19,13 @@
 
 using System;
 using System.Linq;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
 {
@@ -36,6 +37,35 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
     /// </remarks>
     class TodoCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "todo";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_TODO_COMMAND_TODO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "mode", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["add", "remove", "done", "undone"],
+                        ArgumentDescription = /* Localizable */ "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC"
+                    }),
+                    new CommandArgumentPart(true, "taskname", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC"
+                    }),
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "mode", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["list", "save", "load"],
+                        ArgumentDescription = /* Localizable */ "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC"
+                    }),
+                ]),
+            ];
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {

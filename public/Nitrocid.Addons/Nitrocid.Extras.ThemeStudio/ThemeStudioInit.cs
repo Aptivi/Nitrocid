@@ -29,18 +29,9 @@ namespace Nitrocid.Extras.ThemeStudio
 {
     internal class ThemeStudioInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly List<BaseCommand> addonCommands =
         [
-            new CommandInfo("mktheme", /* Localizable */ "NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "themeName", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC"
-                        }),
-                    ])
-                ], new MkThemeCommand()),
+            new MkThemeCommand(),
         ];
 
         public string AddonName =>

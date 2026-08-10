@@ -32,42 +32,10 @@ namespace Nitrocid.Extras.Mods
 {
     internal class ModsInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly List<BaseCommand> addonCommands =
         [
-            new CommandInfo("modman", /* Localizable */ "NKS_MODS_COMMAND_MODMAN_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "mode", new()
-                        {
-                            ExactWording = ["start", "stop", "info", "reload", "install", "uninstall"],
-                            ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC"
-                        }),
-                        new CommandArgumentPart(true, "modfilename", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC"
-                        }),
-                    ]),
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "mode", new()
-                        {
-                            ExactWording = ["list", "reloadall", "stopall", "startall", "tui"],
-                            ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC"
-                        }),
-                    ]),
-                ], new ModManCommand()),
-
-            new CommandInfo("modmanual", /* Localizable */ "NKS_MODS_COMMAND_MODMANUAL_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "modname", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC"
-                        }),
-                    ])
-                ], new ModManualCommand()),
+            new ModManCommand(),
+            new ModManualCommand(),
         ];
 
         public string AddonName =>
