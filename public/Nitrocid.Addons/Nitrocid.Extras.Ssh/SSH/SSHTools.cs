@@ -40,6 +40,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Base.Extensions.Data;
 using SpecProbe.Software.Platform;
 using Terminaux.Reader;
+using Nitrocid.Base.Misc.Screensaver;
 
 namespace Nitrocid.Extras.Ssh.SSH
 {
@@ -202,6 +203,9 @@ namespace Nitrocid.Extras.Ssh.SSH
         {
             try
             {
+                // Disable screensaver timeout by blocking it
+                ScreensaverManager.PreventLock();
+
                 // Connection
                 var SSH = new SshClient(PromptConnectionInfo(Address, Port, Username));
                 SSH.ConnectionInfo.Timeout = TimeSpan.FromSeconds(30d);
@@ -224,6 +228,11 @@ namespace Nitrocid.Extras.Ssh.SSH
                 EventsManager.FireEvent(EventType.SSHError, ex);
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SSH_CONNECTFAILED"), true, ThemeColorType.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
+            }
+            finally
+            {
+                // Enable screensaver timeout by allowing it
+                ScreensaverManager.AllowLock();
             }
         }
 
