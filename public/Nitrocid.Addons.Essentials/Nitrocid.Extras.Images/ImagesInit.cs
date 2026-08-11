@@ -29,7 +29,7 @@ namespace Nitrocid.Extras.Images
 {
     internal class ImagesInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new PreviewCommand(),
         ];
@@ -43,13 +43,13 @@ namespace Nitrocid.Extras.Images
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Images.Resources.Languages.Output.Localizations", typeof(ImagesInit).Assembly));
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
         }
 
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
         }
     }
 }

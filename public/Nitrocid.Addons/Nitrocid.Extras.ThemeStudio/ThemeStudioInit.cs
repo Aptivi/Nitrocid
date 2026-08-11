@@ -29,7 +29,7 @@ namespace Nitrocid.Extras.ThemeStudio
 {
     internal class ThemeStudioInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new MkThemeCommand(),
         ];
@@ -43,13 +43,13 @@ namespace Nitrocid.Extras.ThemeStudio
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.ThemeStudio.Resources.Languages.Output.Localizations", typeof(ThemeStudioInit).Assembly));
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
         }
 
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
         }
     }
 }

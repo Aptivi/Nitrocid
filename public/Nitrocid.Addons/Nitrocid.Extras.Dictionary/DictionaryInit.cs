@@ -29,7 +29,7 @@ namespace Nitrocid.Extras.Dictionary
 {
     internal class DictionaryInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new DictCommand(),
         ];
@@ -43,13 +43,13 @@ namespace Nitrocid.Extras.Dictionary
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Dictionary.Resources.Languages.Output.Localizations", typeof(DictionaryInit).Assembly));
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
         }
 
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
         }
     }
 }

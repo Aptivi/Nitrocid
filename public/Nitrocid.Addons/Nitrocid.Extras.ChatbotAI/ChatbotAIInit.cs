@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.ChatbotAI
 {
     internal class ChatbotAIInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new ChatbotCommand(),
         ];
@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.ChatbotAI
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterShell("ChatbotShell", new ChatbotShellInfo());
             NetworkConnectionTools.RegisterCustomConnectionType("Chatbot");
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
         }
 
         public void StopAddon()
@@ -64,7 +64,7 @@ namespace Nitrocid.Extras.ChatbotAI
             LanguageTools.RemoveCustomAction(AddonName);
             ShellManager.UnregisterShell("ChatbotShell");
             NetworkConnectionTools.UnregisterCustomConnectionType("Chatbot");
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
             ConfigTools.UnregisterBaseSetting(nameof(ChatbotAIConfig));
         }
     }

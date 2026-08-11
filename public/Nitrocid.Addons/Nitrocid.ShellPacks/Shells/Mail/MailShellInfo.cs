@@ -35,7 +35,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <summary>
         /// Mail commands
         /// </summary>
-        public override List<BaseCommand> Commands =>
+        public override BaseCommand[] Commands =>
         [
             new CdCommand(),
             new DetachCommand(),

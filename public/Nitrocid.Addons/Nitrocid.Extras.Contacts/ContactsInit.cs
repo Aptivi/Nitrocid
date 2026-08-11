@@ -42,7 +42,7 @@ namespace Nitrocid.Extras.Contacts
             new(".vcf", "Contacts", ContactsHandler.Handle, ContactsHandler.InfoHandle),
             new(".vcard", "Contacts", ContactsHandler.Handle, ContactsHandler.InfoHandle),
         ];
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new ContactsCommand(),
             new ListContactsCommand(),
@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.Contacts
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Contacts.Resources.Languages.Output.Localizations", typeof(ContactsInit).Assembly));
             var config = new ContactsConfig();
             ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
             ExtensionHandlerTools.extensionHandlers.AddRange(handlers);
 
             // Enable logging if debugging is enabled
@@ -83,7 +83,7 @@ namespace Nitrocid.Extras.Contacts
             LanguageTools.RemoveCustomAction(AddonName);
             ContactsManager.RemoveContacts(false);
             DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all contacts");
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
             foreach (var handler in handlers)
                 ExtensionHandlerTools.extensionHandlers.Remove(handler);
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_CONTACTS_HOMEPAGE_CONTACTS");

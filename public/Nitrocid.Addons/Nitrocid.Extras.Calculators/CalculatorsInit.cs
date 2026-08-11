@@ -29,7 +29,7 @@ namespace Nitrocid.Extras.Calculators
 {
     internal class CalculatorsInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new CalcCommand(),
             new ImaginaryCommand(),
@@ -44,13 +44,13 @@ namespace Nitrocid.Extras.Calculators
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Calculators.Resources.Languages.Output.Localizations", typeof(CalculatorsInit).Assembly));
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
         }
 
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
         }
     }
 }

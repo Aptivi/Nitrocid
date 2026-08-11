@@ -32,7 +32,7 @@ namespace Nitrocid.Extras.Forecast
 {
     internal class ForecastInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new WeatherCommand(),
             new WeatherOldCommand(),
@@ -50,7 +50,7 @@ namespace Nitrocid.Extras.Forecast
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Forecast.Resources.Languages.Output.Localizations", typeof(ForecastInit).Assembly));
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
             var config = new ForecastConfig();
             ConfigTools.RegisterBaseSetting(config);
         }
@@ -58,7 +58,7 @@ namespace Nitrocid.Extras.Forecast
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
             ConfigTools.UnregisterBaseSetting(nameof(ForecastConfig));
         }
     }

@@ -36,7 +36,7 @@ namespace Nitrocid.ShellPacks.Shells.Json
         /// <summary>
         /// JSON commands
         /// </summary>
-        public override List<BaseCommand> Commands =>
+        public override BaseCommand[] Commands =>
         [
             new AddCommand(),
             new ClearCommand(),

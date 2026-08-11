@@ -33,7 +33,7 @@ namespace Nitrocid.Extras.Stocks
 {
     internal class StocksInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new StockCommand(),
         ];
@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.Stocks
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Stocks.Resources.Languages.Output.Localizations", typeof(StocksInit).Assembly));
             var config = new StocksConfig();
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
             ConfigTools.RegisterBaseSetting(config);
             WidgetTools.AddBaseWidget(new StocksWidget());
         }
@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.Stocks
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
             ConfigTools.UnregisterBaseSetting(nameof(StocksConfig));
             WidgetTools.RemoveBaseWidget(nameof(StocksWidget));
         }

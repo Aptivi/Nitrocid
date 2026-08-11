@@ -35,7 +35,7 @@ namespace Nitrocid.ShellPacks.Shells.HTTP
         /// <summary>
         /// HTTP commands
         /// </summary>
-        public override List<BaseCommand> Commands =>
+        public override BaseCommand[] Commands =>
         [
             new AddHeaderCommand(),
             new CurrAgentCommand(),

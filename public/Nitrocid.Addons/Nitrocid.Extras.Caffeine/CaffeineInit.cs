@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Caffeine
 {
     internal class CaffeineInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new CaffeineCommand(),
         ];
@@ -44,13 +44,13 @@ namespace Nitrocid.Extras.Caffeine
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Caffeine.Resources.Languages.Output.Localizations", typeof(CaffeineInit).Assembly));
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
         }
 
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
         }
     }
 }

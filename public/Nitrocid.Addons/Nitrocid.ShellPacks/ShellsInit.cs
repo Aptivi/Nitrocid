@@ -56,7 +56,7 @@ namespace Nitrocid.ShellPacks
     {
         private static bool gitNativeLibIsSet = false;
 
-        private readonly List<BaseCommand> startCommands =
+        private readonly BaseCommand[] startCommands =
         [
             new ArchiveCommand(),
             new FtpCommandExec(),
@@ -95,7 +95,7 @@ namespace Nitrocid.ShellPacks
             ShellManager.RegisterShell("RSSShell", new RSSShellInfo());
             ShellManager.RegisterShell("SFTPShell", new SFTPShellInfo());
             ShellManager.RegisterShell("SqlShell", new SqlShellInfo());
-            CommandManager.RegisterCustomCommands("Shell", [.. startCommands]);
+            CommandManager.RegisterCustomCommands("Shell", startCommands);
             WidgetTools.AddBaseWidget(new RssFeedSingle());
             WidgetTools.AddBaseWidget(new RssFeeds());
 
@@ -120,7 +120,7 @@ namespace Nitrocid.ShellPacks
             ShellManager.UnregisterShell("SFTPShell");
             ShellManager.UnregisterShell("SqlShell");
             ConfigTools.UnregisterBaseSetting(nameof(ShellsConfig));
-            CommandManager.UnregisterCustomCommands("Shell", [.. startCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", startCommands);
             WidgetTools.RemoveBaseWidget(nameof(RssFeedSingle));
             WidgetTools.RemoveBaseWidget(nameof(RssFeeds));
         }

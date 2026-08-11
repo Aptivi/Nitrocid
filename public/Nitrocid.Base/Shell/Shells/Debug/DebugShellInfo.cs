@@ -38,7 +38,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug
         /// <summary>
         /// Debug commands
         /// </summary>
-        public override List<BaseCommand> Commands =>
+        public override BaseCommand[] Commands =>
         [
             new CurrentBtCommand(),
             new DebugLogCommand(),

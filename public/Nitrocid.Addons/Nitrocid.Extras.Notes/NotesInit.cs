@@ -31,7 +31,7 @@ namespace Nitrocid.Extras.Notes
 {
     internal class NotesInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new AddNote(),
             new RemoveNote(),
@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.Notes
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Notes.Resources.Languages.Output.Localizations", typeof(NotesInit).Assembly));
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
 
             // Add homepage entries
             HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_NOTES_HOMEPAGE_NOTES", NoteManagement.OpenNotesTui);
@@ -63,7 +63,7 @@ namespace Nitrocid.Extras.Notes
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_NOTES_HOMEPAGE_NOTES");
         }
     }

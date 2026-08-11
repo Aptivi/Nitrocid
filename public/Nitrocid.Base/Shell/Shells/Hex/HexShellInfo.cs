@@ -35,7 +35,7 @@ namespace Nitrocid.Base.Shell.Shells.Hex
         /// <summary>
         /// Hex commands
         /// </summary>
-        public override List<BaseCommand> Commands =>
+        public override BaseCommand[] Commands =>
         [
             new AddByteCommand(),
             new AddBytesCommand(),

@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.Calendar
 {
     internal class CalendarInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new AltDateCommand(),
             new CalendarCommand(),
@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.Calendar
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Calendar.Resources.Languages.Output.Localizations", typeof(CalendarInit).Assembly));
             var config = new CalendarConfig();
             ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
             ScreensaverManager.AddonSavers.Add("calendar", new CalendarDisplay());
 
             // Initialize events and reminders
@@ -80,7 +80,7 @@ namespace Nitrocid.Extras.Calendar
             LanguageTools.RemoveCustomAction(AddonName);
             ReminderManager.Reminders.Clear();
             EventManager.CalendarEvents.Clear();
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
             ConfigTools.UnregisterBaseSetting(nameof(CalendarConfig));
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_CALENDAR_HOMEPAGE_CALENDAR");
             ScreensaverManager.AddonSavers.Remove("calendar");

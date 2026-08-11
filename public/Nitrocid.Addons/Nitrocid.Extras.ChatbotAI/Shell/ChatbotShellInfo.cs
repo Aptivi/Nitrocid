@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.ChatbotAI.Shell
         /// <summary>
         /// Chatbot AI commands
         /// </summary>
-        public override List<BaseCommand> Commands =>
+        public override BaseCommand[] Commands =>
         [
             new DetachCommand(),
         ];

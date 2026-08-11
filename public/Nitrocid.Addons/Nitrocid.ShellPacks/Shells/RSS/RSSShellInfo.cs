@@ -36,7 +36,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS
         /// <summary>
         /// RSS commands
         /// </summary>
-        public override List<BaseCommand> Commands =>
+        public override BaseCommand[] Commands =>
         [
             new ArticleInfoCommand(),
             new BookmarkCommand(),

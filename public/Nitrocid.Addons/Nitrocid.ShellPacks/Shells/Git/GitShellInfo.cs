@@ -36,7 +36,7 @@ namespace Nitrocid.ShellPacks.Shells.Git
         /// <summary>
         /// Git commands
         /// </summary>
-        public override List<BaseCommand> Commands =>
+        public override BaseCommand[] Commands =>
         [
             new BlameCommand(),
             new CheckoutCommand(),

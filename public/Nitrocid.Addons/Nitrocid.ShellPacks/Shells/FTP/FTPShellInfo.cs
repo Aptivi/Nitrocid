@@ -36,7 +36,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP
         /// <summary>
         /// FTP commands
         /// </summary>
-        public override List<BaseCommand> Commands =>
+        public override BaseCommand[] Commands =>
         [
             new CatCommand(),
             new CdlCommand(),

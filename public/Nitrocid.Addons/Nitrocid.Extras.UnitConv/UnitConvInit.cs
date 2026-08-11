@@ -33,7 +33,7 @@ namespace Nitrocid.Extras.UnitConv
 {
     internal class UnitConvInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new ListUnitsCommand(),
             new UnitConvCommand(),
@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.UnitConv
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.UnitConv.Resources.Languages.Output.Localizations", typeof(UnitConvInit).Assembly));
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
 
             // Add homepage entries
             HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_UNITCONV_HOMEPAGE_UNITCONV", UnitConvTools.OpenUnitConvTui);
@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.UnitConv
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_UNITCONV_HOMEPAGE_UNITCONV");
         }
     }

@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.Amusements
 {
     internal class AmusementsInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new BackRaceCommand(),
             new ClickerCommand(),
@@ -77,15 +77,11 @@ namespace Nitrocid.Extras.Amusements
 
         private readonly SplashInfo quote = new("Quote", new SplashQuote(), false);
 
-        public void FinalizeAddon()
-        {
-        }
-
         public void StartAddon()
         {
             // Initialize everything
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Amusements.Resources.Languages.Output.Localizations", typeof(AmusementsInit).Assembly));
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
             ScreensaverManager.AddonSavers.Add("meteor", new MeteorDisplay());
             ScreensaverManager.AddonSavers.Add("meteordodge", new MeteorDodgeDisplay());
             ScreensaverManager.AddonSavers.Add("quote", new QuoteDisplay());
@@ -130,7 +126,7 @@ namespace Nitrocid.Extras.Amusements
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
             ScreensaverManager.AddonSavers.Remove("meteor");
             ScreensaverManager.AddonSavers.Remove("meteordodge");
             ScreensaverManager.AddonSavers.Remove("quote");

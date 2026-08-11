@@ -31,7 +31,7 @@ namespace Nitrocid.Extras.Chemistry
 {
     internal class ChemistryInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new ElementCommand(),
             new ElementsCommand(),
@@ -46,14 +46,14 @@ namespace Nitrocid.Extras.Chemistry
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Chemistry.Resources.Languages.Output.Localizations", typeof(ChemistryInit).Assembly));
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
             ScreensaverManager.AddonSavers.Add("periodicpreview", new PeriodicPreviewDisplay());
         }
 
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
             ScreensaverManager.AddonSavers.Remove("periodicpreview");
         }
     }

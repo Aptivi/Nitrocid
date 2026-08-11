@@ -29,7 +29,7 @@ namespace Nitrocid.Extras.BeepSynth
 {
     internal class BeepSynthInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new BeepSynthCommand(),
         ];
@@ -43,13 +43,13 @@ namespace Nitrocid.Extras.BeepSynth
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.BeepSynth.Resources.Languages.Output.Localizations", typeof(BeepSynthInit).Assembly));
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
         }
 
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
         }
     }
 }

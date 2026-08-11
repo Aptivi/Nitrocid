@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.BassBoom
         internal static Version? outVer;
         internal static Color white = new(ConsoleColors.White);
 
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new LyricLinesCommand(),
             new PlayLyricCommand(),
@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.BassBoom
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.BassBoom.Resources.Languages.Output.Localizations", typeof(BassBoomInit).Assembly));
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
             ScreensaverManager.AddonSavers.Add("lyrics", new LyricsDisplay());
 
             // Then, initialize configuration in a way that no mod can play with them
@@ -86,7 +86,7 @@ namespace Nitrocid.Extras.BassBoom
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
             ScreensaverManager.AddonSavers.Remove("lyrics");
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomConfig));

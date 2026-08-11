@@ -31,7 +31,7 @@ namespace Nitrocid.Extras.ToDoList
 {
     internal class ToDoListInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new TodoCommand(),
         ];
@@ -45,7 +45,7 @@ namespace Nitrocid.Extras.ToDoList
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.ToDoList.Resources.Languages.Output.Localizations", typeof(ToDoListInit).Assembly));
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
 
             // Initialize to-do tasks
             ToDoManager.LoadTasks();
@@ -55,7 +55,7 @@ namespace Nitrocid.Extras.ToDoList
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.Dates
 {
     internal class DatesInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new GetTimeInfoCommand(),
             new ExpiryCommand(),
@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.Dates
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Dates.Resources.Languages.Output.Localizations", typeof(DatesInit).Assembly));
             var config = new DatesConfig();
             ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
 
             // Add homepage entries
             HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_DATES_HOMEPAGE_TIMER", TimerScreen.OpenTimer);
@@ -68,7 +68,7 @@ namespace Nitrocid.Extras.Dates
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
             ConfigTools.UnregisterBaseSetting(nameof(DatesConfig));
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_DATES_HOMEPAGE_TIMER");
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_DATES_HOMEPAGE_STOPWATCH");

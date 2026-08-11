@@ -34,7 +34,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql
         /// <summary>
         /// Sql commands
         /// </summary>
-        public override List<BaseCommand> Commands =>
+        public override BaseCommand[] Commands =>
         [
             new CmdCommand(),
             new DbInfoCommand(),

@@ -34,7 +34,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH
         /// <summary>
         /// List of commands
         /// </summary>
-        public override List<BaseCommand> Commands =>
+        public override BaseCommand[] Commands =>
         [
             new TwoFactorCommand(),
             new AddGroupCommand(),

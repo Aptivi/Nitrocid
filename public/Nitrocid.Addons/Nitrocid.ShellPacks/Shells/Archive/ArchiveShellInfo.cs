@@ -36,7 +36,7 @@ namespace Nitrocid.ShellPacks.Shells.Archive
         /// <summary>
         /// Archive commands
         /// </summary>
-        public override List<BaseCommand> Commands =>
+        public override BaseCommand[] Commands =>
         [
             new CDirCommand(),
             new ChDirCommand(),

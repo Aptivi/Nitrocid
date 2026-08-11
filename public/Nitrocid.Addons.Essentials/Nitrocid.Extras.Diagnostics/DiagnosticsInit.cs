@@ -28,7 +28,7 @@ namespace Nitrocid.Extras.Diagnostics
 {
     internal class DiagnosticsInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new ThreadsBtCommand(),
         ];
@@ -42,13 +42,13 @@ namespace Nitrocid.Extras.Diagnostics
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Diagnostics.Resources.Languages.Output.Localizations", typeof(DiagnosticsInit).Assembly));
-            CommandManager.RegisterCustomCommands("DebugShell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("DebugShell", addonCommands);
         }
 
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("DebugShell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("DebugShell", addonCommands);
         }
     }
 }

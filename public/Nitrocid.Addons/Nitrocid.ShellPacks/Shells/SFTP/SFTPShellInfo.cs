@@ -36,7 +36,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
         /// <summary>
         /// SFTP commands
         /// </summary>
-        public override List<BaseCommand> Commands =>
+        public override BaseCommand[] Commands =>
         [
             new CatCommand(),
             new CdlCommand(),

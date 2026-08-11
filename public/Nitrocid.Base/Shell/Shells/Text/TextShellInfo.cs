@@ -34,7 +34,7 @@ namespace Nitrocid.Base.Shell.Shells.Text
         /// <summary>
         /// Text commands
         /// </summary>
-        public override List<BaseCommand> Commands =>
+        public override BaseCommand[] Commands =>
         [
             new AddLineCommand(),
             new AddLinesCommand(),

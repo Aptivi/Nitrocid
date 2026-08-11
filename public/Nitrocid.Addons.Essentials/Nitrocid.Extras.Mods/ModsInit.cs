@@ -32,7 +32,7 @@ namespace Nitrocid.Extras.Mods
 {
     internal class ModsInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new ModManCommand(),
             new ModManualCommand(),
@@ -52,13 +52,13 @@ namespace Nitrocid.Extras.Mods
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Mods.Resources.Languages.Output.Localizations", typeof(ModsInit).Assembly));
             var config = new ModsConfig();
             ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
         }
 
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
             ConfigTools.UnregisterBaseSetting(nameof(ModsConfig));
         }
     }

@@ -31,7 +31,7 @@ namespace Nitrocid.Extras.Ssh
 {
     internal class SshInit : IAddon
     {
-        private readonly List<BaseCommand> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
             new SshellCommand(),
             new SshcmdCommand(),
@@ -51,13 +51,13 @@ namespace Nitrocid.Extras.Ssh
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Ssh.Resources.Languages.Output.Localizations", typeof(SshInit).Assembly));
             var config = new SshConfig();
             ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", addonCommands);
         }
 
         public void StopAddon()
         {
             LanguageTools.RemoveCustomAction(AddonName);
-            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", addonCommands);
             ConfigTools.UnregisterBaseSetting(nameof(SshConfig));
         }
     }

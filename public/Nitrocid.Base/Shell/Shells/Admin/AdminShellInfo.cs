@@ -34,7 +34,7 @@ namespace Nitrocid.Base.Shell.Shells.Admin
         /// <summary>
         /// Admin commands
         /// </summary>
-        public override List<BaseCommand> Commands =>
+        public override BaseCommand[] Commands =>
         [
             new ArgHelpCommand(),
             new BootLogCommand(),
