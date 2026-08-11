@@ -108,7 +108,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS"));
             foreach (QuantityInfo QuantityInfo in Quantity.Infos)
             {
-                SeparatorWriterColor.WriteSeparator(QuantityInfo.Name, true);
+                SeparatorWriterColor.WriteSeparator(QuantityInfo.Name);
                 foreach (Enum UnitValues in QuantityInfo.UnitInfos.Select(x => x.Value))
                 {
                     string abbreviationsStr = string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), (int)(object)UnitValues));

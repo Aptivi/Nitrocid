@@ -67,7 +67,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.UESHCommands
                 IspTools.GetIspConfig(mailOrHost);
 
             // Print ISP info
-            SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER") + $" {mailOrHost}", true);
+            SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER") + $" {mailOrHost}");
             ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYNAME"), ispInfo.EmailProvider?.DisplayName ?? "");
             ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYSHORTNAME"), ispInfo.EmailProvider?.DisplayShortName ?? "");
             ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMAIN"), string.Join(", ", ispInfo.EmailProvider?.Domain ?? []));
@@ -75,7 +75,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.UESHCommands
             TextWriterRaw.Write();
 
             // Print server info
-            SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER") + $" {mailOrHost}", true);
+            SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER") + $" {mailOrHost}");
             foreach (var server in ispInfo.EmailProvider?.IncomingServer ?? [])
             {
                 ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_HOSTNAME"), server.Hostname);

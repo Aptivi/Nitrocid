@@ -76,7 +76,7 @@ namespace Nitrocid.Extras.Dates.Commands
             DateTime dateTimeInfo = TimeDateTools.KernelDateTime;
             if (getNow || DateTime.TryParse(date, out dateTimeInfo))
             {
-                SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_HEADER") + $" {TimeDateRenderers.Render(dateTimeInfo)}", true);
+                SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_HEADER") + $" {TimeDateRenderers.Render(dateTimeInfo)}");
                 ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_MS"), $"{dateTimeInfo.Millisecond}");
                 ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_SECONDS"), $"{dateTimeInfo.Second}");
                 ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_MINUTES"), $"{dateTimeInfo.Minute}");
