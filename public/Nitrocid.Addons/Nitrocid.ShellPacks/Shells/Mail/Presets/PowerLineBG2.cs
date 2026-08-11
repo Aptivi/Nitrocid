@@ -23,6 +23,7 @@ using System.Text;
 using Colorimetry;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Shells.Mail.Tools;
 using Terminaux.Base.Extensions;
 using Terminaux.Shell.Prompts;
 using Terminaux.Shell.Shells;
@@ -70,8 +71,8 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Presets
             // Segments
             List<PowerLineSegment> segments =
             [
-                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), mailShell.NetworkCredential.UserName, default, TransitionPartChar),
-                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), mailShell.IMAP_CurrentDirectory, default, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), mailShell.NetworkCredential ?.UserName ?? "", default, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), mailShell.ProtocolType == MailProtocolType.POP3 ? mailShell.NetworkCredential?.UserName ?? "???" : mailShell.IMAP_CurrentDirectory, default, TransitionPartChar),
             ];
 
             // Builder

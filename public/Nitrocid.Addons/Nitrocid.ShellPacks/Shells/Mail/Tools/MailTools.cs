@@ -21,9 +21,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using MailKit;
 using MailKit.Net.Imap;
+using MailKit.Net.Pop3;
 using MailKit.Net.Smtp;
 using MailKit.Search;
 using MimeKit;
@@ -35,6 +37,7 @@ using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Shells.Mail.Tools.PGP;
 using Nitrocid.ShellPacks.Shells.Mail.Tools.Transfer;
+using Renci.SshNet.Messages;
 using Terminaux.Base.Extensions;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
@@ -190,28 +193,44 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// </summary>
         /// <param name="client">IMAP mail client</param>
         /// <param name="path">Path to a mail folder</param>
-        public static IEnumerable<UniqueId> PopulateMessages(ImapClient client, string path)
+        public static object PopulateMessages(ImapClient? client, Pop3Client? pop3Client, string path)
         {
             IEnumerable<UniqueId> messages = [];
-            if (client.IsConnected)
+            IEnumerable<MimeMessage> popMessages = [];
+            if (client is not null)
             {
-                lock (client.SyncRoot)
+                if (client.IsConnected)
                 {
-                    IMailFolder folder;
-                    if (string.IsNullOrEmpty(path) || path == "Inbox")
+                    lock (client.SyncRoot)
                     {
-                        folder = client.Inbox ??
-                            throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
-                        folder.Open(FolderAccess.ReadWrite);
+                        IMailFolder folder;
+                        if (string.IsNullOrEmpty(path) || path == "Inbox")
+                        {
+                            folder = client.Inbox ??
+                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
+                            folder.Open(FolderAccess.ReadWrite);
+                        }
+                        else
+                            folder = OpenFolder(client, path);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}", vars: [path]);
+                        messages = folder.Search(SearchQuery.All).Reverse();
+                        DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", vars: [messages.LongCount()]);
                     }
-                    else
-                        folder = OpenFolder(client, path);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}", vars: [path]);
-                    messages = folder.Search(SearchQuery.All).Reverse();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", vars: [messages.LongCount()]);
                 }
             }
-            return messages;
+            else if (pop3Client is not null)
+            {
+                if (pop3Client.IsConnected)
+                {
+                    lock (pop3Client.SyncRoot)
+                    {
+                        int messagesCount = pop3Client.GetMessageCount();
+                        popMessages = pop3Client.GetMessages(0, messagesCount);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", vars: [messages.LongCount()]);
+                    }
+                }
+            }
+            return pop3Client is not null ? popMessages : messages;
         }
 
         /// <summary>
@@ -221,8 +240,8 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// <param name="directory">Directory to open</param>
         /// <param name="PageNum">Page number</param>
         /// <exception cref="ArgumentException"></exception>
-        public static void MailListMessages(ImapClient client, string directory, int PageNum) =>
-            MailListMessages(client, directory, PageNum, ShellsInit.ShellsConfig.MailMaxMessagesInPage);
+        public static void MailListMessages(ImapClient? client, Pop3Client? pop3Client, string directory, int PageNum) =>
+            MailListMessages(client, pop3Client, directory, PageNum, ShellsInit.ShellsConfig.MailMaxMessagesInPage);
 
         /// <summary>
         /// Lists messages
@@ -232,7 +251,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// <param name="PageNum">Page number</param>
         /// <param name="MessagesInPage">Max messages in one page</param>
         /// <exception cref="ArgumentException"></exception>
-        public static void MailListMessages(ImapClient client, string directory, int PageNum, int MessagesInPage)
+        public static void MailListMessages(ImapClient? client, Pop3Client? pop3Client, string directory, int PageNum, int MessagesInPage)
         {
             // Sanity checks for the page number
             if (PageNum <= 0)
@@ -241,11 +260,11 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
 
             int FirstIndex = MessagesInPage * PageNum - 10;
             int LastIndex = MessagesInPage * PageNum - 1;
-            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED -> Obtaining folder {0} failed
-            var folder = OpenFolder(client, directory) ??
-                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);
-            var messages = PopulateMessages(client, directory);
-            int MaxMessagesIndex = messages.Count() - 1;
+            var messages = PopulateMessages(client, pop3Client, directory);
+            int MaxMessagesIndex =
+                messages is IEnumerable<UniqueId> ?
+                ((IEnumerable<UniqueId>)messages).Count() - 1 :
+                ((IEnumerable<MimeMessage>)messages).Count() - 1;
             DebugWriter.WriteDebug(DebugLevel.I, "10 messages shown in each page. First message number in page {0} is {1} and last message number in page {0} is {2}", vars: [MessagesInPage, FirstIndex, LastIndex]);
             for (int i = FirstIndex; i <= LastIndex; i++)
             {
@@ -257,13 +276,32 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
 
                     // Getting information about the message is vital to display them.
                     DebugWriter.WriteDebug(DebugLevel.I, "Getting message {0}...", vars: [i]);
-                    lock (client.SyncRoot)
+                    if (client is not null)
                     {
-                        MimeMessage Msg = folder?.GetMessage(messages.ElementAtOrDefault(i), default, Progress) ??
-                            throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED"));
-                        MsgFrom = Msg.From.ToString();
-                        MsgSubject = Msg.Subject ?? "";
-                        MsgPreview = Msg.GetTextBody(MimeKit.Text.TextFormat.Text)?.Truncate(200) ?? "";
+                        lock (client.SyncRoot)
+                        {
+                            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED -> Obtaining folder {0} failed
+                            var imapMessages = (IEnumerable<UniqueId>)messages;
+                            var folder = OpenFolder(client, directory) ??
+                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);
+                            MimeMessage Msg = folder?.GetMessage(imapMessages.ElementAtOrDefault(i), default, Progress) ??
+                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED"));
+                            MsgFrom = Msg.From.ToString();
+                            MsgSubject = Msg.Subject ?? "";
+                            MsgPreview = Msg.GetTextBody(TextFormat.Text)?.Truncate(200) ?? "";
+                        }
+                    }
+                    else if (pop3Client is not null)
+                    {
+                        lock (pop3Client.SyncRoot)
+                        {
+                            var popMessages = (IEnumerable<MimeMessage>)messages;
+                            MimeMessage Msg = popMessages.ElementAtOrDefault(i) ??
+                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED"));
+                            MsgFrom = Msg.From.ToString();
+                            MsgSubject = Msg.Subject ?? "";
+                            MsgPreview = Msg.GetTextBody(TextFormat.Text)?.Truncate(200) ?? "";
+                        }
                     }
                     DebugWriter.WriteDebug(DebugLevel.I, "From {0}: {1}", vars: [MsgFrom, MsgSubject]);
 
@@ -293,14 +331,14 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// <param name="MsgNumber">Message number</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="ArgumentException"></exception>
-        public static bool MailRemoveMessage(ImapClient client, string directory, int MsgNumber)
+        public static bool MailRemoveMessage(ImapClient? client, Pop3Client? pop3Client, string directory, int MsgNumber)
         {
             int Message = MsgNumber - 1;
-            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED -> Obtaining folder {0} failed
-            var folder = OpenFolder(client, directory) ??
-                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);
-            var messages = PopulateMessages(client, directory);
-            int MaxMessagesIndex = messages.Count() - 1;
+            var messages = PopulateMessages(client, pop3Client, directory);
+            int MaxMessagesIndex =
+                messages is IEnumerable<UniqueId> ?
+                ((IEnumerable<UniqueId>)messages).Count() - 1 :
+                ((IEnumerable<MimeMessage>)messages).Count() - 1;
             DebugWriter.WriteDebug(DebugLevel.I, "Message number {0}", vars: [Message]);
             if (Message < 0)
             {
@@ -313,11 +351,27 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND"));
             }
 
-            lock (client.SyncRoot)
+            if (client is not null)
             {
-                folder.Store(messages.ElementAtOrDefault(Message), new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
-                DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
-                folder.Expunge();
+                lock (client.SyncRoot)
+                {
+                    // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED -> Obtaining folder {0} failed
+                    var imapMessages = (IEnumerable<UniqueId>)messages;
+                    var folder = OpenFolder(client, directory) ??
+                        throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);
+                    folder.Store(imapMessages.ElementAtOrDefault(Message), new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
+                    folder.Expunge();
+                }
+            }
+            else if (pop3Client is not null)
+            {
+                lock (pop3Client.SyncRoot)
+                {
+                    var popMessages = (IEnumerable<MimeMessage>)messages;
+                    pop3Client.DeleteMessage(popMessages.Count() - Message);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
+                }
             }
             return true;
         }
@@ -329,36 +383,66 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// <param name="directory">Directory to open</param>
         /// <param name="Sender">The sender name</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool MailRemoveAllBySender(ImapClient client, string directory, string Sender)
+        public static bool MailRemoveAllBySender(ImapClient? client, Pop3Client? pop3Client, string directory, string Sender)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "All mail by {0} will be removed.", vars: [Sender]);
             int DeletedMsgNumber = 1;
             int SteppedMsgNumber = 0;
-            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED -> Obtaining folder {0} failed
-            var folder = OpenFolder(client, directory) ??
-                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);
-            var messages = PopulateMessages(client, directory);
-            for (int i = 0; i < messages.Count(); i++)
+            var messages = PopulateMessages(client, pop3Client, directory);
+            int MaxMessagesIndex =
+                messages is IEnumerable<UniqueId> ?
+                ((IEnumerable<UniqueId>)messages).Count() - 1 :
+                ((IEnumerable<MimeMessage>)messages).Count() - 1;
+            for (int i = 0; i < MaxMessagesIndex + 1; i++)
             {
                 try
                 {
-                    lock (client.SyncRoot)
+                    if (client is not null)
                     {
-                        var MessageId = messages.ElementAtOrDefault(i);
-                        MimeMessage Msg = folder.GetMessage(MessageId, default, Progress);
-                        SteppedMsgNumber += 1;
-
-                        foreach (var address in Msg.From)
+                        lock (client.SyncRoot)
                         {
-                            if (address.Name == Sender)
+                            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED -> Obtaining folder {0} failed
+                            var imapMessages = (IEnumerable<UniqueId>)messages;
+                            var folder = OpenFolder(client, directory) ??
+                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);
+                            var MessageId = imapMessages.ElementAtOrDefault(i);
+                            MimeMessage Msg = folder.GetMessage(MessageId, default, Progress);
+                            SteppedMsgNumber += 1;
+
+                            foreach (var address in Msg.From)
                             {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}. Removing {1}...", vars: [directory, Sender]);
-                                folder.Store(MessageId, new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
-                                DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
-                                folder.Expunge();
-                                DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", vars: [DeletedMsgNumber, Sender, directory, messages.Count() - SteppedMsgNumber]);
-                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX"), DeletedMsgNumber, Sender, directory, messages.Count() - SteppedMsgNumber);
-                                DeletedMsgNumber += 1;
+                                if (address.Name == Sender)
+                                {
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}. Removing {1}...", vars: [directory, Sender]);
+                                    folder.Store(MessageId, new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
+                                    folder.Expunge();
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", vars: [DeletedMsgNumber, Sender, directory, imapMessages.Count() - SteppedMsgNumber]);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX"), DeletedMsgNumber, Sender, directory, imapMessages.Count() - SteppedMsgNumber);
+                                    DeletedMsgNumber += 1;
+                                }
+                            }
+                        }
+                    }
+                    else if (pop3Client is not null)
+                    {
+                        lock (pop3Client.SyncRoot)
+                        {
+                            var popMessages = (IEnumerable<MimeMessage>)messages;
+                            MimeMessage Msg = popMessages.ElementAt(i);
+                            SteppedMsgNumber += 1;
+
+                            foreach (var address in Msg.From)
+                            {
+                                if (address.Name == Sender)
+                                {
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}. Removing {1}...", vars: [directory, Sender]);
+                                    pop3Client.DeleteMessage(popMessages.Count() - i);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", vars: [DeletedMsgNumber, Sender, directory, popMessages.Count() - SteppedMsgNumber]);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX"), DeletedMsgNumber, Sender, directory, popMessages.Count() - SteppedMsgNumber);
+                                    DeletedMsgNumber += 1;
+                                }
                             }
                         }
                     }
@@ -389,7 +473,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);
             var targetFolder = OpenFolder(client, TargetFolder) ??
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);
-            var messages = PopulateMessages(client, directory);
+            var messages = (IEnumerable<UniqueId>)PopulateMessages(client, null, directory);
             int MaxMessagesIndex = messages.Count() - 1;
             DebugWriter.WriteDebug(DebugLevel.I, "Message number {0}", vars: [Message]);
             if (Message < 0)
@@ -430,7 +514,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);
             var targetFolder = OpenFolder(client, TargetFolder) ??
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);
-            var messages = PopulateMessages(client, directory);
+            var messages = (IEnumerable<UniqueId>)PopulateMessages(client, null, directory);
             for (int i = 0; i < messages.Count(); i++)
             {
                 try
@@ -470,8 +554,8 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// <param name="client">IMAP mail client</param>
         /// <param name="directory">Directory to open</param>
         /// <param name="MessageNum">Message number</param>
-        public static void MailPrintMessage(ImapClient client, string directory, int MessageNum) =>
-            TextWriterColor.Write(MailRenderMessage(client, directory, MessageNum));
+        public static void MailPrintMessage(ImapClient? client, Pop3Client? pop3Client, string directory, int MessageNum) =>
+            TextWriterColor.Write(MailRenderMessage(client, pop3Client, directory, MessageNum));
 
         /// <summary>
         /// Renders content of message to a string sequence
@@ -479,16 +563,15 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// <param name="client">IMAP mail client</param>
         /// <param name="directory">Directory to open</param>
         /// <param name="MessageNum">Message number</param>
-        public static string MailRenderMessage(ImapClient client, string directory, int MessageNum)
+        public static string MailRenderMessage(ImapClient? client, Pop3Client? pop3Client, string directory, int MessageNum)
         {
             var messageBuilder = new StringBuilder();
             int Message = MessageNum - 1;
-            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED -> Obtaining folder {0} failed
-            var folder = OpenFolder(client, directory) ??
-                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);
-            var messages = PopulateMessages(client, directory);
-            int MaxMessagesIndex = messages.Count() - 1;
-            MimeMessage currentEntry = folder.GetMessage(messages.ElementAtOrDefault(Message), default, Progress);
+            var messages = PopulateMessages(client, pop3Client, directory);
+            int MaxMessagesIndex =
+                messages is IEnumerable<UniqueId> ?
+                ((IEnumerable<UniqueId>)messages).Count() - 1 :
+                ((IEnumerable<MimeMessage>)messages).Count() - 1;
             DebugWriter.WriteDebug(DebugLevel.I, "Message number {0}", vars: [Message]);
             if (Message < 0)
             {
@@ -501,160 +584,171 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND"));
             }
 
-            lock (client.SyncRoot)
+            MimeMessage? currentEntry = null;
+            if (client is not null)
             {
-                // Get message
-                DebugWriter.WriteDebug(DebugLevel.I, "Getting message...");
+                // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED -> Obtaining folder {0} failed
+                var imapMessages = (IEnumerable<UniqueId>)messages;
+                var folder = OpenFolder(client, directory) ??
+                    throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);
+                currentEntry = folder.GetMessage(imapMessages.ElementAtOrDefault(Message), default, Progress);
+            }
+            else if (pop3Client is not null)
+            {
+                var popMessages = (IEnumerable<MimeMessage>)messages;
+                currentEntry = popMessages.ElementAt(Message);
+            }
+            if (currentEntry is null)
+                return "";
 
-                // Print all the addresses that sent the mail
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} senders.", vars: [currentEntry.From.Count]);
-                foreach (InternetAddress Address in currentEntry.From)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", vars: [Address.Name, Address.Encoding.EncodingName]);
-                    messageBuilder.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM").FormatString(Address.ToString()));
-                }
+            // Print all the addresses that sent the mail
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} senders.", vars: [currentEntry.From.Count]);
+            foreach (InternetAddress Address in currentEntry.From)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", vars: [Address.Name, Address.Encoding.EncodingName]);
+                messageBuilder.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM").FormatString(Address.ToString()));
+            }
 
-                // Print all the addresses that received the mail
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} receivers.", vars: [currentEntry.To.Count]);
-                foreach (InternetAddress Address in currentEntry.To)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", vars: [Address.Name, Address.Encoding.EncodingName]);
-                    messageBuilder.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO").FormatString(Address.ToString()));
-                }
+            // Print all the addresses that received the mail
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} receivers.", vars: [currentEntry.To.Count]);
+            foreach (InternetAddress Address in currentEntry.To)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", vars: [Address.Name, Address.Encoding.EncodingName]);
+                messageBuilder.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO").FormatString(Address.ToString()));
+            }
 
-                // Print the date and time when the user received the mail
-                DebugWriter.WriteDebug(DebugLevel.I, "Rendering time and date of {0}.", vars: [currentEntry.Date.DateTime.ToString()]);
-                messageBuilder.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN").FormatString(TimeDateRenderers.RenderTime(currentEntry.Date.DateTime), TimeDateRenderers.RenderDate(currentEntry.Date.DateTime)));
+            // Print the date and time when the user received the mail
+            DebugWriter.WriteDebug(DebugLevel.I, "Rendering time and date of {0}.", vars: [currentEntry.Date.DateTime.ToString()]);
+            messageBuilder.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN").FormatString(TimeDateRenderers.RenderTime(currentEntry.Date.DateTime), TimeDateRenderers.RenderDate(currentEntry.Date.DateTime)));
 
-                // Prepare subject
+            // Prepare subject
+            messageBuilder.AppendLine();
+            DebugWriter.WriteDebug(DebugLevel.I, "Subject length: {0}, {1}", vars: [currentEntry.Subject?.Length, currentEntry.Subject]);
+            messageBuilder.Append($"- {currentEntry.Subject}");
+
+            // Write a sign after the subject if attachments are found
+            DebugWriter.WriteDebug(DebugLevel.I, "Attachments count: {0}", vars: [currentEntry.Attachments.Count()]);
+            if (currentEntry.Attachments.Any())
+                messageBuilder.AppendLine(" - [*]");
+            else
                 messageBuilder.AppendLine();
-                DebugWriter.WriteDebug(DebugLevel.I, "Subject length: {0}, {1}", vars: [currentEntry.Subject?.Length, currentEntry.Subject]);
-                messageBuilder.Append($"- {currentEntry.Subject}");
 
-                // Write a sign after the subject if attachments are found
-                DebugWriter.WriteDebug(DebugLevel.I, "Attachments count: {0}", vars: [currentEntry.Attachments.Count()]);
-                if (currentEntry.Attachments.Any())
-                    messageBuilder.AppendLine(" - [*]");
-                else
-                    messageBuilder.AppendLine();
-
-                // Prepare body
-                messageBuilder.AppendLine();
-                DebugWriter.WriteDebug(DebugLevel.I, "Displaying body...");
-                var DecryptedMessage = default(Dictionary<string, MimeEntity>);
-                bool isEncrypted = currentEntry.Body is MultipartEncrypted;
-                DebugWriter.WriteDebug(DebugLevel.I, "To decrypt: {0}", vars: [isEncrypted]);
-                if (isEncrypted)
+            // Prepare body
+            messageBuilder.AppendLine();
+            DebugWriter.WriteDebug(DebugLevel.I, "Displaying body...");
+            var DecryptedMessage = default(Dictionary<string, MimeEntity>);
+            bool isEncrypted = currentEntry.Body is MultipartEncrypted;
+            DebugWriter.WriteDebug(DebugLevel.I, "To decrypt: {0}", vars: [isEncrypted]);
+            if (isEncrypted)
+            {
+                DecryptedMessage = DecryptMessage(currentEntry);
+                DebugWriter.WriteDebug(DebugLevel.I, "Decrypted messages length: {0}", vars: [DecryptedMessage.Count]);
+                var DecryptedEntity = DecryptedMessage["Body"];
+                var DecryptedStream = new MemoryStream();
+                DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message type: {(DecryptedEntity is Multipart ? "Multipart" : "Singlepart")}");
+                if (DecryptedEntity is Multipart)
                 {
-                    DecryptedMessage = DecryptMessage(currentEntry);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Decrypted messages length: {0}", vars: [DecryptedMessage.Count]);
-                    var DecryptedEntity = DecryptedMessage["Body"];
-                    var DecryptedStream = new MemoryStream();
-                    DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message type: {(DecryptedEntity is Multipart ? "Multipart" : "Singlepart")}");
-                    if (DecryptedEntity is Multipart)
+                    Multipart MultiEntity = (Multipart)DecryptedEntity;
+                    DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message entity is {(MultiEntity is not null ? "multipart" : "nothing")}");
+                    if (MultiEntity is not null)
                     {
-                        Multipart MultiEntity = (Multipart)DecryptedEntity;
-                        DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message entity is {(MultiEntity is not null ? "multipart" : "nothing")}");
-                        if (MultiEntity is not null)
+                        for (int EntityNumber = 0; EntityNumber <= MultiEntity.Count - 1; EntityNumber++)
                         {
-                            for (int EntityNumber = 0; EntityNumber <= MultiEntity.Count - 1; EntityNumber++)
+                            DebugWriter.WriteDebug(DebugLevel.I, $"Entity number {EntityNumber} is {(MultiEntity[EntityNumber].IsAttachment ? "an attachment" : "not an attachment")}");
+                            if (!MultiEntity[EntityNumber].IsAttachment)
                             {
-                                DebugWriter.WriteDebug(DebugLevel.I, $"Entity number {EntityNumber} is {(MultiEntity[EntityNumber].IsAttachment ? "an attachment" : "not an attachment")}");
-                                if (!MultiEntity[EntityNumber].IsAttachment)
-                                {
-                                    MultiEntity[EntityNumber].WriteTo(DecryptedStream, true);
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to stream.", vars: [DecryptedStream.Length]);
-                                    DecryptedStream.Position = 0L;
-                                    var DecryptedByte = new byte[(int)(DecryptedStream.Length + 1)];
-                                    DecryptedStream.Read(DecryptedByte, 0, (int)DecryptedStream.Length);
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", vars: [DecryptedByte.Length]);
-                                    messageBuilder.AppendLine(Encoding.Default.GetString(DecryptedByte));
-                                }
+                                MultiEntity[EntityNumber].WriteTo(DecryptedStream, true);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to stream.", vars: [DecryptedStream.Length]);
+                                DecryptedStream.Position = 0L;
+                                var DecryptedByte = new byte[(int)(DecryptedStream.Length + 1)];
+                                DecryptedStream.Read(DecryptedByte, 0, (int)DecryptedStream.Length);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", vars: [DecryptedByte.Length]);
+                                messageBuilder.AppendLine(Encoding.Default.GetString(DecryptedByte));
                             }
                         }
                     }
-                    else
-                    {
-                        DecryptedEntity.WriteTo(DecryptedStream, true);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to stream.", vars: [DecryptedStream.Length]);
-                        DecryptedStream.Position = 0L;
-                        var DecryptedByte = new byte[(int)(DecryptedStream.Length + 1)];
-                        DecryptedStream.Read(DecryptedByte, 0, (int)DecryptedStream.Length);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", vars: [DecryptedByte.Length]);
-                        messageBuilder.AppendLine(Encoding.Default.GetString(DecryptedByte));
-                    }
                 }
                 else
-                    messageBuilder.AppendLine(currentEntry.GetTextBody((TextFormat)ShellsInit.ShellsConfig.MailTextFormat));
-                messageBuilder.AppendLine();
-
-                // Populate attachments
-                if (currentEntry.Attachments.Any())
                 {
-                    messageBuilder.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_ATTACHMENTS"));
-                    var AttachmentEntities = new List<MimeEntity>();
-                    if (isEncrypted)
+                    DecryptedEntity.WriteTo(DecryptedStream, true);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to stream.", vars: [DecryptedStream.Length]);
+                    DecryptedStream.Position = 0L;
+                    var DecryptedByte = new byte[(int)(DecryptedStream.Length + 1)];
+                    DecryptedStream.Read(DecryptedByte, 0, (int)DecryptedStream.Length);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", vars: [DecryptedByte.Length]);
+                    messageBuilder.AppendLine(Encoding.Default.GetString(DecryptedByte));
+                }
+            }
+            else
+                messageBuilder.AppendLine(currentEntry.GetTextBody((TextFormat)ShellsInit.ShellsConfig.MailTextFormat));
+            messageBuilder.AppendLine();
+
+            // Populate attachments
+            if (currentEntry.Attachments.Any())
+            {
+                messageBuilder.AppendLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_ATTACHMENTS"));
+                var AttachmentEntities = new List<MimeEntity>();
+                if (isEncrypted)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Parsing attachments...");
+                    if (DecryptedMessage is not null)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Parsing attachments...");
-                        if (DecryptedMessage is not null)
+                        for (int DecryptedEntityNumber = 0; DecryptedEntityNumber <= DecryptedMessage.Count - 1; DecryptedEntityNumber++)
                         {
-                            for (int DecryptedEntityNumber = 0; DecryptedEntityNumber <= DecryptedMessage.Count - 1; DecryptedEntityNumber++)
+                            var decryptedString = DecryptedMessage.Keys.ElementAtOrDefault(DecryptedEntityNumber);
+                            var decryptedEntity = DecryptedMessage.Values.ElementAtOrDefault(DecryptedEntityNumber);
+                            if (decryptedString is null)
+                                continue;
+                            if (decryptedEntity is null)
+                                continue;
+                            DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} an attachment? {1}", vars: [DecryptedEntityNumber, decryptedString.Contains("Attachment")]);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} a body that is a multipart? {1}", vars: [DecryptedEntityNumber, decryptedString == "Body" & DecryptedMessage["Body"] is Multipart]);
+                            if (decryptedString.Contains("Attachment"))
                             {
-                                var decryptedString = DecryptedMessage.Keys.ElementAtOrDefault(DecryptedEntityNumber);
-                                var decryptedEntity = DecryptedMessage.Values.ElementAtOrDefault(DecryptedEntityNumber);
-                                if (decryptedString is null)
-                                    continue;
-                                if (decryptedEntity is null)
-                                    continue;
-                                DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} an attachment? {1}", vars: [DecryptedEntityNumber, decryptedString.Contains("Attachment")]);
-                                DebugWriter.WriteDebug(DebugLevel.I, "Is entity number {0} a body that is a multipart? {1}", vars: [DecryptedEntityNumber, decryptedString == "Body" & DecryptedMessage["Body"] is Multipart]);
-                                if (decryptedString.Contains("Attachment"))
+                                DebugWriter.WriteDebug(DebugLevel.I, "Adding entity {0} to attachment entities...", vars: [DecryptedEntityNumber]);
+                                AttachmentEntities.Add(decryptedEntity);
+                            }
+                            else if (decryptedString == "Body" & DecryptedMessage["Body"] is Multipart)
+                            {
+                                Multipart MultiEntity = (Multipart)DecryptedMessage["Body"];
+                                DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message entity is {(MultiEntity is not null ? "multipart" : "nothing")}");
+                                if (MultiEntity is not null)
                                 {
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Adding entity {0} to attachment entities...", vars: [DecryptedEntityNumber]);
-                                    AttachmentEntities.Add(decryptedEntity);
-                                }
-                                else if (decryptedString == "Body" & DecryptedMessage["Body"] is Multipart)
-                                {
-                                    Multipart MultiEntity = (Multipart)DecryptedMessage["Body"];
-                                    DebugWriter.WriteDebug(DebugLevel.I, $"Decrypted message entity is {(MultiEntity is not null ? "multipart" : "nothing")}");
-                                    if (MultiEntity is not null)
+                                    DebugWriter.WriteDebug(DebugLevel.I, "{0} entities found.", vars: [MultiEntity.Count]);
+                                    for (int EntityNumber = 0; EntityNumber <= MultiEntity.Count - 1; EntityNumber++)
                                     {
-                                        DebugWriter.WriteDebug(DebugLevel.I, "{0} entities found.", vars: [MultiEntity.Count]);
-                                        for (int EntityNumber = 0; EntityNumber <= MultiEntity.Count - 1; EntityNumber++)
+                                        DebugWriter.WriteDebug(DebugLevel.I, $"Entity number {EntityNumber} is {(MultiEntity[EntityNumber].IsAttachment ? "an attachment" : "not an attachment")}");
+                                        if (MultiEntity[EntityNumber].IsAttachment)
                                         {
-                                            DebugWriter.WriteDebug(DebugLevel.I, $"Entity number {EntityNumber} is {(MultiEntity[EntityNumber].IsAttachment ? "an attachment" : "not an attachment")}");
-                                            if (MultiEntity[EntityNumber].IsAttachment)
-                                            {
-                                                DebugWriter.WriteDebug(DebugLevel.I, "Adding entity {0} to attachment list...", vars: [EntityNumber]);
-                                                AttachmentEntities.Add(MultiEntity[EntityNumber]);
-                                            }
+                                            DebugWriter.WriteDebug(DebugLevel.I, "Adding entity {0} to attachment list...", vars: [EntityNumber]);
+                                            AttachmentEntities.Add(MultiEntity[EntityNumber]);
                                         }
                                     }
                                 }
                             }
                         }
                     }
-                    else
-                        AttachmentEntities = (List<MimeEntity>)currentEntry.Attachments;
+                }
+                else
+                    AttachmentEntities = (List<MimeEntity>)currentEntry.Attachments;
 
-                    foreach (MimeEntity Attachment in AttachmentEntities)
+                foreach (MimeEntity Attachment in AttachmentEntities)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Attachment ID: {0}", vars: [Attachment.ContentId]);
+                    if (Attachment is MessagePart)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Attachment ID: {0}", vars: [Attachment.ContentId]);
-                        if (Attachment is MessagePart)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Attachment is a message.");
-                            messageBuilder.AppendLine($"- {Attachment.ContentDisposition?.FileName}");
-                        }
-                        else
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Attachment is a file.");
-                            MimePart AttachmentPart = (MimePart)Attachment;
-                            messageBuilder.AppendLine($"- {AttachmentPart.FileName}");
-                        }
+                        DebugWriter.WriteDebug(DebugLevel.I, "Attachment is a message.");
+                        messageBuilder.AppendLine($"- {Attachment.ContentDisposition?.FileName}");
+                    }
+                    else
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Attachment is a file.");
+                        MimePart AttachmentPart = (MimePart)Attachment;
+                        messageBuilder.AppendLine($"- {AttachmentPart.FileName}");
                     }
                 }
-                return messageBuilder.ToString();
             }
+            return messageBuilder.ToString();
         }
 
         /// <summary>

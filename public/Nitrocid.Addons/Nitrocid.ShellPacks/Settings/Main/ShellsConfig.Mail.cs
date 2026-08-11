@@ -29,6 +29,7 @@ namespace Nitrocid.ShellPacks.Settings
     public partial class ShellsConfig : BaseKernelConfig
     {
         internal static int imapPingInterval = 30000;
+        internal static int pop3PingInterval = 30000;
         internal static int smtpPingInterval = 30000;
         internal static int maxMessagesInPage = 10;
 
@@ -57,6 +58,12 @@ namespace Nitrocid.ShellPacks.Settings
         /// </summary>
         public string MailIMAPPromptStyle { get; set; } = "";
         /// <summary>
+        /// Write how you want your POP3 server prompt to be. Leave blank to use default style. Placeholders are parsed
+        /// </summary>
+        // TODO: NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_NAME -> POP3 prompt style for mail
+        // TODO: NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_DESC -> Write how you want your POP3 server prompt to be. Leave blank to use default style. Placeholders are parsed.
+        public string MailPOP3PromptStyle { get; set; } = "";
+        /// <summary>
         /// Write how you want your SMTP server prompt to be. Leave blank to use default style. Placeholders are parsed
         /// </summary>
         public string MailSMTPPromptStyle { get; set; } = "";
@@ -83,6 +90,16 @@ namespace Nitrocid.ShellPacks.Settings
         {
             get => imapPingInterval;
             set => imapPingInterval = value < 0 ? 30000 : value;
+        }
+        /// <summary>
+        /// How many milliseconds to send the POP3 ping?
+        /// </summary>
+        // TODO: NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_NAME -> Send POP3 ping interval
+        // TODO: NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_DESC -> Write how you want your POP3 server prompt to be. Leave blank to use default style. Placeholders are parsed.
+        public int MailPop3PingInterval
+        {
+            get => pop3PingInterval;
+            set => pop3PingInterval = value < 0 ? 30000 : value;
         }
         /// <summary>
         /// How many milliseconds to send the SMTP ping?

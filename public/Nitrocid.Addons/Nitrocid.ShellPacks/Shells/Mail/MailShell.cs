@@ -24,10 +24,13 @@ using System.Threading;
 using FluentFTP;
 using MailKit;
 using MailKit.Net.Imap;
+using MailKit.Net.Pop3;
 using MailKit.Net.Smtp;
+using MimeKit;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Connections;
+using Nitrocid.ShellPacks.Shells.Mail.Tools;
 using Terminaux.Inputs;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
@@ -43,6 +46,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail
     public partial class MailShell : BaseShell, IShell
     {
         internal IEnumerable<UniqueId>? IMAP_Messages;
+        internal IEnumerable<MimeMessage>? POP3_Messages;
         internal NetworkInstanceConnection<object[]>? Client;
 
         /// <summary>
@@ -53,20 +57,32 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <summary>
         /// IMAP client
         /// </summary>
-        public ImapClient ImapClient =>
-            (ImapClient)((Client?.ConnectionInstance) ?? [])[0];
+        public ImapClient? ImapClient =>
+            Client?.ConnectionInstance is not null ? (ImapClient)Client.ConnectionInstance[0] : null;
 
         /// <summary>
         /// SMTP client
         /// </summary>
-        public SmtpClient SmtpClient =>
-            (SmtpClient)((Client?.ConnectionInstance) ?? [])[1];
+        public SmtpClient? SmtpClient =>
+            Client?.ConnectionInstance is not null ? (SmtpClient)Client.ConnectionInstance[1] : null;
+
+        /// <summary>
+        /// POP3 client
+        /// </summary>
+        public Pop3Client? Pop3Client =>
+            Client?.ConnectionInstance is not null ? (Pop3Client)Client.ConnectionInstance[2] : null;
 
         /// <summary>
         /// Network credentials
         /// </summary>
-        public NetworkCredential NetworkCredential =>
-            (NetworkCredential)((Client?.ConnectionInstance) ?? [])[3];
+        public NetworkCredential? NetworkCredential =>
+            Client?.ConnectionInstance is not null ? (NetworkCredential)Client.ConnectionInstance[3] : null;
+
+        /// <summary>
+        /// Protocol type
+        /// </summary>
+        public MailProtocolType ProtocolType =>
+            Client?.ConnectionInstance is not null ? (MailProtocolType)Client.ConnectionInstance[4] : (MailProtocolType)(-1);
 
         /// <inheritdoc/>
         public override string ShellType => "MailShell";
@@ -84,9 +100,18 @@ namespace Nitrocid.ShellPacks.Shells.Mail
             Client = connection;
 
             // Send ping to keep the connection alive
+            var POP3_NoOp = new ThreadInstance("POP3 Keep Connection", false, POP3KeepConnection);
             var IMAP_NoOp = new ThreadInstance("IMAP Keep Connection", false, IMAPKeepConnection);
-            IMAP_NoOp.Start();
-            DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about IMAPKeepConnection()");
+            if (ProtocolType == MailProtocolType.POP3)
+            {
+                POP3_NoOp.Start();
+                DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about POP3KeepConnection()");
+            }
+            else
+            {
+                IMAP_NoOp.Start();
+                DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about IMAPKeepConnection()");
+            }
             var SMTP_NoOp = new ThreadInstance("SMTP Keep Connection", false, SMTPKeepConnection);
             SMTP_NoOp.Start();
             DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about SMTPKeepConnection()");
@@ -127,9 +152,11 @@ namespace Nitrocid.ShellPacks.Shells.Mail
                         if (ShellsInit.ShellsConfig.MailNotifyNewMail)
                             ReleaseHandlers();
                         IMAP_NoOp.Stop();
+                        POP3_NoOp.Stop();
                         SMTP_NoOp.Stop();
-                        ImapClient.Disconnect(true);
-                        SmtpClient.Disconnect(true);
+                        ImapClient?.Disconnect(true);
+                        Pop3Client?.Disconnect(true);
+                        SmtpClient?.Disconnect(true);
                         int connectionIndex = NetworkConnectionTools.GetConnectionIndex(Client);
                         NetworkConnectionTools.CloseConnection(connectionIndex);
                         Client = null;

@@ -123,17 +123,13 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                             {
                                 // Getting information about the message is vital to display them.
                                 DebugWriter.WriteDebug(DebugLevel.I, "Getting message {0}...", vars: [i]);
+                                // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED -> IMAP server is not connected
+                                if (mailShell.ImapClient is null)
+                                    throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED"));
                                 lock (mailShell.ImapClient.SyncRoot)
                                 {
-                                    MimeMessage Msg;
-                                    if (!string.IsNullOrEmpty(mailShell.IMAP_CurrentDirectory) & !(mailShell.IMAP_CurrentDirectory == "Inbox"))
-                                    {
-                                        var Dir = mailShell.OpenFolder(mailShell.IMAP_CurrentDirectory);
-                                        Msg = Dir.GetMessage(messages.ElementAtOrDefault(i), default, MailTools.Progress);
-                                    }
-                                    else
-                                        Msg = mailShell.ImapClient.Inbox?.GetMessage(messages.ElementAtOrDefault(i), default, MailTools.Progress) ??
-                                            throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED"));
+                                    var Dir = PrimaryDataSource.ElementAt(FirstPaneCurrentSelection - 1);
+                                    MimeMessage Msg = Dir.GetMessage(messages.ElementAtOrDefault(i), default, MailTools.Progress);
                                     secondPaneListing.Add(Msg);
                                 }
                             }
@@ -232,7 +228,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                         return;
 
                     // Open it in a separate infobox.
-                    var messageBuilder = MailTools.MailRenderMessage(mailShell.ImapClient, entry1?.FullName ?? "", messageNum + 1);
+                    var messageBuilder = MailTools.MailRenderMessage(mailShell.ImapClient, null, entry1?.FullName ?? "", messageNum + 1);
                     InfoBoxModalColor.WriteInfoBoxModal(messageBuilder);
                     refreshSecondPaneListing = true;
                 }

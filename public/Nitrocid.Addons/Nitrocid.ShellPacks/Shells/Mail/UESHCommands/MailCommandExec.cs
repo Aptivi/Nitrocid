@@ -49,15 +49,15 @@ namespace Nitrocid.ShellPacks.Shells.Mail.UESHCommands
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             NetworkConnectionTools.OpenConnectionForShell("MailShell", EstablishMailConnection, (_, connection) =>
-            EstablishMailConnectionSpeedDial(connection), parameters.ArgumentsText);
+                EstablishMailConnectionSpeedDial(connection), parameters.ArgumentsText);
             return 0;
         }
 
         private NetworkConnection? EstablishMailConnection(string username) =>
-            string.IsNullOrEmpty(username) ? MailLogin.PromptUser() : MailLogin.PromptPassword(username);
+            string.IsNullOrEmpty(username) ? MailLogin.PromptUser(MailProtocolType.IMAP) : MailLogin.PromptPassword(username, MailProtocolType.IMAP);
 
         private NetworkConnection? EstablishMailConnectionSpeedDial(SpeedDialEntry connection) =>
-            MailLogin.PromptPassword(connection.Username);
+            MailLogin.PromptPassword(connection.Username, MailProtocolType.IMAP);
 
     }
 }

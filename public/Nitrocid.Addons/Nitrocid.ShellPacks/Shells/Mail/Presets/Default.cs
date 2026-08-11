@@ -61,7 +61,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Presets
 
             // Mail username
             PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground());
-            PresetStringBuilder.AppendFormat("{0}", mailShell.NetworkCredential.UserName);
+            PresetStringBuilder.AppendFormat("{0}", mailShell.NetworkCredential?.UserName ?? "");
 
             // Closing
             PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());

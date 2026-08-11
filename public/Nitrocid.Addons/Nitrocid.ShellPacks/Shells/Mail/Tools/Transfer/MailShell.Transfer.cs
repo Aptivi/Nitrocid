@@ -20,6 +20,8 @@
 using System.Collections.Generic;
 using MailKit;
 using MimeKit;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Shells.Mail.Tools;
 using Terminaux.Shell.Shells;
 
@@ -35,7 +37,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// </summary>
         /// <param name="MessageNum">Message number</param>
         public void MailPrintMessage(int MessageNum) =>
-            MailTools.MailPrintMessage(ImapClient, IMAP_CurrentDirectory, MessageNum);
+            MailTools.MailPrintMessage(ImapClient, Pop3Client, IMAP_CurrentDirectory, MessageNum);
 
         /// <summary>
         /// Sends a message
@@ -44,8 +46,13 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <param name="Subject">Subject</param>
         /// <param name="Body">Body (only text. See <see cref="MailSendMessage(string, string, MimeEntity)"/> for more.)</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        public bool MailSendMessage(string Recipient, string Subject, string Body) =>
-            MailTools.MailSendMessage(SmtpClient, NetworkCredential.UserName, Recipient, Subject, Body);
+        public bool MailSendMessage(string Recipient, string Subject, string Body)
+        {
+            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED -> SMTP server is not connected
+            if (SmtpClient is null)
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED"));
+            return MailTools.MailSendMessage(SmtpClient, NetworkCredential?.UserName ?? "", Recipient, Subject, Body);
+        }
 
         /// <summary>
         /// Sends a message with advanced features like attachments
@@ -54,8 +61,13 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <param name="Subject">Subject</param>
         /// <param name="Body">Body</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        public bool MailSendMessage(string Recipient, string Subject, MimeEntity Body) =>
-            MailTools.MailSendMessage(SmtpClient, NetworkCredential.UserName, Recipient, Subject, Body);
+        public bool MailSendMessage(string Recipient, string Subject, MimeEntity Body)
+        {
+            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED -> SMTP server is not connected
+            if (SmtpClient is null)
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED"));
+            return MailTools.MailSendMessage(SmtpClient, NetworkCredential?.UserName ?? "", Recipient, Subject, Body);
+        }
 
         /// <summary>
         /// Sends an encrypted message with advanced features like attachments
@@ -64,13 +76,24 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <param name="Subject">Subject</param>
         /// <param name="Body">Body</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        public bool MailSendEncryptedMessage(string Recipient, string Subject, MimeEntity Body) =>
-            MailTools.MailSendEncryptedMessage(SmtpClient, NetworkCredential.UserName, Recipient, Subject, Body);
+        public bool MailSendEncryptedMessage(string Recipient, string Subject, MimeEntity Body)
+        {
+            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED -> SMTP server is not connected
+            if (SmtpClient is null)
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED"));
+            return MailTools.MailSendEncryptedMessage(SmtpClient, NetworkCredential?.UserName ?? "", Recipient, Subject, Body);
+        }
 
         /// <summary>
         /// Populates e-mail messages
         /// </summary>
-        public IEnumerable<UniqueId>? PopulateMessages() =>
-            MailTools.PopulateMessages(ImapClient, IMAP_CurrentDirectory);
+        public void PopulateMessages()
+        {
+            var messages = MailTools.PopulateMessages(ImapClient, Pop3Client, IMAP_CurrentDirectory);
+            if (ProtocolType == MailProtocolType.POP3)
+                POP3_Messages = (IEnumerable<MimeMessage>)messages;
+            else
+                IMAP_Messages = (IEnumerable<UniqueId>)messages;
+        }
     }
 }

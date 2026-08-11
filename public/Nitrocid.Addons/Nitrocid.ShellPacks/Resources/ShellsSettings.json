@@ -224,6 +224,12 @@
                 "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_DESC"
             },
             {
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_NAME",
+                "Type": "SString",
+                "Variable": "MailPOP3PromptStyle",
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_DESC"
+            },
+            {
                 "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_NAME",
                 "Type": "SString",
                 "Variable": "MailSMTPPromptStyle",
@@ -258,6 +264,12 @@
                 "Type": "SInt",
                 "Variable": "MailImapPingInterval",
                 "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_DESC"
+            },
+            {
+                "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_NAME",
+                "Type": "SInt",
+                "Variable": "MailPop3PingInterval",
+                "Description": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_DESC"
             },
             {
                 "Name": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_NAME",

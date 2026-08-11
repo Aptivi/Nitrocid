@@ -18,6 +18,8 @@
 //
 
 using System;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Shells.Mail.Tools;
 using Terminaux.Shell.Shells;
 
@@ -34,7 +36,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <param name="PageNum">Page number</param>
         /// <exception cref="ArgumentException"></exception>
         public void MailListMessages(int PageNum) =>
-            MailTools.MailListMessages(ImapClient, IMAP_CurrentDirectory, PageNum);
+            MailTools.MailListMessages(ImapClient, Pop3Client, IMAP_CurrentDirectory, PageNum);
 
         /// <summary>
         /// Lists messages
@@ -43,7 +45,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <param name="MessagesInPage">Max messages in one page</param>
         /// <exception cref="ArgumentException"></exception>
         public void MailListMessages(int PageNum, int MessagesInPage) =>
-            MailTools.MailListMessages(ImapClient, IMAP_CurrentDirectory, PageNum, MessagesInPage);
+            MailTools.MailListMessages(ImapClient, Pop3Client, IMAP_CurrentDirectory, PageNum, MessagesInPage);
 
         /// <summary>
         /// Removes a message
@@ -52,7 +54,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="ArgumentException"></exception>
         public bool MailRemoveMessage(int MsgNumber) =>
-            MailTools.MailRemoveMessage(ImapClient, IMAP_CurrentDirectory, MsgNumber);
+            MailTools.MailRemoveMessage(ImapClient, Pop3Client, IMAP_CurrentDirectory, MsgNumber);
 
         /// <summary>
         /// Removes all mail that the specified sender has sent
@@ -60,7 +62,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <param name="Sender">The sender name</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         public bool MailRemoveAllBySender(string Sender) =>
-            MailTools.MailRemoveAllBySender(ImapClient, IMAP_CurrentDirectory, Sender);
+            MailTools.MailRemoveAllBySender(ImapClient, Pop3Client, IMAP_CurrentDirectory, Sender);
 
         /// <summary>
         /// Moves a message
@@ -69,8 +71,13 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <param name="TargetFolder">Target folder</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <exception cref="ArgumentException"></exception>
-        public bool MailMoveMessage(int MsgNumber, string TargetFolder) =>
-            MailTools.MailMoveMessage(ImapClient, IMAP_CurrentDirectory, MsgNumber, TargetFolder);
+        public bool MailMoveMessage(int MsgNumber, string TargetFolder)
+        {
+            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED -> IMAP server is not connected
+            if (ImapClient is null)
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED"));
+            return MailTools.MailMoveMessage(ImapClient, IMAP_CurrentDirectory, MsgNumber, TargetFolder);
+        }
 
         /// <summary>
         /// Moves all mail that the specified sender has sent
@@ -78,7 +85,12 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <param name="Sender">The sender name</param>
         /// <param name="TargetFolder">Target folder</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public bool MailMoveAllBySender(string Sender, string TargetFolder) =>
-            MailTools.MailMoveAllBySender(ImapClient, IMAP_CurrentDirectory, Sender, TargetFolder);
+        public bool MailMoveAllBySender(string Sender, string TargetFolder)
+        {
+            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED -> IMAP server is not connected
+            if (ImapClient is null)
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED"));
+            return MailTools.MailMoveAllBySender(ImapClient, IMAP_CurrentDirectory, Sender, TargetFolder);
+        }
     }
 }

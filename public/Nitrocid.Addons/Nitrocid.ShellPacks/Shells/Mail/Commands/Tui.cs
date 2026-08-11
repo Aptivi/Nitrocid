@@ -23,6 +23,7 @@ using MimeKit;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Shells.Mail.Interactive;
+using Nitrocid.ShellPacks.Shells.Mail.Tools;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
@@ -41,16 +42,27 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
         {
             var mailShell = (MailShell?)shell ??
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
-            var tui = new MailManagerCli(mailShell);
-            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN"), ConsoleKey.Enter, (entry1, _, entry2, messageNum) => tui.Open(entry1, entry2, messageNum)));
-            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_CREATEFOLDER"), ConsoleKey.F1, (_, _, _, _) => tui.MakeFolder()));
-            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVE"), ConsoleKey.F2, (_, _, _, index) => tui.MoveMessage(index)));
-            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVEALL"), ConsoleKey.F2, ConsoleModifiers.Shift, (_, _, _, index) => tui.MoveAllMessages(index)));
-            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_RENAMEFOLDER"), ConsoleKey.F3, (entry1, _, _, _) => tui.RenameFolder(entry1)));
-            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEFOLDER"), ConsoleKey.F4, (entry1, _, _, _) => tui.RemoveFolder(entry1)));
-            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVE"), ConsoleKey.F5, (_, _, _, index) => tui.RemoveMessage(index)));
-            tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEALL"), ConsoleKey.F5, ConsoleModifiers.Shift, (_, _, _, index) => tui.RemoveAllMessages(index)));
-            InteractiveTuiTools.OpenInteractiveTui(tui);
+            if (mailShell.ProtocolType == MailProtocolType.POP3)
+            {
+                var tui = new Pop3MailManagerCli(mailShell);
+                tui.Bindings.Add(new InteractiveTuiBinding<MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN"), ConsoleKey.Enter, (entry1, messageNum, _, _) => tui.Open(entry1, messageNum)));
+                tui.Bindings.Add(new InteractiveTuiBinding<MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVE"), ConsoleKey.F1, (_, index, _, _) => tui.RemoveMessage(index)));
+                tui.Bindings.Add(new InteractiveTuiBinding<MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEALL"), ConsoleKey.F1, ConsoleModifiers.Shift, (_, index, _, _) => tui.RemoveAllMessages(index)));
+                InteractiveTuiTools.OpenInteractiveTui(tui);
+            }
+            else
+            {
+                var tui = new MailManagerCli(mailShell);
+                tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN"), ConsoleKey.Enter, (entry1, _, entry2, messageNum) => tui.Open(entry1, entry2, messageNum)));
+                tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_CREATEFOLDER"), ConsoleKey.F1, (_, _, _, _) => tui.MakeFolder()));
+                tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVE"), ConsoleKey.F2, (_, _, _, index) => tui.MoveMessage(index)));
+                tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVEALL"), ConsoleKey.F2, ConsoleModifiers.Shift, (_, _, _, index) => tui.MoveAllMessages(index)));
+                tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_RENAMEFOLDER"), ConsoleKey.F3, (entry1, _, _, _) => tui.RenameFolder(entry1)));
+                tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEFOLDER"), ConsoleKey.F4, (entry1, _, _, _) => tui.RemoveFolder(entry1)));
+                tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVE"), ConsoleKey.F5, (_, _, _, index) => tui.RemoveMessage(index)));
+                tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEALL"), ConsoleKey.F5, ConsoleModifiers.Shift, (_, _, _, index) => tui.RemoveAllMessages(index)));
+                InteractiveTuiTools.OpenInteractiveTui(tui);
+            }
             return 0;
         }
     }

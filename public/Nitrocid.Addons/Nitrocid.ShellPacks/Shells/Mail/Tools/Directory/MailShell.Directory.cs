@@ -18,6 +18,8 @@
 //
 
 using MailKit;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Shells.Mail.Tools;
 using Terminaux.Shell.Shells;
 
@@ -32,23 +34,38 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// Creates mail folder
         /// </summary>
         /// <param name="Directory">Directory name</param>
-        public void CreateMailDirectory(string Directory) =>
+        public void CreateMailDirectory(string Directory)
+        {
+            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED -> IMAP server is not connected
+            if (ImapClient is null)
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED"));
             MailTools.CreateMailDirectory(ImapClient, Directory, IMAP_CurrentDirectory);
+        }
 
         /// <summary>
         /// Deletes mail folder
         /// </summary>
         /// <param name="Directory">Directory name</param>
-        public void DeleteMailDirectory(string Directory) =>
+        public void DeleteMailDirectory(string Directory)
+        {
+            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED -> IMAP server is not connected
+            if (ImapClient is null)
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED"));
             MailTools.DeleteMailDirectory(ImapClient, Directory);
+        }
 
         /// <summary>
         /// Deletes mail folder
         /// </summary>
         /// <param name="Directory">Directory name</param>
         /// <param name="NewName">New mail directory name</param>
-        public void RenameMailDirectory(string Directory, string NewName) =>
+        public void RenameMailDirectory(string Directory, string NewName)
+        {
+            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED -> IMAP server is not connected
+            if (ImapClient is null)
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED"));
             MailTools.RenameMailDirectory(ImapClient, Directory, NewName);
+        }
 
         /// <summary>
         /// Changes current mail directory
@@ -56,6 +73,9 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <param name="Directory">A mail directory</param>
         public void MailChangeDirectory(string Directory)
         {
+            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED -> IMAP server is not connected
+            if (ImapClient is null)
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED"));
             MailTools.MailChangeDirectory(ImapClient, Directory);
             IMAP_CurrentDirectory = Directory;
         }
@@ -66,14 +86,24 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <param name="FolderString">A folder to open (not a path)</param>
         /// <param name="FolderMode">Folder mode</param>
         /// <returns>A folder</returns>
-        public MailFolder OpenFolder(string FolderString, FolderAccess FolderMode = FolderAccess.ReadWrite) =>
-            MailTools.OpenFolder(ImapClient, FolderString, FolderMode);
+        public MailFolder OpenFolder(string FolderString, FolderAccess FolderMode = FolderAccess.ReadWrite)
+        {
+            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED -> IMAP server is not connected
+            if (ImapClient is null)
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED"));
+            return MailTools.OpenFolder(ImapClient, FolderString, FolderMode);
+        }
 
         /// <summary>
         /// Lists directories
         /// </summary>
         /// <returns>A list of mail folder instances</returns>
-        public MailFolder[] MailListDirectories() =>
-            MailTools.MailListDirectories(ImapClient);
+        public MailFolder[] MailListDirectories()
+        {
+            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED -> IMAP server is not connected
+            if (ImapClient is null)
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED"));
+            return MailTools.MailListDirectories(ImapClient);
+        }
     }
 }

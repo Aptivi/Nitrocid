@@ -19,6 +19,9 @@
 
 // using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Network.Connections;
+using Nitrocid.Base.Network.SpeedDial;
+using Nitrocid.ShellPacks.Shells.Mail.Tools;
 using Terminaux.Shell.Arguments;
 // using Nitrocid.Base.Network.Connections;
 // using Nitrocid.Base.Network.SpeedDial;
@@ -50,18 +53,16 @@ namespace Nitrocid.ShellPacks.Shells.Mail.UESHCommands
 
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            // TODO: Implement on 0.2.1 RC.
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING"), ThemeColorType.Warning);
-            // NetworkConnectionTools.OpenConnectionForShell("MailShell", EstablishMailConnection, (_, connection) =>
-            // EstablishMailConnectionSpeedDial(connection), parameters.ArgumentsText);
+            NetworkConnectionTools.OpenConnectionForShell("MailShell", EstablishMailConnection, (_, connection) =>
+            EstablishMailConnectionSpeedDial(connection), parameters.ArgumentsText);
             return 0;
         }
 
-        // private NetworkConnection EstablishMailConnection(string username) =>
-        //     string.IsNullOrEmpty(username) ? MailLogin.PromptUser() : MailLogin.PromptPassword(username);
+        private NetworkConnection? EstablishMailConnection(string username) =>
+            string.IsNullOrEmpty(username) ? MailLogin.PromptUser(MailProtocolType.POP3) : MailLogin.PromptPassword(username, MailProtocolType.POP3);
 
-        // private NetworkConnection EstablishMailConnectionSpeedDial(SpeedDialEntry connection) =>
-        //     MailLogin.PromptPassword(connection.Options[0].ToString());
+        private NetworkConnection? EstablishMailConnectionSpeedDial(SpeedDialEntry connection) =>
+            MailLogin.PromptPassword(connection.Username, MailProtocolType.POP3);
 
     }
 }

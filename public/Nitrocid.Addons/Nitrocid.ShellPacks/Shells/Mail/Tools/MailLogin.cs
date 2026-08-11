@@ -23,7 +23,9 @@ using System.Linq;
 using System.Net;
 using MailKit;
 using MailKit.Net.Imap;
+using MailKit.Net.Pop3;
 using MailKit.Net.Smtp;
+using MailKit.Security;
 using MimeKit.Cryptography;
 using Nettify.MailAddress;
 using Nitrocid.Base.Files.Paths;
@@ -56,13 +58,17 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
             /// <summary>
             /// The SMTP server
             /// </summary>
-            SMTP
+            SMTP,
+            /// <summary>
+            /// The POP3 server
+            /// </summary>
+            POP3,
         }
 
         /// <summary>
         /// Prompts user to enter username or e-mail address
         /// </summary>
-        public static NetworkConnection? PromptUser()
+        public static NetworkConnection? PromptUser(MailProtocolType protocolType)
         {
             // Username or mail address
             if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailUserPromptStyle))
@@ -72,14 +78,15 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
 
             // Try to get the username or e-mail address from the input
             string InputMailAddress = TermReader.Read();
-            return PromptPassword(InputMailAddress);
+            return PromptPassword(InputMailAddress, protocolType);
         }
 
         /// <summary>
         /// Prompts user to enter password
         /// </summary>
         /// <param name="Username">Specified username</param>
-        public static NetworkConnection? PromptPassword(string Username)
+        /// <param name="protocolType">Protocol type</param>
+        public static NetworkConnection? PromptPassword(string Username, MailProtocolType protocolType)
         {
             NetworkCredential Authentication = new();
 
@@ -87,55 +94,60 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
             DebugWriter.WriteDebug(DebugLevel.I, "Username: {0}", vars: [Username]);
             Authentication.UserName = Username;
             if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailPassPromptStyle))
-            {
                 TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailPassPromptStyle), false, ThemeColorType.Input);
-            }
             else
-            {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_PASSWORDPROMPT"), false, ThemeColorType.Input);
-            }
             Authentication.Password = TermReader.Read(password: true);
 
-            string DynamicAddressIMAP = ShellsInit.ShellsConfig.MailAutoDetectServer ? ServerDetect(Username, ServerType.IMAP) : "";
+            string DynamicAddressIMAP = ShellsInit.ShellsConfig.MailAutoDetectServer ? ServerDetect(Username, protocolType == MailProtocolType.POP3 ? ServerType.POP3 : ServerType.IMAP) : "";
             string DynamicAddressSMTP = ShellsInit.ShellsConfig.MailAutoDetectServer ? ServerDetect(Username, ServerType.SMTP) : "";
 
             if (!string.IsNullOrEmpty(DynamicAddressIMAP) && !string.IsNullOrEmpty(DynamicAddressSMTP))
-                return ParseAddresses(DynamicAddressIMAP, 0, DynamicAddressSMTP, 0, Authentication);
+                return ParseAddresses(DynamicAddressIMAP, 0, DynamicAddressSMTP, 0, Authentication, protocolType);
             else
-                return PromptServer(Authentication);
+                return PromptServer(Authentication, protocolType);
         }
 
         /// <summary>
         /// Prompts for server
         /// </summary>
-        public static NetworkConnection? PromptServer(NetworkCredential authentication)
+        public static NetworkConnection? PromptServer(NetworkCredential authentication, MailProtocolType protocolType)
         {
             string IMAP_Address;
             var IMAP_Port = 0;
             int SMTP_Port;
 
-            // IMAP server address and port
-            if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailIMAPPromptStyle))
-                TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailIMAPPromptStyle), false, ThemeColorType.Input);
+            // IMAP or POP3 server address and port
+            string finalPrompt = "";
+            if (protocolType == MailProtocolType.POP3)
+            {
+                // TODO: NKS_SHELLPACKS_MAIL_POP3SERVERPROMPT -> "Enter IMAP server address and port (<address> or <address>:[port]): "
+                finalPrompt = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_POP3SERVERPROMPT");
+                if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailPOP3PromptStyle))
+                    finalPrompt = PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailPOP3PromptStyle);
+            }
             else
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT"), false, ThemeColorType.Input);
-            IMAP_Address = TermReader.Read();
-            DebugWriter.WriteDebug(DebugLevel.I, "IMAP Server: \"{0}\"", vars: [IMAP_Address]);
+            {
+                finalPrompt = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT");
+                if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailIMAPPromptStyle))
+                    finalPrompt = PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailIMAPPromptStyle);
+            }
+            IMAP_Address = TermReader.Read(finalPrompt);
+            DebugWriter.WriteDebug(DebugLevel.I, "IMAP/POP3 Server: \"{0}\"", vars: [IMAP_Address]);
 
             // SMTP server address and port
+            string finalSmtpPrompt = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT");
             if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailSMTPPromptStyle))
-                TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailSMTPPromptStyle), false, ThemeColorType.Input);
-            else
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT"), false, ThemeColorType.Input);
-            string SMTP_Address = TermReader.Read();
+                finalSmtpPrompt = PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailSMTPPromptStyle);
+            string SMTP_Address = TermReader.Read(finalSmtpPrompt);
             SMTP_Port = 587;
             DebugWriter.WriteDebug(DebugLevel.I, "SMTP Server: \"{0}\"", vars: [SMTP_Address]);
 
             // Parse addresses to connect
-            return ParseAddresses(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port, authentication);
+            return ParseAddresses(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port, authentication, protocolType);
         }
 
-        public static NetworkConnection? ParseAddresses(string IMAP_Address, int IMAP_Port, string SMTP_Address, int SMTP_Port, NetworkCredential authentication)
+        public static NetworkConnection? ParseAddresses(string IMAP_Address, int IMAP_Port, string SMTP_Address, int SMTP_Port, NetworkCredential authentication, MailProtocolType protocolType)
         {
             // If the address is <address>:[port]
             if (IMAP_Address.Contains(':'))
@@ -157,7 +169,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
 
             // Try to connect
             authentication.Domain = IMAP_Address;
-            return ConnectShell(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port, authentication);
+            return ConnectShell(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port, authentication, protocolType);
         }
 
         /// <summary>
@@ -187,10 +199,24 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
 
                         break;
                     }
+                case ServerType.POP3:
+                    {
+                        var Pop3Servers = DynamicConfiguration.EmailProvider?.IncomingServer?.Select(x => x).Where(x => x.Type == "pop3");
+                        if (Pop3Servers is not null && Pop3Servers.Any())
+                        {
+                            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_NOPOP3 -> Can't get POP3 server configuration
+                            var Pop3Server = Pop3Servers.ElementAtOrDefault(0) ??
+                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_NOPOP3"));
+                            ReturnedMailAddress = Pop3Server.Hostname;
+                            ReturnedMailPort = Pop3Server.Port;
+                        }
+
+                        break;
+                    }
                 case ServerType.SMTP:
                     {
                         var SmtpServer = DynamicConfiguration.EmailProvider?.OutgoingServer ??
-                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_NOSMTP"));
+                            throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_NOSMTP"));
                         ReturnedMailAddress = SmtpServer.Hostname;
                         ReturnedMailPort = SmtpServer.Port;
                         break;
@@ -212,16 +238,21 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// <param name="SmtpAddress">An IP address of the SMTP server</param>
         /// <param name="SmtpPort">A port of the SMTP server</param>
         /// <param name="authentication">Authentication credentials</param>
-        public static NetworkConnection? ConnectShell(string Address, int Port, string SmtpAddress, int SmtpPort, NetworkCredential authentication)
+        /// <param name="protocolType">Protocol type</param>
+        public static NetworkConnection? ConnectShell(string Address, int Port, string SmtpAddress, int SmtpPort, NetworkCredential authentication, MailProtocolType protocolType)
         {
             // Make new clients
-            ImapClient IMAP_Client = new();
+            ImapClient? IMAP_Client = protocolType == MailProtocolType.IMAP ? new() : null;
+            Pop3Client? POP3_Client = protocolType == MailProtocolType.POP3 ? new() : null;
             SmtpClient SMTP_Client = new();
 
             // Initialize the loggers if debug mode is on
             if (KernelEntry.DebugMode & ShellsInit.ShellsConfig.MailDebug)
             {
-                IMAP_Client = new ImapClient(new ProtocolLogger(PathsManagement.HomePath + "/ImapDebug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });
+                if (protocolType == MailProtocolType.IMAP)
+                    IMAP_Client = new ImapClient(new ProtocolLogger(PathsManagement.HomePath + "/ImapDebug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });
+                if (protocolType == MailProtocolType.POP3)
+                    POP3_Client = new Pop3Client(new ProtocolLogger(PathsManagement.HomePath + "/Pop3Debug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });
                 SMTP_Client = new SmtpClient(new ProtocolLogger(PathsManagement.HomePath + "/SmtpDebug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });
             }
 
@@ -230,30 +261,50 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
                 // Register the PGP context
                 CryptographyContext.Register(typeof(PGPContext));
 
-                // IMAP Connection
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTING"), Address);
-                DebugWriter.WriteDebug(DebugLevel.I, "Connecting to IMAP Server {0}:{1} with SSL...", vars: [Address, Port]);
-                IMAP_Client.Connect(Address, Port, MailKit.Security.SecureSocketOptions.SslOnConnect);
-                IMAP_Client.WebAlert += HandleWebAlert;
+                // IMAP or POP3
+                if (POP3_Client is not null)
+                {
+                    // POP3 Connection
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTING"), Address);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Connecting to POP3 Server {0}:{1} with SSL...", vars: [Address, Port]);
+                    POP3_Client.Connect(Address, Port, SecureSocketOptions.Auto);
+
+                    // POP3 Authentication
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_AUTHENTICATING"));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to POP3 server {1}...", vars: [authentication.UserName, Address]);
+                    POP3_Client.Authenticate(authentication);
+                }
+                else if (IMAP_Client is not null)
+                {
+                    // Handle web alert
+                    IMAP_Client.WebAlert += HandleWebAlert;
+
+                    // IMAP Connection
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTING"), Address);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Connecting to IMAP Server {0}:{1} with SSL...", vars: [Address, Port]);
+                    IMAP_Client.Connect(Address, Port, SecureSocketOptions.Auto);
+
+                    // IMAP Authentication
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_AUTHENTICATING"));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to IMAP server {1}...", vars: [authentication.UserName, Address]);
+                    IMAP_Client.Authenticate(authentication);
+
+                    // Remove web alert handler
+                    IMAP_Client.WebAlert -= HandleWebAlert;
+                }
 
                 // SMTP Connection
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTING"), SmtpAddress);
                 DebugWriter.WriteDebug(DebugLevel.I, "Connecting to SMTP Server {0}:{1} with SSL...", vars: [SmtpAddress, SmtpPort]);
-                SMTP_Client.Connect(SmtpAddress, SmtpPort, MailKit.Security.SecureSocketOptions.StartTlsWhenAvailable);
-
-                // IMAP Authentication
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_AUTHENTICATING"));
-                DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to IMAP server {1}...", vars: [authentication.UserName, Address]);
-                IMAP_Client.Authenticate(authentication);
+                SMTP_Client.Connect(SmtpAddress, SmtpPort, SecureSocketOptions.Auto);
 
                 // SMTP Authentication
                 DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to SMTP server {1}...", vars: [authentication.UserName, SmtpAddress]);
                 SMTP_Client.Authenticate(authentication);
-                IMAP_Client.WebAlert -= HandleWebAlert;
 
                 // Initialize shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Authentication succeeded. Opening shell...");
-                var Client = NetworkConnectionTools.EstablishConnection("Mail client", $"mailto:{authentication.UserName}", NetworkConnectionType.Mail, new object?[] { IMAP_Client, SMTP_Client, null, authentication });
+                var Client = NetworkConnectionTools.EstablishConnection("Mail client", $"mailto:{authentication.UserName}", NetworkConnectionType.Mail, new object?[] { IMAP_Client, SMTP_Client, POP3_Client, authentication, protocolType });
                 SpeedDialTools.TryAddEntryToSpeedDial(Client.ConnectionUri.AbsoluteUri, Client.ConnectionUri.Port, NetworkConnectionType.Mail, authentication.UserName, authentication.Password, false);
                 return Client;
             }
@@ -261,7 +312,8 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTIONFAILED"), true, ThemeColorType.Error, Address, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                IMAP_Client.Disconnect(true);
+                IMAP_Client?.Disconnect(true);
+                POP3_Client?.Disconnect(true);
                 SMTP_Client.Disconnect(true);
                 return null;
             }

@@ -45,6 +45,9 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
         {
             var mailShell = (MailShell?)shell ??
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED -> IMAP server is not connected
+            if (mailShell.ImapClient is null)
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED"));
             var folders = MailTools.MailListDirectories(mailShell.ImapClient);
             foreach (var folder in folders)
                 TextWriterColor.Write($"- {folder.Name}", false, ThemeColorType.NeutralText);

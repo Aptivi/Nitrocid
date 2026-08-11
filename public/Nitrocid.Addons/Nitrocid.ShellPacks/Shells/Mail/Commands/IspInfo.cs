@@ -46,10 +46,10 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
 
             // Determine how to get ISP info
-            var ispInfo = IspTools.GetIspConfig(mailShell.NetworkCredential.UserName);
+            var ispInfo = IspTools.GetIspConfig(mailShell.NetworkCredential?.UserName ?? "");
 
             // Print ISP info
-            SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER") + $" {mailShell.NetworkCredential.UserName}");
+            SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER") + $" {mailShell.NetworkCredential?.UserName ?? ""}");
             ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYNAME"), ispInfo.EmailProvider?.DisplayName ?? "");
             ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYSHORTNAME"), ispInfo.EmailProvider?.DisplayShortName ?? "");
             ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMAIN"), string.Join(", ", ispInfo.EmailProvider?.Domain ?? []));
@@ -57,7 +57,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
             TextWriterRaw.Write();
 
             // Print server info
-            SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER") + $" {mailShell.NetworkCredential.UserName}");
+            SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER") + $" {mailShell.NetworkCredential?.UserName ?? ""}");
             foreach (var server in ispInfo.EmailProvider?.IncomingServer ?? [])
             {
                 ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_HOSTNAME"), server.Hostname);
