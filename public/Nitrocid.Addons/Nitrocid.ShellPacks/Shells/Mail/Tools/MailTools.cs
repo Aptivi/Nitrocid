@@ -192,6 +192,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// Populates e-mail messages
         /// </summary>
         /// <param name="client">IMAP mail client</param>
+        /// <param name="pop3Client">POP3 mail client</param>
         /// <param name="path">Path to a mail folder</param>
         public static object PopulateMessages(ImapClient? client, Pop3Client? pop3Client, string path)
         {
@@ -237,6 +238,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// Lists messages
         /// </summary>
         /// <param name="client">IMAP mail client</param>
+        /// <param name="pop3Client">POP3 mail client</param>
         /// <param name="directory">Directory to open</param>
         /// <param name="PageNum">Page number</param>
         /// <exception cref="ArgumentException"></exception>
@@ -247,6 +249,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// Lists messages
         /// </summary>
         /// <param name="client">IMAP mail client</param>
+        /// <param name="pop3Client">POP3 mail client</param>
         /// <param name="directory">Directory to open</param>
         /// <param name="PageNum">Page number</param>
         /// <param name="MessagesInPage">Max messages in one page</param>
@@ -327,6 +330,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// Removes a message
         /// </summary>
         /// <param name="client">IMAP mail client</param>
+        /// <param name="pop3Client">POP3 mail client</param>
         /// <param name="directory">Directory to open</param>
         /// <param name="MsgNumber">Message number</param>
         /// <returns>True if successful; False if unsuccessful</returns>
@@ -380,6 +384,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// Removes all mail that the specified sender has sent
         /// </summary>
         /// <param name="client">IMAP mail client</param>
+        /// <param name="pop3Client">POP3 mail client</param>
         /// <param name="directory">Directory to open</param>
         /// <param name="Sender">The sender name</param>
         /// <returns>True if successful; False if unsuccessful</returns>
@@ -552,6 +557,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// Prints content of message to console
         /// </summary>
         /// <param name="client">IMAP mail client</param>
+        /// <param name="pop3Client">POP3 mail client</param>
         /// <param name="directory">Directory to open</param>
         /// <param name="MessageNum">Message number</param>
         public static void MailPrintMessage(ImapClient? client, Pop3Client? pop3Client, string directory, int MessageNum) =>
@@ -561,6 +567,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// Renders content of message to a string sequence
         /// </summary>
         /// <param name="client">IMAP mail client</param>
+        /// <param name="pop3Client">POP3 mail client</param>
         /// <param name="directory">Directory to open</param>
         /// <param name="MessageNum">Message number</param>
         public static string MailRenderMessage(ImapClient? client, Pop3Client? pop3Client, string directory, int MessageNum)
@@ -795,7 +802,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// <summary>
         /// Sends a message
         /// </summary>
-        /// <param name="client">IMAP mail client</param>
+        /// <param name="client">SMTP mail client</param>
         /// <param name="sender">Sender name</param>
         /// <param name="Recipient">Recipient name</param>
         /// <param name="Subject">Subject</param>
@@ -821,7 +828,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// <summary>
         /// Sends a message with advanced features like attachments
         /// </summary>
-        /// <param name="client">IMAP mail client</param>
+        /// <param name="client">SMTP mail client</param>
         /// <param name="sender">Sender name</param>
         /// <param name="Recipient">Recipient name</param>
         /// <param name="Subject">Subject</param>
@@ -847,7 +854,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         /// <summary>
         /// Sends an encrypted message with advanced features like attachments
         /// </summary>
-        /// <param name="client">IMAP mail client</param>
+        /// <param name="client">SMTP mail client</param>
         /// <param name="sender">Sender name</param>
         /// <param name="Recipient">Recipient name</param>
         /// <param name="Subject">Subject</param>
