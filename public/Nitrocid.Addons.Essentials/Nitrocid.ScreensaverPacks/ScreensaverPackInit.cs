@@ -39,6 +39,7 @@ namespace Nitrocid.ScreensaverPacks
             { "barwave", new BarWaveDisplay() },
             { "batteryfull", new BatteryFullDisplay() },
             { "bigletter", new BigLetterDisplay() },
+            { "blazefury", new BlazeFuryDisplay() },
             { "blockclock", new BlockClockDisplay() },
             { "bloom", new BloomDisplay() },
             { "bouncingblock", new BouncingBlockDisplay() },
