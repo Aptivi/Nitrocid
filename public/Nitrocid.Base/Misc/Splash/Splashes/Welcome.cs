@@ -39,7 +39,6 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
 {
     class SplashWelcome : BaseSplash, ISplash
     {
-        private bool cleared = false;
         private SimpleProgress progress = new(0, 100);
 
         // Standalone splash information
@@ -76,15 +75,6 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(progressColor);
             progress.ProgressActiveForegroundColor = progressColor;
             progress.ProgressBackgroundColor = ConsoleColoring.CurrentBackgroundColor;
-            if (ConsoleResizeHandler.WasResized(true))
-                cleared = false;
-            if (!cleared)
-            {
-                cleared = true;
-                builder.Append(
-                    base.Opening(context)
-                );
-            }
 
             // Populate some text
             string modeText =
@@ -161,10 +151,6 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
         public override string Closing(SplashContext context, out bool delayRequired)
         {
             var builder = new StringBuilder();
-            cleared = false;
-            builder.Append(
-                base.Opening(context)
-            );
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing...");
 
             // Check if delay is required

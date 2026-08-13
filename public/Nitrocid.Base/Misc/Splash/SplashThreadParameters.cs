@@ -21,12 +21,12 @@ namespace Nitrocid.Base.Misc.Splash
 {
     internal class SplashThreadParameters
     {
-        internal string splashName;
+        internal ISplash splash;
         internal string splashNameWatch;
         internal SplashContext splashContext;
 
-        public string SplashName =>
-            splashName;
+        public ISplash Splash =>
+            splash;
 
         public string SplashNameWatch =>
             splashNameWatch;
@@ -34,9 +34,9 @@ namespace Nitrocid.Base.Misc.Splash
         public SplashContext SplashContext =>
             splashContext;
 
-        internal SplashThreadParameters(string splashName, string splashNameWatch, SplashContext splashContext)
+        internal SplashThreadParameters(ISplash splash, string splashNameWatch, SplashContext splashContext)
         {
-            this.splashName = splashName;
+            this.splash = splash;
             this.splashNameWatch = splashNameWatch;
             this.splashContext = splashContext;
         }

@@ -208,17 +208,12 @@ namespace Nitrocid.Base.Misc.Splash
             if (Config.MainConfig.EnableSplash && !KernelPlatform.IsOnTestHost())
             {
                 // Clean everything up
-                var openingPart = new ScreenPart();
                 splashScreen.RemoveBufferedParts();
 
                 // Now, set the current context and prepare
                 currentContext = context;
                 SplashReport._Progress = 0;
                 ConsoleWrapper.CursorVisible = false;
-
-                // Add the opening function as dynamic text
-                openingPart.AddDynamicText(() => splash.Opening(context));
-                splashScreen.AddBufferedPart("Opening splash", openingPart);
 
                 // Make it resize-aware
                 ScreenTools.SetCurrent(splashScreen);
@@ -229,17 +224,13 @@ namespace Nitrocid.Base.Misc.Splash
                 if (splash.RequiresBackground)
                     ConsoleColoring.AllowBackground = true;
 
-                // Finally, render it
-                ThemeColorsTools.LoadBackground();
-                ScreenTools.Render();
-
                 // Render the display
-                openingPart.Visible = false;
+                ThemeColorsTools.LoadBackground();
                 SplashThread.Stop();
-                SplashThread.Start(new SplashThreadParameters(splash.SplashName, nameWatch, context));
+                SplashThread.Start(new SplashThreadParameters(splash, nameWatch, context));
+                SpinWait.SpinUntil(() => SplashReport._InSplash);
 
-                // Inform the kernel that the splash has started
-                SplashReport._InSplash = true;
+                // Reset report area
                 SplashReport.ResetProgressReportArea();
             }
         }
@@ -311,6 +302,7 @@ namespace Nitrocid.Base.Misc.Splash
                     // manifest, which is not good.
                     SplashThread.Wait();
                     SplashThread.Stop();
+                    ThemeColorsTools.LoadBackground();
                     if (showClosing)
                         closingPart.AddDynamicText(() => splash.Closing(context, out delay));
                     else
@@ -466,32 +458,54 @@ namespace Nitrocid.Base.Misc.Splash
             {
                 if (threadParameters is null)
                     throw new KernelException(KernelExceptionType.Splash, LanguageTools.GetLocalized("NKS_MISC_SPLASH_EXCEPTION_EMPTYSPLASHTHREADPARAMS"));
-                var splash = GetSplashFromName(threadParameters.SplashName).EntryPoint;
-                var displayPart = new ScreenPart();
-                displayPart.AddDynamicText(() => splash.Display(threadParameters.SplashContext));
-                splashScreen.AddBufferedPart("Display", displayPart);
+                var splash = threadParameters.Splash;
+                bool firstRender = true;
+
+                // Main loop
                 while (!BaseSplash.SplashClosing && !SplashThread.IsStopping)
                 {
+                    // Check to see if the splash is the same or not
+                    if ((!string.IsNullOrEmpty(threadParameters.SplashNameWatch) && splash.SplashName != GetSplashFromName(threadParameters.SplashNameWatch).SplashName) || firstRender)
+                    {
+                        // Change the display part to hold new splash if not first time
+                        if (!firstRender)
+                        {
+                            splash = GetSplashFromName(threadParameters.SplashNameWatch).EntryPoint;
+                            splashScreen.RemoveBufferedParts();
+                        }
+
+                        // Add the opening function as dynamic text
+                        var openingPart = new ScreenPart();
+                        openingPart.AddDynamicText(() =>
+                        {
+                            if (splashScreen.NeedsRefresh || splashScreen.RefreshWasDone)
+                                return splash.Opening(threadParameters.SplashContext);
+                            return "";
+                        });
+                        splashScreen.AddBufferedPart("Opening splash", openingPart);
+
+                        // Add display part
+                        var displayPart = new ScreenPart();
+                        displayPart.AddDynamicText(() => splash.Display(threadParameters.SplashContext));
+                        splashScreen.AddBufferedPart("Display", displayPart);
+
+                        // Require refresh
+                        splashScreen.RequireRefresh();
+                    }
+
+                    // Render and sleep
                     lock (splashScreen)
                     {
                         ScreenTools.Render();
                     }
-                    Thread.Sleep(20);
 
-                    // Check to see if the splash is the same or not
-                    if (!string.IsNullOrEmpty(threadParameters.SplashNameWatch) && splash.SplashName != GetSplashFromName(threadParameters.SplashNameWatch).SplashName)
+                    // Inform the kernel that the splash has started
+                    if (firstRender)
                     {
-                        // Change the display part to hold new splash
-                        splash = GetSplashFromName(threadParameters.SplashNameWatch).EntryPoint;
-                        splashScreen.RemoveBufferedParts();
-                        var openingPart = new ScreenPart();
-                        openingPart.AddDynamicText(() => splash.Opening(threadParameters.SplashContext));
-                        splashScreen.AddBufferedPart("Opening splash", openingPart);
-                        displayPart.Clear();
-                        displayPart.AddDynamicText(() => splash.Display(threadParameters.SplashContext));
-                        splashScreen.AddBufferedPart("Display", displayPart);
-                        splashScreen.RequireRefresh();
+                        firstRender = false;
+                        SplashReport._InSplash = true;
                     }
+                    Thread.Sleep(20);
                 }
             }
             catch (ThreadInterruptedException)
