@@ -134,7 +134,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH
             new RmUserCommand(),
             new RmGroupCommand(),
             new RmUserFromGroupCommand(),
-            new RebootCommand(),
+            new RRebootCommand(),
             new RShutdownCommand(),
             new SaveConfigCommand(),
             new SaveScreenCommand(),
