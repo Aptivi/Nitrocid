@@ -38,6 +38,7 @@ namespace Nitrocid.SplashPacks
             new SplashInfo("FigProgress", new SplashFigProgress()),
             new SplashInfo("Welcome2024", new SplashWelcome2024()),
             new SplashInfo("Logbox", new SplashLogbox()),
+            new SplashInfo("TextKnob", new SplashTextKnob()),
         ];
 
         public string AddonName =>
