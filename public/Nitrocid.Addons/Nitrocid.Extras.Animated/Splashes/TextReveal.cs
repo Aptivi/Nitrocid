@@ -62,11 +62,11 @@ namespace Nitrocid.Extras.Animated.Splashes
                 int RedColorNum = RandomDriver.Random(_textRevealMinimumRedColorLevel, _textRevealMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Random(_textRevealMinimumGreenColorLevel, _textRevealMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(_textRevealMinimumBlueColorLevel, _textRevealMaximumBlueColorLevel);
-                _left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
-                _top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
                 _currentColor = new(RedColorNum, GreenColorNum, BlueColorNum);
                 _inited = true;
             }
+            _left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+            _top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
             return base.Opening(context);
         }
 

@@ -41,7 +41,6 @@ namespace Nitrocid.SplashPacks.Splashes
 {
     class SplashWelcome2024 : BaseSplash, ISplash
     {
-        private bool cleared = false;
         private ProgressBarNoText progress = new(0, 100);
 
         // Standalone splash information
@@ -57,15 +56,6 @@ namespace Nitrocid.SplashPacks.Splashes
             progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.Progress));
             progress.ProgressActiveForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Progress);
             progress.ProgressBackgroundColor = ConsoleColoring.CurrentBackgroundColor;
-            if (ConsoleResizeHandler.WasResized(true))
-                cleared = false;
-            if (!cleared)
-            {
-                cleared = true;
-                builder.Append(
-                    base.Opening(context)
-                );
-            }
 
             // Populate some text
             string text =
@@ -121,11 +111,7 @@ namespace Nitrocid.SplashPacks.Splashes
         public override string Closing(SplashContext context, out bool delayRequired)
         {
             var builder = new StringBuilder();
-            cleared = false;
             progress.Width = ConsoleWrapper.WindowWidth - 6;
-            builder.Append(
-                base.Opening(context)
-            );
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing...");
 
             if (context == SplashContext.Showcase ||

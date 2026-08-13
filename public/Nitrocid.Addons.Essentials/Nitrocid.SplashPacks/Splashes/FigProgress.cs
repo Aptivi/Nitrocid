@@ -41,14 +41,13 @@ namespace Nitrocid.SplashPacks.Splashes
 {
     class SplashFigProgress : BaseSplash, ISplash
     {
-        private bool cleared = false;
         private ProgressBarNoText progress = new(0, 100);
 
         // Standalone splash information
         public override string SplashName => "Welcome";
 
         // Actual logic
-        public override string Opening(SplashContext context)
+        public override string Display(SplashContext context)
         {
             var builder = new StringBuilder();
             progress.Position = 0;
@@ -57,15 +56,6 @@ namespace Nitrocid.SplashPacks.Splashes
             progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.Progress));
             progress.ProgressActiveForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Progress);
             progress.ProgressBackgroundColor = ConsoleColoring.CurrentBackgroundColor;
-            if (ConsoleResizeHandler.WasResized(true))
-                cleared = false;
-            if (!cleared)
-            {
-                cleared = true;
-                builder.Append(
-                    base.Opening(context)
-                );
-            }
 
             // Populate some text
             string text = $"{SplashReport.Progress}%";
@@ -117,7 +107,6 @@ namespace Nitrocid.SplashPacks.Splashes
         public override string Closing(SplashContext context, out bool delayRequired)
         {
             var builder = new StringBuilder();
-            cleared = false;
             progress.Width = ConsoleWrapper.WindowWidth - 6;
             builder.Append(
                 base.Opening(context)

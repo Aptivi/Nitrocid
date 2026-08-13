@@ -37,7 +37,6 @@ namespace Nitrocid.SplashPacks.Splashes
     class SplashLogbox : BaseSplash, ISplash
     {
         private List<string> progresses = [];
-        private bool cleared = false;
         private SimpleProgress progress = new(0, 100);
 
         // Standalone splash information
@@ -53,15 +52,6 @@ namespace Nitrocid.SplashPacks.Splashes
             progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(progressColor);
             progress.ProgressActiveForegroundColor = progressColor;
             progress.ProgressBackgroundColor = ConsoleColoring.CurrentBackgroundColor;
-            if (ConsoleResizeHandler.WasResized(true))
-                cleared = false;
-            if (!cleared)
-            {
-                cleared = true;
-                builder.Append(
-                    base.Opening(context)
-                );
-            }
 
             // Write an infobox border
             int height = ConsoleWrapper.WindowHeight - 4;
@@ -132,7 +122,6 @@ namespace Nitrocid.SplashPacks.Splashes
 
         public override string Closing(SplashContext context, out bool delayRequired)
         {
-            cleared = false;
             delayRequired = false;
             if (context == SplashContext.ShuttingDown || context == SplashContext.Rebooting)
                 progresses.Clear();
