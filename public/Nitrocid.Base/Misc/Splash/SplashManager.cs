@@ -234,6 +234,7 @@ namespace Nitrocid.Base.Misc.Splash
                 ScreenTools.Render();
 
                 // Render the display
+                openingPart.Visible = false;
                 SplashThread.Stop();
                 SplashThread.Start(new SplashThreadParameters(splash.SplashName, nameWatch, context));
 
