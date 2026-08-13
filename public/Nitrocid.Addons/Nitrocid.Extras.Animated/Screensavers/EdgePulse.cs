@@ -32,11 +32,12 @@ namespace Nitrocid.Extras.Animated.Screensavers
     {
 
         private EdgePulseSettings? EdgePulseSettingsInstance;
+
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
-            EdgePulseSettingsInstance = new Animations.EdgePulse.EdgePulseSettings()
+            EdgePulseSettingsInstance = new EdgePulseSettings()
             {
                 EdgePulseDelay = AnimatedInit.SaversConfig.EdgePulseDelay,
                 EdgePulseMaxSteps = AnimatedInit.SaversConfig.EdgePulseMaxSteps,

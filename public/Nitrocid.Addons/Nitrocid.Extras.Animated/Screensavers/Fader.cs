@@ -33,13 +33,14 @@ namespace Nitrocid.Extras.Animated.Screensavers
     {
 
         private FaderSettings? FaderSettingsInstance;
+
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             base.ScreensaverPreparation();
             ConsoleColoring.LoadBackDry(new Color(AnimatedInit.SaversConfig.FaderBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
-            FaderSettingsInstance = new Animations.Fader.FaderSettings()
+            FaderSettingsInstance = new FaderSettings()
             {
                 FaderDelay = AnimatedInit.SaversConfig.FaderDelay,
                 FaderWrite = AnimatedInit.SaversConfig.FaderWrite,

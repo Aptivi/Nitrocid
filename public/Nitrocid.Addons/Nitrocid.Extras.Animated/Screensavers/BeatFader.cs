@@ -30,7 +30,8 @@ namespace Nitrocid.Extras.Animated.Screensavers
     public class BeatFaderDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Animations.BeatFader.BeatFaderSettings? BeatFaderSettingsInstance;
+        private BeatFaderSettings? BeatFaderSettingsInstance;
+
         /// <inheritdoc/>
         public override bool ScreensaverContainsFlashingImages =>
             true;
@@ -39,7 +40,7 @@ namespace Nitrocid.Extras.Animated.Screensavers
         public override void ScreensaverPreparation()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
-            BeatFaderSettingsInstance = new Animations.BeatFader.BeatFaderSettings()
+            BeatFaderSettingsInstance = new BeatFaderSettings()
             {
                 BeatFaderTrueColor = AnimatedInit.SaversConfig.BeatFaderTrueColor,
                 BeatFaderBeatColor = AnimatedInit.SaversConfig.BeatFaderBeatColor,

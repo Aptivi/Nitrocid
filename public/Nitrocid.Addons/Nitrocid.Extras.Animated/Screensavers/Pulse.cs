@@ -30,7 +30,8 @@ namespace Nitrocid.Extras.Animated.Screensavers
     public class PulseDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Animations.Pulse.PulseSettings? PulseSettingsInstance;
+        private PulseSettings? PulseSettingsInstance;
+
         /// <inheritdoc/>
         public override bool ScreensaverContainsFlashingImages =>
             true;
@@ -39,7 +40,7 @@ namespace Nitrocid.Extras.Animated.Screensavers
         public override void ScreensaverPreparation()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
-            PulseSettingsInstance = new Animations.Pulse.PulseSettings()
+            PulseSettingsInstance = new PulseSettings()
             {
                 PulseDelay = AnimatedInit.SaversConfig.PulseDelay,
                 PulseMaxSteps = AnimatedInit.SaversConfig.PulseMaxSteps,

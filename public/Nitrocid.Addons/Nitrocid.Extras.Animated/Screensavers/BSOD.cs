@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.Animated.Screensavers
         {
             // Variable preparations
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
-            BSODSettingsInstance = new Animations.BSOD.BSODSettings()
+            BSODSettingsInstance = new BSODSettings()
             {
                 BSODDelay = AnimatedInit.SaversConfig.BSODDelay
             };

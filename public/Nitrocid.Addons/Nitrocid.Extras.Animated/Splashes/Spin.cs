@@ -19,11 +19,12 @@
 
 using System.Text;
 using System.Threading;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Misc.Splash;
-using Terminaux.Base;
 using Colorimetry;
 using Colorimetry.Data;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Misc.Splash;
+using Nitrocid.Extras.Animated.Animations.Spin;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Threadify.Manager;
 
@@ -32,48 +33,25 @@ namespace Nitrocid.Extras.Animated.Splashes
     class SplashSpin : BaseSplash, ISplash
     {
 
-        private readonly int _spinDelay = 10;
-        private static int currentSpinStep = 0;
-        private static readonly char[] spinSteps = ['/', '|', '\\', '-'];
+        private SpinSettings? SpinSettingsInstance;
 
         // Standalone splash information
         public override string SplashName => "Spin";
 
+        public override string Opening(SplashContext context)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
+            SpinSettingsInstance = new SpinSettings()
+            {
+                SpinDelay = AnimatedInit.SplashConfig.SpinDelay
+            };
+            return base.Opening(context);
+        }
+
         public override string Display(SplashContext context)
         {
-            var builder = new StringBuilder();
-            try
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
-                ConsoleWrapper.CursorVisible = false;
-
-                // Get spin character from current index
-                char spinStep = spinSteps[currentSpinStep];
-
-                // Make a spin buffer
-                builder.Append(
-                    new Color(ConsoleColors.White).VTSequenceForeground() +
-                    new Color(ConsoleColors.Black).VTSequenceBackground()
-                );
-                for (int x = 0; x < ConsoleWrapper.WindowWidth; x++)
-                {
-                    for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
-                    {
-                        builder.Append(spinStep);
-                    }
-                }
-                ThreadManager.SleepNoBlock(_spinDelay);
-
-                // Step the current spin step forward
-                currentSpinStep++;
-                if (currentSpinStep >= spinSteps.Length)
-                    currentSpinStep = 0;
-            }
-            catch (ThreadInterruptedException)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
-            }
-            return builder.ToString();
+            Spin.Simulate(SpinSettingsInstance);
+            return base.Display(context);
         }
 
     }

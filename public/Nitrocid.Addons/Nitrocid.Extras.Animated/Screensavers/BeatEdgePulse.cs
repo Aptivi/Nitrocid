@@ -19,6 +19,7 @@
 
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Screensaver;
+using Nitrocid.Extras.Animated.Animations.BeatEdgePulse;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 
@@ -30,12 +31,13 @@ namespace Nitrocid.Extras.Animated.Screensavers
     public class BeatEdgePulseDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Animations.BeatEdgePulse.BeatEdgePulseSettings? BeatEdgePulseSettingsInstance;
+        private BeatEdgePulseSettings? BeatEdgePulseSettingsInstance;
+
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
-            BeatEdgePulseSettingsInstance = new Animations.BeatEdgePulse.BeatEdgePulseSettings()
+            BeatEdgePulseSettingsInstance = new BeatEdgePulseSettings()
             {
                 BeatEdgePulseTrueColor = AnimatedInit.SaversConfig.BeatEdgePulseTrueColor,
                 BeatEdgePulseBeatColor = AnimatedInit.SaversConfig.BeatEdgePulseBeatColor,
@@ -57,7 +59,7 @@ namespace Nitrocid.Extras.Animated.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            Animations.BeatEdgePulse.BeatEdgePulse.Simulate(BeatEdgePulseSettingsInstance);
+            BeatEdgePulse.Simulate(BeatEdgePulseSettingsInstance);
             ScreensaverManager.Delay(AnimatedInit.SaversConfig.BeatEdgePulseDelay);
         }
 

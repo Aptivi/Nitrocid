@@ -32,12 +32,13 @@ namespace Nitrocid.Extras.Animated.Screensavers
     {
 
         private SquareCornerSettings? SquareCornerSettingsInstance;
+
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Variable preparations
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
-            SquareCornerSettingsInstance = new Animations.SquareCorner.SquareCornerSettings()
+            SquareCornerSettingsInstance = new SquareCornerSettings()
             {
                 SquareCornerDelay = AnimatedInit.SaversConfig.SquareCornerDelay,
                 SquareCornerFadeOutDelay = AnimatedInit.SaversConfig.SquareCornerFadeOutDelay,

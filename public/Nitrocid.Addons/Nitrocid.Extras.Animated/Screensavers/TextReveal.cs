@@ -30,12 +30,13 @@ namespace Nitrocid.Extras.Animated.Screensavers
     public class TextRevealDisplay : BaseScreensaver, IScreensaver
     {
         private TextRevealSettings? TextRevealSettingsInstance;
+
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             base.ScreensaverPreparation();
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
-            TextRevealSettingsInstance = new Animations.TextReveal.TextRevealSettings()
+            TextRevealSettingsInstance = new TextRevealSettings()
             {
                 TextRevealDelay = AnimatedInit.SaversConfig.TextRevealDelay,
                 TextRevealWrite = AnimatedInit.SaversConfig.TextRevealWrite,

@@ -19,6 +19,7 @@
 
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Screensaver;
+using Nitrocid.Extras.Animated.Animations.Spin;
 using Terminaux.Base;
 
 namespace Nitrocid.Extras.Animated.Screensavers
@@ -29,12 +30,13 @@ namespace Nitrocid.Extras.Animated.Screensavers
     public class SpinDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Animations.Spin.SpinSettings? SpinSettingsInstance;
+        private SpinSettings? SpinSettingsInstance;
+
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
-            SpinSettingsInstance = new Animations.Spin.SpinSettings()
+            SpinSettingsInstance = new SpinSettings()
             {
                 SpinDelay = AnimatedInit.SaversConfig.SpinDelay
             };
@@ -44,7 +46,7 @@ namespace Nitrocid.Extras.Animated.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            Animations.Spin.Spin.Simulate(SpinSettingsInstance);
+            Spin.Simulate(SpinSettingsInstance);
             ScreensaverManager.Delay(AnimatedInit.SaversConfig.SpinDelay);
         }
 

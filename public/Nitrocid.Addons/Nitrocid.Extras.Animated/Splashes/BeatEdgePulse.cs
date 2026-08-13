@@ -20,14 +20,16 @@
 using System;
 using System.Text;
 using System.Threading;
-using Nitrocid.Base.Drivers.RNG;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Misc.Splash;
-using Terminaux.Base;
 using Colorimetry;
 using Colorimetry.Data;
-using Terminaux.Sequences.Builder.Types;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Misc.Screensaver;
+using Nitrocid.Base.Misc.Splash;
+using Nitrocid.Extras.Animated.Animations.BeatEdgePulse;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Sequences.Builder.Types;
 using Threadify.Manager;
 
 namespace Nitrocid.Extras.Animated.Splashes
@@ -35,23 +37,7 @@ namespace Nitrocid.Extras.Animated.Splashes
     class SplashBeatEdgePulse : BaseSplash, ISplash
     {
 
-        private bool _isFadingOut = false;
-        private int _currentStep = 0;
-        private Color _currentColor = Color.Empty;
-        private bool _inited = false;
-        private readonly bool _beatedgepulseTrueColor = true;
-        private readonly int _beatedgepulseDelay = 120;
-        private readonly int _beatedgepulseMaxSteps = 30;
-        private readonly bool _beatedgepulseCycleColors = true;
-        private readonly string _beatedgepulseBeatColor = "17";
-        private readonly int _beatedgepulseMinimumRedColorLevel = 0;
-        private readonly int _beatedgepulseMinimumGreenColorLevel = 0;
-        private readonly int _beatedgepulseMinimumBlueColorLevel = 0;
-        private readonly int _beatedgepulseMinimumColorLevel = 0;
-        private readonly int _beatedgepulseMaximumRedColorLevel = 255;
-        private readonly int _beatedgepulseMaximumGreenColorLevel = 255;
-        private readonly int _beatedgepulseMaximumBlueColorLevel = 255;
-        private readonly int _beatedgepulseMaximumColorLevel = 255;
+        private BeatEdgePulseSettings? BeatEdgePulseSettingsInstance;
 
         // Standalone splash information
         public override string SplashName => "BeatEdgePulse";
@@ -60,205 +46,31 @@ namespace Nitrocid.Extras.Animated.Splashes
 
         public override string Opening(SplashContext context)
         {
-            if (!_inited)
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
+            BeatEdgePulseSettingsInstance = new BeatEdgePulseSettings()
             {
-                // If we're cycling colors, set them. Else, use the user-provided color
-                int RedColorNum, GreenColorNum, BlueColorNum;
-                if (_beatedgepulseCycleColors)
-                {
-                    // We're cycling. Select the color mode, starting from true color
-                    DebugWriter.WriteDebug(DebugLevel.I, "Cycling colors...");
-                    if (_beatedgepulseTrueColor)
-                    {
-                        RedColorNum = RandomDriver.Random(_beatedgepulseMinimumRedColorLevel, _beatedgepulseMaximumRedColorLevel);
-                        GreenColorNum = RandomDriver.Random(_beatedgepulseMinimumGreenColorLevel, _beatedgepulseMaximumGreenColorLevel);
-                        BlueColorNum = RandomDriver.Random(_beatedgepulseMinimumBlueColorLevel, _beatedgepulseMaximumBlueColorLevel);
-                    }
-                    else
-                    {
-                        var ConsoleColor = new Color((ConsoleColors)RandomDriver.Random(_beatedgepulseMinimumColorLevel, _beatedgepulseMaximumColorLevel));
-                        RedColorNum = ConsoleColor.RGB.R;
-                        GreenColorNum = ConsoleColor.RGB.G;
-                        BlueColorNum = ConsoleColor.RGB.B;
-                    }
-                    DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
-                }
-                else
-                {
-                    // We're not cycling. Parse the color and then select the color mode, starting from true color
-                    DebugWriter.WriteDebug(DebugLevel.I, "Parsing colors... {0}", vars: [_beatedgepulseBeatColor]);
-                    var UserColor = new Color(_beatedgepulseBeatColor);
-                    if (UserColor.Type == ColorType.TrueColor)
-                    {
-                        RedColorNum = UserColor.RGB.R;
-                        GreenColorNum = UserColor.RGB.G;
-                        BlueColorNum = UserColor.RGB.B;
-                    }
-                    else
-                    {
-                        var ConsoleColor = new Color((ConsoleColors)Convert.ToInt32(UserColor.PlainSequence));
-                        RedColorNum = ConsoleColor.RGB.R;
-                        GreenColorNum = ConsoleColor.RGB.G;
-                        BlueColorNum = ConsoleColor.RGB.B;
-                    }
-                    DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
-                }
-
-                _currentColor = new(RedColorNum, GreenColorNum, BlueColorNum);
-                _inited = true;
-            }
+                BeatEdgePulseTrueColor = AnimatedInit.SplashConfig.BeatEdgePulseTrueColor,
+                BeatEdgePulseBeatColor = AnimatedInit.SplashConfig.BeatEdgePulseBeatColor,
+                BeatEdgePulseDelay = AnimatedInit.SplashConfig.BeatEdgePulseDelay,
+                BeatEdgePulseMaxSteps = AnimatedInit.SplashConfig.BeatEdgePulseMaxSteps,
+                BeatEdgePulseCycleColors = AnimatedInit.SplashConfig.BeatEdgePulseCycleColors,
+                BeatEdgePulseMinimumRedColorLevel = AnimatedInit.SplashConfig.BeatEdgePulseMinimumRedColorLevel,
+                BeatEdgePulseMinimumGreenColorLevel = AnimatedInit.SplashConfig.BeatEdgePulseMinimumGreenColorLevel,
+                BeatEdgePulseMinimumBlueColorLevel = AnimatedInit.SplashConfig.BeatEdgePulseMinimumBlueColorLevel,
+                BeatEdgePulseMinimumColorLevel = AnimatedInit.SplashConfig.BeatEdgePulseMinimumColorLevel,
+                BeatEdgePulseMaximumRedColorLevel = AnimatedInit.SplashConfig.BeatEdgePulseMaximumRedColorLevel,
+                BeatEdgePulseMaximumGreenColorLevel = AnimatedInit.SplashConfig.BeatEdgePulseMaximumGreenColorLevel,
+                BeatEdgePulseMaximumBlueColorLevel = AnimatedInit.SplashConfig.BeatEdgePulseMaximumBlueColorLevel,
+                BeatEdgePulseMaximumColorLevel = AnimatedInit.SplashConfig.BeatEdgePulseMaximumColorLevel
+            };
             return base.Opening(context);
         }
 
         // Actual logic
         public override string Display(SplashContext context)
         {
-            var builder = new StringBuilder();
-            try
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
-                ConsoleWrapper.CursorVisible = false;
-                int BeatInterval = (int)Math.Round(60000d / _beatedgepulseDelay);
-                int BeatIntervalStep = (int)Math.Round(BeatInterval / (double)_beatedgepulseMaxSteps);
-                DebugWriter.WriteDebug(DebugLevel.I, "Beat interval from {0} BPM: {1}", vars: [_beatedgepulseDelay, BeatInterval]);
-                DebugWriter.WriteDebug(DebugLevel.I, "Beat steps: {0} ms", vars: [_beatedgepulseDelay, BeatIntervalStep]);
-                ThreadManager.SleepNoBlock(BeatIntervalStep);
-
-                // If we're cycling colors, set them. Else, use the user-provided color
-                int RedColorNum = _currentColor.RGB.R;
-                int GreenColorNum = _currentColor.RGB.G;
-                int BlueColorNum = _currentColor.RGB.B;
-                builder.Append(_currentColor.VTSequenceBackground());
-
-                // Set thresholds
-                double ThresholdRed = RedColorNum / (double)_beatedgepulseMaxSteps;
-                double ThresholdGreen = GreenColorNum / (double)_beatedgepulseMaxSteps;
-                double ThresholdBlue = BlueColorNum / (double)_beatedgepulseMaxSteps;
-                DebugWriter.WriteDebug(DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2})", vars: [ThresholdRed, ThresholdGreen, ThresholdBlue]);
-
-                // Fade in or out
-                if (_isFadingOut)
-                {
-                    // Fade out
-                    int CurrentColorRedOut = RedColorNum;
-                    int CurrentColorGreenOut = GreenColorNum;
-                    int CurrentColorBlueOut = BlueColorNum;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1} each {2} ms", vars: [_currentStep, _beatedgepulseMaxSteps, BeatIntervalStep]);
-                    ThreadManager.SleepNoBlock(BeatIntervalStep);
-                    CurrentColorRedOut = (int)Math.Round(CurrentColorRedOut - ThresholdRed * _currentStep);
-                    CurrentColorGreenOut = (int)Math.Round(CurrentColorGreenOut - ThresholdGreen * _currentStep);
-                    CurrentColorBlueOut = (int)Math.Round(CurrentColorBlueOut - ThresholdBlue * _currentStep);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
-                    var color = new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}");
-                    builder.Append(
-                        color.VTSequenceBackground() +
-                        FillIn()
-                    );
-                    _currentStep++;
-                    if (_currentStep > _beatedgepulseMaxSteps)
-                    {
-                        _currentStep = 0;
-                        _isFadingOut = false;
-                    }
-                }
-                else
-                {
-                    // Fade in
-                    int CurrentColorRedIn = 0;
-                    int CurrentColorGreenIn = 0;
-                    int CurrentColorBlueIn = 0;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", vars: [_currentStep, BeatIntervalStep]);
-                    ThreadManager.SleepNoBlock(BeatIntervalStep);
-                    CurrentColorRedIn = (int)Math.Round((CurrentColorRedIn + ThresholdRed) * _currentStep);
-                    CurrentColorGreenIn = (int)Math.Round((CurrentColorGreenIn + ThresholdGreen) * _currentStep);
-                    CurrentColorBlueIn = (int)Math.Round((CurrentColorBlueIn + ThresholdBlue) * _currentStep);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", vars: [CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn]);
-                    var color = new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
-                    builder.Append(
-                        color.VTSequenceBackground() +
-                        FillIn()
-                    );
-                    _currentStep++;
-                    if (_currentStep > _beatedgepulseMaxSteps)
-                    {
-                        _currentStep = 0;
-                        _isFadingOut = true;
-                    }
-                }
-            }
-            catch (ThreadInterruptedException)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
-            }
-            return builder.ToString();
-        }
-
-        public override string Closing(SplashContext context, out bool delayRequired)
-        {
-            _inited = false;
-            return base.Closing(context, out delayRequired);
-        }
-
-        private static string FillIn()
-        {
-            var filled = new StringBuilder();
-
-            int FloorTopLeftEdge = 0;
-            int FloorBottomLeftEdge = 0;
-            DebugWriter.WriteDebug(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", vars: [FloorTopLeftEdge, FloorBottomLeftEdge]);
-
-            int FloorTopRightEdge = ConsoleWrapper.WindowWidth - 1;
-            int FloorBottomRightEdge = ConsoleWrapper.WindowWidth - 1;
-            DebugWriter.WriteDebug(DebugLevel.I, "Top right edge: {0}, Bottom right edge: {1}", vars: [FloorTopRightEdge, FloorBottomRightEdge]);
-
-            int FloorTopEdge = 0;
-            int FloorBottomEdge = ConsoleWrapper.WindowHeight - 1;
-            DebugWriter.WriteDebug(DebugLevel.I, "Top edge: {0}, Bottom edge: {1}", vars: [FloorTopEdge, FloorBottomEdge]);
-
-            int FloorLeftEdge = 0;
-            int FloorRightEdge = ConsoleWrapper.WindowWidth - 2;
-            DebugWriter.WriteDebug(DebugLevel.I, "Left edge: {0}, Right edge: {1}", vars: [FloorLeftEdge, FloorRightEdge]);
-
-            // First, draw the floor top edge
-            for (int x = FloorTopLeftEdge; x <= FloorTopRightEdge; x++)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor top edge ({0}, {1})", vars: [x, 0]);
-                filled.Append(
-                    CsiSequences.GenerateCsiCursorPosition(x + 1, 1) +
-                    " "
-                );
-            }
-
-            // Second, draw the floor bottom edge
-            for (int x = FloorBottomLeftEdge; x <= FloorBottomRightEdge; x++)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor bottom edge ({0}, {1})", vars: [x, FloorBottomEdge]);
-                filled.Append(
-                    CsiSequences.GenerateCsiCursorPosition(x + 1, FloorBottomEdge + 1) +
-                    " "
-                );
-            }
-
-            // Third, draw the floor left edge
-            for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor left edge ({0}, {1})", vars: [FloorLeftEdge, y]);
-                filled.Append(
-                    CsiSequences.GenerateCsiCursorPosition(FloorLeftEdge + 1, y + 1) +
-                    " "
-                );
-            }
-
-            // Finally, draw the floor right edge
-            for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", vars: [FloorRightEdge, y]);
-                filled.Append(
-                    CsiSequences.GenerateCsiCursorPosition(FloorRightEdge + 2, y + 1) +
-                    " "
-                );
-            }
-            return filled.ToString();
+            BeatEdgePulse.Simulate(BeatEdgePulseSettingsInstance);
+            return base.Display(context);
         }
 
     }

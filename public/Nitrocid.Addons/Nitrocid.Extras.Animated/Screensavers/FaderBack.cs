@@ -19,6 +19,7 @@
 
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Screensaver;
+using Nitrocid.Extras.Animated.Animations.FaderBack;
 using Terminaux.Base;
 
 namespace Nitrocid.Extras.Animated.Screensavers
@@ -29,12 +30,13 @@ namespace Nitrocid.Extras.Animated.Screensavers
     public class FaderBackDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Animations.FaderBack.FaderBackSettings? FaderBackSettingsInstance;
+        private FaderBackSettings? FaderBackSettingsInstance;
+
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
-            FaderBackSettingsInstance = new Animations.FaderBack.FaderBackSettings()
+            FaderBackSettingsInstance = new FaderBackSettings()
             {
                 FaderBackDelay = AnimatedInit.SaversConfig.FaderBackDelay,
                 FaderBackFadeOutDelay = AnimatedInit.SaversConfig.FaderBackFadeOutDelay,
@@ -50,7 +52,7 @@ namespace Nitrocid.Extras.Animated.Screensavers
         }
 
         /// <inheritdoc/>
-        public override void ScreensaverLogic() => Animations.FaderBack.FaderBack.Simulate(FaderBackSettingsInstance);
+        public override void ScreensaverLogic() => FaderBack.Simulate(FaderBackSettingsInstance);
 
     }
 }

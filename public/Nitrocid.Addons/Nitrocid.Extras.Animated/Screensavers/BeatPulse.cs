@@ -31,6 +31,7 @@ namespace Nitrocid.Extras.Animated.Screensavers
     {
 
         private BeatPulseSettings? BeatPulseSettingsInstance;
+
         /// <inheritdoc/>
         public override bool ScreensaverContainsFlashingImages =>
             true;
@@ -39,7 +40,7 @@ namespace Nitrocid.Extras.Animated.Screensavers
         public override void ScreensaverPreparation()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
-            BeatPulseSettingsInstance = new Animations.BeatPulse.BeatPulseSettings()
+            BeatPulseSettingsInstance = new BeatPulseSettings()
             {
                 BeatPulseTrueColor = AnimatedInit.SaversConfig.BeatPulseTrueColor,
                 BeatPulseBeatColor = AnimatedInit.SaversConfig.BeatPulseBeatColor,

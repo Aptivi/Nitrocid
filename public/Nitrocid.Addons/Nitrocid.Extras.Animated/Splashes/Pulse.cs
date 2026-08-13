@@ -20,12 +20,13 @@
 using System;
 using System.Text;
 using System.Threading;
+using Colorimetry;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Splash;
+using Nitrocid.Extras.Animated.Animations.Pulse;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Colorimetry;
 using Threadify.Manager;
 
 namespace Nitrocid.Extras.Animated.Splashes
@@ -33,18 +34,7 @@ namespace Nitrocid.Extras.Animated.Splashes
     class SplashPulse : BaseSplash, ISplash
     {
 
-        private bool _isFadingOut = false;
-        private int _currentStep = 0;
-        private Color _currentColor = Color.Empty;
-        private bool _inited = false;
-        private readonly int _pulseDelay = 50;
-        private readonly int _pulseMaxSteps = 25;
-        private readonly int _pulseMinimumRedColorLevel = 0;
-        private readonly int _pulseMinimumGreenColorLevel = 0;
-        private readonly int _pulseMinimumBlueColorLevel = 0;
-        private readonly int _pulseMaximumRedColorLevel = 255;
-        private readonly int _pulseMaximumGreenColorLevel = 255;
-        private readonly int _pulseMaximumBlueColorLevel = 255;
+        private PulseSettings? PulseSettingsInstance;
 
         // Standalone splash information
         public override string SplashName => "Pulse";
@@ -54,93 +44,25 @@ namespace Nitrocid.Extras.Animated.Splashes
         // Actual logic
         public override string Opening(SplashContext context)
         {
-            if (!_inited)
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
+            PulseSettingsInstance = new PulseSettings()
             {
-                int RedColorNum = RandomDriver.Random(_pulseMinimumRedColorLevel, _pulseMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(_pulseMinimumGreenColorLevel, _pulseMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(_pulseMinimumBlueColorLevel, _pulseMaximumBlueColorLevel);
-                _currentColor = new(RedColorNum, GreenColorNum, BlueColorNum);
-                _inited = true;
-            }
+                PulseDelay = AnimatedInit.SplashConfig.PulseDelay,
+                PulseMaxSteps = AnimatedInit.SplashConfig.PulseMaxSteps,
+                PulseMinimumRedColorLevel = AnimatedInit.SplashConfig.PulseMinimumRedColorLevel,
+                PulseMinimumGreenColorLevel = AnimatedInit.SplashConfig.PulseMinimumGreenColorLevel,
+                PulseMinimumBlueColorLevel = AnimatedInit.SplashConfig.PulseMinimumBlueColorLevel,
+                PulseMaximumRedColorLevel = AnimatedInit.SplashConfig.PulseMaximumRedColorLevel,
+                PulseMaximumGreenColorLevel = AnimatedInit.SplashConfig.PulseMaximumGreenColorLevel,
+                PulseMaximumBlueColorLevel = AnimatedInit.SplashConfig.PulseMaximumBlueColorLevel
+            };
             return base.Opening(context);
         }
 
         public override string Display(SplashContext context)
         {
-            var builder = new StringBuilder();
-            try
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
-                int RedColorNum = _currentColor.RGB.R;
-                int GreenColorNum = _currentColor.RGB.G;
-                int BlueColorNum = _currentColor.RGB.B;
-                ConsoleWrapper.CursorVisible = false;
-
-                // Set thresholds
-                double ThresholdRed = RedColorNum / (double)_pulseMaxSteps;
-                double ThresholdGreen = GreenColorNum / (double)_pulseMaxSteps;
-                double ThresholdBlue = BlueColorNum / (double)_pulseMaxSteps;
-                DebugWriter.WriteDebug(DebugLevel.I, "Color threshold (R;G;B: {0})", vars: [ThresholdRed, ThresholdGreen, ThresholdBlue]);
-
-                // Fade in or out
-                if (_isFadingOut)
-                {
-                    // Fade out
-                    int CurrentColorRedOut = RedColorNum;
-                    int CurrentColorGreenOut = GreenColorNum;
-                    int CurrentColorBlueOut = BlueColorNum;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", vars: [_currentStep, _pulseMaxSteps]);
-                    ThreadManager.SleepNoBlock(_pulseDelay);
-                    CurrentColorRedOut = (int)Math.Round(CurrentColorRedOut - ThresholdRed * _currentStep);
-                    CurrentColorGreenOut = (int)Math.Round(CurrentColorGreenOut - ThresholdGreen * _currentStep);
-                    CurrentColorBlueOut = (int)Math.Round(CurrentColorBlueOut - ThresholdBlue * _currentStep);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut]);
-                    builder.Append(
-                        ConsoleColoring.RenderSetConsoleColor(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut), true) +
-                        ConsoleClearing.GetClearWholeScreenSequence()
-                    );
-                    _currentStep++;
-                    if (_currentStep > _pulseMaxSteps)
-                    {
-                        _currentStep = 0;
-                        _isFadingOut = false;
-                    }
-                }
-                else
-                {
-                    // Fade in
-                    int CurrentColorRedIn = 0;
-                    int CurrentColorGreenIn = 0;
-                    int CurrentColorBlueIn = 0;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", vars: [_currentStep, _pulseMaxSteps]);
-                    ThreadManager.SleepNoBlock(_pulseDelay);
-                    CurrentColorRedIn = (int)Math.Round((CurrentColorRedIn + ThresholdRed) * _currentStep);
-                    CurrentColorGreenIn = (int)Math.Round((CurrentColorGreenIn + ThresholdGreen) * _currentStep);
-                    CurrentColorBlueIn = (int)Math.Round((CurrentColorBlueIn + ThresholdBlue) * _currentStep);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", vars: [CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn]);
-                    builder.Append(
-                        ConsoleColoring.RenderSetConsoleColor(new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn), true) +
-                        ConsoleClearing.GetClearWholeScreenSequence()
-                    );
-                    _currentStep++;
-                    if (_currentStep > _pulseMaxSteps)
-                    {
-                        _currentStep = 0;
-                        _isFadingOut = true;
-                    }
-                }
-            }
-            catch (ThreadInterruptedException)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
-            }
-            return builder.ToString();
-        }
-
-        public override string Closing(SplashContext context, out bool delayRequired)
-        {
-            _inited = false;
-            return base.Closing(context, out delayRequired);
+            Pulse.Simulate(PulseSettingsInstance);
+            return base.Display(context);
         }
 
     }

@@ -20,13 +20,14 @@
 using System;
 using System.Text;
 using System.Threading;
+using Colorimetry;
+using Colorimetry.Data;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Splash;
+using Nitrocid.Extras.Animated.Animations.BeatFader;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Colorimetry;
-using Colorimetry.Data;
 using Threadify.Manager;
 
 namespace Nitrocid.Extras.Animated.Splashes
@@ -34,22 +35,7 @@ namespace Nitrocid.Extras.Animated.Splashes
     class SplashBeatFader : BaseSplash, ISplash
     {
 
-        private int _currentStep = 0;
-        private Color _currentColor = Color.Empty;
-        private bool _inited = false;
-        private readonly bool _beatFaderTrueColor = true;
-        private readonly int _beatFaderDelay = 120;
-        private readonly int _beatFaderMaxSteps = 30;
-        private readonly bool _beatFaderCycleColors = true;
-        private readonly string _beatFaderBeatColor = "17";
-        private readonly int _beatFaderMinimumRedColorLevel = 0;
-        private readonly int _beatFaderMinimumGreenColorLevel = 0;
-        private readonly int _beatFaderMinimumBlueColorLevel = 0;
-        private readonly int _beatFaderMinimumColorLevel = 0;
-        private readonly int _beatFaderMaximumRedColorLevel = 255;
-        private readonly int _beatFaderMaximumGreenColorLevel = 255;
-        private readonly int _beatFaderMaximumBlueColorLevel = 255;
-        private readonly int _beatFaderMaximumColorLevel = 255;
+        private BeatFaderSettings? BeatFaderSettingsInstance;
 
         // Standalone splash information
         public override string SplashName => "BeatFader";
@@ -59,107 +45,30 @@ namespace Nitrocid.Extras.Animated.Splashes
         // Actual logic
         public override string Opening(SplashContext context)
         {
-            if (!_inited)
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
+            BeatFaderSettingsInstance = new BeatFaderSettings()
             {
-                int RedColorNum;
-                int GreenColorNum;
-                int BlueColorNum;
-                if (_beatFaderCycleColors)
-                {
-                    // We're cycling. Select the color mode, starting from true color
-                    DebugWriter.WriteDebug(DebugLevel.I, "Cycling colors...");
-                    if (_beatFaderTrueColor)
-                    {
-                        RedColorNum = RandomDriver.Random(_beatFaderMinimumRedColorLevel, _beatFaderMaximumRedColorLevel);
-                        GreenColorNum = RandomDriver.Random(_beatFaderMinimumGreenColorLevel, _beatFaderMaximumGreenColorLevel);
-                        BlueColorNum = RandomDriver.Random(_beatFaderMinimumBlueColorLevel, _beatFaderMaximumBlueColorLevel);
-                    }
-                    else
-                    {
-                        var ConsoleColor = new Color((ConsoleColors)RandomDriver.Random(_beatFaderMinimumColorLevel, _beatFaderMaximumColorLevel));
-                        RedColorNum = ConsoleColor.RGB.R;
-                        GreenColorNum = ConsoleColor.RGB.G;
-                        BlueColorNum = ConsoleColor.RGB.B;
-                    }
-                    DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
-                }
-                else
-                {
-                    // We're not cycling. Parse the color and then select the color mode, starting from true color
-                    DebugWriter.WriteDebug(DebugLevel.I, "Parsing colors... {0}", vars: [_beatFaderBeatColor]);
-                    var UserColor = new Color(_beatFaderBeatColor);
-                    if (UserColor.Type == ColorType.TrueColor)
-                    {
-                        RedColorNum = UserColor.RGB.R;
-                        GreenColorNum = UserColor.RGB.G;
-                        BlueColorNum = UserColor.RGB.B;
-                    }
-                    else
-                    {
-                        var ConsoleColor = new Color((ConsoleColors)Convert.ToInt32(UserColor.PlainSequence));
-                        RedColorNum = ConsoleColor.RGB.R;
-                        GreenColorNum = ConsoleColor.RGB.G;
-                        BlueColorNum = ConsoleColor.RGB.B;
-                    }
-                    DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
-                }
-
-                _currentColor = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                _inited = true;
-            }
+                BeatFaderTrueColor = AnimatedInit.SplashConfig.BeatFaderTrueColor,
+                BeatFaderBeatColor = AnimatedInit.SplashConfig.BeatFaderBeatColor,
+                BeatFaderDelay = AnimatedInit.SplashConfig.BeatFaderDelay,
+                BeatFaderMaxSteps = AnimatedInit.SplashConfig.BeatFaderMaxSteps,
+                BeatFaderCycleColors = AnimatedInit.SplashConfig.BeatFaderCycleColors,
+                BeatFaderMinimumRedColorLevel = AnimatedInit.SplashConfig.BeatFaderMinimumRedColorLevel,
+                BeatFaderMinimumGreenColorLevel = AnimatedInit.SplashConfig.BeatFaderMinimumGreenColorLevel,
+                BeatFaderMinimumBlueColorLevel = AnimatedInit.SplashConfig.BeatFaderMinimumBlueColorLevel,
+                BeatFaderMinimumColorLevel = AnimatedInit.SplashConfig.BeatFaderMinimumColorLevel,
+                BeatFaderMaximumRedColorLevel = AnimatedInit.SplashConfig.BeatFaderMaximumRedColorLevel,
+                BeatFaderMaximumGreenColorLevel = AnimatedInit.SplashConfig.BeatFaderMaximumGreenColorLevel,
+                BeatFaderMaximumBlueColorLevel = AnimatedInit.SplashConfig.BeatFaderMaximumBlueColorLevel,
+                BeatFaderMaximumColorLevel = AnimatedInit.SplashConfig.BeatFaderMaximumColorLevel
+            };
             return base.Opening(context);
         }
 
         public override string Display(SplashContext context)
         {
-            var builder = new StringBuilder();
-            try
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
-                ConsoleWrapper.CursorVisible = false;
-                int BeatInterval = (int)Math.Round(60000d / _beatFaderDelay);
-                int BeatIntervalStep = (int)Math.Round(BeatInterval / (double)_beatFaderMaxSteps);
-                DebugWriter.WriteDebug(DebugLevel.I, "Beat interval from {0} BPM: {1}", vars: [_beatFaderDelay, BeatInterval]);
-                DebugWriter.WriteDebug(DebugLevel.I, "Beat steps: {0} ms", vars: [_beatFaderDelay, BeatIntervalStep]);
-                ThreadManager.SleepNoBlock(BeatIntervalStep);
-
-                // If we're cycling colors, set them. Else, use the user-provided color
-                int RedColorNum = _currentColor.RGB.R;
-                int GreenColorNum = _currentColor.RGB.G;
-                int BlueColorNum = _currentColor.RGB.B;
-
-                // Set thresholds
-                double ThresholdRed = RedColorNum / (double)_beatFaderMaxSteps;
-                double ThresholdGreen = GreenColorNum / (double)_beatFaderMaxSteps;
-                double ThresholdBlue = BlueColorNum / (double)_beatFaderMaxSteps;
-                DebugWriter.WriteDebug(DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2})", vars: [ThresholdRed, ThresholdGreen, ThresholdBlue]);
-
-                // Fade out
-                DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1} each {2} ms", vars: [_currentStep, _beatFaderMaxSteps, BeatIntervalStep]);
-                ThreadManager.SleepNoBlock(BeatIntervalStep);
-                int CurrentColorRedOut = (int)Math.Round(RedColorNum - ThresholdRed * _currentStep);
-                int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * _currentStep);
-                int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * _currentStep);
-                DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
-                builder.Append(
-                    ConsoleColoring.RenderSetConsoleColor(new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), true) +
-                    ConsoleClearing.GetClearWholeScreenSequence()
-                );
-                _currentStep++;
-                if (_currentStep > _beatFaderMaxSteps)
-                    _currentStep = 0;
-            }
-            catch (ThreadInterruptedException)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
-            }
-            return builder.ToString();
-        }
-
-        public override string Closing(SplashContext context, out bool delayRequired)
-        {
-            _inited = false;
-            return base.Closing(context, out delayRequired);
+            BeatFader.Simulate(BeatFaderSettingsInstance);
+            return base.Display(context);
         }
 
     }
