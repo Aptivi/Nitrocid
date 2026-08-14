@@ -17,15 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Reflection;
-using Nitrocid.Base.Security.Permissions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
+using Nitrocid.Base.Security.Permissions;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Nitrocid.Extras.Mods.Modifications.Communication
 {
@@ -232,9 +234,6 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <param name="parameters">Parameters to execute the function with</param>
         public static object? ExecuteCustomModFunction(string modName, string functionName, Type type, params object?[]? parameters)
         {
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
-
             // Verify the type before proceeding
             VerifyType(modName, type);
 
@@ -242,6 +241,11 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
             var function = GetFunctionInfo(modName, functionName, type);
             if (function is null)
                 return null;
+
+            // Check to see if this function is a privileged function
+            var privileged = function.GetCustomAttribute<CommunicationPrivilegedAttribute>() is not null;
+            if (privileged)
+                PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
 
             // The function instance is valid. Try to dynamically invoke it.
             return MethodManager.InvokeMethodStatic(function, parameters);
@@ -268,9 +272,6 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available mod properties from an mod type.</param>
         public static object? GetCustomModPropertyValue(string modName, string propertyName, Type type)
         {
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
-
             // Verify the type before proceeding
             VerifyType(modName, type);
 
@@ -278,6 +279,11 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
             var property = GetPropertyInfo(modName, propertyName, type);
             if (property is null)
                 return null;
+
+            // Check to see if this property is a privileged property
+            var privileged = property.GetCustomAttribute<CommunicationPrivilegedAttribute>() is not null;
+            if (privileged)
+                PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
 
             // Try to get a value from it.
             return PropertyManager.GetPropertyValue(property);
@@ -306,9 +312,6 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <param name="value">Value to set the property to</param>
         public static void SetCustomModPropertyValue(string modName, string propertyName, Type type, object? value)
         {
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
-
             // Verify the type before proceeding
             VerifyType(modName, type);
 
@@ -316,6 +319,11 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
             var property = GetPropertyInfo(modName, propertyName, type);
             if (property is null)
                 return;
+
+            // Check to see if this property is a privileged property
+            var privileged = property.GetCustomAttribute<CommunicationPrivilegedAttribute>() is not null;
+            if (privileged)
+                PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
 
             // Try to set a value in it.
             PropertyManager.SetPropertyValue(property, value);
@@ -342,15 +350,17 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available mod fields from an mod type.</param>
         public static object? GetCustomModFieldValue(string modName, string fieldName, Type type)
         {
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
-
             // Verify the type before proceeding
             VerifyType(modName, type);
 
             // Get the field
             var field = GetFieldInfo(modName, fieldName, type) ??
                 throw new KernelException(KernelExceptionType.ModManagement, LanguageTools.GetLocalized("NKS_MODS_INTERMOD_NOFIELDINFO") + $" {modName} -> {fieldName}");
+
+            // Check to see if this field is a privileged field
+            var privileged = field.GetCustomAttribute<CommunicationPrivilegedAttribute>() is not null;
+            if (privileged)
+                PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
 
             // Try to get a value from it.
             return FieldManager.GetFieldValue(field);
@@ -379,15 +389,17 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <param name="value">Value to set the field to</param>
         public static void SetCustomModFieldValue(string modName, string fieldName, Type type, object? value)
         {
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
-
             // Verify the type before proceeding
             VerifyType(modName, type);
 
             // Get the field
             var field = GetFieldInfo(modName, fieldName, type) ??
                 throw new KernelException(KernelExceptionType.ModManagement, LanguageTools.GetLocalized("NKS_MODS_INTERMOD_NOFIELDINFO") + $" {modName} -> {fieldName}");
+
+            // Check to see if this field is a privileged field
+            var privileged = field.GetCustomAttribute<CommunicationPrivilegedAttribute>() is not null;
+            if (privileged)
+                PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
 
             // Try to set a value in it.
             FieldManager.SetFieldValue(field, value);
@@ -416,9 +428,6 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no function</returns>
         public static ParameterInfo[]? GetFunctionParameters(string modName, string functionName, Type type)
         {
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
-
             // Verify the type before proceeding
             VerifyType(modName, type);
 
@@ -426,6 +435,11 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
             var function = GetFunctionInfo(modName, functionName, type);
             if (function is null)
                 return null;
+
+            // Check to see if this function is a privileged function
+            var privileged = function.GetCustomAttribute<CommunicationPrivilegedAttribute>() is not null;
+            if (privileged)
+                PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
 
             // Get the function parameters
             return function.GetParameters();
@@ -454,9 +468,6 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no property</returns>
         public static ParameterInfo[]? GetSetPropertyParameters(string modName, string propertyName, Type type)
         {
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
-
             // Verify the type before proceeding
             VerifyType(modName, type);
 
@@ -464,6 +475,11 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
             var property = GetPropertyInfo(modName, propertyName, type);
             if (property is null)
                 return null;
+
+            // Check to see if this property is a privileged property
+            var privileged = property.GetCustomAttribute<CommunicationPrivilegedAttribute>() is not null;
+            if (privileged)
+                PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
 
             // Get the property parameters
             var get = property.GetSetMethod();
