@@ -89,47 +89,6 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
             originalColors[colorType] = color;
         }
 
-        internal void Load()
-        {
-            var choices = new InputChoiceInfo[]
-            {
-                new("1", LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_LOADFROM")),
-                new("2", LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_LOADFROMBUILTIN")),
-                new("3", LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_LOADCURRENT")),
-            };
-            int choice = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TUI_HOWLOAD"));
-            if (choice < 0)
-                return;
-            switch (choice)
-            {
-                case 0:
-                    {
-                        // Load Theme From File...
-                        DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                        string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMEFILEPROMPT")) + ".json";
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
-                        LoadThemeFromFile(AltThemeName);
-                        break;
-                    }
-                case 1:
-                    {
-                        // Load Theme From Prebuilt Themes...
-                        DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-                        string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT"));
-                        DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
-                        LoadThemeFromResource(AltThemeName);
-                        break;
-                    }
-                case 2:
-                    {
-                        // Load Current Colors
-                        DebugWriter.WriteDebug(DebugLevel.I, "Loading current colors...");
-                        LoadThemeFromCurrentColors();
-                        break;
-                    }
-            }
-        }
-
         internal void Copy(string colorType)
         {
             var sourceColor = originalColors[colorType];
