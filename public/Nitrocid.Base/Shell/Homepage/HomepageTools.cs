@@ -56,6 +56,7 @@ using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Login;
 using Nitrocid.Base.Users.Interactives;
 using Nitrocid.Base.Users.Groups.Interactives;
+using Nitrocid.Base.Kernel.Starting;
 
 namespace Nitrocid.Base.Shell.Homepage
 {
@@ -613,8 +614,11 @@ namespace Nitrocid.Base.Shell.Homepage
         {
             InfoBoxModalColor.WriteInfoBoxModal(
                 LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUT_DESC") + "\n\n" +
-                LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_VERSION") + $": {KernelReleaseInfo.VersionFullStr}" + "\n" +
-                LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUT_MODAPI") + $": {KernelReleaseInfo.ApiVersion}" + "\n\n" +
+                "  * " + LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_VERSION") + $": {KernelReleaseInfo.VersionFullStr}" + "\n" +
+                "  * " + LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUT_MODAPI") + $": {KernelReleaseInfo.ApiVersion}" + "\n\n" +
+                LanguageTools.GetLocalized("NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE") + "\n" +
+                new string('-', ConsoleChar.EstimateCellWidth(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE"))) + "\n\n" +
+                WelcomeMessage.GetLicenseString() + "\n\n" +
                 LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUT_COPYRIGHT") + " - https://aptivi.github.io", new InfoBoxSettings()
                 {
                     Title = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUTNITROCID"),
