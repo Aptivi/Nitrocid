@@ -8786,5 +8786,32 @@
                 "MaximumValue": 100
             }
         ]
+    },
+    {
+        "Name": "Hell",
+        "Desc": "NKS_SCREENSAVERPACKS_HELL_SETTINGS_DESC",
+        "Keys": [
+            {
+                "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+                "Type": "SInt",
+                "Variable": "HellDelay",
+                "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
+                "Type": "SMultivar",
+                "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
+                "Variables": [
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "HellMaximumBackColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    }
+                ]
+            }
+        ]
     }
 ]

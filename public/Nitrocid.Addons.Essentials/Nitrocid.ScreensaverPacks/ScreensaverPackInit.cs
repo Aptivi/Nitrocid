@@ -77,6 +77,7 @@ namespace Nitrocid.ScreensaverPacks
             { "gradientbloom", new GradientBloomDisplay() },
             { "gradientrot", new GradientRotDisplay() },
             { "hacking", new HackingDisplay() },
+            { "hell", new HellDisplay() },
             { "hueback", new HueBackDisplay() },
             { "huebackgradient", new HueBackGradientDisplay() },
             { "indeterminate", new IndeterminateDisplay() },
