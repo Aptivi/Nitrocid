@@ -305,7 +305,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
                         Value = 0,
                     }
                 ];
-                bool provided = InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT") + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", Settings.InfoBoxSettings);
+                bool provided = InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT"), Settings.InfoBoxSettings);
                 if (!provided)
                     return;
 

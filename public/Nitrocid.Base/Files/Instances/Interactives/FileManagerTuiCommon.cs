@@ -494,7 +494,7 @@ namespace Nitrocid.Base.Files.Instances.Interactives
 
                 // Open an infobox
                 // TODO: NKS_MISC_INTERACTIVES_FMTUI_PERMSINFOBOX_NAME -> You can change the permissions for this file or directory here.
-                bool done = InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERMSINFOBOX_NAME") + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", infoBoxSettings);
+                bool done = InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERMSINFOBOX_NAME"), infoBoxSettings);
                 if (!done)
                     return;
 
