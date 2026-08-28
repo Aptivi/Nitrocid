@@ -18,7 +18,9 @@
 //
 
 using Nitrocid.Base.Kernel.Updates;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -34,8 +36,13 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class UpdateCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "update";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UPDATE_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             UpdateManager.CheckKernelUpdates();
             return 0;

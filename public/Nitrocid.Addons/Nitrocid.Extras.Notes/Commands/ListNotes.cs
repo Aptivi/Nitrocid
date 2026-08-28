@@ -20,19 +20,26 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Notes.Management;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.Notes.Commands
 {
     internal class ListNotes : BaseCommand, ICommand
     {
+        public override string Command => 
+            "listnotes";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_NOTES_COMMAND_LISTNOTES_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             ListWriterColor.WriteList(NoteManagement.notes);
             return 0;
         }
 
-        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
+        public override int ExecuteDumb(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             for (int i = 0; i < NoteManagement.notes.Count; i++)
             {

@@ -17,11 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -30,22 +33,45 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </summary>
     class IsModeCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "ismode";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo([],
+                [
+                    new SwitchInfo("s", /* Localizable */ "NKS_MISC_SPLASHES_WELCOME_SAFEMODE", new SwitchOptions()
+                    {
+                        AcceptsValues = false,
+                        ConflictsWith = ["d", "m"]
+                    }),
+                    new SwitchInfo("d", /* Localizable */ "NKS_MISC_SPLASHES_WELCOME_DEBUGMODE", new SwitchOptions()
+                    {
+                        AcceptsValues = false,
+                        ConflictsWith = ["s", "m"]
+                    }),
+                    new SwitchInfo("m", /* Localizable */ "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE", new SwitchOptions()
+                    {
+                        AcceptsValues = false,
+                        ConflictsWith = ["s", "d"]
+                    }),
+                    new SwitchInfo("v", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false,
+                    }),
+                ], true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            bool safeModeCheck = false;
-            bool debugModeCheck = false;
-            bool maintenanceModeCheck = false;
-            bool verbose = false;
+            bool safeModeCheck = parameters.ContainsSwitch("-s");
+            bool debugModeCheck = parameters.ContainsSwitch("-d");
+            bool maintenanceModeCheck = parameters.ContainsSwitch("-m");
+            bool verbose = parameters.ContainsSwitch("-v");
             bool result = false;
-            if (parameters.ContainsSwitch("-s"))
-                safeModeCheck = true;
-            if (parameters.ContainsSwitch("-d"))
-                debugModeCheck = true;
-            if (parameters.ContainsSwitch("-m"))
-                maintenanceModeCheck = true;
-            if (parameters.ContainsSwitch("-v"))
-                verbose = true;
 
             if (!safeModeCheck && !debugModeCheck && !maintenanceModeCheck)
             {

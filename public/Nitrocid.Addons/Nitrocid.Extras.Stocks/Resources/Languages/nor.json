@@ -117,6 +117,10 @@
     {
       "loc": "NKS_STOCKS_TUI_HELP02_BODY",
       "text": "Den interaktive brukergrensesnittet gir deg aksjeinformasjon om et bestemt selskap du sporer, for eksempel åpnings- og sluttkurser for aksjer, høyeste og laveste aksjekurser og annen informasjon. Denne informasjonen endres hver time, så du må følge med på prisene så nøye som mulig for å få en dyp forståelse av hvordan et selskaps aksjekurser presterer."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "AlphaVantage API-nøkkel"
     }
   ]
 }

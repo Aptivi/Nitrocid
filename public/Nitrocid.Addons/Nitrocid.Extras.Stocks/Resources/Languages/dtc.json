@@ -119,6 +119,10 @@
     {
       "loc": "NKS_STOCKS_TUI_HELP02_BODY",
       "text": "De interactieve TUI biedt u aandeleninformatie over een bepaald bedrijf dat u volgt, zoals openings- en slotkoersen, hoogste en laagste aandelenkoersen en andere informatie. Deze informatie verandert elk uur, dus u moet de koersen zo goed mogelijk in de gaten houden om een ​​goed inzicht te krijgen in de prestaties van de aandelenkoersen van een bedrijf."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "AlphaVantage API-sleutel"
     }
   ]
 }

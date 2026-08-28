@@ -25,6 +25,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Shell.Shells.Debug;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -38,8 +39,13 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class DebugShellCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "debugshell";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DEBUGSHELL_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
@@ -49,7 +55,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            ShellManager.StartShell("DebugShell");
+            ShellManager.StartShell(nameof(DebugShell));
             return 0;
         }
     }

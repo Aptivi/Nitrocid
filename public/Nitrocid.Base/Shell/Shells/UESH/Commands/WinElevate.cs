@@ -17,12 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
 using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users.Windows;
-using Nitrocid.Base.Kernel.Power;
+using SpecProbe.Software.Platform;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -34,10 +37,20 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class WinElevateCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "winelevate";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_WINELEVATE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (KernelPlatform.IsOnWindows())
+            if (PlatformHelper.IsOnWindows())
             {
                 bool isAdmin = WindowsUserTools.IsAdministrator();
                 if (isAdmin)

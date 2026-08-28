@@ -18,14 +18,21 @@
 //
 
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Extras.Notes.Management;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.Notes.Commands
 {
     internal class NotesTui : BaseCommand, ICommand
     {
+        public override string Command => 
+            "notestui";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_NOTES_COMMAND_NOTESTUI_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             NoteManagement.OpenNotesTui();
             return 0;

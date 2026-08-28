@@ -18,7 +18,9 @@
 //
 
 using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Admin.Commands
 {
@@ -27,8 +29,13 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
     /// </summary>
     class ClearFiredEventsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "clearfiredevents";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_CLEARFIREDEVENTS_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             EventsManager.ClearAllFiredEvents();
             return 0;

@@ -74,6 +74,10 @@
     {
       "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
       "text": "ChatGPT'ye erişim için API anahtarınız. Ücretsiz API anahtarını kullanabilirsiniz, ancak gelişmiş modelleri kullanamazsınız. Tüm ücretli modellere tam erişim istiyorsanız, erişim için ödeme yapmanız gerekir."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
+      "text": "Mevcut çalışan yapay zeka sohbet robotundan kabuğu ayırır."
     }
   ]
 }

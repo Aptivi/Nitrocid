@@ -123,10 +123,6 @@
       "text": "Start kjernemodifikasjonene automatisk ved oppstart."
     },
     {
-      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
-      "text": "Mod-fil er ikke spesifisert."
-    },
-    {
       "loc": "NKS_MODS_MODUPDATING",
       "text": "Prøver å installere en allerede installert mod. Oppdaterer mod..."
     },

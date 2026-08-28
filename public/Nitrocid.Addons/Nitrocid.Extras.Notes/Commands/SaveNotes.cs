@@ -17,15 +17,22 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Languages;
 using Nitrocid.Extras.Notes.Management;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Notes.Commands
 {
     internal class SaveNotes : BaseCommand, ICommand
     {
+        public override string Command => 
+            "savenotes";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_NOTES_COMMAND_SAVENOTES_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             NoteManagement.SaveNotes();
             return 0;

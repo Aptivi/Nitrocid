@@ -17,16 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using Nettify.Weather;
+using Nitrocid.Base.Languages;
+using Nitrocid.Extras.Forecast.Forecast.Interactive;
+using Terminaux.Inputs.Interactive;
+using Terminaux.Reader;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.ConsoleBase.Inputs;
-using Nettify.Weather;
-using Terminaux.Shell.Switches;
-using Terminaux.Inputs.Interactive;
-using Nitrocid.Extras.Forecast.Forecast.Interactive;
-using System;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {
@@ -52,8 +54,47 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
     /// </remarks>
     class WeatherCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "weather";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("tui", /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false,
+                    })
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "latitude", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "longitude", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC"
+                    }),
+                    new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("list", /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC", new SwitchOptions()
+                    {
+                        OptionalizeLastRequiredArguments = 3,
+                        AcceptsValues = true,
+                        ArgumentsRequired = true,
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (parameters.ContainsSwitch("-tui"))
             {
@@ -65,36 +106,37 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
                 InteractiveTuiTools.OpenInteractiveTui(tui);
                 return 0;
             }
-            if (parameters.ArgumentsList.Length <= 1)
-            {
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_LATLONPROMPT"), ThemeColorType.Error);
-                return 38;
-            }
-            string APIKey = Forecast.ApiKey;
-            if (parameters.ArgumentsList.Length > 2)
-            {
-                APIKey = parameters.ArgumentsList[2];
-            }
-            else if (string.IsNullOrEmpty(APIKey))
+
+            // Prompt for API key
+            string apiKey =
+                parameters.ArgumentsList.Length > 2 && !string.IsNullOrEmpty(parameters.ArgumentsList[2]) ?
+                parameters.ArgumentsList[2] :
+                Forecast.ApiKey;
+            if (string.IsNullOrEmpty(apiKey))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_APIKEY"));
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_APIKEYPROMPT") + " ", false, ThemeColorType.Input);
-                APIKey = InputTools.ReadLineNoInput();
-                Forecast.ApiKey = APIKey;
+                apiKey = TermReader.Read(password: true);
+                Forecast.ApiKey = apiKey;
             }
-            var ListMode = false;
-            if (parameters.ContainsSwitch("-list"))
-                ListMode = true;
+
+            // Either list or obtain
+            var ListMode = parameters.ContainsSwitch("-list");
             if (ListMode)
             {
-                var Cities = WeatherForecast.ListAllCities(SwitchManager.GetSwitchValue(parameters.SwitchesList, "-list"), APIKey);
+                var Cities = WeatherForecast.ListAllCities(SwitchManager.GetSwitchValue(parameters.SwitchesList, "-list"), apiKey);
                 ListWriterColor.WriteList(Cities);
             }
             else
             {
+                if (parameters.ArgumentsList.Length <= 1)
+                {
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_LATLONPROMPT"), ThemeColorType.Error);
+                    return 38;
+                }
                 double latitude = double.Parse(parameters.ArgumentsList[0]);
                 double longitude = double.Parse(parameters.ArgumentsList[1]);
-                Forecast.PrintWeatherInfo(latitude, longitude, APIKey);
+                Forecast.PrintWeatherInfo(latitude, longitude, apiKey);
             }
             return 0;
         }

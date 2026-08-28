@@ -17,16 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using Nitrocid.Base.Files.Editors.HexEdit;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using System;
 using Textify.General;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Misc.Reflection;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Files.Editors.HexEdit;
-using Nitrocid.Base.Kernel.Exceptions;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 {
@@ -38,39 +39,52 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
     /// </remarks>
     class PrintCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "print";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_PRINT_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             long ByteNumber;
             if (parameters.ArgumentsList.Length > 0)
             {
                 if (parameters.ArgumentsList.Length == 1)
                 {
+                    string startByteStr = parameters.ArgumentsList[0];
+
                     // We've only provided one range
-                    DebugWriter.WriteDebug(DebugLevel.I, "Byte number provided: {0}", vars: [parameters.ArgumentsList[0]]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", vars: [TextTools.IsStringNumeric(parameters.ArgumentsList[0])]);
-                    if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
+                    DebugWriter.WriteDebug(DebugLevel.I, "Byte number provided: {0}", vars: [startByteStr]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", vars: [TextTools.IsStringNumeric(startByteStr)]);
+                    if (TextTools.IsStringNumeric(startByteStr))
                     {
-                        ByteNumber = Convert.ToInt64(parameters.ArgumentsList[0]);
+                        ByteNumber = Convert.ToInt64(startByteStr);
                         HexEditTools.DisplayHex(ByteNumber);
                         return 0;
                     }
                     else
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMON_NOTNUMERIC"), true, ThemeColorType.Error);
-                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[0]]);
+                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [startByteStr]);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                     }
                 }
                 else
                 {
+                    string startByteStr = parameters.ArgumentsList[0];
+                    string endByteStr = parameters.ArgumentsList[1];
+
                     // We've provided two Byte numbers in the range
-                    DebugWriter.WriteDebug(DebugLevel.I, "Byte numbers provided: {0}, {1}", vars: [parameters.ArgumentsList[0], parameters.ArgumentsList[1]]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", vars: [TextTools.IsStringNumeric(parameters.ArgumentsList[0]), TextTools.IsStringNumeric(parameters.ArgumentsList[1])]);
-                    if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]) & TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
+                    DebugWriter.WriteDebug(DebugLevel.I, "Byte numbers provided: {0}, {1}", vars: [startByteStr, endByteStr]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", vars: [TextTools.IsStringNumeric(startByteStr), TextTools.IsStringNumeric(endByteStr)]);
+                    if (TextTools.IsStringNumeric(startByteStr) & TextTools.IsStringNumeric(endByteStr))
                     {
-                        long ByteNumberStart = Convert.ToInt64(parameters.ArgumentsList[0]);
-                        long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[1]);
+                        long ByteNumberStart = Convert.ToInt64(startByteStr);
+                        long ByteNumberEnd = Convert.ToInt64(endByteStr);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
                         HexEditTools.DisplayHex(ByteNumberStart, ByteNumberEnd);
                         return 0;
@@ -78,7 +92,7 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
                     else
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMON_NOTNUMERIC"), true, ThemeColorType.Error);
-                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[0]]);
+                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [startByteStr]);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                     }
                 }

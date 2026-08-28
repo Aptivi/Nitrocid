@@ -29,35 +29,10 @@ namespace Nitrocid.Extras.Calculators
 {
     internal class CalculatorsInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("calc", /* Localizable */ "NKS_CALCULATORS_COMMAND_CALC_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "expression", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_CALCULATORS_EXPRESSION"
-                        }),
-                    ], true)
-                ], new CalcCommand()),
-
-            new CommandInfo("imaginary", /* Localizable */ "NKS_CALCULATORS_COMMAND_IMAGINARY_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "real", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_CALCULATORS_REAL"
-                        }),
-                        new CommandArgumentPart(true, "imaginary", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_CALCULATORS_IMAG"
-                        }),
-                    ])
-                ], new ImaginaryCommand()),
+            new CalcCommand(),
+            new ImaginaryCommand(),
         ];
 
         public string AddonName =>

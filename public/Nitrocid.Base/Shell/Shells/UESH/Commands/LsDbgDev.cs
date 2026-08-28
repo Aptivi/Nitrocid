@@ -20,6 +20,7 @@
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug;
@@ -38,8 +39,16 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class LsDbgDevCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsdbgdev";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSDBGDEV_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
@@ -50,10 +59,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             }
 
             foreach (RemoteDebugDevice DebugDevice in RemoteDebugger.DebugDevices)
-            {
-                TextWriterColor.Write($"- {DebugDevice.ClientIP}: ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(DebugDevice.ClientName, true, ThemeColorType.ListValue);
-            }
+                ListEntryWriterColor.WriteListEntry(DebugDevice.ClientIP, DebugDevice.ClientName);
             return 0;
         }
 

@@ -60,10 +60,6 @@
       "text": "사용자 이름:"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES",
-      "text": "공백은 허용되지 않습니다."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS",
       "text": "특수 문자는 허용되지 않습니다."
     },
@@ -1734,10 +1730,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
       "text": "안전 모드와 유사하지만 다중 사용자 및 일부 사용자 정의도 비활성화합니다."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
-      "text": "색상은 다시 시작할 필요가 없지만 대부분의 설정은 다시 시작해야 합니다."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -7952,10 +7944,6 @@
       "text": "비밀번호를 변경할 사용자 이름"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC",
-      "text": "현재 사용자 비밀번호"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC",
       "text": "변경할 기존 사용자 이름"
     },
@@ -9430,6 +9418,14 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "기사 없음"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC",
+      "text": "설정할 값"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC",
+      "text": "고압축"
     }
   ]
 }

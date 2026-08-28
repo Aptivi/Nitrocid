@@ -17,14 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Users.Login;
-using Nitrocid.Base.Security.Permissions;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -42,8 +44,29 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class ChUsrNameCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "chusrname";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "oldUserName", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => [.. UserManagement.ListAllUsers()],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC",
+                    }),
+                    new CommandArgumentPart(true, "newUserName", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_NEWNAME_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
@@ -53,9 +76,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            UserManagement.ChangeUsername(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHUSRNAME_SUCCESS"), parameters.ArgumentsList[1]);
-            if (parameters.ArgumentsList[0] == UserManagement.CurrentUser.Username)
+            string oldUserName = parameters.ArgumentsList[0];
+            string newUserName = parameters.ArgumentsList[1];
+            UserManagement.ChangeUsername(oldUserName, newUserName);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHUSRNAME_SUCCESS"), newUserName);
+            if (oldUserName == UserManagement.CurrentUser.Username)
                 Login.LogoutRequested = true;
             return 0;
         }

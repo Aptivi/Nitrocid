@@ -19,12 +19,14 @@
 
 using System;
 using FluentFTP;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ShellPacks.Tools.Filesystem;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Tools.Filesystem;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {
@@ -36,8 +38,28 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
     /// </remarks>
     class SumFileCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "sumfile";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_SUMFILE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEFILE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "algorithm", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_ALGORITHM_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string RemoteFile = parameters.ArgumentsList[0];
             string Hash = parameters.ArgumentsList[1];

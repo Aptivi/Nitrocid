@@ -17,23 +17,25 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.IO;
-using Nitrocid.Base.Kernel;
-using Terminaux.Shell.Help;
-using Terminaux.Shell.Commands;
 using Nitrocid.Base.Files;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Files.Paths;
-using Terminaux.Themes.Colors;
+using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users;
 using Nitrocid.Extras.Mods.Modifications;
 using Nitrocid.Extras.Mods.Modifications.Interactive;
 using Terminaux.Inputs.Interactive;
-using System;
-using Nitrocid.Base.Users;
-using Nitrocid.Base.Kernel.Debugging;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Help;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Mods.Commands
 {
@@ -47,8 +49,37 @@ namespace Nitrocid.Extras.Mods.Commands
     /// </remarks>
     class ModManCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "modman";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMAN_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "mode", new()
+                    {
+                        ExactWording = ["start", "stop", "info", "reload", "install", "uninstall"],
+                        ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC"
+                    }),
+                    new CommandArgumentPart(true, "modfilename", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC"
+                    }),
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "mode", new()
+                    {
+                        ExactWording = ["list", "reloadall", "stopall", "startall", "tui"],
+                        ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC"
+                    }),
+                ]),
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
 #pragma warning disable NLOC0001
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
@@ -77,32 +108,14 @@ namespace Nitrocid.Extras.Mods.Commands
                     case "reload":
                     case "install":
                     case "uninstall":
+                        TargetMod = parameters.ArgumentsList[1];
+                        TargetModPath = FilesystemTools.NeutralizePath(TargetMod, PathsManagement.GetKernelPath(KernelPathType.Mods));
+                        if (!FilesystemTools.FileExists(TargetModPath))
                         {
-                            if (parameters.ArgumentsList.Length > 1)
-                            {
-                                TargetMod = parameters.ArgumentsList[1];
-                                TargetModPath = FilesystemTools.NeutralizePath(TargetMod, PathsManagement.GetKernelPath(KernelPathType.Mods));
-                                if (!(FilesystemTools.TryParsePath(TargetModPath) && FilesystemTools.FileExists(TargetModPath)))
-                                {
-                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODNOTFOUND"), true, ThemeColorType.Error);
-                                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchMod);
-                                }
-                            }
-                            else
-                            {
-                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODFILENEEDED"), true, ThemeColorType.Error);
-                                return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchMod);
-                            }
-
-                            break;
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_MODNOTFOUND"), true, ThemeColorType.Error);
+                            return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchMod);
                         }
-                    case "list":
-                        {
-                            if (parameters.ArgumentsList.Length > 1)
-                                ModListTerm = parameters.ArgumentsList[1];
-
-                            break;
-                        }
+                        break;
                 }
 
                 // Now, the actual logic
@@ -156,6 +169,8 @@ namespace Nitrocid.Extras.Mods.Commands
                         }
                     case "list":
                         {
+                            if (parameters.ArgumentsList.Length > 1)
+                                ModListTerm = parameters.ArgumentsList[1];
                             foreach (string Mod in ModManager.ListMods(ModListTerm).Keys)
                             {
                                 SeparatorWriterColor.WriteSeparatorColor(Mod, ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
@@ -208,7 +223,6 @@ namespace Nitrocid.Extras.Mods.Commands
                     default:
                         {
                             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MODS_MODMAN_NOCOMMAND"), true, ThemeColorType.Error, CommandMode);
-                            HelpPrint.ShowHelp("modman");
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.ModManagement);
                         }
                 }

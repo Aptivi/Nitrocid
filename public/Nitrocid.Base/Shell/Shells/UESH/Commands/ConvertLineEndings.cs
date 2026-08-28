@@ -17,12 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Files.LineEndings;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Files;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Files.LineEndings;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -49,36 +52,70 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// <term>-m</term>
     /// <description>Converts the line endings to the Mac OS 9 format (CR)</description>
     /// </item>
+    /// <item>
+    /// <term>-force</term>
+    /// <description>Forces conversion</description>
+    /// </item>
     /// </list>
     /// <br></br>
     /// </remarks>
     class ConvertLineEndingsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "convertlineendings";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "textfile", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_ARGUMENT_TEXTFILE_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("w", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_W_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["u", "m"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("u", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_U_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["m", "w"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("m", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_M_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["u", "w"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("force", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_FORCE_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            string TargetTextFile = parameters.ArgumentsList[0];
-            var TargetLineEnding = FilesystemTools.NewlineStyle;
-            bool force = false;
-            if (parameters.SwitchesList.Length != 0)
-            {
-                if (parameters.ContainsSwitch("-w"))
-                    TargetLineEnding = FilesystemNewlineStyle.CRLF;
-                if (parameters.ContainsSwitch("-u"))
-                    TargetLineEnding = FilesystemNewlineStyle.LF;
-                if (parameters.ContainsSwitch("-m"))
-                    TargetLineEnding = FilesystemNewlineStyle.CR;
-                if (parameters.ContainsSwitch("-force"))
-                    force = true;
-            }
+            string targetTextFile = parameters.ArgumentsList[0];
+            var targetLineEnding =
+                parameters.ContainsSwitch("-w") ? FilesystemNewlineStyle.CRLF :
+                parameters.ContainsSwitch("-u") ? FilesystemNewlineStyle.LF :
+                parameters.ContainsSwitch("-m") ? FilesystemNewlineStyle.CR :
+                FilesystemTools.NewlineStyle;
+            bool force = parameters.ContainsSwitch("-force");
 
             // Convert the line endings
-            if (FilesystemTools.IsBinaryFile(TargetTextFile) && !force)
+            if (FilesystemTools.IsBinaryFile(targetTextFile) && !force)
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CONVERTLINEENDINGS_BINARYFILE"), true, ThemeColorType.Error);
                 return 7;
             }
-            FilesystemTools.ConvertLineEndings(TargetTextFile, TargetLineEnding, force);
+            FilesystemTools.ConvertLineEndings(targetTextFile, targetLineEnding, force);
             return 0;
         }
 

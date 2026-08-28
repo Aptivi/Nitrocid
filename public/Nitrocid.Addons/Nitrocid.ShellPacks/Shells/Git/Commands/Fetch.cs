@@ -17,13 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using LibGit2Sharp;
-using GitCommand = LibGit2Sharp.Commands;
 using System.Linq;
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
+using LibGit2Sharp;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using GitCommand = LibGit2Sharp.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -35,8 +38,24 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     /// </remarks>
     class FetchCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "fetch";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_FETCH_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "remote", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_FETCH_ARGUMENT_REMOTE_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var status = GitShellCommon.Repository.RetrieveStatus();
 

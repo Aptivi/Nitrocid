@@ -22,6 +22,8 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.Base.Shell.Shells.Admin.Commands
 {
@@ -33,8 +35,24 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
     /// </remarks>
     class UserInfoCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "userinfo";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERINFO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "user", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_USER_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Get the requested username
             string userName = parameters.ArgumentsList.Length > 0 ? parameters.ArgumentsList[0] : UserManagement.CurrentUser.Username;

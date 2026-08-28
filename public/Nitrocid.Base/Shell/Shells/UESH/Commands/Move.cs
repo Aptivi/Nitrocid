@@ -17,9 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Files;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Security.Permissions;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -31,11 +34,33 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class MoveCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "move";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_MOVE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "source", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MOVE_ARGUMENT_SOURCE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "target", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MOVE_ARGUMENT_TARGET_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
-            FilesystemTools.MoveFileOrDir(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            string source = parameters.ArgumentsList[0];
+            string target = parameters.ArgumentsList[1];
+            FilesystemTools.MoveFileOrDir(source, target);
             return 0;
         }
     }

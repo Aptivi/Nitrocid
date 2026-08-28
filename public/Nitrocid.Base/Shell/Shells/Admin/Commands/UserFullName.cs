@@ -22,30 +22,48 @@ using Terminaux.Shell.Commands;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Kernel.Exceptions;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.Base.Shell.Shells.Admin.Commands
 {
     class UserFullNameCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "userfullname";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "user", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_USER_DESC"
+                    }),
+                    new CommandArgumentPart(true, "name/clear", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_ARGUMENT_NEWNAME_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string userName = parameters.ArgumentsList[0];
             string fullName = parameters.ArgumentsList[1];
+            string finalFullName = "";
             int userIndex = UserManagement.GetUserIndex(userName);
-            if (fullName == "clear")
+            if (fullName != "clear")
+                finalFullName = fullName;
+            if (!string.IsNullOrWhiteSpace(fullName))
             {
                 // Now, change the name in the user config
-                UserManagement.Users[userIndex].FullName = "";
+                UserManagement.Users[userIndex].FullName = finalFullName;
                 UserManagement.SaveUsers();
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERFULLNAME_SUCCESS"), fullName);
-            }
-            else if (!string.IsNullOrWhiteSpace(fullName))
-            {
-                // Now, change the name in the user config
-                UserManagement.Users[userIndex].FullName = fullName;
-                UserManagement.SaveUsers();
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERFULLNAME_SUCCESS"), fullName);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERFULLNAME_SUCCESS"), finalFullName);
             }
             else
             {

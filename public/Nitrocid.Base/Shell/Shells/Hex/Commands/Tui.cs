@@ -17,10 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
-using Terminaux.Inputs.Styles.Editor;
-using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Inputs.Styles.Editor;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 {
@@ -32,8 +33,13 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
     /// </remarks>
     class TuiCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "tui";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_TUI_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var FileBytes = HexEditShellCommon.FileBytes ??
                 throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));

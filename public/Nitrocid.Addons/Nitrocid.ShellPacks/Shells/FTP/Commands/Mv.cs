@@ -17,12 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ShellPacks.Tools.Filesystem;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Tools.Filesystem;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
@@ -37,8 +39,28 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
     /// </remarks>
     class MvCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "mv";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_MV_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "sourcefileordir", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_SOURCEFILEORDIR_DESC"
+                    }),
+                    new CommandArgumentPart(true, "targetfileordir", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_TARGETFILEORDIR_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_MOVING"), true, ThemeColorType.Progress, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             if (FTPFilesystem.FTPMoveItem(parameters.ArgumentsList[0], parameters.ArgumentsList[1]))

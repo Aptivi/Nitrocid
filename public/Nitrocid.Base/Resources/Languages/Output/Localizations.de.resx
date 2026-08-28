@@ -97,9 +97,6 @@
   <data name="NKS_USERS_LOGIN_USERNAMEPROMPT" xml:space="preserve">
     <value>Benutzername: </value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES" xml:space="preserve">
-    <value>Leerzeichen sind nicht erlaubt.</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS" xml:space="preserve">
     <value>Sonderzeichen sind nicht erlaubt.</value>
   </data>
@@ -1353,9 +1350,6 @@
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC" xml:space="preserve">
     <value>Wie der abgesicherte Modus, deaktiviert aber auch den Mehrbenutzermodus und einige Anpassungen</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS" xml:space="preserve">
-    <value>Farben erfordern keinen Neustart, aber die meisten Einstellungen erfordern einen Neustart.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC" xml:space="preserve">
     <value>Ersetzt ein Wort oder einen Satz durch einen anderen unter Verwendung regulärer Ausdrücke</value>
@@ -6016,9 +6010,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC" xml:space="preserve">
     <value>Benutzername zum Ändern des Passworts</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC" xml:space="preserve">
-    <value>Aktuelles Benutzerkennwort</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC" xml:space="preserve">
     <value>Alter Benutzername zum Ändern</value>
   </data>
@@ -7125,5 +7116,11 @@
   </data>
   <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
     <value>Keine Artikel</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC" xml:space="preserve">
+    <value>Einstellwert:</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC" xml:space="preserve">
+    <value>Hohe Kompression</value>
   </data>
 </root>

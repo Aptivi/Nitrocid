@@ -17,18 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration.Instances;
+using Nitrocid.Base.Kernel.Configuration.Settings;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Kernel.Configuration.Settings;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
-using Nitrocid.Base.Kernel.Configuration.Instances;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Security.Permissions;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -39,8 +41,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// This command starts up the Settings application, which allows you to change the kernel settings available to you. It's the successor to the defunct Nitrocid Configuration Tool application, and is native to the kernel.
     /// It starts with the list of sections to start from. Once the user selects one, they'll be greeted with various options that are configurable. When they choose one, they'll be able to change the setting there.
     /// If you just want to try out a setting without saving to the configuration file, you can change a setting and exit it immediately. It only survives the current session until you decide to save the changes to the configuration file.
-    /// Some settings allow you to specify a string, a number, or by the usage of another API, like the ColorWheel() tool.
-    /// In the string or long string values, if you used the /clear value, it will blank out the value. In some settings, if you just pressed ENTER, it'll use the same value that the kernel uses at the moment.
     /// We've made sure that this application is user-friendly.
     /// <br></br>
     /// <br></br>
@@ -52,10 +52,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// <term>Switches</term>
     /// <description>Description</description>
     /// </listheader>
-    /// <item>
-    /// <term>-sel</term>
-    /// <description>Opens the legacy selection-style-based settings instead of the interactive TUI</description>
-    /// </item>
     /// <item>
     /// <term>-saver</term>
     /// <description>Opens the screensaver settings</description>
@@ -86,8 +82,49 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class SettingsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "settings";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo([
+                    new SwitchInfo("saver", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SCREENSAVER_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["splash", "addonsplash", "type", "addonsaver", "driver"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("addonsaver", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_ADDONSAVER_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["splash", "addonsplash", "type", "saver", "driver"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("splash", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["saver", "addonsplash", "type", "addonsaver", "driver"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("addonsplash", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_ADDONSPLASH_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["saver", "splash", "type", "addonsaver", "driver"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("driver", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_DRIVER_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["saver", "addonsplash", "type", "addonsaver", "splash"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("type", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_TYPE_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["saver", "addonsplash", "splash", "addonsaver", "driver"],
+                        ArgumentsRequired = true
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
@@ -137,7 +174,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        public override void HelpHelper()
+        public override void HelpHelper(IShell? shell)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_TYPELISTING") + ": ", true, ThemeColorType.Tip);
             TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_BASE") + ": ", true, ThemeColorType.ListTitle);

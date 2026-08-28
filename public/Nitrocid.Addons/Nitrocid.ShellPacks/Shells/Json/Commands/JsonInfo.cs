@@ -17,12 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Newtonsoft.Json.Linq;
 using System.Linq;
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
+using Newtonsoft.Json.Linq;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
 {
@@ -31,8 +35,31 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
     /// </summary>
     class JsonInfoCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "jsoninfo";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("simplified", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("showvals", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Base info
             SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.Separator));

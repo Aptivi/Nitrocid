@@ -18,7 +18,12 @@
 //
 
 using LibGit2Sharp;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -30,8 +35,35 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     /// </remarks>
     class ResetCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "reset";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_RESET_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("soft", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_SOFT_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["hard", "mixed"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("mixed", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_MIXED_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["soft", "hard"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("hard", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_HARD_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["soft", "mixed"],
+                        AcceptsValues = false
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Assume that we want to do a soft reset
             var resetMode = ResetMode.Soft;

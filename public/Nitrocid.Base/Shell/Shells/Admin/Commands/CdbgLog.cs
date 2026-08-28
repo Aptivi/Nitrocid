@@ -21,6 +21,7 @@ using System;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
@@ -36,8 +37,13 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
     /// </remarks>
     class CdbgLogCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "cdbglog";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_CDBGLOG_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (KernelEntry.DebugMode)
             {

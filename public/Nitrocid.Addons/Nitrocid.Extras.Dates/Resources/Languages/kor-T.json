@@ -278,6 +278,30 @@
     {
       "loc": "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC",
       "text": "대상 제품이 만료 날짜를 명시적으로 지정하지 않았는지 여부"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_PREPRODUCTION",
+      "text": "사전 제작"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_EXPIRED",
+      "text": "만료됨"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_POOR",
+      "text": "나쁨"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_AVERAGE",
+      "text": "보통"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_GOOD",
+      "text": "좋음"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_EXCELLENT",
+      "text": "훌륭함"
     }
   ]
 }

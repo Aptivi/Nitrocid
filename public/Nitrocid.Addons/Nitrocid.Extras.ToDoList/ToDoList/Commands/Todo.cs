@@ -19,11 +19,13 @@
 
 using System;
 using System.Linq;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
 {
@@ -35,8 +37,37 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
     /// </remarks>
     class TodoCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "todo";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_TODO_COMMAND_TODO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "mode", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["add", "remove", "done", "undone"],
+                        ArgumentDescription = /* Localizable */ "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC"
+                    }),
+                    new CommandArgumentPart(true, "taskname", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC"
+                    }),
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "mode", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["list", "save", "load"],
+                        ArgumentDescription = /* Localizable */ "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC"
+                    }),
+                ]),
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string Action = parameters.ArgumentsList[0];
 
@@ -47,23 +78,15 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                 case "add":
                     {
                         // User chose to add a task
-                        if (ActionArguments.Length != 0)
+                        try
                         {
-                            try
-                            {
-                                ToDoManager.AddTask(ActionArguments[0]);
-                            }
-                            catch (Exception ex)
-                            {
-                                DebugWriter.WriteDebugStackTrace(ex);
-                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_TODO_ADDREMOVEFAILED") + " {0}", true, ThemeColorType.Error, ex.Message);
-                                return ex.GetHashCode();
-                            }
+                            ToDoManager.AddTask(ActionArguments[0]);
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_TODO_NAMENEEDED"), true, ThemeColorType.Error);
-                            return 5;
+                            DebugWriter.WriteDebugStackTrace(ex);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_TODO_ADDREMOVEFAILED") + " {0}", true, ThemeColorType.Error, ex.Message);
+                            return ex.GetHashCode();
                         }
 
                         return 0;
@@ -71,23 +94,15 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                 case "remove":
                     {
                         // User chose to remove a task
-                        if (ActionArguments.Length != 0)
+                        try
                         {
-                            try
-                            {
-                                ToDoManager.RemoveTask(ActionArguments[0]);
-                            }
-                            catch (Exception ex)
-                            {
-                                DebugWriter.WriteDebugStackTrace(ex);
-                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_TODO_ADDREMOVEFAILED") + " {0}", true, ThemeColorType.Error, ex.Message);
-                                return ex.GetHashCode();
-                            }
+                            ToDoManager.RemoveTask(ActionArguments[0]);
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_TODO_NAMENEEDED"), true, ThemeColorType.Error);
-                            return 5;
+                            DebugWriter.WriteDebugStackTrace(ex);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_TODO_ADDREMOVEFAILED") + " {0}", true, ThemeColorType.Error, ex.Message);
+                            return ex.GetHashCode();
                         }
 
                         return 0;
@@ -95,23 +110,15 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                 case "done":
                     {
                         // User chose to mark a task as done
-                        if (ActionArguments.Length != 0)
+                        try
                         {
-                            try
-                            {
-                                ToDoManager.SetDone(ActionArguments[0]);
-                            }
-                            catch (Exception ex)
-                            {
-                                DebugWriter.WriteDebugStackTrace(ex);
-                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_TODO_MARKFAILED") + " {0}", true, ThemeColorType.Error, ex.Message);
-                                return ex.GetHashCode();
-                            }
+                            ToDoManager.SetDone(ActionArguments[0]);
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_TODO_NAMENEEDED"), true, ThemeColorType.Error);
-                            return 5;
+                            DebugWriter.WriteDebugStackTrace(ex);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_TODO_MARKFAILED") + " {0}", true, ThemeColorType.Error, ex.Message);
+                            return ex.GetHashCode();
                         }
 
                         return 0;
@@ -119,23 +126,15 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                 case "undone":
                     {
                         // User chose to mark a task as undone
-                        if (ActionArguments.Length != 0)
+                        try
                         {
-                            try
-                            {
-                                ToDoManager.SetUndone(ActionArguments[0]);
-                            }
-                            catch (Exception ex)
-                            {
-                                DebugWriter.WriteDebugStackTrace(ex);
-                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_TODO_MARKFAILED") + " {0}", true, ThemeColorType.Error, ex.Message);
-                                return ex.GetHashCode();
-                            }
+                            ToDoManager.SetUndone(ActionArguments[0]);
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_TODO_NAMENEEDED"), true, ThemeColorType.Error);
-                            return 5;
+                            DebugWriter.WriteDebugStackTrace(ex);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_TODO_MARKFAILED") + " {0}", true, ThemeColorType.Error, ex.Message);
+                            return ex.GetHashCode();
                         }
 
                         return 0;

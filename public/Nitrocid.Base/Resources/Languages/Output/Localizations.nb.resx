@@ -97,9 +97,6 @@
   <data name="NKS_USERS_LOGIN_USERNAMEPROMPT" xml:space="preserve">
     <value>Brukernavn:</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES" xml:space="preserve">
-    <value>Plasser er ikke tillatt.</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS" xml:space="preserve">
     <value>Spesialtegn er ikke tillatt.</value>
   </data>
@@ -1353,9 +1350,6 @@
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC" xml:space="preserve">
     <value>Som sikker modus, men deaktiverer også flerbruker og litt tilpasning</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS" xml:space="preserve">
-    <value>Farger krever ikke omstart, men de fleste innstillingene krever omstart.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC" xml:space="preserve">
     <value>Erstatter et ord eller en setning med et annet ved hjelp av regulære uttrykk</value>
@@ -6016,9 +6010,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC" xml:space="preserve">
     <value>Brukernavn for å endre passord</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC" xml:space="preserve">
-    <value>Gjeldende brukerpassord</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC" xml:space="preserve">
     <value>Gammelt brukernavn å endre</value>
   </data>
@@ -7125,5 +7116,11 @@
   </data>
   <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
     <value>Ingen artikler</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC" xml:space="preserve">
+    <value>Verdi som skal settes til</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC" xml:space="preserve">
+    <value>Høy komprimering</value>
   </data>
 </root>

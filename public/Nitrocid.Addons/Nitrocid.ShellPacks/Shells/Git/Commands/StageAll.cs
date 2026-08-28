@@ -17,13 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using LibGit2Sharp;
-using GitCommand = LibGit2Sharp.Commands;
 using System;
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
+using LibGit2Sharp;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using GitCommand = LibGit2Sharp.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -35,8 +38,13 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     /// </remarks>
     class StageAllCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "stageall";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_STAGEALL_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var status = GitShellCommon.Repository.RetrieveStatus();
 

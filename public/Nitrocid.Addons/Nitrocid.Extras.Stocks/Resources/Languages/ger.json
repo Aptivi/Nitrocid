@@ -122,6 +122,10 @@
     {
       "loc": "NKS_STOCKS_TUI_HELP02_BODY",
       "text": "Die interaktive Benutzeroberfläche (TUI) liefert Ihnen Aktieninformationen zu einem bestimmten Unternehmen, das Sie beobachten, wie z. B. Eröffnungs- und Schlusskurse, Höchst- und Tiefstkurse und weitere Informationen. Da sich diese Informationen stündlich ändern, sollten Sie die Kurse möglichst genau verfolgen, um die Kursentwicklung eines Unternehmens umfassend zu verstehen."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "AlphaVantage API-Schlüssel"
     }
   ]
 }

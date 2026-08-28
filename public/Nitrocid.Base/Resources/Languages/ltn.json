@@ -59,10 +59,6 @@
       "text": "Nomen usoris:"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES",
-      "text": "Spatia non permittuntur."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS",
       "text": "Praecipua ingenia non permittuntur."
     },
@@ -1733,10 +1729,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
       "text": "Modus tutus similis, sed etiam multi-usor et quidam css"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
-      "text": "Colores non requirunt sileo, sed pleraeque uncinis sileo requirunt."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -7951,10 +7943,6 @@
       "text": "User nomen mutare password"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC",
-      "text": "Current user password"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC",
       "text": "Vetus usoris mutare"
     },
@@ -9429,6 +9417,14 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "Nullae commentationes"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC",
+      "text": "Valor ad quem statuendus est"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC",
+      "text": "Alta compressio"
     }
   ]
 }

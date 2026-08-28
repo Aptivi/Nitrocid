@@ -17,17 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Styles.Selection;
-using Terminaux.Themes;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Files;
-using Terminaux.Shell.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Terminaux.Inputs.Styles;
-using Terminaux.Themes.Colors;
+using Nitrocid.Base.Files;
 using Nitrocid.Base.Languages;
+using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Selection;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -39,15 +41,31 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class ThemePrevCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "themeprev";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_THEMEPREV_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "theme", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_THEMEPREV_ARGUMENT_THEMENAME_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string selectedTheme;
             string ThemePath;
 
             bool bail = false;
             int step = 1;
-            string[] categoryNames = Enum.GetNames(typeof(ThemeCategory));
+            string[] categoryNames = Enum.GetNames<ThemeCategory>();
             int categoryIndex = 0;
             while (!bail)
             {
@@ -154,7 +172,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        public override void HelpHelper() =>
+        public override void HelpHelper(IShell? shell) =>
             TextWriterColor.Write("<Theme>: ThemeName.json, " + string.Join(", ", ThemeTools.GetInstalledThemes().Keys));
 
     }

@@ -114,6 +114,10 @@
     {
       "loc": "NKS_STOCKS_TUI_HELP02_BODY",
       "text": "Interfața interactivă TUI vă oferă informații despre acțiunile unei anumite companii pe care o urmăriți, cum ar fi prețurile de deschidere și închidere ale acțiunilor, prețurile maxime și minime ale acțiunilor și alte informații. Aceste informații se schimbă în fiecare oră, așa că va trebui să urmăriți prețurile cât mai atent posibil pentru a avea o înțelegere profundă a modului în care performează prețurile acțiunilor unei companii."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "Cheia API AlphaVantage"
     }
   ]
 }

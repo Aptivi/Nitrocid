@@ -128,10 +128,6 @@
       "text": "Starten Sie automatisch die Kernel-Modifikationen beim Booten."
     },
     {
-      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
-      "text": "Mod-Datei ist nicht angegeben."
-    },
-    {
       "loc": "NKS_MODS_MODUPDATING",
       "text": "Versuch, einen bereits installierten Mod zu installieren. Mod aktualisieren..."
     },

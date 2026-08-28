@@ -32,12 +32,6 @@ namespace Nitrocid.Extras.ChatbotAI.Shell
     /// </summary>
     internal class ChatbotShellInfo : BaseShellInfo<ChatbotShell>, IShellInfo
     {
-        /// <summary>
-        /// Chatbot AI commands
-        /// </summary>
-        public override List<CommandInfo> Commands =>
-        [ ];
-
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
         {
             { "Default", new ChatbotDefaultPreset() },
@@ -55,15 +49,6 @@ namespace Nitrocid.Extras.ChatbotAI.Shell
 
         public override bool SlashCommand => true;
 
-        public override CommandInfo NonSlashCommandInfo => new("prompt", /* Localizable */ "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
-            [
-                new CommandArgumentInfo(
-                [
-                    new CommandArgumentPart(true, "promptString", new CommandArgumentPartOptions()
-                    {
-                        ArgumentDescription = /* Localizable */ "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC"
-                    })
-                ])
-            ], new PromptCommand());
+        public override BaseCommand NonSlashCommandInfo => new PromptCommand();
     }
 }

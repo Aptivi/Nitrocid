@@ -277,6 +277,30 @@
     {
       "loc": "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC",
       "text": "Apakah produk target tidak menentukan tanggal kedaluwarsa secara eksplisit"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_PREPRODUCTION",
+      "text": "Pra-produksi"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_EXPIRED",
+      "text": "Kedaluwarsa"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_POOR",
+      "text": "Buruk"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_AVERAGE",
+      "text": "Rata-rata"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_GOOD",
+      "text": "Baik"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_EXCELLENT",
+      "text": "Sangat Baik"
     }
   ]
 }

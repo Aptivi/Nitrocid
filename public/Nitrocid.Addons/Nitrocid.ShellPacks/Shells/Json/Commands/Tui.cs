@@ -17,14 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Tools;
+using Terminaux.Inputs.Styles.Editor;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ShellPacks.Tools;
-using Nitrocid.Base.Files;
-using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
-using System.Collections.Generic;
-using Terminaux.Inputs.Styles.Editor;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
 {
@@ -36,8 +38,13 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
     /// </remarks>
     class TuiCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "tui";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_TUI_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (JsonShellCommon.FileStream is null)
             {

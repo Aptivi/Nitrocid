@@ -17,9 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Tools;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
 {
@@ -31,17 +35,32 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
     /// </remarks>
     class PrintCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "print";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_PRINT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "propertyName", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC"
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (parameters.ArgumentsList.Length > 0)
-            {
                 TextWriterColor.Write(JsonTools.SerializeToString(parameters.ArgumentsText));
-            }
             else
-            {
                 TextWriterColor.Write(JsonTools.SerializeToString("$"));
-            }
             return 0;
         }
 

@@ -18,17 +18,18 @@
 //
 
 using System;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Network.Transfer;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Files;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Network;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Network.Transfer;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -40,23 +41,45 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class GetCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "get";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GET_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+             [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "url", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GET_ARGUMENT_URL_DESC"
+                    })
+                ],
+                [
+                    new SwitchInfo("outputpath", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GET_SWITCH_OUTPUTPATH_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            int RetryCount = 1;
-            string URL = parameters.ArgumentsList[0];
+            int retryCount = 1;
+            string url = parameters.ArgumentsList[0];
             string outputPath = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-outputpath");
             int failCode = 0;
-            DebugWriter.WriteDebug(DebugLevel.I, "URL: {0}", vars: [URL]);
-            while (RetryCount <= Config.MainConfig.DownloadRetries)
+            DebugWriter.WriteDebug(DebugLevel.I, "URL: {0}", vars: [url]);
+            while (retryCount <= Config.MainConfig.DownloadRetries)
             {
                 try
                 {
-                    if (!URL.StartsWith("ftp://") || !URL.StartsWith("ftps://") || !URL.StartsWith("ftpes://"))
+                    if (!url.StartsWith("ftp://") || !url.StartsWith("ftps://") || !url.StartsWith("ftpes://"))
                     {
-                        if (!string.IsNullOrEmpty(URL))
+                        if (!string.IsNullOrEmpty(url))
                         {
-                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GET_DOWNLOADING"), URL);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GET_DOWNLOADING"), url);
                             if (string.IsNullOrEmpty(outputPath))
                             {
                                 // Use the current output path
@@ -86,10 +109,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 }
                 catch (Exception ex)
                 {
-                    NetworkTools.TransferFinished = false;
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GET_FAILEDTRY"), true, ThemeColorType.Error, RetryCount, ex.Message);
-                    RetryCount += 1;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Try count: {0}", vars: [RetryCount]);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GET_FAILEDTRY"), true, ThemeColorType.Error, retryCount, ex.Message);
+                    retryCount += 1;
+                    DebugWriter.WriteDebug(DebugLevel.I, "Try count: {0}", vars: [retryCount]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     failCode = ex.GetHashCode();
                 }

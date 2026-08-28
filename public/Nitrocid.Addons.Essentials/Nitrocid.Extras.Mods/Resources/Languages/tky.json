@@ -120,10 +120,6 @@
       "text": "Önyükleme sırasında çekirdek değişikliklerini otomatik olarak başlat."
     },
     {
-      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
-      "text": "Mod dosyası belirtilmemiş."
-    },
-    {
       "loc": "NKS_MODS_MODUPDATING",
       "text": "Zaten kurulu bir modu yüklemeye çalışıyorum. Mod güncelleniyor..."
     },

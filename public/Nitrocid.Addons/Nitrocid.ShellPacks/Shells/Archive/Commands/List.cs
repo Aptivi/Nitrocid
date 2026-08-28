@@ -18,13 +18,17 @@
 //
 
 using System.Collections.Generic;
-using SharpCompress.Archives;
-using Terminaux.Shell.Commands;
 using Nitrocid.Base.Kernel.Debugging;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.ShellPacks.Tools;
+using SharpCompress.Archives;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Archive.Commands
 {
@@ -36,8 +40,27 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Commands
     /// </remarks>
     class ListCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "list";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_LIST_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "directory", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC"
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             List<IArchiveEntry> Entries;
             if (parameters.ArgumentsList.Length > 0)
@@ -54,13 +77,9 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Commands
             {
                 TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, Entry.Key ?? "");
                 if (!Entry.IsDirectory) // Entry is a file
-                {
                     TextWriterColor.Write("{0} ({1})", true, ThemeColorType.ListValue, Entry.CompressedSize.SizeString(), Entry.Size.SizeString());
-                }
                 else
-                {
                     TextWriterRaw.Write();
-                }
             }
             return 0;
         }

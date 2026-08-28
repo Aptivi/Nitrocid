@@ -63,10 +63,6 @@
       "text": "Brukernavn:"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES",
-      "text": "Plasser er ikke tillatt."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS",
       "text": "Spesialtegn er ikke tillatt."
     },
@@ -1737,10 +1733,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
       "text": "Som sikker modus, men deaktiverer også flerbruker og litt tilpasning"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
-      "text": "Farger krever ikke omstart, men de fleste innstillingene krever omstart."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -7955,10 +7947,6 @@
       "text": "Brukernavn for å endre passord"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC",
-      "text": "Gjeldende brukerpassord"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC",
       "text": "Gammelt brukernavn å endre"
     },
@@ -9433,6 +9421,14 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "Ingen artikler"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC",
+      "text": "Verdi som skal settes til"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC",
+      "text": "Høy komprimering"
     }
   ]
 }

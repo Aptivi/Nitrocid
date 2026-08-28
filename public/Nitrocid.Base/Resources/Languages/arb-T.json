@@ -85,10 +85,6 @@
       "text": "اسم المستخدم:"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES",
-      "text": "لا يسمح الفراغات."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS",
       "text": "يمنع استعمال الرموز."
     },
@@ -1759,10 +1755,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
       "text": "مثل الوضع الآمن ، ولكن أيضًا يعطل تعدد المستخدمين وبعض التخصيص"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
-      "text": "لا تتطلب الألوان إعادة التشغيل ، لكن معظم الإعدادات تتطلب إعادة التشغيل."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -7977,10 +7969,6 @@
       "text": "اسم المستخدم لتغيير كلمة المرور"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC",
-      "text": "كلمة مرور المستخدم الحالية"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC",
       "text": "اسم المستخدم القديم للتغيير"
     },
@@ -9455,6 +9443,14 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "لا توجد مقالات"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC",
+      "text": "القيمة المراد ضبطها على"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC",
+      "text": "ضغط عالي"
     }
   ]
 }

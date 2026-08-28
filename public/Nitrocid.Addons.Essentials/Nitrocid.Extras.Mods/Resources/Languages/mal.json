@@ -122,10 +122,6 @@
       "text": "Mulakan pengubahsuaian kernel secara automatik semasa but."
     },
     {
-      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
-      "text": "Fail mod tidak dinyatakan."
-    },
-    {
       "loc": "NKS_MODS_MODUPDATING",
       "text": "Cuba memasang mod yang sudah dipasang. Mengemas kini mod..."
     },

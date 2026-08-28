@@ -29,18 +29,9 @@ namespace Nitrocid.Extras.Images
 {
     internal class ImagesInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("preview", /* Localizable */ "NKS_IMAGES_COMMAND_PREVIEW_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "imageFile", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC"
-                        }),
-                    ])
-                ], new PreviewCommand()),
+            new PreviewCommand(),
         ];
 
         public string AddonName =>

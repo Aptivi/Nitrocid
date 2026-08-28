@@ -17,9 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 {
@@ -31,8 +33,13 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
     /// </remarks>
     class PwdrCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "pwdr";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDR_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_REMOTEDIR"), SFTPShellCommon.SFTPCurrentRemoteDir ?? "");
             return 0;

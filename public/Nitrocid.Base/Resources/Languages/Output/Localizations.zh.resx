@@ -97,9 +97,6 @@
   <data name="NKS_USERS_LOGIN_USERNAMEPROMPT" xml:space="preserve">
     <value>用戶名：</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES" xml:space="preserve">
-    <value>不允許有空格。</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS" xml:space="preserve">
     <value>不允許有特殊字符。</value>
   </data>
@@ -1353,9 +1350,6 @@
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC" xml:space="preserve">
     <value>喜歡安全模式，但也禁用多用戶和一些自定義</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS" xml:space="preserve">
-    <value>顏色不需要重新啟動，但大多數設置都需要重新啟動。</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC" xml:space="preserve">
     <value>使用正則表達式將單詞或短語替換為另一個單詞或短語</value>
@@ -6016,9 +6010,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC" xml:space="preserve">
     <value>修改密碼的使用者名稱</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC" xml:space="preserve">
-    <value>目前用戶密碼</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC" xml:space="preserve">
     <value>更改舊用戶名</value>
   </data>
@@ -7125,5 +7116,11 @@
   </data>
   <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
     <value>沒有文章</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC" xml:space="preserve">
+    <value>設定為</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC" xml:space="preserve">
+    <value />
   </data>
 </root>

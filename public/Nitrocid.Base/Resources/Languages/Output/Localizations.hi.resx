@@ -97,9 +97,6 @@
   <data name="NKS_USERS_LOGIN_USERNAMEPROMPT" xml:space="preserve">
     <value>उपयोगकर्ता नाम:</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES" xml:space="preserve">
-    <value>रिक्त स्थान की अनुमति नहीं है।</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS" xml:space="preserve">
     <value>विशेष वर्णों की अनुमति नहीं है।</value>
   </data>
@@ -1353,9 +1350,6 @@
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC" xml:space="preserve">
     <value>सुरक्षित मोड की तरह, लेकिन बहु-उपयोगकर्ता और कुछ अनुकूलन को भी अक्षम करता है</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS" xml:space="preserve">
-    <value>रंगों को पुनरारंभ करने की आवश्यकता नहीं है, लेकिन अधिकांश सेटिंग्स को पुनरारंभ करने की आवश्यकता होती है।</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC" xml:space="preserve">
     <value>रेगुलर एक्सप्रेशन का उपयोग करके किसी शब्द या वाक्यांश को दूसरे से बदल देता है</value>
@@ -6016,9 +6010,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC" xml:space="preserve">
     <value>पासवर्ड बदलने के लिए उपयोगकर्ता नाम</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC" xml:space="preserve">
-    <value>वर्तमान उपयोगकर्ता पासवर्ड</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC" xml:space="preserve">
     <value>पुराना उपयोगकर्ता नाम बदलना है</value>
   </data>
@@ -7125,5 +7116,11 @@
   </data>
   <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
     <value>कोई लेख नहीं</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC" xml:space="preserve">
+    <value>सेट करने के लिए मान</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC" xml:space="preserve">
+    <value>हाई कम्प्रेशन</value>
   </data>
 </root>

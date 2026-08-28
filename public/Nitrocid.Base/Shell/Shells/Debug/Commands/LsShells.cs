@@ -33,8 +33,16 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     /// </remarks>
     class LsShellsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsshells";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSSHELLS_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSSHELLS_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
 
@@ -44,7 +52,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
             return 0;
         }
 
-        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
+        public override int ExecuteDumb(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSSHELLS_TITLE"));
 

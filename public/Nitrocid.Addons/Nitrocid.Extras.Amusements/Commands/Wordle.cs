@@ -17,15 +17,44 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Languages;
 using Nitrocid.Extras.Amusements.Amusements.Games;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Extras.Amusements.Commands
 {
     class WordleCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "wordle";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_WORDLE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo([
+                    new SwitchInfo("orig", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("common", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["uncommon"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("uncommon", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["common"],
+                        AcceptsValues = false
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool useOrig = parameters.ContainsSwitch("-orig");
             var wordDifficulty =

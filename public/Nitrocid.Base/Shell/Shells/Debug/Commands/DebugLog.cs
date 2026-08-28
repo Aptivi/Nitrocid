@@ -25,6 +25,8 @@ using System;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Files.Paths;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -36,8 +38,27 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     /// </remarks>
     class DebugLogCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "debuglog";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_DEBUGLOG_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "sessionGuid", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_DEBUGLOG_ARGUMENT_SESSIONGUID_DESC"
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Try to parse the session GUID.
             string sessionGuidStr = parameters.ArgumentsList[0];

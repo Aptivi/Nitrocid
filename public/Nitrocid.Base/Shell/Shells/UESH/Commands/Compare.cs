@@ -17,12 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Terminaux.Themes.Colors;
 using Nitrocid.Base.Files;
-using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -34,8 +36,28 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class CompareCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "compare";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COMPARE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "source", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_COMPARE_ARGUMENT_SOURCEINPUT_DESC"
+                    }),
+                    new CommandArgumentPart(true, "target", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_COMPARE_ARGUMENT_TARGETINPUT_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string pathOne = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             string pathTwo = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);

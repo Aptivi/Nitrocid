@@ -63,10 +63,6 @@
       "text": "API キーを入力してください:"
     },
     {
-      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
-      "text": "ID を持つ都市のリストについては、以下のリンクを参照するか、このコマンドに「-list」を渡すことができます。"
-    },
-    {
       "loc": "NKS_FORECAST_SETTINGS_DESC",
       "text": "このセクションでは、予測の動作方法を構成できます。"
     },

@@ -18,14 +18,16 @@
 //
 
 using Newtonsoft.Json.Linq;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Extras.Stocks.Interactives;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Transfer;
-using Terminaux.Shell.Commands;
+using Nitrocid.Extras.Stocks.Interactives;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Reader;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Stocks.Commands
 {
@@ -34,27 +36,44 @@ namespace Nitrocid.Extras.Stocks.Commands
     /// </summary>
     class StockCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "stock";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_STOCKS_COMMAND_STOCK_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "company", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC"
+                    }),
+                    new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Get the symbol and prompt for the API key
-            string symbol = string.IsNullOrEmpty(parameters.ArgumentsText) ? StocksInit.StocksConfig.StocksCompany : parameters.ArgumentsText;
-            string apiKey = StocksInit.StocksConfig.StocksApiKey;
-            while (string.IsNullOrWhiteSpace(apiKey))
+            string symbol = parameters.ArgumentsList.Length >= 1 ? parameters.ArgumentsList[0] : StocksInit.StocksConfig.StocksCompany;
+            string apiKey = parameters.ArgumentsList.Length >= 2 ? parameters.ArgumentsList[1] : StocksInit.StocksConfig.StocksApiKey;
+            bool prompting = string.IsNullOrWhiteSpace(apiKey);
+            while (prompting)
             {
                 apiKey = TermReader.Read(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYPROMPT") + ": ");
                 if (string.IsNullOrWhiteSpace(apiKey))
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYNEEDED"), ThemeColorType.Error);
-                if (apiKey == "demo")
-                {
+                else if (apiKey == "demo")
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYISDEMO"), ThemeColorType.Error);
-                    apiKey = "";
-                }
-                if (apiKey.Length != 16)
-                {
+                else if (apiKey.Length != 16)
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYINVALIDLENGTH"), ThemeColorType.Error);
-                    apiKey = "";
-                }
+                else
+                    prompting = false;
             }
 
             // Now, get the stock info

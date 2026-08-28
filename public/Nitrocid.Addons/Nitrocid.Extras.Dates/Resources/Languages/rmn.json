@@ -278,6 +278,30 @@
     {
       "loc": "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC",
       "text": "Dacă produsul țintă nu specifică în mod explicit data de expirare"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_PREPRODUCTION",
+      "text": "Preproducție"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_EXPIRED",
+      "text": "Expirat"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_POOR",
+      "text": "Slab"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_AVERAGE",
+      "text": "Mediu"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_GOOD",
+      "text": "Bun"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_EXCELLENT",
+      "text": "Excelent"
     }
   ]
 }

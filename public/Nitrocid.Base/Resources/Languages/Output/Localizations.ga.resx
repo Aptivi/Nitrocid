@@ -97,9 +97,6 @@
   <data name="NKS_USERS_LOGIN_USERNAMEPROMPT" xml:space="preserve">
     <value>Ainm Úsáideora:</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES" xml:space="preserve">
-    <value>Ní cheadaítear spásanna.</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS" xml:space="preserve">
     <value>Ní cheadaítear carachtair speisialta.</value>
   </data>
@@ -1353,9 +1350,6 @@
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC" xml:space="preserve">
     <value>Cosúil le modh sábháilte, ach freisin díchumasaigh il-úsáideoir agus roinnt saincheaptha</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS" xml:space="preserve">
-    <value>Ní gá dathanna a atosú, ach teastaíonn atosú ón gcuid is mó de na socruithe.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC" xml:space="preserve">
     <value>Cuirtear focal nó frása eile in ionad focal nó frása ag baint úsáide as nathanna rialta</value>
@@ -6016,9 +6010,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC" xml:space="preserve">
     <value>Ainm úsáideora chun pasfhocal a athrú</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC" xml:space="preserve">
-    <value>Pasfhocal úsáideora reatha</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC" xml:space="preserve">
     <value>Seanainm úsáideora le hathrú</value>
   </data>
@@ -7125,5 +7116,11 @@
   </data>
   <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
     <value>Gan aon ailt</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC" xml:space="preserve">
+    <value>Luach le socrú go</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC" xml:space="preserve">
+    <value>Ard-chomhbhrú</value>
   </data>
 </root>

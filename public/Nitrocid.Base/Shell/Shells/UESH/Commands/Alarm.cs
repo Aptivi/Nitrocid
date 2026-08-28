@@ -17,18 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Help;
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
 using System;
 using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Time.Alarm;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
-using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Misc.Interactives;
 using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Help;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -40,8 +43,65 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class AlarmCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "alarm";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "start", new()
+                    {
+                        ExactWording = ["start"],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_START_DESC"
+                    }),
+                    new CommandArgumentPart(true, "alarmname", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME"
+                    }),
+                    new CommandArgumentPart(true, "interval", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_START_INTERVAL_DESC"
+                    }),
+                ])
+                {
+                    ArgChecker = (cp) => AlarmCommand.CheckArgument(cp, "start")
+                },
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "stop", new()
+                    {
+                        ExactWording = ["stop"],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_STOP_DESC"
+                    }),
+                    new CommandArgumentPart(true, "alarmname", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_STOP_NAME_DESC"
+                    }),
+                ])
+                {
+                    ArgChecker = (cp) => AlarmCommand.CheckArgument(cp, "stop")
+                },
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "list", new()
+                    {
+                        ExactWording = ["list"],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_LIST_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("tui", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_SWITCH_TUI_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ]),
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
@@ -57,24 +117,22 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 AlarmCli.OpenAlarmCli();
                 return 0;
             }
-            string CommandMode = parameters.ArgumentsList[0].ToLower();
-            string name = "";
-            string interval = "";
+            string commandMode = parameters.ArgumentsList[0].ToLower();
 
             // Now, the actual logic
-            switch (CommandMode)
+            switch (commandMode)
             {
                 case "start":
                     {
-                        name = parameters.ArgumentsList[1];
-                        interval = parameters.ArgumentsList[2];
+                        string name = parameters.ArgumentsList[1];
+                        string interval = parameters.ArgumentsList[2];
                         TimeSpan span = TimeSpan.Parse(interval);
                         AlarmTools.StartAlarm(name, name, (int)span.TotalSeconds);
                         break;
                     }
                 case "stop":
                     {
-                        name = parameters.ArgumentsList[1];
+                        string name = parameters.ArgumentsList[1];
                         AlarmTools.StopAlarm(name);
                         break;
                     }
@@ -83,12 +141,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                         foreach (var alarm in AlarmTools.alarms)
                         {
                             SeparatorWriterColor.WriteSeparatorColor(alarm.Key, ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_NAME") + " ", false, ThemeColorType.ListEntry);
-                            TextWriterColor.Write(alarm.Value.Name, true, ThemeColorType.ListValue);
-                            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_DESC") + " ", false, ThemeColorType.ListEntry);
-                            TextWriterColor.Write(alarm.Value.Description, true, ThemeColorType.ListValue);
-                            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_DUE") + " ", false, ThemeColorType.ListEntry);
-                            TextWriterColor.Write($"{alarm.Value.Length}", true, ThemeColorType.ListValue);
+                            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_NAME"), alarm.Value.Name);
+                            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_DESC"), alarm.Value.Description);
+                            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ALARM_DUE"), $"{alarm.Value.Length}");
                         }
 
                         break;
@@ -96,7 +151,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
                 default:
                     {
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_INVALIDCOMMAND_BRANCHED"), true, ThemeColorType.Error, CommandMode);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_INVALIDCOMMAND_BRANCHED"), true, ThemeColorType.Error, commandMode);
                         HelpPrint.ShowHelp("alarm");
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
                     }

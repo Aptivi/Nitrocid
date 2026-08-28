@@ -17,13 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Files;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Exceptions;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -35,8 +37,30 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class ChkLockCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "chklock";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHKLOCK_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "file", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_FILE_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("waitforunlock", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHKLOCK_SWITCH_WAITFORUNLOCK_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string path = parameters.ArgumentsList[0];
             bool locked = FilesystemTools.IsLocked(path);

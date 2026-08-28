@@ -18,18 +18,44 @@
 //
 
 using System;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Tools;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ShellPacks.Tools;
-using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
 {
     class PostStringCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "poststring";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_POSTSTRING");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "request", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC"
+                    }),
+                    new CommandArgumentPart(true, "string", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_STRING_DESC"
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Print a message
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_POST_POSTING_STRING"), true, ThemeColorType.Progress, parameters.ArgumentsList[1]);

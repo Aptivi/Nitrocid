@@ -63,10 +63,6 @@
       "text": "apanee api kunjee darj karen:"
     },
     {
-      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
-      "text": "aap ya to shaharon kee soochee ke lie unake id ke saath neeche die gae link se paraamarsh kar sakate hain, ya, is kamaand mein \"-list\" paas kar sakate hain."
-    },
-    {
       "loc": "NKS_FORECAST_SETTINGS_DESC",
       "text": "yah anubhaag aapako konfigar karane deta hai ki poorvaanumaan kaise kaam karata hai."
     },

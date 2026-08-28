@@ -17,12 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
 using OpenAI.Chat;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.ChatbotAI.Shell.Commands
 {
@@ -31,9 +33,28 @@ namespace Nitrocid.Extras.ChatbotAI.Shell.Commands
     /// </summary>
     class PromptCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "prompt";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "promptString", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var chatbotShell = (ChatbotShell?)shell ??
+                throw new KernelException(KernelExceptionType.ChatbotAI, LanguageTools.GetLocalized("NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+
             // Try to get the chat client
             ChatClient? clientChat = (ChatClient?)ChatbotShellCommon.ClientChat?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.ChatbotAI, LanguageTools.GetLocalized("NKS_CHATBOTAI_EXCEPTION_NOCLIENT"));

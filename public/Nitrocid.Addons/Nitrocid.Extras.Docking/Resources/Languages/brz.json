@@ -10,10 +10,6 @@
       "text": "Mostra uma visão geral em tela cheia sobre uma visualização de dock selecionada para poder usá-la como um painel de informações"
     },
     {
-      "loc": "NKS_DOCKING_NODOCKSCREEN1",
-      "text": "Não há nenhuma tela de encaixe com esse nome."
-    },
-    {
       "loc": "NKS_DOCKING_NODOCKSCREEN2",
       "text": "Não há nenhum dock de tela com esse nome."
     },

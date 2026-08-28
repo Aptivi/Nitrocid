@@ -67,10 +67,6 @@
       "text": "用户名："
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES",
-      "text": "不允许使用空格。"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS",
       "text": "不允许有特殊字符。"
     },
@@ -1741,10 +1737,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
       "text": "喜欢安全模式，但也禁用多用户和一些自定义"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
-      "text": "颜色不需要重新启动，但大多数设置都需要重新启动。"
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -7959,10 +7951,6 @@
       "text": "修改密码的用户名"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC",
-      "text": "当前用户密码"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC",
       "text": "更改旧用户名"
     },
@@ -9437,6 +9425,14 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "没有文章"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC",
+      "text": "设置为"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC",
+      "text": "高压缩"
     }
   ]
 }

@@ -17,14 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
-using Nitrocid.Base.ConsoleBase.Inputs;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Network.Connections;
 using OpenAI.Chat;
+using Terminaux.Reader;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.ChatbotAI.Commands
 {
@@ -33,8 +35,23 @@ namespace Nitrocid.Extras.ChatbotAI.Commands
     /// </summary>
     class ChatbotCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "chatbot";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_CHATBOTAI_COMMAND_CHATBOT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("apikey", /* Localizable */ "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC"),
+
+                    new SwitchInfo("model", /* Localizable */ "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC"),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Check if user has provided the API key via the switch
             string apiKey = ChatbotAIInit.ChatbotAIConfig.ChatGPTApiKey;
@@ -58,7 +75,7 @@ namespace Nitrocid.Extras.ChatbotAI.Commands
             // Prompt for API key if needed
             while (string.IsNullOrEmpty(apiKey))
             {
-                apiKey = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_CHATBOTAI_APIKEYPROMPT") + ": ");
+                apiKey = TermReader.Read(LanguageTools.GetLocalized("NKS_CHATBOTAI_APIKEYPROMPT") + ": ");
                 if (string.IsNullOrEmpty(apiKey))
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CHATBOTAI_APIKEYNOTPROVIDED"), ThemeColorType.Error);
             }

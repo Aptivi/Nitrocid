@@ -159,6 +159,10 @@
     {
       "loc": "NKS_STOCKS_TUI_HELP02_BODY",
       "text": "L'interface utilisateur interactive (TUI) vous fournit des informations sur l'action de la société que vous suivez, comme les cours d'ouverture et de clôture, les cours les plus hauts et les plus bas, et d'autres données. Ces informations étant mises à jour toutes les heures, il est important de suivre attentivement l'évolution des cours pour bien comprendre la performance boursière de la société."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "Clé API AlphaVantage"
     }
   ]
 }

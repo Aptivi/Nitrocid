@@ -17,14 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Commands
 {
@@ -36,8 +37,24 @@ namespace Nitrocid.ShellPacks.Commands
     /// </remarks>
     class ArchiveCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "archive";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "archivefile", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             parameters.ArgumentsList[0] = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {0}", vars: [parameters.ArgumentsList[0], FilesystemTools.FileExists(parameters.ArgumentsList[0])]);

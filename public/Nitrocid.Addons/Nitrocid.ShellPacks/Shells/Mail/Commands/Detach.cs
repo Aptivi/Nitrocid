@@ -33,12 +33,17 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
     /// </remarks>
     class DetachCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "detach";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var shell = (MailShell?)ShellManager.GetShellInfo(ShellManager.CurrentShellType).ShellBase ??
+            var mailShell = (MailShell?)shell ??
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
-            shell.detaching = true;
+            mailShell.detaching = true;
             ShellManager.KillShell();
             return 0;
         }

@@ -17,15 +17,42 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Languages;
 using Nitrocid.Extras.Amusements.Amusements.Games;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Extras.Amusements.Commands
 {
     class ScoreSimCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "scoresim";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SCORESIM_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo([
+                    new SwitchInfo("soccer", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SOCCER_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["basketball"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("basketball", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_BASKETBALL_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["soccer"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("firstTeamName", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_FIRSTTEAMNAME_DESC"),
+                    new SwitchInfo("secondTeamName", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SECONDTEAMNAME_DESC"),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool isSoccer = parameters.ContainsSwitch("-soccer");
             bool isBasketball = parameters.ContainsSwitch("-basketball");

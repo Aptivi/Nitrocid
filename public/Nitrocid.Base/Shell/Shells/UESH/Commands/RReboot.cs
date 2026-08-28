@@ -17,9 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
-using System;
 using Nitrocid.Base.Kernel.Power;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -28,14 +31,49 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </summary>
     /// <remarks>
     /// This command restarts your simulated kernel in the remote instance and reloads all the config that are not loaded using reloadconfig.
-    /// <br></br>
-    /// > [!WARNING]
-    /// > There is no file system syncing because the current kernel version doesn't have the real file system to sync, and the kernel is not final.
     /// </remarks>
     class RRebootCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "rreboot";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RREBOOT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "address", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC"
+                    }),
+                    new CommandArgumentPart(true, "port", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("safe", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_SAFE_DESC", new()
+                    {
+                        AcceptsValues = false,
+                        ConflictsWith = ["maintenance", "debug"]
+                    }),
+                    new SwitchInfo("maintenance", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_MAINTENANCE_DESC", new()
+                    {
+                        AcceptsValues = false,
+                        ConflictsWith = ["safe", "debug"]
+                    }),
+                    new SwitchInfo("debug", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_DEBUG_DESC", new()
+                    {
+                        AcceptsValues = false,
+                        ConflictsWith = ["safe", "maintenance"]
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool debug = parameters.ContainsSwitch("-debug");
             bool safe = parameters.ContainsSwitch("-safe");
@@ -45,12 +83,13 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 safe ? PowerMode.RemoteRestartSafe :
                 maintenance ? PowerMode.RemoteRestartMaintenance :
                 PowerMode.RemoteRestart;
-            if (!string.IsNullOrEmpty(parameters.ArgumentsList[0]))
+            string address = parameters.ArgumentsList[0];
+            if (parameters.ArgumentsList.Length == 1)
+                PowerManager.PowerManage(mode, address);
+            else
             {
-                if (parameters.ArgumentsList.Length > 1)
-                    PowerManager.PowerManage(mode, parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1]));
-                else
-                    PowerManager.PowerManage(mode, parameters.ArgumentsList[0]);
+                string portNumStr = parameters.ArgumentsList[1];
+                PowerManager.PowerManage(mode, address, int.Parse(portNumStr));
             }
             return 0;
         }

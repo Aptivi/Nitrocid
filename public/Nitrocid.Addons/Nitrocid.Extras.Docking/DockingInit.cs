@@ -30,19 +30,9 @@ namespace Nitrocid.Extras.Docking
 {
     internal class DockingInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("dock", /* Localizable */ "NKS_DOCKING_COMMAND_DOCK_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "dockName", new()
-                        {
-                            AutoCompleter = (_) => DockTools.GetDockScreenNames(),
-                            ArgumentDescription = /* Localizable */ "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC"
-                        }),
-                    ])
-                ], new DockCommand())
+            new DockCommand()
         ];
 
         public string AddonName =>

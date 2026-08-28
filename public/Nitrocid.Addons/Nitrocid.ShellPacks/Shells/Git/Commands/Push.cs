@@ -17,7 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -29,8 +32,13 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     /// </remarks>
     class PushCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "push";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_PUSH_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (GitShellCommon.Repository is null)
                 return 43;

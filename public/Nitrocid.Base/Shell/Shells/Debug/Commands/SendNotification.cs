@@ -21,8 +21,10 @@ using System;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Time.Renderers;
+using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -31,8 +33,13 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     /// </summary>
     class SendNotificationCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "sendnotification";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string notificationTitle = $"{RandomDriver.Random(1000, 9999)} - {KernelReleaseInfo.VersionFullStr}";
             string notificationDesc = $"{KernelReleaseInfo.ApiVersion} - {TimeDateRenderers.Render()}";

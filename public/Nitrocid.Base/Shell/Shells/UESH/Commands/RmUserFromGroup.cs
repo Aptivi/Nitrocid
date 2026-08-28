@@ -17,14 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Users.Groups;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
 using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users;
+using Nitrocid.Base.Users.Groups;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -38,8 +40,28 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class RmUserFromGroupCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "rmuserfromgroup";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RMUSERFROMGROUP_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "user", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSERFROMGROUP_ARGUMENT_USERNAME_DESC"
+                    }),
+                    new CommandArgumentPart(true, "group", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSERFROMGROUP_ARGUMENT_GROUPNAME_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
@@ -49,9 +71,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
+            string user = parameters.ArgumentsList[0];
+            string group = parameters.ArgumentsList[1];
             PermissionsTools.Demand(PermissionTypes.ManageGroups);
-            GroupManagement.RemoveUserFromGroup(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_RMUSERFROMGROUP_SUCCESS"), parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            GroupManagement.RemoveUserFromGroup(user, group);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_RMUSERFROMGROUP_SUCCESS"), user, group);
             return 0;
         }
 

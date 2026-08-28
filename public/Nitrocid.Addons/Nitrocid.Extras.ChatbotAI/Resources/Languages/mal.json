@@ -76,6 +76,10 @@
     {
       "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
       "text": "Kunci API anda untuk ChatGPT untuk akses. Walaupun anda boleh menggunakan kunci API percuma, anda tidak boleh menggunakan model lanjutan. Jika anda mahukan akses penuh kepada semua model berbayar, anda perlu membayar untuk akses tersebut."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
+      "text": "Menanggalkan shell daripada chatbot AI yang sedang berfungsi"
     }
   ]
 }

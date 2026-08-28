@@ -17,15 +17,29 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
+using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.Admin.Commands
 {
     class LsUsersCommand : BaseCommand, ICommand
     {
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string Command => 
+            "lsusers";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_LSUSERS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var users = UserManagement.ListAllUsers();
             ListWriterColor.WriteList(users);
@@ -33,7 +47,7 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
             return 0;
         }
 
-        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
+        public override int ExecuteDumb(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var users = UserManagement.ListAllUsers();
             foreach (var user in users)

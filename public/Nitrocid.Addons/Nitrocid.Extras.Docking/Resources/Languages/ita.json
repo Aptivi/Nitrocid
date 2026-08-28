@@ -14,10 +14,6 @@
       "text": "Mostra una panoramica a schermo intero su una visualizzazione dock selezionata per poterla utilizzare come pannello informativo"
     },
     {
-      "loc": "NKS_DOCKING_NODOCKSCREEN1",
-      "text": "Non esiste una schermata dock con questo nome."
-    },
-    {
       "loc": "NKS_DOCKING_NODOCKSCREEN2",
       "text": "Non esiste uno screen dock con questo nome."
     },

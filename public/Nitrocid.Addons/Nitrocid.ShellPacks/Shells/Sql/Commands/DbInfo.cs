@@ -17,10 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Sql.Commands
 {
@@ -32,8 +34,13 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
     /// </remarks>
     class DbInfoCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "dbinfo";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMAND_DBINFO_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var connection = SqlShellCommon.sqliteConnection;
             if (connection is null)

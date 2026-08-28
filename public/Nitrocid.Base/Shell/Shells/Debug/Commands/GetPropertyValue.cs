@@ -18,11 +18,13 @@
 //
 
 using System;
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
-using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -34,8 +36,25 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     /// </remarks>
     class GetPropertyValueCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "getpropertyvalue";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_GETPROPERTYVALUE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "property", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => [.. PropertyManager.GetAllPropertiesNoEvaluation().Keys],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_GETPROPERTYVALUE_ARGUMENT_NAME_DESC"
+                    })
+                ], true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // List all available properties on all the kernel types
             string propertyName = parameters.ArgumentsList[0];

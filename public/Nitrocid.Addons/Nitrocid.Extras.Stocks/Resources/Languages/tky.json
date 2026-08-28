@@ -114,6 +114,10 @@
     {
       "loc": "NKS_STOCKS_TUI_HELP02_BODY",
       "text": "Etkileşimli TUI, takip ettiğiniz belirli bir şirket hakkında açılış ve kapanış hisse senedi fiyatları, en yüksek ve en düşük hisse senedi fiyatları ve diğer bilgiler gibi hisse senedi bilgileri sağlar. Bu bilgiler her saat değişir, bu nedenle bir şirketin hisse senedi fiyatlarının nasıl performans gösterdiğini derinlemesine anlamak için fiyatları mümkün olduğunca yakından takip etmeniz gerekir."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "AlphaVantage API anahtarı"
     }
   ]
 }

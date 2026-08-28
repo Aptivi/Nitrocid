@@ -17,7 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 {
@@ -26,8 +29,13 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
     /// </summary>
     class ClearCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "clear";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_CLEAR_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             HexEditShellCommon.FileBytes = [];
             return 0;

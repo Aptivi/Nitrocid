@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Textify.General;
-using Nitrocid.Base.Kernel;
-using Nitrocid.Base.Languages;
+using Terminaux.Writer.CyclicWriters.Renderer.Markup;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -31,26 +31,22 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </summary>
     class UserManualCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "usermanual";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_USERMANUAL_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_MAINLINK"));
-            TextWriterColor.Write(
-                KernelPlatform.IsOnUnix() ?
-                $"    {CharManager.GetEsc()}]8;;https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/{CharManager.GetEsc()}\\Manual page{CharManager.GetEsc()}]8;;{CharManager.GetEsc()}\\" :
-                "    https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/",
-                true, ThemeColorType.Tip
-            );
+            TextWriterColor.Write(MarkupTools.ParseMarkup("    [link=https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/]Manual page[/]"), true, ThemeColorType.Tip);
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_APILINK"));
-            TextWriterColor.Write(
-                KernelPlatform.IsOnUnix() ?
-                $"    {CharManager.GetEsc()}]8;;https://aptivi.github.io/Nitrocid{CharManager.GetEsc()}\\API documentation{CharManager.GetEsc()}]8;;{CharManager.GetEsc()}\\" :
-                "    https://aptivi.github.io/Nitrocid",
-                true, ThemeColorType.Tip);
+            TextWriterColor.Write(MarkupTools.ParseMarkup("    [link=https://aptivi.github.io/Nitrocid/]API documentation[/]"), true, ThemeColorType.Tip);
             return 0;
         }
 
-        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
+        public override int ExecuteDumb(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_MAINLINK"));
             TextWriterColor.Write("    https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/", true, ThemeColorType.Tip);

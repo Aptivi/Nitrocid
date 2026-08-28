@@ -33,12 +33,17 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
     /// </remarks>
     class DetachCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "detach";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var shell = (HTTPShell?)ShellManager.GetShellInfo(ShellManager.CurrentShellType).ShellBase ??
+            var httpShell = (HTTPShell?)shell ??
                 throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
-            shell.detaching = true;
+            httpShell.detaching = true;
             ShellManager.KillShell();
             return 0;
         }

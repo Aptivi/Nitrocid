@@ -18,14 +18,16 @@
 //
 
 using System;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Security.Permissions;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -39,8 +41,32 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class PermGroupCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "permgroup";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PERMGROUP_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "groupName", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PERMGROUP_ARGUMENT_GROUPNAME_DESC"
+                    }),
+                    new CommandArgumentPart(true, "allow/revoke", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_MODE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "perm", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_GRANT_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
@@ -55,7 +81,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             string mode = parameters.ArgumentsList[1];
             string perm = parameters.ArgumentsList[2];
 
-            if (!Enum.TryParse(typeof(PermissionTypes), perm, out object? permission))
+            if (!Enum.TryParse(perm, out PermissionTypes permission))
             {
                 // Permission not found
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PERM_NOPERM"), true, ThemeColorType.Error);
@@ -64,10 +90,10 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
             if (mode == "allow")
                 // Granting permission.
-                PermissionsTools.GrantPermissionGroup(target, (PermissionTypes)permission);
+                PermissionsTools.GrantPermissionGroup(target, permission);
             else if (mode == "revoke")
                 // Revoking permission.
-                PermissionsTools.RevokePermissionGroup(target, (PermissionTypes)permission);
+                PermissionsTools.RevokePermissionGroup(target, permission);
             else
             {
                 // No mode

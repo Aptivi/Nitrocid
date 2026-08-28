@@ -17,10 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Tools;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
 {
@@ -29,8 +32,16 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
     /// </summary>
     class LsHeaderCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsheader";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_LSHEADER_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var headers = HttpTools.HttpListHeaders();
             foreach (var header in headers)

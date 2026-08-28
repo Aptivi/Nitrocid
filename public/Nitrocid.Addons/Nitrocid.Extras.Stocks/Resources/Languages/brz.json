@@ -112,6 +112,10 @@
     {
       "loc": "NKS_STOCKS_TUI_HELP02_BODY",
       "text": "A interface interativa TUI fornece informações sobre as ações de uma empresa específica que você está acompanhando, como preços de abertura e fechamento, preços máximos e mínimos das ações e outras informações. Essas informações mudam a cada hora, portanto, você precisará observar os preços com atenção para ter uma compreensão profunda do desempenho das ações de uma empresa."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "Chave da API AlphaVantage"
     }
   ]
 }

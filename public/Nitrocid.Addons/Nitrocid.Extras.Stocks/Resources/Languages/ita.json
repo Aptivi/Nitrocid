@@ -116,6 +116,10 @@
     {
       "loc": "NKS_STOCKS_TUI_HELP02_BODY",
       "text": "L'interfaccia utente interattiva fornisce informazioni sulle azioni di una particolare società che si sta monitorando, come i prezzi di apertura e chiusura, i prezzi massimi e minimi delle azioni e altre informazioni. Queste informazioni cambiano ogni ora, quindi è necessario monitorare i prezzi il più attentamente possibile per avere una comprensione approfondita dell'andamento dei prezzi delle azioni di una società."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "Chiave API di AlphaVantage"
     }
   ]
 }

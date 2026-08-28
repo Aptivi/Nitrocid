@@ -27,6 +27,7 @@ using Nitrocid.Base.Users;
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Security.Permissions;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -42,8 +43,13 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class RdebugCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "rdebug";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RDEBUG_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))

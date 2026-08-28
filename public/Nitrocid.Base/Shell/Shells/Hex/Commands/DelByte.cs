@@ -17,15 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using Nitrocid.Base.Files.Editors.HexEdit;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using System;
 using Textify.General;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Files.Editors.HexEdit;
-using Nitrocid.Base.Kernel.Exceptions;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 {
@@ -37,16 +39,34 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
     /// </remarks>
     class DelByteCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "delbyte";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_DELBYTE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "bytenumber", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_ADDBYTETO_ARGUMENT_BYTEPOS_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
+            string byteStr = parameters.ArgumentsList[0];
+            if (TextTools.IsStringNumeric(byteStr))
             {
                 var FileBytes = HexEditShellCommon.FileBytes ??
                     throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
-                if (Convert.ToInt32(parameters.ArgumentsList[0]) <= FileBytes.LongLength)
+                if (Convert.ToInt32(byteStr) <= FileBytes.LongLength)
                 {
-                    HexEditTools.DeleteByte(Convert.ToInt64(parameters.ArgumentsList[0]));
+                    HexEditTools.DeleteByte(Convert.ToInt64(byteStr));
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_DELBYTE_SUCCESS"), true, ThemeColorType.Success);
                     return 0;
                 }
@@ -59,7 +79,7 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
             else
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMON_NOTNUMERIC"), true, ThemeColorType.Error);
-                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[0]]);
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [byteStr]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
             }
         }

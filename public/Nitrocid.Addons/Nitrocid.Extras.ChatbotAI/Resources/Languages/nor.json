@@ -77,6 +77,10 @@
     {
       "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
       "text": "Din API-nøkkel for ChatGPT for tilgang. Selv om du kan bruke den gratis API-nøkkelen, kan du ikke bruke avanserte modeller. Hvis du vil ha full tilgang til alle betalte modeller, må du betale for tilgangen."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
+      "text": "Kobler skallet fra den nåværende fungerende AI-chatboten"
     }
   ]
 }

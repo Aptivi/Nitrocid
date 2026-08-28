@@ -33,18 +33,9 @@ namespace Nitrocid.Extras.Stocks
 {
     internal class StocksInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("stock", /* Localizable */ "NKS_STOCKS_COMMAND_STOCK_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "company", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC"
-                        }),
-                    ])
-                ], new StockCommand()),
+            new StockCommand(),
         ];
 
         public string AddonName =>

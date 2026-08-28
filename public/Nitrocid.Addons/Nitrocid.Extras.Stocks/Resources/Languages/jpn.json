@@ -113,6 +113,10 @@
     {
       "loc": "NKS_STOCKS_TUI_HELP02_BODY",
       "text": "インタラクティブなTUIでは、追跡している特定の企業の株価情報（始値と終値、最高値と最安値など）を提供します。この情報は1時間ごとに変化するため、企業の株価の動きを深く理解するには、できるだけ注意深く株価を監視する必要があります。"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "AlphaVantage APIキー"
     }
   ]
 }

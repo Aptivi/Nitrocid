@@ -17,51 +17,59 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
 using System.Globalization;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
-using Nitrocid.Base.Kernel.Exceptions;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.Admin.Commands
 {
     class UserCultureCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "userculture";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "user", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_USER_DESC"
+                    }),
+                    new CommandArgumentPart(true, "culture/clear", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_ARGUMENT_CULTUREID_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string userName = parameters.ArgumentsList[0];
             string culture = parameters.ArgumentsList[1];
             int userIndex = UserManagement.GetUserIndex(userName);
-            if (culture == "clear")
+            if (CultureManager.GetCulturesDictionary().TryGetValue(culture, out CultureInfo? cultureInfo) || culture == "clear")
             {
                 // If we're doing this on ourselves, change the kernel culture to the system culture
-                culture = CultureManager.currentCulture.Name;
+                string finalCulture = culture == "clear" ? CultureManager.currentCulture.Name : culture;
                 if (UserManagement.CurrentUser.Username == userName)
                 {
-                    CultureManager.currentUserCulture = CultureManager.currentCulture;
-                    UserManagement.CurrentUser.PreferredCulture = culture;
+                    CultureManager.currentUserCulture = culture == "clear" || cultureInfo is null ? CultureManager.currentCulture : cultureInfo;
+                    UserManagement.CurrentUser.PreferredCulture = finalCulture;
                 }
 
                 // Now, change the culture in the user config
-                UserManagement.Users[userIndex].PreferredCulture = null;
+                UserManagement.Users[userIndex].PreferredCulture = culture == "clear" ? null : culture;
                 UserManagement.SaveUsers();
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERCULTURE_SUCCESS"), culture);
-            }
-            else if (CultureManager.GetCulturesDictionary().TryGetValue(culture, out CultureInfo? cultureInfo))
-            {
-                // Do it locally
-                if (UserManagement.CurrentUser.Username == userName)
-                {
-                    CultureManager.currentUserCulture = cultureInfo;
-                    UserManagement.CurrentUser.PreferredCulture = culture;
-                }
-
-                // Now, change the culture in the user config
-                UserManagement.Users[userIndex].PreferredCulture = culture;
-                UserManagement.SaveUsers();
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERCULTURE_SUCCESS"), culture);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERCULTURE_SUCCESS"), finalCulture);
             }
             else
             {

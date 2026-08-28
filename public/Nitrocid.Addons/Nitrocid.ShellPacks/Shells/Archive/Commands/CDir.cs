@@ -17,8 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Archive.Commands
 {
@@ -30,8 +33,13 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Commands
     /// </remarks>
     class CDirCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "cdir";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(ArchiveShellCommon.CurrentDirectory ?? "");
             return 0;

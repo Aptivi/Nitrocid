@@ -18,7 +18,11 @@
 //
 
 using Nitrocid.Base.Kernel.Power;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -27,14 +31,38 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </summary>
     /// <remarks>
     /// This command restarts your simulated kernel and reloads all the config that are not loaded using reloadconfig.
-    /// <br></br>
-    /// > [!WARNING]
-    /// > There is no file system syncing because the current kernel version doesn't have the real file system to sync, and the kernel is not final.
     /// </remarks>
     class RebootCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "reboot";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("safe", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_SAFE_DESC", new()
+                    {
+                        AcceptsValues = false,
+                        ConflictsWith = ["maintenance", "debug"]
+                    }),
+                    new SwitchInfo("maintenance", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_MAINTENANCE_DESC", new()
+                    {
+                        AcceptsValues = false,
+                        ConflictsWith = ["safe", "debug"]
+                    }),
+                    new SwitchInfo("debug", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_DEBUG_DESC", new()
+                    {
+                        AcceptsValues = false,
+                        ConflictsWith = ["safe", "maintenance"]
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool debug = parameters.ContainsSwitch("-debug");
             bool safe = parameters.ContainsSwitch("-safe");

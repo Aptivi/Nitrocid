@@ -127,10 +127,6 @@
       "text": "在引导时自动启动内核修改。"
     },
     {
-      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
-      "text": "未指定 Mod 文件。"
-    },
-    {
       "loc": "NKS_MODS_MODUPDATING",
       "text": "尝试安装已安装的 mod。更新模式..."
     },

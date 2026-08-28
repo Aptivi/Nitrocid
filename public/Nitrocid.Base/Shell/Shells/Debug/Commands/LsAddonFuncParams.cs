@@ -18,13 +18,16 @@
 //
 
 #if NKS_EXTENSIONS
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
+using System.Linq;
 using System.Reflection;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.CyclicWriters.Simple;
-using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -36,13 +39,46 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     /// </remarks>
     class LsAddonFuncParamsCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "lsaddonfuncparams";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => AddonTools.GetAddons(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_NAME_DESC"
+                    }),
+                    new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (arg) => InterAddonTools.ListAvailableTypes(arg[0]).Select((type) => type.FullName ?? "").ToArray(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_TYPE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "function", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (arg) => InterAddonTools.ListAvailableFunctions(arg[0], arg[1]).Keys.ToArray(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_ARGUMENT_FUNCTION_DESC"
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_LISTING") + $" {parameters.ArgumentsList[1]}, {parameters.ArgumentsList[0]} -> {parameters.ArgumentsList[2]}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+            string addonName = parameters.ArgumentsList[0];
+            string typeName = parameters.ArgumentsList[1];
+            string functionName = parameters.ArgumentsList[2];
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_LISTING") + $" {typeName}, {addonName} -> {functionName}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
 
             // List all the available addons
-            var list = InterAddonTools.GetFunctionParameters(parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]) ?? [];
+            var list = InterAddonTools.GetFunctionParameters(addonName, functionName, typeName) ?? [];
             var listing = new Listing()
             {
                 Objects = list,
@@ -54,12 +90,15 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
             return 0;
         }
 
-        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
+        public override int ExecuteDumb(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_LISTING") + $" {parameters.ArgumentsList[1]}, {parameters.ArgumentsList[0]} -> {parameters.ArgumentsList[2]}");
+            string addonName = parameters.ArgumentsList[0];
+            string typeName = parameters.ArgumentsList[1];
+            string functionName = parameters.ArgumentsList[2];
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_LISTING") + $" {typeName}, {addonName} -> {functionName}");
 
             // List all the available addons
-            var list = InterAddonTools.GetFunctionParameters(parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]) ?? [];
+            var list = InterAddonTools.GetFunctionParameters(addonName, functionName, typeName) ?? [];
             foreach (var parameter in list)
                 TextWriterColor.Write($"  - [{parameter.ParameterType.FullName ?? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_UNKNOWNTYPE")}] {parameter.Name ?? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONFUNCPARAMS_UNKNOWNPARAM")}");
             return 0;

@@ -73,6 +73,10 @@
     {
       "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
       "text": "Clavis API tua pro ChatGPT ad accessum. Dum clavem API gratuitam uti potes, exemplaria provectiora uti non potes. Si accessum plenum ad omnia exemplaria soluta vis, pro accessu solvere debebis."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
+      "text": "Testam a programmate colloquendi artificiali (IA) nunc operante separat."
     }
   ]
 }

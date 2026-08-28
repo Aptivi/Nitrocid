@@ -113,6 +113,10 @@
     {
       "loc": "NKS_STOCKS_TUI_HELP02_BODY",
       "text": "intaraiktiv tui aapako us khaas kampanee ke baare mein stoks kee jaanakaaree deta hai jise aap traik kar rahe hain, jaise ki opaning aur klojing stok prais, haee aur lo stok prais, aur doosaree jaanakaaree. har ghante, yah jaanakaaree badalatee hai, isalie aapako kampanee ke stok prais kaisa paraphorm karate hain, isakee gaharee samajh paane ke lie prais ko jitana ho sake kareeb se dekhana hoga."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "alphaventage API kunji"
     }
   ]
 }

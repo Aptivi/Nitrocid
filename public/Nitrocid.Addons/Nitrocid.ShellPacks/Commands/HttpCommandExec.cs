@@ -17,18 +17,24 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Connections;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Base.Network.Transfer;
+using Terminaux.Reader;
 
 namespace Nitrocid.ShellPacks.Commands
 {
     internal class HttpCommandExec : BaseCommand, ICommand
     {
+        public override string Command =>
+            "http";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             NetworkConnectionTools.OpenConnectionForShell("HTTPShell", EstablishHttpConnection, (_, connection) =>
             EstablishHttpConnection(connection.Address), parameters.ArgumentsText);
@@ -38,7 +44,7 @@ namespace Nitrocid.ShellPacks.Commands
         private NetworkConnection EstablishHttpConnection(string address)
         {
             if (string.IsNullOrEmpty(address))
-                address = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT") + " ");
+                address = TermReader.Read(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT") + " ");
             return NetworkConnectionTools.EstablishConnection("HTTP connection", address, NetworkConnectionType.HTTP, NetworkTransfer.HttpClientNew);
         }
 

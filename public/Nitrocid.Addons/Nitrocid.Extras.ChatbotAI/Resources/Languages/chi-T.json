@@ -81,6 +81,10 @@
     {
       "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
       "text": "您用于访问 ChatGPT 的 API 密钥。虽然您可以使用免费 API 密钥，但无法使用高级模型。如果您想完全访问所有付费模型，则需要付费。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
+      "text": "将外壳从当前运行的 AI 聊天机器人中分离出来。"
     }
   ]
 }

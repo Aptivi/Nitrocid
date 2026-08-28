@@ -23,6 +23,7 @@ using Terminaux.Shell.Commands;
 using System.Linq;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Files.Extensions;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -34,18 +35,21 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class GetAllExtHandlersCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "getallexthandlers";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETALLEXTHANDLERS_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var handlers = ExtensionHandlerTools.GetExtensionHandlers();
             for (int i = 0; i < handlers.Length; i++)
             {
                 ExtensionHandler handler = handlers[i];
                 SeparatorWriterColor.WriteSeparatorColor($"{i + 1}/{handlers.Length}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSION") + ": ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(handler.Extension, ThemeColorType.ListValue);
-                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSIONHANDLER") + ": ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(handler.Implementer, ThemeColorType.ListValue);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSION"), handler.Extension);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSIONHANDLER"), handler.Implementer);
             }
             variableValue = $"[{string.Join(", ", handlers.Select((h) => h.Implementer))}]";
             return 0;

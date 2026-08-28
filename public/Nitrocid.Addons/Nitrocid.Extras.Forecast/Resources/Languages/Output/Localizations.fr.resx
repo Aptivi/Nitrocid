@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_FORECAST_COMMAND_WEATHEROLD_DESC" xml:space="preserve">
+  </resheader>
+  <data name="NKS_FORECAST_COMMAND_WEATHEROLD_DESC" xml:space="preserve">
     <value>Affiche les informations météorologiques pour la ville spécifiée. Utilise OpenWeatherMap.</value>
   </data>
   <data name="NKS_FORECAST_WEATHEROLD_INFO_HEADER" xml:space="preserve">
@@ -159,14 +100,11 @@
   <data name="NKS_FORECAST_APIKEYPROMPT" xml:space="preserve">
     <value>Saisissez votre clé API :</value>
   </data>
-  <data name="NKS_FORECAST_WEATHEROLD_CITYLISTLINK" xml:space="preserve">
-    <value>Vous pouvez soit consulter le lien ci-dessous pour la liste des villes avec leurs identifiants, soit passer &quot;-list&quot; à cette commande.</value>
-  </data>
   <data name="NKS_FORECAST_SETTINGS_DESC" xml:space="preserve">
     <value>Cette section vous permet de configurer le fonctionnement de Forecast.</value>
   </data>
   <data name="NKS_FORECAST_COMMAND_WEATHER_DESC" xml:space="preserve">
-    <value>Affiche les informations météorologiques pour la ville spécifiée. Utilise The Weather Channel d&apos;IBM.</value>
+    <value>Affiche les informations météorologiques pour la ville spécifiée. Utilise The Weather Channel d'IBM.</value>
   </data>
   <data name="NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC" xml:space="preserve">
     <value>Informations météo dans un TUI interactif</value>
@@ -214,10 +152,10 @@
     <value>Entrez la latitude et la longitude de la ville.</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_APIKEY" xml:space="preserve">
-    <value>Vous pouvez obtenir votre propre clé API en consultant le site Web d&apos;IBM pour obtenir des conseils.</value>
+    <value>Vous pouvez obtenir votre propre clé API en consultant le site Web d'IBM pour obtenir des conseils.</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_TUI_LOADING" xml:space="preserve">
-    <value>Chargement des informations météo à partir d&apos;un emplacement géographique</value>
+    <value>Chargement des informations météo à partir d'un emplacement géographique</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_TUI_CONDITION" xml:space="preserve">
     <value>Les conditions météorologiques</value>
@@ -232,7 +170,7 @@
     <value>Direction du vent</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_TUI_HUMIDITY" xml:space="preserve">
-    <value>Taux d&apos;humidité</value>
+    <value>Taux d'humidité</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_TUI_LAT" xml:space="preserve">
     <value>Latitude</value>
@@ -244,7 +182,7 @@
     <value>Entrez un nom de ville à rechercher.</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_TUI_NOCITIES" xml:space="preserve">
-    <value>Il n&apos;existe aucune ville portant ce nom. Si vous essayez de rechercher une ville spécifique, essayez de rechercher un emplacement plus large, le plus proche de la ville que vous recherchez.</value>
+    <value>Il n'existe aucune ville portant ce nom. Si vous essayez de rechercher une ville spécifique, essayez de rechercher un emplacement plus large, le plus proche de la ville que vous recherchez.</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_TUI_SELECTCITY" xml:space="preserve">
     <value>Sélectionnez une ville dans la liste ci-dessous. Les deux chiffres représentent des emplacements géographiques.</value>
@@ -256,16 +194,16 @@
     <value>Entrez la longitude de la ville.</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_TUI_LATINVALID" xml:space="preserve">
-    <value>La latitude n&apos;est pas valide.</value>
+    <value>La latitude n'est pas valide.</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_TUI_LONINVALID" xml:space="preserve">
-    <value>La longitude n&apos;est pas valide.</value>
+    <value>La longitude n'est pas valide.</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_TUI_APIKEYPROMPT" xml:space="preserve">
-    <value>Vous pouvez obtenir votre propre clé API en consultant le site Web d&apos;IBM pour obtenir des conseils. Entrez la clé API Weather Channel.</value>
+    <value>Vous pouvez obtenir votre propre clé API en consultant le site Web d'IBM pour obtenir des conseils. Entrez la clé API Weather Channel.</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_TUI_APIKEYNOTPROVIDED" xml:space="preserve">
-    <value>La clé API Weather Channel n&apos;est pas fournie. Si vous avez besoin d&apos;aide, consultez le site Web IBM.</value>
+    <value>La clé API Weather Channel n'est pas fournie. Si vous avez besoin d'aide, consultez le site Web IBM.</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADD" xml:space="preserve">
     <value>Ajouter</value>
@@ -274,22 +212,22 @@
     <value>Supprimer tout</value>
   </data>
   <data name="NKS_FORECAST_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
-    <value>Impossible d&apos;obtenir les entrées de paramètres.</value>
+    <value>Impossible d'obtenir les entrées de paramètres.</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADDMANUAL" xml:space="preserve">
     <value>Ajouter manuellement</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_EXCEPTION_NODAYPARTARRAY" xml:space="preserve">
-    <value>Impossible d&apos;obtenir le tableau des parties du jour</value>
+    <value>Impossible d'obtenir le tableau des parties du jour</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_EXCEPTION_NODAYPART" xml:space="preserve">
-    <value>Impossible d&apos;obtenir la partie de la journée</value>
+    <value>Impossible d'obtenir la partie de la journée</value>
   </data>
   <data name="NKS_FORECAST_SETTINGS_PREFERREDUNIT_DESC" xml:space="preserve">
-    <value>Sélectionnez votre unité préférée pour la température (cela s&apos;applique uniquement à la commande « météo »). 1 est Kelvin, 2 est métrique et 3 est impérial.</value>
+    <value>Sélectionnez votre unité préférée pour la température (cela s'applique uniquement à la commande « météo »). 1 est Kelvin, 2 est métrique et 3 est impérial.</value>
   </data>
   <data name="NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC" xml:space="preserve">
-    <value>Latitude d&apos;utilisation</value>
+    <value>Latitude d'utilisation</value>
   </data>
   <data name="NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC" xml:space="preserve">
     <value>Longitude à utiliser</value>
@@ -298,7 +236,7 @@
     <value>Clé API de Weather.com</value>
   </data>
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC" xml:space="preserve">
-    <value>ID de la ville ou nom de la ville connu d&apos;OpenWeatherMap</value>
+    <value>ID de la ville ou nom de la ville connu d'OpenWeatherMap</value>
   </data>
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>Clé API OpenWeatherMap</value>
@@ -307,10 +245,10 @@
     <value>Prévisions météo</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_TUI_HELP01_DESC" xml:space="preserve">
-    <value>L&apos;information météo à portée de main</value>
+    <value>L'information météo à portée de main</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_TUI_HELP01_BODY" xml:space="preserve">
-    <value>Les prévisions météo regroupent des données météorologiques telles que la température, les prévisions (ensoleillé, pluvieux, etc.) et l&apos;indice UV. Grâce à votre connexion internet, vous pouvez consulter la météo actuelle.</value>
+    <value>Les prévisions météo regroupent des données météorologiques telles que la température, les prévisions (ensoleillé, pluvieux, etc.) et l'indice UV. Grâce à votre connexion internet, vous pouvez consulter la météo actuelle.</value>
   </data>
   <data name="NKS_FORECAST_WEATHER_TUI_HELP02_TITLE" xml:space="preserve">
     <value>Sources utilisées</value>
@@ -321,5 +259,4 @@
   <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
     <value>Nous utilisons OpenWeatherMap pour les données de prévisions météo, et nous proposons également les mêmes données sur The Weather Channel (weather.com) moyennant un abonnement.</value>
   </data>
-
 </root>

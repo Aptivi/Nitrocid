@@ -17,9 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
 using Nitrocid.Base.Kernel.Time.Renderers;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -31,8 +35,41 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class DateCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "date";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTD_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo([
+                    new SwitchInfo("date", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["time", "full"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("time", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["date", "full"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("full", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTD_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["date", "time"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("utc", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ], true)
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Determine how to show date and time
             bool showDate = true;
@@ -51,33 +88,18 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             if (showDate)
             {
                 if (useUtc)
-                {
-                    string rendered = TimeDateRenderersUtc.RenderDateUtc();
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                    variableValue = TimeDateRenderersUtc.RenderDateUtc();
                 else
-                {
-                    string rendered = TimeDateRenderers.RenderDate();
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                    variableValue = TimeDateRenderers.RenderDate();
             }
             if (showTime)
             {
                 if (useUtc)
-                {
-                    string rendered = TimeDateRenderersUtc.RenderTimeUtc();
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                    variableValue = TimeDateRenderersUtc.RenderTimeUtc();
                 else
-                {
-                    string rendered = TimeDateRenderers.RenderTime();
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                    variableValue = TimeDateRenderers.RenderTime();
             }
+            TextWriterColor.Write(variableValue);
             return 0;
         }
     }

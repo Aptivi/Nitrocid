@@ -23,6 +23,8 @@ using Terminaux.Shell.Commands;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Languages;
 using Terminaux.Base.Extensions;
+using SpecProbe.Software.Platform;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -34,10 +36,15 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     /// </remarks>
     class ShowMainBufferCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "showmainbuffer";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (KernelPlatform.IsOnWindows())
+            if (PlatformHelper.IsOnWindows())
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_SHOWMAINBUFFER_WINDOWS"), ThemeColorType.Error);
                 return 33;

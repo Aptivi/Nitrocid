@@ -18,11 +18,13 @@
 //
 
 using System;
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
-using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -34,8 +36,25 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     /// </remarks>
     class ExcInfoCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "excinfo";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_EXCINFO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "excNum", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_EXCINFO_ARGUMENT_EXCNUMBER_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Check to see if we really have the type
             string exceptionStr = parameters.ArgumentsList[0];

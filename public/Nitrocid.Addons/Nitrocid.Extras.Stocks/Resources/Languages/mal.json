@@ -116,6 +116,10 @@
     {
       "loc": "NKS_STOCKS_TUI_HELP02_BODY",
       "text": "TUI interaktif menyediakan anda maklumat saham tentang syarikat tertentu yang anda jejaki, seperti harga saham pembukaan dan penutupan, harga saham tinggi dan rendah, dan maklumat lain. Untuk setiap jam, maklumat ini berubah, jadi anda perlu memerhatikan harga sedekat mungkin untuk memahami prestasi harga saham syarikat dengan lebih mendalam."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "Kunci API AlphaVantage"
     }
   ]
 }

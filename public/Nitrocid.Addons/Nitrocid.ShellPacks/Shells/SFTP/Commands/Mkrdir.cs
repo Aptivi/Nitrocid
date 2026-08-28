@@ -17,8 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Tools.Filesystem;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 {
@@ -30,8 +34,24 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
     /// </remarks>
     class MkrdirCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "mkrdir";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_MKRDIR_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC"
+                    }),
+                ], true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             SFTPFilesystem.SFTPMakeDirectory(parameters.ArgumentsList[0]);
             return 0;

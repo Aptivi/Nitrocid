@@ -17,12 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using Nitrocid.Base.Languages;
+using Nitrocid.Extras.Dates.Tools;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Extras.Dates.Tools;
-using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
-using System;
 
 namespace Nitrocid.Extras.Dates.Commands
 {
@@ -34,16 +37,44 @@ namespace Nitrocid.Extras.Dates.Commands
     /// </remarks>
     class ExpiryCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "expiry";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "production", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC"
+                    }),
+                    new CommandArgumentPart(true, "expiry", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC"
+                    })
+                ],
+                [
+                    new SwitchInfo("implicit", /* Localizable */ "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool implicitExpiry = parameters.ContainsSwitch("-implicit");
+            string productionDateStr = parameters.ArgumentsList[0];
+            string expiryDateStr = parameters.ArgumentsList[1];
             try
             {
                 TimeSpan expirySpan = TimeSpan.Zero;
 
                 // Parse the production date
-                if (!DateTimeOffset.TryParse(parameters.ArgumentsList[0], out var production))
+                if (!DateTimeOffset.TryParse(productionDateStr, out var production))
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODDATEINVALID"), ThemeColorType.Error);
                     return 45;
@@ -52,13 +83,13 @@ namespace Nitrocid.Extras.Dates.Commands
                 // Parse the expiry date or time period
                 if (implicitExpiry)
                 {
-                    if (!TimeSpan.TryParse(parameters.ArgumentsList[1], out expirySpan))
+                    if (!TimeSpan.TryParse(expiryDateStr, out expirySpan))
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPTIMEINVALID"), ThemeColorType.Error);
                         return 45;
                     }
                 }
-                else if (DateTimeOffset.TryParse(parameters.ArgumentsList[1], out var expiryDate))
+                else if (DateTimeOffset.TryParse(expiryDateStr, out var expiryDate))
                     expirySpan = expiryDate - production;
                 else
                 {
@@ -76,11 +107,12 @@ namespace Nitrocid.Extras.Dates.Commands
 
                 // Write the status
                 string status =
-                    productHealth == -1 ? "Pre-production" :
-                    productHealth == 0 ?  "Expired" :
-                    productHealth <= 25 ? "Poor" :
-                    productHealth <= 50 ? "Average" :
-                    productHealth <= 75 ? "Good" : "Excellent";
+                    productHealth == -1 ? LanguageTools.GetLocalized("NKS_DATES_EXPIRY_STATUS_PREPRODUCTION") :
+                    productHealth == 0 ? LanguageTools.GetLocalized("NKS_DATES_EXPIRY_STATUS_EXPIRED") :
+                    productHealth <= 25 ? LanguageTools.GetLocalized("NKS_DATES_EXPIRY_STATUS_POOR") :
+                    productHealth <= 50 ? LanguageTools.GetLocalized("NKS_DATES_EXPIRY_STATUS_AVERAGE") :
+                    productHealth <= 75 ? LanguageTools.GetLocalized("NKS_DATES_EXPIRY_STATUS_GOOD") :
+                    LanguageTools.GetLocalized("NKS_DATES_EXPIRY_STATUS_EXCELLENT");
                 ThemeColorType statusColor =
                     productHealth == -1 ? ThemeColorType.ListValue :
                     productHealth == 0 ? ThemeColorType.Error :

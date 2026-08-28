@@ -17,9 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
 using System.Text;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -31,8 +35,91 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class ModelineCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "modeline";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "horizontalPixels", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALPIXELS_DESC",
+                        IsNumeric = true,
+                    }),
+                    new CommandArgumentPart(true, "verticalPixels", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALPIXELS_DESC",
+                        IsNumeric = true,
+                    }),
+                    new CommandArgumentPart(true, "verticalFreq", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALFREQ_DESC",
+                        IsNumeric = true,
+                    }),
+                    new CommandArgumentPart(false, "verticalSync", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALSYNC_DESC",
+                        IsNumeric = true,
+                    }),
+                    new CommandArgumentPart(false, "verticalBlanking", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALBLANKING_DESC",
+                        IsNumeric = true,
+                    }),
+                    new CommandArgumentPart(false, "horizontalSync", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALSYNC_DESC",
+                        IsNumeric = true,
+                    }),
+                    new CommandArgumentPart(false, "horizontalBlanking", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALBLANKING_DESC",
+                        IsNumeric = true,
+                    }),
+                    new CommandArgumentPart(false, "verticalRatioFrontPorch", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOFRONTPORCH_DESC",
+                        IsNumeric = true,
+                    }),
+                    new CommandArgumentPart(false, "verticalRatioSync", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOSYNC_DESC",
+                        IsNumeric = true,
+                    }),
+                    new CommandArgumentPart(false, "verticalRatioBackPorch", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOBACKPORCH_DESC",
+                        IsNumeric = true,
+                    }),
+                    new CommandArgumentPart(false, "horizontalRatioFrontPorch", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOFRONTPORCH_DESC",
+                        IsNumeric = true,
+                    }),
+                    new CommandArgumentPart(false, "horizontalRatioSync", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOSYNC_DESC",
+                        IsNumeric = true,
+                    }),
+                    new CommandArgumentPart(false, "horizontalRatioBackPorch", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOBACKPORCH_DESC",
+                        IsNumeric = true,
+                    }),
+                ],
+                [
+                    new SwitchInfo("oneline", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false,
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Check to see if we need Modeline for monitor or generate a whole Mode block
             bool modelineOneLine = parameters.ContainsSwitch("-oneline");

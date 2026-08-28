@@ -20,6 +20,8 @@
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Kernel.Events;
+using Terminaux.Shell.Shells;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Shell.Shells.Admin.Commands
 {
@@ -31,15 +33,23 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
     /// </remarks>
     class LsEventsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsevents";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_LSEVENTS_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var events = EventsManager.ListAllFiredEvents();
             ListWriterColor.WriteList(events);
             return 0;
         }
 
-        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
+        public override int ExecuteDumb(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var events = EventsManager.ListAllFiredEvents();
             foreach (string @event in events.Keys)

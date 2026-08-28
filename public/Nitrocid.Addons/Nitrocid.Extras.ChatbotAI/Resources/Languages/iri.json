@@ -74,6 +74,10 @@
     {
       "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
       "text": "D'eochair API do ChatGPT le haghaidh rochtana. Cé gur féidir leat an eochair API saor in aisce a úsáid, ní féidir leat samhlacha ardleibhéil a úsáid. Más mian leat rochtain iomlán a fháil ar gach samhail íoctha, beidh ort íoc as an rochtain."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
+      "text": "Dícheanglaíonn sé an bhlaosc ón gcomhrábot AI atá ag obair faoi láthair"
     }
   ]
 }

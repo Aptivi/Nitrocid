@@ -68,10 +68,6 @@
       "text": "Benutzername: "
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES",
-      "text": "Leerzeichen sind nicht erlaubt."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS",
       "text": "Sonderzeichen sind nicht erlaubt."
     },
@@ -1742,10 +1738,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
       "text": "Wie der abgesicherte Modus, deaktiviert aber auch den Mehrbenutzermodus und einige Anpassungen"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
-      "text": "Farben erfordern keinen Neustart, aber die meisten Einstellungen erfordern einen Neustart."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -7960,10 +7952,6 @@
       "text": "Benutzername zum Ändern des Passworts"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC",
-      "text": "Aktuelles Benutzerkennwort"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC",
       "text": "Alter Benutzername zum Ändern"
     },
@@ -9438,6 +9426,14 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "Keine Artikel"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC",
+      "text": "Einstellwert:"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC",
+      "text": "Hohe Kompression"
     }
   ]
 }

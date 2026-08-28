@@ -18,11 +18,14 @@
 //
 
 using Nettify.Rss.Instance;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Base.Extensions;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
 using Textify.General;
-using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Commands
 {
@@ -34,8 +37,16 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
     /// </remarks>
     class ListCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "list";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_LIST_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             foreach (RSSArticle Article in RSSShellCommon.RSSFeedInstance?.FeedArticles ?? [])
             {

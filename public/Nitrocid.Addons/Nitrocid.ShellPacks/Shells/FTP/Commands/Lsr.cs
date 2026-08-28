@@ -18,10 +18,15 @@
 //
 
 using System.Collections.Generic;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Tools.Filesystem;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ShellPacks.Tools.Filesystem;
-using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {
@@ -49,9 +54,36 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
     /// </remarks>
     class LsrCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsr";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSR_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "dir", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC"
+                    })
+                ],
+                [
+                    new SwitchInfo("showdetails", /* Localizable */ "NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SHOWDETAILS_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var ftpShell = (FTPShell?)shell ??
+                throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             bool ShowFileDetails = parameters.ContainsSwitch("-showdetails") || ShellsInit.ShellsConfig.FtpShowDetailsInList;
             var Entries = new List<string>();
             if (parameters.ArgumentsList.Length != 0)
@@ -60,9 +92,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
                     Entries = FTPFilesystem.FTPListRemote(TargetDirectory, ShowFileDetails);
             }
             else
-            {
                 Entries = FTPFilesystem.FTPListRemote("", ShowFileDetails);
-            }
             Entries.Sort();
             foreach (string Entry in Entries)
                 TextWriterColor.Write(Entry, true, ThemeColorType.ListEntry);

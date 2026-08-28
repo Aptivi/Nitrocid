@@ -18,14 +18,15 @@
 //
 
 using System;
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -37,8 +38,16 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class LsConnectionsCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "lsconnections";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LSCONNECTIONS_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
@@ -50,13 +59,13 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
             var shellTypes = Enum.GetNames<NetworkConnectionType>();
             foreach (var shellType in shellTypes)
-            {
+                {
                 var connections = NetworkConnectionTools.GetNetworkConnections(shellType);
                 SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONNECTIONS_LISTING") + $" {shellType}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                foreach (var connection in connections)
-                {
-                    TextWriterColor.Write($"- {connection.ConnectionName} -> {connection.ConnectionOriginalUrl}");
-                    TextWriterColor.Write($"  {connection.ConnectionUri}");
+                    foreach (var connection in connections)
+                    {
+                        TextWriterColor.Write($"- {connection.ConnectionName} -> {connection.ConnectionOriginalUrl}");
+                        TextWriterColor.Write($"  {connection.ConnectionUri}");
                     if (!connection.ConnectionIsInstance)
                         ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_KERNELALIVE"), $"{connection.ConnectionAlive}", indent: 1);
                     ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONNECTIONS_INSTANCE"), $"{connection.ConnectionInstance}", indent: 1);

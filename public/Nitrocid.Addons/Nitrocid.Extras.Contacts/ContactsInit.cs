@@ -42,39 +42,13 @@ namespace Nitrocid.Extras.Contacts
             new(".vcf", "Contacts", ContactsHandler.Handle, ContactsHandler.InfoHandle),
             new(".vcard", "Contacts", ContactsHandler.Handle, ContactsHandler.InfoHandle),
         ];
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("contacts", /* Localizable */ "NKS_CONTACTS_COMMAND_CONTACTS_DESC", new ContactsCommand()),
-            new CommandInfo("listcontacts", /* Localizable */ "NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC", new ListContactsCommand()),
-            new CommandInfo("loadcontacts", /* Localizable */ "NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC", new LoadContactsCommand()),
-            new CommandInfo("importcontacts", /* Localizable */ "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC",
-                [
-                    new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "mecard/path", new CommandArgumentPartOptions()
-                            {
-                                ArgumentDescription = /* Localizable */ "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC"
-                            })
-                        ],
-                        [
-                            new SwitchInfo("mecard", /* Localizable */ "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC", new(){
-                                AcceptsValues = false,
-                            }),
-                        ]
-                    )
-                ], new ImportContactsCommand()),
-            new CommandInfo("contactinfo", /* Localizable */ "NKS_CONTACTS_COMMAND_CONTACTINFO_DESC",
-                [
-                    new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "contactNum", new()
-                            {
-                                IsNumeric = true,
-                                ArgumentDescription = /* Localizable */ "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC"
-                            })
-                        ]
-                    )
-                ], new ContactInfoCommand()),
+            new ContactsCommand(),
+            new ListContactsCommand(),
+            new LoadContactsCommand(),
+            new ImportContactsCommand(),
+            new ContactInfoCommand(),
         ];
 
         public string AddonName =>

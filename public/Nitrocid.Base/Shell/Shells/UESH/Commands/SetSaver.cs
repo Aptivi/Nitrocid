@@ -17,19 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Linq;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Screensaver;
+using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using System.Linq;
-using Nitrocid.Base.Files;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
-using Nitrocid.Base.Misc.Screensaver;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Security.Permissions;
-using Nitrocid.Base.Files.Paths;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -37,14 +36,30 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// Sets your default screensaver as your own screensaver or built-in savers
     /// </summary>
     /// <remarks>
-    /// You can set your default screensaver as your own screensaver by the modfile or built-in savers such as matrix, disco, colorMix, and so on, whose names found in <see cref="ScreensaverManager.Screensavers"/> can be used as the argument for this command.
+    /// You can set your default screensaver as your own screensaver by savers, such as matrix, disco, colorMix, and so on, whose names found in <see cref="ScreensaverManager.Screensavers"/> can be used as the argument for this command.
     /// <br></br>
     /// The user must have at least the administrative privileges before they can run the below commands.
     /// </remarks>
     class SetSaverCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "setsaver";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETSAVER_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "saver", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETSAVER_ARGUMENT_SAVER_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
@@ -54,15 +69,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            string modPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
             string finalSaverName = parameters.ArgumentsText.ToLower();
             if (ScreensaverManager.GetScreensaverNames().Contains(finalSaverName))
-            {
-                ScreensaverManager.SetDefaultScreensaver(finalSaverName);
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETSAVER_SUCCESS"), finalSaverName);
-                return 0;
-            }
-            else if (FilesystemTools.FileExists($"{modPath}{finalSaverName}") & !KernelEntry.SafeMode)
             {
                 ScreensaverManager.SetDefaultScreensaver(finalSaverName);
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETSAVER_SUCCESS"), finalSaverName);
@@ -75,7 +83,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             }
         }
 
-        public override void HelpHelper()
+        public override void HelpHelper(IShell? shell)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETSAVER_LISTING") + " {0}", string.Join(", ", ScreensaverManager.GetScreensaverNames()));
         }

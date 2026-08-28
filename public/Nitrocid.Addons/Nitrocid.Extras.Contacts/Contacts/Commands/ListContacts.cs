@@ -17,22 +17,29 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
 using System;
-using Terminaux.Themes.Colors;
-using Nitrocid.Base.Kernel.Exceptions;
-using VisualCard.Parts.Implementations;
 using System.Text;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using VisualCard.Parts.Enums;
+using VisualCard.Parts.Implementations;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Commands
 {
     class ListContactsCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "listcontacts";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             try
             {

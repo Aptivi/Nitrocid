@@ -20,6 +20,7 @@
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Files.Extensions;
@@ -34,8 +35,13 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class GetDefaultExtHandlersCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "getdefaultexthandlers";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETDEFAULTEXTHANDLERS_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var handlers = ExtensionHandlerTools.defaultHandlers;
             for (int i = 0; i < handlers.Count; i++)
@@ -44,10 +50,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 if (handler is null)
                     continue;
                 SeparatorWriterColor.WriteSeparatorColor($"{i + 1}/{handlers.Count}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSION") + ": ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(handler.Extension, ThemeColorType.ListValue);
-                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_DEFAULTHANDLER") + ": ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(handler.Implementer, ThemeColorType.ListValue);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSION"), handler.Extension);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_DEFAULTHANDLER"), handler.Implementer);
             }
             variableValue = $"[{string.Join(", ", handlers.Select((h) => h.Value))}]";
             return 0;

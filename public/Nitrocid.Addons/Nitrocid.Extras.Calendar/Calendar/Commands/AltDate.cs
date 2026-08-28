@@ -17,13 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using System;
 using Calendrier;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using System;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Commands
 {
@@ -35,8 +38,48 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
     /// </remarks>
     class AltDateCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "altdate";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_ALTDATE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "culture", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_ALTDATE_ARGUMENT_CULTURE_DESC"
+                    })
+                ],
+                [
+                    new SwitchInfo("date", /* Localizable */ "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_DATE_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["full", "time"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("time", /* Localizable */ "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_TIME_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["date", "full"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("full", /* Localizable */ "NKS_CALENDAR_COMMAND_ALTDATE_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["date", "time"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("utc", /* Localizable */ "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_UTC_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ], true)
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Determine how to show date and time
             bool showDate = true;
@@ -64,33 +107,18 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
             if (showDate)
             {
                 if (useUtc)
-                {
-                    string rendered = TimeDateRenderersUtc.RenderDateUtc(cultureInstance);
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                    variableValue = TimeDateRenderersUtc.RenderDateUtc(cultureInstance);
                 else
-                {
-                    string rendered = TimeDateRenderers.RenderDate(cultureInstance);
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                    variableValue = TimeDateRenderers.RenderDate(cultureInstance);
             }
             if (showTime)
             {
                 if (useUtc)
-                {
-                    string rendered = TimeDateRenderersUtc.RenderTimeUtc(cultureInstance);
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                    variableValue = TimeDateRenderersUtc.RenderTimeUtc(cultureInstance);
                 else
-                {
-                    string rendered = TimeDateRenderers.RenderTime(cultureInstance);
-                    TextWriterColor.Write(rendered);
-                    variableValue = rendered;
-                }
+                    variableValue = TimeDateRenderers.RenderTime(cultureInstance);
             }
+            TextWriterColor.Write(variableValue);
             return 0;
         }
     }

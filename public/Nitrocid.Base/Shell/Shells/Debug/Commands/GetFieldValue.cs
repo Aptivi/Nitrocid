@@ -18,11 +18,13 @@
 //
 
 using System;
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
-using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -34,8 +36,25 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     /// </remarks>
     class GetFieldValueCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "getfieldvalue";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_GETFIELDVALUE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "field", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => [.. FieldManager.GetAllFieldsNoEvaluation().Keys],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_GETFIELDVALUE_ARGUMENT_NAME_DESC"
+                    })
+                ], true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // List all available fields on all the kernel types
             string fieldName = parameters.ArgumentsList[0];

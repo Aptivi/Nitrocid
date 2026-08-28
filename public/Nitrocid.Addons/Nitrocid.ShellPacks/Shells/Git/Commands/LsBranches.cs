@@ -17,9 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -31,8 +34,16 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     /// </remarks>
     class LsBranchesCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsbranches";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_LSBRANCHES_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (GitShellCommon.Repository is null)
                 return 43;

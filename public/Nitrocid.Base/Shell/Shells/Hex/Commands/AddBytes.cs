@@ -18,12 +18,14 @@
 //
 
 using System.Collections.Generic;
+using Nitrocid.Base.Files.Editors.HexEdit;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Reader;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Files.Editors.HexEdit;
-using Nitrocid.Base.ConsoleBase.Inputs;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 {
@@ -35,8 +37,13 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
     /// </remarks>
     class AddBytesCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "addbytes";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTES_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var FinalBytes = new List<byte>();
             string FinalByte = "";
@@ -46,17 +53,13 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
             while (FinalByte != "EOF")
             {
                 TextWriterColor.Write(">> ", false, ThemeColorType.Input);
-                FinalByte = InputTools.ReadLine();
+                FinalByte = TermReader.Read();
                 if (FinalByte != "EOF")
                 {
                     if (byte.TryParse(FinalByte, System.Globalization.NumberStyles.HexNumber, null, out byte ByteContent))
-                    {
                         FinalBytes.Add(ByteContent);
-                    }
                     else
-                    {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTES_INVALIDBYTE"), true, ThemeColorType.Error);
-                    }
                 }
             }
 

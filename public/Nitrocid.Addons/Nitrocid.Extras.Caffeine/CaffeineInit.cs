@@ -30,24 +30,9 @@ namespace Nitrocid.Extras.Caffeine
 {
     internal class CaffeineInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("caffeine", /* Localizable */ "NKS_CAFFEINE_COMMAND_CAFFEINE_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "secondsOrName", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC"
-                        }),
-                    ],
-                    [
-                        new SwitchInfo("abort", /* Localizable */ "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC", new SwitchOptions()
-                        {
-                            OptionalizeLastRequiredArguments = 1
-                        })
-                    ])
-                ], new CaffeineCommand())
+            new CaffeineCommand(),
         ];
 
         public string AddonName =>

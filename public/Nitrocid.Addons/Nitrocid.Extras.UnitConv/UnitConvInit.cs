@@ -33,51 +33,10 @@ namespace Nitrocid.Extras.UnitConv
 {
     internal class UnitConvInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("listunits", /* Localizable */ "NKS_UNITCONV_COMMAND_LISTUNITS_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
-                        {
-                            AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray(),
-                            ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC"
-                        }),
-                    ])
-                ], new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-
-            new CommandInfo("unitconv", /* Localizable */ "NKS_UNITCONV_COMMAND_UNITCONV_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "unittype", new CommandArgumentPartOptions()
-                        {
-                            AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray(),
-                            ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC"
-                        }),
-                        new CommandArgumentPart(true, "quantity", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_QUANTITY_DESC"
-                        }),
-                        new CommandArgumentPart(true, "sourceunit", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_SOURCEUNIT_DESC"
-                        }),
-                        new CommandArgumentPart(true, "targetunit", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC"
-                        }),
-                    ],
-                    [
-                        new SwitchInfo("tui", /* Localizable */ "NKS_UNITCONV_COMMAND_UNITCONV_SWITCH_TUI_DESC", new SwitchOptions()
-                        {
-                            OptionalizeLastRequiredArguments = 4,
-                            AcceptsValues = false
-                        })
-                    ])
-                ], new UnitConvCommand()),
+            new ListUnitsCommand(),
+            new UnitConvCommand(),
         ];
 
         public string AddonName =>

@@ -17,20 +17,45 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
 using System;
-using Terminaux.Themes.Colors;
-using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Commands
 {
     class ImportContactsCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "importcontacts";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "mecard/path", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC"
+                        })
+                    ],
+                    [
+                        new SwitchInfo("mecard", /* Localizable */ "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC", new(){
+                            AcceptsValues = false,
+                        }),
+                    ]
+                )
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             try
             {

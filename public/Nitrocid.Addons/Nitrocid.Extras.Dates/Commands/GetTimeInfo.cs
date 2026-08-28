@@ -18,15 +18,18 @@
 //
 
 using System;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Calendrier;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Time;
-using Calendrier;
 using Nitrocid.Base.Kernel.Time.Converters;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Nitrocid.Extras.Dates.Commands
@@ -39,51 +42,78 @@ namespace Nitrocid.Extras.Dates.Commands
     /// </remarks>
     class GetTimeInfoCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "gettimeinfo";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_DATES_COMMAND_GETTIMEINFO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "date", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC"
+                    })
+                ],
+                [
+                    new SwitchInfo("now", /* Localizable */ "NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC", new SwitchOptions()
+                    {
+                        OptionalizeLastRequiredArguments = 1,
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool getNow = parameters.SwitchesList.Length > 0 && parameters.ContainsSwitch("-now");
-            DateTime DateTimeInfo = TimeDateTools.KernelDateTime;
-            if (getNow || DateTime.TryParse(parameters.ArgumentsList[0], out DateTimeInfo))
+            string date = parameters.ArgumentsList[0];
+            DateTime dateTimeInfo = TimeDateTools.KernelDateTime;
+            if (getNow || DateTime.TryParse(date, out dateTimeInfo))
             {
-                SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_HEADER") + " {0}", true, TimeDateRenderers.Render(DateTimeInfo));
-                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_MS"), "{0}".FormatString(DateTimeInfo.Millisecond));
-                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_SECONDS"), "{0}".FormatString(DateTimeInfo.Second));
-                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_MINUTES"), "{0}".FormatString(DateTimeInfo.Minute));
-                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_HOURS"), "{0}".FormatString(DateTimeInfo.Hour));
-                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DAYS"), "{0}".FormatString(DateTimeInfo.Day));
-                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_MONTHS"), "{0}".FormatString(DateTimeInfo.Month));
-                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_YEARS"), "{0}".FormatString(DateTimeInfo.Year));
+                SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_HEADER") + $" {TimeDateRenderers.Render(dateTimeInfo)}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_MS"), $"{dateTimeInfo.Millisecond}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_SECONDS"), $"{dateTimeInfo.Second}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_MINUTES"), $"{dateTimeInfo.Minute}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_HOURS"), $"{dateTimeInfo.Hour}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DAYS"), $"{dateTimeInfo.Day}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_MONTHS"), $"{dateTimeInfo.Month}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_YEARS"), $"{dateTimeInfo.Year}");
                 TextWriterRaw.Write();
 
                 // Whole date and time
-                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATE"), "{0}".FormatString(TimeDateRenderers.RenderDate(DateTimeInfo)));
-                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_TIME"), "{0}".FormatString(TimeDateRenderers.RenderTime(DateTimeInfo)));
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATE"), TimeDateRenderers.RenderDate(dateTimeInfo));
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_TIME"), TimeDateRenderers.RenderTime(dateTimeInfo));
                 TextWriterRaw.Write();
 
                 // Some more info
-                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DAYOFYEAR"), "{0}".FormatString(DateTimeInfo.DayOfYear));
-                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DAYOFWEEK"), "{0}".FormatString(DateTimeInfo.DayOfWeek.ToString()));
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DAYOFYEAR"), $"{dateTimeInfo.DayOfYear}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DAYOFWEEK"), dateTimeInfo.DayOfWeek.ToString());
                 TextWriterRaw.Write();
 
                 // Conversions
-                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_BINARY"), "{0}".FormatString(DateTimeInfo.ToBinary()));
-                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_LOCALTIME"), "{0}".FormatString(TimeDateRenderers.Render(DateTimeInfo.ToLocalTime())));
-                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_UNIVERSALTIME"), "{0}".FormatString(TimeDateRenderers.Render(DateTimeInfo.ToUniversalTime())));
-                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_UNIXTIME"), "{0}".FormatString(TimeDateConverters.DateToUnix(DateTimeInfo)));
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_BINARY"), $"{dateTimeInfo.ToBinary()}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_LOCALTIME"), TimeDateRenderers.Render(dateTimeInfo.ToLocalTime()));
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_UNIVERSALTIME"), TimeDateRenderers.Render(dateTimeInfo.ToUniversalTime()));
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_UNIXTIME"), $"{TimeDateConverters.DateToUnix(dateTimeInfo)}");
                 TextWriterRaw.Write();
 
                 // For the calendars
-                foreach (var calendar in Enum.GetNames(typeof(CalendarTypes)))
+                foreach (var calendar in Enum.GetNames<CalendarTypes>())
                 {
                     var calendarInstance = CalendarTools.GetCalendar(calendar);
-                    ListEntryWriterColor.WriteListEntry(calendar, TimeDateRenderers.Render(DateTimeInfo, calendarInstance));
+                    ListEntryWriterColor.WriteListEntry(calendar, TimeDateRenderers.Render(dateTimeInfo, calendarInstance));
                 }
                 return 0;
             }
             else
             {
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1") + " {0}. " + LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2"), true, ThemeColorType.Error, parameters.ArgumentsList[0]);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1") + " {0}. " + LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2"), true, ThemeColorType.Error, date);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.TimeDate);
             }
         }

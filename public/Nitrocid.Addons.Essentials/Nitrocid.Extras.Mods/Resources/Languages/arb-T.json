@@ -145,10 +145,6 @@
       "text": "ابدأ تلقائيًا تعديلات kernel عند التشغيل."
     },
     {
-      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
-      "text": "لم يتم تحديد ملف Mod."
-    },
-    {
       "loc": "NKS_MODS_MODUPDATING",
       "text": "محاولة تثبيت تعديل مثبت بالفعل. جارٍ تحديث الوضع ..."
     },

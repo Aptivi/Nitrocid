@@ -19,7 +19,11 @@
 
 using System.IO.Compression;
 using Nitrocid.Base.Files;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -51,25 +55,58 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class ZipCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "zip";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "zipfile", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_ARGUMENT_ZIPFILE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "path", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_ARGUMENT_PATH_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("fast", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_FAST_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["nocomp", "smallest"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("nocomp", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_NOCOMP_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["fast", "smallest"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("smallest", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["fast", "nocomp"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("nobasedir", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_NOBASEDIR_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string ZipArchiveName = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             string Destination = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
-            var ZipCompression = CompressionLevel.Optimal;
-            bool ZipBaseDir = true;
-            if (parameters.ContainsSwitch("-fast"))
-            {
-                ZipCompression = CompressionLevel.Fastest;
-            }
-            else if (parameters.ContainsSwitch("-nocomp"))
-            {
-                ZipCompression = CompressionLevel.NoCompression;
-            }
-            if (parameters.ContainsSwitch("-nobasedir"))
-            {
-                ZipBaseDir = false;
-            }
+            var ZipCompression =
+                parameters.ContainsSwitch("-fast") ? CompressionLevel.Fastest :
+                parameters.ContainsSwitch("-nocomp") ? CompressionLevel.NoCompression :
+                parameters.ContainsSwitch("-smallest") ? CompressionLevel.SmallestSize :
+                CompressionLevel.Optimal;
+            bool ZipBaseDir = !parameters.ContainsSwitch("-nobasedir");
             ZipFile.CreateFromDirectory(Destination, ZipArchiveName, ZipCompression, ZipBaseDir);
             return 0;
         }

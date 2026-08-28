@@ -17,9 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Files;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Security.Permissions;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -33,12 +36,29 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class MdCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "md";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_MD_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MD_ARGUMENT_DIRECTORY_DESC"
+                    }),
+                ], true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
-            FilesystemTools.MakeDirectory(parameters.ArgumentsList[0]);
-            variableValue = parameters.ArgumentsList[0];
+            string directoryPath = parameters.ArgumentsList[0];
+            FilesystemTools.MakeDirectory(directoryPath);
+            variableValue = directoryPath;
             return 0;
         }
     }

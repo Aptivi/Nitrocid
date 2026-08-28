@@ -17,12 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Linq;
+using Nitrocid.Base.Files.Extensions;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Files.Extensions;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -34,18 +37,35 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class GetDefaultExtHandlerCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "getdefaultexthandler";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETDEFAULTEXTHANDLER_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "extension", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GETDEFAULTEXTHANDLER_ARGUMENT_EXTENSION_DESC"
+                    }),
+                ], true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (!ExtensionHandlerTools.IsHandlerRegistered(parameters.ArgumentsList[0]))
+            string extension = parameters.ArgumentsList[0];
+            if (!ExtensionHandlerTools.IsHandlerRegistered(extension))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_NOEXT"), ThemeColorType.Error);
                 return 21;
             }
-            var handler = ExtensionHandlerTools.GetExtensionHandler(parameters.ArgumentsList[0]) ??
-                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_EXCEPTION_HANDLERFAILED") + $" {parameters.ArgumentsList[0]}");
-            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_DEFAULTHANDLER") + ": ", false, ThemeColorType.ListEntry);
-            TextWriterColor.Write(handler.Implementer, ThemeColorType.ListValue);
+            var handler = ExtensionHandlerTools.GetExtensionHandler(extension) ??
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_EXCEPTION_HANDLERFAILED") + $" {extension}");
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_DEFAULTHANDLER"), handler.Implementer);
             variableValue = handler.Implementer;
             return 0;
         }

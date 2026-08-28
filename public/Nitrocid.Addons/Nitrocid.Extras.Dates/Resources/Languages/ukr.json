@@ -277,6 +277,30 @@
     {
       "loc": "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC",
       "text": "Чи в цільовому продукті не вказано чітко термін придатності"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_PREPRODUCTION",
+      "text": "Передпродакшн"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_EXPIRED",
+      "text": "Термін дії минув"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_POOR",
+      "text": "Погано"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_AVERAGE",
+      "text": "Середньо"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_GOOD",
+      "text": "Добре"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_EXCELLENT",
+      "text": "Відмінно"
     }
   ]
 }

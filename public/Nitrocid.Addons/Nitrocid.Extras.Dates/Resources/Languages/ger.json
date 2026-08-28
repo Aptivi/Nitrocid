@@ -286,6 +286,30 @@
     {
       "loc": "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC",
       "text": "Ob das Zielprodukt das Ablaufdatum nicht explizit angibt"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_PREPRODUCTION",
+      "text": "Vorproduktion"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_EXPIRED",
+      "text": "Abgelaufen"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_POOR",
+      "text": "Schlecht"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_AVERAGE",
+      "text": "Durchschnittlich"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_GOOD",
+      "text": "Gut"
+    },
+    {
+      "loc": "NKS_DATES_EXPIRY_STATUS_EXCELLENT",
+      "text": "Ausgezeichnet"
     }
   ]
 }

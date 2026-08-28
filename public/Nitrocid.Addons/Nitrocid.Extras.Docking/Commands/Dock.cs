@@ -17,24 +17,44 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Widgets;
+using Nitrocid.Extras.Docking.Dock;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Extras.Docking.Dock;
-using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.Misc.Widgets;
 
 namespace Nitrocid.Extras.Docking.Commands
 {
     class DockCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "dock";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_DOCKING_COMMAND_DOCK_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "dockName", new()
+                    {
+                        AutoCompleter = (_) => DockTools.GetDockScreenNames(),
+                        ArgumentDescription = /* Localizable */ "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Check the dock screen for existence
-            if (!DockTools.DoesDockScreenExist(parameters.ArgumentsList[0], out BaseWidget? dock))
+            string dockName = parameters.ArgumentsList[0];
+            if (!DockTools.DoesDockScreenExist(dockName, out BaseWidget? dock))
             {
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN1"), ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN2"), ThemeColorType.Error);
                 return 34;
             }
 

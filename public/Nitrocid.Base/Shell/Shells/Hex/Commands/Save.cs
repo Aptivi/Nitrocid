@@ -18,7 +18,10 @@
 //
 
 using Nitrocid.Base.Files.Editors.HexEdit;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Commands
 {
@@ -30,8 +33,13 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
     /// </remarks>
     class SaveCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "save";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEXTEXT_COMMAND_SAVE_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             HexEditTools.SaveBinaryFile();
             return 0;

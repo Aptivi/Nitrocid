@@ -18,14 +18,16 @@
 //
 
 using System.IO;
+using Nitrocid.Base.Drivers.Encryption;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Files;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Drivers.Encryption;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -58,15 +60,48 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class VerifyCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "verify";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "algorithm", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => EncryptionDriverTools.GetEncryptionDriverNames(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_ALGORITHM_DESC"
+                    }),
+                    new CommandArgumentPart(true, "calculatedhash", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_ARGUMENT_CALCULATEDHASH_DESC"
+                    }),
+                    new CommandArgumentPart(true, "hashfile/expectedhash", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_ARGUMENT_HASHFILE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_ARGUMENT_FILE_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             try
             {
-                string HashFile = FilesystemTools.NeutralizePath(parameters.ArgumentsList[2]);
-                if (FilesystemTools.FileExists(HashFile))
+                string algorithm = parameters.ArgumentsList[0];
+                string calculatedHash = parameters.ArgumentsList[1];
+                string pathOrExpectedHash = parameters.ArgumentsList[2];
+                string hashFile = FilesystemTools.NeutralizePath(parameters.ArgumentsList[2]);
+                string targetFile = parameters.ArgumentsList[3];
+                if (FilesystemTools.FileExists(hashFile))
                 {
-                    if (HashVerifier.VerifyHashFromHashesFile(parameters.ArgumentsList[3], parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]))
+                    if (HashVerifier.VerifyHashFromHashesFile(targetFile, algorithm, hashFile, calculatedHash))
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESMATCH"));
                         return 0;
@@ -77,7 +112,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                         return 4;
                     }
                 }
-                else if (HashVerifier.VerifyHashFromHash(parameters.ArgumentsList[3], parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]))
+                else if (HashVerifier.VerifyHashFromHash(targetFile, algorithm, pathOrExpectedHash, calculatedHash))
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESMATCH"));
                     return 0;

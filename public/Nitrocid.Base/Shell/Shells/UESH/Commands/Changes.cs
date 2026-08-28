@@ -20,6 +20,8 @@
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Kernel.Updates;
+using Terminaux.Shell.Shells;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -31,8 +33,16 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class ChangesCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "changes";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHANGES_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string changes = UpdateManager.FetchCurrentChangelogsFromResources();
             TextWriterColor.Write(changes);

@@ -17,20 +17,27 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using FluentFTP;
+using Nitrocid.Base.Files.Instances;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Shells.FTP.Interactive;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Shell.Commands;
-using Nitrocid.Base.Files.Instances;
-using Nitrocid.Base.Languages;
-using System;
-using Nitrocid.ShellPacks.Shells.FTP.Interactive;
-using FluentFTP;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {
     class IfmCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "ifm";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_IFM_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var tui = new FtpFileManagerCli();
             tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry, FtpListItem>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));

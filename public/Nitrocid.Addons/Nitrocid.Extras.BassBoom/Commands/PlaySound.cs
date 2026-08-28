@@ -17,19 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Files;
-using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
 using System;
 using System.IO;
 using System.Threading;
-using Terminaux.Base;
-using Terminaux.Inputs;
-using BassBoom.Basolia;
 using BassBoom.Basolia.Media;
 using BassBoom.Basolia.Media.Playback;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Languages;
+using Terminaux.Inputs;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {
@@ -41,8 +41,24 @@ namespace Nitrocid.Extras.BassBoom.Commands
     /// </remarks>
     class PlaySoundCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "playsound";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "musicFile", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string path = parameters.ArgumentsList[0];
             var media = new BasoliaMedia();

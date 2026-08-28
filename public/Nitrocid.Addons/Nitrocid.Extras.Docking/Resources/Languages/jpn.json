@@ -11,10 +11,6 @@
       "text": "選択したドック ビューに関する全画面概要を表示し、情報パネルとして使用できるようにします。"
     },
     {
-      "loc": "NKS_DOCKING_NODOCKSCREEN1",
-      "text": "この名前のドック画面はありません。"
-    },
-    {
       "loc": "NKS_DOCKING_NODOCKSCREEN2",
       "text": "この名前のスクリーンドックはありません。"
     },

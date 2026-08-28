@@ -76,6 +76,10 @@
     {
       "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
       "text": "您用於存取 ChatGPT 的 API 金鑰。雖然您可以使用免費 API 金鑰，但無法使用高級模型。如果您想完全存取所有付費模型，則需要付費。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
+      "text": "將外殼從目前運行的 AI 聊天機器人中分離出來。"
     }
   ]
 }

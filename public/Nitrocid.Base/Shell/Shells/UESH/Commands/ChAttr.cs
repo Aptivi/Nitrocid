@@ -19,13 +19,15 @@
 
 using System;
 using System.IO;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Security.Permissions;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Files;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Security.Permissions;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -61,48 +63,72 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class ChAttrCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "chattr";
 
-        // Warning: Don't use parameters.SwitchesList to replace parameters.ArgumentsList(1); the removal signs of ChAttr are treated as switches and will cause unexpected behavior if changed.
-        public override int Execute(CommandParameters parameters, ref string variableValue)
-        {
-            string NeutralizedFilePath = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
-            PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
-            if (FilesystemTools.FileExists(NeutralizedFilePath))
-            {
-                if (parameters.ArgumentsList[2] == "Normal" | parameters.ArgumentsList[2] == "ReadOnly" | parameters.ArgumentsList[2] == "Hidden" | parameters.ArgumentsList[2] == "Archive")
-                {
-                    if (parameters.ArgumentsList[1] == "add")
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "file", new()
                     {
-                        FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), parameters.ArgumentsList[2]));
-                        if (FilesystemTools.TryAddAttributeToFile(NeutralizedFilePath, Attrib))
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_FILE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "add/rem", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_ADDREMOVE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "Normal/ReadOnly/Hidden/Archive", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_NAME_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
+        {
+            string target = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
+            string mode = parameters.ArgumentsList[1];
+            string attribute = parameters.ArgumentsList[2];
+            PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
+            if (FilesystemTools.FileExists(target))
+            {
+                if (attribute == "Normal" || attribute == "ReadOnly" || attribute == "Hidden" || attribute == "Archive")
+                {
+                    FileAttributes attrib = Enum.Parse<FileAttributes>(attribute);
+                    if (mode == "add")
+                    {
+                        if (FilesystemTools.TryAddAttributeToFile(target, attrib))
                         {
-                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ADDSUCCESS") + " {0}", parameters.ArgumentsList[2]);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ADDSUCCESS") + " {0}", attribute);
                             return 0;
                         }
                         else
                         {
-                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ADDFAILED") + " {0}", parameters.ArgumentsList[2]);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ADDFAILED") + " {0}", attribute);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
                         }
                     }
-                    else if (parameters.ArgumentsList[1] == "rem")
+                    else if (mode == "rem")
                     {
-                        FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), parameters.ArgumentsList[2]));
-                        if (FilesystemTools.TryRemoveAttributeFromFile(NeutralizedFilePath, Attrib))
+                        if (FilesystemTools.TryRemoveAttributeFromFile(target, attrib))
                         {
-                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_REMOVESUCCESS") + " {0}", parameters.ArgumentsList[2]);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_REMOVESUCCESS") + " {0}", attribute);
                             return 0;
                         }
                         else
                         {
-                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_REMOVEFAILED") + " {0}", parameters.ArgumentsList[2]);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_REMOVEFAILED") + " {0}", attribute);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
                         }
                     }
                 }
                 else
                 {
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_INVALIDATTR"), true, ThemeColorType.Error, parameters.ArgumentsList[2]);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_INVALIDATTR"), true, ThemeColorType.Error, attribute);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
                 }
             }
@@ -114,17 +140,13 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        public override void HelpHelper()
+        public override void HelpHelper(IShell? shell)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_LIST"));
-            TextWriterColor.Write("- Normal: ", false, ThemeColorType.ListEntry);
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_NORMAL"), true, ThemeColorType.ListValue);                   // Normal   = 128
-            TextWriterColor.Write("- ReadOnly: ", false, ThemeColorType.ListEntry);
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_READONLY"), true, ThemeColorType.ListValue);              // ReadOnly = 1
-            TextWriterColor.Write("- Hidden: ", false, ThemeColorType.ListEntry);
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_HIDDEN"), true, ThemeColorType.ListValue);                   // Hidden   = 2
-            TextWriterColor.Write("- Archive: ", false, ThemeColorType.ListEntry);
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_ARCHIVE"), true, ThemeColorType.ListValue);  // Archive  = 32
+            ListEntryWriterColor.WriteListEntry(nameof(FileAttributes.Normal), LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_NORMAL"));
+            ListEntryWriterColor.WriteListEntry(nameof(FileAttributes.ReadOnly), LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_READONLY"));
+            ListEntryWriterColor.WriteListEntry(nameof(FileAttributes.Hidden), LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_HIDDEN"));
+            ListEntryWriterColor.WriteListEntry(nameof(FileAttributes.Archive), LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_ARCHIVE"));
         }
 
     }

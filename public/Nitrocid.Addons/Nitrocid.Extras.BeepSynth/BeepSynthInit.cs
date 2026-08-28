@@ -29,18 +29,9 @@ namespace Nitrocid.Extras.BeepSynth
 {
     internal class BeepSynthInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("beepsynth", /* Localizable */ "NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "synthFile", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_ARGUMENT_SYNTHFILE_DESC"
-                        }),
-                    ])
-                ], new BeepSynthCommand())
+            new BeepSynthCommand(),
         ];
 
         public string AddonName =>

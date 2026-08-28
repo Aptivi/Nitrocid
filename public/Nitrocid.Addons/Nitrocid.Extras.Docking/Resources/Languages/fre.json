@@ -57,10 +57,6 @@
       "text": "Vous montre un aperçu en plein écran d'une vue du Dock sélectionnée pour pouvoir l'utiliser comme panneau d'informations"
     },
     {
-      "loc": "NKS_DOCKING_NODOCKSCREEN1",
-      "text": "Il n’existe pas d’écran de dock portant ce nom."
-    },
-    {
       "loc": "NKS_DOCKING_NODOCKSCREEN2",
       "text": "Il n’existe pas de station d’accueil d’écran de ce nom."
     },

@@ -18,16 +18,17 @@
 //
 
 using MimeKit;
-using Nitrocid.ShellPacks.Tools.Transfer;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Files;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
+using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Tools.Transfer;
+using Terminaux.Reader;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
-using Nitrocid.Base.ConsoleBase.Inputs;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 {
@@ -60,15 +61,22 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
     /// </remarks>
     class SendEncCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "sendenc";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_SENDENC_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var mailShell = (MailShell?)shell ??
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             string Receiver, Subject;
             var Body = new BodyBuilder();
 
             // Prompt for receiver e-mail address
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_TARGETPROMPT") + " ", false, ThemeColorType.Input);
-            Receiver = InputTools.ReadLine();
+            Receiver = TermReader.Read();
             DebugWriter.WriteDebug(DebugLevel.I, "Recipient: {0}", vars: [Receiver]);
 
             // Check for mail format
@@ -78,7 +86,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 
                 // Prompt for subject
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_SUBJECTPROMPT") + " ", false, ThemeColorType.Input);
-                Subject = InputTools.ReadLine();
+                Subject = TermReader.Read();
                 DebugWriter.WriteDebug(DebugLevel.I, "Subject: {0} ({1} chars)", vars: [Subject, Subject.Length]);
 
                 // Prompt for body
@@ -86,7 +94,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
                 string BodyLine = "";
                 while (!BodyLine.Equals("EOF", System.StringComparison.OrdinalIgnoreCase))
                 {
-                    BodyLine = InputTools.ReadLine();
+                    BodyLine = TermReader.Read();
                     if (!BodyLine.Equals("EOF", System.StringComparison.OrdinalIgnoreCase))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Body line: {0} ({1} chars)", vars: [BodyLine, BodyLine.Length]);
@@ -100,7 +108,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
                 while (!string.IsNullOrEmpty(PathLine))
                 {
                     TextWriterColor.Write("> ", false, ThemeColorType.Input);
-                    PathLine = InputTools.ReadLine();
+                    PathLine = TermReader.Read();
                     if (!string.IsNullOrEmpty(PathLine))
                     {
                         PathLine = FilesystemTools.NeutralizePath(PathLine);

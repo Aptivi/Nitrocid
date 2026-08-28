@@ -34,52 +34,13 @@ namespace Nitrocid.Extras.Dates
 {
     internal class DatesInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("gettimeinfo", /* Localizable */ "NKS_DATES_COMMAND_GETTIMEINFO_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "date", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC"
-                        })
-                    ],
-                    [
-                        new SwitchInfo("now", /* Localizable */ "NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC", new SwitchOptions()
-                        {
-                            OptionalizeLastRequiredArguments = 1,
-                            AcceptsValues = false
-                        })
-                    ])
-                ], new GetTimeInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-            
-            new CommandInfo("expiry", /* Localizable */ "NKS_DATES_COMMAND_EXPIRY_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "production", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC"
-                        }),
-                        new CommandArgumentPart(true, "expiry", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC"
-                        })
-                    ],
-                    [
-                        new SwitchInfo("implicit", /* Localizable */ "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC", new SwitchOptions()
-                        {
-                            AcceptsValues = false
-                        })
-                    ])
-                ], new ExpiryCommand()),
-
-            new CommandInfo("stopwatch", /* Localizable */ "NKS_DATES_COMMAND_STOPWATCH_DESC", new StopwatchCommand()),
-
-            new CommandInfo("timer", /* Localizable */ "NKS_DATES_COMMAND_TIMER_DESC", new TimerCommand()),
-
-            new CommandInfo("pomodoro", /* Localizable */ "NKS_DATES_COMMAND_POMODORO_DESC", new PomodoroCommand()),
+            new GetTimeInfoCommand(),
+            new ExpiryCommand(),
+            new StopwatchCommand(),
+            new TimerCommand(),
+            new PomodoroCommand(),
         ];
 
         public string AddonName =>

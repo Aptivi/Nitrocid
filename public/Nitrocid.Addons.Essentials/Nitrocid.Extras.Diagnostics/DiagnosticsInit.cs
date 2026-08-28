@@ -28,9 +28,9 @@ namespace Nitrocid.Extras.Diagnostics
 {
     internal class DiagnosticsInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("threadsbt", /* Localizable */ "NKS_DIAG_COMMAND_THREADSBT_DESC", new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            new ThreadsBtCommand(),
         ];
 
         public string AddonName =>

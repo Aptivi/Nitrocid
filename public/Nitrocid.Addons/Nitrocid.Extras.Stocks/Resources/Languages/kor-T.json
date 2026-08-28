@@ -114,6 +114,10 @@
     {
       "loc": "NKS_STOCKS_TUI_HELP02_BODY",
       "text": "대화형 TUI는 추적 중인 특정 기업의 주식 정보(시가 및 종가, 최고가 및 최저가 등)를 제공합니다. 이 정보는 매시간 변동하므로 기업의 주가 움직임을 심층적으로 이해하려면 주가를 최대한 면밀히 살펴봐야 합니다."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "AlphaVantage API 키"
     }
   ]
 }

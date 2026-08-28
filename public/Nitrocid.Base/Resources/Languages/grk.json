@@ -60,10 +60,6 @@
       "text": "Όνομα χρήστη:"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES",
-      "text": "Δεν επιτρέπονται θέσεις."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS",
       "text": "Ειδικοί χαρακτήρες δεν επιτρέπονται."
     },
@@ -1734,10 +1730,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
       "text": "Όπως και η ασφαλής λειτουργία, αλλά επίσης απενεργοποιεί την πολλαπλή χρήση και κάποια προσαρμογή"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
-      "text": "Τα χρώματα δεν απαιτούν επανεκκίνηση, αλλά οι περισσότερες ρυθμίσεις απαιτούν επανεκκίνηση."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -7952,10 +7944,6 @@
       "text": "Όνομα χρήστη για αλλαγή κωδικού πρόσβασης"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC",
-      "text": "Τρέχων κωδικός χρήστη"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC",
       "text": "Παλιό όνομα χρήστη για αλλαγή"
     },
@@ -9430,6 +9418,14 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "Δεν υπάρχουν άρθρα"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC",
+      "text": "Τιμή για ορισμό σε"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC",
+      "text": "Υψηλή συμπίεση"
     }
   ]
 }

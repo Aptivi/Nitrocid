@@ -119,10 +119,6 @@
       "text": "起動時にカーネルの変更を自動的に開始します。"
     },
     {
-      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
-      "text": "Modファイルが指定されていません。"
-    },
-    {
       "loc": "NKS_MODS_MODUPDATING",
       "text": "すでにインストールされているmodをインストールしようとしています。modを更新しています..."
     },

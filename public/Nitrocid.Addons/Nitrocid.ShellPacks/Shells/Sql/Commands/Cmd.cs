@@ -17,16 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
 using Microsoft.Data.Sqlite;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Tools;
+using Terminaux.Reader;
 using Terminaux.Shell.Commands;
-using System.Collections.Generic;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
-using Nitrocid.Base.ConsoleBase.Inputs;
 
 namespace Nitrocid.ShellPacks.Shells.Sql.Commands
 {
@@ -38,8 +39,13 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
     /// </remarks>
     class CmdCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "cmd";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMAND_CMD_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // First, check to see if we have parameters
             List<SqliteParameter> sqlParameters = [];
@@ -47,7 +53,7 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
             {
                 if (StringArg.StartsWith("@"))
                 {
-                    string paramValue = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT").FormatString(StringArg) + " ");
+                    string paramValue = TermReader.Read(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT").FormatString(StringArg) + " ");
                     sqlParameters.Add(new SqliteParameter(StringArg, paramValue));
                 }
             }

@@ -17,9 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
-using System;
 using Nitrocid.Base.Kernel.Power;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -31,13 +33,38 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class RShutdownCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "rshutdown";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RSHUTDOWN_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "address", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC"
+                    }),
+                    new CommandArgumentPart(true, "port", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            string address = parameters.ArgumentsList[0];
             if (parameters.ArgumentsList.Length == 1)
-                PowerManager.PowerManage(PowerMode.RemoteShutdown, parameters.ArgumentsList[0]);
+                PowerManager.PowerManage(PowerMode.RemoteShutdown, address);
             else
-                PowerManager.PowerManage(PowerMode.RemoteShutdown, parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1]));
+            {
+                string portNumStr = parameters.ArgumentsList[1];
+                PowerManager.PowerManage(PowerMode.RemoteShutdown, address, int.Parse(portNumStr));
+            }
             return 0;
         }
 

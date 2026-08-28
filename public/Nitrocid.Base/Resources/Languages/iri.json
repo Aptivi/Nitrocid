@@ -60,10 +60,6 @@
       "text": "Ainm Úsáideora:"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES",
-      "text": "Ní cheadaítear spásanna."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS",
       "text": "Ní cheadaítear carachtair speisialta."
     },
@@ -1734,10 +1730,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
       "text": "Cosúil le modh sábháilte, ach freisin díchumasaigh il-úsáideoir agus roinnt saincheaptha"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
-      "text": "Ní gá dathanna a atosú, ach teastaíonn atosú ón gcuid is mó de na socruithe."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -7952,10 +7944,6 @@
       "text": "Ainm úsáideora chun pasfhocal a athrú"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC",
-      "text": "Pasfhocal úsáideora reatha"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC",
       "text": "Seanainm úsáideora le hathrú"
     },
@@ -9430,6 +9418,14 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "Gan aon ailt"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC",
+      "text": "Luach le socrú go"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC",
+      "text": "Ard-chomhbhrú"
     }
   ]
 }

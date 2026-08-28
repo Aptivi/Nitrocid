@@ -17,13 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ShellPacks.Tools;
+using System;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Tools;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using System;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
 {
@@ -35,8 +37,24 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
     /// </remarks>
     class RmCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "rm";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_RM_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "objectPath", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_RM_ARGUMENT_OBJECTPATH_DESC"
+                        })
+                    ])
+                ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             try
             {

@@ -17,15 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
 using System;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
-using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Network.Types.RPC;
+using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -39,8 +42,34 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class RexecCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "rexec";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "address", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC"
+                    }),
+                    new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_COMMAND_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("port", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC", new()
+                    {
+                        IsNumeric = true,
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
@@ -50,10 +79,13 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            if (parameters.ArgumentsList.Length == 2)
-                RPCCommands.SendCommand("<Request:Exec>(" + parameters.ArgumentsList[1] + ")", parameters.ArgumentsList[0]);
+            string hostName = parameters.ArgumentsList[0];
+            string command = parameters.ArgumentsList[1];
+            int port = parameters.ContainsSwitch("-port") ? int.Parse(parameters.GetSwitchValue("-port")) : 0;
+            if (port == 0)
+                RPCCommands.SendCommand("<Request:Exec>(" + command + ")", hostName);
             else
-                RPCCommands.SendCommand("<Request:Exec>(" + parameters.ArgumentsList[2] + ")", parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1]));
+                RPCCommands.SendCommand("<Request:Exec>(" + command + ")", hostName, port);
             return 0;
         }
 

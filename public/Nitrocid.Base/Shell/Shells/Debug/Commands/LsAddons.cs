@@ -24,6 +24,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Extensions;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -35,8 +36,16 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
     /// </remarks>
     class LsAddonsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsaddons";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONS_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONS_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
 
@@ -46,7 +55,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
             return 0;
         }
 
-        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
+        public override int ExecuteDumb(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSADDONS_TITLE"));
 

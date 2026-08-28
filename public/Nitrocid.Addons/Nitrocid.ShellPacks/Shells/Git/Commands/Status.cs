@@ -17,12 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Linq;
 using LibGit2Sharp;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using System.Linq;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -34,8 +36,16 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     /// </remarks>
     class StatusCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "status";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_STATUS_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var status = GitShellCommon.Repository.RetrieveStatus();
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STATUS_TITLE"), GitShellCommon.BranchName);

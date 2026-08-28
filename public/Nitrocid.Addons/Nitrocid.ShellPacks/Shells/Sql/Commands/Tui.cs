@@ -17,10 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Base.Files;
-using Terminaux.Shell.Commands;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.ShellPacks.Tools;
 using Terminaux.Inputs.Styles.Editor;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Sql.Commands
 {
@@ -32,8 +35,13 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
     /// </remarks>
     class TuiCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "tui";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMAND_TUI_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string path = SqlShellCommon.DatabasePath;
             byte[] bytes = FilesystemTools.ReadAllBytesNoBlock(path);

@@ -17,16 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
 using System;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Users.Login;
+using Nitrocid.Base.Languages;
 using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users;
+using Nitrocid.Base.Users.Login;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -38,8 +39,24 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class SudoCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "sudo";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_ARGUMENT_COMMAND_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             bool sudoDone = false;
             PermissionsTools.Demand(PermissionTypes.UseSudo);

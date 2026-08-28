@@ -17,14 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using GitCommand = LibGit2Sharp.Commands;
 using LibGit2Sharp;
-using Terminaux.Shell.Commands;
-using Nitrocid.Base.Languages;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Time.Timezones;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using GitCommand = LibGit2Sharp.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {
@@ -36,8 +38,13 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
     /// </remarks>
     class PullCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "pull";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_PULL_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!GitShellCommon.isIdentified)
             {

@@ -117,10 +117,6 @@
       "text": "Shows you a full-screen overview about a selected dock view to be able to use it as an info panel"
     },
     {
-      "loc": "NKS_DOCKING_NODOCKSCREEN1",
-      "text": "There is no dock screen by this name."
-    },
-    {
       "loc": "NKS_DOCKING_NODOCKSCREEN2",
       "text": "There is no screen dock by this name."
     },

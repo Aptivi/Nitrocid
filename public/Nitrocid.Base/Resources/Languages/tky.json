@@ -60,10 +60,6 @@
       "text": "Kullanıcı adı:"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES",
-      "text": "Boşluklara izin verilmiyor."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS",
       "text": "Özel karakterlere izin verilmez."
     },
@@ -1734,10 +1730,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
       "text": "Güvenli mod gibi, ancak aynı zamanda çoklu kullanıcıyı ve bazı özelleştirmeleri de devre dışı bırakıyor"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
-      "text": "Renklerin yeniden başlatılmasına gerek yok, ancak ayarların çoğu yeniden başlatma gerektiriyor."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -7952,10 +7944,6 @@
       "text": "Şifreyi değiştirmek için kullanıcı adı"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC",
-      "text": "Mevcut kullanıcı şifresi"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC",
       "text": "Eski kullanıcı adını değiştirmek"
     },
@@ -9430,6 +9418,14 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "Makale yok"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC",
+      "text": "Ayarlanacak değer"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC",
+      "text": "Yüksek sıkıştırma"
     }
   ]
 }

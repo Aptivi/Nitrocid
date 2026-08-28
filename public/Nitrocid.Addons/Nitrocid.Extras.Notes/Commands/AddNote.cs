@@ -17,15 +17,34 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Languages;
 using Nitrocid.Extras.Notes.Management;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Notes.Commands
 {
     internal class AddNote : BaseCommand, ICommand
     {
+        public override string Command => 
+            "addnote";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_NOTES_COMMAND_ADDNOTE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "noteContents...", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_NOTES_COMMAND_ADDNOTE_ARGUMENT_NOTECONTENTS_DESC"
+                    })
+                ]),
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             NoteManagement.NewNote(parameters.ArgumentsText);
             return 0;

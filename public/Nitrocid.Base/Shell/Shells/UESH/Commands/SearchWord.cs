@@ -18,14 +18,15 @@
 //
 
 using System;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
-using Colorimetry;
 using Terminaux.Base.Extensions;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -37,23 +38,46 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class SearchWordCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "searchword";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SEARCHWORD_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "lookup", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SEARCHWORD_ARGUMENT_STRING_DESC"
+                    }),
+                    new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SEARCH_ARGUMENT_FILE_DESC"
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string lookup = parameters.ArgumentsList[0];
             string fileName = parameters.ArgumentsList[1];
 
             try
             {
-                var Matches = FilesystemTools.SearchFileForString(fileName, lookup);
-                foreach (string Match in Matches)
+                var matches = FilesystemTools.SearchFileForString(fileName, lookup);
+                foreach (string match in matches)
                 {
                     var matchColor = ThemeColorsTools.GetColor(ThemeColorType.Success);
                     var normalColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
-                    string matchLine = Match;
                     string toReplaceWith = $"{matchColor.VTSequenceForeground()}{lookup}{normalColor.VTSequenceForeground()}";
 
                     // We want to avoid repetitions here
+                    string matchLine = match;
                     if (!matchLine.Contains(toReplaceWith))
                         matchLine = matchLine.Replace(lookup, toReplaceWith);
                     TextWriterColor.Write(matchLine);

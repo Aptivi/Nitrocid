@@ -18,8 +18,13 @@
 //
 
 using Nitrocid.Base.Files;
-using Terminaux.Shell.Commands;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Tools;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.ShellPacks.Shells.Archive.Commands
 {
@@ -43,8 +48,31 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Commands
     /// </remarks>
     class GetCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "get";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "entry", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_ENTRY_DESC"
+                    }),
+                    new CommandArgumentPart(false, "where", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_WHERE_DESC"
+                    })
+                ],
+                [
+                    new SwitchInfo("absolute", /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC")
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string Where = "";
             var Absolute = false;

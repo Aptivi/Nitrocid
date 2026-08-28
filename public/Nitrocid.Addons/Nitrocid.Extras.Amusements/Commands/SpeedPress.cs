@@ -18,8 +18,12 @@
 //
 
 using System;
+using Nitrocid.Base.Languages;
 using Nitrocid.Extras.Amusements.Amusements.Games;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Textify.General;
 
 namespace Nitrocid.Extras.Amusements.Commands
@@ -60,25 +64,62 @@ namespace Nitrocid.Extras.Amusements.Commands
     /// </remarks>
     class SpeedPressCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "speedpress";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo([
+                    new SwitchInfo("e", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_E_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["m", "h", "v", "c"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("m", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_M_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["v", "h", "e", "c"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("h", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_H_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["m", "v", "e", "c"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("v", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_V_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["m", "h", "e", "c"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("c", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_C_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["m", "h", "v", "e"],
+                        ArgumentsRequired = true
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var Difficulty = SpeedPress.SpeedPressDifficulty.Medium;
-            int CustomTimeout = SpeedPress.SpeedPressTimeout;
-            if (parameters.ContainsSwitch("-e"))
-                Difficulty = SpeedPress.SpeedPressDifficulty.Easy;
-            if (parameters.ContainsSwitch("-m"))
-                Difficulty = SpeedPress.SpeedPressDifficulty.Medium;
-            if (parameters.ContainsSwitch("-h"))
-                Difficulty = SpeedPress.SpeedPressDifficulty.Hard;
-            if (parameters.ContainsSwitch("-v"))
-                Difficulty = SpeedPress.SpeedPressDifficulty.VeryHard;
-            if (parameters.ContainsSwitch("-c") & parameters.ArgumentsList.Length > 0 && TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
+            var difficulty =
+                parameters.ContainsSwitch("-e") ? SpeedPress.SpeedPressDifficulty.Easy :
+                parameters.ContainsSwitch("-h") ? SpeedPress.SpeedPressDifficulty.Hard :
+                parameters.ContainsSwitch("-v") ? SpeedPress.SpeedPressDifficulty.VeryHard :
+                parameters.ContainsSwitch("-c") ? SpeedPress.SpeedPressDifficulty.Custom :
+                SpeedPress.SpeedPressDifficulty.Medium;
+
+            // Set up custom timeout
+            int customTimeout = SpeedPress.SpeedPressTimeout;
+            if (difficulty == SpeedPress.SpeedPressDifficulty.Custom)
             {
-                Difficulty = SpeedPress.SpeedPressDifficulty.Custom;
-                CustomTimeout = Convert.ToInt32(parameters.ArgumentsList[0]);
+                string customTimeoutStr = parameters.GetSwitchValue("-c");
+                customTimeout = int.Parse(customTimeoutStr);
             }
-            SpeedPress.InitializeSpeedPress(Difficulty, CustomTimeout);
+
+            // Initialize the game
+            SpeedPress.InitializeSpeedPress(difficulty, customTimeout);
             return 0;
         }
 

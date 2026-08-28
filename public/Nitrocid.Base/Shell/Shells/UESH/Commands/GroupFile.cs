@@ -17,13 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Files;
-using Terminaux.Shell.Commands;
 using Nitrocid.Base.Kernel.Exceptions;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Security.Permissions;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -35,8 +38,27 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class GroupFileCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "groupfile";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_FILE_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("outputDir", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_OUTPUTDIR_DESC"),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
 

@@ -17,15 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Extras.BeepSynth.Tools;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
+using Nitrocid.Extras.BeepSynth.Tools;
 using Terminaux.Base;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Threadify.Manager;
 
 namespace Nitrocid.Extras.BeepSynth.Commands
 {
@@ -37,7 +39,24 @@ namespace Nitrocid.Extras.BeepSynth.Commands
     /// </remarks>
     class BeepSynthCommand : BaseCommand, ICommand
     {
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string Command =>
+            "beepsynth";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "synthFile", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_ARGUMENT_SYNTHFILE_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string path = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             if (!FilesystemTools.FileExists(path))

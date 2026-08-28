@@ -17,8 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Languages;
 using Nitrocid.Extras.Dates.Timers;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Dates.Commands
 {
@@ -30,8 +32,13 @@ namespace Nitrocid.Extras.Dates.Commands
     /// </remarks>
     class TimerCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "timer";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_DATES_COMMAND_TIMER_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TimerScreen.OpenTimer();
             return 0;

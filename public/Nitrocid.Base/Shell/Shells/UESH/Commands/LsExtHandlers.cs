@@ -22,6 +22,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Files.Extensions;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -33,21 +34,25 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class LsExtHandlersCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsexthandlers";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LSEXTHANDLERS_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var handlers = ExtensionHandlerTools.GetExtensionHandlers();
             foreach (var handler in handlers)
             {
                 SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_INFOFOR") + $" {handler.Extension}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_IMPLEMENTER") + $": ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(handler.Implementer, true, ThemeColorType.ListValue);
-                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_METADATA") + $": ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(handler.MimeType, true, ThemeColorType.ListValue);
-                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_HEADERINFO") + $": ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write($"{handler.Handler is not null}", true, ThemeColorType.ListValue);
-                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_HANDLERFUNCTION") + $": ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write($"{handler.InfoHandler is not null}\n", true, ThemeColorType.ListValue);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_IMPLEMENTER"), handler.Implementer);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_METADATA"), handler.MimeType);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_HEADERINFO"), $"{handler.Handler is not null}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSEXTHANDLERS_HANDLERFUNCTION"), $"{handler.InfoHandler is not null}");
             }
             return 0;
         }

@@ -24,6 +24,8 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using StringMath;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.Extras.Calculators.Commands
 {
@@ -35,8 +37,24 @@ namespace Nitrocid.Extras.Calculators.Commands
     /// </remarks>
     class CalcCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "calc";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_CALCULATORS_COMMAND_CALC_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "expression", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_CALCULATORS_EXPRESSION"
+                    }),
+                ], true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             try
             {

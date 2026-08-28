@@ -17,15 +17,22 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Languages;
 using Nitrocid.Extras.Amusements.Amusements.Games;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Amusements.Commands
 {
     class StreetRunCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "streetrun";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_STREETRUN_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             StreetRun.InitializeStreetRun();
             return 0;

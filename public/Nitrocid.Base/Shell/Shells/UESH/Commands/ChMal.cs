@@ -17,17 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Users.Login.Motd;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Security.Permissions;
-using Nitrocid.Base.Files.Paths;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -45,8 +47,24 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </remarks>
     class ChMalCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "chmal";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHMAL_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "message", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_ARGUMENT_MESSAGE_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
@@ -72,7 +90,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             }
             else
             {
-                ShellManager.StartShell("TextShell", PathsManagement.GetKernelPath(KernelPathType.MAL));
+                FilesystemTools.OpenEditor(PathsManagement.GetKernelPath(KernelPathType.MAL));
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHMAL_PROGRESS"));
                 MalParse.ReadMal();
                 return 0;

@@ -17,17 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Terminaux.Themes.Colors;
-using Textify.Tools.Placeholder;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Hardware;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Users.Login.Motd;
 using Nitrocid.Base.Users.Windows;
-using Nitrocid.Base.Kernel.Hardware;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.Tools.Placeholder;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -36,24 +39,50 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
     /// </summary>
     class SysInfoCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "sysinfo";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SYSINFO");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo([],
+                [
+                    new SwitchInfo("s", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_S_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("h", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_H_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("u", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_U_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("m", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_M_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("l", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_L_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("a", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_A_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            bool ShowSystemInfo = false;
-            bool ShowHardwareInfo = false;
-            bool ShowUserInfo = false;
-            bool ShowMessageOfTheDay = false;
-            bool ShowMal = false;
-            if (parameters.ContainsSwitch("-s"))
-                ShowSystemInfo = true;
-            if (parameters.ContainsSwitch("-h"))
-                ShowHardwareInfo = true;
-            if (parameters.ContainsSwitch("-u"))
-                ShowUserInfo = true;
-            if (parameters.ContainsSwitch("-m"))
-                ShowMessageOfTheDay = true;
-            if (parameters.ContainsSwitch("-l"))
-                ShowMal = true;
+            bool ShowSystemInfo = parameters.ContainsSwitch("-s");
+            bool ShowHardwareInfo = parameters.ContainsSwitch("-h");
+            bool ShowUserInfo = parameters.ContainsSwitch("-u");
+            bool ShowMessageOfTheDay = parameters.ContainsSwitch("-m");
+            bool ShowMal = parameters.ContainsSwitch("-l");
             if (parameters.ContainsSwitch("-a") || parameters.SwitchesList.Length == 0)
             {
                 ShowSystemInfo = true;
@@ -67,14 +96,10 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             {
                 // Kernel section
                 SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.Separator));
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_VERSION") + " ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(KernelReleaseInfo.Version?.ToString() ?? "0.0.0.0", true, ThemeColorType.ListValue);
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_DEBUG") + " ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(KernelEntry.DebugMode.ToString(), true, ThemeColorType.ListValue);
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_USUAL") + " ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(KernelPlatform.IsOnUsualEnvironment().ToString(), true, ThemeColorType.ListValue);
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_SAFE") + " ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(KernelEntry.SafeMode.ToString(), true, ThemeColorType.ListValue);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_VERSION"), KernelReleaseInfo.Version?.ToString() ?? "0.0.0.0");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_DEBUG"), KernelEntry.DebugMode.ToString());
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_USUAL"), KernelPlatform.IsOnUsualEnvironment().ToString());
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_SAFE"), KernelEntry.SafeMode.ToString());
                 TextWriterRaw.Write();
             }
 
@@ -95,12 +120,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             {
                 // User section
                 SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.Separator));
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_USERNAME") + " ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(UserManagement.CurrentUser.Username, true, ThemeColorType.ListValue);
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_HOSTNAME") + " ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(Config.MainConfig.HostName, true, ThemeColorType.ListValue);
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_LISTING") + " ", false, ThemeColorType.ListEntry);
-                TextWriterColor.Write(string.Join(", ", UserManagement.ListAllUsers()), true, ThemeColorType.ListValue);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_USERNAME"), UserManagement.CurrentUser.Username);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_HOSTNAME"), Config.MainConfig.HostName);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_LISTING"), string.Join(", ", UserManagement.ListAllUsers()));
                 TextWriterRaw.Write();
             }
 
