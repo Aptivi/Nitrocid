@@ -1,4 +1,4 @@
-We have introduced this update to make Nitrocid more reliable in the driver handling code.
+We have introduced this update to improve how Nitrocid handles commands.
 
 ### Changes
 
