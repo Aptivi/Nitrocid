@@ -36,7 +36,6 @@ namespace Nitrocid.Extras.ChatbotAI.Shell.Commands
         public override string Command => 
             "detach";
 
-        // TODO: NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC -> Detaches the shell from the current working AI chatbot
         public override string HelpDefinition => 
             LanguageTools.GetLocalized("NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC");
 

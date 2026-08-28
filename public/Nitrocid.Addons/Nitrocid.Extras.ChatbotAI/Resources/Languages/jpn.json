@@ -73,6 +73,10 @@
     {
       "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
       "text": "ChatGPTにアクセスするためのAPIキーです。無料のAPIキーは使用できますが、高度なモデルは使用できません。すべての有料モデルにフルアクセスするには、アクセス料金を支払う必要があります。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
+      "text": "現在動作中のAIチャットボットからシェルを切り離します"
     }
   ]
 }

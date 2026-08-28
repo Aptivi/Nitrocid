@@ -74,6 +74,10 @@
     {
       "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
       "text": "Cheia ta API pentru ChatGPT pentru acces. Deși poți utiliza cheia API gratuită, nu poți utiliza modele avansate. Dacă dorești acces complet la toate modelele plătite, va trebui să plătești pentru acces."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
+      "text": "Detașează shell-ul de chatbot-ul AI funcțional curent"
     }
   ]
 }

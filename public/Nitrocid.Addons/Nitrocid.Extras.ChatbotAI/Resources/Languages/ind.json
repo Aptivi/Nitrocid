@@ -73,6 +73,10 @@
     {
       "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
       "text": "ekses ke lie chhatgpt hetu aapakee api kunjee. haalaanki aap muft api kunjee ka upayog kar sakate hain, lekin aap unnat modal ka upayog nahin kar sakate. yadi aap sabhee sashulk modal tak poorn pahunch chaahate hain, to aapako ekses ke lie bhugataan karana hoga."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
+      "text": "maujuda kaam kar rahe AI chatbot se shell ko alag karta hai"
     }
   ]
 }

@@ -85,7 +85,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                         ConflictsWith = ["fast", "smallest"],
                         AcceptsValues = false
                     }),
-                    // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC -> High compression
                     new SwitchInfo("smallest", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC", new SwitchOptions()
                     {
                         ConflictsWith = ["fast", "nocomp"],

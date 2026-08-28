@@ -7126,4 +7126,10 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC" xml:space="preserve">
     <value>Назва доку</value>
   </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC" xml:space="preserve">
+    <value>Значення, яке потрібно встановити</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC" xml:space="preserve">
+    <value>Високе стиснення</value>
+  </data>
 </root>

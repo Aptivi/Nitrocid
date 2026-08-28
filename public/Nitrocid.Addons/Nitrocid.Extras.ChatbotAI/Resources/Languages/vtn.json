@@ -73,6 +73,10 @@
     {
       "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
       "text": "Khóa API của bạn cho ChatGPT để truy cập. Mặc dù bạn có thể sử dụng khóa API miễn phí, nhưng bạn không thể sử dụng các mô hình nâng cao. Nếu bạn muốn truy cập đầy đủ vào tất cả các mô hình trả phí, bạn sẽ phải trả phí."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
+      "text": "Tách lớp vỏ khỏi chatbot AI hiện đang hoạt động."
     }
   ]
 }

@@ -179,6 +179,10 @@
     {
       "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
       "text": "Your API key for ChatGPT for access. While you can use the free API key, you can't use advanced models. If you want full access to all paid models, you'll have to pay for the access."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
+      "text": "Detaches the shell from the current working AI chatbot"
     }
   ]
 }

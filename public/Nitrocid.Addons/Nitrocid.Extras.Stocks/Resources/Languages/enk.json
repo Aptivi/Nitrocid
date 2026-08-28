@@ -112,6 +112,10 @@
     {
       "loc": "NKS_STOCKS_TUI_HELP02_BODY",
       "text": "The interactive TUI provides you with stocks information about a particular company that you're tracking, such as opening and closing stock prices, high and low stock prices, and other information. For every hour, this information changes, so you'll need to watch the prices as close as possible to have a deep understanding of how a company's stock prices performs."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "AlphaVantage API key"
     }
   ]
 }

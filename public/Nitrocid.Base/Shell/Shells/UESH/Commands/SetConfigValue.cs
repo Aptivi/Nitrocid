@@ -59,7 +59,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     }),
                     new(true, "value", new CommandArgumentPartOptions()
                     {
-                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC -> Value to set to
                         ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC"
                     })
                 })

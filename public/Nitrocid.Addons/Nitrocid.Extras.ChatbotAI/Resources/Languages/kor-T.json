@@ -74,6 +74,10 @@
     {
       "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
       "text": "액세스를 위한 ChatGPT용 API 키입니다. 무료 API 키는 사용할 수 있지만 고급 모델은 사용할 수 없습니다. 모든 유료 모델에 대한 전체 액세스를 원하시면 액세스 비용을 지불해야 합니다."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
+      "text": "현재 작동 중인 AI 챗봇에서 셸을 분리합니다."
     }
   ]
 }

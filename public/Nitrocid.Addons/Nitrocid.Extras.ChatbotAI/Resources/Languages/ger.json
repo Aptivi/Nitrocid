@@ -82,6 +82,10 @@
     {
       "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
       "text": "Ihr API-Schlüssel für ChatGPT für den Zugriff. Sie können zwar den kostenlosen API-Schlüssel verwenden, erweiterte Modelle sind jedoch nicht verfügbar. Für vollen Zugriff auf alle kostenpflichtigen Modelle ist ein kostenpflichtiger Zugriff erforderlich."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
+      "text": "Trennt die Hülle vom aktuell funktionierenden KI-Chatbot."
     }
   ]
 }

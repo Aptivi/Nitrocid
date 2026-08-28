@@ -114,6 +114,10 @@
     {
       "loc": "NKS_STOCKS_TUI_HELP02_BODY",
       "text": "Soláthraíonn an TUI idirghníomhach faisnéis faoi scaireanna duit faoi chuideachta ar leith atá á rianú agat, amhail praghsanna scaireanna oscailte agus dúnta, praghsanna scaireanna arda agus ísle, agus faisnéis eile. Athraíonn an fhaisnéis seo gach uair an chloig, mar sin beidh ort na praghsanna a fheiceáil chomh dlúth agus is féidir chun tuiscint dhomhain a bheith agat ar fheidhmíocht praghsanna scaireanna cuideachta."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "Eochair API AlphaVantage"
     }
   ]
 }

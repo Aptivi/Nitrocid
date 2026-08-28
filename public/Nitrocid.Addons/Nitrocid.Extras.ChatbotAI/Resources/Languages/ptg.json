@@ -83,6 +83,10 @@
     {
       "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
       "text": "A sua chave API para o ChatGPT para acesso. Embora possa utilizar a chave API gratuita, não é possível utilizar modelos avançados. Se quiser ter acesso total a todos os modelos pagos, terá de pagar pelo acesso."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
+      "text": "Desvincula o núcleo do chatbot de IA em funcionamento."
     }
   ]
 }

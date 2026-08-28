@@ -106,12 +106,6 @@ namespace Nitrocid.Extras.Dates.Commands
                 ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODHEALTH"), $"{productHealth}");
 
                 // Write the status
-                // TODO: NKS_DATES_EXPIRY_STATUS_PREPRODUCTION -> Pre-production
-                // TODO: NKS_DATES_EXPIRY_STATUS_EXPIRED -> Expired
-                // TODO: NKS_DATES_EXPIRY_STATUS_POOR -> Poor
-                // TODO: NKS_DATES_EXPIRY_STATUS_AVERAGE -> Average
-                // TODO: NKS_DATES_EXPIRY_STATUS_GOOD -> Good
-                // TODO: NKS_DATES_EXPIRY_STATUS_EXCELLENT -> Excellent
                 string status =
                     productHealth == -1 ? LanguageTools.GetLocalized("NKS_DATES_EXPIRY_STATUS_PREPRODUCTION") :
                     productHealth == 0 ? LanguageTools.GetLocalized("NKS_DATES_EXPIRY_STATUS_EXPIRED") :

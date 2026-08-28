@@ -116,6 +116,10 @@
     {
       "loc": "NKS_STOCKS_TUI_HELP02_BODY",
       "text": "互動式使用者介面 (TUI) 為您提供您正在追蹤的特定公司的股票信息，例如開盤價和收盤價、最高價和最低價以及其他資訊。這些資訊每小時都會變化，因此您需要密切注意價格，以深入了解公司股票價格的走勢。"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "AlphaVantage API 金鑰"
     }
   ]
 }
