@@ -17,12 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Languages;
-using Terminaux.Shell.Commands;
 using System;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Calculators.Commands
 {
@@ -35,18 +36,40 @@ namespace Nitrocid.Extras.Calculators.Commands
     /// </remarks>
     class ImaginaryCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "imaginary";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_CALCULATORS_COMMAND_IMAGINARY_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "real", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_CALCULATORS_REAL"
+                    }),
+                    new CommandArgumentPart(true, "imaginary", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_CALCULATORS_IMAG"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Check both the real and the imaginary numbers for verification
             if (!double.TryParse(parameters.ArgumentsList[0], out double Real))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_REALINVALID"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_REALINVALID"), true, ThemeColorType.Error);
                 return 2;
             }
             if (!double.TryParse(parameters.ArgumentsList[1], out double Imaginary))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_IMAGINARYINVALID"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_IMAGINARYINVALID"), true, ThemeColorType.Error);
                 return 2;
             }
 
@@ -70,8 +93,8 @@ namespace Nitrocid.Extras.Calculators.Commands
 
             // Now, write the result in both the exponentional format (Z = r * (e)^{angle}i)
             //                           and the triangular format    (Z = r (cos {angle} + i sin {angle})
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_EXPONENTIAL") + " Z = {0} * (e)^{1}i", true, KernelColorType.Success, Radius, AngleSin);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_TRIANGULAR") + " Z = {0} * (cos ({1}) + i sin ({2}))", true, KernelColorType.Success, Radius, AngleCos, AngleSin);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_EXPONENTIAL") + " Z = {0} * (e)^{1}i", true, ThemeColorType.Success, Radius, AngleSin);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_TRIANGULAR") + " Z = {0} * (cos ({1}) + i sin ({2}))", true, ThemeColorType.Success, Radius, AngleCos, AngleSin);
             return 0;
         }
     }

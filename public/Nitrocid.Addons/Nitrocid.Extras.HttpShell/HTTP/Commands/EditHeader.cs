@@ -18,7 +18,10 @@
 //
 
 using Nitrocid.Extras.HttpShell.Tools;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.HttpShell.HTTP.Commands
 {
@@ -27,8 +30,28 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Commands
     /// </summary>
     class EditHeaderCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "editheader";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_EDITHEADER_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "key", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_KEY_DESC"
+                    }),
+                    new CommandArgumentPart(true, "value", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_VALUE_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string key = parameters.ArgumentsList[0];
             string value = parameters.ArgumentsList[1];

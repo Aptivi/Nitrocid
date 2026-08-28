@@ -17,15 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-using System.Linq;
 using Nettify.Weather;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
+using Terminaux.Reader;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Inputs;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {
@@ -51,40 +51,59 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
     /// </remarks>
     class WeatherOldCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "weather-old";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHEROLD_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "CityID/CityName", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC"
+                    }),
+                    new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("list", /* Localizable */ "NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC", new SwitchOptions()
+                    {
+                        OptionalizeLastRequiredArguments = 2,
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var ListMode = false;
-            if (parameters.SwitchesList.Contains("-list"))
-                ListMode = true;
+            var ListMode = parameters.ContainsSwitch("-list");
             if (ListMode)
             {
                 var Cities = WeatherForecastOwm.ListAllCities();
-                TextWriters.WriteList(Cities);
+                ListWriterColor.WriteList(Cities);
             }
             else
             {
-                string APIKey = Forecast.ApiKeyOwm;
-                if (parameters.ArgumentsList.Length > 1)
-                {
-                    APIKey = parameters.ArgumentsList[1];
-                }
-                else if (string.IsNullOrEmpty(APIKey))
+                string cityName = parameters.ArgumentsList[0];
+                string apiKey =
+                    parameters.ArgumentsList.Length > 1 && !string.IsNullOrEmpty(parameters.ArgumentsList[1]) ?
+                    parameters.ArgumentsList[1] :
+                    Forecast.ApiKeyOwm;
+                if (string.IsNullOrEmpty(apiKey))
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_APIKEY"));
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FORECAST_APIKEYPROMPT") + " ", false, KernelColorType.Input);
-                    APIKey = InputTools.ReadLineNoInput();
-                    Forecast.ApiKeyOwm = APIKey;
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_APIKEYPROMPT") + " ", false, ThemeColorType.Input);
+                    apiKey = TermReader.Read(password: true);
+                    Forecast.ApiKeyOwm = apiKey;
                 }
-                Forecast.PrintWeatherInfoOwm(parameters.ArgumentsList[0], APIKey);
+                Forecast.PrintWeatherInfoOwm(cityName, apiKey);
             }
             return 0;
-        }
-
-        public override void HelpHelper()
-        {
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHEROLD_CITYLISTLINK"));
-            TextWriterColor.Write("http://bulk.openweathermap.org/sample/city.list.json.gz");
         }
 
     }

@@ -59,10 +59,6 @@
       "text": "Nama belakang:"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES",
-      "text": "Spasi tidak diizinkan."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS",
       "text": "Karakter khusus tidak diizinkan."
     },
@@ -1729,10 +1725,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
       "text": "Seperti mode aman, tetapi juga menonaktifkan multi-pengguna dan beberapa penyesuaian"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
-      "text": "Warna tidak memerlukan mulai ulang, tetapi sebagian besar pengaturan memerlukan mulai ulang."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -7939,10 +7931,6 @@
       "text": "Nama pengguna untuk mengubah kata sandi"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC",
-      "text": "Kata sandi pengguna saat ini"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC",
       "text": "Nama pengguna lama untuk diubah"
     },
@@ -8627,10 +8615,6 @@
       "text": "Ekstra - Kalender"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_COLORCONVERTER",
-      "text": "Ekstra - Konverter Warna"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CONTACTS",
       "text": "Ekstra - Kontak"
     },
@@ -9131,10 +9115,6 @@
       "text": "Mencantumkan variabel UESH yang tersedia"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SEL_DESC",
-      "text": "Menggunakan gaya pengaturan lama"
-    },
-    {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_NAME",
       "text": "Driver logger debug saat ini"
     },
@@ -9309,6 +9289,18 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
       "text": "Tidak ada artikel"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC",
+      "text": "Memilih screensaver acak"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC",
+      "text": "Nilai yang akan diatur ke"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC",
+      "text": "Kompresi tinggi"
     }
   ]
 }

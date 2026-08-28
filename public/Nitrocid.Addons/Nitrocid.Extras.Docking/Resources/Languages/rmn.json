@@ -12,10 +12,6 @@
       "text": "Vă arată o prezentare generală pe ecran complet despre o vizualizare de andocare selectată pentru a o putea folosi ca panou de informații"
     },
     {
-      "loc": "NKS_DOCKING_NODOCKSCREEN1",
-      "text": "Nu există niciun ecran de andocare cu acest nume."
-    },
-    {
       "loc": "NKS_DOCKING_NODOCKSCREEN2",
       "text": "Nu există dock pentru ecran cu acest nume."
     },

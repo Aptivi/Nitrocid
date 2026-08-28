@@ -18,11 +18,13 @@
 //
 
 using FluentFTP;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Commands
 {
@@ -34,8 +36,28 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
     /// </remarks>
     class ExecuteCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "execute";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_ARGUMENT_COMMAND_DESC"
+                    }),
+                    new CommandArgumentPart(false, "where", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write("<<< C: {0}", parameters.ArgumentsText);
             var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance;
@@ -44,15 +66,15 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
             var ExecutedReply = client.Execute(parameters.ArgumentsText);
             if (ExecutedReply.Success)
             {
-                TextWriters.Write(">>> [{0}] M: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.Message);
-                TextWriters.Write(">>> [{0}] I: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.InfoMessages);
+                TextWriterColor.Write(">>> [{0}] M: {1}", true, ThemeColorType.Success, ExecutedReply.Code, ExecutedReply.Message);
+                TextWriterColor.Write(">>> [{0}] I: {1}", true, ThemeColorType.Success, ExecutedReply.Code, ExecutedReply.InfoMessages);
                 return 0;
             }
             else
             {
-                TextWriters.Write(">>> [{0}] M: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.Message);
-                TextWriters.Write(">>> [{0}] I: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.InfoMessages);
-                TextWriters.Write(">>> [{0}] E: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.ErrorMessage);
+                TextWriterColor.Write(">>> [{0}] M: {1}", true, ThemeColorType.Error, ExecutedReply.Code, ExecutedReply.Message);
+                TextWriterColor.Write(">>> [{0}] I: {1}", true, ThemeColorType.Error, ExecutedReply.Code, ExecutedReply.InfoMessages);
+                TextWriterColor.Write(">>> [{0}] E: {1}", true, ThemeColorType.Error, ExecutedReply.Code, ExecutedReply.ErrorMessage);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPShell);
             }
         }

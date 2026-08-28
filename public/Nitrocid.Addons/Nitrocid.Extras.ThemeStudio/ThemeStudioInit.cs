@@ -17,35 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.ThemeStudio.Commands;
 using Terminaux.Shell.Commands;
-using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
 using System.Linq;
-using Terminaux.Shell.Switches;
 using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.ThemeStudio
 {
     internal class ThemeStudioInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("mktheme", LanguageTools.GetLocalized("NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "themeName", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC")
-                        }),
-                    ],
-                    [
-                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC"))
-                    ])
-                ], new MkThemeCommand()),
+            new MkThemeCommand(),
         ];
 
         public string AddonName =>

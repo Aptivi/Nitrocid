@@ -18,13 +18,13 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Editors.HexEdit;
 using Nitrocid.Languages;
+using Terminaux.Reader;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.Hex.Commands
 {
@@ -36,8 +36,13 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
     /// </remarks>
     class AddBytesCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "addbytes";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTES_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var FinalBytes = new List<byte>();
             string FinalByte = "";
@@ -46,18 +51,14 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTES_PROMPT"));
             while (FinalByte != "EOF")
             {
-                TextWriters.Write(">> ", false, KernelColorType.Input);
-                FinalByte = InputTools.ReadLine();
+                TextWriterColor.Write(">> ", false, ThemeColorType.Input);
+                FinalByte = TermReader.Read();
                 if (FinalByte != "EOF")
                 {
                     if (byte.TryParse(FinalByte, System.Globalization.NumberStyles.HexNumber, null, out byte ByteContent))
-                    {
                         FinalBytes.Add(ByteContent);
-                    }
                     else
-                    {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTES_INVALIDBYTE"), true, KernelColorType.Error);
-                    }
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTES_INVALIDBYTE"), true, ThemeColorType.Error);
                 }
             }
 

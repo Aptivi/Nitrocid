@@ -18,13 +18,15 @@
 //
 
 using System;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Terminaux.Reader;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Nitrocid.Shell.Shells.Text.Commands
@@ -37,30 +39,48 @@ namespace Nitrocid.Shell.Shells.Text.Commands
     /// </remarks>
     class EditLineCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "editline";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_EDITLINE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "linenumber", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELCHARNUM_ARGUMENT_LINENUM_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
+            string lineNumStr = parameters.ArgumentsList[0];
+            if (TextTools.IsStringNumeric(lineNumStr))
             {
-                int lineNum = Convert.ToInt32(parameters.ArgumentsList[0]);
+                int lineNum = Convert.ToInt32(lineNumStr);
                 if (lineNum <= TextEditShellCommon.FileLines.Count)
                 {
                     string OriginalLine = TextEditShellCommon.FileLines[lineNum - 1];
-                    TextWriters.Write(">> ", false, KernelColorType.Input);
-                    string EditedLine = InputTools.ReadLine("", OriginalLine);
+                    TextWriterColor.Write(">> ", false, ThemeColorType.Input);
+                    string EditedLine = TermReader.Read("", OriginalLine);
                     TextEditShellCommon.FileLines[lineNum - 1] = EditedLine;
                     return 0;
                 }
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                 }
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, KernelColorType.Error);
-                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[0]]);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, ThemeColorType.Error);
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [lineNumStr]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
             }
         }

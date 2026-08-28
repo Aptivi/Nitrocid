@@ -17,10 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.SqlShell.Sql.Commands
 {
@@ -32,25 +33,30 @@ namespace Nitrocid.Extras.SqlShell.Sql.Commands
     /// </remarks>
     class DbInfoCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "dbinfo";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMAND_DBINFO_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var connection = SqlShellCommon.sqliteConnection;
             if (connection is null)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_NOCONNECTION"), KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_NOCONNECTION"), ThemeColorType.Error);
                 return 41;
             }
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_PATH") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(connection.DataSource, true, KernelColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_VERSION") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(connection.ServerVersion, true, KernelColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_STATE") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(connection.State.ToString(), true, KernelColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_STRING") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(connection.ConnectionString, true, KernelColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_NAME") + " ", false, KernelColorType.ListEntry);
-            TextWriters.Write(connection.Database, true, KernelColorType.ListValue);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_PATH") + " ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(connection.DataSource, true, ThemeColorType.ListValue);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_VERSION") + " ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(connection.ServerVersion, true, ThemeColorType.ListValue);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_STATE") + " ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(connection.State.ToString(), true, ThemeColorType.ListValue);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_STRING") + " ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(connection.ConnectionString, true, ThemeColorType.ListValue);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_NAME") + " ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(connection.Database, true, ThemeColorType.ListValue);
             return 0;
         }
     }

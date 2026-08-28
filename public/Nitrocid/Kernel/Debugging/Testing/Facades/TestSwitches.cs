@@ -19,7 +19,6 @@
 
 using Nitrocid.Languages;
 using Terminaux.Shell.Arguments;
-using Terminaux.Shell.Shells;
 using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades

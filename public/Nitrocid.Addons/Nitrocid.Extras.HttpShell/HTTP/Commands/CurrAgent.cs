@@ -17,9 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.HttpShell.Tools;
+using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.HttpShell.HTTP.Commands
 {
@@ -28,8 +30,13 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Commands
     /// </summary>
     class CurrAgentCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "curragent";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_CURRAGENT_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string currentUa = HttpTools.HttpGetCurrentUserAgent();
             TextWriterColor.Write(currentUa);

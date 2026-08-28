@@ -90,6 +90,10 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "Δεν είναι δυνατή η λήψη πληροφοριών μετοχών."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "Κλειδί API AlphaVantage"
     }
   ]
 }

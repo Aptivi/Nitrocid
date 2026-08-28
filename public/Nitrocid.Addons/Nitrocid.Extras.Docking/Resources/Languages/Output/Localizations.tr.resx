@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>Seçili bir dock görünümü hakkında tam ekran genel bakış gösterir ve bunu bir bilgi paneli olarak kullanabilmenizi sağlar</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>Bu isimde bir dock ekranı bulunmamaktadır.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>Bu isimde bir ekran yuvası yok.</value>
   </data>

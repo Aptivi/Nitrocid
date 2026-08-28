@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>Shows you a full-screen overview about a selected dock view to be able to use it as an info panel</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>There is no dock screen by this name.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>There is no screen dock by this name.</value>
   </data>

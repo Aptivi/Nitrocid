@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>顯示所選停靠視圖的全螢幕概述，以便能夠將其用作資訊面板</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>沒有同名的停靠螢幕。</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>沒有同名的螢幕底座。</value>
   </data>

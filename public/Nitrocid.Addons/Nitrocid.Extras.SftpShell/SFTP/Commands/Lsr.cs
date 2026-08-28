@@ -17,13 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.SftpShell.Tools.Filesystem;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.SftpShell.SFTP.Commands
 {
@@ -51,10 +53,35 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Commands
     /// </remarks>
     class LsrCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsr";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSR_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "dir", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC"
+                    })
+                ],
+                [
+                    new SwitchInfo("showdetails", /* Localizable */ "NKS_SHELLPACKS_SFTP_COMMAND_SHOWDETAILS_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            bool ShowFileDetails = parameters.SwitchesList.Contains("-showdetails") || SFTPShellCommon.SFTPShowDetailsInList;
+            bool ShowFileDetails = parameters.ContainsSwitch("-showdetails") || SFTPShellCommon.SFTPShowDetailsInList;
             var Entries = new List<string>();
             if (parameters.ArgumentsList.Length != 0)
             {
@@ -62,12 +89,10 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Commands
                     Entries = SFTPFilesystem.SFTPListRemote(TargetDirectory, ShowFileDetails);
             }
             else
-            {
                 Entries = SFTPFilesystem.SFTPListRemote("", ShowFileDetails);
-            }
             Entries.Sort();
             foreach (string Entry in Entries)
-                TextWriters.Write(Entry, true, KernelColorType.ListEntry);
+                TextWriterColor.Write(Entry, true, ThemeColorType.ListEntry);
             return 0;
         }
 

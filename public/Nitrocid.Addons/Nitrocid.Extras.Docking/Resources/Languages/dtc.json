@@ -17,10 +17,6 @@
       "text": "Toont u een schermvullend overzicht van een geselecteerde dockweergave, zodat u deze als infopaneel kunt gebruiken"
     },
     {
-      "loc": "NKS_DOCKING_NODOCKSCREEN1",
-      "text": "Er is geen dockscherm met deze naam."
-    },
-    {
       "loc": "NKS_DOCKING_NODOCKSCREEN2",
       "text": "Er is geen schermdock met deze naam."
     },

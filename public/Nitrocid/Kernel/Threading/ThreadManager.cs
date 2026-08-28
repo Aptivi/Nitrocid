@@ -23,10 +23,8 @@ using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
-using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Base;
 using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel.Threading

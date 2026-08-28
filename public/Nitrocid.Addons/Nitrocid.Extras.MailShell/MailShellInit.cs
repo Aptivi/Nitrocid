@@ -17,43 +17,23 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Extras.MailShell.Mail;
 using Nitrocid.Extras.MailShell.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.Languages;
+using Nitrocid.Extras.MailShell.Mail;
 
 namespace Nitrocid.Extras.MailShell
 {
     internal class MailShellInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("mail", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_MAIL_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "emailAddress", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC")
-                        }),
-                    ])
-                ], new MailCommandExec()),
-            new CommandInfo("popmail", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "emailAddress", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC")
-                        }),
-                    ])
-                ], new PopMailCommandExec()),
+            new MailCommandExec(),
+            new PopMailCommandExec(),
         ];
 
         public string AddonName =>

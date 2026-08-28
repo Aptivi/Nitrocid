@@ -17,13 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.Docking.Commands;
-using Nitrocid.Extras.Docking.Dock;
 using Terminaux.Shell.Commands;
-using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Languages;
 
@@ -31,19 +27,9 @@ namespace Nitrocid.Extras.Docking
 {
     internal class DockingInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("dock", LanguageTools.GetLocalized("NKS_DOCKING_COMMAND_DOCK_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "dockName", new()
-                        {
-                            AutoCompleter = (_) => DockTools.GetDockScreenNames(),
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC")
-                        }),
-                    ])
-                ], new DockCommand())
+            new DockCommand()
         ];
 
         public string AddonName =>

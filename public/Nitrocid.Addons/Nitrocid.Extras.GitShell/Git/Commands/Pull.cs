@@ -17,15 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using GitCommand = LibGit2Sharp.Commands;
 using LibGit2Sharp;
-using Terminaux.Shell.Commands;
-using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Timezones;
+using Nitrocid.Languages;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using GitCommand = LibGit2Sharp.Commands;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {
@@ -37,12 +37,17 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// </remarks>
     class PullCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "pull";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_PULL_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!GitShellCommon.isIdentified)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1") + " 'setid' " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1") + " 'setid' " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2"), true, ThemeColorType.Error);
                 return 14;
             }
             var merger = new Signature(GitShellCommon.name, GitShellCommon.email, new(TimeDateTools.KernelDateTime, TimeZoneRenderers.ShowTimeZoneUtcOffsetLocal()));
@@ -55,14 +60,14 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                     break;
                 case MergeStatus.FastForward:
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_PULL_FASTFORWARD") + $":");
-                    TextWriters.Write($"  {pullResult.Commit.Sha[..7]}: {pullResult.Commit.MessageShort}", true, KernelColorType.ListValue);
+                    TextWriterColor.Write($"  {pullResult.Commit.Sha[..7]}: {pullResult.Commit.MessageShort}", true, ThemeColorType.ListValue);
                     break;
                 case MergeStatus.NonFastForward:
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_PULL_UPDATED") + $":");
-                    TextWriters.Write($"  {pullResult.Commit.Sha[..7]}: {pullResult.Commit.MessageShort}", true, KernelColorType.ListValue);
+                    TextWriterColor.Write($"  {pullResult.Commit.Sha[..7]}: {pullResult.Commit.MessageShort}", true, ThemeColorType.ListValue);
                     break;
                 case MergeStatus.Conflicts:
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_PULL_MERGECONFLICTS"), true, KernelColorType.Warning);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_PULL_MERGECONFLICTS"), true, ThemeColorType.Warning);
                     break;
             }
             return 0;

@@ -121,4 +121,7 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>Kan geen aandeleninformatie verkrijgen.</value>
   </data>
+  <data name="NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC" xml:space="preserve">
+    <value>AlphaVantage API-sleutel</value>
+  </data>
 </root>

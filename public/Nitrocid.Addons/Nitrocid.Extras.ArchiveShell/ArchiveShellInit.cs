@@ -17,34 +17,23 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Arguments;
+using System.Linq;
 using Nitrocid.Extras.ArchiveShell.Archive.Commands;
 using Nitrocid.Extras.ArchiveShell.Archive.Shell;
 using Nitrocid.Extras.ArchiveShell.Settings;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Shell.Commands;
-using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
-using System.Linq;
 using Nitrocid.Languages;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.ArchiveShell
 {
     internal class ArchiveShellInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("archive", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "archivefile", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC")
-                        }),
-                    ])
-                ], new ArchiveCommand())
+            new ArchiveCommand(),
         ];
 
         public string AddonName =>

@@ -20,14 +20,15 @@
 using System;
 using System.Data;
 using System.Linq;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
-using UnitsNet;
 using Nitrocid.Extras.UnitConv.Tools;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using UnitsNet;
 
 namespace Nitrocid.Extras.UnitConv.Commands
 {
@@ -41,40 +42,77 @@ namespace Nitrocid.Extras.UnitConv.Commands
     /// </remarks>
     class UnitConvCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "unitconv";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "unittype", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => [.. Quantity.Infos.Select((src) => src.Name)],
+                        ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "quantity", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_QUANTITY_DESC"
+                    }),
+                    new CommandArgumentPart(true, "sourceunit", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_SOURCEUNIT_DESC"
+                    }),
+                    new CommandArgumentPart(true, "targetunit", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("tui", /* Localizable */ "NKS_UNITCONV_COMMAND_UNITCONV_SWITCH_TUI_DESC", new SwitchOptions()
+                    {
+                        OptionalizeLastRequiredArguments = 4,
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            bool tuiMode = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui");
+            bool tuiMode = parameters.ContainsSwitch("-tui");
             if (tuiMode)
                 UnitConvTools.OpenUnitConvTui();
             else
             {
                 var parser = UnitsNetSetup.Default.UnitParser;
                 string UnitType = parameters.ArgumentsList[0];
-                int QuantityNum = Convert.ToInt32(parameters.ArgumentsList[1]);
+                int QuantityNum = int.Parse(parameters.ArgumentsList[1]);
                 string SourceUnit = parameters.ArgumentsList[2];
                 string TargetUnit = parameters.ArgumentsList[3];
                 var QuantityInfos = Quantity.Infos.Where(x => x.Name == UnitType).ToArray();
                 var TargetUnitInstance = parser.Parse(TargetUnit, QuantityInfos[0].UnitType);
                 var InitialUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}");
                 var ConvertedUnit = InitialUnit.ToUnit(TargetUnitInstance);
-                TextWriters.Write("- {0} => ", false, KernelColorType.ListEntry, InitialUnit.ToString(CultureManager.CurrentCulture.NumberFormat));
-                TextWriters.Write(ConvertedUnit.ToString(CultureManager.CurrentCulture.NumberFormat), true, KernelColorType.ListValue);
+                TextWriterColor.Write("- {0} => ", false, ThemeColorType.ListEntry, InitialUnit.ToString(CultureManager.CurrentCulture.NumberFormat));
+                TextWriterColor.Write(ConvertedUnit.ToString(CultureManager.CurrentCulture.NumberFormat), true, ThemeColorType.ListValue);
             }
             return 0;
         }
 
-        public override void HelpHelper()
+        public override void HelpHelper(IShell? shell)
         {
             var abbreviations = UnitsNetSetup.Default.UnitAbbreviations;
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS"));
             foreach (QuantityInfo QuantityInfo in Quantity.Infos)
             {
-                TextWriters.Write("- {0}:", true, KernelColorType.ListEntry, QuantityInfo.Name);
+                SeparatorWriterColor.WriteSeparator(QuantityInfo.Name);
                 foreach (Enum UnitValues in QuantityInfo.UnitInfos.Select(x => x.Value))
                 {
-                    TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
-                    TextWriters.Write(UnitValues.ToString(), true, KernelColorType.ListValue);
+                    string abbreviationsStr = string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), (int)(object)UnitValues));
+                    ListEntryWriterColor.WriteListEntry(abbreviationsStr, UnitValues.ToString());
                 }
             }
         }

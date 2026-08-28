@@ -20,15 +20,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Themes;
 using Nitrocid.Files;
 using Nitrocid.Languages;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Selection;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
+using Terminaux.Themes;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
@@ -43,8 +44,30 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class ThemeSetCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "themeset";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_THEMESET_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "theme", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_THEMEPREV_ARGUMENT_THEMENAME_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("y", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_THEMESET_SWITCH_Y_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             int answer = -1;
             string selectedTheme = "";
@@ -52,7 +75,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
             bool bail = false;
             int step = 1;
-            string[] categoryNames = Enum.GetNames(typeof(ThemeCategory));
+            string[] categoryNames = Enum.GetNames<ThemeCategory>();
             int categoryIndex = 0;
             while (answer != 0 && !bail)
             {
@@ -81,11 +104,9 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                                 themeCategoryChoices.Add(ici);
                             }
                             categoryIndex = SelectionStyle.PromptSelection(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_SELECTCATEGORY"), [.. themeCategoryChoices], [.. themeCategoryAltChoices]);
-
-                            // If the color index is -1, exit.
                             if (categoryIndex == -1 || categoryIndex >= categoryNames.Length)
                             {
-                                KernelColorTools.LoadBackground();
+                                ThemeColorsTools.LoadBackground();
                                 return 3;
                             }
                             else
@@ -108,7 +129,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             {
                                 var themeInstance = ThemeTools.GetThemeInfo(theme);
                                 string name = themeInstance.Name;
-                                string desc = themeInstance.Localizable ? LanguageTools.GetLocalized(themeInstance.Description) : themeInstance.Description;
+                                string desc = LanguageTools.GetLocalized(themeInstance.Description);
                                 var ici = new InputChoiceInfo(
                                     theme,
                                     $"{name}{(themeInstance.IsEvent ? $" - [{themeInstance.StartMonth}/{themeInstance.StartDay} -> {themeInstance.EndMonth}/{themeInstance.EndDay} / {(themeInstance.IsExpired ? LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_THEMEEXPIRED") : LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_THEMEAVAILABLE"))}]" : "")}",
@@ -121,7 +142,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             // If the color index is -1, exit.
                             if (colorIndex == -1)
                             {
-                                KernelColorTools.LoadBackground();
+                                ThemeColorsTools.LoadBackground();
                                 return 3;
                             }
                             else if (colorIndex < themeChoices.Count)
@@ -155,7 +176,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     Theme = ThemeTools.GetThemeInfo(selectedTheme, true);
 
                 // Immediately bail if -y is passed
-                if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-y"))
+                if (parameters.ContainsSwitch("-y"))
                     break;
 
                 // Now, preview the theme
@@ -167,24 +188,27 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         new("y", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMESET_YES")),
                         new("n", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMESET_NO"))
                     ],
-                    TextTools.FormatString(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMESET_PROMPT") + "\n{0}: {1}", selectedTheme, Theme.Localizable ? LanguageTools.GetLocalized(Theme.Description) : Theme.Description)
+                    TextTools.FormatString(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMESET_PROMPT") + "\n{0}: {1}", selectedTheme, LanguageTools.GetLocalized(Theme.Description))
                 );
                 if (answer == 1 && parameters.ArgumentsList.Length > 0)
                     bail = true;
             }
 
             if (bail)
+            {
+                ThemeColorsTools.LoadBackground();
                 return 0;
+            }
 
             // User answered yes, so set it
             if (FilesystemTools.FileExists(ThemePath))
                 ThemeTools.ApplyThemeFromFile(ThemePath);
             else
-                ThemeTools.ApplyThemeFromResources(selectedTheme);
+                ThemeTools.ApplyThemeFromRegistered(selectedTheme);
             return 0;
         }
 
-        public override void HelpHelper() =>
+        public override void HelpHelper(IShell? shell) =>
             TextWriterColor.Write("[Theme]: ThemeName.json, " + string.Join(", ", ThemeTools.GetInstalledThemes().Keys));
 
     }

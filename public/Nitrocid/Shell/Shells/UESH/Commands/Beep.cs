@@ -17,12 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Terminaux.Shell.Commands;
 using Terminaux.Base;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -38,19 +40,43 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class BeepCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "beep";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "freq", new()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_FREQ_DESC"
+                    }),
+                    new CommandArgumentPart(false, "ms", new()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_INTERVAL_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (parameters.ArgumentsList.Length >= 2)
             {
-                if (!int.TryParse(parameters.ArgumentsList[0], out var freq))
+                string freqStr = parameters.ArgumentsList[0];
+                string timeStr = parameters.ArgumentsList[1];
+                if (!int.TryParse(freqStr, out var freq))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_BEEP_INVALIDFREQ"), KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_BEEP_INVALIDFREQ"), ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
                 }
-                if (!int.TryParse(parameters.ArgumentsList[1], out var ms))
+                if (!int.TryParse(timeStr, out var ms))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_BEEP_INVALIDDURATION"), KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_BEEP_INVALIDDURATION"), ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
                 }
                 ConsoleWrapper.Beep(freq, ms);

@@ -18,14 +18,16 @@
 //
 
 using System;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Users;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -39,14 +41,38 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class PermGroupCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "permgroup";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PERMGROUP_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "groupName", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PERMGROUP_ARGUMENT_GROUPNAME_DESC"
+                    }),
+                    new CommandArgumentPart(true, "allow/revoke", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_MODE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "perm", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_GRANT_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
 
@@ -55,23 +81,23 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             string mode = parameters.ArgumentsList[1];
             string perm = parameters.ArgumentsList[2];
 
-            if (!Enum.TryParse(typeof(PermissionTypes), perm, out object? permission))
+            if (!Enum.TryParse(perm, out PermissionTypes permission))
             {
                 // Permission not found
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PERM_NOPERM"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PERM_NOPERM"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.PermissionManagement);
             }
 
             if (mode == "allow")
                 // Granting permission.
-                PermissionsTools.GrantPermissionGroup(target, (PermissionTypes)permission);
+                PermissionsTools.GrantPermissionGroup(target, permission);
             else if (mode == "revoke")
                 // Revoking permission.
-                PermissionsTools.RevokePermissionGroup(target, (PermissionTypes)permission);
+                PermissionsTools.RevokePermissionGroup(target, permission);
             else
             {
                 // No mode
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PERM_NOPERMMODE"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PERM_NOPERMMODE"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.PermissionManagement);
             }
             return 0;

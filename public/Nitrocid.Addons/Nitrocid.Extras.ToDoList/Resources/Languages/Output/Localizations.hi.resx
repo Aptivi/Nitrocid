@@ -70,9 +70,6 @@
   <data name="NKS_TODO_ADDREMOVEFAILED" xml:space="preserve">
     <value>कोई कार्य जोड़ने या हटाने में विफल.</value>
   </data>
-  <data name="NKS_TODO_NAMENEEDED" xml:space="preserve">
-    <value>कृपया अपने कार्य के लिए एक नाम प्रदान करें.</value>
-  </data>
   <data name="NKS_TODO_MARKFAILED" xml:space="preserve">
     <value>किसी कार्य को चिह्नित करने में विफल.</value>
   </data>

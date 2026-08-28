@@ -17,15 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Linq;
-using Terminaux.Shell.Commands;
-using Nitrocid.Languages;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel.Extensions;
+#if NKS_EXTENSIONS
 using System;
-using Colorimetry.Data;
+using System.Linq;
 using Colorimetry;
-using Nitrocid.ConsoleBase.Colors;
+using Colorimetry.Data;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Languages;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -37,10 +39,18 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
     /// </remarks>
     class LsBaseAddonsCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "lsbaseaddons";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSBASEADDONS_TITLE"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSBASEADDONS_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
 
             // List all the available addons
             foreach (var enumValue in Enum.GetValues<KnownAddons>())
@@ -60,3 +70,4 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
     }
 }
+#endif

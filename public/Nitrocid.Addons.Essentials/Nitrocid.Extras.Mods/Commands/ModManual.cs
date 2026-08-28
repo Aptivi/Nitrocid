@@ -17,19 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Languages;
-using Nitrocid.Kernel.Exceptions;
-using Terminaux.Inputs.Interactive;
+using System;
+using System.IO;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Extras.Mods.Modifications;
+using Nitrocid.Extras.Mods.Modifications.Interactive;
+using Nitrocid.Extras.Mods.Modifications.ManPages;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
-using System.IO;
-using System;
-using Nitrocid.Extras.Mods.Modifications;
-using Nitrocid.Extras.Mods.Modifications.ManPages;
-using Nitrocid.Extras.Mods.Modifications.Interactive;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Terminaux.Inputs.Interactive;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Mods.Commands
 {
@@ -42,8 +44,24 @@ namespace Nitrocid.Extras.Mods.Commands
     /// </remarks>
     class ModManualCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "modmanual";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMANUAL_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "modname", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC")
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string modName = parameters.ArgumentsList[0];
             if (!ModManager.Mods.TryGetValue(modName, out ModInfo? mod))

@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>Показує повноекранний огляд вибраного подання дока, щоб мати можливість використовувати його як інформаційну панель</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>Немає док-екрана з такою назвою.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>Немає док-станції з такою назвою.</value>
   </data>

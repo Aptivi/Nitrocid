@@ -97,6 +97,10 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "无法获取股票信息。"
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "AlphaVantage API 密钥"
     }
   ]
 }

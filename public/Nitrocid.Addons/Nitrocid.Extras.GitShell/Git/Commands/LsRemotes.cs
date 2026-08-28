@@ -17,9 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {
@@ -31,17 +33,25 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// </remarks>
     class LsRemotesCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsremotes";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_LSREMOTES_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (GitShellCommon.Repository is null)
                 return 43;
             var remotes = GitShellCommon.Repository.Network.Remotes;
             foreach (var remote in remotes)
             {
-                TextWriters.Write($"- {remote.Name}:", true, KernelColorType.ListEntry);
-                TextWriters.Write($"  - R: {remote.Url}", true, KernelColorType.ListValue);
-                TextWriters.Write($"  - P: {remote.PushUrl}", true, KernelColorType.ListValue);
+                TextWriterColor.Write($"- {remote.Name}:", true, ThemeColorType.ListEntry);
+                TextWriterColor.Write($"  - R: {remote.Url}", true, ThemeColorType.ListValue);
+                TextWriterColor.Write($"  - P: {remote.PushUrl}", true, ThemeColorType.ListValue);
             }
             return 0;
         }

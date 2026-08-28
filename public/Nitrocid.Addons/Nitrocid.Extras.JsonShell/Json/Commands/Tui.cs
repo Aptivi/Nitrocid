@@ -17,14 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using System.Collections.Generic;
 using Nitrocid.Extras.JsonShell.Tools;
 using Nitrocid.Files;
 using Nitrocid.Languages;
-using Terminaux.Shell.Commands;
-using System.Collections.Generic;
 using Terminaux.Inputs.Styles.Editor;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.JsonShell.Json.Commands
 {
@@ -36,12 +37,17 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
     /// </remarks>
     class TuiCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "tui";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_TUI_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (JsonShellCommon.FileStream is null)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_STREAMNOTOPEN"), KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_STREAMNOTOPEN"), ThemeColorType.Error);
                 return 42;
             }
             string path = JsonShellCommon.FileStream.Name;

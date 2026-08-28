@@ -17,14 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using System;
 using Nitrocid.Extras.MailShell.Tools.Directory;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using System;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Nitrocid.Extras.MailShell.Mail.Commands
@@ -37,20 +39,39 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
     /// </remarks>
     class ListCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "list";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_LIST_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "pageNum", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_MAIL_COMMAND_LIST_ARGUMENT_PAGENUM_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            var mailShell = (MailShell?)shell ??
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
             if (parameters.ArgumentsList.Length > 0)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Page is numeric? {0}", vars: [TextTools.IsStringNumeric(parameters.ArgumentsList[0])]);
-                if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
+                DebugWriter.WriteDebug(DebugLevel.I, "Page is numeric? {0}", vars: [parameters.ArgumentsList[0].IsStringNumeric()]);
+                if (parameters.ArgumentsList[0].IsStringNumeric())
                 {
                     MailManager.MailListMessages(Convert.ToInt32(parameters.ArgumentsList[0]));
                     return 0;
                 }
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_PAGENOTNUMERIC"), true, KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_PAGENOTNUMERIC"), true, ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Mail);
                 }
             }

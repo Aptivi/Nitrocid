@@ -19,11 +19,13 @@
 
 using System;
 using Nitrocid.Extras.SftpShell.Tools.Filesystem;
-using Terminaux.Shell.Commands;
-using Terminaux.Inputs.Styles.Choice;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Inputs.Styles.Choice;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Nitrocid.Extras.SftpShell.SFTP.Commands
@@ -40,14 +42,30 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Commands
     /// </remarks>
     class DelCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "del";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_DEL_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_DEL_ARGUMENT_REMOTEFILE_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Print a message
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPHTTPSFTP_DELETING"), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPHTTPSFTP_DELETING"), true, ThemeColorType.Progress, parameters.ArgumentsList[0]);
 
             // Make a confirmation message so user will not accidentally delete a file or folder
-            string answer = ChoiceStyle.PromptChoice(TextTools.FormatString(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPHTTPSFTP_DELETECONFIRM"), parameters.ArgumentsList[0]), [("y", "Yes"), ("n", "No")]);
+            string answer = ChoiceStyle.PromptChoice(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPHTTPSFTP_DELETECONFIRM").FormatString(parameters.ArgumentsList[0]), [("y", "Yes"), ("n", "No")]);
             if (answer != "y")
                 return 1;
 
@@ -58,7 +76,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Commands
             }
             catch (Exception ex)
             {
-                TextWriters.Write(ex.Message, true, KernelColorType.Error);
+                TextWriterColor.Write(ex.Message, true, ThemeColorType.Error);
                 return ex.GetHashCode();
             }
         }

@@ -17,12 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -34,20 +36,44 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class WrapTextCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "wraptext";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_WRAPTEXT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_FILE_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("columns", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_WRAPTEXT_SWITCH_COLUMNS_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true,
+                        IsNumeric = true
+                    })
+                ], true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             int columns = 78;
-            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-columns"))
+            string textFile = parameters.ArgumentsList[0];
+            if (parameters.ContainsSwitch("-columns"))
             {
                 string parsedColumns = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-columns");
                 if (!int.TryParse(parsedColumns, out columns))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_WRAPTEXT_COLUMNNUMINVALID"), true, KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_WRAPTEXT_COLUMNNUMINVALID"), true, ThemeColorType.Error);
                     return 20;
                 }
             }
-            FilesystemTools.WrapTextFile(parameters.ArgumentsList[0], columns);
+            FilesystemTools.WrapTextFile(textFile, columns);
             return 0;
         }
 

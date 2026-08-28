@@ -70,9 +70,6 @@
   <data name="NKS_TODO_ADDREMOVEFAILED" xml:space="preserve">
     <value>Falha ao adicionar ou remover uma tarefa.</value>
   </data>
-  <data name="NKS_TODO_NAMENEEDED" xml:space="preserve">
-    <value>Por favor, forneça um nome para sua tarefa.</value>
-  </data>
   <data name="NKS_TODO_MARKFAILED" xml:space="preserve">
     <value>Falha ao marcar uma tarefa.</value>
   </data>

@@ -71,10 +71,6 @@
       "text": "输入您的 API 密钥："
     },
     {
-      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
-      "text": "您可以查阅以下链接以获取城市列表及其 ID，或者将“-list”传递给此命令。"
-    },
-    {
       "loc": "NKS_FORECAST_SETTINGS_DESC",
       "text": "此部分允许您配置 Forecast 的工作方式。"
     },

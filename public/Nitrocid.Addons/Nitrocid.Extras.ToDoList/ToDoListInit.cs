@@ -17,14 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.ToDoList.ToDoList;
 using Nitrocid.Extras.ToDoList.ToDoList.Commands;
 using Nitrocid.Kernel.Debugging;
 using Terminaux.Shell.Commands;
-using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Languages;
 
@@ -32,31 +29,9 @@ namespace Nitrocid.Extras.ToDoList
 {
     internal class ToDoListInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("todo", LanguageTools.GetLocalized("NKS_TODO_COMMAND_TODO_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "add/remove/done/undone", new CommandArgumentPartOptions()
-                        {
-                            ExactWording = ["add", "remove", "done", "undone"],
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC")
-                        }),
-                        new CommandArgumentPart(true, "taskname", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC")
-                        }),
-                    ]),
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
-                        {
-                            ExactWording = ["list", "save", "load"],
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC")
-                        }),
-                    ]),
-                ], new TodoCommand()),
+            new TodoCommand(),
         ];
 
         public string AddonName =>

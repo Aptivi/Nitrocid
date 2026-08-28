@@ -17,14 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using System;
 using Nitrocid.Extras.JsonShell.Tools;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
-using System;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.JsonShell.Json.Commands
 {
@@ -36,8 +38,39 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
     /// </remarks>
     class SetCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "set";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SET_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "jsonValue", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC"
+                    })
+                ],
+                [
+                    new SwitchInfo("parentPath", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true
+                    }),
+                    new SwitchInfo("type", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true,
+                        IsRequired = true
+                    }),
+                    new SwitchInfo("propName", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string parent = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-parentPath");
             string type = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type");
@@ -49,12 +82,12 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
             }
             catch (KernelException kex)
             {
-                TextWriters.Write(kex.Message, KernelColorType.Error);
+                TextWriterColor.Write(kex.Message, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.JsonEditor);
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_SETITEMFAILED") + $" {ex.Message}", KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_SETITEMFAILED") + $" {ex.Message}", ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.JsonEditor);
             }
             return 0;

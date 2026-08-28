@@ -22,7 +22,10 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Users;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -38,8 +41,30 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class ChLangCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "chlang";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "language", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_ARGUMENT_LANGID_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("user", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_SWITCH_USER_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))

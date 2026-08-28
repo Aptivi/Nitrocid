@@ -17,21 +17,41 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Languages;
 using System;
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Exceptions;
-using VisualCard.Parts.Implementations;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using VisualCard.Parts.Enums;
+using VisualCard.Parts.Implementations;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Commands
 {
     class ContactInfoCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "contactinfo";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_CONTACTINFO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "contactNum", new()
+                        {
+                            IsNumeric = true,
+                            ArgumentDescription = /* Localizable */ "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC"
+                        })
+                    ]
+                )
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             try
             {
@@ -39,18 +59,18 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                 var contacts = ContactsManager.GetContacts();
                 if (contacts.Length == 0)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOCONTACTS"), KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOCONTACTS"), ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Contacts);
                 }
                 if (!int.TryParse(parameters.ArgumentsList[0], out int contactNum))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_NUMINVALID"), KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_NUMINVALID"), ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Contacts);
                 }
                 int contactIdx = contactNum - 1;
                 if (contactIdx < 0 || contactIdx >= contacts.Length)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE"), KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE"), ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Contacts);
                 }
                 var contact = contacts[contactIdx];
@@ -72,16 +92,11 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
 
                 // Print every detail
                 if (hasFullName)
-                {
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTNAME") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetString(CardStringsEnum.FullName)[0].Value ?? "", KernelColorType.ListValue);
-                }
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTNAME"), contact.GetString(CardStringsEnum.FullName)[0].Value);
                 if (hasName)
                 {
-                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_FIRSTNAME") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<NameInfo>()[0].ContactFirstName ?? "", KernelColorType.ListValue);
-                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_LASTNAME") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetPartsArray<NameInfo>()[0].ContactLastName ?? "", KernelColorType.ListValue);
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_FIRSTNAME"), contact.GetPartsArray<NameInfo>()[0].ContactFirstName ?? "", indent: 1);
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_LASTNAME"), contact.GetPartsArray<NameInfo>()[0].ContactLastName ?? "", indent: 1);
                 }
                 if (hasAddress)
                 {
@@ -93,68 +108,39 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                     string locality = address.Locality ?? "";
                     string region = address.Region ?? "";
                     string country = address.Country ?? "";
-                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESS") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write($"{street}, {postal}, {poBox}, {extended}, {locality}, {region}, {country}", KernelColorType.ListValue);
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESS"), $"{street}, {postal}, {poBox}, {extended}, {locality}, {region}, {country}", indent: 1);
                 }
                 if (hasMail)
-                {
-                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MAIL") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetString(CardStringsEnum.Mails)[0].Value ?? "", KernelColorType.ListValue);
-                }
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MAIL"), contact.GetString(CardStringsEnum.Mails)[0].Value ?? "", indent: 1);
                 if (hasOrganization)
                 {
                     var org = contact.GetPartsArray<OrganizationInfo>()[0];
                     string name = org.Name ?? "";
                     string unit = org.Unit ?? "";
                     string role = org.Role ?? "";
-                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ORG") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write($"{name}, {unit}, {role}", KernelColorType.ListValue);
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ORG"), $"{name}, {unit}, {role}", indent: 1);
                 }
                 if (hasTelephone)
-                {
-                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_CONTACTS_TUI_PHONE") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetString(CardStringsEnum.Telephones)[0].Value ?? "", KernelColorType.ListValue);
-                }
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_PHONE"), contact.GetString(CardStringsEnum.Telephones)[0].Value ?? "", indent: 1);
                 if (hasURL)
-                {
-                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_CONTACTS_TUI_URL") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetString(CardStringsEnum.Url)[0].Value ?? "", KernelColorType.ListValue);
-                }
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_URL"), contact.GetString(CardStringsEnum.Url)[0].Value ?? "", indent: 1);
                 if (hasGeo)
-                {
-                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_GEO") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetString(CardStringsEnum.Geo)[0].Value ?? "", KernelColorType.ListValue);
-                }
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_GEO"), contact.GetString(CardStringsEnum.Geo)[0].Value ?? "", indent: 1);
                 if (hasImpp)
-                {
-                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_CONTACTS_TUI_IMPP") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetString(CardStringsEnum.Impps)[0].Value ?? "", KernelColorType.ListValue);
-                }
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_IMPP"), contact.GetString(CardStringsEnum.Impps)[0].Value ?? "", indent: 1);
                 if (hasNickname)
-                {
-                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NICK") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetString(CardStringsEnum.Nicknames)[0].Value ?? "", KernelColorType.ListValue);
-                }
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NICK"), contact.GetString(CardStringsEnum.Nicknames)[0].Value ?? "", indent: 1);
                 if (hasRoles)
-                {
-                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ROLE") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetString(CardStringsEnum.Roles)[0].Value ?? "", KernelColorType.ListValue);
-                }
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ROLE"), contact.GetString(CardStringsEnum.Roles)[0].Value ?? "", indent: 1);
                 if (hasTitles)
-                {
-                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_CONTACTS_TUI_TITLE") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetString(CardStringsEnum.Titles)[0].Value ?? "", KernelColorType.ListValue);
-                }
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_TITLE"), contact.GetString(CardStringsEnum.Titles)[0].Value ?? "", indent: 1);
                 if (hasNotes)
-                {
-                    TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_NOTE") + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(contact.GetString(CardStringsEnum.Notes)[0].Value ?? "", KernelColorType.ListValue);
-                }
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_NOTE"), contact.GetString(CardStringsEnum.Notes)[0].Value ?? "", indent: 1);
                 return 0;
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_CANTLISTSOME") + ex.Message, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_CANTLISTSOME") + ex.Message, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Contacts);
             }
         }

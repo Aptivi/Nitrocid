@@ -18,14 +18,14 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Shell.Commands;
+using Terminaux.Themes.Colors;
+using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
-using Terminaux.Shell.Commands;
-using Nitrocid.Security.Permissions;
 using Nitrocid.Users;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Security.Permissions;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -39,14 +39,19 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class ReloadConfigCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "reloadconfig";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RELOADCONFIG_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
 
@@ -54,9 +59,6 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_RELOADED"));
             return 0;
         }
-
-        public override void HelpHelper() =>
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS"));
 
     }
 }

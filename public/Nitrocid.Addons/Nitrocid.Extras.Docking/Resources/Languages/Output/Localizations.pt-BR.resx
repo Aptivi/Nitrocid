@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>Mostra uma visão geral em tela cheia sobre uma visualização de dock selecionada para poder usá-la como um painel de informações</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>Não há nenhuma tela de encaixe com esse nome.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>Não há nenhum dock de tela com esse nome.</value>
   </data>

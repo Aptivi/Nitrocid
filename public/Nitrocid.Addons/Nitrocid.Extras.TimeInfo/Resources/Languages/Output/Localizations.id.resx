@@ -160,4 +160,22 @@
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
     <value>Waktu Unix:</value>
   </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_PREPRODUCTION" xml:space="preserve">
+    <value>Pra-produksi</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_EXPIRED" xml:space="preserve">
+    <value>Kedaluwarsa</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_POOR" xml:space="preserve">
+    <value>Buruk</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_AVERAGE" xml:space="preserve">
+    <value>Rata-rata</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_GOOD" xml:space="preserve">
+    <value>Baik</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_EXCELLENT" xml:space="preserve">
+    <value>Sangat Baik</value>
+  </data>
 </root>

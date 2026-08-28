@@ -17,13 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using LibGit2Sharp;
-using GitCommand = LibGit2Sharp.Commands;
 using System.Linq;
-using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
+using LibGit2Sharp;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using GitCommand = LibGit2Sharp.Commands;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {
@@ -35,15 +37,31 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// </remarks>
     class FetchCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "fetch";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_FETCH_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "remote", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_FETCH_ARGUMENT_REMOTE_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var status = GitShellCommon.Repository.RetrieveStatus();
 
             // Check to see if the repo has been modified
             if (status.IsDirty)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSSAVING"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSSAVING"), true, ThemeColorType.Error);
                 return 11;
             }
 
@@ -58,7 +76,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 string requestedRemote = parameters.ArgumentsList[0];
                 if (!remoteNames.Contains(requestedRemote))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_FETCH_REMOTENOTFOUND") + $" {requestedRemote}", true, KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_FETCH_REMOTENOTFOUND") + $" {requestedRemote}", true, ThemeColorType.Error);
                     return 12;
                 }
             }
@@ -70,7 +88,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                     // We don't have origin! Let's select the first remote
                     if (remoteNames.Length == 0)
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_FETCH_NOREMOTES"), true, KernelColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_FETCH_NOREMOTES"), true, ThemeColorType.Error);
                         return 13;
                     }
                     selectedRemote = remoteNames[0];

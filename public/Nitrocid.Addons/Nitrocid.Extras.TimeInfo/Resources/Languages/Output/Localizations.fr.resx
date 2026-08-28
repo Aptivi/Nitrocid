@@ -160,4 +160,22 @@
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
     <value>Heure Unix :</value>
   </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_PREPRODUCTION" xml:space="preserve">
+    <value>Préproduction</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_EXPIRED" xml:space="preserve">
+    <value>Expiré</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_POOR" xml:space="preserve">
+    <value>Mauvais</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_AVERAGE" xml:space="preserve">
+    <value>Moyen</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_GOOD" xml:space="preserve">
+    <value>Bon</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_EXCELLENT" xml:space="preserve">
+    <value>Excellent</value>
+  </data>
 </root>

@@ -17,9 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {
@@ -31,16 +33,24 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// </remarks>
     class LsTagsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lstags";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_LSTAGS_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (GitShellCommon.Repository is null)
                 return 43;
             var tags = GitShellCommon.Repository.Tags;
             foreach (var tag in tags)
             {
-                TextWriters.Write($"- [{(tag.IsAnnotated ? "A" : " ")}] {tag.CanonicalName} [{tag.FriendlyName}]", true, KernelColorType.ListEntry);
-                TextWriters.Write($"  {tag.Target.Sha}", true, KernelColorType.ListValue);
+                TextWriterColor.Write($"- [{(tag.IsAnnotated ? "A" : " ")}] {tag.CanonicalName} [{tag.FriendlyName}]", true, ThemeColorType.ListEntry);
+                TextWriterColor.Write($"  {tag.Target.Sha}", true, ThemeColorType.ListValue);
             }
             return 0;
         }

@@ -17,37 +17,26 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Arguments;
 using LibGit2Sharp;
-using Nitrocid.Extras.GitShell.Git;
 using Nitrocid.Extras.GitShell.Settings;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Shell.Commands;
-using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Files.Paths;
 using Terminaux.Shell.Shells;
 using Nitrocid.Kernel;
 using System.Linq;
 using Nitrocid.Languages;
+using Nitrocid.Extras.GitShell.Git;
 
 namespace Nitrocid.Extras.GitShell
 {
     internal class GitShellInit : IAddon
     {
         private static bool nativeLibIsSet = false;
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("gitsh", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_GITSH_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "repoPath", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC")
-                        })
-                    ]),
-                ], new GitCommandExec())
+            new GitCommandExec(),
         ];
 
         public string AddonName =>

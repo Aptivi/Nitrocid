@@ -17,14 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using System;
 using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using System;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Nitrocid.Shell.Shells.Text.Commands
@@ -37,27 +39,51 @@ namespace Nitrocid.Shell.Shells.Text.Commands
     /// </remarks>
     class DelCharNumCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "delcharnum";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELCHARNUM_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "charNum", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELCHARNUM_ARGUMENT_CHARNUM_DESC"
+                    }),
+                    new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELCHARNUM_ARGUMENT_LINENUM_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]) & TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
+            string charNumStr = parameters.ArgumentsList[0];
+            string lineNumStr = parameters.ArgumentsList[1];
+            if (TextTools.IsStringNumeric(lineNumStr) & TextTools.IsStringNumeric(charNumStr))
             {
-                if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.FileLines.Count)
+                if (Convert.ToInt32(lineNumStr) <= TextEditShellCommon.FileLines.Count)
                 {
-                    TextEditTools.DeleteChar(Convert.ToInt32(parameters.ArgumentsList[0]), Convert.ToInt32(parameters.ArgumentsList[1]));
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS"), true, KernelColorType.Success);
+                    TextEditTools.DeleteChar(Convert.ToInt32(charNumStr), Convert.ToInt32(lineNumStr));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS"), true, ThemeColorType.Success);
                     return 0;
                 }
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                 }
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELCHARNUM_NUMINVALID"), true, KernelColorType.Error);
-                DebugWriter.WriteDebug(DebugLevel.E, "{0} and {1} are not numeric values.", vars: [parameters.ArgumentsList[0], parameters.ArgumentsList[1]]);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELCHARNUM_NUMINVALID"), true, ThemeColorType.Error);
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} and {1} are not numeric values.", vars: [charNumStr, lineNumStr]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
             }
         }

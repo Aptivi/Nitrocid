@@ -17,23 +17,41 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-// using Nitrocid.Extras.MailShell.Tools;
+// using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 // using Nitrocid.Network.Connections;
 // using Nitrocid.Network.SpeedDial;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.MailShell
 {
     internal class PopMailCommandExec : BaseCommand, ICommand
     {
+        public override string Command =>
+            "popmail";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "emailAddress", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Implement on 0.1.1.
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING"), KernelColorType.Warning);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING"), ThemeColorType.Warning);
             // NetworkConnectionTools.OpenConnectionForShell("MailShell", EstablishMailConnection, (_, connection) =>
             // EstablishMailConnectionSpeedDial(connection), parameters.ArgumentsText);
             return 0;

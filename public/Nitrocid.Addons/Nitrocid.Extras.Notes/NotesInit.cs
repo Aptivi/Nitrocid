@@ -17,13 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.Notes.Commands;
 using Nitrocid.Extras.Notes.Management;
 using Terminaux.Shell.Commands;
-using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Shell.Homepage;
 using Nitrocid.Languages;
@@ -32,55 +29,15 @@ namespace Nitrocid.Extras.Notes
 {
     internal class NotesInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("addnote", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_ADDNOTE_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "noteContents...", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_NOTES_COMMAND_ADDNOTE_ARGUMENT_NOTECONTENTS_DESC")
-                        })
-                    ]),
-                ], new AddNote()),
-
-            new CommandInfo("removenote", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_REMOVENOTE_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "noteNumber", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC")
-                        })
-                    ]),
-                ], new RemoveNote()),
-
-            new CommandInfo("removenotes", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_REMOVENOTES_DESC"),
-                [
-                    new CommandArgumentInfo(),
-                ], new RemoveNotes()),
-
-            new CommandInfo("listnotes", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_LISTNOTES_DESC"),
-                [
-                    new CommandArgumentInfo(),
-                ], new ListNotes()),
-
-            new CommandInfo("savenotes", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_SAVENOTES_DESC"),
-                [
-                    new CommandArgumentInfo(),
-                ], new SaveNotes()),
-
-            new CommandInfo("reloadnotes", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_RELOADNOTES_DESC"),
-                [
-                    new CommandArgumentInfo(),
-                ], new ReloadNotes()),
-
-            new CommandInfo("notestui", LanguageTools.GetLocalized("NKS_NOTES_COMMAND_NOTESTUI_DESC"),
-                [
-                    new CommandArgumentInfo(),
-                ], new NotesTui()),
+            new AddNote(),
+            new RemoveNote(),
+            new RemoveNotes(),
+            new ListNotes(),
+            new SaveNotes(),
+            new ReloadNotes(),
+            new NotesTui(),
         ];
 
         public string AddonName =>
@@ -99,13 +56,13 @@ namespace Nitrocid.Extras.Notes
         {
             LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
-            HomepageTools.UnregisterBuiltinAction("Notes");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_NOTES_HOMEPAGE_NOTES");
         }
 
         public void FinalizeAddon()
         {
             // Add homepage entries
-            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_NOTES_HOMEPAGE_NOTES"), NoteManagement.OpenNotesTui);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_NOTES_HOMEPAGE_NOTES", NoteManagement.OpenNotesTui);
 
             // Load notes
             NoteManagement.LoadNotes();

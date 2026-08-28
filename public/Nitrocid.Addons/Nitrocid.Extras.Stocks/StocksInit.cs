@@ -17,35 +17,23 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Extras.Stocks.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Extras.Stocks.Commands;
-using Nitrocid.Users.Login.Widgets;
 using Nitrocid.Extras.Stocks.Widgets;
+using Nitrocid.Users.Login.Widgets;
 using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Stocks
 {
     internal class StocksInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("stock", LanguageTools.GetLocalized("NKS_STOCKS_COMMAND_STOCK_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "company", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC")
-                        }),
-                    ])
-                ], new StockCommand()),
+            new StockCommand(),
         ];
 
         public string AddonName =>

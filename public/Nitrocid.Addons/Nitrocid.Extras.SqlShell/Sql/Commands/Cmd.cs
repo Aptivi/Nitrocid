@@ -17,16 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
 using Microsoft.Data.Sqlite;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.SqlShell.Tools;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Terminaux.Reader;
 using Terminaux.Shell.Commands;
-using System.Collections.Generic;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
-using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.SqlShell.Sql.Commands
 {
@@ -38,8 +39,13 @@ namespace Nitrocid.Extras.SqlShell.Sql.Commands
     /// </remarks>
     class CmdCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "cmd";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMAND_CMD_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // First, check to see if we have parameters
             List<SqliteParameter> sqlParameters = [];
@@ -47,7 +53,7 @@ namespace Nitrocid.Extras.SqlShell.Sql.Commands
             {
                 if (StringArg.StartsWith("@"))
                 {
-                    string paramValue = InputTools.ReadLine(TextTools.FormatString(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT"), StringArg) + " ");
+                    string paramValue = TermReader.Read(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT").FormatString(StringArg) + " ");
                     sqlParameters.Add(new SqliteParameter(StringArg, paramValue));
                 }
             }
@@ -56,16 +62,16 @@ namespace Nitrocid.Extras.SqlShell.Sql.Commands
             string[] replies = [];
             if (SqlEditTools.SqlEdit_SqlCommand(parameters.ArgumentsText, ref replies, out var error, [.. sqlParameters]))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDSUCCESS"), true, KernelColorType.Success);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDSUCCESS"), true, ThemeColorType.Success);
                 foreach (string reply in replies)
-                    TextWriters.Write(reply, true, KernelColorType.Success);
+                    TextWriterColor.Write(reply, true, ThemeColorType.Success);
                 return 0;
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDFAILURE"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDFAILURE"), true, ThemeColorType.Error);
                 if (error is not null)
-                    TextWriters.Write(error.Message, true, KernelColorType.Error);
+                    TextWriterColor.Write(error.Message, true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.SqlEditor);
             }
         }

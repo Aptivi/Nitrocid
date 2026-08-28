@@ -17,13 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase.Colors;
-using Textify.General;
-using Terminaux.Base.Extensions;
 using Nettify.Rss.Searcher;
+using Nitrocid.Languages;
+using Terminaux.Base.Extensions;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands
 {
@@ -35,14 +37,33 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
     /// </remarks>
     class SelFeedCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "selfeed";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_SELFEED_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "phrase", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC"
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var foundFeeds = SearcherTools.GetRssFeeds(parameters.ArgumentsList[0]);
             foreach (var feed in foundFeeds)
             {
-                TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, feed.Title);
-                TextWriters.Write(feed.FeedId, true, KernelColorType.ListValue);
+                TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, feed.Title);
+                TextWriterColor.Write(feed.FeedId, true, ThemeColorType.ListValue);
                 TextWriterColor.Write("    {0}", feed.Description.SplitNewLines()[0].Truncate(200));
             }
             return 0;

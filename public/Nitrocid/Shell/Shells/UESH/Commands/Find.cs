@@ -18,13 +18,13 @@
 //
 
 using Nitrocid.Files;
-using Nitrocid.Kernel.Threading;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
-using System.Linq;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
-using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -36,18 +36,48 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class FindCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "find";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FIND_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "file", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_MISC_INTERACTIVES_FMTUI_FILENAME"
+                    }),
+                    new CommandArgumentPart(true, "directory", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("recursive", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("exec", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_EXEC_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true
+                    })
+                ], true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            string FileToSearch = parameters.ArgumentsList[0];
-            string DirectoryToSearch = FilesystemTools.CurrentDir;
-            bool isRecursive = parameters.SwitchesList.Contains("-recursive");
+            string fileToSearch = parameters.ArgumentsList[0];
+            string directoryToSearch = FilesystemTools.CurrentDir;
+            bool isRecursive = parameters.ContainsSwitch("-recursive");
             string command = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-exec").ReleaseDoubleQuotes();
             if (parameters.ArgumentsList.Length > 1)
-                DirectoryToSearch = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
+                directoryToSearch = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
 
             // Print the results if found
-            var FileEntries = FilesystemTools.GetFilesystemEntries(DirectoryToSearch, FileToSearch, isRecursive);
+            var FileEntries = FilesystemTools.GetFilesystemEntries(directoryToSearch, fileToSearch, isRecursive);
 
             // Print or exec, depending on the command
             if (!string.IsNullOrWhiteSpace(command))
@@ -59,7 +89,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
             }
             else
-                TextWriters.WriteList(FileEntries);
+                ListWriterColor.WriteList(FileEntries);
             variableValue = string.Join('\n', FileEntries);
             return 0;
         }

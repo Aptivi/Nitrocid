@@ -70,9 +70,6 @@
   <data name="NKS_TODO_ADDREMOVEFAILED" xml:space="preserve">
     <value>Не вдалося додати або видалити завдання.</value>
   </data>
-  <data name="NKS_TODO_NAMENEEDED" xml:space="preserve">
-    <value>Будь ласка, назвіть своє завдання.</value>
-  </data>
   <data name="NKS_TODO_MARKFAILED" xml:space="preserve">
     <value>Не вдалося позначити завдання.</value>
   </data>

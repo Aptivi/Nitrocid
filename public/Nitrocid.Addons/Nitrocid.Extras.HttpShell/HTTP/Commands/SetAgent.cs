@@ -18,7 +18,10 @@
 //
 
 using Nitrocid.Extras.HttpShell.Tools;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.HttpShell.HTTP.Commands
 {
@@ -27,8 +30,24 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Commands
     /// </summary>
     class SetAgentCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "setagent";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "userAgent", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_ARGUMENT_UA_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string uaToSet = parameters.ArgumentsList[0];
             HttpTools.HttpSetUserAgent(uaToSet);

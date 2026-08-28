@@ -17,11 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Extras.BeepSynth.Commands;
 using Nitrocid.Languages;
@@ -30,18 +27,9 @@ namespace Nitrocid.Extras.BeepSynth
 {
     internal class BeepSynthInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("beepsynth", LanguageTools.GetLocalized("NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "synthFile", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_ARGUMENT_SYNTHFILE_DESC")
-                        }),
-                    ])
-                ], new BeepSynthCommand())
+            new BeepSynthCommand(),
         ];
 
         public string AddonName =>

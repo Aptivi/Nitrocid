@@ -100,9 +100,6 @@
   <data name="NKS_FORECAST_APIKEYPROMPT" xml:space="preserve">
     <value>Masukkan kunci API Anda:</value>
   </data>
-  <data name="NKS_FORECAST_WEATHEROLD_CITYLISTLINK" xml:space="preserve">
-    <value>Anda dapat merujuk ke tautan di bawah untuk melihat daftar kota beserta ID-nya, atau berikan "-list" pada perintah ini.</value>
-  </data>
   <data name="NKS_FORECAST_SETTINGS_DESC" xml:space="preserve">
     <value>Bagian ini memungkinkan Anda mengonfigurasikan cara kerja Prakiraan.</value>
   </data>

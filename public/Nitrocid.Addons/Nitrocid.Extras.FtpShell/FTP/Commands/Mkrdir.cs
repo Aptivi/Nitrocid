@@ -18,7 +18,10 @@
 //
 
 using Nitrocid.Extras.FtpShell.Tools.Filesystem;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Commands
 {
@@ -30,8 +33,24 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
     /// </remarks>
     class MkrdirCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "mkrdir";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_MKRDIR_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC"
+                    }),
+                ], true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             FTPFilesystem.FTPMakeDirectory(parameters.ArgumentsList[0]);
             return 0;

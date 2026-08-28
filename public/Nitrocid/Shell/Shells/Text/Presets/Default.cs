@@ -22,7 +22,6 @@ using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Editors.TextEdit;
 using Terminaux.Shell.Prompts;
-using Colorimetry;
 using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Shell.Shells.Text.Presets

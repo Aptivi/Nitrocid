@@ -19,11 +19,9 @@
 
 using System.Globalization;
 using Colorimetry;
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Time;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;

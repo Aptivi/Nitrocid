@@ -19,7 +19,10 @@
 
 using System;
 using Nitrocid.Files.Editors.HexEdit;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Shell.Shells.Hex.Commands
 {
@@ -31,8 +34,24 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
     /// </remarks>
     class AddByteCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "addbyte";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "byte", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_ADDBYTE_ARGUMENT_BYTE_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             byte ByteContent = Convert.ToByte(parameters.ArgumentsText, 16);
             HexEditTools.AddNewByte(ByteContent);

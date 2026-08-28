@@ -17,33 +17,22 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Extras.FtpShell.FTP;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using System.Collections.Generic;
 using System.Linq;
 using FtpConfig = Nitrocid.Extras.FtpShell.Settings.FtpConfig;
 using Nitrocid.Languages;
+using Nitrocid.Extras.FtpShell.FTP;
 
 namespace Nitrocid.Extras.FtpShell
 {
     internal class FtpShellInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("ftp", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_FTP_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "server", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC")
-                        }),
-                    ])
-                ], new FtpCommandExec())
+            new FtpCommandExec(),
         ];
 
         public string AddonName =>

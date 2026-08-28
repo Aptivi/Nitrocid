@@ -17,22 +17,28 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Languages;
 using System;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Kernel.Exceptions;
-using VisualCard.Parts.Implementations;
 using System.Text;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using VisualCard.Parts.Enums;
+using VisualCard.Parts.Implementations;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Commands
 {
     class ListContactsCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "listcontacts";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             try
             {
@@ -48,13 +54,13 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                         finalNameRendered.Append(contact.GetString(CardStringsEnum.FullName)[0].Value);
                     else
                         finalNameRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOCONTACTNAME"));
-                    TextWriters.Write(finalNameRendered.ToString(), KernelColorType.NeutralText);
+                    TextWriterColor.Write(finalNameRendered.ToString(), ThemeColorType.NeutralText);
                 }
                 return 0;
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_CANTLISTSOME") + ex.Message, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CONTACTS_CONTACTINFO_CANTLISTSOME") + ex.Message, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Contacts);
             }
         }

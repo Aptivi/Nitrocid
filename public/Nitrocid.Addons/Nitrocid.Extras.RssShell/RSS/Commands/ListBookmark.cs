@@ -18,8 +18,10 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Extras.RssShell.Tools;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Nitrocid.Languages;
+using Nitrocid.Extras.RssShell.Tools;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands
 {
@@ -31,8 +33,16 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
     /// </remarks>
     class ListBookmarkCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "listbookmark";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_LISTBOOKMARK_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var Bookmarks = RSSBookmarkManager.GetBookmarks();
             foreach (var bookmark in Bookmarks)

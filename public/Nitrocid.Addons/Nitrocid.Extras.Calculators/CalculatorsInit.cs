@@ -17,12 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.Calculators.Commands;
 using Terminaux.Shell.Commands;
-using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Languages;
 
@@ -30,35 +27,10 @@ namespace Nitrocid.Extras.Calculators
 {
     internal class CalculatorsInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("calc", LanguageTools.GetLocalized("NKS_CALCULATORS_COMMAND_CALC_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "expression", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_CALCULATORS_EXPRESSION")
-                        }),
-                    ], true)
-                ], new CalcCommand()),
-
-            new CommandInfo("imaginary", LanguageTools.GetLocalized("NKS_CALCULATORS_COMMAND_IMAGINARY_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "real", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_CALCULATORS_REAL")
-                        }),
-                        new CommandArgumentPart(true, "imaginary", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_CALCULATORS_IMAG")
-                        }),
-                    ])
-                ], new ImaginaryCommand()),
+            new CalcCommand(),
+            new ImaginaryCommand(),
         ];
 
         public string AddonName =>

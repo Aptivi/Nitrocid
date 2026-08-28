@@ -26,8 +26,6 @@ using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Base.Checks;
-using System.Reflection;
 using Terminaux.Shell.Shells;
 using Textify.Tools.Placeholder;
 using Nitrocid.Kernel.Starting;

@@ -17,24 +17,42 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Linq;
-using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Languages;
 using Terminaux.Images;
 using Terminaux.Images.Interactives;
-using Terminaux.Inputs.Styles.Editor;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using Textify.General;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Extras.Images.Commands
 {
     class PreviewCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "preview";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_IMAGES_COMMAND_PREVIEW_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "imageFile", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC")
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string path = parameters.ArgumentsList[0];
             if (string.IsNullOrEmpty(path))

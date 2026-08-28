@@ -18,12 +18,13 @@
 //
 
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -35,25 +36,41 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class LsConfigsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsconfigs";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LSCONFIGS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(new SwitchInfo[]
+                {
+                    new("deep", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LSCONFIGS_SWITCH_DEEP_DESC")
+                })
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var configs = Config.GetKernelConfigs();
-            bool deep = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-deep");
+            bool deep = parameters.ContainsSwitch("-deep");
             foreach (var config in configs)
             {
                 if (config is null || config.SettingsEntries is null)
                     continue;
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_INFOFOR") + $" {config.GetType().Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_COUNT"), $"{config.SettingsEntries.Length}");
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_INFOFOR") + $" {config.GetType().Name}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_COUNT"), $"{config.SettingsEntries.Length}");
                 if (deep)
                 {
                     foreach (var entry in config.SettingsEntries)
                     {
-                        SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_NAME") + $": {entry.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DISPLAY"), LanguageTools.GetLocalized(entry.DisplayAs), indent: 1);
-                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"), LanguageTools.GetLocalized(entry.Desc), indent: 1);
-                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_KEYS"), $"{entry.Keys.Length}", indent: 1);
+                        SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_NAME") + $": {entry.Name}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+                        ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DISPLAY"), LanguageTools.GetLocalized(entry.DisplayAs), indent: 1);
+                        ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"), LanguageTools.GetLocalized(entry.Desc), indent: 1);
+                        ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_KEYS"), $"{entry.Keys.Length}", indent: 1);
                     }
                 }
             }

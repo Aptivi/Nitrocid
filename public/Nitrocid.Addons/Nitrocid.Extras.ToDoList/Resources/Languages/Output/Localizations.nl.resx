@@ -70,9 +70,6 @@
   <data name="NKS_TODO_ADDREMOVEFAILED" xml:space="preserve">
     <value>Kan een taak niet toevoegen of verwijderen.</value>
   </data>
-  <data name="NKS_TODO_NAMENEEDED" xml:space="preserve">
-    <value>Geef een naam op voor uw taak.</value>
-  </data>
   <data name="NKS_TODO_MARKFAILED" xml:space="preserve">
     <value>Kan een taak niet markeren.</value>
   </data>

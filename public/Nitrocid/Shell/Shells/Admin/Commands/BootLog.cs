@@ -17,10 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Misc.Splash;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
+using Nitrocid.Misc.Splash;
+using Terminaux.Shell.Shells;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Shell.Shells.Admin.Commands
 {
@@ -32,18 +34,26 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
     /// </remarks>
     class BootLogCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "bootlog";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_BOOTLOG_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var logLines = SplashReport.LogBuffer;
             foreach (var line in logLines)
             {
                 var finalColor =
-                    line.Severity == SplashReportSeverity.Error ? KernelColorType.Error :
-                    line.Severity == SplashReportSeverity.Warning ? KernelColorType.Warning :
-                    KernelColorType.NeutralText;
-                TextWriters.Write($"[{line.Time}] [{line.Progress}%] [{line.Severity}] : ", false, KernelColorType.ListEntry);
-                TextWriters.Write(line.RenderedMessage, true, finalColor);
+                    line.Severity == SplashReportSeverity.Error ? ThemeColorType.Error :
+                    line.Severity == SplashReportSeverity.Warning ? ThemeColorType.Warning :
+                    ThemeColorType.NeutralText;
+                TextWriterColor.Write($"[{line.Time}] [{line.Progress}%] [{line.Severity}] : ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(line.RenderedMessage, true, finalColor);
             }
             return 0;
         }

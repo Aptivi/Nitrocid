@@ -18,18 +18,18 @@
 //
 
 using System;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Calendars;
 using Nitrocid.Kernel.Time.Converters;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
-using Textify.General;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.TimeInfo.Commands
 {
@@ -41,67 +41,78 @@ namespace Nitrocid.Extras.TimeInfo.Commands
     /// </remarks>
     class GetTimeInfoCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "gettimeinfo";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_DATES_COMMAND_GETTIMEINFO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "date", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC"
+                    })
+                ],
+                [
+                    new SwitchInfo("now", /* Localizable */ "NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC", new SwitchOptions()
+                    {
+                        OptionalizeLastRequiredArguments = 1,
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            bool getNow = parameters.SwitchesList.Length > 0 && SwitchManager.ContainsSwitch(parameters.SwitchesList, "-now");
-            DateTime DateTimeInfo = TimeDateTools.KernelDateTime;
-            if (getNow || DateTime.TryParse(parameters.ArgumentsList[0], out DateTimeInfo))
+            bool getNow = parameters.SwitchesList.Length > 0 && parameters.ContainsSwitch("-now");
+            string date = parameters.ArgumentsList[0];
+            DateTime dateTimeInfo = TimeDateTools.KernelDateTime;
+            if (getNow || DateTime.TryParse(date, out dateTimeInfo))
             {
-                SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_HEADER") + " {0}", true, TimeDateRenderers.Render(DateTimeInfo));
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_MILLISECONDS") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Millisecond);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_SECONDS") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Second);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_MINUTES") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Minute);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_HOURS") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Hour);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DAYS") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Day);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_MONTHS") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Month);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_YEAR") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Year);
+                SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_HEADER") + $" {TimeDateRenderers.Render(dateTimeInfo)}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_MILLISECONDS"), $"{dateTimeInfo.Millisecond}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_SECONDS"), $"{dateTimeInfo.Second}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_MINUTES"), $"{dateTimeInfo.Minute}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_HOURS"), $"{dateTimeInfo.Hour}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DAYS"), $"{dateTimeInfo.Day}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_MONTHS"), $"{dateTimeInfo.Month}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_YEAR"), $"{dateTimeInfo.Year}");
                 TextWriterRaw.Write();
 
                 // Whole date and time
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATE") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write("{0}", KernelColorType.ListValue, TimeDateRenderers.RenderDate(DateTimeInfo));
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_TIME") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write("{0}", KernelColorType.ListValue, TimeDateRenderers.RenderTime(DateTimeInfo));
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATE"), TimeDateRenderers.RenderDate(dateTimeInfo));
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_TIME"), TimeDateRenderers.RenderTime(dateTimeInfo));
                 TextWriterRaw.Write();
 
                 // Some more info
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DOY") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.DayOfYear);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DOW") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.DayOfWeek.ToString());
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DOY"), $"{dateTimeInfo.DayOfYear}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DOW"), dateTimeInfo.DayOfWeek.ToString());
                 TextWriterRaw.Write();
 
                 // Conversions
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_BINARY") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.ToBinary());
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_LOCALTIME") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write("{0}", KernelColorType.ListValue, TimeDateRenderers.Render(DateTimeInfo.ToLocalTime()));
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_UNIVERSALTIME") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write("{0}", KernelColorType.ListValue, TimeDateRenderers.Render(DateTimeInfo.ToUniversalTime()));
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_UNIXTIME") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write("{0}", KernelColorType.ListValue, TimeDateConverters.DateToUnix(DateTimeInfo));
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_BINARY"), $"{dateTimeInfo.ToBinary()}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_LOCALTIME"), TimeDateRenderers.Render(dateTimeInfo.ToLocalTime()));
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_UNIVERSALTIME"), TimeDateRenderers.Render(dateTimeInfo.ToUniversalTime()));
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_UNIXTIME"), $"{TimeDateConverters.DateToUnix(dateTimeInfo)}");
                 TextWriterRaw.Write();
 
                 // For the calendars
-                foreach (var calendar in Enum.GetNames(typeof(CalendarTypes)))
+                foreach (var calendar in Enum.GetNames<CalendarTypes>())
                 {
                     var calendarInstance = CalendarTools.GetCalendar(calendar);
-                    TextWriters.Write("{0}: ", false, KernelColorType.ListEntry, calendar);
-                    TextWriters.Write("{0}", KernelColorType.ListValue, TimeDateRenderers.Render(DateTimeInfo, calendarInstance));
+                    ListEntryWriterColor.WriteListEntry(calendar, TimeDateRenderers.Render(dateTimeInfo, calendarInstance));
                 }
                 return 0;
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1") + " {0}. " + LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1") + " {0}. " + LanguageTools.GetLocalized("NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2"), true, ThemeColorType.Error, date);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.TimeDate);
             }
         }

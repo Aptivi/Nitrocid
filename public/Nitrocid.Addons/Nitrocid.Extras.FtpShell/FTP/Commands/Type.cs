@@ -18,11 +18,13 @@
 //
 
 using FluentFTP;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Commands
 {
@@ -34,8 +36,24 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
     /// </remarks>
     class TypeCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "type";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_TYPE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "a/b", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTP_COMMAND_TYPE_ARGUMENT_TYPE_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance;
             if (client is null)
@@ -45,8 +63,8 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
                 client.Config.DownloadDataType = FtpDataType.ASCII;
                 client.Config.ListingDataType = FtpDataType.ASCII;
                 client.Config.UploadDataType = FtpDataType.ASCII;
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_ASCII"), true, KernelColorType.Success);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_ASCII_WARNING"), true, KernelColorType.Warning);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_ASCII"), true, ThemeColorType.Success);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_ASCII_WARNING"), true, ThemeColorType.Warning);
                 return 0;
             }
             else if (parameters.ArgumentsList[0].Equals("b", System.StringComparison.OrdinalIgnoreCase))
@@ -54,12 +72,12 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
                 client.Config.DownloadDataType = FtpDataType.Binary;
                 client.Config.ListingDataType = FtpDataType.Binary;
                 client.Config.UploadDataType = FtpDataType.Binary;
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_BINARY"), true, KernelColorType.Success);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_BINARY"), true, ThemeColorType.Success);
                 return 0;
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_INVALID"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_INVALID"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPFilesystem);
             }
         }

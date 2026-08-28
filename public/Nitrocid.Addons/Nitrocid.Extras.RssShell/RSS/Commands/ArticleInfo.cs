@@ -18,14 +18,15 @@
 //
 
 using System;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Textify.General;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands
 {
@@ -39,13 +40,30 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
     /// </remarks>
     class ArticleInfoCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "articleinfo";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_ARTICLEINFO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             int ArticleIndex = (int)Math.Round(Convert.ToDouble(parameters.ArgumentsList[0]) - 1d);
             if (ArticleIndex > RSSShellCommon.RSSFeedInstance?.FeedArticles.Length - 1)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE"), true, ThemeColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", vars: [ArticleIndex, RSSShellCommon.RSSFeedInstance?.FeedArticles.Length - 1]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.RSSShell);
             }
@@ -53,10 +71,10 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
             {
                 var Article = RSSShellCommon.RSSFeedInstance?.FeedArticles[ArticleIndex] ??
                     throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_NOARTICLE"));
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(Article.ArticleTitle, true, KernelColorType.ListValue);
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK") + " ", false, KernelColorType.ListEntry);
-                TextWriters.Write(Article.ArticleLink, true, KernelColorType.ListValue);
+                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE") + " ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(Article.ArticleTitle, true, ThemeColorType.ListValue);
+                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK") + " ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(Article.ArticleLink, true, ThemeColorType.ListValue);
                 foreach (string Variable in Article.ArticleVariables.Keys)
                 {
                     if (Variable != "title" &&
@@ -65,8 +83,8 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
                         Variable != "description" &&
                         Variable != "content")
                     {
-                        TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, Variable);
-                        TextWriters.Write(Article.ArticleVariables[Variable].InnerText, true, KernelColorType.ListValue);
+                        TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, Variable);
+                        TextWriterColor.Write(Article.ArticleVariables[Variable].InnerText, true, ThemeColorType.ListValue);
                     }
                 }
                 TextWriterColor.Write(CharManager.NewLine + Article.ArticleDescription);

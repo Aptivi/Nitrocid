@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>Le muestra una descripción general en pantalla completa sobre una vista del muelle seleccionada para poder usarla como panel de información.</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>No hay ninguna pantalla de acoplamiento con este nombre.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>No hay ninguna base de pantalla con este nombre.</value>
   </data>

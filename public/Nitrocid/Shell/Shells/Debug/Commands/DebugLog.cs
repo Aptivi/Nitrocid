@@ -18,14 +18,15 @@
 //
 
 using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Themes.Colors;
+using Nitrocid.Files;
+using System;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
-using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files;
-using System;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -37,15 +38,34 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
     /// </remarks>
     class DebugLogCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "debuglog";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_DEBUGLOG_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "sessionGuid", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_DEBUGLOG_ARGUMENT_SESSIONGUID_DESC"
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Try to parse the session GUID.
             string sessionGuidStr = parameters.ArgumentsList[0];
             if (!Guid.TryParse(sessionGuidStr, out Guid sessionGuid))
             {
                 // There is invalid session GUID being requested
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_DEBUGLOG_INVALIDGUID") + $" {sessionGuidStr}", true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_DEBUGLOG_INVALIDGUID") + $" {sessionGuidStr}", true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 
@@ -67,7 +87,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             if (string.IsNullOrEmpty(finalDebug))
             {
                 // There is no such session GUID being requested
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_DEBUGLOG_NOGUID") + $" {sessionGuidStr}", true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_DEBUGLOG_NOGUID") + $" {sessionGuidStr}", true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 

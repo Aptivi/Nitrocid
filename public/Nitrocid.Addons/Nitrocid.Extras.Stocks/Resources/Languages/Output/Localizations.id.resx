@@ -121,4 +121,7 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>Tidak dapat memperoleh informasi saham.</value>
   </data>
+  <data name="NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC" xml:space="preserve">
+    <value>Kunci API AlphaVantage</value>
+  </data>
 </root>

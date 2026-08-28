@@ -26,7 +26,6 @@ using Nitrocid.Languages;
 using Terminaux.Shell.Prompts;
 using Terminaux.Shell.Shells;
 using Nitrocid.Users;
-using Colorimetry;
 using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Shell.Shells.UESH.Presets

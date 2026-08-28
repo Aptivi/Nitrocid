@@ -20,7 +20,6 @@
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Misc.Screensaver;
 using Colorimetry;
-using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.ConsoleWriters;
 

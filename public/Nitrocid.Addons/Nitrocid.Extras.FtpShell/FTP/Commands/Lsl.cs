@@ -17,11 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-using System.Linq;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Configuration;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Commands
 {
@@ -51,15 +53,42 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
     /// </remarks>
     class LslCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsl";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSL_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "dir", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC"
+                    })
+                ],
+                [
+                    new SwitchInfo("showdetails", /* Localizable */ "NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SHOWDETAILS_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("suppressmessages", /* Localizable */ "NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SUPPRESSMESSAGES_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            bool ShowFileDetails = parameters.SwitchesList.Contains("-showdetails") || Config.MainConfig.ShowFileDetailsList;
-            bool SuppressUnauthorizedMessage = parameters.SwitchesList.Contains("-suppressmessages") || Config.MainConfig.SuppressUnauthorizedMessages;
+            bool ShowFileDetails = parameters.ContainsSwitch("-showdetails") || Config.MainConfig.ShowFileDetailsList;
+            bool SuppressUnauthorizedMessage = parameters.ContainsSwitch("-suppressmessages") || Config.MainConfig.SuppressUnauthorizedMessages;
             if (parameters.ArgumentsList?.Length == 0)
-            {
                 FilesystemTools.List(FTPShellCommon.FtpCurrentDirectory, ShowFileDetails, SuppressUnauthorizedMessage);
-            }
             else
             {
                 foreach (string Directory in parameters.ArgumentsList ?? [])

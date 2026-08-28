@@ -18,12 +18,13 @@
 //
 
 using Nettify.Rss.Instance;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Textify.General;
+using Nitrocid.Languages;
 using Terminaux.Base.Extensions;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands
 {
@@ -35,13 +36,21 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
     /// </remarks>
     class ListCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "list";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_LIST_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             foreach (RSSArticle Article in RSSShellCommon.RSSFeedInstance?.FeedArticles ?? [])
             {
-                TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, Article.ArticleTitle);
-                TextWriters.Write(Article.ArticleLink, true, KernelColorType.ListValue);
+                TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, Article.ArticleTitle);
+                TextWriterColor.Write(Article.ArticleLink, true, ThemeColorType.ListValue);
                 TextWriterColor.Write("    {0}", Article.ArticleDescription.SplitNewLines()[0].Truncate(200));
             }
             return 0;

@@ -63,10 +63,6 @@
       "text": "Nulla API clavis:"
     },
     {
-      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
-      "text": "Potes vel infra nexum consulere pro indice civitatum cum IDs suis, vel ad hoc mandatum \"-list\" transire."
-    },
-    {
       "loc": "NKS_FORECAST_SETTINGS_DESC",
       "text": "Haec sectio permittit te configurare quomodo Data opera."
     },

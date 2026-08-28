@@ -17,14 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using LibGit2Sharp;
-using GitCommand = LibGit2Sharp.Commands;
-using System.Linq;
 using System;
-using Terminaux.Shell.Commands;
+using System.Linq;
+using LibGit2Sharp;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using GitCommand = LibGit2Sharp.Commands;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {
@@ -36,15 +38,31 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// </remarks>
     class UnstageCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "unstage";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "stagedFile", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_ARGUMENT_STAGED_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var status = GitShellCommon.Repository.RetrieveStatus();
 
             // Check to see if the repo has been modified
             if (!status.IsDirty)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES"), true, KernelColorType.Success);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES"), true, ThemeColorType.Success);
                 return 0;
             }
 
@@ -53,11 +71,11 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             try
             {
                 GitCommand.Unstage(GitShellCommon.Repository, modified.FilePath);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS"), true, KernelColorType.Success, modified.FilePath);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS"), true, ThemeColorType.Success, modified.FilePath);
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_FAILURE") + "{1}", true, KernelColorType.Error, modified.FilePath, ex.Message);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_FAILURE") + "{1}", true, ThemeColorType.Error, modified.FilePath, ex.Message);
             }
             return 0;
         }

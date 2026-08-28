@@ -62,10 +62,6 @@
       "text": "Enter your API key:"
     },
     {
-      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
-      "text": "You can either consult the below link for the list of cities with their IDs, or, pass \"-list\" to this command."
-    },
-    {
       "loc": "NKS_FORECAST_SETTINGS_DESC",
       "text": "This section lets you configure how Forecast works."
     },

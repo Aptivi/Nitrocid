@@ -19,7 +19,8 @@
 
 using Nitrocid.Extras.Amusements.Amusements.Games;
 using Terminaux.Shell.Commands;
-using Terminaux.Base;
+using Terminaux.Shell.Shells;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Extras.Amusements.Commands
 {
@@ -55,11 +56,15 @@ namespace Nitrocid.Extras.Amusements.Commands
     /// </remarks>
     class PongCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "pong";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_PONG_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             Pong.InitializePong();
-            ConsoleWrapper.Clear();
             return 0;
         }
 

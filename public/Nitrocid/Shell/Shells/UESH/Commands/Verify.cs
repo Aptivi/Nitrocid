@@ -18,15 +18,16 @@
 //
 
 using System.IO;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -59,52 +60,85 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class VerifyCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "verify";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "algorithm", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => EncryptionDriverTools.GetEncryptionDriverNames(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_ALGORITHM_DESC"
+                    }),
+                    new CommandArgumentPart(true, "calculatedhash", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_ARGUMENT_CALCULATEDHASH_DESC"
+                    }),
+                    new CommandArgumentPart(true, "hashfile/expectedhash", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_ARGUMENT_HASHFILE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_ARGUMENT_FILE_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             try
             {
-                string HashFile = FilesystemTools.NeutralizePath(parameters.ArgumentsList[2]);
-                if (FilesystemTools.FileExists(HashFile))
+                string algorithm = parameters.ArgumentsList[0];
+                string calculatedHash = parameters.ArgumentsList[1];
+                string pathOrExpectedHash = parameters.ArgumentsList[2];
+                string hashFile = FilesystemTools.NeutralizePath(parameters.ArgumentsList[2]);
+                string targetFile = parameters.ArgumentsList[3];
+                if (FilesystemTools.FileExists(hashFile))
                 {
-                    if (HashVerifier.VerifyHashFromHashesFile(parameters.ArgumentsList[3], parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]))
+                    if (HashVerifier.VerifyHashFromHashesFile(targetFile, algorithm, hashFile, calculatedHash))
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESMATCH"));
                         return 0;
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESNOMATCH"), true, KernelColorType.Warning);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESNOMATCH"), true, ThemeColorType.Warning);
                         return 4;
                     }
                 }
-                else if (HashVerifier.VerifyHashFromHash(parameters.ArgumentsList[3], parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]))
+                else if (HashVerifier.VerifyHashFromHash(targetFile, algorithm, pathOrExpectedHash, calculatedHash))
                 {
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESMATCH"));
                     return 0;
                 }
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESNOMATCH"), true, KernelColorType.Warning);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_HASHESNOMATCH"), true, ThemeColorType.Warning);
                     return 4;
                 }
             }
             catch (KernelException ihae) when (ihae.ExceptionType == KernelExceptionType.InvalidHashAlgorithm)
             {
                 DebugWriter.WriteDebugStackTrace(ihae);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_ALGORITHMINVALID"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_ALGORITHMINVALID"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(ihae.ExceptionType);
             }
             catch (KernelException ihe) when (ihe.ExceptionType == KernelExceptionType.InvalidHash)
             {
                 DebugWriter.WriteDebugStackTrace(ihe);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_MALFORMEDHASHES"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_MALFORMEDHASHES"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(ihe.ExceptionType);
             }
             catch (FileNotFoundException fnfe)
             {
                 DebugWriter.WriteDebugStackTrace(fnfe);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_NOTFOUND"), true, KernelColorType.Error, parameters.ArgumentsList[3]);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_VERIFY_NOTFOUND"), true, ThemeColorType.Error, parameters.ArgumentsList[3]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encryption);
             }
         }

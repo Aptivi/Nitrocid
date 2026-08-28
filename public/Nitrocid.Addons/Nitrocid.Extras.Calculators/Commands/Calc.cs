@@ -18,13 +18,14 @@
 //
 
 using System;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
 using StringMath;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.Extras.Calculators.Commands
 {
@@ -36,8 +37,24 @@ namespace Nitrocid.Extras.Calculators.Commands
     /// </remarks>
     class CalcCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "calc";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_CALCULATORS_COMMAND_CALC_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "expression", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_CALCULATORS_EXPRESSION"
+                    }),
+                ], true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             try
             {
@@ -51,7 +68,7 @@ namespace Nitrocid.Extras.Calculators.Commands
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to calculate expression {0}: {1}", vars: [parameters.ArgumentsText, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_CALCERROR") + " {0}", true, KernelColorType.Error, ex.Message);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALCULATORS_CALCERROR") + " {0}", true, ThemeColorType.Error, ex.Message);
                 return ex.GetHashCode();
             }
         }

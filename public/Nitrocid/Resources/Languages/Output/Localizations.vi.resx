@@ -97,9 +97,6 @@
   <data name="NKS_USERS_LOGIN_USERNAMEPROMPT" xml:space="preserve">
     <value>Tên người dùng:</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES" xml:space="preserve">
-    <value>Không được phép có khoảng cách.</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS" xml:space="preserve">
     <value>Không được phép sử dụng ký tự đặc biệt.</value>
   </data>
@@ -1350,9 +1347,6 @@
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC" xml:space="preserve">
     <value>Giống như chế độ an toàn, nhưng cũng vô hiệu hóa chế độ nhiều người dùng và một số tùy chỉnh</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS" xml:space="preserve">
-    <value>Màu sắc không cần phải khởi động lại, nhưng hầu hết các cài đặt đều yêu cầu phải khởi động lại.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC" xml:space="preserve">
     <value>Thay thế một từ hoặc cụm từ bằng một từ hoặc cụm từ khác bằng cách sử dụng biểu thức chính quy</value>
@@ -6007,9 +6001,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC" xml:space="preserve">
     <value>Tên người dùng để thay đổi mật khẩu</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC" xml:space="preserve">
-    <value>Mật khẩu người dùng hiện tại</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC" xml:space="preserve">
     <value>Tên người dùng cũ cần thay đổi</value>
   </data>
@@ -6523,9 +6514,6 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_CALENDAR" xml:space="preserve">
     <value>Thêm - Lịch</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_COLORCONVERTER" xml:space="preserve">
-    <value>Phần bổ sung - Bộ chuyển đổi màu</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_CONTACTS" xml:space="preserve">
     <value>Extras - Liên hệ</value>
   </data>
@@ -6901,9 +6889,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LSVARS_DESC" xml:space="preserve">
     <value>Liệt kê các biến UESH có sẵn</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SEL_DESC" xml:space="preserve">
-    <value>Sử dụng kiểu cài đặt cũ</value>
-  </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_NAME" xml:space="preserve">
     <value>Trình điều khiển ghi nhật ký gỡ lỗi hiện tại</value>
   </data>
@@ -7035,5 +7020,14 @@
   </data>
   <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
     <value>Không có bài viết nào</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC" xml:space="preserve">
+    <value>Chọn một trình bảo vệ màn hình ngẫu nhiên</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC" xml:space="preserve">
+    <value>Giá trị cần đặt thành</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC" xml:space="preserve">
+    <value>Nén cao</value>
   </data>
 </root>

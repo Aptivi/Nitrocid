@@ -18,12 +18,11 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Extras.SqlShell.Sql.Presets;
-using Nitrocid.Extras.SqlShell.Sql.Commands;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Prompts;
-using Nitrocid.Languages;
+using Nitrocid.Extras.SqlShell.Sql.Presets;
+using Nitrocid.Extras.SqlShell.Sql.Commands;
 
 namespace Nitrocid.Extras.SqlShell.Sql
 {
@@ -35,13 +34,11 @@ namespace Nitrocid.Extras.SqlShell.Sql
         /// <summary>
         /// Sql commands
         /// </summary>
-        public override List<CommandInfo> Commands =>
+        public override BaseCommand[] Commands =>
         [
-            new CommandInfo("cmd", LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMAND_CMD_DESC"), new CmdCommand()),
-
-            new CommandInfo("dbinfo", LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMAND_DBINFO_DESC"), new DbInfoCommand()),
-
-            new CommandInfo("tui", LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMAND_TUI_DESC"), new TuiCommand()),
+            new CmdCommand(),
+            new DbInfoCommand(),
+            new TuiCommand(),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

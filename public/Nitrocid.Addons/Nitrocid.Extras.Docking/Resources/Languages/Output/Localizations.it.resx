@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>Mostra una panoramica a schermo intero su una visualizzazione dock selezionata per poterla utilizzare come pannello informativo</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>Non esiste una schermata dock con questo nome.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>Non esiste uno screen dock con questo nome.</value>
   </data>

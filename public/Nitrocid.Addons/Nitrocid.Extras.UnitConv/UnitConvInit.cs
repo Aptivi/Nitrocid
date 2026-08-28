@@ -17,15 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Arguments;
-using Terminaux.Shell.Switches;
 using Nitrocid.Extras.UnitConv.Commands;
 using Terminaux.Shell.Commands;
-using System.Collections.Generic;
 using System.Linq;
-using UnitsNet;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
 using Nitrocid.Extras.UnitConv.Tools;
 using Nitrocid.Shell.Homepage;
 using Nitrocid.Languages;
@@ -34,51 +29,10 @@ namespace Nitrocid.Extras.UnitConv
 {
     internal class UnitConvInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("listunits", LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_LISTUNITS_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
-                        {
-                            AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray(),
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC")
-                        }),
-                    ])
-                ], new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-
-            new CommandInfo("unitconv", LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "unittype", new CommandArgumentPartOptions()
-                        {
-                            AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray(),
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC")
-                        }),
-                        new CommandArgumentPart(true, "quantity", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_QUANTITY_DESC")
-                        }),
-                        new CommandArgumentPart(true, "sourceunit", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_SOURCEUNIT_DESC")
-                        }),
-                        new CommandArgumentPart(true, "targetunit", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC")
-                        }),
-                    ],
-                    [
-                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_SWITCH_TUI_DESC"), new SwitchOptions()
-                        {
-                            OptionalizeLastRequiredArguments = 4,
-                            AcceptsValues = false
-                        })
-                    ])
-                ], new UnitConvCommand()),
+            new ListUnitsCommand(),
+            new UnitConvCommand(),
         ];
 
         public string AddonName =>
@@ -97,13 +51,13 @@ namespace Nitrocid.Extras.UnitConv
         {
             LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
-            HomepageTools.UnregisterBuiltinAction("Unit Converter");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_UNITCONV_HOMEPAGE_UNITCONV");
         }
 
         public void FinalizeAddon()
         {
             // Add homepage entries
-            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_UNITCONV_HOMEPAGE_UNITCONV"), UnitConvTools.OpenUnitConvTui);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_UNITCONV_HOMEPAGE_UNITCONV", UnitConvTools.OpenUnitConvTui);
         }
     }
 }

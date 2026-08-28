@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>aapako ek chayanit dok drshy ke baare mein ek poorn-skreen avalokan dikhaata hai taaki aap ise ek soochana painal ke roop mein upayog kar saken</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>is naam se koee dok skreen nahin hai.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>is naam se koee skreen dok nahin hai.</value>
   </data>

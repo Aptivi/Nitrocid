@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>आपको एक चयनित डॉक दृश्य के बारे में एक पूर्ण-स्क्रीन अवलोकन दिखाता है ताकि आप इसे एक सूचना पैनल के रूप में उपयोग कर सकें</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>इस नाम की कोई डॉक स्क्रीन नहीं है.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>इस नाम से कोई स्क्रीन डॉक नहीं है.</value>
   </data>

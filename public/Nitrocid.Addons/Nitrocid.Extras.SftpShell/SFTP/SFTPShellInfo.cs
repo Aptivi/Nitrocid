@@ -18,14 +18,11 @@
 //
 
 using System.Collections.Generic;
-using Terminaux.Shell.Switches;
-using Terminaux.Shell.Arguments;
-using Nitrocid.Extras.SftpShell.SFTP.Presets;
-using Nitrocid.Extras.SftpShell.SFTP.Commands;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Prompts;
-using Nitrocid.Languages;
+using Nitrocid.Extras.SftpShell.SFTP.Commands;
+using Nitrocid.Extras.SftpShell.SFTP.Presets;
 
 namespace Nitrocid.Extras.SftpShell.SFTP
 {
@@ -37,141 +34,22 @@ namespace Nitrocid.Extras.SftpShell.SFTP
         /// <summary>
         /// SFTP commands
         /// </summary>
-        public override List<CommandInfo> Commands =>
+        public override BaseCommand[] Commands =>
         [
-            new CommandInfo("cat", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_CAT_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEFILE_DESC")
-                        })
-                    ])
-                ], new CatCommand(), CommandFlags.Wrappable),
-
-            new CommandInfo("cdl", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDL_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC")
-                        })
-                    ])
-                ], new CdlCommand()),
-
-            new CommandInfo("cdr", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDR_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC")
-                        })
-                    ])
-                ], new CdrCommand()),
-
-            new CommandInfo("del", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_DEL_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_DEL_ARGUMENT_REMOTEFILE_DESC")
-                        })
-                    ])
-                ], new DelCommand()),
-
-            new CommandInfo("detach", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC"), new DetachCommand()),
-
-            new CommandInfo("get", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_GET_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEFILE_DESC")
-                        })
-                    ])
-                ], new GetCommand()),
-
-            new CommandInfo("ifm", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_IFM_DESC"), new IfmCommand()),
-
-            new CommandInfo("lsl", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSL_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "dir", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC")
-                        })
-                    ],
-                    [
-                        new SwitchInfo("showdetails", LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_COMMAND_SHOWDETAILS_DESC"), new SwitchOptions()
-                        {
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("suppressmessages", LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_COMMAND_LSL_SWITCH_SUPPRESSMESSAGES_DESC"), new SwitchOptions()
-                        {
-                            AcceptsValues = false
-                        })
-                    ])
-                ], new LslCommand(), CommandFlags.Wrappable),
-
-            new CommandInfo("lsr", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSR_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "dir", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC")
-                        })
-                    ],
-                    [
-                        new SwitchInfo("showdetails", LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_COMMAND_SHOWDETAILS_DESC"), new SwitchOptions()
-                        {
-                            AcceptsValues = false
-                        })
-                    ])
-                ], new LsrCommand(), CommandFlags.Wrappable),
-
-            new CommandInfo("mkldir", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_MKLDIR_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC")
-                        }),
-                    ], true)
-                ], new MkldirCommand()),
-
-            new CommandInfo("mkrdir", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_MKRDIR_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC")
-                        }),
-                    ], true)
-                ], new MkrdirCommand()),
-
-            new CommandInfo("put", LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_PUT_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_PUT_ARGUMENT_FILE_DESC")
-                        })
-                    ])
-                ], new PutCommand()),
-
-            new CommandInfo("pwdl", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC"), new PwdlCommand()),
-
-            new CommandInfo("pwdr", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDR_DESC"), new PwdrCommand()),
+            new CatCommand(),
+            new CdlCommand(),
+            new CdrCommand(),
+            new DelCommand(),
+            new DetachCommand(),
+            new GetCommand(),
+            new IfmCommand(),
+            new LslCommand(),
+            new LsrCommand(),
+            new MkldirCommand(),
+            new MkrdirCommand(),
+            new PutCommand(),
+            new PwdlCommand(),
+            new PwdrCommand(),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

@@ -17,37 +17,22 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Arguments;
-using Terminaux.Shell.Switches;
-using Nitrocid.Extras.RssShell.RSS;
 using Nitrocid.Extras.RssShell.Settings;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Shell.Commands;
-using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Languages;
+using Nitrocid.Extras.RssShell.RSS;
 
 namespace Nitrocid.Extras.RssShell
 {
     internal class RssShellInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("rss", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_RSS_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "feedlink", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_RSS_ARGUMENT_FEEDLINK_DESC")
-                        }),
-                    ],
-                    [
-                        new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC")),
-                    ])
-                ], new RssCommandExec())
+            new RssCommandExec()
         ];
 
         public string AddonName =>

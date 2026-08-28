@@ -17,13 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel;
 using Nitrocid.Languages;
 using Terminaux.Base.Extensions;
-using Terminaux.Shell.Commands;
+using SpecProbe.Software.Platform;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -35,12 +36,17 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
     /// </remarks>
     class ShowMainBufferCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "showmainbuffer";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (KernelPlatform.IsOnWindows())
+            if (PlatformHelper.IsOnWindows())
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_SHOWMAINBUFFER_WINDOWS"), KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_SHOWMAINBUFFER_WINDOWS"), ThemeColorType.Error);
                 return 33;
             }
             if (KernelEntry.UseAltBuffer)

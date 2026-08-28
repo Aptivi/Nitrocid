@@ -17,19 +17,25 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Languages;
 using System;
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Commands
 {
     class LoadContactsCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "loadcontacts";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             try
             {
@@ -39,7 +45,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CANTIMPORTCONTACTS") + ex.Message, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CANTIMPORTCONTACTS") + ex.Message, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Contacts);
             }
         }

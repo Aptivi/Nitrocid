@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Base.Buffered;
-using Nitrocid.Drivers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Events;
 using Nitrocid.Misc.Screensaver;

@@ -70,9 +70,6 @@
   <data name="NKS_TODO_ADDREMOVEFAILED" xml:space="preserve">
     <value>Nu s-a putut adăuga sau elimina o sarcină.</value>
   </data>
-  <data name="NKS_TODO_NAMENEEDED" xml:space="preserve">
-    <value>Vă rugăm să furnizați un nume pentru sarcina dvs.</value>
-  </data>
   <data name="NKS_TODO_MARKFAILED" xml:space="preserve">
     <value>Nu s-a marcat o sarcină.</value>
   </data>

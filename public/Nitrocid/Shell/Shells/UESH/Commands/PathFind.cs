@@ -17,12 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -34,19 +36,36 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class PathFindCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "pathfind";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PATHFIND_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "fileName", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PATHFIND_ARGUMENT_FILENAME_DESC"
+                    }),
+                ], true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            string fileName = parameters.ArgumentsList[0];
             string? filePath = "";
-            if (PathLookupTools.FileExistsInPath(parameters.ArgumentsList[0], ref filePath) && filePath is not null)
+            if (PathLookupTools.FileExistsInPath(fileName, ref filePath) && filePath is not null)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PATHFIND_FOUND") + " {0}", true, KernelColorType.Success, filePath);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PATHFIND_FOUND") + " {0}", true, ThemeColorType.Success, filePath);
                 variableValue = filePath;
                 return 0;
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PATHFIND_NOTFOUND"), true, KernelColorType.Warning);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PATHFIND_NOTFOUND"), true, ThemeColorType.Warning);
                 variableValue = "";
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }

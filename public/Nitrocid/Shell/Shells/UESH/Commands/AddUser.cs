@@ -17,15 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Terminaux.Shell.Commands;
 using Nitrocid.Users;
-using Nitrocid.Security.Permissions;
-using Nitrocid.Kernel.Debugging;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -41,34 +40,53 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class AddUserCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "adduser";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_ARGUMENT_USERNAME_DESC"
+                    }),
+                    new CommandArgumentPart(false, "password", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_ARGUMENT_PASSWORD_DESC"
+                    }),
+                    new CommandArgumentPart(false, "confirm", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_ARGUMENT_CONFIRM_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
-                !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
-                return -4;
-            }
-
+            string userName = parameters.ArgumentsList[0];
             if (parameters.ArgumentsList.Length == 1)
             {
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDUSER_CREATEPROGRESS"), parameters.ArgumentsList[0]);
-                UserManagement.AddUser(parameters.ArgumentsList[0]);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDUSER_CREATEPROGRESS"), userName);
+                UserManagement.AddUser(userName);
                 return 0;
             }
             else if (parameters.ArgumentsList.Length > 2)
             {
-                if (parameters.ArgumentsList[1] == parameters.ArgumentsList[2])
+                string password = parameters.ArgumentsList[1];
+                string confirmPassword = parameters.ArgumentsList[2];
+                if (password == confirmPassword)
                 {
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDUSER_CREATEPROGRESS"), parameters.ArgumentsList[0]);
-                    UserManagement.AddUser(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDUSER_CREATEPROGRESS"), userName);
+                    UserManagement.AddUser(userName, password);
                     return 0;
                 }
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDUSER_PASSWORDMISMATCH"), true, KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDUSER_PASSWORDMISMATCH"), true, ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
                 }
             }

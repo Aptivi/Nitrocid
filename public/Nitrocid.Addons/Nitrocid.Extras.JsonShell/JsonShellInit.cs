@@ -17,68 +17,25 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Extras.JsonShell.Commands;
-using Nitrocid.Extras.JsonShell.Json;
 using Nitrocid.Extras.JsonShell.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.Languages;
+using Nitrocid.Extras.JsonShell.Commands;
+using Nitrocid.Extras.JsonShell.Json;
 
 namespace Nitrocid.Extras.JsonShell
 {
     internal class JsonShellInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("jsondiff", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "file1", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE1_DESC")
-                        }),
-                        new CommandArgumentPart(true, "file2", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE2_DESC")
-                        }),
-                    ])
-                ], new JsonDiffCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-
-            new CommandInfo("jsonbeautify", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONBEAUTIFY_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "jsonfile", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC")
-                        }),
-                        new CommandArgumentPart(true, "output", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC")
-                        }),
-                    ], true)
-                ], new JsonBeautifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-
-            new CommandInfo("jsonminify", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONMINIFY_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "jsonfile", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC")
-                        }),
-                        new CommandArgumentPart(true, "output", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC")
-                        }),
-                    ], true)
-                ], new JsonMinifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
+            new JsonDiffCommand(),
+            new JsonBeautifyCommand(),
+            new JsonMinifyCommand(),
         ];
 
         public string AddonName =>

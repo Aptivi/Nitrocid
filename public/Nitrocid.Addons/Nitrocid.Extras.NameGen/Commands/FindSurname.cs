@@ -18,8 +18,12 @@
 //
 
 using System.Linq;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.Data.NameGen;
 
 namespace Nitrocid.Extras.NameGen.Commands
@@ -32,8 +36,35 @@ namespace Nitrocid.Extras.NameGen.Commands
     /// </remarks>
     class FindSurnameCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "findsurname";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "term", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_TERM_DESC"
+                    }),
+                    new CommandArgumentPart(false, "surnameprefix", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_SURNAMEPREFIX_DESC"
+                    }),
+                    new CommandArgumentPart(false, "surnamesuffix", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_SURNAMESUFFIX_DESC"
+                    }),
+                ], true)
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string term = "";
             string SurnamePrefix = "";

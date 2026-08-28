@@ -18,7 +18,9 @@
 //
 
 using Nitrocid.Extras.Timers.Timers;
+using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Timers.Commands
 {
@@ -30,8 +32,13 @@ namespace Nitrocid.Extras.Timers.Commands
     /// </remarks>
     class StopwatchCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "stopwatch";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_DATES_COMMAND_STOPWATCH_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             StopwatchScreen.OpenStopwatch();
             return 0;

@@ -19,11 +19,7 @@
 
 using Nitrocid.Extras.Pastebin.Commands;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
-using Terminaux.Shell.Switches;
-using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.Languages;
 
@@ -31,49 +27,9 @@ namespace Nitrocid.Extras.Pastebin
 {
     internal class PastebinInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("pastebin", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "file/string", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_FILESTRING_DESC")
-                        }),
-                        new CommandArgumentPart(false, "arguments", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_ARGUMENTS_DESC")
-                        }),
-                    ],
-                    [
-                        new SwitchInfo("provider", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_PROVIDER_DESC"), new()
-                        {
-                            AcceptsValues = true,
-                            ArgumentsRequired = true,
-                        }),
-                        new SwitchInfo("type", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_TYPE_DESC"), new()
-                        {
-                            AcceptsValues = true,
-                            ArgumentsRequired = true,
-                        }),
-                        new SwitchInfo("postpage", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTPAGE_DESC"), new()
-                        {
-                            AcceptsValues = true,
-                            ArgumentsRequired = true,
-                        }),
-                        new SwitchInfo("postformat", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFORMAT_DESC"), new()
-                        {
-                            AcceptsValues = true,
-                            ArgumentsRequired = true,
-                        }),
-                        new SwitchInfo("postfield", LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFIELD_DESC"), new()
-                        {
-                            AcceptsValues = true,
-                            ArgumentsRequired = true,
-                        }),
-                    ]),
-                ], new PastebinCommand()),
+            new PastebinCommand(),
         ];
 
         public string AddonName =>

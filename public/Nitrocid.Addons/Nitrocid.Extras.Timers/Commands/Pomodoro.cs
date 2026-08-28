@@ -18,7 +18,9 @@
 //
 
 using Nitrocid.Extras.Timers.Timers;
+using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.Timers.Commands
 {
@@ -27,8 +29,13 @@ namespace Nitrocid.Extras.Timers.Commands
     /// </summary>
     class PomodoroCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "pomodoro";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_DATES_COMMAND_POMODORO_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             PomodoroScreen.OpenPomodoro();
             return 0;

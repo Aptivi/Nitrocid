@@ -17,13 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.FtpShell.Tools.Transfer;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Commands
 {
@@ -35,23 +36,43 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
     /// </remarks>
     class GetFolderCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "getfolder";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_GETFOLDER_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "folder", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC"
+                    }),
+                    new CommandArgumentPart(false, "where", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string RemoteFolder = parameters.ArgumentsList[0];
             string LocalFolder = parameters.ArgumentsList.Length > 1 ? parameters.ArgumentsList[1] : "";
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADING"), true, KernelColorType.Progress, RemoteFolder);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADING"), true, ThemeColorType.Progress, RemoteFolder);
             bool Result = !string.IsNullOrWhiteSpace(LocalFolder) ? FTPTransfer.FTPGetFolder(RemoteFolder, LocalFolder) : FTPTransfer.FTPGetFolder(RemoteFolder);
             if (Result)
             {
                 TextWriterRaw.Write();
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADED"), true, KernelColorType.Success, RemoteFolder);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADED"), true, ThemeColorType.Success, RemoteFolder);
                 return 0;
             }
             else
             {
                 TextWriterRaw.Write();
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADFAILED"), true, KernelColorType.Error, RemoteFolder);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADFAILED"), true, ThemeColorType.Error, RemoteFolder);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPNetwork);
             }
         }

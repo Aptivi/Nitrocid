@@ -21,10 +21,7 @@ using Nitrocid.Extras.Chemistry.Commands;
 using Nitrocid.Extras.Chemistry.Screensavers;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Misc.Screensaver;
-using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
-using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.Languages;
 
@@ -32,20 +29,10 @@ namespace Nitrocid.Extras.Chemistry
 {
     internal class ChemistryInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("element", LanguageTools.GetLocalized("NKS_CHEMISTRY_COMMAND_ELEMENT_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "name/symbol/atomicNumber", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_CHEMISTRY_COMMAND_ELEMENT_ARGUMENT_SPECIFIER_DESC")
-                        }),
-                    ])
-                ], new ElementCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
-
-            new CommandInfo("elements", LanguageTools.GetLocalized("NKS_CHEMISTRY_COMMAND_ELEMENTS_DESC"), new ElementsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            new ElementCommand(),
+            new ElementsCommand(),
         ];
 
         public string AddonName =>

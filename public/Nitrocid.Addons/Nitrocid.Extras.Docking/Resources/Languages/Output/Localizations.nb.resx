@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>Viser deg en fullskjermsoversikt over en valgt dock-visning for å kunne bruke den som et infopanel</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>Det er ingen dokkingskjerm med dette navnet.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>Det er ingen skjermdokking med dette navnet.</value>
   </data>

@@ -19,15 +19,11 @@
 
 using System;
 using System.Text;
-using System.Threading;
-using System.Timers;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
@@ -38,7 +34,6 @@ using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences.Builder.Types;
-using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.Data.Figlet;

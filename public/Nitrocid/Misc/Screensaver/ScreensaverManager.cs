@@ -27,7 +27,6 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Users;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Drivers;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.ConsoleBase.Writers;

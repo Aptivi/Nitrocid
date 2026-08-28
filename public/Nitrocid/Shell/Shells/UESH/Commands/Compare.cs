@@ -17,13 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Shell.Commands;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -35,34 +36,54 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class CompareCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "compare";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COMPARE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "source", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_COMPARE_ARGUMENT_SOURCEINPUT_DESC"
+                    }),
+                    new CommandArgumentPart(true, "target", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_COMPARE_ARGUMENT_TARGETINPUT_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string pathOne = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             string pathTwo = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
 
             if (!FilesystemTools.FileExists(pathOne))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_SOURCENOTFOUND"), KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_SOURCENOTFOUND"), ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             if (!FilesystemTools.FileExists(pathTwo))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_TARGETNOTFOUND"), KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_TARGETNOTFOUND"), ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             var compared = FilesystemTools.Compare(pathOne, pathTwo);
             if (compared.Length == 0)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_IDENTICAL"), KernelColorType.Warning);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_IDENTICAL"), ThemeColorType.Warning);
                 return 0;
             }
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_DIFFERENT"));
             foreach (var (line, one, two) in compared)
             {
-                TextWriters.WriteListEntry($"[{line}]", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_DETAILS_DIFFERENT"), KernelColorType.ListEntry, KernelColorType.ListValue);
-                TextWriters.WriteListEntry("[-]", one, KernelColorType.ListEntry, KernelColorType.ListValue, 1);
-                TextWriters.WriteListEntry("[+]", two, KernelColorType.ListEntry, KernelColorType.ListValue, 1);
+                ListEntryWriterColor.WriteListEntry($"[{line}]", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_DETAILS_DIFFERENT"), ThemeColorType.ListEntry, ThemeColorType.ListValue);
+                ListEntryWriterColor.WriteListEntry("[-]", one, ThemeColorType.ListEntry, ThemeColorType.ListValue, 1);
+                ListEntryWriterColor.WriteListEntry("[+]", two, ThemeColorType.ListEntry, ThemeColorType.ListValue, 1);
             }
             return 0;
         }

@@ -12,10 +12,6 @@
       "text": "Seçili bir dock görünümü hakkında tam ekran genel bakış gösterir ve bunu bir bilgi paneli olarak kullanabilmenizi sağlar"
     },
     {
-      "loc": "NKS_DOCKING_NODOCKSCREEN1",
-      "text": "Bu isimde bir dock ekranı bulunmamaktadır."
-    },
-    {
       "loc": "NKS_DOCKING_NODOCKSCREEN2",
       "text": "Bu isimde bir ekran yuvası yok."
     },

@@ -20,7 +20,6 @@
 using System.Collections.Generic;
 using FluentFTP;
 using Nitrocid.Network.Connections;
-using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.FtpShell.FTP
 {
@@ -37,7 +36,6 @@ namespace Nitrocid.Extras.FtpShell.FTP
         internal static string FtpSite = "";
         internal static string FtpPass = "";
         internal static string FtpUser = "";
-        internal readonly static List<CommandInfo> FTPModCommands = [];
 
         /// <summary>
         /// The FTP client used to connect to the FTP server

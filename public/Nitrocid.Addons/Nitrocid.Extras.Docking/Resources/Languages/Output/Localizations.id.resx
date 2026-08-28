@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>Menunjukkan kepada Anda ikhtisar layar penuh tentang tampilan dok yang dipilih untuk dapat menggunakannya sebagai panel info</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>Tidak ada layar dok dengan nama ini.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>Tidak ada dok layar dengan nama ini.</value>
   </data>

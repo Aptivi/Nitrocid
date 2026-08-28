@@ -115,6 +115,10 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "لا يمكن الحصول على معلومات المخزون."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "مفتاح واجهة برمجة تطبيقات AlphaVantage"
     }
   ]
 }

@@ -89,6 +89,10 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "stok jaanakaaree nahin mil sakatee."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "alphaventage API kunji"
     }
   ]
 }

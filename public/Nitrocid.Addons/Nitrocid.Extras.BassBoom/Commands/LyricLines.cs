@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Extras.BassBoom.Animations.Lyrics;
-using Nitrocid.Languages;
-using Terminaux.Shell.Commands;
 using Nitrocid.Files;
+using Nitrocid.Languages;
+using Nitrocid.Extras.BassBoom.Animations.Lyrics;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {
@@ -35,8 +35,27 @@ namespace Nitrocid.Extras.BassBoom.Commands
     /// </remarks>
     class LyricLinesCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lyriclines";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_LYRICLINES_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "lyric.lrc", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC"
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string pathToLyrics = parameters.ArgumentsList[0];
 
@@ -50,10 +69,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
             // Visualize it!
             var lines = Lyrics.GetLyricLines(pathToLyrics);
             foreach (var line in lines)
-            {
-                TextWriters.Write($"- [{line.LineSpan.Hours:00}:{line.LineSpan.Minutes:00}:{line.LineSpan.Seconds:00}.{line.LineSpan.Milliseconds:000}] ", false, KernelColorType.ListEntry);
-                TextWriters.Write(line.Line, KernelColorType.ListValue);
-            }
+                ListEntryWriterColor.WriteListEntry($"{line.LineSpan.Hours:00}:{line.LineSpan.Minutes:00}:{line.LineSpan.Seconds:00}.{line.LineSpan.Milliseconds:000}", line.Line);
             return 0;
         }
 

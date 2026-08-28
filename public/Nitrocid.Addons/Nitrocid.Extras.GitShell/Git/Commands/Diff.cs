@@ -18,11 +18,12 @@
 //
 
 using LibGit2Sharp;
-using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Shell.Switches;
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
@@ -35,8 +36,35 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// </remarks>
     class DiffCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "diff";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_DIFF_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("patch", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_PATCH_DESC", new()
+                    {
+                        ConflictsWith = ["tree", "all"]
+                    }),
+                    new SwitchInfo("tree", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_TREE_DESC", new()
+                    {
+                        ConflictsWith = ["patch", "all"]
+                    }),
+                    new SwitchInfo("all", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_ALL_DESC", new()
+                    {
+                        ConflictsWith = ["tree", "patch"]
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Get the tree changes and the patch
             if (GitShellCommon.Repository is null)
@@ -47,11 +75,11 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
 
             // Determine what to show
             bool doTree =
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tree") ||
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all");
+                parameters.ContainsSwitch("-tree") ||
+                parameters.ContainsSwitch("-all");
             bool doPatch =
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-patch") ||
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all");
+                parameters.ContainsSwitch("-patch") ||
+                parameters.ContainsSwitch("-all");
             if (!doTree && !doPatch)
                 doTree = doPatch = true;
 
@@ -66,23 +94,23 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 var renamed = tree.Renamed;
 
                 // List the general changes
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_DIFF_GENERALCHANGES") + $" {GitShellCommon.RepoName}:", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_DIFF_GENERALCHANGES") + $" {GitShellCommon.RepoName}:", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                 foreach (var change in modified)
-                    TextWriters.Write($"[M] * {change.Path}", KernelColorType.ListEntry);
+                    TextWriterColor.Write($"[M] * {change.Path}", ThemeColorType.ListEntry);
                 foreach (var change in added)
-                    TextWriters.Write($"[A] + {change.Path}", KernelColorType.ListEntry);
+                    TextWriterColor.Write($"[A] + {change.Path}", ThemeColorType.ListEntry);
                 foreach (var change in deleted)
-                    TextWriters.Write($"[D] - {change.Path}", KernelColorType.ListEntry);
+                    TextWriterColor.Write($"[D] - {change.Path}", ThemeColorType.ListEntry);
                 foreach (var change in conflicted)
-                    TextWriters.Write($"[C] X {change.OldPath} vs. {change.Path}", KernelColorType.ListEntry);
+                    TextWriterColor.Write($"[C] X {change.OldPath} vs. {change.Path}", ThemeColorType.ListEntry);
                 foreach (var change in renamed)
-                    TextWriters.Write($"[R] / {change.OldPath} -> {change.Path}", KernelColorType.ListEntry);
+                    TextWriterColor.Write($"[R] / {change.OldPath} -> {change.Path}", ThemeColorType.ListEntry);
             }
             TextWriterRaw.Write();
 
             if (doPatch)
             {
-                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_DIFF_CONTENTCHANGES") + $" {GitShellCommon.RepoName}:", KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_DIFF_CONTENTCHANGES") + $" {GitShellCommon.RepoName}:", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                 TextWriterColor.Write(patch.Content);
             }
 

@@ -19,7 +19,11 @@
 
 using Newtonsoft.Json;
 using Nitrocid.Extras.JsonShell.Tools;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Extras.JsonShell.Json.Commands
 {
@@ -47,8 +51,30 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
     /// </remarks>
     class SaveCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "save";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SAVE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("b", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["m"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("m", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_M_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["b"],
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var TargetFormatting = Formatting.Indented;
             if (parameters.SwitchesList.Length > 0)

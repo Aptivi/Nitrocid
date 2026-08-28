@@ -11,10 +11,6 @@
       "text": "Menunjukkan kepada Anda ikhtisar layar penuh tentang tampilan dok yang dipilih untuk dapat menggunakannya sebagai panel info"
     },
     {
-      "loc": "NKS_DOCKING_NODOCKSCREEN1",
-      "text": "Tidak ada layar dok dengan nama ini."
-    },
-    {
       "loc": "NKS_DOCKING_NODOCKSCREEN2",
       "text": "Tidak ada dok layar dengan nama ini."
     },

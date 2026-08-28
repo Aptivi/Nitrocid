@@ -18,7 +18,9 @@
 //
 
 using Nitrocid.Kernel.Power;
+using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -30,8 +32,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class ShutdownCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "shutdown";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHUTDOWN_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             PowerManager.PowerManage(PowerMode.Shutdown);
             return 0;

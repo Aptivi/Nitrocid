@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {
@@ -33,8 +33,16 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// </remarks>
     class LsCommitsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lscommits";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_LSCOMMITS_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (GitShellCommon.Repository is null)
                 return 43;
@@ -42,8 +50,8 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_LSCOMMITS_TITLE") + $" {GitShellCommon.BranchName}:");
             foreach (var commit in commits)
             {
-                TextWriters.Write($"- {commit.Sha[..7]}, {commit.Committer.Name} <{commit.Committer.Email}>", true, KernelColorType.ListEntry);
-                TextWriters.Write($"  - {commit.MessageShort}", true, KernelColorType.ListValue);
+                TextWriterColor.Write($"- {commit.Sha[..7]}, {commit.Committer.Name} <{commit.Committer.Email}>", true, ThemeColorType.ListEntry);
+                TextWriterColor.Write($"  - {commit.MessageShort}", true, ThemeColorType.ListValue);
             }
             return 0;
         }

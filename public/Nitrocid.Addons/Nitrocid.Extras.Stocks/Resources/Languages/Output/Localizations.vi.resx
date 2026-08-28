@@ -121,4 +121,7 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>Không thể lấy được thông tin về cổ phiếu.</value>
   </data>
+  <data name="NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC" xml:space="preserve">
+    <value>Khóa API AlphaVantage</value>
+  </data>
 </root>

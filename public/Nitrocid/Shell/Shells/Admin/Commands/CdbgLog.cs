@@ -18,14 +18,14 @@
 //
 
 using System;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Terminaux.Shell.Commands;
+using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Shell.Shells.Admin.Commands
 {
@@ -37,8 +37,13 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
     /// </remarks>
     class CdbgLogCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "cdbglog";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_CDBGLOG_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (KernelEntry.DebugMode)
             {
@@ -50,7 +55,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_CDBGLOG_FAILURE"), true, KernelColorType.Error, ex.Message);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_CDBGLOG_FAILURE"), true, ThemeColorType.Error, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                     return ex.GetHashCode();
                 }

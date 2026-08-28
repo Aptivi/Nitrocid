@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Tests.Misc.Reflection.Data
 {
@@ -25,10 +26,16 @@ namespace Nitrocid.Tests.Misc.Reflection.Data
     {
         internal string doSet = "";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue) =>
+        public override string Command =>
+            "reflectedcommand";
+
+        public override string HelpDefinition =>
+            "";
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue) =>
             0;
 
-        public override void HelpHelper() =>
+        public override void HelpHelper(IShell? shell) =>
             doSet = "yes";
     }
 }

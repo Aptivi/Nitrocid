@@ -21,7 +21,6 @@ using Nitrocid.Extras.Diagnostics.Commands;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Languages;
 
@@ -29,9 +28,9 @@ namespace Nitrocid.Extras.Diagnostics
 {
     internal class DiagnosticsInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("threadsbt", LanguageTools.GetLocalized("NKS_DIAG_COMMAND_THREADSBT_DESC"), new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            new ThreadsBtCommand(),
         ];
 
         public string AddonName =>

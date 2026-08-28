@@ -18,13 +18,13 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Languages;
+using Terminaux.Reader;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.Text.Commands
 {
@@ -36,8 +36,13 @@ namespace Nitrocid.Shell.Shells.Text.Commands
     /// </remarks>
     class AddLinesCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "addlines";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_ADDLINES_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var FinalLines = new List<string>();
             string FinalLine = "";
@@ -46,8 +51,8 @@ namespace Nitrocid.Shell.Shells.Text.Commands
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_ADDLINES_LINEPROMPT"));
             while (FinalLine != "EOF")
             {
-                TextWriters.Write(">> ", false, KernelColorType.Input);
-                FinalLine = InputTools.ReadLine();
+                TextWriterColor.Write(">> ", false, ThemeColorType.Input);
+                FinalLine = TermReader.Read();
                 if (FinalLine != "EOF")
                 {
                     FinalLines.Add(FinalLine);

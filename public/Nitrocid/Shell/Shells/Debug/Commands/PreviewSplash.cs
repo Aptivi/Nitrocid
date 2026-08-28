@@ -17,15 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
-using Nitrocid.Misc.Splash;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Switches;
 using System;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Splash;
+using Nitrocid.Kernel.Exceptions;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -37,11 +38,37 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
     /// </remarks>
     class PreviewSplashCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "previewsplash";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "splashName", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_ARGUMENT_SPLASHNAME_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("splashout", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_SWITCH_SPLASHOUT_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("context", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_SWITCH_CONTEXT_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            bool splashOut = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-splashout");
-            bool customContext = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-context");
+            bool splashOut = parameters.ContainsSwitch("-splashout");
+            bool customContext = parameters.ContainsSwitch("-context");
             string contextName =
                 customContext ?
                 SwitchManager.GetSwitchValue(parameters.SwitchesList, "-context") :
@@ -51,7 +78,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                 !customContext || Enum.TryParse(contextName, out context);
             if (!contextValid)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_PREVIEWSPLASH_CONTEXTINVALID"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_PREVIEWSPLASH_CONTEXTINVALID"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Splash);
             }
 
@@ -62,11 +89,11 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             return 0;
         }
 
-        public override void HelpHelper()
+        public override void HelpHelper(IShell? shell)
         {
             var splashes = SplashManager.GetNamesOfSplashes();
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_PREVIEWSPLASH_HELPER"));
-            TextWriters.WriteList(splashes);
+            ListWriterColor.WriteList(splashes);
         }
 
     }

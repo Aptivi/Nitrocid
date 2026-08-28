@@ -18,8 +18,12 @@
 //
 
 using System.Linq;
-using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.Data.NameGen;
 
 namespace Nitrocid.Extras.NameGen.Commands
@@ -54,8 +58,65 @@ namespace Nitrocid.Extras.NameGen.Commands
     /// </remarks>
     class GenNameCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "genname";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_NAMEGEN_COMMAND_GENNAME_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "namescount", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC"
+                    }),
+                    new CommandArgumentPart(false, "nameprefix", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMEPREFIX_DESC"
+                    }),
+                    new CommandArgumentPart(false, "namesuffix", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESUFFIX_DESC"
+                    }),
+                    new CommandArgumentPart(false, "surnameprefix", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_SURNAMEPREFIX_DESC"
+                    }),
+                    new CommandArgumentPart(false, "surnamesuffix", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_SURNAMESUFFIX_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("t", /* Localizable */ "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_NAMETAG_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("male", /* Localizable */ "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_MALE_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["female", "both"],
+                        AcceptsValues = false,
+                    }),
+                    new SwitchInfo("female", /* Localizable */ "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_FEMALE_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["male", "both"],
+                        AcceptsValues = false,
+                    }),
+                    new SwitchInfo("both", /* Localizable */ "NKS_NAMEGEN_COMMAND_GENNAME_SWITCH_UNIFIED_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["female", "male"],
+                        AcceptsValues = false,
+                    }),
+                ], true)
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             int NamesCount = 10;
             string NamePrefix = "";

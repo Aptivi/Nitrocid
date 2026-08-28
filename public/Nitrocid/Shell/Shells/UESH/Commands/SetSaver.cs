@@ -17,20 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files.Paths;
-using Nitrocid.Kernel;
+using System.Linq;
+using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
-using Terminaux.Shell.Commands;
-using System.Linq;
-using Nitrocid.Files;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Users;
-using Nitrocid.Kernel.Debugging;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -38,24 +36,39 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// Sets your default screensaver as your own screensaver or built-in savers
     /// </summary>
     /// <remarks>
-    /// You can set your default screensaver as your own screensaver by the modfile or built-in savers such as matrix, disco, colorMix, and so on, whose names found in <see cref="ScreensaverManager.Screensavers"/> can be used as the argument for this command.
+    /// You can set your default screensaver as your own screensaver by savers, such as matrix, disco, colorMix, and so on, whose names found in <see cref="ScreensaverManager.Screensavers"/> can be used as the argument for this command.
     /// <br></br>
     /// The user must have at least the administrative privileges before they can run the below commands.
     /// </remarks>
     class SetSaverCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "setsaver";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETSAVER_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "saver", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETSAVER_ARGUMENT_SAVER_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
 
-            string modPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
             string finalSaverName = parameters.ArgumentsText.ToLower();
             if (ScreensaverManager.GetScreensaverNames().Contains(finalSaverName))
             {
@@ -63,20 +76,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETSAVER_SUCCESS"), finalSaverName);
                 return 0;
             }
-            else if (FilesystemTools.FileExists($"{modPath}{finalSaverName}") & !KernelEntry.SafeMode)
-            {
-                ScreensaverManager.SetDefaultScreensaver(finalSaverName);
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETSAVER_SUCCESS"), finalSaverName);
-                return 0;
-            }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETSAVER_NOTFOUND"), true, KernelColorType.Error, finalSaverName);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETSAVER_NOTFOUND"), true, ThemeColorType.Error, finalSaverName);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchScreensaver);
             }
         }
 
-        public override void HelpHelper()
+        public override void HelpHelper(IShell? shell)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETSAVER_LISTING") + " {0}", string.Join(", ", ScreensaverManager.GetScreensaverNames()));
         }

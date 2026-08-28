@@ -17,26 +17,50 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Languages;
 using System;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Kernel.Exceptions;
-using Terminaux.Shell.Switches;
 using Nitrocid.Files;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Commands
 {
     class ImportContactsCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "importcontacts";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "mecard/path", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC"
+                        })
+                    ],
+                    [
+                        new SwitchInfo("mecard", /* Localizable */ "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC", new(){
+                            AcceptsValues = false,
+                        }),
+                    ]
+                )
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             try
             {
                 // Determine import mode
-                if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-mecard"))
+                if (parameters.ContainsSwitch("-mecard"))
                 {
                     string meCard = parameters.ArgumentsList[0];
                     if (!string.IsNullOrEmpty(meCard))
@@ -46,7 +70,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MECARDEMPTY"), KernelColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MECARDEMPTY"), ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Contacts);
                     }
                 }
@@ -61,7 +85,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_FILENOTFOUND"), KernelColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_FILENOTFOUND"), ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Contacts);
                     }
                 }
@@ -69,7 +93,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CANTIMPORTCONTACTS") + ex.Message, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CANTIMPORTCONTACTS") + ex.Message, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Contacts);
             }
         }

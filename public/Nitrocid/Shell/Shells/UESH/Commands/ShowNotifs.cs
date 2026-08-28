@@ -17,14 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Notifications;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using Nitrocid.Misc.Interactives;
+using Nitrocid.Misc.Notifications;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -36,10 +37,29 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class ShowNotifsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "shownotifs";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHOWNOTIFS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("tui", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWNOTIFS_SWITCH_TUI_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui"))
+            if (parameters.ContainsSwitch("-tui"))
                 NotificationsCli.OpenNotificationsCli();
             else
             {
@@ -48,11 +68,11 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 {
                     foreach (Notification Notif in NotificationManager.NotifRecents)
                     {
-                        TextWriters.Write($"[{Count}/{NotificationManager.NotifRecents.Count}] {Notif.Title}: ", false, KernelColorType.ListEntry);
-                        TextWriters.Write(Notif.Desc, false, KernelColorType.ListValue);
+                        TextWriterColor.Write($"[{Count}/{NotificationManager.NotifRecents.Count}] {Notif.Title}: ", false, ThemeColorType.ListEntry);
+                        TextWriterColor.Write(Notif.Desc, false, ThemeColorType.ListValue);
                         if (Notif.Type == NotificationType.Progress)
                         {
-                            TextWriters.Write($" ({Notif.Progress}%)", false, Notif.ProgressState == NotificationProgressState.Failure ? KernelColorType.Error : KernelColorType.Success);
+                            TextWriterColor.Write($" ({Notif.Progress}%)", false, Notif.ProgressState == NotificationProgressState.Failure ? ThemeColorType.Error : ThemeColorType.Success);
                         }
                         TextWriterRaw.Write();
                         Count += 1;

@@ -97,9 +97,6 @@
   <data name="NKS_USERS_LOGIN_USERNAMEPROMPT" xml:space="preserve">
     <value>upayogakarta naam: </value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES" xml:space="preserve">
-    <value>rikt sthaan kee anumati nahin hai.</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHHOSTNAME_NOSPECIALCHARS" xml:space="preserve">
     <value>vishesh varnon kee anumati nahin hai.</value>
   </data>
@@ -1350,9 +1347,6 @@
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC" xml:space="preserve">
     <value>surakshit mod kee tarah, lekin bahu-upayogakarta aur kuchh anukoolan ko bhee aksham karata hai</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS" xml:space="preserve">
-    <value>rangon ko punaraarambh karane kee aavashyakata nahin hai, lekin adhikaansh setings ko punaraarambh karane kee aavashyakata hotee hai.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC" xml:space="preserve">
     <value>regular eksapreshan ka upayog karake kisee shabd ya vaakyaansh ko doosare se badal deta hai</value>
@@ -6007,9 +6001,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC" xml:space="preserve">
     <value>paasavard badalane ke lie upayogakarta naam</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC" xml:space="preserve">
-    <value>vartamaan upayogakarta paasavard</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC" xml:space="preserve">
     <value>badalane ke lie puraana upayogakarta naam</value>
   </data>
@@ -6523,9 +6514,6 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_CALENDAR" xml:space="preserve">
     <value>atirikt - kailendar</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_COLORCONVERTER" xml:space="preserve">
-    <value>atirikt - rang kanavartar</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_CONTACTS" xml:space="preserve">
     <value>atirikt - sampark</value>
   </data>
@@ -6901,9 +6889,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LSVARS_DESC" xml:space="preserve">
     <value>avelable UESH veriables ko list karta hai</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SEL_DESC" xml:space="preserve">
-    <value>legesi settings style ka istemaal karta hai</value>
-  </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTDEBUGLOGGERDRIVER_NAME" xml:space="preserve">
     <value>karant debug logger driver</value>
   </data>
@@ -7035,5 +7020,14 @@
   </data>
   <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
     <value>koi lekh nahin</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC" xml:space="preserve">
+    <value>ek yaadrchchhik skreenasevar ka chayan karata hai</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VALUE_DESC" xml:space="preserve">
+    <value>set karne ke liye man</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC" xml:space="preserve">
+    <value>high compression</value>
   </data>
 </root>

@@ -18,12 +18,13 @@
 //
 
 using System;
-using Terminaux.Shell.Commands;
-using Nitrocid.Misc.Reflection;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Shell.Switches;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Misc.Reflection;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
@@ -36,8 +37,27 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
     /// </remarks>
     class LsPropertiesCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "lsproperties";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSPROPERTIES_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("suppress", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_SWITCH_SUPPRESS_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // List all available properties on all the kernel types
             foreach (var type in ReflectionCommon.KernelTypes)
@@ -48,20 +68,20 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                     if (properties.Count > 0)
                     {
                         // Write the property names and their values
-                        SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSPROPERTIES_TITLE") + $" {type.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                        TextWriters.WriteList(properties);
+                        SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSPROPERTIES_TITLE") + $" {type.Name}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+                        ListWriterColor.WriteList(properties);
                     }
                 }
                 catch (Exception ex)
                 {
-                    if (!SwitchManager.ContainsSwitch(parameters.SwitchesList, "-suppress"))
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETPROPERTYVALUE_FAILED") + $" {type.Name}: {ex.Message}", KernelColorType.Error);
+                    if (!parameters.ContainsSwitch("-suppress"))
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETPROPERTYVALUE_FAILED") + $" {type.Name}: {ex.Message}", ThemeColorType.Error);
                 }
             }
             return 0;
         }
 
-        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
+        public override int ExecuteDumb(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // List all available properties on all the kernel types
             foreach (var type in ReflectionCommon.KernelTypes)
@@ -79,8 +99,8 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                 }
                 catch (Exception ex)
                 {
-                    if (!SwitchManager.ContainsSwitch(parameters.SwitchesList, "-suppress"))
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETPROPERTYVALUE_FAILED") + $" {type.Name}: {ex.Message}", KernelColorType.Error);
+                    if (!parameters.ContainsSwitch("-suppress"))
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETPROPERTYVALUE_FAILED") + $" {type.Name}: {ex.Message}", ThemeColorType.Error);
                 }
             }
             return 0;

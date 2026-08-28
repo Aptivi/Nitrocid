@@ -18,13 +18,15 @@
 //
 
 using System;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Editors.HexEdit;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Nitrocid.Shell.Shells.Hex.Commands
@@ -37,50 +39,85 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
     /// </remarks>
     class QueryByteCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "querybyte";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMAND_QUERYBYTE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "byte", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_ADDBYTE_ARGUMENT_BYTE_DESC"
+                    }),
+                    new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_STARTBYTE_DESC"
+                    }),
+                    new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_DELBYTES_ARGUMENT_ENDBYTE_DESC"
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var FileBytes = HexEditShellCommon.FileBytes ??
                 throw new KernelException(KernelExceptionType.HexEditor, LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_NOTOPENYET"));
             if (parameters.ArgumentsList.Length == 1)
             {
-                byte ByteContent = Convert.ToByte(parameters.ArgumentsList[0], 16);
+                string byteStr = parameters.ArgumentsList[0];
+                byte ByteContent = Convert.ToByte(byteStr, 16);
                 HexEditTools.QueryByteAndDisplay(ByteContent);
                 return 0;
             }
             else if (parameters.ArgumentsList.Length == 2)
             {
-                if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
+                string byteStr = parameters.ArgumentsList[0];
+                string startByteStr = parameters.ArgumentsList[1];
+                if (TextTools.IsStringNumeric(startByteStr))
                 {
-                    if (Convert.ToInt64(parameters.ArgumentsList[1]) <= FileBytes.LongLength)
+                    if (Convert.ToInt64(startByteStr) <= FileBytes.LongLength)
                     {
-                        byte ByteContent = Convert.ToByte(parameters.ArgumentsList[0], 16);
-                        HexEditTools.QueryByteAndDisplay(ByteContent, Convert.ToInt64(parameters.ArgumentsList[1]));
+                        byte ByteContent = Convert.ToByte(byteStr, 16);
+                        HexEditTools.QueryByteAndDisplay(ByteContent, Convert.ToInt64(startByteStr));
                         return 0;
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, KernelColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                     }
                 }
             }
             else if (parameters.ArgumentsList.Length > 2)
             {
-                if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]) & TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
+                string byteStr = parameters.ArgumentsList[0];
+                string startByteStr = parameters.ArgumentsList[1];
+                string endByteStr = parameters.ArgumentsList[2];
+                if (TextTools.IsStringNumeric(startByteStr) & TextTools.IsStringNumeric(endByteStr))
                 {
-                    if (Convert.ToInt64(parameters.ArgumentsList[1]) <= FileBytes.LongLength & Convert.ToInt64(parameters.ArgumentsList[2]) <= HexEditShellCommon.FileBytes.LongLength)
+                    if (Convert.ToInt64(startByteStr) <= FileBytes.LongLength & Convert.ToInt64(endByteStr) <= HexEditShellCommon.FileBytes.LongLength)
                     {
-                        byte ByteContent = Convert.ToByte(parameters.ArgumentsList[0], 16);
-                        long ByteNumberStart = Convert.ToInt64(parameters.ArgumentsList[1]);
-                        long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[2]);
+                        byte ByteContent = Convert.ToByte(byteStr, 16);
+                        long ByteNumberStart = Convert.ToInt64(startByteStr);
+                        long ByteNumberEnd = Convert.ToInt64(endByteStr);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
                         HexEditTools.QueryByteAndDisplay(ByteContent, ByteNumberStart, ByteNumberEnd);
                         return 0;
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, KernelColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                     }
                 }

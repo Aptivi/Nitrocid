@@ -17,20 +17,26 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Interactive;
-using Terminaux.Shell.Commands;
-using Nitrocid.Languages;
 using System;
-using Nitrocid.Extras.MailShell.Mail.Interactive;
 using MailKit;
 using MimeKit;
+using Nitrocid.Extras.MailShell.Mail.Interactive;
+using Nitrocid.Languages;
+using Terminaux.Inputs.Interactive;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.MailShell.Mail.Commands
 {
     class TuiCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "tui";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_TUI_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var tui = new MailManagerCli();
             tui.Bindings.Add(new InteractiveTuiBinding<MailFolder, MimeMessage>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));

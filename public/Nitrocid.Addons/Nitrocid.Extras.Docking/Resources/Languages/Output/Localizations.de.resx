@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>Zeigt Ihnen eine Vollbildübersicht über eine ausgewählte Dockansicht, um diese als Infopanel nutzen zu können</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>Es gibt keinen Dock-Bildschirm mit diesem Namen.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>Es gibt kein Bildschirmdock mit diesem Namen.</value>
   </data>

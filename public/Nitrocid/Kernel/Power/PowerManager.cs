@@ -25,7 +25,6 @@ using System.IO;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
-using Terminaux.Shell.Commands.ProcessExecution;
 using Terminaux.Shell.Shells;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;

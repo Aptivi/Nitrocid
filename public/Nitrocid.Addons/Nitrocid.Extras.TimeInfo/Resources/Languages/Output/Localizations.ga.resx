@@ -160,4 +160,22 @@
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
     <value>Am Unix:</value>
   </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_PREPRODUCTION" xml:space="preserve">
+    <value>Réamhléiriú</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_EXPIRED" xml:space="preserve">
+    <value>Imithe in éag</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_POOR" xml:space="preserve">
+    <value>Bocht</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_AVERAGE" xml:space="preserve">
+    <value>Meánach</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_GOOD" xml:space="preserve">
+    <value>Maith</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_EXCELLENT" xml:space="preserve">
+    <value>Sármhaith</value>
+  </data>
 </root>

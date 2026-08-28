@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
@@ -27,8 +25,12 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Users;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -39,8 +41,6 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// This command starts up the Settings application, which allows you to change the kernel settings available to you. It's the successor to the defunct Nitrocid Configuration Tool application, and is native to the kernel.
     /// It starts with the list of sections to start from. Once the user selects one, they'll be greeted with various options that are configurable. When they choose one, they'll be able to change the setting there.
     /// If you just want to try out a setting without saving to the configuration file, you can change a setting and exit it immediately. It only survives the current session until you decide to save the changes to the configuration file.
-    /// Some settings allow you to specify a string, a number, or by the usage of another API, like the ColorWheel() tool.
-    /// In the string or long string values, if you used the /clear value, it will blank out the value. In some settings, if you just pressed ENTER, it'll use the same value that the kernel uses at the moment.
     /// We've made sure that this application is user-friendly.
     /// <br></br>
     /// <br></br>
@@ -52,10 +52,6 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// <term>Switches</term>
     /// <description>Description</description>
     /// </listheader>
-    /// <item>
-    /// <term>-sel</term>
-    /// <description>Opens the legacy selection-style-based settings instead of the interactive TUI</description>
-    /// </item>
     /// <item>
     /// <term>-saver</term>
     /// <description>Opens the screensaver settings</description>
@@ -86,27 +82,67 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class SettingsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "settings";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo([
+                    new SwitchInfo("saver", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SCREENSAVER_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["splash", "addonsplash", "type", "addonsaver", "driver"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("addonsaver", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_ADDONSAVER_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["splash", "addonsplash", "type", "saver", "driver"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("splash", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["saver", "addonsplash", "type", "addonsaver", "driver"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("addonsplash", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_ADDONSPLASH_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["saver", "splash", "type", "addonsaver", "driver"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("driver", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_DRIVER_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["saver", "addonsplash", "type", "addonsaver", "splash"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("type", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_TYPE_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["saver", "addonsplash", "splash", "addonsaver", "driver"],
+                        ArgumentsRequired = true
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
 
-            bool useSelection = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-sel");
-            bool useType = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-type");
+            bool useType = parameters.ContainsSwitch("-type");
             var typeFinal = useType ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type") : nameof(KernelMainConfig);
             if (parameters.SwitchesList.Length > 0 && !useType)
             {
-                bool isSaver = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-saver");
-                bool isAddonSaver = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-addonsaver");
-                bool isSplash = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-splash");
-                bool isAddonSplash = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-addonsplash");
-                bool isDriver = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-driver");
+                bool isSaver = parameters.ContainsSwitch("-saver");
+                bool isAddonSaver = parameters.ContainsSwitch("-addonsaver");
+                bool isSplash = parameters.ContainsSwitch("-splash");
+                bool isAddonSplash = parameters.ContainsSwitch("-addonsplash");
+                bool isDriver = parameters.ContainsSwitch("-driver");
                 if (isSaver)
                     typeFinal = nameof(KernelSaverConfig);
                 else if (isAddonSaver)
@@ -115,7 +151,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         typeFinal = "ExtraSaversConfig";
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_ADDIITONALSAVERS"), true, KernelColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_ADDIITONALSAVERS"), true, ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Config);
                     }
                 }
@@ -127,24 +163,24 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         typeFinal = "ExtraSplashesConfig";
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_ADDIITONALSPLASHES"), true, KernelColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_ADDIITONALSPLASHES"), true, ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Config);
                     }
                 }
                 else if (isDriver)
                     typeFinal = nameof(KernelDriverConfig);
             }
-            SettingsApp.OpenMainPage(typeFinal, useSelection);
+            SettingsApp.OpenMainPage(typeFinal);
             return 0;
         }
 
-        public override void HelpHelper()
+        public override void HelpHelper(IShell? shell)
         {
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_TYPELISTING") + ": ", true, KernelColorType.Tip);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_BASE") + ": ", true, KernelColorType.ListTitle);
-            TextWriters.WriteList(Config.baseConfigurations.Keys);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_CUSTOM") + ": ", true, KernelColorType.ListTitle);
-            TextWriters.WriteList(Config.customConfigurations.Keys);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_TYPELISTING") + ": ", true, ThemeColorType.Tip);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_BASE") + ": ", true, ThemeColorType.ListTitle);
+            ListWriterColor.WriteList(Config.baseConfigurations.Keys);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_CUSTOM") + ": ", true, ThemeColorType.ListTitle);
+            ListWriterColor.WriteList(Config.customConfigurations.Keys);
         }
 
     }

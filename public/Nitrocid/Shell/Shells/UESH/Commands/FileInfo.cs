@@ -19,18 +19,19 @@
 
 using System.IO;
 using System.Reflection;
-using Terminaux.Shell.Commands;
-using Nitrocid.Kernel.Debugging;
+using Magico.Files;
 using Nitrocid.Files;
-using Nitrocid.Misc.Reflection;
-using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files.Extensions;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Extensions;
+using Nitrocid.Misc.Reflection;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Magico.Files;
-using Nitrocid.Kernel.Exceptions;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -42,17 +43,36 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class FileInfoCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "fileinfo";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FILEINFO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "file", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_FILE_DESC"
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             foreach (string FileName in parameters.ArgumentsList)
             {
-                string FilePath = FilesystemTools.NeutralizePath(FileName);
-                DebugWriter.WriteDebug(DebugLevel.I, "Neutralized file path: {0} ({1})", vars: [FilePath, FilesystemTools.FileExists(FilePath)]);
-                SeparatorWriterColor.WriteSeparatorColor(FileName, KernelColorTools.GetColor(KernelColorType.ListTitle));
-                if (FilesystemTools.FileExists(FilePath))
+                string filePath = FilesystemTools.NeutralizePath(FileName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Neutralized file path: {0} ({1})", vars: [filePath, FilesystemTools.FileExists(filePath)]);
+                SeparatorWriterColor.WriteSeparatorColor(FileName, ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+                if (FilesystemTools.FileExists(filePath))
                 {
-                    var FileInfo = new FileInfo(FilePath);
+                    var FileInfo = new FileInfo(filePath);
 
                     // General info
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ENTRYNAME"), FileInfo.Name);
@@ -69,14 +89,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FILETYPE") + ": {0}\n", MagicHandler.GetMagicInfo(FileInfo.FullName));
                     if (!FilesystemTools.IsBinaryFile(FileInfo.FullName))
                     {
-                        var Style = FilesystemTools.GetLineEndingFromFile(FilePath);
+                        var Style = FilesystemTools.GetLineEndingFromFile(filePath);
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NEWLINESTYLE") + " {0}", Style.ToString());
                     }
                     TextWriterRaw.Write();
 
                     // .NET managed info
-                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_ASMINFO"), KernelColorTools.GetColor(KernelColorType.ListTitle));
-                    if (ReflectionCommon.IsDotnetAssemblyFile(FilePath, out AssemblyName? asmName) && asmName is not null)
+                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_ASMINFO"), ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+                    if (ReflectionCommon.IsDotnetAssemblyFile(filePath, out AssemblyName? asmName) && asmName is not null)
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ENTRYNAME"), asmName.Name ?? "");
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FULLNAME") + ": {0}", asmName.FullName);
@@ -89,17 +109,17 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     TextWriterRaw.Write();
 
                     // Other info handled by the extension handler
-                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_EXTRAINFO"), KernelColorTools.GetColor(KernelColorType.ListTitle));
+                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_EXTRAINFO"), ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                     if (ExtensionHandlerTools.IsHandlerRegistered(FileInfo.Extension))
                     {
                         var handler = ExtensionHandlerTools.GetExtensionHandler(FileInfo.Extension) ??
                             throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_EXCEPTION_HANDLERFAILED") + $" {FileInfo.Extension}");
-                        TextWriterColor.Write(handler.InfoHandler(FilePath));
+                        TextWriterColor.Write(handler.InfoHandler(filePath));
                     }
                 }
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_FILENOTFOUND"), true, KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_FILENOTFOUND"), true, ThemeColorType.Error);
                 }
             }
             return 0;

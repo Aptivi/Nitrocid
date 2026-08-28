@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
-using Nitrocid.Kernel;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
 using System;
 using System.Net.Http;
@@ -30,6 +30,9 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Web;
+using Nitrocid.Kernel;
+using Nitrocid.Network.Transfer;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.Extras.Pastebin.Commands
 {
@@ -41,36 +44,84 @@ namespace Nitrocid.Extras.Pastebin.Commands
     /// </remarks>
     class PastebinCommand : BaseCommand, ICommand
     {
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string Command =>
+            "pastebin";
+
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_PASTEBIN_COMMAND_PASTEBIN_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "file/string", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_FILESTRING_DESC"
+                    }),
+                    new CommandArgumentPart(false, "arguments", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_ARGUMENT_ARGUMENTS_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("provider", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_PROVIDER_DESC", new()
+                    {
+                        AcceptsValues = true,
+                        ArgumentsRequired = true,
+                    }),
+                    new SwitchInfo("type", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_TYPE_DESC", new()
+                    {
+                        AcceptsValues = true,
+                        ArgumentsRequired = true,
+                    }),
+                    new SwitchInfo("postpage", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTPAGE_DESC", new()
+                    {
+                        AcceptsValues = true,
+                        ArgumentsRequired = true,
+                    }),
+                    new SwitchInfo("postformat", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFORMAT_DESC", new()
+                    {
+                        AcceptsValues = true,
+                        ArgumentsRequired = true,
+                    }),
+                    new SwitchInfo("postfield", /* Localizable */ "NKS_PASTEBIN_COMMAND_PASTEBIN_SWITCH_POSTFIELD_DESC", new()
+                    {
+                        AcceptsValues = true,
+                        ArgumentsRequired = true,
+                    }),
+                ]),
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Check the contents
             string contents = parameters.ArgumentsList[0];
             if (string.IsNullOrWhiteSpace(contents))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_NEEDSFILEORTEXT"), KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_NEEDSFILEORTEXT"), ThemeColorType.Error);
                 return 35;
             }
 
             // Check the provider and the type
-            string provider = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-provider") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-provider") : "pastebin.com";
+            string provider = parameters.ContainsSwitch("-provider") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-provider") : "pastebin.com";
             int port = 443;
-            string type = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-type") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type") : "https";
+            string type = parameters.ContainsSwitch("-type") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type") : "https";
             if (provider.Contains(':'))
             {
-                string portStr = provider.Substring(provider.IndexOf(":") + 1);
+                string portStr = provider[(provider.IndexOf(':') + 1)..];
                 port = int.Parse(portStr);
-                provider = provider.Substring(0, provider.IndexOf(':'));
+                provider = provider[..provider.IndexOf(':')];
             }
             if (type != "raw" && type != "http" && type != "https")
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PROVIDERTYPEUNSUPPORTED"), KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PROVIDERTYPEUNSUPPORTED"), ThemeColorType.Error);
                 return 36;
             }
 
             // Get the post page, field, format
-            string page = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-postpage") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-postpage") : "api/api_post.php";
-            string format = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-postformat") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-postformat") : "text";
-            string field = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-postfield") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-postfield") : "api_paste_code";
+            string page = parameters.ContainsSwitch("-postpage") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-postpage") : "api/api_post.php";
+            string format = parameters.ContainsSwitch("-postformat") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-postformat") : "text";
+            string field = parameters.ContainsSwitch("-postfield") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-postfield") : "api_paste_code";
 
             // Get the contents
             if (FilesystemTools.FileExists(contents))
@@ -96,13 +147,13 @@ namespace Nitrocid.Extras.Pastebin.Commands
 
                     // Decode the response
                     string response = Encoding.UTF8.GetString(buffer);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTESUCCESS"), KernelColorType.Success);
-                    TextWriters.Write(response, KernelColorType.NeutralText);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTESUCCESS"), ThemeColorType.Success);
+                    TextWriterColor.Write(response, ThemeColorType.NeutralText);
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTEFAILURE"), KernelColorType.Error);
-                    TextWriters.Write(ex.Message, KernelColorType.NeutralText);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTEFAILURE"), ThemeColorType.Error);
+                    TextWriterColor.Write(ex.Message, ThemeColorType.NeutralText);
                     return 37;
                 }
             }
@@ -118,16 +169,18 @@ namespace Nitrocid.Extras.Pastebin.Commands
                 client.DefaultRequestHeaders.Add("User-Agent", $"Nitrocid v{KernelMain.Version}");
 
                 // Now, post and return the response.
-                var response = client.PostAsync(uri, new StringContent($"{field}={encoded}{(parameters.ArgumentsList.Length > 1 ? $"&{parameters.ArgumentsList[1]}" : "")}", Encoding.UTF8, format == "json" ? "text/json" : "application/x-www-form-urlencoded")).Result;
+                string arguments = parameters.ArgumentsList.Length > 1 ? $"&{parameters.ArgumentsList[1]}" : "";
+                string mediaType = format == "json" ? "text/json" : "application/x-www-form-urlencoded";
+                var response = client.PostAsync(uri, new StringContent($"{field}={encoded}{arguments}", Encoding.UTF8, mediaType)).Result;
                 string reply = response.Content.ReadAsStringAsync().Result;
                 if (!response.IsSuccessStatusCode)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTEFAILURE") + $" [{(int)response.StatusCode}] {response.StatusCode}", KernelColorType.Error);
-                    TextWriters.Write(reply, KernelColorType.NeutralText);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTEFAILURE") + $" [{(int)response.StatusCode}] {response.StatusCode}", ThemeColorType.Error);
+                    TextWriterColor.Write(reply, ThemeColorType.NeutralText);
                     return 37;
                 }
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTESUCCESS"), KernelColorType.Success);
-                TextWriters.Write(reply, KernelColorType.NeutralText);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_PASTEBIN_PASTESUCCESS"), ThemeColorType.Success);
+                TextWriterColor.Write(reply, ThemeColorType.NeutralText);
             }
             return 0;
         }

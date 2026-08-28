@@ -100,9 +100,6 @@
   <data name="NKS_FORECAST_APIKEYPROMPT" xml:space="preserve">
     <value>API anahtarınızı girin:</value>
   </data>
-  <data name="NKS_FORECAST_WEATHEROLD_CITYLISTLINK" xml:space="preserve">
-    <value>Şehirlerin ID'leri ile birlikte listesine aşağıdaki bağlantıdan ulaşabilirsiniz veya bu komuta "-list" verebilirsiniz.</value>
-  </data>
   <data name="NKS_FORECAST_SETTINGS_DESC" xml:space="preserve">
     <value>Bu bölüm Forecast'ın nasıl çalışacağını yapılandırmanızı sağlar.</value>
   </data>

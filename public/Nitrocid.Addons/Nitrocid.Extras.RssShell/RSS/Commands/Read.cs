@@ -18,13 +18,15 @@
 //
 
 using System;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Terminaux.Shell.Commands;
 using SpecProbe.Software.Platform;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands
 {
@@ -36,8 +38,25 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
     /// </remarks>
     class ReadCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "read";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_READ_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var articles = RSSShellCommon.RSSFeedInstance?.FeedArticles ?? [];
             int ArticleIndex = (int)Math.Round(Convert.ToDouble(parameters.ArgumentsList[0]) - 1d);
@@ -45,7 +64,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
             var article = articles[ArticleIndex];
             if (ArticleIndex > articleCount - 1)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE"), true, ThemeColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", vars: [ArticleIndex, articleCount - 1]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.RSSShell);
             }
@@ -57,7 +76,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READ_NOLINK"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READ_NOLINK"), true, ThemeColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Tried to open a web browser to link of article number {0}, but it's empty. \"{1}\"", vars: [ArticleIndex, article.ArticleLink]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.RSSShell);
             }

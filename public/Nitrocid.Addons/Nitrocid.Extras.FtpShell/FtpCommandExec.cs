@@ -17,19 +17,38 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using FluentFTP;
 using Nitrocid.Extras.FtpShell.Tools;
+using Nitrocid.Languages;
 using Nitrocid.Network.Connections;
 using Nitrocid.Network.SpeedDial;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using System;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.FtpShell
 {
     internal class FtpCommandExec : BaseCommand, ICommand
     {
+        public override string Command =>
+            "ftp";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_FTP_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "server", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             NetworkConnectionTools.OpenConnectionForShell("FTPShell", FTPTools.TryToConnect, EstablishFtpConnection, parameters.ArgumentsText);
             return 0;

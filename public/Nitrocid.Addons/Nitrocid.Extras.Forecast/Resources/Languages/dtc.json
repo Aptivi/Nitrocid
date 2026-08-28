@@ -69,10 +69,6 @@
       "text": "Voer uw API-sleutel in:"
     },
     {
-      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
-      "text": "U kunt de onderstaande link raadplegen voor de lijst met steden met hun ID's, of u kunt \"-list\" doorgeven aan deze opdracht."
-    },
-    {
       "loc": "NKS_FORECAST_SETTINGS_DESC",
       "text": "In deze sectie kunt u configureren hoe Prognose werkt."
     },

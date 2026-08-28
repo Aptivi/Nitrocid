@@ -20,6 +20,9 @@
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Arguments;
+using Nitrocid.Languages;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -31,8 +34,18 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class HostCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "host";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_HOST_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string currentHost = Config.MainConfig.HostName;
             TextWriterColor.Write(currentHost);

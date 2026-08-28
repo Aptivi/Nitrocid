@@ -72,10 +72,6 @@
       "text": "Geben Sie Ihren API-Schlüssel ein:"
     },
     {
-      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
-      "text": "Sie können entweder den folgenden Link aufrufen, um die Liste der Städte mit ihren IDs anzuzeigen, oder „-list“ an diesen Befehl übergeben."
-    },
-    {
       "loc": "NKS_FORECAST_SETTINGS_DESC",
       "text": "In diesem Abschnitt können Sie konfigurieren, wie die Prognose funktioniert."
     },

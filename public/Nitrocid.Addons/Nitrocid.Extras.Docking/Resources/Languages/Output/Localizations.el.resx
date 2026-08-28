@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>Σας εμφανίζει μια επισκόπηση πλήρους οθόνης σχετικά με μια επιλεγμένη προβολή βάσης σύνδεσης για να μπορείτε να τη χρησιμοποιήσετε ως πίνακα πληροφοριών</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>Δεν υπάρχει οθόνη βάσης με αυτό το όνομα.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>Δεν υπάρχει βάση σύνδεσης οθόνης με αυτό το όνομα.</value>
   </data>

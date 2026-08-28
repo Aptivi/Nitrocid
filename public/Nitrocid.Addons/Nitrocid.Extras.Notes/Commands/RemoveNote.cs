@@ -18,25 +18,44 @@
 //
 
 using FluentFTP.Helpers;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Extras.Notes.Management;
 using Nitrocid.Languages;
+using Nitrocid.Extras.Notes.Management;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using System;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Notes.Commands
 {
     internal class RemoveNote : BaseCommand, ICommand
     {
+        public override string Command => 
+            "removenote";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_NOTES_COMMAND_REMOVENOTE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+           [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "noteNumber", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC"
+                    })
+                ]),
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (parameters.ArgumentsList[0].IsNumeric())
-                NoteManagement.RemoveNote(Convert.ToInt32(parameters.ArgumentsList[0]) - 1);
+            string noteId = parameters.ArgumentsList[0];
+            if (noteId.IsNumeric())
+                NoteManagement.RemoveNote(int.Parse(noteId) - 1);
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_NOTES_NOTEIDNOTNUMERIC"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_NOTES_NOTEIDNOTNUMERIC"), true, ThemeColorType.Error);
                 return 8;
             }
             return 0;

@@ -17,13 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.Tools;
 
 namespace Nitrocid.Extras.JsonShell.Commands
@@ -36,8 +37,31 @@ namespace Nitrocid.Extras.JsonShell.Commands
     /// </remarks>
     class JsonBeautifyCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "jsonbeautify";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONBEAUTIFY_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "jsonfile", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "output", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC"
+                    }),
+                ], true)
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string JsonFile = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             string JsonOutputFile;
@@ -60,7 +84,7 @@ namespace Nitrocid.Extras.JsonShell.Commands
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_JSON_FILENOTFOUND"), true, KernelColorType.Error, JsonFile);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_JSON_FILENOTFOUND"), true, ThemeColorType.Error, JsonFile);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.JsonEditor);
             }
         }

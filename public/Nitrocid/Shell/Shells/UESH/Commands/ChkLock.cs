@@ -17,13 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -35,33 +37,55 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class ChkLockCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "chklock";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHKLOCK_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "file", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_FILE_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("waitforunlock", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHKLOCK_SWITCH_WAITFORUNLOCK_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string path = parameters.ArgumentsList[0];
             bool locked = FilesystemTools.IsLocked(path);
-            bool waitForUnlock = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-waitforunlock");
+            bool waitForUnlock = parameters.ContainsSwitch("-waitforunlock");
             string waitForUnlockMsStr = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-waitforunlock");
             bool waitForUnlockTimed = !string.IsNullOrEmpty(waitForUnlockMsStr);
             int waitForUnlockMs = waitForUnlockTimed ? int.Parse(waitForUnlockMsStr) : 0;
             if (locked)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_LOCKED"), true, KernelColorType.Warning);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_LOCKED"), true, ThemeColorType.Warning);
                 if (waitForUnlock)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_WAITING"), true, KernelColorType.Progress);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_WAITING"), true, ThemeColorType.Progress);
                     if (waitForUnlockTimed)
                         FilesystemTools.WaitForLockRelease(path, waitForUnlockMs);
                     else
                         FilesystemTools.WaitForLockReleaseIndefinite(path);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_UNLOCKED"), true, KernelColorType.Success);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_UNLOCKED"), true, ThemeColorType.Success);
                     return 0;
                 }
                 else
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_UNLOCKED"), true, KernelColorType.Success);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHKLOCK_UNLOCKED"), true, ThemeColorType.Success);
             return 0;
         }
     }

@@ -17,14 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs.Interactive;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Time.Timezones;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Interactives;
+using Terminaux.Inputs.Interactive;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -56,11 +58,43 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class ShowTdZoneCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "showtdzone";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "timezone", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_ARGUMENT_TIMEZONE_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("all", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_ALL_DESC", new SwitchOptions()
+                    {
+                        OptionalizeLastRequiredArguments = 1,
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("selection", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_SELECTION_DESC", new SwitchOptions()
+                    {
+                        OptionalizeLastRequiredArguments = 1,
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            bool ShowAll = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all");
-            bool useTui = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-selection");
+            string timezone = parameters.ArgumentsList[0];
+            bool ShowAll = parameters.ContainsSwitch("-all");
+            bool useTui = parameters.ContainsSwitch("-selection");
             if (useTui)
             {
                 var tui = new TimeZoneShowCli();
@@ -70,8 +104,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (ShowAll)
                     TimeZoneRenderers.ShowAllTimeZones();
-                else if (!TimeZoneRenderers.ShowTimeZones(parameters.ArgumentsList[0]))
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SHOWTDZONE_INCORRECT"), true, KernelColorType.Error);
+                else if (!TimeZoneRenderers.ShowTimeZones(timezone))
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SHOWTDZONE_INCORRECT"), true, ThemeColorType.Error);
             }
             return 0;
         }

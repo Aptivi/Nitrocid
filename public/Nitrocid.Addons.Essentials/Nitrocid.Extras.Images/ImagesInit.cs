@@ -21,7 +21,6 @@ using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Extras.Images.Commands;
 using Nitrocid.Languages;
@@ -30,18 +29,9 @@ namespace Nitrocid.Extras.Images
 {
     internal class ImagesInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("preview", LanguageTools.GetLocalized("NKS_IMAGES_COMMAND_PREVIEW_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "imageFile", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC")
-                        }),
-                    ])
-                ], new PreviewCommand()),
+            new PreviewCommand(),
         ];
 
         public string AddonName =>

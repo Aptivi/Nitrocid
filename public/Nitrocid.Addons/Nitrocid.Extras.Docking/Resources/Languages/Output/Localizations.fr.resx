@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>Vous montre un aperçu en plein écran d'une vue du Dock sélectionnée pour pouvoir l'utiliser comme panneau d'informations</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>Il n’existe pas d’écran de dock portant ce nom.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>Il n’existe pas de station d’accueil d’écran de ce nom.</value>
   </data>

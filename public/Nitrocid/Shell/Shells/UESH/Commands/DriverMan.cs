@@ -17,19 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel;
 using Terminaux.Shell.Help;
 using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Shell.Shells;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Themes.Colors;
+using System;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel;
+using Nitrocid.Drivers;
 using Nitrocid.Languages;
+using Nitrocid.Users;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Security.Permissions;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Drivers;
-using System;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Users;
-using Nitrocid.Kernel.Debugging;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -43,26 +44,74 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class DriverManCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "driverman";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "change", new()
+                    {
+                        ExactWording = ["change"],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "type", new()
+                    {
+                        AutoCompleter = (_) => Enum.GetNames<DriverTypes>(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_TYPE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "driver", new()
+                    {
+                        AutoCompleter = (args) => DriverHandler.GetDriverNames(DriverHandler.InferDriverTypeFromTypeName(args[1])),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_DRIVER_DESC"
+                    }),
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "list", new()
+                    {
+                        ExactWording = ["list"],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_LIST_DESC"
+                    }),
+                    new CommandArgumentPart(true, "type", new()
+                    {
+                        AutoCompleter = (_) => Enum.GetNames<DriverTypes>(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_TYPE_DESC"
+                    }),
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "types", new()
+                    {
+                        ExactWording = ["types"],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_TYPES_DESC"
+                    }),
+                ]),
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
 
             if (!KernelEntry.SafeMode)
             {
                 PermissionsTools.Demand(PermissionTypes.ManageDrivers);
-                string CommandDriver = parameters.ArgumentsList[0].ToLower();
+                string commandDriver = parameters.ArgumentsList[0].ToLower();
                 DriverTypes typeTerm = DriverTypes.RNG;
                 string driverValue = "";
 
                 // These command drivers require arguments to be passed, so re-check here and there. Optional arguments also lie there.
-                switch (CommandDriver)
+                switch (commandDriver)
                 {
                     case "change":
                         {
@@ -84,26 +133,23 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
 
                 // Now, the actual logic
-                switch (CommandDriver)
+                switch (commandDriver)
                 {
                     case "change":
                         {
                             if (DriverHandler.IsRegistered(typeTerm, driverValue))
                                 DriverHandler.SetDriverSafe(typeTerm, driverValue);
                             else
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_DRIVERNOTFOUND"), true, KernelColorType.Error);
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_DRIVERNOTFOUND"), true, ThemeColorType.Error);
                             break;
                         }
                     case "list":
                         {
-                            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_DRIVERSFOR") + $" {typeTerm}", KernelColorTools.GetColor(KernelColorType.Separator));
+                            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_DRIVERSFOR") + $" {typeTerm}", ThemeColorsTools.GetColor(ThemeColorType.Separator));
                             foreach (var driver in DriverHandler.GetDrivers(typeTerm))
                             {
                                 if (!driver.DriverInternal)
-                                {
-                                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_NAME") + ": ", false, KernelColorType.ListEntry);
-                                    TextWriters.Write(driver.DriverName, true, KernelColorType.ListValue);
-                                }
+                                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_NAME"), driver.DriverName);
                             }
                             break;
                         }
@@ -112,17 +158,15 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             var types = DriverHandler.knownTypes;
                             foreach (var type in types)
                             {
-                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_TYPENAME") + ": ", false, KernelColorType.ListEntry);
-                                TextWriters.Write($"{type.Key.Name} [{type.Key.FullName}]", true, KernelColorType.ListValue);
-                                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_TYPE") + ": ", false, KernelColorType.ListEntry);
-                                TextWriters.Write(type.Value.ToString(), true, KernelColorType.ListValue);
+                                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_TYPENAME"), $"{type.Key.Name} [{type.Key.FullName}]");
+                                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_TYPE"), type.Value.ToString());
                             }
                             break;
                         }
 
                     default:
                         {
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_INVALIDCOMMAND_BRANCHED"), true, KernelColorType.Error, CommandDriver);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_INVALIDCOMMAND_BRANCHED"), true, ThemeColorType.Error, commandDriver);
                             HelpPrint.ShowHelp("driverman");
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.DriverManagement);
                         }
@@ -130,7 +174,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_SAFEMODE"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DRIVERMAN_SAFEMODE"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.DriverManagement);
             }
             return 0;

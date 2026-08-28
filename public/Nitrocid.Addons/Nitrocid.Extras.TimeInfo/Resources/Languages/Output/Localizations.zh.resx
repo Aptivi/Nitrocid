@@ -160,4 +160,22 @@
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
     <value>Unix 時間：</value>
   </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_PREPRODUCTION" xml:space="preserve">
+    <value>預生產</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_EXPIRED" xml:space="preserve">
+    <value>已過期</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_POOR" xml:space="preserve">
+    <value>差</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_AVERAGE" xml:space="preserve">
+    <value>一般</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_GOOD" xml:space="preserve">
+    <value>好</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_EXCELLENT" xml:space="preserve">
+    <value>優秀</value>
+  </data>
 </root>

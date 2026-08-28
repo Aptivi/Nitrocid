@@ -17,12 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using System.Linq;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using System.Linq;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -35,23 +36,38 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class GetExtHandlersCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "getexthandlers";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETEXTHANDLERS_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "extension", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GETDEFAULTEXTHANDLER_ARGUMENT_EXTENSION_DESC"
+                    }),
+                ], true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!ExtensionHandlerTools.IsHandlerRegistered(parameters.ArgumentsList[0]))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_NOEXT"), KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_NOEXT"), ThemeColorType.Error);
                 return 22;
             }
             var handlers = ExtensionHandlerTools.GetExtensionHandlers(parameters.ArgumentsList[0]);
             for (int i = 0; i < handlers.Length; i++)
             {
                 ExtensionHandler handler = handlers[i];
-                SeparatorWriterColor.WriteSeparatorColor($"{i + 1}/{handlers.Length}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSION") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write(handler.Extension, KernelColorType.ListValue);
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSIONHANDLER") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write(handler.Implementer, KernelColorType.ListValue);
+                SeparatorWriterColor.WriteSeparatorColor($"{i + 1}/{handlers.Length}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSION"), handler.Extension);
+                ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSIONHANDLER"), handler.Implementer);
             }
             variableValue = $"[{string.Join(", ", handlers.Select((h) => h.Implementer))}]";
             return 0;

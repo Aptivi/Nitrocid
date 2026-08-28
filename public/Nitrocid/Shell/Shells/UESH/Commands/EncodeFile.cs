@@ -17,15 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encoding;
 using Nitrocid.Drivers.EncodingAsymmetric;
 using Nitrocid.Files;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -37,10 +39,40 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class EncodeFileCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "encodefile";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEFILE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "file", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEFILE_ARGUMENT_FILE_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("key", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_KEY_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true,
+                    }),
+                    new SwitchInfo("iv", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_IV_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true,
+                    }),
+                    new SwitchInfo("algorithm", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_IV_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true,
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            bool useCustomAlgorithm = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-algorithm");
+            bool useCustomAlgorithm = parameters.ContainsSwitch("-algorithm");
             string algorithm = useCustomAlgorithm ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-algorithm") : DriverHandler.CurrentEncodingDriverLocal.DriverName;
             string path = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             string keyValue = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-key");
@@ -76,10 +108,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 // Now, print out the key and the IV used
                 string keyDecomposed = driver.DecomposeBytesFromString(key);
                 string ivDecomposed = driver.DecomposeBytesFromString(iv);
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_KEYUSED") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write(keyDecomposed, true, KernelColorType.ListValue);
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_IVUSED") + ": ", false, KernelColorType.ListEntry);
-                TextWriters.Write(ivDecomposed, true, KernelColorType.ListValue);
+                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_KEYUSED") + ": ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(keyDecomposed, true, ThemeColorType.ListValue);
+                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_IVUSED") + ": ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(ivDecomposed, true, ThemeColorType.ListValue);
             }
             return 0;
         }

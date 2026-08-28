@@ -19,16 +19,38 @@
 
 using ChemiStar;
 using ChemiStar.Data;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Chemistry.Commands
 {
     class ElementCommand : BaseCommand, ICommand
     {
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string Command =>
+            "element";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_CHEMISTRY_COMMAND_ELEMENT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "name/symbol/atomicNumber", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_CHEMISTRY_COMMAND_ELEMENT_ARGUMENT_SPECIFIER_DESC"
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Get substance from either the name, the symbol, or from the atomic number
             string representation = parameters.ArgumentsList[0];
@@ -38,7 +60,7 @@ namespace Nitrocid.Extras.Chemistry.Commands
                 // This is an atomic number.
                 if (!PeriodicTableParser.IsSubstanceRegistered(atomicNumber, out substance))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_ATOMICNUM") + $" {atomicNumber}", KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_ATOMICNUM") + $" {atomicNumber}", ThemeColorType.Error);
                     return 44;
                 }
             }
@@ -48,23 +70,23 @@ namespace Nitrocid.Extras.Chemistry.Commands
                 if (!PeriodicTableParser.IsSubstanceRegistered(representation, out substance) &&
                     !PeriodicTableParser.IsSubstanceRegisteredName(representation, out substance))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_SYMORNAME") + $" {representation}", KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_NOSUBSTANCE_SYMORNAME") + $" {representation}", ThemeColorType.Error);
                     return 44;
                 }
             }
 
             // Print information
-            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_NAME"), substance.Name);
-            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_ATOMICNUMBER"), $"{substance.AtomicNumber}");
-            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_ATOMICMASS"), $"{substance.AtomicMass}");
-            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_SYMBOL"), substance.Symbol);
-            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_SUMMARY"), substance.Summary);
-            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_PHASE"), $"{substance.Phase}");
-            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_POSITIONPT"), $"{substance.Period}, {substance.Group}");
-            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_POSITIONCOORD"), $"{substance.PosX} (w: {substance.WPosX}), {substance.PosY} (w: {substance.WPosY})");
-            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_DISCOVERER"), substance.Discoverer);
-            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_NAMEDBY"), substance.NamedBy);
-            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_ELECTRON"), substance.ElectronConfiguration);
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_NAME"), substance.Name);
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_ATOMICNUMBER"), $"{substance.AtomicNumber}");
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_ATOMICMASS"), $"{substance.AtomicMass}");
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_SYMBOL"), substance.Symbol);
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_SUMMARY"), substance.Summary);
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_PHASE"), $"{substance.Phase}");
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_POSITIONPT"), $"{substance.Period}, {substance.Group}");
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_POSITIONCOORD"), $"{substance.PosX} (w: {substance.WPosX}), {substance.PosY} (w: {substance.WPosY})");
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_DISCOVERER"), substance.Discoverer);
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_NAMEDBY"), substance.NamedBy);
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_CHEMISTRY_ELEMENT_ELECTRON"), substance.ElectronConfiguration);
             return 0;
         }
     }

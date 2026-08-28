@@ -17,16 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Kernel;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel;
+using Nitrocid.Languages;
+using Nitrocid.Users;
 using Nitrocid.Kernel.Debugging.RemoteDebug;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
 using Nitrocid.Security.Permissions;
-using Nitrocid.Users;
-using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -42,32 +43,33 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class RdebugCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "rdebug";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RDEBUG_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
 
             if (KernelEntry.DebugMode)
             {
                 if (RemoteDebugger.RDebugThread.IsAlive)
-                {
                     RemoteDebugger.StopRDebugThread();
-                }
                 else
-                {
                     RemoteDebugger.StartRDebugThread();
-                }
                 return 0;
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_RDEBUG_NOTENABLED"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_RDEBUG_NOTENABLED"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
         }

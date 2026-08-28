@@ -70,9 +70,6 @@
   <data name="NKS_TODO_ADDREMOVEFAILED" xml:space="preserve">
     <value>koee kaary jodane ya hataane mein viphal.</value>
   </data>
-  <data name="NKS_TODO_NAMENEEDED" xml:space="preserve">
-    <value>krpaya apane kaary ke lie koee naam pradaan karen.</value>
-  </data>
   <data name="NKS_TODO_MARKFAILED" xml:space="preserve">
     <value>koee kaary chihnit karane mein viphal.</value>
   </data>

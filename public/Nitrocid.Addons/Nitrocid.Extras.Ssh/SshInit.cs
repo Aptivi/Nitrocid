@@ -17,12 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Arguments;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Shell.Commands;
-using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Extras.Ssh.Settings;
 using Nitrocid.Extras.Ssh.Commands;
@@ -32,41 +29,10 @@ namespace Nitrocid.Extras.Ssh
 {
     internal class SshInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("sshell", LanguageTools.GetLocalized("NKS_SSH_COMMAND_SSHELL_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "address:port", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC")
-                        }),
-                        new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC")
-                        }),
-                    ])
-                ], new SshellCommand()),
-
-            new CommandInfo("sshcmd", LanguageTools.GetLocalized("NKS_SSH_COMMAND_SSHCMD_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "address:port", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC")
-                        }),
-                        new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC")
-                        }),
-                        new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC")
-                        }),
-                    ])
-                ], new SshcmdCommand()),
+            new SshellCommand(),
+            new SshcmdCommand(),
         ];
 
         public string AddonName =>

@@ -19,10 +19,13 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.Tools;
 
 namespace Nitrocid.Extras.JsonShell.Commands
@@ -32,13 +35,36 @@ namespace Nitrocid.Extras.JsonShell.Commands
     /// </summary>
     class JsonDiffCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "jsondiff";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "file1", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE1_DESC"
+                    }),
+                    new CommandArgumentPart(true, "file2", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE2_DESC"
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var source = JToken.Parse(FilesystemTools.ReadContentsText(parameters.ArgumentsList[0]));
             var target = JToken.Parse(FilesystemTools.ReadContentsText(parameters.ArgumentsList[1]));
             var diff = JsonTools.FindDifferences(source, target);
-            TextWriters.Write(diff.ToString(Formatting.Indented), KernelColorType.NeutralText);
+            TextWriterColor.Write(diff.ToString(Formatting.Indented), ThemeColorType.NeutralText);
             return 0;
         }
     }

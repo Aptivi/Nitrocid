@@ -25,8 +25,6 @@ using System.Reflection;
 using System.Diagnostics;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
 using Nitrocid.Misc.Reflection;

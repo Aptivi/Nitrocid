@@ -30,7 +30,6 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
 using Renci.SshNet;
 using Renci.SshNet.Sftp;
-using Colorimetry;
 using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.SftpShell.Tools.Filesystem

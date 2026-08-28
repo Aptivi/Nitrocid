@@ -17,13 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Newtonsoft.Json.Linq;
 using System.Linq;
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
+using Newtonsoft.Json.Linq;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.JsonShell.Json.Commands
 {
@@ -32,42 +34,65 @@ namespace Nitrocid.Extras.JsonShell.Json.Commands
     /// </summary>
     class JsonInfoCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "jsoninfo";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("simplified", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("showvals", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Base info
-            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_TITLE"), KernelColorTools.GetColor(KernelColorType.Separator));
-            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_TYPE"), $"{JsonShellCommon.FileToken.Type}");
-            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_VALUES"), $"{JsonShellCommon.FileToken.HasValues}");
-            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS"), $"{JsonShellCommon.FileToken.Count()}");
-            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_BASEPATH"), JsonShellCommon.FileToken.Path);
+            SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.Separator));
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_TYPE"), $"{JsonShellCommon.FileToken.Type}");
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_VALUES"), $"{JsonShellCommon.FileToken.HasValues}");
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS"), $"{JsonShellCommon.FileToken.Count()}");
+            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_BASEPATH"), JsonShellCommon.FileToken.Path);
             TextWriterRaw.Write();
 
             // Individual properties
-            if (!parameters.SwitchesList.Contains("-simplified"))
+            if (!parameters.ContainsSwitch("-simplified"))
             {
                 foreach (var token in JsonShellCommon.FileToken)
                 {
-                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TITLE") + " [{0}]", KernelColorTools.GetColor(KernelColorType.Separator), true, token.Path);
-                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TYPE"), $"{token.Type}");
-                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUES"), $"{token.HasValues}");
-                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS"), $"{token.Count()}");
-                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_PATH"), token.Path);
-                    if (parameters.SwitchesList.Contains("-showvals"))
-                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUE"), $"{token}");
+                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TITLE") + " [{0}]", ThemeColorsTools.GetColor(ThemeColorType.Separator), true, token.Path);
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TYPE"), $"{token.Type}");
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUES"), $"{token.HasValues}");
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS"), $"{token.Count()}");
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_PATH"), token.Path);
+                    if (parameters.ContainsSwitch("-showvals"))
+                        ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUE"), $"{token}");
                     TextWriterRaw.Write();
 
                     // Check to see if the token is a property
                     if (token.Type == JTokenType.Property)
                     {
                         var prop = (JProperty)token;
-                        SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TITLE") + " [{0}]", KernelColorTools.GetColor(KernelColorType.Separator), true, token.Path);
-                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TYPE"), $"{prop.Value.Type}");
-                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_COUNT"), $"{prop.Count}");
-                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_NAME"), prop.Name);
-                        TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_PATH"), prop.Path);
-                        if (parameters.SwitchesList.Contains("-showvals"))
-                            TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_VALUE"), $"{prop.Value}");
+                        SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TITLE") + " [{0}]", ThemeColorsTools.GetColor(ThemeColorType.Separator), true, token.Path);
+                        ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TYPE"), $"{prop.Value.Type}");
+                        ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_COUNT"), $"{prop.Count}");
+                        ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_NAME"), prop.Name);
+                        ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_PATH"), prop.Path);
+                        if (parameters.ContainsSwitch("-showvals"))
+                            ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_VALUE"), $"{prop.Value}");
                         TextWriterRaw.Write();
                     }
                 }

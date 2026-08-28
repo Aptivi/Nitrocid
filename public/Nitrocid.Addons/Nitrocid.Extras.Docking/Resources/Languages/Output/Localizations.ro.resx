@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>Vă arată o prezentare generală pe ecran complet despre o vizualizare de andocare selectată pentru a o putea folosi ca panou de informații</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>Nu există niciun ecran de andocare cu acest nume.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>Nu există dock pentru ecran cu acest nume.</value>
   </data>

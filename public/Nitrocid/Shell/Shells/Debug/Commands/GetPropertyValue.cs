@@ -18,11 +18,12 @@
 //
 
 using System;
-using Terminaux.Shell.Commands;
-using Nitrocid.Misc.Reflection;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Misc.Reflection;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
@@ -35,8 +36,25 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
     /// </remarks>
     class GetPropertyValueCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "getpropertyvalue";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_GETPROPERTYVALUE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "property", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => [.. PropertyManager.GetAllPropertiesNoEvaluation().Keys],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_GETPROPERTYVALUE_ARGUMENT_NAME_DESC"
+                    })
+                ], true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // List all available properties on all the kernel types
             string propertyName = parameters.ArgumentsList[0];
@@ -49,13 +67,13 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                         continue;
 
                     // Write the property name and its value
-                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETPROPERTYVALUE_TITLE") + $" {type.Name}::{propertyName}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETFIELDVALUE_VALUE") + $": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write($"{property.GetValue(null)}", KernelColorType.ListValue);
+                    SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETPROPERTYVALUE_TITLE") + $" {type.Name}::{propertyName}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETFIELDVALUE_VALUE") + $": ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{property.GetValue(null)}", ThemeColorType.ListValue);
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETPROPERTYVALUE_FAILED") + $" {type.Name}::{propertyName}: {ex.Message}", KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETPROPERTYVALUE_FAILED") + $" {type.Name}::{propertyName}: {ex.Message}", ThemeColorType.Error);
                 }
             }
             return 0;

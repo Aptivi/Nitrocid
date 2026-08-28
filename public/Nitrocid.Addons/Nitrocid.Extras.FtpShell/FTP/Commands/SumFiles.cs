@@ -19,12 +19,14 @@
 
 using System;
 using FluentFTP;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.FtpShell.Tools.Filesystem;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Commands
 {
@@ -36,8 +38,28 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
     /// </remarks>
     class SumFilesCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "sumfiles";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_SUMFILES_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC"
+                    }),
+                    new CommandArgumentPart(true, "algorithm", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_ALGORITHM_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string RemoteDirectory = parameters.ArgumentsList[0];
             string Hash = parameters.ArgumentsList[1];
@@ -48,14 +70,14 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
                 var HashResults = FTPHashing.FTPGetHashes(RemoteDirectory, (FtpHashAlgorithm)Convert.ToInt32(Enum.Parse(typeof(FtpHashAlgorithm), Hash)));
                 foreach (string Filename in HashResults.Keys)
                 {
-                    TextWriters.Write("- " + Filename + ": ", false, KernelColorType.ListEntry);
-                    TextWriters.Write(HashResults[Filename].Value, true, KernelColorType.ListValue);
+                    TextWriterColor.Write("- " + Filename + ": ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write(HashResults[Filename].Value, true, ThemeColorType.ListValue);
                 }
                 return 0;
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_INVALIDENCRYPTION"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_INVALIDENCRYPTION"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPFilesystem);
             }
         }

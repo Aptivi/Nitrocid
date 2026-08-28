@@ -17,17 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.Contacts.Contacts;
 using Nitrocid.Extras.Contacts.Contacts.Commands;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Kernel.Debugging;
 using Terminaux.Shell.Commands;
-using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
 using System.Linq;
-using Terminaux.Shell.Switches;
 using Nitrocid.Shell.Homepage;
 using Nitrocid.Extras.Contacts.Settings;
 using Nitrocid.Kernel.Configuration;
@@ -43,39 +39,13 @@ namespace Nitrocid.Extras.Contacts
             new(".vcf", "Contacts", ContactsHandler.Handle, ContactsHandler.InfoHandle),
             new(".vcard", "Contacts", ContactsHandler.Handle, ContactsHandler.InfoHandle),
         ];
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("contacts", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_CONTACTS_DESC"), new ContactsCommand()),
-            new CommandInfo("listcontacts", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC"), new ListContactsCommand()),
-            new CommandInfo("loadcontacts", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC"), new LoadContactsCommand()),
-            new CommandInfo("importcontacts", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC"),
-                [
-                    new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "mecard/path", new CommandArgumentPartOptions()
-                            {
-                                ArgumentDescription = LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC")
-                            })
-                        ],
-                        [
-                            new SwitchInfo("mecard", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC"), new(){
-                                AcceptsValues = false,
-                            }),
-                        ]
-                    )
-                ], new ImportContactsCommand()),
-            new CommandInfo("contactinfo", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_CONTACTINFO_DESC"),
-                [
-                    new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "contactNum", new()
-                            {
-                                IsNumeric = true,
-                                ArgumentDescription = LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC")
-                            })
-                        ]
-                    )
-                ], new ContactInfoCommand()),
+            new ContactsCommand(),
+            new ListContactsCommand(),
+            new LoadContactsCommand(),
+            new ImportContactsCommand(),
+            new ContactInfoCommand(),
         ];
 
         public string AddonName =>
@@ -90,7 +60,7 @@ namespace Nitrocid.Extras.Contacts
         public void FinalizeAddon()
         {
             // Add homepage entries
-            HomepageTools.RegisterBuiltinAction(LanguageTools.GetLocalized("NKS_CONTACTS_HOMEPAGE_CONTACTS"), ContactsManager.OpenContactsTui);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_CONTACTS_HOMEPAGE_CONTACTS", ContactsManager.OpenContactsTui);
         }
 
         public void StartAddon()
@@ -116,7 +86,7 @@ namespace Nitrocid.Extras.Contacts
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             foreach (var handler in handlers)
                 ExtensionHandlerTools.extensionHandlers.Remove(handler);
-            HomepageTools.UnregisterBuiltinAction("Contacts");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_CONTACTS_HOMEPAGE_CONTACTS");
             ConfigTools.UnregisterBaseSetting(nameof(ContactsConfig));
             LoggingTools.EnableLogging = false;
         }

@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>Toont u een schermvullend overzicht van een geselecteerde dockweergave, zodat u deze als infopaneel kunt gebruiken</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>Er is geen dockscherm met deze naam.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>Er is geen schermdock met deze naam.</value>
   </data>

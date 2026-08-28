@@ -17,23 +17,57 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Languages;
 using Nitrocid.Extras.Amusements.Amusements.Games;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Extras.Amusements.Commands
 {
     class HangmanCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "hangman";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_HANGMAN_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo([
+                    new SwitchInfo("hardcore", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_HARDCORE_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["practice"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("practice", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_PRACTICE_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["hardcore"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("common", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["uncommon"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("uncommon", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["common"],
+                        AcceptsValues = false
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var difficulty =
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-hardcore") ? HangmanDifficulty.Hardcore :
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-practice") ? HangmanDifficulty.Practice :
+                parameters.ContainsSwitch("-hardcore") ? HangmanDifficulty.Hardcore :
+                parameters.ContainsSwitch("-practice") ? HangmanDifficulty.Practice :
                 HangmanDifficulty.None;
             var wordDifficulty =
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-uncommon") ? HangmanWordDifficulty.Uncommon :
+                parameters.ContainsSwitch("-uncommon") ? HangmanWordDifficulty.Uncommon :
                 HangmanWordDifficulty.Common;
             Hangman.InitializeHangman(difficulty, wordDifficulty);
             return 0;

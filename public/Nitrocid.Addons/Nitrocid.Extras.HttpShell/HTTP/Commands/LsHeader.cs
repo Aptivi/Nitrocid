@@ -17,10 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.HttpShell.Tools;
+using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.HttpShell.HTTP.Commands
 {
@@ -29,14 +31,22 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Commands
     /// </summary>
     class LsHeaderCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsheader";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_LSHEADER_DESC");
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var headers = HttpTools.HttpListHeaders();
             foreach (var header in headers)
             {
-                TextWriters.Write("  - {0}: ", false, KernelColorType.ListEntry, header.Item1);
-                TextWriters.Write("{0}", true, KernelColorType.ListValue, header.Item2);
+                TextWriterColor.Write("  - {0}: ", false, ThemeColorType.ListEntry, header.Item1);
+                TextWriterColor.Write("{0}", true, ThemeColorType.ListValue, header.Item2);
             }
             return 0;
         }

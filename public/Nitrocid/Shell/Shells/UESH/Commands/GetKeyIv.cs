@@ -17,14 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encoding;
 using Nitrocid.Drivers.EncodingAsymmetric;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -36,15 +38,32 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class GetKeyIvCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "getkeyiv";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETKEYIV_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "algorithm", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => EncodingDriverTools.GetEncodingDriverNames(),
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GETKEYIV_ARGUMENT_ALGORITHM_DESC"
+                    }),
+                ], true)
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Check the algorithm
             string algorithm = parameters.ArgumentsList.Length > 0 ? parameters.ArgumentsList[0] : DriverHandler.CurrentEncodingDriverLocal.DriverName;
             bool isAsymmetric = DriverHandler.IsRegistered<IEncodingAsymmetricDriver>(algorithm);
             if (isAsymmetric)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETKEYIV_NEEDSSYMMETRIC"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETKEYIV_NEEDSSYMMETRIC"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Encoding);
             }
 
@@ -57,10 +76,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             byte[] iv = driver.Iv;
             string keyDecomposed = driver.DecomposeBytesFromString(key);
             string ivDecomposed = driver.DecomposeBytesFromString(iv);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_KEYUSED") + ": ", false, KernelColorType.ListEntry);
-            TextWriters.Write(keyDecomposed, true, KernelColorType.ListValue);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_IVUSED") + ": ", false, KernelColorType.ListEntry);
-            TextWriters.Write(ivDecomposed, true, KernelColorType.ListValue);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_KEYUSED") + ": ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(keyDecomposed, true, ThemeColorType.ListValue);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_IVUSED") + ": ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(ivDecomposed, true, ThemeColorType.ListValue);
             variableValue = $"[{keyDecomposed}, {ivDecomposed}]";
             return 0;
         }

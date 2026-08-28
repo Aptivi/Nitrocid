@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>Léiríonn sé forbhreathnú lánscáileáin duit ar radharc duga roghnaithe chun go mbeidh tú in ann é a úsáid mar phainéal faisnéise</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>Níl aon scáileán duga leis an ainm seo.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>Níl aon duga scáileáin leis an ainm seo.</value>
   </data>

@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>يعرض لك نظرة عامة بملء الشاشة حول عرض الإرساء المحدد لتتمكن من استخدامه كلوحة معلومات</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>لا توجد شاشة إرساء بهذا الاسم.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>لا يوجد إرساء شاشة بهذا الاسم.</value>
   </data>

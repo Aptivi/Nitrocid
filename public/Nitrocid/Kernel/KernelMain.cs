@@ -23,7 +23,6 @@ using System.Diagnostics;
 using System.Reflection;
 using Textify.Versioning;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase;
 using Nitrocid.Arguments;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;

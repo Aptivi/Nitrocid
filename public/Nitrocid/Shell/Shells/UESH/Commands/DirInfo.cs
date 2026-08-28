@@ -18,14 +18,15 @@
 //
 
 using System.IO;
-using Terminaux.Shell.Commands;
-using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
-using Nitrocid.Misc.Reflection;
-using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Misc.Reflection;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -38,14 +39,33 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class DirInfoCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "dirinfo";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "directory", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC"
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             foreach (string Dir in parameters.ArgumentsList)
             {
                 string DirectoryPath = FilesystemTools.NeutralizePath(Dir);
                 DebugWriter.WriteDebug(DebugLevel.I, "Neutralized directory path: {0} ({1})", vars: [DirectoryPath, FilesystemTools.FolderExists(DirectoryPath)]);
-                SeparatorWriterColor.WriteSeparatorColor(Dir, KernelColorTools.GetColor(KernelColorType.ListTitle));
+                SeparatorWriterColor.WriteSeparatorColor(Dir, ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                 if (FilesystemTools.FolderExists(DirectoryPath))
                 {
                     var DirInfo = new DirectoryInfo(DirectoryPath);
@@ -60,7 +80,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DIRINFO_DIRNOTFOUND"), true, KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_DIRINFO_DIRNOTFOUND"), true, ThemeColorType.Error);
                 }
             }
             return 0;

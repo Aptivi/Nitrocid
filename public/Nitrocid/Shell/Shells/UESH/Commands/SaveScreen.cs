@@ -17,17 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Languages;
-using Nitrocid.Misc.Screensaver;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
-using Terminaux.Inputs.Interactive;
-using Nitrocid.Misc.Interactives;
-using Terminaux.Inputs.Pointer;
 using System;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Interactives;
+using Nitrocid.Misc.Screensaver;
 using Terminaux.Inputs;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Inputs.Interactive;
+using Terminaux.Inputs.Pointer;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -39,10 +40,37 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class SaveScreenCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "savescreen";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "saver", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_ARGUMENT_SAVERNAME_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("select", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_SELECT_DESC", new()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("random", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC", new()
+                    {
+                        AcceptsValues = false
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            bool selectionMode = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-select");
+            bool selectionMode = parameters.ContainsSwitch("-select");
+            bool randomMode = parameters.ContainsSwitch("-random");
             if (selectionMode)
             {
                 var tui = new ScreensaverCli();
@@ -53,6 +81,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (parameters.ArgumentsList.Length != 0)
                     ScreensaverManager.ShowSavers(parameters.ArgumentsList[0]);
+                else if (randomMode)
+                    ScreensaverManager.ShowSavers("random");
                 else
                     ScreensaverManager.ShowSavers();
                 PressAndBailHelper();
@@ -60,11 +90,11 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        public override void HelpHelper()
+        public override void HelpHelper(IShell? shell)
         {
             var screensavers = ScreensaverManager.GetScreensaverNames();
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SAVESCREEN_LISTING"));
-            TextWriters.WriteList(screensavers);
+            ListWriterColor.WriteList(screensavers);
         }
 
         private void PressAndBailHelper()

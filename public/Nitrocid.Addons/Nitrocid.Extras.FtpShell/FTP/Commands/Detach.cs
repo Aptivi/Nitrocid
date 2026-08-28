@@ -33,12 +33,17 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
     /// </remarks>
     class DetachCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "detach";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            var shell = (FTPShell?)ShellManager.GetShellInfo(ShellManager.CurrentShellType).ShellBase ??
+            var ftpShell = (FTPShell?)shell ??
                 throw new KernelException(KernelExceptionType.FTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
-            shell.detaching = true;
+            ftpShell.detaching = true;
             ShellManager.KillShell();
             return 0;
         }

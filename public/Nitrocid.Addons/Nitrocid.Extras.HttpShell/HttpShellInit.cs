@@ -17,23 +17,22 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Extras.HttpShell.HTTP;
 using Nitrocid.Extras.HttpShell.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.Languages;
+using Nitrocid.Extras.HttpShell.HTTP;
 
 namespace Nitrocid.Extras.HttpShell
 {
     internal class HttpShellInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("http", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC"), new HttpCommandExec())
+            new HttpCommandExec(),
         ];
 
         public string AddonName =>

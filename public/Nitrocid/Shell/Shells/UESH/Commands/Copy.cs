@@ -18,8 +18,11 @@
 //
 
 using Nitrocid.Files;
+using Nitrocid.Languages;
 using Nitrocid.Security.Permissions;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -31,11 +34,33 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class CopyCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "copy";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COPY_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "source", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_COPY_ARGUMENT_SOURCE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "target", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_COPY_ARGUMENT_TARGET_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
-            FilesystemTools.CopyFileOrDir(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            string source = parameters.ArgumentsList[0];
+            string target = parameters.ArgumentsList[1];
+            FilesystemTools.CopyFileOrDir(source, target);
             return 0;
         }
     }

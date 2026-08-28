@@ -21,7 +21,10 @@ using System;
 using System.IO;
 using System.IO.Compression;
 using Nitrocid.Files;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -46,19 +49,47 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class UnZipCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "unzip";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "zipfile", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_ZIPFILE_DESC"
+                    }),
+                    new CommandArgumentPart(false, "path", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_PATH_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("createdir", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_SWITCH_CREATEDIR_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            string zipFile = parameters.ArgumentsList[0];
+            string path = parameters.ArgumentsList[1];
             if (parameters.ArgumentsList.Length == 1)
             {
-                string ZipArchiveName = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
+                string ZipArchiveName = FilesystemTools.NeutralizePath(zipFile);
                 ZipFile.ExtractToDirectory(ZipArchiveName, FilesystemTools.CurrentDir);
             }
             else if (parameters.ArgumentsList.Length > 1)
             {
-                bool createDir = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-createdir");
-                string ZipArchiveName = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
-                string Destination = createDir ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]) : "";
+                bool createDir = parameters.ContainsSwitch("-createdir");
+                string ZipArchiveName = FilesystemTools.NeutralizePath(zipFile);
+                string Destination = createDir ? FilesystemTools.NeutralizePath(path) : "";
                 string target = createDir ? Path.GetFileNameWithoutExtension(ZipArchiveName) : FilesystemTools.NeutralizePath(Path.GetFileNameWithoutExtension(ZipArchiveName));
                 if (createDir)
                 {

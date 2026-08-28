@@ -99,6 +99,10 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "Não é possível obter informações sobre ações."
+    },
+    {
+      "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
+      "text": "Chave API AlphaVantage"
     }
   ]
 }

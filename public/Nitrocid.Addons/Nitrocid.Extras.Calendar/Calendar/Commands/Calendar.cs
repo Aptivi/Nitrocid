@@ -19,16 +19,18 @@
 
 using System;
 using System.Linq;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Extras.Calendar.Calendar.Events;
-using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Kernel.Time.Calendars;
 using Nitrocid.Languages;
+using Nitrocid.Extras.Calendar.Calendar.Events;
+using Nitrocid.Extras.Calendar.Calendar.Reminders;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Kernel.Time.Calendars;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Commands
 {
@@ -40,8 +42,171 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
     /// </remarks>
     class CalendarCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "calendar";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "tui", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["tui"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TUI_DESC"
+                    }),
+                    new CommandArgumentPart(false, "year", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_YEAR_DESC"
+                    }),
+                    new CommandArgumentPart(false, "month", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_MONTH_DESC"
+                    })
+                ],
+                [
+                    new SwitchInfo("calendar", /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_CALENDAR_DESC"),
+                    new SwitchInfo("legacy", /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_LEGACY_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["event"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
+                    }),
+                    new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["add"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_ADD_DESC"
+                    }),
+                    new CommandArgumentPart(true, "date", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_TARGETDATE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "title", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC"
+                    })
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["event"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
+                    }),
+                    new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["remove"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_REMOVE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "eventId", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_EVENTID_DESC"
+                    })
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["event"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
+                    }),
+                    new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["list"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_LIST_DESC"
+                    })
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["event"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
+                    }),
+                    new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["saveall"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_SAVEALL_DESC"
+                    })
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["reminder"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
+                    }),
+                    new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["add"]
+                    }),
+                    new CommandArgumentPart(true, "dateandtime", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_TARGET_DESC"
+                    }),
+                    new CommandArgumentPart(true, "title", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC"
+                    })
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["reminder"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
+                    }),
+                    new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["remove"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMOVE_DESC"
+                    }),
+                    new CommandArgumentPart(true, "reminderid", new CommandArgumentPartOptions()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMINDERID_DESC"
+                    })
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["reminder"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
+                    }),
+                    new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["list"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_LIST_DESC"
+                    })
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["reminder"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
+                    }),
+                    new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
+                    {
+                        ExactWording = ["saveall"],
+                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_SAVEALL_DESC"
+                    })
+                ]),
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string Action = parameters.ArgumentsList[0];
 
@@ -54,8 +219,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                     {
                         // User chose to show the calendar TUI
                         var calendar = CalendarTypes.Variant;
-                        bool useLegacy = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-legacy");
-                        if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-calendar"))
+                        bool useLegacy = parameters.ContainsSwitch("-legacy");
+                        if (parameters.ContainsSwitch("-calendar"))
                             calendar = Enum.Parse<CalendarTypes>(SwitchManager.GetSwitchValue(parameters.SwitchesList, "-calendar"));
                         if (ActionArguments.Length != 0)
                         {
@@ -77,7 +242,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_SHOWCALENDARFAILED") + " {0}", true, KernelColorType.Error, ex.Message);
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALENDAR_SHOWCALENDARFAILED") + " {0}", true, ThemeColorType.Error, ex.Message);
                                 return ex.GetHashCode();
                             }
                         }
@@ -117,13 +282,13 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                                             catch (Exception ex)
                                             {
                                                 DebugWriter.WriteDebugStackTrace(ex);
-                                                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_EVENTADDFAILED") + " {0}", true, KernelColorType.Error, ex.Message);
+                                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALENDAR_EVENTADDFAILED") + " {0}", true, ThemeColorType.Error, ex.Message);
                                                 return ex.GetHashCode();
                                             }
                                         }
                                         else
                                         {
-                                            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_EVENTARGSNOTPROVIDED_ADD"), true, KernelColorType.Error);
+                                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALENDAR_EVENTARGSNOTPROVIDED_ADD"), true, ThemeColorType.Error);
                                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                                         }
 
@@ -145,13 +310,13 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                                             catch (Exception ex)
                                             {
                                                 DebugWriter.WriteDebugStackTrace(ex);
-                                                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_EVENTREMOVEFAILED") + " {0}", true, KernelColorType.Error, ex.Message);
+                                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALENDAR_EVENTREMOVEFAILED") + " {0}", true, ThemeColorType.Error, ex.Message);
                                                 return ex.GetHashCode();
                                             }
                                         }
                                         else
                                         {
-                                            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_EVENTARGSNOTPROVIDED_REMOVE"), true, KernelColorType.Error);
+                                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALENDAR_EVENTARGSNOTPROVIDED_REMOVE"), true, ThemeColorType.Error);
                                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                                         }
 
@@ -172,14 +337,14 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                                 default:
                                     {
                                         // Invalid action.
-                                        TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_INVALIDACTION"), true, KernelColorType.Error);
+                                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALENDAR_INVALIDACTION"), true, ThemeColorType.Error);
                                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                                     }
                             }
                         }
                         else
                         {
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_EVENTMANIPULATIONARGSNOTPROVIDED"), true, KernelColorType.Error);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALENDAR_EVENTMANIPULATIONARGSNOTPROVIDED"), true, ThemeColorType.Error);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                         }
                     }
@@ -209,13 +374,13 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                                             catch (Exception ex)
                                             {
                                                 DebugWriter.WriteDebugStackTrace(ex);
-                                                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_REMINDERADDFAILED") + " {0}", true, KernelColorType.Error, ex.Message);
+                                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALENDAR_REMINDERADDFAILED") + " {0}", true, ThemeColorType.Error, ex.Message);
                                                 return ex.GetHashCode();
                                             }
                                         }
                                         else
                                         {
-                                            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_REMINDERADDNEEDSARGS"), true, KernelColorType.Error);
+                                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALENDAR_REMINDERADDNEEDSARGS"), true, ThemeColorType.Error);
                                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                                         }
 
@@ -237,13 +402,13 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                                             catch (Exception ex)
                                             {
                                                 DebugWriter.WriteDebugStackTrace(ex);
-                                                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_REMINDERREMOVEFAILED") + " {0}", true, KernelColorType.Error, ex.Message);
+                                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALENDAR_REMINDERREMOVEFAILED") + " {0}", true, ThemeColorType.Error, ex.Message);
                                                 return ex.GetHashCode();
                                             }
                                         }
                                         else
                                         {
-                                            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_REMINDERREMOVENEEDSARGS"), true, KernelColorType.Error);
+                                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALENDAR_REMINDERREMOVENEEDSARGS"), true, ThemeColorType.Error);
                                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                                         }
 
@@ -264,21 +429,21 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                                 default:
                                     {
                                         // Invalid action.
-                                        TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_INVALIDACTION"), true, KernelColorType.Error);
+                                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALENDAR_INVALIDACTION"), true, ThemeColorType.Error);
                                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                                     }
                             }
                         }
                         else
                         {
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_REMINDERMANIPULATIONARGSNOTPROVIDED"), true, KernelColorType.Error);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALENDAR_REMINDERMANIPULATIONARGSNOTPROVIDED"), true, ThemeColorType.Error);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                         }
                     }
                 default:
                     {
                         // Invalid action.
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_INVALIDACTION"), true, KernelColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALENDAR_INVALIDACTION"), true, ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Calendar);
                     }
             }

@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>Monstrat tibi plenum screen overview visum navale delectum eo uti posse ut tabula info</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>Non est tegumentum navale hoc nomine.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>Nullum navale tegumentum hoc nomine est.</value>
   </data>

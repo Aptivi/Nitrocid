@@ -18,14 +18,11 @@
 //
 
 using System.Collections.Generic;
-using Terminaux.Shell.Arguments;
-using Terminaux.Shell.Switches;
-using Nitrocid.Extras.GitShell.Git.Commands;
-using Nitrocid.Extras.GitShell.Git.Presets;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Prompts;
-using Nitrocid.Languages;
+using Nitrocid.Extras.GitShell.Git.Presets;
+using Nitrocid.Extras.GitShell.Git.Commands;
 
 namespace Nitrocid.Extras.GitShell.Git
 {
@@ -37,196 +34,30 @@ namespace Nitrocid.Extras.GitShell.Git
         /// <summary>
         /// Git commands
         /// </summary>
-        public override List<CommandInfo> Commands =>
+        public override BaseCommand[] Commands =>
         [
-            new CommandInfo("blame", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_BLAME_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_ARGUMENT_PATH_DESC")
-                        }),
-                        new CommandArgumentPart(false, "startLineNum", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_STARTLINENUM_DESC")
-                        }),
-                        new CommandArgumentPart(false, "endLineNum", new CommandArgumentPartOptions()
-                        {
-                            IsNumeric = true,
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_ENDLINENUM_DESC")
-                        }),
-                    ])
-                ], new BlameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-
-            new CommandInfo("checkout", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "branch", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_ARGUMENT_BRANCH_DESC")
-                        })
-                    ])
-                ], new CheckoutCommand()),
-
-            new CommandInfo("commit", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_COMMIT_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "summary", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_COMMIT_ARGUMENT_SUMMARY_DESC")
-                        })
-                    ])
-                ], new CommitCommand()),
-
-            new CommandInfo("describe", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "commitsha", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_ARGUMENT_COMMITSHA_DESC")
-                        })
-                    ])
-                ], new DescribeCommand()),
-
-            new CommandInfo("diff", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_DIFF_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new SwitchInfo("patch", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_PATCH_DESC"), new()
-                        {
-                            ConflictsWith = ["tree", "all"]
-                        }),
-                        new SwitchInfo("tree", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_TREE_DESC"), new()
-                        {
-                            ConflictsWith = ["patch", "all"]
-                        }),
-                        new SwitchInfo("all", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_ALL_DESC"), new()
-                        {
-                            ConflictsWith = ["tree", "patch"]
-                        }),
-                    ])
-                ], new DiffCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-
-            new CommandInfo("fetch", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_FETCH_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "remote", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_FETCH_ARGUMENT_REMOTE_DESC")
-                        })
-                    ])
-                ], new FetchCommand()),
-
-            new CommandInfo("filestatus", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_FILESTATUS_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_ARGUMENT_PATH_DESC")
-                        })
-                    ])
-                ], new FileStatusCommand()),
-
-            new CommandInfo("info", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_INFO_DESC"), new InfoCommand()),
-
-            new CommandInfo("lsbranches", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_LSBRANCHES_DESC"), new LsBranchesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-
-            new CommandInfo("lscommits", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_LSCOMMITS_DESC"), new LsCommitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-
-            new CommandInfo("lsremotes", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_LSREMOTES_DESC"), new LsRemotesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-
-            new CommandInfo("lstags", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_LSTAGS_DESC"), new LsTagsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
-
-            new CommandInfo("maketag", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "tagname", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_TAGNAME_DESC")
-                        }),
-                        new CommandArgumentPart(false, "message", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_MESSAGE_DESC")
-                        }),
-                    ])
-                ], new MakeTagCommand()),
-
-            new CommandInfo("pull", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_PULL_DESC"), new PullCommand()),
-
-            new CommandInfo("push", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_PUSH_DESC"), new PushCommand()),
-
-            new CommandInfo("reset", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_RESET_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new SwitchInfo("soft", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_SOFT_DESC"), new SwitchOptions()
-                        {
-                            ConflictsWith = ["hard", "mixed"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("mixed", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_MIXED_DESC"), new SwitchOptions()
-                        {
-                            ConflictsWith = ["soft", "hard"],
-                            AcceptsValues = false
-                        }),
-                        new SwitchInfo("hard", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_HARD_DESC"), new SwitchOptions()
-                        {
-                            ConflictsWith = ["soft", "mixed"],
-                            AcceptsValues = false
-                        }),
-                    ])
-                ], new ResetCommand()),
-
-            new CommandInfo("setid", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_SETID_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "email", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_EMAIL_DESC")
-                        }),
-                        new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_USERNAME_DESC")
-                        }),
-                    ])
-                ], new SetIdCommand()),
-
-            new CommandInfo("stage", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_STAGE_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "unstagedFile", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_STAGE_ARGUMENT_UNSTAGED_DESC")
-                        })
-                    ])
-                ], new StageCommand()),
-
-            new CommandInfo("stageall", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_STAGEALL_DESC"), new StageAllCommand()),
-
-            new CommandInfo("status", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_STATUS_DESC"), new StatusCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
-
-            new CommandInfo("unstage", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "stagedFile", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_ARGUMENT_STAGED_DESC")
-                        })
-                    ])
-                ], new UnstageCommand()),
-
-            new CommandInfo("unstageall", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_UNSTAGEALL_DESC"), new UnstageAllCommand()),
+            new BlameCommand(),
+            new CheckoutCommand(),
+            new CommitCommand(),
+            new DescribeCommand(),
+            new DiffCommand(),
+            new FetchCommand(),
+            new FileStatusCommand(),
+            new InfoCommand(),
+            new LsBranchesCommand(),
+            new LsCommitsCommand(),
+            new LsRemotesCommand(),
+            new LsTagsCommand(),
+            new MakeTagCommand(),
+            new PullCommand(),
+            new PushCommand(),
+            new ResetCommand(),
+            new SetIdCommand(),
+            new StageCommand(),
+            new StageAllCommand(),
+            new StatusCommand(),
+            new UnstageCommand(),
+            new UnstageAllCommand(),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

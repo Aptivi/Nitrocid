@@ -17,13 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using LibGit2Sharp;
-using GitCommand = LibGit2Sharp.Commands;
 using System;
-using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
+using LibGit2Sharp;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using GitCommand = LibGit2Sharp.Commands;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {
@@ -35,15 +36,20 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// </remarks>
     class UnstageAllCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "unstageall";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_UNSTAGEALL_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             var status = GitShellCommon.Repository.RetrieveStatus();
 
             // Check to see if the repo has been modified
             if (!status.IsDirty)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES"), true, KernelColorType.Success);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES"), true, ThemeColorType.Success);
                 return 0;
             }
 
@@ -54,11 +60,11 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 try
                 {
                     GitCommand.Unstage(GitShellCommon.Repository, item.FilePath);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS"), true, KernelColorType.Success, item.FilePath);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS"), true, ThemeColorType.Success, item.FilePath);
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_FAILURE") + "{1}", true, KernelColorType.Error, item.FilePath, ex.Message);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_UNSTAGE_FAILURE") + "{1}", true, ThemeColorType.Error, item.FilePath, ex.Message);
                 }
             }
             return 0;

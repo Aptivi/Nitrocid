@@ -18,15 +18,12 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Terminaux.Base;
 using Colorimetry.Data;
-using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Textify.General;
 
 namespace Nitrocid.Misc.Screensaver
 {

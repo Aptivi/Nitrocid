@@ -17,14 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using System;
+using System.Net;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Network;
+using Nitrocid.Security.Permissions;
+using Nitrocid.Users;
 using Terminaux.Shell.Commands;
-using System;
-using System.Net;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -38,9 +41,22 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class LsNetCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "lsnet";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LSNET_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
+            if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
+                !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
+                return -4;
+            }
+
             foreach (IPAddress Device in NetworkTools.GetOnlineDevicesInNetwork())
             {
                 string address = string.Join(".", Device.GetAddressBytes());
@@ -58,8 +74,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
 
                 // Print info
-                TextWriters.Write($"- {address}: ", false, KernelColorType.ListEntry);
-                TextWriters.Write(host, true, KernelColorType.ListValue);
+                TextWriterColor.Write($"- {address}: ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(host, true, ThemeColorType.ListValue);
             }
             return 0;
         }

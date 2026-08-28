@@ -19,11 +19,9 @@
 
 using System;
 using System.Threading;
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Splash;
-using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Textify.General;
 

@@ -17,34 +17,25 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Arguments;
+using System.Collections.Generic;
+using System.Linq;
 using Nitrocid.Extras.SftpShell.Commands;
 using Nitrocid.Extras.SftpShell.Settings;
 using Nitrocid.Extras.SftpShell.SFTP;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Shell.Commands;
-using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
-using System.Linq;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.SftpShell
 {
     internal class SftpShellInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("sftp", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(false, "server", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_SFTP_ARGUMENT_SERVER_DESC")
-                        }),
-                    ])
-                ], new SftpCommandExec()),
+            new SftpCommandExec()
         ];
 
         public string AddonName =>

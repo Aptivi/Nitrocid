@@ -28,7 +28,6 @@ using Terminaux.Shell.Shells;
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Kernel.Threading;
-using Terminaux.Shell.Aliases;
 using Nitrocid.Kernel.Debugging.RemoteDebug;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Misc.Reflection;
@@ -46,7 +45,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Kernel.Threading.Watchdog;
-using Terminaux.Base.Checks;
 using Nitrocid.Users.Login.Motd;
 using Nitrocid.Network.Types.RPC;
 using Nitrocid.Network.SpeedDial;
@@ -67,7 +65,6 @@ using Nitrocid.Shell.Shells.Hex;
 using Nitrocid.Shell.Shells.Admin;
 using Nitrocid.Shell.Shells.Debug;
 using Nitrocid.Shell.Shells;
-using Colorimetry;
 
 namespace Nitrocid.Kernel.Starting
 {

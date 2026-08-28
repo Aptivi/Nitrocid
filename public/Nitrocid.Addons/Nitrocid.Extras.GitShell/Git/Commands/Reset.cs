@@ -18,7 +18,10 @@
 //
 
 using LibGit2Sharp;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
@@ -31,17 +34,44 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// </remarks>
     class ResetCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "reset";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_RESET_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new SwitchInfo("soft", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_SOFT_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["hard", "mixed"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("mixed", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_MIXED_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["soft", "hard"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("hard", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_HARD_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["soft", "mixed"],
+                        AcceptsValues = false
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Assume that we want to do a soft reset
             var resetMode = ResetMode.Soft;
             if (parameters.SwitchesList.Length > 0)
             {
                 // Determine the reset mode by switch
-                bool useSoft = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-soft");
-                bool useMixed = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-mixed");
-                bool useHard = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-hard");
+                bool useSoft = parameters.ContainsSwitch("-soft");
+                bool useMixed = parameters.ContainsSwitch("-mixed");
+                bool useHard = parameters.ContainsSwitch("-hard");
                 if (useSoft)
                     resetMode = ResetMode.Soft;
                 else if (useMixed)

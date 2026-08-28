@@ -18,14 +18,16 @@
 //
 
 using Newtonsoft.Json.Linq;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Extras.Stocks.Interactives;
 using Nitrocid.Languages;
 using Nitrocid.Network.Transfer;
-using Terminaux.Shell.Commands;
+using Nitrocid.Extras.Stocks.Interactives;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Reader;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Stocks.Commands
 {
@@ -34,27 +36,44 @@ namespace Nitrocid.Extras.Stocks.Commands
     /// </summary>
     class StockCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "stock";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_STOCKS_COMMAND_STOCK_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "company", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC"
+                    }),
+                    new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Get the symbol and prompt for the API key
-            string symbol = string.IsNullOrEmpty(parameters.ArgumentsText) ? StocksInit.StocksConfig.StocksCompany : parameters.ArgumentsText;
-            string apiKey = StocksInit.StocksConfig.StocksApiKey;
-            while (string.IsNullOrWhiteSpace(apiKey))
+            string symbol = parameters.ArgumentsList.Length >= 1 ? parameters.ArgumentsList[0] : StocksInit.StocksConfig.StocksCompany;
+            string apiKey = parameters.ArgumentsList.Length >= 2 ? parameters.ArgumentsList[1] : StocksInit.StocksConfig.StocksApiKey;
+            bool prompting = string.IsNullOrWhiteSpace(apiKey);
+            while (prompting)
             {
                 apiKey = TermReader.Read(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYPROMPT") + ": ");
                 if (string.IsNullOrWhiteSpace(apiKey))
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYNEEDED"), KernelColorType.Error);
-                if (apiKey == "demo")
-                {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYISDEMO"), KernelColorType.Error);
-                    apiKey = "";
-                }
-                if (apiKey.Length != 16)
-                {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYINVALIDLENGTH"), KernelColorType.Error);
-                    apiKey = "";
-                }
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYNEEDED"), ThemeColorType.Error);
+                else if (apiKey == "demo")
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYISDEMO"), ThemeColorType.Error);
+                else if (apiKey.Length != 16)
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYINVALIDLENGTH"), ThemeColorType.Error);
+                else
+                    prompting = false;
             }
 
             // Now, get the stock info
@@ -63,8 +82,8 @@ namespace Nitrocid.Extras.Stocks.Commands
             var stocksIntervalToken = stocksToken["Time Series (Daily)"];
             if (stocksIntervalToken is null)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIFAILED") + ":", KernelColorType.Error);
-                TextWriters.Write(stocksJson, KernelColorType.NeutralText);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIFAILED") + ":", ThemeColorType.Error);
+                TextWriterColor.Write(stocksJson, ThemeColorType.NeutralText);
                 return 40;
             }
             string? ianaTimeZone = (string?)stocksToken?["Meta Data"]?["5. Time Zone"];

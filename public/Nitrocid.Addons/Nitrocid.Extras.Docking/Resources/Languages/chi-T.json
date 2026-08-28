@@ -19,10 +19,6 @@
       "text": "显示有关所选停靠视图的全屏概述，以便能够将其用作信息面板"
     },
     {
-      "loc": "NKS_DOCKING_NODOCKSCREEN1",
-      "text": "没有同名的停靠屏幕。"
-    },
-    {
       "loc": "NKS_DOCKING_NODOCKSCREEN2",
       "text": "没有同名的屏幕底座。"
     },

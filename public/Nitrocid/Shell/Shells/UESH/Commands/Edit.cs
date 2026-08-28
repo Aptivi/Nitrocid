@@ -17,12 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -36,18 +38,56 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class EditCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "edit";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "file", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_FILE_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("text", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_TEXT_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["sql", "json", "hex"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("hex", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_HEX_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["text", "json", "sql"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("json", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_JSON_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["text", "sql", "hex"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("sql", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_SQL_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["text", "json", "hex"],
+                        AcceptsValues = false
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string path = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
-            bool forceText = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-text");
-            bool forceJson = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-json");
-            bool forceHex = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-hex");
-            bool forceSql = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-sql");
+            bool forceText = parameters.ContainsSwitch("-text");
+            bool forceJson = parameters.ContainsSwitch("-json");
+            bool forceHex = parameters.ContainsSwitch("-hex");
+            bool forceSql = parameters.ContainsSwitch("-sql");
             if (FilesystemTools.FileExists(path))
                 FilesystemTools.OpenEditor(path, forceText, forceJson, forceHex, forceSql);
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_EDIT_NOTFOUND"), true, KernelColorType.Error, path);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_EDIT_NOTFOUND"), true, ThemeColorType.Error, path);
             return 0;
         }
 

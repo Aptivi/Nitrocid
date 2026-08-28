@@ -17,12 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encoding;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -34,10 +37,40 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class DecodeTextCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "decodetext";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODETEXT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "encodedString", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DECODETEXT_ARGUMENT_ENCODEDSTRING_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("key", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_KEY_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true,
+                    }),
+                    new SwitchInfo("iv", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_IV_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true,
+                    }),
+                    new SwitchInfo("algorithm", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_IV_DESC", new SwitchOptions()
+                    {
+                        ArgumentsRequired = true,
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            bool useCustomAlgorithm = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-algorithm");
+            bool useCustomAlgorithm = parameters.ContainsSwitch("-algorithm");
             string algorithm = useCustomAlgorithm ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-algorithm") : DriverHandler.CurrentEncodingDriverLocal.DriverName;
             string encoded = parameters.ArgumentsText;
             string keyValue = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-key");
@@ -54,7 +87,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 byte[] iv = driver.ComposeBytesFromString(ivValue);
                 decoded = driver.GetDecodedString(composed, key, iv);
             }
-            TextWriters.Write(decoded, true, KernelColorType.Success);
+            TextWriterColor.Write(decoded, true, ThemeColorType.Success);
             return 0;
         }
     }

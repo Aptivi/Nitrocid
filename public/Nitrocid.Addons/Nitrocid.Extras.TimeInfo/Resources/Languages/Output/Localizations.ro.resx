@@ -160,4 +160,22 @@
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
     <value>Ora Unix:</value>
   </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_PREPRODUCTION" xml:space="preserve">
+    <value>Preproducție</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_EXPIRED" xml:space="preserve">
+    <value>Expirat</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_POOR" xml:space="preserve">
+    <value>Slab</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_AVERAGE" xml:space="preserve">
+    <value>Mediu</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_GOOD" xml:space="preserve">
+    <value>Bun</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_STATUS_EXCELLENT" xml:space="preserve">
+    <value>Excelent</value>
+  </data>
 </root>

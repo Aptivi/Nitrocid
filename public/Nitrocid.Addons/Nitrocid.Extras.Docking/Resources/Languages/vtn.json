@@ -11,10 +11,6 @@
       "text": "Hiển thị cho bạn tổng quan toàn màn hình về chế độ xem dock đã chọn để có thể sử dụng chế độ này như một bảng thông tin"
     },
     {
-      "loc": "NKS_DOCKING_NODOCKSCREEN1",
-      "text": "Không có màn hình dock nào có tên này."
-    },
-    {
       "loc": "NKS_DOCKING_NODOCKSCREEN2",
       "text": "Không có dock màn hình nào có tên này."
     },

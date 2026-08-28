@@ -20,10 +20,6 @@
       "text": "Zeigt Ihnen eine Vollbildübersicht über eine ausgewählte Dockansicht, um diese als Infopanel nutzen zu können"
     },
     {
-      "loc": "NKS_DOCKING_NODOCKSCREEN1",
-      "text": "Es gibt keinen Dock-Bildschirm mit diesem Namen."
-    },
-    {
       "loc": "NKS_DOCKING_NODOCKSCREEN2",
       "text": "Es gibt kein Bildschirmdock mit diesem Namen."
     },

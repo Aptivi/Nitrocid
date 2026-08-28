@@ -100,9 +100,6 @@
   <data name="NKS_FORECAST_APIKEYPROMPT" xml:space="preserve">
     <value>apanee api kunjee darj karen:</value>
   </data>
-  <data name="NKS_FORECAST_WEATHEROLD_CITYLISTLINK" xml:space="preserve">
-    <value>aap ya to shaharon kee soochee ke lie unake id ke saath neeche die gae link se paraamarsh kar sakate hain, ya, is kamaand mein "-list" paas kar sakate hain.</value>
-  </data>
   <data name="NKS_FORECAST_SETTINGS_DESC" xml:space="preserve">
     <value>yah anubhaag aapako konfigar karane deta hai ki poorvaanumaan kaise kaam karata hai.</value>
   </data>

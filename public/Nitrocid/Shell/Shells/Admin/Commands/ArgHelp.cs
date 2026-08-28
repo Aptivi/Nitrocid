@@ -18,8 +18,11 @@
 //
 
 using Nitrocid.Arguments;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Arguments.Base.Help;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Shell.Shells.Admin.Commands
 {
@@ -31,8 +34,28 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
     /// </remarks>
     class ArgHelpCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "arghelp";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "argument", new CommandArgumentPartOptions()
+                    {
+                        AutoCompleter = (_) => [.. KernelArguments.AvailableCMDLineArgs.Keys],
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_ARGUMENT_ARGUMENT_DESC"
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             // Now, show the help
             if (string.IsNullOrWhiteSpace(parameters.ArgumentsText))
@@ -41,6 +64,5 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                 ArgumentHelpPrint.ShowArgsHelp(parameters.ArgumentsList[0], KernelArguments.AvailableCMDLineArgs);
             return 0;
         }
-
     }
 }

@@ -32,8 +32,10 @@ using Nitrocid.Languages;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Users;
 using Terminaux.Inputs.Interactive;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Help;
+using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -49,8 +51,37 @@ namespace Nitrocid.Extras.Mods.Commands
     /// </remarks>
     class ModManCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "modman";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMAN_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "start/stop/info/reload/install/uninstall", new()
+                    {
+                        ExactWording = ["start", "stop", "info", "reload", "install", "uninstall"],
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC")
+                    }),
+                    new CommandArgumentPart(true, "modfilename", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC")
+                    }),
+                ]),
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "list/reloadall/stopall/startall/tui", new()
+                    {
+                        ExactWording = ["list", "reloadall", "stopall", "startall", "tui"],
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC")
+                    }),
+                ]),
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
 #pragma warning disable NLOC0001
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&

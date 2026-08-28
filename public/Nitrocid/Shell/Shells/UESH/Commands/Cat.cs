@@ -18,13 +18,16 @@
 //
 
 using System;
-using System.Linq;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -52,27 +55,56 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class CatCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "cat";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CAT_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "file", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CAT_ARGUMENT_FILE_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("lines", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CAT_SWITCH_LINES_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["nolines"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("nolines", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CAT_SWITCH_NOLINES_DESC", new SwitchOptions()
+                    {
+                        ConflictsWith = ["lines"],
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("plain", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CAT_SWITCH_PLAIN_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.RedirectionSupported | CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             try
             {
-                bool PrintLines = Config.MainConfig.PrintLineNumbers;
-                bool ForcePlain = false;
-                if (parameters.SwitchesList.Contains("-lines"))
-                    PrintLines = true;
-                if (parameters.SwitchesList.Contains("-nolines"))
-                    // -lines and -nolines cancel together.
-                    PrintLines = false;
-                if (parameters.SwitchesList.Contains("-plain"))
-                    ForcePlain = true;
-                FilesystemTools.PrintContents(parameters.ArgumentsList[0], PrintLines, ForcePlain);
+                bool printLines = (parameters.ContainsSwitch("-lines") || Config.MainConfig.PrintLineNumbers) && !parameters.ContainsSwitch("-nolines");
+                bool forcePlain = parameters.ContainsSwitch("-plain");
+                string filePath = parameters.ArgumentsList[0];
+                FilesystemTools.PrintContents(filePath, printLines, forcePlain);
                 return 0;
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(ex.Message, true, KernelColorType.Error);
+                TextWriterColor.Write(ex.Message, true, ThemeColorType.Error);
                 return ex.GetHashCode();
             }
         }

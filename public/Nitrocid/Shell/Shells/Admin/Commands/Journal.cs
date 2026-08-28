@@ -17,13 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Journaling;
 using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.Admin.Commands
 {
@@ -35,15 +37,36 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
     /// </remarks>
     class JournalCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "journal";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_JOURNAL_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(false, "sessionNum", new()
+                    {
+                        IsNumeric = true,
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_ADMIN_COMMAND_JOURNAL_ARGUMENT_SESSIONNUM_DESC"
+                    }),
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable | CommandFlags.RedirectionSupported;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (parameters.ArgumentsList.Length > 0)
             {
                 // Check to see if invalid number is provided
-                if (!int.TryParse(parameters.ArgumentsList[0], out int sessionNum))
+                string sessionNumStr = parameters.ArgumentsList[0];
+                if (!int.TryParse(sessionNumStr, out int sessionNum))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID"), KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID"), ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Journaling);
                 }
                 var entries = JournalManager.GetJournalEntries(sessionNum);

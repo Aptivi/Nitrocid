@@ -17,14 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Languages;
-using Terminaux.Shell.Commands;
-using Nitrocid.Users;
-using Nitrocid.Security.Permissions;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Languages;
+using Nitrocid.Security.Permissions;
+using Nitrocid.Users;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -40,20 +41,38 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class RmUserCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "rmuser";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "user", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_ARGUMENT_TARGET_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
 
-            UserManagement.RemoveUser(parameters.ArgumentsList[0]);
-            if (!UserManagement.UserExists(parameters.ArgumentsList[0]))
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_RMUSER_REMOVED"), parameters.ArgumentsList[0]);
+            string user = parameters.ArgumentsList[0];
+            PermissionsTools.Demand(PermissionTypes.ManageUsers);
+            UserManagement.RemoveUser(user);
+            if (!UserManagement.UserExists(user))
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_RMUSER_REMOVED"), user);
             return 0;
         }
 

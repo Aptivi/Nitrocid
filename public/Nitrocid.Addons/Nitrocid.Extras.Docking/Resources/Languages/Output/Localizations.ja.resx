@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>選択したドック ビューに関する全画面概要を表示し、情報パネルとして使用できるようにします。</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>この名前のドック画面はありません。</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>この名前のスクリーンドックはありません。</value>
   </data>

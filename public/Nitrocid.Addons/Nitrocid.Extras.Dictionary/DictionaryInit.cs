@@ -17,12 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.Dictionary.Commands;
 using Terminaux.Shell.Commands;
-using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Languages;
 
@@ -30,18 +27,9 @@ namespace Nitrocid.Extras.Dictionary
 {
     internal class DictionaryInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("dict", LanguageTools.GetLocalized("NKS_DICTIONARY_DICTIONARY"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "word", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_DICTIONARY_WORDTODEFINE")
-                        }),
-                    ])
-                ], new DictCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            new DictCommand(),
         ];
 
         public string AddonName =>

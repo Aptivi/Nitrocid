@@ -17,29 +17,26 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Extras.Timers.Commands;
 using Nitrocid.Extras.Timers.Settings;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Shell.Homepage;
 using Nitrocid.Extras.Timers.Timers;
 using Nitrocid.Languages;
+using Nitrocid.Extras.Timers.Commands;
 
 namespace Nitrocid.Extras.Timers
 {
     internal class TimersInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("stopwatch", LanguageTools.GetLocalized("NKS_DATES_COMMAND_STOPWATCH_DESC"), new StopwatchCommand()),
-
-            new CommandInfo("timer", LanguageTools.GetLocalized("NKS_DATES_COMMAND_TIMER_DESC"), new TimerCommand()),
-
-            new CommandInfo("pomodoro", LanguageTools.GetLocalized("NKS_DATES_COMMAND_POMODORO_DESC"), new PomodoroCommand()),
+            new StopwatchCommand(),
+            new TimerCommand(),
+            new PomodoroCommand(),
         ];
 
         public string AddonName =>

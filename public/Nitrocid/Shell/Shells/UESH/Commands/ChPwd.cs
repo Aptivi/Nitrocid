@@ -18,14 +18,18 @@
 //
 
 using System;
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Drivers.Encryption;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Terminaux.Shell.Commands;
-using Nitrocid.Users;
 using Nitrocid.Security.Permissions;
+using Nitrocid.Users;
+using Terminaux.Reader;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -43,42 +47,72 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class ChPwdCommand : BaseCommand, ICommand
     {
+        public override string Command =>
+            "chpwd";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "Username", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC"
+                    }),
+                    new CommandArgumentPart(true, "newPass", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_ARGUMENT_PASSWORD_DESC"
+                    }),
+                    new CommandArgumentPart(true, "confirm", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_ARGUMENT_CONFIRM_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
 
             try
             {
-                if (parameters.ArgumentsList[3].Contains(' '))
+                string username = parameters.ArgumentsList[0];
+                string newPass = parameters.ArgumentsList[1];
+                string newPassTwice = parameters.ArgumentsList[2];
+                if (newPassTwice != newPass)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES"), true, KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_MISMATCH"), true, ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
                 }
-                else if (parameters.ArgumentsList[3] == parameters.ArgumentsList[2])
+                else
                 {
-                    UserManagement.ChangePassword(parameters.ArgumentsList[0], parameters.ArgumentsList[1], parameters.ArgumentsList[2]);
+                    // Check to see if the user has password or not
+                    var targetUser = UserManagement.GetUser(username) ??
+                        throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CANTGETUSER") + $" {username}");
+                    string currentPassword = "";
+                    if (targetUser.Password != Encryption.GetEmptyHash("SHA256"))
+                    {
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_PASSWORDPROMPT"), false, ThemeColorType.Input, username);
+                        currentPassword = TermReader.Read(true);
+                    }
+                    UserManagement.ChangePassword(username, currentPassword, newPass);
                     return 0;
-                }
-                else if (parameters.ArgumentsList[3] != parameters.ArgumentsList[2])
-                {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_MISMATCH"), true, KernelColorType.Error);
-                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
                 }
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_FAILURE"), true, KernelColorType.Error, ex.Message);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_FAILURE"), true, ThemeColorType.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return ex.GetHashCode();
             }
-            return 0;
         }
 
     }

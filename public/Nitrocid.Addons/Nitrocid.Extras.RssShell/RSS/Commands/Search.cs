@@ -17,15 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Linq;
-using Nitrocid.Extras.RssShell.Tools;
 using Nettify.Rss.Instance;
-using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase.Colors;
-using Textify.General;
+using Nitrocid.Extras.RssShell.Tools;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
 using Terminaux.Base.Extensions;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands
 {
@@ -60,13 +63,52 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
     /// </remarks>
     class SearchCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "search";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "phrase", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC"
+                    })
+                ],
+                [
+                    new SwitchInfo("t", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_T_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("d", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_D_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("a", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_A_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    }),
+                    new SwitchInfo("cs", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_CS_DESC", new SwitchOptions()
+                    {
+                        AcceptsValues = false
+                    })
+                ])
+            ];
+
+        public override CommandFlags Flags =>
+            CommandFlags.Wrappable;
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            bool findTitle = parameters.SwitchesList.Contains("-t");
-            bool findDescription = parameters.SwitchesList.Contains("-d");
-            bool findAll = parameters.SwitchesList.Contains("-a");
-            bool caseSensitive = parameters.SwitchesList.Contains("-cs");
+            var rssShell = (RSSShell?)shell ??
+                throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH"));
+            bool findTitle = parameters.ContainsSwitch("-t");
+            bool findDescription = parameters.ContainsSwitch("-d");
+            bool findAll = parameters.ContainsSwitch("-a");
+            bool caseSensitive = parameters.ContainsSwitch("-cs");
 
             if (findAll)
                 findTitle = findDescription = true;
@@ -74,8 +116,8 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
             var foundArticles = RSSShellTools.SearchArticles(parameters.ArgumentsList[0], findTitle, findDescription, caseSensitive);
             foreach (RSSArticle Article in foundArticles)
             {
-                TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, Article.ArticleTitle);
-                TextWriters.Write(Article.ArticleLink, true, KernelColorType.ListValue);
+                TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, Article.ArticleTitle);
+                TextWriterColor.Write(Article.ArticleLink, true, ThemeColorType.ListValue);
                 TextWriterColor.Write("    {0}", Article.ArticleDescription.SplitNewLines()[0].Truncate(200));
             }
             return 0;

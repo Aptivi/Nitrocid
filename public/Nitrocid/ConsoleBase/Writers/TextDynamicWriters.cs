@@ -18,11 +18,9 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Drivers;
 using Nitrocid.Kernel.Debugging;
 using System;
 using System.Threading;
-using Terminaux.Base.Extensions;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ConsoleBase.Writers

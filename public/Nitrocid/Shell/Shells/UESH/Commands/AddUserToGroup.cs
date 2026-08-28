@@ -17,15 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
-using Terminaux.Shell.Commands;
 using Nitrocid.Users.Groups;
-using Nitrocid.Security.Permissions;
-using Nitrocid.Users;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -39,19 +36,33 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class AddUserToGroupCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "addusertogroup";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSERTOGROUP_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSERTOGROUP_ARGUMENT_USERNAME_DESC"
+                    }),
+                    new CommandArgumentPart(true, "group", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSERTOGROUP_ARGUMENT_GROUP_DESC"
+                    }),
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
-                !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
-                return -4;
-            }
-
-            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDUSERTOGROUP_PROGRESS"), parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
-            GroupManagement.AddUserToGroup(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            string userName = parameters.ArgumentsList[0];
+            string groupName = parameters.ArgumentsList[1];
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ADDUSERTOGROUP_PROGRESS"), userName, groupName);
+            GroupManagement.AddUserToGroup(userName, groupName);
             return 0;
         }
 

@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>정보 패널로 사용할 수 있도록 선택한 도크 보기에 대한 전체 화면 개요를 표시합니다.</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>이 이름의 도크 화면이 없습니다.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>이 이름의 스크린 독이 없습니다.</value>
   </data>

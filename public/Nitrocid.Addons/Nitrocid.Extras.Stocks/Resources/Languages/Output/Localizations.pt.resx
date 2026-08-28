@@ -121,4 +121,7 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>Não é possível obter informações sobre ações.</value>
   </data>
+  <data name="NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC" xml:space="preserve">
+    <value>Chave API AlphaVantage</value>
+  </data>
 </root>

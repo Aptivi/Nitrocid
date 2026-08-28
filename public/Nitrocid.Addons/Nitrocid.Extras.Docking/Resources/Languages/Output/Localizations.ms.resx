@@ -61,9 +61,6 @@
   <data name="NKS_DOCKING_COMMAND_DOCK_DESC" xml:space="preserve">
     <value>Menunjukkan kepada anda gambaran keseluruhan skrin penuh tentang paparan dok yang dipilih untuk dapat menggunakannya sebagai panel maklumat</value>
   </data>
-  <data name="NKS_DOCKING_NODOCKSCREEN1" xml:space="preserve">
-    <value>Tiada skrin dok dengan nama ini.</value>
-  </data>
   <data name="NKS_DOCKING_NODOCKSCREEN2" xml:space="preserve">
     <value>Tiada dok skrin dengan nama ini.</value>
   </data>

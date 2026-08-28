@@ -1,4 +1,4 @@
-//
+﻿//
 // Nitrocid  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid
@@ -17,14 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Updates;
 using Nitrocid.Languages;
-using Nitrocid.Security.Permissions;
-using Nitrocid.Users;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -40,17 +36,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class UpdateCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "update";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UPDATE_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
-                !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, KernelColorType.Error, parameters.CommandText);
-                return -4;
-            }
-
             UpdateManager.CheckKernelUpdates();
             return 0;
         }

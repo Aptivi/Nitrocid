@@ -17,14 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Kernel.Time.Alarm;
-using Nitrocid.Languages;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using System.Collections.Generic;
 using System.Linq;
+using Nitrocid.Kernel.Time.Alarm;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Caffeine.Commands
 {
@@ -36,22 +38,44 @@ namespace Nitrocid.Extras.Caffeine.Commands
     /// </remarks>
     class CaffeineCommand : BaseCommand, ICommand
     {
-
-        private static readonly Dictionary<string, int> caffeines = new()
+        private static Dictionary<string, (string, int)> Caffeines => new()
         {
-            { LanguageTools.GetLocalized("NKS_CAFFEINE_AMERICANCOFFEE"),  60 * 5 },
-            { LanguageTools.GetLocalized("NKS_CAFFEINE_REDTEA"),          60 * 10 },
-            { LanguageTools.GetLocalized("NKS_CAFFEINE_GREENTEA"),        60 * 10 },
+            { "American Coffee", (LanguageTools.GetLocalized("NKS_CAFFEINE_AMERICANCOFFEE"), 60 * 5) },
+            { "Red Tea",         (LanguageTools.GetLocalized("NKS_CAFFEINE_REDTEA"), 60 * 10) },
+            { "Green Tea",       (LanguageTools.GetLocalized("NKS_CAFFEINE_GREENTEA"), 60 * 10) },
         };
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string Command =>
+            "caffeine";
+
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_CAFFEINE_COMMAND_CAFFEINE_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "secondsOrName", new CommandArgumentPartOptions()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC"
+                    }),
+                ],
+                [
+                    new SwitchInfo("abort", /* Localizable */ "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC", new SwitchOptions()
+                    {
+                        OptionalizeLastRequiredArguments = 1
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            bool abortCurrentAlarm = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-abort");
+            bool abortCurrentAlarm = parameters.ContainsSwitch("-abort");
             if (abortCurrentAlarm)
             {
                 if (!AlarmTools.IsAlarmRegistered("Caffeine"))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CAFFEINE_NOALERTS"), KernelColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CAFFEINE_NOALERTS"), ThemeColorType.Error);
                     return 32;
                 }
                 var id = AlarmTools.alarms.Keys.Last((alarm) => alarm.Contains("Caffeine"));
@@ -60,18 +84,22 @@ namespace Nitrocid.Extras.Caffeine.Commands
             else
             {
                 string secsOrName = parameters.ArgumentsList[0];
-                bool nameSpecified = caffeines.ContainsKey(secsOrName);
-                if (!int.TryParse(secsOrName, out int alarmSeconds) && !caffeines.TryGetValue(secsOrName, out alarmSeconds))
+                bool nameSpecified = Caffeines.ContainsKey(secsOrName);
+                if (!int.TryParse(secsOrName, out int alarmSeconds))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CAFFEINE_INVALIDSECONDS"), KernelColorType.Error);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CAFFEINE_INVALIDSECONDSTIP"), KernelColorType.Tip);
-                    TextWriters.WriteList(caffeines);
-                    return 26;
+                    if (!Caffeines.TryGetValue(secsOrName, out var alarmSpecifier))
+                    {
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CAFFEINE_INVALIDSECONDS"), ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CAFFEINE_INVALIDSECONDSTIP"), ThemeColorType.Tip);
+                        ListWriterColor.WriteList(Caffeines);
+                        return 26;
+                    }
+                    alarmSeconds = alarmSpecifier.Item2;
+                    secsOrName = alarmSpecifier.Item1;
                 }
-                AlarmTools.StartAlarm("Caffeine", LanguageTools.GetLocalized("NKS_CAFFEINE_ALARMNAME"), alarmSeconds, nameSpecified ? LanguageTools.GetLocalized(secsOrName) : "");
+                AlarmTools.StartAlarm("Caffeine", LanguageTools.GetLocalized("NKS_CAFFEINE_ALARMNAME"), alarmSeconds, nameSpecified ? secsOrName : "");
             }
             return 0;
         }
-
     }
 }

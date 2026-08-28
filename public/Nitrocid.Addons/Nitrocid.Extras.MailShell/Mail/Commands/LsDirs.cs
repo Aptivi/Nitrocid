@@ -17,10 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.MailShell.Tools.Directory;
+using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.MailShell.Mail.Commands
 {
@@ -32,10 +34,15 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
     /// </remarks>
     class LsDirsCommand : BaseCommand, ICommand
     {
+        public override string Command => 
+            "lsdirs";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition => 
+            LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_LSDIRS_DESC");
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
-            TextWriters.Write(MailDirectory.MailRenderListDirectories(), false, KernelColorType.NeutralText);
+            TextWriterColor.Write(MailDirectory.MailRenderListDirectories(), false, ThemeColorType.NeutralText);
             return 0;
         }
     }

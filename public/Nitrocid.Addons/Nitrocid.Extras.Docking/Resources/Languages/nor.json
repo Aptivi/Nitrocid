@@ -15,10 +15,6 @@
       "text": "Viser deg en fullskjermsoversikt over en valgt dock-visning for å kunne bruke den som et infopanel"
     },
     {
-      "loc": "NKS_DOCKING_NODOCKSCREEN1",
-      "text": "Det er ingen dokkingskjerm med dette navnet."
-    },
-    {
       "loc": "NKS_DOCKING_NODOCKSCREEN2",
       "text": "Det er ingen skjermdokking med dette navnet."
     },

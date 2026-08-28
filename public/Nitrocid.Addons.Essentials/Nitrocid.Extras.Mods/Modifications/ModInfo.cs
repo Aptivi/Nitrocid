@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
 using System.Diagnostics;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Extensions;

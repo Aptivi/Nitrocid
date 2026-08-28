@@ -21,10 +21,7 @@ using Nitrocid.Extras.Mods.Commands;
 using Nitrocid.Extras.Mods.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
-using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.Languages;
 
@@ -32,42 +29,10 @@ namespace Nitrocid.Extras.Mods
 {
     internal class ModsInit : IAddon
     {
-        private readonly List<CommandInfo> addonCommands =
+        private readonly BaseCommand[] addonCommands =
         [
-            new CommandInfo("modman", LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMAN_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "start/stop/info/reload/install/uninstall", new()
-                        {
-                            ExactWording = ["start", "stop", "info", "reload", "install", "uninstall"],
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC")
-                        }),
-                        new CommandArgumentPart(true, "modfilename", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC")
-                        }),
-                    ]),
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "list/reloadall/stopall/startall/tui", new()
-                        {
-                            ExactWording = ["list", "reloadall", "stopall", "startall", "tui"],
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC")
-                        }),
-                    ]),
-                ], new ModManCommand()),
-
-            new CommandInfo("modmanual", LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMANUAL_DESC"),
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "modname", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC")
-                        }),
-                    ])
-                ], new ModManualCommand()),
+            new ModManCommand(),
+            new ModManualCommand(),
         ];
 
         public string AddonName =>

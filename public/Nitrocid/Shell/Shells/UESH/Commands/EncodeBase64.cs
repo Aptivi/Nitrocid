@@ -19,7 +19,10 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Languages;
+using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Textify.General;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -32,8 +35,24 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
     /// </remarks>
     class EncodeBase64Command : BaseCommand, ICommand
     {
+        public override string Command =>
+            "encodebase64";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override string HelpDefinition =>
+            LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEBASE64_DESC");
+
+        public override CommandArgumentInfo[] CommandArgumentInfo =>
+            [
+                new CommandArgumentInfo(
+                [
+                    new CommandArgumentPart(true, "encoded", new()
+                    {
+                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_ARGUMENT_STRING_DESC"
+                    })
+                ])
+            ];
+
+        public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string orig = parameters.ArgumentsList[0];
             string encoded = orig.GetBase64Encoded();
