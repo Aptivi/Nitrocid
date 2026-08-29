@@ -138,14 +138,14 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     // Populate enemies depending on console width and height
                     if (enemies.Count == 0)
                     {
-                        int enemyColumns = (ConsoleWrapper.WindowWidth - 6) / 24;
-                        int enemyRows = ConsoleWrapper.WindowHeight * 2 / 3 / 9;
+                        int enemyColumns = (ConsoleWrapper.WindowWidth - 6) / 12;
+                        int enemyRows = ConsoleWrapper.WindowHeight * 2 / 3 / 5;
                         for (int i = 0; i < enemyColumns; i++)
                         {
-                            int columnX = 3 + (24 * i);
+                            int columnX = 3 + (12 * i);
                             for (int j = 0; j < enemyRows; j++)
                             {
-                                int columnY = 2 + (9 * j);
+                                int columnY = 2 + (5 * j);
                                 enemies.Add((columnX, columnY));
                             }
                         }
@@ -233,7 +233,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             var enemy = enemies[enemyIndex];
 
                             // Check if enemies need to reverse the direction and to move down once
-                            if ((enemy.Item1 + 24 > ConsoleWrapper.WindowWidth - 3 || enemy.Item1 < 3) && !movingDown && !movedDown)
+                            if ((enemy.Item1 + 12 > ConsoleWrapper.WindowWidth - 3 || enemy.Item1 < 3) && !movingDown && !movedDown)
                             {
                                 reversing = !reversing;
                                 movingDown = true;
@@ -271,8 +271,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         for (int BulletIndex = Bullets.Count - 1; BulletIndex >= 0; BulletIndex -= 1)
                         {
                             var Bullet = Bullets[BulletIndex];
-                            if (Bullet.Item1 >= enemy.Item1 && Bullet.Item1 <= enemy.Item1 + 22 &&
-                                Bullet.Item2 >= enemy.Item2 && Bullet.Item2 <= enemy.Item2 + 8)
+                            if (Bullet.Item1 >= enemy.Item1 && Bullet.Item1 <= enemy.Item1 + 11 &&
+                                Bullet.Item2 >= enemy.Item2 && Bullet.Item2 <= enemy.Item2 + 4)
                             {
                                 // The enemy got killed. Remove it, and remove the bullet.
                                 enemies.RemoveAt(enemyIndex);
@@ -286,7 +286,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     for (int enemyIndex = enemies.Count - 1; enemyIndex >= 0; enemyIndex -= 1)
                     {
                         var enemy = enemies[enemyIndex];
-                        if (enemy.Item2 + 8 >= ConsoleWrapper.WindowHeight - 3)
+                        if (enemy.Item2 + 4 >= ConsoleWrapper.WindowHeight - 3)
                             GameEnded = true;
                     }
 
@@ -365,6 +365,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 Top = enemyY,
                 Width = 11,
                 Height = 8,
+                DoubleWidth = false,
+                HighDensity = true,
                 Pixels =
                 [
                     // Shape is:
