@@ -33,6 +33,7 @@ using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Base.Extensions;
 using Threadify.Manager;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -132,6 +133,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 bool reversing = false;
                 bool movingDown = false;
                 bool movedDown = false;
+                string renderedEnemy = DrawEnemy();
 
                 while (!GameEnded)
                 {
@@ -261,7 +263,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     for (int enemyIndex = enemies.Count - 1; enemyIndex >= 0; enemyIndex -= 1)
                     {
                         var enemy = enemies[enemyIndex];
-                        buffer.Append(DrawEnemy(enemy.Item1, enemy.Item2));
+                        buffer.Append(TextWriterWhereColor.RenderWherePlain(renderedEnemy, enemy.Item1, enemy.Item2));
                     }
 
                     // Check if the bullet has reached the enemy
@@ -357,12 +359,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             return TextWriterWhereColor.RenderWhereColorBack(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Aqua, ConsoleColors.Black);
         }
 
-        private static string DrawEnemy(int enemyX, int enemyY)
+        private static string DrawEnemy()
         {
-            var enemyShape = new Canvas()
+            var enemyShape = new SimpleCanvas()
             {
-                Left = enemyX,
-                Top = enemyY,
                 Width = 11,
                 Height = 8,
                 DoubleWidth = false,
