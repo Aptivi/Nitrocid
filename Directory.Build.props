@@ -64,8 +64,8 @@
         <DebugType Condition="'$(Configuration)' == 'Debug'">portable</DebugType>
         <Optimize>true</Optimize>
         <Optimize Condition="'$(Configuration)' == 'Debug'">false</Optimize>
-        <NitrocidReleaseSpecifier>BETA</NitrocidReleaseSpecifier>
-        <NitrocidReleaseSpecifier Condition="'$(Configuration)' == 'Debug'">BETA</NitrocidReleaseSpecifier>
+        <NitrocidReleaseSpecifier>RC</NitrocidReleaseSpecifier>
+        <NitrocidReleaseSpecifier Condition="'$(Configuration)' == 'Debug'">RC</NitrocidReleaseSpecifier>
         <DefineConstants>SPECIFIER$(NitrocidReleaseSpecifier);$(NitrocidFlags.Replace(",",";"))</DefineConstants>
         <DefineConstants Condition="'$(NKSLITE)' != 'true'">NKS_EXTENSIONS;$(DefineConstants)</DefineConstants>
         <NoWarn>$(NoWarn);NU1605</NoWarn>
