@@ -63,9 +63,5 @@ namespace Nitrocid.ShellPacks.Shells.HTTP
             { "PowerLineBG2", new HTTPPowerLineBG2Preset() },
             { "PowerLineBG3", new HTTPPowerLineBG3Preset() }
         };
-
-        public override bool AcceptsNetworkConnection => true;
-
-        public override string NetworkConnectionType => nameof(Base.Network.Connections.NetworkConnectionType.HTTP);
     }
 }

@@ -30,6 +30,7 @@ using Terminaux.Reader;
 using Terminaux.Shell.Shells;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 using Threadify.Manager;
 
 namespace Nitrocid.Base.Network.Connections
@@ -395,19 +396,14 @@ namespace Nitrocid.Base.Network.Connections
         /// <summary>
         /// Opens a connection for the selected shell
         /// </summary>
-        /// <param name="shellType">Any shell type that has its <see cref="BaseShellInfo.AcceptsNetworkConnection"/> flag set to true.</param>
+        /// <param name="shellType">Any shell type that has its entry registered as a network type. Consult <see cref="GetConnectionTypes"/>.</param>
         /// <param name="establisher">The function responsible for establishing the network connection</param>
         /// <param name="speedEstablisher">The function responsible for establishing the network connection with speed dial options</param>
         /// <param name="address">Target address to connect to</param>
         public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection?> establisher, Func<string, SpeedDialEntry, NetworkConnection?> speedEstablisher, string address = "")
         {
-            // Get shell info to check to see if the shell accepts network connections
-            var shellInfo = ShellManager.GetShellInfo(shellType);
-            if (!shellInfo.AcceptsNetworkConnection)
-                throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS"), shellType);
-
-            // Determine the network connection type
-            string connectionType = shellInfo.NetworkConnectionType;
+            // Check the connection type, which is the same as the shell type
+            string connectionType = shellType.RemoveSuffix("Shell");
             if (!networkTypes.Contains(connectionType))
                 throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTYPE"));
 

@@ -75,9 +75,5 @@ namespace Nitrocid.ShellPacks.Shells.FTP
             { "PowerLineBG3", new FtpPowerLineBG3Preset() }
         };
 
-        public override bool AcceptsNetworkConnection => true;
-
-        public override string NetworkConnectionType => nameof(Base.Network.Connections.NetworkConnectionType.FTP);
-
     }
 }

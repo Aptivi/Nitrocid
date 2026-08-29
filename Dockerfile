@@ -4,7 +4,7 @@ WORKDIR /NKS
 # Initialize the project files
 COPY . ./
 
-# Comment this when Terminaux 8.7 gets released by Aug 20th 2026
+# Comment this when Terminaux 8.8 gets released by Sep 2026
 RUN --mount=type=secret,id=github_token dotnet nuget add source --username AptiviCEO --password $(cat /run/secrets/github_token) --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aptivi/index.json"
 
 # Attempt to build Nitrocid KS

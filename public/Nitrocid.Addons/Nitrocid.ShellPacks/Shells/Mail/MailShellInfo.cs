@@ -65,9 +65,5 @@ namespace Nitrocid.ShellPacks.Shells.Mail
             { "PowerLineBG2", new MailPowerLineBG2Preset() },
             { "PowerLineBG3", new MailPowerLineBG3Preset() }
         };
-
-        public override bool AcceptsNetworkConnection => true;
-
-        public override string NetworkConnectionType => nameof(Base.Network.Connections.NetworkConnectionType.Mail);
     }
 }
