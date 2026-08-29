@@ -34,8 +34,8 @@
 
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="8.8.0-20260829111212" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
-    <PackageReference Include="Terminaux.Images" Version="8.8.0-20260829111212" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux" Version="8.8.0-20260829125616" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux.Images" Version="8.8.0-20260829125616" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
     <PackageReference Include="Textify.Offline" Version="2.14.2.2" PrivateAssets="contentfiles;analyzers;build;runtime">
       <Aliases>global,TextifyDep</Aliases>
     </PackageReference>
