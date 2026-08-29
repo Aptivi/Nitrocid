@@ -260,7 +260,7 @@ namespace Nitrocid.Base.Shell.Homepage
                                 if (finalChoiceIdx < choices.Length)
                                 {
                                     choiceIdx = finalChoiceIdx;
-                                    if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
+                                    if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left && context.ClickTier == 2)
                                     {
                                         ScreenTools.StopCyclicScreen();
                                         hold = true;
