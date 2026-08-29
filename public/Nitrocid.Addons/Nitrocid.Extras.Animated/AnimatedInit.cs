@@ -67,10 +67,10 @@ namespace Nitrocid.Extras.Animated
         ];
 
         public string AddonName =>
-            InterAddonTranslations.GetAddonName(KnownAddons.AddonScreensaverPacks);
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasAnimated);
 
         public string AddonTranslatedName =>
-            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.AddonScreensaverPacks);
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasAnimated);
 
         internal static AnimatedSaversConfig SaversConfig =>
             ConfigTools.IsCustomSettingBuiltin(nameof(AnimatedSaversConfig)) ? (AnimatedSaversConfig)Config.baseConfigurations[nameof(AnimatedSaversConfig)] : Config.GetFallbackKernelConfig<AnimatedSaversConfig>();
