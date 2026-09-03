@@ -214,6 +214,8 @@ namespace Nitrocid.Base.Shell.Homepage
                         bool isWithinSettings = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX, settingsButtonStartPosY), (settingsButtonEndPosX, settingsButtonEndPosY));
                         bool isWithinAbout = PointerTools.PointerWithinRange(context, (aboutButtonStartPosX, aboutButtonStartPosY), (aboutButtonEndPosX, aboutButtonEndPosY));
                         bool isWithinOptions = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX + 1, widgetTop + 1), (optionsEndX, optionsEndY));
+                        bool isWithinOptionsArrowUp = PointerTools.PointerWithinRange(context, (optionsEndX + 1, widgetTop + 1), (optionsEndX + 1, widgetTop + 1));
+                        bool isWithinOptionsArrowDown = PointerTools.PointerWithinRange(context, (optionsEndX + 1, optionsEndY), (optionsEndX + 1, optionsEndY));
                         bool isWithinNotifications = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX + 1, notificationsEndY), (optionsEndX, notificationsEndY));
 
                         // If the mouse pointer is within the settings, check for left release
@@ -266,6 +268,24 @@ namespace Nitrocid.Base.Shell.Homepage
                                     if (choiceIdx >= choices.Length)
                                         choiceIdx = choices.Length - 1;
                                 }
+                            }
+                        }
+                        else if (isWithinOptionsArrowUp)
+                        {
+                            if (context.ButtonPress == PointerButtonPress.Released)
+                            {
+                                choiceIdx--;
+                                if (choiceIdx < 0)
+                                    choiceIdx = 0;
+                            }
+                        }
+                        else if (isWithinOptionsArrowDown)
+                        {
+                            if (context.ButtonPress == PointerButtonPress.Released)
+                            {
+                                choiceIdx++;
+                                if (choiceIdx >= choices.Length)
+                                    choiceIdx = choices.Length - 1;
                             }
                         }
                         else if (isWithinNotifications)
