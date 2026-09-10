@@ -57,6 +57,7 @@ using Nitrocid.Base.Login;
 using Nitrocid.Base.Users.Interactives;
 using Nitrocid.Base.Users.Groups.Interactives;
 using Nitrocid.Base.Kernel.Starting;
+using System.Threading.Tasks;
 
 namespace Nitrocid.Base.Shell.Homepage
 {
@@ -67,8 +68,11 @@ namespace Nitrocid.Base.Shell.Homepage
     {
         internal static bool isHomepageEnabled = true;
         internal static bool isHomepageRssFeedEnabled = true;
+        internal static bool isHomepageRssFeedUpdating = false;
         internal static string homepageWidgetName = nameof(AnalogClock);
         private static bool isOnHomepage = false;
+        private static string rssSequence = "";
+        private static (string feedTitle, string articleTitle)[]? articles = default;
         private static readonly Dictionary<string, Action> choiceActionsAddons = [];
         private static readonly Dictionary<string, Action> choiceActionsCustom = [];
         private static readonly Dictionary<string, Action> choiceActionsBuiltin = new()
@@ -137,15 +141,10 @@ namespace Nitrocid.Base.Shell.Homepage
                     WidgetTools.GetWidget(Config.MainConfig.HomepageWidget) :
                     WidgetTools.GetWidget(nameof(AnalogClock));
                 var notificationsWidget = new NotificationIcons();
-                bool feedAddonInstalled =
-#if NKS_EXTENSIONS
-                    AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.AddonShellPacks)) is not null;
-#else
-                    false;
-#endif
-                string feedErrorMessage = "";
-                (string feedTitle, string articleTitle)[]? articles = null;
-                homeScreenBuffer.AddDynamicText(() => RenderHomepagePage(homeScreen.RefreshWasDone, pageNumber, canvases, choices, choiceIdx, buttonHighlight, widget, notificationsWidget, feedAddonInstalled, ref articles, ref feedErrorMessage));
+                bool feedAddonInstalled = IsFeedAddonInstalled();
+                rssSequence = LanguageTools.GetLocalized("NKS_MISC_SPLASH_DEFAULTMSG");
+                articles = null;
+                homeScreenBuffer.AddDynamicText(() => RenderHomepagePage(homeScreen.RefreshWasDone, pageNumber, canvases, choices, choiceIdx, buttonHighlight, widget, notificationsWidget, feedAddonInstalled));
                 homeScreen.AddBufferedPart("The Nitrocid Homepage", homeScreenBuffer);
 
                 // Helper function
@@ -323,15 +322,13 @@ namespace Nitrocid.Base.Shell.Homepage
                                 {
                                     ScreenTools.StopCyclicScreen();
                                     hold = true;
-#if NKS_EXTENSIONS
                                     if (!feedAddonInstalled)
                                         InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON"));
+#if NKS_EXTENSIONS
                                     else if (!Config.MainConfig.ShowHeadlineOnLogin)
                                         InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES"));
                                     else
                                         InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.AddonShellPacks, "OpenFeedTui", "Nitrocid.ShellPacks.Shells.RSS.Tools.RSSTools", Config.MainConfig.RssHeadlineUrl);
-#else
-                                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON"));
 #endif
                                     homeScreen.RequireRefresh();
                                 }
@@ -669,7 +666,7 @@ namespace Nitrocid.Base.Shell.Homepage
             return homepagePages;
         }
 
-        private static string RenderHomepagePage(bool refreshWasDone, int pageNumber, List<WidgetRenderInfo[]> canvases, (InputChoiceInfo, Action)[] choices, int choiceIdx, int buttonHighlight, BaseWidget widget, NotificationIcons notificationsWidget, bool feedAddonInstalled, ref (string feedTitle, string articleTitle)[]? articles, ref string feedErrorMessage)
+        private static string RenderHomepagePage(bool refreshWasDone, int pageNumber, List<WidgetRenderInfo[]> canvases, (InputChoiceInfo, Action)[] choices, int choiceIdx, int buttonHighlight, BaseWidget widget, NotificationIcons notificationsWidget, bool feedAddonInstalled)
         {
             int actualScreenNum = pageNumber - 2;
             var builder = new StringBuilder();
@@ -752,52 +749,20 @@ namespace Nitrocid.Base.Shell.Homepage
                 {
                     int rssFeedLeft = widgetLeft + 1;
                     int rssFeedTop = rssTop + 1;
-                    string rssSequence = "";
-                    try
+                    if ((articles is null || articles.Length == 0) && !isHomepageRssFeedUpdating)
                     {
-#if NKS_EXTENSIONS
-                        if (!feedAddonInstalled)
-                            rssSequence = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON");
-                        else if (!Config.MainConfig.ShowHeadlineOnLogin)
-                            rssSequence = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES");
-                        else
+                        isHomepageRssFeedUpdating = true;
+                        var updateTask = new Task(() =>
                         {
-                            articles ??= ((string feedTitle, string articleTitle)[]?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.AddonShellPacks, "GetArticles", "Nitrocid.ShellPacks.Shells.RSS.Tools.RSSTools", Config.MainConfig.RssHeadlineUrl) ?? [];
-                            if (articles is not null && articles.Length > 0)
-                            {
-                                var headlines = new StringBuilder();
-                                foreach (var (feedTitle, articleTitle) in articles)
-                                {
-                                    string finalFeedEntry = $"{articleTitle}";
-                                    finalFeedEntry = finalFeedEntry.Truncate(widgetWidth);
-                                    headlines.AppendLine(finalFeedEntry);
-                                }
-                                rssSequence = headlines.ToString();
-                            }
-                            else
-                            {
-                                if (string.IsNullOrEmpty(feedErrorMessage))
-                                    feedErrorMessage = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NOARTICLES");
-                            }
-                        }
-#else
-                            rssSequence = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON");
-#endif
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
-                        DebugWriter.WriteDebugStackTrace(ex);
-                        feedErrorMessage = LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED");
-                    }
-                    if (!string.IsNullOrEmpty(feedErrorMessage))
-                    {
-                        rssSequence = feedErrorMessage;
-                        articles = [];
+                            (string rssSequence, (string feedTitle, string articleTitle)[]) tuple = UpdateRssFeeds(widgetWidth);
+                            rssSequence = tuple.rssSequence;
+                            articles = tuple.Item2;
+                        });
+                        updateTask.Start();
                     }
 
                     // Render the RSS feed sequence or an error message
-                    rssSequence = new BoundedText()
+                    var rssSequenceBounded = new BoundedText()
                     {
                         Left = rssFeedLeft,
                         Top = rssFeedTop,
@@ -805,7 +770,7 @@ namespace Nitrocid.Base.Shell.Homepage
                         Height = 3,
                         Text = rssSequence,
                     }.Render();
-                    builder.Append(rssSequence);
+                    builder.Append(rssSequenceBounded);
                 }
 
                 // Populate the button positions
@@ -930,6 +895,61 @@ namespace Nitrocid.Base.Shell.Homepage
                 builder.Append(renderedCanvas);
             }
             return builder.ToString();
+        }
+
+        private static bool IsFeedAddonInstalled()
+        {
+            bool feedAddonInstalled =
+#if NKS_EXTENSIONS
+                AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.AddonShellPacks)) is not null;
+#else
+                false;
+#endif
+            return feedAddonInstalled;
+        }
+
+        private static (string rssSequence, (string feedTitle, string articleTitle)[]) UpdateRssFeeds(int widgetWidth)
+        {
+            (string feedTitle, string articleTitle)[]? articles = null;
+            string rssSequence = LanguageTools.GetLocalized("NKS_MISC_SPLASH_DEFAULTMSG");
+
+            try
+            {
+                bool feedAddonInstalled = IsFeedAddonInstalled();
+                if (!feedAddonInstalled)
+                    rssSequence = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON");
+#if NKS_EXTENSIONS
+                else if (!Config.MainConfig.ShowHeadlineOnLogin)
+                    rssSequence = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES");
+                else
+                {
+                    articles = ((string feedTitle, string articleTitle)[]?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.AddonShellPacks, "GetArticles", "Nitrocid.ShellPacks.Shells.RSS.Tools.RSSTools", Config.MainConfig.RssHeadlineUrl) ?? [];
+                    if (articles is not null && articles.Length > 0)
+                    {
+                        var headlines = new StringBuilder();
+                        foreach (var (feedTitle, articleTitle) in articles)
+                        {
+                            string finalFeedEntry = $"{articleTitle}";
+                            finalFeedEntry = finalFeedEntry.Truncate(widgetWidth);
+                            headlines.AppendLine(finalFeedEntry);
+                        }
+                        rssSequence = headlines.ToString();
+                    }
+                    else
+                    {
+                        rssSequence = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NOARTICLES");
+                    }
+                }
+#endif
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
+                DebugWriter.WriteDebugStackTrace(ex);
+                rssSequence = LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED");
+            }
+            isHomepageRssFeedUpdating = false;
+            return (rssSequence, articles ?? []);
         }
     }
 }
