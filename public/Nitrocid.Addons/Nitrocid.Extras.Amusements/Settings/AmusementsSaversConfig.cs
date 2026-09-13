@@ -33,6 +33,12 @@ namespace Nitrocid.Extras.Amusements.Settings
     public partial class AmusementsSaversConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
+        // TODO: NKS_AMUSEMENTS_SETTINGS_INSTANCES_SAVERSETTINGS -> Amusement screensavers configuration
+        [JsonIgnore]
+        public override string Name =>
+            LanguageTools.GetLocalized("NKS_AMUSEMENTS_SETTINGS_INSTANCES_SAVERSETTINGS");
+
+        /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries
         {

@@ -33,6 +33,12 @@ namespace Nitrocid.Extras.Contacts.Settings
     public partial class ContactsConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
+        // TODO: NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS -> Contacts configuration
+        [JsonIgnore]
+        public override string Name =>
+            LanguageTools.GetLocalized("NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS");
+
+        /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries
         {

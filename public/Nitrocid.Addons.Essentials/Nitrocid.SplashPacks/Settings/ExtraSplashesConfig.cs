@@ -33,6 +33,12 @@ namespace Nitrocid.SplashPacks.Settings
     public partial class ExtraSplashesConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
+        // TODO: NKS_SPLASHPACKS_SETTINGS_INSTANCES_SETTINGS -> Splash packs configuration
+        [JsonIgnore]
+        public override string Name =>
+            LanguageTools.GetLocalized("NKS_SPLASHPACKS_SETTINGS_INSTANCES_SETTINGS");
+
+        /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries
         {

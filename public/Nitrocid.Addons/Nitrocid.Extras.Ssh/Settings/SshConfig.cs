@@ -33,6 +33,12 @@ namespace Nitrocid.Extras.Ssh.Settings
     public partial class SshConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
+        // TODO: NKS_SSH_SETTINGS_INSTANCES_SETTINGS -> SSH configuration
+        [JsonIgnore]
+        public override string Name =>
+            LanguageTools.GetLocalized("NKS_SSH_SETTINGS_INSTANCES_SETTINGS");
+
+        /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries
         {

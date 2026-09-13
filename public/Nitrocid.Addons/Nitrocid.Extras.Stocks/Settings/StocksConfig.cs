@@ -33,6 +33,12 @@ namespace Nitrocid.Extras.Stocks.Settings
     public partial class StocksConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
+        // TODO: NKS_STOCKS_SETTINGS_INSTANCES_SETTINGS -> Stocks configuration
+        [JsonIgnore]
+        public override string Name =>
+            LanguageTools.GetLocalized("NKS_STOCKS_SETTINGS_INSTANCES_SETTINGS");
+
+        /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries
         {

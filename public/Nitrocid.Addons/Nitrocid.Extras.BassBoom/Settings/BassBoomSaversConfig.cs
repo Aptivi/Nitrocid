@@ -33,6 +33,12 @@ namespace Nitrocid.Extras.BassBoom.Settings
     public partial class BassBoomSaversConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
+        // TODO: NKS_BASSBOOM_SETTINGS_INSTANCES_SAVERSETTINGS -> BassBoom screensaver configuration
+        [JsonIgnore]
+        public override string Name =>
+            LanguageTools.GetLocalized("NKS_BASSBOOM_SETTINGS_INSTANCES_SAVERSETTINGS");
+
+        /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries
         {

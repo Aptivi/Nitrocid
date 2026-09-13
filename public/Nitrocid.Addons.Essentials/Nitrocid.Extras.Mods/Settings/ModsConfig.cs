@@ -33,6 +33,12 @@ namespace Nitrocid.Extras.Mods.Settings
     public partial class ModsConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
+        // TODO: NKS_MODS_SETTINGS_INSTANCES_SETTINGS -> Mods configuration
+        [JsonIgnore]
+        public override string Name =>
+            LanguageTools.GetLocalized("NKS_MODS_SETTINGS_INSTANCES_SETTINGS");
+
+        /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries
         {

@@ -33,6 +33,12 @@ namespace Nitrocid.Extras.Animated.Settings
     public partial class AnimatedSplashesConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
+        // TODO: NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SPLASHESSETTINGS -> Animated splashes configuration
+        [JsonIgnore]
+        public override string Name =>
+            LanguageTools.GetLocalized("NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SPLASHESSETTINGS");
+
+        /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries
         {

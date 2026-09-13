@@ -33,6 +33,12 @@ namespace Nitrocid.Extras.BassBoom.Settings
     public partial class BassBoomConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
+        // TODO: NKS_BASSBOOM_SETTINGS_INSTANCES_SETTINGS -> BassBoom music player configuration
+        [JsonIgnore]
+        public override string Name =>
+            LanguageTools.GetLocalized("NKS_BASSBOOM_SETTINGS_INSTANCES_SETTINGS");
+
+        /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries
         {

@@ -33,6 +33,12 @@ namespace Nitrocid.Extras.Amusements.Settings
     public partial class AmusementsConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
+        // TODO: NKS_AMUSEMENTS_SETTINGS_INSTANCES_SETTINGS -> Games and amusements configuration
+        [JsonIgnore]
+        public override string Name =>
+            LanguageTools.GetLocalized("NKS_AMUSEMENTS_SETTINGS_INSTANCES_SETTINGS");
+
+        /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries
         {

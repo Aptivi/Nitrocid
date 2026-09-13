@@ -33,6 +33,12 @@ namespace Nitrocid.Extras.Animated.Settings
     public partial class AnimatedSaversConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
+        // TODO: NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SAVERSETTINGS -> Animated screensaver configuration
+        [JsonIgnore]
+        public override string Name =>
+            LanguageTools.GetLocalized("NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SAVERSETTINGS");
+
+        /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries
         {

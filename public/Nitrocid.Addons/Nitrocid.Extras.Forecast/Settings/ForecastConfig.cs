@@ -33,6 +33,12 @@ namespace Nitrocid.Extras.Forecast.Settings
     public partial class ForecastConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
+        // TODO: NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS -> Forecast configuration
+        [JsonIgnore]
+        public override string Name =>
+            LanguageTools.GetLocalized("NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS");
+
+        /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries
         {
