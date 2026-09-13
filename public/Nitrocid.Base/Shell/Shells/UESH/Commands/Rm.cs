@@ -46,7 +46,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "target", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_RM_ARGUMENT_TARGET_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_RM_ARGUMENT_TARGET_DESC")
                     }),
                 ])
             ];

@@ -53,7 +53,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
                     new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC")
                     })
                 ])
             ];

@@ -55,15 +55,15 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "userName", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_USERNAME_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_USERNAME_DESC")
                     }),
                     new CommandArgumentPart(true, "allow/revoke", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_MODE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_MODE_DESC")
                     }),
                     new CommandArgumentPart(true, "perm", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_GRANT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_GRANT_DESC")
                     }),
                 ])
             ];

@@ -51,17 +51,17 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                 [
                     new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELWORD_ARGUMENT_WORD_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELWORD_ARGUMENT_WORD_DESC")
                     }),
                     new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM_DESC")
                     }),
                     new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC")
                     })
                 ])
             ];

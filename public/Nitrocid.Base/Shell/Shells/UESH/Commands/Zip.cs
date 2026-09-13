@@ -67,30 +67,30 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "zipfile", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_ARGUMENT_ZIPFILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_ARGUMENT_ZIPFILE_DESC")
                     }),
                     new CommandArgumentPart(true, "path", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_ARGUMENT_PATH_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_ARGUMENT_PATH_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("fast", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_FAST_DESC", new SwitchOptions()
+                    new SwitchInfo("fast", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_FAST_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["nocomp", "smallest"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("nocomp", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_NOCOMP_DESC", new SwitchOptions()
+                    new SwitchInfo("nocomp", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_NOCOMP_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["fast", "smallest"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("smallest", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC", new SwitchOptions()
+                    new SwitchInfo("smallest", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["fast", "nocomp"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("nobasedir", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_NOBASEDIR_DESC", new SwitchOptions()
+                    new SwitchInfo("nobasedir", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_NOBASEDIR_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

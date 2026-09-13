@@ -67,24 +67,24 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(false, "directory", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_ARGUMENT_DIRECTORY_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LIST_ARGUMENT_DIRECTORY_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("showdetails", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SHOWDETAILS_DESC", new SwitchOptions()
+                    new SwitchInfo("showdetails", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SHOWDETAILS_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("suppressmessages", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SUPPRESSMESSAGES_DESC", new SwitchOptions()
+                    new SwitchInfo("suppressmessages", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SUPPRESSMESSAGES_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("recursive", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_RECURSIVE_DESC", new SwitchOptions()
+                    new SwitchInfo("recursive", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_RECURSIVE_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false,
                         ConflictsWith = ["tree"]
                     }),
-                    new SwitchInfo("tree", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_TREE_DESC", new SwitchOptions()
+                    new SwitchInfo("tree", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_TREE_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false,
                         ConflictsWith = ["recursive"]

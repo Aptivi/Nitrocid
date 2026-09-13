@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.Mods.Commands
                 [
                     new CommandArgumentPart(true, "modname", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC")
                     }),
                 ])
             ];

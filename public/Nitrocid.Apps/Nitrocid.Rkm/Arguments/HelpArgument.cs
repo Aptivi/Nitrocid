@@ -28,9 +28,9 @@ namespace Nitrocid.Rkm.Arguments
         public override void Execute(ArgumentParameters parameters)
         {
             if (parameters.ArgumentsList.Length == 0)
-                ArgumentHelpPrint.ShowArgsHelp(EntryPoint.arguments);
+                ArgumentHelpPrint.ShowArgsHelp(EntryPoint.Arguments);
             else
-                ArgumentHelpPrint.ShowArgsHelp(parameters.ArgumentsList[0], EntryPoint.arguments);
+                ArgumentHelpPrint.ShowArgsHelp(parameters.ArgumentsList[0], EntryPoint.Arguments);
             Environment.Exit(0);
         }
     }

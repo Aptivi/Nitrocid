@@ -55,19 +55,19 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     new CommandArgumentPart(true, "algorithm/all", new CommandArgumentPartOptions()
                     {
                         AutoCompleter = (_) => EncryptionDriverTools.GetEncryptionDriverNames(),
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_ALGORITHM_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_ALGORITHM_DESC")
                     }),
                     new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_FILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_FILE_DESC")
                     }),
                     new CommandArgumentPart(false, "outputFile", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_OUTPUTFILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_OUTPUTFILE_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("relative", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_SWITCH_RELATIVE_DESC", new SwitchOptions()
+                    new SwitchInfo("relative", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_SWITCH_RELATIVE_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

@@ -54,11 +54,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "culture", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHCULTURE_ARGUMENT_CULTUREID_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHCULTURE_ARGUMENT_CULTUREID_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("user", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHCULTURE_SWITCH_USER_DESC", new SwitchOptions()
+                    new SwitchInfo("user", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHCULTURE_SWITCH_USER_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),

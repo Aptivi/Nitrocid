@@ -54,7 +54,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
                 [
                     new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_DEL_ARGUMENT_REMOTEFILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_DEL_ARGUMENT_REMOTEFILE_DESC")
                     })
                 ])
             ];

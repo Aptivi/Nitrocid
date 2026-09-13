@@ -50,17 +50,17 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
                 [
                     new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_ARGUMENT_PATH_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_ARGUMENT_PATH_DESC")
                     }),
                     new CommandArgumentPart(false, "startLineNum", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_STARTLINENUM_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_STARTLINENUM_DESC")
                     }),
                     new CommandArgumentPart(false, "endLineNum", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_ENDLINENUM_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_ENDLINENUM_DESC")
                     }),
                 ])
             ];

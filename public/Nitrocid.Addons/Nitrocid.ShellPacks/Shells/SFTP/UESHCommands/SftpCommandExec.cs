@@ -41,7 +41,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.UESHCommands
                 [
                     new CommandArgumentPart(false, "server", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_SFTP_ARGUMENT_SERVER_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_SFTP_ARGUMENT_SERVER_DESC")
                     }),
                 ])
             ];

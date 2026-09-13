@@ -37,7 +37,7 @@ namespace Nitrocid.Extras.Amusements.Commands
         public override CommandArgumentInfo[] CommandArgumentInfo =>
             [
                 new CommandArgumentInfo([
-                    new SwitchInfo("computer", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_TICTACTOE_SWITCH_COMPUTER_DESC", new SwitchOptions()
+                    new SwitchInfo("computer", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_TICTACTOE_SWITCH_COMPUTER_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),

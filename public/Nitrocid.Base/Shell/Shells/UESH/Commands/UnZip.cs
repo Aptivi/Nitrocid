@@ -61,15 +61,15 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "zipfile", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_ZIPFILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_ZIPFILE_DESC")
                     }),
                     new CommandArgumentPart(false, "path", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_PATH_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_PATH_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("createdir", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_SWITCH_CREATEDIR_DESC", new SwitchOptions()
+                    new SwitchInfo("createdir", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_SWITCH_CREATEDIR_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

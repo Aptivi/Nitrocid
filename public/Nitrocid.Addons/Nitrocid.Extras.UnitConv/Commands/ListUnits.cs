@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
                     new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
                     {
                         AutoCompleter = (_) => [.. Quantity.Infos.Select((src) => src.Name)],
-                        ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC")
                     }),
                 ])
             ];

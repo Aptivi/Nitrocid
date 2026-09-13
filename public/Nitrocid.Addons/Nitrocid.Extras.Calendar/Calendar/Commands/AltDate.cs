@@ -50,26 +50,26 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                 [
                     new CommandArgumentPart(true, "culture", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_ALTDATE_ARGUMENT_CULTURE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_ALTDATE_ARGUMENT_CULTURE_DESC")
                     })
                 ],
                 [
-                    new SwitchInfo("date", /* Localizable */ "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_DATE_DESC", new SwitchOptions()
+                    new SwitchInfo("date", LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_DATE_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["full", "time"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("time", /* Localizable */ "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_TIME_DESC", new SwitchOptions()
+                    new SwitchInfo("time", LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_TIME_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["date", "full"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("full", /* Localizable */ "NKS_CALENDAR_COMMAND_ALTDATE_DESC", new SwitchOptions()
+                    new SwitchInfo("full", LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_ALTDATE_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["date", "time"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("utc", /* Localizable */ "NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_UTC_DESC", new SwitchOptions()
+                    new SwitchInfo("utc", LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_UTC_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

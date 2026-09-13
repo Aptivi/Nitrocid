@@ -47,11 +47,11 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
                 [
                     new CommandArgumentPart(true, "propertyName", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC")
                     })
                 ],
                 [
-                    new SwitchInfo("parentProperty", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_SWITCH_PARENTPROPERTY_DESC", new SwitchOptions()
+                    new SwitchInfo("parentProperty", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_SWITCH_PARENTPROPERTY_DESC"), new SwitchOptions()
                     {
                         ArgumentsRequired = true
                     })

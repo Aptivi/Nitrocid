@@ -18,6 +18,7 @@
 //
 
 using Nitrocid.Base.Arguments.CommandLineArguments;
+using Nitrocid.Base.Languages;
 using System.Collections.Generic;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Arguments.Base;
@@ -29,32 +30,114 @@ namespace Nitrocid.Base.Arguments
     /// </summary>
     public static class KernelArguments
     {
+        /// <summary>
+        /// Available command line arguments
+        /// </summary>
+        public static Dictionary<string, ArgumentInfo> AvailableCMDLineArgs => new()
+        {
+            { "quiet",
+                new ArgumentInfo("quiet", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_QUIET_DESC"),
+                    [
+                        new CommandArgumentInfo()
+                    ], new QuietArgument())
+            },
 
-        internal readonly static Dictionary<string, ArgumentInfo> outArgs = new()
+            { "maintenance",
+                new ArgumentInfo("maintenance", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC"),
+                    [
+                        new CommandArgumentInfo()
+                    ], new MaintenanceArgument())
+            },
+
+            { "safe",
+                new ArgumentInfo("safe", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_SAFE_DESC"),
+                    [
+                        new CommandArgumentInfo()
+                    ], new SafeArgument())
+            },
+
+            { "testInteractive",
+                new ArgumentInfo("testInteractive", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_TESTINTERACTIVE_DESC"),
+                    [
+                        new CommandArgumentInfo()
+                    ], new TestInteractiveArgument())
+            },
+
+            { "debug",
+                new ArgumentInfo("debug", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC"),
+                    [
+                        new CommandArgumentInfo()
+                    ], new DebugArgument())
+            },
+
+            { "terminaldebug",
+                new ArgumentInfo("terminaldebug", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_TERMINALDEBUG_DESC"),
+                    [
+                        new CommandArgumentInfo()
+                    ], new TerminalDebugArgument())
+            },
+
+            { "reset",
+                new ArgumentInfo("reset", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_RESET_DESC"),
+                    [
+                        new CommandArgumentInfo()
+                    ], new ResetArgument())
+            },
+
+            { "noaltbuffer",
+                new ArgumentInfo("noaltbuffer", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_NOALTBUFFER_DESC"),
+                    [
+                        new CommandArgumentInfo()
+                    ], new NoAltBufferArgument())
+            },
+
+            { "attach",
+                new ArgumentInfo("attach", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_ATTACH_DESC"),
+                    [
+                        new CommandArgumentInfo()
+                    ], new AttachArgument())
+            },
+
+            { "verbosepreboot",
+                new ArgumentInfo("verbosepreboot", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_VERBOSEPREBOOT_DESC"),
+                    [
+                        new CommandArgumentInfo()
+                    ], new VerbosePrebootArgument())
+            },
+
+            { "noprebootsplash",
+                new ArgumentInfo("noprebootsplash", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_NOPREBOOTSPLASH_DESC"),
+                    [
+                        new CommandArgumentInfo()
+                    ], new NoPrebootSplashArgument())
+            },
+        };
+
+        internal static Dictionary<string, ArgumentInfo> OutArgs => new()
         {
             { "help",
-                new ArgumentInfo("help", /* Localizable */ "NKS_SHELL_SHELLS_COMMAND_HELP_DESC",
+                new ArgumentInfo("help", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_COMMAND_HELP_DESC"),
                     [
                         new CommandArgumentInfo()
                     ], new HelpArgument())
             },
 
             { "version",
-                new ArgumentInfo("version", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_VERSION_DESC",
+                new ArgumentInfo("version", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_VERSION_DESC"),
                     [
                         new CommandArgumentInfo()
                     ], new VersionArgument())
             },
 
             { "apiversion",
-                new ArgumentInfo("apiversion", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_APIVERSION_DESC",
+                new ArgumentInfo("apiversion", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_APIVERSION_DESC"),
                     [
                         new CommandArgumentInfo()
                     ], new ApiVersionArgument())
             },
 
             { "lang",
-                new ArgumentInfo("lang", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_LANG_DESC",
+                new ArgumentInfo("lang", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_LANG_DESC"),
                     [
                         new CommandArgumentInfo(
                         [
@@ -63,91 +146,5 @@ namespace Nitrocid.Base.Arguments
                     ], new LangArgument())
             },
         };
-
-        private readonly static Dictionary<string, ArgumentInfo> args = new()
-        {
-            { "quiet",
-                new ArgumentInfo("quiet", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_QUIET_DESC",
-                    [
-                        new CommandArgumentInfo()
-                    ], new QuietArgument())
-            },
-
-            { "maintenance",
-                new ArgumentInfo("maintenance", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
-                    [
-                        new CommandArgumentInfo()
-                    ], new MaintenanceArgument())
-            },
-
-            { "safe",
-                new ArgumentInfo("safe", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_SAFE_DESC",
-                    [
-                        new CommandArgumentInfo()
-                    ], new SafeArgument())
-            },
-
-            { "testInteractive",
-                new ArgumentInfo("testInteractive", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_TESTINTERACTIVE_DESC",
-                    [
-                        new CommandArgumentInfo()
-                    ], new TestInteractiveArgument())
-            },
-
-            { "debug",
-                new ArgumentInfo("debug", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
-                    [
-                        new CommandArgumentInfo()
-                    ], new DebugArgument())
-            },
-
-            { "terminaldebug",
-                new ArgumentInfo("terminaldebug", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_TERMINALDEBUG_DESC",
-                    [
-                        new CommandArgumentInfo()
-                    ], new TerminalDebugArgument())
-            },
-
-            { "reset",
-                new ArgumentInfo("reset", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_RESET_DESC",
-                    [
-                        new CommandArgumentInfo()
-                    ], new ResetArgument())
-            },
-
-            { "noaltbuffer",
-                new ArgumentInfo("noaltbuffer", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_NOALTBUFFER_DESC",
-                    [
-                        new CommandArgumentInfo()
-                    ], new NoAltBufferArgument())
-            },
-
-            { "attach",
-                new ArgumentInfo("attach", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_ATTACH_DESC",
-                    [
-                        new CommandArgumentInfo()
-                    ], new AttachArgument())
-            },
-
-            { "verbosepreboot",
-                new ArgumentInfo("verbosepreboot", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_VERBOSEPREBOOT_DESC",
-                    [
-                        new CommandArgumentInfo()
-                    ], new VerbosePrebootArgument())
-            },
-
-            { "noprebootsplash",
-                new ArgumentInfo("noprebootsplash", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_NOPREBOOTSPLASH_DESC",
-                    [
-                        new CommandArgumentInfo()
-                    ], new NoPrebootSplashArgument())
-            },
-        };
-
-        /// <summary>
-        /// Available command line arguments
-        /// </summary>
-        public static Dictionary<string, ArgumentInfo> AvailableCMDLineArgs =>
-            args;
     }
 }

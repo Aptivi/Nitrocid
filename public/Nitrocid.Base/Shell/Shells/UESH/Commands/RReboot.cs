@@ -46,26 +46,26 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "address", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_HOSTNAME_DESC")
                     }),
                     new CommandArgumentPart(true, "port", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_ARGUMENT_PORT_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("safe", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_SAFE_DESC", new()
+                    new SwitchInfo("safe", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_SAFE_DESC"), new()
                     {
                         AcceptsValues = false,
                         ConflictsWith = ["maintenance", "debug"]
                     }),
-                    new SwitchInfo("maintenance", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_MAINTENANCE_DESC", new()
+                    new SwitchInfo("maintenance", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_MAINTENANCE_DESC"), new()
                     {
                         AcceptsValues = false,
                         ConflictsWith = ["safe", "debug"]
                     }),
-                    new SwitchInfo("debug", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_DEBUG_DESC", new()
+                    new SwitchInfo("debug", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_REBOOT_SWITCH_DEBUG_DESC"), new()
                     {
                         AcceptsValues = false,
                         ConflictsWith = ["safe", "maintenance"]

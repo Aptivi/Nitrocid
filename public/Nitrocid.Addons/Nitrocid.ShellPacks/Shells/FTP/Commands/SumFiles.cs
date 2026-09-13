@@ -49,11 +49,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
                 [
                     new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC")
                     }),
                     new CommandArgumentPart(true, "algorithm", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_ALGORITHM_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_ALGORITHM_DESC")
                     })
                 ])
             ];

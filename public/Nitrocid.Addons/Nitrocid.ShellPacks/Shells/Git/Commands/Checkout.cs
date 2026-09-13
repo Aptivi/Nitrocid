@@ -50,7 +50,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
                 [
                     new CommandArgumentPart(true, "branch", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_ARGUMENT_BRANCH_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_ARGUMENT_BRANCH_DESC")
                     })
                 ])
             ];

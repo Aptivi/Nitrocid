@@ -46,7 +46,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
                 [
                     new CommandArgumentPart(false, "propertyName", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC")
                     })
                 ])
             ];

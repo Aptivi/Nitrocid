@@ -49,12 +49,12 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     new CommandArgumentPart(true, "text", new()
                     {
                         // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC -> Text to print in a conversation bubble
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC")
                     }),
                 ],
                 [
                     // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC -> Cow name to render with
-                    new SwitchInfo("cow", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC"),
+                    new SwitchInfo("cow", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC")),
                 ], true)
             ];
 

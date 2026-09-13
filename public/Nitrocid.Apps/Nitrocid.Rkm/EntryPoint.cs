@@ -43,48 +43,48 @@ namespace Nitrocid.Rkm
         internal static int hostPort = Config.MainConfig.RPCPort;
         internal static string command = "test";
         internal static string commandArguments = "";
-        internal static readonly Dictionary<string, ArgumentInfo> arguments = new()
+        internal static Dictionary<string, ArgumentInfo> Arguments => new()
         {
-            { "verbose", new("verbose", /* Localizable */ "NKS_RKM_ARGUMENTS_VERBOSE_DESC", new VerboseArgument()) },
-            { "help", new("help", /* Localizable */ "NKS_RKM_ARGUMENTS_HELP_DESC",
+            { "verbose", new("verbose", LanguageTools.GetLocalized("NKS_RKM_ARGUMENTS_VERBOSE_DESC"), new VerboseArgument()) },
+            { "help", new("help", LanguageTools.GetLocalized("NKS_RKM_ARGUMENTS_HELP_DESC"),
                 [
                     new([
                             new CommandArgumentPart(false, "argument", new()
                             {
-                                ArgumentDescription = /* Localizable */ "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC")
                             })
                         ])
                 ], new HelpArgument()) },
-            { "host", new("host", /* Localizable */ "NKS_RKM_ARGUMENTS_HOST_DESC",
+            { "host", new("host", LanguageTools.GetLocalized("NKS_RKM_ARGUMENTS_HOST_DESC"),
                 [
                     new([
                             new CommandArgumentPart(true, "host", new()
                             {
-                                ArgumentDescription = /* Localizable */ "NKS_RKM_ARGUMENTS_HOST_HOST_DESC"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_RKM_ARGUMENTS_HOST_HOST_DESC")
                             })
                         ])
                 ], new HostArgument()) },
-            { "port", new("port", /* Localizable */ "NKS_RKM_ARGUMENTS_PORT_DESC",
+            { "port", new("port", LanguageTools.GetLocalized("NKS_RKM_ARGUMENTS_PORT_DESC"),
                 [
                     new([
                             new CommandArgumentPart(true, "port", new()
                             {
-                                ArgumentDescription = /* Localizable */ "NKS_RKM_ARGUMENTS_PORT_PORT_DESC",
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_RKM_ARGUMENTS_PORT_PORT_DESC"),
                                 IsNumeric = true
                             })
                         ])
                 ], new PortArgument()) },
-            { "command", new("command", /* Localizable */ "NKS_RKM_ARGUMENTS_COMMAND_DESC",
+            { "command", new("command", LanguageTools.GetLocalized("NKS_RKM_ARGUMENTS_COMMAND_DESC"),
                 [
                     new([
                             new CommandArgumentPart(true, "command", new()
                             {
-                                ArgumentDescription = /* Localizable */ "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC"),
                                 ExactWording = ["shutdown", "reboot", "rebootsafe", "rebootmaintenance", "rebootdebug", "savescr", "exec", "test", "ping", "version", "versioncode", "apiversion", "apiversioncode"]
                             }),
                             new CommandArgumentPart(false, "arguments", new()
                             {
-                                ArgumentDescription = /* Localizable */ "NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC"
+                                ArgumentDescription = LanguageTools.GetLocalized("NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC")
                             }),
                         ], false, true)
                 ], new CommandArgument()) },
@@ -95,7 +95,7 @@ namespace Nitrocid.Rkm
             LanguageTools.AddCustomAction("Rkm", new("Nitrocid.Rkm.Resources.Languages.Output.Localizations", typeof(EntryPoint).Assembly));
 
             // Initialize logging and crash logging
-            ArgumentParse.ParseArguments(args, arguments);
+            ArgumentParse.ParseArguments(args, Arguments);
             CrashTools.InstallCrashHandler();
 
             // If verbose is enabled, write to the log

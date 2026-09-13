@@ -49,20 +49,20 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
                 [
                     new CommandArgumentPart(true, "jsonValue", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ADD_ARGUMENT_JSONVALUE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ADD_ARGUMENT_JSONVALUE_DESC")
                     })
                 ],
                 [
-                    new SwitchInfo("parentPath", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC", new SwitchOptions()
+                    new SwitchInfo("parentPath", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC"), new SwitchOptions()
                     {
                         ArgumentsRequired = true
                     }),
-                    new SwitchInfo("type", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC", new SwitchOptions()
+                    new SwitchInfo("type", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC"), new SwitchOptions()
                     {
                         ArgumentsRequired = true,
                         IsRequired = true
                     }),
-                    new SwitchInfo("propName", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC", new SwitchOptions()
+                    new SwitchInfo("propName", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC"), new SwitchOptions()
                     {
                         ArgumentsRequired = true
                     }),

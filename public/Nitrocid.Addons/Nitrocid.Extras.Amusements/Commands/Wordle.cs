@@ -37,16 +37,16 @@ namespace Nitrocid.Extras.Amusements.Commands
         public override CommandArgumentInfo[] CommandArgumentInfo =>
             [
                 new CommandArgumentInfo([
-                    new SwitchInfo("orig", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC", new SwitchOptions()
+                    new SwitchInfo("orig", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("common", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC", new SwitchOptions()
+                    new SwitchInfo("common", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["uncommon"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("uncommon", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC", new SwitchOptions()
+                    new SwitchInfo("uncommon", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["common"],
                         AcceptsValues = false

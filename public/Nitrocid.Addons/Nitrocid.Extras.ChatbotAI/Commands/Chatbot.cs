@@ -45,9 +45,9 @@ namespace Nitrocid.Extras.ChatbotAI.Commands
             [
                 new CommandArgumentInfo(
                 [
-                    new SwitchInfo("apikey", /* Localizable */ "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC"),
+                    new SwitchInfo("apikey", LanguageTools.GetLocalized("NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC")),
 
-                    new SwitchInfo("model", /* Localizable */ "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC"),
+                    new SwitchInfo("model", LanguageTools.GetLocalized("NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC")),
                 ])
             ];
 

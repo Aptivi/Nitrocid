@@ -48,11 +48,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_FILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_FILE_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("columns", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_WRAPTEXT_SWITCH_COLUMNS_DESC", new SwitchOptions()
+                    new SwitchInfo("columns", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_WRAPTEXT_SWITCH_COLUMNS_DESC"), new SwitchOptions()
                     {
                         ArgumentsRequired = true,
                         IsNumeric = true

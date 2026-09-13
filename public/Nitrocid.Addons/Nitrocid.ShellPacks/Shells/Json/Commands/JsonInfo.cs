@@ -45,11 +45,11 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
             [
                 new CommandArgumentInfo(
                 [
-                    new SwitchInfo("simplified", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC", new SwitchOptions()
+                    new SwitchInfo("simplified", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("showvals", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC", new SwitchOptions()
+                    new SwitchInfo("showvals", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

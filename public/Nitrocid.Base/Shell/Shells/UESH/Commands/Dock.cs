@@ -43,7 +43,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     new CommandArgumentPart(true, "dockName", new()
                     {
                         AutoCompleter = (_) => DockTools.GetDockScreenNames(),
-                        ArgumentDescription = /* Localizable */ "NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_DOCKING_COMMAND_DOCK_ARGUMENT_DOCKNAME_DESC")
                     }),
                 ])
             ];

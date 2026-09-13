@@ -48,27 +48,27 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             [
                 new CommandArgumentInfo([],
                 [
-                    new SwitchInfo("s", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_S_DESC", new SwitchOptions()
+                    new SwitchInfo("s", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_S_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("h", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_H_DESC", new SwitchOptions()
+                    new SwitchInfo("h", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_H_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("u", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_U_DESC", new SwitchOptions()
+                    new SwitchInfo("u", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_U_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("m", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_M_DESC", new SwitchOptions()
+                    new SwitchInfo("m", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_M_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("l", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_L_DESC", new SwitchOptions()
+                    new SwitchInfo("l", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_L_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("a", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_A_DESC", new SwitchOptions()
+                    new SwitchInfo("a", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SYSINFO_SWITCH_A_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),

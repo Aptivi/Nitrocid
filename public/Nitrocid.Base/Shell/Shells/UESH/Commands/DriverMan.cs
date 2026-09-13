@@ -57,17 +57,17 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     new CommandArgumentPart(true, "change", new()
                     {
                         ExactWording = ["change"],
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_DESC")
                     }),
                     new CommandArgumentPart(true, "type", new()
                     {
                         AutoCompleter = (_) => Enum.GetNames<DriverTypes>(),
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_TYPE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_TYPE_DESC")
                     }),
                     new CommandArgumentPart(true, "driver", new()
                     {
                         AutoCompleter = (args) => DriverHandler.GetDriverNames(DriverHandler.InferDriverTypeFromTypeName(args[1])),
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_DRIVER_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_DRIVER_DESC")
                     }),
                 ]),
                 new CommandArgumentInfo(
@@ -75,12 +75,12 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     new CommandArgumentPart(true, "list", new()
                     {
                         ExactWording = ["list"],
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_LIST_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_LIST_DESC")
                     }),
                     new CommandArgumentPart(true, "type", new()
                     {
                         AutoCompleter = (_) => Enum.GetNames<DriverTypes>(),
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_TYPE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_CHANGE_TYPE_DESC")
                     }),
                 ]),
                 new CommandArgumentInfo(
@@ -88,7 +88,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     new CommandArgumentPart(true, "types", new()
                     {
                         ExactWording = ["types"],
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_TYPES_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN_ARGUMENT_TYPES_DESC")
                     }),
                 ]),
             ];

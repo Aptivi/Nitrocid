@@ -55,22 +55,22 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                     new CommandArgumentPart(true, "tui", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["tui"],
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TUI_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TUI_DESC")
                     }),
                     new CommandArgumentPart(false, "year", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_YEAR_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_YEAR_DESC")
                     }),
                     new CommandArgumentPart(false, "month", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_MONTH_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_MONTH_DESC")
                     })
                 ],
                 [
-                    new SwitchInfo("calendar", /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_CALENDAR_DESC"),
-                    new SwitchInfo("legacy", /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_LEGACY_DESC", new SwitchOptions()
+                    new SwitchInfo("calendar", LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_CALENDAR_DESC")),
+                    new SwitchInfo("legacy", LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_LEGACY_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
@@ -80,20 +80,20 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                     new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["event"],
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC")
                     }),
                     new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["add"],
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_ADD_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_ADD_DESC")
                     }),
                     new CommandArgumentPart(true, "date", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_TARGETDATE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_TARGETDATE_DESC")
                     }),
                     new CommandArgumentPart(true, "title", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC")
                     })
                 ]),
                 new CommandArgumentInfo(
@@ -101,17 +101,17 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                     new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["event"],
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC")
                     }),
                     new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["remove"],
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_REMOVE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_REMOVE_DESC")
                     }),
                     new CommandArgumentPart(true, "eventId", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_EVENTID_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_EVENTID_DESC")
                     })
                 ]),
                 new CommandArgumentInfo(
@@ -119,12 +119,12 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                     new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["event"],
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC")
                     }),
                     new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["list"],
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_LIST_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_LIST_DESC")
                     })
                 ]),
                 new CommandArgumentInfo(
@@ -132,12 +132,12 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                     new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["event"],
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC")
                     }),
                     new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["saveall"],
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_SAVEALL_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_SAVEALL_DESC")
                     })
                 ]),
                 new CommandArgumentInfo(
@@ -145,7 +145,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                     new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["reminder"],
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC")
                     }),
                     new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
                     {
@@ -153,11 +153,11 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                     }),
                     new CommandArgumentPart(true, "dateandtime", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_TARGET_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_TARGET_DESC")
                     }),
                     new CommandArgumentPart(true, "title", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC")
                     })
                 ]),
                 new CommandArgumentInfo(
@@ -165,17 +165,17 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                     new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["reminder"],
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC")
                     }),
                     new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["remove"],
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMOVE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMOVE_DESC")
                     }),
                     new CommandArgumentPart(true, "reminderid", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMINDERID_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMINDERID_DESC")
                     })
                 ]),
                 new CommandArgumentInfo(
@@ -183,12 +183,12 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                     new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["reminder"],
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC")
                     }),
                     new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["list"],
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_LIST_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_LIST_DESC")
                     })
                 ]),
                 new CommandArgumentInfo(
@@ -196,12 +196,12 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                     new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["reminder"],
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC")
                     }),
                     new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["saveall"],
-                        ArgumentDescription = /* Localizable */ "NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_SAVEALL_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_SAVEALL_DESC")
                     })
                 ]),
             ];

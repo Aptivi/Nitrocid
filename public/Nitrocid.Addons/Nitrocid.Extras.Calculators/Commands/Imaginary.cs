@@ -49,12 +49,12 @@ namespace Nitrocid.Extras.Calculators.Commands
                     new CommandArgumentPart(true, "real", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_CALCULATORS_REAL"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALCULATORS_REAL")
                     }),
                     new CommandArgumentPart(true, "imaginary", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_CALCULATORS_IMAG"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALCULATORS_IMAG")
                     }),
                 ])
             ];

@@ -45,7 +45,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             [
                 new CommandArgumentInfo(
                 [
-                    new SwitchInfo("quiet", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SWITCH_QUIET_DESC", new SwitchOptions()
+                    new SwitchInfo("quiet", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SWITCH_QUIET_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false,
                     }),

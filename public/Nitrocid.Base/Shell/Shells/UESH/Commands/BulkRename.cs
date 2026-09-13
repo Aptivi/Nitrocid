@@ -47,15 +47,15 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "targetdir", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_BULKRENAME_ARGUMENT_TARGETDIR_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_BULKRENAME_ARGUMENT_TARGETDIR_DESC")
                     }),
                     new CommandArgumentPart(true, "pattern", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_BULKRENAME_ARGUMENT_PATTERN_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_BULKRENAME_ARGUMENT_PATTERN_DESC")
                     }),
                     new CommandArgumentPart(false, "newname", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_BULKRENAME_ARGUMENT_NEWNAME_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_BULKRENAME_ARGUMENT_NEWNAME_DESC")
                     }),
                 ])
             ];

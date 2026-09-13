@@ -37,18 +37,18 @@ namespace Nitrocid.Extras.Amusements.Commands
         public override CommandArgumentInfo[] CommandArgumentInfo =>
             [
                 new CommandArgumentInfo([
-                    new SwitchInfo("soccer", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SOCCER_DESC", new SwitchOptions()
+                    new SwitchInfo("soccer", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SOCCER_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["basketball"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("basketball", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_BASKETBALL_DESC", new SwitchOptions()
+                    new SwitchInfo("basketball", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_BASKETBALL_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["soccer"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("firstTeamName", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_FIRSTTEAMNAME_DESC"),
-                    new SwitchInfo("secondTeamName", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SECONDTEAMNAME_DESC"),
+                    new SwitchInfo("firstTeamName", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_FIRSTTEAMNAME_DESC")),
+                    new SwitchInfo("secondTeamName", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SECONDTEAMNAME_DESC")),
                 ])
             ];
 

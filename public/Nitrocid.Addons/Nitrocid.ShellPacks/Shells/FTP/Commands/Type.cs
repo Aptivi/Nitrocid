@@ -48,7 +48,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
                 [
                     new CommandArgumentPart(true, "a/b", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTP_COMMAND_TYPE_ARGUMENT_TYPE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_TYPE_ARGUMENT_TYPE_DESC")
                     })
                 ])
             ];

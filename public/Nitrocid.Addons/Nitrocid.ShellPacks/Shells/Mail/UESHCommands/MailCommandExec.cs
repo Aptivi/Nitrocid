@@ -41,7 +41,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.UESHCommands
                 [
                     new CommandArgumentPart(false, "emailAddress", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC")
                     }),
                 ])
             ];

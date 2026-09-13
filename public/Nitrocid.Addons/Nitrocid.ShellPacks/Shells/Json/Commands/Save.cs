@@ -61,12 +61,12 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
             [
                 new CommandArgumentInfo(
                 [
-                    new SwitchInfo("b", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC", new SwitchOptions()
+                    new SwitchInfo("b", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["m"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("m", /* Localizable */ "NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_M_DESC", new SwitchOptions()
+                    new SwitchInfo("m", LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_M_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["b"],
                         AcceptsValues = false

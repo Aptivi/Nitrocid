@@ -51,12 +51,12 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_FILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_FILE_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("outputDir", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_OUTPUTDIR_DESC"),
-                    new SwitchInfo("chunkSize", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC", new SwitchOptions()
+                    new SwitchInfo("outputDir", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_OUTPUTDIR_DESC")),
+                    new SwitchInfo("chunkSize", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC"), new SwitchOptions()
                     {
                         IsNumeric = true,
                     })

@@ -49,15 +49,15 @@ namespace Nitrocid.Extras.Dates.Commands
                 [
                     new CommandArgumentPart(true, "production", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC")
                     }),
                     new CommandArgumentPart(true, "expiry", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC")
                     })
                 ],
                 [
-                    new SwitchInfo("implicit", /* Localizable */ "NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC", new SwitchOptions()
+                    new SwitchInfo("implicit", LanguageTools.GetLocalized("NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

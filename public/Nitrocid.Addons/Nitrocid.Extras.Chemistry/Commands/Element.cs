@@ -42,7 +42,7 @@ namespace Nitrocid.Extras.Chemistry.Commands
                 [
                     new CommandArgumentPart(true, "name/symbol/atomicNumber", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_CHEMISTRY_COMMAND_ELEMENT_ARGUMENT_SPECIFIER_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CHEMISTRY_COMMAND_ELEMENT_ARGUMENT_SPECIFIER_DESC")
                     }),
                 ])
             ];

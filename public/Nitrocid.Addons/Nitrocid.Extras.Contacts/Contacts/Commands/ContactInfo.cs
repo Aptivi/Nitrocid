@@ -47,7 +47,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                         new CommandArgumentPart(true, "contactNum", new()
                         {
                             IsNumeric = true,
-                            ArgumentDescription = /* Localizable */ "NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC")
                         })
                     ]
                 )

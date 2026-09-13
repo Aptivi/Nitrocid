@@ -51,20 +51,20 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                 [
                     new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_SOURCE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_SOURCE_DESC")
                     }),
                     new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_TARGET_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_TARGET_DESC")
                     }),
                     new CommandArgumentPart(true, "lineNum/all", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINE_ARGUMENT_LINENUM_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINE_ARGUMENT_LINENUM_DESC")
                     }),
                     new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELLINE_ARGUMENT_LINENUM2_DESC")
                     })
                 ])
             ];

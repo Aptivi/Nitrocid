@@ -47,15 +47,15 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             [
                 new CommandArgumentInfo(
                 [
-                    new SwitchInfo("patch", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_PATCH_DESC", new()
+                    new SwitchInfo("patch", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_PATCH_DESC"), new()
                     {
                         ConflictsWith = ["tree", "all"]
                     }),
-                    new SwitchInfo("tree", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_TREE_DESC", new()
+                    new SwitchInfo("tree", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_TREE_DESC"), new()
                     {
                         ConflictsWith = ["patch", "all"]
                     }),
-                    new SwitchInfo("all", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_ALL_DESC", new()
+                    new SwitchInfo("all", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_ALL_DESC"), new()
                     {
                         ConflictsWith = ["tree", "patch"]
                     }),

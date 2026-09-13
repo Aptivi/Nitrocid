@@ -57,11 +57,11 @@ namespace Nitrocid.Extras.Caffeine.Commands
                 [
                     new CommandArgumentPart(true, "secondsOrName", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CAFFEINE_COMMAND_CAFFEINE_ARGUMENT_SECSORNAME_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("abort", /* Localizable */ "NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC", new SwitchOptions()
+                    new SwitchInfo("abort", LanguageTools.GetLocalized("NKS_CAFFEINE_COMMAND_CAFFEINE_SWITCH_ABORT_DESC"), new SwitchOptions()
                     {
                         OptionalizeLastRequiredArguments = 1
                     })

@@ -49,7 +49,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
                     new CommandArgumentPart(true, "excNum", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_EXCINFO_ARGUMENT_EXCNUMBER_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_EXCINFO_ARGUMENT_EXCNUMBER_DESC")
                     })
                 ])
             ];

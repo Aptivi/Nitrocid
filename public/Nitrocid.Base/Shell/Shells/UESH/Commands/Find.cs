@@ -48,19 +48,19 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "file", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_MISC_INTERACTIVES_FMTUI_FILENAME"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FILENAME")
                     }),
                     new CommandArgumentPart(true, "directory", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("recursive", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC", new SwitchOptions()
+                    new SwitchInfo("recursive", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("exec", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_EXEC_DESC", new SwitchOptions()
+                    new SwitchInfo("exec", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_EXEC_DESC"), new SwitchOptions()
                     {
                         ArgumentsRequired = true
                     })

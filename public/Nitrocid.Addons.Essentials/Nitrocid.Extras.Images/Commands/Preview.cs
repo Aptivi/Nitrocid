@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.Images.Commands
                 [
                     new CommandArgumentPart(true, "imageFile", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_IMAGES_COMMAND_PREVIEW_ARGUMENT_IMAGEFILE_DESC")
                     }),
                 ])
             ];

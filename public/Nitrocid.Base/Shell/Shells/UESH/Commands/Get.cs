@@ -53,11 +53,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "url", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GET_ARGUMENT_URL_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GET_ARGUMENT_URL_DESC")
                     })
                 ],
                 [
-                    new SwitchInfo("outputpath", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GET_SWITCH_OUTPUTPATH_DESC", new SwitchOptions()
+                    new SwitchInfo("outputpath", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GET_SWITCH_OUTPUTPATH_DESC"), new SwitchOptions()
                     {
                         ArgumentsRequired = true
                     })

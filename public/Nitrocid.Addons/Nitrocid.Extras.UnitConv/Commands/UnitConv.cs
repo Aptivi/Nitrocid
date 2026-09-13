@@ -55,24 +55,24 @@ namespace Nitrocid.Extras.UnitConv.Commands
                     new CommandArgumentPart(true, "unittype", new CommandArgumentPartOptions()
                     {
                         AutoCompleter = (_) => [.. Quantity.Infos.Select((src) => src.Name)],
-                        ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_ARGUMENT_UNITTYPE_DESC")
                     }),
                     new CommandArgumentPart(true, "quantity", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_QUANTITY_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_QUANTITY_DESC")
                     }),
                     new CommandArgumentPart(true, "sourceunit", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_SOURCEUNIT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_SOURCEUNIT_DESC")
                     }),
                     new CommandArgumentPart(true, "targetunit", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("tui", /* Localizable */ "NKS_UNITCONV_COMMAND_UNITCONV_SWITCH_TUI_DESC", new SwitchOptions()
+                    new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_UNITCONV_COMMAND_UNITCONV_SWITCH_TUI_DESC"), new SwitchOptions()
                     {
                         OptionalizeLastRequiredArguments = 4,
                         AcceptsValues = false

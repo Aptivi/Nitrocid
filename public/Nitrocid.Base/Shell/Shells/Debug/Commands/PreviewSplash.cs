@@ -50,15 +50,15 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
                 [
                     new CommandArgumentPart(true, "splashName", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_ARGUMENT_SPLASHNAME_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_ARGUMENT_SPLASHNAME_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("splashout", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_SWITCH_SPLASHOUT_DESC", new SwitchOptions()
+                    new SwitchInfo("splashout", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_SWITCH_SPLASHOUT_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("context", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_SWITCH_CONTEXT_DESC", new SwitchOptions()
+                    new SwitchInfo("context", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_PREVIEWSPLASH_SWITCH_CONTEXT_DESC"), new SwitchOptions()
                     {
                         ArgumentsRequired = true
                     }),

@@ -47,7 +47,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
             [
                 new CommandArgumentInfo(
                 [
-                    new SwitchInfo("suppress", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_SWITCH_SUPPRESS_DESC", new SwitchOptions()
+                    new SwitchInfo("suppress", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_SWITCH_SUPPRESS_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

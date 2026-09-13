@@ -50,26 +50,26 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "file", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_FILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_ARGUMENT_FILE_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("text", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_TEXT_DESC", new SwitchOptions()
+                    new SwitchInfo("text", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_TEXT_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["sql", "json", "hex"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("hex", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_HEX_DESC", new SwitchOptions()
+                    new SwitchInfo("hex", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_HEX_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["text", "json", "sql"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("json", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_JSON_DESC", new SwitchOptions()
+                    new SwitchInfo("json", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_JSON_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["text", "sql", "hex"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("sql", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_SQL_DESC", new SwitchOptions()
+                    new SwitchInfo("sql", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_SWITCH_SQL_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["text", "json", "hex"],
                         AcceptsValues = false

@@ -50,11 +50,11 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                     new CommandArgumentPart(true, "mode", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["add", "remove", "done", "undone"],
-                        ArgumentDescription = /* Localizable */ "NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_TODO_COMMAND_TODO_ARGUMENT_ACTION_DESC")
                     }),
                     new CommandArgumentPart(true, "taskname", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_TODO_COMMAND_TODO_ARGUMENT_TASKNAME_DESC")
                     }),
                 ]),
                 new CommandArgumentInfo(
@@ -62,7 +62,7 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
                     new CommandArgumentPart(true, "mode", new CommandArgumentPartOptions()
                     {
                         ExactWording = ["list", "save", "load"],
-                        ArgumentDescription = /* Localizable */ "NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_TODO_COMMAND_TODO_ARGUMENT_LISTSAVELOAD_DESC")
                     }),
                 ]),
             ];

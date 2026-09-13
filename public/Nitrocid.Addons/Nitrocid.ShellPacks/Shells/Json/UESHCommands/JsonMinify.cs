@@ -49,11 +49,11 @@ namespace Nitrocid.ShellPacks.Shells.Json.UESHCommands
                 [
                     new CommandArgumentPart(true, "jsonfile", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC")
                     }),
                     new CommandArgumentPart(true, "output", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC")
                     }),
                 ], true)
             ];

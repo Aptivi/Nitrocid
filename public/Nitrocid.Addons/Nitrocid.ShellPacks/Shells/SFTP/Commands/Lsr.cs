@@ -65,11 +65,11 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
                 [
                     new CommandArgumentPart(false, "dir", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC")
                     })
                 ],
                 [
-                    new SwitchInfo("showdetails", /* Localizable */ "NKS_SHELLPACKS_SFTP_COMMAND_SHOWDETAILS_DESC", new SwitchOptions()
+                    new SwitchInfo("showdetails", LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_COMMAND_SHOWDETAILS_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

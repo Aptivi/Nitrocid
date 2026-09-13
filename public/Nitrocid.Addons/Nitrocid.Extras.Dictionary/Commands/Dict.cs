@@ -47,7 +47,7 @@ namespace Nitrocid.Extras.Dictionary.Commands
                 [
                     new CommandArgumentPart(true, "word", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_DICTIONARY_WORDTODEFINE"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_DICTIONARY_WORDTODEFINE")
                     }),
                 ])
             ];

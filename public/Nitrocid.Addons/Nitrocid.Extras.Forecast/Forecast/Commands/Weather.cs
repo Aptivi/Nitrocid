@@ -64,7 +64,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
             [
                 new CommandArgumentInfo(
                 [
-                    new SwitchInfo("tui", /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC", new SwitchOptions()
+                    new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false,
                     })
@@ -73,19 +73,19 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
                 [
                     new CommandArgumentPart(true, "latitude", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC")
                     }),
                     new CommandArgumentPart(true, "longitude", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC")
                     }),
                     new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("list", /* Localizable */ "NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC", new SwitchOptions()
+                    new SwitchInfo("list", LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC"), new SwitchOptions()
                     {
                         OptionalizeLastRequiredArguments = 3,
                         AcceptsValues = true,

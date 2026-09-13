@@ -47,27 +47,27 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             [
                 new CommandArgumentInfo(
                 [
-                    new SwitchInfo("n", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_N_DESC", new SwitchOptions()
+                    new SwitchInfo("n", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_N_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["r", "v", "b", "c"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("v", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_V_DESC", new SwitchOptions()
+                    new SwitchInfo("v", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_V_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["n", "r", "b", "c"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("b", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_B_DESC", new SwitchOptions()
+                    new SwitchInfo("b", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_B_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["n", "v", "r", "c"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("c", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_C_DESC", new SwitchOptions()
+                    new SwitchInfo("c", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_C_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["n", "v", "b", "r"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("r", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_R_DESC", new SwitchOptions()
+                    new SwitchInfo("r", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PLATFORM_SWITCH_R_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["n", "v", "b", "c"],
                         AcceptsValues = false

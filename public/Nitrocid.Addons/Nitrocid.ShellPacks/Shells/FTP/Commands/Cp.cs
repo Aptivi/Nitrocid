@@ -52,11 +52,11 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
                 [
                     new CommandArgumentPart(true, "sourcefileordir", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_SOURCEFILEORDIR_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_SOURCEFILEORDIR_DESC")
                     }),
                     new CommandArgumentPart(true, "where", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_WHERE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_WHERE_DESC")
                     })
                 ])
             ];

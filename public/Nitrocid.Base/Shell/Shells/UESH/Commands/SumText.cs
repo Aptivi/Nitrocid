@@ -51,11 +51,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     new CommandArgumentPart(true, "algorithm/all", new CommandArgumentPartOptions()
                     {
                         AutoCompleter = (_) => EncryptionDriverTools.GetEncryptionDriverNames(),
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_ALGORITHM_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_ALGORITHM_DESC")
                     }),
                     new CommandArgumentPart(true, "text", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SUMTEXT_ARGUMENT_TEXT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMTEXT_ARGUMENT_TEXT_DESC")
                     }),
                 ])
             ];

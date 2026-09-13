@@ -41,11 +41,11 @@ namespace Nitrocid.Extras.BassBoom.Commands
                 [
                     new CommandArgumentPart(true, "hostname", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC")
                     }),
                     new CommandArgumentPart(true, "port", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC")
                     }),
                 ])
             ];

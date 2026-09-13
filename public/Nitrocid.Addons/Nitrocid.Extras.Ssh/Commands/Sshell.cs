@@ -48,11 +48,11 @@ namespace Nitrocid.Extras.Ssh.Commands
                     [
                         new CommandArgumentPart(true, "address:port", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC")
                         }),
                         new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC")
                         }),
                     ])
                 ];

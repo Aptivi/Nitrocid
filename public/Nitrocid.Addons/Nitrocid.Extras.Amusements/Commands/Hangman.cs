@@ -37,22 +37,22 @@ namespace Nitrocid.Extras.Amusements.Commands
         public override CommandArgumentInfo[] CommandArgumentInfo =>
             [
                 new CommandArgumentInfo([
-                    new SwitchInfo("hardcore", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_HARDCORE_DESC", new SwitchOptions()
+                    new SwitchInfo("hardcore", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_HARDCORE_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["practice"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("practice", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_PRACTICE_DESC", new SwitchOptions()
+                    new SwitchInfo("practice", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_PRACTICE_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["hardcore"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("common", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC", new SwitchOptions()
+                    new SwitchInfo("common", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["uncommon"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("uncommon", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC", new SwitchOptions()
+                    new SwitchInfo("uncommon", LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["common"],
                         AcceptsValues = false

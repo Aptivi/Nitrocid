@@ -51,12 +51,12 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                     new CommandArgumentPart(true, "charNum", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELCHARNUM_ARGUMENT_CHARNUM_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELCHARNUM_ARGUMENT_CHARNUM_DESC")
                     }),
                     new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_DELCHARNUM_ARGUMENT_LINENUM_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_DELCHARNUM_ARGUMENT_LINENUM_DESC")
                     })
                 ])
             ];

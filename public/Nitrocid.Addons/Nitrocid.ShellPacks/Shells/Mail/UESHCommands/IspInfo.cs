@@ -47,11 +47,11 @@ namespace Nitrocid.ShellPacks.Shells.Mail.UESHCommands
                 [
                     new CommandArgumentPart(true, "emailAddressOrHost", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("host", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC"),
+                    new SwitchInfo("host", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC")),
                 ])
             ];
 

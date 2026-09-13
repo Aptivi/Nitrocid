@@ -54,15 +54,15 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "address1", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PING_ARGUMENT_FIRSTHOST_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PING_ARGUMENT_FIRSTHOST_DESC")
                     }),
                     new CommandArgumentPart(false, "address2", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PING_ARGUMENT_SECONDHOST_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PING_ARGUMENT_SECONDHOST_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("times", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_PING_SWITCH_TIMES_DESC", new SwitchOptions()
+                    new SwitchInfo("times", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_PING_SWITCH_TIMES_DESC"), new SwitchOptions()
                     {
                         ArgumentsRequired = true,
                         IsNumeric = true

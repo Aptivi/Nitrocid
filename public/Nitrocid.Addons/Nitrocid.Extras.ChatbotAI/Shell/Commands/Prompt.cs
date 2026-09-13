@@ -45,7 +45,7 @@ namespace Nitrocid.Extras.ChatbotAI.Shell.Commands
                 [
                     new CommandArgumentPart(true, "promptString", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC")
                     })
                 ])
             ];

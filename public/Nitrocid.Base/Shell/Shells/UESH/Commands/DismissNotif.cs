@@ -51,7 +51,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     new CommandArgumentPart(true, "notificationNumber", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DISMISSNOTIF_ARGUMENT_NOTIFICATIONNUM_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DISMISSNOTIF_ARGUMENT_NOTIFICATIONNUM_DESC")
                     }),
                 ])
             ];

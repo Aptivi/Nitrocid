@@ -46,7 +46,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             [
                 new CommandArgumentInfo(
                 [
-                    new SwitchInfo("tui", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWNOTIFS_SWITCH_TUI_DESC", new SwitchOptions()
+                    new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHOWNOTIFS_SWITCH_TUI_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

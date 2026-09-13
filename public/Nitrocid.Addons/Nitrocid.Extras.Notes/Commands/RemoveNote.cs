@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.Notes.Commands
                     new CommandArgumentPart(true, "noteNumber", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC")
                     })
                 ]),
             ];

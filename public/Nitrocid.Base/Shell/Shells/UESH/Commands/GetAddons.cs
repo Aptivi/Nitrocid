@@ -54,7 +54,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             [
                 new CommandArgumentInfo(
                 [
-                    new SwitchInfo("reinstall", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GETADDONS_SWITCH_REINSTALL_DESC", new SwitchOptions()
+                    new SwitchInfo("reinstall", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETADDONS_SWITCH_REINSTALL_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

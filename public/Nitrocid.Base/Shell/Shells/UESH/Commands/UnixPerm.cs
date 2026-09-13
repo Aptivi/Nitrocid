@@ -46,28 +46,28 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     new CommandArgumentPart(true, "num", new()
                     {
                         // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC -> Read, write, or execute permissions as "chmod" number
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC",
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC"),
                         IsNumeric = true,
                     }),
                     new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                     {
                         // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_ARGUMENT_FILE_DESC -> Path to file to set Unix permissions
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_ARGUMENT_FILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_ARGUMENT_FILE_DESC")
                     }),
                 ],
                 [
                     // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETUID_DESC -> Set user ID
-                    new SwitchInfo("setuid", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETUID_DESC", new SwitchOptions()
+                    new SwitchInfo("setuid", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETUID_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
                     // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETGID_DESC -> Set group ID
-                    new SwitchInfo("setgid", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETGID_DESC", new SwitchOptions()
+                    new SwitchInfo("setgid", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETGID_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
                     // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_STICKY_DESC -> Set sticky bit
-                    new SwitchInfo("sticky", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_STICKY_DESC", new SwitchOptions()
+                    new SwitchInfo("sticky", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_STICKY_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),

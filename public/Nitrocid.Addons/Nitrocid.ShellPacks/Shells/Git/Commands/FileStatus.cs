@@ -47,7 +47,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
                 [
                     new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_ARGUMENT_PATH_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_ARGUMENT_PATH_DESC")
                     })
                 ])
             ];

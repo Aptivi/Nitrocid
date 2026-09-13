@@ -47,11 +47,11 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                 [
                     new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_SOURCE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_SOURCE_DESC")
                     }),
                     new CommandArgumentPart(true, "word/phrase", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_TARGET_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACE_ARGUMENT_TARGET_DESC")
                     })
                 ])
             ];

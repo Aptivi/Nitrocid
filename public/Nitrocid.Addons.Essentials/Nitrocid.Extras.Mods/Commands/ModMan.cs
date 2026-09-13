@@ -62,11 +62,11 @@ namespace Nitrocid.Extras.Mods.Commands
                     new CommandArgumentPart(true, "mode", new()
                     {
                         ExactWording = ["start", "stop", "info", "reload", "install", "uninstall"],
-                        ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC")
                     }),
                     new CommandArgumentPart(true, "modfilename", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC")
                     }),
                 ]),
                 new CommandArgumentInfo(
@@ -74,7 +74,7 @@ namespace Nitrocid.Extras.Mods.Commands
                     new CommandArgumentPart(true, "mode", new()
                     {
                         ExactWording = ["list", "reloadall", "stopall", "startall", "tui"],
-                        ArgumentDescription = /* Localizable */ "NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC")
                     }),
                 ]),
             ];

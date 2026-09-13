@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.BeepSynth.Commands
                 [
                     new CommandArgumentPart(true, "synthFile", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_ARGUMENT_SYNTHFILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_BEEPSYNTH_COMMAND_BEEPSYNTH_ARGUMENT_SYNTHFILE_DESC")
                     }),
                 ])
             ];

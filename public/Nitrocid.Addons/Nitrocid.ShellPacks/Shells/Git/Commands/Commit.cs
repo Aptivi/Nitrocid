@@ -50,7 +50,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
                 [
                     new CommandArgumentPart(true, "summary", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_COMMIT_ARGUMENT_SUMMARY_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_COMMIT_ARGUMENT_SUMMARY_DESC")
                     })
                 ])
             ];

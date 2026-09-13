@@ -73,19 +73,19 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     new CommandArgumentPart(true, "algorithm", new CommandArgumentPartOptions()
                     {
                         AutoCompleter = (_) => EncryptionDriverTools.GetEncryptionDriverNames(),
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_ALGORITHM_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_ARGUMENT_ALGORITHM_DESC")
                     }),
                     new CommandArgumentPart(true, "calculatedhash", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_ARGUMENT_CALCULATEDHASH_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_ARGUMENT_CALCULATEDHASH_DESC")
                     }),
                     new CommandArgumentPart(true, "hashfile/expectedhash", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_ARGUMENT_HASHFILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_ARGUMENT_HASHFILE_DESC")
                     }),
                     new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_ARGUMENT_FILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_VERIFY_ARGUMENT_FILE_DESC")
                     }),
                 ])
             ];

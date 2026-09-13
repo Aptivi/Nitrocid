@@ -46,7 +46,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
                 [
                     new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC")
                     }),
                 ], true)
             ];

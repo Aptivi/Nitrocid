@@ -53,12 +53,12 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     new CommandArgumentPart(false, "freq", new()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_FREQ_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_FREQ_DESC")
                     }),
                     new CommandArgumentPart(false, "ms", new()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_INTERVAL_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_INTERVAL_DESC")
                     }),
                 ])
             ];

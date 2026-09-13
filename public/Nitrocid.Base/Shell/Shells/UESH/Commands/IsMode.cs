@@ -43,22 +43,22 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             [
                 new CommandArgumentInfo([],
                 [
-                    new SwitchInfo("s", /* Localizable */ "NKS_MISC_SPLASHES_WELCOME_SAFEMODE", new SwitchOptions()
+                    new SwitchInfo("s", LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_SAFEMODE"), new SwitchOptions()
                     {
                         AcceptsValues = false,
                         ConflictsWith = ["d", "m"]
                     }),
-                    new SwitchInfo("d", /* Localizable */ "NKS_MISC_SPLASHES_WELCOME_DEBUGMODE", new SwitchOptions()
+                    new SwitchInfo("d", LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_DEBUGMODE"), new SwitchOptions()
                     {
                         AcceptsValues = false,
                         ConflictsWith = ["s", "m"]
                     }),
-                    new SwitchInfo("m", /* Localizable */ "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE", new SwitchOptions()
+                    new SwitchInfo("m", LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_MAINTENANCE"), new SwitchOptions()
                     {
                         AcceptsValues = false,
                         ConflictsWith = ["s", "d"]
                     }),
-                    new SwitchInfo("v", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC", new SwitchOptions()
+                    new SwitchInfo("v", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false,
                     }),

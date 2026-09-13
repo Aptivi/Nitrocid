@@ -42,11 +42,11 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
                 [
                     new CommandArgumentPart(true, "request", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC")
                     }),
                     new CommandArgumentPart(true, "string", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_STRING_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_STRING_DESC")
                     })
                 ])
             ];

@@ -43,7 +43,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP.UESHCommands
                 [
                     new CommandArgumentPart(false, "server", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC")
                     }),
                 ])
             ];

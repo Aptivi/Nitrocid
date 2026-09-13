@@ -53,7 +53,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(false, "theme", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_THEMEPREV_ARGUMENT_THEMENAME_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_THEMEPREV_ARGUMENT_THEMENAME_DESC")
                     }),
                 ])
             ];

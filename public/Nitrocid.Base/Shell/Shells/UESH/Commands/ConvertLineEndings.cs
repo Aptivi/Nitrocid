@@ -73,26 +73,26 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "textfile", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_ARGUMENT_TEXTFILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_ARGUMENT_TEXTFILE_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("w", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_W_DESC", new SwitchOptions()
+                    new SwitchInfo("w", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_W_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["u", "m"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("u", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_U_DESC", new SwitchOptions()
+                    new SwitchInfo("u", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_U_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["m", "w"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("m", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_M_DESC", new SwitchOptions()
+                    new SwitchInfo("m", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_M_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["u", "w"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("force", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_FORCE_DESC", new SwitchOptions()
+                    new SwitchInfo("force", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_FORCE_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),

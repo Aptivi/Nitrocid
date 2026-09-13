@@ -50,7 +50,7 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
                     new CommandArgumentPart(false, "sessionNum", new()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_ADMIN_COMMAND_JOURNAL_ARGUMENT_SESSIONNUM_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_JOURNAL_ARGUMENT_SESSIONNUM_DESC")
                     }),
                 ])
             ];

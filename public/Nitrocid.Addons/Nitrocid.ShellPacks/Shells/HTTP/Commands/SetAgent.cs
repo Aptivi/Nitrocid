@@ -42,7 +42,7 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
                 [
                     new CommandArgumentPart(true, "userAgent", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_ARGUMENT_UA_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_ARGUMENT_UA_DESC")
                     })
                 ])
             ];

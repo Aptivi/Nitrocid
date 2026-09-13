@@ -44,11 +44,11 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                     [
                         new CommandArgumentPart(true, "mecard/path", new CommandArgumentPartOptions()
                         {
-                            ArgumentDescription = /* Localizable */ "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC"
+                            ArgumentDescription = LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC")
                         })
                     ],
                     [
-                        new SwitchInfo("mecard", /* Localizable */ "NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC", new(){
+                        new SwitchInfo("mecard", LanguageTools.GetLocalized("NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC"), new(){
                             AcceptsValues = false,
                         }),
                     ]

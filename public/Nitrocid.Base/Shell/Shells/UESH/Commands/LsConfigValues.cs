@@ -49,7 +49,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     new(true, "config", new CommandArgumentPartOptions()
                     {
                         AutoCompleter = (_) => Config.GetKernelConfigs().Select((bkc) => bkc.GetType().Name).ToArray(),
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GETCONFIGVALUE_ARGUMENT_CONFIG_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GETCONFIGVALUE_ARGUMENT_CONFIG_DESC")
                     })
                 })
             ];

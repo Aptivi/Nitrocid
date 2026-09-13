@@ -49,7 +49,7 @@ namespace Nitrocid.ShellPacks.Shells.Archive.UESHCommands
                 [
                     new CommandArgumentPart(true, "archivefile", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC")
                     }),
                 ])
             ];

@@ -53,7 +53,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
                     new CommandArgumentPart(true, "radioUrl", new CommandArgumentPartOptions()
                     {
                         // TODO: NKS_BASSBOOM_COMMAND_ARGUMENT_RADIOURL_DESC -> Path to a radio station
-                        ArgumentDescription = /* Localizable */ "NKS_BASSBOOM_COMMAND_ARGUMENT_RADIOURL_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_ARGUMENT_RADIOURL_DESC")
                     }),
                 ])
             ];

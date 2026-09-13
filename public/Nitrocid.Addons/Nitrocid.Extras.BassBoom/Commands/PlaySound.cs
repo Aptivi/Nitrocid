@@ -53,7 +53,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
                 [
                     new CommandArgumentPart(true, "musicFile", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC")
                     }),
                 ])
             ];

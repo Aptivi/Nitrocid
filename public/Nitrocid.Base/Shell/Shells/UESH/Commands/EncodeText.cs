@@ -50,19 +50,19 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "string", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_ARGUMENT_STRING_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_ARGUMENT_STRING_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("key", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_KEY_DESC", new SwitchOptions()
+                    new SwitchInfo("key", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_KEY_DESC"), new SwitchOptions()
                     {
                         ArgumentsRequired = true,
                     }),
-                    new SwitchInfo("iv", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_IV_DESC", new SwitchOptions()
+                    new SwitchInfo("iv", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_IV_DESC"), new SwitchOptions()
                     {
                         ArgumentsRequired = true,
                     }),
-                    new SwitchInfo("algorithm", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_IV_DESC", new SwitchOptions()
+                    new SwitchInfo("algorithm", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_SWITCH_IV_DESC"), new SwitchOptions()
                     {
                         ArgumentsRequired = true,
                     }),

@@ -47,15 +47,15 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(false, "firstPanePath", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_FIRSTPATH_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_FIRSTPATH_DESC")
                     }),
                     new CommandArgumentPart(false, "secondPanePath", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("single", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC", new SwitchOptions()
+                    new SwitchInfo("single", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

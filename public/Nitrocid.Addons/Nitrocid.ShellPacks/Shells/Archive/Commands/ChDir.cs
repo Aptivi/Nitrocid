@@ -47,7 +47,7 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Commands
                 [
                     new CommandArgumentPart(true, "directory", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_ARCHIVE_COMMAND_CHDIR_ARGUMENT_DIRECTORY_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_COMMAND_CHDIR_ARGUMENT_DIRECTORY_DESC")
                     })
                 ])
             ];

@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.Calculators.Commands
                 [
                     new CommandArgumentPart(true, "expression", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_CALCULATORS_EXPRESSION"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_CALCULATORS_EXPRESSION")
                     }),
                 ], true)
             ];

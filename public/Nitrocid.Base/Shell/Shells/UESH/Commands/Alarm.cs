@@ -55,15 +55,15 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     new CommandArgumentPart(true, "start", new()
                     {
                         ExactWording = ["start"],
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_START_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_START_DESC")
                     }),
                     new CommandArgumentPart(true, "alarmname", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME")
                     }),
                     new CommandArgumentPart(true, "interval", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_START_INTERVAL_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_START_INTERVAL_DESC")
                     }),
                 ])
                 {
@@ -74,11 +74,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     new CommandArgumentPart(true, "stop", new()
                     {
                         ExactWording = ["stop"],
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_STOP_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_STOP_DESC")
                     }),
                     new CommandArgumentPart(true, "alarmname", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_STOP_NAME_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_STOP_NAME_DESC")
                     }),
                 ])
                 {
@@ -89,11 +89,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     new CommandArgumentPart(true, "list", new()
                     {
                         ExactWording = ["list"],
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_LIST_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_LIST_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("tui", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_SWITCH_TUI_DESC", new SwitchOptions()
+                    new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_SWITCH_TUI_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

@@ -63,15 +63,15 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
                 [
                     new CommandArgumentPart(true, "CityID/CityName", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC")
                     }),
                     new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("list", /* Localizable */ "NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC", new SwitchOptions()
+                    new SwitchInfo("list", LanguageTools.GetLocalized("NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC"), new SwitchOptions()
                     {
                         OptionalizeLastRequiredArguments = 2,
                         AcceptsValues = false

@@ -49,7 +49,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
                 [
                     new CommandArgumentPart(true, "phrase", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC")
                     })
                 ])
             ];

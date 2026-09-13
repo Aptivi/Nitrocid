@@ -49,7 +49,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
                     new CommandArgumentPart(true, "field", new CommandArgumentPartOptions()
                     {
                         AutoCompleter = (_) => [.. FieldManager.GetAllFieldsNoEvaluation().Keys],
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_GETFIELDVALUE_ARGUMENT_NAME_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_GETFIELDVALUE_ARGUMENT_NAME_DESC")
                     })
                 ], true)
             ];

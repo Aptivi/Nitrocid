@@ -46,12 +46,12 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             [
                 new CommandArgumentInfo(
                 [
-                    new SwitchInfo("m", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_VERSION_SWITCH_M_DESC", new SwitchOptions()
+                    new SwitchInfo("m", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_VERSION_SWITCH_M_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["k"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("k", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_VERSION_SWITCH_K_DESC", new SwitchOptions()
+                    new SwitchInfo("k", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_VERSION_SWITCH_K_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["m"],
                         AcceptsValues = false

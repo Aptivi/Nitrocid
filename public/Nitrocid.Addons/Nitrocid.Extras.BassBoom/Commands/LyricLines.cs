@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
                 [
                     new CommandArgumentPart(true, "lyric.lrc", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC")
                     }),
                 ])
             ];

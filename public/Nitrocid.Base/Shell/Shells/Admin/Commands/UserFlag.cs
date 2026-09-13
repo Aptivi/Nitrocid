@@ -41,15 +41,15 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
                 [
                     new CommandArgumentPart(true, "user", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_USER_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_USER_DESC")
                     }),
                     new CommandArgumentPart(true, "admin/anonymous/disabled", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_TYPE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_TYPE_DESC")
                     }),
                     new CommandArgumentPart(true, "false/true", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_GRANT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_GRANT_DESC")
                     })
                 ])
             ];

@@ -48,11 +48,11 @@ namespace Nitrocid.ShellPacks.Shells.RSS.UESHCommands
                 [
                     new CommandArgumentPart(false, "feedlink", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_RSS_ARGUMENT_FEEDLINK_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_RSS_ARGUMENT_FEEDLINK_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("tui", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC"),
+                    new SwitchInfo("tui", LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC")),
                 ])
             ];
 

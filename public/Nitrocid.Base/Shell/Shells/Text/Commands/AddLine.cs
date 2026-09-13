@@ -45,7 +45,7 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                 [
                     new CommandArgumentPart(true, "text", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_TEXT_COMMAND_ADDLINE_ARGUMENT_TEXT_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_COMMAND_ADDLINE_ARGUMENT_TEXT_DESC")
                     })
                 ])
             ];

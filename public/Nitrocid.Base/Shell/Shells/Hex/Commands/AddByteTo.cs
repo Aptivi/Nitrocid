@@ -50,12 +50,12 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
                 [
                     new CommandArgumentPart(true, "byte", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_ADDBYTE_ARGUMENT_BYTE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTE_ARGUMENT_BYTE_DESC")
                     }),
                     new CommandArgumentPart(true, "pos", new()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_ADDBYTETO_ARGUMENT_BYTEPOS_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTETO_ARGUMENT_BYTEPOS_DESC")
                     })
                 ])
             ];

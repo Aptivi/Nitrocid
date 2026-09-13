@@ -48,7 +48,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     new CommandArgumentPart(true, "hardwareType", new CommandArgumentPartOptions()
                     {
                         AutoCompleter = (_) => DriverHandler.CurrentHardwareProberDriverLocal.SupportedHardwareTypes.Union(["all"]).ToArray(),
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_HWINFO_ARGUMENT_TYPE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_HWINFO_ARGUMENT_TYPE_DESC")
                     })
                 ])
             ];

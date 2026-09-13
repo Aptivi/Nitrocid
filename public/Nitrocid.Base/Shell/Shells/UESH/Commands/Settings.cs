@@ -91,32 +91,32 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         public override CommandArgumentInfo[] CommandArgumentInfo =>
             [
                 new CommandArgumentInfo([
-                    new SwitchInfo("saver", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SCREENSAVER_DESC", new SwitchOptions()
+                    new SwitchInfo("saver", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SCREENSAVER_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["splash", "addonsplash", "type", "addonsaver", "driver"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("addonsaver", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_ADDONSAVER_DESC", new SwitchOptions()
+                    new SwitchInfo("addonsaver", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_ADDONSAVER_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["splash", "addonsplash", "type", "saver", "driver"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("splash", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC", new SwitchOptions()
+                    new SwitchInfo("splash", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["saver", "addonsplash", "type", "addonsaver", "driver"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("addonsplash", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_ADDONSPLASH_DESC", new SwitchOptions()
+                    new SwitchInfo("addonsplash", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_ADDONSPLASH_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["saver", "splash", "type", "addonsaver", "driver"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("driver", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_DRIVER_DESC", new SwitchOptions()
+                    new SwitchInfo("driver", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_DRIVER_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["saver", "addonsplash", "type", "addonsaver", "splash"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("type", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_TYPE_DESC", new SwitchOptions()
+                    new SwitchInfo("type", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_TYPE_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["saver", "addonsplash", "splash", "addonsaver", "driver"],
                         ArgumentsRequired = true

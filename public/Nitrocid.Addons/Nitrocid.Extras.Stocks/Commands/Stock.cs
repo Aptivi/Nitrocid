@@ -48,11 +48,11 @@ namespace Nitrocid.Extras.Stocks.Commands
                 [
                     new CommandArgumentPart(false, "company", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC")
                     }),
                     new CommandArgumentPart(false, "apikey", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC")
                     }),
                 ])
             ];

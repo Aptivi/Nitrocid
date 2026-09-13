@@ -75,23 +75,23 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
                 [
                     new CommandArgumentPart(true, "phrase", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC")
                     })
                 ],
                 [
-                    new SwitchInfo("t", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_T_DESC", new SwitchOptions()
+                    new SwitchInfo("t", LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_T_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("d", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_D_DESC", new SwitchOptions()
+                    new SwitchInfo("d", LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_D_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("a", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_A_DESC", new SwitchOptions()
+                    new SwitchInfo("a", LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_A_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("cs", /* Localizable */ "NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_CS_DESC", new SwitchOptions()
+                    new SwitchInfo("cs", LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_CS_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

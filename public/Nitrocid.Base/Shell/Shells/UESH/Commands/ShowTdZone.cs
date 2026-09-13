@@ -69,16 +69,16 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "timezone", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_ARGUMENT_TIMEZONE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_ARGUMENT_TIMEZONE_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("all", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_ALL_DESC", new SwitchOptions()
+                    new SwitchInfo("all", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_ALL_DESC"), new SwitchOptions()
                     {
                         OptionalizeLastRequiredArguments = 1,
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("selection", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_SELECTION_DESC", new SwitchOptions()
+                    new SwitchInfo("selection", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_SELECTION_DESC"), new SwitchOptions()
                     {
                         OptionalizeLastRequiredArguments = 1,
                         AcceptsValues = false

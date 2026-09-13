@@ -54,11 +54,11 @@ namespace Nitrocid.Extras.Dates.Commands
                 [
                     new CommandArgumentPart(true, "date", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC")
                     })
                 ],
                 [
-                    new SwitchInfo("now", /* Localizable */ "NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC", new SwitchOptions()
+                    new SwitchInfo("now", LanguageTools.GetLocalized("NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC"), new SwitchOptions()
                     {
                         OptionalizeLastRequiredArguments = 1,
                         AcceptsValues = false

@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.Notes.Commands
                 [
                     new CommandArgumentPart(true, "noteContents...", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_NOTES_COMMAND_ADDNOTE_ARGUMENT_NOTECONTENTS_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_NOTES_COMMAND_ADDNOTE_ARGUMENT_NOTECONTENTS_DESC")
                     })
                 ]),
             ];

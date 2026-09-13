@@ -45,17 +45,17 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             [
                 new CommandArgumentInfo(
                 [
-                    new SwitchInfo("soft", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_SOFT_DESC", new SwitchOptions()
+                    new SwitchInfo("soft", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_SOFT_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["hard", "mixed"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("mixed", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_MIXED_DESC", new SwitchOptions()
+                    new SwitchInfo("mixed", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_MIXED_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["soft", "hard"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("hard", /* Localizable */ "NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_HARD_DESC", new SwitchOptions()
+                    new SwitchInfo("hard", LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_HARD_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["soft", "mixed"],
                         AcceptsValues = false

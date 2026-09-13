@@ -51,7 +51,7 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
                     new CommandArgumentPart(true, "bytenumber", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_HEX_ADDBYTETO_ARGUMENT_BYTEPOS_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_ADDBYTETO_ARGUMENT_BYTEPOS_DESC")
                     })
                 ])
             ];

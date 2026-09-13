@@ -53,7 +53,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
                     new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
                     {
                         IsNumeric = true,
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC")
                     })
                 ])
             ];

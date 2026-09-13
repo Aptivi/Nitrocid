@@ -67,7 +67,7 @@ namespace Nitrocid.Base.Kernel
             try
             {
                 // Show help / version prior to starting the kernel if help / version is passed
-                ArgumentParse.ParseArguments(args, KernelArguments.outArgs);
+                ArgumentParse.ParseArguments(args, KernelArguments.OutArgs);
 
                 // Show development notice
                 if (!PowerManager.KernelShutdown && !devMessageAck)

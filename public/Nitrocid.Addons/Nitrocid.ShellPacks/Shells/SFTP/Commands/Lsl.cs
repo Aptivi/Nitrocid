@@ -66,15 +66,15 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
                 [
                     new CommandArgumentPart(false, "dir", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC")
                     })
                 ],
                 [
-                    new SwitchInfo("showdetails", /* Localizable */ "NKS_SHELLPACKS_SFTP_COMMAND_SHOWDETAILS_DESC", new SwitchOptions()
+                    new SwitchInfo("showdetails", LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_COMMAND_SHOWDETAILS_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("suppressmessages", /* Localizable */ "NKS_SHELLPACKS_SFTP_COMMAND_LSL_SWITCH_SUPPRESSMESSAGES_DESC", new SwitchOptions()
+                    new SwitchInfo("suppressmessages", LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_COMMAND_LSL_SWITCH_SUPPRESSMESSAGES_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

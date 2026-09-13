@@ -50,7 +50,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
                 [
                     new CommandArgumentPart(true, "sessionGuid", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_DEBUGLOG_ARGUMENT_SESSIONGUID_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_DEBUGLOG_ARGUMENT_SESSIONGUID_DESC")
                     })
                 ])
             ];

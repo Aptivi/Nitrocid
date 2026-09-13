@@ -52,17 +52,17 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
                     new CommandArgumentPart(true, "addon", new CommandArgumentPartOptions()
                     {
                         AutoCompleter = (_) => AddonTools.GetAddons(),
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_NAME_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_NAME_DESC")
                     }),
                     new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
                     {
                         AutoCompleter = (arg) => InterAddonTools.ListAvailableTypes(arg[0]).Select((type) => type.FullName ?? "").ToArray(),
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_TYPE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_ARGUMENT_TYPE_DESC")
                     }),
                     new CommandArgumentPart(true, "function", new CommandArgumentPartOptions()
                     {
                         AutoCompleter = (arg) => InterAddonTools.ListAvailableFunctions(arg[0], arg[1]).Keys.ToArray(),
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_ARGUMENT_FUNCTION_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_ARGUMENT_FUNCTION_DESC")
                     }),
                 ])
             ];

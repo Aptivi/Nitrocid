@@ -67,21 +67,21 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "file", new()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CAT_ARGUMENT_FILE_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CAT_ARGUMENT_FILE_DESC")
                     }),
                 ],
                 [
-                    new SwitchInfo("lines", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CAT_SWITCH_LINES_DESC", new SwitchOptions()
+                    new SwitchInfo("lines", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CAT_SWITCH_LINES_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["nolines"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("nolines", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CAT_SWITCH_NOLINES_DESC", new SwitchOptions()
+                    new SwitchInfo("nolines", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CAT_SWITCH_NOLINES_DESC"), new SwitchOptions()
                     {
                         ConflictsWith = ["lines"],
                         AcceptsValues = false
                     }),
-                    new SwitchInfo("plain", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CAT_SWITCH_PLAIN_DESC", new SwitchOptions()
+                    new SwitchInfo("plain", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_CAT_SWITCH_PLAIN_DESC"), new SwitchOptions()
                     {
                         AcceptsValues = false
                     })

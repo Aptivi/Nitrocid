@@ -52,7 +52,7 @@ namespace Nitrocid.Extras.ThemeStudio.Commands
                 [
                     new CommandArgumentPart(true, "themeName", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC")
                     }),
                 ])
             ];

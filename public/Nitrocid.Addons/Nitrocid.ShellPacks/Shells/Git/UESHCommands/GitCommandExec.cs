@@ -39,7 +39,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.UESHCommands
                 [
                     new CommandArgumentPart(true, "repoPath", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC"
+                        ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC")
                     })
                 ]),
             ];
