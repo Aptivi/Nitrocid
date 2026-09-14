@@ -525,6 +525,114 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
             }
         }
 
+        internal void SearchConfig(bool regex = true)
+        {
+            try
+            {
+                if (config is null)
+                    return;
+                var configs = config.SettingsEntries ??
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
+
+                // Prompt for search term to find
+                // TODO: NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPT -> Write a search term to find a configuration entry
+                // TODO: NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPTREGEX -> Write a search term to find a configuration entry (regex supported)
+                string input = InfoBoxInputColor.WriteInfoBoxInput(regex ? LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPTREGEX") : LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPT"), Settings.InfoBoxSettings);
+                var settingsKeys = ConfigTools.FindSetting(input, config, regex);
+
+                // Let user choose a key, or select the first key, depending on if there is a search result
+                if (settingsKeys.Count > 0)
+                {
+                    InputChoiceInfo? selectedKey = null;
+
+                    // Check to see if we have more than one found config key
+                    if (settingsKeys.Count > 1)
+                    {
+                        // Let the user select a config key
+                        // TODO: NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_SELECT -> Select a configuration key from the search results.
+                        int selectedKeyIdx = InfoBoxSelectionColor.WriteInfoBoxSelection([.. settingsKeys], LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_SELECT"));
+                        if (selectedKeyIdx < 0)
+                            return;
+                        selectedKey = settingsKeys[selectedKeyIdx];
+                    }
+                    else if (settingsKeys.Count == 1)
+                    {
+                        // Select the first key
+                        selectedKey = settingsKeys[0];
+                    }
+
+                    // Process the choice
+                    if (selectedKey is null)
+                        return;
+                    string[] choiceNameSplit = selectedKey.ChoiceName.Split("/");
+                    int entryIdx = int.Parse(choiceNameSplit[0]) - 1;
+                    string keyIdx = choiceNameSplit[1];
+                    int[] originalIndexes = [.. keyIdx.Split("|").Select(int.Parse)];
+                    var allSettingsKeys = ConfigTools.FindSetting("", config, false, entryIdx);
+                    int finalKeyIdx = 0;
+                    string lastEntryIdx = "";
+                    foreach (var choice in allSettingsKeys)
+                    {
+                        string[] currentChoiceNameSplit = choice.ChoiceName.Split("/");
+                        int currentEntryIdx = int.Parse(currentChoiceNameSplit[0]) - 1;
+                        string currentKeyIdx = currentChoiceNameSplit[1];
+                        int[] currentOriginalIndexes = [.. currentKeyIdx.Split("|").Select(int.Parse)];
+                        string previousSectionTaken = string.Join("|", currentOriginalIndexes.Take(currentOriginalIndexes.Length - 1));
+                        string currentEntryIdxSections = currentOriginalIndexes.Length > 1 && string.Join("|", originalIndexes.Take(originalIndexes.Length - 1)).StartsWith(previousSectionTaken) ? previousSectionTaken : $"{currentOriginalIndexes[0]}";
+                        if (!choice.ChoiceName.StartsWith(choiceNameSplit[0] + "/" + string.Join("|", originalIndexes.Take(originalIndexes.Length - 1))))
+                        {
+                            if (lastEntryIdx != currentEntryIdxSections)
+                            {
+                                lastEntryIdx = currentEntryIdxSections;
+                                finalKeyIdx++;
+                            }
+                            continue;
+                        }
+                        else
+                        {
+                            finalKeyIdx++;
+                            if (choice.ChoiceName == selectedKey.ChoiceName)
+                                break;
+                        }
+                    }
+
+                    // Expand the necessary choices if there is need
+                    if (originalIndexes.Length > 1)
+                    {
+                        toExpand.Clear();
+                        var configEntry = configs[entryIdx];
+                        SettingsKey? currentSettingsKey = null;
+                        for (int i = 0; i < originalIndexes.Length - 1; i++)
+                        {
+                            var currentSettingsIdx = originalIndexes[i];
+                            currentSettingsKey = currentSettingsKey is not null ? currentSettingsKey.Variables[currentSettingsIdx] : configs[entryIdx].Keys[currentSettingsIdx];
+                            int[] originalIndexesTaken = [.. originalIndexes.Take(i)];
+                            string origKeyStr = originalIndexesTaken.Length > 0 ? $"{string.Join("|", originalIndexesTaken)}|{currentSettingsIdx}" : $"{currentSettingsIdx}";
+                            toExpand.Add((origKeyStr, entryIdx));
+                        }
+                    }
+
+                    // Process movement according to config index
+                    lastFirstPaneIdx = -1;
+                    InteractiveTuiTools.SelectionMovement(this, entryIdx + 1, 1);
+                    InteractiveTuiTools.SelectionMovement(this, finalKeyIdx, 2);
+                }
+                else
+                {
+                    // TODO: NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_NORESULTS -> There is no configuration key that satisfies your search term.
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_NORESULTS"), Settings.InfoBoxSettings);
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_FAILED -> Searching configuration failed
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_FAILED") + TextTools.FormatString(": {0}", ex.Message));
+                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
+            }
+
+        }
+
         private Dictionary<string, SettingsKey> FlattenSettingsKeys(int entryIdx, SettingsKey[] keys, int level = 0, int[]? originalIndexes = null)
         {
             var allKeys = new Dictionary<string, SettingsKey>();

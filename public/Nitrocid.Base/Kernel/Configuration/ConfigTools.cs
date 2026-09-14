@@ -34,6 +34,7 @@ using Nitrocid.Base.Kernel.Configuration.Instances;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Files.Paths;
+using Textify.General;
 
 namespace Nitrocid.Base.Kernel.Configuration
 {
@@ -121,7 +122,7 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// <summary>
         /// Finds a setting with the matching pattern
         /// </summary>
-        public static List<InputChoiceInfo> FindSetting(string Pattern, BaseKernelConfig configType)
+        public static List<InputChoiceInfo> FindSetting(string Pattern, BaseKernelConfig configType, bool regex = true, int entryIdx = -1)
         {
             var Results = new List<InputChoiceInfo>();
 
@@ -131,20 +132,25 @@ namespace Nitrocid.Base.Kernel.Configuration
                 var settingsEntries = configType.SettingsEntries ?? [];
                 for (int SectionIndex = 0; SectionIndex <= settingsEntries.Length - 1; SectionIndex++)
                 {
+                    if (entryIdx != -1 && SectionIndex != entryIdx)
+                        continue;
                     var SectionToken = settingsEntries[SectionIndex];
                     var keys = SectionToken.Keys;
-                    for (int SettingIndex = 0; SettingIndex <= keys.Length - 1; SettingIndex++)
+                    var flattened = FlattenSettingsKeys(SectionIndex, keys);
+                    for (int SettingIndex = 0; SettingIndex <= flattened.Count - 1; SettingIndex++)
                     {
-                        var Setting = keys[SettingIndex];
+                        var kvpSetting = flattened.ElementAt(SettingIndex);
+                        var Setting = kvpSetting.Value;
                         object? CurrentValue = GetValueFromEntry(Setting, configType);
-                        string KeyName = LanguageTools.GetLocalized(Setting.Name) + $" [{CurrentValue}]";
-                        if (Regex.IsMatch(KeyName, Pattern, RegexOptions.IgnoreCase))
+                        string keyName = LanguageTools.GetLocalized(Setting.Name);
+                        string keyNameFull = keyName + $" [{CurrentValue}]";
+                        if ((regex && Regex.IsMatch(keyName, Pattern, RegexOptions.IgnoreCase)) || (!regex && keyName.ContainsWithNoCase(Pattern)))
                         {
                             string desc = LanguageTools.GetLocalized(Setting.Description);
                             string keyTip = LanguageTools.GetLocalized(Setting.Tip);
                             string finalDesc = $"{desc}{(!string.IsNullOrEmpty(keyTip) ? $"\n\n{keyTip}" : "")}";
-                            InputChoiceInfo ici = new($"{SectionIndex + 1}/{SettingIndex + 1}", KeyName, finalDesc);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Found setting {0} under section {1}, key {2}", vars: [KeyName, SectionIndex + 1, SettingIndex + 1]);
+                            InputChoiceInfo ici = new($"{SectionIndex + 1}/{kvpSetting.Key}", keyNameFull, finalDesc);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Found setting {0} under section {1}, key {2}", vars: [keyNameFull, SectionIndex + 1, SettingIndex + 1]);
                             Results.Add(ici);
                         }
                     }
@@ -578,6 +584,24 @@ namespace Nitrocid.Base.Kernel.Configuration
                 Config.baseConfigurations.Remove(setting);
             }
         }
-
+        
+        internal static Dictionary<string, SettingsKey> FlattenSettingsKeys(int entryIdx, SettingsKey[] keys, int level = 0, int[]? originalIndexes = null)
+        {
+            var allKeys = new Dictionary<string, SettingsKey>();
+            for (int i = 0; i < keys.Length; i++)
+            {
+                SettingsKey? key = keys[i];
+                string origKeyStr = originalIndexes is not null ? $"{string.Join("|", originalIndexes)}|{i}" : $"{i}";
+                allKeys.Add(origKeyStr, key);
+                if (key.Type == SettingsKeyType.SMultivar)
+                {
+                    int[] newOriginalIndexes = originalIndexes is not null ? [.. originalIndexes, i] : [i];
+                    var moreKeys = FlattenSettingsKeys(entryIdx, key.Variables, level + 1, newOriginalIndexes);
+                    foreach (var keyToAdd in moreKeys)
+                        allKeys.Add(keyToAdd.Key, keyToAdd.Value);
+                }
+            }
+            return allKeys;
+        }
     }
 }
