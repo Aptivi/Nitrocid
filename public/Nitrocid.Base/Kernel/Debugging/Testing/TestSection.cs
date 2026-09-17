@@ -27,9 +27,6 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing
         Kernel,
         Languages,
         Misc,
-        Modification,
         Network,
-        Shell,
-        Users
     }
 }
