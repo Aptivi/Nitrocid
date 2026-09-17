@@ -18,6 +18,7 @@
 //
 
 using Colorimetry;
+using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Misc.Widgets.Implementations;
 using Terminaux.Writer.ConsoleWriters;
@@ -35,10 +36,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             base.ScreensaverPreparation();
-            widget.TimeColor = ChangeAnalogClockColor();
-            widget.BezelColor = ChangeAnalogClockColor();
-            widget.HandsColor = ChangeAnalogClockColor();
-            widget.SecondsHandColor = ChangeAnalogClockColor();
+            widget.TimeColor = ScreensaverPackInit.SaversConfig.AnalogClockCycleColors ? ChangeAnalogClockColor() : ScreensaverPackInit.SaversConfig.AnalogClockTimeInfoColor;
+            widget.BezelColor = ScreensaverPackInit.SaversConfig.AnalogClockCycleColors ? ChangeAnalogClockColor() : ScreensaverPackInit.SaversConfig.AnalogClockBezelColor;
+            widget.HandsColor = ScreensaverPackInit.SaversConfig.AnalogClockCycleColors ? ChangeAnalogClockColor() : ScreensaverPackInit.SaversConfig.AnalogClockHandsColor;
+            widget.SecondsHandColor = ScreensaverPackInit.SaversConfig.AnalogClockCycleColors ? ChangeAnalogClockColor() : ScreensaverPackInit.SaversConfig.AnalogClockSecondsHandColor;
             widget.ShowSecondsHand = ScreensaverPackInit.SaversConfig.AnalogClockShowSecondsHand;
         }
 

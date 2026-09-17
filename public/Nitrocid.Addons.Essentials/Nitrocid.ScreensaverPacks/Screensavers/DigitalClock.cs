@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Colorimetry;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Misc.Widgets.Implementations;
-using Colorimetry;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -35,7 +35,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             base.ScreensaverPreparation();
-            widget.ClockColor = ChangeDigitalClockColor();
+            widget.ClockColor = ScreensaverPackInit.SaversConfig.DigitalClockCycleColors ? ChangeDigitalClockColor() : ScreensaverPackInit.SaversConfig.DigitalClockColor;
+            widget.ClockInfoColor = ScreensaverPackInit.SaversConfig.DigitalClockCycleColors ? ChangeDigitalClockColor() : ScreensaverPackInit.SaversConfig.DigitalClockInfoColor;
         }
 
         /// <inheritdoc/>

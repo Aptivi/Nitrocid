@@ -5983,6 +5983,36 @@
                         "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC"
                     },
                     {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_NAME",
+                        "Type": "SBoolean",
+                        "Variable": "AnalogClockCycleColors",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_DESC"
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_NAME",
+                        "Type": "SColor",
+                        "Variable": "AnalogClockTimeInfoColor",
+                        "Description": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_DESC"
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_NAME",
+                        "Type": "SColor",
+                        "Variable": "AnalogClockBezelColor",
+                        "Description": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_DESC"
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_NAME",
+                        "Type": "SColor",
+                        "Variable": "AnalogClockHandsColor",
+                        "Description": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_DESC"
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_NAME",
+                        "Type": "SColor",
+                        "Variable": "AnalogClockSecondsHandColor",
+                        "Description": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_DESC"
+                    },
+                    {
                         "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "AnalogClockMinimumRedColorLevel",
@@ -7412,6 +7442,24 @@
                         "Type": "SBoolean",
                         "Variable": "DigitalClockTrueColor",
                         "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC"
+                    },
+                    {
+                        "Name": "NKS_SETTINGS_COMMON_CYCLECOLORS_NAME",
+                        "Type": "SBoolean",
+                        "Variable": "DigitalClockCycleColors",
+                        "Description": "NKS_SETTINGS_COMMON_CYCLECOLORS_DESC"
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_NAME",
+                        "Type": "SColor",
+                        "Variable": "DigitalClockColor",
+                        "Description": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_DESC"
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_NAME",
+                        "Type": "SColor",
+                        "Variable": "DigitalClockInfoColor",
+                        "Description": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_DESC"
                     },
                     {
                         "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME",

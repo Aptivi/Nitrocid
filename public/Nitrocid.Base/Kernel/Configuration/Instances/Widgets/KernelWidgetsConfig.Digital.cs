@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Colorimetry.Data;
+
 namespace Nitrocid.Base.Kernel.Configuration.Instances
 {
     /// <summary>
@@ -35,6 +37,9 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         private int digitalMaximumBlueColorLevel = 255;
         private int digitalMaximumColorLevel = 255;
         private bool digitalDisplayDate = true;
+        private bool digitalCycleColors = false;
+        private string digitalColor = ConsoleColors.Silver.ToString();
+        private string digitalInfoColor = ConsoleColors.Grey.ToString();
 
         /// <summary>
         /// [Digital] Enable truecolor support. Has a higher priority than 255 color support.
@@ -73,6 +78,36 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         {
             get => digitalDisplayDate;
             set => digitalDisplayDate = value;
+        }
+        /// <summary>
+        /// [Digital] Cycles colors
+        /// </summary>
+        // TODO: NKS_SETTINGS_COMMON_CYCLECOLORS_NAME -> Cycle colors
+        // TODO: NKS_SETTINGS_COMMON_CYCLECOLORS_DESC -> Automatically chooses a random set of colors
+        public bool DigitalCycleColors
+        {
+            get => digitalCycleColors;
+            set => digitalCycleColors = value;
+        }
+        /// <summary>
+        /// [Digital] Color of the digital clock
+        /// </summary>
+        // TODO: NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_NAME -> Digital clock color
+        // TODO: NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_DESC -> Specifies the color of the digital clock
+        public string DigitalColor
+        {
+            get => digitalColor;
+            set => digitalColor = value;
+        }
+        /// <summary>
+        /// [Digital] Color of the date info text
+        /// </summary>
+        // TODO: NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_NAME -> Date info color
+        // TODO: NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC -> Specifies the color of the date text
+        public string DigitalInfoColor
+        {
+            get => digitalInfoColor;
+            set => digitalInfoColor = value;
         }
         /// <summary>
         /// [Digital] The minimum red color level (true color)

@@ -230,10 +230,10 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
         /// </summary>
         public AnalogClock()
         {
-            timeColor = ChangeAnalogClockColor();
-            bezelColor = ChangeAnalogClockColor();
-            handsColor = ChangeAnalogClockColor();
-            secondsHandColor = ChangeAnalogClockColor();
+            timeColor = Config.WidgetConfig.AnalogCycleColors ? ChangeAnalogClockColor() : Config.WidgetConfig.AnalogTimeInfoColor;
+            bezelColor = Config.WidgetConfig.AnalogCycleColors ? ChangeAnalogClockColor() : Config.WidgetConfig.AnalogBezelColor;
+            handsColor = Config.WidgetConfig.AnalogCycleColors ? ChangeAnalogClockColor() : Config.WidgetConfig.AnalogHandsColor;
+            secondsHandColor = Config.WidgetConfig.AnalogCycleColors ? ChangeAnalogClockColor() : Config.WidgetConfig.AnalogSecondsHandColor;
         }
     }
 }

@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Colorimetry.Data;
 using Nitrocid.Base.Kernel.Configuration.Instances;
 
 namespace Nitrocid.ScreensaverPacks.Settings
@@ -36,6 +37,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         private int digitalClockMaximumGreenColorLevel = 255;
         private int digitalClockMaximumBlueColorLevel = 255;
         private int digitalClockMaximumColorLevel = 255;
+        private bool digitalClockCycleColors = false;
+        private string digitalClockColor = ConsoleColors.Silver.ToString();
+        private string digitalClockInfoColor = ConsoleColors.Grey.ToString();
 
         /// <summary>
         /// [DigitalClock] Enable truecolor support. Has a higher priority than 255 color support.
@@ -66,6 +70,35 @@ namespace Nitrocid.ScreensaverPacks.Settings
                     value = 1000;
                 digitalClockDelay = value;
             }
+        }
+        /// <summary>
+        /// [DigitalClock] Cycles colors
+        /// </summary>
+        // TODO: NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_DESC -> Automatically chooses a random set of colors
+        public bool DigitalClockCycleColors
+        {
+            get => digitalClockCycleColors;
+            set => digitalClockCycleColors = value;
+        }
+        /// <summary>
+        /// [DigitalClock] Color of the digital clock
+        /// </summary>
+        // TODO: NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_NAME -> Digital clock color
+        // TODO: NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_DESC -> Specifies the color of the digital clock
+        public string DigitalClockColor
+        {
+            get => digitalClockColor;
+            set => digitalClockColor = value;
+        }
+        /// <summary>
+        /// [DigitalClock] Color of the date info text
+        /// </summary>
+        // TODO: NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_NAME -> Date info color
+        // TODO: NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_DESC -> Specifies the color of the date text
+        public string DigitalClockInfoColor
+        {
+            get => digitalClockInfoColor;
+            set => digitalClockInfoColor = value;
         }
         /// <summary>
         /// [DigitalClock] The minimum red color level (true color)

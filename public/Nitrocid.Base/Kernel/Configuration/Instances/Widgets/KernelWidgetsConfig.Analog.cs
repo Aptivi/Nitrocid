@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Colorimetry.Data;
+
 namespace Nitrocid.Base.Kernel.Configuration.Instances
 {
     /// <summary>
@@ -35,6 +37,11 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         private int analogMaximumGreenColorLevel = 255;
         private int analogMaximumBlueColorLevel = 255;
         private int analogMaximumColorLevel = 255;
+        private bool analogCycleColors = false;
+        private string analogTimeInfoColor = ConsoleColors.Silver.ToString();
+        private string analogBezelColor = ConsoleColors.Yellow.ToString();
+        private string analogHandsColor = ConsoleColors.Grey.ToString();
+        private string analogSecondsHandColor = ConsoleColors.Silver.ToString();
 
         /// <summary>
         /// [Analog] Enable truecolor support. Has a higher priority than 255 color support.
@@ -79,6 +86,56 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
             {
                 analogShowSecondsHand = value;
             }
+        }
+        /// <summary>
+        /// [Analog] Cycles colors
+        /// </summary>
+        // TODO: NKS_SETTINGS_COMMON_CYCLECOLORS_NAME -> Cycle colors
+        // TODO: NKS_SETTINGS_COMMON_CYCLECOLORS_DESC -> Automatically chooses a random set of colors
+        public bool AnalogCycleColors
+        {
+            get => analogCycleColors;
+            set => analogCycleColors = value;
+        }
+        /// <summary>
+        /// [Analog] Color of the time information text
+        /// </summary>
+        // TODO: NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_NAME -> Color of time info text
+        // TODO: NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_DESC -> Chooses a color of time information
+        public string AnalogTimeInfoColor
+        {
+            get => analogTimeInfoColor;
+            set => analogTimeInfoColor = value;
+        }
+        /// <summary>
+        /// [Analog] Color of the bezel
+        /// </summary>
+        // TODO: NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_NAME -> Color of bezel
+        // TODO: NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_DESC -> Chooses a color of the analog clock's bezel
+        public string AnalogBezelColor
+        {
+            get => analogBezelColor;
+            set => analogBezelColor = value;
+        }
+        /// <summary>
+        /// [Analog] Color of the hands
+        /// </summary>
+        // TODO: NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_NAME -> Color of hands
+        // TODO: NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_DESC -> Chooses a color of the analog clock's hands
+        public string AnalogHandsColor
+        {
+            get => analogHandsColor;
+            set => analogHandsColor = value;
+        }
+        /// <summary>
+        /// [Analog] Color of the seconds hand
+        /// </summary>
+        // TODO: NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_NAME -> Color of the seconds hand
+        // TODO: NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_DESC -> Chooses a color of the analog clock's seconds hand
+        public string AnalogSecondsHandColor
+        {
+            get => analogSecondsHandColor;
+            set => analogSecondsHandColor = value;
         }
         /// <summary>
         /// [Analog] The minimum red color level (true color)

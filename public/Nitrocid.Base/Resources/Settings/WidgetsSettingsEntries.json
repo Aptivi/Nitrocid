@@ -27,6 +27,36 @@
                         "Description": "NKS_SETTINGS_COMMON_TRUECOLORS_DESC"
                     },
                     {
+                        "Name": "NKS_SETTINGS_COMMON_CYCLECOLORS_NAME",
+                        "Type": "SBoolean",
+                        "Variable": "AnalogCycleColors",
+                        "Description": "NKS_SETTINGS_COMMON_CYCLECOLORS_DESC"
+                    },
+                    {
+                        "Name": "NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_NAME",
+                        "Type": "SColor",
+                        "Variable": "AnalogTimeInfoColor",
+                        "Description": "NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_DESC"
+                    },
+                    {
+                        "Name": "NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_NAME",
+                        "Type": "SColor",
+                        "Variable": "AnalogBezelColor",
+                        "Description": "NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_DESC"
+                    },
+                    {
+                        "Name": "NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_NAME",
+                        "Type": "SColor",
+                        "Variable": "AnalogHandsColor",
+                        "Description": "NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_DESC"
+                    },
+                    {
+                        "Name": "NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_NAME",
+                        "Type": "SColor",
+                        "Variable": "AnalogSecondsHandColor",
+                        "Description": "NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_DESC"
+                    },
+                    {
                         "Name": "NKS_SETTINGS_COMMON_MINREDCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "AnalogMinimumRedColorLevel",
@@ -120,6 +150,24 @@
                         "Type": "SBoolean",
                         "Variable": "DigitalTrueColor",
                         "Description": "NKS_SETTINGS_COMMON_TRUECOLORS_DESC"
+                    },
+                    {
+                        "Name": "NKS_SETTINGS_COMMON_CYCLECOLORS_NAME",
+                        "Type": "SBoolean",
+                        "Variable": "DigitalCycleColors",
+                        "Description": "NKS_SETTINGS_COMMON_CYCLECOLORS_DESC"
+                    },
+                    {
+                        "Name": "NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_NAME",
+                        "Type": "SColor",
+                        "Variable": "DigitalColor",
+                        "Description": "NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_DESC"
+                    },
+                    {
+                        "Name": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_NAME",
+                        "Type": "SColor",
+                        "Variable": "DigitalInfoColor",
+                        "Description": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC"
                     },
                     {
                         "Name": "NKS_SETTINGS_COMMON_MINREDCOLOR_NAME",

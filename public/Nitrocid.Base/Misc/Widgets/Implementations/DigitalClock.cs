@@ -35,6 +35,7 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
     public class DigitalClock : BaseWidget, IWidget
     {
         private Color clockColor = Color.Empty;
+        private Color clockInfoColor = Color.Empty;
         private Color? backgroundColor;
 
         /// <summary>
@@ -44,6 +45,15 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
         {
             get => clockColor;
             set => clockColor = value;
+        }
+
+        /// <summary>
+        /// Clock date info text color
+        /// </summary>
+        public Color ClockInfoColor
+        {
+            get => clockInfoColor;
+            set => clockInfoColor = value;
         }
 
         /// <summary>
@@ -88,7 +98,7 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
                 var dateText = new AlignedText()
                 {
                     Text = dateStr,
-                    ForegroundColor = ClockColor,
+                    ForegroundColor = ClockInfoColor,
                     BackgroundColor = BackgroundColor,
                     Top = consoleInfoY,
                     OneLine = true,
@@ -107,9 +117,9 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
         }
 
         /// <summary>
-        /// Changes the color of date and time
+        /// Changes the color of digital clock
         /// </summary>
-        private Color ChangeDateAndTimeColor() =>
+        private Color ChangeDigitalClockColor() =>
             ColorTools.GetRandomColor(
                 Config.WidgetConfig.DigitalTrueColor ? ColorType.TrueColor : ColorType.EightBitColor,
                 Config.WidgetConfig.DigitalMinimumColorLevel, Config.WidgetConfig.DigitalMaximumColorLevel,
@@ -123,7 +133,8 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
         /// </summary>
         public DigitalClock()
         {
-            clockColor = ChangeDateAndTimeColor();
+            clockColor = Config.WidgetConfig.DigitalCycleColors ? ChangeDigitalClockColor() : Config.WidgetConfig.DigitalColor;
+            clockInfoColor = Config.WidgetConfig.DigitalCycleColors ? ChangeDigitalClockColor() : Config.WidgetConfig.DigitalInfoColor;
         }
     }
 }
