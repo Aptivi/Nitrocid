@@ -36,6 +36,7 @@ using Nitrocid.Base.Network.Types.RPC;
 using Nitrocid.Core.Environment;
 using SpecProbe.Software.Platform;
 using Nitrocid.Base.Login;
+using Nitrocid.Base.Misc.Screensaver;
 
 namespace Nitrocid.Base.Kernel.Power
 {
@@ -167,11 +168,17 @@ namespace Nitrocid.Base.Kernel.Power
                         TermReaderTools.Interrupt();
                         break;
                     }
+                case PowerMode.Sleep:
+                    {
+                        ScreensaverManager.LockScreen(true);
+                        break;
+                    }
                 case PowerMode.RemoteShutdown:
                 case PowerMode.RemoteRestart:
                 case PowerMode.RemoteRestartSafe:
                 case PowerMode.RemoteRestartDebug:
                 case PowerMode.RemoteRestartMaintenance:
+                case PowerMode.RemoteSleep:
                     {
                         JournalManager.WriteJournal(LanguageTools.GetLocalized("NKS_KERNEL_POWER_INVOKING") + $" {IP}:{Port} => {PowerMode}");
                         RPCCommandEnum rpcCommand =
@@ -179,6 +186,7 @@ namespace Nitrocid.Base.Kernel.Power
                             PowerMode == PowerMode.RemoteRestartSafe ? RPCCommandEnum.RebootSafe :
                             PowerMode == PowerMode.RemoteRestartDebug ? RPCCommandEnum.RebootDebug :
                             PowerMode == PowerMode.RemoteRestartMaintenance ? RPCCommandEnum.RebootMaintenance :
+                            PowerMode == PowerMode.RemoteSleep ? RPCCommandEnum.Sleep :
                             RPCCommandEnum.Shutdown;
                         RPCCommands.SendCommand(rpcCommand, IP, Port);
                         break;

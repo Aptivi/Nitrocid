@@ -64,5 +64,13 @@ namespace Nitrocid.Base.Kernel.Power
         /// Kernel will remotely reboot another kernel to safe mode on the network (if RPC is running here and there)
         /// </summary>
         RemoteRestartDebug,
+        /// <summary>
+        /// Kernel will show a blank screen
+        /// </summary>
+        Sleep,
+        /// <summary>
+        /// Kernel will remotely show a blank screen on the network (if RPC is running here and there)
+        /// </summary>
+        RemoteSleep,
     }
 }

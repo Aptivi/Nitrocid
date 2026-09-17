@@ -55,6 +55,7 @@ namespace Nitrocid.Base.Network.Types.RPC
             { RPCCommandEnum.VersionCode,         new VersionCodeCommand() },
             { RPCCommandEnum.ApiVersion,          new ApiVersionCommand() },
             { RPCCommandEnum.ApiVersionCode,      new ApiVersionCodeCommand() },
+            { RPCCommandEnum.Sleep,               new SleepCommand() },
         };
 
         /// <summary>

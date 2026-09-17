@@ -219,13 +219,14 @@ namespace Nitrocid.Base.Misc.Screensaver
         /// <summary>
         /// Locks the screen. The password will be required when unlocking, depending on the kernel settings.
         /// </summary>
-        public static void LockScreen()
+        /// <param name="blackScreen">Whether to clear the screen only or to show the current screensaver</param>
+        public static void LockScreen(bool blackScreen = false)
         {
             LockMode = true;
             try
             {
                 // Show the screensaver and wait for input
-                ShowSavers();
+                ShowSavers(blackScreen ? "plain" : DefaultSaverName);
                 InputEventInfo eventInfo = Input.ReadPointerOrKey(disableLock: true);
                 EventsManager.FireEvent(EventType.PreUnlock, DefaultSaverName);
 

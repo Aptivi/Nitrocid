@@ -76,5 +76,9 @@ namespace Nitrocid.Base.Network.Types.RPC
         /// &lt;Request:ApiVersionCode&gt;: Returns the Nitrocid mod API version code. Usage: &lt;Request:ApiVersionCode&gt;(IP)
         /// </summary>
         ApiVersionCode,
+        /// <summary>
+        /// &lt;Request:Sleep&gt;: Sleeps another kernel instance remotely. Usage: &lt;Request:Sleep&gt;(IP)
+        /// </summary>
+        Sleep,
     }
 }

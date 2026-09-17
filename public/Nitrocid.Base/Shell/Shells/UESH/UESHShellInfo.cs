@@ -148,6 +148,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH
             new ShowTdCommand(),
             new ShowTdZoneCommand(),
             new ShutdownCommand(),
+            new SleepCommand(),
             new SplitFileCommand(),
             new SudoCommand(),
             new SumFileCommand(),
