@@ -133,7 +133,7 @@ namespace Nitrocid.Base.Kernel.Starting
                 PowerSignalHandlers.RegisterHandlers();
 
                 // Initialize input lock
-                Input.DefaultLockCondition = () => !ScreensaverManager.LockMode;
+                Input.DefaultLockCondition = () => !ScreensaverManager.LockMode || (ScreensaverManager.LockMode && !ScreensaverManager.InSaver);
 
                 // Resize handler
                 ConsoleResizeHandler.StartHandler();
