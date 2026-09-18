@@ -570,29 +570,29 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
                     int[] originalIndexes = [.. keyIdx.Split("|").Select(int.Parse)];
                     var allSettingsKeys = ConfigTools.FindSetting("", config, false, entryIdx);
                     int finalKeyIdx = 0;
-                    string lastEntryIdx = "";
-                    foreach (var choice in allSettingsKeys)
+                    int level = 0;
+                    int lastOrigIndex = -1;
+                    for (int i = 0; i < allSettingsKeys.Count; i++)
                     {
+                        InputChoiceInfo choice = allSettingsKeys[i];
                         string[] currentChoiceNameSplit = choice.ChoiceName.Split("/");
-                        int currentEntryIdx = int.Parse(currentChoiceNameSplit[0]) - 1;
                         string currentKeyIdx = currentChoiceNameSplit[1];
                         int[] currentOriginalIndexes = [.. currentKeyIdx.Split("|").Select(int.Parse)];
-                        string previousSectionTaken = string.Join("|", currentOriginalIndexes.Take(currentOriginalIndexes.Length - 1));
-                        string currentEntryIdxSections = currentOriginalIndexes.Length > 1 && string.Join("|", originalIndexes.Take(originalIndexes.Length - 1)).StartsWith(previousSectionTaken) ? previousSectionTaken : $"{currentOriginalIndexes[0]}";
-                        if (!choice.ChoiceName.StartsWith(choiceNameSplit[0] + "/" + string.Join("|", originalIndexes.Take(originalIndexes.Length - 1))))
-                        {
-                            if (lastEntryIdx != currentEntryIdxSections)
+                        if (currentOriginalIndexes[level] != originalIndexes[level])
+                        {   
+                            if (lastOrigIndex != currentOriginalIndexes[level])
                             {
-                                lastEntryIdx = currentEntryIdxSections;
+                                lastOrigIndex = currentOriginalIndexes[level];
                                 finalKeyIdx++;
                             }
-                            continue;
                         }
                         else
                         {
                             finalKeyIdx++;
-                            if (choice.ChoiceName == selectedKey.ChoiceName)
+                            if (level + 1 >= originalIndexes.Length)
                                 break;
+                            level++;
+                            lastOrigIndex = -1;
                         }
                     }
 
