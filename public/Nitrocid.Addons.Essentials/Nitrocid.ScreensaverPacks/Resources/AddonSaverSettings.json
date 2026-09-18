@@ -7433,6 +7433,12 @@
                 "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC"
             },
             {
+                "Name": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_NAME",
+                "Type": "SBoolean",
+                "Variable": "DigitalClockUseLongFormat",
+                "Description": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_DESC"
+            },
+            {
                 "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
                 "Type": "SMultivar",
                 "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",

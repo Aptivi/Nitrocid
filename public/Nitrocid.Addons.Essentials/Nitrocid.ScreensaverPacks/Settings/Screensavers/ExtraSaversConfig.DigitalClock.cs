@@ -38,6 +38,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
         private int digitalClockMaximumBlueColorLevel = 255;
         private int digitalClockMaximumColorLevel = 255;
         private bool digitalClockCycleColors = false;
+        private bool digitalClockUseLongFormat = false;
         private string digitalClockColor = ConsoleColors.Silver.ToString();
         private string digitalClockInfoColor = ConsoleColors.Grey.ToString();
 
@@ -99,6 +100,16 @@ namespace Nitrocid.ScreensaverPacks.Settings
         {
             get => digitalClockInfoColor;
             set => digitalClockInfoColor = value;
+        }
+        /// <summary>
+        /// [Digital] Cycles colors
+        /// </summary>
+        // TODO: NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_NAME -> Use long format
+        // TODO: NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_DESC -> Use a long format when rendering time
+        public bool DigitalClockUseLongFormat
+        {
+            get => digitalClockUseLongFormat;
+            set => digitalClockUseLongFormat = value;
         }
         /// <summary>
         /// [DigitalClock] The minimum red color level (true color)

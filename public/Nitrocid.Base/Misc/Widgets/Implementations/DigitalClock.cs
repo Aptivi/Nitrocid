@@ -65,11 +65,16 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
             set => backgroundColor = value;
         }
 
+        /// <summary>
+        /// Use a long format when rendering time
+        /// </summary>
+        public bool UseLongFormat { get; set; } = Config.WidgetConfig.DigitalUseLongFormat;
+
         /// <inheritdoc/>
         public override string Render(int left, int top, int width, int height)
         {
             var display = new StringBuilder();
-            string timeStr = TimeDateRenderers.RenderTime(FormatType.Short);
+            string timeStr = TimeDateRenderers.RenderTime(UseLongFormat ? FormatType.Long : FormatType.Short);
 
             // Write the time using figlet
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);

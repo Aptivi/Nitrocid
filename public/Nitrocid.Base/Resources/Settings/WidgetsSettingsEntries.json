@@ -141,6 +141,12 @@
                 "Description": "NKS_SETTINGS_WIDGETS_DIGITAL_DISPLAYDATE_DESC"
             },
             {
+                "Name": "NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_NAME",
+                "Type": "SBoolean",
+                "Variable": "DigitalUseLongFormat",
+                "Description": "NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_DESC"
+            },
+            {
                 "Name": "NKS_SETTINGS_KERNEL_COLORS_DISPLAYAS",
                 "Type": "SMultivar",
                 "Description": "NKS_SETTINGS_WIDGETS_ANALOG_COLOR_DESC",

@@ -38,6 +38,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         private int digitalMaximumColorLevel = 255;
         private bool digitalDisplayDate = true;
         private bool digitalCycleColors = false;
+        private bool digitalUseLongFormat = false;
         private string digitalColor = ConsoleColors.Silver.ToString();
         private string digitalInfoColor = ConsoleColors.Grey.ToString();
 
@@ -108,6 +109,16 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         {
             get => digitalInfoColor;
             set => digitalInfoColor = value;
+        }
+        /// <summary>
+        /// [Digital] Cycles colors
+        /// </summary>
+        // TODO: NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_NAME -> Use long format
+        // TODO: NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_DESC -> Use a long format when rendering time
+        public bool DigitalUseLongFormat
+        {
+            get => digitalUseLongFormat;
+            set => digitalUseLongFormat = value;
         }
         /// <summary>
         /// [Digital] The minimum red color level (true color)

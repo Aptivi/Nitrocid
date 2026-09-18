@@ -37,6 +37,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             base.ScreensaverPreparation();
             widget.ClockColor = ScreensaverPackInit.SaversConfig.DigitalClockCycleColors ? ChangeDigitalClockColor() : ScreensaverPackInit.SaversConfig.DigitalClockColor;
             widget.ClockInfoColor = ScreensaverPackInit.SaversConfig.DigitalClockCycleColors ? ChangeDigitalClockColor() : ScreensaverPackInit.SaversConfig.DigitalClockInfoColor;
+            widget.UseLongFormat = ScreensaverPackInit.SaversConfig.DigitalClockUseLongFormat;
         }
 
         /// <inheritdoc/>
