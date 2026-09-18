@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using FluentFTP.Helpers;
 using Nitrocid.Base.Languages;
 using Nitrocid.Extras.Notes.Management;
 using Terminaux.Shell.Arguments;
@@ -51,8 +50,8 @@ namespace Nitrocid.Extras.Notes.Commands
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             string noteId = parameters.ArgumentsList[0];
-            if (noteId.IsNumeric())
-                NoteManagement.RemoveNote(int.Parse(noteId) - 1);
+            if (int.TryParse(noteId, out int noteIdNum))
+                NoteManagement.RemoveNote(noteIdNum - 1);
             else
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_NOTES_NOTEIDNOTNUMERIC"), true, ThemeColorType.Error);

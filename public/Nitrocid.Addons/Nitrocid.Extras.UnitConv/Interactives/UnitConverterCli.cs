@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Collections;
 using UnitsNet;
-using FluentFTP.Helpers;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Base.Languages;
@@ -98,7 +97,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_NONUMBER"), Settings.InfoBoxSettings);
                     return;
                 }
-                else if (!answer.IsNumeric())
+                else if (!int.TryParse(answer, out int quantityNum))
                 {
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_INVALIDNUMBER"), Settings.InfoBoxSettings);
                     return;
@@ -110,13 +109,12 @@ namespace Nitrocid.Extras.UnitConv.Interactives
                     var units = GetUnits();
                     string UnitType = (string?)unitNames.GetElementFromIndex(FirstPaneCurrentSelection - 1) ??
                         throw new Exception("The unit type is not known.");
-                    int QuantityNum = Convert.ToInt32(answer);
                     string wholeUnit = units.OfType<string>().ElementAt(SecondPaneCurrentSelection - 1);
                     string SourceUnit = wholeUnit[..wholeUnit.IndexOf(' ')];
                     string TargetUnit = wholeUnit[(wholeUnit.LastIndexOf(' ') + 1)..];
                     var QuantityInfos = Quantity.Infos.Where(x => x.Name == UnitType).ToArray();
                     var TargetUnitInstance = parser.Parse(TargetUnit, QuantityInfos[0].UnitType);
-                    var InitialUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}");
+                    var InitialUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{quantityNum} {SourceUnit}");
                     var ConvertedUnit = InitialUnit.ToUnit(TargetUnitInstance);
                     InfoBoxModalColor.WriteInfoBoxModal("{0} => {1}", Settings.InfoBoxSettings,
                         InitialUnit.ToString(CultureManager.CurrentCulture.NumberFormat),
