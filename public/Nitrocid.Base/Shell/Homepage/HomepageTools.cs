@@ -876,7 +876,7 @@ namespace Nitrocid.Base.Shell.Homepage
                     Height = buttonHeight,
                     FrameColor = ThemeColorsTools.GetColor(buttonHighlight == 1 ? ThemeColorType.TuiPaneSelectedSeparator : ThemeColorType.Separator),
                     TitleColor = ThemeColorsTools.GetColor(buttonHighlight == 1 ? ThemeColorType.TuiPaneSelectedSeparator : ThemeColorType.Separator),
-                    Text = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NOTIFICATIONS")
+                    Text = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NOTIFICATIONS") + $" ({NotificationManager.NotifRecents.Count})"
                 };
                 notificationsWidget.Options["alignment"] = TextAlignment.Left;
                 builder.Append(
