@@ -24,7 +24,6 @@ using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Base.Misc.Reflection.Internal;
 using Textify.General;
 using Nitrocid.Base.Kernel.Exceptions;
-using BaseLangTools = Nitrocid.Base.Languages.LanguageTools;
 using Nitrocid.Core.Languages;
 
 namespace Nitrocid.ThemePacks
@@ -49,7 +48,7 @@ namespace Nitrocid.ThemePacks
                 string key = resource.RemovePrefix("Themes.");
                 string themeName = key.RemoveSuffix(".json");
                 string data = ResourcesManager.ConvertToString(ResourcesManager.GetData(key, ResourcesType.Themes, typeof(ThemePackInit).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Reflection, BaseLangTools.GetLocalized("NKS_THEMEPACKS_EXCEPTION_NODATA")));
+                    throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized("NKS_THEMEPACKS_EXCEPTION_NODATA")));
                 var themeToken = JToken.Parse(data);
                 ThemeTools.RegisterTheme(themeName, new ThemeInfo(themeToken));
                 DebugWriter.WriteDebug(DebugLevel.I, "Added {0}", vars: [themeName]);

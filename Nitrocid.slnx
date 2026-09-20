@@ -26,9 +26,6 @@
     <Project Path="private/Nitrocid.AddonPruner/Nitrocid.AddonPruner.csproj" />
     <Project Path="private/Dtp/Dtp.csproj" />
   </Folder>
-  <Folder Name="/Private/Locales/">
-    <Project Path="private/Nitrocid.LocaleChecker/Nitrocid.LocaleChecker.csproj" />
-  </Folder>
   <Folder Name="/Private/Testing/">
     <Project Path="private/Nitrocid.Analyzers.Test/Nitrocid.Analyzers.Test.csproj" />
     <Project Path="private/Nitrocid.Tests/Nitrocid.Tests.csproj">

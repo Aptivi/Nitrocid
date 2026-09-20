@@ -73,8 +73,5 @@
   <!-- KS Base projects End -->
 
   <!-- KS Locale Checker -->
-  <ItemGroup>
-    <ProjectReference Include="..\..\private\Nitrocid.LocaleChecker\Nitrocid.LocaleChecker.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-  </ItemGroup>
   <!-- KS Locale Checker End -->
 </Project>
