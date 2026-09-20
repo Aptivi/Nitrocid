@@ -41,7 +41,7 @@ def find_locs(root_dir: str, project_file: Path):
     if (targets_dirty_count > 0):
         print(f'Please localize {targets_dirty_count} listed strings in '
               f'{project_name}.')
-        with open(f"{root_dir}/dirty-t-{project_name}.txt", 'x') as file:
+        with open(f"{root_dir}/dirty-t-{project_name}.txt", 'w') as file:
             for target_dirty in targets_dirty:
                 file.write(target_dirty + "\n")
         
@@ -50,7 +50,7 @@ def find_locs(root_dir: str, project_file: Path):
     if (sources_dirty_count > 0):
         print(f'Please remove {sources_dirty_count} listed strings in '
               f'{project_name}.')
-        with open(f"{root_dir}/dirty-s-{project_name}.txt", 'x') as file:
+        with open(f"{root_dir}/dirty-s-{project_name}.txt", 'w') as file:
             for source_dirty in sources_dirty:
                 file.write(source_dirty + "\n")
 
