@@ -878,9 +878,12 @@ namespace Nitrocid.Base.Kernel.Starting
                 AssemblyLookup.baseAssemblyLookupPaths.Clear();
 
                 // Set modes as appropriate
-                KernelEntry.SafeMode = PowerManager.RebootingToSafeMode;
-                KernelEntry.Maintenance = PowerManager.RebootingToMaintenanceMode;
-                KernelEntry.DebugMode = PowerManager.RebootingToDebugMode;
+                KernelEntry.SafeMode = PowerManager.rebootingToSafeMode;
+                KernelEntry.Maintenance = PowerManager.rebootingToMaintenanceMode;
+                KernelEntry.DebugMode = PowerManager.rebootingToDebugMode;
+                PowerManager.rebootingToSafeMode = false;
+                PowerManager.rebootingToMaintenanceMode = false;
+                PowerManager.rebootingToDebugMode = false;
 
                 // Unload the assembly resolver
                 AppDomain.CurrentDomain.AssemblyResolve -= AssemblyLookup.LoadFromAssemblySearchPaths;

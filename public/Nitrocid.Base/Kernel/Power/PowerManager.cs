@@ -56,39 +56,6 @@ namespace Nitrocid.Base.Kernel.Power
         internal static Stopwatch Uptime = new();
         internal static ThreadInstance RPCPowerListener = new("RPC Power Listener Thread", true, (arg) => PowerManage((PowerMode?)arg ?? PowerMode.Shutdown));
 
-        internal static bool RebootingToSafeMode
-        {
-            get
-            {
-                bool status = rebootingToSafeMode;
-                if (rebootingToSafeMode)
-                    rebootingToSafeMode = false;
-                return status;
-            }
-        }
-
-        internal static bool RebootingToDebugMode
-        {
-            get
-            {
-                bool status = rebootingToDebugMode;
-                if (rebootingToDebugMode)
-                    rebootingToDebugMode = false;
-                return status;
-            }
-        }
-
-        internal static bool RebootingToMaintenanceMode
-        {
-            get
-            {
-                bool status = rebootingToMaintenanceMode;
-                if (rebootingToMaintenanceMode)
-                    rebootingToMaintenanceMode = false;
-                return status;
-            }
-        }
-
         /// <summary>
         /// Manage computer's (actually, simulated computer) power
         /// </summary>
