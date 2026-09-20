@@ -41,8 +41,4 @@
     <PackageReference Include="Terminaux" Version="8.8.0-20260918165005" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Include="..\Nitrocid.Analyzers.Common\*.cs" />
-  </ItemGroup>
-
 </Project>
