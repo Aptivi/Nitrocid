@@ -203,7 +203,7 @@ namespace Nitrocid.LocaleChecker.Localization
                 var location = exp.GetLocation();
                 var idExpression = expIdentifier.Identifier.Text;
                 var idName = identifier.Identifier.Text;
-                if ((idExpression == "LanguageTools" || idExpression == "BaseLangTools") && idName == "GetLocalized")
+                if (idExpression == "LanguageTools" && idName == "GetLocalized")
                 {
                     // Now, get the string representation from the argument count and compare it with the list of translations.
                     // You'll notice that we sometimes call LanguageTools.GetLocalized() with a variable instead of a string, so
