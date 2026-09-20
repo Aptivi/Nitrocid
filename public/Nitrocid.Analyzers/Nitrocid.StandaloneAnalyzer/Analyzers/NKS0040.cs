@@ -26,7 +26,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Colorimetry.Data;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Analyzers.Common;
 
 namespace Nitrocid.StandaloneAnalyzer.Analyzers
 {

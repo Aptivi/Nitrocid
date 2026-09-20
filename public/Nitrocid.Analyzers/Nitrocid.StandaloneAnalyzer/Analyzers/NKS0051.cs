@@ -20,7 +20,6 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Nitrocid.Analyzers.Common;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Threading;

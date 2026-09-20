@@ -18,21 +18,15 @@
 //
 
 using Microsoft.CodeAnalysis;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-
-#if !NOTERMINAUX
 using System;
 using Colorimetry.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Simple;
-#endif
 
-namespace Nitrocid.Analyzers.Common
+namespace Nitrocid.StandaloneAnalyzer
 {
     internal static class AnalyzerTools
     {
-#if !NOTERMINAUX
         internal static void PrintFromLocation(Location? location, Document document, Type targetType, string message) =>
             PrintFromLocation(location, document.FilePath ?? "", targetType.Name, message);
 
@@ -57,18 +51,6 @@ namespace Nitrocid.Analyzers.Common
                     TextWriterRaw.WriteRaw(lineHandle.Render());
                 }
             }
-        }
-#endif
-
-        internal static Location? GenerateLocation(JToken? token, string str, string path, bool enclose = true)
-        {
-            if (token is null)
-                return null;
-            if (enclose)
-                str = $"\"{str}\"";
-            var lineInfo = (IJsonLineInfo)token;
-            var location = lineInfo.HasLineInfo() ? Location.Create(path, new(lineInfo.LinePosition - str.Length, str.Length), new(new(lineInfo.LineNumber - 1, lineInfo.LinePosition - str.Length), new(lineInfo.LineNumber - 1, lineInfo.LinePosition))) : null;
-            return location;
         }
     }
 }

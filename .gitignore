@@ -413,3 +413,6 @@ DocGen/api/
 
 # Nitrocid Generators
 public/*/Generated/
+
+# adt checklocs
+dirty-*.txt

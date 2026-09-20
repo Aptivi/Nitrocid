@@ -27,3 +27,4 @@ jobs:
         run: |
           pip install aptivi-adt
           adt build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true -p:NKSLITE=true"
+          adt checklocs

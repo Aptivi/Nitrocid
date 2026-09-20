@@ -28,6 +28,7 @@ jobs:
         run: |
           pip install aptivi-adt
           adt build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true"
+          adt checklocs
           adt buildwix Debug x64
           adt buildwix Debug ARM64
           adt packbin

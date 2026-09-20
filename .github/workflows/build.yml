@@ -27,6 +27,7 @@ jobs:
         run: |
           pip install aptivi-adt
           adt build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true"
+          adt checklocs
       - name: Testing
         run: adt test -t="--no-build --configuration Debug"
       - uses: actions/upload-artifact@v7

@@ -28,6 +28,7 @@ jobs:
         run: |
           pip install aptivi-adt
           adt build -b "-p:Configuration=Release -p:ContinuousIntegrationBuild=true"
+          adt checklocs
           adt gendocs
           adt packdocs
           adt buildwix Release x64
