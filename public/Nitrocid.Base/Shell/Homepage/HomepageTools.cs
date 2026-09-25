@@ -95,7 +95,6 @@ namespace Nitrocid.Base.Shell.Homepage
             // Keyboard
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_EXECUTE"), ConsoleKey.Enter),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_LOGOUT"), ConsoleKey.Escape),
-            new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN"), ConsoleKey.Escape, ConsoleModifiers.Shift),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SHELL"), ConsoleKey.S),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SWITCH"), ConsoleKey.Tab),
@@ -455,24 +454,21 @@ namespace Nitrocid.Base.Shell.Homepage
                                     homeScreen.RequireRefresh();
                                 break;
                             case ConsoleKey.Escape:
-                                if (keypress.Modifiers == ConsoleModifiers.Shift)
-                                {
-                                    int answer = InfoBoxButtonsColor.WriteInfoBoxButtons([
-                                        new InputChoiceInfo("shutdown", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_SHUTDOWN")),
-                                        new InputChoiceInfo("reboot", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RESTART")),
-                                        new InputChoiceInfo("exit", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_CLOSE")),
-                                    ], LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_POWERACTION"));
-                                    if (answer == 0)
-                                        PowerManager.PowerManage(PowerMode.Shutdown);
-                                    else if (answer == 1)
-                                        PowerManager.PowerManage(PowerMode.Reboot);
-                                    exiting = answer != 2 && answer != -1;
-                                }
-                                else
+                                int answer = InfoBoxButtonsColor.WriteInfoBoxButtons([
+                                    new InputChoiceInfo("shutdown", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_SHUTDOWN")),
+                                    new InputChoiceInfo("reboot", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RESTART")),
+                                    new InputChoiceInfo("logout", LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_LOGOUT")),
+                                ], LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_POWERACTION"));
+                                if (answer == 0)
+                                    PowerManager.PowerManage(PowerMode.Shutdown);
+                                else if (answer == 1)
+                                    PowerManager.PowerManage(PowerMode.Reboot);
+                                else if (answer == 2)
                                 {
                                     exiting = true;
                                     LoginTools.LogoutRequested = true;
                                 }
+                                exiting = answer != -1;
                                 break;
                             case ConsoleKey.S:
                                 exiting = true;
