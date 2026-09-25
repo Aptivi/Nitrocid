@@ -24,6 +24,7 @@ using System.Threading;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Dock.DockInstances;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.Base.Misc.Widgets.Implementations;
@@ -41,11 +42,11 @@ namespace Nitrocid.Base.Misc.Dock
     /// </summary>
     public static class DockTools
     {
-        private static readonly Dictionary<string, BaseWidget> docks = new()
+        private static readonly Dictionary<string, Dock> docks = new()
         {
-            { nameof(DigitalClock), new DigitalClock() },
-            { nameof(AnalogClock), new AnalogClock() },
-            { nameof(Emoji), new Emoji() },
+            { nameof(DigitalClock), new DigitalClockDock() },
+            { nameof(AnalogClock), new AnalogClockDock() },
+            { nameof(Emoji), new EmojiDock() },
         };
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Nitrocid.Base.Misc.Dock
         public static void DockScreen(string dockName)
         {
             // Check to see if there is a dock by this name
-            if (!DoesDockScreenExist(dockName, out BaseWidget? dock))
+            if (!DoesDockScreenExist(dockName, out Dock? dock))
                 throw new KernelException(KernelExceptionType.Docking, LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN"));
 
             // Now, dock the screen
@@ -69,7 +70,7 @@ namespace Nitrocid.Base.Misc.Dock
         /// </summary>
         /// <param name="dockInstance">Screen dock instance</param>
         /// <exception cref="KernelException"></exception>
-        public static void DockScreen(BaseWidget? dockInstance)
+        public static void DockScreen(Dock? dockInstance)
         {
             // Check to see if there is a dock
             if (dockInstance is null)
@@ -88,7 +89,7 @@ namespace Nitrocid.Base.Misc.Dock
                 while (true)
                 {
                     ConsoleWrapper.CursorVisible = false;
-                    TextWriterRaw.WriteRaw(dockInstance.Render());
+                    TextWriterRaw.WriteRaw(dockInstance.Widget.Render());
                     bool result = SpinWait.SpinUntil(() =>
                     {
                         var key = Input.ReadPointerOrKeyNoBlock();
@@ -122,9 +123,9 @@ namespace Nitrocid.Base.Misc.Dock
         /// <param name="dockName">Screen dock class name</param>
         /// <param name="dockInstance">Screen dock instance output</param>
         /// <returns>True if found; false otherwise.</returns>
-        public static bool DoesDockScreenExist(string dockName, out BaseWidget? dockInstance)
+        public static bool DoesDockScreenExist(string dockName, out Dock? dockInstance)
         {
-            bool result = docks.TryGetValue(dockName, out BaseWidget? dock);
+            bool result = docks.TryGetValue(dockName, out Dock? dock);
             DebugWriter.WriteDebug(DebugLevel.I, $"Result: {dockName}, {result}");
             if (result)
                 DebugWriter.WriteDebug(DebugLevel.I, $"Got dock: {dock?.GetType().Name ?? "null"}");
@@ -146,10 +147,10 @@ namespace Nitrocid.Base.Misc.Dock
         /// <summary>
         /// Gets the dock screens
         /// </summary>
-        /// <returns>A read-only dictionary containing dock screen names and their <see cref="BaseWidget"/> instances</returns>
-        public static ReadOnlyDictionary<string, BaseWidget> GetDockScreens()
+        /// <returns>A read-only dictionary containing dock screen names and their <see cref="Dock"/> instances</returns>
+        public static ReadOnlyDictionary<string, Dock> GetDockScreens()
         {
-            var dockScreens = new ReadOnlyDictionary<string, BaseWidget>(docks);
+            var dockScreens = new ReadOnlyDictionary<string, Dock>(docks);
             DebugWriter.WriteDebug(DebugLevel.I, $"Got {dockScreens.Count} docks");
             return dockScreens;
         }

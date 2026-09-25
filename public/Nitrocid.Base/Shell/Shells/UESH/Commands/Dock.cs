@@ -52,7 +52,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         {
             // Check the dock screen for existence
             string dockName = parameters.ArgumentsList[0];
-            if (!DockTools.DoesDockScreenExist(dockName, out BaseWidget? dock))
+            if (!DockTools.DoesDockScreenExist(dockName, out Dock? dock))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN"), ThemeColorType.Error);
                 return 34;
