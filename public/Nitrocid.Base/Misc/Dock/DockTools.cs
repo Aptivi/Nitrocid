@@ -98,7 +98,6 @@ namespace Nitrocid.Base.Misc.Dock
                     if (result)
                         break;
                 }
-                Input.ReadKey();
             }
             catch (Exception ex)
             {
