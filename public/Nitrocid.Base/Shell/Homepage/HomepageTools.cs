@@ -148,7 +148,7 @@ namespace Nitrocid.Base.Shell.Homepage
                 bool feedAddonInstalled = IsFeedAddonInstalled();
                 rssSequence = LanguageTools.GetLocalized("NKS_MISC_SPLASH_DEFAULTMSG");
                 articles = null;
-                homeScreenBuffer.AddDynamicText(() => RenderHomepagePage(homeScreen.RefreshWasDone, pageNumber, canvases, choices, choiceIdx, buttonHighlight, widget, notificationsWidget, feedAddonInstalled));
+                homeScreenBuffer.AddDynamicText(() => RenderHomepagePage(homeScreen.RefreshWasDone, pageNumber, canvases, choices, choiceIdx, buttonHighlight, widget, notificationsWidget));
                 homeScreen.AddBufferedPart("The Nitrocid Homepage", homeScreenBuffer);
 
                 // Helper function
@@ -699,7 +699,7 @@ namespace Nitrocid.Base.Shell.Homepage
             return homepagePages;
         }
 
-        private static string RenderHomepagePage(bool refreshWasDone, int pageNumber, List<WidgetRenderInfo[]> canvases, (InputChoiceInfo, Action)[] choices, int choiceIdx, int buttonHighlight, BaseWidget widget, NotificationIcons notificationsWidget, bool feedAddonInstalled)
+        private static string RenderHomepagePage(bool refreshWasDone, int pageNumber, List<WidgetRenderInfo[]> canvases, (InputChoiceInfo, Action)[] choices, int choiceIdx, int buttonHighlight, BaseWidget widget, NotificationIcons notificationsWidget)
         {
             int actualScreenNum = pageNumber - 2;
             var builder = new StringBuilder();
