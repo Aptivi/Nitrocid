@@ -275,9 +275,15 @@ namespace Nitrocid.Base.Misc.Notifications
 
                                         // Now, check to see if the progress failed or succeeded, or if still progressing
                                         if (NewNotification.ProgressState == NotificationProgressState.Failure)
+                                        {
                                             printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(renderedProgressTitleFailure, notifLeft, notifTitleTop, NotifyProgressFailureColor, background));
+                                            ConsoleTaskbarProgress.SetProgress(ConsoleTaskbarProgressEnum.Error, NewNotification.Progress);
+                                        }
                                         else if (NewNotification.ProgressState == NotificationProgressState.Success)
+                                        {
                                             printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(renderedProgressTitleSuccess, notifLeft, notifTitleTop, NotifyProgressSuccessColor, background));
+                                            ConsoleTaskbarProgress.SetProgress(ConsoleTaskbarProgressEnum.Normal, NewNotification.Progress);
+                                        }
                                         else
                                         {
                                             // Change the title according to the current progress percentage
@@ -291,6 +297,9 @@ namespace Nitrocid.Base.Misc.Notifications
                                             // For indeterminate progresses, flash the box inside the progress bar
                                             progress.Position = NewNotification.Progress;
                                             printBuffer.Append(RendererTools.RenderRenderable(progress, new Coordinate(notifLeft, notifTipTop)));
+
+                                            // Windows: Let the taskbar know about this progress
+                                            ConsoleTaskbarProgress.SetProgress(ConsoleTaskbarProgressEnum.Normal, NewNotification.Progress);
                                         }
                                     }
 
@@ -348,6 +357,7 @@ namespace Nitrocid.Base.Misc.Notifications
                             // Wait 5 seconds and reset overlay
                             SpinWait.SpinUntil(() => sent, 5000);
                             Screen.GlobalOverlayPart = null;
+                            ConsoleTaskbarProgress.SetProgress(ConsoleTaskbarProgressEnum.NoProgress);
                             if (ScreenTools.IsOnScreen && !ScreensaverManager.InSaver)
                             {
                                 bool useSimplified = Config.MainConfig.NotifyDisplayAsAsterisk && NewNotification.Type == NotificationType.Normal;
