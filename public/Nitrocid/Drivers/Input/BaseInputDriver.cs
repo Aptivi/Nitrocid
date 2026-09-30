@@ -84,7 +84,7 @@ namespace Nitrocid.Drivers.Input
 
             // If in lock mode, wait until release
             DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
-            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
+            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode || (ScreensaverManager.LockMode && !ScreensaverManager.InSaver));
             return Output;
         }
 
@@ -121,7 +121,7 @@ namespace Nitrocid.Drivers.Input
 
             // If in lock mode, wait until release
             DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
-            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
+            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode || (ScreensaverManager.LockMode && !ScreensaverManager.InSaver));
             return Output;
         }
 
@@ -186,7 +186,7 @@ namespace Nitrocid.Drivers.Input
 
             // If in lock mode, wait until release
             DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
-            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
+            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode || (ScreensaverManager.LockMode && !ScreensaverManager.InSaver));
             return pass;
         }
 
@@ -202,7 +202,7 @@ namespace Nitrocid.Drivers.Input
 
             // If in lock mode, wait until release
             DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
-            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
+            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode || (ScreensaverManager.LockMode && !ScreensaverManager.InSaver));
             return pass;
         }
 
@@ -266,7 +266,7 @@ namespace Nitrocid.Drivers.Input
 
             // If in lock mode, wait until release
             DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
-            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
+            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode || (ScreensaverManager.LockMode && !ScreensaverManager.InSaver));
             return Output;
         }
 
@@ -303,7 +303,7 @@ namespace Nitrocid.Drivers.Input
 
             // If in lock mode, wait until release
             DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
-            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
+            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode || (ScreensaverManager.LockMode && !ScreensaverManager.InSaver));
             return key;
         }
 

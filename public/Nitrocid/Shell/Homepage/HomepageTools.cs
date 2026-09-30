@@ -425,8 +425,8 @@ namespace Nitrocid.Shell.Homepage
                         bool isWithinSettings = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX, settingsButtonStartPosY), (settingsButtonEndPosX, settingsButtonEndPosY));
                         bool isWithinAbout = PointerTools.PointerWithinRange(context, (aboutButtonStartPosX, aboutButtonStartPosY), (aboutButtonEndPosX, aboutButtonEndPosY));
                         bool isWithinOptions = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX + 1, widgetTop), (optionsEndX, optionsEndY));
-                        bool isWithinOptionsArrowUp = PointerTools.PointerWithinRange(context, (optionsEndX + 1, widgetTop + 1), (optionsEndX + 1, widgetTop + 1));
-                        bool isWithinOptionsArrowDown = PointerTools.PointerWithinRange(context, (optionsEndX + 1, optionsEndY), (optionsEndX + 1, optionsEndY));
+                        bool isWithinOptionsArrowUp = PointerTools.PointerWithinPoint(context, (optionsEndX + 1, widgetTop + 1));
+                        bool isWithinOptionsArrowDown = PointerTools.PointerWithinPoint(context, (optionsEndX + 1, optionsEndY));
 
                         // If the mouse pointer is within the settings, check for left release
                         if (isWithinSettings)
