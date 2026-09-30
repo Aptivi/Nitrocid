@@ -196,21 +196,21 @@ namespace Nitrocid.Users.Login.Handlers.Logins
 
         public override string UserSelector()
         {
-            // First, get the user number from the selection input
-            var users = UserManagement.ListAllUsers().Select(
-                (user) =>
-                {
-                    var userInfo = UserManagement.GetUser(user) ??
-                    throw new KernelException(KernelExceptionType.LoginHandler, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SUDO_EXCEPTION_USERINFO") + $" {user}");
-                    var fullName = userInfo.FullName;
-                    return (user, string.IsNullOrEmpty(fullName) ? user : fullName);
-                }
-            ).ToArray();
+            // Get the user list first
+            var users = GetUsersList();
+
+            // Some common variables
+            var logonScreenScreen = new Screen();
+            var logonScreenScreenBuffer = new ScreenPart();
+            logonScreenScreenBuffer.AddDynamicText(() => ModernLogonScreen.PrintConfiguredLogonScreen(ModernLogonScreen.screenNum));
+            logonScreenScreen.AddBufferedPart("User selector screen part", logonScreenScreenBuffer);
 
             // Then, make the choices and prompt for the selection
-            KernelColorTools.LoadBackground();
+            ScreenTools.SetCurrent(logonScreenScreen);
+            ScreenTools.Render();
             var choices = InputChoiceTools.GetInputChoices(users);
             int userNum = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices], LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_SELECTUSER")) + 1;
+            ScreenTools.UnsetCurrent(logonScreenScreen);
             return
                 userNum != 0 ?
                 UserManagement.SelectUser(userNum) :
@@ -257,6 +257,20 @@ namespace Nitrocid.Users.Login.Handlers.Logins
             else if (ModernLogonScreen.screenNum == 3)
                 WidgetTools.CleanupWidget(WidgetTools.GetWidgetName(ModernLogonScreen.SecondWidget));
             ModernLogonScreen.headlineStr = "";
+        }
+
+        private (string user, string fullName)[] GetUsersList()
+        {
+            var users = UserManagement.ListAllUsers().Select(
+                (user) =>
+                {
+                    var userInfo = UserManagement.GetUser(user) ??
+                        throw new KernelException(KernelExceptionType.LoginHandler, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SUDO_EXCEPTION_USERINFO") + $" {user}");
+                    var fullName = userInfo.FullName;
+                    return (user, string.IsNullOrEmpty(fullName) ? user : fullName);
+                }
+            ).ToArray();
+            return users;
         }
     }
 }
