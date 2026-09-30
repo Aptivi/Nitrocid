@@ -22,6 +22,7 @@ using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Misc.Splash;
 using System;
 using System.Threading;
+using Terminaux.Base.Buffered;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
 {
@@ -30,14 +31,17 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_DESC");
         public override void Run()
         {
+            SplashReport._KernelBooted = true;
+            var screen = new Screen();
+            ScreenTools.SetCurrent(screen);
             foreach (var value in Enum.GetValues(typeof(NotificationPriority)))
             {
-                SplashReport._KernelBooted = true;
                 var Notif = new Notification(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_TEST_TITLE"), LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_TEST_DESC"), (NotificationPriority)value, NotificationType.Normal);
                 NotificationManager.NotifySend(Notif);
                 Thread.Sleep(500);
-                SplashReport._KernelBooted = false;
             }
+            SplashReport._KernelBooted = false;
+            ScreenTools.UnsetCurrent(screen);
         }
     }
 }

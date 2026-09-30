@@ -19,34 +19,35 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using Colorimetry;
-using System.IO;
-using Newtonsoft.Json;
-using System.Text;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
-using Terminaux.Base;
-using Terminaux.Base.Extensions;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters.Renderer;
+using Colorimetry.Data;
 using Colorimetry.Transformation;
+using Newtonsoft.Json;
 using Nitrocid.Base.Files;
-using Terminaux.Writer.CyclicWriters.Graphical;
-using Terminaux.Base.Structures;
-using Terminaux.Writer.CyclicWriters.Simple;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Splash;
-using Threadify.Manager;
-using Nitrocid.Base.Misc.Audio;
-using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Power;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Audio;
+using Nitrocid.Base.Misc.Screensaver;
+using Nitrocid.Base.Misc.Splash;
+using Terminaux.Base;
 using Terminaux.Base.Buffered;
+using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Threadify.Manager;
 
 namespace Nitrocid.Base.Misc.Notifications
 {
@@ -144,19 +145,19 @@ namespace Nitrocid.Base.Misc.Notifications
 
                                     // Set the border color
                                     DebugWriter.WriteDebug(DebugLevel.I, "Priority: {0}", vars: [NewNotification.Priority]);
-                                    var NotifyBorderColor = ThemeColorsTools.GetColor("LowPriorityBorderColor");
-                                    var NotifyTitleColor = ThemeColorsTools.GetColor("NotificationTitleColor");
-                                    var NotifyDescColor = ThemeColorsTools.GetColor("NotificationDescriptionColor");
-                                    var NotifyProgressColor = ThemeColorsTools.GetColor("NotificationProgressColor");
-                                    var NotifyProgressFailureColor = ThemeColorsTools.GetColor("NotificationFailureColor");
+                                    var NotifyBorderColor = ThemeColorsTools.TryGetColor("LowPriorityBorderColor") ?? ConsoleColors.White;
+                                    var NotifyTitleColor = ThemeColorsTools.TryGetColor("NotificationTitleColor") ?? ConsoleColors.Lime;
+                                    var NotifyDescColor = ThemeColorsTools.TryGetColor("NotificationDescriptionColor") ?? ConsoleColors.Silver;
+                                    var NotifyProgressColor = ThemeColorsTools.TryGetColor("NotificationProgressColor") ?? ConsoleColors.Olive;
+                                    var NotifyProgressFailureColor = ThemeColorsTools.TryGetColor("NotificationFailureColor") ?? ConsoleColors.Red;
                                     var NotifyProgressSuccessColor = ThemeColorsTools.GetColor(ThemeColorType.Success);
                                     switch (NewNotification.Priority)
                                     {
                                         case NotificationPriority.Medium:
-                                            NotifyBorderColor = ThemeColorsTools.GetColor("MediumPriorityBorderColor");
+                                            NotifyBorderColor = ThemeColorsTools.TryGetColor("MediumPriorityBorderColor") ?? ConsoleColors.Yellow;
                                             break;
                                         case NotificationPriority.High:
-                                            NotifyBorderColor = ThemeColorsTools.GetColor("HighPriorityBorderColor");
+                                            NotifyBorderColor = ThemeColorsTools.TryGetColor("HighPriorityBorderColor") ?? ConsoleColors.Red;
                                             break;
                                         case NotificationPriority.Custom:
                                             NotifyBorderColor = NewNotification.CustomColor;

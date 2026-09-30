@@ -17,12 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Threading;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Misc.Splash;
-using System;
-using System.Threading;
+using Terminaux.Base.Buffered;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
 {
@@ -31,16 +32,19 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATIONSIMPLE_DESC");
         public override void Run()
         {
+            var screen = new Screen();
+            ScreenTools.SetCurrent(screen);
+            SplashReport._KernelBooted = true;
+            Config.MainConfig.NotifyDisplayAsAsterisk = true;
             foreach (var value in Enum.GetValues(typeof(NotificationPriority)))
             {
-                SplashReport._KernelBooted = true;
-                Config.MainConfig.NotifyDisplayAsAsterisk = true;
                 var Notif = new Notification(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATIONSIMPLE_TEST_TITLE"), LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_TEST_DESC"), (NotificationPriority)value, NotificationType.Normal);
                 NotificationManager.NotifySend(Notif);
                 Thread.Sleep(500);
-                Config.MainConfig.NotifyDisplayAsAsterisk = false;
-                SplashReport._KernelBooted = false;
             }
+            Config.MainConfig.NotifyDisplayAsAsterisk = false;
+            SplashReport._KernelBooted = false;
+            ScreenTools.UnsetCurrent(screen);
         }
     }
 }

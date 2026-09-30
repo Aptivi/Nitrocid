@@ -17,10 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Threading;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Misc.Splash;
-using System.Threading;
+using Terminaux.Base.Buffered;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
 {
@@ -30,6 +31,8 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             SplashReport._KernelBooted = true;
+            var screen = new Screen();
+            ScreenTools.SetCurrent(screen);
             var Notif = new Notification(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATIONPROGF_TEST_TITLE"), LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_TEST_DESC"), NotificationPriority.Low, NotificationType.Progress);
             NotificationManager.NotifySend(Notif);
             while (!Notif.ProgressCompleted)
@@ -39,6 +42,7 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
                 if (Notif.Progress == 50)
                     Notif.ProgressState = NotificationProgressState.Failure;
             }
+            ScreenTools.UnsetCurrent(screen);
             SplashReport._KernelBooted = false;
         }
     }
