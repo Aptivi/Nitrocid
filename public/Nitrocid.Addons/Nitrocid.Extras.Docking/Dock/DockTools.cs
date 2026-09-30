@@ -100,7 +100,6 @@ namespace Nitrocid.Extras.Docking.Dock
                         break;
                 }
                 TextWriterRaw.WriteRaw(dockInstance.Cleanup());
-                Input.ReadKey();
             }
             catch (Exception ex)
             {
