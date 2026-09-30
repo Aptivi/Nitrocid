@@ -27,6 +27,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Languages;
+using Nitrocid.Misc.Screensaver;
 using Nitrocid.Users.Login.Widgets;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
@@ -221,26 +222,32 @@ namespace Nitrocid.Users.Login.Handlers.Logins
             // Check if password is empty
             var userInfo = UserManagement.GetUser(user) ??
             throw new KernelException(KernelExceptionType.LoginHandler, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SUDO_EXCEPTION_USERINFO") + $" {user}");
-            ConsoleWrapper.Clear();
             string UserPassword = userInfo.Password;
             if (UserPassword == Encryption.GetEmptyHash("SHA256"))
                 return true;
 
+            // Some common variables
+            var logonScreenScreen = new Screen();
+            var logonScreenScreenBuffer = new ScreenPart();
+            if (!ScreensaverManager.LockMode)
+                logonScreenScreenBuffer.AddDynamicText(() => ModernLogonScreen.PrintConfiguredLogonScreen(ModernLogonScreen.screenNum));
+            logonScreenScreen.AddBufferedPart("User selector screen part", logonScreenScreenBuffer);
+            ScreenTools.SetCurrent(logonScreenScreen);
+            ScreenTools.Render();
+
             // The password is not empty. Prompt for password.
             pass = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PASSWORD") + $" {user}: ", InfoBoxInputType.Password);
-            KernelColorTools.LoadBackground();
 
             // Validate the password
-            if (UserManagement.ValidatePassword(user, pass))
-                // Password written correctly. Log in.
-                return true;
-            else
-                // Wrong password.
+            bool validated = UserManagement.ValidatePassword(user, pass);
+            if (!validated)
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_WRONGPASSWORD"), new InfoBoxSettings()
                 {
-                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 });
-            return false;
+            ScreenTools.UnsetCurrent(logonScreenScreen);
+            ConsoleWrapper.Clear();
+            return validated;
         }
 
         private void CleanWidgetsUp()
