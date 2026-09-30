@@ -1,3 +1,4 @@
+extern alias TextifyDep;
 //
 // Nitrocid  Copyright (C) 2018-2026  Aptivi
 //
@@ -20,17 +21,18 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Terminaux.Shell.Shells;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.Kernel.Threading;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Inputs.Styles.Selection;
-using Nitrocid.Languages;
-using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Languages;
 using Nitrocid.Network.SpeedDial;
 using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Selection;
+using Terminaux.Shell.Shells;
+using TextifyDep::Textify.General;
 
 namespace Nitrocid.Network.Connections
 {
@@ -386,21 +388,23 @@ namespace Nitrocid.Network.Connections
             networkTypes.Contains(connectionType);
 
         /// <summary>
+        /// Gets connection types
+        /// </summary>
+        /// <returns>Registered connection types</returns>
+        public static string[] GetConnectionTypes() =>
+            [.. networkTypes];
+
+        /// <summary>
         /// Opens a connection for the selected shell
         /// </summary>
-        /// <param name="shellType">Any shell type that has its <see cref="BaseShellInfo.AcceptsNetworkConnection"/> flag set to true.</param>
+        /// <param name="shellType">Any shell type that has its entry registered as a network type. Consult <see cref="GetConnectionTypes"/>.</param>
         /// <param name="establisher">The function responsible for establishing the network connection</param>
         /// <param name="speedEstablisher">The function responsible for establishing the network connection with speed dial options</param>
         /// <param name="address">Target address to connect to</param>
         public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection?> establisher, Func<string, SpeedDialEntry, NetworkConnection?> speedEstablisher, string address = "")
         {
-            // Get shell info to check to see if the shell accepts network connections
-            var shellInfo = ShellManager.GetShellInfo(shellType);
-            if (!shellInfo.AcceptsNetworkConnection)
-                throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS"), shellType);
-
-            // Determine the network connection type
-            string connectionType = shellInfo.NetworkConnectionType;
+            // Check the connection type, which is the same as the shell type
+            string connectionType = shellType.RemoveSuffix("Shell");
             if (!networkTypes.Contains(connectionType))
                 throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTYPE"));
 

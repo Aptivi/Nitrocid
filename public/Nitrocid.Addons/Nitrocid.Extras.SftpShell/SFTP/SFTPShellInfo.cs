@@ -62,9 +62,5 @@ namespace Nitrocid.Extras.SftpShell.SFTP
             { "PowerLineBG2", new SftpPowerLineBG2Preset() },
             { "PowerLineBG3", new SftpPowerLineBG3Preset() }
         };
-
-        public override bool AcceptsNetworkConnection => true;
-
-        public override string NetworkConnectionType => "SFTP";
     }
 }

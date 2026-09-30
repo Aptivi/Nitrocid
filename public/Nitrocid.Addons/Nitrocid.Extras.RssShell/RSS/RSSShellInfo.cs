@@ -58,9 +58,5 @@ namespace Nitrocid.Extras.RssShell.RSS
             { "PowerLineBG2", new RSSPowerLineBG2Preset() },
             { "PowerLineBG3", new RSSPowerLineBG3Preset() }
         };
-
-        public override bool AcceptsNetworkConnection => true;
-
-        public override string NetworkConnectionType => "RSS";
     }
 }

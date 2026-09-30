@@ -64,9 +64,5 @@ namespace Nitrocid.Extras.MailShell.Mail
             { "PowerLineBG2", new MailPowerLineBG2Preset() },
             { "PowerLineBG3", new MailPowerLineBG3Preset() }
         };
-
-        public override bool AcceptsNetworkConnection => true;
-
-        public override string NetworkConnectionType => "Mail";
     }
 }
