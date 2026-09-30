@@ -43,10 +43,6 @@ namespace Nitrocid.Extras.ChatbotAI.Shell
             { "PowerLineBG3", new ChatbotPowerLineBG3Preset() }
         };
 
-        public override bool AcceptsNetworkConnection => true;
-
-        public override string NetworkConnectionType => "Chatbot";
-
         public override bool SlashCommand => true;
 
         public override BaseCommand NonSlashCommandInfo => new PromptCommand();

@@ -40,12 +40,6 @@
   </ItemGroup>
   <!-- KS Dependencies Information End -->
 
-  <!-- KS Generators -->
-  <ItemGroup>
-    <ProjectReference Include="..\..\private\Nitrocid.LocaleChecker\Nitrocid.LocaleChecker.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-  </ItemGroup>
-  <!-- KS Generators End -->
-
   <!-- KS Package Files -->
   <ItemGroup>
     <None Include="..\Nitrocid\OfficialAppIcon-Nitrocid-512.png" Pack="true" PackagePath="\" />
