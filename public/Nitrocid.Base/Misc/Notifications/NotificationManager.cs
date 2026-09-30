@@ -127,6 +127,11 @@ namespace Nitrocid.Base.Misc.Notifications
                             // Only show the notification if we're on the GUI mode
                             if (ScreenTools.IsOnScreen)
                             {
+                                var progress = new SimpleProgress(NewNotification.Progress, 100)
+                                {
+                                    Accurate = true,
+                                    Width = 38,
+                                };
                                 notificationOverlay.AddDynamicText(() =>
                                 {
                                     // Select how to display the notification
@@ -227,13 +232,13 @@ namespace Nitrocid.Base.Misc.Notifications
                                             BorderLeftFrameChar = CurrentNotifyLeftFrameChar,
                                             BorderRightFrameChar = CurrentNotifyRightFrameChar,
                                         };
-                                        var border = new Border()
+                                        var border = new BoxFrame()
                                         {
                                             Left = notifLeft - 1,
                                             Top = notifTopAgnostic,
                                             Width = notifWidth,
                                             Height = 3,
-                                            Color = NotifyBorderColor,
+                                            FrameColor = NotifyBorderColor,
                                             BackgroundColor = background,
                                             Settings = borderSettings
                                         };
@@ -265,26 +270,16 @@ namespace Nitrocid.Base.Misc.Notifications
                                         string renderedProgressTitleFailure = $"{Title} ({LanguageTools.GetLocalized("NKS_MISC_NOTIFICATIONS_PROGFAILURE")})".Truncate(36);
 
                                         // Loop until the progress is finished
-                                        var progress = new SimpleProgress(NewNotification.Progress, 100)
-                                        {
-                                            Indeterminate = indeterminate,
-                                            Accurate = true,
-                                            Width = 38,
-                                            ProgressActiveForegroundColor = NotifyProgressColor,
-                                            ProgressForegroundColor = TransformationTools.GetDarkBackground(NotifyProgressColor),
-                                        };
+                                        progress.Position = NewNotification.Progress;
+                                        progress.Indeterminate = indeterminate;
+                                        progress.ProgressActiveForegroundColor = NotifyProgressColor;
+                                        progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(NotifyProgressColor);
 
                                         // Now, check to see if the progress failed or succeeded, or if still progressing
                                         if (NewNotification.ProgressState == NotificationProgressState.Failure)
-                                        {
                                             printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(renderedProgressTitleFailure, notifLeft, notifTitleTop, NotifyProgressFailureColor, background));
-                                            ConsoleTaskbarProgress.SetProgress(ConsoleTaskbarProgressEnum.Error, NewNotification.Progress);
-                                        }
                                         else if (NewNotification.ProgressState == NotificationProgressState.Success)
-                                        {
                                             printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(renderedProgressTitleSuccess, notifLeft, notifTitleTop, NotifyProgressSuccessColor, background));
-                                            ConsoleTaskbarProgress.SetProgress(ConsoleTaskbarProgressEnum.Normal, NewNotification.Progress);
-                                        }
                                         else
                                         {
                                             // Change the title according to the current progress percentage
@@ -298,9 +293,6 @@ namespace Nitrocid.Base.Misc.Notifications
                                             // For indeterminate progresses, flash the box inside the progress bar
                                             progress.Position = NewNotification.Progress;
                                             printBuffer.Append(RendererTools.RenderRenderable(progress, new Coordinate(notifLeft, notifTipTop)));
-
-                                            // Windows: Let the taskbar know about this progress
-                                            ConsoleTaskbarProgress.SetProgress(ConsoleTaskbarProgressEnum.Normal, NewNotification.Progress);
                                         }
                                     }
 
@@ -341,12 +333,22 @@ namespace Nitrocid.Base.Misc.Notifications
                                 }
                                 else
                                 {
+                                    // Windows: Let the taskbar know about this progress
+                                    bool indeterminate = NewNotification.ProgressIndeterminate;
+                                    if (indeterminate)
+                                        ConsoleTaskbarProgress.SetProgress(ConsoleTaskbarProgressEnum.Indeterminate);
                                     while (NewNotification.ProgressState == NotificationProgressState.Progressing)
                                     {
                                         if (ScreenTools.IsOnScreen)
                                             ScreenTools.Render();
-                                        Thread.Sleep(NewNotification.ProgressIndeterminate ? 250 : 1);
+                                        if (!indeterminate)
+                                            ConsoleTaskbarProgress.SetProgress(ConsoleTaskbarProgressEnum.Normal, NewNotification.Progress);
+                                        Thread.Sleep(indeterminate ? 50 : 1);
                                     }
+                                    if (NewNotification.ProgressState == NotificationProgressState.Failure)
+                                        ConsoleTaskbarProgress.SetProgress(ConsoleTaskbarProgressEnum.Error, indeterminate ? 100 : NewNotification.Progress);
+                                    else if (NewNotification.ProgressState == NotificationProgressState.Success)
+                                        ConsoleTaskbarProgress.SetProgress(ConsoleTaskbarProgressEnum.Normal, indeterminate ? 100 : NewNotification.Progress);
                                 }
                             }
                             else
