@@ -52,6 +52,7 @@ using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
 using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Misc.Notifications;
 
 namespace Nitrocid.Base.Shell.Homepage
 {
