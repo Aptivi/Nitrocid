@@ -22,6 +22,7 @@ using Terminaux.Themes.Colors;
 using System;
 using Colorimetry;
 using Textify.General.Structures;
+using Colorimetry.Data;
 
 namespace Nitrocid.Base.Misc.Notifications
 {
@@ -145,31 +146,31 @@ namespace Nitrocid.Base.Misc.Notifications
         /// Custom color (for custom priority notfications)
         /// </summary>
         [JsonProperty]
-        public Color CustomColor { get; set; } = ThemeColorsTools.GetColor("LowPriorityBorderColor");
+        public Color CustomColor { get; set; } = ThemeColorsTools.TryGetColor("LowPriorityBorderColor") ?? ConsoleColors.White;
 
         /// <summary>
         /// Custom title color (for custom priority notfications)
         /// </summary>
         [JsonProperty]
-        public Color CustomTitleColor { get; set; } = ThemeColorsTools.GetColor("NotificationTitleColor");
+        public Color CustomTitleColor { get; set; } = ThemeColorsTools.TryGetColor("NotificationTitleColor") ?? ConsoleColors.Lime;
 
         /// <summary>
         /// Custom description color (for custom priority notfications)
         /// </summary>
         [JsonProperty]
-        public Color CustomDescriptionColor { get; set; } = ThemeColorsTools.GetColor("NotificationDescriptionColor");
+        public Color CustomDescriptionColor { get; set; } = ThemeColorsTools.TryGetColor("NotificationDescriptionColor") ?? ConsoleColors.Silver;
 
         /// <summary>
         /// Custom progress color (for custom priority notfications)
         /// </summary>
         [JsonProperty]
-        public Color CustomProgressColor { get; set; } = ThemeColorsTools.GetColor("NotificationProgressColor");
+        public Color CustomProgressColor { get; set; } = ThemeColorsTools.TryGetColor("NotificationProgressColor") ?? ConsoleColors.Olive;
 
         /// <summary>
         /// Custom progress failure color (for custom priority notfications)
         /// </summary>
         [JsonProperty]
-        public Color CustomProgressFailureColor { get; set; } = ThemeColorsTools.GetColor("NotificationFailureColor");
+        public Color CustomProgressFailureColor { get; set; } = ThemeColorsTools.TryGetColor("NotificationFailureColor") ?? ConsoleColors.Red;
 
         /// <summary>
         /// Custom progress success color (for custom priority notfications)
