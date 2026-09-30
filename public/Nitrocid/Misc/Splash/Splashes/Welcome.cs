@@ -44,7 +44,6 @@ namespace Nitrocid.Misc.Splash.Splashes
 {
     class SplashWelcome : BaseSplash, ISplash
     {
-        private bool cleared = false;
         private int dotStep = 0;
         private int currMs = 0;
         private ProgressBarNoText progress = new(0, 100);
@@ -62,15 +61,6 @@ namespace Nitrocid.Misc.Splash.Splashes
             progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(KernelColorTools.GetColor(KernelColorType.Progress));
             progress.ProgressActiveForegroundColor = KernelColorTools.GetColor(KernelColorType.Progress);
             progress.ProgressBackgroundColor = ConsoleColoring.CurrentBackgroundColor;
-            if (ConsoleResizeHandler.WasResized(true))
-                cleared = false;
-            if (!cleared)
-            {
-                cleared = true;
-                builder.Append(
-                    base.Opening(context)
-                );
-            }
 
             // Populate some text
             string text =
@@ -178,11 +168,7 @@ namespace Nitrocid.Misc.Splash.Splashes
             var builder = new StringBuilder();
             currMs = 0;
             dotStep = 0;
-            cleared = false;
             progress.Width = ConsoleWrapper.WindowWidth - 6;
-            builder.Append(
-                base.Opening(context)
-            );
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing...");
 
             if (context == SplashContext.Showcase ||
