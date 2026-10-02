@@ -250,7 +250,9 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
         {
             // Prompt for new feed
             // TODO: NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT -> Write an RSS feed link for your news site.
-            string feedLink = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT"), Settings.InfoBoxSettings);
+            string feedLink = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT"), Settings.InfoBoxSettings, out bool done);
+            if (!done)
+                return;
             try
             {
                 var feed = new RSSFeed(feedLink, RSSFeedType.Infer);

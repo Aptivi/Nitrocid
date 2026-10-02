@@ -236,7 +236,9 @@ namespace Nitrocid.Base.Login.Handlers.Logins
             ScreenTools.Render();
 
             // The password is not empty. Prompt for password.
-            pass = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PASSWORD") + $" {user}: ", InfoBoxInputType.Password);
+            pass = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PASSWORD") + $" {user}: ", out bool done, InfoBoxInputType.Password);
+            if (!done)
+                return false;
 
             // Validate the password
             bool validated = UserManagement.ValidatePassword(user, pass);

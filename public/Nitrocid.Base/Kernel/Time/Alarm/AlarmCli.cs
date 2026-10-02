@@ -89,13 +89,17 @@ namespace Nitrocid.Base.Kernel.Time.Alarm
 
         internal void Start()
         {
-            string name = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAMEPROMPT"));
+            string name = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAMEPROMPT"), out bool done);
+            if (!done)
+                return;
             if (string.IsNullOrWhiteSpace(name))
             {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAMENOTSPECCED"));
                 return;
             }
-            string interval = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAMEINTERVALPROMPT") + ": HH:MM:SS");
+            string interval = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAMEINTERVALPROMPT") + ": HH:MM:SS", out done);
+            if (!done)
+                return;
             if (!TimeSpan.TryParse(interval, out TimeSpan span))
             {
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAMEINTERVALINVALID"));

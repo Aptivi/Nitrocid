@@ -175,7 +175,9 @@ namespace Nitrocid.Base.Login
                             else
                             {
                                 // Present an infobox that tells the user to provide the 2FA code
-                                string codeInputStr = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_PROVIDECODE"));
+                                string codeInputStr = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_PROVIDECODE"), out bool done);
+                                if (!done)
+                                    break;
 
                                 // If there is no input, assume cancellation
                                 if (string.IsNullOrEmpty(codeInputStr))

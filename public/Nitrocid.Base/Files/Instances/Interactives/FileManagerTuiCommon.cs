@@ -235,7 +235,9 @@ namespace Nitrocid.Base.Files.Instances.Interactives
         {
             try
             {
-                string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_TARGETPATHCOPY"), infoBoxSettings);
+                string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_TARGETPATHCOPY"), infoBoxSettings, out bool done);
+                if (!done)
+                    return;
                 path = FilesystemTools.NeutralizePath(path, dest) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                 DebugCheck.AssertNull(path, "destination is null!");
@@ -262,7 +264,9 @@ namespace Nitrocid.Base.Files.Instances.Interactives
         {
             try
             {
-                string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_TARGETPATHMOVE"), infoBoxSettings);
+                string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_TARGETPATHMOVE"), infoBoxSettings, out bool done);
+                if (!done)
+                    return;
                 path = FilesystemTools.NeutralizePath(path, dest) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                 DebugCheck.AssertNull(path, "destination is null!");
@@ -289,7 +293,9 @@ namespace Nitrocid.Base.Files.Instances.Interactives
         {
             try
             {
-                string filename = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NEWFILENAMEPROMPT"), infoBoxSettings);
+                string filename = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NEWFILENAMEPROMPT"), infoBoxSettings, out bool done);
+                if (!done)
+                    return;
                 DebugWriter.WriteDebug(DebugLevel.I, $"New filename is {filename}");
                 if (!FilesystemTools.FileExists(filename))
                 {
@@ -311,7 +317,9 @@ namespace Nitrocid.Base.Files.Instances.Interactives
 
         internal static void MakeDir(string dest, InfoBoxSettings infoBoxSettings)
         {
-            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NEWFOLDERNAMEPROMPT"), infoBoxSettings);
+            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_NEWFOLDERNAMEPROMPT"), infoBoxSettings, out bool done);
+            if (!done)
+                return;
             path = FilesystemTools.NeutralizePath(path, dest);
             if (!FilesystemTools.FolderExists(path))
                 FilesystemTools.TryMakeDirectory(path);
@@ -356,7 +364,9 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             string hash = Encryption.GetEncryptedFile(entry.FilePath, hashDriver);
 
             // Now, let the user write the expected hash
-            string expectedHash = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_EXPECTEDHASHPROMPT"), infoBoxSettings);
+            string expectedHash = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_EXPECTEDHASHPROMPT"), infoBoxSettings, out bool done);
+            if (!done)
+                return;
             if (expectedHash == hash)
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_HASHESMATCH"), infoBoxSettings);
             else

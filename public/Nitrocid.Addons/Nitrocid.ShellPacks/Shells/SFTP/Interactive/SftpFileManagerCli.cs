@@ -551,7 +551,9 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
 
             try
             {
-                string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_COPYPROMPT"), Settings.InfoBoxSettings);
+                string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_COPYPROMPT"), Settings.InfoBoxSettings, out bool done);
+                if (!done)
+                    return;
 
                 // Determine whether to run this action locally or from the remote
                 if (CurrentPane == 2)
@@ -616,8 +618,10 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
 
             try
             {
-                string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_MOVEPROMPT"), Settings.InfoBoxSettings);
-                
+                string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_MOVEPROMPT"), Settings.InfoBoxSettings, out bool done);
+                if (!done)
+                    return;
+
                 // Determine whether to run this action locally or from the remote
                 if (CurrentPane == 2)
                 {
@@ -683,7 +687,9 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
 
         internal void MakeDir()
         {
-            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWDIRNAMEPROMPT"), Settings.InfoBoxSettings);
+            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWDIRNAMEPROMPT"), Settings.InfoBoxSettings, out bool done);
+            if (!done)
+                return;
 
             // Determine whether to run this action locally or from the remote
             if (CurrentPane == 2)

@@ -99,7 +99,12 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
                         else if (result == 3)
                         {
                             // Adding new item
-                            string newItemValue = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LIST_ENTERVALUE"));
+                            string newItemValue = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LIST_ENTERVALUE"), out bool done);
+                            if (!done)
+                            {
+                                bail = true;
+                                return KeyDefaultValue;
+                            }
                             TargetList.Add(newItemValue);
                         }
                     }

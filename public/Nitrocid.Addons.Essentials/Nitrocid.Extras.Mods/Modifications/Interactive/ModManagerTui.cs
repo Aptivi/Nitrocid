@@ -103,7 +103,9 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
                 if (manual)
                 {
                     // Give an infobox that lets the user enter the mod path
-                    path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MODS_TUI_PATHTOMODPROMPT"));
+                    path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MODS_TUI_PATHTOMODPROMPT"), out bool done);
+                    if (!done)
+                        return;
                 }
                 else
                 {
@@ -157,7 +159,9 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
                 if (manual)
                 {
                     // Give an infobox that lets the user enter the mod path
-                    path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MODS_TUI_PATHTOMODINSTALLPROMPT"));
+                    path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MODS_TUI_PATHTOMODINSTALLPROMPT"), out bool done);
+                    if (!done)
+                        return;
                 }
                 else
                 {

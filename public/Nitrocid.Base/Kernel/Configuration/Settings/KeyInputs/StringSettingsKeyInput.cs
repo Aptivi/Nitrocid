@@ -45,8 +45,13 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
             };
             string? AnswerString =
                 key.Masked ?
-                InfoBoxInputColor.WriteInfoBoxInput($"{finalDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT")}", settings, InfoBoxInputType.Password) :
-                InfoBoxInputColor.WriteInfoBoxInput($"{finalDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT")} [{KeyDefaultValue}]", settings);
+                InfoBoxInputColor.WriteInfoBoxInput($"{finalDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT")}", settings, out bool done, InfoBoxInputType.Password) :
+                InfoBoxInputColor.WriteInfoBoxInput($"{finalDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT")} [{KeyDefaultValue}]", settings, out done);
+            if (!done)
+            {
+                bail = true;
+                return KeyDefaultValue;
+            }
 
             // Neutralize path if required with the assumption that the keytype is not list
             AnswerString = (string?)TranslateStringValueWithDefault(key, AnswerString, KeyDefaultValue);

@@ -102,7 +102,9 @@ namespace Nitrocid.Base.Users.Interactives
         {
             try
             {
-                string userName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_USERNAME_PROMPT_DESC"));
+                string userName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_USERNAME_PROMPT_DESC"), out bool done);
+                if (!done)
+                    return;
                 UserManagement.AddUser(userName);
                 UserManagement.SaveUsers();
             }
@@ -134,13 +136,21 @@ namespace Nitrocid.Base.Users.Interactives
                 // Prompt for current password if a target user has one
                 string currentPassword = "";
                 if (userInstance.Password != Encryption.GetEmptyHash("SHA256"))
-                    currentPassword = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_PASSWORDPROMPT").FormatString(user ?? ""), InfoBoxInputType.Password);
+                {
+                    currentPassword = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_PASSWORDPROMPT").FormatString(user ?? ""), out bool doneCurrent, InfoBoxInputType.Password);
+                    if (!doneCurrent)
+                        return;
+                }
 
                 // Prompt for new password and confirmation
                 // TODO: NKS_USERS_LOGIN_NEWPASSWORDPROMPT -> {0}'s new password: 
                 // TODO: NKS_USERS_LOGIN_NEWCONFIRMPASSWORDPROMPT -> Confirm {0}'s new password: 
-                string newPassword = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_NEWPASSWORDPROMPT").FormatString(user ?? ""), InfoBoxInputType.Password);
-                string confirmPassword = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_NEWCONFIRMPASSWORDPROMPT").FormatString(user ?? ""), InfoBoxInputType.Password);
+                string newPassword = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_NEWPASSWORDPROMPT").FormatString(user ?? ""), out bool done, InfoBoxInputType.Password);
+                if (!done)
+                    return;
+                string confirmPassword = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_NEWCONFIRMPASSWORDPROMPT").FormatString(user ?? ""), out done, InfoBoxInputType.Password);
+                if (!done)
+                    return;
                 if (confirmPassword.Contains(' '))
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES"), true, ThemeColorType.Error);
                 else if (confirmPassword != newPassword)

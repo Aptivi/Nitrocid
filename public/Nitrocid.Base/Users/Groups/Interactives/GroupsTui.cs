@@ -85,7 +85,9 @@ namespace Nitrocid.Base.Users.Groups.Interactives
             try
             {
                 // TODO: NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME_PROMPT -> Enter the group name.
-                string groupName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME_PROMPT"));
+                string groupName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME_PROMPT"), out bool done);
+                if (!done)
+                    return;
                 GroupManagement.AddGroup(groupName);
                 GroupManagement.SaveGroups();
             }

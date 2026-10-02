@@ -40,7 +40,12 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
             string AnswerString = InfoBoxInputColor.WriteInfoBoxInput($"{finalDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_WRITEINTEGER")} [{KeyDefaultValue}]", new InfoBoxSettings()
             {
                 Title = keyName,
-            });
+            }, out bool done);
+            if (!done)
+            {
+                bail = true;
+                return KeyDefaultValue;
+            }
 
             // Neutralize path if required with the assumption that the keytype is not list
             int answer = 0;

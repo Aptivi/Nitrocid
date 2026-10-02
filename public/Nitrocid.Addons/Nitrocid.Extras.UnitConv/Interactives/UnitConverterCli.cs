@@ -91,7 +91,9 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             try
             {
                 // Open a dialog box asking for number to convert
-                string answer = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_NUMBERPROMPT"), Settings.InfoBoxSettings);
+                string answer = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_NUMBERPROMPT"), Settings.InfoBoxSettings, out bool done);
+                if (!done)
+                    return;
                 if (string.IsNullOrEmpty(answer))
                 {
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_UNITCONV_CLI_NONUMBER"), Settings.InfoBoxSettings);

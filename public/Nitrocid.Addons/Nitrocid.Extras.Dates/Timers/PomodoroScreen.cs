@@ -258,7 +258,9 @@ namespace Nitrocid.Extras.Dates.Timers
                             string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_DATES_TIMERS_TIMEOUTPROMPT") + " [{0}] ", new InfoBoxSettings()
                             {
                                 ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Question)
-                            }, InfoBoxInputType.Text, TimerInterval);
+                            }, out bool done, InfoBoxInputType.Text, TimerInterval);
+                            if (!done)
+                                break;
                             if (!double.TryParse(UnparsedInterval, out TimerInterval))
                             {
                                 // Not numeric.
@@ -280,7 +282,9 @@ namespace Nitrocid.Extras.Dates.Timers
                             string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_DATES_POMODORO_TIMEOUTPROMPT") + " [{0}] ", new InfoBoxSettings()
                             {
                                 ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Question)
-                            }, InfoBoxInputType.Text, breakTimerInterval);
+                            }, out bool done, InfoBoxInputType.Text, breakTimerInterval);
+                            if (!done)
+                                break;
                             if (!double.TryParse(UnparsedInterval, out breakTimerInterval))
                             {
                                 // Not numeric.

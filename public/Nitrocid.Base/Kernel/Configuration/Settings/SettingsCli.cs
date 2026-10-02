@@ -537,7 +537,9 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
                 // Prompt for search term to find
                 // TODO: NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPT -> Write a search term to find a configuration entry
                 // TODO: NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPTREGEX -> Write a search term to find a configuration entry (regex supported)
-                string input = InfoBoxInputColor.WriteInfoBoxInput(regex ? LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPTREGEX") : LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPT"), Settings.InfoBoxSettings);
+                string input = InfoBoxInputColor.WriteInfoBoxInput(regex ? LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPTREGEX") : LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPT"), Settings.InfoBoxSettings, out bool done);
+                if (!done)
+                    return;
                 var settingsKeys = ConfigTools.FindSetting(input, config, regex);
 
                 // Let user choose a key, or select the first key, depending on if there is a search result

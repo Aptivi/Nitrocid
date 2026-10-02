@@ -74,8 +74,10 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
         /// <inheritdoc/>
         public override string GetInfoFromItem((double, double) item)
         {
+            if (!CheckApiKey())
+                return LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_APIKEYNOTPROVIDED");
+
             // Load the weather information, given the API key provided by the command line. Prompt for it if empty.
-            CheckApiKey();
             InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LOADING") + $" {item.Item1}, {item.Item2}...", Settings.InfoBoxSettings);
             var WeatherInfo = Forecast.GetWeatherInfo(item.Item1, item.Item2);
             T Adjust<T>(string dayPartData)
@@ -151,10 +153,13 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
 
         internal void Add()
         {
-            CheckApiKey();
+            if (!CheckApiKey())
+                return;
 
             // Search for a specific city
-            string cityName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_CITYNAMEPROMPT"), Settings.InfoBoxSettings);
+            string cityName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_CITYNAMEPROMPT"), Settings.InfoBoxSettings, out bool done);
+            if (!done)
+                return;
             var cities = WeatherForecast.ListAllCities(cityName, Forecast.ApiKey);
             if (cities.Count == 0)
             {
@@ -172,7 +177,8 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
 
         internal void AddManually()
         {
-            CheckApiKey();
+            if (!CheckApiKey())
+                return;
 
             // Let the user input the latitude and the longitude data
             // TODO: NKS_FORECAST_WEATHER_TUI_LATLON -> Enter latitude and longitude of a city or a region below.
@@ -217,17 +223,20 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
         internal void RemoveAll() =>
             latsLongs.Clear();
 
-        internal void CheckApiKey()
+        internal bool CheckApiKey()
         {
             if (string.IsNullOrEmpty(Forecast.ApiKey))
             {
                 do
                 {
-                    Forecast.ApiKey = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_APIKEYPROMPT"), Settings.InfoBoxSettings, InfoBoxInputType.Password);
+                    Forecast.ApiKey = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_APIKEYPROMPT"), Settings.InfoBoxSettings, out bool done, InfoBoxInputType.Password);
+                    if (!done)
+                        return false;
                     if (string.IsNullOrEmpty(Forecast.ApiKey))
                         InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_APIKEYNOTPROVIDED"), Settings.InfoBoxSettings);
                 } while (string.IsNullOrEmpty(Forecast.ApiKey));
             }
+            return true;
         }
     }
 }

@@ -205,7 +205,9 @@ namespace Nitrocid.Base.Files.Instances.Interactives
         internal void GoTo()
         {
             // Now, render the search box
-            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FOLDERPROMPT"), Settings.InfoBoxSettings);
+            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FOLDERPROMPT"), Settings.InfoBoxSettings, out bool done);
+            if (!done)
+                return;
             path = FilesystemTools.NeutralizePath(path, firstPanePath);
             if (FilesystemTools.FolderExists(path))
             {

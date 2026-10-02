@@ -150,7 +150,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         internal void ImportContactsFrom()
         {
             // Now, render the search box
-            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_PATHVCFPROMPT"), Settings.InfoBoxSettings);
+            string path = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_PATHVCFPROMPT"), Settings.InfoBoxSettings, out bool done);
+            if (!done)
+                return;
             if (FilesystemTools.FileExists(path))
             {
                 try
@@ -170,7 +172,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         internal void ImportContactFromMeCard()
         {
             // Now, render the search box
-            string meCard = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MECARDPROMPT"), Settings.InfoBoxSettings);
+            string meCard = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MECARDPROMPT"), Settings.InfoBoxSettings, out bool done);
+            if (!done)
+                return;
             if (!string.IsNullOrEmpty(meCard))
             {
                 try
@@ -248,7 +252,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         internal void SearchBox()
         {
             // Now, render the search box
-            string exp = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_SEARCHPROMPT"), Settings.InfoBoxSettings);
+            string exp = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_SEARCHPROMPT"), Settings.InfoBoxSettings, out bool done);
+            if (!done)
+                return;
             if (RegexpTools.IsValidRegex(exp))
             {
                 // Initiate the search
@@ -853,7 +859,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 return;
 
             // Ask for the new name
-            string newName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT") + $": {GetContactNamesFinal(card)}", Settings.InfoBoxSettings).Trim();
+            string newName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT") + $": {GetContactNamesFinal(card)}", Settings.InfoBoxSettings, out bool done).Trim();
+            if (!done)
+                return;
             if (string.IsNullOrWhiteSpace(newName))
                 newName = "Unnamed contact";
 
@@ -959,32 +967,60 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                     switch (editIndex)
                     {
                         case 0:
-                            string newPoBox = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_POBOXPROMPT"));
-                            address.PostOfficeBox = newPoBox;
+                            {
+                                string newPoBox = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_POBOXPROMPT"), out bool done);
+                                if (!done)
+                                    break;
+                                address.PostOfficeBox = newPoBox;
+                            }
                             break;
                         case 1:
-                            string newExtAddr = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDRPROMPT"));
-                            address.ExtendedAddress = newExtAddr;
+                            {
+                                string newExtAddr = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDRPROMPT"), out bool done);
+                                if (!done)
+                                    break;
+                                address.ExtendedAddress = newExtAddr;
+                            }
                             break;
                         case 2:
-                            string newStrAddr = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_STRADDRPROMPT"));
-                            address.StreetAddress = newStrAddr;
+                            {
+                                string newStrAddr = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_STRADDRPROMPT"), out bool done);
+                                if (!done)
+                                    break;
+                                address.StreetAddress = newStrAddr;
+                            }
                             break;
                         case 3:
-                            string newLocality = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITYPROMPT"));
-                            address.Locality = newLocality;
+                            {
+                                string newLocality = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITYPROMPT"), out bool done);
+                                if (!done)
+                                    break;
+                                address.Locality = newLocality;
+                            }
                             break;
                         case 4:
-                            string newRegion = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_REGIONPROMPT"));
-                            address.Region = newRegion;
+                            {
+                                string newRegion = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_REGIONPROMPT"), out bool done);
+                                if (!done)
+                                    break;
+                                address.Region = newRegion;
+                            }
                             break;
                         case 5:
-                            string newPostalCode = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODEPROMPT"));
-                            address.PostalCode = newPostalCode;
+                            {
+                                string newPostalCode = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODEPROMPT"), out bool done);
+                                if (!done)
+                                    break;
+                                address.PostalCode = newPostalCode;
+                            }
                             break;
                         case 6:
-                            string newCountry = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRYPROMPT"));
-                            address.Country = newCountry;
+                            {
+                                string newCountry = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRYPROMPT"), out bool done);
+                                if (!done)
+                                    break;
+                                address.Country = newCountry;
+                            }
                             break;
                     }
 
@@ -1097,7 +1133,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                     switch (editIndex)
                     {
                         case 0:
-                            string newMail = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MAILINFO_ADDRESSPROMPT"));
+                            string newMail = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MAILINFO_ADDRESSPROMPT"), out bool done);
+                            if (!done)
+                                break;
                             mail.Value = newMail;
                             break;
                     }
@@ -1186,16 +1224,28 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                     switch (editIndex)
                     {
                         case 0:
-                            string newName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAMEPROMPT"));
-                            organization.Name = newName;
+                            {
+                                string newName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAMEPROMPT"), out bool done);
+                                if (!done)
+                                    break;
+                                organization.Name = newName;
+                            }
                             break;
                         case 1:
-                            string newUnit = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNITPROMPT"));
-                            organization.Unit = newUnit;
+                            {
+                                string newUnit = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNITPROMPT"), out bool done);
+                                if (!done)
+                                    break;
+                                organization.Unit = newUnit;
+                            }
                             break;
                         case 2:
-                            string newRole = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLEPROMPT"));
-                            organization.Role = newRole;
+                            {
+                                string newRole = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLEPROMPT"), out bool done);
+                                if (!done)
+                                    break;
+                                organization.Role = newRole;
+                            }
                             break;
                     }
 
@@ -1296,7 +1346,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                     switch (editIndex)
                     {
                         case 0:
-                            string newTelephone = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBERPROMPT"));
+                            string newTelephone = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBERPROMPT"), out bool done);
+                            if (!done)
+                                break;
                             telephone.Value = newTelephone;
                             break;
                     }
@@ -1383,7 +1435,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                     switch (editIndex)
                     {
                         case 0:
-                            string newUrl = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_URLINFO_ADDRESSPROMPT"));
+                            string newUrl = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_URLINFO_ADDRESSPROMPT"), out bool done);
+                            if (!done)
+                                break;
                             url.Value = newUrl;
                             break;
                     }
@@ -1470,7 +1524,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                     switch (editIndex)
                     {
                         case 0:
-                            string newGeo = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_GEOINFO_COORDSPROMPT"));
+                            string newGeo = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_GEOINFO_COORDSPROMPT"), out bool done);
+                            if (!done)
+                                break;
                             geo.Value = newGeo;
                             break;
                     }
@@ -1561,7 +1617,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                     switch (editIndex)
                     {
                         case 0:
-                            string newImpp = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_IMPPINFO_INFOPROMPT"));
+                            string newImpp = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_IMPPINFO_INFOPROMPT"), out bool done);
+                            if (!done)
+                                break;
                             impp.Value = newImpp;
                             break;
                     }
@@ -1652,7 +1710,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                     switch (editIndex)
                     {
                         case 0:
-                            string newNickname = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NICKNAMEINFO_NICKPROMPT"));
+                            string newNickname = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NICKNAMEINFO_NICKPROMPT"), out bool done);
+                            if (!done)
+                                break;
                             nickname.Value = newNickname;
                             break;
                     }
@@ -1739,7 +1799,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                     switch (editIndex)
                     {
                         case 0:
-                            string newRole = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ROLEINFO_ROLEPROMPT"));
+                            string newRole = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ROLEINFO_ROLEPROMPT"), out bool done);
+                            if (!done)
+                                break;
                             role.Value = newRole;
                             break;
                     }
@@ -1826,7 +1888,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                     switch (editIndex)
                     {
                         case 0:
-                            string newTitle = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_TITLEINFO_TITLEPROMPT"));
+                            string newTitle = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_TITLEINFO_TITLEPROMPT"), out bool done);
+                            if (!done)
+                                break;
                             title.Value = newTitle;
                             break;
                     }
@@ -1913,7 +1977,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                     switch (editIndex)
                     {
                         case 0:
-                            string newNote = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT"));
+                            string newNote = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT"), out bool done);
+                            if (!done)
+                                break;
                             note.Value = newNote;
                             break;
                     }

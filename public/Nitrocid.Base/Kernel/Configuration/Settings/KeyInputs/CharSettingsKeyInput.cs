@@ -42,7 +42,12 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
             {
                 Title = keyName,
             };
-            string? AnswerString = InfoBoxInputColor.WriteInfoBoxInput($"{finalDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT")} [{KeyDefaultValue}]", settings, InfoBoxInputType.Character);
+            string? AnswerString = InfoBoxInputColor.WriteInfoBoxInput($"{finalDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT")} [{KeyDefaultValue}]", settings, out bool done, InfoBoxInputType.Character);
+            if (!done)
+            {
+                bail = true;
+                return KeyDefaultValue;
+            }
 
             // Neutralize path if required with the assumption that the keytype is not list
             DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", vars: [AnswerString]);

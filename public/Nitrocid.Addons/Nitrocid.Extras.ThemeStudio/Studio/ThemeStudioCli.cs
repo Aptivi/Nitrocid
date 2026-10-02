@@ -113,7 +113,9 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         internal void SaveThemeToAnotherDirectoryPrompt()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for directory name...");
-            string DirectoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETODIRPROMPT") + " [{0}] ", vars: [FilesystemTools.CurrentDir]);
+            string DirectoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETODIRPROMPT") + " [{0}] ", out bool done, vars: [FilesystemTools.CurrentDir]);
+            if (!done)
+                return;
             DirectoryName = string.IsNullOrWhiteSpace(DirectoryName) ? FilesystemTools.CurrentDir : DirectoryName;
             DebugWriter.WriteDebug(DebugLevel.I, "Got directory name {0}.", vars: [DirectoryName]);
             SaveThemeToAnotherDirectory(themeName, DirectoryName);
@@ -122,7 +124,9 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         internal void SaveThemeToCurrentDirectoryAltPrompt()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-            string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT") + " [{0}] ", vars: [themeName]);
+            string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT") + " [{0}] ", out bool done, vars: [themeName]);
+            if (!done)
+                return;
             AltThemeName = string.IsNullOrWhiteSpace(AltThemeName) ? themeName : AltThemeName;
             DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
             SaveThemeToCurrentDirectory(AltThemeName);
@@ -166,7 +170,9 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         internal void LoadThemeFromFilePrompt()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-            string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMEFILEPROMPT")) + ".json";
+            string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMEFILEPROMPT"), out bool done) + ".json";
+            if (!done)
+                return;
             DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
             LoadThemeFromFile(AltThemeName);
         }
@@ -174,7 +180,9 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         internal void LoadThemeFromResourcePrompt()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme name...");
-            string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT"));
+            string AltThemeName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT"), out bool done);
+            if (!done)
+                return;
             DebugWriter.WriteDebug(DebugLevel.I, "Got theme name {0}.", vars: [AltThemeName]);
             LoadThemeFromResource(AltThemeName);
         }

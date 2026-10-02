@@ -83,7 +83,9 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
             string Location = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVEPROMPT"), new InfoBoxSettings()
             {
                 ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Question)
-            });
+            }, out bool done);
+            if (!done)
+                return;
             Location = FilesystemTools.NeutralizePath(Location);
             ConsoleWrapper.CursorVisible = false;
             if (!FilesystemTools.FileExists(Location))
@@ -100,7 +102,9 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
             string Location = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT"), new InfoBoxSettings()
             {
                 ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Question)
-            });
+            }, out bool done);
+            if (!done)
+                return;
             Location = FilesystemTools.NeutralizePath(Location);
             if (FilesystemTools.FileExists(Location))
             {

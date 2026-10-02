@@ -261,7 +261,9 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                 // Determine whether to deal with the message or with the folder
                 if (CurrentPane == 1)
                 {
-                    string directoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMEPROMPT"), Settings.InfoBoxSettings);
+                    string directoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMEPROMPT"), Settings.InfoBoxSettings, out bool done);
+                    if (!done)
+                        return;
                     InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_CREATINGDIR"), Settings.InfoBoxSettings);
                     mailShell.CreateMailDirectory(directoryName);
                     refreshFirstPaneListing = true;
@@ -345,7 +347,9 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                 // Determine whether to deal with the message or with the folder
                 if (CurrentPane == 1)
                 {
-                    string directoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMERENAMEPROMPT"), Settings.InfoBoxSettings, InfoBoxInputType.Text, folder.Name);
+                    string directoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMERENAMEPROMPT"), Settings.InfoBoxSettings, out bool done, InfoBoxInputType.Text, folder.Name);
+                    if (!done)
+                        return;
                     InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIR"), Settings.InfoBoxSettings);
                     mailShell.RenameMailDirectory(folder.Name, directoryName);
                     refreshFirstPaneListing = true;
