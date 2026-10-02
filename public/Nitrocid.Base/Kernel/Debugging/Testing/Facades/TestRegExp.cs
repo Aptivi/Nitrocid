@@ -34,9 +34,17 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
             string Text = "";
             string Regex = "";
             if (string.IsNullOrEmpty(Text))
-                Text = TermReader.Read(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTREGEXP_STRINGPROMPT") + " ");
+            {
+                Text = TermReader.Read(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTREGEXP_STRINGPROMPT") + " ", out bool done);
+                if (!done)
+                    return;
+            }
             if (string.IsNullOrEmpty(Regex))
-                Regex = TermReader.Read(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTREGEXP_REGEXPROMPT") + " ");
+            {
+                Regex = TermReader.Read(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTREGEXP_REGEXPROMPT") + " ", out bool done);
+                if (!done)
+                    return;
+            }
             var Reg = new Regex(Regex);
             var Matches = Reg.Matches(Text);
             int MatchNum = 1;

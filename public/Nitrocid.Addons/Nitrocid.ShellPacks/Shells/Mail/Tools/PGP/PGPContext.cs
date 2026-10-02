@@ -32,7 +32,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.PGP
     /// </summary>
     public class PGPContext : GnuPGContext
     {
-
         /// <summary>
         /// Gets password for secret key.
         /// </summary>
@@ -44,7 +43,9 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools.PGP
                 TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailGPGPromptStyle), false, ThemeColorType.Input, key.KeyId);
             else
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD") + ": ", false, ThemeColorType.Input, key.KeyId);
-            string Password = TermReader.Read(password: true);
+            string Password = TermReader.Read(out bool done, password: true);
+            if (!done)
+                return "";
             return Password;
         }
     }

@@ -55,7 +55,9 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
             {
                 if (StringArg.StartsWith("@"))
                 {
-                    string paramValue = TermReader.Read(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT").FormatString(StringArg) + " ");
+                    string paramValue = TermReader.Read(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT").FormatString(StringArg) + " ", out bool done);
+                    if (!done)
+                        return 0;
                     sqlParameters.Add(new SqliteParameter(StringArg, paramValue));
                 }
             }

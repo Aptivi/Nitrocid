@@ -76,7 +76,7 @@ namespace Nitrocid.Extras.Ssh.SSH
         /// <param name="Address">An IP address or hostname</param>
         /// <param name="Port">A port of the SSH/SFTP server. It's usually 22</param>
         /// <param name="Username">A username to authenticate with</param>
-        public static ConnectionInfo PromptConnectionInfo(string Address, int Port, string Username)
+        public static ConnectionInfo? PromptConnectionInfo(string Address, int Port, string Username)
         {
             // Authentication
             DebugWriter.WriteDebug(DebugLevel.I, "Address: {0}:{1}, Username: {2}", vars: [Address, Port, Username]);
@@ -89,7 +89,10 @@ namespace Nitrocid.Extras.Ssh.SSH
                 TextWriterColor.Write("1) " + LanguageTools.GetLocalized("NKS_SSH_AUTHMETHOD_PRIVATEKEY"), true, ThemeColorType.Option);
                 TextWriterColor.Write("2) " + LanguageTools.GetLocalized("NKS_SSH_AUTHMETHOD_PASSWORD") + CharManager.NewLine, true, ThemeColorType.Option);
                 TextWriterColor.Write(">> ", false, ThemeColorType.Input);
-                if (int.TryParse(TermReader.Read(), out Answer))
+                string answerStr = TermReader.Read(out bool done);
+                if (!done)
+                    return null;
+                if (int.TryParse(answerStr, out Answer))
                 {
                     // Check for answer
                     bool exitWhile = false;
@@ -122,61 +125,71 @@ namespace Nitrocid.Extras.Ssh.SSH
             switch (Answer)
             {
                 case 1:
-                    // Private key file
-                    var AuthFiles = new List<PrivateKeyFile>();
-
-                    // Prompt user
-                    while (true)
                     {
-                        string PrivateKeyFile, PrivateKeyPassphrase;
-                        PrivateKeyFile PrivateKeyAuth;
+                        // Private key file
+                        var AuthFiles = new List<PrivateKeyFile>();
 
-                        // Ask for location
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SSH_PRIVKEYLOCATIONPROMPT"), false, ThemeColorType.Input, Username);
-                        PrivateKeyFile = TermReader.Read();
-                        PrivateKeyFile = FilesystemTools.NeutralizePath(PrivateKeyFile);
-                        if (FilesystemTools.FileExists(PrivateKeyFile))
+                        // Prompt user
+                        while (true)
                         {
-                            // Ask for passphrase
-                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SSH_PASSPHRASEPROMPT"), false, ThemeColorType.Input, PrivateKeyFile);
-                            PrivateKeyPassphrase = TermReader.Read(password: true);
+                            string PrivateKeyFile, PrivateKeyPassphrase;
+                            PrivateKeyFile PrivateKeyAuth;
 
-                            // Add authentication method
-                            try
+                            // Ask for location
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SSH_PRIVKEYLOCATIONPROMPT"), false, ThemeColorType.Input, Username);
+                            PrivateKeyFile = TermReader.Read(out bool done);
+                            if (!done)
+                                return null;
+                            PrivateKeyFile = FilesystemTools.NeutralizePath(PrivateKeyFile);
+                            if (FilesystemTools.FileExists(PrivateKeyFile))
                             {
-                                if (string.IsNullOrEmpty(PrivateKeyPassphrase))
-                                    PrivateKeyAuth = new PrivateKeyFile(PrivateKeyFile);
-                                else
-                                    PrivateKeyAuth = new PrivateKeyFile(PrivateKeyFile, PrivateKeyPassphrase);
-                                AuthFiles.Add(PrivateKeyAuth);
+                                // Ask for passphrase
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SSH_PASSPHRASEPROMPT"), false, ThemeColorType.Input, PrivateKeyFile);
+                                PrivateKeyPassphrase = TermReader.Read(out done, password: true);
+                                if (!done)
+                                    return null;
+
+                                // Add authentication method
+                                try
+                                {
+                                    if (string.IsNullOrEmpty(PrivateKeyPassphrase))
+                                        PrivateKeyAuth = new PrivateKeyFile(PrivateKeyFile);
+                                    else
+                                        PrivateKeyAuth = new PrivateKeyFile(PrivateKeyFile, PrivateKeyPassphrase);
+                                    AuthFiles.Add(PrivateKeyAuth);
+                                }
+                                catch (Exception ex)
+                                {
+                                    DebugWriter.WriteDebugStackTrace(ex);
+                                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to add private key authentication method: {0}", vars: [ex.Message]);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SSH_CANTADDPRIVKEY") + " {0}", true, ThemeColorType.Error, ex.Message);
+                                }
                             }
-                            catch (Exception ex)
-                            {
-                                DebugWriter.WriteDebugStackTrace(ex);
-                                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to add private key authentication method: {0}", vars: [ex.Message]);
-                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SSH_CANTADDPRIVKEY") + " {0}", true, ThemeColorType.Error, ex.Message);
-                            }
+                            else if (PrivateKeyFile.EndsWith("/q"))
+                                break;
+                            else
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SSH_KEYFILENOTFOUND"), true, ThemeColorType.Error, PrivateKeyFile);
                         }
-                        else if (PrivateKeyFile.EndsWith("/q"))
-                            break;
-                        else
-                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SSH_KEYFILENOTFOUND"), true, ThemeColorType.Error, PrivateKeyFile);
+
+                        // Add authentication method
+                        AuthenticationMethods.Add(new PrivateKeyAuthenticationMethod(Username, AuthFiles.ToArray()));
+                        break;
                     }
-
-                    // Add authentication method
-                    AuthenticationMethods.Add(new PrivateKeyAuthenticationMethod(Username, AuthFiles.ToArray()));
-                    break;
                 case 2:
-                    // Password
-                    string Pass;
+                    {
+                        // Password
+                        string Pass;
 
-                    // Ask for password
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SSH_PASSWORDPROMPT"), false, ThemeColorType.Input, Username);
-                    Pass = TermReader.Read(password: true);
+                        // Ask for password
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SSH_PASSWORDPROMPT"), false, ThemeColorType.Input, Username);
+                        Pass = TermReader.Read(out bool done, password: true);
+                        if (!done)
+                            return null;
 
-                    // Add authentication method
-                    AuthenticationMethods.Add(new PasswordAuthenticationMethod(Username, Pass));
-                    break;
+                        // Add authentication method
+                        AuthenticationMethods.Add(new PasswordAuthenticationMethod(Username, Pass));
+                        break;
+                    }
             }
             return GetConnectionInfo(Address, Port, Username, AuthenticationMethods);
         }
@@ -207,7 +220,10 @@ namespace Nitrocid.Extras.Ssh.SSH
                 ScreensaverManager.PreventLock();
 
                 // Connection
-                var SSH = new SshClient(PromptConnectionInfo(Address, Port, Username));
+                var sshConnectionInfo = PromptConnectionInfo(Address, Port, Username);
+                if (sshConnectionInfo is null)
+                    return;
+                var SSH = new SshClient(sshConnectionInfo);
                 SSH.ConnectionInfo.Timeout = TimeSpan.FromSeconds(30d);
                 if (Config.MainConfig.SSHBanner)
                     SSH.ConnectionInfo.AuthenticationBanner += ShowBanner;

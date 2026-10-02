@@ -65,7 +65,9 @@ namespace Nitrocid.Extras.Stocks.Commands
             bool prompting = string.IsNullOrWhiteSpace(apiKey);
             while (prompting)
             {
-                apiKey = TermReader.Read(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYPROMPT") + ": ");
+                apiKey = TermReader.Read(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYPROMPT") + ": ", out bool done);
+                if (!done)
+                    return 0;
                 if (string.IsNullOrWhiteSpace(apiKey))
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYNEEDED"), ThemeColorType.Error);
                 else if (apiKey == "demo")

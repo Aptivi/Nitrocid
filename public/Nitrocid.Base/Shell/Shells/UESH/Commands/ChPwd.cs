@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Threading;
 using Nitrocid.Base.Drivers.Encryption;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
@@ -101,7 +102,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     if (targetUser.Password != Encryption.GetEmptyHash("SHA256"))
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_PASSWORDPROMPT"), false, ThemeColorType.Input, username);
-                        currentPassword = TermReader.Read(true);
+                        currentPassword = TermReader.Read(out bool done, true);
+                        if (!done)
+                            return 0;
                     }
                     UserManagement.ChangePassword(username, currentPassword, newPass);
                     return 0;

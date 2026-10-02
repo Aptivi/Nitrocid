@@ -46,6 +46,8 @@ namespace Nitrocid.StandaloneAnalyzer
                 // Attempt to set the version of MSBuild.
                 var visualStudioInstances = MSBuildLocator.QueryVisualStudioInstances().ToArray();
                 var instance = visualStudioInstances.Length == 1 ? visualStudioInstances[0] : SelectVisualStudioInstance(visualStudioInstances);
+                if (instance is null)
+                    return;
                 TextWriterColor.Write($"Build system is {instance.MSBuildPath}, {instance.Name}, version {instance.Version}");
                 MSBuildLocator.RegisterInstance(instance);
 
@@ -95,7 +97,7 @@ namespace Nitrocid.StandaloneAnalyzer
             }
         }
 
-        private static VisualStudioInstance SelectVisualStudioInstance(VisualStudioInstance[] visualStudioInstances)
+        private static VisualStudioInstance? SelectVisualStudioInstance(VisualStudioInstance[] visualStudioInstances)
         {
             TextWriterColor.Write("Select a Visual Studio instance:");
             for (int i = 0; i < visualStudioInstances.Length; i++)
@@ -108,7 +110,9 @@ namespace Nitrocid.StandaloneAnalyzer
 
             while (true)
             {
-                var userResponse = TermReader.Read(">> ");
+                var userResponse = TermReader.Read(">> ", out bool done);
+                if (!done)
+                    return null;
                 if (int.TryParse(userResponse, out int instanceNumber) &&
                     instanceNumber > 0 &&
                     instanceNumber <= visualStudioInstances.Length)

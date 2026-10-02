@@ -426,7 +426,9 @@ namespace Nitrocid.Base.Network.Connections
                     {
                         // Prompt the user to provide connection information
                         DebugWriter.WriteDebug(DebugLevel.I, "Letting user provide connection info...");
-                        address = TermReader.Read(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_ADDRESSPROMPT") + " ");
+                        address = TermReader.Read(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_ADDRESSPROMPT") + " ", out bool done);
+                        if (!done)
+                            return;
                         connection = establisher(address);
                     }
                     else if (selectedConnection == availableConnections + 1)
@@ -452,7 +454,9 @@ namespace Nitrocid.Base.Network.Connections
                         {
                             // User selected to create a new connection
                             DebugWriter.WriteDebug(DebugLevel.I, "Letting user provide connection info...");
-                            address = TermReader.Read(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_ADDRESSPROMPT") + " ");
+                            address = TermReader.Read(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_ADDRESSPROMPT") + " ", out bool done);
+                            if (!done)
+                                return;
                             connection = establisher(address);
                         }
                         else

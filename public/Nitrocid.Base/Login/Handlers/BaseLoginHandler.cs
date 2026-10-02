@@ -93,7 +93,9 @@ namespace Nitrocid.Base.Login.Handlers
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_PASSWORDPROMPT"), false, ThemeColorType.Input, user);
 
                     // Get input
-                    string answerpass = TermReader.Read(new TermReaderSettings() { DisableLock = true });
+                    string answerpass = TermReader.Read(new TermReaderSettings() { DisableLock = true }, out bool done);
+                    if (!done)
+                        return false;
                     pass = answerpass;
                     if (UserManagement.ValidatePassword(user, answerpass))
                         return true;

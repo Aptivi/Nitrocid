@@ -63,6 +63,16 @@ namespace Nitrocid.Extras.ChatbotAI.Commands
             if (parameters.ContainsSwitch("-model"))
                 modelUsed = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-model");
 
+            // Prompt for API key if needed
+            while (string.IsNullOrEmpty(apiKey))
+            {
+                apiKey = TermReader.Read(LanguageTools.GetLocalized("NKS_CHATBOTAI_APIKEYPROMPT") + ": ", out bool done);
+                if (!done)
+                    return 0;
+                if (string.IsNullOrEmpty(apiKey))
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CHATBOTAI_APIKEYNOTPROVIDED"), ThemeColorType.Error);
+            }
+
             // Now, try to authenticate
             NetworkConnectionTools.OpenConnectionForShell("ChatbotShell",
                 (_) => EstablishChatGPTConnection(apiKey, modelUsed),
@@ -70,16 +80,8 @@ namespace Nitrocid.Extras.ChatbotAI.Commands
             return 0;
         }
 
-        private NetworkInstanceConnection<ChatClient> EstablishChatGPTConnection(string apiKey, string model)
+        private NetworkInstanceConnection<ChatClient>? EstablishChatGPTConnection(string apiKey, string model)
         {
-            // Prompt for API key if needed
-            while (string.IsNullOrEmpty(apiKey))
-            {
-                apiKey = TermReader.Read(LanguageTools.GetLocalized("NKS_CHATBOTAI_APIKEYPROMPT") + ": ");
-                if (string.IsNullOrEmpty(apiKey))
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CHATBOTAI_APIKEYNOTPROVIDED"), ThemeColorType.Error);
-            }
-
             // Try to authenticate
             var chatClient = new ChatClient(model, apiKey);
             return NetworkConnectionTools.EstablishConnection("ChatGPT", "chatgpt.com", "Chatbot", chatClient);

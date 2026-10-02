@@ -68,7 +68,9 @@ namespace Nitrocid.ShellPacks.Shells.RSS.UESHCommands
                 }
                 else
                 {
-                    string address = TermReader.Read(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FEEDURLPROMPT") + ": ", Config.MainConfig.RssHeadlineUrl);
+                    string address = TermReader.Read(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FEEDURLPROMPT") + ": ", Config.MainConfig.RssHeadlineUrl, out bool done);
+                    if (!done)
+                        return 0;
                     if (string.IsNullOrEmpty(address) || !Uri.TryCreate(address, UriKind.Absolute, out Uri? uri))
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE"), ThemeColorType.Error);

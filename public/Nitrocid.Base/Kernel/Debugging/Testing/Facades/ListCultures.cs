@@ -30,7 +30,9 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Languages;
         public override void Run()
         {
-            string Text = TermReader.Read(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_LISTCULTURES_PROMPT") + " ");
+            string Text = TermReader.Read(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_LISTCULTURES_PROMPT") + " ", out bool done);
+            if (!done)
+                return;
             var Cults = CultureInfo.GetCultures(CultureTypes.AllCultures);
             foreach (CultureInfo Cult in Cults)
             {

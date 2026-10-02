@@ -116,7 +116,9 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_APIKEY"));
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FORECAST_APIKEYPROMPT") + " ", false, ThemeColorType.Input);
-                apiKey = TermReader.Read(password: true);
+                apiKey = TermReader.Read(out bool done, password: true);
+                if (!done)
+                    return 0;
                 Forecast.ApiKey = apiKey;
             }
 

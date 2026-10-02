@@ -54,7 +54,9 @@ namespace Nitrocid.Base.Shell.Shells.Hex.Commands
             while (FinalByte != "EOF")
             {
                 TextWriterColor.Write(">> ", false, ThemeColorType.Input);
-                FinalByte = TermReader.Read();
+                FinalByte = TermReader.Read(out bool done);
+                if (!done)
+                    return 0;
                 if (FinalByte != "EOF")
                 {
                     if (byte.TryParse(FinalByte, System.Globalization.NumberStyles.HexNumber, null, out byte ByteContent))

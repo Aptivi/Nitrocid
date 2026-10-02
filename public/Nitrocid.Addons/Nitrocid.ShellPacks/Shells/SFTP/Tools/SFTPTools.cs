@@ -364,7 +364,9 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools
                     TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.SFTPUserPromptStyle), false, ThemeColorType.Input, address);
                 else
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME"), false, ThemeColorType.Input, address);
-                string sftpUser = TermReader.Read();
+                string sftpUser = TermReader.Read(out bool done);
+                if (!done)
+                    return null;
                 if (string.IsNullOrEmpty(sftpUser))
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "User is not provided. Fallback to \"anonymous\"");
@@ -373,6 +375,8 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools
 
                 // Check to see if we're aborting or not
                 var client = GetConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), sftpUser);
+                if (client is null)
+                    return null;
 
                 // Connect to SFTP
                 return ConnectSFTP(client);
@@ -392,7 +396,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools
         /// <param name="Address">An IP address or hostname</param>
         /// <param name="Port">A port of the SSH/SFTP server. It's usually 22</param>
         /// <param name="Username">A username to authenticate with</param>
-        public static ConnectionInfo PromptConnectionInfo(string Address, int Port, string Username)
+        public static ConnectionInfo? PromptConnectionInfo(string Address, int Port, string Username)
         {
             // Authentication
             DebugWriter.WriteDebug(DebugLevel.I, "Address: {0}:{1}, Username: {2}", vars: [Address, Port, Username]);
@@ -405,7 +409,10 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools
                 TextWriterColor.Write("1) " + LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PRIVATEKEY"), true, ThemeColorType.Option);
                 TextWriterColor.Write("2) " + LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PASSWORD") + CharManager.NewLine, true, ThemeColorType.Option);
                 TextWriterColor.Write(">> ", false, ThemeColorType.Input);
-                if (int.TryParse(TermReader.Read(), out Answer))
+                string answerStr = TermReader.Read(out bool done);
+                if (!done)
+                    return null;
+                if (int.TryParse(answerStr, out Answer))
                 {
                     // Check for answer
                     bool exitWhile = false;
@@ -438,67 +445,83 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Tools
             switch (Answer)
             {
                 case 1:
-                    // Private key file
-                    var AuthFiles = new List<PrivateKeyFile>();
-
-                    // Prompt user
-                    while (true)
                     {
-                        string PrivateKeyFile, PrivateKeyPassphrase;
-                        PrivateKeyFile PrivateKeyAuth;
+                        // Private key file
+                        var AuthFiles = new List<PrivateKeyFile>();
 
-                        // Ask for location
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT"), false, ThemeColorType.Input, Username);
-                        PrivateKeyFile = TermReader.Read();
-                        PrivateKeyFile = FilesystemTools.NeutralizePath(PrivateKeyFile);
-                        if (FilesystemTools.FileExists(PrivateKeyFile))
+                        // Prompt user
+                        while (true)
                         {
-                            // Ask for passphrase
-                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYPASSPHRASE"), false, ThemeColorType.Input, PrivateKeyFile);
-                            PrivateKeyPassphrase = TermReader.Read(password: true);
+                            string PrivateKeyFile, PrivateKeyPassphrase;
+                            PrivateKeyFile PrivateKeyAuth;
 
-                            // Add authentication method
-                            try
+                            // Ask for location
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT"), false, ThemeColorType.Input, Username);
+                            PrivateKeyFile = TermReader.Read(out bool done);
+                            if (!done)
+                                return null;
+                            PrivateKeyFile = FilesystemTools.NeutralizePath(PrivateKeyFile);
+                            if (FilesystemTools.FileExists(PrivateKeyFile))
                             {
-                                if (string.IsNullOrEmpty(PrivateKeyPassphrase))
-                                    PrivateKeyAuth = new PrivateKeyFile(PrivateKeyFile);
-                                else
-                                    PrivateKeyAuth = new PrivateKeyFile(PrivateKeyFile, PrivateKeyPassphrase);
-                                AuthFiles.Add(PrivateKeyAuth);
+                                // Ask for passphrase
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYPASSPHRASE"), false, ThemeColorType.Input, PrivateKeyFile);
+                                PrivateKeyPassphrase = TermReader.Read(out done, password: true);
+                                if (!done)
+                                    return null;
+
+                                // Add authentication method
+                                try
+                                {
+                                    if (string.IsNullOrEmpty(PrivateKeyPassphrase))
+                                        PrivateKeyAuth = new PrivateKeyFile(PrivateKeyFile);
+                                    else
+                                        PrivateKeyAuth = new PrivateKeyFile(PrivateKeyFile, PrivateKeyPassphrase);
+                                    AuthFiles.Add(PrivateKeyAuth);
+                                }
+                                catch (Exception ex)
+                                {
+                                    DebugWriter.WriteDebugStackTrace(ex);
+                                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to add private key authentication method: {0}", vars: [ex.Message]);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYADDFAILED") + " {0}", true, ThemeColorType.Error, ex.Message);
+                                }
                             }
-                            catch (Exception ex)
-                            {
-                                DebugWriter.WriteDebugStackTrace(ex);
-                                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to add private key authentication method: {0}", vars: [ex.Message]);
-                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYADDFAILED") + " {0}", true, ThemeColorType.Error, ex.Message);
-                            }
+                            else if (PrivateKeyFile.EndsWith("/q"))
+                                break;
+                            else
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYNOTFOUND"), true, ThemeColorType.Error, PrivateKeyFile);
                         }
-                        else if (PrivateKeyFile.EndsWith("/q"))
-                            break;
-                        else
-                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYNOTFOUND"), true, ThemeColorType.Error, PrivateKeyFile);
+
+                        // Add authentication method
+                        AuthenticationMethods.Add(new PrivateKeyAuthenticationMethod(Username, AuthFiles.ToArray()));
+                        break;
                     }
-
-                    // Add authentication method
-                    AuthenticationMethods.Add(new PrivateKeyAuthenticationMethod(Username, AuthFiles.ToArray()));
-                    break;
                 case 2:
-                    // Password
-                    string Pass;
+                    {
+                        // Password
+                        string Pass;
 
-                    // Ask for password
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_PASSWORDPROMPT"), false, ThemeColorType.Input, Username);
-                    Pass = TermReader.Read(password: true);
+                        // Ask for password
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_PASSWORDPROMPT"), false, ThemeColorType.Input, Username);
+                        Pass = TermReader.Read(out bool done, password: true);
+                        if (!done)
+                            return null;
 
-                    // Add authentication method
-                    AuthenticationMethods.Add(new PasswordAuthenticationMethod(Username, Pass));
-                    break;
+                        // Add authentication method
+                        AuthenticationMethods.Add(new PasswordAuthenticationMethod(Username, Pass));
+                        break;
+                    }
             }
             return new(Address, Port, Username, [.. AuthenticationMethods]);
         }
 
-        internal static SftpClient GetConnectionInfo(string SftpHost, int SftpPort, string SftpUser) =>
-            new(PromptConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), SftpUser));
+        internal static SftpClient? GetConnectionInfo(string SftpHost, int SftpPort, string SftpUser)
+        {
+            var connectionInfo = PromptConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), SftpUser);
+            if (connectionInfo is null)
+                return null;
+            var sftpClient = new SftpClient(connectionInfo);
+            return sftpClient;
+        }
 
         /// <summary>
         /// Tries to connect to the SFTP server.

@@ -37,7 +37,7 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.UESHCommands
         public override int Execute(IShell? shell, CommandParameters parameters, ref string variableValue)
         {
             NetworkConnectionTools.OpenConnectionForShell("HTTPShell", EstablishHttpConnection, (_, connection) =>
-            EstablishHttpConnection(connection.Address), parameters.ArgumentsText);
+                EstablishHttpConnection(connection.Address), parameters.ArgumentsText);
             return 0;
         }
 

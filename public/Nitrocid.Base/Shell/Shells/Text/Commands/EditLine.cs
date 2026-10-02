@@ -69,7 +69,9 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                 {
                     string OriginalLine = textShell.FileLines[lineNum - 1];
                     TextWriterColor.Write(">> ", false, ThemeColorType.Input);
-                    string EditedLine = TermReader.Read("", OriginalLine);
+                    string EditedLine = TermReader.Read("", OriginalLine, out bool done);
+                    if (!done)
+                        return 0;
                     textShell.FileLines[lineNum - 1] = EditedLine;
                     return 0;
                 }

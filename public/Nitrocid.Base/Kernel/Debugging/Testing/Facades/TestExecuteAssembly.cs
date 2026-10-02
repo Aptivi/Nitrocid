@@ -32,7 +32,11 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         {
             string path = "";
             if (string.IsNullOrEmpty(path))
-                path = TermReader.Read(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_PROMPT") + " ");
+            {
+                path = TermReader.Read(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_PROMPT") + " ", out bool done);
+                if (!done)
+                    return;
+            }
             path = FilesystemTools.NeutralizePath(path);
             var entryPoint = Assembly.LoadFrom(path).EntryPoint ??
                 throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_EXCEPTION_ENTRYPOINTGET"));

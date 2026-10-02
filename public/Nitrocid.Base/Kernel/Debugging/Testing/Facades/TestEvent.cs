@@ -31,7 +31,9 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Kernel;
         public override void Run()
         {
-            string Text = TermReader.Read(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEVENT_PROMPT") + " ");
+            string Text = TermReader.Read(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEVENT_PROMPT") + " ", out bool done);
+            if (!done)
+                return;
             string[] eventArgs = ["RanByTest"];
             if (Enum.TryParse(Text, out EventType eventType))
                 EventsManager.FireEvent(eventType, eventArgs);

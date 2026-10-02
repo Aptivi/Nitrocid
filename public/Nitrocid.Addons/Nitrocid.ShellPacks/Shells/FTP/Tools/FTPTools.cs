@@ -703,7 +703,9 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD"), false, ThemeColorType.Input, user);
 
             // Get input
-            string ftpPass = TermReader.Read(password: true);
+            string ftpPass = TermReader.Read(out bool done, password: true);
+            if (!done)
+                return null;
 
             // Set up credentials
             clientFTP.Credentials = new NetworkCredential(user, ftpPass);
@@ -758,7 +760,9 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Tools
                     TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.FtpUserPromptStyle), false, ThemeColorType.Input, address);
                 else
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME"), false, ThemeColorType.Input, address);
-                string ftpUser = TermReader.Read();
+                string ftpUser = TermReader.Read(out bool done);
+                if (!done)
+                    return null;
                 if (string.IsNullOrEmpty(ftpUser))
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "User is not provided. Fallback to \"anonymous\"");

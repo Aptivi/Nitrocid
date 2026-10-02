@@ -54,11 +54,11 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
             while (FinalLine != "EOF")
             {
                 TextWriterColor.Write(">> ", false, ThemeColorType.Input);
-                FinalLine = TermReader.Read();
+                FinalLine = TermReader.Read(out bool done);
+                if (!done)
+                    return 0;
                 if (FinalLine != "EOF")
-                {
                     FinalLines.Add(FinalLine);
-                }
             }
 
             // Add the new lines

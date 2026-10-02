@@ -153,7 +153,9 @@ namespace Nitrocid.Base.Login
                             if (LoginHandlerTools.CurrentHandlerName == "classic")
                             {
                                 // Present a prompt that tells the user to provide the 2FA code
-                                string codeInputStr = TermReader.Read(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC") + ": ");
+                                string codeInputStr = TermReader.Read(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC") + ": ", out bool done);
+                                if (!done)
+                                    break;
 
                                 // If there is no input, assume cancellation
                                 if (string.IsNullOrEmpty(codeInputStr))

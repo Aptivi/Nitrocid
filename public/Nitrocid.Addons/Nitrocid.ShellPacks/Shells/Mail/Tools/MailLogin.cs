@@ -21,6 +21,7 @@ using System;
 using System.Data;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using MailKit;
 using MailKit.Net.Imap;
 using MailKit.Net.Pop3;
@@ -77,7 +78,9 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_ADDRESSPROMPT"), false, ThemeColorType.Input);
 
             // Try to get the username or e-mail address from the input
-            string InputMailAddress = TermReader.Read();
+            string InputMailAddress = TermReader.Read(out bool done);
+            if (!done)
+                return null;
             return PromptPassword(InputMailAddress, protocolType);
         }
 
@@ -97,7 +100,9 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
                 TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailPassPromptStyle), false, ThemeColorType.Input);
             else
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_PASSWORDPROMPT"), false, ThemeColorType.Input);
-            Authentication.Password = TermReader.Read(password: true);
+            Authentication.Password = TermReader.Read(out bool done, password: true);
+            if (!done)
+                return null;
 
             string DynamicAddressIMAP = ShellsInit.ShellsConfig.MailAutoDetectServer ? ServerDetect(Username, protocolType == MailProtocolType.POP3 ? ServerType.POP3 : ServerType.IMAP) : "";
             string DynamicAddressSMTP = ShellsInit.ShellsConfig.MailAutoDetectServer ? ServerDetect(Username, ServerType.SMTP) : "";
@@ -132,14 +137,18 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
                 if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailIMAPPromptStyle))
                     finalPrompt = PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailIMAPPromptStyle);
             }
-            IMAP_Address = TermReader.Read(finalPrompt);
+            IMAP_Address = TermReader.Read(finalPrompt, out bool done);
+            if (!done)
+                return null;
             DebugWriter.WriteDebug(DebugLevel.I, "IMAP/POP3 Server: \"{0}\"", vars: [IMAP_Address]);
 
             // SMTP server address and port
             string finalSmtpPrompt = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT");
             if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailSMTPPromptStyle))
                 finalSmtpPrompt = PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailSMTPPromptStyle);
-            string SMTP_Address = TermReader.Read(finalSmtpPrompt);
+            string SMTP_Address = TermReader.Read(finalSmtpPrompt, out done);
+            if (!done)
+                return null;
             SMTP_Port = 587;
             DebugWriter.WriteDebug(DebugLevel.I, "SMTP Server: \"{0}\"", vars: [SMTP_Address]);
 

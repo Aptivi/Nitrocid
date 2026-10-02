@@ -52,9 +52,11 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.UESHCommands
             return 0;
         }
 
-        private NetworkConnection EstablishSftpConnection(string address, SpeedDialEntry connection)
+        private NetworkConnection? EstablishSftpConnection(string address, SpeedDialEntry connection)
         {
             var info = SFTPTools.GetConnectionInfo(address, connection.Port, connection.Username);
+            if (info is null)
+                return null;
             return SFTPTools.ConnectSFTP(info);
         }
 
