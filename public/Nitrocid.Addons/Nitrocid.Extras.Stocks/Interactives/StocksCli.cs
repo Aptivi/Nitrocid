@@ -44,9 +44,7 @@ namespace Nitrocid.Extras.Stocks.Interactives
                 HelpDescription = /* Localizable */ "NKS_STOCKS_TUI_HELP01_DESC",
                 HelpBody =
                     LanguageTools.GetLocalized("NKS_STOCKS_TUI_HELP01_BODY") + "\n\n" +
-#pragma warning disable NLOC0001
                     LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/fundamentals/simulated-kernel-features/extra-features/common-programs/stocks",
-#pragma warning restore NLOC0001
             },
             new()
             {
@@ -54,9 +52,7 @@ namespace Nitrocid.Extras.Stocks.Interactives
                 HelpDescription = /* Localizable */ "NKS_STOCKS_TUI_HELP02_DESC",
                 HelpBody =
                     LanguageTools.GetLocalized("NKS_STOCKS_TUI_HELP02_BODY") + "\n\n" +
-#pragma warning disable NLOC0001
                     LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/fundamentals/simulated-kernel-features/extra-features/common-programs/stocks",
-#pragma warning restore NLOC0001
             }
         ];
 

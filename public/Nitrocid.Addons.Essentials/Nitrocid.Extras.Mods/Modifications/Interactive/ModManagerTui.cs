@@ -45,9 +45,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
                 HelpDescription = /* Localizable */ "NKS_MODS_TUI_HELP01_DESC",
                 HelpBody =
                     LanguageTools.GetLocalized("NKS_MODS_TUI_HELP01_BODY") + "\n\n" +
-#pragma warning disable NLOC0001
                     LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications",
-#pragma warning restore NLOC0001
             }
         ];
 
