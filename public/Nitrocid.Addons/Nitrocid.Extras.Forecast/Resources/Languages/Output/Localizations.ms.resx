@@ -100,9 +100,6 @@
   <data name="NKS_FORECAST_APIKEYPROMPT" xml:space="preserve">
     <value>Masukkan kunci API anda:</value>
   </data>
-  <data name="NKS_FORECAST_WEATHEROLD_CITYLISTLINK" xml:space="preserve">
-    <value>Anda boleh sama ada merujuk pautan di bawah untuk senarai bandar dengan ID mereka, atau, hantar "-list" kepada arahan ini.</value>
-  </data>
   <data name="NKS_FORECAST_SETTINGS_DESC" xml:space="preserve">
     <value>Bahagian ini membolehkan anda mengkonfigurasi cara Ramalan berfungsi.</value>
   </data>

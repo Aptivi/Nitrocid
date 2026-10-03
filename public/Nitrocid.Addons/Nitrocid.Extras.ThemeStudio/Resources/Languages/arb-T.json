@@ -33,20 +33,8 @@
   ],
   "locs": [
     {
-      "loc": "NKS_THEMESTUDIO_APP_EXIT",
-      "text": "خروج"
-    },
-    {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC",
       "text": "يصنع موضوعًا جديدًا"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_MAKINGTHEME",
-      "text": "صنع موضوع جديد \"{0}\"."
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_SAVETOCURRENT",
-      "text": "حفظ الموضوع في الدليل الحالي"
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_SAVETOOTHER",
@@ -73,10 +61,6 @@
       "text": "حدد اسم ملف النسق بدون امتداد .json:"
     },
     {
-      "loc": "NKS_THEMESTUDIO_APP_PREVIEW",
-      "text": "معاينة..."
-    },
-    {
       "loc": "NKS_THEMESTUDIO_APP_LOADCURRENT",
       "text": "تحميل الألوان الحالية"
     },
@@ -87,18 +71,6 @@
     {
       "loc": "NKS_THEMESTUDIO_APP_SAVETODIRPROMPT",
       "text": "حدد الدليل لحفظ السمة في:"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC",
-      "text": "إنشاء سمة جديدة في واجهة TUI التفاعلية"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_COPYCOLORTO",
-      "text": "نسخ اللون إلى..."
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_SOURCETYPEPROMPT",
-      "text": "حدد نوع اللون المصدر لنسخ اللون منه."
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_TARGETTYPEPROMPT",
@@ -125,24 +97,12 @@
       "text": "سطوع اللون"
     },
     {
-      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWSAVE",
-      "text": "اختر كيف تريد حفظ هذا الموضوع"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWLOAD",
-      "text": "اختر الطريقة التي تريد بها تحميل السمة"
-    },
-    {
       "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_CHANGE",
       "text": "يتغير..."
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_SAVE",
       "text": "يحفظ..."
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_LOAD",
-      "text": "حمولة..."
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_COPY",

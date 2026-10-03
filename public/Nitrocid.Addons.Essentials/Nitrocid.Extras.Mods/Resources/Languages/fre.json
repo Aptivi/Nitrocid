@@ -165,10 +165,6 @@
       "text": "Démarre automatiquement les modifications du noyau au démarrage."
     },
     {
-      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
-      "text": "Le fichier de mod n'est pas spécifié."
-    },
-    {
       "loc": "NKS_MODS_MODUPDATING",
       "text": "Essayer d'installer un mod déjà installé. Mise à jour du module..."
     },

@@ -279,10 +279,6 @@
       "text": "Повідомлення {0} від {1} видалено з {2}. Для аналізу залишилося {3} повідомлень."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "Повідомлення {0} від {1} видалено з папки \"Вхідні\". Для аналізу залишилося {2} повідомлень."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "Не вдалося відкрити файл. Вихід із оболонки..."
     },
@@ -445,10 +441,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "Введіть шлях до вкладених файлів. Натисніть ENTER на порожньому шляху для підтвердження."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "Відкриває зашифроване повідомлення"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1203,10 +1195,6 @@
       "text": "Без перегляду."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "Підключення ще не встановлено."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "Введіть адресу сервера:"
     },
@@ -1235,10 +1223,6 @@
       "text": "Відкриває поштовий клієнт POP3"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "Пошта POP3 повертається з версії 0.0.20.0, але наразі ми не плануємо випускати її в цій версії. Чекайте наступної версії."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "Введіть URL-адресу каналу RSS"
     },
@@ -1249,10 +1233,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "Відкриває TUI для читання інтерактивних каналів RSS"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "Нічого не вдається витягти."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1433,18 +1413,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "Встановлює агент користувача"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "Додавання вже існуючого заголовка."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "Видалення заголовка, якого не існує."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "Редагування заголовка, якого не існує."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1945,10 +1913,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "Оболонці JSON не вдалося встановити елемент."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "Повідомлення {0} від {1} переміщено. Для аналізу залишилося {2} повідомлень."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

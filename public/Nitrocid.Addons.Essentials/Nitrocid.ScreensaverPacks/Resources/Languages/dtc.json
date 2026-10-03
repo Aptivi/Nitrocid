@@ -81,16 +81,8 @@
       "text": "Hoeveel standen branden er voordat er wordt gedimd?"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_NAME",
-      "text": "Vertraging uitfaden in milliseconden"
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_NAME",
       "text": "Max. fade-stappen"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_DESC",
-      "text": "Hoeveel milliseconden moet ik wachten voordat de tekst vervaagt?"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_DESC",
@@ -155,18 +147,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_DESC",
       "text": "Of de Beats Per Minute-eenheid moet worden gebruikt om de volgende kleur te schrijven."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_NAME",
-      "text": "Vertraging in beats per minuut"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_DESC",
-      "text": "Hoeveel beats per minuut moet je wachten voordat je de volgende keer schrijft?"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_CYCLECOLORS_DESC",
-      "text": "BeatFader selecteert willekeurige kleuren als dit is ingeschakeld. Gebruik anders kleuren uit config."
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_NAME",
@@ -729,24 +709,8 @@
       "text": "Hoe groter het percentage, hoe luidruchtiger het signaal"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_NAME",
-      "text": "Glitchdichtheid"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_DESC",
-      "text": "Hoe groter het percentage, hoe groter de glitch!"
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_WORD_LOADING",
       "text": "Bezig met laden..."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_KSX_CONTINUED",
-      "text": "Wordt vervolgd..."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_KSX_THEEND",
-      "text": "Het einde"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_NEWYEAR_CONGRATS",
@@ -819,22 +783,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_BOUNCINGTEXT_SETTINGS_DESC",
       "text": "Toont u een tekst die rond de console stuitert."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_DESC",
-      "text": "Tekst in- en uitfaden."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADERBACK_SETTINGS_DESC",
-      "text": "Vervagende achtergrond in en uit."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_DESC",
-      "text": "Tekst in en uitfaden in beats."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_BEATCOLOR_DESC",
-      "text": "Versla kleur"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_DESC",
@@ -913,40 +861,12 @@
       "text": "Eenvoudige datum en tijd in het midden van het scherm."
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DESC",
-      "text": "Simuleert een storing op uw scherm."
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_FALLINGLINE_SETTINGS_DESC",
       "text": "Toont u een dalende lijn die naar beneden gaat en vervaagt."
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_INDETERMINATE_SETTINGS_DESC",
       "text": "Toont u een onbepaalde voortgangsbalk."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_PULSE_SETTINGS_DESC",
-      "text": "Toont u een pulserende achtergrond."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_DESC",
-      "text": "Toont je een pulserende achtergrond in beats."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_CYCLECOLORS_DESC",
-      "text": "BeatPulse selecteert willekeurige kleuren als deze is ingeschakeld. Gebruik anders kleuren uit config."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EDGEPULSE_SETTINGS_DESC",
-      "text": "Toont u een pulserende rand."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_DESC",
-      "text": "Toont je een pulserend randje in beats."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_CYCLECOLORS_DESC",
-      "text": "BeatEdgePulse selecteert willekeurige kleuren als deze is ingeschakeld. Gebruik anders kleuren uit config."
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_DESC",
@@ -981,10 +901,6 @@
       "text": "De sirenestijl."
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_SPIN_SETTINGS_DESC",
-      "text": "Draaiende schuine strepen."
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_SNAKEFILL_SETTINGS_DESC",
       "text": "Vult de console met een kleur als een slang."
     },
@@ -997,36 +913,8 @@
       "text": "Volgende schermvertraging in milliseconden"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_BSOD_SETTINGS_DESC",
-      "text": "Simuleert systeemfouten van verschillende besturingssystemen."
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_MEMDUMP_SETTINGS_DESC",
       "text": "Genereert kleuren door willekeurige verschuiving."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_DESC",
-      "text": "Toont u een tekst die vervaagt en in beats knippert."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_CYCLECOLORS_DESC",
-      "text": "ExcaliBeats selecteert willekeurige kleuren als dit is ingeschakeld. Gebruik anders kleuren uit config."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_NAME",
-      "text": "Expliciete modus"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_DESC",
-      "text": "Wijzig de tekst expliciet in Excalibur"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_NAME",
-      "text": "Trance-modus"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_DESC",
-      "text": "Trance-modus - Vermenigvuldigt de BPM met 2 om de trance-muziekstijl te simuleren"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_DESC",
@@ -1087,14 +975,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_WORDHASHER_SETTINGS_DESC",
       "text": "Toont u een woord en de hashsom ervan."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_DESC",
-      "text": "Toont u een vervagend vierkant in vier hoeken."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_FADEOUTDELAY_DESC",
-      "text": "Hoeveel milliseconden moet je wachten voordat het vierkant verdwijnt?"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_NUMBERSCATTER_SETTINGS_DESC",
@@ -1871,10 +1751,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
       "text": "Onthult een achtergrondkleur die achter het blok wordt weergegeven (zoals bij het aanwijzen) (de zaklamp op een voorwerp in een donkere kamer)"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
-      "text": "Onthult de tekst die op de achtergrond is afgedrukt"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",

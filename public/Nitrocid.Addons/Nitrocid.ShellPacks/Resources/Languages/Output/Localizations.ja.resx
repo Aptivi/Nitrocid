@@ -262,9 +262,6 @@
   <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX" xml:space="preserve">
     <value>{1}からのメッセージ{0}が{2}から削除されました。 {3}解析するメッセージが残っています。</value>
   </data>
-  <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX" xml:space="preserve">
-    <value>{1}からのメッセージ{0}が受信トレイから削除されました。 {2}解析するメッセージが残っています。</value>
-  </data>
   <data name="NKS_SHELLPACKS_FILESHELLS_OPENFAILED" xml:space="preserve">
     <value>ファイルを開けませんでした。シェルを終了しています...</value>
   </data>
@@ -387,9 +384,6 @@
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT" xml:space="preserve">
     <value>添付ファイルへのファイルパスを入力します。空白のパスでEnterキーを押して確認します。</value>
-  </data>
-  <data name="NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC" xml:space="preserve">
-    <value>暗号化されたメッセージを開きます</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD" xml:space="preserve">
     <value>キーID {0}のパスワードを書き込む</value>
@@ -955,9 +949,6 @@
   <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV" xml:space="preserve">
     <value>改訂はありません。</value>
   </data>
-  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION" xml:space="preserve">
-    <value>まだ接続が確立されていません。</value>
-  </data>
   <data name="NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT" xml:space="preserve">
     <value>サーバーアドレスを入力してください:</value>
   </data>
@@ -979,9 +970,6 @@
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC" xml:space="preserve">
     <value>POP3メールクライアントを開きます</value>
   </data>
-  <data name="NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING" xml:space="preserve">
-    <value>POP3 メールは 0.0.20.0 から戻ってきていますが、現時点ではこのバージョンでリリースする予定はありません。次のバージョンをお待ちください。</value>
-  </data>
   <data name="NKS_SHELLPACKS_RSS_FEEDURLPROMPT" xml:space="preserve">
     <value>RSSフィードのURLを入力してください</value>
   </data>
@@ -990,9 +978,6 @@
   </data>
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC" xml:space="preserve">
     <value>インタラクティブな RSS フィード リーダー TUI を開きます</value>
-  </data>
-  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT" xml:space="preserve">
-    <value>何も抽出できません。</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK" xml:space="preserve">
     <value>タイプが次であるため、アーカイブは書き込み可能ではありません</value>
@@ -1128,15 +1113,6 @@
   </data>
   <data name="NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC" xml:space="preserve">
     <value>ユーザーエージェントを設定します</value>
-  </data>
-  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS" xml:space="preserve">
-    <value>すでに存在するヘッダーを追加します。</value>
-  </data>
-  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE" xml:space="preserve">
-    <value>存在しないヘッダーを削除します。</value>
-  </data>
-  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT" xml:space="preserve">
-    <value>存在しないヘッダーを編集しています。</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC" xml:space="preserve">
     <value>新しい配列、オブジェクト、またはプロパティを追加します</value>
@@ -1512,9 +1488,6 @@
   </data>
   <data name="NKS_SHELLPACKS_JSON_SETITEMFAILED" xml:space="preserve">
     <value>JSON シェルが項目を設定できませんでした。</value>
-  </data>
-  <data name="NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX" xml:space="preserve">
-    <value>{1} からのメッセージ {0} が移動されました。{2} 個のメッセージがまだ解析されていません。</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_ATTACHMENTS" xml:space="preserve">
     <value>添付ファイル:</value>

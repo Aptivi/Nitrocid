@@ -8,20 +8,8 @@
   ],
   "locs": [
     {
-      "loc": "NKS_THEMESTUDIO_APP_EXIT",
-      "text": "Εξοδος"
-    },
-    {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC",
       "text": "Φτιάχνει ένα νέο θέμα"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_MAKINGTHEME",
-      "text": "Δημιουργία νέου θέματος \"{0}\"."
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_SAVETOCURRENT",
-      "text": "Αποθήκευση θέματος στον τρέχοντα κατάλογο"
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_SAVETOOTHER",
@@ -48,10 +36,6 @@
       "text": "Καθορίστε το όνομα αρχείου θέματος χωρίς την επέκταση .json:"
     },
     {
-      "loc": "NKS_THEMESTUDIO_APP_PREVIEW",
-      "text": "Προεπισκόπηση..."
-    },
-    {
       "loc": "NKS_THEMESTUDIO_APP_LOADCURRENT",
       "text": "Φόρτωση τρεχόντων χρωμάτων"
     },
@@ -62,18 +46,6 @@
     {
       "loc": "NKS_THEMESTUDIO_APP_SAVETODIRPROMPT",
       "text": "Καθορίστε τον κατάλογο για να αποθηκεύσετε το θέμα σε:"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC",
-      "text": "Δημιουργεί ένα νέο θέμα σε ένα διαδραστικό TUI"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_COPYCOLORTO",
-      "text": "Αντιγραφή χρώματος σε..."
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_SOURCETYPEPROMPT",
-      "text": "Επιλέξτε τον τύπο χρώματος πηγής από τον οποίο θα αντιγράψετε το χρώμα."
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_TARGETTYPEPROMPT",
@@ -100,24 +72,12 @@
       "text": "Φωτεινότητα χρώματος"
     },
     {
-      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWSAVE",
-      "text": "Επιλέξτε πώς θέλετε να αποθηκεύσετε αυτό το θέμα"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWLOAD",
-      "text": "Επιλέξτε πώς θέλετε να φορτώσετε ένα θέμα"
-    },
-    {
       "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_CHANGE",
       "text": "Αλλαγή..."
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_SAVE",
       "text": "Εκτός..."
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_LOAD",
-      "text": "Φορτίο..."
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_COPY",

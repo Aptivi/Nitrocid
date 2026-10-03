@@ -1,127 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_NAME" xml:space="preserve">
+  </resheader>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_NAME" xml:space="preserve">
     <value>Texte affiché</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_SHORT" xml:space="preserve">
-    <value>Écrivez le texte que vous souhaitez afficher. Plus c&apos;est court, c&apos;est mieux.</value>
+    <value>Écrivez le texte que vous souhaitez afficher. Plus c'est court, c'est mieux.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME" xml:space="preserve">
     <value>Activez les vraies couleurs</value>
@@ -130,10 +71,10 @@
     <value>Couleurs du cycle</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
-    <value>Disco fera défiler les couleurs lorsqu&apos;il est activé. Sinon, sélectionnez des couleurs aléatoires.</value>
+    <value>Disco fera défiler les couleurs lorsqu'il est activé. Sinon, sélectionnez des couleurs aléatoires.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_BGCOLOR_NAME" xml:space="preserve">
-    <value>Couleur de l&apos;arrière plan</value>
+    <value>Couleur de l'arrière plan</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME" xml:space="preserve">
     <value>Retard en millisecondes</value>
@@ -168,32 +109,26 @@
   <data name="NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_DESC" xml:space="preserve">
     <value>Combien de positions sont allumées avant la gradation ?</value>
   </data>
-  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_NAME" xml:space="preserve">
-    <value>Délai de fondu en millisecondes</value>
-  </data>
   <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_NAME" xml:space="preserve">
     <value>Étapes de fondu max.</value>
   </data>
-  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_DESC" xml:space="preserve">
-    <value>Combien de millisecondes attendre avant de faire disparaître le texte ?</value>
-  </data>
   <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_DESC" xml:space="preserve">
-    <value>Combien d&apos;étapes de fondu faire ?</value>
+    <value>Combien d'étapes de fondu faire ?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_WRITEAGAIN_NAME" xml:space="preserve">
-    <value>Délai d&apos;écriture à nouveau en millisecondes</value>
+    <value>Délai d'écriture à nouveau en millisecondes</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_WRITEAGAIN_DESC" xml:space="preserve">
     <value>Combien de millisecondes attendre avant de réécrire du texte ?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_LONG" xml:space="preserve">
-    <value>Écrivez le texte que vous souhaitez afficher. Plus c&apos;est long, mieux c&apos;est.</value>
+    <value>Écrivez le texte que vous souhaitez afficher. Plus c'est long, mieux c'est.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MINSPEED_NAME" xml:space="preserve">
-    <value>Vitesse d&apos;écriture minimale en WPM</value>
+    <value>Vitesse d'écriture minimale en WPM</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MAXSPEED_NAME" xml:space="preserve">
-    <value>Vitesse d&apos;écriture maximale en WPM</value>
+    <value>Vitesse d'écriture maximale en WPM</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_TYPOPERCENT_NAME" xml:space="preserve">
     <value>Probabilité de faute de frappe en pourcentage</value>
@@ -214,10 +149,10 @@
     <value>Si le texte affiché sur le rectangle de sélection est toujours centré.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_NAME" xml:space="preserve">
-    <value>Utiliser l&apos;API de la console</value>
+    <value>Utiliser l'API de la console</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_DESC" xml:space="preserve">
-    <value>Que ce soit pour utiliser l&apos;API de la console pour effacer le texte ou pour utiliser la séquence VT d&apos;effacement de ligne plus rapide. Si False, Marquee utilisera la séquence VT appropriée. Sinon, il utilisera l&apos;API de la console probablement plus lente.</value>
+    <value>Que ce soit pour utiliser l'API de la console pour effacer le texte ou pour utiliser la séquence VT d'effacement de ligne plus rapide. Si False, Marquee utilisera la séquence VT appropriée. Sinon, il utilisera l'API de la console probablement plus lente.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_NAME" xml:space="preserve">
     <value>Beats pro Minute verwenden</value>
@@ -225,17 +160,8 @@
   <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_DESC" xml:space="preserve">
     <value>Ob die Einheit Beats Per Minute verwendet werden soll, um die nächste Farbe zu schreiben.</value>
   </data>
-  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_NAME" xml:space="preserve">
-    <value>Verzögerung in Schlägen pro Minute</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_DESC" xml:space="preserve">
-    <value>Wie viele Schläge pro Minute muss man warten, bevor der nächste Schreibvorgang ausgeführt wird?</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
-    <value>BeatFader wählt zufällige Farben aus, wenn es aktiviert ist. Verwenden Sie andernfalls Farben aus config.</value>
-  </data>
   <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_NAME" xml:space="preserve">
-    <value>Nouveau délai d&apos;écran en millisecondes</value>
+    <value>Nouveau délai d'écran en millisecondes</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_COLUMNCOUNT_NAME" xml:space="preserve">
     <value>Nombre de colonnes</value>
@@ -256,13 +182,13 @@
     <value>Les colonnes de texte à imprimer.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILL_DESC" xml:space="preserve">
-    <value>Combien de caractères écrire avant de déclencher le &quot;remplissage de ligne&quot; ?</value>
+    <value>Combien de caractères écrire avant de déclencher le "remplissage de ligne" ?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_CAPPROBABILITY_DESC" xml:space="preserve">
     <value>Possibilité que le motif de remplissage de ligne soit imprimé en majuscules en pourcentage</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MISSPROBABILITY_NAME" xml:space="preserve">
-    <value>Probabilité d&apos;échec en pourcentage</value>
+    <value>Probabilité d'échec en pourcentage</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_NEXTRAMP_NAME" xml:space="preserve">
     <value>Prochain intervalle de rampe</value>
@@ -325,7 +251,7 @@
     <value>Caractère de ligne</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_DESC" xml:space="preserve">
-    <value>Un caractère pour former une ligne. Assurez-vous de ne saisir qu&apos;un seul caractère.</value>
+    <value>Un caractère pour former une ligne. Assurez-vous de ne saisir qu'un seul caractère.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_HOURS_NAME" xml:space="preserve">
     <value>Caractère du coin supérieur gauche pour la barre des heures</value>
@@ -400,13 +326,13 @@
     <value>Caractère du cadre droit pour la barre des secondes</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_HOURS_NAME" xml:space="preserve">
-    <value>Texte d&apos;information pour les heures</value>
+    <value>Texte d'information pour les heures</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_MINUTES_NAME" xml:space="preserve">
-    <value>Texte d&apos;information pour les minutes</value>
+    <value>Texte d'information pour les minutes</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_SECONDS_NAME" xml:space="preserve">
-    <value>Texte d&apos;information pendant les secondes</value>
+    <value>Texte d'information pendant les secondes</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_HOURS_NAME" xml:space="preserve">
     <value>Niveau de couleur rouge minimum pendant des heures</value>
@@ -481,31 +407,31 @@
     <value>Niveau de couleur maximal pendant quelques secondes</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCHAR_DESC" xml:space="preserve">
-    <value>Un caractère qui ressemble au coin supérieur gauche. Assurez-vous de ne saisir qu&apos;un seul caractère.</value>
+    <value>Un caractère qui ressemble au coin supérieur gauche. Assurez-vous de ne saisir qu'un seul caractère.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCHAR_DESC" xml:space="preserve">
-    <value>Un caractère qui ressemble au coin inférieur gauche. Assurez-vous de ne saisir qu&apos;un seul caractère.</value>
+    <value>Un caractère qui ressemble au coin inférieur gauche. Assurez-vous de ne saisir qu'un seul caractère.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECHAR_DESC" xml:space="preserve">
-    <value>Un personnage qui ressemble au cadre supérieur. Assurez-vous de ne saisir qu&apos;un seul caractère.</value>
+    <value>Un personnage qui ressemble au cadre supérieur. Assurez-vous de ne saisir qu'un seul caractère.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECHAR_DESC" xml:space="preserve">
-    <value>Un personnage qui ressemble au cadre inférieur. Assurez-vous de ne saisir qu&apos;un seul caractère.</value>
+    <value>Un personnage qui ressemble au cadre inférieur. Assurez-vous de ne saisir qu'un seul caractère.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECHAR_DESC" xml:space="preserve">
-    <value>Un caractère qui ressemble au cadre de gauche. Assurez-vous de ne saisir qu&apos;un seul caractère.</value>
+    <value>Un caractère qui ressemble au cadre de gauche. Assurez-vous de ne saisir qu'un seul caractère.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECHAR_DESC" xml:space="preserve">
-    <value>Un personnage qui ressemble au cadre droit. Assurez-vous de ne saisir qu&apos;un seul caractère.</value>
+    <value>Un personnage qui ressemble au cadre droit. Assurez-vous de ne saisir qu'un seul caractère.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_HOURS_DESC" xml:space="preserve">
-    <value>Écrivez comment votre texte d&apos;information pour l&apos;heure actuelle s&apos;affiche. {0} pour l&apos;heure actuelle sur 24 heures.</value>
+    <value>Écrivez comment votre texte d'information pour l'heure actuelle s'affiche. {0} pour l'heure actuelle sur 24 heures.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_MINUTES_DESC" xml:space="preserve">
-    <value>Écrivez comment votre texte d&apos;information pour la minute en cours s&apos;affiche. {0} pour la minute actuelle sur 60 minutes.</value>
+    <value>Écrivez comment votre texte d'information pour la minute en cours s'affiche. {0} pour la minute actuelle sur 60 minutes.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_SECONDS_DESC" xml:space="preserve">
-    <value>Écrivez comment votre texte d&apos;information pour la seconde actuelle s&apos;affiche. {0} pour la seconde actuelle sur 60 secondes.</value>
+    <value>Écrivez comment votre texte d'information pour la seconde actuelle s'affiche. {0} pour la seconde actuelle sur 60 secondes.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_TEXTCOLOR_NAME" xml:space="preserve">
     <value>Couleur du texte</value>
@@ -628,46 +554,34 @@
     <value>Combien de millisecondes attendre avant de pourrir une extrémité de la rampe suivante ?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_RADIUS_NAME" xml:space="preserve">
-    <value>Rayon d&apos;explosion du feu d&apos;artifice</value>
+    <value>Rayon d'explosion du feu d'artifice</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_RADIUS_DESC" xml:space="preserve">
-    <value>Combien de blocs (jusqu&apos;à 10) est le rayon d&apos;explosion du feu d&apos;artifice lorsqu&apos;il est allumé ?</value>
+    <value>Combien de blocs (jusqu'à 10) est le rayon d'explosion du feu d'artifice lorsqu'il est allumé ?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_FONT_NAME" xml:space="preserve">
     <value>Police Figlet</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_FONT_DESC" xml:space="preserve">
-    <value>Écrivez une police figlet prise en charge par la bibliothèque Figgle. Consultez la documentation de la bibliothèque pour plus d&apos;informations</value>
+    <value>Écrivez une police figlet prise en charge par la bibliothèque Figgle. Consultez la documentation de la bibliothèque pour plus d'informations</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_BW_NAME" xml:space="preserve">
     <value>Activer le mode noir et blanc</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_BW_DESC" xml:space="preserve">
-    <value>Rend la discothèque en noir et blanc. Cela vous fera vraiment mal aux yeux si c&apos;était trop rapide, donc déconseillé si vous rencontrez une crise d&apos;images rapides.</value>
+    <value>Rend la discothèque en noir et blanc. Cela vous fera vraiment mal aux yeux si c'était trop rapide, donc déconseillé si vous rencontrez une crise d'images rapides.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_NAME" xml:space="preserve">
     <value>Densité de bruit</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_NEWSCREENDELAY_DESC" xml:space="preserve">
-    <value>Combien de millisecondes attendre avant d&apos;écrire dans le nouvel écran ?</value>
+    <value>Combien de millisecondes attendre avant d'écrire dans le nouvel écran ?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_DESC" xml:space="preserve">
     <value>Plus le pourcentage est élevé, plus le signal est bruyant</value>
   </data>
-  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_NAME" xml:space="preserve">
-    <value>Densité de glitch</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_DESC" xml:space="preserve">
-    <value>Plus le pourcentage est élevé, plus le glitch est dense !</value>
-  </data>
   <data name="NKS_SCREENSAVERPACKS_WORD_LOADING" xml:space="preserve">
     <value>Chargement...</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_KSX_CONTINUED" xml:space="preserve">
-    <value>À suivre...</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_KSX_THEEND" xml:space="preserve">
-    <value>La fin</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_NEWYEAR_CONGRATS" xml:space="preserve">
     <value>Bonne année!</value>
@@ -679,10 +593,10 @@
     <value>Paramètres de couleur</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCHAR_DESC" xml:space="preserve">
-    <value>Un caractère qui ressemble au coin supérieur droit. Assurez-vous de ne saisir qu&apos;un seul caractère.</value>
+    <value>Un caractère qui ressemble au coin supérieur droit. Assurez-vous de ne saisir qu'un seul caractère.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCHAR_DESC" xml:space="preserve">
-    <value>Un caractère qui ressemble au coin inférieur droit. Assurez-vous de ne saisir qu&apos;un seul caractère.</value>
+    <value>Un caractère qui ressemble au coin inférieur droit. Assurez-vous de ne saisir qu'un seul caractère.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_MATRIX_SETTINGS_DESC" xml:space="preserve">
     <value>Le nombre binaire qui tombe sur votre écran.</value>
@@ -691,10 +605,10 @@
     <value>Mélanger les couleurs et les imprimer sur la console.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_DESC" xml:space="preserve">
-    <value>C&apos;est la lumière disco, l&apos;un des tout premiers économiseurs d&apos;écran.</value>
+    <value>C'est la lumière disco, l'un des tout premiers économiseurs d'écran.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_GLITTERCOLOR_SETTINGS_DESC" xml:space="preserve">
-    <value>La couleur brille sur l&apos;écran.</value>
+    <value>La couleur brille sur l'écran.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_DESC" xml:space="preserve">
     <value>Une ligne qui erre verticalement autour de la console.</value>
@@ -709,31 +623,19 @@
     <value>Vous montre trois barres de progression qui représentent le temps.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_DESC" xml:space="preserve">
-    <value>Blocs d&apos;éclairage.</value>
+    <value>Blocs d'éclairage.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_WIPE_SETTINGS_DESC" xml:space="preserve">
-    <value>Essuie l&apos;écran avec une couleur.</value>
+    <value>Essuie l'écran avec une couleur.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_SIMPLEMATRIX_SETTINGS_DESC" xml:space="preserve">
     <value>Matrice simple.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_GLITTERMATRIX_SETTINGS_DESC" xml:space="preserve">
-    <value>Numéros matriciels qui se propagent de manière aléatoire sur l&apos;écran.</value>
+    <value>Numéros matriciels qui se propagent de manière aléatoire sur l'écran.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_BOUNCINGTEXT_SETTINGS_DESC" xml:space="preserve">
     <value>Vous montre un texte qui rebondit sur la console.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_DESC" xml:space="preserve">
-    <value>Fondu du texte entrant et sortant.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_FADERBACK_SETTINGS_DESC" xml:space="preserve">
-    <value>Fondu en fondu entrant et sortant.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_DESC" xml:space="preserve">
-    <value>Fondu du texte entrant et sortant en rythmes.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_BEATCOLOR_DESC" xml:space="preserve">
-    <value>Battre la couleur</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_DESC" xml:space="preserve">
     <value>Simule une personne écrivant un texte avec des fautes de frappe.</value>
@@ -745,7 +647,7 @@
     <value>Simule une personne écrivant du texte pour un journal sur le clavier linotype dans les temps anciens.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILLTYPE_DESC" xml:space="preserve">
-    <value>Type de motif de remplissage de ligne. 0 imprime le modèle connu de caractères etaoin, 1 imprime le modèle complet de caractères etaoin et 2 imprime l&apos;ensemble aléatoire de caractères pour remplir rapidement la ligne.</value>
+    <value>Type de motif de remplissage de ligne. 0 imprime le modèle connu de caractères etaoin, 1 imprime le modèle complet de caractères etaoin et 2 imprime l'ensemble aléatoire de caractères pour remplir rapidement la ligne.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_DESC" xml:space="preserve">
     <value>Simule parfaitement une personne qui écrit un texte.</value>
@@ -754,7 +656,7 @@
     <value>Afficher la position de la flèche</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_ARROWPOS_DESC" xml:space="preserve">
-    <value>Affiche la position de la colonne des lettres de la machine à écrire en affichant une flèche en bas de l&apos;écran</value>
+    <value>Affiche la position de la colonne des lettres de la machine à écrire en affichant une flèche en bas de l'écran</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_FLASHCOLOR_SETTINGS_DESC" xml:space="preserve">
     <value>Couleurs clignotantes sur votre écran.</value>
@@ -766,13 +668,13 @@
     <value>Remplit la rampe avec des couleurs dégradées.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_DESC" xml:space="preserve">
-    <value>Empile les boîtes sur l&apos;écran.</value>
+    <value>Empile les boîtes sur l'écran.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_BARROT_SETTINGS_DESC" xml:space="preserve">
-    <value>Simule une barre qui pourrit avec une autre couleur d&apos;arrière-plan, créant ainsi un dégradé.</value>
+    <value>Simule une barre qui pourrit avec une autre couleur d'arrière-plan, créant ainsi un dégradé.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_DESC" xml:space="preserve">
-    <value>Vous montre des feux d&apos;artifice qui sont lancés et explosent.</value>
+    <value>Vous montre des feux d'artifice qui sont lancés et explosent.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_DESC" xml:space="preserve">
     <value>Vous montre un texte figlet coloré.</value>
@@ -787,37 +689,16 @@
     <value>Vous montre un texte clignotant en couleur.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DESC" xml:space="preserve">
-    <value>Simule le bruit statique d&apos;un téléviseur.</value>
+    <value>Simule le bruit statique d'un téléviseur.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_DATEANDTIME_SETTINGS_DESC" xml:space="preserve">
-    <value>Date et heure simples au milieu de l&apos;écran.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DESC" xml:space="preserve">
-    <value>Simule un problème sur votre écran.</value>
+    <value>Date et heure simples au milieu de l'écran.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_FALLINGLINE_SETTINGS_DESC" xml:space="preserve">
     <value>Vous montre une ligne descendante qui descend et disparaît.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_INDETERMINATE_SETTINGS_DESC" xml:space="preserve">
     <value>Vous montre une barre de progression indéterminée.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_PULSE_SETTINGS_DESC" xml:space="preserve">
-    <value>Vous montre un arrière-plan palpitant.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_DESC" xml:space="preserve">
-    <value>Vous montre un arrière-plan palpitant en rythmes.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
-    <value>BeatPulse sélectionnera des couleurs aléatoires s&apos;il est activé. Sinon, utilisez les couleurs de config.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EDGEPULSE_SETTINGS_DESC" xml:space="preserve">
-    <value>Vous montre un front pulsé.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_DESC" xml:space="preserve">
-    <value>Vous montre un front pulsé en battements.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
-    <value>BeatEdgePulse sélectionnera des couleurs aléatoires s&apos;il est activé. Sinon, utilisez les couleurs de config.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_DESC" xml:space="preserve">
     <value>Vous montre un écran rempli de couleurs qui se décomposent lentement en une autre couleur, créant des dégradés.</value>
@@ -826,16 +707,16 @@
     <value>Prochain intervalle de pourriture du gradient</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_NEXTROT_DESC" xml:space="preserve">
-    <value>Combien de millisecondes attendre avant de pourrir l&apos;écran suivant ?</value>
+    <value>Combien de millisecondes attendre avant de pourrir l'écran suivant ?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_GRADIENT_SETTINGS_DESC" xml:space="preserve">
     <value>Vous montre un dégradé sur votre écran.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_STARFIELD_SETTINGS_DESC" xml:space="preserve">
-    <value>Vous montre un voyage d&apos;étoile en 2D.</value>
+    <value>Vous montre un voyage d'étoile en 2D.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_SIREN_SETTINGS_DESC" xml:space="preserve">
-    <value>Modifie l&apos;arrière-plan en fonction des couleurs définies, ce qui simule une sirène.</value>
+    <value>Modifie l'arrière-plan en fonction des couleurs définies, ce qui simule une sirène.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_NAME" xml:space="preserve">
     <value>Style sirène</value>
@@ -843,41 +724,17 @@
   <data name="NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_DESC" xml:space="preserve">
     <value>Le style sirène.</value>
   </data>
-  <data name="NKS_SCREENSAVERPACKS_SPIN_SETTINGS_DESC" xml:space="preserve">
-    <value>Des coupures tournantes.</value>
-  </data>
   <data name="NKS_SCREENSAVERPACKS_SNAKEFILL_SETTINGS_DESC" xml:space="preserve">
-    <value>Remplit la console d&apos;une couleur comme un serpent.</value>
+    <value>Remplit la console d'une couleur comme un serpent.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_DESC" xml:space="preserve">
     <value>Vous montre un égaliseur qui vous montre les basses, les médiums et les aigus.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_NEXTSCREENDELAY_NAME" xml:space="preserve">
-    <value>Délai de l&apos;écran suivant en millisecondes</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BSOD_SETTINGS_DESC" xml:space="preserve">
-    <value>Simule les erreurs système de différents systèmes d&apos;exploitation.</value>
+    <value>Délai de l'écran suivant en millisecondes</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_MEMDUMP_SETTINGS_DESC" xml:space="preserve">
     <value>Génère des couleurs à partir du décalage aléatoire.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_DESC" xml:space="preserve">
-    <value>Vous montre un texte qui disparaît et clignote en rythme.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
-    <value>ExcaliBeats sélectionnera des couleurs aléatoires si elle est activée. Sinon, utilisez les couleurs de config.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_NAME" xml:space="preserve">
-    <value>Mode explicite</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_DESC" xml:space="preserve">
-    <value>Changer explicitement le texte en Excalibur</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_NAME" xml:space="preserve">
-    <value>Mode transe</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_DESC" xml:space="preserve">
-    <value>Mode Trance - Multiplie le BPM par 2 pour simuler le style de musique trance</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_DESC" xml:space="preserve">
     <value>Vous montre un groupe de vagues dans des barres.</value>
@@ -886,7 +743,7 @@
     <value>Niveau de fréquence</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_FREQLEVEL_DESC" xml:space="preserve">
-    <value>Le niveau de la fréquence. C&apos;est le dénominateur de la valeur Pi en mathématiques.</value>
+    <value>Le niveau de la fréquence. C'est le dénominateur de la valeur Pi en mathématiques.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_WAVE_SETTINGS_DESC" xml:space="preserve">
     <value>Vous montre une vague qui se génère et avance.</value>
@@ -907,7 +764,7 @@
     <value>Chance, en pourcentage, de frapper</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DESC" xml:space="preserve">
-    <value>Vous montre une couleur d&apos;arrière-plan qui change lentement.</value>
+    <value>Vous montre une couleur d'arrière-plan qui change lentement.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DARK_NAME" xml:space="preserve">
     <value>Couleurs sombres</value>
@@ -923,12 +780,6 @@
   </data>
   <data name="NKS_SCREENSAVERPACKS_WORDHASHER_SETTINGS_DESC" xml:space="preserve">
     <value>Vous montre un mot et sa somme de hachage.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_DESC" xml:space="preserve">
-    <value>Vous montre un carré qui s&apos;estompe aux quatre coins.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_FADEOUTDELAY_DESC" xml:space="preserve">
-    <value>Combien de millisecondes attendre avant de faire disparaître le carré ?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_NUMBERSCATTER_SETTINGS_DESC" xml:space="preserve">
     <value>Disperse le numéro sur tout l’écran.</value>
@@ -949,7 +800,7 @@
     <value>Vous montre un texte simple dans une zone de texte.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_WORDHASHERWRITE_SETTINGS_DESC" xml:space="preserve">
-    <value>Vous montre un mot qui s&apos;écrit lentement et sa somme de hachage.</value>
+    <value>Vous montre un mot qui s'écrit lentement et sa somme de hachage.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_SIRENTHEME_SETTINGS_DESC" xml:space="preserve">
     <value>Simule une sirène qui utilise votre thème comme un ensemble de couleurs.</value>
@@ -958,13 +809,13 @@
     <value>Style de sirène du thème du noyau</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_STARFIELDWARP_SETTINGS_DESC" xml:space="preserve">
-    <value>Vous montre un groupe d&apos;étoiles dans la vue de face du navire.</value>
+    <value>Vous montre un groupe d'étoiles dans la vue de face du navire.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_SPECKLES_SETTINGS_DESC" xml:space="preserve">
     <value>Vous montre un groupe de taches dans la vue avant du navire.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LETTERSCATTER_SETTINGS_DESC" xml:space="preserve">
-    <value>Vous montre une lettre dispersée sur tout l&apos;écran.</value>
+    <value>Vous montre une lettre dispersée sur tout l'écran.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_MULTILINES_SETTINGS_DESC" xml:space="preserve">
     <value>Vous montre plusieurs lignes.</value>
@@ -982,16 +833,16 @@
     <value>Niveau de fréquence horizontal</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_HFREQ_DESC" xml:space="preserve">
-    <value>Le niveau de la fréquence horizontale. C&apos;est le dénominateur de la valeur Pi en mathématiques. Utilisez-le pour créer de magnifiques émerillons ondulés !</value>
+    <value>Le niveau de la fréquence horizontale. C'est le dénominateur de la valeur Pi en mathématiques. Utilisez-le pour créer de magnifiques émerillons ondulés !</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_NAME" xml:space="preserve">
     <value>Niveau de fréquence vertical</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_DESC" xml:space="preserve">
-    <value>Le niveau de la fréquence verticale. C&apos;est le dénominateur de la valeur Pi en mathématiques. Utilisez-le pour créer de magnifiques émerillons ondulés !</value>
+    <value>Le niveau de la fréquence verticale. C'est le dénominateur de la valeur Pi en mathématiques. Utilisez-le pour créer de magnifiques émerillons ondulés !</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_DOORSHIFT_SETTINGS_DESC" xml:space="preserve">
-    <value>Simule l&apos;ouverture et la fermeture de la porte.</value>
+    <value>Simule l'ouverture et la fermeture de la porte.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_GRADIENTBLOOM_SETTINGS_DESC" xml:space="preserve">
     <value>Vous montre un dégradé à changement dynamique.</value>
@@ -1009,13 +860,13 @@
     <value>Saturation des teintes de couleur</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUESAT_DESC" xml:space="preserve">
-    <value>Quelle est l&apos;intensité de la couleur ?</value>
+    <value>Quelle est l'intensité de la couleur ?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUELIGHT_DESC" xml:space="preserve">
     <value>Quelle est la couleur claire?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_HUEBACKGRADIENT_SETTINGS_DESC" xml:space="preserve">
-    <value>Changer la couleur d’arrière-plan en fonction de la teinte croissante. Plus d&apos;arc-en-ciel !</value>
+    <value>Changer la couleur d’arrière-plan en fonction de la teinte croissante. Plus d'arc-en-ciel !</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DESC" xml:space="preserve">
     <value>Des particules colorées !</value>
@@ -1033,13 +884,13 @@
     <value>Combien de rafraîchissements avant que le fuseau horaire ne soit modifié ?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_FILLFADE_SETTINGS_DESC" xml:space="preserve">
-    <value>Remplit tout l&apos;écran bloc par bloc, puis le fait disparaître.</value>
+    <value>Remplit tout l'écran bloc par bloc, puis le fait disparaître.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_DANCELINES_SETTINGS_DESC" xml:space="preserve">
     <value>Vous montre des lignes de danse.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_DESC" xml:space="preserve">
-    <value>Génère de jolis labyrinthes en utilisant l&apos;algorithme de Kruskal.</value>
+    <value>Génère de jolis labyrinthes en utilisant l'algorithme de Kruskal.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_NAME" xml:space="preserve">
     <value>Nouveau délai de labyrinthe en millisecondes</value>
@@ -1054,13 +905,13 @@
     <value>Mettre en évidence les positions non couvertes</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_HIGHLIGHTUNCOVERED_DESC" xml:space="preserve">
-    <value>Si activé, met en surbrillance les positions non couvertes avec la couleur de fond gris. Sinon, ils s&apos;affichent sous forme de boîtes.</value>
+    <value>Si activé, met en surbrillance les positions non couvertes avec la couleur de fond gris. Sinon, ils s'affichent sous forme de boîtes.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_SCHWARTZIAN_NAME" xml:space="preserve">
     <value>Utiliser la transformation schwartzienne</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_SCHWARTZIAN_DESC" xml:space="preserve">
-    <value>S&apos;il est activé, cet économiseur d&apos;écran utilise la transformation de Schwartzian pour mélanger les bords du labyrinthe. Sinon, il utilise la méthode simple de transformation.</value>
+    <value>S'il est activé, cet économiseur d'écran utilise la transformation de Schwartzian pour mélanger les bords du labyrinthe. Sinon, il utilise la méthode simple de transformation.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_TWOSPINS_SETTINGS_DESC" xml:space="preserve">
     <value>Deux groupes de points tournant sur les deux moitiés de la console.</value>
@@ -1072,16 +923,16 @@
     <value>Vous montre des étoiles pulvérisées.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_ZEBRASHIFT_SETTINGS_DESC" xml:space="preserve">
-    <value>Deux lignes échangeant leurs couleurs sur l&apos;écran.</value>
+    <value>Deux lignes échangeant leurs couleurs sur l'écran.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_DESC" xml:space="preserve">
-    <value>Horloge analogique avec une simple date et heure en bas de l&apos;écran.</value>
+    <value>Horloge analogique avec une simple date et heure en bas de l'écran.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_NAME" xml:space="preserve">
-    <value>Afficher l&apos;aiguille des secondes</value>
+    <value>Afficher l'aiguille des secondes</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_DESC" xml:space="preserve">
-    <value>S&apos;il faut afficher ou non l&apos;aiguille des secondes.</value>
+    <value>S'il faut afficher ou non l'aiguille des secondes.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_DESC" xml:space="preserve">
     <value>Simule un hypothétique écran noir défectueux avec des lignes RVB apparaissant parfois.</value>
@@ -1090,10 +941,10 @@
     <value>Probabilité de pépin</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_PROBABILITY_DESC" xml:space="preserve">
-    <value>Chance, en pourcentage, que le problème d&apos;écran se produise</value>
+    <value>Chance, en pourcentage, que le problème d'écran se produise</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
-    <value>Impossible d&apos;obtenir les entrées de paramètres.</value>
+    <value>Impossible d'obtenir les entrées de paramètres.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUELIGHT_NAME" xml:space="preserve">
     <value>Luminance de la teinte de la couleur (clarté)</value>
@@ -1102,13 +953,13 @@
     <value>Nous célébrons le 8 000e commit depuis la version 0.0.1 !</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_NEWYEAR_LEFT" xml:space="preserve">
-    <value>laissé jusqu&apos;à l&apos;année prochaine</value>
+    <value>laissé jusqu'à l'année prochaine</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC" xml:space="preserve">
     <value>Cela vous permet de configurer les couleurs</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSRAMP_NAME" xml:space="preserve">
-    <value>Réglages de la rampe d&apos;heures</value>
+    <value>Réglages de la rampe d'heures</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSRAMP_DESC" xml:space="preserve">
     <value>Cela vous permet de configurer la rampe horaire</value>
@@ -1135,10 +986,10 @@
     <value>Vous montre du texte sous une ligne sur un fond rouge sombre.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_GLITTERCHAR_SETTINGS_DESC" xml:space="preserve">
-    <value>Des personnages aléatoires qui se répartissent de manière aléatoire sur l&apos;écran.</value>
+    <value>Des personnages aléatoires qui se répartissent de manière aléatoire sur l'écran.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_DESC" xml:space="preserve">
-    <value>Date et heure simples au milieu de l&apos;écran et change de couleur en fonction de l&apos;heure actuelle.</value>
+    <value>Date et heure simples au milieu de l'écran et change de couleur en fonction de l'heure actuelle.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_BRIGHT_NAME" xml:space="preserve">
     <value>Date et heure lumineuses</value>
@@ -1156,7 +1007,7 @@
     <value>Longueur du sentier</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_LENGTH_DESC" xml:space="preserve">
-    <value>La longueur de la traînée de l&apos;onde pivotante en mouvement.</value>
+    <value>La longueur de la traînée de l'onde pivotante en mouvement.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_POINTTRACK_SETTINGS_DESC" xml:space="preserve">
     <value>Bloc se déplaçant selon un motif ondulé avec des règles vertes suivant sa position.</value>
@@ -1189,22 +1040,22 @@
     <value>Cela vous permet de configurer la troisième rampe</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_APPEARANCE_NAME" xml:space="preserve">
-    <value>Paramètres d&apos;apparence</value>
+    <value>Paramètres d'apparence</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_HOURS_DESC" xml:space="preserve">
-    <value>Cela vous permet de configurer l&apos;apparence de la rampe des heures</value>
+    <value>Cela vous permet de configurer l'apparence de la rampe des heures</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_HOURS_DESC" xml:space="preserve">
     <value>Cela vous permet de configurer la couleur de la rampe des heures</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_MINUTES_DESC" xml:space="preserve">
-    <value>Cela vous permet de configurer l&apos;apparence de la rampe des minutes</value>
+    <value>Cela vous permet de configurer l'apparence de la rampe des minutes</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_MINUTES_DESC" xml:space="preserve">
     <value>Cela vous permet de configurer la couleur de la rampe des minutes</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_SECONDS_DESC" xml:space="preserve">
-    <value>Cela vous permet de configurer l&apos;apparence de la rampe des secondes</value>
+    <value>Cela vous permet de configurer l'apparence de la rampe des secondes</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_SECONDS_DESC" xml:space="preserve">
     <value>Cela vous permet de configurer la couleur de la rampe des secondes</value>
@@ -1228,7 +1079,7 @@
     <value>Cela vous permet de configurer la barre de rampe</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_APPEARANCE_DESC" xml:space="preserve">
-    <value>Cela vous permet de configurer l&apos;apparence de la rampe</value>
+    <value>Cela vous permet de configurer l'apparence de la rampe</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_DESC" xml:space="preserve">
     <value>Cela vous permet de configurer les couleurs de la rampe</value>
@@ -1246,10 +1097,10 @@
     <value>Cela vous permet de configurer les couleurs de dégradé de fin</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXBGCOLORLEVEL_NAME" xml:space="preserve">
-    <value>Niveau de couleur d&apos;arrière-plan maximal</value>
+    <value>Niveau de couleur d'arrière-plan maximal</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXBGCOLORLEVEL_DESC" xml:space="preserve">
-    <value>Niveau de couleur d&apos;arrière-plan maximal. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.</value>
+    <value>Niveau de couleur d'arrière-plan maximal. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXLNCOLORLEVEL_NAME" xml:space="preserve">
     <value>Niveau de couleur de ligne maximal</value>
@@ -1264,13 +1115,13 @@
     <value>Niveau de couleur de texte maximal. La valeur minimale acceptée est 0 et la valeur maximale acceptée est 255.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_APPEARANCE_DESC" xml:space="preserve">
-    <value>Cela vous permet de configurer l&apos;apparence de la première rampe</value>
+    <value>Cela vous permet de configurer l'apparence de la première rampe</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_INFOTEXT_NAME" xml:space="preserve">
-    <value>Texte d&apos;information pour le premier</value>
+    <value>Texte d'information pour le premier</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_INFOTEXT_DESC" xml:space="preserve">
-    <value>Écrivez comment votre texte d&apos;information pour l&apos;heure en cours s&apos;affiche. {0} pour l&apos;heure en cours sur 24 en premier.</value>
+    <value>Écrivez comment votre texte d'information pour l'heure en cours s'affiche. {0} pour l'heure en cours sur 24 en premier.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_ULCCHAR_NAME" xml:space="preserve">
     <value>Caractère du coin supérieur gauche pour la première barre</value>
@@ -1327,13 +1178,13 @@
     <value>Niveau de couleur maximum pour la première</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_APPEARANCE_DESC" xml:space="preserve">
-    <value>Cela vous permet de configurer l&apos;apparence de la deuxième rampe</value>
+    <value>Cela vous permet de configurer l'apparence de la deuxième rampe</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_INFOTEXT_NAME" xml:space="preserve">
-    <value>Texte d&apos;information pour la deuxième</value>
+    <value>Texte d'information pour la deuxième</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_INFOTEXT_DESC" xml:space="preserve">
-    <value>Écrivez comment votre texte d&apos;information pour la minute en cours s&apos;affiche. {0} pour la minute en cours sur 60 secondes.</value>
+    <value>Écrivez comment votre texte d'information pour la minute en cours s'affiche. {0} pour la minute en cours sur 60 secondes.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_ULCCHAR_NAME" xml:space="preserve">
     <value>Caractère du coin supérieur gauche pour la deuxième barre</value>
@@ -1390,7 +1241,7 @@
     <value>Niveau de couleur maximum pour la deuxième</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_APPEARANCE_DESC" xml:space="preserve">
-    <value>Cela vous permet de configurer l&apos;apparence de la troisième rampe</value>
+    <value>Cela vous permet de configurer l'apparence de la troisième rampe</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_ULCCHAR_NAME" xml:space="preserve">
     <value>Caractère du coin supérieur gauche pour la troisième barre</value>
@@ -1417,10 +1268,10 @@
     <value>Caractère du cadre droit pour la troisième barre</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_INFOTEXT_NAME" xml:space="preserve">
-    <value>Texte d&apos;information pour la troisième</value>
+    <value>Texte d'information pour la troisième</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_INFOTEXT_DESC" xml:space="preserve">
-    <value>Écrivez comment votre texte d&apos;information pour la seconde actuelle s&apos;affiche. {0} pour la seconde actuelle sur 60 troisièmes.</value>
+    <value>Écrivez comment votre texte d'information pour la seconde actuelle s'affiche. {0} pour la seconde actuelle sur 60 troisièmes.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_COLORSETTINGS_DESC" xml:space="preserve">
     <value>Cela vous permet de configurer la couleur de la troisième rampe</value>
@@ -1459,7 +1310,7 @@
     <value>Si le cycle de couleurs est activé, combien de graduations avant de changer de couleur dans Progresses ? 1 graduation = 0,5 tiers</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC" xml:space="preserve">
-    <value>Horloge analogique au milieu de l&apos;écran, dont la couleur change en fonction de l&apos;heure.</value>
+    <value>Horloge analogique au milieu de l'écran, dont la couleur change en fonction de l'heure.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC" xml:space="preserve">
     <value>Affiche une magnifique horloge numérique.</value>
@@ -1468,7 +1319,7 @@
     <value>Combien de millisecondes faut-il attendre avant de générer un nouveau labyrinthe ?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC" xml:space="preserve">
-    <value>Simule un fond coloré s&apos;estompant en noir dans un cercle partant du centre.</value>
+    <value>Simule un fond coloré s'estompant en noir dans un cercle partant du centre.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC" xml:space="preserve">
     <value>Affiche trois blocs : un pour les heures, un pour les minutes et un pour les secondes.</value>
@@ -1477,10 +1328,10 @@
     <value>Simule une transition et une déformation lentes des couleurs.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC" xml:space="preserve">
-    <value>Crée une tache sur l&apos;écran qui s&apos;étend sur toute la console (rayon du cercle).</value>
+    <value>Crée une tache sur l'écran qui s'étend sur toute la console (rayon du cercle).</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC" xml:space="preserve">
-    <value>Simule l&apos;évaporation de gouttelettes.</value>
+    <value>Simule l'évaporation de gouttelettes.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC" xml:space="preserve">
     <value>Fait défiler des lettres anglaises avec Figlet.</value>
@@ -1501,31 +1352,28 @@
     <value>Affiche un arc de cercle qui se remplit au centre de la console.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC" xml:space="preserve">
-    <value>Affiche un cercle qui s&apos;agrandit et remplit tout l&apos;écran avant d&apos;être recouvert par un autre.</value>
+    <value>Affiche un cercle qui s'agrandit et remplit tout l'écran avant d'être recouvert par un autre.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC" xml:space="preserve">
-    <value>Affiche des gouttelettes d&apos;eau tombant du haut de la console, comme s&apos;il pleuvait.</value>
+    <value>Affiche des gouttelettes d'eau tombant du haut de la console, comme s'il pleuvait.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC" xml:space="preserve">
-    <value>Affiche un effet d&apos;ondulation en direct à partir du centre.</value>
+    <value>Affiche un effet d'ondulation en direct à partir du centre.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC" xml:space="preserve">
-    <value>Révèle un arrière-plan. Couleur affichée derrière le bloc (comme lorsqu&apos;on éclaire un objet dans une pièce sombre avec une lampe torche)</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC" xml:space="preserve">
-    <value>Affiche le texte imprimé en arrière-plan</value>
+    <value>Révèle un arrière-plan. Couleur affichée derrière le bloc (comme lorsqu'on éclaire un objet dans une pièce sombre avec une lampe torche)</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC" xml:space="preserve">
-    <value>Affiche un diagramme d&apos;ondes de droite à gauche de la console</value>
+    <value>Affiche un diagramme d'ondes de droite à gauche de la console</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP" xml:space="preserve">
-    <value>Cet économiseur d&apos;écran prend en charge les fichiers texte. Indiquez le chemin d&apos;accès complet au fichier dans ce champ ; l&apos;économiseur d&apos;écran affichera alors son contenu.</value>
+    <value>Cet économiseur d'écran prend en charge les fichiers texte. Indiquez le chemin d'accès complet au fichier dans ce champ ; l'économiseur d'écran affichera alors son contenu.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME" xml:space="preserve">
     <value>Caractère pour les lignes verticales</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC" xml:space="preserve">
-    <value>Caractère permettant de former une ligne verticale. Veuillez n&apos;entrer qu&apos;un seul caractère.</value>
+    <value>Caractère permettant de former une ligne verticale. Veuillez n'entrer qu'un seul caractère.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME" xml:space="preserve">
     <value>Densité des lignes</value>
@@ -1534,22 +1382,22 @@
     <value>Densité des lignes</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME" xml:space="preserve">
-    <value>Fréquence d&apos;affichage des lignes verticales</value>
+    <value>Fréquence d'affichage des lignes verticales</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC" xml:space="preserve">
-    <value>Fréquence d&apos;affichage des lignes verticales</value>
+    <value>Fréquence d'affichage des lignes verticales</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME" xml:space="preserve">
-    <value>Fréquence d&apos;inversion du sens des lignes</value>
+    <value>Fréquence d'inversion du sens des lignes</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC" xml:space="preserve">
-    <value>Fréquence d&apos;inversion du sens des lignes (de droite à gauche au lieu de gauche à droite, ou de bas en haut au lieu de haut en bas)</value>
+    <value>Fréquence d'inversion du sens des lignes (de droite à gauche au lieu de gauche à droite, ou de bas en haut au lieu de haut en bas)</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME" xml:space="preserve">
     <value>Délai entre les lignes</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC" xml:space="preserve">
-    <value>Délai en millisecondes avant l&apos;ajout d&apos;une nouvelle ligne</value>
+    <value>Délai en millisecondes avant l'ajout d'une nouvelle ligne</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME" xml:space="preserve">
     <value>Bruit de couleur</value>
@@ -1573,7 +1421,7 @@
     <value>Simule une tentative de piratage informatique</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC" xml:space="preserve">
-    <value>Crée quatre rectangles occupant tout l&apos;écran, puis un motif en forme de filet à l&apos;intérieur.</value>
+    <value>Crée quatre rectangles occupant tout l'écran, puis un motif en forme de filet à l'intérieur.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC" xml:space="preserve">
     <value>Affiche un texte à gauche et son image miroir à droite.</value>
@@ -1584,5 +1432,4 @@
   <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC" xml:space="preserve">
     <value>Choix du mode de transition et des couleurs.</value>
   </data>
-
 </root>

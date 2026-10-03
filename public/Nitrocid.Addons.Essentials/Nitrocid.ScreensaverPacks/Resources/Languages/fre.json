@@ -121,16 +121,8 @@
       "text": "Combien de positions sont allumées avant la gradation ?"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_NAME",
-      "text": "Délai de fondu en millisecondes"
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_NAME",
       "text": "Étapes de fondu max."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_DESC",
-      "text": "Combien de millisecondes attendre avant de faire disparaître le texte ?"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_DESC",
@@ -195,18 +187,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_DESC",
       "text": "Ob die Einheit Beats Per Minute verwendet werden soll, um die nächste Farbe zu schreiben."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_NAME",
-      "text": "Verzögerung in Schlägen pro Minute"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_DESC",
-      "text": "Wie viele Schläge pro Minute muss man warten, bevor der nächste Schreibvorgang ausgeführt wird?"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_CYCLECOLORS_DESC",
-      "text": "BeatFader wählt zufällige Farben aus, wenn es aktiviert ist. Verwenden Sie andernfalls Farben aus config."
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_NAME",
@@ -769,24 +749,8 @@
       "text": "Plus le pourcentage est élevé, plus le signal est bruyant"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_NAME",
-      "text": "Densité de glitch"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_DESC",
-      "text": "Plus le pourcentage est élevé, plus le glitch est dense !"
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_WORD_LOADING",
       "text": "Chargement..."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_KSX_CONTINUED",
-      "text": "À suivre..."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_KSX_THEEND",
-      "text": "La fin"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_NEWYEAR_CONGRATS",
@@ -859,22 +823,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_BOUNCINGTEXT_SETTINGS_DESC",
       "text": "Vous montre un texte qui rebondit sur la console."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_DESC",
-      "text": "Fondu du texte entrant et sortant."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADERBACK_SETTINGS_DESC",
-      "text": "Fondu en fondu entrant et sortant."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_DESC",
-      "text": "Fondu du texte entrant et sortant en rythmes."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_BEATCOLOR_DESC",
-      "text": "Battre la couleur"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_DESC",
@@ -953,40 +901,12 @@
       "text": "Date et heure simples au milieu de l'écran."
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DESC",
-      "text": "Simule un problème sur votre écran."
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_FALLINGLINE_SETTINGS_DESC",
       "text": "Vous montre une ligne descendante qui descend et disparaît."
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_INDETERMINATE_SETTINGS_DESC",
       "text": "Vous montre une barre de progression indéterminée."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_PULSE_SETTINGS_DESC",
-      "text": "Vous montre un arrière-plan palpitant."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_DESC",
-      "text": "Vous montre un arrière-plan palpitant en rythmes."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_CYCLECOLORS_DESC",
-      "text": "BeatPulse sélectionnera des couleurs aléatoires s'il est activé. Sinon, utilisez les couleurs de config."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EDGEPULSE_SETTINGS_DESC",
-      "text": "Vous montre un front pulsé."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_DESC",
-      "text": "Vous montre un front pulsé en battements."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_CYCLECOLORS_DESC",
-      "text": "BeatEdgePulse sélectionnera des couleurs aléatoires s'il est activé. Sinon, utilisez les couleurs de config."
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_DESC",
@@ -1021,10 +941,6 @@
       "text": "Le style sirène."
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_SPIN_SETTINGS_DESC",
-      "text": "Des coupures tournantes."
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_SNAKEFILL_SETTINGS_DESC",
       "text": "Remplit la console d'une couleur comme un serpent."
     },
@@ -1037,36 +953,8 @@
       "text": "Délai de l'écran suivant en millisecondes"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_BSOD_SETTINGS_DESC",
-      "text": "Simule les erreurs système de différents systèmes d'exploitation."
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_MEMDUMP_SETTINGS_DESC",
       "text": "Génère des couleurs à partir du décalage aléatoire."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_DESC",
-      "text": "Vous montre un texte qui disparaît et clignote en rythme."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_CYCLECOLORS_DESC",
-      "text": "ExcaliBeats sélectionnera des couleurs aléatoires si elle est activée. Sinon, utilisez les couleurs de config."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_NAME",
-      "text": "Mode explicite"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_DESC",
-      "text": "Changer explicitement le texte en Excalibur"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_NAME",
-      "text": "Mode transe"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_DESC",
-      "text": "Mode Trance - Multiplie le BPM par 2 pour simuler le style de musique trance"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_DESC",
@@ -1127,14 +1015,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_WORDHASHER_SETTINGS_DESC",
       "text": "Vous montre un mot et sa somme de hachage."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_DESC",
-      "text": "Vous montre un carré qui s'estompe aux quatre coins."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_FADEOUTDELAY_DESC",
-      "text": "Combien de millisecondes attendre avant de faire disparaître le carré ?"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_NUMBERSCATTER_SETTINGS_DESC",
@@ -1911,10 +1791,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
       "text": "Révèle un arrière-plan. Couleur affichée derrière le bloc (comme lorsqu'on éclaire un objet dans une pièce sombre avec une lampe torche)"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
-      "text": "Affiche le texte imprimé en arrière-plan"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",

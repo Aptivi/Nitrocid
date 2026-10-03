@@ -850,17 +850,8 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TRANSLATE_DESC" xml:space="preserve">
     <value>리소스에있는 문자열을 특정 언어로 번역하는 테스트</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTPLACES_DESC" xml:space="preserve">
-    <value>콘솔에 문자열을 인쇄하고 찾은 자리 표시자를 구문 분석합니다.</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTREGEXP_DESC" xml:space="preserve">
     <value>정규식 기능을 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_DESC" xml:space="preserve">
-    <value>255 가지 색상에 대한 VT 시퀀스 테스트</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTRUETEST_DESC" xml:space="preserve">
-    <value>트루 컬러에 대한 VT 시퀀스 테스트</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_DESC" xml:space="preserve">
     <value>수신자를 테스트하기 위해 알림을 보냅니다.</value>
@@ -870,33 +861,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PROBEHARDWARE_DESC" xml:space="preserve">
     <value>하드웨어 검사 테스트</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_DESC" xml:space="preserve">
-    <value>문자열 및 문자열 배열을 사용하여 목록 작성기를 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_DESC" xml:space="preserve">
-    <value>정수 및 정수 배열로 목록 작성기를 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_DESC" xml:space="preserve">
-    <value>char 및 char 배열을 사용하여 목록 작성기를 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_NORMALLIST" xml:space="preserve">
-    <value>일반 문자열 목록 :</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_ARRAYLIST" xml:space="preserve">
-    <value>배열 문자열 목록 :</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_NORMALLIST" xml:space="preserve">
-    <value>일반 정수 목록 :</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_ARRAYLIST" xml:space="preserve">
-    <value>배열 정수 목록 :</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST" xml:space="preserve">
-    <value>일반 문자 목록 :</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST" xml:space="preserve">
-    <value>배열 문자 목록 :</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_NAME" xml:space="preserve">
     <value>RPC 활성화</value>
@@ -969,33 +933,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS" xml:space="preserve">
     <value>캐릭터가 삭제되었습니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_DESC" xml:space="preserve">
-    <value>문자열 및 문자열 배열을 사용하여 사전 작성기를 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_DESC" xml:space="preserve">
-    <value>char 및 char 배열을 사용하여 사전 작성기를 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_DESC" xml:space="preserve">
-    <value>정수 및 정수 배열을 사용하여 사전 작성기를 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_NORMALLIST" xml:space="preserve">
-    <value>일반 문자열 사전 :</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_ARRAYLIST" xml:space="preserve">
-    <value>배열 문자열 사전 :</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_NORMALLIST" xml:space="preserve">
-    <value>일반 정수 사전 :</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_ARRAYLIST" xml:space="preserve">
-    <value>배열 정수 사전 :</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_NORMALLIST" xml:space="preserve">
-    <value>일반 문자 사전 :</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_ARRAYLIST" xml:space="preserve">
-    <value>배열 문자 사전 :</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_FILESYSTEM_PROGRESS_NAME" xml:space="preserve">
     <value>파일 시스템 작업에 대한 진행률 표시</value>
@@ -1303,9 +1240,6 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC" xml:space="preserve">
     <value>CRC32를 사용하여 문자열 암호화</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTTABLE_DESC" xml:space="preserve">
-    <value>테이블 기능 테스트</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_EDITLINE_DESC" xml:space="preserve">
     <value>지정된 줄을 편집합니다.</value>
   </data>
@@ -1353,9 +1287,6 @@
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC" xml:space="preserve">
     <value>안전 모드와 유사하지만 다중 사용자 및 일부 사용자 정의도 비활성화합니다.</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS" xml:space="preserve">
-    <value>색상은 다시 시작할 필요가 없지만 대부분의 설정은 다시 시작해야 합니다.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC" xml:space="preserve">
     <value>정규식을 사용하여 단어나 구를 다른 단어나 구로 바꿉니다.</value>
@@ -1762,9 +1693,6 @@
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TITLE" xml:space="preserve">
     <value>시작하다!</value>
   </data>
-  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1" xml:space="preserve">
-    <value>축하해요! 이제 {0} 사용자 계정이 생겼습니다!</value>
-  </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT2" xml:space="preserve">
     <value>커널 사용을 시작하고 새 계정에 로그인하려면 Enter 키를 누르세요. 행운을 빌어요!</value>
   </data>
@@ -1776,9 +1704,6 @@
   </data>
   <data name="NKS_USERS_EXCEPTION_USERLOCKED" xml:space="preserve">
     <value>잠겨 있는 동안 기존 계정을 수정하려고 합니다.</value>
-  </data>
-  <data name="NKS_USERS_EXCEPTION_UNENCRYPTEDPASS" xml:space="preserve">
-    <value>사용자 목록에 암호화되지 않은 비밀번호를 추가하려고 합니다.</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_CANNOTVALIDATE_ADD" xml:space="preserve">
     <value>사용자 이름을 추가할 수 없습니다. 사용자 이름이 존재하지 않는지 확인하세요.</value>
@@ -2512,9 +2437,6 @@
   <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZEFAILED" xml:space="preserve">
     <value>커널 애드온 초기화 실패</value>
   </data>
-  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_FINALIZEFAILED" xml:space="preserve">
-    <value>애드온을 완료하지 못했습니다. 아래 애드온이 완료되지 못했습니다:</value>
-  </data>
   <data name="NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_STOPFAILED" xml:space="preserve">
     <value>애드온을 중지하지 못했습니다. 아래 애드온을 중지하지 못했습니다:</value>
   </data>
@@ -2716,12 +2638,6 @@
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOTAFILE" xml:space="preserve">
     <value>선택한 항목이 파일이 아닙니다.</value>
   </data>
-  <data name="NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT" xml:space="preserve">
-    <value>해시 드라이버를 입력하세요:</value>
-  </data>
-  <data name="NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERNOTFOUND" xml:space="preserve">
-    <value>해시 드라이버를 찾을 수 없습니다.</value>
-  </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_EXPECTEDHASHPROMPT" xml:space="preserve">
     <value>예상 해시를 입력하세요.</value>
   </data>
@@ -2739,9 +2655,6 @@
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_ISDIRECTORY" xml:space="preserve">
     <value>디렉토리입니다</value>
-  </data>
-  <data name="NKS_MISC_INTERACTIVES_FMTUI_ISSELECTED" xml:space="preserve">
-    <value>선택됨</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILESIZE" xml:space="preserve">
     <value>파일 크기</value>
@@ -2902,9 +2815,6 @@
   <data name="NKS_MISC_SPLASH_DEFAULTMSG" xml:space="preserve">
     <value>로드 중...</value>
   </data>
-  <data name="NKS_NETWORK_CONNECTION_EXCEPTION_INVALIDINVOCATION" xml:space="preserve">
-    <value>이 속성은 스레드 연결에만 유효합니다. 인스턴스 연결의 경우 이 속성을 호출하는 대신 인스턴스 자체에서 적절한 속성을 호출하세요.</value>
-  </data>
   <data name="NKS_NETWORK_CONNECTION_SELECT_PROMPT" xml:space="preserve">
     <value>연결을 선택합니다. 연결이 없으면 새 연결을 만들어야 합니다. 또한 단축 다이얼 기능을 사용하여 서버에 빠르게 연결할 수 있습니다.</value>
   </data>
@@ -2934,9 +2844,6 @@
   </data>
   <data name="NKS_NETWORK_CONNECTION_EXCEPTION_TYPEEXISTS" xml:space="preserve">
     <value>연결 유형이 이미 존재합니다.</value>
-  </data>
-  <data name="NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS" xml:space="preserve">
-    <value>쉘 {0}은 네트워크 연결을 허용하지 않습니다.</value>
   </data>
   <data name="NKS_NETWORK_CONNECTION_ADDRESSPROMPT" xml:space="preserve">
     <value>서버 주소를 입력하세요:</value>
@@ -3046,12 +2953,6 @@
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_TITLE" xml:space="preserve">
     <value>비정상적인 환경 알림</value>
   </data>
-  <data name="NKS_KERNEL_STARTING_TIPS_ADDONNEEDED" xml:space="preserve">
-    <value>Nitrocid의 전체 빌드와 함께 제공되는 커널 애드온에서 추가 정보를 얻을 수 있습니까?</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_TIPS_PREFIX" xml:space="preserve">
-    <value>전문가 팁: 알고 계셨나요?</value>
-  </data>
   <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS" xml:space="preserve">
     <value>키바인딩</value>
   </data>
@@ -3124,17 +3025,8 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_MISC" xml:space="preserve">
     <value>기타 테스트</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_MODIFICATION" xml:space="preserve">
-    <value>커널 수정 테스트</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_NETWORK" xml:space="preserve">
     <value>네트워크 시스템 테스트</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_SHELL" xml:space="preserve">
-    <value>UESH 셸 테스트</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS" xml:space="preserve">
-    <value>사용자 테스트</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_THEMESET_NO" xml:space="preserve">
     <value>아니요</value>
@@ -3198,9 +3090,6 @@
   </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>명령어를 찾을수 없음.</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC" xml:space="preserve">
-    <value>임의의 커널 팁을 표시합니다.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_ERROR" xml:space="preserve">
     <value>관리 셸 오류: {0}</value>
@@ -3688,18 +3577,6 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE" xml:space="preserve">
     <value>당신의 언어를 고르시 오</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC" xml:space="preserve">
-    <value>이중 창 상호 작용으로 대화형 TUI 시스템을 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETEST_DESC" xml:space="preserve">
-    <value>단일 창 상호 작용으로 대화형 TUI 시스템을 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETESTREFRESHING_DESC" xml:space="preserve">
-    <value>단일 창 상호 작용과 두 번째 창 정보 새로 고침을 통해 대화형 TUI 시스템을 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT" xml:space="preserve">
-    <value>1부터 255까지의 색상 번호를 쓰세요.</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_DEBUG_DESC" xml:space="preserve">
     <value>디버거를 활성화합니다.</value>
   </data>
@@ -3742,32 +3619,11 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_NETWORKCHECK_TEST" xml:space="preserve">
     <value>네트워크 가용성은</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINT_DESC" xml:space="preserve">
-    <value>콘솔에 문자열 인쇄</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTD_DESC" xml:space="preserve">
     <value>디버거에 문자열 인쇄</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTDF_DESC" xml:space="preserve">
     <value>형식 지정을 사용하여 디버거에 문자열 인쇄</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTF_DESC" xml:space="preserve">
-    <value>형식을 지정하여 콘솔에 문자열을 인쇄합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTHIGHLIGHTED_DESC" xml:space="preserve">
-    <value>강조 표시를 사용하여 콘솔에 문자열을 인쇄합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEP_DESC" xml:space="preserve">
-    <value>콘솔에 구분 기호를 인쇄합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEPF_DESC" xml:space="preserve">
-    <value>서식을 지정하여 콘솔에 구분 기호를 인쇄합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNEWLINES_DESC" xml:space="preserve">
-    <value>문자열의 새 줄을 사용하여 콘솔에 문자열을 인쇄합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNULLS_DESC" xml:space="preserve">
-    <value>null 문자를 사용하여 콘솔에 문자열을 인쇄합니다.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_RDEBUG_DESC" xml:space="preserve">
     <value>원격 디버거를 활성화합니다.</value>
@@ -3795,9 +3651,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATIONSIMPLE_TEST_TITLE" xml:space="preserve">
     <value>간단한 알림 테스트</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTARGS_DESC" xml:space="preserve">
-    <value>인수를 테스트합니다.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRYPTORNG_DESC" xml:space="preserve">
     <value>암호화된 보안 난수 생성기를 테스트합니다.</value>
@@ -3829,36 +3682,6 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTFOLDERSSELECTOR_DESC" xml:space="preserve">
     <value>여러 폴더 선택기를 테스트합니다.</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONS_DESC" xml:space="preserve">
-    <value>정보 상자의 버튼을 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUT_DESC" xml:space="preserve">
-    <value>정보 상자의 색상 입력 상자를 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUT_DESC" xml:space="preserve">
-    <value>정보 상자의 입력 상자를 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTION_DESC" xml:space="preserve">
-    <value>정보 상자에서 입력 다중 선택 스타일을 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTION_DESC" xml:space="preserve">
-    <value>정보 상자에서 입력 선택 스타일을 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTMULTISELECTION_DESC" xml:space="preserve">
-    <value>입력 다중 선택 스타일을 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTION_DESC" xml:space="preserve">
-    <value>입력 선택 스타일을 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_DESC" xml:space="preserve">
-    <value>목록 항목 작성기를 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT1" xml:space="preserve">
-    <value>들여쓰기 1:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT2" xml:space="preserve">
-    <value>들여쓰기 2:</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTPROGRESSHANDLER_DESC" xml:space="preserve">
     <value>진행 핸들러를 테스트합니다.</value>
   </data>
@@ -3873,15 +3696,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTRNG_DESC" xml:space="preserve">
     <value>난수 생성기를 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_DESC" xml:space="preserve">
-    <value>콘솔의 화면 기능을 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_FAILED" xml:space="preserve">
-    <value>화면을 렌더링하지 못했습니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSWITCHES_DESC" xml:space="preserve">
-    <value>스위치 테스트</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID" xml:space="preserve">
     <value>세션 번호가 잘못되었습니다.</value>
@@ -5380,39 +5194,6 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_EXCEPTION_ENTRYPOINTGET" xml:space="preserve">
     <value>진입점을 가져오는 데 실패했습니다.</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONSTITLED_DESC" xml:space="preserve">
-    <value>정보 상자(제목)의 버튼을 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUTTITLED_DESC" xml:space="preserve">
-    <value>정보 상자(제목)에서 색상이 지정된 입력 상자를 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUTTITLED_DESC" xml:space="preserve">
-    <value>정보 상자(제목)의 입력 상자를 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTIONTITLED_DESC" xml:space="preserve">
-    <value>정보 상자(제목)에서 입력 다중 선택 스타일을 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGE_DESC" xml:space="preserve">
-    <value>정보 상자에서 입력 선택 스타일을 테스트합니다(스크롤 및 페이지 이동을 테스트할 항목이 많음)</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLE_DESC" xml:space="preserve">
-    <value>정보 상자에서 입력 다중 선택 스타일을 테스트합니다(스크롤 및 페이지 이동을 테스트할 항목 수가 많음)</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLETITLED_DESC" xml:space="preserve">
-    <value>정보 상자에서 입력 다중 선택 스타일을 테스트합니다(스크롤 및 페이징을 테스트할 항목이 많음)(제목</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGETITLED_DESC" xml:space="preserve">
-    <value>정보 상자에서 입력 선택 스타일을 테스트합니다(스크롤 및 페이징을 테스트할 항목이 많음)(제목:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONTITLED_DESC" xml:space="preserve">
-    <value>정보 상자(제목)에서 입력 선택 스타일을 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGE_DESC" xml:space="preserve">
-    <value>입력 선택 스타일(스크롤 및 페이징을 테스트하기 위한 많은 수의 항목)을 테스트합니다.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGEMULTIPLE_DESC" xml:space="preserve">
-    <value>입력 다중 선택 스타일 테스트(스크롤 및 페이지 이동을 테스트하기 위한 많은 수의 항목)</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_NOFRAME" xml:space="preserve">
     <value>프레임을 얻을 수 없습니다</value>
   </data>
@@ -5676,9 +5457,6 @@
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_ALARM" xml:space="preserve">
     <value>알람 리스너를 로드하는 데 실패했습니다.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_FAILED_FINALIZE_ADDONS" xml:space="preserve">
-    <value>애드온을 마무리하는 데 실패했습니다</value>
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_MOTD" xml:space="preserve">
     <value>MOTD 및 MAL을 로드하는 데 실패했습니다.</value>
@@ -6000,9 +5778,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC" xml:space="preserve">
     <value>비밀번호를 변경할 사용자 이름</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC" xml:space="preserve">
-    <value>현재 사용자 비밀번호</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC" xml:space="preserve">
     <value>변경할 기존 사용자 이름</value>
@@ -6529,9 +6304,6 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_CALENDAR" xml:space="preserve">
     <value>추가사항 - 달력</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_COLORCONVERTER" xml:space="preserve">
-    <value>추가 기능 - 색상 변환기</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_CONTACTS" xml:space="preserve">
     <value>기타 - 연락처</value>
   </data>
@@ -6541,9 +6313,6 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_DICTIONARY" xml:space="preserve">
     <value>추가사항 - 사전</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_DOCKING" xml:space="preserve">
-    <value>추가 사항 - 도킹</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_FORECAST" xml:space="preserve">
     <value>추가사항 - 일기예보</value>
   </data>
@@ -6552,9 +6321,6 @@
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO" xml:space="preserve">
     <value>기타 - 테마 스튜디오</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_TIPS" xml:space="preserve">
-    <value>추가 사항 - 커널 팁</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_TODO" xml:space="preserve">
     <value>추가 사항 - 할 일 목록</value>
@@ -6592,9 +6358,6 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_DATES" xml:space="preserve">
     <value>추가 - 날짜</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_HASHES" xml:space="preserve">
-    <value>추가 - 해시</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_CHATBOT" xml:space="preserve">
     <value>추가 - 챗봇 AI</value>
   </data>
@@ -6612,12 +6375,6 @@
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC" xml:space="preserve">
     <value>어떤 난수 생성기 드라이버를 사용하시겠습니까?</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME" xml:space="preserve">
-    <value>현재 네트워크 드라이버</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC" xml:space="preserve">
-    <value>어떤 네트워크 드라이버를 사용하시겠습니까?</value>
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME" xml:space="preserve">
     <value>현재 파일 시스템 드라이버</value>
@@ -6693,12 +6450,6 @@
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
     <value>설정 인스턴스에 중복된 키가 있습니다. 변수가 중복 존재하지 않는지 다시 한번 확인해 주세요.</value>
-  </data>
-  <data name="NKS_USERS_LOGIN_MODERNLOGON_CLOSE" xml:space="preserve">
-    <value>닫다</value>
-  </data>
-  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN" xml:space="preserve">
-    <value>종료하다</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE" xml:space="preserve">
     <value>파일 관리자(단일 창)</value>

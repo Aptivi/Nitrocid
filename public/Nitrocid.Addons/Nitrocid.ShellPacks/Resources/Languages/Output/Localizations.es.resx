@@ -262,9 +262,6 @@
   <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX" xml:space="preserve">
     <value>Mensaje {0} de {1} eliminado de {2}. Quedan {3} mensajes por analizar.</value>
   </data>
-  <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX" xml:space="preserve">
-    <value>Mensaje {0} de {1} eliminado de la bandeja de entrada. Quedan {2} mensajes por analizar.</value>
-  </data>
   <data name="NKS_SHELLPACKS_FILESHELLS_OPENFAILED" xml:space="preserve">
     <value>Fallo al abrir el archivo. Saliendo de la carcasa ...</value>
   </data>
@@ -387,9 +384,6 @@
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT" xml:space="preserve">
     <value>Ingrese las rutas de los archivos a los adjuntos. Presione ENTER en una ruta en blanco para confirmar.</value>
-  </data>
-  <data name="NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC" xml:space="preserve">
-    <value>Abre un mensaje encriptado</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD" xml:space="preserve">
     <value>Escriba la contraseña para el ID de clave {0}</value>
@@ -955,9 +949,6 @@
   <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV" xml:space="preserve">
     <value>Sin revisión.</value>
   </data>
-  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION" xml:space="preserve">
-    <value>La conexión aún no se ha establecido.</value>
-  </data>
   <data name="NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT" xml:space="preserve">
     <value>Introduzca la dirección del servidor:</value>
   </data>
@@ -979,9 +970,6 @@
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC" xml:space="preserve">
     <value>Abre el cliente de correo POP3.</value>
   </data>
-  <data name="NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING" xml:space="preserve">
-    <value>El correo POP3 regresa desde 0.0.20.0, pero actualmente no planeamos lanzarlo en esta versión. Espere la próxima versión.</value>
-  </data>
   <data name="NKS_SHELLPACKS_RSS_FEEDURLPROMPT" xml:space="preserve">
     <value>Ingrese la URL de la fuente RSS</value>
   </data>
@@ -990,9 +978,6 @@
   </data>
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC" xml:space="preserve">
     <value>Abre un lector de feeds RSS interactivo TUI</value>
-  </data>
-  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT" xml:space="preserve">
-    <value>No puedo extraer nada.</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK" xml:space="preserve">
     <value>El archivo no se puede escribir porque el tipo es</value>
@@ -1128,15 +1113,6 @@
   </data>
   <data name="NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC" xml:space="preserve">
     <value>Establece un agente de usuario</value>
-  </data>
-  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS" xml:space="preserve">
-    <value>Agregar encabezado que ya existe.</value>
-  </data>
-  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE" xml:space="preserve">
-    <value>Eliminando encabezado que no existe.</value>
-  </data>
-  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT" xml:space="preserve">
-    <value>Editando encabezado que no existe.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC" xml:space="preserve">
     <value>Agrega una nueva matriz, objeto o propiedad</value>
@@ -1512,9 +1488,6 @@
   </data>
   <data name="NKS_SHELLPACKS_JSON_SETITEMFAILED" xml:space="preserve">
     <value>El shell JSON no pudo establecer un elemento.</value>
-  </data>
-  <data name="NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX" xml:space="preserve">
-    <value>Mensaje {0} de {1} movido. Quedan {2} mensajes por analizar.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_ATTACHMENTS" xml:space="preserve">
     <value>Archivos adjuntos:</value>

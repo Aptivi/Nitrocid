@@ -63,10 +63,6 @@
       "text": "Masukkan kunci API Anda:"
     },
     {
-      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
-      "text": "Anda dapat merujuk ke tautan di bawah untuk melihat daftar kota beserta ID-nya, atau berikan \"-list\" pada perintah ini."
-    },
-    {
       "loc": "NKS_FORECAST_SETTINGS_DESC",
       "text": "Bagian ini memungkinkan Anda mengonfigurasikan cara kerja Prakiraan."
     },

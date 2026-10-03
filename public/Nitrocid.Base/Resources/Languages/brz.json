@@ -1062,20 +1062,8 @@
       "text": "Testes traduzindo uma string que existe em recursos para um idioma específico"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTPLACES_DESC",
-      "text": "Imprime uma string no console e analisa os espaços reservados encontrados"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTREGEXP_DESC",
       "text": "Testa o recurso de expressão regular"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_DESC",
-      "text": "Testa a sequência VT para 255 cores"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTRUETEST_DESC",
-      "text": "Testa a sequência VT para cores verdadeiras"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_DESC",
@@ -1088,42 +1076,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PROBEHARDWARE_DESC",
       "text": "Testes sondando o hardware"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_DESC",
-      "text": "Testa o escritor da lista com a string e a matriz de strings"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_DESC",
-      "text": "Testa o escritor da lista com o inteiro e a matriz de inteiros"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_DESC",
-      "text": "Testa o escritor da lista com o char e o array char"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_NORMALLIST",
-      "text": "Lista de strings normal:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_ARRAYLIST",
-      "text": "Lista de strings de matriz:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_NORMALLIST",
-      "text": "Lista de inteiros normais:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_ARRAYLIST",
-      "text": "Lista de inteiros de matriz:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
-      "text": "Lista de caracteres normal:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
-      "text": "Lista de caracteres da matriz:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_NAME",
@@ -1220,42 +1172,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS",
       "text": "Personagem excluído."
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_DESC",
-      "text": "Testa o escritor do dicionário com a string e a matriz de strings"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_DESC",
-      "text": "Testa o escritor do dicionário com o array char e char"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_DESC",
-      "text": "Testa o escritor do dicionário com o inteiro e a matriz de inteiros"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_NORMALLIST",
-      "text": "Dicionário de strings normal:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_ARRAYLIST",
-      "text": "Dicionário de strings de matriz:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_NORMALLIST",
-      "text": "Dicionário de números inteiros normal:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_ARRAYLIST",
-      "text": "Dicionário de inteiros de matriz:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_NORMALLIST",
-      "text": "Dicionário de caracteres normal:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_ARRAYLIST",
-      "text": "Dicionário de caracteres de matriz:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_FILESYSTEM_PROGRESS_NAME",
@@ -1666,10 +1582,6 @@
       "text": "Criptografa uma string usando CRC32"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTTABLE_DESC",
-      "text": "Testa a funcionalidade da tabela"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_EDITLINE_DESC",
       "text": "Edita a linha especificada"
     },
@@ -1732,10 +1644,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
       "text": "Semelhante ao modo de segurança, mas também desabilita o multiusuário e alguma personalização"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
-      "text": "As cores não exigem reinicialização, mas a maioria das configurações exige reinicialização."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -2278,10 +2186,6 @@
       "text": "Comece já!"
     },
     {
-      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1",
-      "text": "Parabéns! Agora você tem uma conta de usuário, {0}!"
-    },
-    {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT2",
       "text": "Pressione a tecla ENTER para começar a usar o kernel e faça login na sua nova conta. Boa sorte!"
     },
@@ -2296,10 +2200,6 @@
     {
       "loc": "NKS_USERS_EXCEPTION_USERLOCKED",
       "text": "Tentando modificar uma conta existente enquanto ela está bloqueada"
-    },
-    {
-      "loc": "NKS_USERS_EXCEPTION_UNENCRYPTEDPASS",
-      "text": "Tentando adicionar senha não criptografada à lista de usuários."
     },
     {
       "loc": "NKS_USERS_EXCEPTION_CANNOTVALIDATE_ADD",
@@ -3278,10 +3178,6 @@
       "text": "Falha ao inicializar o complemento do kernel"
     },
     {
-      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_FINALIZEFAILED",
-      "text": "Falha ao finalizar os complementos. Os complementos abaixo falharam ao finalizar:"
-    },
-    {
       "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_STOPFAILED",
       "text": "Falha ao parar os complementos. Os complementos abaixo falharam ao parar:"
     },
@@ -3550,14 +3446,6 @@
       "text": "A entrada selecionada não é um arquivo."
     },
     {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT",
-      "text": "Insira um driver de hash:"
-    },
-    {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERNOTFOUND",
-      "text": "Driver de hash não encontrado."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_EXPECTEDHASHPROMPT",
       "text": "Insira o hash esperado"
     },
@@ -3580,10 +3468,6 @@
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_ISDIRECTORY",
       "text": "É um diretório"
-    },
-    {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_ISSELECTED",
-      "text": "Está selecionado"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILESIZE",
@@ -3798,10 +3682,6 @@
       "text": "Carregando..."
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_INVALIDINVOCATION",
-      "text": "Esta propriedade é válida somente para conexões com threads. Para conexões de instância, chame a propriedade apropriada na própria instância em vez de chamar esta propriedade."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_SELECT_PROMPT",
       "text": "Selecione uma conexão. Se não tiver conexões, você terá que criar uma nova conexão. Além disso, você pode usar o recurso de discagem rápida para se conectar rapidamente aos servidores."
     },
@@ -3840,10 +3720,6 @@
     {
       "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_TYPEEXISTS",
       "text": "O tipo de conexão já existe"
-    },
-    {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "O shell {0} não aceita conexões de rede."
     },
     {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
@@ -3990,14 +3866,6 @@
       "text": "Aviso de ambiente incomum"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_TIPS_ADDONNEEDED",
-      "text": "que você pode obter dicas extras do complemento do kernel fornecido com a compilação completa do Nitrocid?"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_TIPS_PREFIX",
-      "text": "Dica profissional: você sabia"
-    },
-    {
       "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS",
       "text": "Atalhos de teclado"
     },
@@ -4094,20 +3962,8 @@
       "text": "Testes diversos"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_MODIFICATION",
-      "text": "Testes de modificação do kernel"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_NETWORK",
       "text": "Testes de sistema de rede"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_SHELL",
-      "text": "Testes de shell UESH"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS",
-      "text": "Testes de usuário"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_NO",
@@ -4192,10 +4048,6 @@
     {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Comando não encontrado."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
-      "text": "Mostra uma dica aleatória do kernel"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_ERROR",
@@ -4846,22 +4698,6 @@
       "text": "Escolha seu idioma"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC",
-      "text": "Testa o sistema TUI interativo com interação de painel duplo"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETEST_DESC",
-      "text": "Testa o sistema TUI interativo com uma única interação de painel"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETESTREFRESHING_DESC",
-      "text": "Testa o sistema TUI interativo com uma única interação de painel e com a atualização das informações do segundo painel"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT",
-      "text": "Escreva um número de cor variando de 1 a 255:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_DEBUG_DESC",
       "text": "Habilita o depurador"
     },
@@ -4918,40 +4754,12 @@
       "text": "A disponibilidade da rede é"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINT_DESC",
-      "text": "Imprima uma string no console"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTD_DESC",
       "text": "Imprima uma string para o depurador"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTDF_DESC",
       "text": "Imprima uma string para o depurador com formatação"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTF_DESC",
-      "text": "Imprima uma string no console com formatação"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTHIGHLIGHTED_DESC",
-      "text": "Imprima uma string no console com destaque"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEP_DESC",
-      "text": "Imprimir um separador para o console"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEPF_DESC",
-      "text": "Imprima um separador no console com formatação"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNEWLINES_DESC",
-      "text": "Imprima uma string no console com novas linhas na string"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNULLS_DESC",
-      "text": "Imprima uma string no console com caracteres nulos"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_RDEBUG_DESC",
@@ -4988,10 +4796,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATIONSIMPLE_TEST_TITLE",
       "text": "Teste de notificação simples"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTARGS_DESC",
-      "text": "Argumentos de testes"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRYPTORNG_DESC",
@@ -5034,46 +4838,6 @@
       "text": "Testa o seletor de múltiplas pastas"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONS_DESC",
-      "text": "Testa os botões na caixa de informações"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUT_DESC",
-      "text": "Testa a caixa de entrada colorida na caixa informativa"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUT_DESC",
-      "text": "Testa a caixa de entrada na caixa informativa"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTION_DESC",
-      "text": "Testa o estilo de seleção múltipla de entrada na caixa informativa"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTION_DESC",
-      "text": "Testa o estilo de seleção de entrada na caixa informativa"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTMULTISELECTION_DESC",
-      "text": "Testa o estilo de seleção múltipla de entrada"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTION_DESC",
-      "text": "Testa o estilo de seleção de entrada"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_DESC",
-      "text": "Testa o escritor de entrada da lista"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT1",
-      "text": "Travessão 1:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT2",
-      "text": "Recuo 2:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTPROGRESSHANDLER_DESC",
       "text": "Testa o manipulador de progresso"
     },
@@ -5092,18 +4856,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTRNG_DESC",
       "text": "Testa o gerador de números aleatórios"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_DESC",
-      "text": "Testa o recurso de tela do console"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_FAILED",
-      "text": "Falha na renderização da tela:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSWITCHES_DESC",
-      "text": "Testes de interruptores"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID",
@@ -7102,50 +6854,6 @@
       "text": "Falha ao obter ponto de entrada."
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONSTITLED_DESC",
-      "text": "Testa os botões na caixa informativa (intitulada)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUTTITLED_DESC",
-      "text": "Testa a caixa de entrada colorida na caixa informativa (intitulada)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUTTITLED_DESC",
-      "text": "Testa a caixa de entrada na caixa informativa (intitulada)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTIONTITLED_DESC",
-      "text": "Testa o estilo de seleção múltipla de entrada na caixa informativa (intitulada)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGE_DESC",
-      "text": "Testa o estilo de seleção de entrada na caixa informativa (grande número de itens para testar rolagem e paginação)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLE_DESC",
-      "text": "Testa o estilo de seleção múltipla de entrada na caixa informativa (grande número de itens para testar rolagem e paginação)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLETITLED_DESC",
-      "text": "Testa o estilo de seleção múltipla de entrada na caixa informativa (grande número de itens para testar rolagem e paginação) (intitulado"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGETITLED_DESC",
-      "text": "Testa o estilo de seleção de entrada na caixa informativa (grande número de itens para testar rolagem e paginação) (intitulado"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONTITLED_DESC",
-      "text": "Testa o estilo de seleção de entrada na caixa informativa (intitulada"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGE_DESC",
-      "text": "Testa o estilo de seleção de entrada (grande número de itens para testar rolagem e paginação)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGEMULTIPLE_DESC",
-      "text": "Testa o estilo de seleção múltipla de entrada (grande número de itens para testar rolagem e paginação)"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_NOFRAME",
       "text": "Não é possível obter o quadro"
     },
@@ -7496,10 +7204,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ALARM",
       "text": "Falha ao carregar o ouvinte de alarme"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_FAILED_FINALIZE_ADDONS",
-      "text": "Falha ao finalizar os complementos"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_MOTD",
@@ -7928,10 +7632,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC",
       "text": "Nome de usuário para alterar a senha"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC",
-      "text": "Senha do usuário atual"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC",
@@ -8634,10 +8334,6 @@
       "text": "Extras - Calendário"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_COLORCONVERTER",
-      "text": "Extras - Conversor de cores"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CONTACTS",
       "text": "Extras - Contatos"
     },
@@ -8650,10 +8346,6 @@
       "text": "Extras - Dicionário"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_DOCKING",
-      "text": "Extras - Atracação"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_FORECAST",
       "text": "Extras - Previsão"
     },
@@ -8664,10 +8356,6 @@
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO",
       "text": "Extras - Estúdio Temático"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_TIPS",
-      "text": "Extras - Dicas do Kernel"
     },
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_TODO",
@@ -8718,10 +8406,6 @@
       "text": "Extras - Datas"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_HASHES",
-      "text": "Extras - Hashes"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CHATBOT",
       "text": "Extras - IA do Chatbot"
     },
@@ -8744,14 +8428,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC",
       "text": "Qual driver de gerador de números aleatórios você gostaria de usar?"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME",
-      "text": "Driver de rede atual"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC",
-      "text": "Qual driver de rede você gostaria de usar?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME",
@@ -8852,14 +8528,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS",
       "text": "Foram encontradas chaves duplicadas na sua instância de configurações. Verifique novamente a variável para garantir que ela não exista mais de uma vez."
-    },
-    {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_CLOSE",
-      "text": "Fechar"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN",
-      "text": "Desligar"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE",

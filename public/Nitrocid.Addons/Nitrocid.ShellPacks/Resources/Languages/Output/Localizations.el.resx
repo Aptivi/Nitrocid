@@ -262,9 +262,6 @@
   <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX" xml:space="preserve">
     <value>Το μήνυμα {0} από {1} διαγράφηκε από {2}. Απομένουν {3} μηνύματα για ανάλυση.</value>
   </data>
-  <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX" xml:space="preserve">
-    <value>Το μήνυμα {0} από τον χρήστη {1} διαγράφηκε από τα εισερχόμενα. Απομένουν {2} μηνύματα για ανάλυση.</value>
-  </data>
   <data name="NKS_SHELLPACKS_FILESHELLS_OPENFAILED" xml:space="preserve">
     <value>Απέτυχε το άνοιγμα του αρχείου. Έξοδος από το κέλυφος...</value>
   </data>
@@ -387,9 +384,6 @@
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT" xml:space="preserve">
     <value>Εισαγάγετε διαδρομές αρχείων στα συνημμένα. Πατήστε ENTER σε μια κενή διαδρομή για επιβεβαίωση.</value>
-  </data>
-  <data name="NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC" xml:space="preserve">
-    <value>Ανοίγει ένα κρυπτογραφημένο μήνυμα</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD" xml:space="preserve">
     <value>Γράψτε τον κωδικό πρόσβασης για το αναγνωριστικό κλειδιού {0}</value>
@@ -955,9 +949,6 @@
   <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV" xml:space="preserve">
     <value>Καμία αναθεώρηση.</value>
   </data>
-  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION" xml:space="preserve">
-    <value>Η σύνδεση δεν έχει δημιουργηθεί ακόμα.</value>
-  </data>
   <data name="NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT" xml:space="preserve">
     <value>Εισαγάγετε τη διεύθυνση διακομιστή:</value>
   </data>
@@ -979,9 +970,6 @@
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC" xml:space="preserve">
     <value>Ανοίγει το πρόγραμμα-πελάτη αλληλογραφίας POP3</value>
   </data>
-  <data name="NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING" xml:space="preserve">
-    <value>Η αλληλογραφία POP3 επιστρέφει από την 0.0.20.0, αλλά προς το παρόν δεν σκοπεύουμε να την κυκλοφορήσουμε σε αυτήν την έκδοση. Περιμένετε την επόμενη έκδοση.</value>
-  </data>
   <data name="NKS_SHELLPACKS_RSS_FEEDURLPROMPT" xml:space="preserve">
     <value>Εισαγάγετε τη διεύθυνση URL της ροής RSS</value>
   </data>
@@ -990,9 +978,6 @@
   </data>
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC" xml:space="preserve">
     <value>Ανοίγει ένα διαδραστικό πρόγραμμα ανάγνωσης ροών RSS TUI</value>
-  </data>
-  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT" xml:space="preserve">
-    <value>Δεν μπορώ να εξαγάγω τίποτα.</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK" xml:space="preserve">
     <value>Το αρχείο δεν είναι εγγράψιμο επειδή ο τύπος είναι</value>
@@ -1128,15 +1113,6 @@
   </data>
   <data name="NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC" xml:space="preserve">
     <value>Ορίζει έναν παράγοντα χρήστη</value>
-  </data>
-  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS" xml:space="preserve">
-    <value>Προσθήκη κεφαλίδας που υπάρχει ήδη.</value>
-  </data>
-  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE" xml:space="preserve">
-    <value>Αφαίρεση κεφαλίδας που δεν υπάρχει.</value>
-  </data>
-  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT" xml:space="preserve">
-    <value>Επεξεργασία κεφαλίδας που δεν υπάρχει.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC" xml:space="preserve">
     <value>Προσθέτει έναν νέο πίνακα, αντικείμενο ή ιδιότητα</value>
@@ -1512,9 +1488,6 @@
   </data>
   <data name="NKS_SHELLPACKS_JSON_SETITEMFAILED" xml:space="preserve">
     <value>Το κέλυφος JSON απέτυχε να ορίσει ένα στοιχείο.</value>
-  </data>
-  <data name="NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX" xml:space="preserve">
-    <value>Το μήνυμα {0} από τον χρήστη {1} μετακινήθηκε. Απομένουν {2} μηνύματα για ανάλυση.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_ATTACHMENTS" xml:space="preserve">
     <value>Συνημμένα:</value>

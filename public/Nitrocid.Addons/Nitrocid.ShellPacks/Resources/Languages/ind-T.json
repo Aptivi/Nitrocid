@@ -279,10 +279,6 @@
       "text": "{1} से {0} संदेश {2} से हटा दिया गया। {3} संदेश पार्स करने के लिए शेष है।"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "इनबॉक्स से {0} संदेश {0} हटाए गए। {2} संदेश पार्स करने के लिए शेष है।"
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "फ़ाइल खोलने में असमर्थ। शेल से बाहर ..."
     },
@@ -445,10 +441,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "अनुलग्नकों के लिए फ़ाइल पथ दर्ज करें। पुष्टि करने के लिए रिक्त पथ पर ENTER दबाएँ।"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "एक एन्क्रिप्टेड संदेश खोलता है"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1203,10 +1195,6 @@
       "text": "कोई संशोधन नहीं."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "कनेक्शन अभी तक स्थापित नहीं हुआ है."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "सर्वर पता दर्ज करें:"
     },
@@ -1235,10 +1223,6 @@
       "text": "POP3 मेल क्लाइंट खोलता है"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "POP3 मेल 0.0.20.0 से लौट रहा है, लेकिन फिलहाल हम इसे इस संस्करण में जारी करने की योजना नहीं बना रहे हैं। अगले संस्करण की प्रतीक्षा करें."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "RSS फ़ीड URL दर्ज करें"
     },
@@ -1249,10 +1233,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "एक इंटरैक्टिव आरएसएस फ़ीड रीडर टीयूआई खोलता है"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "कुछ भी नहीं निकाल सकते."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1433,18 +1413,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "एक उपयोगकर्ता एजेंट सेट करता है"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "वह शीर्षलेख जोड़ना जो पहले से मौजूद है."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "जो हेडर मौजूद नहीं है उसे हटाया जा रहा है।"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "वह शीर्षलेख संपादित किया जा रहा है जो मौजूद नहीं है."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1945,10 +1913,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "JSON शेल एक आइटम सेट करने में विफल रहा।"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "संदेश {0} को {1} से स्थानांतरित किया गया। {2} संदेश पार्स करने के लिए शेष हैं।"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

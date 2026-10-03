@@ -850,17 +850,8 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TRANSLATE_DESC" xml:space="preserve">
     <value>Testes traduzindo uma string que existe em recursos para um idioma específico</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTPLACES_DESC" xml:space="preserve">
-    <value>Imprime uma string no console e analisa os espaços reservados encontrados</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTREGEXP_DESC" xml:space="preserve">
     <value>Testa o recurso de expressão regular</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_DESC" xml:space="preserve">
-    <value>Testa a sequência VT para 255 cores</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTRUETEST_DESC" xml:space="preserve">
-    <value>Testa a sequência VT para cores verdadeiras</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_DESC" xml:space="preserve">
     <value>Envia uma notificação para testar o receptor</value>
@@ -870,33 +861,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PROBEHARDWARE_DESC" xml:space="preserve">
     <value>Testes sondando o hardware</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_DESC" xml:space="preserve">
-    <value>Testa o escritor da lista com a string e a matriz de strings</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_DESC" xml:space="preserve">
-    <value>Testa o escritor da lista com o inteiro e a matriz de inteiros</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_DESC" xml:space="preserve">
-    <value>Testa o escritor da lista com o char e o array char</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_NORMALLIST" xml:space="preserve">
-    <value>Lista de strings normal:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_ARRAYLIST" xml:space="preserve">
-    <value>Lista de strings de matriz:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_NORMALLIST" xml:space="preserve">
-    <value>Lista de inteiros normais:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_ARRAYLIST" xml:space="preserve">
-    <value>Lista de inteiros de matriz:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST" xml:space="preserve">
-    <value>Lista de caracteres normal:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST" xml:space="preserve">
-    <value>Lista de caracteres da matriz:</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_NAME" xml:space="preserve">
     <value>Habilitar RPC</value>
@@ -969,33 +933,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS" xml:space="preserve">
     <value>Personagem excluído.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_DESC" xml:space="preserve">
-    <value>Testa o escritor do dicionário com a string e a matriz de strings</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_DESC" xml:space="preserve">
-    <value>Testa o escritor do dicionário com o array char e char</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_DESC" xml:space="preserve">
-    <value>Testa o escritor do dicionário com o inteiro e a matriz de inteiros</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_NORMALLIST" xml:space="preserve">
-    <value>Dicionário de strings normal:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_ARRAYLIST" xml:space="preserve">
-    <value>Dicionário de strings de matriz:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_NORMALLIST" xml:space="preserve">
-    <value>Dicionário de números inteiros normal:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_ARRAYLIST" xml:space="preserve">
-    <value>Dicionário de inteiros de matriz:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_NORMALLIST" xml:space="preserve">
-    <value>Dicionário de caracteres normal:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_ARRAYLIST" xml:space="preserve">
-    <value>Dicionário de caracteres de matriz:</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_FILESYSTEM_PROGRESS_NAME" xml:space="preserve">
     <value>Mostrar progresso nas operações do sistema de arquivos</value>
@@ -1303,9 +1240,6 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC" xml:space="preserve">
     <value>Criptografa uma string usando CRC32</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTTABLE_DESC" xml:space="preserve">
-    <value>Testa a funcionalidade da tabela</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_EDITLINE_DESC" xml:space="preserve">
     <value>Edita a linha especificada</value>
   </data>
@@ -1353,9 +1287,6 @@
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC" xml:space="preserve">
     <value>Semelhante ao modo de segurança, mas também desabilita o multiusuário e alguma personalização</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS" xml:space="preserve">
-    <value>As cores não exigem reinicialização, mas a maioria das configurações exige reinicialização.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC" xml:space="preserve">
     <value>Substitui uma palavra ou frase por outra usando expressões regulares</value>
@@ -1762,9 +1693,6 @@
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TITLE" xml:space="preserve">
     <value>Comece já!</value>
   </data>
-  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1" xml:space="preserve">
-    <value>Parabéns! Agora você tem uma conta de usuário, {0}!</value>
-  </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT2" xml:space="preserve">
     <value>Pressione a tecla ENTER para começar a usar o kernel e faça login na sua nova conta. Boa sorte!</value>
   </data>
@@ -1776,9 +1704,6 @@
   </data>
   <data name="NKS_USERS_EXCEPTION_USERLOCKED" xml:space="preserve">
     <value>Tentando modificar uma conta existente enquanto ela está bloqueada</value>
-  </data>
-  <data name="NKS_USERS_EXCEPTION_UNENCRYPTEDPASS" xml:space="preserve">
-    <value>Tentando adicionar senha não criptografada à lista de usuários.</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_CANNOTVALIDATE_ADD" xml:space="preserve">
     <value>Não é possível adicionar nome de usuário. Certifique-se de que o nome de usuário não exista.</value>
@@ -2512,9 +2437,6 @@
   <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZEFAILED" xml:space="preserve">
     <value>Falha ao inicializar o complemento do kernel</value>
   </data>
-  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_FINALIZEFAILED" xml:space="preserve">
-    <value>Falha ao finalizar os complementos. Os complementos abaixo falharam ao finalizar:</value>
-  </data>
   <data name="NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_STOPFAILED" xml:space="preserve">
     <value>Falha ao parar os complementos. Os complementos abaixo falharam ao parar:</value>
   </data>
@@ -2716,12 +2638,6 @@
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOTAFILE" xml:space="preserve">
     <value>A entrada selecionada não é um arquivo.</value>
   </data>
-  <data name="NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT" xml:space="preserve">
-    <value>Insira um driver de hash:</value>
-  </data>
-  <data name="NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERNOTFOUND" xml:space="preserve">
-    <value>Driver de hash não encontrado.</value>
-  </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_EXPECTEDHASHPROMPT" xml:space="preserve">
     <value>Insira o hash esperado</value>
   </data>
@@ -2739,9 +2655,6 @@
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_ISDIRECTORY" xml:space="preserve">
     <value>É um diretório</value>
-  </data>
-  <data name="NKS_MISC_INTERACTIVES_FMTUI_ISSELECTED" xml:space="preserve">
-    <value>Está selecionado</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILESIZE" xml:space="preserve">
     <value>Tamanho do arquivo</value>
@@ -2902,9 +2815,6 @@
   <data name="NKS_MISC_SPLASH_DEFAULTMSG" xml:space="preserve">
     <value>Carregando...</value>
   </data>
-  <data name="NKS_NETWORK_CONNECTION_EXCEPTION_INVALIDINVOCATION" xml:space="preserve">
-    <value>Esta propriedade é válida somente para conexões com threads. Para conexões de instância, chame a propriedade apropriada na própria instância em vez de chamar esta propriedade.</value>
-  </data>
   <data name="NKS_NETWORK_CONNECTION_SELECT_PROMPT" xml:space="preserve">
     <value>Selecione uma conexão. Se não tiver conexões, você terá que criar uma nova conexão. Além disso, você pode usar o recurso de discagem rápida para se conectar rapidamente aos servidores.</value>
   </data>
@@ -2934,9 +2844,6 @@
   </data>
   <data name="NKS_NETWORK_CONNECTION_EXCEPTION_TYPEEXISTS" xml:space="preserve">
     <value>O tipo de conexão já existe</value>
-  </data>
-  <data name="NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS" xml:space="preserve">
-    <value>O shell {0} não aceita conexões de rede.</value>
   </data>
   <data name="NKS_NETWORK_CONNECTION_ADDRESSPROMPT" xml:space="preserve">
     <value>Digite o endereço do servidor:</value>
@@ -3046,12 +2953,6 @@
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_TITLE" xml:space="preserve">
     <value>Aviso de ambiente incomum</value>
   </data>
-  <data name="NKS_KERNEL_STARTING_TIPS_ADDONNEEDED" xml:space="preserve">
-    <value>que você pode obter dicas extras do complemento do kernel fornecido com a compilação completa do Nitrocid?</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_TIPS_PREFIX" xml:space="preserve">
-    <value>Dica profissional: você sabia</value>
-  </data>
   <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS" xml:space="preserve">
     <value>Atalhos de teclado</value>
   </data>
@@ -3124,17 +3025,8 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_MISC" xml:space="preserve">
     <value>Testes diversos</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_MODIFICATION" xml:space="preserve">
-    <value>Testes de modificação do kernel</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_NETWORK" xml:space="preserve">
     <value>Testes de sistema de rede</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_SHELL" xml:space="preserve">
-    <value>Testes de shell UESH</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS" xml:space="preserve">
-    <value>Testes de usuário</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_THEMESET_NO" xml:space="preserve">
     <value>Não</value>
@@ -3198,9 +3090,6 @@
   </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Comando não encontrado.</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC" xml:space="preserve">
-    <value>Mostra uma dica aleatória do kernel</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_ERROR" xml:space="preserve">
     <value>Erro no shell administrativo: {0}</value>
@@ -3688,18 +3577,6 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE" xml:space="preserve">
     <value>Escolha seu idioma</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC" xml:space="preserve">
-    <value>Testa o sistema TUI interativo com interação de painel duplo</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETEST_DESC" xml:space="preserve">
-    <value>Testa o sistema TUI interativo com uma única interação de painel</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETESTREFRESHING_DESC" xml:space="preserve">
-    <value>Testa o sistema TUI interativo com uma única interação de painel e com a atualização das informações do segundo painel</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT" xml:space="preserve">
-    <value>Escreva um número de cor variando de 1 a 255:</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_DEBUG_DESC" xml:space="preserve">
     <value>Habilita o depurador</value>
   </data>
@@ -3742,32 +3619,11 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_NETWORKCHECK_TEST" xml:space="preserve">
     <value>A disponibilidade da rede é</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINT_DESC" xml:space="preserve">
-    <value>Imprima uma string no console</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTD_DESC" xml:space="preserve">
     <value>Imprima uma string para o depurador</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTDF_DESC" xml:space="preserve">
     <value>Imprima uma string para o depurador com formatação</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTF_DESC" xml:space="preserve">
-    <value>Imprima uma string no console com formatação</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTHIGHLIGHTED_DESC" xml:space="preserve">
-    <value>Imprima uma string no console com destaque</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEP_DESC" xml:space="preserve">
-    <value>Imprimir um separador para o console</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEPF_DESC" xml:space="preserve">
-    <value>Imprima um separador no console com formatação</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNEWLINES_DESC" xml:space="preserve">
-    <value>Imprima uma string no console com novas linhas na string</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNULLS_DESC" xml:space="preserve">
-    <value>Imprima uma string no console com caracteres nulos</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_RDEBUG_DESC" xml:space="preserve">
     <value>Habilita o depurador remoto</value>
@@ -3795,9 +3651,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATIONSIMPLE_TEST_TITLE" xml:space="preserve">
     <value>Teste de notificação simples</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTARGS_DESC" xml:space="preserve">
-    <value>Argumentos de testes</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRYPTORNG_DESC" xml:space="preserve">
     <value>Testa o gerador de números aleatórios criptograficamente seguro</value>
@@ -3829,36 +3682,6 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTFOLDERSSELECTOR_DESC" xml:space="preserve">
     <value>Testa o seletor de múltiplas pastas</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONS_DESC" xml:space="preserve">
-    <value>Testa os botões na caixa de informações</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUT_DESC" xml:space="preserve">
-    <value>Testa a caixa de entrada colorida na caixa informativa</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUT_DESC" xml:space="preserve">
-    <value>Testa a caixa de entrada na caixa informativa</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTION_DESC" xml:space="preserve">
-    <value>Testa o estilo de seleção múltipla de entrada na caixa informativa</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTION_DESC" xml:space="preserve">
-    <value>Testa o estilo de seleção de entrada na caixa informativa</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTMULTISELECTION_DESC" xml:space="preserve">
-    <value>Testa o estilo de seleção múltipla de entrada</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTION_DESC" xml:space="preserve">
-    <value>Testa o estilo de seleção de entrada</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_DESC" xml:space="preserve">
-    <value>Testa o escritor de entrada da lista</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT1" xml:space="preserve">
-    <value>Travessão 1:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT2" xml:space="preserve">
-    <value>Recuo 2:</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTPROGRESSHANDLER_DESC" xml:space="preserve">
     <value>Testa o manipulador de progresso</value>
   </data>
@@ -3873,15 +3696,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTRNG_DESC" xml:space="preserve">
     <value>Testa o gerador de números aleatórios</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_DESC" xml:space="preserve">
-    <value>Testa o recurso de tela do console</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_FAILED" xml:space="preserve">
-    <value>Falha na renderização da tela:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSWITCHES_DESC" xml:space="preserve">
-    <value>Testes de interruptores</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID" xml:space="preserve">
     <value>O número da sessão é inválido.</value>
@@ -5380,39 +5194,6 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_EXCEPTION_ENTRYPOINTGET" xml:space="preserve">
     <value>Falha ao obter ponto de entrada.</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONSTITLED_DESC" xml:space="preserve">
-    <value>Testa os botões na caixa informativa (intitulada)</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUTTITLED_DESC" xml:space="preserve">
-    <value>Testa a caixa de entrada colorida na caixa informativa (intitulada)</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUTTITLED_DESC" xml:space="preserve">
-    <value>Testa a caixa de entrada na caixa informativa (intitulada)</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTIONTITLED_DESC" xml:space="preserve">
-    <value>Testa o estilo de seleção múltipla de entrada na caixa informativa (intitulada)</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGE_DESC" xml:space="preserve">
-    <value>Testa o estilo de seleção de entrada na caixa informativa (grande número de itens para testar rolagem e paginação)</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLE_DESC" xml:space="preserve">
-    <value>Testa o estilo de seleção múltipla de entrada na caixa informativa (grande número de itens para testar rolagem e paginação)</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLETITLED_DESC" xml:space="preserve">
-    <value>Testa o estilo de seleção múltipla de entrada na caixa informativa (grande número de itens para testar rolagem e paginação) (intitulado</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGETITLED_DESC" xml:space="preserve">
-    <value>Testa o estilo de seleção de entrada na caixa informativa (grande número de itens para testar rolagem e paginação) (intitulado</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONTITLED_DESC" xml:space="preserve">
-    <value>Testa o estilo de seleção de entrada na caixa informativa (intitulada</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGE_DESC" xml:space="preserve">
-    <value>Testa o estilo de seleção de entrada (grande número de itens para testar rolagem e paginação)</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGEMULTIPLE_DESC" xml:space="preserve">
-    <value>Testa o estilo de seleção múltipla de entrada (grande número de itens para testar rolagem e paginação)</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_NOFRAME" xml:space="preserve">
     <value>Não é possível obter o quadro</value>
   </data>
@@ -5676,9 +5457,6 @@
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_ALARM" xml:space="preserve">
     <value>Falha ao carregar o ouvinte de alarme</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_FAILED_FINALIZE_ADDONS" xml:space="preserve">
-    <value>Falha ao finalizar os complementos</value>
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_MOTD" xml:space="preserve">
     <value>Falha ao carregar MOTD e MAL</value>
@@ -6000,9 +5778,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC" xml:space="preserve">
     <value>Nome de usuário para alterar a senha</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC" xml:space="preserve">
-    <value>Senha do usuário atual</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC" xml:space="preserve">
     <value>Nome de usuário antigo para alterar</value>
@@ -6529,9 +6304,6 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_CALENDAR" xml:space="preserve">
     <value>Extras - Calendário</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_COLORCONVERTER" xml:space="preserve">
-    <value>Extras - Conversor de cores</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_CONTACTS" xml:space="preserve">
     <value>Extras - Contatos</value>
   </data>
@@ -6541,9 +6313,6 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_DICTIONARY" xml:space="preserve">
     <value>Extras - Dicionário</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_DOCKING" xml:space="preserve">
-    <value>Extras - Atracação</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_FORECAST" xml:space="preserve">
     <value>Extras - Previsão</value>
   </data>
@@ -6552,9 +6321,6 @@
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO" xml:space="preserve">
     <value>Extras - Estúdio Temático</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_TIPS" xml:space="preserve">
-    <value>Extras - Dicas do Kernel</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_TODO" xml:space="preserve">
     <value>Extras - Lista de tarefas</value>
@@ -6592,9 +6358,6 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_DATES" xml:space="preserve">
     <value>Extras - Datas</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_HASHES" xml:space="preserve">
-    <value>Extras - Hashes</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_CHATBOT" xml:space="preserve">
     <value>Extras - IA do Chatbot</value>
   </data>
@@ -6612,12 +6375,6 @@
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC" xml:space="preserve">
     <value>Qual driver de gerador de números aleatórios você gostaria de usar?</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME" xml:space="preserve">
-    <value>Driver de rede atual</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC" xml:space="preserve">
-    <value>Qual driver de rede você gostaria de usar?</value>
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME" xml:space="preserve">
     <value>Driver de sistema de arquivos atual</value>
@@ -6693,12 +6450,6 @@
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
     <value>Foram encontradas chaves duplicadas na sua instância de configurações. Verifique novamente a variável para garantir que ela não exista mais de uma vez.</value>
-  </data>
-  <data name="NKS_USERS_LOGIN_MODERNLOGON_CLOSE" xml:space="preserve">
-    <value>Fechar</value>
-  </data>
-  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN" xml:space="preserve">
-    <value>Desligar</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE" xml:space="preserve">
     <value>Gerenciador de Arquivos (painel único)</value>

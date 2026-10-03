@@ -16,20 +16,8 @@
   ],
   "locs": [
     {
-      "loc": "NKS_THEMESTUDIO_APP_EXIT",
-      "text": "Ausgang"
-    },
-    {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC",
       "text": "Macht ein neues Thema"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_MAKINGTHEME",
-      "text": "Erstellen eines neuen Themas \"{0}\"."
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_SAVETOCURRENT",
-      "text": "Thema im aktuellen Verzeichnis speichern"
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_SAVETOOTHER",
@@ -56,10 +44,6 @@
       "text": "Geben Sie den Namen der Designdatei ohne die Erweiterung .json an:"
     },
     {
-      "loc": "NKS_THEMESTUDIO_APP_PREVIEW",
-      "text": "Vorschau..."
-    },
-    {
       "loc": "NKS_THEMESTUDIO_APP_LOADCURRENT",
       "text": "Aktuelle Farben laden"
     },
@@ -70,18 +54,6 @@
     {
       "loc": "NKS_THEMESTUDIO_APP_SAVETODIRPROMPT",
       "text": "Geben Sie das Verzeichnis an, in dem das Design gespeichert werden soll:"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC",
-      "text": "Erstellt ein neues Thema in einem interaktiven TUI"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_COPYCOLORTO",
-      "text": "Farbe kopieren nach..."
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_SOURCETYPEPROMPT",
-      "text": "Wählen Sie den Quellfarbtyp aus, von dem die Farbe kopiert werden soll."
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_TARGETTYPEPROMPT",
@@ -108,24 +80,12 @@
       "text": "Farbhelligkeit"
     },
     {
-      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWSAVE",
-      "text": "Wählen Sie aus, wie Sie dieses Design speichern möchten"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWLOAD",
-      "text": "Wählen Sie aus, wie Sie ein Design laden möchten"
-    },
-    {
       "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_CHANGE",
       "text": "Ändern..."
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_SAVE",
       "text": "Speichern..."
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_LOAD",
-      "text": "Laden..."
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_COPY",

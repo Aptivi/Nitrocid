@@ -75,16 +75,8 @@
       "text": "調光する前に点灯する位置はいくつですか?"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_NAME",
-      "text": "ミリ秒単位のフェードアウト遅延"
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_NAME",
       "text": "最大フェード ステップ"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_DESC",
-      "text": "テキストをフェードアウトするまで何ミリ秒待つか?"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_DESC",
@@ -149,18 +141,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_DESC",
       "text": "Beats PerMinute単位を使用して次の色を書き込むかどうか。"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_NAME",
-      "text": "1分あたりの拍数の遅延"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_DESC",
-      "text": "次の書き込みを行う前に待機する1分あたりのビート数は？"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_CYCLECOLORS_DESC",
-      "text": "BeatFaderが有効になっている場合、ランダムな色を選択します。 それ以外の場合は、構成の色を使用します。"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_NAME",
@@ -723,24 +703,8 @@
       "text": "パーセンテージが大きいほど、信号のノイズが大きくなります"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_NAME",
-      "text": "グリッチ密度"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_DESC",
-      "text": "パーセンテージが大きいほど、グリッチの密度が高くなります。"
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_WORD_LOADING",
       "text": "読み込み中..."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_KSX_CONTINUED",
-      "text": "つづく..."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_KSX_THEEND",
-      "text": "終わり"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_NEWYEAR_CONGRATS",
@@ -813,22 +777,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_BOUNCINGTEXT_SETTINGS_DESC",
       "text": "コンソール上で跳ね返るテキストを表示します。"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_DESC",
-      "text": "テキストをフェードインおよびフェードアウトします。"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADERBACK_SETTINGS_DESC",
-      "text": "背景をフェードインおよびフェードアウトします。"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_DESC",
-      "text": "テキストをビートごとにフェードインおよびフェードアウトします。"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_BEATCOLOR_DESC",
-      "text": "ビートカラー"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_DESC",
@@ -907,40 +855,12 @@
       "text": "画面中央にシンプルな日付と時刻。"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DESC",
-      "text": "画面上の不具合をシミュレートします。"
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_FALLINGLINE_SETTINGS_DESC",
       "text": "下に向かってフェードアウトする下降ラインを表示します。"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_INDETERMINATE_SETTINGS_DESC",
       "text": "不確定な進行状況バーを表示します。"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_PULSE_SETTINGS_DESC",
-      "text": "脈動する背景を表示します。"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_DESC",
-      "text": "脈動する背景をビートで表示します。"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_CYCLECOLORS_DESC",
-      "text": "BeatPulse が有効になっている場合、BeatPulse はランダムな色を選択します。それ以外の場合は、設定の色を使用します。"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EDGEPULSE_SETTINGS_DESC",
-      "text": "脈動するエッジを見せます。"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_DESC",
-      "text": "ビートの脈動的なエッジを示します。"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_CYCLECOLORS_DESC",
-      "text": "BeatEdgePulse が有効になっている場合、ランダムな色が選択されます。それ以外の場合は、設定の色を使用します。"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_DESC",
@@ -975,10 +895,6 @@
       "text": "サイレンスタイル。"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_SPIN_SETTINGS_DESC",
-      "text": "回転斬り。"
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_SNAKEFILL_SETTINGS_DESC",
       "text": "コンソールを蛇のような色で埋め尽くします。"
     },
@@ -991,36 +907,8 @@
       "text": "次の画面の遅延 (ミリ秒)"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_BSOD_SETTINGS_DESC",
-      "text": "さまざまなオペレーティング システムからのシステム エラーをシミュレートします。"
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_MEMDUMP_SETTINGS_DESC",
       "text": "ランダムなシフトから色を生成します。"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_DESC",
-      "text": "フェードアウトしてビートで点滅するテキストを表示します。"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_CYCLECOLORS_DESC",
-      "text": "ExcaliBeats が有効になっている場合、ランダムな色が選択されます。それ以外の場合は、設定の色を使用します。"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_NAME",
-      "text": "明示的モード"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_DESC",
-      "text": "テキストを明示的に Excalibur に変更します"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_NAME",
-      "text": "トランスモード"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_DESC",
-      "text": "トランス モード - BPM を 2 倍にして、トランス ミュージック スタイルをシミュレートします。"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_DESC",
@@ -1081,14 +969,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_WORDHASHER_SETTINGS_DESC",
       "text": "単語とそのハッシュサムを表示します。"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_DESC",
-      "text": "四隅に消えゆく四角形が表示されます。"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_FADEOUTDELAY_DESC",
-      "text": "正方形をフェードアウトするまで何ミリ秒待つ必要がありますか?"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_NUMBERSCATTER_SETTINGS_DESC",
@@ -1865,10 +1745,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
       "text": "背後に表示されている背景色を明らかにします。ブロック（暗い部屋で懐中電灯を何かに向けるときのように）"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
-      "text": "背景に印刷されたテキストを表示します"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",

@@ -280,10 +280,6 @@
       "text": "{1} adresinden gelen {0} mesajı {2} adresinden silindi. Ayrıştırılacak {3} mesaj kaldı."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "{1} adlı kişiden gelen {0} mesajı gelen kutusundan silindi. Ayrıştırılacak {2} mesaj kaldı."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "Dosya açılamadı. Kabuktan çıkılıyor..."
     },
@@ -446,10 +442,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "Ekler için dosya yollarını girin. Onaylamak için boş bir yolda ENTER'a basın."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "Şifrelenmiş bir mesajı açar"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1204,10 +1196,6 @@
       "text": "Revizyon yok."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "Bağlantı henüz kurulamadı."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "Sunucu adresini girin:"
     },
@@ -1236,10 +1224,6 @@
       "text": "POP3 posta istemcisini açar"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "POP3 postası 0.0.20.0'dan dönüyor, ancak şu anda bu sürümde yayınlamayı planlamıyoruz. Bir sonraki sürümü bekleyin."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "RSS besleme URL'sini girin"
     },
@@ -1250,10 +1234,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "Etkileşimli bir RSS besleme okuyucusu açar TUI"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "Hiçbir şey çıkarılamıyor."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1434,18 +1414,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "Bir kullanıcı aracısı ayarlar"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "Zaten var olan bir başlığı ekleme."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "Varolmayan başlığı kaldırıyorum."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "Varolmayan başlığı düzenliyorum."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1946,10 +1914,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "JSON kabuğu bir öğeyi ayarlayamadı."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "{1} adresinden gelen {0} mesajı taşındı. Ayrıştırılacak {2} mesaj kaldı."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

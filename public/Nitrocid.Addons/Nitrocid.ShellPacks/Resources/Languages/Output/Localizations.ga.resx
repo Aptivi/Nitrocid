@@ -262,9 +262,6 @@
   <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX" xml:space="preserve">
     <value>Scriosadh an teachtaireacht {0} ó {1} ó {2}. {3} teachtaireacht fágtha le parsáil.</value>
   </data>
-  <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX" xml:space="preserve">
-    <value>Scriosadh an teachtaireacht {0} ó {1} ón mbosca isteach. {2} teachtaireacht fágtha le parsáil.</value>
-  </data>
   <data name="NKS_SHELLPACKS_FILESHELLS_OPENFAILED" xml:space="preserve">
     <value>Theip ar an gcomhad a oscailt. blaosc ag éirí as...</value>
   </data>
@@ -387,9 +384,6 @@
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT" xml:space="preserve">
     <value>Cuir isteach cosáin comhaid chuig ceangaltáin. Brúigh ENTER ar chonair bhán lena dhearbhú.</value>
-  </data>
-  <data name="NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC" xml:space="preserve">
-    <value>Osclaíonn sé teachtaireacht criptithe</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD" xml:space="preserve">
     <value>Scríobh pasfhocal don eochair-aitheantas {0}</value>
@@ -955,9 +949,6 @@
   <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV" xml:space="preserve">
     <value>Gan athbhreithniú.</value>
   </data>
-  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION" xml:space="preserve">
-    <value>Níl ceangal bunaithe fós.</value>
-  </data>
   <data name="NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT" xml:space="preserve">
     <value>Cuir isteach seoladh an fhreastalaí:</value>
   </data>
@@ -979,9 +970,6 @@
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC" xml:space="preserve">
     <value>Osclaíonn sé an cliant ríomhphoist POP3</value>
   </data>
-  <data name="NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING" xml:space="preserve">
-    <value>Tá post POP3 ag filleadh ó 0.0.20.0, ach níl sé beartaithe againn faoi láthair é a scaoileadh sa leagan seo. Fan le haghaidh an chéad leagan eile.</value>
-  </data>
   <data name="NKS_SHELLPACKS_RSS_FEEDURLPROMPT" xml:space="preserve">
     <value>Cuir isteach an fotha RSS URL</value>
   </data>
@@ -990,9 +978,6 @@
   </data>
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC" xml:space="preserve">
     <value>Osclaíonn sé léitheoir fotha RSS idirghníomhach TUI</value>
-  </data>
-  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT" xml:space="preserve">
-    <value>Ní féidir aon rud a bhaint as.</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK" xml:space="preserve">
     <value>Níl an chartlann inscríofa toisc go bhfuil cineál</value>
@@ -1128,15 +1113,6 @@
   </data>
   <data name="NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC" xml:space="preserve">
     <value>Socraíonn gníomhaire úsáideora</value>
-  </data>
-  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS" xml:space="preserve">
-    <value>Ag cur ceanntásc atá ann cheana féin.</value>
-  </data>
-  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE" xml:space="preserve">
-    <value>Ag baint ceanntásc nach bhfuil ann.</value>
-  </data>
-  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT" xml:space="preserve">
-    <value>Ag cur ceanntásc nach bhfuil ann.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC" xml:space="preserve">
     <value>Cuirtear eagar, réad nó airí nua leis</value>
@@ -1512,9 +1488,6 @@
   </data>
   <data name="NKS_SHELLPACKS_JSON_SETITEMFAILED" xml:space="preserve">
     <value>Theip ar bhlaosc JSON mír a shocrú.</value>
-  </data>
-  <data name="NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX" xml:space="preserve">
-    <value>Bogadh an teachtaireacht {0} ó {1}. {2} teachtaireacht fágtha le parsáil.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_ATTACHMENTS" xml:space="preserve">
     <value>Ceangaltáin:</value>

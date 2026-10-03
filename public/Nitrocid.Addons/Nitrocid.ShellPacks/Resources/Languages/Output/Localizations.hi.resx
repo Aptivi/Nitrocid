@@ -262,9 +262,6 @@
   <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX" xml:space="preserve">
     <value>{1} से {0} संदेश {2} से हटा दिया गया। {3} संदेश पार्स करने के लिए शेष है।</value>
   </data>
-  <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX" xml:space="preserve">
-    <value>इनबॉक्स से {0} संदेश {0} हटाए गए। {2} संदेश पार्स करने के लिए शेष है।</value>
-  </data>
   <data name="NKS_SHELLPACKS_FILESHELLS_OPENFAILED" xml:space="preserve">
     <value>फ़ाइल खोलने में असमर्थ। शेल से बाहर ...</value>
   </data>
@@ -387,9 +384,6 @@
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT" xml:space="preserve">
     <value>अनुलग्नकों के लिए फ़ाइल पथ दर्ज करें। पुष्टि करने के लिए रिक्त पथ पर ENTER दबाएँ।</value>
-  </data>
-  <data name="NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC" xml:space="preserve">
-    <value>एक एन्क्रिप्टेड संदेश खोलता है</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD" xml:space="preserve">
     <value>कुंजी आईडी {0} के लिए पासवर्ड लिखें</value>
@@ -955,9 +949,6 @@
   <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV" xml:space="preserve">
     <value>कोई संशोधन नहीं.</value>
   </data>
-  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION" xml:space="preserve">
-    <value>कनेक्शन अभी तक स्थापित नहीं हुआ है.</value>
-  </data>
   <data name="NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT" xml:space="preserve">
     <value>सर्वर पता दर्ज करें:</value>
   </data>
@@ -979,9 +970,6 @@
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC" xml:space="preserve">
     <value>POP3 मेल क्लाइंट खोलता है</value>
   </data>
-  <data name="NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING" xml:space="preserve">
-    <value>POP3 मेल 0.0.20.0 से लौट रहा है, लेकिन फिलहाल हम इसे इस संस्करण में जारी करने की योजना नहीं बना रहे हैं। अगले संस्करण की प्रतीक्षा करें.</value>
-  </data>
   <data name="NKS_SHELLPACKS_RSS_FEEDURLPROMPT" xml:space="preserve">
     <value>RSS फ़ीड URL दर्ज करें</value>
   </data>
@@ -990,9 +978,6 @@
   </data>
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC" xml:space="preserve">
     <value>एक इंटरैक्टिव आरएसएस फ़ीड रीडर टीयूआई खोलता है</value>
-  </data>
-  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT" xml:space="preserve">
-    <value>कुछ भी नहीं निकाल सकते.</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK" xml:space="preserve">
     <value>पुरालेख लिखने योग्य नहीं है क्योंकि प्रकार है</value>
@@ -1128,15 +1113,6 @@
   </data>
   <data name="NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC" xml:space="preserve">
     <value>एक उपयोगकर्ता एजेंट सेट करता है</value>
-  </data>
-  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS" xml:space="preserve">
-    <value>वह शीर्षलेख जोड़ना जो पहले से मौजूद है.</value>
-  </data>
-  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE" xml:space="preserve">
-    <value>जो हेडर मौजूद नहीं है उसे हटाया जा रहा है।</value>
-  </data>
-  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT" xml:space="preserve">
-    <value>वह शीर्षलेख संपादित किया जा रहा है जो मौजूद नहीं है.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC" xml:space="preserve">
     <value>एक नई सरणी, ऑब्जेक्ट या प्रॉपर्टी जोड़ता है</value>
@@ -1512,9 +1488,6 @@
   </data>
   <data name="NKS_SHELLPACKS_JSON_SETITEMFAILED" xml:space="preserve">
     <value>JSON शेल एक आइटम सेट करने में विफल रहा।</value>
-  </data>
-  <data name="NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX" xml:space="preserve">
-    <value>संदेश {0} को {1} से स्थानांतरित किया गया। {2} संदेश पार्स करने के लिए शेष हैं।</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_ATTACHMENTS" xml:space="preserve">
     <value>अनुलग्नक:</value>

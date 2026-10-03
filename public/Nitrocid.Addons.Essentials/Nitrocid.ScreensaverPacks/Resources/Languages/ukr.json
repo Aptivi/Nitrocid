@@ -75,16 +75,8 @@
       "text": "Скільки позицій освітлюється перед затемненням?"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_NAME",
-      "text": "Затримка згасання в мілісекундах"
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_NAME",
       "text": "Макс. кроки згасання"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_DESC",
-      "text": "Скільки мілісекунд чекати, перш ніж текст зникне?"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_DESC",
@@ -149,18 +141,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_DESC",
       "text": "Чи використовувати одиницю ударів за хвилину для запису наступного кольору."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_NAME",
-      "text": "Затримка в ударах за хвилину"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_DESC",
-      "text": "Скільки ударів на хвилину чекати перед наступним записом?"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_CYCLECOLORS_DESC",
-      "text": "BeatFader вибере випадкові кольори, якщо його ввімкнено. В іншому випадку використовуйте кольори з конфігурації."
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_NAME",
@@ -723,24 +703,8 @@
       "text": "Чим більший відсоток, тим шумніший сигнал"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_NAME",
-      "text": "Щільність глюків"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_DESC",
-      "text": "Чим більше відсоток, тим щільніше глюк!"
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_WORD_LOADING",
       "text": "Завантаження..."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_KSX_CONTINUED",
-      "text": "Продовження буде..."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_KSX_THEEND",
-      "text": "Кінець"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_NEWYEAR_CONGRATS",
@@ -813,22 +777,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_BOUNCINGTEXT_SETTINGS_DESC",
       "text": "Показує вам текст, який підстрибує навколо консолі."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_DESC",
-      "text": "Зникнення тексту."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADERBACK_SETTINGS_DESC",
-      "text": "Зникнення фону."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_DESC",
-      "text": "Зникнення тексту в тактах."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_BEATCOLOR_DESC",
-      "text": "Обіграти колір"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_DESC",
@@ -907,40 +855,12 @@
       "text": "Проста дата й час посередині екрана."
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DESC",
-      "text": "Імітує збій на екрані."
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_FALLINGLINE_SETTINGS_DESC",
       "text": "Показує спадаючу лінію, яка йде вниз і зникає."
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_INDETERMINATE_SETTINGS_DESC",
       "text": "Показує невизначену панель прогресу."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_PULSE_SETTINGS_DESC",
-      "text": "Показує пульсуючий фон."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_DESC",
-      "text": "Показує пульсуючий фон у ритмах."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_CYCLECOLORS_DESC",
-      "text": "BeatPulse вибере випадкові кольори, якщо це ввімкнено. В іншому випадку використовуйте кольори з конфігурації."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EDGEPULSE_SETTINGS_DESC",
-      "text": "Показує вам пульсуючий край."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_DESC",
-      "text": "Показує пульсуючий край у ударах."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_CYCLECOLORS_DESC",
-      "text": "BeatEdgePulse вибере випадкові кольори, якщо його ввімкнено. В іншому випадку використовуйте кольори з конфігурації."
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_DESC",
@@ -975,10 +895,6 @@
       "text": "Стиль сирени."
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_SPIN_SETTINGS_DESC",
-      "text": "Обертання похилих рис."
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_SNAKEFILL_SETTINGS_DESC",
       "text": "Заповнює консоль кольором змії."
     },
@@ -991,36 +907,8 @@
       "text": "Затримка наступного екрана в мілісекундах"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_BSOD_SETTINGS_DESC",
-      "text": "Імітує системні помилки з різних операційних систем."
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_MEMDUMP_SETTINGS_DESC",
       "text": "Генерує кольори з випадкового зсуву."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_DESC",
-      "text": "Показує вам текст, який поступово згасає та блимає."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_CYCLECOLORS_DESC",
-      "text": "ExcaliBeats вибере випадкові кольори, якщо це ввімкнено. В іншому випадку використовуйте кольори з конфігурації."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_NAME",
-      "text": "Явний режим"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_DESC",
-      "text": "Явно змініть текст на Excalibur"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_NAME",
-      "text": "Режим трансу"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_DESC",
-      "text": "Режим Trance - множить BPM на 2, щоб імітувати музичний стиль транс"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_DESC",
@@ -1081,14 +969,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_WORDHASHER_SETTINGS_DESC",
       "text": "Показує вам слово та його хеш-суму."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_DESC",
-      "text": "Показує згасаючий квадрат у чотирьох кутах."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_FADEOUTDELAY_DESC",
-      "text": "Скільки мілісекунд чекати, перш ніж зникне квадрат?"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_NUMBERSCATTER_SETTINGS_DESC",
@@ -1865,10 +1745,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
       "text": "Показує колір фону, який відображається за блоком (як при спрямуванні ліхтарика на якийсь предмет у темряві) кімната)"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
-      "text": "Відображає текст, надрукований на фоні"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",

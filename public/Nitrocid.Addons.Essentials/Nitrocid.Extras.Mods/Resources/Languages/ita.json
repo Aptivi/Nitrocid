@@ -122,10 +122,6 @@
       "text": "Avvia automaticamente le modifiche del kernel all'avvio."
     },
     {
-      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
-      "text": "Il file mod non è specificato."
-    },
-    {
       "loc": "NKS_MODS_MODUPDATING",
       "text": "Tentativo di installare una mod già installata. Aggiornamento mod..."
     },

@@ -7,20 +7,8 @@
   ],
   "locs": [
     {
-      "loc": "NKS_THEMESTUDIO_APP_EXIT",
-      "text": "baahar jaen"
-    },
-    {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC",
       "text": "ek naya vishay banaata hai"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_MAKINGTHEME",
-      "text": "ek naee theem \"{0}\" banaana."
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_SAVETOCURRENT",
-      "text": "theem ko vartamaan nirdeshika mein sahejen"
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_SAVETOOTHER",
@@ -47,10 +35,6 @@
       "text": ".json eksatenshan ke bina theem fail naam nirdisht karen:"
     },
     {
-      "loc": "NKS_THEMESTUDIO_APP_PREVIEW",
-      "text": "poorvaavalokan..."
-    },
-    {
       "loc": "NKS_THEMESTUDIO_APP_LOADCURRENT",
       "text": "vartamaan rang lod karen"
     },
@@ -61,18 +45,6 @@
     {
       "loc": "NKS_THEMESTUDIO_APP_SAVETODIRPROMPT",
       "text": "theem ko sahejane ke lie nirdeshika nirdisht karen:"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC",
-      "text": "ek intaraiktiv tui mein ek naee theem banaata hai"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_COPYCOLORTO",
-      "text": "rang ko kopee karen..."
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_SOURCETYPEPROMPT",
-      "text": "rang ko kopee karane ke lie srot rang prakaar ka chayan karen."
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_TARGETTYPEPROMPT",
@@ -99,24 +71,12 @@
       "text": "rang chamak"
     },
     {
-      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWSAVE",
-      "text": "chunen ki aap is theem ko kaise sahejana chaahate hain"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWLOAD",
-      "text": "chunen ki aap theem ko kaise lod karana chaahate hain"
-    },
-    {
       "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_CHANGE",
       "text": "badalen..."
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_SAVE",
       "text": "sahejen..."
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_LOAD",
-      "text": "lod karen..."
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_COPY",

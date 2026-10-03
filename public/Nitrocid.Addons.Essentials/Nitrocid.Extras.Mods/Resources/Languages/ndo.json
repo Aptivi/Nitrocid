@@ -119,10 +119,6 @@
       "text": "Secara otomatis memulai modifikasi kernel saat boot."
     },
     {
-      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
-      "text": "Berkas mod tidak ditentukan."
-    },
-    {
       "loc": "NKS_MODS_MODUPDATING",
       "text": "Mencoba memasang mod yang sudah terpasang. Memperbarui mod..."
     },

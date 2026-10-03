@@ -1063,20 +1063,8 @@
       "text": "Pengujian menerjemahkan string yang ada di sumber daya ke bahasa tertentu"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTPLACES_DESC",
-      "text": "Mencetak string ke konsol dan mengurai placeholder yang ditemukan"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTREGEXP_DESC",
       "text": "Menguji fasilitas ekspresi reguler"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_DESC",
-      "text": "Menguji urutan VT untuk 255 warna"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTRUETEST_DESC",
-      "text": "Menguji urutan VT untuk warna sebenarnya"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_DESC",
@@ -1089,42 +1077,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PROBEHARDWARE_DESC",
       "text": "Pengujian yang menguji perangkat keras"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_DESC",
-      "text": "Menguji penulis daftar dengan string dan array string"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_DESC",
-      "text": "Menguji penulis daftar dengan bilangan bulat dan array bilangan bulat"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_DESC",
-      "text": "Menguji penulis daftar dengan char dan array char"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_NORMALLIST",
-      "text": "Daftar string normal:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_ARRAYLIST",
-      "text": "Daftar string array:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_NORMALLIST",
-      "text": "Daftar bilangan bulat normal:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_ARRAYLIST",
-      "text": "Daftar bilangan bulat array:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
-      "text": "Daftar karakter normal:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
-      "text": "Daftar karakter array:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_NAME",
@@ -1221,42 +1173,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS",
       "text": "Karakter dihapus."
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_DESC",
-      "text": "Menguji penulis kamus dengan string dan array string"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_DESC",
-      "text": "Menguji penulis kamus dengan array char dan char"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_DESC",
-      "text": "Menguji penulis kamus dengan integer dan array integer"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_NORMALLIST",
-      "text": "Kamus string normal:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_ARRAYLIST",
-      "text": "Kamus string array:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_NORMALLIST",
-      "text": "Kamus bilangan bulat normal:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_ARRAYLIST",
-      "text": "Kamus bilangan bulat array:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_NORMALLIST",
-      "text": "Kamus char normal:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_ARRAYLIST",
-      "text": "Kamus char array:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_FILESYSTEM_PROGRESS_NAME",
@@ -1667,10 +1583,6 @@
       "text": "Mengenkripsi string menggunakan CRC32"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTTABLE_DESC",
-      "text": "Menguji fungsionalitas tabel"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_EDITLINE_DESC",
       "text": "Mengedit baris yang ditentukan"
     },
@@ -1733,10 +1645,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
       "text": "Seperti mode aman, tetapi juga menonaktifkan multi-pengguna dan beberapa penyesuaian"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
-      "text": "Warna tidak memerlukan mulai ulang, tetapi sebagian besar pengaturan memerlukan mulai ulang."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -2279,10 +2187,6 @@
       "text": "Ayo Mulai!"
     },
     {
-      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1",
-      "text": "Selamat! Anda sekarang memiliki akun pengguna, {0}!"
-    },
-    {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT2",
       "text": "Tekan tombol ENTER untuk mulai menggunakan kernel dan masuk ke akun baru Anda. Semoga berhasil!"
     },
@@ -2297,10 +2201,6 @@
     {
       "loc": "NKS_USERS_EXCEPTION_USERLOCKED",
       "text": "Mencoba mengubah akun yang ada saat terkunci"
-    },
-    {
-      "loc": "NKS_USERS_EXCEPTION_UNENCRYPTEDPASS",
-      "text": "Mencoba menambahkan kata sandi yang tidak terenkripsi ke daftar pengguna."
     },
     {
       "loc": "NKS_USERS_EXCEPTION_CANNOTVALIDATE_ADD",
@@ -3279,10 +3179,6 @@
       "text": "Gagal menginisialisasi addon kernel"
     },
     {
-      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_FINALIZEFAILED",
-      "text": "Gagal menyelesaikan add-on. Add-on berikut gagal diselesaikan:"
-    },
-    {
       "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_STOPFAILED",
       "text": "Gagal menghentikan add-on. Add-on berikut gagal dihentikan:"
     },
@@ -3551,14 +3447,6 @@
       "text": "Entri yang dipilih bukan berkas."
     },
     {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT",
-      "text": "Masukkan driver hash:"
-    },
-    {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERNOTFOUND",
-      "text": "Driver hash tidak ditemukan."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_EXPECTEDHASHPROMPT",
       "text": "Masukkan hash yang Anda harapkan"
     },
@@ -3581,10 +3469,6 @@
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_ISDIRECTORY",
       "text": "Adalah sebuah direktori"
-    },
-    {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_ISSELECTED",
-      "text": "Dipilih"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILESIZE",
@@ -3799,10 +3683,6 @@
       "text": "Memuat..."
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_INVALIDINVOCATION",
-      "text": "Properti ini hanya berlaku untuk koneksi dengan thread. Misalnya koneksi, panggil properti yang sesuai pada instance itu sendiri alih-alih memanggil properti ini."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_SELECT_PROMPT",
       "text": "Pilih koneksi. Jika Anda tidak memiliki koneksi, Anda harus membuat koneksi baru. Selain itu, Anda dapat menggunakan fitur panggilan cepat untuk terhubung dengan cepat ke server."
     },
@@ -3841,10 +3721,6 @@
     {
       "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_TYPEEXISTS",
       "text": "Jenis koneksi sudah ada"
-    },
-    {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "Shell {0} tidak menerima koneksi jaringan."
     },
     {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
@@ -3991,14 +3867,6 @@
       "text": "Pemberitahuan lingkungan yang tidak biasa"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_TIPS_ADDONNEEDED",
-      "text": "bahwa Anda bisa mendapatkan tip tambahan dari addon kernel yang disertakan dengan versi lengkap Nitrocid?"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_TIPS_PREFIX",
-      "text": "Kiat profesional: Tahukah Anda?"
-    },
-    {
       "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS",
       "text": "Pengikatan tombol"
     },
@@ -4095,20 +3963,8 @@
       "text": "Tes lain-lain"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_MODIFICATION",
-      "text": "Pengujian modifikasi kernel"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_NETWORK",
       "text": "Pengujian sistem jaringan"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_SHELL",
-      "text": "Pengujian shell UESH"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS",
-      "text": "Tes pengguna"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_NO",
@@ -4193,10 +4049,6 @@
     {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Perintah tidak ditemukan."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
-      "text": "Menunjukkan tip kernel acak"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_ERROR",
@@ -4847,22 +4699,6 @@
       "text": "Pilih bahasa Anda"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC",
-      "text": "Menguji sistem TUI interaktif dengan interaksi panel ganda"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETEST_DESC",
-      "text": "Menguji sistem TUI interaktif dengan interaksi panel tunggal"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETESTREFRESHING_DESC",
-      "text": "Menguji sistem TUI interaktif dengan interaksi panel tunggal dan dengan menyegarkan info panel kedua"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT",
-      "text": "Tuliskan nomor warna mulai dari 1 hingga 255:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_DEBUG_DESC",
       "text": "Mengaktifkan debugger"
     },
@@ -4919,40 +4755,12 @@
       "text": "Ketersediaan jaringan adalah"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINT_DESC",
-      "text": "Cetak string ke konsol"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTD_DESC",
       "text": "Cetak string untuk debugger"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTDF_DESC",
       "text": "Cetak string untuk di-debug dengan format"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTF_DESC",
-      "text": "Cetak string ke konsol dengan pemformatan"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTHIGHLIGHTED_DESC",
-      "text": "Cetak string ke konsol dengan sorotan"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEP_DESC",
-      "text": "Cetak pemisah ke konsol"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEPF_DESC",
-      "text": "Cetak pemisah ke konsol dengan pemformatan"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNEWLINES_DESC",
-      "text": "Cetak string ke konsol dengan baris baru dalam string"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNULLS_DESC",
-      "text": "Cetak string ke konsol dengan karakter null"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_RDEBUG_DESC",
@@ -4989,10 +4797,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATIONSIMPLE_TEST_TITLE",
       "text": "Uji notifikasi sederhana"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTARGS_DESC",
-      "text": "Menguji argumen"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRYPTORNG_DESC",
@@ -5035,46 +4839,6 @@
       "text": "Menguji pemilih beberapa folder"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONS_DESC",
-      "text": "Menguji tombol di kotak informasi"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUT_DESC",
-      "text": "Menguji kotak input berwarna di kotak informasi"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUT_DESC",
-      "text": "Menguji kotak input di kotak informasi"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTION_DESC",
-      "text": "Menguji gaya pilihan ganda input dalam kotak informasi"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTION_DESC",
-      "text": "Menguji gaya pemilihan input di kotak informasi"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTMULTISELECTION_DESC",
-      "text": "Menguji gaya pilihan ganda input"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTION_DESC",
-      "text": "Menguji gaya pemilihan input"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_DESC",
-      "text": "Menguji penulis entri daftar"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT1",
-      "text": "Indentasi 1:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT2",
-      "text": "Indentasi 2:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTPROGRESSHANDLER_DESC",
       "text": "Menguji penanganan kemajuan"
     },
@@ -5093,18 +4857,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTRNG_DESC",
       "text": "Menguji generator angka acak"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_DESC",
-      "text": "Menguji fitur layar untuk konsol"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_FAILED",
-      "text": "Layar gagal ditampilkan:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSWITCHES_DESC",
-      "text": "Menguji sakelar"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID",
@@ -7103,50 +6855,6 @@
       "text": "Gagal mendapatkan titik masuk."
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONSTITLED_DESC",
-      "text": "Menguji tombol di kotak informasi (berjudul)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUTTITLED_DESC",
-      "text": "Menguji kotak masukan berwarna di kotak informasi (berjudul)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUTTITLED_DESC",
-      "text": "Menguji kotak input di kotak informasi (berjudul)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTIONTITLED_DESC",
-      "text": "Menguji gaya pilihan ganda input dalam kotak informasi (berjudul)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGE_DESC",
-      "text": "Menguji gaya pemilihan input di kotak informasi (sejumlah besar item untuk menguji pengguliran dan paging)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLE_DESC",
-      "text": "Menguji gaya pilihan ganda input dalam kotak informasi (sejumlah besar item untuk menguji pengguliran dan paging)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLETITLED_DESC",
-      "text": "Menguji gaya pilihan ganda input dalam kotak informasi (sejumlah besar item untuk menguji pengguliran dan paging) (berjudul"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGETITLED_DESC",
-      "text": "Menguji gaya pemilihan input di kotak informasi (sejumlah besar item untuk menguji pengguliran dan paging) (berjudul"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONTITLED_DESC",
-      "text": "Menguji gaya pemilihan input dalam kotak informasi (berjudul"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGE_DESC",
-      "text": "Menguji gaya pemilihan input (sejumlah besar item untuk menguji pengguliran dan paging)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGEMULTIPLE_DESC",
-      "text": "Menguji gaya pilihan ganda input (sejumlah besar item untuk menguji pengguliran dan paging)"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_NOFRAME",
       "text": "Tidak bisa mendapatkan bingkai"
     },
@@ -7497,10 +7205,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ALARM",
       "text": "Gagal memuat pendengar alarm"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_FAILED_FINALIZE_ADDONS",
-      "text": "Gagal menyelesaikan add-on"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_MOTD",
@@ -7929,10 +7633,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC",
       "text": "Nama pengguna untuk mengubah kata sandi"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC",
-      "text": "Kata sandi pengguna saat ini"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC",
@@ -8635,10 +8335,6 @@
       "text": "Ekstra - Kalender"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_COLORCONVERTER",
-      "text": "Ekstra - Konverter Warna"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CONTACTS",
       "text": "Ekstra - Kontak"
     },
@@ -8651,10 +8347,6 @@
       "text": "Ekstra - Kamus"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_DOCKING",
-      "text": "Ekstra - Docking"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_FORECAST",
       "text": "Ekstra - Prakiraan Cuaca"
     },
@@ -8665,10 +8357,6 @@
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO",
       "text": "Ekstra - Studio Tema"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_TIPS",
-      "text": "Ekstra - Tip Kernel"
     },
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_TODO",
@@ -8719,10 +8407,6 @@
       "text": "Ekstra - Tanggal"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_HASHES",
-      "text": "Ekstra - Hash"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CHATBOT",
       "text": "Ekstra - Chatbot AI"
     },
@@ -8745,14 +8429,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC",
       "text": "Driver generator angka acak mana yang ingin Anda gunakan?"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME",
-      "text": "Driver jaringan saat ini"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC",
-      "text": "Driver jaringan mana yang ingin Anda gunakan?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME",
@@ -8853,14 +8529,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS",
       "text": "Terdapat kunci duplikat dalam instance pengaturan Anda. Harap periksa kembali variabel tersebut untuk memastikan bahwa variabel tersebut tidak ada lebih dari satu kali."
-    },
-    {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_CLOSE",
-      "text": "Menutup"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN",
-      "text": "Menutup"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE",

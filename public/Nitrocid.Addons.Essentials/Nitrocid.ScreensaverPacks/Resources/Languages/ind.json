@@ -75,16 +75,8 @@
       "text": "diming se pahale kitane pojeeshan jalae jaate hain?"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_NAME",
-      "text": "mileesekand mein fed aaut vilamb"
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_NAME",
       "text": "adhikatam pheeka kadam"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_DESC",
-      "text": "tekst fed aaut karane se pahale kitane mileesekand prateeksha karen?"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_DESC",
@@ -149,18 +141,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_DESC",
       "text": "agala rang likhane ke lie beets prati minat ikaee ka upayog karana hai ya nahin."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_NAME",
-      "text": "beets prati minat mein deree"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_DESC",
-      "text": "agala likhane se pahale prati minat kitane beets prateeksha karen?"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_CYCLECOLORS_DESC",
-      "text": "yadi yah saksham hai to beetaphaidar yaadrchchhik rangon ka chayan karega. anyatha, chonfig se rangon ka upayog karen."
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_NAME",
@@ -723,24 +703,8 @@
       "text": "pratishat jitana adhik hoga, signal utana hee shor hoga"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_NAME",
-      "text": "gadabad ghanatv"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_DESC",
-      "text": "pratishat jitana adhik hoga, gadabad utanee hee ghanee hogee!"
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_WORD_LOADING",
       "text": "lod ho raha hai..."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_KSX_CONTINUED",
-      "text": "jaaree rahega..."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_KSX_THEEND",
-      "text": "ant"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_NEWYEAR_CONGRATS",
@@ -813,22 +777,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_BOUNCINGTEXT_SETTINGS_DESC",
       "text": "aapako kansol ke chaaron or uchhalata hua tekst dikhaata hai."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_DESC",
-      "text": "tekst ko andar aur baahar fed karana."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADERBACK_SETTINGS_DESC",
-      "text": "baikagraund ko andar aur baahar fed karana."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_DESC",
-      "text": "tekst ko beets mein andar aur baahar fed karana."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_BEATCOLOR_DESC",
-      "text": "beet kalar"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_DESC",
@@ -907,40 +855,12 @@
       "text": "skreen ke beech mein saral dinaank aur samay."
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DESC",
-      "text": "aapakee skreen par gadabadee ka anukaran karata hai."
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_FALLINGLINE_SETTINGS_DESC",
       "text": "aapako ek giratee huee rekha dikhaata hai jo neeche jaatee hai aur pheekee pad jaatee hai."
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_INDETERMINATE_SETTINGS_DESC",
       "text": "aapako ek anishchit pragati pattee dikhaata hai."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_PULSE_SETTINGS_DESC",
-      "text": "aapako ek spandanasheel prshthabhoomi dikhaata hai."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_DESC",
-      "text": "aapako beets mein ek spandanasheel prshthabhoomi dikhaata hai."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_CYCLECOLORS_DESC",
-      "text": "baiatpulsai saksham hone par yaadrchchhik rangon ka chayan karega. anyatha, konfigareshan se rangon ka upayog karen."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EDGEPULSE_SETTINGS_DESC",
-      "text": "aapako ek spandanasheel kinaara dikhaata hai."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_DESC",
-      "text": "aapako beets mein ek spandanasheel kinaara dikhaata hai."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_CYCLECOLORS_DESC",
-      "text": "baiataidgaipulsai saksham hone par yaadrchchhik rangon ka chayan karega. anyatha, konfigareshan se rangon ka upayog karen."
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_DESC",
@@ -975,10 +895,6 @@
       "text": "saayaran stail."
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_SPIN_SETTINGS_DESC",
-      "text": "spining slaish."
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_SNAKEFILL_SETTINGS_DESC",
       "text": "kansol ko saanp jaise rang se bharata hai."
     },
@@ -991,36 +907,8 @@
       "text": "mileesekand mein agalee skreen deree"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_BSOD_SETTINGS_DESC",
-      "text": "vibhinn opareting sistam se sistam trutiyon ka anukaran karata hai."
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_MEMDUMP_SETTINGS_DESC",
       "text": "yaadrchchhik shiphting se rang utpann karata hai."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_DESC",
-      "text": "aapako ek aisa tekst dikhaata hai jo pheeka pad jaata hai aur beets mein chamakata hai."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_CYCLECOLORS_DESC",
-      "text": "yadi yah saksham hai to aixchalibaiats yaadrchchhik rangon ka chayan karega. anyatha, konfigareshan se rangon ka upayog karen."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_NAME",
-      "text": "spasht mod"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_DESC",
-      "text": "spasht roop se tekst ko aixchalibur mein badalen"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_NAME",
-      "text": "traans mod"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_DESC",
-      "text": "traans mod - traans sangeet shailee ka anukaran karane ke lie bpm ko 2 se guna karata hai"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_DESC",
@@ -1081,14 +969,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_WORDHASHER_SETTINGS_DESC",
       "text": "aapako ek shabd aur usaka haish yog dikhaata hai."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_DESC",
-      "text": "aapako chaar konon mein ek lupt hota hua varg dikhaata hai."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_FADEOUTDELAY_DESC",
-      "text": "varg ko lupt hone se pahale kitane mileesekand prateeksha karanee hai?"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_NUMBERSCATTER_SETTINGS_DESC",
@@ -1865,10 +1745,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
       "text": "ek baikagraund kalar dikhaata hai jo blok ke peechhe dikhaaya jaata hai (jaise andhere kamare mein kisee cheez par torch kee roshanee daalane par)"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
-      "text": "baikagraund mein printed tekst dikhaata hai"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",

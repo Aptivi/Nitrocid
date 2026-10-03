@@ -279,10 +279,6 @@
       "text": "{1}からのメッセージ{0}が{2}から削除されました。 {3}解析するメッセージが残っています。"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "{1}からのメッセージ{0}が受信トレイから削除されました。 {2}解析するメッセージが残っています。"
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "ファイルを開けませんでした。シェルを終了しています..."
     },
@@ -445,10 +441,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "添付ファイルへのファイルパスを入力します。空白のパスでEnterキーを押して確認します。"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "暗号化されたメッセージを開きます"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1203,10 +1195,6 @@
       "text": "改訂はありません。"
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "まだ接続が確立されていません。"
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "サーバーアドレスを入力してください:"
     },
@@ -1235,10 +1223,6 @@
       "text": "POP3メールクライアントを開きます"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "POP3 メールは 0.0.20.0 から戻ってきていますが、現時点ではこのバージョンでリリースする予定はありません。次のバージョンをお待ちください。"
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "RSSフィードのURLを入力してください"
     },
@@ -1249,10 +1233,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "インタラクティブな RSS フィード リーダー TUI を開きます"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "何も抽出できません。"
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1433,18 +1413,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "ユーザーエージェントを設定します"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "すでに存在するヘッダーを追加します。"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "存在しないヘッダーを削除します。"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "存在しないヘッダーを編集しています。"
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1945,10 +1913,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "JSON シェルが項目を設定できませんでした。"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "{1} からのメッセージ {0} が移動されました。{2} 個のメッセージがまだ解析されていません。"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

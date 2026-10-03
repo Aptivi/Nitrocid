@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_NAME" xml:space="preserve">
+  </resheader>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_NAME" xml:space="preserve">
     <value>Texto mostrado</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_SHORT" xml:space="preserve">
@@ -168,14 +109,8 @@
   <data name="NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_DESC" xml:space="preserve">
     <value>Quantas posições são acesas antes de escurecer?</value>
   </data>
-  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_NAME" xml:space="preserve">
-    <value>Atraso de Fade Out em Milissegundos</value>
-  </data>
   <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_NAME" xml:space="preserve">
     <value>Passos de fade máximo</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_DESC" xml:space="preserve">
-    <value>Quantos milissegundos esperar antes que o texto desapareça gradualmente?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_DESC" xml:space="preserve">
     <value>Quantos passos de fade devo fazer?</value>
@@ -225,15 +160,6 @@
   <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_DESC" xml:space="preserve">
     <value>Se deve usar a unidade Batimentos por Minuto para escrever a próxima cor.</value>
   </data>
-  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_NAME" xml:space="preserve">
-    <value>Atraso em Batidas por Minuto</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_DESC" xml:space="preserve">
-    <value>Quantas batidas por minuto esperar antes de fazer a próxima gravação?</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
-    <value>O BeatFader selecionará cores aleatórias se estiver habilitado. Caso contrário, use cores da configuração.</value>
-  </data>
   <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_NAME" xml:space="preserve">
     <value>Novo atraso de tela em milissegundos</value>
   </data>
@@ -256,7 +182,7 @@
     <value>As colunas de texto a serem impressas.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILL_DESC" xml:space="preserve">
-    <value>Quantos caracteres escrever antes de acionar o &quot;preenchimento de linha&quot;?</value>
+    <value>Quantos caracteres escrever antes de acionar o "preenchimento de linha"?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_CAPPROBABILITY_DESC" xml:space="preserve">
     <value>Possibilidade de que o padrão de preenchimento de linha seja impresso em letras maiúsculas em porcentagem</value>
@@ -654,20 +580,8 @@
   <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_DESC" xml:space="preserve">
     <value>Quanto maior a porcentagem, mais ruidoso é o sinal</value>
   </data>
-  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_NAME" xml:space="preserve">
-    <value>Densidade de falhas</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_DESC" xml:space="preserve">
-    <value>Quanto maior a porcentagem, mais densa é a falha!</value>
-  </data>
   <data name="NKS_SCREENSAVERPACKS_WORD_LOADING" xml:space="preserve">
     <value>Carregando...</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_KSX_CONTINUED" xml:space="preserve">
-    <value>Continua...</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_KSX_THEEND" xml:space="preserve">
-    <value>O fim</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_NEWYEAR_CONGRATS" xml:space="preserve">
     <value>Feliz Ano Novo!</value>
@@ -722,18 +636,6 @@
   </data>
   <data name="NKS_SCREENSAVERPACKS_BOUNCINGTEXT_SETTINGS_DESC" xml:space="preserve">
     <value>Mostra um texto que salta pelo console.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_DESC" xml:space="preserve">
-    <value>Texto aparecendo e desaparecendo gradualmente.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_FADERBACK_SETTINGS_DESC" xml:space="preserve">
-    <value>Desvanecimento e esmaecimento do fundo.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_DESC" xml:space="preserve">
-    <value>Texto aparecendo e desaparecendo gradualmente em batidas.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_BEATCOLOR_DESC" xml:space="preserve">
-    <value>Cor da batida</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_DESC" xml:space="preserve">
     <value>Simula uma pessoa escrevendo um texto com erros de digitação.</value>
@@ -792,32 +694,11 @@
   <data name="NKS_SCREENSAVERPACKS_DATEANDTIME_SETTINGS_DESC" xml:space="preserve">
     <value>Data e hora simples no meio da tela.</value>
   </data>
-  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DESC" xml:space="preserve">
-    <value>Simula uma falha na sua tela.</value>
-  </data>
   <data name="NKS_SCREENSAVERPACKS_FALLINGLINE_SETTINGS_DESC" xml:space="preserve">
     <value>Mostra uma linha descendente que desce e desaparece gradualmente.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_INDETERMINATE_SETTINGS_DESC" xml:space="preserve">
     <value>Mostra uma barra de progresso indeterminada.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_PULSE_SETTINGS_DESC" xml:space="preserve">
-    <value>Mostra um fundo pulsante.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_DESC" xml:space="preserve">
-    <value>Mostra um fundo pulsante em batidas.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
-    <value>O BeatPulse selecionará cores aleatórias se estiver habilitado. Caso contrário, use cores da configuração.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EDGEPULSE_SETTINGS_DESC" xml:space="preserve">
-    <value>Mostra uma borda pulsante.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_DESC" xml:space="preserve">
-    <value>Mostra uma borda pulsante nas batidas.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
-    <value>O BeatEdgePulse selecionará cores aleatórias se estiver habilitado. Caso contrário, use cores da configuração.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_DESC" xml:space="preserve">
     <value>Mostra uma tela cheia de cores que lentamente se transformam em outra cor, criando gradientes.</value>
@@ -843,9 +724,6 @@
   <data name="NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_DESC" xml:space="preserve">
     <value>O estilo sereia.</value>
   </data>
-  <data name="NKS_SCREENSAVERPACKS_SPIN_SETTINGS_DESC" xml:space="preserve">
-    <value>Cortes giratórios.</value>
-  </data>
   <data name="NKS_SCREENSAVERPACKS_SNAKEFILL_SETTINGS_DESC" xml:space="preserve">
     <value>Preenche o console com uma cor parecida com uma cobra.</value>
   </data>
@@ -855,29 +733,8 @@
   <data name="NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_NEXTSCREENDELAY_NAME" xml:space="preserve">
     <value>Atraso na próxima tela em milissegundos</value>
   </data>
-  <data name="NKS_SCREENSAVERPACKS_BSOD_SETTINGS_DESC" xml:space="preserve">
-    <value>Simula erros de sistema de diferentes sistemas operacionais.</value>
-  </data>
   <data name="NKS_SCREENSAVERPACKS_MEMDUMP_SETTINGS_DESC" xml:space="preserve">
     <value>Gera cores a partir de mudanças aleatórias.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_DESC" xml:space="preserve">
-    <value>Mostra um texto que desaparece gradualmente e pisca em batidas.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
-    <value>O ExcaliBeats selecionará cores aleatórias se estiver habilitado. Caso contrário, use cores da configuração.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_NAME" xml:space="preserve">
-    <value>Modo explícito</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_DESC" xml:space="preserve">
-    <value>Alterar explicitamente o texto para Excalibur</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_NAME" xml:space="preserve">
-    <value>Modo de transe</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_DESC" xml:space="preserve">
-    <value>Modo Trance - Multiplica o BPM por 2 para simular o estilo de música trance</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_DESC" xml:space="preserve">
     <value>Mostra um grupo de ondas em barras.</value>
@@ -923,12 +780,6 @@
   </data>
   <data name="NKS_SCREENSAVERPACKS_WORDHASHER_SETTINGS_DESC" xml:space="preserve">
     <value>Mostra uma palavra e sua soma hash.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_DESC" xml:space="preserve">
-    <value>Mostra um quadrado desbotado nos quatro cantos.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_FADEOUTDELAY_DESC" xml:space="preserve">
-    <value>Quantos milissegundos esperar antes de o quadrado desaparecer?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_NUMBERSCATTER_SETTINGS_DESC" xml:space="preserve">
     <value>Espalha o número pela tela inteira.</value>
@@ -1512,9 +1363,6 @@
   <data name="NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC" xml:space="preserve">
     <value>Revela uma cor de fundo que é exibida atrás do bloco (como ao apontar a lanterna). (em algum item em um quarto escuro)</value>
   </data>
-  <data name="NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC" xml:space="preserve">
-    <value>Revela o texto impresso no fundo</value>
-  </data>
   <data name="NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC" xml:space="preserve">
     <value>Mostra um diagrama de ondas da direita para a esquerda do console</value>
   </data>
@@ -1573,7 +1421,7 @@
     <value>Simula uma pessoa invadindo sistemas</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC" xml:space="preserve">
-    <value>Cria quatro caixas que preenchem toda a tela e, em seguida, cria uma &quot;rede&quot; dentro das caixas.</value>
+    <value>Cria quatro caixas que preenchem toda a tela e, em seguida, cria uma "rede" dentro das caixas.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC" xml:space="preserve">
     <value>Escreve um texto à esquerda e sua versão espelhada à direita.</value>
@@ -1584,5 +1432,4 @@
   <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC" xml:space="preserve">
     <value>Escolhe como fazer a transição e seleciona as cores.</value>
   </data>
-
 </root>

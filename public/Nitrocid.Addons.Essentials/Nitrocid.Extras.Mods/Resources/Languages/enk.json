@@ -118,10 +118,6 @@
       "text": "Automatically start the kernel modifications on boot."
     },
     {
-      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
-      "text": "Mod file is not specified."
-    },
-    {
       "loc": "NKS_MODS_MODUPDATING",
       "text": "Trying to install an already-installed mod. Updating mod..."
     },

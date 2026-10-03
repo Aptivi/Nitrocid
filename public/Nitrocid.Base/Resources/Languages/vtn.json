@@ -1063,20 +1063,8 @@
       "text": "Kiểm tra việc dịch một chuỗi tồn tại trong tài nguyên sang ngôn ngữ cụ thể"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTPLACES_DESC",
-      "text": "In một chuỗi ra console và phân tích các chỗ giữ chỗ được tìm thấy"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTREGEXP_DESC",
       "text": "Kiểm tra tiện ích biểu thức chính quy"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_DESC",
-      "text": "Kiểm tra chuỗi VT cho 255 màu"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTRUETEST_DESC",
-      "text": "Kiểm tra trình tự VT để biết màu sắc thực sự"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_DESC",
@@ -1089,42 +1077,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PROBEHARDWARE_DESC",
       "text": "Kiểm tra thăm dò phần cứng"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_DESC",
-      "text": "Kiểm tra trình ghi danh sách với chuỗi và mảng chuỗi"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_DESC",
-      "text": "Kiểm tra trình ghi danh sách với số nguyên và mảng số nguyên"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_DESC",
-      "text": "Kiểm tra trình ghi danh sách với mảng char và char"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_NORMALLIST",
-      "text": "Danh sách chuỗi thông thường:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_ARRAYLIST",
-      "text": "Danh sách chuỗi mảng:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_NORMALLIST",
-      "text": "Danh sách số nguyên thông thường:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_ARRAYLIST",
-      "text": "Danh sách số nguyên mảng:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
-      "text": "Danh sách ký tự bình thường:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
-      "text": "Mảng danh sách ký tự:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_NAME",
@@ -1221,42 +1173,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS",
       "text": "Ký tự đã bị xóa."
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_DESC",
-      "text": "Kiểm tra trình viết từ điển với chuỗi và mảng chuỗi"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_DESC",
-      "text": "Kiểm tra trình viết từ điển với mảng char và char"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_DESC",
-      "text": "Kiểm tra trình viết từ điển với số nguyên và mảng số nguyên"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_NORMALLIST",
-      "text": "Từ điển chuỗi thông thường:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_ARRAYLIST",
-      "text": "Từ điển chuỗi mảng:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_NORMALLIST",
-      "text": "Từ điển số nguyên thông thường:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_ARRAYLIST",
-      "text": "Từ điển số nguyên mảng:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_NORMALLIST",
-      "text": "Từ điển ký tự thông thường:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_ARRAYLIST",
-      "text": "Từ điển mảng char:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_FILESYSTEM_PROGRESS_NAME",
@@ -1667,10 +1583,6 @@
       "text": "Mã hóa chuỗi bằng CRC32"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTTABLE_DESC",
-      "text": "Kiểm tra chức năng của bảng"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_EDITLINE_DESC",
       "text": "Chỉnh sửa dòng đã chỉ định"
     },
@@ -1733,10 +1645,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
       "text": "Giống như chế độ an toàn, nhưng cũng vô hiệu hóa chế độ nhiều người dùng và một số tùy chỉnh"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
-      "text": "Màu sắc không cần phải khởi động lại, nhưng hầu hết các cài đặt đều yêu cầu phải khởi động lại."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -2279,10 +2187,6 @@
       "text": "Bắt đầu thôi!"
     },
     {
-      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1",
-      "text": "Xin chúc mừng! Bây giờ bạn đã có tài khoản người dùng, {0}!"
-    },
-    {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT2",
       "text": "Nhấn phím ENTER để bắt đầu sử dụng kernel và đăng nhập vào tài khoản mới của bạn. Chúc may mắn!"
     },
@@ -2297,10 +2201,6 @@
     {
       "loc": "NKS_USERS_EXCEPTION_USERLOCKED",
       "text": "Đang cố gắng sửa đổi tài khoản hiện tại khi nó bị khóa"
-    },
-    {
-      "loc": "NKS_USERS_EXCEPTION_UNENCRYPTEDPASS",
-      "text": "Đang cố gắng thêm mật khẩu chưa mã hóa vào danh sách người dùng."
     },
     {
       "loc": "NKS_USERS_EXCEPTION_CANNOTVALIDATE_ADD",
@@ -3279,10 +3179,6 @@
       "text": "Không thể khởi tạo tiện ích bổ sung kernel"
     },
     {
-      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_FINALIZEFAILED",
-      "text": "Không thể hoàn tất các tiện ích bổ sung. Các tiện ích bổ sung dưới đây không thể hoàn tất:"
-    },
-    {
       "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_STOPFAILED",
       "text": "Không dừng được các tiện ích bổ sung. Các tiện ích bổ sung dưới đây không dừng được:"
     },
@@ -3551,14 +3447,6 @@
       "text": "Mục đã chọn không phải là một tập tin."
     },
     {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT",
-      "text": "Nhập trình điều khiển băm:"
-    },
-    {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERNOTFOUND",
-      "text": "Không tìm thấy trình điều khiển băm."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_EXPECTEDHASHPROMPT",
       "text": "Nhập giá trị băm mong đợi của bạn"
     },
@@ -3581,10 +3469,6 @@
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_ISDIRECTORY",
       "text": "Là một thư mục"
-    },
-    {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_ISSELECTED",
-      "text": "Đã được chọn"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILESIZE",
@@ -3799,10 +3683,6 @@
       "text": "Đang tải..."
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_INVALIDINVOCATION",
-      "text": "Thuộc tính này chỉ hợp lệ đối với các kết nối có luồng. Ví dụ kết nối, hãy gọi thuộc tính thích hợp trên chính phiên bản đó thay vì gọi thuộc tính này."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_SELECT_PROMPT",
       "text": "Chọn một kết nối. Nếu bạn không có kết nối nào, bạn sẽ phải tạo một kết nối mới. Ngoài ra, bạn có thể sử dụng tính năng quay số nhanh để kết nối nhanh đến máy chủ."
     },
@@ -3841,10 +3721,6 @@
     {
       "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_TYPEEXISTS",
       "text": "Loại kết nối đã tồn tại"
-    },
-    {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "Shell {0} không chấp nhận kết nối mạng."
     },
     {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
@@ -3991,14 +3867,6 @@
       "text": "Thông báo môi trường bất thường"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_TIPS_ADDONNEEDED",
-      "text": "rằng bạn có thể nhận được thêm mẹo từ tiện ích bổ sung kernel đi kèm với bản dựng đầy đủ của Nitrocid không?"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_TIPS_PREFIX",
-      "text": "Mẹo chuyên nghiệp: Bạn có biết"
-    },
-    {
       "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS",
       "text": "Phím tắt"
     },
@@ -4095,20 +3963,8 @@
       "text": "Các bài kiểm tra khác nhau"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_MODIFICATION",
-      "text": "Kiểm tra sửa đổi hạt nhân"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_NETWORK",
       "text": "Kiểm tra hệ thống mạng"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_SHELL",
-      "text": "Kiểm tra vỏ UESH"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS",
-      "text": "Kiểm tra người dùng"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_NO",
@@ -4193,10 +4049,6 @@
     {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Không tìm thấy lệnh."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
-      "text": "Hiển thị một đầu hạt nhân ngẫu nhiên"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_ERROR",
@@ -4847,22 +4699,6 @@
       "text": "Chọn ngôn ngữ của bạn"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC",
-      "text": "Kiểm tra hệ thống TUI tương tác với tương tác hai cửa sổ"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETEST_DESC",
-      "text": "Kiểm tra hệ thống TUI tương tác với tương tác một cửa sổ duy nhất"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETESTREFRESHING_DESC",
-      "text": "Kiểm tra hệ thống TUI tương tác với tương tác một ngăn và làm mới thông tin ngăn thứ hai"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT",
-      "text": "Viết số màu từ 1 đến 255:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_DEBUG_DESC",
       "text": "Cho phép trình gỡ lỗi"
     },
@@ -4919,40 +4755,12 @@
       "text": "Tính khả dụng của mạng là"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINT_DESC",
-      "text": "In một chuỗi ra console"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTD_DESC",
       "text": "In một chuỗi ra trình gỡ lỗi"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTDF_DESC",
       "text": "In một chuỗi để gỡ lỗi với định dạng"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTF_DESC",
-      "text": "In một chuỗi ra bảng điều khiển với định dạng"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTHIGHLIGHTED_DESC",
-      "text": "In một chuỗi ra console với highlight"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEP_DESC",
-      "text": "In một dấu phân cách vào bảng điều khiển"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEPF_DESC",
-      "text": "In một dấu phân cách vào bảng điều khiển với định dạng"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNEWLINES_DESC",
-      "text": "In một chuỗi ra console với các dòng mới trong chuỗi"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNULLS_DESC",
-      "text": "In một chuỗi ra console với các ký tự null"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_RDEBUG_DESC",
@@ -4989,10 +4797,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATIONSIMPLE_TEST_TITLE",
       "text": "Kiểm tra thông báo đơn giản"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTARGS_DESC",
-      "text": "Kiểm tra các đối số"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRYPTORNG_DESC",
@@ -5035,46 +4839,6 @@
       "text": "Kiểm tra bộ chọn nhiều thư mục"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONS_DESC",
-      "text": "Kiểm tra các nút trong hộp thông tin"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUT_DESC",
-      "text": "Kiểm tra hộp nhập màu trong hộp thông tin"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUT_DESC",
-      "text": "Kiểm tra hộp nhập liệu trong hộp thông tin"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTION_DESC",
-      "text": "Kiểm tra kiểu lựa chọn nhiều đầu vào trong hộp thông tin"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTION_DESC",
-      "text": "Kiểm tra kiểu lựa chọn đầu vào trong hộp thông tin"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTMULTISELECTION_DESC",
-      "text": "Kiểm tra kiểu lựa chọn nhiều đầu vào"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTION_DESC",
-      "text": "Kiểm tra kiểu lựa chọn đầu vào"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_DESC",
-      "text": "Kiểm tra trình ghi danh sách"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT1",
-      "text": "Thụt lề 1:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT2",
-      "text": "Thụt lề 2:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTPROGRESSHANDLER_DESC",
       "text": "Kiểm tra trình xử lý tiến trình"
     },
@@ -5093,18 +4857,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTRNG_DESC",
       "text": "Kiểm tra máy phát số ngẫu nhiên"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_DESC",
-      "text": "Kiểm tra tính năng màn hình cho bảng điều khiển"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_FAILED",
-      "text": "Màn hình không hiển thị được:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSWITCHES_DESC",
-      "text": "Kiểm tra công tắc"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID",
@@ -7103,50 +6855,6 @@
       "text": "Không thể lấy được điểm vào."
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONSTITLED_DESC",
-      "text": "Kiểm tra các nút trong hộp thông tin (có tiêu đề)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUTTITLED_DESC",
-      "text": "Kiểm tra hộp nhập màu trong hộp thông tin (có tiêu đề)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUTTITLED_DESC",
-      "text": "Kiểm tra hộp nhập liệu trong hộp thông tin (có tiêu đề)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTIONTITLED_DESC",
-      "text": "Kiểm tra kiểu lựa chọn nhiều đầu vào trong hộp thông tin (có tiêu đề)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGE_DESC",
-      "text": "Kiểm tra kiểu lựa chọn đầu vào trong hộp thông tin (số lượng lớn các mục để kiểm tra cuộn và phân trang)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLE_DESC",
-      "text": "Kiểm tra kiểu lựa chọn nhiều đầu vào trong hộp thông tin (số lượng lớn các mục để kiểm tra cuộn và phân trang)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLETITLED_DESC",
-      "text": "Kiểm tra kiểu lựa chọn nhiều đầu vào trong hộp thông tin (số lượng lớn các mục để kiểm tra cuộn và phân trang) (có tiêu đề"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGETITLED_DESC",
-      "text": "Kiểm tra kiểu lựa chọn đầu vào trong hộp thông tin (số lượng lớn các mục để kiểm tra cuộn và phân trang) (có tiêu đề"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONTITLED_DESC",
-      "text": "Kiểm tra kiểu lựa chọn đầu vào trong hộp thông tin (có tiêu đề"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGE_DESC",
-      "text": "Kiểm tra kiểu lựa chọn đầu vào (số lượng lớn các mục để kiểm tra cuộn và phân trang)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGEMULTIPLE_DESC",
-      "text": "Kiểm tra kiểu lựa chọn nhiều đầu vào (số lượng lớn các mục để kiểm tra cuộn và phân trang)"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_NOFRAME",
       "text": "Không thể lấy được khung"
     },
@@ -7497,10 +7205,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ALARM",
       "text": "Không tải được trình nghe báo động"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_FAILED_FINALIZE_ADDONS",
-      "text": "Không thể hoàn tất tiện ích bổ sung"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_MOTD",
@@ -7929,10 +7633,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC",
       "text": "Tên người dùng để thay đổi mật khẩu"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC",
-      "text": "Mật khẩu người dùng hiện tại"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC",
@@ -8635,10 +8335,6 @@
       "text": "Thêm - Lịch"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_COLORCONVERTER",
-      "text": "Phần bổ sung - Bộ chuyển đổi màu"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CONTACTS",
       "text": "Extras - Liên hệ"
     },
@@ -8651,10 +8347,6 @@
       "text": "Extras - Từ điển"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_DOCKING",
-      "text": "Tiện ích bổ sung - Docking"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_FORECAST",
       "text": "Thêm - Dự báo"
     },
@@ -8665,10 +8357,6 @@
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO",
       "text": "Phần bổ sung - Theme Studio"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_TIPS",
-      "text": "Phần bổ sung - Mẹo về Kernel"
     },
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_TODO",
@@ -8719,10 +8407,6 @@
       "text": "Phần bổ sung - Ngày"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_HASHES",
-      "text": "Phần bổ sung - Băm"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CHATBOT",
       "text": "Phần bổ sung - AI của Chatbot"
     },
@@ -8745,14 +8429,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC",
       "text": "Bạn muốn sử dụng trình điều khiển trình tạo số ngẫu nhiên nào?"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME",
-      "text": "Trình điều khiển mạng hiện tại"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC",
-      "text": "Bạn muốn sử dụng trình điều khiển mạng nào?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME",
@@ -8853,14 +8529,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS",
       "text": "Có các khóa trùng lặp trong phần cài đặt của bạn. Vui lòng kiểm tra kỹ biến đó để đảm bảo rằng nó không tồn tại nhiều hơn một lần."
-    },
-    {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_CLOSE",
-      "text": "Đóng"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN",
-      "text": "Tắt máy"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE",

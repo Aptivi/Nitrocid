@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_NAME" xml:space="preserve">
+  </resheader>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_NAME" xml:space="preserve">
     <value>Gösterilen metin</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_SHORT" xml:space="preserve">
@@ -157,10 +98,10 @@
     <value>Renk değiştirmek için keneler</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_CYCLETICKS_DESC" xml:space="preserve">
-    <value>Renk döngüsü etkinleştirilirse, ProgressClock&apos;ta renkleri değiştirmeden önce kaç tik var? 1 tik = 0,5 saniye</value>
+    <value>Renk döngüsü etkinleştirilirse, ProgressClock'ta renkleri değiştirmeden önce kaç tik var? 1 tik = 0,5 saniye</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
-    <value>ProgressClock etkinleştirilirse rastgele renkler seçecektir. Aksi takdirde, config&apos;deki renkleri kullanın.</value>
+    <value>ProgressClock etkinleştirilirse rastgele renkler seçecektir. Aksi takdirde, config'deki renkleri kullanın.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_NAME" xml:space="preserve">
     <value>Maksimum Pozisyon Sayısı</value>
@@ -168,14 +109,8 @@
   <data name="NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_DESC" xml:space="preserve">
     <value>Kısılmadan önce kaç pozisyon yanıyor?</value>
   </data>
-  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_NAME" xml:space="preserve">
-    <value>Fade Out Gecikmesi Milisaniye Cinsinden</value>
-  </data>
   <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_NAME" xml:space="preserve">
     <value>Maksimum Solma Adımları</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_DESC" xml:space="preserve">
-    <value>Metnin kaybolması için kaç milisaniye beklenmesi gerekiyor?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_DESC" xml:space="preserve">
     <value>Kaç tane solma adımı atılmalı?</value>
@@ -211,28 +146,19 @@
     <value>Gösterilmesini istediğiniz herhangi bir metni yazın.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CENTERED_DESC" xml:space="preserve">
-    <value>Marquee&apos;de gösterilen metnin her zaman ortalanıp ortalanmayacağı.</value>
+    <value>Marquee'de gösterilen metnin her zaman ortalanıp ortalanmayacağı.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_NAME" xml:space="preserve">
-    <value>Konsol API&apos;sini kullanın</value>
+    <value>Konsol API'sini kullanın</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_DESC" xml:space="preserve">
-    <value>Metni temizlemek için Konsol API&apos;sini mi kullanacağız yoksa daha hızlı satır temizleme VT dizisini mi kullanacağız. False ise, Marquee uygun VT dizisini kullanacaktır. Aksi takdirde, muhtemelen daha yavaş olan Konsol API&apos;sini kullanacaktır.</value>
+    <value>Metni temizlemek için Konsol API'sini mi kullanacağız yoksa daha hızlı satır temizleme VT dizisini mi kullanacağız. False ise, Marquee uygun VT dizisini kullanacaktır. Aksi takdirde, muhtemelen daha yavaş olan Konsol API'sini kullanacaktır.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_NAME" xml:space="preserve">
     <value>Dakikadaki Vuruşları Kullan</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_DESC" xml:space="preserve">
     <value>Bir sonraki rengi yazmak için Dakikadaki Vuruş Sayısı biriminin kullanılıp kullanılmayacağı.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_NAME" xml:space="preserve">
-    <value>Dakikadaki Vuruş Sayısında Gecikme</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_DESC" xml:space="preserve">
-    <value>Bir sonraki yazıyı yazmadan önce dakikada kaç vuruş beklenmeli?</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
-    <value>BeatFader etkinleştirilirse rastgele renkler seçecektir. Aksi takdirde, config&apos;den renkleri kullanın.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_NAME" xml:space="preserve">
     <value>Yeni Ekran Gecikmesi Milisaniye Cinsinden</value>
@@ -256,7 +182,7 @@
     <value>Yazdırılacak metin sütunları.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILL_DESC" xml:space="preserve">
-    <value>&quot;Satır doldurma&quot; tetiklenmeden önce kaç karakter yazılmalı?</value>
+    <value>"Satır doldurma" tetiklenmeden önce kaç karakter yazılmalı?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_CAPPROBABILITY_DESC" xml:space="preserve">
     <value>Satır dolgu deseninin yüzde olarak tamamı büyük harflerle yazdırılma olasılığı</value>
@@ -295,28 +221,28 @@
     <value>Maksimum renk seviyesi</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC" xml:space="preserve">
-    <value>Minimum kırmızı renk seviyesi. Kabul edilebilir minimum değer 0, kabul edilebilir maksimum değer 255&apos;tir.</value>
+    <value>Minimum kırmızı renk seviyesi. Kabul edilebilir minimum değer 0, kabul edilebilir maksimum değer 255'tir.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC" xml:space="preserve">
-    <value>Minimum yeşil renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255&apos;tir.</value>
+    <value>Minimum yeşil renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255'tir.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC" xml:space="preserve">
-    <value>Minimum mavi renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255&apos;tir.</value>
+    <value>Minimum mavi renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255'tir.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC" xml:space="preserve">
-    <value>Minimum renk seviyesi. Kabul edilebilir minimum değer 0&apos;dır ve kabul edilebilir maksimum değer 255 renk için 255 veya 16 renk için 16&apos;dır.</value>
+    <value>Minimum renk seviyesi. Kabul edilebilir minimum değer 0'dır ve kabul edilebilir maksimum değer 255 renk için 255 veya 16 renk için 16'dır.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC" xml:space="preserve">
-    <value>Maksimum kırmızı renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255&apos;tir.</value>
+    <value>Maksimum kırmızı renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255'tir.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC" xml:space="preserve">
-    <value>Maksimum yeşil renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255&apos;tir.</value>
+    <value>Maksimum yeşil renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255'tir.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC" xml:space="preserve">
-    <value>Maksimum mavi renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255&apos;tir.</value>
+    <value>Maksimum mavi renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255'tir.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC" xml:space="preserve">
-    <value>Maksimum renk seviyesi. Kabul edilebilir minimum değer 0&apos;dır ve kabul edilebilir maksimum değer 255 renk için 255 veya 16 renk için 16&apos;dır.</value>
+    <value>Maksimum renk seviyesi. Kabul edilebilir minimum değer 0'dır ve kabul edilebilir maksimum değer 255 renk için 255 veya 16 renk için 16'dır.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_FGCOLOR_NAME" xml:space="preserve">
     <value>Ön plan rengi</value>
@@ -654,20 +580,8 @@
   <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_DESC" xml:space="preserve">
     <value>Yüzde ne kadar büyükse sinyal o kadar gürültülüdür</value>
   </data>
-  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_NAME" xml:space="preserve">
-    <value>Arıza yoğunluğu</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_DESC" xml:space="preserve">
-    <value>Yüzde ne kadar büyükse, aksaklık o kadar yoğun olur!</value>
-  </data>
   <data name="NKS_SCREENSAVERPACKS_WORD_LOADING" xml:space="preserve">
     <value>Yükleniyor...</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_KSX_CONTINUED" xml:space="preserve">
-    <value>Devam edecek...</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_KSX_THEEND" xml:space="preserve">
-    <value>Son</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_NEWYEAR_CONGRATS" xml:space="preserve">
     <value>Mutlu yıllar!</value>
@@ -722,18 +636,6 @@
   </data>
   <data name="NKS_SCREENSAVERPACKS_BOUNCINGTEXT_SETTINGS_DESC" xml:space="preserve">
     <value>Konsolda zıplayan bir metin gösterir.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_DESC" xml:space="preserve">
-    <value>Metinlerin açılıp kapanması.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_FADERBACK_SETTINGS_DESC" xml:space="preserve">
-    <value>Arka planın açılıp kapanması.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_DESC" xml:space="preserve">
-    <value>Vuruşlarda metnin yavaş yavaş açılıp kapanması.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_BEATCOLOR_DESC" xml:space="preserve">
-    <value>Rengi yendi</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_DESC" xml:space="preserve">
     <value>Yazım hataları içeren metin yazan bir kişiyi simüle eder.</value>
@@ -792,32 +694,11 @@
   <data name="NKS_SCREENSAVERPACKS_DATEANDTIME_SETTINGS_DESC" xml:space="preserve">
     <value>Ekranın ortasında sade bir tarih ve saat.</value>
   </data>
-  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DESC" xml:space="preserve">
-    <value>Ekranınızdaki bir aksaklığı simüle eder.</value>
-  </data>
   <data name="NKS_SCREENSAVERPACKS_FALLINGLINE_SETTINGS_DESC" xml:space="preserve">
     <value>Aşağı doğru inen ve kaybolan bir çizgi gösterir.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_INDETERMINATE_SETTINGS_DESC" xml:space="preserve">
     <value>Belirsiz bir ilerleme çubuğu gösterir.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_PULSE_SETTINGS_DESC" xml:space="preserve">
-    <value>Size titreşen bir arka plan gösterir.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_DESC" xml:space="preserve">
-    <value>Size vuruşlarla titreşen bir arka plan gösterir.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
-    <value>BeatPulse etkinleştirilirse rastgele renkler seçecektir. Aksi takdirde, config&apos;den renkleri kullanın.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EDGEPULSE_SETTINGS_DESC" xml:space="preserve">
-    <value>Size nabız atan bir kenar gösterir.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_DESC" xml:space="preserve">
-    <value>Size vuruşlarda nabız gibi atan bir kenar gösterir.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
-    <value>BeatEdgePulse etkinleştirilirse rastgele renkler seçecektir. Aksi takdirde, config&apos;den renkleri kullanın.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_DESC" xml:space="preserve">
     <value>Size yavaşça başka bir renge dönüşen ve degradeler oluşturan renklerle dolu bir ekran gösterir.</value>
@@ -843,9 +724,6 @@
   <data name="NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_DESC" xml:space="preserve">
     <value>Siren stili.</value>
   </data>
-  <data name="NKS_SCREENSAVERPACKS_SPIN_SETTINGS_DESC" xml:space="preserve">
-    <value>Dönen çizgiler.</value>
-  </data>
   <data name="NKS_SCREENSAVERPACKS_SNAKEFILL_SETTINGS_DESC" xml:space="preserve">
     <value>Konsolu yılan gibi bir renkle doldurur.</value>
   </data>
@@ -855,29 +733,8 @@
   <data name="NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_NEXTSCREENDELAY_NAME" xml:space="preserve">
     <value>Sonraki Ekran Gecikmesi Milisaniye Cinsinden</value>
   </data>
-  <data name="NKS_SCREENSAVERPACKS_BSOD_SETTINGS_DESC" xml:space="preserve">
-    <value>Farklı işletim sistemlerinden kaynaklanan sistem hatalarını simüle eder.</value>
-  </data>
   <data name="NKS_SCREENSAVERPACKS_MEMDUMP_SETTINGS_DESC" xml:space="preserve">
     <value>Rastgele kaymalardan renkler üretir.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_DESC" xml:space="preserve">
-    <value>Size yavaş yavaş kaybolan ve vuruşlarla yanıp sönen bir metin gösterir.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
-    <value>ExcaliBeats etkinleştirilirse rastgele renkler seçecektir. Aksi takdirde, config&apos;den renkleri kullanın.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_NAME" xml:space="preserve">
-    <value>Açık mod</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_DESC" xml:space="preserve">
-    <value>Metni açıkça Excalibur olarak değiştirin</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_NAME" xml:space="preserve">
-    <value>Trans modu</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_DESC" xml:space="preserve">
-    <value>Trance modu - Trance müzik stilini simüle etmek için BPM&apos;yi 2 ile çarpar</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_DESC" xml:space="preserve">
     <value>Dalgaların bir grubunu çubuklar halinde gösterir.</value>
@@ -895,7 +752,7 @@
     <value>Büyüleyici bir his uyandırır.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_AURORA_SETTINGS_DESC" xml:space="preserve">
-    <value>Aurora borealis&apos;i simüle eder.</value>
+    <value>Aurora borealis'i simüle eder.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_DESC" xml:space="preserve">
     <value>Size çarpıcı bir şimşek gösterir.</value>
@@ -923,12 +780,6 @@
   </data>
   <data name="NKS_SCREENSAVERPACKS_WORDHASHER_SETTINGS_DESC" xml:space="preserve">
     <value>Size bir kelimeyi ve onun karma değerini gösterir.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_DESC" xml:space="preserve">
-    <value>Dört köşede solan bir kare gösterir.</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_FADEOUTDELAY_DESC" xml:space="preserve">
-    <value>Karenin kaybolması için kaç milisaniye beklenmesi gerekiyor?</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_NUMBERSCATTER_SETTINGS_DESC" xml:space="preserve">
     <value>Sayıyı tüm ekrana dağıtır.</value>
@@ -1060,13 +911,13 @@
     <value>Schwartzian Dönüşümünü Kullanın</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_SCHWARTZIAN_DESC" xml:space="preserve">
-    <value>Etkinleştirilirse, bu ekran koruyucu labirent kenarlarını karıştırmak için Schwartzian&apos;ın dönüşümünü kullanır. Aksi takdirde, dönüşümün düz yöntemini kullanır.</value>
+    <value>Etkinleştirilirse, bu ekran koruyucu labirent kenarlarını karıştırmak için Schwartzian'ın dönüşümünü kullanır. Aksi takdirde, dönüşümün düz yöntemini kullanır.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_TWOSPINS_SETTINGS_DESC" xml:space="preserve">
     <value>Konsolun iki yarısında dönen iki grup nokta.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMITMILESTONE_SETTINGS_DESC" xml:space="preserve">
-    <value>Her 1000. commit&apos;te commit kilometre taşını kutlar.</value>
+    <value>Her 1000. commit'te commit kilometre taşını kutlar.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_SPRAY_SETTINGS_DESC" xml:space="preserve">
     <value>Yıldızları püskürttüğünü gösteriyor.</value>
@@ -1099,7 +950,7 @@
     <value>Renk tonu parlaklığı (açıklık)</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_COMMITMILESTONE_CONGRATS" xml:space="preserve">
-    <value>0.0.1&apos;den bu yana 8.000&apos;inci commit&apos;i kutluyoruz!</value>
+    <value>0.0.1'den bu yana 8.000'inci commit'i kutluyoruz!</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_NEWYEAR_LEFT" xml:space="preserve">
     <value>gelecek yıla bırakıldı</value>
@@ -1249,19 +1100,19 @@
     <value>Maksimum arka plan renk seviyesi</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXBGCOLORLEVEL_DESC" xml:space="preserve">
-    <value>Maksimum arka plan renk seviyesi. Kabul edilen minimum değer 0 ve kabul edilen maksimum değer 255&apos;tir.</value>
+    <value>Maksimum arka plan renk seviyesi. Kabul edilen minimum değer 0 ve kabul edilen maksimum değer 255'tir.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXLNCOLORLEVEL_NAME" xml:space="preserve">
     <value>Maksimum çizgi renk seviyesi</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXLNCOLORLEVEL_DESC" xml:space="preserve">
-    <value>Maksimum çizgi renk seviyesi. Kabul edilen en düşük değer 0 ve kabul edilen en yüksek değer 255&apos;tir.</value>
+    <value>Maksimum çizgi renk seviyesi. Kabul edilen en düşük değer 0 ve kabul edilen en yüksek değer 255'tir.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXTXTCOLORLEVEL_NAME" xml:space="preserve">
     <value>Maksimum metin renk seviyesi</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXTXTCOLORLEVEL_DESC" xml:space="preserve">
-    <value>Maksimum metin renk seviyesi. Kabul edilen en düşük değer 0 ve kabul edilen en yüksek değer 255&apos;tir.</value>
+    <value>Maksimum metin renk seviyesi. Kabul edilen en düşük değer 0 ve kabul edilen en yüksek değer 255'tir.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_APPEARANCE_DESC" xml:space="preserve">
     <value>Bu, ilk rampa görünümünü yapılandırmanıza olanak tanır</value>
@@ -1270,7 +1121,7 @@
     <value>İlk için bilgi metni</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_INFOTEXT_DESC" xml:space="preserve">
-    <value>Geçerli saat için bilgi metninizin nasıl gösterildiğini yazın. 24&apos;ten {0} geçerli saat için. İlk çubuk için sol üst köşe karakteri</value>
+    <value>Geçerli saat için bilgi metninizin nasıl gösterildiğini yazın. 24'ten {0} geçerli saat için. İlk çubuk için sol üst köşe karakteri</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_ULCCHAR_NAME" xml:space="preserve">
     <value>İlk çubuk için sol üst köşe karakteri</value>
@@ -1456,7 +1307,7 @@
     <value>Progresses, etkinleştirilirse rastgele renkler seçecektir. Aksi takdirde, yapılandırmadaki renkleri kullanın.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC" xml:space="preserve">
-    <value>Renk döngüsü etkinleştirilirse, Progresses&apos;ta renkleri değiştirmeden önce kaç tik var? 1 tik = 0,5 üçüncü</value>
+    <value>Renk döngüsü etkinleştirilirse, Progresses'ta renkleri değiştirmeden önce kaç tik var? 1 tik = 0,5 üçüncü</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC" xml:space="preserve">
     <value>Ekranın ortasında analog saat ve mevcut saate göre renk değişimi.</value>
@@ -1511,9 +1362,6 @@
   </data>
   <data name="NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC" xml:space="preserve">
     <value>Bloğun arkasında gösterilen bir arka plan rengini ortaya çıkarır (işaret eder gibi) (Karanlık bir odada bir nesneye el feneri tutmak gibi)</value>
-  </data>
-  <data name="NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC" xml:space="preserve">
-    <value>Arka planda basılı metni gösterir</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC" xml:space="preserve">
     <value>Konsolun sağından soluna doğru bir dalga diyagramı gösterir</value>
@@ -1573,7 +1421,7 @@
     <value>Sistemlere sızan bir kişiyi simüle eder</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC" xml:space="preserve">
-    <value>Ekranın tamamını kaplayan dört kutu oluşturur, ardından kutuların içine &quot;balık ağı&quot; deseni çizer.</value>
+    <value>Ekranın tamamını kaplayan dört kutu oluşturur, ardından kutuların içine "balık ağı" deseni çizer.</value>
   </data>
   <data name="NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC" xml:space="preserve">
     <value>Sol tarafa bir metin, sağ tarafa ise bunun aynalı halini yazar.</value>
@@ -1584,5 +1432,4 @@
   <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC" xml:space="preserve">
     <value>Geçiş şeklini ve renk seçimini belirler.</value>
   </data>
-
 </root>

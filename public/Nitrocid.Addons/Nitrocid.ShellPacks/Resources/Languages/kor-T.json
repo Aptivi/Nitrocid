@@ -280,10 +280,6 @@
       "text": "{1}의 {0} 메시지가 {2}에서 삭제되었습니다. 구문 분석을 위해 남은 {3} 메시지."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "{1}의 {0} 메시지가받은 편지함에서 삭제되었습니다. 구문 분석을 위해 남은 {2} 메시지."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "파일을 열지 못했습니다. 쉘 종료 중 ..."
     },
@@ -446,10 +442,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "첨부 파일 경로를 입력하십시오. 빈 경로에서 Enter 키를 눌러 확인합니다."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "암호화 된 메시지를 엽니 다."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1204,10 +1196,6 @@
       "text": "개정이 없습니다."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "아직 연결이 설정되지 않았습니다."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "서버 주소를 입력하세요:"
     },
@@ -1236,10 +1224,6 @@
       "text": "POP3 메일 클라이언트를 엽니다."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "POP3 메일은 0.0.20.0에서 반환되지만 현재 이 버전에서는 출시할 계획이 없습니다. 다음 버전을 기다리세요."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "RSS 피드 URL을 입력하세요."
     },
@@ -1250,10 +1234,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "대화형 RSS 피드 리더 TUI를 엽니다."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "아무것도 추출할 수 없습니다."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1434,18 +1414,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "사용자 에이전트를 설정합니다"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "이미 존재하는 헤더를 추가합니다."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "존재하지 않는 헤더를 제거합니다."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "존재하지 않는 헤더를 편집하고 있습니다."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1946,10 +1914,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "JSON 셸이 항목을 설정하지 못했습니다."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "{1}의 메시지 {0}이(가) 이동되었습니다. 구문 분석할 메시지가 {2}개 남아 있습니다."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

@@ -280,10 +280,6 @@
       "text": "Mesajul {0} de la {1} a fost șters din {2}. {3} mesaje rămase de analizat."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "Mesajul {0} de la {1} a fost șters din căsuța de e-mail. {2} mesaje rămase de analizat."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "Deschiderea fișierului a eșuat. Se ies din shell..."
     },
@@ -446,10 +442,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "Introduceți căile fișierelor către atașamente. Apăsați ENTER pe o cale goală pentru a confirma."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "Deschide un mesaj criptat"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1204,10 +1196,6 @@
       "text": "Nicio revizuire."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "Conexiunea nu este încă stabilită."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "Introdu adresa serverului:"
     },
@@ -1236,10 +1224,6 @@
       "text": "Deschide clientul de e-mail POP3"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "E-mailul POP3 revine de la 0.0.20.0, dar momentan nu intenționăm să-l lansăm în această versiune. Așteptați următoarea versiune."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "Introduceți adresa URL a fluxului RSS"
     },
@@ -1250,10 +1234,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "Deschide un TUI pentru cititorul de flux RSS interactiv"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "Nu pot extrage nimic."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1434,18 +1414,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "Setează un agent utilizator"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "Adăugarea antetului care există deja."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "Se elimină antetul care nu există."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "Editare antet care nu există."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1946,10 +1914,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "Shell-ul JSON nu a reușit să seteze un element."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "Mesajul {0} de la {1} a fost mutat. {2} mesaje rămase de analizat."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

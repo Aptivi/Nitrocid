@@ -1066,20 +1066,8 @@
       "text": "測試將資源中存在的字符串翻譯成特定語言"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTPLACES_DESC",
-      "text": "將字符串打印到控制台並解析找到的佔位符"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTREGEXP_DESC",
       "text": "測試正則表達式工具"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_DESC",
-      "text": "測試 255 色的 VT 序列"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTRUETEST_DESC",
-      "text": "測試 VT 序列的真彩色"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_DESC",
@@ -1092,42 +1080,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PROBEHARDWARE_DESC",
       "text": "測試探測硬件"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_DESC",
-      "text": "使用字符串和字符串數組測試列表編寫器"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_DESC",
-      "text": "使用整數和整數數組測試列表編寫器"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_DESC",
-      "text": "使用 char 和 char 數組測試列表編寫器"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_NORMALLIST",
-      "text": "普通字符串列表："
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_ARRAYLIST",
-      "text": "數組字符串列表："
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_NORMALLIST",
-      "text": "普通整數列表："
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_ARRAYLIST",
-      "text": "數組整數列表："
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
-      "text": "普通字符列表："
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
-      "text": "數組字符列表："
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_NAME",
@@ -1224,42 +1176,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS",
       "text": "字符已刪除。"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_DESC",
-      "text": "使用字符串和字符串數組測試字典編寫器"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_DESC",
-      "text": "使用 char 和 char 數組測試字典編寫器"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_DESC",
-      "text": "使用整數和整數數組測試字典編寫器"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_NORMALLIST",
-      "text": "普通字符串字典："
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_ARRAYLIST",
-      "text": "數組字符串字典："
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_NORMALLIST",
-      "text": "普通整數字典："
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_ARRAYLIST",
-      "text": "數組整數字典："
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_NORMALLIST",
-      "text": "普通字符字典："
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_ARRAYLIST",
-      "text": "數組字符字典："
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_FILESYSTEM_PROGRESS_NAME",
@@ -1670,10 +1586,6 @@
       "text": "使用 CRC32 加密字符串"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTTABLE_DESC",
-      "text": "測試表格功能"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_EDITLINE_DESC",
       "text": "編輯指定行"
     },
@@ -1736,10 +1648,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
       "text": "喜歡安全模式，但也禁用多用戶和一些自定義"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
-      "text": "顏色不需要重新啟動，但大多數設置都需要重新啟動。"
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -2282,10 +2190,6 @@
       "text": "開始吧！"
     },
     {
-      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1",
-      "text": "恭喜！您現在擁有一個使用者帳戶，{0}！"
-    },
-    {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT2",
       "text": "按 ENTER 鍵開始使用核心並登入您的新帳戶。祝你好運！"
     },
@@ -2300,10 +2204,6 @@
     {
       "loc": "NKS_USERS_EXCEPTION_USERLOCKED",
       "text": "嘗試在鎖定時修改現有帳戶"
-    },
-    {
-      "loc": "NKS_USERS_EXCEPTION_UNENCRYPTEDPASS",
-      "text": "嘗試將未加密的密碼新增至使用者清單。"
     },
     {
       "loc": "NKS_USERS_EXCEPTION_CANNOTVALIDATE_ADD",
@@ -3282,10 +3182,6 @@
       "text": "無法初始化內核插件"
     },
     {
-      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_FINALIZEFAILED",
-      "text": "未能完成插件。以下插件未能最終確定："
-    },
-    {
       "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_STOPFAILED",
       "text": "無法停止插件。以下插件無法停止："
     },
@@ -3554,14 +3450,6 @@
       "text": "所選條目不是文件。"
     },
     {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT",
-      "text": "輸入哈希驅動程式："
-    },
-    {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERNOTFOUND",
-      "text": "未找到哈希驅動程式。"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_EXPECTEDHASHPROMPT",
       "text": "輸入您期望的雜湊值"
     },
@@ -3584,10 +3472,6 @@
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_ISDIRECTORY",
       "text": "是一個目錄"
-    },
-    {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_ISSELECTED",
-      "text": "已選取"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILESIZE",
@@ -3802,10 +3686,6 @@
       "text": "載入中..."
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_INVALIDINVOCATION",
-      "text": "該屬性僅對線程連線有效。對於實例連接，請呼叫實例本身的適當屬性，而不是呼叫此屬性。"
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_SELECT_PROMPT",
       "text": "選擇一個連接。如果沒有連接，則必須建立新連接。此外，您還可以使用快速撥號功能快速連線到伺服器。"
     },
@@ -3844,10 +3724,6 @@
     {
       "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_TYPEEXISTS",
       "text": "連線類型已存在"
-    },
-    {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "shell {0} 不接受網路連線。"
     },
     {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
@@ -3994,14 +3870,6 @@
       "text": "異常環境通知"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_TIPS_ADDONNEEDED",
-      "text": "您可以從 Nitrocid 完整版本附帶的內核插件中獲得額外的提示嗎？"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_TIPS_PREFIX",
-      "text": "專業提示：你知道嗎"
-    },
-    {
       "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS",
       "text": "鍵綁定"
     },
@@ -4098,20 +3966,8 @@
       "text": "雜項測試"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_MODIFICATION",
-      "text": "核心修改測試"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_NETWORK",
       "text": "網路系統測試"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_SHELL",
-      "text": "UESH shell 測試"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS",
-      "text": "用戶測試"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_NO",
@@ -4196,10 +4052,6 @@
     {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "找不到指令。"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
-      "text": "顯示隨機內核提示"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_ERROR",
@@ -4850,22 +4702,6 @@
       "text": "選擇你的語言"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC",
-      "text": "使用雙窗格互動測試互動式 TUI 系統"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETEST_DESC",
-      "text": "使用單窗格互動測試互動式 TUI 系統"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETESTREFRESHING_DESC",
-      "text": "透過單窗格互動和刷新第二窗格資訊來測試互動式 TUI 系統"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT",
-      "text": "寫入 1 到 255 之間的顏色編號："
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_DEBUG_DESC",
       "text": "啟用偵錯工具"
     },
@@ -4922,40 +4758,12 @@
       "text": "網路可用性是"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINT_DESC",
-      "text": "將字串列印到控制台"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTD_DESC",
       "text": "將字串列印到調試器"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTDF_DESC",
       "text": "將字串列印到調試器並格式化"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTF_DESC",
-      "text": "將帶有格式的字串列印到控制台"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTHIGHLIGHTED_DESC",
-      "text": "將字串列印到控制台並突出顯示"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEP_DESC",
-      "text": "將分隔符號列印到控制台"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEPF_DESC",
-      "text": "使用格式將分隔符號列印到控制台"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNEWLINES_DESC",
-      "text": "將字串列印到控制台，並在字串中換行"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNULLS_DESC",
-      "text": "將包含空字元的字串列印到控制台"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_RDEBUG_DESC",
@@ -4992,10 +4800,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATIONSIMPLE_TEST_TITLE",
       "text": "測試簡單的通知"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTARGS_DESC",
-      "text": "測試參數"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRYPTORNG_DESC",
@@ -5038,46 +4842,6 @@
       "text": "測試多資料夾選擇器"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONS_DESC",
-      "text": "測試資訊框中的按鈕"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUT_DESC",
-      "text": "測試資訊框中的彩色輸入框"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUT_DESC",
-      "text": "測試資訊框中的輸入框"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTION_DESC",
-      "text": "測試資訊框中的輸入多選樣式"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTION_DESC",
-      "text": "測試資訊框中的輸入選擇樣式"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTMULTISELECTION_DESC",
-      "text": "測試輸入多選樣式"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTION_DESC",
-      "text": "測試輸入選擇樣式"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_DESC",
-      "text": "測試清單條目編寫器"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT1",
-      "text": "縮排 1："
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT2",
-      "text": "縮排 2："
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTPROGRESSHANDLER_DESC",
       "text": "測試進度處理程序"
     },
@@ -5096,18 +4860,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTRNG_DESC",
       "text": "測試隨機數產生器"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_DESC",
-      "text": "測試控制台的螢幕功能"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_FAILED",
-      "text": "螢幕渲染失敗："
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSWITCHES_DESC",
-      "text": "測試開關"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID",
@@ -7106,50 +6858,6 @@
       "text": "無法取得入口點。"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONSTITLED_DESC",
-      "text": "測試資訊框中的按鈕（標題）"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUTTITLED_DESC",
-      "text": "測試資訊框中的彩色輸入框（標題）"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUTTITLED_DESC",
-      "text": "測試資訊框中的輸入框（標題）"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTIONTITLED_DESC",
-      "text": "測試資訊框中的輸入多選樣式（標題）"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGE_DESC",
-      "text": "測試資訊框中的輸入選擇樣式（測試捲動和分頁的大量項目）"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLE_DESC",
-      "text": "測試資訊框中輸入的多選樣式（大量項目測試捲動和分頁）"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLETITLED_DESC",
-      "text": "測試資訊框中輸入的多選樣式（大量項目測試捲動和分頁）（標題為"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGETITLED_DESC",
-      "text": "測試資訊框中的輸入選擇樣式（測試捲動和分頁的大量項目）（標題為"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONTITLED_DESC",
-      "text": "測試資訊框中的輸入選擇樣式（標題為"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGE_DESC",
-      "text": "測試輸入選擇樣式（大量項目來測試滾動和分頁）"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGEMULTIPLE_DESC",
-      "text": "測試輸入多選樣式（大量項目測試滾動和分頁）"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_NOFRAME",
       "text": "無法取得框架"
     },
@@ -7500,10 +7208,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ALARM",
       "text": "無法載入警報監聽器"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_FAILED_FINALIZE_ADDONS",
-      "text": "無法完成插件"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_MOTD",
@@ -7932,10 +7636,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC",
       "text": "修改密碼的使用者名稱"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC",
-      "text": "目前用戶密碼"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC",
@@ -8638,10 +8338,6 @@
       "text": "附加功能 - 日曆"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_COLORCONVERTER",
-      "text": "附加功能 - 顏色轉換器"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CONTACTS",
       "text": "附加功能 - 聯絡方式"
     },
@@ -8654,10 +8350,6 @@
       "text": "額外 - 字典"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_DOCKING",
-      "text": "附加功能 - 對接"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_FORECAST",
       "text": "額外 - 預測"
     },
@@ -8668,10 +8360,6 @@
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO",
       "text": "額外 - 主題工作室"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_TIPS",
-      "text": "附加功能 - 內核提示"
     },
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_TODO",
@@ -8722,10 +8410,6 @@
       "text": "額外內容 - 日期"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_HASHES",
-      "text": "額外內容 - 哈希值"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CHATBOT",
       "text": "額外內容 - 聊天機器人 AI"
     },
@@ -8748,14 +8432,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC",
       "text": "您想使用哪個隨機數產生器驅動程式？"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME",
-      "text": "目前網路驅動程式"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC",
-      "text": "您想使用哪個網路驅動程式？"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME",
@@ -8856,14 +8532,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS",
       "text": "您的设置实例中存在重复的键。请仔细检查该变量，确保它只存在一次。"
-    },
-    {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_CLOSE",
-      "text": "关闭"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN",
-      "text": "关闭"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE",

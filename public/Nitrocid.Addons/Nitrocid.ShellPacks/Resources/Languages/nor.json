@@ -283,10 +283,6 @@
       "text": "Melding {0} fra {1} slettet fra {2}. {3} meldinger gjenstår å analysere."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "Melding {0} fra {1} slettet fra innboksen. {2} meldinger gjenstår å analysere."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "Kunne ikke åpne filen. Går ut av skallet..."
     },
@@ -449,10 +445,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "Skriv inn filstier til vedlegg. Trykk ENTER på en tom bane for å bekrefte."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "Åpner en kryptert melding"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1207,10 +1199,6 @@
       "text": "Ingen revisjon."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "Tilkoblingen er ikke etablert ennå."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "Skriv inn serveradressen:"
     },
@@ -1239,10 +1227,6 @@
       "text": "Åpner POP3-e-postklienten"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "POP3-post kommer tilbake fra 0.0.20.0, men vi planlegger foreløpig ikke å gi den ut i denne versjonen. Vent på neste versjon."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "Skriv inn RSS-feedens URL"
     },
@@ -1253,10 +1237,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "Åpner en interaktiv RSS-feedleser TUI"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "Kan ikke hente ut noe."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1437,18 +1417,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "Angir en brukeragent"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "Legger til overskrift som allerede eksisterer."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "Fjerner overskrift som ikke eksisterer."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "Redigering av overskrift som ikke eksisterer."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1949,10 +1917,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "JSON-skallet klarte ikke å angi et element."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "Melding {0} fra {1} er flyttet. {2} meldinger gjenstår å analysere."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

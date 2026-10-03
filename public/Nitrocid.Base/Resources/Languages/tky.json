@@ -1064,20 +1064,8 @@
       "text": "Kaynaklarda bulunan bir dizeyi belirli bir dile çeviren testler"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTPLACES_DESC",
-      "text": "Konsola bir dize yazdırır ve bulunan yer tutucuları ayrıştırır"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTREGEXP_DESC",
       "text": "Düzenli ifade olanağını test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_DESC",
-      "text": "VT dizisini 255 renk için test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTRUETEST_DESC",
-      "text": "VT dizisini gerçek renk açısından test eder"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_DESC",
@@ -1090,42 +1078,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PROBEHARDWARE_DESC",
       "text": "Donanımı inceleyen testler"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_DESC",
-      "text": "Dize ve dize dizisiyle liste yazıcısını test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_DESC",
-      "text": "Liste yazıcısını tamsayı ve tamsayı dizisiyle test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_DESC",
-      "text": "Liste yazıcısını char ve char dizisiyle test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_NORMALLIST",
-      "text": "Normal string listesi:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_ARRAYLIST",
-      "text": "Dizi dize listesi:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_NORMALLIST",
-      "text": "Normal tam sayı listesi:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_ARRAYLIST",
-      "text": "Dizi tamsayı listesi:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
-      "text": "Normal karakter listesi:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
-      "text": "Dizi karakter listesi:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_NAME",
@@ -1222,42 +1174,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS",
       "text": "Karakter silindi."
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_DESC",
-      "text": "Sözlük yazarını dize ve dize dizisiyle test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_DESC",
-      "text": "Sözlük yazarını char ve char dizisiyle test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_DESC",
-      "text": "Sözlük yazıcısını tamsayı ve tamsayı dizisiyle test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_NORMALLIST",
-      "text": "Normal dize sözlüğü:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_ARRAYLIST",
-      "text": "Dizi dizesi sözlüğü:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_NORMALLIST",
-      "text": "Normal tam sayı sözlüğü:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_ARRAYLIST",
-      "text": "Dizi tamsayı sözlüğü:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_NORMALLIST",
-      "text": "Normal karakter sözlüğü:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_ARRAYLIST",
-      "text": "Dizi char sözlüğü:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_FILESYSTEM_PROGRESS_NAME",
@@ -1668,10 +1584,6 @@
       "text": "Bir dizeyi CRC32 kullanarak şifreler"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTTABLE_DESC",
-      "text": "Tablo işlevselliğini test eder"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_EDITLINE_DESC",
       "text": "Belirtilen satırı düzenler"
     },
@@ -1734,10 +1646,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
       "text": "Güvenli mod gibi, ancak aynı zamanda çoklu kullanıcıyı ve bazı özelleştirmeleri de devre dışı bırakıyor"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
-      "text": "Renklerin yeniden başlatılmasına gerek yok, ancak ayarların çoğu yeniden başlatma gerektiriyor."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -2280,10 +2188,6 @@
       "text": "Başlayın!"
     },
     {
-      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1",
-      "text": "Tebrikler! Artık bir kullanıcı hesabınız var, {0}!"
-    },
-    {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT2",
       "text": "Çekirdeği kullanmaya başlamak ve yeni hesabınıza giriş yapmak için ENTER tuşuna basın. İyi şanslar!"
     },
@@ -2298,10 +2202,6 @@
     {
       "loc": "NKS_USERS_EXCEPTION_USERLOCKED",
       "text": "Mevcut hesap kilitliyken değiştirilmeye çalışılıyor"
-    },
-    {
-      "loc": "NKS_USERS_EXCEPTION_UNENCRYPTEDPASS",
-      "text": "Kullanıcı listesine şifrelenmemiş parola eklemeye çalışıyorum."
     },
     {
       "loc": "NKS_USERS_EXCEPTION_CANNOTVALIDATE_ADD",
@@ -3280,10 +3180,6 @@
       "text": "Çekirdek eklentisi başlatılamadı"
     },
     {
-      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_FINALIZEFAILED",
-      "text": "Eklentiler sonlandırılamadı. Aşağıdaki eklentiler sonlandırılamadı:"
-    },
-    {
       "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_STOPFAILED",
       "text": "Eklentiler durdurulamadı. Aşağıdaki eklentiler durdurulamadı:"
     },
@@ -3552,14 +3448,6 @@
       "text": "Seçilen girdi bir dosya değil."
     },
     {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT",
-      "text": "Bir karma sürücüsü girin:"
-    },
-    {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERNOTFOUND",
-      "text": "Karma sürücüsü bulunamadı."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_EXPECTEDHASHPROMPT",
       "text": "Beklenen karmanızı girin"
     },
@@ -3582,10 +3470,6 @@
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_ISDIRECTORY",
       "text": "Bir dizindir"
-    },
-    {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_ISSELECTED",
-      "text": "Seçildi"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILESIZE",
@@ -3800,10 +3684,6 @@
       "text": "Yükleniyor..."
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_INVALIDINVOCATION",
-      "text": "Bu özellik yalnızca iş parçacıklı bağlantılar için geçerlidir. Örnek bağlantıları için, bu özelliği çağırmak yerine örneğin kendisinde uygun özelliği çağırın."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_SELECT_PROMPT",
       "text": "Bir bağlantı seçin. Bağlantınız yoksa yeni bir bağlantı oluşturmanız gerekir. Ayrıca sunuculara hızlı bir şekilde bağlanmak için hızlı arama özelliğini kullanabilirsiniz."
     },
@@ -3842,10 +3722,6 @@
     {
       "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_TYPEEXISTS",
       "text": "Bağlantı türü zaten mevcut"
-    },
-    {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "{0} kabuğu ağ bağlantılarını kabul etmiyor."
     },
     {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
@@ -3992,14 +3868,6 @@
       "text": "Olağandışı çevre uyarısı"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_TIPS_ADDONNEEDED",
-      "text": "Nitrocid'in tam sürümüyle birlikte gelen çekirdek eklentisinden ekstra ipuçları alabileceğinizi biliyor muydunuz?"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_TIPS_PREFIX",
-      "text": "Profesyonel ipucu: Biliyor muydunuz?"
-    },
-    {
       "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS",
       "text": "Tuş Bağlamaları"
     },
@@ -4096,20 +3964,8 @@
       "text": "Çeşitli testler"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_MODIFICATION",
-      "text": "Çekirdek modifikasyon testleri"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_NETWORK",
       "text": "Ağ sistemi testleri"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_SHELL",
-      "text": "UESH mermi testleri"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS",
-      "text": "Kullanıcı testleri"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_NO",
@@ -4194,10 +4050,6 @@
     {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Komut bulunamadı."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
-      "text": "Rastgele bir çekirdek ipucu gösterir"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_ERROR",
@@ -4848,22 +4700,6 @@
       "text": "Dilinizi seçin"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC",
-      "text": "Çift panel etkileşimli TUI sistemini test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETEST_DESC",
-      "text": "Tek bir panel etkileşimi ile etkileşimli TUI sistemini test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETESTREFRESHING_DESC",
-      "text": "Tek bir bölme etkileşimi ve ikinci bölme bilgisinin yenilenmesiyle etkileşimli TUI sistemini test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT",
-      "text": "1 ile 255 arasında bir renk numarası yazın:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_DEBUG_DESC",
       "text": "Hata ayıklayıcıyı etkinleştirir"
     },
@@ -4920,40 +4756,12 @@
       "text": "Ağ kullanılabilirliği"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINT_DESC",
-      "text": "Konsola bir dize yazdır"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTD_DESC",
       "text": "Hata ayıklayıcıya bir dize yazdır"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTDF_DESC",
       "text": "Biçimlendirmeyle hata ayıklayıcıya bir dize yazdırın"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTF_DESC",
-      "text": "Biçimlendirme ile konsola bir dize yazdır"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTHIGHLIGHTED_DESC",
-      "text": "Vurgulama ile konsola bir dize yazdırın"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEP_DESC",
-      "text": "Konsola bir ayırıcı yazdır"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEPF_DESC",
-      "text": "Biçimlendirme ile konsola bir ayırıcı yazdırın"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNEWLINES_DESC",
-      "text": "Yeni satırlar içeren bir dizeyi konsola yazdırın"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNULLS_DESC",
-      "text": "Konsola boş karakterler içeren bir dize yazdır"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_RDEBUG_DESC",
@@ -4990,10 +4798,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATIONSIMPLE_TEST_TITLE",
       "text": "Basit bildirimi test et"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTARGS_DESC",
-      "text": "Test argümanları"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRYPTORNG_DESC",
@@ -5036,46 +4840,6 @@
       "text": "Birden fazla klasör seçiciyi test eder"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONS_DESC",
-      "text": "Bilgi kutusundaki düğmeleri test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUT_DESC",
-      "text": "Bilgi kutusundaki renkli giriş kutusunu test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUT_DESC",
-      "text": "Bilgi kutusundaki giriş kutusunu test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTION_DESC",
-      "text": "Bilgi kutusundaki giriş çoklu seçim stilini test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTION_DESC",
-      "text": "Bilgi kutusundaki giriş seçimi stilini test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTMULTISELECTION_DESC",
-      "text": "Giriş çoklu seçim stilini test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTION_DESC",
-      "text": "Giriş seçim stilini test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_DESC",
-      "text": "Liste girişi yazıcısını test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT1",
-      "text": "Girinti 1:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT2",
-      "text": "Girinti 2:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTPROGRESSHANDLER_DESC",
       "text": "İlerleme işleyicisini test eder"
     },
@@ -5094,18 +4858,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTRNG_DESC",
       "text": "Rastgele sayı üretecini test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_DESC",
-      "text": "Konsol için ekran özelliğini test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_FAILED",
-      "text": "Ekran oluşturulamadı:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSWITCHES_DESC",
-      "text": "Test anahtarları"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID",
@@ -7104,50 +6856,6 @@
       "text": "Giriş noktasına ulaşılamadı."
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONSTITLED_DESC",
-      "text": "Bilgi kutusundaki (başlıklı) düğmeleri test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUTTITLED_DESC",
-      "text": "Bilgi kutusundaki (başlıklı) renkli giriş kutusunu test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUTTITLED_DESC",
-      "text": "Bilgi kutusundaki (başlıklı) giriş kutusunu test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTIONTITLED_DESC",
-      "text": "Bilgi kutusundaki (başlıklı) giriş çoklu seçim stilini test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGE_DESC",
-      "text": "Bilgi kutusundaki giriş seçimi stilini test eder (kaydırma ve sayfalama için çok sayıda öğe)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLE_DESC",
-      "text": "Bilgi kutusundaki giriş çoklu seçim stilini test eder (kaydırma ve sayfalama test edilecek çok sayıda öğe)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLETITLED_DESC",
-      "text": "Bilgi kutusundaki (kaydırma ve sayfalama işlemlerini test etmek için çok sayıda öğe) giriş çoklu seçim stilini test eder (başlıklı)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGETITLED_DESC",
-      "text": "Bilgi kutusundaki (kaydırma ve sayfalama işlemlerini test etmek için çok sayıda öğe) giriş seçimi stilini test eder (başlıklı)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONTITLED_DESC",
-      "text": "Bilgi kutusundaki (başlıklı) giriş seçimi stilini test eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGE_DESC",
-      "text": "Giriş seçimi stilini test eder (kaydırma ve sayfalamayı test etmek için çok sayıda öğe)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGEMULTIPLE_DESC",
-      "text": "Giriş çoklu seçim stilini test eder (kaydırma ve sayfalamayı test etmek için çok sayıda öğe)"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_NOFRAME",
       "text": "Çerçeve alınamıyor"
     },
@@ -7498,10 +7206,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ALARM",
       "text": "Alarm dinleyicisi yüklenemedi"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_FAILED_FINALIZE_ADDONS",
-      "text": "Eklentiler sonlandırılamadı"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_MOTD",
@@ -7930,10 +7634,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC",
       "text": "Şifreyi değiştirmek için kullanıcı adı"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC",
-      "text": "Mevcut kullanıcı şifresi"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC",
@@ -8636,10 +8336,6 @@
       "text": "Ekstralar - Takvim"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_COLORCONVERTER",
-      "text": "Ekstralar - Renk Dönüştürücü"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CONTACTS",
       "text": "Ekstralar - İletişim"
     },
@@ -8652,10 +8348,6 @@
       "text": "Ekstralar - Sözlük"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_DOCKING",
-      "text": "Ekstralar - Yerleştirme"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_FORECAST",
       "text": "Ekstralar - Tahmin"
     },
@@ -8666,10 +8358,6 @@
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO",
       "text": "Ekstralar - Tema Stüdyosu"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_TIPS",
-      "text": "Ekstralar - Kernel İpuçları"
     },
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_TODO",
@@ -8720,10 +8408,6 @@
       "text": "Ekstralar - Tarihler"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_HASHES",
-      "text": "Ekstralar - Karmalar"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CHATBOT",
       "text": "Ekstralar - Chatbot AI"
     },
@@ -8746,14 +8430,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC",
       "text": "Hangi rastgele sayı üreteci sürücüsünü kullanmak istersiniz?"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME",
-      "text": "Mevcut ağ sürücüsü"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC",
-      "text": "Hangi ağ sürücüsünü kullanmak istersiniz?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME",
@@ -8854,14 +8530,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS",
       "text": "Ayarlar örneğinizde yinelenen anahtarlar bulunmaktadır. Lütfen değişkenin birden fazla kez mevcut olmadığından emin olmak için tekrar kontrol edin."
-    },
-    {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_CLOSE",
-      "text": "Kapalı"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN",
-      "text": "Kapat"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE",

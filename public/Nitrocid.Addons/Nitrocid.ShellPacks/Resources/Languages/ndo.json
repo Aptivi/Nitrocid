@@ -279,10 +279,6 @@
       "text": "Pesan {0} dari {1} dihapus dari {2}. {3} pesan tersisa untuk diurai."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "Pesan {0} dari {1} dihapus dari kotak masuk. {2} pesan tersisa untuk diurai."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "Gagal membuka berkas. Keluar dari shell..."
     },
@@ -445,10 +441,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "Masukkan jalur file ke lampiran. Tekan ENTER pada jalur kosong untuk mengonfirmasi."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "Membuka pesan terenkripsi"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1203,10 +1195,6 @@
       "text": "Tidak ada revisi."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "Koneksi belum terjalin."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "Masukkan alamat server:"
     },
@@ -1235,10 +1223,6 @@
       "text": "Membuka klien email POP3"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "Email POP3 kembali dari 0.0.20.0, tetapi saat ini kami belum berencana untuk merilisnya dalam versi ini. Tunggu versi berikutnya."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "Masukkan URL umpan RSS"
     },
@@ -1249,10 +1233,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "Membuka pembaca umpan RSS interaktif TUI"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "Tidak dapat mengekstrak apa pun."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1433,18 +1413,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "Mengatur agen pengguna"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "Menambahkan header yang sudah ada."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "Menghapus header yang tidak ada."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "Mengedit header yang tidak ada."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1945,10 +1913,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "Shell JSON gagal menyetel item."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "Pesan {0} dari {1} telah dipindahkan. {2} pesan tersisa untuk diurai."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

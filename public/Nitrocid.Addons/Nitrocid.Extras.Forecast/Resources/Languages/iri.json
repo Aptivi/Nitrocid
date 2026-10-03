@@ -64,10 +64,6 @@
       "text": "Cuir isteach d'eochair API:"
     },
     {
-      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
-      "text": "Is féidir leat breathnú ar an nasc thíos le haghaidh liosta na gcathracha a bhfuil a n-aitheantais acu, nó, \"-list\" a chur ar aghaidh chuig an ordú seo."
-    },
-    {
       "loc": "NKS_FORECAST_SETTINGS_DESC",
       "text": "Ligeann an chuid seo duit conas a oibríonn Réamhaisnéis a chumrú."
     },

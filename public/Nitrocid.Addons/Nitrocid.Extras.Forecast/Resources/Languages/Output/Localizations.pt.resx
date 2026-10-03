@@ -100,9 +100,6 @@
   <data name="NKS_FORECAST_APIKEYPROMPT" xml:space="preserve">
     <value>Insira sua chave de API:</value>
   </data>
-  <data name="NKS_FORECAST_WEATHEROLD_CITYLISTLINK" xml:space="preserve">
-    <value>Você pode consultar no link abaixo a lista de cidades com seus IDs, ou passar "-list" para este comando.</value>
-  </data>
   <data name="NKS_FORECAST_SETTINGS_DESC" xml:space="preserve">
     <value>Esta seção permite configurar como o Forecast funciona.</value>
   </data>

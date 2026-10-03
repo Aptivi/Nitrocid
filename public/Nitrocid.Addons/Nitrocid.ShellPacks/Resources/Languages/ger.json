@@ -288,10 +288,6 @@
       "text": "Nachricht {0} von {1} von {2} gelöscht. {3} Nachrichten müssen noch analysiert werden."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "Nachricht {0} von {1} aus Posteingang gelöscht. {2} Nachrichten müssen noch analysiert werden."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "Datei konnte nicht geöffnet werden. Shell verlassen ..."
     },
@@ -454,10 +450,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "Geben Sie Dateipfade zu Anhängen ein. Drücken Sie zur Bestätigung ENTER auf einem leeren Pfad."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "Öffnet eine verschlüsselte Nachricht"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1212,10 +1204,6 @@
       "text": "Keine Überarbeitung."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "Die Verbindung ist noch nicht hergestellt."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "Geben Sie die Serveradresse ein:"
     },
@@ -1244,10 +1232,6 @@
       "text": "Öffnet den POP3-Mail-Client"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "POP3-Mail kehrt von 0.0.20.0 zurück, aber wir planen derzeit nicht, es in dieser Version zu veröffentlichen. Warten Sie auf die nächste Version."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "Geben Sie die RSS-Feed-URL ein"
     },
@@ -1258,10 +1242,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "Öffnet einen interaktiven RSS-Feed-Reader TUI"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "Kann nichts extrahieren."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1442,18 +1422,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "Legt einen Benutzeragenten fest"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "Hinzufügen eines bereits vorhandenen Headers."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "Header entfernen, der nicht existiert."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "Bearbeiten eines nicht vorhandenen Headers."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1954,10 +1922,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "Die JSON-Shell konnte ein Element nicht festlegen."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "Nachricht {0} von {1} verschoben. {2} Nachrichten müssen noch analysiert werden."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

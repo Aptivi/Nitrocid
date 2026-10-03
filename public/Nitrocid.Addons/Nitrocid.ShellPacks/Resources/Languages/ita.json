@@ -282,10 +282,6 @@
       "text": "Messaggio {0} da {1} eliminato da {2}. {3} messaggi rimanenti da analizzare."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "Messaggio {0} da {1} eliminato dalla posta in arrivo. {2} messaggi rimanenti da analizzare."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "Impossibile aprire il file. Uscita dalla shell ..."
     },
@@ -448,10 +444,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "Immettere i percorsi dei file per gli allegati. Premere INVIO su un percorso vuoto per confermare."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "Apre un messaggio crittografato"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1206,10 +1198,6 @@
       "text": "Nessuna revisione."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "La connessione non è stata ancora stabilita."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "Inserisci l'indirizzo del server:"
     },
@@ -1238,10 +1226,6 @@
       "text": "Apre il client di posta POP3"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "La posta POP3 ritorna dalla versione 0.0.20.0, ma al momento non prevediamo di rilasciarla in questa versione. Aspetta la prossima versione."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "Inserisci l'URL del feed RSS"
     },
@@ -1252,10 +1236,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "Apre un'interfaccia utente utente interattiva del lettore di feed RSS"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "Impossibile estrarre nulla."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1436,18 +1416,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "Imposta un agente utente"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "Aggiunta di un'intestazione già esistente."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "Rimozione dell'intestazione che non esiste."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "Modifica dell'intestazione che non esiste."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1948,10 +1916,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "La shell JSON non è riuscita a impostare un elemento."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "Il messaggio {0} da {1} è stato spostato. {2} messaggi rimanenti da analizzare."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

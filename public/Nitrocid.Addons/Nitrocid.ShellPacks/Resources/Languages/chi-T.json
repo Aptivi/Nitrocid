@@ -287,10 +287,6 @@
       "text": "来自{1}的消息{0}已从{2}中删除。剩下{3}条消息需要解析。"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "{1}中的消息{0}已从收件箱中删除。剩下{2}条消息需要解析。"
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "无法打开文件。正在退出外壳..."
     },
@@ -453,10 +449,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "输入附件的文件路径。在空白路径上按ENTER确认。"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "打开一个加密的消息"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1211,10 +1203,6 @@
       "text": "没有修订。"
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "连接尚未建立。"
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "输入服务器地址："
     },
@@ -1243,10 +1231,6 @@
       "text": "打开 POP3 邮件客户端"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "POP3 邮件从 0.0.20.0 开始恢复，但我们目前不打算在此版本中发布它。等待下一个版本。"
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "输入 RSS 源 URL"
     },
@@ -1257,10 +1241,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "打开交互式 RSS 提要阅读器 TUI"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "什么也提取不出来。"
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1441,18 +1421,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "设置用户代理"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "添加已存在的标头。"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "删除不存在的标头。"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "编辑不存在的标题。"
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1953,10 +1921,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "JSON shell 无法设置项目。"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "来自{1}的消息{0}已移动。还剩 {2} 条消息需要解析。"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

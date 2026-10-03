@@ -8,20 +8,8 @@
   ],
   "locs": [
     {
-      "loc": "NKS_THEMESTUDIO_APP_EXIT",
-      "text": "Scoir"
-    },
-    {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC",
       "text": "Déanann sé téama nua"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_MAKINGTHEME",
-      "text": "Ag déanamh téama nua \"{0}\"."
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_SAVETOCURRENT",
-      "text": "Sábháil an Téama san Eolaire Reatha"
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_SAVETOOTHER",
@@ -48,10 +36,6 @@
       "text": "Sonraigh ainm an chomhaid téama gan an iarmhír .json:"
     },
     {
-      "loc": "NKS_THEMESTUDIO_APP_PREVIEW",
-      "text": "Réamhamharc..."
-    },
-    {
       "loc": "NKS_THEMESTUDIO_APP_LOADCURRENT",
       "text": "Luchtaigh Dathanna Reatha"
     },
@@ -62,18 +46,6 @@
     {
       "loc": "NKS_THEMESTUDIO_APP_SAVETODIRPROMPT",
       "text": "Sonraigh eolaire chun an téama a shábháil chuig:"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC",
-      "text": "Déanann sé téama nua i TUI idirghníomhach"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_COPYCOLORTO",
-      "text": "Cóipeáil Dath Chun..."
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_SOURCETYPEPROMPT",
-      "text": "Roghnaigh an cineál dath foinse chun an dath a chóipeáil uaidh."
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_TARGETTYPEPROMPT",
@@ -100,24 +72,12 @@
       "text": "Gile dath"
     },
     {
-      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWSAVE",
-      "text": "Roghnaigh conas is mian leat an téama seo a shábháil"
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_TUI_HOWLOAD",
-      "text": "Roghnaigh conas is mian leat téama a luchtú"
-    },
-    {
       "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_CHANGE",
       "text": "Athrú..."
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_SAVE",
       "text": "Sábháil..."
-    },
-    {
-      "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_LOAD",
-      "text": "Luchtaigh..."
     },
     {
       "loc": "NKS_THEMESTUDIO_APP_TUI_KEYBINDING_COPY",

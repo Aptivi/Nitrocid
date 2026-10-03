@@ -282,10 +282,6 @@
       "text": "Mesej {0} daripada {1} dipadamkan daripada {2}. {3} mesej tinggal untuk dihuraikan."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "Mesej {0} daripada {1} dipadamkan daripada peti masuk. {2} mesej tinggal untuk dihuraikan."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "Gagal membuka fail. Keluar dari shell..."
     },
@@ -448,10 +444,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "Masukkan laluan fail ke lampiran. Tekan ENTER pada laluan kosong untuk mengesahkan."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "Membuka mesej yang disulitkan"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1206,10 +1198,6 @@
       "text": "Tiada semakan."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "Sambungan belum diwujudkan lagi."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "Masukkan alamat pelayan:"
     },
@@ -1238,10 +1226,6 @@
       "text": "Membuka klien mel POP3"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "Mel POP3 kembali daripada 0.0.20.0, tetapi pada masa ini kami tidak merancang untuk mengeluarkannya dalam versi ini. Tunggu versi seterusnya."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "Masukkan URL suapan RSS"
     },
@@ -1252,10 +1236,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "Membuka TUI pembaca suapan RSS interaktif"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "Tidak boleh mengeluarkan apa-apa."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1436,18 +1416,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "Menetapkan ejen pengguna"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "Menambah pengepala yang sudah wujud."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "Mengalih keluar pengepala yang tidak wujud."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "Mengedit pengepala yang tidak wujud."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1948,10 +1916,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "Cangkang JSON gagal menetapkan item."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "Mesej {0} daripada {1} dialihkan. {2} mesej tinggal untuk dihuraikan."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

@@ -280,10 +280,6 @@
       "text": "Scriosadh an teachtaireacht {0} ó {1} ó {2}. {3} teachtaireacht fágtha le parsáil."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "Scriosadh an teachtaireacht {0} ó {1} ón mbosca isteach. {2} teachtaireacht fágtha le parsáil."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "Theip ar an gcomhad a oscailt. blaosc ag éirí as..."
     },
@@ -446,10 +442,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "Cuir isteach cosáin comhaid chuig ceangaltáin. Brúigh ENTER ar chonair bhán lena dhearbhú."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "Osclaíonn sé teachtaireacht criptithe"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1204,10 +1196,6 @@
       "text": "Gan athbhreithniú."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "Níl ceangal bunaithe fós."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "Cuir isteach seoladh an fhreastalaí:"
     },
@@ -1236,10 +1224,6 @@
       "text": "Osclaíonn sé an cliant ríomhphoist POP3"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "Tá post POP3 ag filleadh ó 0.0.20.0, ach níl sé beartaithe againn faoi láthair é a scaoileadh sa leagan seo. Fan le haghaidh an chéad leagan eile."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "Cuir isteach an fotha RSS URL"
     },
@@ -1250,10 +1234,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "Osclaíonn sé léitheoir fotha RSS idirghníomhach TUI"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "Ní féidir aon rud a bhaint as."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1434,18 +1414,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "Socraíonn gníomhaire úsáideora"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "Ag cur ceanntásc atá ann cheana féin."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "Ag baint ceanntásc nach bhfuil ann."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "Ag cur ceanntásc nach bhfuil ann."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1946,10 +1914,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "Theip ar bhlaosc JSON mír a shocrú."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "Bogadh an teachtaireacht {0} ó {1}. {2} teachtaireacht fágtha le parsáil."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

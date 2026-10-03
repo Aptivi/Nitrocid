@@ -100,9 +100,6 @@
   <data name="NKS_FORECAST_APIKEYPROMPT" xml:space="preserve">
     <value>Εισαγάγετε το κλειδί API σας:</value>
   </data>
-  <data name="NKS_FORECAST_WEATHEROLD_CITYLISTLINK" xml:space="preserve">
-    <value>Μπορείτε είτε να συμβουλευτείτε τον παρακάτω σύνδεσμο για τη λίστα των πόλεων με τα αναγνωριστικά τους είτε να περάσετε το "-list" σε αυτήν την εντολή.</value>
-  </data>
   <data name="NKS_FORECAST_SETTINGS_DESC" xml:space="preserve">
     <value>Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας της Πρόβλεψης.</value>
   </data>

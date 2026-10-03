@@ -279,10 +279,6 @@
       "text": "Mandatum {0} e {1} ex {1} deletum e {2} {2}. {3:3} Rehquis epistulis ad parse."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "Mandatum {0} e {1} ex intheca deletum. {2} Mandata reliquorum ad parse."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "Defecit file aperire. Exitus testam..."
     },
@@ -445,10 +441,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "Intra file semitas ad attachiamenta. Press Penetro in blank iter ad confirmandas."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "Aperit encrypted nuntium"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1203,10 +1195,6 @@
       "text": "Nulla recognitio."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "Nexus tamen non constat."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "Intrant servo electronica:"
     },
@@ -1235,10 +1223,6 @@
       "text": "Aperit POP3 clientem"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "POP3 epistularum ab 0.0.20.0 revertitur, sed in hac versione eam dimittere non cogitamus. Sequentem versionem exspecta."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "Intrant RSS pascuntur URL"
     },
@@ -1249,10 +1233,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "Interactive aperit RSS lectorem TUI"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "Nihil extrahi potest."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1433,18 +1413,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "A user agente sets"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "Additis titulis iam exstat."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "Removere header quod non est."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "Recensere header quod non est."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1945,10 +1913,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "Et Json Crusta defecit ut an item."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "{0} {I}} movetur. {II} nuntiis manente ad parse."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

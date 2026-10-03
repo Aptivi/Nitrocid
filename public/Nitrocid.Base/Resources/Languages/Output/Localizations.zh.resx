@@ -850,17 +850,8 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TRANSLATE_DESC" xml:space="preserve">
     <value>測試將資源中存在的字符串翻譯成特定語言</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTPLACES_DESC" xml:space="preserve">
-    <value>將字符串打印到控制台並解析找到的佔位符</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTREGEXP_DESC" xml:space="preserve">
     <value>測試正則表達式工具</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_DESC" xml:space="preserve">
-    <value>測試 255 色的 VT 序列</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTRUETEST_DESC" xml:space="preserve">
-    <value>測試 VT 序列的真彩色</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_DESC" xml:space="preserve">
     <value>發送通知以測試接收器</value>
@@ -870,33 +861,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PROBEHARDWARE_DESC" xml:space="preserve">
     <value>測試探測硬件</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_DESC" xml:space="preserve">
-    <value>使用字符串和字符串數組測試列表編寫器</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_DESC" xml:space="preserve">
-    <value>使用整數和整數數組測試列表編寫器</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_DESC" xml:space="preserve">
-    <value>使用 char 和 char 數組測試列表編寫器</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_NORMALLIST" xml:space="preserve">
-    <value>普通字符串列表：</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_ARRAYLIST" xml:space="preserve">
-    <value>數組字符串列表：</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_NORMALLIST" xml:space="preserve">
-    <value>普通整數列表：</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_ARRAYLIST" xml:space="preserve">
-    <value>數組整數列表：</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST" xml:space="preserve">
-    <value>普通字符列表：</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST" xml:space="preserve">
-    <value>數組字符列表：</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_NAME" xml:space="preserve">
     <value>啟用 RPC</value>
@@ -969,33 +933,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS" xml:space="preserve">
     <value>字符已刪除。</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_DESC" xml:space="preserve">
-    <value>使用字符串和字符串數組測試字典編寫器</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_DESC" xml:space="preserve">
-    <value>使用 char 和 char 數組測試字典編寫器</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_DESC" xml:space="preserve">
-    <value>使用整數和整數數組測試字典編寫器</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_NORMALLIST" xml:space="preserve">
-    <value>普通字符串字典：</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_ARRAYLIST" xml:space="preserve">
-    <value>數組字符串字典：</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_NORMALLIST" xml:space="preserve">
-    <value>普通整數字典：</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_ARRAYLIST" xml:space="preserve">
-    <value>數組整數字典：</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_NORMALLIST" xml:space="preserve">
-    <value>普通字符字典：</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_ARRAYLIST" xml:space="preserve">
-    <value>數組字符字典：</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_FILESYSTEM_PROGRESS_NAME" xml:space="preserve">
     <value>顯示文件系統操作的進度</value>
@@ -1303,9 +1240,6 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC" xml:space="preserve">
     <value>使用 CRC32 加密字符串</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTTABLE_DESC" xml:space="preserve">
-    <value>測試表格功能</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_EDITLINE_DESC" xml:space="preserve">
     <value>編輯指定行</value>
   </data>
@@ -1353,9 +1287,6 @@
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC" xml:space="preserve">
     <value>喜歡安全模式，但也禁用多用戶和一些自定義</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS" xml:space="preserve">
-    <value>顏色不需要重新啟動，但大多數設置都需要重新啟動。</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC" xml:space="preserve">
     <value>使用正則表達式將單詞或短語替換為另一個單詞或短語</value>
@@ -1762,9 +1693,6 @@
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TITLE" xml:space="preserve">
     <value>開始吧！</value>
   </data>
-  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1" xml:space="preserve">
-    <value>恭喜！您現在擁有一個使用者帳戶，{0}！</value>
-  </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT2" xml:space="preserve">
     <value>按 ENTER 鍵開始使用核心並登入您的新帳戶。祝你好運！</value>
   </data>
@@ -1776,9 +1704,6 @@
   </data>
   <data name="NKS_USERS_EXCEPTION_USERLOCKED" xml:space="preserve">
     <value>嘗試在鎖定時修改現有帳戶</value>
-  </data>
-  <data name="NKS_USERS_EXCEPTION_UNENCRYPTEDPASS" xml:space="preserve">
-    <value>嘗試將未加密的密碼新增至使用者清單。</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_CANNOTVALIDATE_ADD" xml:space="preserve">
     <value>無法新增用戶名。確保該用戶名不存在。</value>
@@ -2512,9 +2437,6 @@
   <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZEFAILED" xml:space="preserve">
     <value>無法初始化內核插件</value>
   </data>
-  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_FINALIZEFAILED" xml:space="preserve">
-    <value>未能完成插件。以下插件未能最終確定：</value>
-  </data>
   <data name="NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_STOPFAILED" xml:space="preserve">
     <value>無法停止插件。以下插件無法停止：</value>
   </data>
@@ -2716,12 +2638,6 @@
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOTAFILE" xml:space="preserve">
     <value>所選條目不是文件。</value>
   </data>
-  <data name="NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT" xml:space="preserve">
-    <value>輸入哈希驅動程式：</value>
-  </data>
-  <data name="NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERNOTFOUND" xml:space="preserve">
-    <value>未找到哈希驅動程式。</value>
-  </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_EXPECTEDHASHPROMPT" xml:space="preserve">
     <value>輸入您期望的雜湊值</value>
   </data>
@@ -2739,9 +2655,6 @@
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_ISDIRECTORY" xml:space="preserve">
     <value>是一個目錄</value>
-  </data>
-  <data name="NKS_MISC_INTERACTIVES_FMTUI_ISSELECTED" xml:space="preserve">
-    <value>已選取</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILESIZE" xml:space="preserve">
     <value>文件大小</value>
@@ -2902,9 +2815,6 @@
   <data name="NKS_MISC_SPLASH_DEFAULTMSG" xml:space="preserve">
     <value>載入中...</value>
   </data>
-  <data name="NKS_NETWORK_CONNECTION_EXCEPTION_INVALIDINVOCATION" xml:space="preserve">
-    <value>該屬性僅對線程連線有效。對於實例連接，請呼叫實例本身的適當屬性，而不是呼叫此屬性。</value>
-  </data>
   <data name="NKS_NETWORK_CONNECTION_SELECT_PROMPT" xml:space="preserve">
     <value>選擇一個連接。如果沒有連接，則必須建立新連接。此外，您還可以使用快速撥號功能快速連線到伺服器。</value>
   </data>
@@ -2934,9 +2844,6 @@
   </data>
   <data name="NKS_NETWORK_CONNECTION_EXCEPTION_TYPEEXISTS" xml:space="preserve">
     <value>連線類型已存在</value>
-  </data>
-  <data name="NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS" xml:space="preserve">
-    <value>shell {0} 不接受網路連線。</value>
   </data>
   <data name="NKS_NETWORK_CONNECTION_ADDRESSPROMPT" xml:space="preserve">
     <value>輸入伺服器位址：</value>
@@ -3046,12 +2953,6 @@
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_TITLE" xml:space="preserve">
     <value>異常環境通知</value>
   </data>
-  <data name="NKS_KERNEL_STARTING_TIPS_ADDONNEEDED" xml:space="preserve">
-    <value>您可以從 Nitrocid 完整版本附帶的內核插件中獲得額外的提示嗎？</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_TIPS_PREFIX" xml:space="preserve">
-    <value>專業提示：你知道嗎</value>
-  </data>
   <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS" xml:space="preserve">
     <value>鍵綁定</value>
   </data>
@@ -3124,17 +3025,8 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_MISC" xml:space="preserve">
     <value>雜項測試</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_MODIFICATION" xml:space="preserve">
-    <value>核心修改測試</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_NETWORK" xml:space="preserve">
     <value>網路系統測試</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_SHELL" xml:space="preserve">
-    <value>UESH shell 測試</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS" xml:space="preserve">
-    <value>用戶測試</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_THEMESET_NO" xml:space="preserve">
     <value>不</value>
@@ -3198,9 +3090,6 @@
   </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>找不到指令。</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC" xml:space="preserve">
-    <value>顯示隨機內核提示</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_ERROR" xml:space="preserve">
     <value>管理 shell 中出現錯誤：{0}</value>
@@ -3688,18 +3577,6 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE" xml:space="preserve">
     <value>選擇你的語言</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC" xml:space="preserve">
-    <value>使用雙窗格互動測試互動式 TUI 系統</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETEST_DESC" xml:space="preserve">
-    <value>使用單窗格互動測試互動式 TUI 系統</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETESTREFRESHING_DESC" xml:space="preserve">
-    <value>透過單窗格互動和刷新第二窗格資訊來測試互動式 TUI 系統</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT" xml:space="preserve">
-    <value>寫入 1 到 255 之間的顏色編號：</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_DEBUG_DESC" xml:space="preserve">
     <value>啟用偵錯工具</value>
   </data>
@@ -3742,32 +3619,11 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_NETWORKCHECK_TEST" xml:space="preserve">
     <value>網路可用性是</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINT_DESC" xml:space="preserve">
-    <value>將字串列印到控制台</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTD_DESC" xml:space="preserve">
     <value>將字串列印到調試器</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTDF_DESC" xml:space="preserve">
     <value>將字串列印到調試器並格式化</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTF_DESC" xml:space="preserve">
-    <value>將帶有格式的字串列印到控制台</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTHIGHLIGHTED_DESC" xml:space="preserve">
-    <value>將字串列印到控制台並突出顯示</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEP_DESC" xml:space="preserve">
-    <value>將分隔符號列印到控制台</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEPF_DESC" xml:space="preserve">
-    <value>使用格式將分隔符號列印到控制台</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNEWLINES_DESC" xml:space="preserve">
-    <value>將字串列印到控制台，並在字串中換行</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNULLS_DESC" xml:space="preserve">
-    <value>將包含空字元的字串列印到控制台</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_RDEBUG_DESC" xml:space="preserve">
     <value>啟用遠端偵錯工具</value>
@@ -3795,9 +3651,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATIONSIMPLE_TEST_TITLE" xml:space="preserve">
     <value>測試簡單的通知</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTARGS_DESC" xml:space="preserve">
-    <value>測試參數</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRYPTORNG_DESC" xml:space="preserve">
     <value>測試加密安全隨機數產生器</value>
@@ -3829,36 +3682,6 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTFOLDERSSELECTOR_DESC" xml:space="preserve">
     <value>測試多資料夾選擇器</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONS_DESC" xml:space="preserve">
-    <value>測試資訊框中的按鈕</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUT_DESC" xml:space="preserve">
-    <value>測試資訊框中的彩色輸入框</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUT_DESC" xml:space="preserve">
-    <value>測試資訊框中的輸入框</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTION_DESC" xml:space="preserve">
-    <value>測試資訊框中的輸入多選樣式</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTION_DESC" xml:space="preserve">
-    <value>測試資訊框中的輸入選擇樣式</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTMULTISELECTION_DESC" xml:space="preserve">
-    <value>測試輸入多選樣式</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTION_DESC" xml:space="preserve">
-    <value>測試輸入選擇樣式</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_DESC" xml:space="preserve">
-    <value>測試清單條目編寫器</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT1" xml:space="preserve">
-    <value>縮排 1：</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT2" xml:space="preserve">
-    <value>縮排 2：</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTPROGRESSHANDLER_DESC" xml:space="preserve">
     <value>測試進度處理程序</value>
   </data>
@@ -3873,15 +3696,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTRNG_DESC" xml:space="preserve">
     <value>測試隨機數產生器</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_DESC" xml:space="preserve">
-    <value>測試控制台的螢幕功能</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_FAILED" xml:space="preserve">
-    <value>螢幕渲染失敗：</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSWITCHES_DESC" xml:space="preserve">
-    <value>測試開關</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID" xml:space="preserve">
     <value>會話號碼無效。</value>
@@ -5380,39 +5194,6 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_EXCEPTION_ENTRYPOINTGET" xml:space="preserve">
     <value>無法取得入口點。</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONSTITLED_DESC" xml:space="preserve">
-    <value>測試資訊框中的按鈕（標題）</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUTTITLED_DESC" xml:space="preserve">
-    <value>測試資訊框中的彩色輸入框（標題）</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUTTITLED_DESC" xml:space="preserve">
-    <value>測試資訊框中的輸入框（標題）</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTIONTITLED_DESC" xml:space="preserve">
-    <value>測試資訊框中的輸入多選樣式（標題）</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGE_DESC" xml:space="preserve">
-    <value>測試資訊框中的輸入選擇樣式（測試捲動和分頁的大量項目）</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLE_DESC" xml:space="preserve">
-    <value>測試資訊框中輸入的多選樣式（大量項目測試捲動和分頁）</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLETITLED_DESC" xml:space="preserve">
-    <value>測試資訊框中輸入的多選樣式（大量項目測試捲動和分頁）（標題為</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGETITLED_DESC" xml:space="preserve">
-    <value>測試資訊框中的輸入選擇樣式（測試捲動和分頁的大量項目）（標題為</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONTITLED_DESC" xml:space="preserve">
-    <value>測試資訊框中的輸入選擇樣式（標題為</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGE_DESC" xml:space="preserve">
-    <value>測試輸入選擇樣式（大量項目來測試滾動和分頁）</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGEMULTIPLE_DESC" xml:space="preserve">
-    <value>測試輸入多選樣式（大量項目測試滾動和分頁）</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_NOFRAME" xml:space="preserve">
     <value>無法取得框架</value>
   </data>
@@ -5676,9 +5457,6 @@
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_ALARM" xml:space="preserve">
     <value>無法載入警報監聽器</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_FAILED_FINALIZE_ADDONS" xml:space="preserve">
-    <value>無法完成插件</value>
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_MOTD" xml:space="preserve">
     <value>無法載入 MOTD 和 MAL</value>
@@ -6000,9 +5778,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC" xml:space="preserve">
     <value>修改密碼的使用者名稱</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC" xml:space="preserve">
-    <value>目前用戶密碼</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC" xml:space="preserve">
     <value>更改舊用戶名</value>
@@ -6529,9 +6304,6 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_CALENDAR" xml:space="preserve">
     <value>附加功能 - 日曆</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_COLORCONVERTER" xml:space="preserve">
-    <value>附加功能 - 顏色轉換器</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_CONTACTS" xml:space="preserve">
     <value>附加功能 - 聯絡方式</value>
   </data>
@@ -6541,9 +6313,6 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_DICTIONARY" xml:space="preserve">
     <value>額外 - 字典</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_DOCKING" xml:space="preserve">
-    <value>附加功能 - 對接</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_FORECAST" xml:space="preserve">
     <value>額外 - 預測</value>
   </data>
@@ -6552,9 +6321,6 @@
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO" xml:space="preserve">
     <value>額外 - 主題工作室</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_TIPS" xml:space="preserve">
-    <value>附加功能 - 內核提示</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_TODO" xml:space="preserve">
     <value>額外 - 待辦事項列表</value>
@@ -6592,9 +6358,6 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_DATES" xml:space="preserve">
     <value>額外內容 - 日期</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_HASHES" xml:space="preserve">
-    <value>額外內容 - 哈希值</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_CHATBOT" xml:space="preserve">
     <value>額外內容 - 聊天機器人 AI</value>
   </data>
@@ -6612,12 +6375,6 @@
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC" xml:space="preserve">
     <value>您想使用哪個隨機數產生器驅動程式？</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME" xml:space="preserve">
-    <value>目前網路驅動程式</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC" xml:space="preserve">
-    <value>您想使用哪個網路驅動程式？</value>
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME" xml:space="preserve">
     <value>目前檔案系統驅動程式</value>
@@ -6693,12 +6450,6 @@
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
     <value>您的设置实例中存在重复的键。请仔细检查该变量，确保它只存在一次。</value>
-  </data>
-  <data name="NKS_USERS_LOGIN_MODERNLOGON_CLOSE" xml:space="preserve">
-    <value>关闭</value>
-  </data>
-  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN" xml:space="preserve">
-    <value>关闭</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE" xml:space="preserve">
     <value>文件管理器（单窗格）</value>

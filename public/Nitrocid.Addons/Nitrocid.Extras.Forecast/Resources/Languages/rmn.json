@@ -64,10 +64,6 @@
       "text": "Introduceți cheia dvs. API:"
     },
     {
-      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
-      "text": "Puteți fie să consultați linkul de mai jos pentru lista orașelor cu ID-urile lor, fie să transmiteți „-list” la această comandă."
-    },
-    {
       "loc": "NKS_FORECAST_SETTINGS_DESC",
       "text": "Această secțiune vă permite să configurați modul în care funcționează Prognoza."
     },

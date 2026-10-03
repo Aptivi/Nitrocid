@@ -100,9 +100,6 @@
   <data name="NKS_FORECAST_APIKEYPROMPT" xml:space="preserve">
     <value>أدخل مفتاح API الخاص بك:</value>
   </data>
-  <data name="NKS_FORECAST_WEATHEROLD_CITYLISTLINK" xml:space="preserve">
-    <value>يمكنك إما الرجوع إلى الرابط أدناه للحصول على قائمة المدن بمعرفاتها، أو تمرير "-list" إلى هذا الأمر.</value>
-  </data>
   <data name="NKS_FORECAST_SETTINGS_DESC" xml:space="preserve">
     <value>يتيح لك هذا القسم تكوين كيفية عمل التوقعات.</value>
   </data>

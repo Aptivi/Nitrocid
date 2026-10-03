@@ -63,10 +63,6 @@
       "text": "Nhập khóa API của bạn:"
     },
     {
-      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
-      "text": "Bạn có thể tham khảo liên kết bên dưới để biết danh sách các thành phố kèm ID của thành phố đó hoặc truyền \"-list\" vào lệnh này."
-    },
-    {
       "loc": "NKS_FORECAST_SETTINGS_DESC",
       "text": "Phần này cho phép bạn cấu hình cách thức hoạt động của Dự báo."
     },

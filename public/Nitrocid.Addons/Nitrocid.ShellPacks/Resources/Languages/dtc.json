@@ -285,10 +285,6 @@
       "text": "Bericht {0} van {1} verwijderd van {2}. {3} berichten die nog moeten worden geparseerd."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "Bericht {0} van {1} verwijderd uit inbox. {2} berichten die nog moeten worden geparseerd."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "Gefaald om het document te openen. Shell afsluiten ..."
     },
@@ -451,10 +447,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "Voer bestandspaden naar bijlagen in. Druk op ENTER op een leeg pad om te bevestigen."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "Opent een versleuteld bericht"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1209,10 +1201,6 @@
       "text": "Geen revisie."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "Er is nog geen verbinding tot stand gebracht."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "Voer het serveradres in:"
     },
@@ -1241,10 +1229,6 @@
       "text": "Opent de POP3-mailclient"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "POP3-mail keert terug vanaf 0.0.20.0, maar we zijn momenteel niet van plan deze in deze versie uit te brengen. Wacht op de volgende versie."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "Voer de URL van de RSS-feed in"
     },
@@ -1255,10 +1239,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "Opent een interactieve RSS-feedlezer TUI"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "Kan niets extraheren."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1439,18 +1419,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "Stelt een user-agent in"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "Koptekst toevoegen die al bestaat."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "Koptekst verwijderen die niet bestaat."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "Koptekst bewerken die niet bestaat."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1951,10 +1919,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "De JSON-shell kan geen item instellen."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "Bericht {0} van {1} verplaatst. Er zijn nog {2} berichten die nog moeten worden geparseerd."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

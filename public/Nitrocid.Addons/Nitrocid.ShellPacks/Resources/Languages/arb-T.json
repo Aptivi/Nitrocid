@@ -305,10 +305,6 @@
       "text": "تم حذف الرسالة {0} من {1} من {2}. {3} من الرسائل المتبقية للتحليل."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "تم حذف الرسالة {0} من {1} من البريد الوارد. {2} من الرسائل المتبقية للتحليل."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "فشل فتح ملف. الخروج من الصدفة ..."
     },
@@ -471,10 +467,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "أدخل مسارات الملفات للمرفقات. اضغط على ENTER في مسار فارغ للتأكيد."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "يفتح رسالة مشفرة"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1229,10 +1221,6 @@
       "text": "لا مراجعة."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "لم يتم تأسيس الاتصال بعد."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "أدخل عنوان الخادم:"
     },
@@ -1261,10 +1249,6 @@
       "text": "يفتح عميل بريد POP3"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "يعود بريد POP3 من الإصدار 0.0.20.0، لكننا لا نخطط حاليًا لإصداره في هذا الإصدار. انتظر الإصدار التالي."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "أدخل عنوان URL لخلاصة RSS"
     },
@@ -1275,10 +1259,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "يفتح قارئ موجز RSS التفاعلي TUI"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "لا يمكن استخراج أي شيء."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1459,18 +1439,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "يعين وكيل المستخدم"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "إضافة رأس موجود بالفعل."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "إزالة الرأس غير الموجود."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "تحرير الرأس غير موجود."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1971,10 +1939,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "فشلت قذيفة JSON في تعيين عنصر."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "تم نقل الرسالة {0} من {1}. {2} الرسائل المتبقية للتحليل."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

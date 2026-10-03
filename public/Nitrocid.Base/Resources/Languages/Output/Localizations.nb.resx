@@ -850,17 +850,8 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TRANSLATE_DESC" xml:space="preserve">
     <value>Tester å oversette en streng som finnes i ressurser til et spesifikt språk</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTPLACES_DESC" xml:space="preserve">
-    <value>Skriver ut en streng til konsollen og analyserer plassholderne som er funnet</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTREGEXP_DESC" xml:space="preserve">
     <value>Tester det regulære uttrykket</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_DESC" xml:space="preserve">
-    <value>Tester VT-sekvensen for 255 farger</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTRUETEST_DESC" xml:space="preserve">
-    <value>Tester VT-sekvensen for ekte farger</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_DESC" xml:space="preserve">
     <value>Sender et varsel for å teste mottakeren</value>
@@ -870,33 +861,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PROBEHARDWARE_DESC" xml:space="preserve">
     <value>Tester undersøking av maskinvaren</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_DESC" xml:space="preserve">
-    <value>Tester listeskriveren med strengen og strengmatrisen</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_DESC" xml:space="preserve">
-    <value>Tester listeskriveren med heltalls- og heltallsmatrisen</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_DESC" xml:space="preserve">
-    <value>Tester listeskriveren med char og char array</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_NORMALLIST" xml:space="preserve">
-    <value>Normal strengliste:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_ARRAYLIST" xml:space="preserve">
-    <value>Array-strengliste:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_NORMALLIST" xml:space="preserve">
-    <value>Normal heltallsliste:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_ARRAYLIST" xml:space="preserve">
-    <value>Array heltallsliste:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST" xml:space="preserve">
-    <value>Normal røyeliste:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST" xml:space="preserve">
-    <value>Array-tegnliste:</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_NAME" xml:space="preserve">
     <value>Aktiver RPC</value>
@@ -969,33 +933,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS" xml:space="preserve">
     <value>Tegn slettet.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_DESC" xml:space="preserve">
-    <value>Tester ordbokforfatteren med strengen og strengmatrisen</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_DESC" xml:space="preserve">
-    <value>Tester ordbokforfatteren med char og char array</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_DESC" xml:space="preserve">
-    <value>Tester ordbokforfatteren med heltalls- og heltallsmatrisen</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_NORMALLIST" xml:space="preserve">
-    <value>Normal strengordbok:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_ARRAYLIST" xml:space="preserve">
-    <value>Array string ordbok:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_NORMALLIST" xml:space="preserve">
-    <value>Normal heltallsordbok:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_ARRAYLIST" xml:space="preserve">
-    <value>Array heltallsordbok:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_NORMALLIST" xml:space="preserve">
-    <value>Normal char ordbok:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_ARRAYLIST" xml:space="preserve">
-    <value>Array char ordbok:</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_FILESYSTEM_PROGRESS_NAME" xml:space="preserve">
     <value>Vis fremdrift på filsystemoperasjoner</value>
@@ -1303,9 +1240,6 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC" xml:space="preserve">
     <value>Krypterer en streng ved hjelp av CRC32</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTTABLE_DESC" xml:space="preserve">
-    <value>Tester tabellfunksjonaliteten</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_EDITLINE_DESC" xml:space="preserve">
     <value>Redigerer den angitte linjen</value>
   </data>
@@ -1353,9 +1287,6 @@
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC" xml:space="preserve">
     <value>Som sikker modus, men deaktiverer også flerbruker og litt tilpasning</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS" xml:space="preserve">
-    <value>Farger krever ikke omstart, men de fleste innstillingene krever omstart.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC" xml:space="preserve">
     <value>Erstatter et ord eller en setning med et annet ved hjelp av regulære uttrykk</value>
@@ -1762,9 +1693,6 @@
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TITLE" xml:space="preserve">
     <value>Kom i gang!</value>
   </data>
-  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1" xml:space="preserve">
-    <value>Gratulerer! Du har nå en brukerkonto, {0}!</value>
-  </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT2" xml:space="preserve">
     <value>Trykk ENTER-tasten for å komme i gang med å bruke kjernen og logg inn på din nye konto. Lykke til!</value>
   </data>
@@ -1776,9 +1704,6 @@
   </data>
   <data name="NKS_USERS_EXCEPTION_USERLOCKED" xml:space="preserve">
     <value>Prøver å endre eksisterende konto mens den er låst</value>
-  </data>
-  <data name="NKS_USERS_EXCEPTION_UNENCRYPTEDPASS" xml:space="preserve">
-    <value>Prøver å legge til ukryptert passord i brukerlisten.</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_CANNOTVALIDATE_ADD" xml:space="preserve">
     <value>Kan ikke legge til brukernavn. Pass på at brukernavnet ikke eksisterer.</value>
@@ -2512,9 +2437,6 @@
   <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZEFAILED" xml:space="preserve">
     <value>Kunne ikke initialisere kjernetillegget</value>
   </data>
-  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_FINALIZEFAILED" xml:space="preserve">
-    <value>Kunne ikke fullføre tillegg. Følgende tillegg har ikke klart å fullføre:</value>
-  </data>
   <data name="NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_STOPFAILED" xml:space="preserve">
     <value>Kunne ikke stoppe tillegg. Følgende tillegg har ikke klart å stoppe:</value>
   </data>
@@ -2716,12 +2638,6 @@
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOTAFILE" xml:space="preserve">
     <value>Den valgte oppføringen er ikke en fil.</value>
   </data>
-  <data name="NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT" xml:space="preserve">
-    <value>Skriv inn en hash-driver:</value>
-  </data>
-  <data name="NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERNOTFOUND" xml:space="preserve">
-    <value>Hash driver ikke funnet.</value>
-  </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_EXPECTEDHASHPROMPT" xml:space="preserve">
     <value>Skriv inn din forventede hash</value>
   </data>
@@ -2739,9 +2655,6 @@
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_ISDIRECTORY" xml:space="preserve">
     <value>Er en katalog</value>
-  </data>
-  <data name="NKS_MISC_INTERACTIVES_FMTUI_ISSELECTED" xml:space="preserve">
-    <value>Er valgt</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILESIZE" xml:space="preserve">
     <value>Filstørrelse</value>
@@ -2902,9 +2815,6 @@
   <data name="NKS_MISC_SPLASH_DEFAULTMSG" xml:space="preserve">
     <value>Laster inn...</value>
   </data>
-  <data name="NKS_NETWORK_CONNECTION_EXCEPTION_INVALIDINVOCATION" xml:space="preserve">
-    <value>Denne egenskapen er kun gyldig for tilkoblinger med tråder. For eksempel tilkoblinger, kall den aktuelle egenskapen på selve forekomsten i stedet for å kalle denne egenskapen.</value>
-  </data>
   <data name="NKS_NETWORK_CONNECTION_SELECT_PROMPT" xml:space="preserve">
     <value>Velg en tilkobling. Hvis du ikke har noen tilkoblinger, må du opprette en ny tilkobling. I tillegg kan du bruke hurtigoppringingsfunksjonen for raskt å koble til servere.</value>
   </data>
@@ -2934,9 +2844,6 @@
   </data>
   <data name="NKS_NETWORK_CONNECTION_EXCEPTION_TYPEEXISTS" xml:space="preserve">
     <value>Tilkoblingstypen eksisterer allerede</value>
-  </data>
-  <data name="NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS" xml:space="preserve">
-    <value>Skallet {0} godtar ikke nettverkstilkoblinger.</value>
   </data>
   <data name="NKS_NETWORK_CONNECTION_ADDRESSPROMPT" xml:space="preserve">
     <value>Skriv inn serveradressen:</value>
@@ -3046,12 +2953,6 @@
   <data name="NKS_KERNEL_STARTING_UNUSUALENV_TITLE" xml:space="preserve">
     <value>Merknad om uvanlig miljø</value>
   </data>
-  <data name="NKS_KERNEL_STARTING_TIPS_ADDONNEEDED" xml:space="preserve">
-    <value>at du kan få ekstra tips fra kjernetillegget levert med den fulle versjonen av Nitrocid?</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_TIPS_PREFIX" xml:space="preserve">
-    <value>Proff-tips: Visste du det</value>
-  </data>
   <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS" xml:space="preserve">
     <value>Nøkkelbindinger</value>
   </data>
@@ -3124,17 +3025,8 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_MISC" xml:space="preserve">
     <value>Diverse tester</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_MODIFICATION" xml:space="preserve">
-    <value>Kjernemodifikasjonstester</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_NETWORK" xml:space="preserve">
     <value>Nettverkssystemtester</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_SHELL" xml:space="preserve">
-    <value>UESH-skalltester</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS" xml:space="preserve">
-    <value>Brukertester</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_THEMESET_NO" xml:space="preserve">
     <value>Ingen</value>
@@ -3198,9 +3090,6 @@
   </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Kommandoen ble ikke funnet.</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC" xml:space="preserve">
-    <value>Viser et tilfeldig kjernespiss</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_ERROR" xml:space="preserve">
     <value>Feil i administrativt skall: {0}</value>
@@ -3688,18 +3577,6 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE" xml:space="preserve">
     <value>Velg ditt språk</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC" xml:space="preserve">
-    <value>Tester det interaktive TUI-systemet med en interaksjon med dobbel rute</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETEST_DESC" xml:space="preserve">
-    <value>Tester det interaktive TUI-systemet med en enkelt ruteinteraksjon</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETESTREFRESHING_DESC" xml:space="preserve">
-    <value>Tester det interaktive TUI-systemet med en enkelt ruteinteraksjon og med å oppdatere informasjonen om den andre ruten</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT" xml:space="preserve">
-    <value>Skriv et fargetall fra 1 til 255:</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_DEBUG_DESC" xml:space="preserve">
     <value>Aktiverer feilsøkeren</value>
   </data>
@@ -3742,32 +3619,11 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_NETWORKCHECK_TEST" xml:space="preserve">
     <value>Nettverkstilgjengelighet er</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINT_DESC" xml:space="preserve">
-    <value>Skriv ut en streng til konsollen</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTD_DESC" xml:space="preserve">
     <value>Skriv ut en streng for å feilsøke</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTDF_DESC" xml:space="preserve">
     <value>Skriv ut en streng for å feilsøke med formatering</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTF_DESC" xml:space="preserve">
-    <value>Skriv ut en streng til konsoll med formatering</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTHIGHLIGHTED_DESC" xml:space="preserve">
-    <value>Skriv ut en streng til konsollen med utheving</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEP_DESC" xml:space="preserve">
-    <value>Skriv ut en skilletegn til konsollen</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEPF_DESC" xml:space="preserve">
-    <value>Skriv ut en skilletegn til konsoll med formatering</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNEWLINES_DESC" xml:space="preserve">
-    <value>Skriv ut en streng til konsoll med nye linjer i streng</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNULLS_DESC" xml:space="preserve">
-    <value>Skriv ut en streng til konsoll med null-tegn</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_RDEBUG_DESC" xml:space="preserve">
     <value>Aktiverer den eksterne debuggeren</value>
@@ -3795,9 +3651,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATIONSIMPLE_TEST_TITLE" xml:space="preserve">
     <value>Test enkel varsling</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTARGS_DESC" xml:space="preserve">
-    <value>Tester argumenter</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRYPTORNG_DESC" xml:space="preserve">
     <value>Tester den kryptografisk sikre tilfeldige tallgeneratoren</value>
@@ -3829,36 +3682,6 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTFOLDERSSELECTOR_DESC" xml:space="preserve">
     <value>Tester velgeren for flere mapper</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONS_DESC" xml:space="preserve">
-    <value>Tester knappene i informasjonsboksen</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUT_DESC" xml:space="preserve">
-    <value>Tester den fargede inndataboksen i informasjonsboksen</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUT_DESC" xml:space="preserve">
-    <value>Tester inndataboksen i informasjonsboksen</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTION_DESC" xml:space="preserve">
-    <value>Tester inndatamultippelvalgstilen i informasjonsboksen</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTION_DESC" xml:space="preserve">
-    <value>Tester inndatavalgstilen i informasjonsboksen</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTMULTISELECTION_DESC" xml:space="preserve">
-    <value>Tester stilen for flervalg for input</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTION_DESC" xml:space="preserve">
-    <value>Tester stilen for valg av inngang</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_DESC" xml:space="preserve">
-    <value>Tester listeoppføringsforfatteren</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT1" xml:space="preserve">
-    <value>Innrykk 1:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT2" xml:space="preserve">
-    <value>Innrykk 2:</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTPROGRESSHANDLER_DESC" xml:space="preserve">
     <value>Tester fremdriftsbehandleren</value>
   </data>
@@ -3873,15 +3696,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTRNG_DESC" xml:space="preserve">
     <value>Tester tilfeldig tallgenerator</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_DESC" xml:space="preserve">
-    <value>Tester skjermfunksjonen for konsollen</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_FAILED" xml:space="preserve">
-    <value>Skjermen kunne ikke gjengis:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSWITCHES_DESC" xml:space="preserve">
-    <value>Tester brytere</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID" xml:space="preserve">
     <value>Sesjonsnummeret er ugyldig.</value>
@@ -5380,39 +5194,6 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_EXCEPTION_ENTRYPOINTGET" xml:space="preserve">
     <value>Kunne ikke få inngangspunkt.</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONSTITLED_DESC" xml:space="preserve">
-    <value>Tester knappene i informasjonsboksen (med tittel)</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUTTITLED_DESC" xml:space="preserve">
-    <value>Tester den fargede inndataboksen i informasjonsboksen (med tittel)</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUTTITLED_DESC" xml:space="preserve">
-    <value>Tester inndataboksen i informasjonsboksen (med tittel)</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTIONTITLED_DESC" xml:space="preserve">
-    <value>Tester input-multivalgstilen i informasjonsboksen (med tittel)</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGE_DESC" xml:space="preserve">
-    <value>Tester inndatavalgstilen i informasjonsboksen (stort antall elementer for å teste rulling og personsøking)</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLE_DESC" xml:space="preserve">
-    <value>Tester input-multivalgstilen i informasjonsboksen (stort antall elementer for å teste rulling og personsøking)</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLETITLED_DESC" xml:space="preserve">
-    <value>Tester input-multivalgstilen i informasjonsboksen (stort antall elementer for å teste rulling og personsøking) (med tittelen</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGETITLED_DESC" xml:space="preserve">
-    <value>Tester inndatavalgstilen i informasjonsboksen (stort antall elementer for å teste rulling og personsøking) (med tittelen</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONTITLED_DESC" xml:space="preserve">
-    <value>Tester inndatavalgstilen i informasjonsboksen (med tittelen</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGE_DESC" xml:space="preserve">
-    <value>Tester inndatavalgstilen (stort antall elementer for å teste rulling og personsøking)</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGEMULTIPLE_DESC" xml:space="preserve">
-    <value>Tester inndatamultivelvalgstilen (stort antall elementer for å teste rulling og personsøking)</value>
-  </data>
   <data name="NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_NOFRAME" xml:space="preserve">
     <value>Får ikke ramme</value>
   </data>
@@ -5676,9 +5457,6 @@
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_ALARM" xml:space="preserve">
     <value>Kunne ikke laste inn alarmlytteren</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_FAILED_FINALIZE_ADDONS" xml:space="preserve">
-    <value>Kunne ikke fullføre tillegg</value>
   </data>
   <data name="NKS_KERNEL_STARTING_FAILED_LOAD_MOTD" xml:space="preserve">
     <value>Kunne ikke laste inn MOTD og MAL</value>
@@ -6000,9 +5778,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC" xml:space="preserve">
     <value>Brukernavn for å endre passord</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC" xml:space="preserve">
-    <value>Gjeldende brukerpassord</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC" xml:space="preserve">
     <value>Gammelt brukernavn å endre</value>
@@ -6529,9 +6304,6 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_CALENDAR" xml:space="preserve">
     <value>Ekstra - Kalender</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_COLORCONVERTER" xml:space="preserve">
-    <value>Ekstra - Fargekonverter</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_CONTACTS" xml:space="preserve">
     <value>Ekstra - kontakter</value>
   </data>
@@ -6541,9 +6313,6 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_DICTIONARY" xml:space="preserve">
     <value>Ekstra - Ordbok</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_DOCKING" xml:space="preserve">
-    <value>Ekstrautstyr - Docking</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_FORECAST" xml:space="preserve">
     <value>Ekstra - Værmelding</value>
   </data>
@@ -6552,9 +6321,6 @@
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO" xml:space="preserve">
     <value>Ekstra - Theme Studio</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_TIPS" xml:space="preserve">
-    <value>Ekstrautstyr - kjernetips</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_TODO" xml:space="preserve">
     <value>Ekstrautstyr - Gjøremålsliste</value>
@@ -6592,9 +6358,6 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_DATES" xml:space="preserve">
     <value>Ekstra - Datoer</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_HASHES" xml:space="preserve">
-    <value>Ekstra - Hashes</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_CHATBOT" xml:space="preserve">
     <value>Ekstra - Chatbot AI</value>
   </data>
@@ -6612,12 +6375,6 @@
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC" xml:space="preserve">
     <value>Hvilken driver for tilfeldig tallgenerator vil du bruke?</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME" xml:space="preserve">
-    <value>Gjeldende nettverksdriver</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC" xml:space="preserve">
-    <value>Hvilken nettverksdriver vil du bruke?</value>
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME" xml:space="preserve">
     <value>Gjeldende filsystemdriver</value>
@@ -6693,12 +6450,6 @@
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
     <value>Det har vært dupliserte nøkler i innstillingsinstansen din. Dobbeltsjekk variabelen for å sikre at den ikke finnes mer enn én gang.</value>
-  </data>
-  <data name="NKS_USERS_LOGIN_MODERNLOGON_CLOSE" xml:space="preserve">
-    <value>Lukke</value>
-  </data>
-  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN" xml:space="preserve">
-    <value>Slå av</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE" xml:space="preserve">
     <value>Filbehandler (enkelt rute)</value>

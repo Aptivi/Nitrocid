@@ -119,10 +119,6 @@
       "text": "Tự động bắt đầu sửa đổi kernel khi khởi động."
     },
     {
-      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
-      "text": "Tệp mod không được chỉ định."
-    },
-    {
       "loc": "NKS_MODS_MODUPDATING",
       "text": "Đang cố gắng cài đặt bản mod đã cài đặt. Đang cập nhật bản mod..."
     },

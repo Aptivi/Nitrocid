@@ -125,10 +125,6 @@
       "text": "Start automatisch de kernelwijzigingen bij het opstarten."
     },
     {
-      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
-      "text": "Mod-bestand is niet gespecificeerd."
-    },
-    {
       "loc": "NKS_MODS_MODUPDATING",
       "text": "Ik probeer een reeds geïnstalleerde mod te installeren. Modus bijwerken..."
     },

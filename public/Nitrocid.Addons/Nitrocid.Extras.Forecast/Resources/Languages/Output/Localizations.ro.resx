@@ -100,9 +100,6 @@
   <data name="NKS_FORECAST_APIKEYPROMPT" xml:space="preserve">
     <value>Introduceți cheia dvs. API:</value>
   </data>
-  <data name="NKS_FORECAST_WEATHEROLD_CITYLISTLINK" xml:space="preserve">
-    <value>Puteți fie să consultați linkul de mai jos pentru lista orașelor cu ID-urile lor, fie să transmiteți „-list” la această comandă.</value>
-  </data>
   <data name="NKS_FORECAST_SETTINGS_DESC" xml:space="preserve">
     <value>Această secțiune vă permite să configurați modul în care funcționează Prognoza.</value>
   </data>

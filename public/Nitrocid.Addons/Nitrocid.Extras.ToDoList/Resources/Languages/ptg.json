@@ -33,10 +33,6 @@
       "text": "Falha ao adicionar ou remover uma tarefa."
     },
     {
-      "loc": "NKS_TODO_NAMENEEDED",
-      "text": "Forneça um nome para sua tarefa."
-    },
-    {
       "loc": "NKS_TODO_MARKFAILED",
       "text": "Falha ao marcar uma tarefa."
     },

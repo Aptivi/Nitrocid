@@ -76,16 +76,8 @@
       "text": "Πόσες θέσεις ανάβουν πριν χαμηλώσουν;"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_NAME",
-      "text": "Καθυστέρηση εξαφάνισης σε χιλιοστά του δευτερολέπτου"
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_NAME",
       "text": "Max Fade Steps"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_DESC",
-      "text": "Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν εξαφανιστεί το κείμενο;"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_DESC",
@@ -150,18 +142,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_DESC",
       "text": "Εάν θα χρησιμοποιήσετε τη μονάδα Beats Per Minute για να γράψετε το επόμενο χρώμα."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_NAME",
-      "text": "Καθυστέρηση στα Beats Per Minute"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_DESC",
-      "text": "Πόσους παλμούς ανά λεπτό να περιμένετε πριν κάνετε την επόμενη εγγραφή;"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_CYCLECOLORS_DESC",
-      "text": "Το BeatFader θα επιλέξει τυχαία χρώματα εάν είναι ενεργοποιημένο. Διαφορετικά, χρησιμοποιήστε χρώματα από τη διαμόρφωση."
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_NAME",
@@ -724,24 +704,8 @@
       "text": "Όσο μεγαλύτερο είναι το ποσοστό, τόσο πιο θορυβώδες είναι το σήμα"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_NAME",
-      "text": "Πυκνότητα δυσλειτουργίας"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_DESC",
-      "text": "Όσο μεγαλύτερο είναι το ποσοστό, τόσο πιο πυκνό είναι το σφάλμα!"
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_WORD_LOADING",
       "text": "Φόρτωση..."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_KSX_CONTINUED",
-      "text": "Συνεχίζεται..."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_KSX_THEEND",
-      "text": "Το τέλος"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_NEWYEAR_CONGRATS",
@@ -814,22 +778,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_BOUNCINGTEXT_SETTINGS_DESC",
       "text": "Σας δείχνει ένα κείμενο που αναπηδά γύρω από την κονσόλα."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_DESC",
-      "text": "Ξεθώριασμα κειμένου μέσα και έξω."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_FADERBACK_SETTINGS_DESC",
-      "text": "Ξεθώριασμα φόντου μέσα και έξω."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_DESC",
-      "text": "Ξεθώριασμα κειμένου μέσα και έξω σε ρυθμούς."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_BEATCOLOR_DESC",
-      "text": "Κτυπήστε το χρώμα"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_DESC",
@@ -908,40 +856,12 @@
       "text": "Απλή ημερομηνία και ώρα στη μέση της οθόνης."
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DESC",
-      "text": "Προσομοιώνει ένα σφάλμα στην οθόνη σας."
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_FALLINGLINE_SETTINGS_DESC",
       "text": "Σας δείχνει μια γραμμή πτώσης που κατεβαίνει και σβήνει."
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_INDETERMINATE_SETTINGS_DESC",
       "text": "Σας δείχνει μια απροσδιόριστη γραμμή προόδου."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_PULSE_SETTINGS_DESC",
-      "text": "Σας δείχνει ένα παλλόμενο φόντο."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_DESC",
-      "text": "Σας δείχνει ένα παλλόμενο φόντο σε beats."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_CYCLECOLORS_DESC",
-      "text": "Το BeatPulse θα επιλέξει τυχαία χρώματα εάν είναι ενεργοποιημένο. Διαφορετικά, χρησιμοποιήστε χρώματα από τη διαμόρφωση."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EDGEPULSE_SETTINGS_DESC",
-      "text": "Σου δείχνει μια παλλόμενη άκρη."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_DESC",
-      "text": "Σου δείχνει ένα παλλόμενο πλεονέκτημα στα beats."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_CYCLECOLORS_DESC",
-      "text": "Το BeatEdgePulse θα επιλέξει τυχαία χρώματα εάν είναι ενεργοποιημένο. Διαφορετικά, χρησιμοποιήστε χρώματα από τη διαμόρφωση."
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_DESC",
@@ -976,10 +896,6 @@
       "text": "Το στυλ σειρήνας."
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_SPIN_SETTINGS_DESC",
-      "text": "Περιστρεφόμενες κάθετες."
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_SNAKEFILL_SETTINGS_DESC",
       "text": "Γεμίζει την κονσόλα με ένα χρώμα σαν φίδι."
     },
@@ -992,36 +908,8 @@
       "text": "Καθυστέρηση επόμενης οθόνης σε χιλιοστά του δευτερολέπτου"
     },
     {
-      "loc": "NKS_SCREENSAVERPACKS_BSOD_SETTINGS_DESC",
-      "text": "Προσομοιώνει σφάλματα συστήματος από διαφορετικά λειτουργικά συστήματα."
-    },
-    {
       "loc": "NKS_SCREENSAVERPACKS_MEMDUMP_SETTINGS_DESC",
       "text": "Δημιουργεί χρώματα από την τυχαία μετατόπιση."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_DESC",
-      "text": "Σας εμφανίζει ένα κείμενο που ξεθωριάζει και αναβοσβήνει σε ρυθμούς."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_CYCLECOLORS_DESC",
-      "text": "Το ExcaliBeats θα επιλέξει τυχαία χρώματα εάν είναι ενεργοποιημένο. Διαφορετικά, χρησιμοποιήστε χρώματα από τη διαμόρφωση."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_NAME",
-      "text": "Ρητή λειτουργία"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_DESC",
-      "text": "Αλλάξτε ρητά το κείμενο σε Excalibur"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_NAME",
-      "text": "Τρανς λειτουργία"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_DESC",
-      "text": "Trance mode - Πολλαπλασιάζει το BPM επί 2 για να προσομοιώσει το στυλ μουσικής trance"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_DESC",
@@ -1082,14 +970,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_WORDHASHER_SETTINGS_DESC",
       "text": "Σας δείχνει μια λέξη και το άθροισμά της."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_DESC",
-      "text": "Σας δείχνει ένα τετράγωνο που ξεθωριάζει σε τέσσερις γωνίες."
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_FADEOUTDELAY_DESC",
-      "text": "Πόσα χιλιοστά του δευτερολέπτου να περιμένω πριν εξαφανιστεί το τετράγωνο;"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_NUMBERSCATTER_SETTINGS_DESC",
@@ -1866,10 +1746,6 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
       "text": "Αποκαλύπτει ένα χρώμα φόντου που εμφανίζεται πίσω από το μπλοκ (όπως όταν στρέφεις τον φακό σε κάποιο αντικείμενο σε ένα σκοτάδι δωμάτιο)"
-    },
-    {
-      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
-      "text": "Αποκαλύπτει το κείμενο που εκτυπώνεται στο φόντο"
     },
     {
       "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",

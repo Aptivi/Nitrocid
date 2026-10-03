@@ -67,10 +67,6 @@
       "text": "Skriv inn API-nøkkelen din:"
     },
     {
-      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
-      "text": "Du kan enten konsultere lenken nedenfor for listen over byer med deres IDer, eller sende \"-list\" til denne kommandoen."
-    },
-    {
       "loc": "NKS_FORECAST_SETTINGS_DESC",
       "text": "Denne delen lar deg konfigurere hvordan prognosen fungerer."
     },

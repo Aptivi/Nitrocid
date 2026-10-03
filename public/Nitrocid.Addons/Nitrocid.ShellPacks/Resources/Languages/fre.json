@@ -325,10 +325,6 @@
       "text": "Message {0} de {1} supprimé de {2}. {3} messages restants à analyser."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "Message {0} de {1} supprimé de la boîte de réception. {2} messages restants à analyser."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "Échec de l'ouverture du fichier. Sortie du shell ..."
     },
@@ -491,10 +487,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "Entrez les chemins de fichiers vers les pièces jointes. Appuyez sur ENTRÉE sur un chemin vierge pour confirmer."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "Ouvre un message chiffré"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1249,10 +1241,6 @@
       "text": "Aucune révision."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "La connexion n'est pas encore établie."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "Saisissez l'adresse du serveur :"
     },
@@ -1281,10 +1269,6 @@
       "text": "Ouvre le client de messagerie POP3"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "Le courrier POP3 revient à partir de la version 0.0.20.0, mais nous ne prévoyons pas actuellement de le publier dans cette version. Attendez la prochaine version."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "Saisissez l'URL du flux RSS"
     },
@@ -1295,10 +1279,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "Ouvre un lecteur de flux RSS interactif TUI"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "Je ne peux rien extraire."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1479,18 +1459,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "Définit un agent utilisateur"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "Ajout d'un en-tête qui existe déjà."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "Suppression de l'en-tête qui n'existe pas."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "Modification d'un en-tête qui n'existe pas."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1991,10 +1959,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "Le shell JSON n'a pas réussi à définir un élément."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "Message {0} de {1} déplacé. {2} messages restants à analyser."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

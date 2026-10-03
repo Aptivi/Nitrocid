@@ -1063,20 +1063,8 @@
       "text": "संसाधनों में मौजूद स्ट्रिंग का विशिष्ट भाषा में अनुवाद करने का परीक्षण"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTPLACES_DESC",
-      "text": "कंसोल के लिए एक स्ट्रिंग प्रिंट करता है और पाए गए प्लेसहोल्डर्स को पार्स करता है"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTREGEXP_DESC",
       "text": "रेगुलर एक्सप्रेशन सुविधा का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_DESC",
-      "text": "255 रंगों के लिए VT अनुक्रम का परीक्षण करें"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTRUETEST_DESC",
-      "text": "सच्चे रंग के लिए वीटी अनुक्रम का परीक्षण करें"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATION_DESC",
@@ -1089,42 +1077,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PROBEHARDWARE_DESC",
       "text": "हार्डवेयर की जांच करने वाले परीक्षण"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_DESC",
-      "text": "स्ट्रिंग और स्ट्रिंग सरणी के साथ सूची लेखक का परीक्षण करें"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_DESC",
-      "text": "पूर्णांक और पूर्णांक सरणी के साथ सूची लेखक का परीक्षण करें"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_DESC",
-      "text": "सूची लेखक को चार और चार सरणी के साथ परीक्षण करें"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_NORMALLIST",
-      "text": "सामान्य स्ट्रिंग सूची:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_ARRAYLIST",
-      "text": "सरणी स्ट्रिंग सूची:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_NORMALLIST",
-      "text": "सामान्य पूर्णांक सूची:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERINT_ARRAYLIST",
-      "text": "सरणी पूर्णांक सूची:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_NORMALLIST",
-      "text": "सामान्य चार सूची:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERCHAR_ARRAYLIST",
-      "text": "सरणी चार सूची:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_NETWORK_ENABLERPC_NAME",
@@ -1221,42 +1173,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS",
       "text": "चरित्र हटा दिया गया।"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_DESC",
-      "text": "स्ट्रिंग और स्ट्रिंग सरणी के साथ शब्दकोश लेखक का परीक्षण करें"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_DESC",
-      "text": "शब्दकोश लेखक का परीक्षण चार और चार सरणी के साथ करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_DESC",
-      "text": "पूर्णांक और पूर्णांक सरणी के साथ शब्दकोश लेखक का परीक्षण करें"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_NORMALLIST",
-      "text": "सामान्य स्ट्रिंग शब्दकोश:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_ARRAYLIST",
-      "text": "सरणी स्ट्रिंग शब्दकोश:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_NORMALLIST",
-      "text": "सामान्य पूर्णांक शब्दकोश:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_ARRAYLIST",
-      "text": "सरणी पूर्णांक शब्दकोश:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_NORMALLIST",
-      "text": "सामान्य चार शब्दकोश:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERCHAR_ARRAYLIST",
-      "text": "सरणी चार शब्दकोश:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_FILESYSTEM_PROGRESS_NAME",
@@ -1667,10 +1583,6 @@
       "text": "CRC32 का उपयोग करके एक स्ट्रिंग को एन्क्रिप्ट करता है"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTTABLE_DESC",
-      "text": "तालिका की कार्यक्षमता का परीक्षण करता है"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_EDITLINE_DESC",
       "text": "निर्दिष्ट पंक्ति को संपादित करता है"
     },
@@ -1733,10 +1645,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_MAINTENANCE_DESC",
       "text": "सुरक्षित मोड की तरह, लेकिन बहु-उपयोगकर्ता और कुछ अनुकूलन को भी अक्षम करता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
-      "text": "रंगों को पुनरारंभ करने की आवश्यकता नहीं है, लेकिन अधिकांश सेटिंग्स को पुनरारंभ करने की आवश्यकता होती है।"
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -2279,10 +2187,6 @@
       "text": "शुरू हो जाओ!"
     },
     {
-      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1",
-      "text": "बधाई हो! अब आपके पास एक उपयोगकर्ता खाता है, {0}!"
-    },
-    {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT2",
       "text": "कर्नेल का उपयोग आरंभ करने और अपने नए खाते में लॉग-इन करने के लिए ENTER कुंजी दबाएँ। आपको कामयाबी मिले!"
     },
@@ -2297,10 +2201,6 @@
     {
       "loc": "NKS_USERS_EXCEPTION_USERLOCKED",
       "text": "मौजूदा खाता लॉक होने पर उसे संशोधित करने का प्रयास किया जा रहा है"
-    },
-    {
-      "loc": "NKS_USERS_EXCEPTION_UNENCRYPTEDPASS",
-      "text": "उपयोगकर्ताओं की सूची में अनएन्क्रिप्टेड पासवर्ड जोड़ने का प्रयास किया जा रहा है।"
     },
     {
       "loc": "NKS_USERS_EXCEPTION_CANNOTVALIDATE_ADD",
@@ -3279,10 +3179,6 @@
       "text": "कर्नेल ऐडऑन आरंभ करने में विफल"
     },
     {
-      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_FINALIZEFAILED",
-      "text": "ऐडऑन को अंतिम रूप देने में विफल. नीचे दिए गए ऐड-ऑन अंतिम रूप देने में विफल रहे हैं:"
-    },
-    {
       "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_STOPFAILED",
       "text": "ऐडऑन रोकने में विफल. नीचे दिए गए ऐडऑन रोकने में विफल रहे हैं:"
     },
@@ -3551,14 +3447,6 @@
       "text": "चयनित प्रविष्टि कोई फ़ाइल नहीं है."
     },
     {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT",
-      "text": "हैश ड्राइवर दर्ज करें:"
-    },
-    {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERNOTFOUND",
-      "text": "हैश ड्राइवर नहीं मिला."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_EXPECTEDHASHPROMPT",
       "text": "अपना अपेक्षित हैश दर्ज करें"
     },
@@ -3581,10 +3469,6 @@
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_ISDIRECTORY",
       "text": "एक निर्देशिका है"
-    },
-    {
-      "loc": "NKS_MISC_INTERACTIVES_FMTUI_ISSELECTED",
-      "text": "चयनित है"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILESIZE",
@@ -3799,10 +3683,6 @@
       "text": "लोड हो रहा है..."
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_INVALIDINVOCATION",
-      "text": "यह प्रॉपर्टी केवल थ्रेड्स के साथ कनेक्शन के लिए मान्य है। इंस्टेंस कनेक्शन के लिए, इस प्रॉपर्टी को कॉल करने के बजाय इंस्टेंस पर ही उपयुक्त प्रॉपर्टी को कॉल करें।"
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_SELECT_PROMPT",
       "text": "एक कनेक्शन चुनें. यदि आपके पास कोई कनेक्शन नहीं है, तो आपको एक नया कनेक्शन बनाना होगा। इसके अतिरिक्त, आप सर्वर से शीघ्रता से जुड़ने के लिए स्पीड डायल सुविधा का उपयोग कर सकते हैं।"
     },
@@ -3841,10 +3721,6 @@
     {
       "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_TYPEEXISTS",
       "text": "कनेक्शन प्रकार पहले से मौजूद है"
-    },
-    {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "शेल {0} नेटवर्क कनेक्शन स्वीकार नहीं करता है."
     },
     {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
@@ -3991,14 +3867,6 @@
       "text": "असामान्य वातावरण सूचना"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_TIPS_ADDONNEEDED",
-      "text": "कि आप नाइट्रोसिड के पूर्ण निर्माण के साथ भेजे गए कर्नेल ऐडऑन से अतिरिक्त युक्तियाँ प्राप्त कर सकते हैं?"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_TIPS_PREFIX",
-      "text": "प्रो टिप: क्या आप जानते हैं"
-    },
-    {
       "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS",
       "text": "कुंजी बाइंडिंग"
     },
@@ -4095,20 +3963,8 @@
       "text": "विविध परीक्षण"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_MODIFICATION",
-      "text": "कर्नेल संशोधन परीक्षण"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_NETWORK",
       "text": "नेटवर्क सिस्टम परीक्षण"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_SHELL",
-      "text": "यूईएसएच शेल परीक्षण"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS",
-      "text": "उपयोगकर्ता परीक्षण"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_NO",
@@ -4193,10 +4049,6 @@
     {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "यह कमांड नहीं मिला।"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
-      "text": "एक यादृच्छिक कर्नेल टिप दिखाता है"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_ERROR",
@@ -4847,22 +4699,6 @@
       "text": "अपनी भाषा चुनें"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC",
-      "text": "दोहरे फलक इंटरेक्शन के साथ इंटरैक्टिव टीयूआई प्रणाली का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETEST_DESC",
-      "text": "एकल फलक इंटरेक्शन के साथ इंटरैक्टिव टीयूआई प्रणाली का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIINFOPANETESTREFRESHING_DESC",
-      "text": "एकल फलक इंटरैक्शन के साथ और दूसरे फलक की जानकारी को ताज़ा करने के साथ इंटरैक्टिव टीयूआई प्रणाली का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_COLORTEST_PROMPT",
-      "text": "1 से 255 तक की रंग संख्या लिखें:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_DEBUG_DESC",
       "text": "डिबगर को सक्षम करता है"
     },
@@ -4919,40 +4755,12 @@
       "text": "नेटवर्क उपलब्धता है"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINT_DESC",
-      "text": "कंसोल के लिए एक स्ट्रिंग प्रिंट करें"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTD_DESC",
       "text": "डिबगर करने के लिए एक स्ट्रिंग प्रिंट करें"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTDF_DESC",
       "text": "फ़ॉर्मेटिंग के साथ डीबगर करने के लिए एक स्ट्रिंग प्रिंट करें"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTF_DESC",
-      "text": "फ़ॉर्मेटिंग के साथ कंसोल करने के लिए एक स्ट्रिंग प्रिंट करें"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTHIGHLIGHTED_DESC",
-      "text": "हाइलाइट के साथ कंसोल करने के लिए एक स्ट्रिंग प्रिंट करें"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEP_DESC",
-      "text": "कंसोल के लिए एक विभाजक प्रिंट करें"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTSEPF_DESC",
-      "text": "फ़ॉर्मेटिंग के साथ कंसोल करने के लिए एक विभाजक प्रिंट करें"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNEWLINES_DESC",
-      "text": "स्ट्रिंग में नई पंक्तियों के साथ कंसोल करने के लिए एक स्ट्रिंग प्रिंट करें"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_PRINTWITHNULLS_DESC",
-      "text": "शून्य वर्णों के साथ कंसोल करने के लिए एक स्ट्रिंग प्रिंट करें"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_RDEBUG_DESC",
@@ -4989,10 +4797,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_SENDNOTIFICATIONSIMPLE_TEST_TITLE",
       "text": "सरल अधिसूचना का परीक्षण करें"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTARGS_DESC",
-      "text": "तर्कों का परीक्षण करता है"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRYPTORNG_DESC",
@@ -5035,46 +4839,6 @@
       "text": "एकाधिक फ़ोल्डर चयनकर्ता का परीक्षण करता है"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONS_DESC",
-      "text": "सूचनात्मक बॉक्स में बटनों का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUT_DESC",
-      "text": "सूचनात्मक बॉक्स में रंगीन इनपुट बॉक्स का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUT_DESC",
-      "text": "सूचना बॉक्स में इनपुट बॉक्स का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTION_DESC",
-      "text": "सूचनात्मक बॉक्स में इनपुट एकाधिक चयन शैली का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTION_DESC",
-      "text": "सूचनात्मक बॉक्स में इनपुट चयन शैली का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTMULTISELECTION_DESC",
-      "text": "इनपुट एकाधिक चयन शैली का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTION_DESC",
-      "text": "इनपुट चयन शैली का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_DESC",
-      "text": "सूची प्रविष्टि लेखक का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT1",
-      "text": "इंडेंट 1:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTENTRYWRITER_INDENT2",
-      "text": "इंडेंट 2:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTPROGRESSHANDLER_DESC",
       "text": "प्रगति हैंडलर का परीक्षण करता है"
     },
@@ -5093,18 +4857,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTRNG_DESC",
       "text": "यादृच्छिक संख्या जनरेटर का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_DESC",
-      "text": "कंसोल के लिए स्क्रीन सुविधा का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSCREEN_FAILED",
-      "text": "स्क्रीन रेंडर करने में विफल:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSWITCHES_DESC",
-      "text": "परीक्षण स्विच"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID",
@@ -7103,50 +6855,6 @@
       "text": "प्रवेश बिंदु प्राप्त करने में विफल."
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXBUTTONSTITLED_DESC",
-      "text": "सूचना बॉक्स (शीर्षक) में बटनों का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXCOLOREDINPUTTITLED_DESC",
-      "text": "सूचना बॉक्स (शीर्षक) में रंगीन इनपुट बॉक्स का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXINPUTTITLED_DESC",
-      "text": "सूचना बॉक्स (शीर्षक) में इनपुट बॉक्स का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXMULTISELECTIONTITLED_DESC",
-      "text": "सूचना बॉक्स (शीर्षक) में इनपुट बहु चयन शैली का परीक्षण करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGE_DESC",
-      "text": "सूचना बॉक्स में इनपुट चयन शैली का परीक्षण करता है (स्क्रॉलिंग और पेजिंग का परीक्षण करने के लिए बड़ी संख्या में आइटम)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLE_DESC",
-      "text": "सूचना बॉक्स में इनपुट बहु-चयन शैली का परीक्षण करता है (स्क्रॉलिंग और पेजिंग का परीक्षण करने के लिए बड़ी संख्या में आइटम)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGEMULTIPLETITLED_DESC",
-      "text": "सूचना बॉक्स में इनपुट बहु चयन शैली का परीक्षण करता है (स्क्रॉलिंग और पेजिंग का परीक्षण करने के लिए बड़ी संख्या में आइटम) (शीर्षक"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONLARGETITLED_DESC",
-      "text": "सूचना बॉक्स में इनपुट चयन शैली का परीक्षण करता है (स्क्रॉलिंग और पेजिंग का परीक्षण करने के लिए बड़ी संख्या में आइटम) (शीर्षक"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTINFOBOXSELECTIONTITLED_DESC",
-      "text": "सूचना बॉक्स में इनपुट चयन शैली का परीक्षण करता है (शीर्षक"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGE_DESC",
-      "text": "इनपुट चयन शैली का परीक्षण करता है (स्क्रॉलिंग और पेजिंग का परीक्षण करने के लिए बड़ी संख्या में आइटम)"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTINPUTSELECTIONLARGEMULTIPLE_DESC",
-      "text": "इनपुट बहु-चयन शैली का परीक्षण करता है (स्क्रॉलिंग और पेजिंग का परीक्षण करने के लिए बड़ी संख्या में आइटम)"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_NOFRAME",
       "text": "फ़्रेम नहीं मिल पा रहा"
     },
@@ -7497,10 +7205,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ALARM",
       "text": "अलार्म श्रोता लोड करने में विफल"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_FAILED_FINALIZE_ADDONS",
-      "text": "ऐडऑन को अंतिम रूप देने में विफल"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_MOTD",
@@ -7929,10 +7633,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC",
       "text": "पासवर्ड बदलने के लिए उपयोगकर्ता नाम"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC",
-      "text": "वर्तमान उपयोगकर्ता पासवर्ड"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC",
@@ -8635,10 +8335,6 @@
       "text": "अतिरिक्त - कैलेंडर"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_COLORCONVERTER",
-      "text": "अतिरिक्त - रंग परिवर्तक"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CONTACTS",
       "text": "अतिरिक्त - संपर्क"
     },
@@ -8651,10 +8347,6 @@
       "text": "अतिरिक्त - शब्दकोश"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_DOCKING",
-      "text": "अतिरिक्त - डॉकिंग"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_FORECAST",
       "text": "अतिरिक्त - पूर्वानुमान"
     },
@@ -8665,10 +8357,6 @@
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO",
       "text": "अतिरिक्त - थीम स्टूडियो"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_TIPS",
-      "text": "अतिरिक्त - कर्नेल युक्तियाँ"
     },
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_TODO",
@@ -8719,10 +8407,6 @@
       "text": "अतिरिक्त - तिथियाँ"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_HASHES",
-      "text": "अतिरिक्त - हैश"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_CHATBOT",
       "text": "अतिरिक्त - चैटबॉट AI"
     },
@@ -8745,14 +8429,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_DESC",
       "text": "आप किस रैंडम नंबर जनरेटर ड्राइवर का उपयोग करना चाहेंगे?"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_NAME",
-      "text": "वर्तमान नेटवर्क ड्राइवर"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTNETWORKDRIVER_DESC",
-      "text": "आप किस नेटवर्क ड्राइवर का उपयोग करना चाहेंगे?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTFILESYSTEMDRIVER_NAME",
@@ -8853,14 +8529,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS",
       "text": "आपकी सेटिंग्स इंस्टेंस में डुप्लिकेट कुंजियाँ मौजूद हैं। कृपया वेरिएबल की दोबारा जाँच करें ताकि यह सुनिश्चित हो सके कि यह एक से अधिक बार मौजूद न हो।"
-    },
-    {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_CLOSE",
-      "text": "बंद करना"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN",
-      "text": "शट डाउन"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE",

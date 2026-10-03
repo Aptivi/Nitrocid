@@ -120,10 +120,6 @@
       "text": "부팅 시 커널 수정을 자동으로 시작합니다."
     },
     {
-      "loc": "NKS_MODS_MODMAN_MODFILENEEDED",
-      "text": "모드 파일이 지정되지 않았습니다."
-    },
-    {
       "loc": "NKS_MODS_MODUPDATING",
       "text": "이미 설치된 모드를 설치하려고 합니다. 모드 업데이트 중..."
     },

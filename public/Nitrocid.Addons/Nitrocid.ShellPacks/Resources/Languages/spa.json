@@ -304,10 +304,6 @@
       "text": "Mensaje {0} de {1} eliminado de {2}. Quedan {3} mensajes por analizar."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "Mensaje {0} de {1} eliminado de la bandeja de entrada. Quedan {2} mensajes por analizar."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "Fallo al abrir el archivo. Saliendo de la carcasa ..."
     },
@@ -470,10 +466,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "Ingrese las rutas de los archivos a los adjuntos. Presione ENTER en una ruta en blanco para confirmar."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "Abre un mensaje encriptado"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1228,10 +1220,6 @@
       "text": "Sin revisión."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "La conexión aún no se ha establecido."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "Introduzca la dirección del servidor:"
     },
@@ -1260,10 +1248,6 @@
       "text": "Abre el cliente de correo POP3."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "El correo POP3 regresa desde 0.0.20.0, pero actualmente no planeamos lanzarlo en esta versión. Espere la próxima versión."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "Ingrese la URL de la fuente RSS"
     },
@@ -1274,10 +1258,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "Abre un lector de feeds RSS interactivo TUI"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "No puedo extraer nada."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1458,18 +1438,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "Establece un agente de usuario"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "Agregar encabezado que ya existe."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "Eliminando encabezado que no existe."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "Editando encabezado que no existe."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1970,10 +1938,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "El shell JSON no pudo establecer un elemento."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "Mensaje {0} de {1} movido. Quedan {2} mensajes por analizar."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

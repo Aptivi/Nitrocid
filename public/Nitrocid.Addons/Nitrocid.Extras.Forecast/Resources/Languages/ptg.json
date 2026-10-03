@@ -73,10 +73,6 @@
       "text": "Insira sua chave de API:"
     },
     {
-      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
-      "text": "Você pode consultar no link abaixo a lista de cidades com seus IDs, ou passar \"-list\" para este comando."
-    },
-    {
       "loc": "NKS_FORECAST_SETTINGS_DESC",
       "text": "Esta seção permite configurar como o Forecast funciona."
     },

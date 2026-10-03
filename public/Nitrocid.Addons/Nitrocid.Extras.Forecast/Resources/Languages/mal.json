@@ -66,10 +66,6 @@
       "text": "Masukkan kunci API anda:"
     },
     {
-      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
-      "text": "Anda boleh sama ada merujuk pautan di bawah untuk senarai bandar dengan ID mereka, atau, hantar \"-list\" kepada arahan ini."
-    },
-    {
       "loc": "NKS_FORECAST_SETTINGS_DESC",
       "text": "Bahagian ini membolehkan anda mengkonfigurasi cara Ramalan berfungsi."
     },

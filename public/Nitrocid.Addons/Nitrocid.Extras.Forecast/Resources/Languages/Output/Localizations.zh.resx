@@ -100,9 +100,6 @@
   <data name="NKS_FORECAST_APIKEYPROMPT" xml:space="preserve">
     <value>輸入您的 API 金鑰：</value>
   </data>
-  <data name="NKS_FORECAST_WEATHEROLD_CITYLISTLINK" xml:space="preserve">
-    <value>您可以查閱以下連結以獲取城市列表及其 ID，或將“-list”傳遞給此命令。</value>
-  </data>
   <data name="NKS_FORECAST_SETTINGS_DESC" xml:space="preserve">
     <value>此部分可讓您配置 Forecast 的工作方式。</value>
   </data>

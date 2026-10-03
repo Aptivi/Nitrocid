@@ -279,10 +279,6 @@
       "text": "Tin nhắn {0} từ {1} đã bị xóa khỏi {2}. Còn {3} tin nhắn cần phân tích."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "Tin nhắn {0} từ {1} đã bị xóa khỏi hộp thư đến. Còn {2} tin nhắn cần phân tích."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "Không mở được tệp. Đang thoát khỏi shell..."
     },
@@ -445,10 +441,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "Nhập đường dẫn tệp đến tệp đính kèm. Nhấn ENTER trên đường dẫn trống để xác nhận."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "Mở một tin nhắn được mã hóa"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1203,10 +1195,6 @@
       "text": "Không cần sửa đổi."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "Kết nối vẫn chưa được thiết lập."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "Nhập địa chỉ máy chủ:"
     },
@@ -1235,10 +1223,6 @@
       "text": "Mở ứng dụng thư POP3"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "Thư POP3 đang trở lại từ 0.0.20.0, nhưng hiện tại chúng tôi không có kế hoạch phát hành trong phiên bản này. Hãy đợi phiên bản tiếp theo."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "Nhập URL nguồn cấp RSS"
     },
@@ -1249,10 +1233,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "Mở trình đọc nguồn cấp RSS tương tác TUI"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "Không thể trích xuất được gì cả."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1433,18 +1413,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "Thiết lập một tác nhân người dùng"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "Thêm tiêu đề đã tồn tại."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "Xóa tiêu đề không tồn tại."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "Đang chỉnh sửa tiêu đề không tồn tại."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1945,10 +1913,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "Shell JSON không thể thiết lập mục."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "Tin nhắn {0} từ {1} đã được di chuyển. Còn {2} tin nhắn cần phân tích."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

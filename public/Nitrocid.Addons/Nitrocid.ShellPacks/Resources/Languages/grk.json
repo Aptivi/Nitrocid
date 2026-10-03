@@ -280,10 +280,6 @@
       "text": "Το μήνυμα {0} από {1} διαγράφηκε από {2}. Απομένουν {3} μηνύματα για ανάλυση."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "Το μήνυμα {0} από τον χρήστη {1} διαγράφηκε από τα εισερχόμενα. Απομένουν {2} μηνύματα για ανάλυση."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "Απέτυχε το άνοιγμα του αρχείου. Έξοδος από το κέλυφος..."
     },
@@ -446,10 +442,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "Εισαγάγετε διαδρομές αρχείων στα συνημμένα. Πατήστε ENTER σε μια κενή διαδρομή για επιβεβαίωση."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "Ανοίγει ένα κρυπτογραφημένο μήνυμα"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1204,10 +1196,6 @@
       "text": "Καμία αναθεώρηση."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "Η σύνδεση δεν έχει δημιουργηθεί ακόμα."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "Εισαγάγετε τη διεύθυνση διακομιστή:"
     },
@@ -1236,10 +1224,6 @@
       "text": "Ανοίγει το πρόγραμμα-πελάτη αλληλογραφίας POP3"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "Η αλληλογραφία POP3 επιστρέφει από την 0.0.20.0, αλλά προς το παρόν δεν σκοπεύουμε να την κυκλοφορήσουμε σε αυτήν την έκδοση. Περιμένετε την επόμενη έκδοση."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "Εισαγάγετε τη διεύθυνση URL της ροής RSS"
     },
@@ -1250,10 +1234,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "Ανοίγει ένα διαδραστικό πρόγραμμα ανάγνωσης ροών RSS TUI"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "Δεν μπορώ να εξαγάγω τίποτα."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1434,18 +1414,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "Ορίζει έναν παράγοντα χρήστη"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "Προσθήκη κεφαλίδας που υπάρχει ήδη."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "Αφαίρεση κεφαλίδας που δεν υπάρχει."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "Επεξεργασία κεφαλίδας που δεν υπάρχει."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1946,10 +1914,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "Το κέλυφος JSON απέτυχε να ορίσει ένα στοιχείο."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "Το μήνυμα {0} από τον χρήστη {1} μετακινήθηκε. Απομένουν {2} μηνύματα για ανάλυση."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

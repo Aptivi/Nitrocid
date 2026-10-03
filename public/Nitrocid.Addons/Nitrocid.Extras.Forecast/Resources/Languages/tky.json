@@ -64,10 +64,6 @@
       "text": "API anahtarınızı girin:"
     },
     {
-      "loc": "NKS_FORECAST_WEATHEROLD_CITYLISTLINK",
-      "text": "Şehirlerin ID'leri ile birlikte listesine aşağıdaki bağlantıdan ulaşabilirsiniz veya bu komuta \"-list\" verebilirsiniz."
-    },
-    {
       "loc": "NKS_FORECAST_SETTINGS_DESC",
       "text": "Bu bölüm Forecast'ın nasıl çalışacağını yapılandırmanızı sağlar."
     },

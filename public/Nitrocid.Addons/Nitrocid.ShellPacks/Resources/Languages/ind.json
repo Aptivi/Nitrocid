@@ -279,10 +279,6 @@
       "text": "{1} se {0} sandesh {2} se hata diya gaya. {3} sandesh paars karane ke lie shesh hai."
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX",
-      "text": "inaboks se {0} sandesh {0} hatae gae. {2} sandesh paars karane ke lie shesh hai."
-    },
-    {
       "loc": "NKS_SHELLPACKS_FILESHELLS_OPENFAILED",
       "text": "fail kholane mein asamarth. shel se baahar ..."
     },
@@ -445,10 +441,6 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT",
       "text": "anulagnakon ke lie fail path darj karen. pushti karane ke lie rikt path par aintair dabaen."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC",
-      "text": "ek enkripted sandesh kholata hai"
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD",
@@ -1203,10 +1195,6 @@
       "text": "koee sanshodhan nahin."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION",
-      "text": "kanekshan abhee tak sthaapit nahin hua hai."
-    },
-    {
       "loc": "NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT",
       "text": "sarvar pata darj karen:"
     },
@@ -1235,10 +1223,6 @@
       "text": "pop3 mel klaint kholata hai"
     },
     {
-      "loc": "NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING",
-      "text": "pop3 mel 0.0.20.0 se vaapas aa raha hai, lekin ham vartamaan mein ise is sanskaran mein jaaree karane kee yojana nahin bana rahe hain. agale sanskaran kee prateeksha karen."
-    },
-    {
       "loc": "NKS_SHELLPACKS_RSS_FEEDURLPROMPT",
       "text": "rss feed url darj karen"
     },
@@ -1249,10 +1233,6 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC",
       "text": "ek intaraiktiv rss feed reedar tui kholata hai"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT",
-      "text": "kuchh bhee nahin nikaala ja sakata."
     },
     {
       "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK",
@@ -1433,18 +1413,6 @@
     {
       "loc": "NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC",
       "text": "upayogakarta ejent set karata hai"
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
-      "text": "pahale se maujood sheershalekh jodana."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
-      "text": "jo sheershalekh maujood nahin hai use hataana."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
-      "text": "jo sheershalekh maujood nahin hai use sampaadit karana."
     },
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC",
@@ -1945,10 +1913,6 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_SETITEMFAILED",
       "text": "json shel aaitam set karane mein viphal raha."
-    },
-    {
-      "loc": "NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX",
-      "text": "{1} se sandesh {0} ko sthaanaantarit kar diya gaya. paars karane ke lie {2} sandesh shesh hain."
     },
     {
       "loc": "NKS_SHELLPACKS_MAIL_ATTACHMENTS",

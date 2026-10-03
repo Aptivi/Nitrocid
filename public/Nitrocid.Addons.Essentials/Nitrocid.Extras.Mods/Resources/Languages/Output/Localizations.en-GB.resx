@@ -1,124 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_MODS_MODCANTLOAD" xml:space="preserve">
-    <value>Mod can&apos;t be loaded because of the following: </value>
+  </resheader>
+  <data name="NKS_MODS_MODCANTLOAD" xml:space="preserve">
+    <value>Mod can't be loaded because of the following: </value>
   </data>
   <data name="NKS_MODS_MODSTARTED" xml:space="preserve">
     <value>{0} v{1} started</value>
@@ -181,7 +122,7 @@
     <value>Mod has already been started!</value>
   </data>
   <data name="NKS_MODS_MODHASNTSTARTED" xml:space="preserve">
-    <value>Mod hasn&apos;t started yet!</value>
+    <value>Mod hasn't started yet!</value>
   </data>
   <data name="NKS_MODS_MODNEEDSUPGRADE" xml:space="preserve">
     <value>Contact the vendor of the mod to upgrade the mod to the compatible version.</value>
@@ -190,7 +131,7 @@
     <value>Blacklisted mods</value>
   </data>
   <data name="NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC" xml:space="preserve">
-    <value>Write the filenames of the mods that will not run on startup. When you&apos;re finished, write &quot;q&quot;. Write a minus sign next to the path to remove an existing mod.</value>
+    <value>Write the filenames of the mods that will not run on startup. When you're finished, write "q". Write a minus sign next to the path to remove an existing mod.</value>
   </data>
   <data name="NKS_MODS_MODBLACKLISTED" xml:space="preserve">
     <value>Mod {0} is blacklisted.</value>
@@ -200,9 +141,6 @@
   </data>
   <data name="NKS_MODS_SETTINGS_AUTOSTART_DESC" xml:space="preserve">
     <value>Automatically start the kernel modifications on boot.</value>
-  </data>
-  <data name="NKS_MODS_MODMAN_MODFILENEEDED" xml:space="preserve">
-    <value>Mod file is not specified.</value>
   </data>
   <data name="NKS_MODS_MODUPDATING" xml:space="preserve">
     <value>Trying to install an already-installed mod. Updating mod...</value>
@@ -238,10 +176,10 @@
     <value>The mod is not strongly signed. It may contain untrusted code.</value>
   </data>
   <data name="NKS_MODS_MODINCOMPATIBLE1" xml:space="preserve">
-    <value>Mod can&apos;t be loaded because there&apos;s an incompatibility between this version of the kernel and this mod:</value>
+    <value>Mod can't be loaded because there's an incompatibility between this version of the kernel and this mod:</value>
   </data>
   <data name="NKS_MODS_MODINCOMPATIBLE2" xml:space="preserve">
-    <value>Here&apos;s a list of errors that may help you investigate this incompatibility:</value>
+    <value>Here's a list of errors that may help you investigate this incompatibility:</value>
   </data>
   <data name="NKS_MODS_MODNEEDSAPIEXACT" xml:space="preserve">
     <value>Mod {0} requires exactly an API version {1}, but you have version {2}. Upgrading Nitrocid and/or the mod usually helps. Mod parsing failed.</value>
@@ -268,7 +206,7 @@
     <value>File path</value>
   </data>
   <data name="NKS_MODS_MANTUI_HASNOCONTENTS" xml:space="preserve">
-    <value>Unfortunately, this manual page doesn&apos;t have any contents. However, this documentation might have been found under the mod vendor&apos;s webpage. If you still can&apos;t find this documentation, ask the developers of the mod for more information.</value>
+    <value>Unfortunately, this manual page doesn't have any contents. However, this documentation might have been found under the mod vendor's webpage. If you still can't find this documentation, ask the developers of the mod for more information.</value>
   </data>
   <data name="NKS_MODS_MANTUI_PRESENTED" xml:space="preserve">
     <value>Presented to you by</value>
@@ -283,7 +221,7 @@
     <value>No revision.</value>
   </data>
   <data name="NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND" xml:space="preserve">
-    <value>Can&apos;t execute custom function with non-existent mod</value>
+    <value>Can't execute custom function with non-existent mod</value>
   </data>
   <data name="NKS_MODS_EXCEPTION_DEPSFAILED" xml:space="preserve">
     <value>Dependency unsatisfied. Failed dependencies are listed below:</value>
@@ -298,7 +236,7 @@
     <value>Tried to initialise the manual file {0} for nonexistent mod {1}.</value>
   </data>
   <data name="NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD" xml:space="preserve">
-    <value>Tried to initialise the manual file {0} which doesn&apos;t exist for mod {1}.</value>
+    <value>Tried to initialise the manual file {0} which doesn't exist for mod {1}.</value>
   </data>
   <data name="NKS_MODS_TUI_MODNAME" xml:space="preserve">
     <value>Name</value>
@@ -307,7 +245,7 @@
     <value>Allow loading untrusted mods</value>
   </data>
   <data name="NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC" xml:space="preserve">
-    <value>If set to true, the kernel won&apos;t error out upon loading mods that don&apos;t have the signed public key.</value>
+    <value>If set to true, the kernel won't error out upon loading mods that don't have the signed public key.</value>
   </data>
   <data name="NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC" xml:space="preserve">
     <value>Show the count of kernel modification commands when listing them in the help command</value>
@@ -316,10 +254,10 @@
     <value>Starting or stopping mods not allowed on safe mode.</value>
   </data>
   <data name="NKS_MODS_INTERMOD_NOFIELDINFO" xml:space="preserve">
-    <value>Can&apos;t get field info for</value>
+    <value>Can't get field info for</value>
   </data>
   <data name="NKS_MODS_EXCEPTION_DEPNOMODVER" xml:space="preserve">
-    <value>Can&apos;t determine mod version</value>
+    <value>Can't determine mod version</value>
   </data>
   <data name="NKS_MODS_UNKNOWNLOADEREXCEPTION" xml:space="preserve">
     <value>Unknown loader exception</value>
@@ -358,16 +296,16 @@
     <value>Reload all</value>
   </data>
   <data name="NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND" xml:space="preserve">
-    <value>Can&apos;t return non-existent class type from mod assembly</value>
+    <value>Can't return non-existent class type from mod assembly</value>
   </data>
   <data name="NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND" xml:space="preserve">
-    <value>Can&apos;t find function &apos;{0}&apos; in mod &apos;{1}&apos;.</value>
+    <value>Can't find function '{0}' in mod '{1}'.</value>
   </data>
   <data name="NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND" xml:space="preserve">
-    <value>Can&apos;t find property &apos;{0}&apos; in mod &apos;{1}&apos;.</value>
+    <value>Can't find property '{0}' in mod '{1}'.</value>
   </data>
   <data name="NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND" xml:space="preserve">
-    <value>Can&apos;t find field &apos;{0}&apos; in mod &apos;{1}&apos;.</value>
+    <value>Can't find field '{0}' in mod '{1}'.</value>
   </data>
   <data name="NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS" xml:space="preserve">
     <value>This class is not an mod class</value>
@@ -388,7 +326,7 @@
     <value>Failed to install mod</value>
   </data>
   <data name="NKS_MODS_CANTSTARTORSTOP" xml:space="preserve">
-    <value>Can&apos;t start or stop this mod!</value>
+    <value>Can't start or stop this mod!</value>
   </data>
   <data name="NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC" xml:space="preserve">
     <value>Whether to start, stop, get info out of, reload, install, or uninstall a mod</value>
@@ -424,7 +362,6 @@
     <value>Manual pages may come bundled with your mods, in case they give you additional help, all in one place. You can use this interactive TUI to view the manual pages more interactively.</value>
   </data>
   <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
-    <value>Can&apos;t stop mod {0}</value>
+    <value>Can't stop mod {0}</value>
   </data>
-
 </root>
