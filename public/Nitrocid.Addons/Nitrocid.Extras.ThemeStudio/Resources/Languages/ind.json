@@ -97,6 +97,18 @@
     {
       "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
       "text": "aap is intaraiktiv tui ka istemaal karake pahale se zyaada aasaanee se theem bana sakate hain. tairminaux ke edavaansd kalar pikar se, aap apane karnel ke lie apanee pasand ke kalar ke hisaab se apanee pasand kee kastam shaanadaar theem bana sakate hain."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETODIR",
+      "text": "target directory"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMENAME",
+      "text": "thim ka nam"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMEDIR",
+      "text": "niche target directory aur theme ka naam dalen."
     }
   ]
 }

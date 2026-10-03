@@ -848,6 +848,18 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
       "text": "這使你可以配置顏色"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "遊戲和娛樂配置"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SAVERSETTINGS",
+      "text": "娛樂螢幕保護程式配置"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SPLASHESSETTINGS",
+      "text": "娛樂啟動畫面配置"
     }
   ]
 }

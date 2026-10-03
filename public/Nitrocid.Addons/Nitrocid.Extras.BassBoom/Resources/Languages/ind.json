@@ -181,6 +181,34 @@
     {
       "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
       "text": "mpaig rediyo steshan ka port"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYRADIO_DESC",
+      "text": "radio station chalata hai"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_RADIOURL_DESC",
+      "text": "radio station ka path"
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDRADIOFILE",
+      "text": "radio station safaltapurvak khola gaya."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENRADIOFILE",
+      "text": "radio station nahin khol sakta."
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOWPLAYING",
+      "text": "abhi chal raha hai"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_INSTANCES_SETTINGS",
+      "text": "BassBoom music player configaration"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_INSTANCES_SAVERSETTINGS",
+      "text": "BassBoom screensevar configuration"
     }
   ]
 }

@@ -2670,6 +2670,134 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Theip ar fháil an bhosca isteach"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Cumraíocht do shliogáin éagsúla"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_FILESTREAMFAILED",
+      "text": "Theip ar oscailt an tsrutha comhaid cartlainne"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_EXCEPTION_NOTSQL",
+      "text": "Ní ​​comhad bunachar sonraí SQL é"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NOFEEDLINK",
+      "text": "Níl nasc ag an bhfotha seo."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFEEDFAILED",
+      "text": "Ní féidir brabhsálaí an óstaigh a oscailt ag nasc an ailt."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT",
+      "text": "Cuir isteach nasc fotha RSS do do shuíomh nuachta."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDFAILED",
+      "text": "Theip ar chur leis an bhfotha nua."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_NAME",
+      "text": "Critéir scagtha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_DESC",
+      "text": "Scríobh slonn rialta chun ailt fotha RSS a scagadh. Cuirfear ailt a chomhlíonann do chritéir i bhfolach. Mar shampla, cuirfidh (deal|offer|sale) margaí, tairiscintí agus díolacháin i bhfolach."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME",
+      "text": "Cineál scagaire"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC",
+      "text": "Sonraigh sprioc an scagaire: an bhfuil tú ag iarraidh ailt a scagadh de réir ainm, de réir tuairisce, nó de réir an dá cheann?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME_NAME",
+      "text": "Scag de réir ainm"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC_NAME",
+      "text": "Scag de réir tuairisce"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAMEDESC_NAME",
+      "text": "Scag de réir ainm agus tuairisce"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT",
+      "text": "Sonraigh conas is mian leat ailt a scagadh."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_INVALIDFILTER",
+      "text": "Critéir scagaire neamhbhailí."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERFAILED",
+      "text": "Theip ar scagadh na n-alt."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "text": "Cuir fotha leis"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESHALL",
+      "text": "Athnuachan gach rud"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "text": "Oscail leathanach baile an fhotha"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERARTICLES",
+      "text": "Scag ailt"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERRESET",
+      "text": "Athshocraigh an scagaire"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED",
+      "text": "Níl an freastalaí IMAP ceangailte"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_POP3NOTCONNECTED",
+      "text": "Níl an freastalaí POP3 ceangailte"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_POP3SERVERPROMPT",
+      "text": "Cuir isteach seoladh agus port an fhreastalaí IMAP (<seoladh> nó <seoladh>:[port]):"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOPOP3",
+      "text": "Ní féidir cumraíocht an fhreastalaí POP3 a fháil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED",
+      "text": "Theip ar fháil an fhillteáin {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED",
+      "text": "Níl an freastalaí SMTP ceangailte"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_NAME",
+      "text": "Stíl pras POP3 don ríomhphost"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_DESC",
+      "text": "Scríobh an chaoi ar mhaith leat go mbeadh pras an fhreastalaí POP3. Fág bán é chun an stíl réamhshocraithe a úsáid. Déantar áitchoinneálaithe a pharsáil."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_NAME",
+      "text": "Eatramh ping POP3 a sheoladh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_DESC",
+      "text": "Scríobh an chaoi ar mhaith leat go mbeadh pras an fhreastalaí POP3. Fág bán é chun an stíl réamhshocraithe a úsáid. Déantar áitchoinneálaithe a pharsáil."
     }
   ]
 }

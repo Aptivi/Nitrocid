@@ -9105,6 +9105,534 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC",
       "text": "高圧縮"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS",
+      "text": "Unix権限を変更"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT",
+      "text": "属性"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_FLAGSPROMPT",
+      "text": "属性を選択"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT_DESC",
+      "text": "このユーザーの属性を選択"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ADMIN",
+      "text": "管理者"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ADMIN_DESC",
+      "text": "このユーザーは特権操作を実行できます"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ANONYMOUS",
+      "text": "匿名"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ANONYMOUS_DESC",
+      "text": "このユーザーはユーザー名一覧に表示されません"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_DISABLED",
+      "text": "無効"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_DISABLED_DESC",
+      "text": "このユーザーは無効化されており、サインインには使用できません"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT",
+      "text": "属性"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_EXTRAUSERPROMPT",
+      "text": "属性を選択"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_DESC",
+      "text": "このユーザーの属性を選択"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_YES_DESC",
+      "text": "追加のユーザーを作成する"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_NO_DESC",
+      "text": "追加のユーザーを作成しない"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1_NEW",
+      "text": "これでNitrocidオペレーティングシステムを使用する準備が整いました！"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_TITLE",
+      "text": "ユーザーの管理"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_DESC",
+      "text": "TUI（テキストユーザーインターフェース）を使用したユーザー管理"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_BODY",
+      "text": "このテキストユーザーインターフェースを使用して、簡単にユーザーを管理できます。"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_NEWPASSWORDPROMPT",
+      "text": "{0}の新しいパスワード:"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_NEWCONFIRMPASSWORDPROMPT",
+      "text": "{0}の新しいパスワード（確認用）:"
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDERROR",
+      "text": "ユーザーのパスワード変更中にエラーが発生しました。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTPERMISSIONS",
+      "text": "以下のリストからユーザー権限を選択してください。"
+    },
+    {
+      "loc": "NKS_SECURITY_PERMISSIONS_EXCEPTION_MANAGEMENTERROR",
+      "text": "権限の管理に失敗しました。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTFLAGS",
+      "text": "以下のリストからユーザーフラグを選択してください。"
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_FLAGMANAGEMENTERROR",
+      "text": "フラグの管理に失敗しました。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTGROUPS",
+      "text": "以下のリストからユーザーグループを選択してください。"
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_GROUPMANAGEMENTERROR",
+      "text": "グループの管理に失敗しました。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_CHANGEPASSWORD",
+      "text": "パスワードを変更"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEFLAGS",
+      "text": "フラグを管理"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEPERMS",
+      "text": "権限を管理"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEMEMBERSHIPS",
+      "text": "所属グループを管理"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_TITLE",
+      "text": "グループの管理"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_DESC",
+      "text": "TUI（テキストユーザーインターフェース）を使用したグループ管理"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_BODY",
+      "text": "このテキストユーザーインターフェースを使用して、簡単にグループを管理できます。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME",
+      "text": "グループ名"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME_PROMPT",
+      "text": "グループ名を入力してください。"
+    },
+    {
+      "loc": "NKS_USERS_GROUPS_EXCEPTION_GROUPADDFAILED",
+      "text": "グループの追加に失敗しました。"
+    },
+    {
+      "loc": "NKS_USERS_GROUPS_EXCEPTION_GROUPREMOVEFAILED",
+      "text": "グループの削除に失敗しました。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_SELECTPERMISSIONS",
+      "text": "以下のリストからグループ権限を選択してください。"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_USERMANAGER",
+      "text": "ユーザー管理"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_GROUPMANAGER",
+      "text": "グループ管理"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_FIND",
+      "text": "検索"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_FINDREGEX",
+      "text": "正規表現で検索"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FINDREGEX_PROMPT",
+      "text": "ホームページの選択肢を検索する語句を入力してください（正規表現対応）。"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_PROMPT",
+      "text": "ホームページの選択肢を検索する語句を入力してください（大文字・小文字を区別しない）。"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_NORESULTS",
+      "text": "その検索語句に該当する選択肢は見つかりませんでした。"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_SELECT",
+      "text": "以下の検索結果から選択肢を選んでください。"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_DESC",
+      "text": "テキストをASCIIアートの「牛」で表示"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC",
+      "text": "吹き出しに表示するテキスト"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC",
+      "text": "表示に使用する牛のアート名"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_INVALIDCOW",
+      "text": "無効な牛のアート名です。"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_DESC",
+      "text": "テキストをASCIIアートの「Figlet」で表示"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_ARGUMENT_TEXT_DESC",
+      "text": "Figletフォントで表示するテキスト"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_SWITCH_FIGLET_DESC",
+      "text": "表示に使用するFigletフォント"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_INVALIDFIGLET",
+      "text": "無効なFigletフォント名です。"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPMANTUI_DESC",
+      "text": "グループ管理TUIを開く"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
+      "text": "コンピュータをスリープ状態にする"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_DESC",
+      "text": "ファイルのUnixパーミッションを設定する"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC",
+      "text": "読み取り、書き込み、または実行のパーミッションを「chmod」形式の数値で指定"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_ARGUMENT_FILE_DESC",
+      "text": "Unixパーミッションを設定するファイルのパス"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETUID_DESC",
+      "text": "ユーザーIDを設定"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETGID_DESC",
+      "text": "グループIDを設定"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_STICKY_DESC",
+      "text": "スティッキービットを設定"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_DESC",
+      "text": "Unixパーミッションを計算する"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC",
+      "text": "変換方法を指定"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_USERREP_DESC",
+      "text": "ユーザー（所有者）の読み取り、書き込み、または実行パーミッション"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_GROUPREP_DESC",
+      "text": "グループの読み取り、書き込み、または実行パーミッション"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_OTHERREP_DESC",
+      "text": "その他のユーザーの読み取り、書き込み、または実行パーミッション"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC",
+      "text": "ユーザー管理TUIを開く"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
+      "text": "ヘッダーは既に存在します"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
+      "text": "削除対象のヘッダーが存在しません"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
+      "text": "編集対象のヘッダーが存在しません"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_GIT",
+      "text": "Git操作の処理中にエラーが発生しました。"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_SQL",
+      "text": "無効なSQL操作が実行されています。"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_CONFIG",
+      "text": "設定の読み込みに失敗しました。"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ADDONS",
+      "text": "カーネルアドオンを読み込み中..."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ADDONS",
+      "text": "カーネルアドオンの読み込みに失敗しました"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG",
+      "text": "設定を検索"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIGREGEX",
+      "text": "正規表現を使用して設定を検索"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPTREGEX",
+      "text": "設定項目を検索するための検索語を入力（正規表現対応）"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPT",
+      "text": "設定項目を検索するための検索語を入力"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_SELECT",
+      "text": "検索結果から設定キーを選択してください。"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_NORESULTS",
+      "text": "検索語に一致する設定キーはありません。"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_FAILED",
+      "text": "設定の検索に失敗しました"
+    },
+    {
+      "loc": "NKS_KNOWNADDONS_EXTRAS_ANIMATED",
+      "text": "拡張機能 - アニメーション"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONEMPTY",
+      "text": "パーミッション表現文字列が空です。"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTH",
+      "text": "パーミッション表現文字列の長さは3文字である必要があります。"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONINVALID",
+      "text": "指定位置の表現が無効です"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTHARRAY",
+      "text": "パーミッション表現の長さは3文字である必要があります。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMISSIONS",
+      "text": "パーミッション"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMISSIONS",
+      "text": "特殊パーミッション"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW",
+      "text": "以下のリストからハッシュドライバーを選択してください。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_NAME",
+      "text": "読み取り"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_TITLE",
+      "text": "ファイルの読み取り、またはディレクトリの照会が可能"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_NAME",
+      "text": "書き込み"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_TITLE",
+      "text": "ファイルの書き込み、またはディレクトリの変更が可能"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_NAME",
+      "text": "実行"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_TITLE",
+      "text": "ファイルの実行、またはディレクトリへのアクセス（移動）が可能"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_NAME",
+      "text": "Setuid"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_TITLE",
+      "text": "ファイルの所有者（通常はrootユーザー）の権限でファイルを実行可能"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_NAME",
+      "text": "Setgid"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_TITLE",
+      "text": "ファイルのグループ（通常は管理グループ）の権限でファイルを実行可能"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_NAME",
+      "text": "スティッキー"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_TITLE",
+      "text": "このビットが設定されたディレクトリ内のファイルは、ファイルの所有者、ディレクトリの所有者、およびrootユーザーのみが操作可能"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_NAME",
+      "text": "ユーザーパーミッション"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_DESC",
+      "text": "ここで所有者のファイルパーミッションを設定できます"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_NAME",
+      "text": "グループパーミッション"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_DESC",
+      "text": "ここでグループのファイルパーミッションを設定できます"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_NAME",
+      "text": "その他のパーミッション"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_DESC",
+      "text": "ここでその他のユーザーのファイルパーミッションを設定できます"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_NAME",
+      "text": "特殊パーミッション"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_DESC",
+      "text": "ファイルやディレクトリの特殊パーミッションを設定できます"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMSINFOBOX_NAME",
+      "text": "ここでこのファイルまたはディレクトリのパーミッションを変更できます。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMSSETFAILURE",
+      "text": "権限の設定に失敗しました"
+    },
+    {
+      "loc": "NKS_FILES_EXCEPTION_UNIXPERMWINDOWS",
+      "text": "WindowsではUnixの権限設定ツールを使用できません。"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_NAME",
+      "text": "色を切り替える"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_DESC",
+      "text": "ランダムな色の組み合わせを自動的に選択します"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_NAME",
+      "text": "時刻情報のテキスト色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_DESC",
+      "text": "時刻情報の表示色を選択します"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_NAME",
+      "text": "ベゼルの色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_DESC",
+      "text": "アナログ時計のベゼルの色を選択します"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_NAME",
+      "text": "針の色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_DESC",
+      "text": "アナログ時計の針の色を選択します"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_NAME",
+      "text": "秒針の色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_DESC",
+      "text": "アナログ時計の秒針の色を選択します"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_NAME",
+      "text": "長い形式を使用する"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_DESC",
+      "text": "時刻の表示に長い形式を使用します"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_NAME",
+      "text": "デジタル時計の色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_DESC",
+      "text": "デジタル時計の色を指定します"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_NAME",
+      "text": "日付情報の色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC",
+      "text": "日付テキストの色を指定します"
     }
   ]
 }

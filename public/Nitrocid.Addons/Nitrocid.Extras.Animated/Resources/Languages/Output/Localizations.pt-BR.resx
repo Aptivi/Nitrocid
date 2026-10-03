@@ -244,4 +244,10 @@
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC" xml:space="preserve">
     <value>Isso permite que você configure as cores</value>
   </data>
+  <data name="NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SAVERSETTINGS" xml:space="preserve">
+    <value>Configuração de protetor de tela animado</value>
+  </data>
+  <data name="NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SPLASHESSETTINGS" xml:space="preserve">
+    <value>Configuração de telas de abertura animadas</value>
+  </data>
 </root>

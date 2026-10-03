@@ -252,6 +252,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
       "text": "This allows you to configure the colours"
+    },
+    {
+      "loc": "NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SAVERSETTINGS",
+      "text": "Animated screensaver configuration"
+    },
+    {
+      "loc": "NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SPLASHESSETTINGS",
+      "text": "Animated splashes configuration"
     }
   ]
 }

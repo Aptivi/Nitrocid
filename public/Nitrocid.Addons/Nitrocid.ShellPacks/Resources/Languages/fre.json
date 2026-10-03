@@ -2715,6 +2715,134 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Échec de la récupération de la boîte de réception"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuration pour différents shells"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_FILESTREAMFAILED",
+      "text": "Échec de l'ouverture du flux de fichier d'archive"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_EXCEPTION_NOTSQL",
+      "text": "Ce n'est pas un fichier de base de données SQL"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NOFEEDLINK",
+      "text": "Ce flux ne contient pas de lien."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFEEDFAILED",
+      "text": "Impossible d'ouvrir le navigateur pour accéder au lien de l'article."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT",
+      "text": "Saisissez le lien du flux RSS de votre site d'actualités."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDFAILED",
+      "text": "Échec de l'ajout du nouveau flux."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_NAME",
+      "text": "Critères de filtrage"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_DESC",
+      "text": "Saisissez une expression régulière pour filtrer les articles du flux RSS. Les articles répondant à vos critères seront masqués. Par exemple, (deal|offer|sale) masquera les bonnes affaires, les offres et les promotions."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME",
+      "text": "Type de filtre"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC",
+      "text": "Indiquez la cible du filtre : souhaitez-vous filtrer les articles par nom, par description ou par les deux ?"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME_NAME",
+      "text": "Filtrer par nom"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC_NAME",
+      "text": "Filtrer par description"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAMEDESC_NAME",
+      "text": "Filtrer par nom et description"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT",
+      "text": "Indiquez comment vous souhaitez filtrer les articles."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_INVALIDFILTER",
+      "text": "Critères de filtrage invalides."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERFAILED",
+      "text": "Échec du filtrage des articles."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "text": "Ajouter un flux"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESHALL",
+      "text": "Tout actualiser"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "text": "Ouvrir la page d'accueil du flux"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERARTICLES",
+      "text": "Filtrer les articles"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERRESET",
+      "text": "Réinitialiser le filtre"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED",
+      "text": "Serveur IMAP non connecté"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_POP3NOTCONNECTED",
+      "text": "Serveur POP3 non connecté"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_POP3SERVERPROMPT",
+      "text": "Saisissez l'adresse et le port du serveur IMAP (<adresse> ou <adresse>:[port]) :"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOPOP3",
+      "text": "Impossible d'obtenir la configuration du serveur POP3"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED",
+      "text": "Échec de l'obtention du dossier {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED",
+      "text": "Serveur SMTP non connecté"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_NAME",
+      "text": "Style d'invite POP3 pour le courrier"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_DESC",
+      "text": "Définissez le format de l'invite du serveur POP3. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont interprétés."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_NAME",
+      "text": "Intervalle d'envoi de ping POP3"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_DESC",
+      "text": "Définissez le format de l'invite du serveur POP3. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont interprétés."
     }
   ]
 }

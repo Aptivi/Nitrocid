@@ -416,6 +416,10 @@
     {
       "loc": "NKS_MODS_CANTSTOP",
       "text": "Impossibile interrompere la mod {0}"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configurazione delle mod"
     }
   ]
 }

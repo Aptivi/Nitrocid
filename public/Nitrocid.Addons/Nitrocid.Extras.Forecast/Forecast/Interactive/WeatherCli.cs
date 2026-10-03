@@ -177,18 +177,15 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
                 return;
 
             // Let the user input the latitude and the longitude data
-            // TODO: NKS_FORECAST_WEATHER_TUI_LATLON -> Enter latitude and longitude of a city or a region below.
             InputModule[] latLon =
             [
                 new TextBoxModule()
                 {
-                    // TODO: NKS_FORECAST_WEATHER_TUI_LAT -> Latitude
                     Name = LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LAT"),
                     Description = LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LATPROMPT"),
                 },
                 new TextBoxModule()
                 {
-                    // TODO: NKS_FORECAST_WEATHER_TUI_LAT -> Latitude
                     Name = LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LON"),
                     Description = LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_LONPROMPT"),
                 },

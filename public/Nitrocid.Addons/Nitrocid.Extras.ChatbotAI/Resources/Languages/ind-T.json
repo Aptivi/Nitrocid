@@ -77,6 +77,10 @@
     {
       "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
       "text": "मौजूदा काम कर रहे AI चैटबॉट से शेल को अलग करता है"
+    },
+    {
+      "loc": "NKS_CHATBOT_SETTINGS_INSTANCES_SETTINGS",
+      "text": "चैटबॉट AI कॉन्फ़िगरेशन"
     }
   ]
 }

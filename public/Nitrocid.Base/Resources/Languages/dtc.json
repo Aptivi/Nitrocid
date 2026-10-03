@@ -9111,6 +9111,534 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC",
       "text": "Hoge compressie"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS",
+      "text": "Unix-rechten wijzigen"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT",
+      "text": "Kenmerken"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_FLAGSPROMPT",
+      "text": "Kies de kenmerken"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT_DESC",
+      "text": "Kies de kenmerken voor deze gebruiker"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ADMIN",
+      "text": "Beheerder"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ADMIN_DESC",
+      "text": "Deze gebruiker kan bevoorrechte bewerkingen uitvoeren"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ANONYMOUS",
+      "text": "Anoniem"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ANONYMOUS_DESC",
+      "text": "Deze gebruiker verschijnt niet in de lijst met gebruikersnamen"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_DISABLED",
+      "text": "Uitgeschakeld"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_DISABLED_DESC",
+      "text": "Deze gebruiker is uitgeschakeld en kan niet worden gebruikt om in te loggen"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT",
+      "text": "Kenmerken"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_EXTRAUSERPROMPT",
+      "text": "Kies de kenmerken"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_DESC",
+      "text": "Kies de kenmerken voor deze gebruiker"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_YES_DESC",
+      "text": "Een extra gebruiker toevoegen"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_NO_DESC",
+      "text": "Geen extra gebruiker toevoegen"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1_NEW",
+      "text": "Je bent nu klaar om het Nitrocid-besturingssysteem te gebruiken!"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_TITLE",
+      "text": "Gebruikers beheren"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_DESC",
+      "text": "Gebruikers beheren via de TUI voor gebruikers"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_BODY",
+      "text": "Met deze tekstuele gebruikersinterface kun je eenvoudig gebruikers beheren."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_NEWPASSWORDPROMPT",
+      "text": "Nieuw wachtwoord voor {0}:"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_NEWCONFIRMPASSWORDPROMPT",
+      "text": "Bevestig nieuw wachtwoord voor {0}:"
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDERROR",
+      "text": "Fout bij het wijzigen van het wachtwoord van een gebruiker."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTPERMISSIONS",
+      "text": "Selecteer gebruikersrechten uit de onderstaande lijst."
+    },
+    {
+      "loc": "NKS_SECURITY_PERMISSIONS_EXCEPTION_MANAGEMENTERROR",
+      "text": "Beheer van rechten mislukt."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTFLAGS",
+      "text": "Selecteer gebruikersvlaggen uit de onderstaande lijst."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_FLAGMANAGEMENTERROR",
+      "text": "Beheer van vlaggen mislukt."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTGROUPS",
+      "text": "Selecteer gebruikersgroepen uit de onderstaande lijst."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_GROUPMANAGEMENTERROR",
+      "text": "Beheer van groepen mislukt."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_CHANGEPASSWORD",
+      "text": "Wachtwoord wijzigen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEFLAGS",
+      "text": "Vlaggen beheren"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEPERMS",
+      "text": "Rechten beheren"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEMEMBERSHIPS",
+      "text": "Lidmaatschappen beheren"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_TITLE",
+      "text": "Groepen beheren"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_DESC",
+      "text": "Groepen beheren via de TUI voor groepen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_BODY",
+      "text": "Met deze tekstuele gebruikersinterface kun je eenvoudig groepen beheren."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME",
+      "text": "Groepsnaam"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME_PROMPT",
+      "text": "Voer de groepsnaam in."
+    },
+    {
+      "loc": "NKS_USERS_GROUPS_EXCEPTION_GROUPADDFAILED",
+      "text": "Groep toevoegen mislukt."
+    },
+    {
+      "loc": "NKS_USERS_GROUPS_EXCEPTION_GROUPREMOVEFAILED",
+      "text": "Groep verwijderen mislukt."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_SELECTPERMISSIONS",
+      "text": "Selecteer groepsrechten uit de onderstaande lijst."
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_USERMANAGER",
+      "text": "Gebruikersbeheer"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_GROUPMANAGER",
+      "text": "Groepsbeheer"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_FIND",
+      "text": "Zoeken"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_FINDREGEX",
+      "text": "Zoeken met regex"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FINDREGEX_PROMPT",
+      "text": "Voer een zoekterm in voor de startpagina-opties (ondersteunt reguliere expressies)."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_PROMPT",
+      "text": "Voer een zoekterm in voor de startpagina-opties (niet hoofdlettergevoelig)."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_NORESULTS",
+      "text": "Keuze niet gevonden bij deze zoekterm."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_SELECT",
+      "text": "Selecteer een keuze uit de onderstaande zoekresultaten."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_DESC",
+      "text": "Geeft tekst weer in een mooie ASCII-koe"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC",
+      "text": "Tekst om in een tekstballon weer te geven"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC",
+      "text": "Naam van de koe voor de weergave"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_INVALIDCOW",
+      "text": "Ongeldige naam voor ASCII-koe."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_DESC",
+      "text": "Geeft tekst weer in een mooie ASCII-figlet"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_ARGUMENT_TEXT_DESC",
+      "text": "Tekst om in een Figlet-lettertype weer te geven"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_SWITCH_FIGLET_DESC",
+      "text": "Figlet-lettertype voor de weergave"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_INVALIDFIGLET",
+      "text": "Ongeldige naam voor Figlet-lettertype."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPMANTUI_DESC",
+      "text": "Opent de TUI voor groepsbeheer"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
+      "text": "Zet de computer in de slaapstand"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_DESC",
+      "text": "Stelt Unix-rechten van een bestand in"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC",
+      "text": "Lees-, schrijf- of uitvoerrechten als 'chmod'-getal"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_ARGUMENT_FILE_DESC",
+      "text": "Pad naar het bestand waarvan de Unix-rechten moeten worden ingesteld"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETUID_DESC",
+      "text": "User ID instellen"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETGID_DESC",
+      "text": "Group ID instellen"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_STICKY_DESC",
+      "text": "Sticky bit instellen"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_DESC",
+      "text": "Berekent Unix-rechten"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC",
+      "text": "Geef de conversiemethode op"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_USERREP_DESC",
+      "text": "Lees-, schrijf- of uitvoerrechten voor de eigenaar (user)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_GROUPREP_DESC",
+      "text": "Lees-, schrijf- of uitvoerrechten voor de groep (group)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_OTHERREP_DESC",
+      "text": "Lees-, schrijf- of uitvoerrechten voor anderen (others)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC",
+      "text": "Opent de TUI voor gebruikersbeheer"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
+      "text": "Header bestaat al"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
+      "text": "Header bestaat niet en kan niet worden verwijderd"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
+      "text": "Header bestaat niet en kan niet worden bewerkt"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_GIT",
+      "text": "Er is een fout opgetreden bij het verwerken van uw verzoek voor Git-bewerkingen."
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_SQL",
+      "text": "Er wordt een ongeldige SQL-bewerking uitgevoerd."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_CONFIG",
+      "text": "Laden van configuratie mislukt."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ADDONS",
+      "text": "Kernel-add-ons laden..."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ADDONS",
+      "text": "Laden van kernel-add-ons mislukt"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG",
+      "text": "Configuratie doorzoeken"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIGREGEX",
+      "text": "Configuratie doorzoeken met regex"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPTREGEX",
+      "text": "Voer een zoekterm in om een ​​configuratie-item te vinden (regex ondersteund)"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPT",
+      "text": "Voer een zoekterm in om een ​​configuratie-item te vinden"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_SELECT",
+      "text": "Selecteer een configuratiesleutel uit de zoekresultaten."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_NORESULTS",
+      "text": "Er is geen configuratiesleutel die aan uw zoekterm voldoet."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_FAILED",
+      "text": "Doorzoeken van configuratie mislukt"
+    },
+    {
+      "loc": "NKS_KNOWNADDONS_EXTRAS_ANIMATED",
+      "text": "Extra's - Geanimeerd"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONEMPTY",
+      "text": "De tekenreeks voor de weergave van rechten is leeg."
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTH",
+      "text": "De lengte van de tekenreeks voor de weergave van rechten moet drie tekens zijn."
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONINVALID",
+      "text": "Ongeldige weergave op positie"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTHARRAY",
+      "text": "De lengte van de weergave van rechten moet drie tekens zijn."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMISSIONS",
+      "text": "Rechten"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMISSIONS",
+      "text": "Speciale rechten"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW",
+      "text": "Selecteer een hash-driver uit de onderstaande lijst."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_NAME",
+      "text": "Lezen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_TITLE",
+      "text": "Bestand kan worden gelezen of map kan worden opgevraagd"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_NAME",
+      "text": "Schrijven"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_TITLE",
+      "text": "Bestand kan worden beschreven of map kan worden gewijzigd"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_NAME",
+      "text": "Uitvoeren"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_TITLE",
+      "text": "Bestand kan worden uitgevoerd of map kan worden doorlopen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_NAME",
+      "text": "Setuid"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_TITLE",
+      "text": "Bestand kan worden uitgevoerd met de rechten van de bestandseigenaar, meestal een root-gebruiker"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_NAME",
+      "text": "Setgid"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_TITLE",
+      "text": "Bestand kan worden uitgevoerd met de rechten van de bestandsgroep, meestal een beheerdersgroep"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_NAME",
+      "text": "Sticky"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_TITLE",
+      "text": "Bestanden in een map met deze bit ingesteld kunnen alleen worden gewijzigd door de bestandseigenaar, de mapeigenaar en een root-gebruiker"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_NAME",
+      "text": "Gebruikersrechten"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_DESC",
+      "text": "Hier kunt u de bestandsrechten voor de eigenaar instellen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_NAME",
+      "text": "Groepsrechten"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_DESC",
+      "text": "Hier kunt u de bestandsrechten voor de groep instellen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_NAME",
+      "text": "Rechten voor anderen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_DESC",
+      "text": "Hier kunt u de bestandsrechten voor anderen instellen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_NAME",
+      "text": "Speciale rechten"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_DESC",
+      "text": "Hier kunt u speciale rechten voor bestanden of mappen instellen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMSINFOBOX_NAME",
+      "text": "Hier kunt u de rechten voor dit bestand of deze map wijzigen."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMSSETFAILURE",
+      "text": "Instellen van rechten mislukt"
+    },
+    {
+      "loc": "NKS_FILES_EXCEPTION_UNIXPERMWINDOWS",
+      "text": "U kunt geen Unix-rechtenhulpmiddelen gebruiken op Windows."
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_NAME",
+      "text": "Kleuren afwisselen"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_DESC",
+      "text": "Kiest automatisch een willekeurige set kleuren"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_NAME",
+      "text": "Kleur van tijdinformatie"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_DESC",
+      "text": "Kiest de kleur voor de tijdinformatie"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_NAME",
+      "text": "Kleur van de rand"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_DESC",
+      "text": "Kiest de kleur voor de rand van de analoge klok"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_NAME",
+      "text": "Kleur van de wijzers"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_DESC",
+      "text": "Kiest de kleur voor de wijzers van de analoge klok"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_NAME",
+      "text": "Kleur van de secondewijzer"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_DESC",
+      "text": "Kiest de kleur voor de secondewijzer van de analoge klok"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_NAME",
+      "text": "Lange notatie gebruiken"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_DESC",
+      "text": "Gebruikt een lange notatie bij het weergeven van de tijd"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_NAME",
+      "text": "Kleur van digitale klok"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_DESC",
+      "text": "Bepaalt de kleur van de digitale klok"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_NAME",
+      "text": "Kleur van datuminformatie"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC",
+      "text": "Bepaalt de kleur van de datumtekst"
     }
   ]
 }

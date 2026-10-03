@@ -1838,6 +1838,90 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
       "text": "Επιλέγει τον τρόπο μετάβασης και επιλογής χρωμάτων."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Ρυθμίσεις πακέτων προφύλαξης οθόνης"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_DESC",
+      "text": "Αυτόματη επιλογή τυχαίου συνδυασμού χρωμάτων"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_NAME",
+      "text": "Χρώμα κειμένου ώρας"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_DESC",
+      "text": "Επιλογή χρώματος για την ένδειξη της ώρας"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_NAME",
+      "text": "Χρώμα στεφάνης"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_DESC",
+      "text": "Επιλογή χρώματος για τη στεφάνη του αναλογικού ρολογιού"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_NAME",
+      "text": "Χρώμα δεικτών"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_DESC",
+      "text": "Επιλογή χρώματος για τους δείκτες του αναλογικού ρολογιού"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_NAME",
+      "text": "Χρώμα δείκτη δευτερολέπτων"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_DESC",
+      "text": "Επιλογή χρώματος για τον δείκτη δευτερολέπτων του αναλογικού ρολογιού"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_NAME",
+      "text": "Χρήση αναλυτικής μορφής"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_DESC",
+      "text": "Χρήση αναλυτικής μορφής κατά την απεικόνιση της ώρας"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_NAME",
+      "text": "Εναλλαγή χρωμάτων"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_DESC",
+      "text": "Επιλογή μεταξύ τυχαίου χρώματος και χρώματος που ορίζεται από τον χρήστη"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_NAME",
+      "text": "Χρώμα ψηφιακού ρολογιού"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_DESC",
+      "text": "Καθορισμός του χρώματος του ψηφιακού ρολογιού"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_NAME",
+      "text": "Χρώμα ένδειξης ημερομηνίας"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_DESC",
+      "text": "Καθορισμός του χρώματος του κειμένου της ημερομηνίας"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HELL_SETTINGS_DESC",
+      "text": "Εμφάνιση ατμόσφαιρας σε περιβάλλον σκούρου κόκκινου χρώματος με σωματίδια λιωμένου πετρώματος που θυμίζουν ροές λάβας"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_NAME",
+      "text": "Μέγιστο επίπεδο χρώματος φόντου"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_DESC",
+      "text": "Καθορισμός του μέγιστου επιπέδου χρώματος για την τυχαία επιλογή χρώματος φόντου"
     }
   ]
 }

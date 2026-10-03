@@ -185,6 +185,34 @@
     {
       "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
       "text": "Port til MPEG-radiostasjonen"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYRADIO_DESC",
+      "text": "Spiller av en radiostasjon"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_RADIOURL_DESC",
+      "text": "Sti til en radiostasjon"
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDRADIOFILE",
+      "text": "Radiostasjonen ble åpnet."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENRADIOFILE",
+      "text": "Kan ikke åpne radiostasjonen."
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOWPLAYING",
+      "text": "Spiller nå"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Konfigurasjon av BassBoom-musikkspilleren"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_INSTANCES_SAVERSETTINGS",
+      "text": "Konfigurasjon av BassBoom-pauseskjermen"
     }
   ]
 }

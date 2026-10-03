@@ -848,6 +848,18 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
       "text": "Ini membolehkan anda mengkonfigurasi warna"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Konfigurasi permainan dan hiburan"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SAVERSETTINGS",
+      "text": "Konfigurasi penyelamat skrin hiburan"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SPLASHESSETTINGS",
+      "text": "Konfigurasi skrin pembuka hiburan"
     }
   ]
 }

@@ -1432,4 +1432,67 @@
   <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC" xml:space="preserve">
     <value>Alege cum se face tranziția și se selectează culorile</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Configurarea pachetelor de economizor de ecran</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Alege automat un set aleatoriu de culori</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_NAME" xml:space="preserve">
+    <value>Culoarea textului cu informații despre oră</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_DESC" xml:space="preserve">
+    <value>Selectează culoarea informațiilor despre oră</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_NAME" xml:space="preserve">
+    <value>Culoarea marginii cadranului</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_DESC" xml:space="preserve">
+    <value>Selectează culoarea marginii cadranului ceasului analogic</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_NAME" xml:space="preserve">
+    <value>Culoarea indicatoarelor</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_DESC" xml:space="preserve">
+    <value>Selectează culoarea indicatoarelor ceasului analogic</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_NAME" xml:space="preserve">
+    <value>Culoarea indicatorului de secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_DESC" xml:space="preserve">
+    <value>Selectează culoarea indicatorului de secunde al ceasului analogic</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_NAME" xml:space="preserve">
+    <value>Utilizează formatul extins</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_DESC" xml:space="preserve">
+    <value>Utilizează un format extins pentru afișarea orei</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CYCLECOLORS_NAME" xml:space="preserve">
+    <value>Alternare culori</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Alege între o culoare aleatorie și o culoare specificată de utilizator</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_NAME" xml:space="preserve">
+    <value>Culoarea ceasului digital</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_DESC" xml:space="preserve">
+    <value>Specifică culoarea ceasului digital</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_NAME" xml:space="preserve">
+    <value>Culoarea informațiilor despre dată</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_DESC" xml:space="preserve">
+    <value>Specifică culoarea textului datei</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HELL_SETTINGS_DESC" xml:space="preserve">
+    <value>Afișează o atmosferă într-un mediu roșu-închis, cu particule de rocă topită sub formă de fluxuri de lavă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_NAME" xml:space="preserve">
+    <value>Nivelul maxim al culorii de fundal</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_DESC" xml:space="preserve">
+    <value>Stabilește nivelul maxim de culoare pentru alegerea unei culori de fundal aleatorii</value>
+  </data>
 </root>

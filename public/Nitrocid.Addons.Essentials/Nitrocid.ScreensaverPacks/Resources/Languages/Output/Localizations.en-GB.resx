@@ -1432,4 +1432,67 @@
   <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC" xml:space="preserve">
     <value>Chooses how to transition and select colours</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Screensaver packs configuration</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Automatically chooses a random set of colours</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_NAME" xml:space="preserve">
+    <value>Colour of time info text</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_DESC" xml:space="preserve">
+    <value>Chooses a colour of time information</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_NAME" xml:space="preserve">
+    <value>Colour of bezel</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_DESC" xml:space="preserve">
+    <value>Chooses a colour of the analog clock's bezel</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_NAME" xml:space="preserve">
+    <value>Colour of hands</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_DESC" xml:space="preserve">
+    <value>Chooses a colour of the analog clock's hands</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_NAME" xml:space="preserve">
+    <value>Colour of the seconds hand</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_DESC" xml:space="preserve">
+    <value>Chooses a colour of the analog clock's seconds hand</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_NAME" xml:space="preserve">
+    <value>Use long format</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_DESC" xml:space="preserve">
+    <value>Use a long format when rendering time</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CYCLECOLORS_NAME" xml:space="preserve">
+    <value>Cycle colours</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Whether to choose a random colour or to use a user-specified colour</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_NAME" xml:space="preserve">
+    <value>Digital clock colour</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_DESC" xml:space="preserve">
+    <value>Specifies the colour of the digital clock</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_NAME" xml:space="preserve">
+    <value>Date info colour</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_DESC" xml:space="preserve">
+    <value>Specifies the colour of the date text</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HELL_SETTINGS_DESC" xml:space="preserve">
+    <value>Shows an ambience in a dark red environment with molten rock particles as lava flows</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_NAME" xml:space="preserve">
+    <value>Maximum background colour level</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_DESC" xml:space="preserve">
+    <value>Sets the maximum colour level for choosing a random background colour</value>
+  </data>
 </root>

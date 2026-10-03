@@ -111,6 +111,10 @@
     {
       "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
       "text": "Er verschijnt een venster dat gevuld wordt met rapporten die deze splash-opslag opslaat"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuratie van splash packs"
     }
   ]
 }

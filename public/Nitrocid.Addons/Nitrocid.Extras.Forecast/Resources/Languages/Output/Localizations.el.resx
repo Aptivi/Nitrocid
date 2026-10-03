@@ -259,4 +259,10 @@
   <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
     <value>Χρησιμοποιούμε το OpenWeatherMap για τα δεδομένα πρόγνωσης καιρού, αλλά υποστηρίζουμε επίσης το The Weather Channel (weather.com) για τα ίδια δεδομένα, εάν μπορείτε να πληρώσετε για την υπηρεσία.</value>
   </data>
+  <data name="NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Ρύθμιση πρόγνωσης</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATLON" xml:space="preserve">
+    <value>Εισαγάγετε το γεωγραφικό πλάτος και μήκος μιας πόλης ή μιας περιοχής παρακάτω.</value>
+  </data>
 </root>

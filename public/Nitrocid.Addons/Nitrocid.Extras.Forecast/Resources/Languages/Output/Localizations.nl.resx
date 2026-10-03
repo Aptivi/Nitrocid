@@ -259,4 +259,10 @@
   <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
     <value>We gebruiken OpenWeatherMap voor de weersvoorspelling, maar we ondersteunen ook The Weather Channel (weather.com) voor dezelfde gegevens, mits u hiervoor kunt betalen.</value>
   </data>
+  <data name="NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Configuratie van de weersverwachting</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATLON" xml:space="preserve">
+    <value>Voer hieronder de breedte- en lengtegraad van een stad of regio in.</value>
+  </data>
 </root>

@@ -1837,6 +1837,90 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
       "text": "遷移方法と色を選択します"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_INSTANCES_SETTINGS",
+      "text": "スクリーンセーバーパックの設定"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_DESC",
+      "text": "ランダムな色の組み合わせを自動的に選択"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_NAME",
+      "text": "時刻表示の色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_DESC",
+      "text": "時刻情報の表示色を選択"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_NAME",
+      "text": "ベゼルの色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_DESC",
+      "text": "アナログ時計のベゼルの色を選択"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_NAME",
+      "text": "針の色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_DESC",
+      "text": "アナログ時計の針の色を選択"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_NAME",
+      "text": "秒針の色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_DESC",
+      "text": "アナログ時計の秒針の色を選択"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_NAME",
+      "text": "長い形式を使用"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_DESC",
+      "text": "時刻の表示に長い形式を使用"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_NAME",
+      "text": "色を切り替え"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_DESC",
+      "text": "ランダムな色を選択するか、ユーザー指定の色を使用するかを選択"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_NAME",
+      "text": "デジタル時計の色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_DESC",
+      "text": "デジタル時計の色を指定"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_NAME",
+      "text": "日付表示の色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_DESC",
+      "text": "日付テキストの色を指定"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HELL_SETTINGS_DESC",
+      "text": "溶岩流のような溶岩の粒子が漂う、暗赤色の環境を表示"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_NAME",
+      "text": "背景色の最大レベル"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_DESC",
+      "text": "ランダムな背景色を選択する際の色の最大レベルを設定"
     }
   ]
 }

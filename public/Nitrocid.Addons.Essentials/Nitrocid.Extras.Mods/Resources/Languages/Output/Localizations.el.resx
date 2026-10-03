@@ -364,4 +364,7 @@
   <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
     <value>Δεν είναι δυνατή η διακοπή της τροποποίησης {0}</value>
   </data>
+  <data name="NKS_MODS_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Ρύθμιση των mods</value>
+  </data>
 </root>

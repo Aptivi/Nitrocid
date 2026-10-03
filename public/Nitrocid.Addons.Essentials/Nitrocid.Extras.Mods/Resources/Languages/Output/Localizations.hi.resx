@@ -364,4 +364,7 @@
   <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
     <value>मॉड {0} को रोका नहीं जा सकता</value>
   </data>
+  <data name="NKS_MODS_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>मॉड्स कॉन्फ़िगरेशन</value>
+  </data>
 </root>

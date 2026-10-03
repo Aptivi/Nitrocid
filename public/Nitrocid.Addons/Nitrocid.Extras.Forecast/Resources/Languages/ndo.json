@@ -273,6 +273,14 @@
     {
       "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
       "text": "Kami menggunakan OpenWeatherMap untuk data prakiraan cuaca, tetapi kami juga mendukung The Weather Channel (weather.com) untuk data yang sama jika Anda dapat membayar layanan tersebut."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Konfigurasi prakiraan"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATLON",
+      "text": "Masukkan garis lintang dan garis bujur kota atau wilayah di bawah ini."
     }
   ]
 }

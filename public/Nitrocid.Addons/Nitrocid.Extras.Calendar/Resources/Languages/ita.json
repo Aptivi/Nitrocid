@@ -380,6 +380,10 @@
     {
       "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC",
       "text": "Impostazioni screensaver..."
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configurazione del calendario"
     }
   ]
 }

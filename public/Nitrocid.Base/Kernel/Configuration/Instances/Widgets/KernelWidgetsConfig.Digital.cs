@@ -83,8 +83,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// [Digital] Cycles colors
         /// </summary>
-        // TODO: NKS_SETTINGS_COMMON_CYCLECOLORS_NAME -> Cycle colors
-        // TODO: NKS_SETTINGS_COMMON_CYCLECOLORS_DESC -> Automatically chooses a random set of colors
         public bool DigitalCycleColors
         {
             get => digitalCycleColors;
@@ -93,8 +91,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// [Digital] Color of the digital clock
         /// </summary>
-        // TODO: NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_NAME -> Digital clock color
-        // TODO: NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_DESC -> Specifies the color of the digital clock
         public string DigitalColor
         {
             get => digitalColor;
@@ -103,8 +99,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// [Digital] Color of the date info text
         /// </summary>
-        // TODO: NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_NAME -> Date info color
-        // TODO: NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC -> Specifies the color of the date text
         public string DigitalInfoColor
         {
             get => digitalInfoColor;
@@ -113,8 +107,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// [Digital] Cycles colors
         /// </summary>
-        // TODO: NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_NAME -> Use long format
-        // TODO: NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_DESC -> Use a long format when rendering time
         public bool DigitalUseLongFormat
         {
             get => digitalUseLongFormat;

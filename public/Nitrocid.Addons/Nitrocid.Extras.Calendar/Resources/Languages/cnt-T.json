@@ -380,6 +380,10 @@
     {
       "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC",
       "text": "螢幕保護程式設定..."
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_INSTANCES_SETTINGS",
+      "text": "日曆配置"
     }
   ]
 }

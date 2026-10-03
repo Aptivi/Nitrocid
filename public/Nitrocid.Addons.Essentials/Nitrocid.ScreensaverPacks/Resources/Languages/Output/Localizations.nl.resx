@@ -1432,4 +1432,67 @@
   <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC" xml:space="preserve">
     <value>Kiest hoe de overgang moet verlopen en selecteert kleuren.</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Configuratie van screensaverpakketten</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Kiest automatisch een willekeurige set kleuren</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_NAME" xml:space="preserve">
+    <value>Kleur van tijdinformatie</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_DESC" xml:space="preserve">
+    <value>Kiest de kleur voor de tijdinformatie</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_NAME" xml:space="preserve">
+    <value>Kleur van de rand</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_DESC" xml:space="preserve">
+    <value>Kiest de kleur van de rand van de analoge klok</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_NAME" xml:space="preserve">
+    <value>Kleur van de wijzers</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_DESC" xml:space="preserve">
+    <value>Kiest de kleur van de wijzers van de analoge klok</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_NAME" xml:space="preserve">
+    <value>Kleur van de secondewijzer</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_DESC" xml:space="preserve">
+    <value>Kiest de kleur van de secondewijzer van de analoge klok</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_NAME" xml:space="preserve">
+    <value>Lang formaat gebruiken</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_DESC" xml:space="preserve">
+    <value>Gebruikt een lang formaat bij het weergeven van de tijd</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CYCLECOLORS_NAME" xml:space="preserve">
+    <value>Kleuren afwisselen</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Bepaalt of er een willekeurige kleur wordt gekozen of een door de gebruiker opgegeven kleur</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_NAME" xml:space="preserve">
+    <value>Kleur van digitale klok</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_DESC" xml:space="preserve">
+    <value>Bepaalt de kleur van de digitale klok</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_NAME" xml:space="preserve">
+    <value>Kleur van datuminformatie</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_DESC" xml:space="preserve">
+    <value>Bepaalt de kleur van de datumtekst</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HELL_SETTINGS_DESC" xml:space="preserve">
+    <value>Toont een sfeer in een donkerrode omgeving met deeltjes gesmolten gesteente als lavastromen</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_NAME" xml:space="preserve">
+    <value>Maximaal niveau achtergrondkleur</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_DESC" xml:space="preserve">
+    <value>Stelt het maximale kleurniveau in voor het kiezen van een willekeurige achtergrondkleur</value>
+  </data>
 </root>

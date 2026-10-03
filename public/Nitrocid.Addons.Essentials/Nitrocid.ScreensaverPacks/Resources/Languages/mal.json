@@ -1840,6 +1840,90 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
       "text": "Memilih cara peralihan dan memilih warna"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Konfigurasi pek penyelamat skrin"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_DESC",
+      "text": "Memilih set warna secara rawak secara automatik"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_NAME",
+      "text": "Warna teks maklumat masa"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_DESC",
+      "text": "Memilih warna untuk maklumat masa"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_NAME",
+      "text": "Warna bingkai"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_DESC",
+      "text": "Memilih warna bingkai jam analog"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_NAME",
+      "text": "Warna jarum jam"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_DESC",
+      "text": "Memilih warna jarum jam analog"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_NAME",
+      "text": "Warna jarum saat"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_DESC",
+      "text": "Memilih warna jarum saat jam analog"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_NAME",
+      "text": "Gunakan format panjang"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_DESC",
+      "text": "Menggunakan format panjang semasa memaparkan masa"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_NAME",
+      "text": "Kitaran warna"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_DESC",
+      "text": "Menentukan sama ada untuk memilih warna secara rawak atau menggunakan warna yang ditetapkan pengguna"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_NAME",
+      "text": "Warna jam digital"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_DESC",
+      "text": "Menentukan warna jam digital"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_NAME",
+      "text": "Warna maklumat tarikh"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_DESC",
+      "text": "Menentukan warna teks tarikh"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HELL_SETTINGS_DESC",
+      "text": "Memaparkan suasana persekitaran merah gelap dengan zarah batuan lebur seperti aliran lava"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_NAME",
+      "text": "Tahap warna latar belakang maksimum"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_DESC",
+      "text": "Menetapkan tahap warna maksimum untuk pemilihan warna latar belakang secara rawak"
     }
   ]
 }

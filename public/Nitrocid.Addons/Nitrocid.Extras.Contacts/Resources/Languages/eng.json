@@ -711,6 +711,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
       "text": "This interactive TUI allows you to manage your contacts in an interactive way, because it provides you a pane for selecting contacts and a pane for viewing information about a contact. You can also edit, add, import, and delete contacts here for increased convenience."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Contacts configuration"
     }
   ]
 }

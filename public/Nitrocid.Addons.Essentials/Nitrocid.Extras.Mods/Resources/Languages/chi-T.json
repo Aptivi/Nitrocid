@@ -421,6 +421,10 @@
     {
       "loc": "NKS_MODS_CANTSTOP",
       "text": "无法停止模块 {0}"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "模组配置"
     }
   ]
 }

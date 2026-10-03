@@ -1845,6 +1845,90 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
       "text": "选择过渡方式和颜色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_INSTANCES_SETTINGS",
+      "text": "屏幕保护程序包配置"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_DESC",
+      "text": "自动选择随机颜色组合"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_NAME",
+      "text": "时间信息文本颜色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_DESC",
+      "text": "选择时间信息的颜色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_NAME",
+      "text": "边框颜色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_DESC",
+      "text": "选择模拟时钟边框的颜色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_NAME",
+      "text": "指针颜色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_DESC",
+      "text": "选择模拟时钟指针的颜色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_NAME",
+      "text": "秒针颜色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_DESC",
+      "text": "选择模拟时钟秒针的颜色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_NAME",
+      "text": "使用长格式"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_DESC",
+      "text": "显示时间时使用长格式"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_NAME",
+      "text": "循环颜色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_DESC",
+      "text": "选择随机颜色或使用用户指定的颜色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_NAME",
+      "text": "数字时钟颜色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_DESC",
+      "text": "指定数字时钟的颜色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_NAME",
+      "text": "日期信息颜色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_DESC",
+      "text": "指定日期文本的颜色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HELL_SETTINGS_DESC",
+      "text": "在深红色环境中呈现氛围效果，并伴有熔岩流般的熔融岩石粒子"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_NAME",
+      "text": "最大背景颜色级别"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_DESC",
+      "text": "设置随机选择背景颜色时的最大颜色级别"
     }
   ]
 }

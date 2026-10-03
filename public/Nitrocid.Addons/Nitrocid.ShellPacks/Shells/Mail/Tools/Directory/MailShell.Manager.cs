@@ -73,7 +73,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <exception cref="ArgumentException"></exception>
         public bool MailMoveMessage(int MsgNumber, string TargetFolder)
         {
-            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED -> IMAP server is not connected
             if (ImapClient is null)
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED"));
             return MailTools.MailMoveMessage(ImapClient, IMAP_CurrentDirectory, MsgNumber, TargetFolder);
@@ -87,7 +86,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <returns>True if successful; False if unsuccessful</returns>
         public bool MailMoveAllBySender(string Sender, string TargetFolder)
         {
-            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED -> IMAP server is not connected
             if (ImapClient is null)
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED"));
             return MailTools.MailMoveAllBySender(ImapClient, IMAP_CurrentDirectory, Sender, TargetFolder);

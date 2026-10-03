@@ -244,4 +244,10 @@
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC" xml:space="preserve">
     <value>Це дозволяє налаштувати кольори</value>
   </data>
+  <data name="NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SAVERSETTINGS" xml:space="preserve">
+    <value>Налаштування анімованої заставки</value>
+  </data>
+  <data name="NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SPLASHESSETTINGS" xml:space="preserve">
+    <value>Налаштування анімованих заставок при запуску</value>
+  </data>
 </root>

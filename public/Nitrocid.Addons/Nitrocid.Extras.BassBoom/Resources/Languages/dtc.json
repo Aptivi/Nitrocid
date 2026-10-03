@@ -187,6 +187,34 @@
     {
       "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
       "text": "Poort naar het MPEG-radiostation"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYRADIO_DESC",
+      "text": "Speelt een radiozender af"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_RADIOURL_DESC",
+      "text": "Pad naar een radiozender"
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDRADIOFILE",
+      "text": "Radiozender succesvol geopend."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENRADIOFILE",
+      "text": "Kan radiozender niet openen."
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOWPLAYING",
+      "text": "Nu aan het afspelen"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuratie van BassBoom-muziekspeler"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_INSTANCES_SAVERSETTINGS",
+      "text": "Configuratie van BassBoom-schermbeveiliging"
     }
   ]
 }

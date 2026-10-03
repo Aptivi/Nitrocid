@@ -2669,6 +2669,134 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Gagal mendapatkan kotak masuk"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Konfigurasi untuk berbagai shell"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_FILESTREAMFAILED",
+      "text": "Gagal membuka aliran berkas arsip"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_EXCEPTION_NOTSQL",
+      "text": "Bukan berkas basis data SQL"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NOFEEDLINK",
+      "text": "Umpan ini tidak memiliki tautan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFEEDFAILED",
+      "text": "Tidak dapat membuka peramban host untuk tautan artikel."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT",
+      "text": "Masukkan tautan umpan RSS untuk situs berita Anda."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDFAILED",
+      "text": "Gagal menambahkan umpan baru."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_NAME",
+      "text": "Kriteria filter"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_DESC",
+      "text": "Masukkan ekspresi reguler untuk penyaringan artikel umpan RSS. Artikel yang memenuhi kriteria Anda akan disembunyikan dari tampilan. Sebagai contoh, (deal|offer|sale) akan menyembunyikan penawaran (deals, offers, dan sales)."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME",
+      "text": "Jenis filter"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC",
+      "text": "Tentukan target filter; apakah Anda ingin menyaring artikel berdasarkan nama, deskripsi, atau keduanya."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME_NAME",
+      "text": "Filter berdasarkan nama"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC_NAME",
+      "text": "Filter berdasarkan deskripsi"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAMEDESC_NAME",
+      "text": "Filter berdasarkan nama dan deskripsi"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT",
+      "text": "Tentukan cara Anda ingin menyaring artikel."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_INVALIDFILTER",
+      "text": "Kriteria filter tidak valid."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERFAILED",
+      "text": "Gagal menyaring artikel."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "text": "Menambahkan umpan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESHALL",
+      "text": "Segarkan semua"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "text": "Buka beranda umpan"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERARTICLES",
+      "text": "Saring artikel"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERRESET",
+      "text": "Atur ulang filter"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED",
+      "text": "Server IMAP tidak terhubung"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_POP3NOTCONNECTED",
+      "text": "Server POP3 tidak terhubung"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_POP3SERVERPROMPT",
+      "text": "Masukkan alamat dan port server IMAP (<alamat> atau <alamat>:[port]):"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOPOP3",
+      "text": "Tidak dapat memperoleh konfigurasi server POP3"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED",
+      "text": "Gagal mendapatkan folder {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED",
+      "text": "Server SMTP tidak terhubung"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_NAME",
+      "text": "Gaya prompt POP3 untuk email"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_DESC",
+      "text": "Tentukan format prompt server POP3 yang Anda inginkan. Biarkan kosong untuk menggunakan gaya default. Placeholder akan diproses."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_NAME",
+      "text": "Interval pengiriman ping POP3"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_DESC",
+      "text": "Tentukan format prompt server POP3 yang Anda inginkan. Biarkan kosong untuk menggunakan gaya default. Placeholder akan diproses."
     }
   ]
 }

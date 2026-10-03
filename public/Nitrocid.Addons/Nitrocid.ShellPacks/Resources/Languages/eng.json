@@ -2775,6 +2775,134 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Inbox obtain failed"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuration for different shells"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_FILESTREAMFAILED",
+      "text": "Opening archive file stream failed"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_EXCEPTION_NOTSQL",
+      "text": "Not an SQL database file"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NOFEEDLINK",
+      "text": "This feed doesn't have a link."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFEEDFAILED",
+      "text": "Can't open the host browser to the article link."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT",
+      "text": "Write an RSS feed link for your news site."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDFAILED",
+      "text": "Adding new feed has failed."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_NAME",
+      "text": "Filter criteria"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_DESC",
+      "text": "Write a regular expression for RSS feed article filtering. Articles that meet your criteria will be hidden from view. For example, (deal|offer|sale) will hide deals, offers, and sales."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME",
+      "text": "Filter type"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC",
+      "text": "Specify the filter target, whether you want to filter articles by name, by description, or by both."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME_NAME",
+      "text": "Filter by name"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC_NAME",
+      "text": "Filter by description"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAMEDESC_NAME",
+      "text": "Filter by name and description"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT",
+      "text": "Specify how you want to filter articles."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_INVALIDFILTER",
+      "text": "Invalid filter criteria."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERFAILED",
+      "text": "Filtering articles has failed."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "text": "Adds a feed"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESHALL",
+      "text": "Refresh all"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "text": "Open feed homepage"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERARTICLES",
+      "text": "Filter articles"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERRESET",
+      "text": "Reset filter"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED",
+      "text": "IMAP server is not connected"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_POP3NOTCONNECTED",
+      "text": "POP3 server is not connected"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_POP3SERVERPROMPT",
+      "text": "Enter IMAP server address and port (<address> or <address>:[port]): "
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOPOP3",
+      "text": "Can't get POP3 server configuration"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED",
+      "text": "Obtaining folder {0} failed"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED",
+      "text": "SMTP server is not connected"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_NAME",
+      "text": "POP3 prompt style for mail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_DESC",
+      "text": "Write how you want your POP3 server prompt to be. Leave blank to use default style. Placeholders are parsed."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_NAME",
+      "text": "Send POP3 ping interval"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_DESC",
+      "text": "Write how you want your POP3 server prompt to be. Leave blank to use default style. Placeholders are parsed."
     }
   ]
 }

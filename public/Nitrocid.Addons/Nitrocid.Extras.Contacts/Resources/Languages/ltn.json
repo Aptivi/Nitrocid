@@ -605,6 +605,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
       "text": "Haec TUI interactiva te sinit contactus tuos modo interactivo administrare, quia tibi praebet tabulam ad contactus eligendos et tabulam ad informationes de contactu inspiciendas. Contactus etiam hic recensere, addere, importare et delere potes ad maiorem commoditatem."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuratio notitiarum contactus"
     }
   ]
 }

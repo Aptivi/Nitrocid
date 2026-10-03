@@ -2056,4 +2056,100 @@
   <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED" xml:space="preserve">
     <value>Lỗi khi lấy hộp thư đến</value>
   </data>
+  <data name="NKS_SHELLPACKS_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Cấu hình cho các shell khác nhau</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_FILESTREAMFAILED" xml:space="preserve">
+    <value>Không thể mở luồng tệp lưu trữ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_EXCEPTION_NOTSQL" xml:space="preserve">
+    <value>Không phải là tệp cơ sở dữ liệu SQL</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NOFEEDLINK" xml:space="preserve">
+    <value>Nguồn cấp tin này không có liên kết.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFEEDFAILED" xml:space="preserve">
+    <value>Không thể mở trình duyệt để truy cập liên kết bài viết.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT" xml:space="preserve">
+    <value>Nhập liên kết nguồn cấp tin RSS cho trang tin tức của bạn.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDFAILED" xml:space="preserve">
+    <value>Thêm nguồn cấp tin mới thất bại.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_NAME" xml:space="preserve">
+    <value>Tiêu chí lọc</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_DESC" xml:space="preserve">
+    <value>Nhập biểu thức chính quy để lọc bài viết từ nguồn cấp tin RSS. Các bài viết thỏa mãn tiêu chí của bạn sẽ bị ẩn đi. Ví dụ: (deal|offer|sale) sẽ ẩn các bài viết về ưu đãi, khuyến mãi và giảm giá.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME" xml:space="preserve">
+    <value>Loại bộ lọc</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC" xml:space="preserve">
+    <value>Xác định mục tiêu lọc: lọc bài viết theo tên, theo mô tả hoặc cả hai.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME_NAME" xml:space="preserve">
+    <value>Lọc theo tên</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC_NAME" xml:space="preserve">
+    <value>Lọc theo mô tả</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAMEDESC_NAME" xml:space="preserve">
+    <value>Lọc theo tên và mô tả</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT" xml:space="preserve">
+    <value>Xác định cách thức lọc bài viết.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_INVALIDFILTER" xml:space="preserve">
+    <value>Tiêu chí lọc không hợp lệ.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERFAILED" xml:space="preserve">
+    <value>Lọc bài viết thất bại.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE" xml:space="preserve">
+    <value>Thêm nguồn cấp tin</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESHALL" xml:space="preserve">
+    <value>Làm mới tất cả</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED" xml:space="preserve">
+    <value>Mở trang chủ của nguồn cấp tin</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERARTICLES" xml:space="preserve">
+    <value>Lọc bài viết</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERRESET" xml:space="preserve">
+    <value>Đặt lại bộ lọc</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED" xml:space="preserve">
+    <value>Máy chủ IMAP chưa được kết nối</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_POP3NOTCONNECTED" xml:space="preserve">
+    <value>Máy chủ POP3 chưa được kết nối</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_POP3SERVERPROMPT" xml:space="preserve">
+    <value>Nhập địa chỉ và cổng máy chủ IMAP (&lt;địa chỉ&gt; hoặc &lt;địa chỉ&gt;:[cổng]):</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_NOPOP3" xml:space="preserve">
+    <value>Không thể lấy cấu hình máy chủ POP3</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED" xml:space="preserve">
+    <value>Lấy thư mục {0} thất bại</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED" xml:space="preserve">
+    <value>Máy chủ SMTP chưa được kết nối</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_NAME" xml:space="preserve">
+    <value>Kiểu lời nhắc POP3 cho thư</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_DESC" xml:space="preserve">
+    <value>Nhập định dạng lời nhắc máy chủ POP3 mong muốn. Để trống để sử dụng kiểu mặc định. Các biến giữ chỗ sẽ được xử lý.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_NAME" xml:space="preserve">
+    <value>Khoảng thời gian gửi tín hiệu ping POP3</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_DESC" xml:space="preserve">
+    <value>Nhập định dạng lời nhắc máy chủ POP3 mong muốn. Để trống để sử dụng kiểu mặc định. Các biến giữ chỗ sẽ được xử lý.</value>
+  </data>
 </root>

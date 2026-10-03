@@ -83,9 +83,6 @@ namespace Nitrocid.Base.Shell.Homepage
             { /* Localizable */ "NKS_SHELL_HOMEPAGE_ALARMMANAGER", AlarmCli.OpenAlarmCli },
             { /* Localizable */ "NKS_SHELL_HOMEPAGE_NOTIFICATIONS", NotificationsCli.OpenNotificationsCli },
             { /* Localizable */ "NKS_SHELL_HOMEPAGE_TASKMANAGER", TaskManagerCli.OpenTaskManagerCli },
-
-            // TODO: NKS_SHELL_HOMEPAGE_USERMANAGER -> User manager
-            // TODO: NKS_SHELL_HOMEPAGE_GROUPMANAGER -> Group manager
             { /* Localizable */ "NKS_SHELL_HOMEPAGE_USERMANAGER", UsersTui.OpenUsersTui },
             { /* Localizable */ "NKS_SHELL_HOMEPAGE_GROUPMANAGER", GroupsTui.OpenGroupsTui },
         };
@@ -100,8 +97,6 @@ namespace Nitrocid.Base.Shell.Homepage
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SWITCH"), ConsoleKey.Tab),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE"), ConsoleKey.RightArrow),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE"), ConsoleKey.LeftArrow),
-            // TODO: NKS_SHELL_HOMEPAGE_KEYBINDING_FIND -> Find
-            // TODO: NKS_SHELL_HOMEPAGE_KEYBINDING_FINDREGEX -> Find with regex
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_FIND"), ConsoleKey.F),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_FINDREGEX"), ConsoleKey.F, ConsoleModifiers.Shift),
             new("Play...", ConsoleKey.P, true),
@@ -475,8 +470,6 @@ namespace Nitrocid.Base.Shell.Homepage
                                 break;
                             case ConsoleKey.F:
                                 // Prompt for search term
-                                // TODO: NKS_USERS_LOGIN_MODERNLOGON_FINDREGEX_PROMPT -> Enter search term for home page choices (supports regular expression).
-                                // TODO: NKS_USERS_LOGIN_MODERNLOGON_FIND_PROMPT -> Enter search term for home page choices (case insensitive).
                                 bool searchRegex = keypress.Modifiers == ConsoleModifiers.Shift;
                                 string searchTerm = InfoBoxInputColor.WriteInfoBoxInput(searchRegex ? LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_FINDREGEX_PROMPT") : LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_FIND_PROMPT"), out bool findDone);
                                 if (!findDone)
@@ -489,13 +482,11 @@ namespace Nitrocid.Base.Shell.Homepage
                                     choices.Where((tuple) => tuple.Item1.ChoiceTitle.ContainsWithNoCase(searchTerm));
                                 if (!foundChoices.Any())
                                 {
-                                    // TODO: NKS_USERS_LOGIN_MODERNLOGON_FIND_NORESULTS -> Choice not found in this search term.
                                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_FIND_NORESULTS"));
                                     break;
                                 }
 
                                 // Let the user choose one, or choose the first one if there's only one.
-                                // TODO: NKS_USERS_LOGIN_MODERNLOGON_FIND_SELECT -> Select a choice from the search results below.
                                 var choiceInfos = foundChoices.Select((tuple) => tuple.Item1).ToArray();
                                 int selectedChoiceIdx = choiceInfos.Length > 1 ? InfoBoxSelectionColor.WriteInfoBoxSelection(choiceInfos, LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_FIND_SELECT")) : 0;
                                 if (selectedChoiceIdx < 0)

@@ -414,6 +414,10 @@
     {
       "loc": "NKS_MODS_CANTSTOP",
       "text": "Δεν είναι δυνατή η διακοπή της τροποποίησης {0}"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Ρύθμιση των mods"
     }
   ]
 }

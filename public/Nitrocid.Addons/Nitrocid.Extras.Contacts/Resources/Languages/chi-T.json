@@ -613,6 +613,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
       "text": "此交互式用户界面 (TUI) 允许您以交互方式管理联系人，因为它提供了一个用于选择联系人的面板和一个用于查看联系人信息的面板。您还可以在此处编辑、添加、导入和删除联系人，从而更加便捷。"
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "联系人配置"
     }
   ]
 }

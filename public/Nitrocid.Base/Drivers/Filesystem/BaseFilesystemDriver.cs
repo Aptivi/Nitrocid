@@ -1940,8 +1940,6 @@ namespace Nitrocid.Base.Drivers.Filesystem
             inputFile = FS.NeutralizePath(inputFile);
             if (!FS.Exists(inputFile))
                 throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_FILENOTFOUND2"), inputFile);
-
-            // TODO: NKS_FILES_EXCEPTION_UNIXPERMWINDOWS -> You can't use Unix permission tools on Windows.
             if (PlatformHelper.IsOnWindows() && OperatingSystem.IsWindows())
                 throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_UNIXPERMWINDOWS"));
 

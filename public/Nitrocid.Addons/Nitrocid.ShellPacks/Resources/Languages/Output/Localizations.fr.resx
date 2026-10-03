@@ -2056,4 +2056,100 @@
   <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED" xml:space="preserve">
     <value>Échec de la récupération de la boîte de réception</value>
   </data>
+  <data name="NKS_SHELLPACKS_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Configuration pour différents shells</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_FILESTREAMFAILED" xml:space="preserve">
+    <value>Échec de l'ouverture du flux de fichier d'archive</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_EXCEPTION_NOTSQL" xml:space="preserve">
+    <value>Ce n'est pas un fichier de base de données SQL</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NOFEEDLINK" xml:space="preserve">
+    <value>Ce flux ne contient pas de lien.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFEEDFAILED" xml:space="preserve">
+    <value>Impossible d'ouvrir le navigateur pour accéder au lien de l'article.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT" xml:space="preserve">
+    <value>Saisissez le lien du flux RSS de votre site d'actualités.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDFAILED" xml:space="preserve">
+    <value>Échec de l'ajout du nouveau flux.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_NAME" xml:space="preserve">
+    <value>Critères de filtrage</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_DESC" xml:space="preserve">
+    <value>Saisissez une expression régulière pour filtrer les articles du flux RSS. Les articles répondant à vos critères seront masqués. Par exemple, (deal|offer|sale) masquera les bonnes affaires, les offres et les promotions.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME" xml:space="preserve">
+    <value>Type de filtre</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC" xml:space="preserve">
+    <value>Indiquez la cible du filtre : souhaitez-vous filtrer les articles par nom, par description ou par les deux ?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME_NAME" xml:space="preserve">
+    <value>Filtrer par nom</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC_NAME" xml:space="preserve">
+    <value>Filtrer par description</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAMEDESC_NAME" xml:space="preserve">
+    <value>Filtrer par nom et description</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT" xml:space="preserve">
+    <value>Indiquez comment vous souhaitez filtrer les articles.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_INVALIDFILTER" xml:space="preserve">
+    <value>Critères de filtrage invalides.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERFAILED" xml:space="preserve">
+    <value>Échec du filtrage des articles.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE" xml:space="preserve">
+    <value>Ajouter un flux</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESHALL" xml:space="preserve">
+    <value>Tout actualiser</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED" xml:space="preserve">
+    <value>Ouvrir la page d'accueil du flux</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERARTICLES" xml:space="preserve">
+    <value>Filtrer les articles</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERRESET" xml:space="preserve">
+    <value>Réinitialiser le filtre</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED" xml:space="preserve">
+    <value>Serveur IMAP non connecté</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_POP3NOTCONNECTED" xml:space="preserve">
+    <value>Serveur POP3 non connecté</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_POP3SERVERPROMPT" xml:space="preserve">
+    <value>Saisissez l'adresse et le port du serveur IMAP (&lt;adresse&gt; ou &lt;adresse&gt;:[port]) :</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_NOPOP3" xml:space="preserve">
+    <value>Impossible d'obtenir la configuration du serveur POP3</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED" xml:space="preserve">
+    <value>Échec de l'obtention du dossier {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED" xml:space="preserve">
+    <value>Serveur SMTP non connecté</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_NAME" xml:space="preserve">
+    <value>Style d'invite POP3 pour le courrier</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_DESC" xml:space="preserve">
+    <value>Définissez le format de l'invite du serveur POP3. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont interprétés.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_NAME" xml:space="preserve">
+    <value>Intervalle d'envoi de ping POP3</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_DESC" xml:space="preserve">
+    <value>Définissez le format de l'invite du serveur POP3. Laissez vide pour utiliser le style par défaut. Les espaces réservés sont interprétés.</value>
+  </data>
 </root>

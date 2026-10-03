@@ -1432,4 +1432,67 @@
   <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC" xml:space="preserve">
     <value>Escolhe como fazer a transição e seleciona as cores.</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Configuração do protetor de ecrã</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Seleciona automaticamente um conjunto aleatório de cores</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_NAME" xml:space="preserve">
+    <value>Cor do texto de informação de hora</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_DESC" xml:space="preserve">
+    <value>Escolhe a cor da informação de hora</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_NAME" xml:space="preserve">
+    <value>Cor da moldura</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_DESC" xml:space="preserve">
+    <value>Escolhe a cor da moldura do relógio analógico</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_NAME" xml:space="preserve">
+    <value>Cor dos ponteiros</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_DESC" xml:space="preserve">
+    <value>Escolhe a cor dos ponteiros do relógio analógico</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_NAME" xml:space="preserve">
+    <value>Cor do ponteiro dos segundos</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_DESC" xml:space="preserve">
+    <value>Escolhe a cor do ponteiro dos segundos do relógio analógico</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_NAME" xml:space="preserve">
+    <value>Usar formato longo</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_DESC" xml:space="preserve">
+    <value>Utilizar um formato longo ao exibir a hora</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CYCLECOLORS_NAME" xml:space="preserve">
+    <value>Alternar cores</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Opções para escolher uma cor aleatória ou uma cor especificada pelo utilizador</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_NAME" xml:space="preserve">
+    <value>Cor do relógio digital</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_DESC" xml:space="preserve">
+    <value>Especifica a cor do relógio digital</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_NAME" xml:space="preserve">
+    <value>Cor da informação de data</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_DESC" xml:space="preserve">
+    <value>Especifica a cor do texto da data</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HELL_SETTINGS_DESC" xml:space="preserve">
+    <value>Exibe um ambiente a vermelho escuro com partículas de rocha fundida como escoadas de lava</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_NAME" xml:space="preserve">
+    <value>Nível máximo de cor de fundo</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HELL_SETTINGS_MAXBGCOLORLEVEL_DESC" xml:space="preserve">
+    <value>Define o nível máximo de cor para a seleção de uma cor de fundo aleatória</value>
+  </data>
 </root>

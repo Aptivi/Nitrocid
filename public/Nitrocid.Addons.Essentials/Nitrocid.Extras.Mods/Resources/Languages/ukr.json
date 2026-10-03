@@ -413,6 +413,10 @@
     {
       "loc": "NKS_MODS_CANTSTOP",
       "text": "Не вдається зупинити мод {0}"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Налаштування модів"
     }
   ]
 }

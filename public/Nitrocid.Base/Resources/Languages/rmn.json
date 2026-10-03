@@ -9106,6 +9106,534 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC",
       "text": "Compresie ridicată"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS",
+      "text": "Modifică permisiunile Unix"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT",
+      "text": "Atribute"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_FLAGSPROMPT",
+      "text": "Alege atributele"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT_DESC",
+      "text": "Alege atributele acestui utilizator"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ADMIN",
+      "text": "Administrator"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ADMIN_DESC",
+      "text": "Acest utilizator poate executa operațiuni privilegiate"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ANONYMOUS",
+      "text": "Anonim"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ANONYMOUS_DESC",
+      "text": "Acest utilizator nu va apărea în lista de nume de utilizator"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_DISABLED",
+      "text": "Dezactivat"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_DISABLED_DESC",
+      "text": "Acest utilizator este dezactivat și nu poate fi folosit pentru autentificare"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT",
+      "text": "Atribute"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_EXTRAUSERPROMPT",
+      "text": "Alege atributele"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_DESC",
+      "text": "Alege atributele acestui utilizator"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_YES_DESC",
+      "text": "Adaugă un utilizator suplimentar"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_NO_DESC",
+      "text": "Nu adăuga un utilizator suplimentar"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1_NEW",
+      "text": "Ești gata să folosești sistemul de operare Nitrocid!"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_TITLE",
+      "text": "Gestionarea utilizatorilor"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_DESC",
+      "text": "Utilizarea interfeței text (TUI) pentru gestionarea utilizatorilor"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_BODY",
+      "text": "Cu această interfață text, poți gestiona cu ușurință utilizatorii."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_NEWPASSWORDPROMPT",
+      "text": "Noua parolă pentru {0}:"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_NEWCONFIRMPASSWORDPROMPT",
+      "text": "Confirmă noua parolă pentru {0}:"
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDERROR",
+      "text": "Eroare la încercarea de a schimba parola unui utilizator."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTPERMISSIONS",
+      "text": "Selectează permisiunile utilizatorului din lista de mai jos."
+    },
+    {
+      "loc": "NKS_SECURITY_PERMISSIONS_EXCEPTION_MANAGEMENTERROR",
+      "text": "Gestionarea permisiunilor a eșuat."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTFLAGS",
+      "text": "Selectează atributele (flag-urile) utilizatorului din lista de mai jos."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_FLAGMANAGEMENTERROR",
+      "text": "Gestionarea atributelor a eșuat."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTGROUPS",
+      "text": "Selectează grupurile utilizatorului din lista de mai jos."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_GROUPMANAGEMENTERROR",
+      "text": "Gestionarea grupurilor a eșuat."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_CHANGEPASSWORD",
+      "text": "Schimbă parola"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEFLAGS",
+      "text": "Gestionează atributele"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEPERMS",
+      "text": "Gestionează permisiunile"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEMEMBERSHIPS",
+      "text": "Gestionează apartenența la grupuri"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_TITLE",
+      "text": "Gestionarea grupurilor"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_DESC",
+      "text": "Utilizarea interfeței text (TUI) pentru gestionarea grupurilor"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_BODY",
+      "text": "Cu această interfață text, poți gestiona cu ușurință grupurile."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME",
+      "text": "Numele grupului"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME_PROMPT",
+      "text": "Introdu numele grupului."
+    },
+    {
+      "loc": "NKS_USERS_GROUPS_EXCEPTION_GROUPADDFAILED",
+      "text": "Adăugarea grupului a eșuat."
+    },
+    {
+      "loc": "NKS_USERS_GROUPS_EXCEPTION_GROUPREMOVEFAILED",
+      "text": "Eliminarea grupului a eșuat."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_SELECTPERMISSIONS",
+      "text": "Selectează permisiunile grupului din lista de mai jos."
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_USERMANAGER",
+      "text": "Gestionar utilizatori"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_GROUPMANAGER",
+      "text": "Gestionar grupuri"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_FIND",
+      "text": "Caută"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_FINDREGEX",
+      "text": "Caută folosind expresii regulate (regex)"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FINDREGEX_PROMPT",
+      "text": "Introdu termenul de căutare pentru opțiunile paginii principale (suportă expresii regulate)."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_PROMPT",
+      "text": "Introdu termenul de căutare pentru opțiunile paginii principale (fără a distinge între majuscule și minuscule)."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_NORESULTS",
+      "text": "Opțiune negăsită pentru acest termen de căutare."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_SELECT",
+      "text": "Selectează o opțiune din rezultatele căutării de mai jos."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_DESC",
+      "text": "Afișează textul folosind o vacă ASCII atractivă"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC",
+      "text": "Text de afișat într-o bulă de conversație"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC",
+      "text": "Numele vacii de utilizat pentru afișare"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_INVALIDCOW",
+      "text": "Nume invalid pentru reprezentarea grafică a vacii."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_DESC",
+      "text": "Afișează textul folosind un stil Figlet ASCII atractiv"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_ARGUMENT_TEXT_DESC",
+      "text": "Text de afișat folosind un font Figlet"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_SWITCH_FIGLET_DESC",
+      "text": "Font Figlet de utilizat pentru afișare"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_INVALIDFIGLET",
+      "text": "Nume invalid de font Figlet."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPMANTUI_DESC",
+      "text": "Deschide interfața text (TUI) pentru gestionarea grupurilor"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
+      "text": "Pune calculatorul în modul de repaus (sleep)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_DESC",
+      "text": "Setează permisiunile Unix ale unui fișier"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC",
+      "text": "Permisiuni de citire, scriere sau execuție sub formă de număr „chmod”"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_ARGUMENT_FILE_DESC",
+      "text": "Calea către fișierul pentru care se setează permisiunile Unix"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETUID_DESC",
+      "text": "Setează ID-ul utilizatorului (set user ID)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETGID_DESC",
+      "text": "Setează ID-ul grupului (set group ID)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_STICKY_DESC",
+      "text": "Setează bitul „sticky”"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_DESC",
+      "text": "Calculează permisiunile Unix"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC",
+      "text": "Specifică metoda de conversie"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_USERREP_DESC",
+      "text": "Permisiuni de citire, scriere sau execuție pentru utilizator"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_GROUPREP_DESC",
+      "text": "Permisiuni de citire, scriere sau execuție pentru grup"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_OTHERREP_DESC",
+      "text": "Permisiuni de citire, scriere sau execuție pentru alții"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC",
+      "text": "Deschide interfața text (TUI) pentru gestionarea utilizatorilor"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
+      "text": "Antetul există deja"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
+      "text": "Antetul nu există pentru a fi eliminat"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
+      "text": "Antetul nu există pentru a fi editat"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_GIT",
+      "text": "A apărut o eroare la procesarea solicitării pentru operațiuni Git."
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_SQL",
+      "text": "Se execută o operațiune SQL invalidă."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_CONFIG",
+      "text": "Încărcarea configurației a eșuat."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ADDONS",
+      "text": "Se încarcă modulele suplimentare ale nucleului (kernel addons)..."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ADDONS",
+      "text": "Încărcarea modulelor suplimentare ale nucleului a eșuat"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG",
+      "text": "Căutare în configurație"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIGREGEX",
+      "text": "Căutare în configurație folosind expresii regulate (regex)"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPTREGEX",
+      "text": "Introduceți un termen de căutare pentru a găsi o intrare de configurare (se acceptă expresii regulate)"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPT",
+      "text": "Introduceți un termen de căutare pentru a găsi o intrare de configurare"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_SELECT",
+      "text": "Selectați o cheie de configurare din rezultatele căutării."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_NORESULTS",
+      "text": "Nu există nicio cheie de configurare care să corespundă termenului de căutare."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_FAILED",
+      "text": "Căutarea în configurație a eșuat"
+    },
+    {
+      "loc": "NKS_KNOWNADDONS_EXTRAS_ANIMATED",
+      "text": "Suplimente - Animate"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONEMPTY",
+      "text": "Șirul de reprezentare a permisiunilor este gol."
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTH",
+      "text": "Lungimea șirului de reprezentare a permisiunilor trebuie să fie de trei caractere."
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONINVALID",
+      "text": "Reprezentare invalidă la poziția"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTHARRAY",
+      "text": "Lungimea reprezentării permisiunilor trebuie să fie de trei caractere."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMISSIONS",
+      "text": "Permisiuni"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMISSIONS",
+      "text": "Permisiuni speciale"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW",
+      "text": "Selectați un algoritm de hashing din lista de mai jos."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_NAME",
+      "text": "Citire"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_TITLE",
+      "text": "Fișierul poate fi citit sau directorul poate fi interogat"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_NAME",
+      "text": "Scriere"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_TITLE",
+      "text": "Fișierul poate fi scris sau directorul poate fi modificat"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_NAME",
+      "text": "Execuție"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_TITLE",
+      "text": "Fișierul poate fi executat sau directorul poate fi parcurs"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_NAME",
+      "text": "Setuid"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_TITLE",
+      "text": "Fișierul poate fi executat cu privilegiile proprietarului fișierului, de obicei utilizatorul root"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_NAME",
+      "text": "Setgid"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_TITLE",
+      "text": "Fișierul poate fi executat cu privilegiile grupului fișierului, de obicei un grup administrativ"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_NAME",
+      "text": "Sticky"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_TITLE",
+      "text": "Fișierele dintr-un director cu acest bit activat pot fi manipulate doar de proprietarul fișierului, proprietarul directorului și utilizatorul root"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_NAME",
+      "text": "Permisiuni utilizator"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_DESC",
+      "text": "Aici puteți seta permisiunile fișierului pentru proprietar"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_NAME",
+      "text": "Permisiuni grup"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_DESC",
+      "text": "Aici puteți seta permisiunile fișierului pentru grup"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_NAME",
+      "text": "Permisiuni pentru alții"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_DESC",
+      "text": "Aici puteți seta permisiunile fișierului pentru alți utilizatori"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_NAME",
+      "text": "Permisiuni speciale"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_DESC",
+      "text": "Aici puteți seta permisiuni speciale pentru fișiere sau directoare"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMSINFOBOX_NAME",
+      "text": "Aici puteți modifica permisiunile pentru acest fișier sau director."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMSSETFAILURE",
+      "text": "Setarea permisiunilor a eșuat"
+    },
+    {
+      "loc": "NKS_FILES_EXCEPTION_UNIXPERMWINDOWS",
+      "text": "Nu puteți utiliza instrumente Unix de gestionare a permisiunilor pe Windows."
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_NAME",
+      "text": "Schimbare ciclică a culorilor"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_DESC",
+      "text": "Alege automat un set aleatoriu de culori"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_NAME",
+      "text": "Culoarea textului cu informații despre oră"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_DESC",
+      "text": "Alege culoarea pentru informațiile despre oră"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_NAME",
+      "text": "Culoarea marginii cadranului"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_DESC",
+      "text": "Alege culoarea marginii cadranului ceasului analogic"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_NAME",
+      "text": "Culoarea indicatoarelor"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_DESC",
+      "text": "Alege culoarea indicatoarelor ceasului analogic"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_NAME",
+      "text": "Culoarea indicatorului de secunde"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_DESC",
+      "text": "Alege culoarea indicatorului de secunde al ceasului analogic"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_NAME",
+      "text": "Utilizare format extins"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_DESC",
+      "text": "Utilizează un format extins la afișarea orei"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_NAME",
+      "text": "Culoarea ceasului digital"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_DESC",
+      "text": "Specifică culoarea ceasului digital"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_NAME",
+      "text": "Culoarea informațiilor despre dată"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC",
+      "text": "Specifică culoarea textului cu data"
     }
   ]
 }

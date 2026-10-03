@@ -256,6 +256,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
       "text": "這使你可以配置顏色"
+    },
+    {
+      "loc": "NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SAVERSETTINGS",
+      "text": "動畫螢幕保護程式配置"
+    },
+    {
+      "loc": "NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SPLASHESSETTINGS",
+      "text": "動畫啟動畫面配置"
     }
   ]
 }

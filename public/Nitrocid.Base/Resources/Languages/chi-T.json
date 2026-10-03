@@ -9113,6 +9113,534 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC",
       "text": "高压缩"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS",
+      "text": "更改 Unix 权限"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT",
+      "text": "属性"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_FLAGSPROMPT",
+      "text": "选择属性"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT_DESC",
+      "text": "选择该用户的属性"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ADMIN",
+      "text": "管理员"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ADMIN_DESC",
+      "text": "该用户可执行特权操作"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ANONYMOUS",
+      "text": "匿名"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ANONYMOUS_DESC",
+      "text": "该用户不会出现在用户名列表中"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_DISABLED",
+      "text": "已禁用"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_DISABLED_DESC",
+      "text": "该用户已被禁用，无法用于登录"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT",
+      "text": "属性"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_EXTRAUSERPROMPT",
+      "text": "选择属性"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_DESC",
+      "text": "选择该用户的属性"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_YES_DESC",
+      "text": "添加额外用户"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_NO_DESC",
+      "text": "不添加额外用户"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1_NEW",
+      "text": "您现在可以使用 Nitrocid 操作系统了！"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_TITLE",
+      "text": "管理用户"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_DESC",
+      "text": "使用用户 TUI 管理用户"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_BODY",
+      "text": "通过此文本用户界面，您可以轻松管理用户。"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_NEWPASSWORDPROMPT",
+      "text": "{0} 的新密码："
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_NEWCONFIRMPASSWORDPROMPT",
+      "text": "确认 {0} 的新密码："
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDERROR",
+      "text": "更改用户密码时出错。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTPERMISSIONS",
+      "text": "从下方列表中选择用户权限。"
+    },
+    {
+      "loc": "NKS_SECURITY_PERMISSIONS_EXCEPTION_MANAGEMENTERROR",
+      "text": "权限管理失败。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTFLAGS",
+      "text": "从下方列表中选择用户标志。"
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_FLAGMANAGEMENTERROR",
+      "text": "标志管理失败。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTGROUPS",
+      "text": "从下方列表中选择用户组。"
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_GROUPMANAGEMENTERROR",
+      "text": "组管理失败。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_CHANGEPASSWORD",
+      "text": "更改密码"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEFLAGS",
+      "text": "管理标志"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEPERMS",
+      "text": "管理权限"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEMEMBERSHIPS",
+      "text": "管理成员资格"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_TITLE",
+      "text": "管理组"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_DESC",
+      "text": "使用组 TUI 管理组"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_BODY",
+      "text": "通过此文本用户界面，您可以轻松管理组。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME",
+      "text": "组名"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME_PROMPT",
+      "text": "输入组名。"
+    },
+    {
+      "loc": "NKS_USERS_GROUPS_EXCEPTION_GROUPADDFAILED",
+      "text": "添加组失败。"
+    },
+    {
+      "loc": "NKS_USERS_GROUPS_EXCEPTION_GROUPREMOVEFAILED",
+      "text": "移除组失败。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_SELECTPERMISSIONS",
+      "text": "从下方列表中选择组权限。"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_USERMANAGER",
+      "text": "用户管理器"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_GROUPMANAGER",
+      "text": "组管理器"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_FIND",
+      "text": "查找"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_FINDREGEX",
+      "text": "使用正则表达式查找"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FINDREGEX_PROMPT",
+      "text": "输入主页选项的搜索词（支持正则表达式）。"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_PROMPT",
+      "text": "输入主页选项的搜索词（不区分大小写）。"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_NORESULTS",
+      "text": "在此搜索词中未找到匹配选项。"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_SELECT",
+      "text": "从下方搜索结果中选择一个选项。"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_DESC",
+      "text": "以精美的 ASCII 奶牛图案渲染文本"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC",
+      "text": "要在对话气泡中显示的文本"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC",
+      "text": "用于渲染的奶牛图案名称"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_INVALIDCOW",
+      "text": "无效的奶牛图​​案名称。"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_DESC",
+      "text": "以精美的 ASCII Figlet 字体渲染文本"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_ARGUMENT_TEXT_DESC",
+      "text": "要以 Figlet 字体显示的文本"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_SWITCH_FIGLET_DESC",
+      "text": "用于渲染的 Figlet 字体"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_INVALIDFIGLET",
+      "text": "无效的 Figlet 字体名称。"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPMANTUI_DESC",
+      "text": "打开用户组管理 TUI"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
+      "text": "使计算机进入睡眠状态"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_DESC",
+      "text": "设置文件的 Unix 权限"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC",
+      "text": "以“chmod”数字形式表示的读、写或执行权限"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_ARGUMENT_FILE_DESC",
+      "text": "要设置 Unix 权限的文件路径"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETUID_DESC",
+      "text": "设置用户 ID (SUID)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETGID_DESC",
+      "text": "设置组 ID (SGID)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_STICKY_DESC",
+      "text": "设置粘滞位 (Sticky bit)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_DESC",
+      "text": "计算 Unix 权限"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC",
+      "text": "指定转换方法"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_USERREP_DESC",
+      "text": "用户（所有者）的读、写或执行权限"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_GROUPREP_DESC",
+      "text": "组的读、写或执行权限"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_OTHERREP_DESC",
+      "text": "其他用户的读、写或执行权限"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC",
+      "text": "打开用户管理 TUI"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
+      "text": "标头已存在"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
+      "text": "标头不存在，无法删除"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
+      "text": "标头不存在，无法编辑"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_GIT",
+      "text": "处理您的 Git 操作请求时出错。"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_SQL",
+      "text": "正在执行无效的 SQL 操作。"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_CONFIG",
+      "text": "无法加载配置。"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ADDONS",
+      "text": "正在加载内核附加组件..."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ADDONS",
+      "text": "无法加载内核附加组件"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG",
+      "text": "搜索配置"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIGREGEX",
+      "text": "使用正则表达式搜索配置"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPTREGEX",
+      "text": "输入搜索词以查找配置项（支持正则表达式）"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPT",
+      "text": "输入搜索词以查找配置项"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_SELECT",
+      "text": "从搜索结果中选择配置键。"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_NORESULTS",
+      "text": "没有符合您搜索词的配置键。"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_FAILED",
+      "text": "搜索配置失败"
+    },
+    {
+      "loc": "NKS_KNOWNADDONS_EXTRAS_ANIMATED",
+      "text": "附加功能 - 动画效果"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONEMPTY",
+      "text": "权限表示字符串为空。"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTH",
+      "text": "权限表示字符串的长度必须为 3。"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONINVALID",
+      "text": "位置处的表示无效"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTHARRAY",
+      "text": "权限表示长度必须为 3。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMISSIONS",
+      "text": "权限"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMISSIONS",
+      "text": "特殊权限"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW",
+      "text": "从下表中选择哈希驱动程序。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_NAME",
+      "text": "读"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_TITLE",
+      "text": "文件可读或目录可查询"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_NAME",
+      "text": "写"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_TITLE",
+      "text": "文件可写或目录可修改"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_NAME",
+      "text": "执行"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_TITLE",
+      "text": "文件可执行或目录可遍历"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_NAME",
+      "text": "Setuid"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_TITLE",
+      "text": "文件以文件所有者（通常为 root 用户）的权限执行"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_NAME",
+      "text": "Setgid"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_TITLE",
+      "text": "文件以文件所属组（通常为管理组）的权限执行"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_NAME",
+      "text": "Sticky（粘滞位）"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_TITLE",
+      "text": "设置了此位后，目录内的文件仅能由文件所有者、目录所有者或 root 用户进行操作"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_NAME",
+      "text": "用户权限"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_DESC",
+      "text": "在此处设置文件所有者的权限"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_NAME",
+      "text": "组权限"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_DESC",
+      "text": "在此处设置文件所属组的权限"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_NAME",
+      "text": "其他权限"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_DESC",
+      "text": "在此处设置其他用户的权限"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_NAME",
+      "text": "特殊权限"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_DESC",
+      "text": "在此处设置文件或目录的特殊权限"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMSINFOBOX_NAME",
+      "text": "在此处更改此文件或目录的权限。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMSSETFAILURE",
+      "text": "设置权限失败"
+    },
+    {
+      "loc": "NKS_FILES_EXCEPTION_UNIXPERMWINDOWS",
+      "text": "无法在 Windows 上使用 Unix 权限工具。"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_NAME",
+      "text": "循环切换颜色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_DESC",
+      "text": "自动选择一组随机颜色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_NAME",
+      "text": "时间信息文本颜色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_DESC",
+      "text": "选择时间信息的颜色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_NAME",
+      "text": "边框颜色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_DESC",
+      "text": "选择模拟时钟边框的颜色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_NAME",
+      "text": "指针颜色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_DESC",
+      "text": "选择模拟时钟指针的颜色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_NAME",
+      "text": "秒针颜色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_DESC",
+      "text": "选择模拟时钟秒针的颜色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_NAME",
+      "text": "使用长格式"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_DESC",
+      "text": "显示时间时使用长格式"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_NAME",
+      "text": "数字时钟颜色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_DESC",
+      "text": "指定数字时钟的颜色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_NAME",
+      "text": "日期信息颜色"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC",
+      "text": "指定日期文本的颜色"
     }
   ]
 }

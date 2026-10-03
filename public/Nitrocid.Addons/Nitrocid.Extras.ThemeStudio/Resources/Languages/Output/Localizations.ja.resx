@@ -127,4 +127,13 @@
   <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
     <value>インタラクティブなTUIを使えば、これまで以上に簡単にテーマを作成できます。Terminaux搭載の高度なカラーピッカーを使えば、カーネルに合わせて魅力的なカスタムテーマを作成し、お好みのカラーでカスタマイズできます。</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETODIR" xml:space="preserve">
+    <value>ターゲットディレクトリ</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMENAME" xml:space="preserve">
+    <value>テーマ名</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMEDIR" xml:space="preserve">
+    <value>以下にターゲットディレクトリとテーマ名を入力してください。</value>
+  </data>
 </root>

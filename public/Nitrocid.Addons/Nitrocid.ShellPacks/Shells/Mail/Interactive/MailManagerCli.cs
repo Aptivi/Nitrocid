@@ -119,7 +119,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                             {
                                 // Getting information about the message is vital to display them.
                                 DebugWriter.WriteDebug(DebugLevel.I, "Getting message {0}...", vars: [i]);
-                                // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED -> IMAP server is not connected
                                 if (mailShell.ImapClient is null)
                                     throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED"));
                                 lock (mailShell.ImapClient.SyncRoot)

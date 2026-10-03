@@ -38,7 +38,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         public override string Command =>
             "figlet";
 
-        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_DESC -> Renders text in a nice ASCII figlet
         public override string HelpDefinition =>
             LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_DESC");
 
@@ -48,12 +47,10 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "text", new()
                     {
-                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_ARGUMENT_TEXT_DESC -> Text to print in a conversation bubble
                         ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_ARGUMENT_TEXT_DESC")
                     }),
                 ],
                 [
-                    // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_SWITCH_FIGLET_DESC -> Figlet font to render with
                     new SwitchInfo("figlet", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_SWITCH_FIGLET_DESC")),
                 ], true)
             ];
@@ -67,7 +64,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             var figletFont = FigletFonts.TryGetByName(figletName);
             if (figletFont is null)
             {
-                // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_INVALIDFIGLET -> Invalid figlet font name.
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_INVALIDFIGLET"), ThemeColorType.Error);
                 return 48;
             }

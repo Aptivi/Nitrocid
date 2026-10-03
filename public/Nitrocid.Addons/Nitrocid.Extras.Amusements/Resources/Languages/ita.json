@@ -848,6 +848,18 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
       "text": "Questo ti permette di configurare i colori"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configurazione di giochi e intrattenimento"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SAVERSETTINGS",
+      "text": "Configurazione degli screensaver di intrattenimento"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SPLASHESSETTINGS",
+      "text": "Configurazione delle schermate di avvio di intrattenimento"
     }
   ]
 }

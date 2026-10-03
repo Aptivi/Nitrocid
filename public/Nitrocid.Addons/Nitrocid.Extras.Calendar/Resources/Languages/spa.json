@@ -402,6 +402,10 @@
     {
       "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC",
       "text": "Configuración del protector de pantalla..."
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuración del calendario"
     }
   ]
 }

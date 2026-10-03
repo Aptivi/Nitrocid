@@ -535,8 +535,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
                     throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
 
                 // Prompt for search term to find
-                // TODO: NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPT -> Write a search term to find a configuration entry
-                // TODO: NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPTREGEX -> Write a search term to find a configuration entry (regex supported)
                 string input = InfoBoxInputColor.WriteInfoBoxInput(regex ? LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPTREGEX") : LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPT"), Settings.InfoBoxSettings, out bool done);
                 if (!done)
                     return;
@@ -551,7 +549,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
                     if (settingsKeys.Count > 1)
                     {
                         // Let the user select a config key
-                        // TODO: NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_SELECT -> Select a configuration key from the search results.
                         int selectedKeyIdx = InfoBoxSelectionColor.WriteInfoBoxSelection([.. settingsKeys], LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_SELECT"));
                         if (selectedKeyIdx < 0)
                             return;
@@ -620,14 +617,10 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
                     InteractiveTuiTools.SelectionMovement(this, finalKeyIdx, 2);
                 }
                 else
-                {
-                    // TODO: NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_NORESULTS -> There is no configuration key that satisfies your search term.
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_NORESULTS"), Settings.InfoBoxSettings);
-                }
             }
             catch (Exception ex)
             {
-                // TODO: NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_FAILED -> Searching configuration failed
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_FAILED") + TextTools.FormatString(": {0}", ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);

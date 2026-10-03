@@ -854,6 +854,18 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
       "text": "Hiermit können Sie die Farben konfigurieren"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Konfiguration von Spielen und Unterhaltungsanwendungen"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SAVERSETTINGS",
+      "text": "Konfiguration von Unterhaltungs-Bildschirmschonern"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SPLASHESSETTINGS",
+      "text": "Konfiguration von Unterhaltungs-Startbildschirmen"
     }
   ]
 }

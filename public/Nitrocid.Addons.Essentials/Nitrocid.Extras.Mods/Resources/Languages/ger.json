@@ -422,6 +422,10 @@
     {
       "loc": "NKS_MODS_CANTSTOP",
       "text": "Das Modul {0} kann nicht gestoppt werden."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Mod-Konfiguration"
     }
   ]
 }

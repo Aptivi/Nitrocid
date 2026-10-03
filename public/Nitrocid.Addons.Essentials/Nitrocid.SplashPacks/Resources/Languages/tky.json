@@ -106,6 +106,10 @@
     {
       "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
       "text": "Bu açılış ekranının depoladığı raporlarla dolan bir kutu gösterir."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Sıçrama paketleri yapılandırması"
     }
   ]
 }

@@ -651,6 +651,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
       "text": "Cette interface utilisateur interactive vous permet de gérer vos contacts de manière intuitive. Elle propose un volet de sélection et un volet d'affichage des informations relatives à chaque contact. Vous pouvez également modifier, ajouter, importer et supprimer des contacts pour plus de simplicité."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuration des contacts"
     }
   ]
 }

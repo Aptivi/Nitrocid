@@ -60,8 +60,6 @@ namespace Nitrocid.ShellPacks.Settings
         /// <summary>
         /// Write how you want your POP3 server prompt to be. Leave blank to use default style. Placeholders are parsed
         /// </summary>
-        // TODO: NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_NAME -> POP3 prompt style for mail
-        // TODO: NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_DESC -> Write how you want your POP3 server prompt to be. Leave blank to use default style. Placeholders are parsed.
         public string MailPOP3PromptStyle { get; set; } = "";
         /// <summary>
         /// Write how you want your SMTP server prompt to be. Leave blank to use default style. Placeholders are parsed
@@ -94,8 +92,6 @@ namespace Nitrocid.ShellPacks.Settings
         /// <summary>
         /// How many milliseconds to send the POP3 ping?
         /// </summary>
-        // TODO: NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_NAME -> Send POP3 ping interval
-        // TODO: NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_DESC -> Write how you want your POP3 server prompt to be. Leave blank to use default style. Placeholders are parsed.
         public int MailPop3PingInterval
         {
             get => pop3PingInterval;

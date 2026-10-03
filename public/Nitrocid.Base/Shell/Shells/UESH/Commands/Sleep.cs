@@ -35,7 +35,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         public override string Command => 
             "ksleep";
 
-        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC -> Puts your computer to sleep
         public override string HelpDefinition => 
             LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC");
 

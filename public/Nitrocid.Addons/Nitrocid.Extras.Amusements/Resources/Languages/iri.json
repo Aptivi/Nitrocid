@@ -846,6 +846,18 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
       "text": "Ligeann sé seo duit na dathanna a chumrú"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Cumraíocht cluichí agus siamsaíochta"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SAVERSETTINGS",
+      "text": "Cumraíocht scáileán-choimeádán siamsaíochta"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SPLASHESSETTINGS",
+      "text": "Cumraíocht scáileán tosaigh siamsaíochta"
     }
   ]
 }

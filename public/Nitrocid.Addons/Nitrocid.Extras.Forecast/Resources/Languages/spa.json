@@ -298,6 +298,14 @@
     {
       "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
       "text": "Utilizamos OpenWeatherMap para los datos del pronóstico del tiempo, pero también ofrecemos soporte a The Weather Channel (weather.com) para obtener los mismos datos si puedes pagar por el servicio."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuración del pronóstico"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATLON",
+      "text": "Introduzca la latitud y la longitud de una ciudad o región a continuación."
     }
   ]
 }

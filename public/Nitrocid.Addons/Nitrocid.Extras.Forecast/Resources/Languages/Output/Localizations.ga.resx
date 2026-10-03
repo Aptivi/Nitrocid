@@ -259,4 +259,10 @@
   <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
     <value>Úsáidimid OpenWeatherMap le haghaidh sonraí réamhaisnéise na haimsire, ach tacaímid le The Weather Channel (weather.com) freisin le haghaidh na sonraí céanna má tá tú in ann íoc as an tseirbhís.</value>
   </data>
+  <data name="NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Cumraíocht na réamhaisnéise</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATLON" xml:space="preserve">
+    <value>Cuir isteach domhanleithead agus domhanfhad cathrach nó réigiúin thíos.</value>
+  </data>
 </root>

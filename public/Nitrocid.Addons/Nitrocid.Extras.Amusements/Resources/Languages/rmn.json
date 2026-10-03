@@ -846,6 +846,18 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
       "text": "Acest lucru vă permite să configurați culorile"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configurarea jocurilor și a divertismentului"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SAVERSETTINGS",
+      "text": "Configurarea economizoarelor de ecran cu tematică de divertisment"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SPLASHESSETTINGS",
+      "text": "Configurarea ecranelor de întâmpinare cu tematică de divertisment"
     }
   ]
 }

@@ -126,6 +126,10 @@
     {
       "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
       "text": "AlphaVantage API-Schlüssel"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Konfiguration der Schaftteile"
     }
   ]
 }

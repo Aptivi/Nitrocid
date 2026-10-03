@@ -98,6 +98,18 @@
     {
       "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
       "text": "Bu etkileşimli TUI'yi kullanarak temaları her zamankinden daha kolay oluşturabilirsiniz. Terminaux tarafından desteklenen gelişmiş renk seçiciyle, çekirdeğiniz için özel ve göz alıcı temalar oluşturabilir ve renk seçiminizle kişiselleştirebilirsiniz."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETODIR",
+      "text": "Hedef dizin"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMENAME",
+      "text": "Tema adı"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMEDIR",
+      "text": "Hedef dizini ve tema adını aşağıya girin."
     }
   ]
 }

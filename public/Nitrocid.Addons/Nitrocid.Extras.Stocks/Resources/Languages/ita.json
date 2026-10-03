@@ -120,6 +120,10 @@
     {
       "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
       "text": "Chiave API di AlphaVantage"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Cumraíocht na stoc"
     }
   ]
 }

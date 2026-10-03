@@ -2670,6 +2670,134 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Η λήψη των εισερχομένων απέτυχε"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Ρύθμιση για διαφορετικά κελύφη (shells)"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_ARCHIVE_EXCEPTION_FILESTREAMFAILED",
+      "text": "Αποτυχία ανοίγματος ροής αρχείου αρχειοθήκης"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_SQL_EXCEPTION_NOTSQL",
+      "text": "Δεν πρόκειται για αρχείο βάσης δεδομένων SQL"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NOFEEDLINK",
+      "text": "Αυτή η ροή δεν διαθέτει σύνδεσμο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFEEDFAILED",
+      "text": "Αδυναμία ανοίγματος του προγράμματος περιήγησης στον σύνδεσμο του άρθρου."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT",
+      "text": "Εισαγάγετε έναν σύνδεσμο ροής RSS για τον ειδησεογραφικό σας ιστότοπο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDFAILED",
+      "text": "Η προσθήκη νέας ροής απέτυχε."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_NAME",
+      "text": "Κριτήρια φιλτραρίσματος"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_DESC",
+      "text": "Εισαγάγετε μια κανονική έκφραση για το φιλτράρισμα άρθρων της ροής RSS. Τα άρθρα που πληρούν τα κριτήριά σας θα αποκρύπτονται. Για παράδειγμα, η έκφραση (deal|offer|sale) θα αποκρύπτει προσφορές και εκπτώσεις."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME",
+      "text": "Τύπος φίλτρου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC",
+      "text": "Καθορίστε τον στόχο του φίλτρου: αν θέλετε να φιλτράρετε τα άρθρα βάσει ονόματος, περιγραφής ή και των δύο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME_NAME",
+      "text": "Φιλτράρισμα βάσει ονόματος"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC_NAME",
+      "text": "Φιλτράρισμα βάσει περιγραφής"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAMEDESC_NAME",
+      "text": "Φιλτράρισμα βάσει ονόματος και περιγραφής"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT",
+      "text": "Καθορίστε τον τρόπο φιλτραρίσματος των άρθρων."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_INVALIDFILTER",
+      "text": "Μη έγκυρα κριτήρια φίλτρου."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_FILTERFAILED",
+      "text": "Το φιλτράρισμα των άρθρων απέτυχε."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "text": "Προσθήκη ροής"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESHALL",
+      "text": "Ανανέωση όλων"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "text": "Άνοιγμα αρχικής σελίδας ροής"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERARTICLES",
+      "text": "Φιλτράρισμα άρθρων"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERRESET",
+      "text": "Επαναφορά φίλτρου"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED",
+      "text": "Ο διακομιστής IMAP δεν είναι συνδεδεμένος"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_POP3NOTCONNECTED",
+      "text": "Ο διακομιστής POP3 δεν είναι συνδεδεμένος"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_POP3SERVERPROMPT",
+      "text": "Εισαγάγετε τη διεύθυνση και τη θύρα του διακομιστή IMAP (<διεύθυνση> ή <διεύθυνση>:[θύρα]):"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_NOPOP3",
+      "text": "Αδυναμία λήψης των ρυθμίσεων του διακομιστή POP3"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED",
+      "text": "Αποτυχία λήψης του φακέλου {0}"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED",
+      "text": "Ο διακομιστής SMTP δεν είναι συνδεδεμένος"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_NAME",
+      "text": "Στυλ προτροπής POP3 για την αλληλογραφία"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_DESC",
+      "text": "Καθορίστε τη μορφή της προτροπής του διακομιστή POP3. Αφήστε το κενό για χρήση της προεπιλεγμένης μορφής. Τα σύμβολα κράτησης θέσης (placeholders) αναλύονται."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_NAME",
+      "text": "Διάστημα αποστολής ping POP3"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_DESC",
+      "text": "Καθορίστε τη μορφή της προτροπής του διακομιστή POP3. Αφήστε το κενό για χρήση της προεπιλεγμένης μορφής. Τα σύμβολα κράτησης θέσης (placeholders) αναλύονται."
     }
   ]
 }

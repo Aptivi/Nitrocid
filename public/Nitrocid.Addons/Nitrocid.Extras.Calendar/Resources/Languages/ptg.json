@@ -387,6 +387,10 @@
     {
       "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC",
       "text": "Definições do protetor de ecrã..."
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuração do calendário"
     }
   ]
 }

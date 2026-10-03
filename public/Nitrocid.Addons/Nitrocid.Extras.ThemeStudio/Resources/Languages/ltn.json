@@ -97,6 +97,18 @@
     {
       "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
       "text": "Hoc TUI interactivo uti potes ad themata facilius quam antea creanda. Cum selectore colorum provecto a Terminaux impulsato, themata tua propria et pulchra pro nucleo tuo creare potes ut ea cum electione coloris tui personalizes."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETODIR",
+      "text": "Directorium destinatum"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMENAME",
+      "text": "Nomen thematis"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMEDIR",
+      "text": "Directorium destinatum et nomen thematis infra insere."
     }
   ]
 }

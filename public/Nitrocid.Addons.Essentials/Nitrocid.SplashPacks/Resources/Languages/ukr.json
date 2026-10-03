@@ -105,6 +105,10 @@
     {
       "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
       "text": "Показує вікно, яке заповнюється звітами, що зберігаються в цьому сплеші"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Конфігурація бризкозахисних пакетів"
     }
   ]
 }

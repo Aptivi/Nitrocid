@@ -253,6 +253,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
       "text": "यह आपको रंगों को कॉन्फ़िगर करने की अनुमति देता है"
+    },
+    {
+      "loc": "NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SAVERSETTINGS",
+      "text": "एनिमेटेड स्क्रीनसेवर कॉन्फ़िगरेशन"
+    },
+    {
+      "loc": "NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SPLASHESSETTINGS",
+      "text": "एनिमेटेड स्प्लैश कॉन्फ़िगरेशन"
     }
   ]
 }

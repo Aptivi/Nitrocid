@@ -77,6 +77,10 @@
     {
       "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
       "text": "Від’єднує оболонку від поточного робочого чат-бота зі штучним інтелектом"
+    },
+    {
+      "loc": "NKS_CHATBOT_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Налаштування ШІ-чат-бота"
     }
   ]
 }

@@ -127,4 +127,13 @@
   <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
     <value>يمكنك استخدام واجهة المستخدم التفاعلية هذه لإنشاء السمات بسهولة أكبر من ذي قبل. باستخدام أداة اختيار الألوان المتقدمة من Terminaux، يمكنك إنشاء سماتك الخاصة والرائعة لنواة نظامك، وإضفاء طابعك الشخصي عليها باختيارك للألوان.</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETODIR" xml:space="preserve">
+    <value>الدليل الوجهة</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMENAME" xml:space="preserve">
+    <value>اسم السمة</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMEDIR" xml:space="preserve">
+    <value>أدخل الدليل الوجهة واسم السمة أدناه.</value>
+  </data>
 </root>

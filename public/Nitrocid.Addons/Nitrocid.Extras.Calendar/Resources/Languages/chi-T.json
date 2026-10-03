@@ -385,6 +385,10 @@
     {
       "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC",
       "text": "屏幕保护程序设置..."
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_INSTANCES_SETTINGS",
+      "text": "日历配置"
     }
   ]
 }

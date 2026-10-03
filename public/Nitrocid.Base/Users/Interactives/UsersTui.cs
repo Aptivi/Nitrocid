@@ -41,9 +41,6 @@ namespace Nitrocid.Base.Users.Interactives
         [
             new()
             {
-                // TODO: NKS_MISC_INTERACTIVES_USERSCLI_HELP01_TITLE -> Managing users
-                // TODO: NKS_MISC_INTERACTIVES_USERSCLI_HELP01_DESC -> Using the users TUI to manage users
-                // TODO: NKS_MISC_INTERACTIVES_USERSCLI_HELP01_BODY -> With this textual user interface, you can easily manage users.
                 HelpTitle = /* Localizable */ "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_TITLE",
                 HelpDescription = /* Localizable */ "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_DESC",
                 HelpBody =
@@ -143,8 +140,6 @@ namespace Nitrocid.Base.Users.Interactives
                 }
 
                 // Prompt for new password and confirmation
-                // TODO: NKS_USERS_LOGIN_NEWPASSWORDPROMPT -> {0}'s new password: 
-                // TODO: NKS_USERS_LOGIN_NEWCONFIRMPASSWORDPROMPT -> Confirm {0}'s new password: 
                 string newPassword = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_NEWPASSWORDPROMPT").FormatString(user ?? ""), out bool done, InfoBoxInputType.Password);
                 if (!done)
                     return;
@@ -163,7 +158,6 @@ namespace Nitrocid.Base.Users.Interactives
             }
             catch (Exception ex)
             {
-                // TODO: NKS_USERS_EXCEPTION_CHANGEPASSWORDERROR -> Error when trying to change password of a user.
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CHANGEPASSWORDERROR") + $" {ex.Message}");
             }
         }
@@ -175,7 +169,6 @@ namespace Nitrocid.Base.Users.Interactives
                 var userInstance = UserManagement.GetUser(user ?? "");
 
                 // Get permissions and let the user manage them
-                // TODO: NKS_MISC_INTERACTIVES_USERSTUI_SELECTPERMISSIONS -> Select user permissions from the list below.
                 var permissions = userInstance.Permissions.Select(Enum.Parse<PermissionTypes>);
                 var allPermissions = Enum.GetNames<PermissionTypes>();
                 var selectedPermissions = allPermissions.Select((_, idx) => idx).Where((idx) => permissions.Contains(Enum.Parse<PermissionTypes>(allPermissions[idx]))).ToArray();
@@ -186,7 +179,6 @@ namespace Nitrocid.Base.Users.Interactives
             }
             catch (Exception ex)
             {
-                // TODO: NKS_SECURITY_PERMISSIONS_EXCEPTION_MANAGEMENTERROR -> Managing permissions failed.
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SECURITY_PERMISSIONS_EXCEPTION_MANAGEMENTERROR") + $" {ex.Message}");
             }
         }
@@ -198,7 +190,6 @@ namespace Nitrocid.Base.Users.Interactives
                 var userInstance = UserManagement.GetUser(user ?? "");
 
                 // Get flags and let the user manage them
-                // TODO: NKS_MISC_INTERACTIVES_USERSTUI_SELECTFLAGS -> Select user flags from the list below.
                 var flags = userInstance.Flags;
                 var flagValues = Enum.GetValues<UserFlags>().Where(uf => uf > 0).ToArray();
                 string[] allFlags = [.. flagValues.Select(uf => uf.ToString())];
@@ -211,7 +202,6 @@ namespace Nitrocid.Base.Users.Interactives
             }
             catch (Exception ex)
             {
-                // TODO: NKS_USERS_EXCEPTION_FLAGMANAGEMENTERROR -> Managing flags failed.
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_FLAGMANAGEMENTERROR") + $" {ex.Message}");
             }
         }
@@ -223,7 +213,6 @@ namespace Nitrocid.Base.Users.Interactives
                 var userInstance = UserManagement.GetUser(user ?? "");
 
                 // Get groups and let the user manage them
-                // TODO: NKS_MISC_INTERACTIVES_USERSTUI_SELECTGROUPS -> Select user groups from the list below.
                 var allGroups = GroupManagement.AvailableGroups.Select(group => group.GroupName).ToArray();
                 var groupIndexes = allGroups.Select((_, idx) => idx).Where(idx => userInstance.Groups.Contains(allGroups[idx])).ToArray();
                 var selectedFlagsIndexes = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(groupIndexes, 0, InputChoiceTools.GetInputChoices(allGroups), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_USERSTUI_SELECTGROUPS"));
@@ -233,17 +222,12 @@ namespace Nitrocid.Base.Users.Interactives
             }
             catch (Exception ex)
             {
-                // TODO: NKS_USERS_EXCEPTION_GROUPMANAGEMENTERROR -> Managing groups failed.
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_GROUPMANAGEMENTERROR") + $" {ex.Message}");
             }
         }
 
         internal static void OpenUsersTui()
         {
-            // TODO: NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_CHANGEPASSWORD -> Change password
-            // TODO: NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEFLAGS -> Manage flags
-            // TODO: NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEPERMS -> Manage permissions
-            // TODO: NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEMEMBERSHIPS -> Manage memberships
             var tui = new UsersTui();
             tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_DELETE"), ConsoleKey.Delete, (user, _, _, _) => tui.Remove(user)));
             tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_KEYBINDING_ADD"), ConsoleKey.F1, (_, _, _, _) => tui.AddUserPrompt()));

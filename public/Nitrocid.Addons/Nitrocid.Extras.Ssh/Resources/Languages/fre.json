@@ -159,6 +159,10 @@
     {
       "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
       "text": "Commande à exécuter à distance"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuration SSH"
     }
   ]
 }

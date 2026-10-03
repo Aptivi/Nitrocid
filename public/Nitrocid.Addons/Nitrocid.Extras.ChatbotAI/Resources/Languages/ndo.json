@@ -77,6 +77,10 @@
     {
       "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
       "text": "Melepaskan shell dari chatbot AI yang sedang berjalan."
+    },
+    {
+      "loc": "NKS_CHATBOT_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Konfigurasi chatbot AI"
     }
   ]
 }

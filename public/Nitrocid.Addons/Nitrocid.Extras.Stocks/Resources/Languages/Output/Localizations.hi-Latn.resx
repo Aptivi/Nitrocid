@@ -142,4 +142,7 @@
   <data name="NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>alphaventage API kunji</value>
   </data>
+  <data name="NKS_STOCKS_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>stocks configuration</value>
+  </data>
 </root>

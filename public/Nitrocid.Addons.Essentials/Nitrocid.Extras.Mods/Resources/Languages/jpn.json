@@ -413,6 +413,10 @@
     {
       "loc": "NKS_MODS_CANTSTOP",
       "text": "モジュール {0} を停止できません"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "MOD設定"
     }
   ]
 }

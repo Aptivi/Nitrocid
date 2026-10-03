@@ -364,4 +364,7 @@
   <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
     <value>No se puede detener el mod {0}</value>
   </data>
+  <data name="NKS_MODS_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Configuración de mods</value>
+  </data>
 </root>

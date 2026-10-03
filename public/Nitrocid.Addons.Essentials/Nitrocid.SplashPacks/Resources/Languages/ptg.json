@@ -115,6 +115,10 @@
     {
       "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
       "text": "Mostra uma caixa que é preenchida com os relatórios armazenados nesta página inicial."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuração dos pacotes Splash"
     }
   ]
 }

@@ -127,4 +127,13 @@
   <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
     <value>Ви можете використовувати цей інтерактивний TUI для створення тем легше, ніж раніше. За допомогою розширеного засобу вибору кольорів на базі Terminaux ви можете створювати власні приголомшливі теми для свого ядра, щоб персоналізувати його за допомогою обраного кольору.</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETODIR" xml:space="preserve">
+    <value>Цільовий каталог</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMENAME" xml:space="preserve">
+    <value>Назва теми</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMEDIR" xml:space="preserve">
+    <value>Введіть цільовий каталог і назву теми нижче.</value>
+  </data>
 </root>

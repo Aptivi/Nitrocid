@@ -184,6 +184,34 @@
     {
       "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
       "text": "Port ke stesen radio MPEG"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYRADIO_DESC",
+      "text": "Memainkan stesen radio"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_RADIOURL_DESC",
+      "text": "Laluan ke stesen radio"
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDRADIOFILE",
+      "text": "Stesen radio berjaya dibuka."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENRADIOFILE",
+      "text": "Tidak dapat membuka stesen radio."
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOWPLAYING",
+      "text": "Sedang dimainkan"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Konfigurasi pemain muzik BassBoom"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_INSTANCES_SAVERSETTINGS",
+      "text": "Konfigurasi penyelamat skrin BassBoom"
     }
   ]
 }

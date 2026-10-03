@@ -244,4 +244,10 @@
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC" xml:space="preserve">
     <value>これにより色を設定できます</value>
   </data>
+  <data name="NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SAVERSETTINGS" xml:space="preserve">
+    <value>アニメーション・スクリーンセーバーの設定</value>
+  </data>
+  <data name="NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SPLASHESSETTINGS" xml:space="preserve">
+    <value>アニメーション・スプラッシュ画面の設定</value>
+  </data>
 </root>

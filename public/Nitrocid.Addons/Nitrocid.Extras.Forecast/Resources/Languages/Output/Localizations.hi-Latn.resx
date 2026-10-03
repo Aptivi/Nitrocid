@@ -259,4 +259,10 @@
   <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
     <value>ham mausam ke anumaan ke deta ke lie OpenWeatherMap ka istemaal karate hain, lekin agar aap sarvis ke lie paise de sakate hain to ham usee deta ke lie The Weather Channel (weather.com) ko bhee saport karate hain.</value>
   </data>
+  <data name="NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>purvanuman configaration</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATLON" xml:space="preserve">
+    <value>niche kisi shahar ya kshetra ka akshansh aur deshantar darj karen.</value>
+  </data>
 </root>

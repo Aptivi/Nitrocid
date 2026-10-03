@@ -127,4 +127,13 @@
   <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
     <value>Você pode usar esta interface de usuário interativa (TUI) para criar temas com mais facilidade do que nunca. Com o seletor de cores avançado do Terminaux, você pode criar temas personalizados e impressionantes para o seu kernel e personalizá-lo com as cores de sua escolha.</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETODIR" xml:space="preserve">
+    <value>Diretório de destino</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMENAME" xml:space="preserve">
+    <value>Nome do tema</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMEDIR" xml:space="preserve">
+    <value>Insira o diretório de destino e o nome do tema abaixo.</value>
+  </data>
 </root>

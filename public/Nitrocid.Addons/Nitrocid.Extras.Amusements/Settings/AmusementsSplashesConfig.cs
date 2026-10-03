@@ -33,10 +33,9 @@ namespace Nitrocid.Extras.Amusements.Settings
     public partial class AmusementsSplashesConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
-        // TODO: NKS_AMUSEMENTS_SETTINGS_INSTANCES_SPLASHESSETTINGS -> Amusement splashes configuration
         [JsonIgnore]
         public override string Name =>
-            LanguageTools.GetLocalized("NKS_AMUSEMENTS_SETTINGS_INSTANCES_SAVERSETTINGS");
+            LanguageTools.GetLocalized("NKS_AMUSEMENTS_SETTINGS_INSTANCES_SPLASHESSETTINGS");
 
         /// <inheritdoc/>
         [JsonIgnore]

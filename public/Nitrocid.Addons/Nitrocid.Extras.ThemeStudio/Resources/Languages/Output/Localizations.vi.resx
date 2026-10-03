@@ -127,4 +127,13 @@
   <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
     <value>Bạn có thể sử dụng TUI tương tác này để tạo chủ đề dễ dàng hơn bao giờ hết. Với bộ chọn màu nâng cao được hỗ trợ bởi Terminaux, bạn có thể tạo các chủ đề tùy chỉnh tuyệt đẹp cho kernel của mình để cá nhân hóa theo lựa chọn màu sắc của bạn.</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETODIR" xml:space="preserve">
+    <value>Thư mục đích</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMENAME" xml:space="preserve">
+    <value>Tên giao diện</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMEDIR" xml:space="preserve">
+    <value>Nhập thư mục đích và tên giao diện bên dưới.</value>
+  </data>
 </root>

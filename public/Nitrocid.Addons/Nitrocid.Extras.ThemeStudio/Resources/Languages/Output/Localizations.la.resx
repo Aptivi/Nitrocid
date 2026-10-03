@@ -127,4 +127,13 @@
   <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
     <value>Hoc TUI interactivo uti potes ad themata facilius quam antea creanda. Cum selectore colorum provecto a Terminaux impulsato, themata tua propria et pulchra pro nucleo tuo creare potes ut ea cum electione coloris tui personalizes.</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETODIR" xml:space="preserve">
+    <value>Directorium destinatum</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMENAME" xml:space="preserve">
+    <value>Nomen thematis</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMEDIR" xml:space="preserve">
+    <value>Directorium destinatum et nomen thematis infra insere.</value>
+  </data>
 </root>

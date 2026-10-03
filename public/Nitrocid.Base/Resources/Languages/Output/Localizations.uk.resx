@@ -6883,4 +6883,400 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC" xml:space="preserve">
     <value>Високе стиснення</value>
   </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS" xml:space="preserve">
+    <value>Змінити права доступу Unix</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT" xml:space="preserve">
+    <value>Атрибути</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_FLAGSPROMPT" xml:space="preserve">
+    <value>Виберіть атрибути</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT_DESC" xml:space="preserve">
+    <value>Виберіть атрибути для цього користувача</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_ADMIN" xml:space="preserve">
+    <value>Адміністратор</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_ADMIN_DESC" xml:space="preserve">
+    <value>Цей користувач може виконувати привілейовані операції</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_ANONYMOUS" xml:space="preserve">
+    <value>Анонімний</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_ANONYMOUS_DESC" xml:space="preserve">
+    <value>Цей користувач не відображатиметься у списку імен користувачів</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_DISABLED" xml:space="preserve">
+    <value>Вимкнено</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_DISABLED_DESC" xml:space="preserve">
+    <value>Цей користувач вимкнений і не може використовуватися для входу в систему</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT" xml:space="preserve">
+    <value>Атрибути</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_EXTRAUSERPROMPT" xml:space="preserve">
+    <value>Виберіть атрибути</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_DESC" xml:space="preserve">
+    <value>Виберіть атрибути для цього користувача</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_YES_DESC" xml:space="preserve">
+    <value>Додати додаткового користувача</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_NO_DESC" xml:space="preserve">
+    <value>Не додавати додаткового користувача</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1_NEW" xml:space="preserve">
+    <value>Тепер ви готові до використання операційної системи Nitrocid!</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Керування користувачами</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_HELP01_DESC" xml:space="preserve">
+    <value>Використання текстового інтерфейсу (TUI) для керування користувачами</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_HELP01_BODY" xml:space="preserve">
+    <value>За допомогою цього текстового інтерфейсу ви можете легко керувати користувачами.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_NEWPASSWORDPROMPT" xml:space="preserve">
+    <value>Новий пароль для {0}:</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_NEWCONFIRMPASSWORDPROMPT" xml:space="preserve">
+    <value>Підтвердьте новий пароль для {0}:</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_CHANGEPASSWORDERROR" xml:space="preserve">
+    <value>Помилка під час спроби змінити пароль користувача.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_SELECTPERMISSIONS" xml:space="preserve">
+    <value>Виберіть права доступу користувача зі списку нижче.</value>
+  </data>
+  <data name="NKS_SECURITY_PERMISSIONS_EXCEPTION_MANAGEMENTERROR" xml:space="preserve">
+    <value>Помилка керування правами доступу.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_SELECTFLAGS" xml:space="preserve">
+    <value>Виберіть прапорці користувача зі списку нижче.</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_FLAGMANAGEMENTERROR" xml:space="preserve">
+    <value>Помилка керування прапорцями.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_SELECTGROUPS" xml:space="preserve">
+    <value>Виберіть групи користувача зі списку нижче.</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_GROUPMANAGEMENTERROR" xml:space="preserve">
+    <value>Помилка керування групами.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_CHANGEPASSWORD" xml:space="preserve">
+    <value>Змінити пароль</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEFLAGS" xml:space="preserve">
+    <value>Керувати прапорцями</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEPERMS" xml:space="preserve">
+    <value>Керувати правами доступу</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEMEMBERSHIPS" xml:space="preserve">
+    <value>Керувати членством у групах</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Керування групами</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_DESC" xml:space="preserve">
+    <value>Використання текстового інтерфейсу (TUI) для керування групами</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_BODY" xml:space="preserve">
+    <value>За допомогою цього текстового інтерфейсу ви можете легко керувати групами.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME" xml:space="preserve">
+    <value>Назва групи</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME_PROMPT" xml:space="preserve">
+    <value>Введіть назву групи.</value>
+  </data>
+  <data name="NKS_USERS_GROUPS_EXCEPTION_GROUPADDFAILED" xml:space="preserve">
+    <value>Не вдалося додати групу.</value>
+  </data>
+  <data name="NKS_USERS_GROUPS_EXCEPTION_GROUPREMOVEFAILED" xml:space="preserve">
+    <value>Не вдалося видалити групу.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSTUI_SELECTPERMISSIONS" xml:space="preserve">
+    <value>Виберіть права доступу групи зі списку нижче.</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_USERMANAGER" xml:space="preserve">
+    <value>Менеджер користувачів</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_GROUPMANAGER" xml:space="preserve">
+    <value>Менеджер груп</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_FIND" xml:space="preserve">
+    <value>Знайти</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_FINDREGEX" xml:space="preserve">
+    <value>Знайти за допомогою регулярного виразу</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_FINDREGEX_PROMPT" xml:space="preserve">
+    <value>Введіть пошуковий запит для вибору варіантів (підтримуються регулярні вирази).</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_FIND_PROMPT" xml:space="preserve">
+    <value>Введіть пошуковий запит для вибору варіантів (без урахування регістру).</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_FIND_NORESULTS" xml:space="preserve">
+    <value>Варіант не знайдено за цим пошуковим запитом.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_FIND_SELECT" xml:space="preserve">
+    <value>Виберіть варіант із результатів пошуку нижче.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_DESC" xml:space="preserve">
+    <value>Відображає текст у вигляді гарної ASCII-корови</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC" xml:space="preserve">
+    <value>Текст для виведення в хмаринці діалогу</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC" xml:space="preserve">
+    <value>Назва зображення корови для відображення</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_INVALIDCOW" xml:space="preserve">
+    <value>Недійсна назва зображення корови.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_DESC" xml:space="preserve">
+    <value>Відображає текст у стилі ASCII-шрифту Figlet</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_ARGUMENT_TEXT_DESC" xml:space="preserve">
+    <value>Текст для виведення шрифтом Figlet</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_SWITCH_FIGLET_DESC" xml:space="preserve">
+    <value>Шрифт Figlet для відображення</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_INVALIDFIGLET" xml:space="preserve">
+    <value>Недійсна назва шрифту Figlet.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPMANTUI_DESC" xml:space="preserve">
+    <value>Відкриває інтерфейс керування групами</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC" xml:space="preserve">
+    <value>Переводить комп'ютер у режим сну</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_DESC" xml:space="preserve">
+    <value>Встановлює права доступу Unix для файлу</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC" xml:space="preserve">
+    <value>Права на читання, запис або виконання у вигляді числа (як у команді chmod)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>Шлях до файлу, для якого встановлюються права Unix</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETUID_DESC" xml:space="preserve">
+    <value>Встановити ідентифікатор користувача (setuid)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETGID_DESC" xml:space="preserve">
+    <value>Встановити ідентифікатор групи (setgid)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_STICKY_DESC" xml:space="preserve">
+    <value>Встановити «липкий» біт (sticky bit)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_DESC" xml:space="preserve">
+    <value>Обчислює права доступу Unix</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC" xml:space="preserve">
+    <value>Вкажіть метод перетворення</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_USERREP_DESC" xml:space="preserve">
+    <value>Права на читання, запис або виконання для власника</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_GROUPREP_DESC" xml:space="preserve">
+    <value>Права на читання, запис або виконання для групи</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_OTHERREP_DESC" xml:space="preserve">
+    <value>Права на читання, запис або виконання для інших користувачів</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC" xml:space="preserve">
+    <value>Відкриває інтерфейс керування користувачами</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS" xml:space="preserve">
+    <value>Заголовок уже існує</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE" xml:space="preserve">
+    <value>Заголовок не існує (неможливо видалити)</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT" xml:space="preserve">
+    <value>Заголовок не існує (неможливо редагувати)</value>
+  </data>
+  <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_GIT" xml:space="preserve">
+    <value>Виникла помилка під час обробки запиту на виконання операцій Git.</value>
+  </data>
+  <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_SQL" xml:space="preserve">
+    <value>Виконується неприпустима операція SQL.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_FAILED_LOAD_CONFIG" xml:space="preserve">
+    <value>Не вдалося завантажити конфігурацію.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_ADDONS" xml:space="preserve">
+    <value>Завантаження додаткових модулів ядра...</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_FAILED_LOAD_ADDONS" xml:space="preserve">
+    <value>Не вдалося завантажити додаткові модулі ядра</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG" xml:space="preserve">
+    <value>Пошук у конфігурації</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIGREGEX" xml:space="preserve">
+    <value>Пошук у конфігурації за допомогою регулярного виразу</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPTREGEX" xml:space="preserve">
+    <value>Введіть пошуковий запит для пошуку елемента конфігурації (підтримуються регулярні вирази)</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPT" xml:space="preserve">
+    <value>Введіть пошуковий запит для пошуку елемента конфігурації</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_SELECT" xml:space="preserve">
+    <value>Виберіть ключ конфігурації з результатів пошуку.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_NORESULTS" xml:space="preserve">
+    <value>Немає ключа конфігурації, що відповідає вашому запиту.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_FAILED" xml:space="preserve">
+    <value>Помилка під час пошуку в конфігурації</value>
+  </data>
+  <data name="NKS_KNOWNADDONS_EXTRAS_ANIMATED" xml:space="preserve">
+    <value>Додаткові можливості — Анімація</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONEMPTY" xml:space="preserve">
+    <value>Рядок представлення прав порожній.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTH" xml:space="preserve">
+    <value>Довжина рядка представлення прав має дорівнювати трьом символам.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONINVALID" xml:space="preserve">
+    <value>Неприпустиме представлення на позиції</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTHARRAY" xml:space="preserve">
+    <value>Довжина рядка представлення прав має дорівнювати трьом символам.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERMISSIONS" xml:space="preserve">
+    <value>Права доступу</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMISSIONS" xml:space="preserve">
+    <value>Спеціальні права доступу</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW" xml:space="preserve">
+    <value>Виберіть драйвер хешування зі списку нижче.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_NAME" xml:space="preserve">
+    <value>Читання</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_TITLE" xml:space="preserve">
+    <value>Файл можна читати або виконувати запит до каталогу</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_NAME" xml:space="preserve">
+    <value>Запис</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_TITLE" xml:space="preserve">
+    <value>У файл можна записувати дані або змінювати каталог</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_NAME" xml:space="preserve">
+    <value>Виконання</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_TITLE" xml:space="preserve">
+    <value>Файл можна виконувати або переходити в каталог</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_NAME" xml:space="preserve">
+    <value>Setuid</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_TITLE" xml:space="preserve">
+    <value>Файл виконується з правами власника файлу (зазвичай користувача root)</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_NAME" xml:space="preserve">
+    <value>Setgid</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_TITLE" xml:space="preserve">
+    <value>Файл виконується з правами групи файлу (зазвичай адміністративної групи)</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_NAME" xml:space="preserve">
+    <value>Sticky (липкий біт)</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_TITLE" xml:space="preserve">
+    <value>З файлами в каталозі, де встановлено цей біт, можуть працювати лише власник файлу, власник каталогу та користувач root</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_NAME" xml:space="preserve">
+    <value>Права власника</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_DESC" xml:space="preserve">
+    <value>Тут можна встановити права доступу до файлу для власника</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_NAME" xml:space="preserve">
+    <value>Права групи</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_DESC" xml:space="preserve">
+    <value>Тут можна встановити права доступу до файлу для групи</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_NAME" xml:space="preserve">
+    <value>Права інших користувачів</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_DESC" xml:space="preserve">
+    <value>Тут можна встановити права доступу до файлу для інших користувачів</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_NAME" xml:space="preserve">
+    <value>Спеціальні права доступу</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_DESC" xml:space="preserve">
+    <value>Тут можна встановити спеціальні права для файлів або каталогів</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERMSINFOBOX_NAME" xml:space="preserve">
+    <value>Тут можна змінити права доступу для цього файлу або каталогу.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERMSSETFAILURE" xml:space="preserve">
+    <value>Не вдалося встановити права доступу</value>
+  </data>
+  <data name="NKS_FILES_EXCEPTION_UNIXPERMWINDOWS" xml:space="preserve">
+    <value>Ви не можете використовувати інструменти керування правами Unix у Windows.</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CYCLECOLORS_NAME" xml:space="preserve">
+    <value>Змінювати кольори циклічно</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Автоматично вибирає випадковий набір кольорів</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_NAME" xml:space="preserve">
+    <value>Колір тексту з інформацією про час</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_DESC" xml:space="preserve">
+    <value>Вибір кольору для інформації про час</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_NAME" xml:space="preserve">
+    <value>Колір обідка</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_DESC" xml:space="preserve">
+    <value>Вибір кольору обідка аналогового годинника</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_NAME" xml:space="preserve">
+    <value>Колір стрілок</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_DESC" xml:space="preserve">
+    <value>Вибір кольору стрілок аналогового годинника</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_NAME" xml:space="preserve">
+    <value>Колір секундної стрілки</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_DESC" xml:space="preserve">
+    <value>Вибір кольору секундної стрілки аналогового годинника</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_NAME" xml:space="preserve">
+    <value>Використовувати розширений формат</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_DESC" xml:space="preserve">
+    <value>Використовувати розширений формат для відображення часу</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_NAME" xml:space="preserve">
+    <value>Колір цифрового годинника</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_DESC" xml:space="preserve">
+    <value>Вибір кольору цифрового годинника</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_NAME" xml:space="preserve">
+    <value>Колір інформації про дату</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC" xml:space="preserve">
+    <value>Вибір кольору тексту дати</value>
+  </data>
 </root>

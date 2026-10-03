@@ -2056,4 +2056,100 @@
   <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED" xml:space="preserve">
     <value>取得收件匣失敗</value>
   </data>
+  <data name="NKS_SHELLPACKS_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>不同 shell 的配置</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_FILESTREAMFAILED" xml:space="preserve">
+    <value>開啟歸檔文件流失敗</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_EXCEPTION_NOTSQL" xml:space="preserve">
+    <value>不是 SQL 資料庫文件</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NOFEEDLINK" xml:space="preserve">
+    <value>此訂閱源沒有連結。</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFEEDFAILED" xml:space="preserve">
+    <value>無法在主機瀏覽器中開啟文章連結。</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT" xml:space="preserve">
+    <value>為您的新聞網站編寫 RSS 訂閱源連結。</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDFAILED" xml:space="preserve">
+    <value>新增訂閱源失敗。</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_NAME" xml:space="preserve">
+    <value>篩選條件</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_DESC" xml:space="preserve">
+    <value>編寫用於 RSS 訂閱源文章篩選的正規表示式。符合您條件的文章將會被隱藏。例如，(deal|offer|sale) 將隱藏交易、優惠和促銷。</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME" xml:space="preserve">
+    <value>篩選類型</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC" xml:space="preserve">
+    <value>指定篩選目標，即按名稱、描述或兩者篩選文章。</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME_NAME" xml:space="preserve">
+    <value>按名稱篩選</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC_NAME" xml:space="preserve">
+    <value>依描述篩選</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAMEDESC_NAME" xml:space="preserve">
+    <value>按名稱和描述篩選</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT" xml:space="preserve">
+    <value>指定您希望如何篩選文章。</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_INVALIDFILTER" xml:space="preserve">
+    <value>篩選條件無效。</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERFAILED" xml:space="preserve">
+    <value>篩選文章失敗。</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE" xml:space="preserve">
+    <value>新增訂閱源</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESHALL" xml:space="preserve">
+    <value>全部刷新</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED" xml:space="preserve">
+    <value>開啟訂閱源首頁</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERARTICLES" xml:space="preserve">
+    <value>篩選文章</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERRESET" xml:space="preserve">
+    <value>重置篩選條件</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED" xml:space="preserve">
+    <value>IMAP 伺服器未連接</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_POP3NOTCONNECTED" xml:space="preserve">
+    <value>POP3 伺服器未連接</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_POP3SERVERPROMPT" xml:space="preserve">
+    <value>請輸入 IMAP 伺服器位址和連接埠（&lt;位址&gt; 或 &lt;位址&gt;:[連接埠]）：</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_NOPOP3" xml:space="preserve">
+    <value>無法取得 POP3 伺服器配置</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED" xml:space="preserve">
+    <value>取得資料夾 {0} 失敗</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED" xml:space="preserve">
+    <value>SMTP 伺服器未連接</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_NAME" xml:space="preserve">
+    <value>POP3 郵件提示樣式</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_DESC" xml:space="preserve">
+    <value>請輸入您希望的 POP3 伺服器提示樣式。留空則使用預設樣式。系統會自動解析佔位符。</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_NAME" xml:space="preserve">
+    <value>發送 POP3 ping 間隔</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_DESC" xml:space="preserve">
+    <value>請輸入您希望的 POP3 伺服器提示樣式。留空則使用預設樣式。系統會自動解析佔位符。</value>
+  </data>
 </root>

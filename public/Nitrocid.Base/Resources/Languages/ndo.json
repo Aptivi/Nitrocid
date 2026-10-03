@@ -9105,6 +9105,534 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC",
       "text": "Kompresi tinggi"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS",
+      "text": "Ubah izin Unix"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT",
+      "text": "Atribut"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_FLAGSPROMPT",
+      "text": "Pilih atribut"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT_DESC",
+      "text": "Pilih atribut untuk pengguna ini"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ADMIN",
+      "text": "Administrator"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ADMIN_DESC",
+      "text": "Pengguna ini dapat menjalankan operasi dengan hak istimewa"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ANONYMOUS",
+      "text": "Anonim"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ANONYMOUS_DESC",
+      "text": "Pengguna ini tidak akan muncul dalam daftar nama pengguna"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_DISABLED",
+      "text": "Dinonaktifkan"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_DISABLED_DESC",
+      "text": "Pengguna ini dinonaktifkan dan tidak dapat digunakan untuk masuk"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT",
+      "text": "Atribut"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_EXTRAUSERPROMPT",
+      "text": "Pilih atribut"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_DESC",
+      "text": "Pilih atribut untuk pengguna ini"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_YES_DESC",
+      "text": "Tambahkan pengguna tambahan"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_NO_DESC",
+      "text": "Jangan tambahkan pengguna tambahan"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1_NEW",
+      "text": "Anda kini siap menggunakan sistem operasi Nitrocid!"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_TITLE",
+      "text": "Mengelola pengguna"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_DESC",
+      "text": "Menggunakan TUI pengguna untuk mengelola pengguna"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_BODY",
+      "text": "Dengan antarmuka pengguna berbasis teks ini, Anda dapat mengelola pengguna dengan mudah."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_NEWPASSWORDPROMPT",
+      "text": "Kata sandi baru {0}:"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_NEWCONFIRMPASSWORDPROMPT",
+      "text": "Konfirmasi kata sandi baru {0}:"
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDERROR",
+      "text": "Terjadi kesalahan saat mencoba mengubah kata sandi pengguna."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTPERMISSIONS",
+      "text": "Pilih izin pengguna dari daftar di bawah ini."
+    },
+    {
+      "loc": "NKS_SECURITY_PERMISSIONS_EXCEPTION_MANAGEMENTERROR",
+      "text": "Pengelolaan izin gagal."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTFLAGS",
+      "text": "Pilih flag pengguna dari daftar di bawah ini."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_FLAGMANAGEMENTERROR",
+      "text": "Pengelolaan flag gagal."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTGROUPS",
+      "text": "Pilih grup pengguna dari daftar di bawah ini."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_GROUPMANAGEMENTERROR",
+      "text": "Pengelolaan grup gagal."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_CHANGEPASSWORD",
+      "text": "Ubah kata sandi"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEFLAGS",
+      "text": "Kelola flag"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEPERMS",
+      "text": "Kelola izin"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEMEMBERSHIPS",
+      "text": "Kelola keanggotaan"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_TITLE",
+      "text": "Mengelola grup"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_DESC",
+      "text": "Menggunakan TUI grup untuk mengelola grup"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_BODY",
+      "text": "Dengan antarmuka pengguna berbasis teks ini, Anda dapat mengelola grup dengan mudah."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME",
+      "text": "Nama grup"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME_PROMPT",
+      "text": "Masukkan nama grup."
+    },
+    {
+      "loc": "NKS_USERS_GROUPS_EXCEPTION_GROUPADDFAILED",
+      "text": "Gagal menambahkan grup."
+    },
+    {
+      "loc": "NKS_USERS_GROUPS_EXCEPTION_GROUPREMOVEFAILED",
+      "text": "Gagal menghapus grup."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_SELECTPERMISSIONS",
+      "text": "Pilih izin grup dari daftar di bawah ini."
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_USERMANAGER",
+      "text": "Manajer pengguna"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_GROUPMANAGER",
+      "text": "Manajer grup"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_FIND",
+      "text": "Cari"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_FINDREGEX",
+      "text": "Cari dengan regex"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FINDREGEX_PROMPT",
+      "text": "Masukkan kata kunci pencarian untuk pilihan halaman utama (mendukung ekspresi reguler)."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_PROMPT",
+      "text": "Masukkan kata kunci pencarian untuk pilihan halaman utama (tidak membedakan huruf besar/kecil)."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_NORESULTS",
+      "text": "Pilihan tidak ditemukan dalam kata kunci pencarian ini."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_SELECT",
+      "text": "Pilih salah satu opsi dari hasil pencarian di bawah ini."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_DESC",
+      "text": "Menampilkan teks dalam bentuk seni ASCII sapi yang menarik"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC",
+      "text": "Teks untuk dicetak dalam balon percakapan"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC",
+      "text": "Nama sapi yang digunakan untuk tampilan"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_INVALIDCOW",
+      "text": "Nama seni sapi tidak valid."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_DESC",
+      "text": "Menampilkan teks dalam bentuk seni ASCII Figlet yang menarik"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_ARGUMENT_TEXT_DESC",
+      "text": "Teks untuk dicetak menggunakan font Figlet"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_SWITCH_FIGLET_DESC",
+      "text": "Font Figlet yang digunakan untuk tampilan"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_INVALIDFIGLET",
+      "text": "Nama font Figlet tidak valid."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPMANTUI_DESC",
+      "text": "Membuka TUI manajemen grup"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
+      "text": "Mengalihkan komputer ke mode tidur (sleep)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_DESC",
+      "text": "Mengatur izin Unix untuk sebuah file"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC",
+      "text": "Izin baca, tulis, atau eksekusi dalam format angka \"chmod\""
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_ARGUMENT_FILE_DESC",
+      "text": "Jalur file untuk pengaturan izin Unix"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETUID_DESC",
+      "text": "Mengatur ID pengguna"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETGID_DESC",
+      "text": "Mengatur ID grup"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_STICKY_DESC",
+      "text": "Mengatur sticky bit"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_DESC",
+      "text": "Menghitung izin Unix"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC",
+      "text": "Menentukan metode konversi"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_USERREP_DESC",
+      "text": "Izin baca, tulis, atau eksekusi untuk pengguna (user)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_GROUPREP_DESC",
+      "text": "Izin baca, tulis, atau eksekusi untuk grup (group)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_OTHERREP_DESC",
+      "text": "Izin baca, tulis, atau eksekusi untuk pihak lain (others)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC",
+      "text": "Membuka TUI manajemen pengguna"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
+      "text": "Header sudah ada"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
+      "text": "Header tidak ditemukan untuk dihapus"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
+      "text": "Header tidak ditemukan untuk diedit"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_GIT",
+      "text": "Terjadi kesalahan saat memproses permintaan operasi Git Anda."
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_SQL",
+      "text": "Operasi SQL yang tidak valid sedang dijalankan."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_CONFIG",
+      "text": "Gagal memuat konfigurasi."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ADDONS",
+      "text": "Memuat addon kernel..."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ADDONS",
+      "text": "Gagal memuat addon kernel"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG",
+      "text": "Cari konfigurasi"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIGREGEX",
+      "text": "Cari konfigurasi menggunakan regex"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPTREGEX",
+      "text": "Masukkan kata kunci untuk mencari entri konfigurasi (mendukung regex)"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPT",
+      "text": "Masukkan kata kunci untuk mencari entri konfigurasi"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_SELECT",
+      "text": "Pilih kunci konfigurasi dari hasil pencarian."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_NORESULTS",
+      "text": "Tidak ada kunci konfigurasi yang sesuai dengan kata kunci pencarian Anda."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_FAILED",
+      "text": "Pencarian konfigurasi gagal"
+    },
+    {
+      "loc": "NKS_KNOWNADDONS_EXTRAS_ANIMATED",
+      "text": "Tambahan - Animasi"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONEMPTY",
+      "text": "String representasi izin kosong."
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTH",
+      "text": "Panjang string representasi izin harus tiga karakter."
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONINVALID",
+      "text": "Representasi tidak valid pada posisi"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTHARRAY",
+      "text": "Panjang representasi izin harus tiga karakter."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMISSIONS",
+      "text": "Izin"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMISSIONS",
+      "text": "Izin khusus"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW",
+      "text": "Pilih driver hash dari daftar di bawah ini."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_NAME",
+      "text": "Baca"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_TITLE",
+      "text": "File dapat dibaca atau direktori dapat dikueri"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_NAME",
+      "text": "Tulis"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_TITLE",
+      "text": "File dapat ditulis atau direktori dapat dimodifikasi"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_NAME",
+      "text": "Eksekusi"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_TITLE",
+      "text": "File dapat dijalankan atau direktori dapat diakses/dimasuki"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_NAME",
+      "text": "Setuid"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_TITLE",
+      "text": "File dapat dijalankan dengan hak akses pemilik file, biasanya pengguna root"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_NAME",
+      "text": "Setgid"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_TITLE",
+      "text": "File dapat dijalankan dengan hak akses grup file, biasanya grup administratif"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_NAME",
+      "text": "Sticky"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_TITLE",
+      "text": "File di dalam direktori dengan bit ini aktif hanya dapat dimanipulasi oleh pemilik file, pemilik direktori, dan pengguna root"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_NAME",
+      "text": "Izin pengguna"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_DESC",
+      "text": "Anda dapat mengatur izin file untuk pemilik di sini"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_NAME",
+      "text": "Izin grup"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_DESC",
+      "text": "Anda dapat mengatur izin file untuk grup di sini"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_NAME",
+      "text": "Izin lainnya"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_DESC",
+      "text": "Anda dapat mengatur izin file untuk pihak lain di sini"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_NAME",
+      "text": "Izin khusus"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_DESC",
+      "text": "Anda dapat mengatur izin khusus untuk file atau direktori"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMSINFOBOX_NAME",
+      "text": "Anda dapat mengubah izin untuk file atau direktori ini di sini."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMSSETFAILURE",
+      "text": "Pengaturan izin gagal"
+    },
+    {
+      "loc": "NKS_FILES_EXCEPTION_UNIXPERMWINDOWS",
+      "text": "Anda tidak dapat menggunakan alat izin Unix di Windows."
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_NAME",
+      "text": "Rotasi warna"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_DESC",
+      "text": "Memilih rangkaian warna secara acak secara otomatis"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_NAME",
+      "text": "Warna teks informasi waktu"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_DESC",
+      "text": "Memilih warna untuk informasi waktu"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_NAME",
+      "text": "Warna bingkai"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_DESC",
+      "text": "Memilih warna bingkai jam analog"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_NAME",
+      "text": "Warna jarum jam"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_DESC",
+      "text": "Memilih warna jarum jam analog"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_NAME",
+      "text": "Warna jarum detik"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_DESC",
+      "text": "Memilih warna jarum detik jam analog"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_NAME",
+      "text": "Gunakan format panjang"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_DESC",
+      "text": "Menggunakan format panjang saat menampilkan waktu"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_NAME",
+      "text": "Warna jam digital"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_DESC",
+      "text": "Menentukan warna jam digital"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_NAME",
+      "text": "Warna informasi tanggal"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC",
+      "text": "Menentukan warna teks tanggal"
     }
   ]
 }

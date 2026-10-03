@@ -2056,4 +2056,100 @@
   <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED" xml:space="preserve">
     <value>Henting av innboks mislyktes</value>
   </data>
+  <data name="NKS_SHELLPACKS_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Konfigurasjon for ulike skall</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_FILESTREAMFAILED" xml:space="preserve">
+    <value>Kunne ikke åpne arkivfilstrømmen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_EXCEPTION_NOTSQL" xml:space="preserve">
+    <value>Ikke en SQL-databasefil</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NOFEEDLINK" xml:space="preserve">
+    <value>Denne strømmen mangler en lenke.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFEEDFAILED" xml:space="preserve">
+    <value>Kan ikke åpne nettleseren for å vise artikkelen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT" xml:space="preserve">
+    <value>Angi en RSS-strøm-lenke for nyhetssiden din.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDFAILED" xml:space="preserve">
+    <value>Kunne ikke legge til ny strøm.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_NAME" xml:space="preserve">
+    <value>Filterkriterier</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_DESC" xml:space="preserve">
+    <value>Skriv inn et regulært uttrykk for filtrering av artikler i RSS-strømmen. Artikler som oppfyller kriteriene, vil bli skjult. For eksempel vil (deal|offer|sale) skjule tilbud og salg.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME" xml:space="preserve">
+    <value>Filtertype</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC" xml:space="preserve">
+    <value>Angi hva filteret skal gjelde for: om du vil filtrere artikler etter navn, beskrivelse eller begge deler.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME_NAME" xml:space="preserve">
+    <value>Filtrer etter navn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC_NAME" xml:space="preserve">
+    <value>Filtrer etter beskrivelse</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAMEDESC_NAME" xml:space="preserve">
+    <value>Filtrer etter navn og beskrivelse</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT" xml:space="preserve">
+    <value>Angi hvordan du vil filtrere artikler.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_INVALIDFILTER" xml:space="preserve">
+    <value>Ugyldige filterkriterier.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERFAILED" xml:space="preserve">
+    <value>Filtrering av artikler mislyktes.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE" xml:space="preserve">
+    <value>Legger til en strøm</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESHALL" xml:space="preserve">
+    <value>Oppdater alt</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED" xml:space="preserve">
+    <value>Åpne strømmens hjemmeside</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERARTICLES" xml:space="preserve">
+    <value>Filtrer artikler</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERRESET" xml:space="preserve">
+    <value>Nullstill filter</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED" xml:space="preserve">
+    <value>Ikke tilkoblet IMAP-tjener</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_POP3NOTCONNECTED" xml:space="preserve">
+    <value>Ikke tilkoblet POP3-tjener</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_POP3SERVERPROMPT" xml:space="preserve">
+    <value>Angi adresse og port for IMAP-tjener (&lt;adresse&gt; eller &lt;adresse&gt;:[port]):</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_NOPOP3" xml:space="preserve">
+    <value>Kan ikke hente konfigurasjon for POP3-tjener</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED" xml:space="preserve">
+    <value>Kunne ikke hente mappen {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED" xml:space="preserve">
+    <value>Ikke tilkoblet SMTP-tjener</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_NAME" xml:space="preserve">
+    <value>Stil for POP3-ledetekst for e-post</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_DESC" xml:space="preserve">
+    <value>Angi hvordan ledeteksten for POP3-tjeneren skal se ut. La feltet være tomt for å bruke standardstil. Plassholdere tolkes.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_NAME" xml:space="preserve">
+    <value>Intervall for sending av POP3-ping</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_DESC" xml:space="preserve">
+    <value>Angi hvordan ledeteksten for POP3-tjeneren skal se ut. La feltet være tomt for å bruke standardstil. Plassholdere tolkes.</value>
+  </data>
 </root>

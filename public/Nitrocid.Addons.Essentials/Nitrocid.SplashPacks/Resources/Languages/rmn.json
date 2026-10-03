@@ -106,6 +106,10 @@
     {
       "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
       "text": "Afișează o casetă care se umple cu rapoartele pe care le stochează acest splash"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configurația pachetelor de stropire"
     }
   ]
 }

@@ -112,4 +112,7 @@
   <data name="NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC" xml:space="preserve">
     <value>Testam a programmate colloquendi artificiali (IA) nunc operante separat.</value>
   </data>
+  <data name="NKS_CHATBOT_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Configuratio automati colloquialis intellegentiae artificialis</value>
+  </data>
 </root>

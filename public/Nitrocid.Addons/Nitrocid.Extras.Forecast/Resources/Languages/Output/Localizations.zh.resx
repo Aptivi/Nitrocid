@@ -259,4 +259,10 @@
   <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
     <value>我們使用 OpenWeatherMap 取得天氣預報數據，如果您願意付費，我們也支援使用 The Weather Channel (weather.com) 提供的相同數據。</value>
   </data>
+  <data name="NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>預報配置</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATLON" xml:space="preserve">
+    <value>請在下方輸入城市或地區的緯度和經度。</value>
+  </data>
 </root>

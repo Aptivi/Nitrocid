@@ -126,7 +126,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
             string finalPrompt = "";
             if (protocolType == MailProtocolType.POP3)
             {
-                // TODO: NKS_SHELLPACKS_MAIL_POP3SERVERPROMPT -> "Enter IMAP server address and port (<address> or <address>:[port]): "
                 finalPrompt = LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_POP3SERVERPROMPT");
                 if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailPOP3PromptStyle))
                     finalPrompt = PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailPOP3PromptStyle);
@@ -213,7 +212,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
                         var Pop3Servers = DynamicConfiguration.EmailProvider?.IncomingServer?.Select(x => x).Where(x => x.Type == "pop3");
                         if (Pop3Servers is not null && Pop3Servers.Any())
                         {
-                            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_NOPOP3 -> Can't get POP3 server configuration
                             var Pop3Server = Pop3Servers.ElementAtOrDefault(0) ??
                                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_NOPOP3"));
                             ReturnedMailAddress = Pop3Server.Hostname;

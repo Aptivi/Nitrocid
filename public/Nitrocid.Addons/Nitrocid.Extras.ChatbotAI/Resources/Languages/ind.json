@@ -77,6 +77,10 @@
     {
       "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
       "text": "maujuda kaam kar rahe AI chatbot se shell ko alag karta hai"
+    },
+    {
+      "loc": "NKS_CHATBOT_SETTINGS_INSTANCES_SETTINGS",
+      "text": "chatbot AI configuration"
     }
   ]
 }

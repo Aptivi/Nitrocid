@@ -302,6 +302,10 @@
     {
       "loc": "NKS_DATES_EXPIRY_STATUS_EXCELLENT",
       "text": "훌륭함"
+    },
+    {
+      "loc": "NKS_DATES_SETTINGS_INSTANCES_SETTINGS",
+      "text": "날짜 설정"
     }
   ]
 }

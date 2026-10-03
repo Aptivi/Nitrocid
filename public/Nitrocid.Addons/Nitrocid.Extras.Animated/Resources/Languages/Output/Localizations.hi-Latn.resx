@@ -244,4 +244,10 @@
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC" xml:space="preserve">
     <value>yah aapako rangon ko konfigar karane kee anumati deta hai</value>
   </data>
+  <data name="NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SAVERSETTINGS" xml:space="preserve">
+    <value>animated screensevar configaration</value>
+  </data>
+  <data name="NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SPLASHESSETTINGS" xml:space="preserve">
+    <value>animated splash configuration</value>
+  </data>
 </root>

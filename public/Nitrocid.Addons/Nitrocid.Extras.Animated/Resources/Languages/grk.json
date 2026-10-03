@@ -254,6 +254,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
       "text": "Αυτό σας επιτρέπει να διαμορφώσετε τα χρώματα"
+    },
+    {
+      "loc": "NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SAVERSETTINGS",
+      "text": "Ρύθμιση κινούμενης προφύλαξης οθόνης"
+    },
+    {
+      "loc": "NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SPLASHESSETTINGS",
+      "text": "Ρύθμιση κινούμενων πιτσιλιών"
     }
   ]
 }

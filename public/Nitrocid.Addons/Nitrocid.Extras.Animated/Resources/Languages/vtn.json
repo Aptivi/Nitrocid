@@ -253,6 +253,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
       "text": "Điều này cho phép bạn cấu hình màu sắc"
+    },
+    {
+      "loc": "NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SAVERSETTINGS",
+      "text": "Cấu hình trình bảo vệ màn hình động"
+    },
+    {
+      "loc": "NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SPLASHESSETTINGS",
+      "text": "Cấu hình màn hình chào động"
     }
   ]
 }

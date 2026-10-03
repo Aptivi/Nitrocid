@@ -6883,4 +6883,400 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC" xml:space="preserve">
     <value>Ard-chomhbhrú</value>
   </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS" xml:space="preserve">
+    <value>Athraigh ceadanna Unix</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT" xml:space="preserve">
+    <value>Tréithe</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_FLAGSPROMPT" xml:space="preserve">
+    <value>Roghnaigh na tréithe</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT_DESC" xml:space="preserve">
+    <value>Roghnaigh tréithe an úsáideora seo</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_ADMIN" xml:space="preserve">
+    <value>Riarthóir</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_ADMIN_DESC" xml:space="preserve">
+    <value>Is féidir leis an úsáideoir seo oibríochtaí príbhléideacha a dhéanamh</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_ANONYMOUS" xml:space="preserve">
+    <value>Gan ainm</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_ANONYMOUS_DESC" xml:space="preserve">
+    <value>Ní bheidh an t-úsáideoir seo le feiceáil sa liosta ainmneacha úsáideora</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_DISABLED" xml:space="preserve">
+    <value>Díchumasaithe</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_DISABLED_DESC" xml:space="preserve">
+    <value>Tá an t-úsáideoir seo díchumasaithe agus ní féidir é a úsáid chun logáil isteach</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT" xml:space="preserve">
+    <value>Tréithe</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_EXTRAUSERPROMPT" xml:space="preserve">
+    <value>Roghnaigh na tréithe</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_DESC" xml:space="preserve">
+    <value>Roghnaigh tréithe an úsáideora seo</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_YES_DESC" xml:space="preserve">
+    <value>Cuir úsáideoir breise leis</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_NO_DESC" xml:space="preserve">
+    <value>Ná cuir úsáideoir breise leis</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1_NEW" xml:space="preserve">
+    <value>Tá tú réidh anois chun córas oibriúcháin Nitrocid a úsáid!</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Úsáideoirí a bhainistiú</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_HELP01_DESC" xml:space="preserve">
+    <value>Úsáideoirí a bhainistiú trí chomhéadan téacs-bhunaithe (TUI)</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_HELP01_BODY" xml:space="preserve">
+    <value>Leis an gcomhéadan téacs-bhunaithe seo, is féidir leat úsáideoirí a bhainistiú go héasca.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_NEWPASSWORDPROMPT" xml:space="preserve">
+    <value>Pasfhocal nua {0}:</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_NEWCONFIRMPASSWORDPROMPT" xml:space="preserve">
+    <value>Deimhnigh pasfhocal nua {0}:</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_CHANGEPASSWORDERROR" xml:space="preserve">
+    <value>Earráid agus iarracht á déanamh pasfhocal úsáideora a athrú.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_SELECTPERMISSIONS" xml:space="preserve">
+    <value>Roghnaigh ceadanna úsáideora ón liosta thíos.</value>
+  </data>
+  <data name="NKS_SECURITY_PERMISSIONS_EXCEPTION_MANAGEMENTERROR" xml:space="preserve">
+    <value>Theip ar bhainistiú na gceadanna.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_SELECTFLAGS" xml:space="preserve">
+    <value>Roghnaigh bratacha úsáideora ón liosta thíos.</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_FLAGMANAGEMENTERROR" xml:space="preserve">
+    <value>Theip ar bhainistiú na mbratach.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_SELECTGROUPS" xml:space="preserve">
+    <value>Roghnaigh grúpaí úsáideora ón liosta thíos.</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_GROUPMANAGEMENTERROR" xml:space="preserve">
+    <value>Theip ar bhainistiú na ngrúpaí.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_CHANGEPASSWORD" xml:space="preserve">
+    <value>Athraigh pasfhocal</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEFLAGS" xml:space="preserve">
+    <value>Bainistigh bratacha</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEPERMS" xml:space="preserve">
+    <value>Bainistigh ceadanna</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEMEMBERSHIPS" xml:space="preserve">
+    <value>Bainistigh ballraíochtaí</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Grúpaí a bhainistiú</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_DESC" xml:space="preserve">
+    <value>Grúpaí a bhainistiú trí chomhéadan téacs-bhunaithe (TUI)</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_BODY" xml:space="preserve">
+    <value>Leis an gcomhéadan téacs-bhunaithe seo, is féidir leat grúpaí a bhainistiú go héasca.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME" xml:space="preserve">
+    <value>Ainm an ghrúpa</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME_PROMPT" xml:space="preserve">
+    <value>Cuir isteach ainm an ghrúpa.</value>
+  </data>
+  <data name="NKS_USERS_GROUPS_EXCEPTION_GROUPADDFAILED" xml:space="preserve">
+    <value>Theip ar an ngrúpa a chur leis.</value>
+  </data>
+  <data name="NKS_USERS_GROUPS_EXCEPTION_GROUPREMOVEFAILED" xml:space="preserve">
+    <value>Theip ar an ngrúpa a bhaint.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSTUI_SELECTPERMISSIONS" xml:space="preserve">
+    <value>Roghnaigh ceadanna grúpa ón liosta thíos.</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_USERMANAGER" xml:space="preserve">
+    <value>Bainisteoir úsáideoirí</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_GROUPMANAGER" xml:space="preserve">
+    <value>Bainisteoir grúpaí</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_FIND" xml:space="preserve">
+    <value>Aimsigh</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_FINDREGEX" xml:space="preserve">
+    <value>Aimsigh le slonn rialta (regex)</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_FINDREGEX_PROMPT" xml:space="preserve">
+    <value>Cuir isteach téarma cuardaigh do roghanna an leathanaigh bhaile (tacaíonn sé le slonn rialta).</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_FIND_PROMPT" xml:space="preserve">
+    <value>Cuir isteach téarma cuardaigh do roghanna an leathanaigh bhaile (gan aird ar chás na litreach).</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_FIND_NORESULTS" xml:space="preserve">
+    <value>Níor aimsíodh an rogha leis an téarma cuardaigh seo.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_FIND_SELECT" xml:space="preserve">
+    <value>Roghnaigh rogha ó na torthaí cuardaigh thíos.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_DESC" xml:space="preserve">
+    <value>Taispeánann sé téacs mar bhó ASCII dheas</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC" xml:space="preserve">
+    <value>Téacs le priontáil i mboilgeog chomhrá</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC" xml:space="preserve">
+    <value>Ainm na bó le húsáid sa taispeáint</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_INVALIDCOW" xml:space="preserve">
+    <value>Ainm míbhailí ar ealaín bó.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_DESC" xml:space="preserve">
+    <value>Taispeánann sé téacs i bhformáid Figlet ASCII dheas</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_ARGUMENT_TEXT_DESC" xml:space="preserve">
+    <value>Téacs le priontáil i gcló Figlet</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_SWITCH_FIGLET_DESC" xml:space="preserve">
+    <value>Cló Figlet le húsáid sa taispeáint</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_INVALIDFIGLET" xml:space="preserve">
+    <value>Ainm míbhailí ar chló Figlet.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPMANTUI_DESC" xml:space="preserve">
+    <value>Osclaíonn sé an comhéadan téacsbhunaithe (TUI) chun grúpaí a bhainistiú</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC" xml:space="preserve">
+    <value>Cuireann sé do ríomhaire i mód codlata</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_DESC" xml:space="preserve">
+    <value>Socraíonn sé ceadanna Unix do chomhad</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC" xml:space="preserve">
+    <value>Ceadanna léite, scríofa nó forghníomhaithe mar uimhir "chmod"</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>Conair chuig an gcomhad a bhfuil ceadanna Unix le socrú dó</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETUID_DESC" xml:space="preserve">
+    <value>Socraigh ID an úsáideora</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETGID_DESC" xml:space="preserve">
+    <value>Socraigh ID an ghrúpa</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_STICKY_DESC" xml:space="preserve">
+    <value>Socraigh an giotán 'sticky'</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_DESC" xml:space="preserve">
+    <value>Ríomhann sé ceadanna Unix</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC" xml:space="preserve">
+    <value>Sonraigh an modh tiontaithe</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_USERREP_DESC" xml:space="preserve">
+    <value>Ceadanna léite, scríofa nó forghníomhaithe don úsáideoir</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_GROUPREP_DESC" xml:space="preserve">
+    <value>Ceadanna léite, scríofa nó forghníomhaithe don ghrúpa</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_OTHERREP_DESC" xml:space="preserve">
+    <value>Ceadanna léite, scríofa nó forghníomhaithe do dhaoine eile</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC" xml:space="preserve">
+    <value>Osclaíonn sé an comhéadan téacsbhunaithe (TUI) chun úsáideoirí a bhainistiú</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS" xml:space="preserve">
+    <value>Tá an ceanntásc ann cheana féin</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE" xml:space="preserve">
+    <value>Níl an ceanntásc ann le baint</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT" xml:space="preserve">
+    <value>Níl an ceanntásc ann le cur in eagar</value>
+  </data>
+  <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_GIT" xml:space="preserve">
+    <value>Tharla earráid agus iarracht á déanamh do iarratas ar oibríochtaí Git a phróiseáil.</value>
+  </data>
+  <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_SQL" xml:space="preserve">
+    <value>Tá oibríocht SQL neamhbhailí á déanamh.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_FAILED_LOAD_CONFIG" xml:space="preserve">
+    <value>Theip ar luchtú na cumraíochta.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_ADDONS" xml:space="preserve">
+    <value>Ag luchtú breiseán eithne...</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_FAILED_LOAD_ADDONS" xml:space="preserve">
+    <value>Theip ar luchtú na mbreiseán eithne</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG" xml:space="preserve">
+    <value>Cuardaigh an chumraíocht</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIGREGEX" xml:space="preserve">
+    <value>Cuardaigh an chumraíocht ag baint úsáide as slonn rialta (regex)</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPTREGEX" xml:space="preserve">
+    <value>Cuir isteach téarma cuardaigh chun iontráil chumraíochta a aimsiú (tacaítear le slonn rialta)</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPT" xml:space="preserve">
+    <value>Cuir isteach téarma cuardaigh chun iontráil chumraíochta a aimsiú</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_SELECT" xml:space="preserve">
+    <value>Roghnaigh eochair chumraíochta ó na torthaí cuardaigh.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_NORESULTS" xml:space="preserve">
+    <value>Níl aon eochair chumraíochta ann a fhreagraíonn do do théarma cuardaigh.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_FAILED" xml:space="preserve">
+    <value>Theip ar chuardach na cumraíochta</value>
+  </data>
+  <data name="NKS_KNOWNADDONS_EXTRAS_ANIMATED" xml:space="preserve">
+    <value>Breiseanna - Beoite</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONEMPTY" xml:space="preserve">
+    <value>Tá an teaghrán a léiríonn na ceadanna folamh.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTH" xml:space="preserve">
+    <value>Caithfidh fad an teaghráin a léiríonn na ceadanna a bheith trí charachtar.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONINVALID" xml:space="preserve">
+    <value>Léiriú neamhbhailí ag an suíomh</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTHARRAY" xml:space="preserve">
+    <value>Caithfidh fad an léirithe ceadanna a bheith trí charachtar.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERMISSIONS" xml:space="preserve">
+    <value>Ceadanna</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMISSIONS" xml:space="preserve">
+    <value>Ceadanna speisialta</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW" xml:space="preserve">
+    <value>Roghnaigh tiománaí haise (hash driver) ón liosta thíos.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_NAME" xml:space="preserve">
+    <value>Léamh</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_TITLE" xml:space="preserve">
+    <value>Is féidir an comhad a léamh nó ceist a chur ar an eolaire</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_NAME" xml:space="preserve">
+    <value>Scríobh</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_TITLE" xml:space="preserve">
+    <value>Is féidir scríobh chuig an gcomhad nó an t-eolaire a mhodhnú</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_NAME" xml:space="preserve">
+    <value>Forghníomhú</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_TITLE" xml:space="preserve">
+    <value>Is féidir an comhad a fhorghníomhú nó an t-eolaire a thrasnú</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_NAME" xml:space="preserve">
+    <value>Setuid</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_TITLE" xml:space="preserve">
+    <value>Is féidir an comhad a fhorghníomhú le pribhléidí úinéir an chomhaid, úsáideoir 'root' de ghnáth</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_NAME" xml:space="preserve">
+    <value>Setgid</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_TITLE" xml:space="preserve">
+    <value>Is féidir an comhad a fhorghníomhú le pribhléidí ghrúpa an chomhaid, grúpa riaracháin de ghnáth</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_NAME" xml:space="preserve">
+    <value>Sticky</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_TITLE" xml:space="preserve">
+    <value>Ní féidir comhaid laistigh d'eolaire a bhfuil an giotán seo socraithe air a láimhseáil ach ag úinéir an chomhaid, ag úinéir an eolaire, agus ag úsáideoir 'root'</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_NAME" xml:space="preserve">
+    <value>Ceadanna úsáideora</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_DESC" xml:space="preserve">
+    <value>Is féidir leat ceadanna comhaid a shocrú don úinéir anseo</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_NAME" xml:space="preserve">
+    <value>Ceadanna grúpa</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_DESC" xml:space="preserve">
+    <value>Is féidir leat ceadanna comhaid a shocrú don ghrúpa anseo</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_NAME" xml:space="preserve">
+    <value>Ceadanna eile</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_DESC" xml:space="preserve">
+    <value>Is féidir leat ceadanna comhaid a shocrú do dhaoine eile anseo</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_NAME" xml:space="preserve">
+    <value>Ceadanna speisialta</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_DESC" xml:space="preserve">
+    <value>Is féidir leat ceadanna speisialta a shocrú do chomhaid nó d'eolairí</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERMSINFOBOX_NAME" xml:space="preserve">
+    <value>Is féidir leat na ceadanna don chomhad nó don eolaire seo a athrú anseo.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERMSSETFAILURE" xml:space="preserve">
+    <value>Theip ar shocrú na gceadanna</value>
+  </data>
+  <data name="NKS_FILES_EXCEPTION_UNIXPERMWINDOWS" xml:space="preserve">
+    <value>Ní féidir uirlisí ceadanna Unix a úsáid ar Windows.</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CYCLECOLORS_NAME" xml:space="preserve">
+    <value>Rothlaigh dathanna</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Roghnaítear tacar randamach dathanna go huathoibríoch</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_NAME" xml:space="preserve">
+    <value>Dath na téacs-eolais faoin am</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_DESC" xml:space="preserve">
+    <value>Roghnaítear dath don fhaisnéis ama</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_NAME" xml:space="preserve">
+    <value>Dath an fhráma</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_DESC" xml:space="preserve">
+    <value>Roghnaítear dath do fhráma an chloig analógaigh</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_NAME" xml:space="preserve">
+    <value>Dath na ngéag</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_DESC" xml:space="preserve">
+    <value>Roghnaítear dath do ghéaga an chloig analógaigh</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_NAME" xml:space="preserve">
+    <value>Dath na géige soicindí</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_DESC" xml:space="preserve">
+    <value>Roghnaítear dath do ghéag soicindí an chloig analógaigh</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_NAME" xml:space="preserve">
+    <value>Úsáid formáid fhada</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_DESC" xml:space="preserve">
+    <value>Úsáidtear formáid fhada agus an t-am á thaispeáint</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_NAME" xml:space="preserve">
+    <value>Dath an chloig dhigitigh</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_DESC" xml:space="preserve">
+    <value>Socraítear dath an chloig dhigitigh</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_NAME" xml:space="preserve">
+    <value>Dath na faisnéise dáta</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC" xml:space="preserve">
+    <value>Socraítear dath na téacs-dáta</value>
+  </data>
 </root>

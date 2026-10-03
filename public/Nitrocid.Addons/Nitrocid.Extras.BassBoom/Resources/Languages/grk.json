@@ -182,6 +182,34 @@
     {
       "loc": "NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC",
       "text": "Μεταφορά στον ραδιοφωνικό σταθμό MPEG"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_PLAYRADIO_DESC",
+      "text": "Αναπαραγωγή ραδιοφωνικού σταθμού"
+    },
+    {
+      "loc": "NKS_BASSBOOM_COMMAND_ARGUMENT_RADIOURL_DESC",
+      "text": "Διαδρομή προς ραδιοφωνικό σταθμό"
+    },
+    {
+      "loc": "NKS_BASSBOOM_OPENEDRADIOFILE",
+      "text": "Ο ραδιοφωνικός σταθμός άνοιξε με επιτυχία."
+    },
+    {
+      "loc": "NKS_BASSBOOM_CANTOPENRADIOFILE",
+      "text": "Αδυναμία ανοίγματος του ραδιοφωνικού σταθμού."
+    },
+    {
+      "loc": "NKS_BASSBOOM_NOWPLAYING",
+      "text": "Αναπαράγεται τώρα"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Ρυθμίσεις προγράμματος αναπαραγωγής μουσικής BassBoom"
+    },
+    {
+      "loc": "NKS_BASSBOOM_SETTINGS_INSTANCES_SAVERSETTINGS",
+      "text": "Ρυθμίσεις προστασίας οθόνης BassBoom"
     }
   ]
 }

@@ -112,4 +112,7 @@
   <data name="NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC" xml:space="preserve">
     <value>Mevcut çalışan yapay zeka sohbet robotundan kabuğu ayırır.</value>
   </data>
+  <data name="NKS_CHATBOT_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Yapay zeka sohbet botu yapılandırması</value>
+  </data>
 </root>

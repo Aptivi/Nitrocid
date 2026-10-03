@@ -103,6 +103,10 @@
     {
       "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
       "text": "يفصل الغلاف عن روبوت الدردشة الذكي العامل حاليًا"
+    },
+    {
+      "loc": "NKS_CHATBOT_SETTINGS_INSTANCES_SETTINGS",
+      "text": "تكوين الذكاء الاصطناعي لروبوت الدردشة"
     }
   ]
 }

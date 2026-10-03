@@ -609,6 +609,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
       "text": "Denne interaktive brukergrensesnittet lar deg administrere kontaktene dine på en interaktiv måte, fordi den gir deg en rute for å velge kontakter og en rute for å vise informasjon om en kontakt. Du kan også redigere, legge til, importere og slette kontakter her for økt bekvemmelighet."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Konfigurasjon av kontakter"
     }
   ]
 }

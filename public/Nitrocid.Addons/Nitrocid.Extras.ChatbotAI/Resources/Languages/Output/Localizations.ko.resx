@@ -112,4 +112,7 @@
   <data name="NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC" xml:space="preserve">
     <value>현재 작동 중인 AI 챗봇에서 셸을 분리합니다.</value>
   </data>
+  <data name="NKS_CHATBOT_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>챗봇 AI 구성</value>
+  </data>
 </root>

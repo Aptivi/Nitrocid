@@ -606,6 +606,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
       "text": "Această interfață interactivă TUI vă permite să gestionați contactele într-un mod interactiv, deoarece vă oferă un panou pentru selectarea contactelor și un panou pentru vizualizarea informațiilor despre un contact. De asemenea, puteți edita, adăuga, importa și șterge contacte aici pentru o comoditate sporită."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configurarea contactelor"
     }
   ]
 }

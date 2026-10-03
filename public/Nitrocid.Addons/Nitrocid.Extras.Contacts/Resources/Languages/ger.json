@@ -614,6 +614,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
       "text": "Diese interaktive Benutzeroberfläche ermöglicht Ihnen die komfortable Verwaltung Ihrer Kontakte. Sie bietet Ihnen einen Bereich zur Auswahl von Kontakten und einen Bereich zur Anzeige von Kontaktinformationen. Hier können Sie Kontakte bearbeiten, hinzufügen, importieren und löschen."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Konfiguration der Kontakte"
     }
   ]
 }

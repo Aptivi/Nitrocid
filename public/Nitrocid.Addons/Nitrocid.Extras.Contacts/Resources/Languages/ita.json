@@ -608,6 +608,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
       "text": "Questa interfaccia utente utente interattiva consente di gestire i contatti in modo interattivo, poiché offre un riquadro per la selezione dei contatti e un riquadro per la visualizzazione delle informazioni su un contatto. È inoltre possibile modificare, aggiungere, importare ed eliminare i contatti per una maggiore praticità."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configurazione dei contatti"
     }
   ]
 }

@@ -117,6 +117,10 @@
     {
       "loc": "NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC",
       "text": "alphaventage API kunji"
+    },
+    {
+      "loc": "NKS_STOCKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "stocks configuration"
     }
   ]
 }

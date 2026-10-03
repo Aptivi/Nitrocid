@@ -2056,4 +2056,100 @@
   <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED" xml:space="preserve">
     <value>Η λήψη των εισερχομένων απέτυχε</value>
   </data>
+  <data name="NKS_SHELLPACKS_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Ρύθμιση για διαφορετικά κελύφη (shells)</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_FILESTREAMFAILED" xml:space="preserve">
+    <value>Αποτυχία ανοίγματος ροής αρχείου αρχειοθήκης</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_EXCEPTION_NOTSQL" xml:space="preserve">
+    <value>Δεν πρόκειται για αρχείο βάσης δεδομένων SQL</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NOFEEDLINK" xml:space="preserve">
+    <value>Αυτή η ροή δεν διαθέτει σύνδεσμο.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFEEDFAILED" xml:space="preserve">
+    <value>Αδυναμία ανοίγματος του προγράμματος περιήγησης στον σύνδεσμο του άρθρου.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT" xml:space="preserve">
+    <value>Εισαγάγετε έναν σύνδεσμο ροής RSS για τον ειδησεογραφικό σας ιστότοπο.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDFAILED" xml:space="preserve">
+    <value>Η προσθήκη νέας ροής απέτυχε.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_NAME" xml:space="preserve">
+    <value>Κριτήρια φιλτραρίσματος</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_DESC" xml:space="preserve">
+    <value>Εισαγάγετε μια κανονική έκφραση για το φιλτράρισμα άρθρων της ροής RSS. Τα άρθρα που πληρούν τα κριτήριά σας θα αποκρύπτονται. Για παράδειγμα, η έκφραση (deal|offer|sale) θα αποκρύπτει προσφορές και εκπτώσεις.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME" xml:space="preserve">
+    <value>Τύπος φίλτρου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC" xml:space="preserve">
+    <value>Καθορίστε τον στόχο του φίλτρου: αν θέλετε να φιλτράρετε τα άρθρα βάσει ονόματος, περιγραφής ή και των δύο.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME_NAME" xml:space="preserve">
+    <value>Φιλτράρισμα βάσει ονόματος</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC_NAME" xml:space="preserve">
+    <value>Φιλτράρισμα βάσει περιγραφής</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAMEDESC_NAME" xml:space="preserve">
+    <value>Φιλτράρισμα βάσει ονόματος και περιγραφής</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT" xml:space="preserve">
+    <value>Καθορίστε τον τρόπο φιλτραρίσματος των άρθρων.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_INVALIDFILTER" xml:space="preserve">
+    <value>Μη έγκυρα κριτήρια φίλτρου.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERFAILED" xml:space="preserve">
+    <value>Το φιλτράρισμα των άρθρων απέτυχε.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE" xml:space="preserve">
+    <value>Προσθήκη ροής</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESHALL" xml:space="preserve">
+    <value>Ανανέωση όλων</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED" xml:space="preserve">
+    <value>Άνοιγμα αρχικής σελίδας ροής</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERARTICLES" xml:space="preserve">
+    <value>Φιλτράρισμα άρθρων</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERRESET" xml:space="preserve">
+    <value>Επαναφορά φίλτρου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED" xml:space="preserve">
+    <value>Ο διακομιστής IMAP δεν είναι συνδεδεμένος</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_POP3NOTCONNECTED" xml:space="preserve">
+    <value>Ο διακομιστής POP3 δεν είναι συνδεδεμένος</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_POP3SERVERPROMPT" xml:space="preserve">
+    <value>Εισαγάγετε τη διεύθυνση και τη θύρα του διακομιστή IMAP (&lt;διεύθυνση&gt; ή &lt;διεύθυνση&gt;:[θύρα]):</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_NOPOP3" xml:space="preserve">
+    <value>Αδυναμία λήψης των ρυθμίσεων του διακομιστή POP3</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED" xml:space="preserve">
+    <value>Αποτυχία λήψης του φακέλου {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED" xml:space="preserve">
+    <value>Ο διακομιστής SMTP δεν είναι συνδεδεμένος</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_NAME" xml:space="preserve">
+    <value>Στυλ προτροπής POP3 για την αλληλογραφία</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_DESC" xml:space="preserve">
+    <value>Καθορίστε τη μορφή της προτροπής του διακομιστή POP3. Αφήστε το κενό για χρήση της προεπιλεγμένης μορφής. Τα σύμβολα κράτησης θέσης (placeholders) αναλύονται.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_NAME" xml:space="preserve">
+    <value>Διάστημα αποστολής ping POP3</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_DESC" xml:space="preserve">
+    <value>Καθορίστε τη μορφή της προτροπής του διακομιστή POP3. Αφήστε το κενό για χρήση της προεπιλεγμένης μορφής. Τα σύμβολα κράτησης θέσης (placeholders) αναλύονται.</value>
+  </data>
 </root>

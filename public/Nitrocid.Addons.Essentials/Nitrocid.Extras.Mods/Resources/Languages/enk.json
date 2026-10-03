@@ -412,6 +412,10 @@
     {
       "loc": "NKS_MODS_CANTSTOP",
       "text": "Can't stop mod {0}"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Mods configuration"
     }
   ]
 }

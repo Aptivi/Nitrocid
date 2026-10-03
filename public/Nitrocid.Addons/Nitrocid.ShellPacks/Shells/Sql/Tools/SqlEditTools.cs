@@ -40,7 +40,6 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Tools
         public static SqliteConnection OpenSqlFile(string File)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Trying to open SQL database file {0}...", vars: [File]);
-            // TODO: NKS_SHELLPACKS_SQL_EXCEPTION_NOTSQL -> Not an SQL database file
             if (!FilesystemTools.IsSql(File))
                 throw new KernelException(KernelExceptionType.SqlEditor, LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_EXCEPTION_NOTSQL"));
             var sqliteConnection = new SqliteConnection($"Data Source={File}");

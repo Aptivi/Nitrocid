@@ -279,6 +279,14 @@
     {
       "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
       "text": "We gebruiken OpenWeatherMap voor de weersvoorspelling, maar we ondersteunen ook The Weather Channel (weather.com) voor dezelfde gegevens, mits u hiervoor kunt betalen."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuratie van de weersverwachting"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATLON",
+      "text": "Voer hieronder de breedte- en lengtegraad van een stad of regio in."
     }
   ]
 }

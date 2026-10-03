@@ -439,6 +439,10 @@
     {
       "loc": "NKS_MODS_CANTSTOP",
       "text": "لا يمكن إيقاف التعديل {0}"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "إعدادات التعديلات"
     }
   ]
 }

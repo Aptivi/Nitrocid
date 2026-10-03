@@ -112,4 +112,7 @@
   <data name="NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC" xml:space="preserve">
     <value>Trennt die Hülle vom aktuell funktionierenden KI-Chatbot.</value>
   </data>
+  <data name="NKS_CHATBOT_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Konfiguration der Chatbot-KI</value>
+  </data>
 </root>

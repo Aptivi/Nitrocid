@@ -101,6 +101,18 @@
     {
       "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
       "text": "Du kan bruke denne interaktive brukergrensesnittet til å lage temaer enklere enn før. Med den avanserte fargevelgeren drevet av Terminaux kan du lage dine egne, flotte temaer for kjernen din for å tilpasse den med fargevalget ditt."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETODIR",
+      "text": "Målmappe"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMENAME",
+      "text": "Temanavn"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMEDIR",
+      "text": "Angi målmappe og temanavn nedenfor."
     }
   ]
 }

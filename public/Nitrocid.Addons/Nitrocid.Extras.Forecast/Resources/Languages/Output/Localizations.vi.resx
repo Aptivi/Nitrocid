@@ -259,4 +259,10 @@
   <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
     <value>Chúng tôi sử dụng OpenWeatherMap cho dữ liệu dự báo thời tiết, nhưng chúng tôi cũng hỗ trợ The Weather Channel (weather.com) cho cùng dữ liệu này nếu bạn có thể trả phí cho dịch vụ.</value>
   </data>
+  <data name="NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Cấu hình dự báo</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATLON" xml:space="preserve">
+    <value>Nhập vĩ độ và kinh độ của một thành phố hoặc khu vực vào bên dưới.</value>
+  </data>
 </root>

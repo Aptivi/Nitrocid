@@ -1,181 +1,122 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_CONTACTS_COMMAND_CONTACTS_DESC" xml:space="preserve">
+  </resheader>
+  <data name="NKS_CONTACTS_COMMAND_CONTACTS_DESC" xml:space="preserve">
     <value>Gère vos contacts</value>
   </data>
   <data name="NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED" xml:space="preserve">
-    <value>Impossible d&apos;ouvrir le fichier « {0} », car il est introuvable.</value>
+    <value>Impossible d'ouvrir le fichier « {0} », car il est introuvable.</value>
   </data>
   <data name="NKS_CONTACTS_IMPORTSUCCESS" xml:space="preserve">
     <value>Contacts importés avec succès.</value>
   </data>
   <data name="NKS_CONTACTS_CONTACTFILEINVALID_NAMED" xml:space="preserve">
-    <value>Impossible d&apos;ouvrir le fichier « {0} », car le fichier de la carte n&apos;est pas valide.</value>
+    <value>Impossible d'ouvrir le fichier « {0} », car le fichier de la carte n'est pas valide.</value>
   </data>
   <data name="NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED" xml:space="preserve">
-    <value>Le fichier de contact n&apos;existe pas.</value>
+    <value>Le fichier de contact n'existe pas.</value>
   </data>
   <data name="NKS_CONTACTS_CONTACTSCOUNT" xml:space="preserve">
     <value>contacts trouvés</value>
   </data>
   <data name="NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED" xml:space="preserve">
-    <value>Le fichier de contact n&apos;est pas valide.</value>
+    <value>Le fichier de contact n'est pas valide.</value>
   </data>
   <data name="NKS_CONTACTS_MECARDEMPTY" xml:space="preserve">
     <value>La syntaxe MeCard ne peut pas être vide.</value>
   </data>
   <data name="NKS_CONTACTS_CONTACTFILENOCONTACT" xml:space="preserve">
-    <value>Soit le fichier de contacts fourni ne contient aucune information sur aucun contact, soit il n&apos;est pas valide.</value>
+    <value>Soit le fichier de contacts fourni ne contient aucune information sur aucun contact, soit il n'est pas valide.</value>
   </data>
   <data name="NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED" xml:space="preserve">
-    <value>Échec de l&apos;analyse des contacts. Consultez les détails de l’erreur pour plus d’informations.</value>
+    <value>Échec de l'analyse des contacts. Consultez les détails de l’erreur pour plus d’informations.</value>
   </data>
   <data name="NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE" xml:space="preserve">
-    <value>L&apos;indice de contact est hors plage. L&apos;index maximum est {0} tandis que l&apos;index fourni est {1}.</value>
+    <value>L'indice de contact est hors plage. L'index maximum est {0} tandis que l'index fourni est {1}.</value>
   </data>
   <data name="NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET" xml:space="preserve">
-    <value>Il n&apos;y a aucun contact à obtenir.</value>
+    <value>Il n'y a aucun contact à obtenir.</value>
   </data>
   <data name="NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH" xml:space="preserve">
-    <value>Il n&apos;y a aucun contact à rechercher.</value>
+    <value>Il n'y a aucun contact à rechercher.</value>
   </data>
   <data name="NKS_CONTACTS_EXCEPTION_INVALIDREGEX" xml:space="preserve">
-    <value>L&apos;expression régulière n&apos;est pas valide.</value>
+    <value>L'expression régulière n'est pas valide.</value>
   </data>
   <data name="NKS_CONTACTS_TUI_NOCONTACT" xml:space="preserve">
-    <value>Il n&apos;y a aucun contact. Si vous souhaitez importer des contacts, veuillez utiliser les options d&apos;importation en utilisant les touches définies en bas de l&apos;écran.</value>
+    <value>Il n'y a aucun contact. Si vous souhaitez importer des contacts, veuillez utiliser les options d'importation en utilisant les touches définies en bas de l'écran.</value>
   </data>
   <data name="NKS_CONTACTS_TUI_CANTIMPORTCONTACTS" xml:space="preserve">
     <value>Certains contacts ne peuvent pas être importés.</value>
   </data>
   <data name="NKS_CONTACTS_TUI_PATHVCFPROMPT" xml:space="preserve">
-    <value>Entrez le chemin d&apos;accès à un fichier VCF contenant votre contact. Le fichier contacts2.db d&apos;Android est également pris en charge.</value>
+    <value>Entrez le chemin d'accès à un fichier VCF contenant votre contact. Le fichier contacts2.db d'Android est également pris en charge.</value>
   </data>
   <data name="NKS_CONTACTS_TUI_FILENOTFOUND" xml:space="preserve">
-    <value>Le fichier n&apos;existe pas. Assurez-vous d&apos;avoir écrit le chemin correct vers un fichier VCF ou vers un fichier contacts2.db.</value>
+    <value>Le fichier n'existe pas. Assurez-vous d'avoir écrit le chemin correct vers un fichier VCF ou vers un fichier contacts2.db.</value>
   </data>
   <data name="NKS_CONTACTS_TUI_MECARDPROMPT" xml:space="preserve">
     <value>Entrez une représentation MeCard valide de votre contact.</value>
   </data>
   <data name="NKS_CONTACTS_TUI_MECARDINVALID" xml:space="preserve">
-    <value>La syntaxe de Contact MeCard n&apos;est pas valide.</value>
+    <value>La syntaxe de Contact MeCard n'est pas valide.</value>
   </data>
   <data name="NKS_CONTACTS_TUI_MECARDEMPTY" xml:space="preserve">
     <value>La syntaxe de Contact MeCard ne peut pas être vide</value>
@@ -184,7 +125,7 @@
     <value>Entrez une expression régulière pour rechercher les contacts.</value>
   </data>
   <data name="NKS_CONTACTS_TUI_NOCONTACTSSEARCH" xml:space="preserve">
-    <value>Aucun contact ne contient l&apos;expression demandée.</value>
+    <value>Aucun contact ne contient l'expression demandée.</value>
   </data>
   <data name="NKS_CONTACTS_TUI_CONTACTNAME" xml:space="preserve">
     <value>Nom du contact</value>
@@ -202,7 +143,7 @@
     <value>Pas de mail de contact</value>
   </data>
   <data name="NKS_CONTACTS_TUI_ORG" xml:space="preserve">
-    <value>Contacter l&apos;organisation</value>
+    <value>Contacter l'organisation</value>
   </data>
   <data name="NKS_CONTACTS_TUI_NOORG" xml:space="preserve">
     <value>Aucun organisme de contact</value>
@@ -265,7 +206,7 @@
     <value>Importe vos contacts</value>
   </data>
   <data name="NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC" xml:space="preserve">
-    <value>Traite l&apos;entrée requise comme une chaîne MeCard</value>
+    <value>Traite l'entrée requise comme une chaîne MeCard</value>
   </data>
   <data name="NKS_CONTACTS_COMMAND_CONTACTINFO_DESC" xml:space="preserve">
     <value>Obtient les informations de contact</value>
@@ -274,7 +215,7 @@
     <value>Aucun contact.</value>
   </data>
   <data name="NKS_CONTACTS_CONTACTINFO_NUMINVALID" xml:space="preserve">
-    <value>Le numéro de contact n&apos;est pas valide.</value>
+    <value>Le numéro de contact n'est pas valide.</value>
   </data>
   <data name="NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE" xml:space="preserve">
     <value>Le numéro de contact est hors de portée.</value>
@@ -301,7 +242,7 @@
     <value>Informations</value>
   </data>
   <data name="NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
-    <value>Impossible d&apos;obtenir les entrées de paramètres.</value>
+    <value>Impossible d'obtenir les entrées de paramètres.</value>
   </data>
   <data name="NKS_CONTACTS_HOMEPAGE_CONTACTS" xml:space="preserve">
     <value>Contacts</value>
@@ -361,7 +302,7 @@
     <value>Ajouter</value>
   </data>
   <data name="NKS_CONTACTS_EXCEPTION_CONTACTSAVEFAILED" xml:space="preserve">
-    <value>Échec de l&apos;enregistrement des contacts</value>
+    <value>Échec de l'enregistrement des contacts</value>
   </data>
   <data name="NKS_CONTACTS_TUI_CONTACTHASPICTURE" xml:space="preserve">
     <value>Contient une photo de profil</value>
@@ -373,10 +314,10 @@
     <value>Modification du contact</value>
   </data>
   <data name="NKS_CONTACTS_TUI_CONTACTADDRSEDITPROMPT" xml:space="preserve">
-    <value>Modification de l&apos;adresse du contact</value>
+    <value>Modification de l'adresse du contact</value>
   </data>
   <data name="NKS_CONTACTS_TUI_CONTACTADDREDITPROMPT" xml:space="preserve">
-    <value>Modification de l&apos;adresse du contact</value>
+    <value>Modification de l'adresse du contact</value>
   </data>
   <data name="NKS_CONTACTS_TUI_ADDRESSINFO_POBOX" xml:space="preserve">
     <value>Boîte postale</value>
@@ -421,34 +362,34 @@
     <value>Saisir un nouveau pays</value>
   </data>
   <data name="NKS_CONTACTS_TUI_CONTACTMAILSEDITPROMPT" xml:space="preserve">
-    <value>Modification de l&apos;adresse e-mail du contact</value>
+    <value>Modification de l'adresse e-mail du contact</value>
   </data>
   <data name="NKS_CONTACTS_TUI_CONTACTMAILEDITPROMPT" xml:space="preserve">
-    <value>Modification de l&apos;adresse e-mail du contact</value>
+    <value>Modification de l'adresse e-mail du contact</value>
   </data>
   <data name="NKS_CONTACTS_TUI_CONTACTORGSEDITPROMPT" xml:space="preserve">
-    <value>Modification de l&apos;organisation du contact</value>
+    <value>Modification de l'organisation du contact</value>
   </data>
   <data name="NKS_CONTACTS_TUI_CONTACTORGEDITPROMPT" xml:space="preserve">
-    <value>Modification de l&apos;organisation du contact</value>
+    <value>Modification de l'organisation du contact</value>
   </data>
   <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAME" xml:space="preserve">
-    <value>Nom de l&apos;organisation</value>
+    <value>Nom de l'organisation</value>
   </data>
   <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNIT" xml:space="preserve">
     <value>Unité organisationnelle</value>
   </data>
   <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLE" xml:space="preserve">
-    <value>Rôle au sein de l&apos;organisation</value>
+    <value>Rôle au sein de l'organisation</value>
   </data>
   <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAMEPROMPT" xml:space="preserve">
-    <value>Saisir un nouveau nom d&apos;organisation</value>
+    <value>Saisir un nouveau nom d'organisation</value>
   </data>
   <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNITPROMPT" xml:space="preserve">
     <value>Saisir une nouvelle unité organisationnelle</value>
   </data>
   <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLEPROMPT" xml:space="preserve">
-    <value>Saisir un nouveau rôle au sein de l&apos;organisation</value>
+    <value>Saisir un nouveau rôle au sein de l'organisation</value>
   </data>
   <data name="NKS_CONTACTS_TUI_CONTACTTELEPHONESEDITPROMPT" xml:space="preserve">
     <value>Modification du numéro de téléphone du contact</value>
@@ -457,10 +398,10 @@
     <value>Modification du numéro de téléphone du contact</value>
   </data>
   <data name="NKS_CONTACTS_TUI_CONTACTURLSEDITPROMPT" xml:space="preserve">
-    <value>Modification de l&apos;URL du contact</value>
+    <value>Modification de l'URL du contact</value>
   </data>
   <data name="NKS_CONTACTS_TUI_CONTACTURLEDITPROMPT" xml:space="preserve">
-    <value>Modification de l&apos;URL du contact</value>
+    <value>Modification de l'URL du contact</value>
   </data>
   <data name="NKS_CONTACTS_TUI_CONTACTGEOSEDITPROMPT" xml:space="preserve">
     <value>Modification de la géolocalisation du contact</value>
@@ -469,10 +410,10 @@
     <value>Modification de la géolocalisation du contact</value>
   </data>
   <data name="NKS_CONTACTS_TUI_CONTACTIMPPSEDITPROMPT" xml:space="preserve">
-    <value>Modification de l&apos;IMPP du contact</value>
+    <value>Modification de l'IMPP du contact</value>
   </data>
   <data name="NKS_CONTACTS_TUI_CONTACTIMPPEDITPROMPT" xml:space="preserve">
-    <value>Modification de l&apos;IMPP du contact</value>
+    <value>Modification de l'IMPP du contact</value>
   </data>
   <data name="NKS_CONTACTS_TUI_CONTACTNICKNAMESEDITPROMPT" xml:space="preserve">
     <value>Modification du contact Surnoms de</value>
@@ -565,7 +506,9 @@
     <value>Gestion interactive de vos contacts</value>
   </data>
   <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
-    <value>Cette interface utilisateur interactive vous permet de gérer vos contacts de manière intuitive. Elle propose un volet de sélection et un volet d&apos;affichage des informations relatives à chaque contact. Vous pouvez également modifier, ajouter, importer et supprimer des contacts pour plus de simplicité.</value>
+    <value>Cette interface utilisateur interactive vous permet de gérer vos contacts de manière intuitive. Elle propose un volet de sélection et un volet d'affichage des informations relatives à chaque contact. Vous pouvez également modifier, ajouter, importer et supprimer des contacts pour plus de simplicité.</value>
   </data>
-
+  <data name="NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Configuration des contacts</value>
+  </data>
 </root>

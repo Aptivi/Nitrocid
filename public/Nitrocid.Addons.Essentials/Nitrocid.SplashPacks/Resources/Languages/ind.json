@@ -105,6 +105,10 @@
     {
       "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
       "text": "ek boks dikhaata hai jo un riport se bhar jaata hai jinhen yah splaish stor karata hai"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "splash pax configuration"
     }
   ]
 }

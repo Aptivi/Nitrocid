@@ -37,9 +37,6 @@ namespace Nitrocid.Base.Users.Groups.Interactives
         [
             new()
             {
-                // TODO: NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_TITLE -> Managing groups
-                // TODO: NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_DESC -> Using the groups TUI to manage groups
-                // TODO: NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_BODY -> With this textual user interface, you can easily manage groups.
                 HelpTitle = /* Localizable */ "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_TITLE",
                 HelpDescription = /* Localizable */ "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_DESC",
                 HelpBody =
@@ -59,7 +56,6 @@ namespace Nitrocid.Base.Users.Groups.Interactives
         public override string GetInfoFromItem(GroupInfo item)
         {
             // Render group information
-            // TODO: NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME -> Group name
             StringBuilder builder = new();
             builder.AppendLine(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME") + ": " + item.GroupName);
 
@@ -84,7 +80,6 @@ namespace Nitrocid.Base.Users.Groups.Interactives
         {
             try
             {
-                // TODO: NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME_PROMPT -> Enter the group name.
                 string groupName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME_PROMPT"), out bool done);
                 if (!done)
                     return;
@@ -93,7 +88,6 @@ namespace Nitrocid.Base.Users.Groups.Interactives
             }
             catch (Exception ex)
             {
-                // TODO: NKS_USERS_GROUPS_EXCEPTION_GROUPADDFAILED -> Failed to add group.
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_GROUPS_EXCEPTION_GROUPADDFAILED") + $" {ex.Message}");
             }
         }
@@ -107,7 +101,6 @@ namespace Nitrocid.Base.Users.Groups.Interactives
             }
             catch (Exception ex)
             {
-                // TODO: NKS_USERS_GROUPS_EXCEPTION_GROUPREMOVEFAILED -> Failed to remove group.
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_GROUPS_EXCEPTION_GROUPREMOVEFAILED") + $" {ex.Message}");
             }
         }
@@ -120,7 +113,6 @@ namespace Nitrocid.Base.Users.Groups.Interactives
                     throw new KernelException(KernelExceptionType.GroupManagement, LanguageTools.GetLocalized("NKS_USERS_GROUPS_EXCEPTION_GROUPINFO"));
 
                 // Get permissions and let the group manage them
-                // TODO: NKS_MISC_INTERACTIVES_GROUPSTUI_SELECTPERMISSIONS -> Select group permissions from the list below.
                 var permissions = group.Permissions.Select(Enum.Parse<PermissionTypes>);
                 var allPermissions = Enum.GetNames<PermissionTypes>();
                 var selectedPermissions = allPermissions.Select((_, idx) => idx).Where((idx) => permissions.Contains(Enum.Parse<PermissionTypes>(allPermissions[idx]))).ToArray();
@@ -131,14 +123,12 @@ namespace Nitrocid.Base.Users.Groups.Interactives
             }
             catch (Exception ex)
             {
-                // TODO: NKS_SECURITY_PERMISSIONS_EXCEPTION_MANAGEMENTERROR -> Managing permissions failed.
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SECURITY_PERMISSIONS_EXCEPTION_MANAGEMENTERROR") + $" {ex.Message}");
             }
         }
 
         internal static void OpenGroupsTui()
         {
-            // TODO: NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEPERMS -> Manage permissions
             var tui = new GroupsTui();
             tui.Bindings.Add(new InteractiveTuiBinding<GroupInfo>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_DELETE"), ConsoleKey.Delete, (group, _, _, _) => tui.Remove(group)));
             tui.Bindings.Add(new InteractiveTuiBinding<GroupInfo>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_ALARMTUI_KEYBINDING_ADD"), ConsoleKey.F1, (_, _, _, _) => tui.AddGroupPrompt(), true));

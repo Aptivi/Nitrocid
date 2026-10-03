@@ -302,6 +302,10 @@
     {
       "loc": "NKS_DATES_EXPIRY_STATUS_EXCELLENT",
       "text": "Excelent"
+    },
+    {
+      "loc": "NKS_DATES_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configurarea datelor"
     }
   ]
 }

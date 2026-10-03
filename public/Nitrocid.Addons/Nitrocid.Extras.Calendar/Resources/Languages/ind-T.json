@@ -377,6 +377,10 @@
     {
       "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC",
       "text": "स्क्रीनसेवर सेटिंग्स..."
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_INSTANCES_SETTINGS",
+      "text": "कैलेंडर कॉन्फ़िगरेशन"
     }
   ]
 }

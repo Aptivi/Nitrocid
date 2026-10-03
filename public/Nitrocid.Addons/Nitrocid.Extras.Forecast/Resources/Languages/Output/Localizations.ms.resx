@@ -259,4 +259,10 @@
   <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
     <value>Kami menggunakan OpenWeatherMap untuk data ramalan cuaca, tetapi kami juga menyokong The Weather Channel (weather.com) untuk data yang sama jika anda boleh membayar untuk perkhidmatan tersebut.</value>
   </data>
+  <data name="NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Konfigurasi ramalan</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATLON" xml:space="preserve">
+    <value>Masukkan latitud dan longitud bandar atau wilayah di bawah.</value>
+  </data>
 </root>

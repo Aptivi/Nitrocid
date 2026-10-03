@@ -6883,4 +6883,400 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC" xml:space="preserve">
     <value>Alta compressio</value>
   </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS" xml:space="preserve">
+    <value>Permutationes iurum Unix muta</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT" xml:space="preserve">
+    <value>Proprietates</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_FLAGSPROMPT" xml:space="preserve">
+    <value>Proprietates elige</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT_DESC" xml:space="preserve">
+    <value>Proprietates huius usoris elige</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_ADMIN" xml:space="preserve">
+    <value>Administrator</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_ADMIN_DESC" xml:space="preserve">
+    <value>Hic usor munera privilegiata exsequi potest</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_ANONYMOUS" xml:space="preserve">
+    <value>Anonymus</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_ANONYMOUS_DESC" xml:space="preserve">
+    <value>Hic usor in indice nominum usorum non apparebit</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_DISABLED" xml:space="preserve">
+    <value>Inactivatus</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_DISABLED_DESC" xml:space="preserve">
+    <value>Hic usor inactivatus est nec ad rationem intrandam adhiberi potest</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT" xml:space="preserve">
+    <value>Proprietates</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_EXTRAUSERPROMPT" xml:space="preserve">
+    <value>Proprietates elige</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_DESC" xml:space="preserve">
+    <value>Proprietates huius usoris elige</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_YES_DESC" xml:space="preserve">
+    <value>Usoris additicius adde</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_NO_DESC" xml:space="preserve">
+    <value>Usoris additicius noli addere</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1_NEW" xml:space="preserve">
+    <value>Iam paratus es ad systema operativum Nitrocid utendum!</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Administratio usorum</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_HELP01_DESC" xml:space="preserve">
+    <value>Administratio usorum per interfaciem textualem</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_HELP01_BODY" xml:space="preserve">
+    <value>Hac interfacie textuali usorum, usores facile administrare potes.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_NEWPASSWORDPROMPT" xml:space="preserve">
+    <value>Novum tesseram usoris {0}:</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_NEWCONFIRMPASSWORDPROMPT" xml:space="preserve">
+    <value>Confirma novam tesseram usoris {0}:</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_CHANGEPASSWORDERROR" xml:space="preserve">
+    <value>Error dum tessera usoris mutari conatur.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_SELECTPERMISSIONS" xml:space="preserve">
+    <value>Permissio usoris ex indice infra elige.</value>
+  </data>
+  <data name="NKS_SECURITY_PERMISSIONS_EXCEPTION_MANAGEMENTERROR" xml:space="preserve">
+    <value>Administratio permissionum defecit.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_SELECTFLAGS" xml:space="preserve">
+    <value>Notas usoris ex indice infra elige.</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_FLAGMANAGEMENTERROR" xml:space="preserve">
+    <value>Administratio notarum defecit.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_SELECTGROUPS" xml:space="preserve">
+    <value>Greges usoris ex indice infra elige.</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_GROUPMANAGEMENTERROR" xml:space="preserve">
+    <value>Administratio gregum defecit.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_CHANGEPASSWORD" xml:space="preserve">
+    <value>Tesseram muta</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEFLAGS" xml:space="preserve">
+    <value>Notas administra</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEPERMS" xml:space="preserve">
+    <value>Permissiones administra</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEMEMBERSHIPS" xml:space="preserve">
+    <value>Sodalitates administra</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Administratio gregum</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_DESC" xml:space="preserve">
+    <value>Administratio gregum per interfaciem textualem</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_BODY" xml:space="preserve">
+    <value>Hac interfacie textuali gregum, greges facile administrare potes.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME" xml:space="preserve">
+    <value>Nomen gregis</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME_PROMPT" xml:space="preserve">
+    <value>Nomen gregis inscribe.</value>
+  </data>
+  <data name="NKS_USERS_GROUPS_EXCEPTION_GROUPADDFAILED" xml:space="preserve">
+    <value>Additio gregis defecit.</value>
+  </data>
+  <data name="NKS_USERS_GROUPS_EXCEPTION_GROUPREMOVEFAILED" xml:space="preserve">
+    <value>Remotio gregis defecit.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSTUI_SELECTPERMISSIONS" xml:space="preserve">
+    <value>Permissio gregis ex indice infra elige.</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_USERMANAGER" xml:space="preserve">
+    <value>Administrator usorum</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_GROUPMANAGER" xml:space="preserve">
+    <value>Administrator gregum</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_FIND" xml:space="preserve">
+    <value>Inveni</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_FINDREGEX" xml:space="preserve">
+    <value>Inveni per expressionem regularem</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_FINDREGEX_PROMPT" xml:space="preserve">
+    <value>Inscribe verbum quaesitum pro optionibus paginae initialis (expressionem regularem sustinet).</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_FIND_PROMPT" xml:space="preserve">
+    <value>Inscribe verbum quaesitum pro optionibus paginae initialis (discrimen litterarum maiuscularum/minuscularum neglegitur).</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_FIND_NORESULTS" xml:space="preserve">
+    <value>Optio in hoc verbo quaesito non inventa.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_FIND_SELECT" xml:space="preserve">
+    <value>Optionem ex eventibus quaesitionis infra elige.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_DESC" xml:space="preserve">
+    <value>Textum in figura vaccae ASCII amoena reddit</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC" xml:space="preserve">
+    <value>Textus imprimendus in bulla sermonis</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC" xml:space="preserve">
+    <value>Nomen vaccae ad figuram reddendam</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_INVALIDCOW" xml:space="preserve">
+    <value>Nomen figurae vaccae invalidum.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_DESC" xml:space="preserve">
+    <value>Textum in forma Figlet ASCII amoena reddit</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_ARGUMENT_TEXT_DESC" xml:space="preserve">
+    <value>Textus imprimendus in typo Figlet</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_SWITCH_FIGLET_DESC" xml:space="preserve">
+    <value>Typus Figlet ad figuram reddendam</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_INVALIDFIGLET" xml:space="preserve">
+    <value>Nomen typi Figlet invalidum.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPMANTUI_DESC" xml:space="preserve">
+    <value>Interfaciem textualem (TUI) ad greges administrandos aperit</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC" xml:space="preserve">
+    <value>Computatrum tuum in modum quietis (sleep) ponit</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_DESC" xml:space="preserve">
+    <value>Iura accessus Unix (permissions) pro fasciculo constituit</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC" xml:space="preserve">
+    <value>Iura legendi, scribendi vel exsequendi per numerum "chmod"</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>Semita ad fasciculum cui iura Unix constituenda sunt</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETUID_DESC" xml:space="preserve">
+    <value>Identificator utentis (UID) constituitur</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETGID_DESC" xml:space="preserve">
+    <value>Identificator gregis (GID) constituitur</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_STICKY_DESC" xml:space="preserve">
+    <value>Bitum "sticky" constituit</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_DESC" xml:space="preserve">
+    <value>Iura accessus Unix computat</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC" xml:space="preserve">
+    <value>Modum conversionis designa</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_USERREP_DESC" xml:space="preserve">
+    <value>Iura legendi, scribendi vel exsequendi pro utente</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_GROUPREP_DESC" xml:space="preserve">
+    <value>Iura legendi, scribendi vel exsequendi pro grege</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_OTHERREP_DESC" xml:space="preserve">
+    <value>Iura legendi, scribendi vel exsequendi pro aliis</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC" xml:space="preserve">
+    <value>Interfaciem textualem (TUI) ad utentes administrandos aperit</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS" xml:space="preserve">
+    <value>Caput (header) iam exstat</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE" xml:space="preserve">
+    <value>Caput delendum non exstat</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT" xml:space="preserve">
+    <value>Caput emendandum non exstat</value>
+  </data>
+  <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_GIT" xml:space="preserve">
+    <value>Error accidit dum postulatum tuum de operationibus Git tractabatur.</value>
+  </data>
+  <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_SQL" xml:space="preserve">
+    <value>Operatio SQL invalida peragitur.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_FAILED_LOAD_CONFIG" xml:space="preserve">
+    <value>Configuratio onerari non potuit.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_ADDONS" xml:space="preserve">
+    <value>Additamenta nuclei (kernel) onerantur...</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_FAILED_LOAD_ADDONS" xml:space="preserve">
+    <value>Additamenta nuclei onerari non potuerunt</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG" xml:space="preserve">
+    <value>Configurationem quaere</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIGREGEX" xml:space="preserve">
+    <value>Configurationem per expressionem regularem (regex) quaere</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPTREGEX" xml:space="preserve">
+    <value>Verbum quaesitum scribe ad elementum configurationis inveniendum (regex sustinetur)</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPT" xml:space="preserve">
+    <value>Verbum quaesitum scribe ad elementum configurationis inveniendum</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_SELECT" xml:space="preserve">
+    <value>Clavem configurationis ex eventibus quaesitionis selige.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_NORESULTS" xml:space="preserve">
+    <value>Nulla clavis configurationis verbis quaesitis tuis respondet.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_FAILED" xml:space="preserve">
+    <value>Quaesitio configurationis defecit</value>
+  </data>
+  <data name="NKS_KNOWNADDONS_EXTRAS_ANIMATED" xml:space="preserve">
+    <value>Additamenta - Animata</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONEMPTY" xml:space="preserve">
+    <value>Catena characterum pro iuribus vacua est.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTH" xml:space="preserve">
+    <value>Longitudo catenae pro iuribus tres characteres esse debet.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONINVALID" xml:space="preserve">
+    <value>Repraesentatio invalida in loco</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTHARRAY" xml:space="preserve">
+    <value>Longitudo repraesentationis iurum tres characteres esse debet.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERMISSIONS" xml:space="preserve">
+    <value>Iura accessus</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMISSIONS" xml:space="preserve">
+    <value>Iura specialia</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW" xml:space="preserve">
+    <value>Modulum (driver) "hash" ex indice infra selige.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_NAME" xml:space="preserve">
+    <value>Legere</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_TITLE" xml:space="preserve">
+    <value>Fasciculus legi vel directorium inspici potest</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_NAME" xml:space="preserve">
+    <value>Scribere</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_TITLE" xml:space="preserve">
+    <value>Fasciculus scribi vel directorium mutari potest</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_NAME" xml:space="preserve">
+    <value>Exsequi</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_TITLE" xml:space="preserve">
+    <value>Fasciculus exsequi vel directorium peragrari potest</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_NAME" xml:space="preserve">
+    <value>Setuid</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_TITLE" xml:space="preserve">
+    <value>Fasciculus cum privilegiis domini fasciculi (plerumque utentis "root") exsequi potest</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_NAME" xml:space="preserve">
+    <value>Setgid</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_TITLE" xml:space="preserve">
+    <value>Fasciculus cum privilegiis gregis fasciculi (plerumque gregis administratorum) exsequi potest</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_NAME" xml:space="preserve">
+    <value>Sticky</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_TITLE" xml:space="preserve">
+    <value>Fasciculi in directorio hoc bitu notato tractari possunt tantum a domino fasciculi, domino directorii et utente "root"</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_NAME" xml:space="preserve">
+    <value>Iura utentis</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_DESC" xml:space="preserve">
+    <value>Hic iura fasciculi pro domino constituere potes</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_NAME" xml:space="preserve">
+    <value>Iura gregis</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_DESC" xml:space="preserve">
+    <value>Hic iura fasciculi pro grege constituere potes</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_NAME" xml:space="preserve">
+    <value>Iura aliorum</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_DESC" xml:space="preserve">
+    <value>Hic iura fasciculi pro aliis constituere potes</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_NAME" xml:space="preserve">
+    <value>Iura specialia</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_DESC" xml:space="preserve">
+    <value>Iura specialia pro fasciculis vel directoriis constituere potes</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERMSINFOBOX_NAME" xml:space="preserve">
+    <value>Hic iura huius fasciculi vel directorii mutare potes.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERMSSETFAILURE" xml:space="preserve">
+    <value>Constitutio iurum accessus defecit</value>
+  </data>
+  <data name="NKS_FILES_EXCEPTION_UNIXPERMWINDOWS" xml:space="preserve">
+    <value>Instrumentis Unixianis ad iura moderanda in Windows uti non potes.</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CYCLECOLORS_NAME" xml:space="preserve">
+    <value>Colores alternare</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Seriem colorum fortuitorum automatice eligit</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_NAME" xml:space="preserve">
+    <value>Color textus indicis temporis</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_DESC" xml:space="preserve">
+    <value>Colorem indicis temporis eligit</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_NAME" xml:space="preserve">
+    <value>Color limbi</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_DESC" xml:space="preserve">
+    <value>Colorem limbi horologii analogici eligit</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_NAME" xml:space="preserve">
+    <value>Color indicum</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_DESC" xml:space="preserve">
+    <value>Colorem indicum horologii analogici eligit</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_NAME" xml:space="preserve">
+    <value>Color indicis secundorum</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_DESC" xml:space="preserve">
+    <value>Colorem indicis secundorum horologii analogici eligit</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_NAME" xml:space="preserve">
+    <value>Forma longa uti</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_DESC" xml:space="preserve">
+    <value>Forma longa in tempore exhibendo utitur</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_NAME" xml:space="preserve">
+    <value>Color horologii digitalis</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_DESC" xml:space="preserve">
+    <value>Colorem horologii digitalis definit</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_NAME" xml:space="preserve">
+    <value>Color indicis diei</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC" xml:space="preserve">
+    <value>Colorem textus diei definit</value>
+  </data>
 </root>

@@ -112,4 +112,7 @@
   <data name="NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC" xml:space="preserve">
     <value>Tách lớp vỏ khỏi chatbot AI hiện đang hoạt động.</value>
   </data>
+  <data name="NKS_CHATBOT_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Cấu hình chatbot AI</value>
+  </data>
 </root>

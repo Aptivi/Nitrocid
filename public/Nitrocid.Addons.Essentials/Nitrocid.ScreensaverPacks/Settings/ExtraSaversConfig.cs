@@ -33,7 +33,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
     public partial class ExtraSaversConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
-        // TODO: NKS_SCREENSAVERPACKS_COMMON_SETTINGS_INSTANCES_SETTINGS -> Screensaver packs configuration
         [JsonIgnore]
         public override string Name =>
             LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_COMMON_SETTINGS_INSTANCES_SETTINGS");

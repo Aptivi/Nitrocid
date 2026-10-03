@@ -1,124 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_CALENDAR_COMMAND_ALTDATE_DESC" xml:space="preserve">
-    <value>Affiche la date et l&apos;heure</value>
+  </resheader>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_DESC" xml:space="preserve">
+    <value>Affiche la date et l'heure</value>
   </data>
   <data name="NKS_CALENDAR_TUI_KEYBINDING_EXIT" xml:space="preserve">
     <value>Sortie</value>
@@ -184,22 +125,22 @@
     <value>Active la prise en charge des couleurs vraies.</value>
   </data>
   <data name="NKS_CALENDAR_EVENTADDFAILED" xml:space="preserve">
-    <value>Impossible d&apos;ajouter un événement.</value>
+    <value>Impossible d'ajouter un événement.</value>
   </data>
   <data name="NKS_CALENDAR_EVENTREMOVEFAILED" xml:space="preserve">
-    <value>Échec de la suppression d&apos;un événement.</value>
+    <value>Échec de la suppression d'un événement.</value>
   </data>
   <data name="NKS_CALENDAR_EVENTARGSNOTPROVIDED_ADD" xml:space="preserve">
-    <value>Pas assez d&apos;arguments fournis pour ajouter un événement.</value>
+    <value>Pas assez d'arguments fournis pour ajouter un événement.</value>
   </data>
   <data name="NKS_CALENDAR_EVENTARGSNOTPROVIDED_REMOVE" xml:space="preserve">
-    <value>Pas assez d&apos;arguments fournis pour supprimer un événement.</value>
+    <value>Pas assez d'arguments fournis pour supprimer un événement.</value>
   </data>
   <data name="NKS_CALENDAR_EVENTMANIPULATIONARGSNOTPROVIDED" xml:space="preserve">
-    <value>Pas assez d&apos;arguments fournis pour la manipulation d&apos;événements.</value>
+    <value>Pas assez d'arguments fournis pour la manipulation d'événements.</value>
   </data>
   <data name="NKS_CALENDAR_REMINDERMANIPULATIONARGSNOTPROVIDED" xml:space="preserve">
-    <value>Pas assez d&apos;arguments fournis pour la manipulation des rappels.</value>
+    <value>Pas assez d'arguments fournis pour la manipulation des rappels.</value>
   </data>
   <data name="NKS_CALENDAR_UNTITLEDREMINDER" xml:space="preserve">
     <value>Rappel sans titre</value>
@@ -208,7 +149,7 @@
     <value>Événement sans titre</value>
   </data>
   <data name="NKS_CALENDAR_EVENT_NOTIFICATION" xml:space="preserve">
-    <value>C&apos;est maintenant un jour d&apos;événement!</value>
+    <value>C'est maintenant un jour d'événement!</value>
   </data>
   <data name="NKS_CALENDAR_REMINDER_NOTIFICATION" xml:space="preserve">
     <value>Ne manquez pas ça !</value>
@@ -220,7 +161,7 @@
     <value>Enregistrer tous les événements et/ou rappels de manière destructive</value>
   </data>
   <data name="NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_DESC" xml:space="preserve">
-    <value>Si activé, supprime tous les événements et/ou rappels avant de tous les enregistrer à l&apos;aide de la commande calendrier.</value>
+    <value>Si activé, supprime tous les événements et/ou rappels avant de tous les enregistrer à l'aide de la commande calendrier.</value>
   </data>
   <data name="NKS_CALENDAR_COMMAND_ALTDATE_ARGUMENT_CULTURE_DESC" xml:space="preserve">
     <value>Nom de la culture</value>
@@ -238,13 +179,13 @@
     <value>Affiche juste la date</value>
   </data>
   <data name="NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_TIME_DESC" xml:space="preserve">
-    <value>Montre juste l&apos;heure</value>
+    <value>Montre juste l'heure</value>
   </data>
   <data name="NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_UTC_DESC" xml:space="preserve">
     <value>Utilise UTC au lieu de local</value>
   </data>
   <data name="NKS_CALENDAR_COMMAND_CALENDAR_DESC" xml:space="preserve">
-    <value>Gestionnaire de calendrier, d&apos;événements et de rappels</value>
+    <value>Gestionnaire de calendrier, d'événements et de rappels</value>
   </data>
   <data name="NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_CALENDAR_DESC" xml:space="preserve">
     <value>Type de calendrier sur lequel travailler</value>
@@ -277,28 +218,28 @@
     <value>Aucun événement trouvé pour le mois sélectionné</value>
   </data>
   <data name="NKS_CALENDAR_NOCULTURE" xml:space="preserve">
-    <value>La culture n&apos;est pas trouvée.</value>
+    <value>La culture n'est pas trouvée.</value>
   </data>
   <data name="NKS_CALENDAR_SHOWCALENDARFAILED" xml:space="preserve">
-    <value>Échec de l&apos;affichage du calendrier.</value>
+    <value>Échec de l'affichage du calendrier.</value>
   </data>
   <data name="NKS_CALENDAR_REMINDERADDFAILED" xml:space="preserve">
-    <value>Échec de l&apos;ajout d&apos;un rappel.</value>
+    <value>Échec de l'ajout d'un rappel.</value>
   </data>
   <data name="NKS_CALENDAR_REMINDERADDNEEDSARGS" xml:space="preserve">
-    <value>Pas assez d&apos;arguments fournis pour ajouter un rappel.</value>
+    <value>Pas assez d'arguments fournis pour ajouter un rappel.</value>
   </data>
   <data name="NKS_CALENDAR_REMINDERREMOVEFAILED" xml:space="preserve">
-    <value>Échec de la suppression d&apos;un rappel.</value>
+    <value>Échec de la suppression d'un rappel.</value>
   </data>
   <data name="NKS_CALENDAR_REMINDERREMOVENEEDSARGS" xml:space="preserve">
-    <value>Pas assez d&apos;arguments fournis pour supprimer un rappel.</value>
+    <value>Pas assez d'arguments fournis pour supprimer un rappel.</value>
   </data>
   <data name="NKS_CALENDAR_EXCEPTION_NOEVENT" xml:space="preserve">
-    <value>Il n&apos;y a aucun événement.</value>
+    <value>Il n'y a aucun événement.</value>
   </data>
   <data name="NKS_CALENDAR_EXCEPTION_NOREMINDER" xml:space="preserve">
-    <value>Il n&apos;y a pas de rappel.</value>
+    <value>Il n'y a pas de rappel.</value>
   </data>
   <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_CULTURE_NAME" xml:space="preserve">
     <value>Culture</value>
@@ -316,7 +257,7 @@
     <value>Ramadan</value>
   </data>
   <data name="NKS_CALENDAR_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
-    <value>Impossible d&apos;obtenir les entrées de paramètres.</value>
+    <value>Impossible d'obtenir les entrées de paramètres.</value>
   </data>
   <data name="NKS_CALENDAR_HOMEPAGE_CALENDAR" xml:space="preserve">
     <value>Calendrier</value>
@@ -349,7 +290,7 @@
     <value>Supprime un événement</value>
   </data>
   <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_EVENTID_DESC" xml:space="preserve">
-    <value>ID d&apos;événement</value>
+    <value>ID d'événement</value>
   </data>
   <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_LIST_DESC" xml:space="preserve">
     <value>Liste tous les événements</value>
@@ -382,7 +323,7 @@
     <value>Paramètres de culture</value>
   </data>
   <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_DESC" xml:space="preserve">
-    <value>Cela vous permet de configurer la culture utilisée par l&apos;économiseur d&apos;écran du calendrier</value>
+    <value>Cela vous permet de configurer la culture utilisée par l'économiseur d'écran du calendrier</value>
   </data>
   <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_CULTURE_DESC" xml:space="preserve">
     <value>Quelle culture est utilisée pour modifier les noms des mois, le calendrier, etc. ?</value>
@@ -391,10 +332,12 @@
     <value>Utiliser la culture du système</value>
   </data>
   <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_DESC" xml:space="preserve">
-    <value>Si l&apos;économiseur d&apos;écran utilise la culture définie par les paramètres principaux du noyau ou par ces paramètres d&apos;économiseur d&apos;écran.</value>
+    <value>Si l'économiseur d'écran utilise la culture définie par les paramètres principaux du noyau ou par ces paramètres d'économiseur d'écran.</value>
   </data>
   <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC" xml:space="preserve">
-    <value>Paramètres de l&apos;économiseur d&apos;écran…</value>
+    <value>Paramètres de l'économiseur d'écran…</value>
   </data>
-
+  <data name="NKS_CALENDAR_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Configuration du calendrier</value>
+  </data>
 </root>

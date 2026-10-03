@@ -6883,4 +6883,400 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC" xml:space="preserve">
     <value>Compressione elevata</value>
   </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS" xml:space="preserve">
+    <value>Modifica permessi Unix</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT" xml:space="preserve">
+    <value>Attributi</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_FLAGSPROMPT" xml:space="preserve">
+    <value>Scegli gli attributi</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT_DESC" xml:space="preserve">
+    <value>Scegli gli attributi di questo utente</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_ADMIN" xml:space="preserve">
+    <value>Amministratore</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_ADMIN_DESC" xml:space="preserve">
+    <value>Questo utente può eseguire operazioni privilegiate</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_ANONYMOUS" xml:space="preserve">
+    <value>Anonimo</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_ANONYMOUS_DESC" xml:space="preserve">
+    <value>Questo utente non apparirà nell'elenco dei nomi utente</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_DISABLED" xml:space="preserve">
+    <value>Disabilitato</value>
+  </data>
+  <data name="NKS_USERS_FLAGS_DISABLED_DESC" xml:space="preserve">
+    <value>Questo utente è disabilitato e non può essere usato per accedere</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT" xml:space="preserve">
+    <value>Attributi</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_EXTRAUSERPROMPT" xml:space="preserve">
+    <value>Scegli gli attributi</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_DESC" xml:space="preserve">
+    <value>Scegli gli attributi di questo utente</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_YES_DESC" xml:space="preserve">
+    <value>Aggiungi un utente aggiuntivo</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_NO_DESC" xml:space="preserve">
+    <value>Non aggiungere un utente aggiuntivo</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1_NEW" xml:space="preserve">
+    <value>Ora sei pronto per usare il sistema operativo Nitrocid!</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Gestione utenti</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_HELP01_DESC" xml:space="preserve">
+    <value>Uso della TUI per la gestione degli utenti</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_HELP01_BODY" xml:space="preserve">
+    <value>Con questa interfaccia testuale puoi gestire facilmente gli utenti.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_NEWPASSWORDPROMPT" xml:space="preserve">
+    <value>Nuova password per {0}:</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_NEWCONFIRMPASSWORDPROMPT" xml:space="preserve">
+    <value>Conferma la nuova password per {0}:</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_CHANGEPASSWORDERROR" xml:space="preserve">
+    <value>Errore durante il tentativo di cambiare la password di un utente.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_SELECTPERMISSIONS" xml:space="preserve">
+    <value>Seleziona i permessi dell'utente dall'elenco sottostante.</value>
+  </data>
+  <data name="NKS_SECURITY_PERMISSIONS_EXCEPTION_MANAGEMENTERROR" xml:space="preserve">
+    <value>Gestione dei permessi fallita.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_SELECTFLAGS" xml:space="preserve">
+    <value>Seleziona i flag dell'utente dall'elenco sottostante.</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_FLAGMANAGEMENTERROR" xml:space="preserve">
+    <value>Gestione dei flag fallita.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_SELECTGROUPS" xml:space="preserve">
+    <value>Seleziona i gruppi dell'utente dall'elenco sottostante.</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_GROUPMANAGEMENTERROR" xml:space="preserve">
+    <value>Gestione dei gruppi fallita.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_CHANGEPASSWORD" xml:space="preserve">
+    <value>Cambia password</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEFLAGS" xml:space="preserve">
+    <value>Gestisci flag</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEPERMS" xml:space="preserve">
+    <value>Gestisci permessi</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEMEMBERSHIPS" xml:space="preserve">
+    <value>Gestisci appartenenze</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Gestione gruppi</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_DESC" xml:space="preserve">
+    <value>Uso della TUI per la gestione dei gruppi</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_BODY" xml:space="preserve">
+    <value>Con questa interfaccia testuale puoi gestire facilmente i gruppi.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME" xml:space="preserve">
+    <value>Nome del gruppo</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME_PROMPT" xml:space="preserve">
+    <value>Inserisci il nome del gruppo.</value>
+  </data>
+  <data name="NKS_USERS_GROUPS_EXCEPTION_GROUPADDFAILED" xml:space="preserve">
+    <value>Aggiunta del gruppo fallita.</value>
+  </data>
+  <data name="NKS_USERS_GROUPS_EXCEPTION_GROUPREMOVEFAILED" xml:space="preserve">
+    <value>Rimozione del gruppo fallita.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_GROUPSTUI_SELECTPERMISSIONS" xml:space="preserve">
+    <value>Seleziona i permessi del gruppo dall'elenco sottostante.</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_USERMANAGER" xml:space="preserve">
+    <value>Gestione utenti</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_GROUPMANAGER" xml:space="preserve">
+    <value>Gestione gruppi</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_FIND" xml:space="preserve">
+    <value>Trova</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_FINDREGEX" xml:space="preserve">
+    <value>Trova con regex</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_FINDREGEX_PROMPT" xml:space="preserve">
+    <value>Inserisci il termine di ricerca per le opzioni della home page (supporta espressioni regolari).</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_FIND_PROMPT" xml:space="preserve">
+    <value>Inserisci il termine di ricerca per le opzioni della home page (senza distinzione tra maiuscole e minuscole).</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_FIND_NORESULTS" xml:space="preserve">
+    <value>Opzione non trovata per questo termine di ricerca.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_FIND_SELECT" xml:space="preserve">
+    <value>Seleziona un'opzione dai risultati della ricerca sottostanti.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_DESC" xml:space="preserve">
+    <value>Visualizza il testo all'interno di una simpatica mucca ASCII</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC" xml:space="preserve">
+    <value>Testo da stampare nel fumetto</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC" xml:space="preserve">
+    <value>Nome della mucca da utilizzare per la visualizzazione</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_INVALIDCOW" xml:space="preserve">
+    <value>Nome della grafica della mucca non valido.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_DESC" xml:space="preserve">
+    <value>Visualizza il testo in un elegante stile Figlet ASCII</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_ARGUMENT_TEXT_DESC" xml:space="preserve">
+    <value>Testo da stampare con un font Figlet</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_SWITCH_FIGLET_DESC" xml:space="preserve">
+    <value>Font Figlet da utilizzare per la visualizzazione</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_INVALIDFIGLET" xml:space="preserve">
+    <value>Nome del font Figlet non valido.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPMANTUI_DESC" xml:space="preserve">
+    <value>Apre l'interfaccia testuale (TUI) per la gestione dei gruppi</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC" xml:space="preserve">
+    <value>Mette il computer in modalità sospensione</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_DESC" xml:space="preserve">
+    <value>Imposta i permessi Unix di un file</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC" xml:space="preserve">
+    <value>Permessi di lettura, scrittura o esecuzione espressi come numero "chmod"</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>Percorso del file di cui impostare i permessi Unix</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETUID_DESC" xml:space="preserve">
+    <value>Imposta l'ID utente (setuid)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETGID_DESC" xml:space="preserve">
+    <value>Imposta l'ID gruppo (setgid)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_STICKY_DESC" xml:space="preserve">
+    <value>Imposta lo sticky bit</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_DESC" xml:space="preserve">
+    <value>Calcola i permessi Unix</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC" xml:space="preserve">
+    <value>Specifica il metodo di conversione</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_USERREP_DESC" xml:space="preserve">
+    <value>Permessi di lettura, scrittura o esecuzione per l'utente</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_GROUPREP_DESC" xml:space="preserve">
+    <value>Permessi di lettura, scrittura o esecuzione per il gruppo</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_OTHERREP_DESC" xml:space="preserve">
+    <value>Permessi di lettura, scrittura o esecuzione per gli altri</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC" xml:space="preserve">
+    <value>Apre l'interfaccia testuale (TUI) per la gestione degli utenti</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS" xml:space="preserve">
+    <value>L'intestazione esiste già</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE" xml:space="preserve">
+    <value>L'intestazione da rimuovere non esiste</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT" xml:space="preserve">
+    <value>L'intestazione da modificare non esiste</value>
+  </data>
+  <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_GIT" xml:space="preserve">
+    <value>Si è verificato un errore durante l'elaborazione della richiesta di operazioni Git.</value>
+  </data>
+  <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_SQL" xml:space="preserve">
+    <value>È in corso un'operazione SQL non valida.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_FAILED_LOAD_CONFIG" xml:space="preserve">
+    <value>Impossibile caricare la configurazione.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_ADDONS" xml:space="preserve">
+    <value>Caricamento componenti aggiuntivi del kernel...</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_FAILED_LOAD_ADDONS" xml:space="preserve">
+    <value>Impossibile caricare i componenti aggiuntivi del kernel</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG" xml:space="preserve">
+    <value>Cerca nella configurazione</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIGREGEX" xml:space="preserve">
+    <value>Cerca nella configurazione usando espressioni regolari (regex)</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPTREGEX" xml:space="preserve">
+    <value>Inserisci un termine di ricerca per trovare una voce di configurazione (supporto regex)</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPT" xml:space="preserve">
+    <value>Inserisci un termine di ricerca per trovare una voce di configurazione</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_SELECT" xml:space="preserve">
+    <value>Seleziona una chiave di configurazione dai risultati della ricerca.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_NORESULTS" xml:space="preserve">
+    <value>Nessuna chiave di configurazione corrisponde al termine di ricerca inserito.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_FAILED" xml:space="preserve">
+    <value>Ricerca nella configurazione fallita</value>
+  </data>
+  <data name="NKS_KNOWNADDONS_EXTRAS_ANIMATED" xml:space="preserve">
+    <value>Extra - Animati</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONEMPTY" xml:space="preserve">
+    <value>La stringa di rappresentazione dei permessi è vuota.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTH" xml:space="preserve">
+    <value>La lunghezza della stringa di rappresentazione dei permessi deve essere di tre caratteri.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONINVALID" xml:space="preserve">
+    <value>Rappresentazione non valida alla posizione</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTHARRAY" xml:space="preserve">
+    <value>La lunghezza della rappresentazione dei permessi deve essere di tre caratteri.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERMISSIONS" xml:space="preserve">
+    <value>Permessi</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMISSIONS" xml:space="preserve">
+    <value>Permessi speciali</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW" xml:space="preserve">
+    <value>Seleziona un algoritmo di hash dall'elenco sottostante.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_NAME" xml:space="preserve">
+    <value>Lettura</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_TITLE" xml:space="preserve">
+    <value>Il file può essere letto o la directory può essere interrogata</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_NAME" xml:space="preserve">
+    <value>Scrittura</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_TITLE" xml:space="preserve">
+    <value>Il file può essere scritto o la directory può essere modificata</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_NAME" xml:space="preserve">
+    <value>Esecuzione</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_TITLE" xml:space="preserve">
+    <value>Il file può essere eseguito o la directory può essere attraversata</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_NAME" xml:space="preserve">
+    <value>Setuid</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_TITLE" xml:space="preserve">
+    <value>Il file può essere eseguito con i privilegi del proprietario del file, solitamente l'utente root</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_NAME" xml:space="preserve">
+    <value>Setgid</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_TITLE" xml:space="preserve">
+    <value>Il file può essere eseguito con i privilegi del gruppo del file, solitamente un gruppo amministrativo</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_NAME" xml:space="preserve">
+    <value>Sticky</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_TITLE" xml:space="preserve">
+    <value>I file all'interno di una directory con questo bit attivo possono essere manipolati solo dal proprietario del file, dal proprietario della directory o dall'utente root</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_NAME" xml:space="preserve">
+    <value>Permessi utente</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_DESC" xml:space="preserve">
+    <value>Qui puoi impostare i permessi del file per il proprietario</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_NAME" xml:space="preserve">
+    <value>Permessi gruppo</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_DESC" xml:space="preserve">
+    <value>Qui puoi impostare i permessi del file per il gruppo</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_NAME" xml:space="preserve">
+    <value>Permessi altri</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_DESC" xml:space="preserve">
+    <value>Qui puoi impostare i permessi del file per gli altri utenti</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_NAME" xml:space="preserve">
+    <value>Permessi speciali</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_DESC" xml:space="preserve">
+    <value>Qui puoi impostare permessi speciali per file o directory</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERMSINFOBOX_NAME" xml:space="preserve">
+    <value>Qui puoi modificare i permessi per questo file o questa directory.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_PERMSSETFAILURE" xml:space="preserve">
+    <value>Impostazione dei permessi non riuscita</value>
+  </data>
+  <data name="NKS_FILES_EXCEPTION_UNIXPERMWINDOWS" xml:space="preserve">
+    <value>Non è possibile utilizzare strumenti per i permessi Unix su Windows.</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CYCLECOLORS_NAME" xml:space="preserve">
+    <value>Ciclo colori</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Seleziona automaticamente una combinazione casuale di colori</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_NAME" xml:space="preserve">
+    <value>Colore del testo dell'orario</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_DESC" xml:space="preserve">
+    <value>Seleziona il colore per le informazioni sull'orario</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_NAME" xml:space="preserve">
+    <value>Colore della cornice</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_DESC" xml:space="preserve">
+    <value>Seleziona il colore della cornice dell'orologio analogico</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_NAME" xml:space="preserve">
+    <value>Colore delle lancette</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_DESC" xml:space="preserve">
+    <value>Seleziona il colore delle lancette dell'orologio analogico</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_NAME" xml:space="preserve">
+    <value>Colore della lancetta dei secondi</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_DESC" xml:space="preserve">
+    <value>Seleziona il colore della lancetta dei secondi dell'orologio analogico</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_NAME" xml:space="preserve">
+    <value>Usa formato esteso</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_DESC" xml:space="preserve">
+    <value>Utilizza un formato esteso per la visualizzazione dell'orario</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_NAME" xml:space="preserve">
+    <value>Colore dell'orologio digitale</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_DESC" xml:space="preserve">
+    <value>Specifica il colore dell'orologio digitale</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_NAME" xml:space="preserve">
+    <value>Colore delle informazioni sulla data</value>
+  </data>
+  <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC" xml:space="preserve">
+    <value>Specifica il colore del testo della data</value>
+  </data>
 </root>

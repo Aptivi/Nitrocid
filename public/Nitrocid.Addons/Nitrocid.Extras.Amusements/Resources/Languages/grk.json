@@ -846,6 +846,18 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
       "text": "Αυτό σας επιτρέπει να διαμορφώσετε τα χρώματα"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Ρύθμιση παιχνιδιών και ψυχαγωγίας"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SAVERSETTINGS",
+      "text": "Ρύθμιση προστατευτικών οθόνης ψυχαγωγικού περιεχομένου"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_INSTANCES_SPLASHESSETTINGS",
+      "text": "Ρύθμιση οθονών εισαγωγής ψυχαγωγικού περιεχομένου"
     }
   ]
 }

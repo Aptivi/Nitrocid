@@ -114,6 +114,10 @@
     {
       "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
       "text": "Εντολή για απομακρυσμένη εκτέλεση"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Διαμόρφωση SSH"
     }
   ]
 }

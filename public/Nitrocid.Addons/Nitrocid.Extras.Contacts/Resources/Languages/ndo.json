@@ -605,6 +605,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
       "text": "TUI interaktif ini memungkinkan Anda mengelola kontak secara interaktif, karena menyediakan panel untuk memilih kontak dan panel untuk melihat informasi tentang kontak. Anda juga dapat mengedit, menambah, mengimpor, dan menghapus kontak di sini untuk kenyamanan lebih."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Konfigurasi kontak"
     }
   ]
 }

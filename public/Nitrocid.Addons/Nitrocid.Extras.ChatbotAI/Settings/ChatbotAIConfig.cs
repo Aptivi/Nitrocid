@@ -33,7 +33,6 @@ namespace Nitrocid.Extras.ChatbotAI.Settings
     public partial class ChatbotAIConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
-        // TODO: NKS_CHATBOT_SETTINGS_INSTANCES_SETTINGS -> Chatbot AI configuration
         [JsonIgnore]
         public override string Name =>
             LanguageTools.GetLocalized("NKS_CHATBOT_SETTINGS_INSTANCES_SETTINGS");

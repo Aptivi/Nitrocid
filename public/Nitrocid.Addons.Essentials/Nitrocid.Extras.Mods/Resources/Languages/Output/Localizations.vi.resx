@@ -364,4 +364,7 @@
   <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
     <value>Không thể dừng mod {0}</value>
   </data>
+  <data name="NKS_MODS_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Cấu hình bản mod</value>
+  </data>
 </root>

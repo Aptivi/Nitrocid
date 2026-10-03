@@ -378,6 +378,10 @@
     {
       "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC",
       "text": "Socruithe spárálaíscáileáin..."
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Cumraíocht an fhéilire"
     }
   ]
 }

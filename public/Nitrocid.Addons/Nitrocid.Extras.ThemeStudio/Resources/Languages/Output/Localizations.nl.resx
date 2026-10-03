@@ -127,4 +127,13 @@
   <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
     <value>Je kunt deze interactieve TUI gebruiken om gemakkelijker dan ooit thema's te maken. Met de geavanceerde kleurenkiezer van Terminaux kun je je eigen verbluffende thema's voor je kernel maken en deze personaliseren met je eigen kleurkeuze.</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETODIR" xml:space="preserve">
+    <value>Doelmap</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMENAME" xml:space="preserve">
+    <value>Themanaam</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMEDIR" xml:space="preserve">
+    <value>Voer hieronder de doelmap en themanaam in.</value>
+  </data>
 </root>

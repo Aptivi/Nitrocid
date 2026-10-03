@@ -146,11 +146,6 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Tools
                 throw new KernelException(KernelExceptionType.RSSNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
 
             // Initialize the RSS reader TUI
-            // TODO: NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED -> Adds a feed
-            // TODO: NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESHALL -> Refresh all
-            // TODO: NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE -> Open feed homepage
-            // TODO: NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERARTICLES -> Filter articles
-            // TODO: NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERRESET -> Reset filter
             var tui = new RssReaderCli();
             tui.BindingsSecondPane.Add(new InteractiveTuiBinding<RSSFeed, RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO"), ConsoleKey.Enter, (_, _, article, _) => tui.ShowArticleInfo(article)));
             tui.BindingsSecondPane.Add(new InteractiveTuiBinding<RSSFeed, RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE"), ConsoleKey.Enter, ConsoleModifiers.Shift, (_, _, article, _) => tui.OpenArticleLink(article)));

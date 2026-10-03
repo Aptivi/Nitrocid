@@ -273,6 +273,14 @@
     {
       "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
       "text": "ham mausam ke anumaan ke deta ke lie OpenWeatherMap ka istemaal karate hain, lekin agar aap sarvis ke lie paise de sakate hain to ham usee deta ke lie The Weather Channel (weather.com) ko bhee saport karate hain."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS",
+      "text": "purvanuman configaration"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATLON",
+      "text": "niche kisi shahar ya kshetra ka akshansh aur deshantar darj karen."
     }
   ]
 }

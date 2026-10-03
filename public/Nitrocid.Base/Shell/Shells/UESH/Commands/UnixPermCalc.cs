@@ -35,7 +35,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         public override string Command => 
             "unixpermcalc";
 
-        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_DESC -> Calculates Unix permissions
         public override string HelpDefinition => 
             LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_DESC");
 
@@ -45,23 +44,19 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "mode", new()
                     {
-                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC -> Specify conversion method
                         ExactWording = ["tonum"],
                         ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC")
                     }),
                     new CommandArgumentPart(true, "userRep", new()
                     {
-                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_USERREP_DESC -> Read, write, or execute permissions for user representation
                         ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_USERREP_DESC")
                     }),
                     new CommandArgumentPart(true, "groupRep", new()
                     {
-                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_GROUPREP_DESC -> Read, write, or execute permissions for group representation
                         ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_GROUPREP_DESC")
                     }),
                     new CommandArgumentPart(true, "otherRep", new()
                     {
-                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_OTHERREP_DESC -> Read, write, or execute permissions for other representation
                         ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_OTHERREP_DESC")
                     }),
                 ]),
@@ -69,13 +64,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "mode", new()
                     {
-                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC -> Specify conversion method
                         ExactWording = ["torep"],
                         ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC")
                     }),
                     new CommandArgumentPart(true, "num", new()
                     {
-                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC -> Read, write, or execute permissions as "chmod" number
                         ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC"),
                         IsNumeric = true,
                     }),

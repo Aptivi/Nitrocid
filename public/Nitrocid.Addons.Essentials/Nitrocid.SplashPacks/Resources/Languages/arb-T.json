@@ -131,6 +131,10 @@
     {
       "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
       "text": "يظهر مربع يتم ملؤه بالتقارير التي يخزنها هذا النظام."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "تكوين حزم الرش"
     }
   ]
 }

@@ -100,6 +100,18 @@
     {
       "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
       "text": "您可以使用這款互動式 TUI 介面，比以往更輕鬆地建立主題。透過 Terminaux 提供的先進色彩選擇器，您可以為核心建立自訂的精美主題，並使用您選擇的顏色進行個人化設定。"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETODIR",
+      "text": "目標目錄"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMENAME",
+      "text": "主題名稱"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMEDIR",
+      "text": "請在下方輸入目標目錄和主題名稱。"
     }
   ]
 }

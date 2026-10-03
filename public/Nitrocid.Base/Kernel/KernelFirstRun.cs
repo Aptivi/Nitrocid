@@ -177,15 +177,6 @@ namespace Nitrocid.Base.Kernel
                                     }
                                 ),
 
-                                // TODO: NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT -> Attributes
-                                // TODO: NKS_KERNEL_FIRSTRUN_PRESENTATION_FLAGSPROMPT -> Choose the attributes
-                                // TODO: NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT_DESC -> Choose the attributes of this user
-                                // TODO: NKS_USERS_FLAGS_ADMIN -> Administrator
-                                // TODO: NKS_USERS_FLAGS_ADMIN_DESC -> This user can execute privileged operations
-                                // TODO: NKS_USERS_FLAGS_ANONYMOUS -> Anonymous
-                                // TODO: NKS_USERS_FLAGS_ANONYMOUS_DESC -> This user won't show up in the list of usernames
-                                // TODO: NKS_USERS_FLAGS_DISABLED -> Disabled
-                                // TODO: NKS_USERS_FLAGS_DISABLED_DESC -> This user is disabled and can't be used to sign in
                                 new PresentationInputInfo(
                                     LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT"), LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_FLAGSPROMPT"),
                                     new MultiComboBoxModule()
@@ -207,11 +198,6 @@ namespace Nitrocid.Base.Kernel
                                     }
                                 ),
 
-                                // TODO: NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT -> Attributes
-                                // TODO: NKS_KERNEL_FIRSTRUN_PRESENTATION_EXTRAUSERPROMPT -> Choose the attributes
-                                // TODO: NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_DESC -> Choose the attributes of this user
-                                // TODO: NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_YES_DESC -> Add an extra user
-                                // TODO: NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_NO_DESC -> Don't add an extra user
                                 new PresentationInputInfo(
                                     LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT"), LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_EXTRAUSERPROMPT"),
                                     new ComboBoxModule()
@@ -329,7 +315,6 @@ namespace Nitrocid.Base.Kernel
                                 {
                                     Arguments =
                                     [
-                                        // TODO: NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1_NEW -> You're now ready to use the Nitrocid operating system!
                                         () => TextTools.FormatString(LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1_NEW"))
                                     ]
                                 },

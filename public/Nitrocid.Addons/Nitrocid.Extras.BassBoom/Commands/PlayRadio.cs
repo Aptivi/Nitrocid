@@ -42,7 +42,6 @@ namespace Nitrocid.Extras.BassBoom.Commands
         public override string Command =>
             "playradio";
 
-        // TODO: NKS_BASSBOOM_COMMAND_PLAYRADIO_DESC -> Plays a radio station
         public override string HelpDefinition =>
             LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_PLAYRADIO_DESC");
 
@@ -52,7 +51,6 @@ namespace Nitrocid.Extras.BassBoom.Commands
                 [
                     new CommandArgumentPart(true, "radioUrl", new CommandArgumentPartOptions()
                     {
-                        // TODO: NKS_BASSBOOM_COMMAND_ARGUMENT_RADIOURL_DESC -> Path to a radio station
                         ArgumentDescription = LanguageTools.GetLocalized("NKS_BASSBOOM_COMMAND_ARGUMENT_RADIOURL_DESC")
                     }),
                 ])
@@ -64,13 +62,11 @@ namespace Nitrocid.Extras.BassBoom.Commands
             var media = new BasoliaMedia();
             try
             {
-                // TODO: NKS_BASSBOOM_OPENEDRADIOFILE -> Opened radio station successfully.
                 media.OpenUrl(path);
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_OPENEDRADIOFILE"), ThemeColorType.Success);
             }
             catch (Exception ex)
             {
-                // TODO: NKS_BASSBOOM_CANTOPENRADIOFILE -> Can't open radio station.
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_CANTOPENRADIOFILE") + $" {ex.Message}", ThemeColorType.Error);
                 return ex.HResult;
             }
@@ -96,7 +92,6 @@ namespace Nitrocid.Extras.BassBoom.Commands
                         if (newNowPlaying != nowPlaying)
                         {
                             // We have new song from a radio station
-                            // TODO: NKS_BASSBOOM_NOWPLAYING -> Now playing
                             nowPlaying = newNowPlaying;
                             ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_BASSBOOM_NOWPLAYING"), nowPlaying);
                         }

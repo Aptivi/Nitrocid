@@ -606,6 +606,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
       "text": "이 대화형 TUI는 연락처 선택 창과 연락처 정보 보기 창을 제공하여 대화형 방식으로 연락처를 관리할 수 있도록 지원합니다. 또한, 연락처를 편집, 추가, 가져오기 및 삭제할 수 있어 더욱 편리합니다."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "연락처 구성"
     }
   ]
 }

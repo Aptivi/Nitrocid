@@ -309,6 +309,10 @@
     {
       "loc": "NKS_DATES_EXPIRY_STATUS_EXCELLENT",
       "text": "优秀"
+    },
+    {
+      "loc": "NKS_DATES_SETTINGS_INSTANCES_SETTINGS",
+      "text": "日期配置"
     }
   ]
 }

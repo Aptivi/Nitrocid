@@ -142,4 +142,7 @@
   <data name="NKS_STOCKS_COMMAND_STOCK_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>Khóa API AlphaVantage</value>
   </data>
+  <data name="NKS_STOCKS_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Cấu hình cổ phiếu</value>
+  </data>
 </root>

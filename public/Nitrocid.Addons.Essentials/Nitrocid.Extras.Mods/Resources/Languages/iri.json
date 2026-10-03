@@ -414,6 +414,10 @@
     {
       "loc": "NKS_MODS_CANTSTOP",
       "text": "Ní féidir stop a chur le mod {0}"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Cumraíocht na modanna"
     }
   ]
 }

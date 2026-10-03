@@ -108,6 +108,10 @@
     {
       "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
       "text": "顯示一個方框，其中會填入有關此啟動畫面儲存的報告。"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "啟動套件配置"
     }
   ]
 }

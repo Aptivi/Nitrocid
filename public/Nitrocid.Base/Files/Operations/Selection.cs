@@ -64,8 +64,6 @@ namespace Nitrocid.Base.Files
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_HASH"), ConsoleKey.F9, (entry1, _, _, _) => selector.Hash(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_VERIFY"), ConsoleKey.F10, (entry1, _, _, _) => selector.Verify(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_PREVIEW"), ConsoleKey.P, (entry1, _, _, _) => selector.Preview(entry1)));
-
-            // TODO: NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS -> Change Unix permissions
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS"), ConsoleKey.U, (entry1, _, _, _) => selector.ShowUnixPermissionChangeInfoBoxInstance(entry1)));
             InteractiveTuiTools.OpenInteractiveTui(selector);
             string selected = selector.selectedFile;
@@ -106,8 +104,6 @@ namespace Nitrocid.Base.Files
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_VERIFY"), ConsoleKey.F10, (entry1, _, _, _) => selector.Verify(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_PREVIEWSELECTIONS"), ConsoleKey.F11, (_, _, _, _) => selector.PreviewSelected()));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_PREVIEW"), ConsoleKey.P, (entry1, _, _, _) => selector.Preview(entry1)));
-
-            // TODO: NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS -> Change Unix permissions
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS"), ConsoleKey.U, (entry1, _, _, _) => selector.ShowUnixPermissionChangeInfoBoxInstance(entry1)));
             InteractiveTuiTools.OpenInteractiveTui(selector);
             string[] selected = [.. selector.selectedFiles];
@@ -148,8 +144,6 @@ namespace Nitrocid.Base.Files
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_HASH"), ConsoleKey.F9, (entry1, _, _, _) => selector.Hash(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_VERIFY"), ConsoleKey.F10, (entry1, _, _, _) => selector.Verify(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_PREVIEW"), ConsoleKey.P, (entry1, _, _, _) => selector.Preview(entry1)));
-
-            // TODO: NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS -> Change Unix permissions
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS"), ConsoleKey.U, (entry1, _, _, _) => selector.ShowUnixPermissionChangeInfoBoxInstance(entry1)));
             InteractiveTuiTools.OpenInteractiveTui(selector);
             string selected = selector.selectedFolder;
@@ -191,8 +185,6 @@ namespace Nitrocid.Base.Files
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_VERIFY"), ConsoleKey.F10, (entry1, _, _, _) => selector.Verify(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_PREVIEWSELECTIONS"), ConsoleKey.F11, (_, _, _, _) => selector.PreviewSelected()));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_PREVIEW"), ConsoleKey.P, (entry1, _, _, _) => selector.Preview(entry1)));
-
-            // TODO: NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS -> Change Unix permissions
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS"), ConsoleKey.U, (entry1, _, _, _) => selector.ShowUnixPermissionChangeInfoBoxInstance(entry1)));
             InteractiveTuiTools.OpenInteractiveTui(selector);
             string[] selected = [.. selector.selectedFolders];

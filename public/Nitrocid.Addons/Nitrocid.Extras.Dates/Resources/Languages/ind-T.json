@@ -301,6 +301,10 @@
     {
       "loc": "NKS_DATES_EXPIRY_STATUS_EXCELLENT",
       "text": "बहुत बढ़िया"
+    },
+    {
+      "loc": "NKS_DATES_SETTINGS_INSTANCES_SETTINGS",
+      "text": "तारीखों का कॉन्फ़िगरेशन"
     }
   ]
 }

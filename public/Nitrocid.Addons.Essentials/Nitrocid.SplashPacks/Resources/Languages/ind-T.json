@@ -105,6 +105,10 @@
     {
       "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
       "text": "एक बॉक्स दिखाता है जो उन रिपोर्ट से भर जाता है जिन्हें यह स्प्लैश स्टोर करता है"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "स्प्लैश पैक्स कॉन्फ़िगरेशन"
     }
   ]
 }

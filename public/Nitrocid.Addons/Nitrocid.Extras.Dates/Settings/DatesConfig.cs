@@ -33,7 +33,6 @@ namespace Nitrocid.Extras.Dates.Settings
     public partial class DatesConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
-        // TODO: NKS_DATES_SETTINGS_INSTANCES_SETTINGS -> Dates configuration
         [JsonIgnore]
         public override string Name =>
             LanguageTools.GetLocalized("NKS_DATES_SETTINGS_INSTANCES_SETTINGS");

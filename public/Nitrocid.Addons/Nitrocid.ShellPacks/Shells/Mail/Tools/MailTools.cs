@@ -283,7 +283,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
                     {
                         lock (client.SyncRoot)
                         {
-                            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED -> Obtaining folder {0} failed
                             var imapMessages = (IEnumerable<UniqueId>)messages;
                             var folder = OpenFolder(client, directory) ??
                                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);
@@ -359,7 +358,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
             {
                 lock (client.SyncRoot)
                 {
-                    // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED -> Obtaining folder {0} failed
                     var imapMessages = (IEnumerable<UniqueId>)messages;
                     var folder = OpenFolder(client, directory) ??
                         throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);
@@ -406,7 +404,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
                     {
                         lock (client.SyncRoot)
                         {
-                            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED -> Obtaining folder {0} failed
                             var imapMessages = (IEnumerable<UniqueId>)messages;
                             var folder = OpenFolder(client, directory) ??
                                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);
@@ -473,7 +470,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
         public static bool MailMoveMessage(ImapClient client, string directory, int MsgNumber, string TargetFolder)
         {
             int Message = MsgNumber - 1;
-            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED -> Obtaining folder {0} failed
             var folder = OpenFolder(client, directory) ??
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);
             var targetFolder = OpenFolder(client, TargetFolder) ??
@@ -514,7 +510,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
             DebugWriter.WriteDebug(DebugLevel.I, "All mail by {0} will be moved.", vars: [Sender]);
             int DeletedMsgNumber = 1;
             int SteppedMsgNumber = 0;
-            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED -> Obtaining folder {0} failed
             var folder = OpenFolder(client, directory) ??
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);
             var targetFolder = OpenFolder(client, TargetFolder) ??
@@ -594,7 +589,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
             MimeMessage? currentEntry = null;
             if (client is not null)
             {
-                // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED -> Obtaining folder {0} failed
                 var imapMessages = (IEnumerable<UniqueId>)messages;
                 var folder = OpenFolder(client, directory) ??
                     throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED"), directory);

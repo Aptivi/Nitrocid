@@ -259,4 +259,10 @@
   <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
     <value>天気予報データはOpenWeatherMapを使用していますが、有料サービスの場合はThe Weather Channel（weather.com）から同じデータも提供しています。</value>
   </data>
+  <data name="NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>予報の設定</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATLON" xml:space="preserve">
+    <value>以下に、都市または地域の緯度と経度を入力してください。</value>
+  </data>
 </root>

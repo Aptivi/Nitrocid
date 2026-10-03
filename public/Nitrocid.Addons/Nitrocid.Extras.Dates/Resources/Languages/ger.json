@@ -310,6 +310,10 @@
     {
       "loc": "NKS_DATES_EXPIRY_STATUS_EXCELLENT",
       "text": "Ausgezeichnet"
+    },
+    {
+      "loc": "NKS_DATES_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Konfiguration der Datumsangaben"
     }
   ]
 }

@@ -606,6 +606,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
       "text": "Bu etkileşimli TUI, kişileri seçmek ve bir kişi hakkındaki bilgileri görüntülemek için birer bölme sunarak kişilerinizi etkileşimli bir şekilde yönetmenizi sağlar. Ayrıca, daha fazla kolaylık sağlamak için kişileri düzenleyebilir, ekleyebilir, içe aktarabilir ve silebilirsiniz."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Kişi yapılandırması"
     }
   ]
 }

@@ -86,6 +86,10 @@
     {
       "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
       "text": "Trennt die Hülle vom aktuell funktionierenden KI-Chatbot."
+    },
+    {
+      "loc": "NKS_CHATBOT_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Konfiguration der Chatbot-KI"
     }
   ]
 }

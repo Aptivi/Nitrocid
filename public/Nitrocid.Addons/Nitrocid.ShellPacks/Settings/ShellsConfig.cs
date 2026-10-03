@@ -33,7 +33,6 @@ namespace Nitrocid.ShellPacks.Settings
     public partial class ShellsConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
-        // TODO: NKS_SHELLPACKS_SETTINGS_INSTANCES_SETTINGS -> Configuration for different shells
         [JsonIgnore]
         public override string Name =>
             LanguageTools.GetLocalized("NKS_SHELLPACKS_SETTINGS_INSTANCES_SETTINGS");

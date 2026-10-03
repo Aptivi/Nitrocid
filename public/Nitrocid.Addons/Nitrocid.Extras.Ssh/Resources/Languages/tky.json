@@ -114,6 +114,10 @@
     {
       "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
       "text": "Uzaktan yürütme komutu"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_INSTANCES_SETTINGS",
+      "text": "SSH yapılandırması"
     }
   ]
 }

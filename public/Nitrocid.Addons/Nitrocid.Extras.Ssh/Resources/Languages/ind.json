@@ -113,6 +113,10 @@
     {
       "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
       "text": "doorasth roop se nishpaadit karane ke lie kamaand"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_INSTANCES_SETTINGS",
+      "text": "SSH configuration"
     }
   ]
 }

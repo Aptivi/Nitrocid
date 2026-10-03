@@ -38,7 +38,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         public override string Command =>
             "cowsay";
 
-        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_DESC -> Renders text in a nice ASCII cow
         public override string HelpDefinition =>
             LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_DESC");
 
@@ -48,12 +47,10 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 [
                     new CommandArgumentPart(true, "text", new()
                     {
-                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC -> Text to print in a conversation bubble
                         ArgumentDescription = LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC")
                     }),
                 ],
                 [
-                    // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC -> Cow name to render with
                     new SwitchInfo("cow", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC")),
                 ], true)
             ];
@@ -66,7 +63,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             string cowsayName = parameters.ContainsSwitch("-cow") ? parameters.GetSwitchValue("-cow") : nameof(CowName.Default);
             if (!Enum.TryParse<CowName>(cowsayName, out var cow))
             {
-                // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_INVALIDCOW -> Invalid cow art name.
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_INVALIDCOW"), ThemeColorType.Error);
                 return 47;
             }

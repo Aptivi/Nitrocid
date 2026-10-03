@@ -33,7 +33,6 @@ namespace Nitrocid.Extras.Calendar.Settings
     public partial class CalendarConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
-        // TODO: NKS_CALENDAR_SETTINGS_INSTANCES_SETTINGS -> Calendar configuration
         [JsonIgnore]
         public override string Name =>
             LanguageTools.GetLocalized("NKS_CALENDAR_SETTINGS_INSTANCES_SETTINGS");

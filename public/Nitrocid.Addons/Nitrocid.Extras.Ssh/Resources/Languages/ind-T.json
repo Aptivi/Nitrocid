@@ -113,6 +113,10 @@
     {
       "loc": "NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC",
       "text": "दूरस्थ रूप से निष्पादित करने के लिए आदेश"
+    },
+    {
+      "loc": "NKS_SSH_SETTINGS_INSTANCES_SETTINGS",
+      "text": "SSH कॉन्फ़िगरेशन"
     }
   ]
 }

@@ -414,6 +414,10 @@
     {
       "loc": "NKS_MODS_CANTSTOP",
       "text": "Mod {0} durdurulamıyor."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Mod yapılandırması"
     }
   ]
 }

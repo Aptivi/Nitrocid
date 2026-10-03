@@ -229,7 +229,6 @@ namespace Nitrocid.Base.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to load configuration");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    // TODO: NKS_KERNEL_STARTING_FAILED_LOAD_CONFIG -> Failed to load configuration.
                     if (KernelEntry.TalkativePreboot)
                         SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_CONFIG") + $": {exc.Message}");
                 }
@@ -447,7 +446,6 @@ namespace Nitrocid.Base.Kernel.Starting
                 // Initialize addons
                 try
                 {
-                    // TODO: NKS_KERNEL_STARTING_ADDONS -> Loading kernel addons...
                     if (KernelEntry.TalkativePreboot)
                         SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ADDONS"));
                     AddonTools.ProcessAddons(ModLoadPriority.Optional);
@@ -459,7 +457,6 @@ namespace Nitrocid.Base.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to load kernel addons");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    // TODO: NKS_KERNEL_STARTING_FAILED_LOAD_ADDONS -> Failed to load kernel addons
                     if (KernelEntry.TalkativePreboot)
                         SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_ADDONS") + $": {exc.Message}");
                 }

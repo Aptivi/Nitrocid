@@ -244,4 +244,10 @@
   <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC" xml:space="preserve">
     <value>यह आपको रंगों को कॉन्फ़िगर करने की अनुमति देता है</value>
   </data>
+  <data name="NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SAVERSETTINGS" xml:space="preserve">
+    <value>एनिमेटेड स्क्रीनसेवर कॉन्फ़िगरेशन</value>
+  </data>
+  <data name="NKS_ANIMATED_COMMON_SETTINGS_INSTANCES_SPLASHESSETTINGS" xml:space="preserve">
+    <value>एनिमेटेड स्प्लैश कॉन्फ़िगरेशन</value>
+  </data>
 </root>

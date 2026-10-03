@@ -259,4 +259,10 @@
   <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
     <value>Nous utilisons OpenWeatherMap pour les données de prévisions météo, et nous proposons également les mêmes données sur The Weather Channel (weather.com) moyennant un abonnement.</value>
   </data>
+  <data name="NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Configuration des prévisions</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATLON" xml:space="preserve">
+    <value>Saisissez ci-dessous la latitude et la longitude d'une ville ou d'une région.</value>
+  </data>
 </root>

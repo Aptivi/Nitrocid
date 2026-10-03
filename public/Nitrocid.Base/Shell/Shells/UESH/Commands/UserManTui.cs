@@ -38,7 +38,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         public override string Command =>
             "usermantui";
 
-        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC -> Opens the user management TUI
         public override string HelpDefinition =>
             LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC");
 

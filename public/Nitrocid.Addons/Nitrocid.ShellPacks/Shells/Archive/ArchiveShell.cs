@@ -110,7 +110,6 @@ namespace Nitrocid.ShellPacks.Shells.Archive
             }
 
             // Open file if not open
-            // TODO: NKS_SHELLPACKS_ARCHIVE_EXCEPTION_FILESTREAMFAILED -> Opening archive file stream failed
             fileStream ??= new FileStream(ArchiveFile, FileMode.Open);
             if (FileStream is null)
                 throw new KernelException(KernelExceptionType.Archive, LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_FILESTREAMFAILED"));

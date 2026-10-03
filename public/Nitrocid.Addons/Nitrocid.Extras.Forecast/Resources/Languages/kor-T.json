@@ -274,6 +274,14 @@
     {
       "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
       "text": "저희는 날씨 예보 데이터로 OpenWeatherMap을 사용하지만, 유료 서비스인 The Weather Channel(weather.com)에서도 동일한 데이터를 제공합니다."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS",
+      "text": "예보 설정"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATLON",
+      "text": "아래에 도시나 지역의 위도와 경도를 입력하세요."
     }
   ]
 }

@@ -386,6 +386,10 @@
     {
       "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC",
       "text": "Bildschirmschonereinstellungen…"
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Kalenderkonfiguration"
     }
   ]
 }

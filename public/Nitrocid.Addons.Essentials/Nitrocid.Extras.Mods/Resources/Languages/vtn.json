@@ -413,6 +413,10 @@
     {
       "loc": "NKS_MODS_CANTSTOP",
       "text": "Không thể dừng mod {0}"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Cấu hình bản mod"
     }
   ]
 }

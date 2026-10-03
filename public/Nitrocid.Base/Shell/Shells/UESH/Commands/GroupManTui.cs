@@ -37,7 +37,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         public override string Command =>
             "groupmantui";
 
-        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_GROUPMANTUI_DESC -> Opens the group management TUI
         public override string HelpDefinition =>
             LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_GROUPMANTUI_DESC");
 

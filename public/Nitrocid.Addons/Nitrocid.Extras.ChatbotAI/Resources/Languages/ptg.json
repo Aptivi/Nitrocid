@@ -87,6 +87,10 @@
     {
       "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
       "text": "Desvincula o núcleo do chatbot de IA em funcionamento."
+    },
+    {
+      "loc": "NKS_CHATBOT_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuração de IA do chatbot"
     }
   ]
 }

@@ -630,6 +630,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
       "text": "Esta interfaz de usuario interactiva te permite gestionar tus contactos de forma interactiva, ya que cuenta con un panel para seleccionar contactos y otro para ver su información. También puedes editar, añadir, importar y eliminar contactos para mayor comodidad."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuración de contactos"
     }
   ]
 }

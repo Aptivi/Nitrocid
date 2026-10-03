@@ -9105,6 +9105,534 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC",
       "text": "हाई कम्प्रेशन"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UNIXPERMS",
+      "text": "Unix अनुमतियाँ बदलें"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT",
+      "text": "विशेषताएँ"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_FLAGSPROMPT",
+      "text": "विशेषताएँ चुनें"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_FLAGS_PROMPT_DESC",
+      "text": "इस यूज़र की विशेषताएँ चुनें"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ADMIN",
+      "text": "एडमिनिस्ट्रेटर"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ADMIN_DESC",
+      "text": "यह यूज़र खास अधिकार वाले काम कर सकता है"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ANONYMOUS",
+      "text": "अनाम (Anonymous)"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_ANONYMOUS_DESC",
+      "text": "यह यूज़रनेम की सूची में नहीं दिखेगा"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_DISABLED",
+      "text": "अक्षम (Disabled)"
+    },
+    {
+      "loc": "NKS_USERS_FLAGS_DISABLED_DESC",
+      "text": "यह यूज़र अक्षम है और साइन-इन के लिए इस्तेमाल नहीं किया जा सकता"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT",
+      "text": "विशेषताएँ"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_EXTRAUSERPROMPT",
+      "text": "विशेषताएँ चुनें"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_DESC",
+      "text": "इस यूज़र की विशेषताएँ चुनें"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_YES_DESC",
+      "text": "एक अतिरिक्त यूज़र जोड़ें"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_EXTRAUSER_PROMPT_NO_DESC",
+      "text": "अतिरिक्त यूज़र न जोड़ें"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT1_NEW",
+      "text": "अब आप Nitrocid ऑपरेटिंग सिस्टम इस्तेमाल करने के लिए तैयार हैं!"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_TITLE",
+      "text": "यूज़र्स को मैनेज करना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_DESC",
+      "text": "यूज़र्स को मैनेज करने के लिए यूज़र TUI का इस्तेमाल"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_BODY",
+      "text": "इस टेक्स्ट-आधारित यूज़र इंटरफ़ेस से आप आसानी से यूज़र्स को मैनेज कर सकते हैं।"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_NEWPASSWORDPROMPT",
+      "text": "{0} का नया पासवर्ड:"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_NEWCONFIRMPASSWORDPROMPT",
+      "text": "{0} का नया पासवर्ड कन्फर्म करें:"
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDERROR",
+      "text": "यूज़र का पासवर्ड बदलने की कोशिश में गड़बड़ी हुई।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTPERMISSIONS",
+      "text": "नीचे दी गई सूची से यूज़र अनुमतियाँ चुनें।"
+    },
+    {
+      "loc": "NKS_SECURITY_PERMISSIONS_EXCEPTION_MANAGEMENTERROR",
+      "text": "अनुमतियाँ मैनेज करने में गड़बड़ी हुई।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTFLAGS",
+      "text": "नीचे दी गई सूची से यूज़र फ़्लैग चुनें।"
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_FLAGMANAGEMENTERROR",
+      "text": "फ़्लैग मैनेज करने में गड़बड़ी हुई।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTGROUPS",
+      "text": "नीचे दी गई सूची से यूज़र ग्रुप चुनें।"
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_GROUPMANAGEMENTERROR",
+      "text": "ग्रुप मैनेज करने में गड़बड़ी हुई।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_CHANGEPASSWORD",
+      "text": "पासवर्ड बदलें"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEFLAGS",
+      "text": "फ़्लैग मैनेज करें"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEPERMS",
+      "text": "अनुमतियाँ मैनेज करें"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEMEMBERSHIPS",
+      "text": "सदस्यताएँ मैनेज करें"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_TITLE",
+      "text": "ग्रुप मैनेज करना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_DESC",
+      "text": "ग्रुप मैनेज करने के लिए ग्रुप TUI का इस्तेमाल"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_BODY",
+      "text": "इस टेक्स्ट-आधारित यूज़र इंटरफ़ेस से आप आसानी से ग्रुप मैनेज कर सकते हैं।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME",
+      "text": "ग्रुप का नाम"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME_PROMPT",
+      "text": "ग्रुप का नाम डालें।"
+    },
+    {
+      "loc": "NKS_USERS_GROUPS_EXCEPTION_GROUPADDFAILED",
+      "text": "ग्रुप जोड़ने में गड़बड़ी हुई।"
+    },
+    {
+      "loc": "NKS_USERS_GROUPS_EXCEPTION_GROUPREMOVEFAILED",
+      "text": "ग्रुप हटाने में गड़बड़ी हुई।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_SELECTPERMISSIONS",
+      "text": "नीचे दी गई सूची से ग्रुप अनुमतियाँ चुनें।"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_USERMANAGER",
+      "text": "यूज़र मैनेजर"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_GROUPMANAGER",
+      "text": "ग्रुप मैनेजर"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_FIND",
+      "text": "ढूँढें"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_FINDREGEX",
+      "text": "Regex के साथ ढूँढें"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FINDREGEX_PROMPT",
+      "text": "होम पेज विकल्पों के लिए सर्च टर्म डालें (रेगुलर एक्सप्रेशन सपोर्ट करता है)।"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_PROMPT",
+      "text": "होम पेज विकल्पों के लिए सर्च टर्म डालें (केस-इनसेंसिटिव)।"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_NORESULTS",
+      "text": "इस सर्च टर्म में कोई विकल्प नहीं मिला।"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_FIND_SELECT",
+      "text": "नीचे दिए गए सर्च नतीजों में से कोई विकल्प चुनें।"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_DESC",
+      "text": "टेक्स्ट को एक अच्छे ASCII गाय के रूप में दिखाता है"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_ARGUMENT_TEXT_DESC",
+      "text": "बातचीत के बबल में प्रिंट करने के लिए टेक्स्ट"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_SWITCH_COW_DESC",
+      "text": "गाय का नाम जिसके साथ दिखाना है"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COWSAY_INVALIDCOW",
+      "text": "गाय की कला का गलत नाम।"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_DESC",
+      "text": "टेक्स्ट को एक अच्छे ASCII फ़िगलेट के रूप में दिखाता है"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_ARGUMENT_TEXT_DESC",
+      "text": "फ़िगलेट फ़ॉन्ट में प्रिंट करने के लिए टेक्स्ट"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_SWITCH_FIGLET_DESC",
+      "text": "फ़िगलेट फ़ॉन्ट जिसके साथ दिखाना है"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIGLET_INVALIDFIGLET",
+      "text": "फ़िगलेट फ़ॉन्ट का गलत नाम।"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPMANTUI_DESC",
+      "text": "ग्रुप मैनेजमेंट TUI खोलता है"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
+      "text": "आपके कंप्यूटर को स्लीप मोड में डालता है"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_DESC",
+      "text": "किसी फ़ाइल की Unix अनुमतियाँ (permissions) सेट करता है"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_NUM_DESC",
+      "text": "\"chmod\" नंबर के तौर पर पढ़ने, लिखने या चलाने (execute) की अनुमतियाँ"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_ARGUMENT_FILE_DESC",
+      "text": "Unix अनुमतियाँ सेट करने के लिए फ़ाइल का पाथ"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETUID_DESC",
+      "text": "यूज़र ID सेट करें"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_SETGID_DESC",
+      "text": "ग्रुप ID सेट करें"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERM_SWITCH_STICKY_DESC",
+      "text": "स्टिकी बिट सेट करें"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_DESC",
+      "text": "Unix अनुमतियाँ कैलकुलेट करता है"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_MODE_DESC",
+      "text": "कन्वर्ज़न का तरीका बताएं"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_USERREP_DESC",
+      "text": "यूज़र के लिए पढ़ने, लिखने या चलाने की अनुमतियाँ"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_GROUPREP_DESC",
+      "text": "ग्रुप के लिए पढ़ने, लिखने या चलाने की अनुमतियाँ"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNIXPERMCALC_ARGUMENT_REPRESENTATION_OTHERREP_DESC",
+      "text": "अन्य के लिए पढ़ने, लिखने या चलाने की अनुमतियाँ"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC",
+      "text": "यूज़र मैनेजमेंट TUI खोलता है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS",
+      "text": "हेडर पहले से मौजूद है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE",
+      "text": "हटाने के लिए हेडर मौजूद नहीं है"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT",
+      "text": "एडिट करने के लिए हेडर मौजूद नहीं है"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_GIT",
+      "text": "Git ऑपरेशन के लिए आपकी रिक्वेस्ट प्रोसेस करते समय एक एरर आया।"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_SQL",
+      "text": "एक अमान्य SQL ऑपरेशन किया जा रहा है।"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_CONFIG",
+      "text": "कॉन्फ़िगरेशन लोड करने में फ़ेल।"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ADDONS",
+      "text": "कर्नेल ऐड-ऑन लोड हो रहे हैं..."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ADDONS",
+      "text": "कर्नेल ऐड-ऑन लोड करने में फ़ेल"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG",
+      "text": "कॉन्फ़िगरेशन खोजें"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIGREGEX",
+      "text": "रेगेक्स (regex) के साथ कॉन्फ़िगरेशन खोजें"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPTREGEX",
+      "text": "कॉन्फ़िगरेशन एंट्री खोजने के लिए सर्च टर्म लिखें (रेगेक्स सपोर्टेड)"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_PROMPT",
+      "text": "कॉन्फ़िगरेशन एंट्री खोजने के लिए सर्च टर्म लिखें"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_SELECT",
+      "text": "सर्च रिज़ल्ट से कॉन्फ़िगरेशन की (key) चुनें।"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_NORESULTS",
+      "text": "आपके सर्च टर्म से मेल खाने वाली कोई कॉन्फ़िगरेशन की (key) नहीं है।"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHCONFIG_FAILED",
+      "text": "कॉन्फ़िगरेशन खोजना फ़ेल रहा"
+    },
+    {
+      "loc": "NKS_KNOWNADDONS_EXTRAS_ANIMATED",
+      "text": "एक्स्ट्रा - एनिमेटेड"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONEMPTY",
+      "text": "अनुमति दिखाने वाली स्ट्रिंग खाली है।"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTH",
+      "text": "अनुमति दिखाने वाली स्ट्रिंग की लंबाई तीन होनी चाहिए।"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONINVALID",
+      "text": "इस जगह पर अमान्य रिप्रेजेंटेशन है"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTHARRAY",
+      "text": "अनुमति दिखाने वाली स्ट्रिंग की लंबाई तीन होनी चाहिए।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMISSIONS",
+      "text": "अनुमतियाँ"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMISSIONS",
+      "text": "खास अनुमतियाँ"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW",
+      "text": "नीचे दी गई लिस्ट से हैश ड्राइवर चुनें।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_NAME",
+      "text": "पढ़ना (Read)"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_TITLE",
+      "text": "फ़ाइल पढ़ी जा सकती है या डायरेक्टरी की जानकारी ली जा सकती है"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_NAME",
+      "text": "लिखना (Write)"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_TITLE",
+      "text": "फ़ाइल में लिखा जा सकता है या डायरेक्टरी में बदलाव किया जा सकता है"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_NAME",
+      "text": "चलाना (Execute)"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_TITLE",
+      "text": "फ़ाइल चलाई जा सकती है या डायरेक्टरी में नेविगेट किया जा सकता है"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_NAME",
+      "text": "Setuid"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_TITLE",
+      "text": "फ़ाइल को फ़ाइल के मालिक (आमतौर पर रूट यूज़र) के अधिकारों के साथ चलाया जा सकता है"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_NAME",
+      "text": "Setgid"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_TITLE",
+      "text": "फ़ाइल को फ़ाइल ग्रुप (आमतौर पर एडमिनिस्ट्रेटिव ग्रुप) के अधिकारों के साथ चलाया जा सकता है"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_NAME",
+      "text": "Sticky"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_TITLE",
+      "text": "इस बिट वाली डायरेक्टरी के अंदर की फ़ाइलों में सिर्फ़ फ़ाइल का मालिक, डायरेक्टरी का मालिक और रूट यूज़र ही बदलाव कर सकते हैं"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_NAME",
+      "text": "यूज़र अनुमतियाँ"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_DESC",
+      "text": "आप यहाँ मालिक के लिए फ़ाइल अनुमतियाँ सेट कर सकते हैं"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_NAME",
+      "text": "ग्रुप अनुमतियाँ"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_DESC",
+      "text": "आप यहाँ ग्रुप के लिए फ़ाइल अनुमतियाँ सेट कर सकते हैं"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_NAME",
+      "text": "अन्य अनुमतियाँ"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_DESC",
+      "text": "आप यहाँ दूसरों के लिए फ़ाइल अनुमतियाँ सेट कर सकते हैं"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_NAME",
+      "text": "खास अनुमतियाँ"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_DESC",
+      "text": "आप फ़ाइलों या डायरेक्टरी के लिए खास अनुमतियाँ सेट कर सकते हैं"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMSINFOBOX_NAME",
+      "text": "आप यहाँ इस फ़ाइल या डायरेक्टरी के लिए अनुमतियाँ बदल सकते हैं।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_PERMSSETFAILURE",
+      "text": "परमिशन सेट करने में गड़बड़ी हुई"
+    },
+    {
+      "loc": "NKS_FILES_EXCEPTION_UNIXPERMWINDOWS",
+      "text": "आप Windows पर Unix परमिशन टूल का इस्तेमाल नहीं कर सकते।"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_NAME",
+      "text": "रंग बदलते रहें"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CYCLECOLORS_DESC",
+      "text": "अपने-आप रंगों का एक रैंडम सेट चुनता है"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_NAME",
+      "text": "समय की जानकारी वाले टेक्स्ट का रंग"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_DESC",
+      "text": "समय की जानकारी के लिए रंग चुनता है"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_NAME",
+      "text": "बेज़ेल का रंग"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_DESC",
+      "text": "एनालॉग घड़ी के बेज़ेल का रंग चुनता है"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_NAME",
+      "text": "सुइयों का रंग"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_DESC",
+      "text": "एनालॉग घड़ी की सुइयों का रंग चुनता है"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_NAME",
+      "text": "सेकंड वाली सुई का रंग"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_DESC",
+      "text": "एनालॉग घड़ी की सेकंड वाली सुई का रंग चुनता है"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_NAME",
+      "text": "लंबे फ़ॉर्मैट का इस्तेमाल करें"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKUSELONGFORMAT_DESC",
+      "text": "समय दिखाते समय लंबे फ़ॉर्मैट का इस्तेमाल करें"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_NAME",
+      "text": "डिजिटल घड़ी का रंग"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKCOLOR_DESC",
+      "text": "डिजिटल घड़ी का रंग तय करता है"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_NAME",
+      "text": "तारीख की जानकारी का रंग"
+    },
+    {
+      "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC",
+      "text": "तारीख वाले टेक्स्ट का रंग तय करता है"
     }
   ]
 }

@@ -75,7 +75,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [DigitalClock] Cycles colors
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_DESC -> Automatically chooses a random set of colors
         public bool DigitalClockCycleColors
         {
             get => digitalClockCycleColors;
@@ -84,8 +83,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [DigitalClock] Color of the digital clock
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_NAME -> Digital clock color
-        // TODO: NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKCOLOR_DESC -> Specifies the color of the digital clock
         public string DigitalClockColor
         {
             get => digitalClockColor;
@@ -94,8 +91,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [DigitalClock] Color of the date info text
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_NAME -> Date info color
-        // TODO: NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKINFOCOLOR_DESC -> Specifies the color of the date text
         public string DigitalClockInfoColor
         {
             get => digitalClockInfoColor;
@@ -104,8 +99,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [Digital] Cycles colors
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_NAME -> Use long format
-        // TODO: NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DIGITALCLOCKUSELONGFORMAT_DESC -> Use a long format when rendering time
         public bool DigitalClockUseLongFormat
         {
             get => digitalClockUseLongFormat;

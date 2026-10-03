@@ -86,8 +86,6 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             string finalRenderedDir = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ISDIRECTORY") + $": {isDirectory}";
             string finalRenderedSize = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FILESIZE") + $": {size.SizeString()}";
             string finalRenderedPath = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_FILEPATH") + $": {path}";
-            // TODO: NKS_MISC_INTERACTIVES_FMTUI_PERMISSIONS -> Permissions
-            // TODO: NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMISSIONS -> Special permissions
             string finalRenderedPermissions = $"{LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERMISSIONS")}: " +
                 $"[{UnixPermissionManager.BuildPermissionRepresentation(permissionTypeUser)}" +
                 $" {UnixPermissionManager.BuildPermissionRepresentation(permissionTypeGroup)}" +
@@ -336,7 +334,6 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             }
 
             // Render the hash box
-            // TODO: NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW -> Select a hash driver from the list below.
             string[] hashDrivers = EncryptionDriverTools.GetEncryptionDriverNames();
             int hashDriverIdx = InfoBoxSelectionColor.WriteInfoBoxSelection(InputChoiceTools.GetInputChoices(hashDrivers), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW"), infoBoxSettings);
             if (hashDriverIdx < 0)
@@ -355,7 +352,6 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             }
 
             // Render the hash box
-            // TODO: NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW -> Select a hash driver from the list below.
             string[] hashDrivers = EncryptionDriverTools.GetEncryptionDriverNames();
             int hashDriverIdx = InfoBoxSelectionColor.WriteInfoBoxSelection(InputChoiceTools.GetInputChoices(hashDrivers), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_HASHDRIVERPROMPT_NEW"), infoBoxSettings);
             if (hashDriverIdx < 0)
@@ -393,31 +389,15 @@ namespace Nitrocid.Base.Files.Instances.Interactives
             {
                 // Input choices for permissions
                 InputChoiceCategoryInfo[] permissionsInputs = [new("", [new("", [
-                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_NAME -> Read
-                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_TITLE -> File can be read or directory can be queried
                     new(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_NAME"), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERM_READ_TITLE")),
-
-                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_NAME -> Write
-                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_TITLE -> File can be write or directory can be modified
                     new(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_NAME"), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERM_WRITE_TITLE")),
-
-                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_NAME -> Execute
-                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_TITLE -> File can be execute or directory can be traversed
                     new(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_NAME"), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERM_EXECUTE_TITLE")),
                 ])])];
 
                 // Input choices for special permissions
                 InputChoiceCategoryInfo[] specialPermissionsInputs = [new("", [new("", [
-                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_NAME -> Setuid
-                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_TITLE -> File can be executed with the privileges of the file owner, usually a root user
                     new(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_NAME"), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETUID_TITLE")),
-
-                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_NAME -> Setgid
-                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_TITLE -> File can be executed with the privileges of the file group, usually an administrative group
                     new(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_NAME"), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_SETGID_TITLE")),
-
-                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_NAME -> Sticky
-                    // TODO: NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_TITLE -> Files inside a directory with this bit set can only be manipulated with by file owner, directory owner, and a root user
                     new(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_NAME"), LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SPECIAL_PERM_STICKY_TITLE")),
                 ])])];
 
@@ -466,8 +446,6 @@ namespace Nitrocid.Base.Files.Instances.Interactives
                 [
                     new MultiComboBoxModule()
                     {
-                        // TODO: NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_NAME -> User permissions
-                        // TODO: NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_DESC -> You can set file permissions for the owner here
                         Name = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_NAME"),
                         Description = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_USERPERMS_DESC"),
                         Choices = permissionsInputs,
@@ -475,8 +453,6 @@ namespace Nitrocid.Base.Files.Instances.Interactives
                     },
                     new MultiComboBoxModule()
                     {
-                        // TODO: NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_NAME -> Group permissions
-                        // TODO: NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_DESC -> You can set file permissions for the group here
                         Name = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_NAME"),
                         Description = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_GROUPPERMS_DESC"),
                         Choices = permissionsInputs,
@@ -484,8 +460,6 @@ namespace Nitrocid.Base.Files.Instances.Interactives
                     },
                     new MultiComboBoxModule()
                     {
-                        // TODO: NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_NAME -> Other permissions
-                        // TODO: NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_DESC -> You can set file permissions for others here
                         Name = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_NAME"),
                         Description = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_OTHERPERMS_DESC"),
                         Choices = permissionsInputs,
@@ -493,8 +467,6 @@ namespace Nitrocid.Base.Files.Instances.Interactives
                     },
                     new MultiComboBoxModule()
                     {
-                        // TODO: NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_NAME -> Special permissions
-                        // TODO: NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_DESC -> You can set special permissions for files or directories
                         Name = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_NAME"),
                         Description = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SPECIALPERMS_DESC"),
                         Choices = specialPermissionsInputs,
@@ -503,7 +475,6 @@ namespace Nitrocid.Base.Files.Instances.Interactives
                 ];
 
                 // Open an infobox
-                // TODO: NKS_MISC_INTERACTIVES_FMTUI_PERMSINFOBOX_NAME -> You can change the permissions for this file or directory here.
                 bool done = InfoBoxMultiInputColor.WriteInfoBoxMultiInput(modules, LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_PERMSINFOBOX_NAME"), infoBoxSettings);
                 if (!done)
                     return;

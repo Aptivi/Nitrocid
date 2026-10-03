@@ -364,4 +364,7 @@
   <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
     <value>Modulationem {0} sistere non possum.</value>
   </data>
+  <data name="NKS_MODS_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Configuratio modificationum</value>
+  </data>
 </root>

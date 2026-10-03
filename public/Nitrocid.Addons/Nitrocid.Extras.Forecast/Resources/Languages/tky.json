@@ -274,6 +274,14 @@
     {
       "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
       "text": "Hava durumu tahmini verileri için OpenWeatherMap kullanıyoruz, ancak ücretli bir hizmet olması durumunda aynı veriler için The Weather Channel'ı (weather.com) da destekliyoruz."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Tahmin yapılandırması"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATLON",
+      "text": "Aşağıya bir şehrin veya bölgenin enlem ve boylamını girin."
     }
   ]
 }

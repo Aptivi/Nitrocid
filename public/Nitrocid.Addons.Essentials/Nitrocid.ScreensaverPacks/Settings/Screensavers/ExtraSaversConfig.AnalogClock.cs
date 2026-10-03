@@ -91,7 +91,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [AnalogClock] Cycles colors
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_DESC -> Automatically chooses a random set of colors
         public bool AnalogClockCycleColors
         {
             get => analogClockCycleColors;
@@ -100,15 +99,11 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [AnalogClock] Color of the time information text
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_NAME -> Color of time info text
-        // TODO: NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKTIMEINFOCOLOR_DESC -> Chooses a color of time information
         public string AnalogClockTimeInfoColor
         {
             get => analogClockTimeInfoColor;
             set => analogClockTimeInfoColor = value;
         }
-        // TODO: NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_NAME -> Color of bezel
-        // TODO: NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKBEZELCOLOR_DESC -> Chooses a color of the analog clock's bezel
         /// <summary>
         /// [AnalogClock] Color of the bezel
         /// </summary>
@@ -117,8 +112,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
             get => analogClockBezelColor;
             set => analogClockBezelColor = value;
         }
-        // TODO: NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_NAME -> Color of hands
-        // TODO: NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKHANDSCOLOR_DESC -> Chooses a color of the analog clock's hands
         /// <summary>
         /// [AnalogClock] Color of the hands
         /// </summary>
@@ -127,8 +120,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
             get => analogClockHandsColor;
             set => analogClockHandsColor = value;
         }
-        // TODO: NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_NAME -> Color of the seconds hand
-        // TODO: NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_CLOCKSECONDSHANDSCOLOR_DESC -> Chooses a color of the analog clock's seconds hand
         /// <summary>
         /// [AnalogClock] Color of the seconds hand
         /// </summary>

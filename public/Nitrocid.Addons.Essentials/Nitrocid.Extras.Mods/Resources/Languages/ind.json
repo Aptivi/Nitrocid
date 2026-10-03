@@ -413,6 +413,10 @@
     {
       "loc": "NKS_MODS_CANTSTOP",
       "text": "mod {0} ko roka nahin ja sakata"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "mods configuration"
     }
   ]
 }

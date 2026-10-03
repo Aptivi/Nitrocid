@@ -94,7 +94,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                             {
                                 // Getting information about the message is vital to display them.
                                 DebugWriter.WriteDebug(DebugLevel.I, "Getting message {0}...", vars: [i]);
-                                // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_POP3NOTCONNECTED -> POP3 server is not connected
                                 if (mailShell.Pop3Client is null)
                                     throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_POP3NOTCONNECTED"));
                                 lock (mailShell.Pop3Client.SyncRoot)

@@ -106,6 +106,10 @@
     {
       "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
       "text": "Taispeánann sé bosca a líontar le tuarascálacha a stórálann an splancscáileán seo"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Cumraíocht na bpacáistí splancscáileáin"
     }
   ]
 }

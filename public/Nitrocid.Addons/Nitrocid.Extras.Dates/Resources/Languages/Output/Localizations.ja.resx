@@ -280,4 +280,7 @@
   <data name="NKS_DATES_EXPIRY_STATUS_EXCELLENT" xml:space="preserve">
     <value>素晴らしい</value>
   </data>
+  <data name="NKS_DATES_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>日付の設定</value>
+  </data>
 </root>

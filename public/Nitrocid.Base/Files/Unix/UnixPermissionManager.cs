@@ -72,11 +72,8 @@ namespace Nitrocid.Base.Files.Unix
         /// <returns>Processed permission type</returns>
         public static UnixPermissionType GetTypeFrom(string permRepresentation)
         {
-            // TODO: NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONEMPTY -> Permission representation string is empty.
             if (string.IsNullOrEmpty(permRepresentation))
                 throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONEMPTY"));
-
-            // TODO: NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTH -> Permission representation string length must be three.
             if (permRepresentation.Length != 3)
                 throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTH"));
 
@@ -98,7 +95,6 @@ namespace Nitrocid.Base.Files.Unix
                     case '-':
                         break;
                     default:
-                        // TODO: NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONINVALID -> Invalid representation at position
                         throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONINVALID") + $" {i + 1}: {perm}");
                 }
             }
@@ -241,7 +237,6 @@ namespace Nitrocid.Base.Files.Unix
             var fileMode = UnixFileMode.None;
 
             // Iterate through descriptors
-            // TODO: NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTHARRAY -> Permission representation length must be three.
             if (descriptors.Length != 3)
                 throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONLENGTHARRAY"));
             bool userProcessed = false, groupProcessed = false, otherProcessed = false;

@@ -273,6 +273,14 @@
     {
       "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
       "text": "Chúng tôi sử dụng OpenWeatherMap cho dữ liệu dự báo thời tiết, nhưng chúng tôi cũng hỗ trợ The Weather Channel (weather.com) cho cùng dữ liệu này nếu bạn có thể trả phí cho dịch vụ."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Cấu hình dự báo"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATLON",
+      "text": "Nhập vĩ độ và kinh độ của một thành phố hoặc khu vực vào bên dưới."
     }
   ]
 }

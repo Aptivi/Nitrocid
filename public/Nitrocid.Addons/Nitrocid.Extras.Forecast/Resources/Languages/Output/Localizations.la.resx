@@ -259,4 +259,10 @@
   <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
     <value>OpenWeatherMap utimur pro notitiis praedictionis meteorologicae, sed etiam The Weather Channel (weather.com) pro eisdem notitiis sustinemus si pro servitio solvere potes.</value>
   </data>
+  <data name="NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Configuratio praedictionis</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATLON" xml:space="preserve">
+    <value>Infra latitudinem et longitudinem urbis vel regionis inscribe.</value>
+  </data>
 </root>

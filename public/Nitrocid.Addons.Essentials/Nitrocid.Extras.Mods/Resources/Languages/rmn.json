@@ -414,6 +414,10 @@
     {
       "loc": "NKS_MODS_CANTSTOP",
       "text": "Nu se poate opri modulul {0}"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configurarea modurilor"
     }
   ]
 }

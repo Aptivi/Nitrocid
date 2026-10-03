@@ -273,6 +273,14 @@
     {
       "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
       "text": "हम मौसम के अनुमान के डेटा के लिए OpenWeatherMap का इस्तेमाल करते हैं, लेकिन अगर आप सर्विस के लिए पैसे दे सकते हैं तो हम उसी डेटा के लिए The Weather Channel (weather.com) को भी सपोर्ट करते हैं।"
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS",
+      "text": "पूर्वानुमान कॉन्फ़िगरेशन"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATLON",
+      "text": "नीचे किसी शहर या क्षेत्र का अक्षांश और देशांतर दर्ज करें।"
     }
   ]
 }

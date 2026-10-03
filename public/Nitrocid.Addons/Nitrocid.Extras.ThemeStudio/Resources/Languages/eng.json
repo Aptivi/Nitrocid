@@ -203,6 +203,18 @@
     {
       "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
       "text": "You can use this interactive TUI to create themes easier than before. With the advanced color picker powered by Terminaux, you can make your custom stunning themes for your kernel to personalize it with your color choice."
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_SAVETODIR",
+      "text": "Target directory"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMENAME",
+      "text": "Theme name"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_THEMEDIR",
+      "text": "Enter target directory and theme name below."
     }
   ]
 }

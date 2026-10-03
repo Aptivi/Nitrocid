@@ -2056,4 +2056,100 @@
   <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED" xml:space="preserve">
     <value>इनबॉक्स प्राप्त करना विफल रहा</value>
   </data>
+  <data name="NKS_SHELLPACKS_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>अलग-अलग शेल के लिए कॉन्फ़िगरेशन</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_FILESTREAMFAILED" xml:space="preserve">
+    <value>आर्काइव फ़ाइल स्ट्रीम खोलने में गड़बड़ी हुई</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_EXCEPTION_NOTSQL" xml:space="preserve">
+    <value>यह SQL डेटाबेस फ़ाइल नहीं है</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NOFEEDLINK" xml:space="preserve">
+    <value>इस फ़ीड में कोई लिंक नहीं है।</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFEEDFAILED" xml:space="preserve">
+    <value>आर्टिकल लिंक के लिए होस्ट ब्राउज़र नहीं खुल पा रहा है।</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT" xml:space="preserve">
+    <value>अपनी न्यूज़ साइट के लिए RSS फ़ीड लिंक लिखें।</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDFAILED" xml:space="preserve">
+    <value>नया फ़ीड जोड़ने में गड़बड़ी हुई।</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_NAME" xml:space="preserve">
+    <value>फ़िल्टर करने के नियम</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_DESC" xml:space="preserve">
+    <value>RSS फ़ीड आर्टिकल को फ़िल्टर करने के लिए रेगुलर एक्सप्रेशन लिखें। जो आर्टिकल आपके नियमों के हिसाब से होंगे, वे दिखाई नहीं देंगे। उदाहरण के लिए, (deal|offer|sale) लिखने पर डील, ऑफ़र और सेल छिप जाएंगे।</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME" xml:space="preserve">
+    <value>फ़िल्टर का प्रकार</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC" xml:space="preserve">
+    <value>फ़िल्टर का टारगेट बताएं—क्या आप आर्टिकल को नाम, विवरण या दोनों के आधार पर फ़िल्टर करना चाहते हैं?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME_NAME" xml:space="preserve">
+    <value>नाम के आधार पर फ़िल्टर करें</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC_NAME" xml:space="preserve">
+    <value>विवरण के आधार पर फ़िल्टर करें</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAMEDESC_NAME" xml:space="preserve">
+    <value>नाम और विवरण के आधार पर फ़िल्टर करें</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT" xml:space="preserve">
+    <value>बताएं कि आप आर्टिकल को कैसे फ़िल्टर करना चाहते हैं।</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_INVALIDFILTER" xml:space="preserve">
+    <value>फ़िल्टर के नियम गलत हैं।</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERFAILED" xml:space="preserve">
+    <value>आर्टिकल फ़िल्टर करने में गड़बड़ी हुई।</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE" xml:space="preserve">
+    <value>फ़ीड जोड़ता है</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESHALL" xml:space="preserve">
+    <value>सभी को रिफ़्रेश करें</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED" xml:space="preserve">
+    <value>फ़ीड का होमपेज खोलें</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERARTICLES" xml:space="preserve">
+    <value>आर्टिकल फ़िल्टर करें</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERRESET" xml:space="preserve">
+    <value>फ़िल्टर रीसेट करें</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_IMAPNOTCONNECTED" xml:space="preserve">
+    <value>IMAP सर्वर कनेक्टेड नहीं है</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_POP3NOTCONNECTED" xml:space="preserve">
+    <value>POP3 सर्वर कनेक्टेड नहीं है</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_POP3SERVERPROMPT" xml:space="preserve">
+    <value>IMAP सर्वर का पता और पोर्ट डालें (&lt;पता&gt; या &lt;पता&gt;:[पोर्ट]):</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_NOPOP3" xml:space="preserve">
+    <value>POP3 सर्वर कॉन्फ़िगरेशन नहीं मिल पा रहा है</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_FOLDEROBTAINFAILED" xml:space="preserve">
+    <value>फ़ोल्डर {0} को पाने में गड़बड़ी हुई</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED" xml:space="preserve">
+    <value>SMTP सर्वर कनेक्टेड नहीं है</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_NAME" xml:space="preserve">
+    <value>मेल के लिए POP3 प्रॉम्प्ट स्टाइल</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_POP3PROMPT_DESC" xml:space="preserve">
+    <value>बताएं कि आप अपना POP3 सर्वर प्रॉम्प्ट कैसा रखना चाहते हैं। डिफ़ॉल्ट स्टाइल इस्तेमाल करने के लिए इसे खाली छोड़ दें। प्लेसहोल्डर को प्रोसेस किया जाता है।</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_NAME" xml:space="preserve">
+    <value>POP3 पिंग इंटरवल भेजें</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDPOP3PING_DESC" xml:space="preserve">
+    <value>बताएं कि आप अपना POP3 सर्वर प्रॉम्प्ट कैसा रखना चाहते हैं। डिफ़ॉल्ट स्टाइल इस्तेमाल करने के लिए इसे खाली छोड़ दें। प्लेसहोल्डर को प्रोसेस किया जाता है।</value>
+  </data>
 </root>

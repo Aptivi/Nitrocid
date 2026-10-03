@@ -78,6 +78,10 @@
     {
       "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
       "text": "Dícheanglaíonn sé an bhlaosc ón gcomhrábot AI atá ag obair faoi láthair"
+    },
+    {
+      "loc": "NKS_CHATBOT_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Cumraíocht chatbot AI"
     }
   ]
 }

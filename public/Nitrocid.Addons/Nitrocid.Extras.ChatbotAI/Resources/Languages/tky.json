@@ -78,6 +78,10 @@
     {
       "loc": "NKS_CHATBOTAI_SHELL_COMMAND_DETACH_DESC",
       "text": "Mevcut çalışan yapay zeka sohbet robotundan kabuğu ayırır."
+    },
+    {
+      "loc": "NKS_CHATBOT_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Yapay zeka sohbet botu yapılandırması"
     }
   ]
 }

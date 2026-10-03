@@ -132,20 +132,17 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
 
         internal void SaveThemeToAnotherDirectoryAltPrompt()
         {
-            // TODO: NKS_THEMESTUDIO_APP_THEMEDIR -> Enter target directory and theme name below.
             DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for theme and directory name...");
             InputModule[] dirTheme =
             [
                 new TextBoxModule()
                 {
-                    // TODO: NKS_THEMESTUDIO_APP_SAVETODIR -> Target directory
                     Name = LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETODIR"),
                     Description = LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_SAVETODIRPROMPT"),
                     Value = FilesystemTools.CurrentDir,
                 },
                 new TextBoxModule()
                 {
-                    // TODO: NKS_THEMESTUDIO_APP_THEMENAME -> Theme name
                     Name = LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAME"),
                     Description = LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_THEMENAMEPROMPT"),
                     Value = themeName,

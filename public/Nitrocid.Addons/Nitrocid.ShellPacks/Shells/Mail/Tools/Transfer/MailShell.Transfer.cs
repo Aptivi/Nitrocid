@@ -48,7 +48,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <returns>True if successful; False if unsuccessful.</returns>
         public bool MailSendMessage(string Recipient, string Subject, string Body)
         {
-            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED -> SMTP server is not connected
             if (SmtpClient is null)
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED"));
             return MailTools.MailSendMessage(SmtpClient, NetworkCredential?.UserName ?? "", Recipient, Subject, Body);
@@ -63,7 +62,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <returns>True if successful; False if unsuccessful.</returns>
         public bool MailSendMessage(string Recipient, string Subject, MimeEntity Body)
         {
-            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED -> SMTP server is not connected
             if (SmtpClient is null)
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED"));
             return MailTools.MailSendMessage(SmtpClient, NetworkCredential?.UserName ?? "", Recipient, Subject, Body);
@@ -78,7 +76,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail
         /// <returns>True if successful; False if unsuccessful.</returns>
         public bool MailSendEncryptedMessage(string Recipient, string Subject, MimeEntity Body)
         {
-            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED -> SMTP server is not connected
             if (SmtpClient is null)
                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_SMTPNOTCONNECTED"));
             return MailTools.MailSendEncryptedMessage(SmtpClient, NetworkCredential?.UserName ?? "", Recipient, Subject, Body);

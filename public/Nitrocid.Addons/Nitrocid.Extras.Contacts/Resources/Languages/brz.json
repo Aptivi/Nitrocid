@@ -604,6 +604,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
       "text": "Esta interface interativa permite que você gerencie seus contatos de forma interativa, pois oferece um painel para selecionar contatos e outro para visualizar informações sobre cada contato. Você também pode editar, adicionar, importar e excluir contatos para maior praticidade."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuração de contatos"
     }
   ]
 }

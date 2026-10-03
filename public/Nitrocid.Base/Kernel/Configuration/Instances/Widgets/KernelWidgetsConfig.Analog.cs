@@ -90,8 +90,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// [Analog] Cycles colors
         /// </summary>
-        // TODO: NKS_SETTINGS_COMMON_CYCLECOLORS_NAME -> Cycle colors
-        // TODO: NKS_SETTINGS_COMMON_CYCLECOLORS_DESC -> Automatically chooses a random set of colors
         public bool AnalogCycleColors
         {
             get => analogCycleColors;
@@ -100,8 +98,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// [Analog] Color of the time information text
         /// </summary>
-        // TODO: NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_NAME -> Color of time info text
-        // TODO: NKS_SETTINGS_COMMON_CLOCKTIMEINFOCOLOR_DESC -> Chooses a color of time information
         public string AnalogTimeInfoColor
         {
             get => analogTimeInfoColor;
@@ -110,8 +106,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// [Analog] Color of the bezel
         /// </summary>
-        // TODO: NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_NAME -> Color of bezel
-        // TODO: NKS_SETTINGS_COMMON_CLOCKBEZELCOLOR_DESC -> Chooses a color of the analog clock's bezel
         public string AnalogBezelColor
         {
             get => analogBezelColor;
@@ -120,8 +114,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// [Analog] Color of the hands
         /// </summary>
-        // TODO: NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_NAME -> Color of hands
-        // TODO: NKS_SETTINGS_COMMON_CLOCKHANDSCOLOR_DESC -> Chooses a color of the analog clock's hands
         public string AnalogHandsColor
         {
             get => analogHandsColor;
@@ -130,8 +122,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// [Analog] Color of the seconds hand
         /// </summary>
-        // TODO: NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_NAME -> Color of the seconds hand
-        // TODO: NKS_SETTINGS_COMMON_CLOCKSECONDSHANDSCOLOR_DESC -> Chooses a color of the analog clock's seconds hand
         public string AnalogSecondsHandColor
         {
             get => analogSecondsHandColor;

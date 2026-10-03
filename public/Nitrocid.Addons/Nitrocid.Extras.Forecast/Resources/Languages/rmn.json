@@ -274,6 +274,14 @@
     {
       "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
       "text": "Folosim OpenWeatherMap pentru datele de prognoză meteo, dar oferim și servicii de asistență The Weather Channel (weather.com) pentru aceleași date, dacă puteți plăti pentru serviciu."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configurarea prognozei"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATLON",
+      "text": "Introduceți mai jos latitudinea și longitudinea unui oraș sau ale unei regiuni."
     }
   ]
 }

@@ -423,6 +423,10 @@
     {
       "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC",
       "text": "Paramètres de l'économiseur d'écran…"
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuration du calendrier"
     }
   ]
 }

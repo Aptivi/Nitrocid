@@ -414,6 +414,10 @@
     {
       "loc": "NKS_MODS_CANTSTOP",
       "text": "모드 {0}을(를) 중지할 수 없습니다."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "모드 설정"
     }
   ]
 }

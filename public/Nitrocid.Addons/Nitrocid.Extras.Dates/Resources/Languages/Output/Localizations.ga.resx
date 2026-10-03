@@ -280,4 +280,7 @@
   <data name="NKS_DATES_EXPIRY_STATUS_EXCELLENT" xml:space="preserve">
     <value>Sármhaith</value>
   </data>
+  <data name="NKS_DATES_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Cumraíocht na ndátaí</value>
+  </data>
 </root>

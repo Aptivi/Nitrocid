@@ -105,6 +105,10 @@
     {
       "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
       "text": "このスプラッシュに保存されたレポートが記入されるボックスが表示されます"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "スプラッシュパックの構成"
     }
   ]
 }

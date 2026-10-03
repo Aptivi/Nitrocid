@@ -611,6 +611,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
       "text": "Met deze interactieve TUI kunt u uw contacten interactief beheren. U beschikt over een deelvenster om contacten te selecteren en een deelvenster om informatie over een contact te bekijken. U kunt hier ook contacten bewerken, toevoegen, importeren en verwijderen voor extra gemak."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuratie van contacten"
     }
   ]
 }

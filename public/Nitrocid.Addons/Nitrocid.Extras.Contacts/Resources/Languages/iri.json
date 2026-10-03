@@ -606,6 +606,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
       "text": "Ligeann an TUI idirghníomhach seo duit do theagmhálaithe a bhainistiú ar bhealach idirghníomhach, mar go soláthraíonn sé painéal duit chun teagmhálaithe a roghnú agus painéal chun faisnéis faoi theagmhálaí a fheiceáil. Is féidir leat teagmhálaithe a chur in eagar, a chur leis, a allmhairiú agus a scriosadh anseo freisin ar mhaithe le háisiúlacht mhéadaithe."
+    },
+    {
+      "loc": "NKS_CONTACTS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Cumraíocht na dteagmhálaithe"
     }
   ]
 }

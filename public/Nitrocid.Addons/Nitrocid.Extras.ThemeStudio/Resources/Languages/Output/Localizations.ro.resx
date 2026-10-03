@@ -127,4 +127,13 @@
   <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
     <value>Poți folosi această interfață interactivă pentru a crea teme mai ușor ca înainte. Cu selectorul de culori avansat oferit de Terminaux, poți crea teme personalizate uimitoare pentru kernelul tău, personalizându-l cu culoarea dorită.</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETODIR" xml:space="preserve">
+    <value>Director de destinație</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMENAME" xml:space="preserve">
+    <value>Numele temei</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMEDIR" xml:space="preserve">
+    <value>Introduceți mai jos directorul de destinație și numele temei.</value>
+  </data>
 </root>

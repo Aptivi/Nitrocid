@@ -413,6 +413,10 @@
     {
       "loc": "NKS_MODS_CANTSTOP",
       "text": "Modulationem {0} sistere non possum."
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuratio modificationum"
     }
   ]
 }

@@ -377,6 +377,10 @@
     {
       "loc": "NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC",
       "text": "Cài đặt trình bảo vệ màn hình..."
+    },
+    {
+      "loc": "NKS_CALENDAR_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Cấu hình lịch"
     }
   ]
 }

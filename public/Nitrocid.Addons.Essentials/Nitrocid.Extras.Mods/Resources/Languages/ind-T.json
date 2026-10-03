@@ -413,6 +413,10 @@
     {
       "loc": "NKS_MODS_CANTSTOP",
       "text": "मॉड {0} को रोका नहीं जा सकता"
+    },
+    {
+      "loc": "NKS_MODS_SETTINGS_INSTANCES_SETTINGS",
+      "text": "मॉड्स कॉन्फ़िगरेशन"
     }
   ]
 }

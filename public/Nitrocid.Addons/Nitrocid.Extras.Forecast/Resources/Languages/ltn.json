@@ -273,6 +273,14 @@
     {
       "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
       "text": "OpenWeatherMap utimur pro notitiis praedictionis meteorologicae, sed etiam The Weather Channel (weather.com) pro eisdem notitiis sustinemus si pro servitio solvere potes."
+    },
+    {
+      "loc": "NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS",
+      "text": "Configuratio praedictionis"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_LATLON",
+      "text": "Infra latitudinem et longitudinem urbis vel regionis inscribe."
     }
   ]
 }

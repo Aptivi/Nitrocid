@@ -127,4 +127,13 @@
   <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
     <value>Anda boleh menggunakan TUI interaktif ini untuk mencipta tema dengan lebih mudah berbanding sebelum ini. Dengan pemilih warna lanjutan yang dikuasakan oleh Terminaux, anda boleh membuat tema tersuai yang menakjubkan untuk kernel anda bagi memperibadikannya dengan pilihan warna anda.</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETODIR" xml:space="preserve">
+    <value>Direktori sasaran</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMENAME" xml:space="preserve">
+    <value>Nama tema</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMEDIR" xml:space="preserve">
+    <value>Masukkan direktori sasaran dan nama tema di bawah.</value>
+  </data>
 </root>

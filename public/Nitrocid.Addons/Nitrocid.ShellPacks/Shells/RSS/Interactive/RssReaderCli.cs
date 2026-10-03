@@ -224,7 +224,6 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             bool hasLink = !string.IsNullOrEmpty(item.FeedUrl);
             if (!hasLink)
             {
-                // TODO: NKS_SHELLPACKS_RSS_READERCLI_NOFEEDLINK -> This feed doesn't have a link.
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_NOFEEDLINK"), Settings.InfoBoxSettings);
                 return;
             }
@@ -236,7 +235,6 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             }
             catch (Exception e)
             {
-                // TODO: NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFEEDFAILED -> Can't open the host browser to the article link.
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFEEDFAILED") + $" {e.Message}", Settings.InfoBoxSettings);
             }
         }
@@ -247,7 +245,6 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
         internal void AddFeedPrompt()
         {
             // Prompt for new feed
-            // TODO: NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT -> Write an RSS feed link for your news site.
             string feedLink = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDPROMPT"), Settings.InfoBoxSettings, out bool done);
             if (!done)
                 return;
@@ -259,7 +256,6 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             }
             catch (Exception e)
             {
-                // TODO: NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDFAILED -> Adding new feed has failed.
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_NEWFEEDFAILED") + $" {e.Message}", Settings.InfoBoxSettings);
             }
         }
@@ -277,14 +273,6 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             // Prompt for regex and filter type
             try
             {
-                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_NAME -> Filter criteria
-                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERCRITERIA_DESC -> Write a regular expression for RSS feed article filtering. Articles that meet your criteria will be hidden from view. For example, (deal|offer|sale) will hide deals, offers, and sales.
-                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME -> Filter type
-                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC -> Specify the filter target, whether you want to filter articles by name, by description, or by both.
-                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAME_NAME -> Filter by name
-                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_DESC_NAME -> Filter by description
-                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERTYPE_NAMEDESC_NAME -> Filter by name and description
-                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERPROMPT -> Specify how you want to filter articles.
                 InputModule[] modules = [
                     new TextBoxModule()
                     {
@@ -310,7 +298,6 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
                     return;
 
                 // Validate regex before setting one
-                // NKS_SHELLPACKS_RSS_READERCLI_INVALIDFILTER -> Invalid filter criteria.
                 string finalRegex = (string?)modules[0].Value ?? "";
                 if (!RegexpTools.IsValidRegex(finalRegex))
                 {
@@ -325,7 +312,6 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
             }
             catch (Exception e)
             {
-                // TODO: NKS_SHELLPACKS_RSS_READERCLI_FILTERFAILED -> Filtering articles has failed.
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_FILTERFAILED") + $" {e.Message}", Settings.InfoBoxSettings);
             }
         }

@@ -259,4 +259,10 @@
   <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
     <value>Folosim OpenWeatherMap pentru datele de prognoză meteo, dar oferim și servicii de asistență The Weather Channel (weather.com) pentru aceleași date, dacă puteți plăti pentru serviciu.</value>
   </data>
+  <data name="NKS_FORECAST_SETTINGS_INSTANCES_SETTINGS" xml:space="preserve">
+    <value>Configurarea prognozei</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATLON" xml:space="preserve">
+    <value>Introduceți mai jos latitudinea și longitudinea unui oraș sau ale unei regiuni.</value>
+  </data>
 </root>

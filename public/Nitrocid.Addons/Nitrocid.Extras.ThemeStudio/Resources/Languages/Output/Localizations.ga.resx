@@ -127,4 +127,13 @@
   <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
     <value>Is féidir leat an TUI idirghníomhach seo a úsáid chun téamaí a chruthú níos éasca ná riamh. Leis an roghnóir dathanna chun cinn atá faoi thiomáint ag Terminaux, is féidir leat do théamaí saincheaptha iontacha a chruthú do do chroílár chun é a phearsantú le do rogha datha.</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETODIR" xml:space="preserve">
+    <value>Eolaire sprice</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMENAME" xml:space="preserve">
+    <value>Ainm na téama</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMEDIR" xml:space="preserve">
+    <value>Cuir isteach an t-eolaire sprice agus ainm na téama thíos.</value>
+  </data>
 </root>
