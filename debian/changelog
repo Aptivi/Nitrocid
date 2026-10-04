@@ -1,6 +1,18 @@
 nitrocid-29 (4.1.29.59-0.2.1.0~rc-1) noble; urgency=medium
 
-  * Please populate changelogs here
+  * Added user and group management TUI
+  * Restored POP mail
+  * Added search function for config and The Nitrocid Homepage
+  * Added UNIX permission function
+  * Added privileged method, field, and property attribute for inter-addon and inter-mod communication
+  * Added screensavers and splashes
+  * Updated Terminaux to v8.8
+  * Updated native libraries
+  * Improved calendar rendering
+  * Improved the kernel codebase
+  * General improvements and bug fixes
+  * Removed kernel tips
+  * Removed legacy theme studio
 
  -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Fri, 02 Oct 2026 23:35:21 +0300
 
