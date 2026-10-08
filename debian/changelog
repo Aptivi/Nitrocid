@@ -1,6 +1,8 @@
 nitrocid-25 (3.0.25.594-0.1.0.87-1) noble; urgency=medium
 
-  * Please populate changelogs here
+  * Added user and group management TUIs
+  * Improvements made to The Nitrocid Homepage
+  * General improvements and bug fixes
 
  -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Wed, 30 Sep 2026 12:30:40 +0300
 
