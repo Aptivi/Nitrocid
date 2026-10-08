@@ -3847,10 +3847,6 @@
       "text": "कनेक्शन प्रकार पहले से मौजूद है"
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "शेल {0} नेटवर्क कनेक्शन स्वीकार नहीं करता है."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
       "text": "सर्वर पता दर्ज करें:"
     },
@@ -9425,6 +9421,122 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ZIP_SWITCH_SMALLEST_DESC",
       "text": "हाई कम्प्रेशन"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES",
+      "text": "रिक्त स्थान की अनुमति नहीं है।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_TITLE",
+      "text": "यूज़र्स को मैनेज करना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_DESC",
+      "text": "यूज़र्स को मैनेज करने के लिए यूज़र TUI का इस्तेमाल"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_HELP01_BODY",
+      "text": "इस टेक्स्ट-आधारित यूज़र इंटरफ़ेस से आप आसानी से यूज़र्स को मैनेज कर सकते हैं।"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_NEWPASSWORDPROMPT",
+      "text": "{0} का नया पासवर्ड:"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_NEWCONFIRMPASSWORDPROMPT",
+      "text": "{0} का नया पासवर्ड कन्फर्म करें:"
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDERROR",
+      "text": "यूज़र का पासवर्ड बदलने की कोशिश में गड़बड़ी हुई।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTPERMISSIONS",
+      "text": "नीचे दी गई सूची से यूज़र अनुमतियाँ चुनें।"
+    },
+    {
+      "loc": "NKS_SECURITY_PERMISSIONS_EXCEPTION_MANAGEMENTERROR",
+      "text": "अनुमतियाँ मैनेज करने में गड़बड़ी हुई।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTFLAGS",
+      "text": "नीचे दी गई सूची से यूज़र फ़्लैग चुनें।"
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_FLAGMANAGEMENTERROR",
+      "text": "फ़्लैग मैनेज करने में गड़बड़ी हुई।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_SELECTGROUPS",
+      "text": "नीचे दी गई सूची से यूज़र ग्रुप चुनें।"
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_GROUPMANAGEMENTERROR",
+      "text": "ग्रुप मैनेज करने में गड़बड़ी हुई।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_CHANGEPASSWORD",
+      "text": "पासवर्ड बदलें"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEFLAGS",
+      "text": "फ़्लैग मैनेज करें"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEPERMS",
+      "text": "अनुमतियाँ मैनेज करें"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEMEMBERSHIPS",
+      "text": "सदस्यताएँ मैनेज करें"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_TITLE",
+      "text": "ग्रुप मैनेज करना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_DESC",
+      "text": "ग्रुप मैनेज करने के लिए ग्रुप TUI का इस्तेमाल"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSCLI_HELP01_BODY",
+      "text": "इस टेक्स्ट-आधारित यूज़र इंटरफ़ेस से आप आसानी से ग्रुप मैनेज कर सकते हैं।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME",
+      "text": "ग्रुप का नाम"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_GROUPNAME_PROMPT",
+      "text": "ग्रुप का नाम डालें।"
+    },
+    {
+      "loc": "NKS_USERS_GROUPS_EXCEPTION_GROUPADDFAILED",
+      "text": "ग्रुप जोड़ने में गड़बड़ी हुई।"
+    },
+    {
+      "loc": "NKS_USERS_GROUPS_EXCEPTION_GROUPREMOVEFAILED",
+      "text": "ग्रुप हटाने में गड़बड़ी हुई।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_GROUPSTUI_SELECTPERMISSIONS",
+      "text": "नीचे दी गई सूची से ग्रुप अनुमतियाँ चुनें।"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_USERMANAGER",
+      "text": "यूज़र मैनेजर"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_GROUPMANAGER",
+      "text": "ग्रुप मैनेजर"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPMANTUI_DESC",
+      "text": "ग्रुप मैनेजमेंट TUI खोलता है"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC",
+      "text": "यूज़र मैनेजमेंट TUI खोलता है"
     }
   ]
 }
