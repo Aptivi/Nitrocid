@@ -8,6 +8,13 @@ id_finder = rf'"({vendor_prefix}[^"]+)"'
 explicit_finder = rf'LanguageTools\.GetLocalized\s*\(\s*{id_finder}'
 implicit_finder = rf'/\*\s*Localizable\s*\*/\s*{id_finder}'
 
+ignored_locs = \
+[
+    "NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO",
+    "NKS_SHELL_SHELLS_NEEDSPERM",
+    "NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH",
+]
+
 def vnd_action(args):
     root_dir = os.path.dirname(os.path.abspath(__file__ + '/../'))
     project_files = [p.resolve() for p in
@@ -126,13 +133,15 @@ def check_for_existence_in_target(source_locs: list, target_locs: list):
                 source_loc_locs = source_loc[3]
                 exists = target_loc_str in source_loc_locs
                 if not exists:
-                    if not target_loc_str in dirty_locs:
+                    ignored = target_loc_str in ignored_locs
+                    if not target_loc_str in dirty_locs and not ignored:
                         dirty_locs.append(target_loc_str)
-                    print(f'WARNING: {target_loc_str} is unlocalized for '
-                          f'{source_loc_lang} {source_loc_name} at line '
-                          f'{target_loc_line} '
-                          f'({target_loc_start}:{target_loc_end}) '
-                          f'from source code file {target_loc_path}')
+                    if not ignored:
+                        print(f'WARNING: {target_loc_str} is unlocalized for '
+                              f'{source_loc_lang} {source_loc_name} at line '
+                              f'{target_loc_line} '
+                              f'({target_loc_start}:{target_loc_end}) '
+                              f'from source code file {target_loc_path}')
     return dirty_locs
 
 
@@ -152,11 +161,13 @@ def check_for_existence_in_source(source_locs: list, target_locs: list):
         for source_loc_id in source_loc_locs:
             exists = source_loc_id in target_loc_ids
             if not exists:
-                if not source_loc_id in dirty_locs:
+                ignored = target_loc_str in ignored_locs
+                if not source_loc_id in dirty_locs and not ignored:
                     dirty_locs.append(source_loc_id)
-                print(f'WARNING: {source_loc_id} is an extra loc for '
-                      f'{source_loc_lang} {source_loc_name} '
-                      f'from source code file {source_loc_path}')
+                if not ignored:
+                    print(f'WARNING: {source_loc_id} is an extra loc for '
+                          f'{source_loc_lang} {source_loc_name} '
+                          f'from source code file {source_loc_path}')
     return dirty_locs
 
 
