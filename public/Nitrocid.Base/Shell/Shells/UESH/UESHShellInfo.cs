@@ -104,6 +104,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH
             new GetExtHandlersCommand(),
             new GetKeyIvCommand(),
             new GroupFileCommand(),
+            new GroupManTuiCommand(),
             new HostCommand(),
             new HwInfoCommand(),
             new IfmCommand(),
@@ -173,6 +174,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH
 #endif
 
             new UptimeCommand(),
+            new UserManTuiCommand(),
             new UserManualCommand(),
             new VerifyCommand(),
             new VersionCommand(),

@@ -478,13 +478,14 @@ namespace Nitrocid.Base.Users
         /// </summary>
         /// <param name="userName">The user</param>
         /// <returns>User information</returns>
-        public static UserInfo? GetUser(string userName)
+        public static UserInfo GetUser(string userName)
         {
             // Check to see if we have the target user
             if (!UserExists(userName))
                 throw new KernelException(KernelExceptionType.NoSuchUser);
 
-            return Users.FirstOrDefault(x => x.Username == userName);
+            int userIdx = GetUserIndex(userName);
+            return Users[userIdx];
         }
 
         /// <summary>
