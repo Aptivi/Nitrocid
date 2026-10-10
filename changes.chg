@@ -1,21 +1,10 @@
 Nitrocid changes
 ================
 
-Released October 8th, 2026; version 0.2.1.0 (RC) (mod API 4.1.29.59); codename
+Released November 5th, 2026; version 0.2.1.0 (mod API 4.1.29.59); codename
 Flaming Speed
 
-This is a release candidate of the upcoming version of Nitrocid that is set to
-release on November 5th, 2026. We have added several new features, including
-an ability to more accurately search for a configuration key in the settings
-textual user interface, a way to graphically manage users and groups, and an
-ability to use POP mail that was removed in earlier versions of Nitrocid due
-to an issue that caused Nitrocid to crash in ARM32 devices.
-
-We have also updated calendar rendering and the whole kernel codebase, as well
-as fixing some of the long standing bugs that were there in earlier versions.
-
-We will populate the full changelogs once the release candidate version becomes
-available, as we're working towards finalizing the official version.
+((Populate changelogs once we stop development on October 29th))
 
 FreeBSD support
 ---------------

@@ -1,3 +1,9 @@
+nitrocid-29 (4.1.29.59-0.2.1.0-1) noble; urgency=medium
+
+  * Please populate changelogs here
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sat, 10 Oct 2026 20:01:23 +0300
+
 nitrocid-29 (4.1.29.59-0.2.1.0~rc-1) noble; urgency=medium
 
   * Added user and group management TUI
