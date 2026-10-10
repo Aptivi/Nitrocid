@@ -62,7 +62,7 @@
       
       For new addons, follow these steps in VS:
       
-        1. Right click on solution -> Project Dependencies
+        1. Right click on solution -> Project Build Dependencies
         2. Projects: Nitrocid.Tests
         3. Place a checkbox next to new addon
         4. Click OK and build
