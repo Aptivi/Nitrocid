@@ -2935,9 +2935,6 @@
   <data name="NKS_NETWORK_CONNECTION_EXCEPTION_TYPEEXISTS" xml:space="preserve">
     <value>Ο τύπος σύνδεσης υπάρχει ήδη</value>
   </data>
-  <data name="NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS" xml:space="preserve">
-    <value>Το κέλυφος {0} δεν δέχεται συνδέσεις δικτύου.</value>
-  </data>
   <data name="NKS_NETWORK_CONNECTION_ADDRESSPROMPT" xml:space="preserve">
     <value>Εισαγάγετε τη διεύθυνση διακομιστή:</value>
   </data>

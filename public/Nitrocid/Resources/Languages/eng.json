@@ -3949,10 +3949,6 @@
       "text": "Connection type already exists"
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "The shell {0} doesn't accept network connections."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
       "text": "Enter the server address:"
     },

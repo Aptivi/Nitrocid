@@ -2935,9 +2935,6 @@
   <data name="NKS_NETWORK_CONNECTION_EXCEPTION_TYPEEXISTS" xml:space="preserve">
     <value>نوع الاتصال موجود بالفعل</value>
   </data>
-  <data name="NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS" xml:space="preserve">
-    <value>لا يقبل الصدفة {0} اتصالات الشبكة.</value>
-  </data>
   <data name="NKS_NETWORK_CONNECTION_ADDRESSPROMPT" xml:space="preserve">
     <value>أدخل عنوان الخادم:</value>
   </data>

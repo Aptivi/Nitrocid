@@ -2935,9 +2935,6 @@
   <data name="NKS_NETWORK_CONNECTION_EXCEPTION_TYPEEXISTS" xml:space="preserve">
     <value>Jenis koneksi sudah ada</value>
   </data>
-  <data name="NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS" xml:space="preserve">
-    <value>Shell {0} tidak menerima koneksi jaringan.</value>
-  </data>
   <data name="NKS_NETWORK_CONNECTION_ADDRESSPROMPT" xml:space="preserve">
     <value>Masukkan alamat server:</value>
   </data>

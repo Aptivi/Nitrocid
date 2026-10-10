@@ -2935,9 +2935,6 @@
   <data name="NKS_NETWORK_CONNECTION_EXCEPTION_TYPEEXISTS" xml:space="preserve">
     <value>El tipo de conexión ya existe</value>
   </data>
-  <data name="NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS" xml:space="preserve">
-    <value>El shell {0} no acepta conexiones de red.</value>
-  </data>
   <data name="NKS_NETWORK_CONNECTION_ADDRESSPROMPT" xml:space="preserve">
     <value>Introduzca la dirección del servidor:</value>
   </data>

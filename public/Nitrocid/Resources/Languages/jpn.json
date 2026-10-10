@@ -3843,10 +3843,6 @@
       "text": "接続タイプはすでに存在します"
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "シェル {0} はネットワーク接続を受け入れません。"
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
       "text": "サーバーアドレスを入力してください:"
     },

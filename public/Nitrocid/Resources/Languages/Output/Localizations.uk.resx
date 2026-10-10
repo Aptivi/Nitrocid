@@ -2935,9 +2935,6 @@
   <data name="NKS_NETWORK_CONNECTION_EXCEPTION_TYPEEXISTS" xml:space="preserve">
     <value>Тип підключення вже існує</value>
   </data>
-  <data name="NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS" xml:space="preserve">
-    <value>Оболонка {0} не приймає мережеві підключення.</value>
-  </data>
   <data name="NKS_NETWORK_CONNECTION_ADDRESSPROMPT" xml:space="preserve">
     <value>Введіть адресу сервера:</value>
   </data>

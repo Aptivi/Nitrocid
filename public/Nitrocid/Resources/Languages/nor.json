@@ -3847,10 +3847,6 @@
       "text": "Tilkoblingstypen eksisterer allerede"
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "Skallet {0} godtar ikke nettverkstilkoblinger."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
       "text": "Skriv inn serveradressen:"
     },

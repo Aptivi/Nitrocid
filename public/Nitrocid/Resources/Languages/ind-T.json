@@ -3843,10 +3843,6 @@
       "text": "कनेक्शन प्रकार पहले से मौजूद है"
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "शेल {0} नेटवर्क कनेक्शन स्वीकार नहीं करता है."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
       "text": "सर्वर पता दर्ज करें:"
     },

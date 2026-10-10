@@ -3844,10 +3844,6 @@
       "text": "연결 유형이 이미 존재합니다."
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "쉘 {0}은 네트워크 연결을 허용하지 않습니다."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
       "text": "서버 주소를 입력하세요:"
     },

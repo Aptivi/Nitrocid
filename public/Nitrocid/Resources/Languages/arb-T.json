@@ -3869,10 +3869,6 @@
       "text": "نوع الاتصال موجود بالفعل"
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "لا يقبل الصدفة {0} اتصالات الشبكة."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
       "text": "أدخل عنوان الخادم:"
     },

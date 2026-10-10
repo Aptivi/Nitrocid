@@ -3844,10 +3844,6 @@
       "text": "Ο τύπος σύνδεσης υπάρχει ήδη"
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "Το κέλυφος {0} δεν δέχεται συνδέσεις δικτύου."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
       "text": "Εισαγάγετε τη διεύθυνση διακομιστή:"
     },

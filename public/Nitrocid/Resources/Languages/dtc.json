@@ -3849,10 +3849,6 @@
       "text": "Verbindingstype bestaat al"
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "De shell {0} accepteert geen netwerkverbindingen."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
       "text": "Voer het serveradres in:"
     },

@@ -3851,10 +3851,6 @@
       "text": "连接类型已存在"
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "shell {0} 不接受网络连接。"
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
       "text": "输入服务器地址："
     },

@@ -3846,10 +3846,6 @@
       "text": "Jenis sambungan sudah wujud"
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "Cangkang {0} tidak menerima sambungan rangkaian."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
       "text": "Masukkan alamat pelayan:"
     },

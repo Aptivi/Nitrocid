@@ -3843,10 +3843,6 @@
       "text": "Connection genus iam exstat"
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "Testa {0} nexus retis non accipit."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
       "text": "Intrant servo electronica:"
     },

@@ -3844,10 +3844,6 @@
       "text": "Tá cineál ceangail ann cheana féin"
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "Ní ghlacann an bhlaosc {0} le naisc líonra."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
       "text": "Cuir isteach seoladh an fhreastalaí:"
     },

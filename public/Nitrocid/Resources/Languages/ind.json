@@ -3843,10 +3843,6 @@
       "text": "kanekshan prakaar pahale se maujood hai"
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "shel {0} netavark kanekshan sveekaar nahin karata hai."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
       "text": "sarvar pata darj karen:"
     },

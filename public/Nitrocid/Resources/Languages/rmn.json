@@ -3844,10 +3844,6 @@
       "text": "Tipul de conexiune există deja"
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "Shell-ul {0} nu acceptă conexiuni la rețea."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
       "text": "Introdu adresa serverului:"
     },

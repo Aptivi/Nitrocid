@@ -3843,10 +3843,6 @@
       "text": "Loại kết nối đã tồn tại"
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "Shell {0} không chấp nhận kết nối mạng."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
       "text": "Nhập địa chỉ máy chủ:"
     },

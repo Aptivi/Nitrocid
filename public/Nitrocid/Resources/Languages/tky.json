@@ -3844,10 +3844,6 @@
       "text": "Bağlantı türü zaten mevcut"
     },
     {
-      "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_SHELLNONETWORKCONNECTIONS",
-      "text": "{0} kabuğu ağ bağlantılarını kabul etmiyor."
-    },
-    {
       "loc": "NKS_NETWORK_CONNECTION_ADDRESSPROMPT",
       "text": "Sunucu adresini girin:"
     },
