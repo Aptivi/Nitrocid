@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSTest.Sdk/4.4.1">
+﻿<Project Sdk="MSTest.Sdk/4.5.1">
 
   <PropertyGroup>
     <OutputPath>KSTest\</OutputPath>
@@ -61,7 +61,7 @@
 
   <ItemGroup>
     <PackageReference Include="Shouldly" Version="4.3.0" />
-    <PackageReference Include="Terminaux" Version="8.8.0" />
+    <PackageReference Include="Terminaux" Version="8.8.1.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -81,7 +81,7 @@
       
       For new addons, follow these steps in VS:
       
-        1. Right click on solution -> Project Dependencies
+        1. Right click on solution -> Project Build Dependencies
         2. Projects: Nitrocid.Tests
         3. Place a checkbox next to new addon
         4. Click OK and build
