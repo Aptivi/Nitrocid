@@ -696,7 +696,8 @@ namespace Nitrocid.Base.Shell.Homepage
             var builder = new StringBuilder();
 
             // Clear the console
-            if (ConsoleResizeHandler.WasResized() || refreshWasDone)
+            bool refreshed = ConsoleResizeHandler.WasResized() || refreshWasDone;
+            if (refreshed)
                 builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
 
             if (actualScreenNum < 0)
@@ -773,12 +774,12 @@ namespace Nitrocid.Base.Shell.Homepage
                 {
                     int rssFeedLeft = widgetLeft + 1;
                     int rssFeedTop = rssTop + 1;
-                    if ((articles is null || articles.Length == 0) && !isHomepageRssFeedUpdating)
+                    if ((articles is null || articles.Length == 0 || refreshed) && !isHomepageRssFeedUpdating)
                     {
                         isHomepageRssFeedUpdating = true;
                         var updateTask = new Task(() =>
                         {
-                            (string rssSequence, (string feedTitle, string articleTitle)[]) tuple = UpdateRssFeeds(widgetWidth);
+                            (string rssSequence, (string feedTitle, string articleTitle)[]) tuple = UpdateRssFeeds(widgetWidth, articles);
                             rssSequence = tuple.rssSequence;
                             articles = tuple.Item2;
                         });
@@ -932,9 +933,8 @@ namespace Nitrocid.Base.Shell.Homepage
             return feedAddonInstalled;
         }
 
-        private static (string rssSequence, (string feedTitle, string articleTitle)[]) UpdateRssFeeds(int widgetWidth)
+        private static (string rssSequence, (string feedTitle, string articleTitle)[]) UpdateRssFeeds(int widgetWidth, (string feedTitle, string articleTitle)[]? articles)
         {
-            (string feedTitle, string articleTitle)[]? articles = null;
             string rssSequence = LanguageTools.GetLocalized("NKS_MISC_SPLASH_DEFAULTMSG");
 
             try
@@ -947,7 +947,8 @@ namespace Nitrocid.Base.Shell.Homepage
                     rssSequence = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES");
                 else
                 {
-                    articles = ((string feedTitle, string articleTitle)[]?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.AddonShellPacks, "GetArticles", "Nitrocid.ShellPacks.Shells.RSS.Tools.RSSTools", Config.MainConfig.RssHeadlineUrl) ?? [];
+                    if (articles is null || articles.Length == 0)
+                        articles = ((string feedTitle, string articleTitle)[]?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.AddonShellPacks, "GetArticles", "Nitrocid.ShellPacks.Shells.RSS.Tools.RSSTools", Config.MainConfig.RssHeadlineUrl) ?? [];
                     if (articles is not null && articles.Length > 0)
                     {
                         var headlines = new StringBuilder();
