@@ -17,12 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
+using System.Collections.Generic;
+using Nitrocid.Base.Kernel.Power;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Arguments.Base;
 using Terminaux.Shell.Arguments.Base.Help;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Power;
 
 namespace Nitrocid.Base.Arguments.CommandLineArguments
 {
@@ -31,8 +32,11 @@ namespace Nitrocid.Base.Arguments.CommandLineArguments
 
         public override void Execute(ArgumentParameters parameters)
         {
+            Dictionary<string, ArgumentInfo> arguments = new(KernelArguments.AvailableCMDLineArgs);
+            foreach (var argument in KernelArguments.OutArgs)
+                arguments.Add(argument.Key, argument.Value);
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_HELP_LISTING"), true, ThemeColorType.ListTitle);
-            ArgumentHelpPrint.ShowArgsHelp(KernelArguments.AvailableCMDLineArgs);
+            ArgumentHelpPrint.ShowArgsHelp(arguments);
             PowerManager.hardShutdown = true;
             PowerManager.KernelShutdown = true;
         }
