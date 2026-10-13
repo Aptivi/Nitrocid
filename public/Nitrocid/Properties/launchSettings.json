@@ -58,6 +58,14 @@
     "Nitrocid - apiversion": {
       "commandName": "Project",
       "commandLineArgs": "--apiversion"
+    },
+    "Nitrocid - versioncode": {
+      "commandName": "Project",
+      "commandLineArgs": "--versioncode"
+    },
+    "Nitrocid - apiversioncode": {
+      "commandName": "Project",
+      "commandLineArgs": "--apiversioncode"
     }
   }
 }

@@ -83,21 +83,50 @@ namespace Nitrocid.Base.Kernel
         /// </summary>
         public static Version? Version =>
             kernelVersion;
+
         /// <summary>
         /// Kernel API version
         /// </summary>
         public static Version ApiVersion =>
             kernelApiVersion;
+
         /// <summary>
         /// Kernel version (full)
         /// </summary>
         public static SemVer? VersionFull =>
             kernelVersionFull;
+
         /// <summary>
         /// Kernel version (full)
         /// </summary>
         public static string VersionFullStr =>
             kernelVersionFull?.ToString() ?? "0.0.0.0";
+
+        /// <summary>
+        /// Version code for kernel
+        /// </summary>
+        public static long VersionCode
+        {
+            get
+            {
+                var version = Version ?? new();
+                long versionCode = GetVersionCode(version);
+                return versionCode;
+            }
+        }
+
+        /// <summary>
+        /// API version code for kernel
+        /// </summary>
+        public static long ApiVersionCode
+        {
+            get
+            {
+                var version = ApiVersion ?? new();
+                long versionCode = GetVersionCode(version);
+                return versionCode;
+            }
+        }
 
         internal static void NotifyReleaseSupportWindow()
         {
@@ -113,5 +142,11 @@ namespace Nitrocid.Base.Kernel
             else if (currentDate >= supportWindow)
                 TextWriterColor.Write("* " + LanguageTools.GetLocalized("NKS_KERNEL_RELEASEINFO_EOL") + " " + LanguageTools.GetLocalized("NKS_KERNEL_RELEASEINFO_EOLTIP"), ThemeColorType.Warning);
         }
+
+        private static long GetVersionCode(Version version) =>
+            ((long)version.Major << 48) |
+            ((long)version.Minor << 32) |
+            ((long)version.Build << 16) |
+            (long)version.Revision;
     }
 }

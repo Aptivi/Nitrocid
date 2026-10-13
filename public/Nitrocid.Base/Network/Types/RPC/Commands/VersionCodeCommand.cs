@@ -28,12 +28,7 @@ namespace Nitrocid.Base.Network.Types.RPC.Commands
         public void Execute(string argument, IPEndPoint endpoint)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "{0} tried to get version code, sending it to the requester...", vars: [endpoint.Address.ToString()]);
-            var version = KernelReleaseInfo.Version ?? new();
-            long versionCode =
-                ((long)version.Major << 48) |
-                ((long)version.Minor << 32) |
-                ((long)version.Build << 16) |
-                (long)version.Revision;
+            long versionCode = KernelReleaseInfo.VersionCode;
             RPCCommands.ReplyTo($"{versionCode}", endpoint);
         }
     }

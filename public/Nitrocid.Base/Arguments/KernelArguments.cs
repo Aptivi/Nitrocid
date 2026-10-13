@@ -136,6 +136,22 @@ namespace Nitrocid.Base.Arguments
                     ], new ApiVersionArgument())
             },
 
+            // TODO: NKS_ARGUMENTS_ARGUMENT_VERSIONCODE_DESC -> Prints the kernel version code
+            { "versioncode",
+                new ArgumentInfo("versioncode", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_VERSIONCODE_DESC"),
+                    [
+                        new CommandArgumentInfo()
+                    ], new VersionCodeArgument())
+            },
+            
+            // TODO: NKS_ARGUMENTS_ARGUMENT_VERSIONCODE_DESC -> Prints the API version code
+            { "apiversioncode",
+                new ArgumentInfo("apiversioncode", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_APIVERSIONCODE_DESC"),
+                    [
+                        new CommandArgumentInfo()
+                    ], new ApiVersionCodeArgument())
+            },
+
             { "lang",
                 new ArgumentInfo("lang", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_LANG_DESC"),
                     [
