@@ -794,6 +794,7 @@ namespace Nitrocid.Base.Shell.Homepage
                         Width = widgetWidth,
                         Height = 3,
                         Text = rssSequence,
+                        WordWrap = false,
                     }.Render();
                     builder.Append(rssSequenceBounded);
                 }
@@ -952,18 +953,12 @@ namespace Nitrocid.Base.Shell.Homepage
                     if (articles is not null && articles.Length > 0)
                     {
                         var headlines = new StringBuilder();
-                        foreach (var (feedTitle, articleTitle) in articles)
-                        {
-                            string finalFeedEntry = $"{articleTitle}";
-                            finalFeedEntry = finalFeedEntry.Truncate(widgetWidth);
-                            headlines.AppendLine(finalFeedEntry);
-                        }
+                        foreach (var (_, articleTitle) in articles)
+                            headlines.AppendLine(articleTitle);
                         rssSequence = headlines.ToString();
                     }
                     else
-                    {
                         rssSequence = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NOARTICLES");
-                    }
                 }
 #endif
             }
