@@ -400,6 +400,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="establisher">The function responsible for establishing the network connection</param>
         /// <param name="speedEstablisher">The function responsible for establishing the network connection with speed dial options</param>
         /// <param name="address">Target address to connect to</param>
+        // TODO: Change the parameters so that errors are also accepted in the establisher instances in 0.2.2
         public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection?> establisher, Func<string, SpeedDialEntry, NetworkConnection?> speedEstablisher, string address = "")
         {
             // Check the connection type, which is the same as the shell type
@@ -414,7 +415,7 @@ namespace Nitrocid.Base.Network.Connections
                 if (string.IsNullOrEmpty(address))
                 {
                     // Select a connection according to user input
-                    int selectedConnection = NetworkConnectionSelector.ConnectionSelector(connectionType);
+                    int selectedConnection = ConnectionSelector(connectionType);
                     var availableConnectionInstances = GetNetworkConnections(connectionType);
                     int availableConnections = availableConnectionInstances.Length;
                     DebugWriter.WriteDebug(DebugLevel.I, "Selected connection {0} out of {1} connections", vars: [selectedConnection, availableConnections]);
@@ -518,6 +519,28 @@ namespace Nitrocid.Base.Network.Connections
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_UNKNOWNSHELLERROR") + " {0}", true, ThemeColorType.Error, ex.Message);
             }
+        }
+
+        private  static int ConnectionSelector(string connectionType)
+        {
+            var connections = GetNetworkConnections(connectionType);
+            var connectionNames = connections.Select((connection) => connection.ConnectionOriginalUrl.ToString()).ToArray();
+
+            // We need to prompt the user to select a connection or to establish a new connection so that the new shell can
+            // attach to the selected connection
+            var connectionsChoiceList = new List<InputChoiceInfo>();
+            for (int i = 0; i < connectionNames.Length; i++)
+            {
+                string connectionUrl = connectionNames[i];
+                connectionsChoiceList.Add(new InputChoiceInfo($"{i + 1}", connectionUrl));
+            }
+
+            return SelectionStyle.PromptSelection(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_SELECT_PROMPT"),
+                [.. connectionsChoiceList], [
+                    new InputChoiceInfo($"{connectionNames.Length + 1}", LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_SELECT_CREATE")),
+                    new InputChoiceInfo($"{connectionNames.Length + 2}", LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_SELECT_SPEEDDIAL")),
+                ]
+            );
         }
     }
 }
