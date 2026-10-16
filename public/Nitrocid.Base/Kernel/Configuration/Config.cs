@@ -345,11 +345,7 @@ namespace Nitrocid.Base.Kernel.Configuration
             }
         }
 
-        /// <summary>
-        /// Main loader for configuration file
-        /// </summary>
-        [CommunicationPrivileged]
-        public static void InitializeConfig()
+        internal static void InitializeConfig()
         {
             // Make a config file if not found
             foreach (var baseConfig in baseConfigurations)

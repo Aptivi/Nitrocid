@@ -147,10 +147,7 @@ namespace Nitrocid.Base.Network.Types.RPC
                 throw new KernelException(KernelExceptionType.RemoteProcedure, LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_EXCEPTION_SENDWITHOUTRPC"));
         }
 
-        /// <summary>
-        /// Thread to listen to commands.
-        /// </summary>
-        public static void ReceiveCommand()
+        internal static void ReceiveCommand()
         {
             StartReceivingCommand();
             rpcStopTrigger.WaitOne();

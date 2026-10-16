@@ -533,7 +533,7 @@ namespace Nitrocid.Base.Network.Connections
             }
         }
 
-        private  static int ConnectionSelector(string connectionType)
+        private static int ConnectionSelector(string connectionType)
         {
             var connections = GetNetworkConnections(connectionType);
             var connectionNames = connections.Select((connection) => connection.ConnectionOriginalUrl.ToString()).ToArray();

@@ -25,15 +25,9 @@ using Terminaux.Shell.Arguments.Base;
 
 namespace Nitrocid.Base.Arguments
 {
-    /// <summary>
-    /// Argument parser class
-    /// </summary>
-    public static class KernelArguments
+    internal static class KernelArguments
     {
-        /// <summary>
-        /// Available command line arguments
-        /// </summary>
-        public static Dictionary<string, ArgumentInfo> AvailableCMDLineArgs => new()
+        internal static Dictionary<string, ArgumentInfo> AvailableCMDLineArgs => new()
         {
             { "quiet",
                 new ArgumentInfo("quiet", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_QUIET_DESC"),

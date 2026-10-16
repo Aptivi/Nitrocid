@@ -95,10 +95,7 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
             }
         }
 
-        /// <summary>
-        /// Thread to accept connections after the listener starts
-        /// </summary>
-        public static void StartRDebugger()
+        private static void StartRDebugger()
         {
             // Listen to a current IP address
             try
@@ -217,7 +214,7 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
         /// </summary>
         [SuppressMessage("Reliability", "CA2022:Avoid inexact read with 'Stream.Read'", Justification = "We are dealing with network streams")]
         [SuppressMessage("CodeQuality", "IDE0079:Remove unnecessary suppression", Justification = "This suppression is justified")]
-        internal static void Listen(object? RDebugInstance)
+        private static void Listen(object? RDebugInstance)
         {
             if (RDebugInstance is not RemoteDebugDevice device)
                 return;
