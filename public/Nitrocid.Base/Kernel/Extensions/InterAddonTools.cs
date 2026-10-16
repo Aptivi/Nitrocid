@@ -278,6 +278,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="addonName">The addon name to query</param>
         /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
         /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
+        [CommunicationPrivileged]
         public static object? ExecuteCustomAddonFunction(KnownAddons addonName, string functionName, string typeName) =>
             ExecuteCustomAddonFunction(InterAddonTranslations.GetAddonName(addonName), functionName, typeName, null);
 
@@ -288,6 +289,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
         /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
         /// <param name="parameters">Parameters to execute the function with</param>
+        [CommunicationPrivileged]
         public static object? ExecuteCustomAddonFunction(KnownAddons addonName, string functionName, string typeName, params object?[]? parameters) =>
             ExecuteCustomAddonFunction(InterAddonTranslations.GetAddonName(addonName), functionName, typeName, parameters);
 
@@ -297,6 +299,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="addonName">The addon name to query</param>
         /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
         /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
+        [CommunicationPrivileged]
         public static object? ExecuteCustomAddonFunction(string addonName, string functionName, string typeName) =>
             ExecuteCustomAddonFunction(addonName, functionName, typeName, null);
 
@@ -307,6 +310,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
         /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
         /// <param name="parameters">Parameters to execute the function with</param>
+        [CommunicationPrivileged]
         public static object? ExecuteCustomAddonFunction(string addonName, string functionName, string typeName, params object?[]? parameters)
         {
             // Get the type
@@ -320,6 +324,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="addonName">The addon name to query</param>
         /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
         /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
+        [CommunicationPrivileged]
         public static object? ExecuteCustomAddonFunction(KnownAddons addonName, string functionName, Type type) =>
             ExecuteCustomAddonFunction(InterAddonTranslations.GetAddonName(addonName), functionName, type, null);
 
@@ -330,6 +335,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
         /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
         /// <param name="parameters">Parameters to execute the function with</param>
+        [CommunicationPrivileged]
         public static object? ExecuteCustomAddonFunction(KnownAddons addonName, string functionName, Type type, params object?[]? parameters) =>
             ExecuteCustomAddonFunction(InterAddonTranslations.GetAddonName(addonName), functionName, type, parameters);
 
@@ -339,6 +345,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="addonName">The addon name to query</param>
         /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
         /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
+        [CommunicationPrivileged]
         public static object? ExecuteCustomAddonFunction(string addonName, string functionName, Type type) =>
             ExecuteCustomAddonFunction(addonName, functionName, type, null);
 
@@ -349,6 +356,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
         /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
         /// <param name="parameters">Parameters to execute the function with</param>
+        [CommunicationPrivileged]
         public static object? ExecuteCustomAddonFunction(string addonName, string functionName, Type type, params object?[]? parameters)
         {
             // Verify the type before proceeding
@@ -374,6 +382,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="addonName">The addon name to query</param>
         /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
         /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
+        [CommunicationPrivileged]
         public static object? GetCustomAddonPropertyValue(KnownAddons addonName, string propertyName, string typeName) =>
             GetCustomAddonPropertyValue(InterAddonTranslations.GetAddonName(addonName), propertyName, typeName);
 
@@ -383,6 +392,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="addonName">The addon name to query</param>
         /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
         /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
+        [CommunicationPrivileged]
         public static object? GetCustomAddonPropertyValue(string addonName, string propertyName, string typeName)
         {
             // Get the type
@@ -396,6 +406,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="addonName">The addon name to query</param>
         /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
         /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
+        [CommunicationPrivileged]
         public static object? GetCustomAddonPropertyValue(KnownAddons addonName, string propertyName, Type type) =>
             GetCustomAddonPropertyValue(InterAddonTranslations.GetAddonName(addonName), propertyName, type);
 
@@ -405,6 +416,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="addonName">The addon name to query</param>
         /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
         /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
+        [CommunicationPrivileged]
         public static object? GetCustomAddonPropertyValue(string addonName, string propertyName, Type type)
         {
             // Verify the type before proceeding
@@ -431,6 +443,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
         /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
         /// <param name="value">Value to set the property to</param>
+        [CommunicationPrivileged]
         public static void SetCustomAddonPropertyValue(KnownAddons addonName, string propertyName, string typeName, object? value) =>
             SetCustomAddonPropertyValue(InterAddonTranslations.GetAddonName(addonName), propertyName, typeName, value);
 
@@ -441,6 +454,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
         /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
         /// <param name="value">Value to set the property to</param>
+        [CommunicationPrivileged]
         public static void SetCustomAddonPropertyValue(string addonName, string propertyName, string typeName, object? value)
         {
             // Get the type
@@ -455,6 +469,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
         /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
         /// <param name="value">Value to set the property to</param>
+        [CommunicationPrivileged]
         public static void SetCustomAddonPropertyValue(KnownAddons addonName, string propertyName, Type type, object? value) =>
             SetCustomAddonPropertyValue(InterAddonTranslations.GetAddonName(addonName), propertyName, type, value);
 
@@ -465,6 +480,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
         /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
         /// <param name="value">Value to set the property to</param>
+        [CommunicationPrivileged]
         public static void SetCustomAddonPropertyValue(string addonName, string propertyName, Type type, object? value)
         {
             // Verify the type before proceeding
@@ -490,6 +506,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="addonName">The addon name to query</param>
         /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
         /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available addon fields from an addon type.</param>
+        [CommunicationPrivileged]
         public static object? GetCustomAddonFieldValue(KnownAddons addonName, string fieldName, string typeName) =>
             GetCustomAddonFieldValue(InterAddonTranslations.GetAddonName(addonName), fieldName, typeName);
 
@@ -499,6 +516,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="addonName">The addon name to query</param>
         /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
         /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available addon fields from an addon type.</param>
+        [CommunicationPrivileged]
         public static object? GetCustomAddonFieldValue(string addonName, string fieldName, string typeName)
         {
             // Get the type
@@ -512,6 +530,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="addonName">The addon name to query</param>
         /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
         /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available addon fields from an addon type.</param>
+        [CommunicationPrivileged]
         public static object? GetCustomAddonFieldValue(KnownAddons addonName, string fieldName, Type type) =>
             GetCustomAddonFieldValue(InterAddonTranslations.GetAddonName(addonName), fieldName, type);
 
@@ -521,6 +540,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="addonName">The addon name to query</param>
         /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
         /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available addon fields from an addon type.</param>
+        [CommunicationPrivileged]
         public static object? GetCustomAddonFieldValue(string addonName, string fieldName, Type type)
         {
             // Verify the type before proceeding
@@ -546,6 +566,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
         /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available addon fields from an addon type.</param>
         /// <param name="value">Value to set the field to</param>
+        [CommunicationPrivileged]
         public static void SetCustomAddonFieldValue(KnownAddons addonName, string fieldName, string typeName, object? value) =>
             SetCustomAddonFieldValue(InterAddonTranslations.GetAddonName(addonName), fieldName, typeName, value);
 
@@ -556,6 +577,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
         /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available addon fields from an addon type.</param>
         /// <param name="value">Value to set the field to</param>
+        [CommunicationPrivileged]
         public static void SetCustomAddonFieldValue(string addonName, string fieldName, string typeName, object? value)
         {
             // Get the type
@@ -570,6 +592,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
         /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available addon fields from an addon type.</param>
         /// <param name="value">Value to set the field to</param>
+        [CommunicationPrivileged]
         public static void SetCustomAddonFieldValue(KnownAddons addonName, string fieldName, Type type, object? value) =>
             SetCustomAddonFieldValue(InterAddonTranslations.GetAddonName(addonName), fieldName, type, value);
 
@@ -580,6 +603,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
         /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available addon fields from an addon type.</param>
         /// <param name="value">Value to set the field to</param>
+        [CommunicationPrivileged]
         public static void SetCustomAddonFieldValue(string addonName, string fieldName, Type type, object? value)
         {
             // Verify the type before proceeding

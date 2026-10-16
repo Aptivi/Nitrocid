@@ -19,22 +19,23 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using Textify.Versioning;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug.Command;
-using Threadify.Manager;
-using Nitrocid.Base.Misc.Notifications;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug.RemoteChat;
-using System.Diagnostics.CodeAnalysis;
+using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Notifications;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.Versioning;
+using Threadify.Manager;
 
 namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
 {
@@ -62,6 +63,7 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
         /// <summary>
         /// Whether to start or stop the remote debugger
         /// </summary>
+        [CommunicationPrivileged]
         public static void StartRDebugThread()
         {
             if (KernelEntry.DebugMode)
@@ -78,6 +80,7 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
         /// <summary>
         /// Whether to start or stop the remote debugger
         /// </summary>
+        [CommunicationPrivileged]
         public static void StopRDebugThread()
         {
             if (KernelEntry.DebugMode)

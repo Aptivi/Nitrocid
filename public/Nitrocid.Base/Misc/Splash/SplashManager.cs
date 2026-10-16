@@ -21,19 +21,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using Terminaux.Base.Buffered;
-using Terminaux.Themes.Colors;
-using Terminaux.Inputs.Styles.Infobox;
+using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
+using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Splash.Splashes;
 using Terminaux.Base;
-using Terminaux.Inputs.Styles.Infobox.Tools;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Languages;
-using Threadify.Manager;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel;
+using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Themes.Colors;
+using Threadify.Manager;
 
 namespace Nitrocid.Base.Misc.Splash
 {
@@ -163,6 +164,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// <summary>
         /// Opens the splash screen
         /// </summary>
+        [CommunicationPrivileged]
         public static void OpenSplash() =>
             OpenSplash(CurrentSplash, currentContext, Config.MainConfig.SplashName);
 
@@ -170,6 +172,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// Opens the splash screen
         /// </summary>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        [CommunicationPrivileged]
         public static void OpenSplash(SplashContext context) =>
             OpenSplash(CurrentSplash, context, Config.MainConfig.SplashName);
 
@@ -177,6 +180,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// Opens the splash screen
         /// </summary>
         /// <param name="splashName">Splash name</param>
+        [CommunicationPrivileged]
         public static void OpenSplash(string splashName) =>
             OpenSplash(GetSplashFromName(splashName).EntryPoint, currentContext, splashName);
 
@@ -185,6 +189,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// </summary>
         /// <param name="splashName">Splash name</param>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        [CommunicationPrivileged]
         public static void OpenSplash(string splashName, SplashContext context) =>
             OpenSplash(GetSplashFromName(splashName).EntryPoint, context, splashName);
 
@@ -192,6 +197,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// Opens the splash screen
         /// </summary>
         /// <param name="splash">Splash interface to use</param>
+        [CommunicationPrivileged]
         public static void OpenSplash(ISplash splash) =>
             OpenSplash(splash, currentContext, "");
 
@@ -200,6 +206,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// </summary>
         /// <param name="splash">Splash interface to use</param>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        [CommunicationPrivileged]
         public static void OpenSplash(ISplash splash, SplashContext context) =>
             OpenSplash(splash, context, "");
 
@@ -238,6 +245,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// <summary>
         /// Closes the splash screen
         /// </summary>
+        [CommunicationPrivileged]
         public static void CloseSplash() =>
             CloseSplash(CurrentSplash, currentContext);
 
@@ -245,6 +253,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// Closes the splash screen
         /// </summary>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        [CommunicationPrivileged]
         public static void CloseSplash(SplashContext context) =>
             CloseSplash(CurrentSplash, context);
 
@@ -252,6 +261,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// Closes the splash screen
         /// </summary>
         /// <param name="splashName">Splash name</param>
+        [CommunicationPrivileged]
         public static void CloseSplash(string splashName) =>
             CloseSplash(GetSplashFromName(splashName).EntryPoint, currentContext);
 
@@ -260,6 +270,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// </summary>
         /// <param name="splashName">Splash name</param>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        [CommunicationPrivileged]
         public static void CloseSplash(string splashName, SplashContext context) =>
             CloseSplash(GetSplashFromName(splashName).EntryPoint, context);
 
@@ -267,6 +278,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// Closes the splash screen
         /// </summary>
         /// <param name="splash">Splash interface to use</param>
+        [CommunicationPrivileged]
         public static void CloseSplash(ISplash splash) =>
             CloseSplash(splash, true, currentContext);
 
@@ -275,6 +287,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// </summary>
         /// <param name="splash">Splash interface to use</param>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        [CommunicationPrivileged]
         public static void CloseSplash(ISplash splash, SplashContext context) =>
             CloseSplash(splash, true, context);
 
@@ -348,6 +361,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// <summary>
         /// Clears the screen for important messages to show up during kernel booting
         /// </summary>
+        [CommunicationPrivileged]
         public static void BeginSplashOut() =>
             BeginSplashOut(CurrentSplash, currentContext);
 
@@ -355,6 +369,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// Clears the screen for important messages to show up during kernel booting
         /// </summary>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        [CommunicationPrivileged]
         public static void BeginSplashOut(SplashContext context) =>
             BeginSplashOut(CurrentSplash, context);
 
@@ -367,6 +382,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// <summary>
         /// Declares that it's done showing important messages during kernel booting
         /// </summary>
+        [CommunicationPrivileged]
         public static void EndSplashOut() =>
             EndSplashOut(CurrentSplash, currentContext);
 
@@ -374,6 +390,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// Declares that it's done showing important messages during kernel booting
         /// </summary>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        [CommunicationPrivileged]
         public static void EndSplashOut(SplashContext context) =>
             EndSplashOut(CurrentSplash, context);
 

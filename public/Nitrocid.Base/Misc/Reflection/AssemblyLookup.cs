@@ -22,10 +22,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Nitrocid.Base.Files;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 
 namespace Nitrocid.Base.Misc.Reflection
 {
@@ -41,6 +42,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// Adds the path pointing to the dependencies to the assembly search path
         /// </summary>
         /// <param name="Path">Path to the dependencies</param>
+        [CommunicationPrivileged]
         public static void AddPathToAssemblySearchPath(string Path)
         {
             Path = FilesystemTools.NeutralizePath(Path);
@@ -57,6 +59,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// Removes the path pointing to the dependencies from the assembly search path
         /// </summary>
         /// <param name="Path">Path to the dependencies</param>
+        [CommunicationPrivileged]
         public static void RemovePathFromAssemblySearchPath(string Path)
         {
             Path = FilesystemTools.NeutralizePath(Path);

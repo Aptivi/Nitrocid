@@ -199,6 +199,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <param name="modName">The mod name to query</param>
         /// <param name="typeName">Full name of the type found in an mod (must be public and static)</param>
         /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available mod functions from an mod type.</param>
+        [CommunicationPrivileged]
         public static object? ExecuteCustomModFunction(string modName, string functionName, string typeName) =>
             ExecuteCustomModFunction(modName, functionName, typeName, null);
 
@@ -209,6 +210,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <param name="typeName">Full name of the type found in an mod (must be public and static)</param>
         /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available mod functions from an mod type.</param>
         /// <param name="parameters">Parameters to execute the function with</param>
+        [CommunicationPrivileged]
         public static object? ExecuteCustomModFunction(string modName, string functionName, string typeName, params object?[]? parameters)
         {
             // Get the type
@@ -222,6 +224,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <param name="modName">The mod name to query</param>
         /// <param name="type">Type found in an mod (must be public and static). You can get this type using <see cref="GetTypeFromMod(string, string)"/>.</param>
         /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available mod functions from an mod type.</param>
+        [CommunicationPrivileged]
         public static object? ExecuteCustomModFunction(string modName, string functionName, Type type) =>
             ExecuteCustomModFunction(modName, functionName, type, null);
 
@@ -232,6 +235,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <param name="type">Type found in an mod (must be public and static). You can get this type using <see cref="GetTypeFromMod(string, string)"/>.</param>
         /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available mod functions from an mod type.</param>
         /// <param name="parameters">Parameters to execute the function with</param>
+        [CommunicationPrivileged]
         public static object? ExecuteCustomModFunction(string modName, string functionName, Type type, params object?[]? parameters)
         {
             // Verify the type before proceeding
@@ -257,6 +261,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <param name="modName">The mod name to query</param>
         /// <param name="typeName">Full name of the type found in an mod (must be public and static)</param>
         /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available mod properties from an mod type.</param>
+        [CommunicationPrivileged]
         public static object? GetCustomModPropertyValue(string modName, string propertyName, string typeName)
         {
             // Get the type
@@ -270,6 +275,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <param name="modName">The mod name to query</param>
         /// <param name="type">Type found in an mod (must be public and static). You can get this type using <see cref="GetTypeFromMod(string, string)"/>.</param>
         /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available mod properties from an mod type.</param>
+        [CommunicationPrivileged]
         public static object? GetCustomModPropertyValue(string modName, string propertyName, Type type)
         {
             // Verify the type before proceeding
@@ -296,6 +302,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <param name="typeName">Full name of the type found in an mod (must be public and static)</param>
         /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available mod properties from an mod type.</param>
         /// <param name="value">Value to set the property to</param>
+        [CommunicationPrivileged]
         public static void SetCustomModPropertyValue(string modName, string propertyName, string typeName, object? value)
         {
             // Get the type
@@ -310,6 +317,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <param name="type">Type found in an mod (must be public and static). You can get this type using <see cref="GetTypeFromMod(string, string)"/>.</param>
         /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available mod properties from an mod type.</param>
         /// <param name="value">Value to set the property to</param>
+        [CommunicationPrivileged]
         public static void SetCustomModPropertyValue(string modName, string propertyName, Type type, object? value)
         {
             // Verify the type before proceeding
@@ -335,6 +343,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <param name="modName">The mod name to query</param>
         /// <param name="typeName">Full name of the type found in an mod (must be public and static)</param>
         /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available mod fields from an mod type.</param>
+        [CommunicationPrivileged]
         public static object? GetCustomModFieldValue(string modName, string fieldName, string typeName)
         {
             // Get the type
@@ -348,6 +357,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <param name="modName">The mod name to query</param>
         /// <param name="type">Type found in an mod (must be public and static). You can get this type using <see cref="GetTypeFromMod(string, string)"/>.</param>
         /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available mod fields from an mod type.</param>
+        [CommunicationPrivileged]
         public static object? GetCustomModFieldValue(string modName, string fieldName, Type type)
         {
             // Verify the type before proceeding
@@ -373,6 +383,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <param name="typeName">Full name of the type found in an mod (must be public and static)</param>
         /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available mod fields from an mod type.</param>
         /// <param name="value">Value to set the field to</param>
+        [CommunicationPrivileged]
         public static void SetCustomModFieldValue(string modName, string fieldName, string typeName, object? value)
         {
             // Get the type
@@ -387,6 +398,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Communication
         /// <param name="type">Type found in an mod (must be public and static). You can get this type using <see cref="GetTypeFromMod(string, string)"/>.</param>
         /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available mod fields from an mod type.</param>
         /// <param name="value">Value to set the field to</param>
+        [CommunicationPrivileged]
         public static void SetCustomModFieldValue(string modName, string fieldName, Type type, object? value)
         {
             // Verify the type before proceeding

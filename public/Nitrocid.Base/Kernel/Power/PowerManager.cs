@@ -17,26 +17,27 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Threading;
 using System.Diagnostics;
-using Terminaux.Reader;
-using System.Reflection;
 using System.IO;
-using Terminaux.Shell.Shells;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Base;
-using Nitrocid.Base.Kernel.Debugging;
+using System.Reflection;
+using System.Threading;
 using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Languages;
-using Threadify.Manager;
-using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Kernel.Journaling;
-using Nitrocid.Base.Network.Types.RPC;
-using Nitrocid.Core.Environment;
-using SpecProbe.Software.Platform;
+using Nitrocid.Base.Languages;
 using Nitrocid.Base.Login;
 using Nitrocid.Base.Misc.Screensaver;
+using Nitrocid.Base.Network.Types.RPC;
+using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Core.Environment;
+using SpecProbe.Software.Platform;
+using Terminaux.Base;
+using Terminaux.Reader;
+using Terminaux.Shell.Shells;
+using Terminaux.Writer.ConsoleWriters;
+using Threadify.Manager;
 
 namespace Nitrocid.Base.Kernel.Power
 {
@@ -60,6 +61,7 @@ namespace Nitrocid.Base.Kernel.Power
         /// Manage computer's (actually, simulated computer) power
         /// </summary>
         /// <param name="PowerMode">Selects the power mode</param>
+        [CommunicationPrivileged]
         public static void PowerManage(PowerMode PowerMode) =>
             PowerManage(PowerMode, "0.0.0.0", Config.MainConfig.RPCPort);
 
@@ -68,6 +70,7 @@ namespace Nitrocid.Base.Kernel.Power
         /// </summary>
         /// <param name="PowerMode">Selects the power mode</param>
         /// <param name="IP">IP address to remotely manage power</param>
+        [CommunicationPrivileged]
         public static void PowerManage(PowerMode PowerMode, string IP) =>
             PowerManage(PowerMode, IP, Config.MainConfig.RPCPort);
 
@@ -77,6 +80,7 @@ namespace Nitrocid.Base.Kernel.Power
         /// <param name="PowerMode">Selects the power mode</param>
         /// <param name="IP">IP address to remotely manage power</param>
         /// <param name="Port">Port of the remote system running KS RPC</param>
+        [CommunicationPrivileged]
         public static void PowerManage(PowerMode PowerMode, string IP, int Port)
         {
             // Check to see if the current user is granted power management or not

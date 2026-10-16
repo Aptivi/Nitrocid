@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.SpeedDial;
 using Terminaux.Inputs.Styles;
@@ -75,6 +76,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <summary>
         /// Closes all the connections
         /// </summary>
+        [CommunicationPrivileged]
         public static void CloseAllConnections()
         {
             for (int connection = networkConnections.Count - 1; connection >= 0; connection--)
@@ -86,6 +88,7 @@ namespace Nitrocid.Base.Network.Connections
         /// </summary>
         /// <param name="connectionIndex">Index of connection to close</param>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static void CloseConnection(int connectionIndex)
         {
             // Check to see if we have this connection
@@ -110,6 +113,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="connectionThread">Thread which holds a loop for connection (usually send/receive)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static NetworkConnection EstablishConnection(string name, string url, NetworkConnectionType connectionType, ThreadInstance connectionThread) =>
             EstablishConnection(name, url, connectionType.ToString(), connectionThread);
 
@@ -122,6 +126,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="connectionThread">Thread which holds a loop for connection (usually send/receive)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static NetworkConnection EstablishConnection(string name, Uri uri, NetworkConnectionType connectionType, ThreadInstance connectionThread) =>
             EstablishConnection(name, uri, connectionType.ToString(), connectionThread);
 
@@ -134,6 +139,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="connectionThread">Thread which holds a loop for connection (usually send/receive)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static NetworkConnection EstablishConnection(string name, string url, string connectionType, ThreadInstance connectionThread)
         {
             if (!networkTypes.Contains(connectionType))
@@ -156,6 +162,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="connectionThread">Thread which holds a loop for connection (usually send/receive)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static NetworkThreadConnection EstablishConnection(string name, Uri uri, string connectionType, ThreadInstance connectionThread)
         {
             if (!networkTypes.Contains(connectionType))
@@ -186,6 +193,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="connectionInstance">Instance which holds this connection (if threads are unsuitable)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static NetworkInstanceConnection<T> EstablishConnection<T>(string name, string url, NetworkConnectionType connectionType, T? connectionInstance) =>
             EstablishConnection(name, url, connectionType.ToString(), connectionInstance);
 
@@ -198,6 +206,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="connectionInstance">Instance which holds this connection (if threads are unsuitable)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static NetworkInstanceConnection<T> EstablishConnection<T>(string name, Uri uri, NetworkConnectionType connectionType, T? connectionInstance) =>
             EstablishConnection(name, uri, connectionType.ToString(), connectionInstance);
 
@@ -210,6 +219,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="connectionInstance">Instance which holds this connection (if threads are unsuitable)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static NetworkInstanceConnection<T> EstablishConnection<T>(string name, string url, string connectionType, T? connectionInstance)
         {
             if (!networkTypes.Contains(connectionType))
@@ -232,6 +242,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="connectionInstance">Instance which holds this connection (if threads are unsuitable)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static NetworkInstanceConnection<T> EstablishConnection<T>(string name, Uri uri, string connectionType, T? connectionInstance)
         {
             if (!networkTypes.Contains(connectionType))
@@ -401,6 +412,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="speedEstablisher">The function responsible for establishing the network connection with speed dial options</param>
         /// <param name="address">Target address to connect to</param>
         // TODO: Change the parameters so that errors are also accepted in the establisher instances in 0.2.2
+        [CommunicationPrivileged]
         public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection?> establisher, Func<string, SpeedDialEntry, NetworkConnection?> speedEstablisher, string address = "")
         {
             // Check the connection type, which is the same as the shell type

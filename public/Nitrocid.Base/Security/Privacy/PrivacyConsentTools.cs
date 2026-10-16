@@ -17,20 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Newtonsoft.Json;
-using Terminaux.Inputs.Styles.Choice;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Textify.General;
+using Newtonsoft.Json;
 using Nitrocid.Base.Files;
-using Nitrocid.Base.Misc.Reflection;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
-using Nitrocid.Base.Misc.Splash;
-using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
+using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Security.Privacy.Consents;
+using Nitrocid.Base.Users;
+using Terminaux.Inputs.Styles.Choice;
+using Textify.General;
 
 namespace Nitrocid.Base.Security.Privacy
 {
@@ -45,6 +46,7 @@ namespace Nitrocid.Base.Security.Privacy
         /// Consents a permission
         /// </summary>
         /// <param name="consentType">Permission type to consent</param>
+        [CommunicationPrivileged]
         public static bool ConsentPermission(ConsentedPermissionType consentType)
         {
             // Get the namespace of the calling method

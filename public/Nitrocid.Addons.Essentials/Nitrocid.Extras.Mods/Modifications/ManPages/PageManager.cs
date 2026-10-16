@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.Mods.Modifications.ManPages
@@ -77,6 +78,7 @@ namespace Nitrocid.Extras.Mods.Modifications.ManPages
         /// <param name="modName">Kernel modification name</param>
         /// <param name="Name">Manual page name</param>
         /// <param name="Page">Manual page instance</param>
+        [CommunicationPrivileged]
         public static void AddManualPage(string modName, string Name, Manual Page)
         {
             if (!ModManager.Mods.ContainsKey(modName))
@@ -103,6 +105,7 @@ namespace Nitrocid.Extras.Mods.Modifications.ManPages
         /// Removes a manual page from the list
         /// </summary>
         /// <param name="Name">Manual page name</param>
+        [CommunicationPrivileged]
         public static bool RemoveManualPage(Manual Name) =>
             Pages.Remove(Name);
 

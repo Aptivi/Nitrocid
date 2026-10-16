@@ -18,26 +18,27 @@
 //
 
 using System;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
-using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Inputs.Styles.Infobox.Tools;
-using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Drivers.Encryption;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Screensaver;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Kernel.Power;
-using Nitrocid.Base.Drivers.Encryption;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Login.Handlers;
+using Nitrocid.Base.Misc.Screensaver;
+using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users;
+using Nitrocid.Base.Users.TwoFactorAuth;
 using OtpNet;
 using Terminaux.Base;
-using Nitrocid.Base.Users.TwoFactorAuth;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Reader;
-using Nitrocid.Base.Login.Handlers;
-using Nitrocid.Base.Users;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Login
 {
@@ -53,6 +54,7 @@ namespace Nitrocid.Base.Login
         /// <summary>
         /// Prompts user for login information
         /// </summary>
+        [CommunicationPrivileged]
         public static void LoginPrompt()
         {
             // Fire event PreLogin
@@ -176,6 +178,7 @@ namespace Nitrocid.Base.Login
         /// Prompts user for password
         /// </summary>
         /// <param name="usernamerequested">A username that is about to be logged in</param>
+        [CommunicationPrivileged]
         public static bool ShowPasswordPrompt(string usernamerequested) =>
             ShowPasswordPrompt(usernamerequested, LoginHandlerTools.CurrentHandlerName);
 
@@ -184,6 +187,7 @@ namespace Nitrocid.Base.Login
         /// </summary>
         /// <param name="usernamerequested">A username that is about to be logged in</param>
         /// <param name="handlerName">Name of the logon handler</param>
+        [CommunicationPrivileged]
         internal static bool ShowPasswordPrompt(string usernamerequested, string handlerName)
         {
             // Prompts user to enter a user's password

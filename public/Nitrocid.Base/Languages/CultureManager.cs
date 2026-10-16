@@ -22,6 +22,7 @@ using System.Globalization;
 using System.Linq;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Login;
 
 namespace Nitrocid.Base.Languages
@@ -62,6 +63,7 @@ namespace Nitrocid.Base.Languages
         /// Updates current culture based on selected culture
         /// </summary>
         /// <param name="Culture">Full culture name or code</param>
+        [CommunicationPrivileged]
         public static void UpdateCulture(string Culture)
         {
             UpdateCultureDry(Culture);

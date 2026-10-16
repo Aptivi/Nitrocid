@@ -22,6 +22,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using Nitrocid.Base.Drivers.Regexp;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel;
@@ -29,36 +31,35 @@ using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Configuration.Settings;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Kernel.Power;
+using Nitrocid.Base.Kernel.Starting;
+using Nitrocid.Base.Kernel.Threading;
+using Nitrocid.Base.Kernel.Time.Alarm;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Login;
 using Nitrocid.Base.Misc.Audio;
-using Nitrocid.Base.Users;
+using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.Base.Misc.Widgets.Canvas;
 using Nitrocid.Base.Misc.Widgets.Implementations;
+using Nitrocid.Base.Users;
+using Nitrocid.Base.Users.Groups.Interactives;
+using Nitrocid.Base.Users.Interactives;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
-using Terminaux.Themes.Colors;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
-using Nitrocid.Base.Kernel.Extensions;
-using Nitrocid.Base.Kernel.Time.Alarm;
-using Nitrocid.Base.Misc.Notifications;
-using Nitrocid.Base.Kernel.Threading;
-using Nitrocid.Base.Login;
-using Nitrocid.Base.Users.Interactives;
-using Nitrocid.Base.Users.Groups.Interactives;
-using Nitrocid.Base.Kernel.Starting;
-using System.Threading.Tasks;
-using Nitrocid.Base.Drivers.Regexp;
 
 namespace Nitrocid.Base.Shell.Homepage
 {
@@ -108,6 +109,7 @@ namespace Nitrocid.Base.Shell.Homepage
         /// <summary>
         /// Opens The Nitrocid Homepage
         /// </summary>
+        [CommunicationPrivileged]
         public static void OpenHomepage()
         {
             if (isOnHomepage || !isHomepageEnabled)

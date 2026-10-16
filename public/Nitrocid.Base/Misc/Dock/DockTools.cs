@@ -23,6 +23,7 @@ using System.Collections.ObjectModel;
 using System.Threading;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Dock.DockInstances;
 using Nitrocid.Base.Misc.Screensaver;
@@ -54,6 +55,7 @@ namespace Nitrocid.Base.Misc.Dock
         /// </summary>
         /// <param name="dockName">Screen dock class name</param>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static void DockScreen(string dockName)
         {
             // Check to see if there is a dock by this name
@@ -70,6 +72,7 @@ namespace Nitrocid.Base.Misc.Dock
         /// </summary>
         /// <param name="dockInstance">Screen dock instance</param>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static void DockScreen(Dock? dockInstance)
         {
             // Check to see if there is a dock

@@ -19,21 +19,22 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Colorimetry;
 using Newtonsoft.Json;
-using System.Linq;
 using Nitrocid.Base.Files;
-using Terminaux.Themes.Colors;
-using Terminaux.Inputs.Styles;
-using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel.Configuration.Instances;
 using Nitrocid.Base.Kernel.Configuration.Settings;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
-using Nitrocid.Base.Kernel.Configuration.Instances;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Events;
-using Nitrocid.Base.Files.Paths;
+using Terminaux.Inputs.Styles;
+using Terminaux.Themes.Colors;
 using Textify.General;
 
 namespace Nitrocid.Base.Kernel.Configuration
@@ -49,6 +50,7 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// <summary>
         /// Reloads config
         /// </summary>
+        [CommunicationPrivileged]
         public static void ReloadConfig()
         {
             EventsManager.FireEvent(EventType.PreReloadConfig);
@@ -60,6 +62,7 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// Reloads config
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
+        [CommunicationPrivileged]
         public static bool TryReloadConfig()
         {
             try

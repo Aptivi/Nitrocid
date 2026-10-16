@@ -17,10 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Files;
 using System.Reflection;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Security.Signing
 {
@@ -34,6 +35,7 @@ namespace Nitrocid.Base.Security.Signing
         /// </summary>
         /// <param name="assembly">Assembly to query</param>
         /// <returns>A byte array that holds the public key token</returns>
+        [CommunicationPrivileged]
         public static byte[] PublicKeyToken(Assembly assembly)
         {
             // Check to see if the assembly is specified
@@ -50,6 +52,7 @@ namespace Nitrocid.Base.Security.Signing
         /// </summary>
         /// <param name="assemblyPath">Path to an assembly file. It's neutralized by this function.</param>
         /// <returns>A byte array that holds the public key token</returns>
+        [CommunicationPrivileged]
         public static byte[] PublicKeyToken(string assemblyPath)
         {
             // Check to see if the assembly path is specified
@@ -67,6 +70,7 @@ namespace Nitrocid.Base.Security.Signing
         /// </summary>
         /// <param name="assemblyName">Assembly name instance.</param>
         /// <returns>A byte array that holds the public key token</returns>
+        [CommunicationPrivileged]
         public static byte[] PublicKeyToken(AssemblyName assemblyName)
         {
             // Check to see if the assembly name is specified
@@ -85,6 +89,7 @@ namespace Nitrocid.Base.Security.Signing
         /// </summary>
         /// <param name="assembly">Assembly to query</param>
         /// <returns>True if signed; false otherwise</returns>
+        [CommunicationPrivileged]
         public static bool IsStronglySigned(Assembly assembly)
         {
             var token = PublicKeyToken(assembly);
@@ -96,6 +101,7 @@ namespace Nitrocid.Base.Security.Signing
         /// </summary>
         /// <param name="assemblyPath">Assembly path to query</param>
         /// <returns>True if signed; false otherwise</returns>
+        [CommunicationPrivileged]
         public static bool IsStronglySigned(string assemblyPath)
         {
             var token = PublicKeyToken(assemblyPath);
@@ -107,6 +113,7 @@ namespace Nitrocid.Base.Security.Signing
         /// </summary>
         /// <param name="assemblyName">Assembly name instance</param>
         /// <returns>True if signed; false otherwise</returns>
+        [CommunicationPrivileged]
         public static bool IsStronglySigned(AssemblyName assemblyName)
         {
             var token = PublicKeyToken(assemblyName);

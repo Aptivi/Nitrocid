@@ -20,9 +20,10 @@
 using System;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Misc.Reflection.Internal;
+using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Network.Transfer;
 
 #if SPECIFIERREL
@@ -43,6 +44,7 @@ namespace Nitrocid.Base.Kernel.Updates
         /// </summary>
         /// <param name="kind">The kind of update</param>
         /// <returns>A kernel update instance</returns>
+        [CommunicationPrivileged]
         public static KernelUpdate? FetchKernelUpdates(UpdateKind kind)
         {
             try
@@ -73,6 +75,7 @@ namespace Nitrocid.Base.Kernel.Updates
         /// <summary>
         /// Prompt for checking for kernel updates
         /// </summary>
+        [CommunicationPrivileged]
         public static void CheckKernelUpdates()
         {
 #if SPECIFIERREL

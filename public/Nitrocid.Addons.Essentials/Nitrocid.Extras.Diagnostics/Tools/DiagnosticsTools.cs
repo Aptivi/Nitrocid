@@ -17,11 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Microsoft.Diagnostics.Runtime;
-using Nitrocid.Base.Languages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Diagnostics.Runtime;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
+using Nitrocid.Base.Languages;
 using Threadify.Manager;
 
 namespace Nitrocid.Extras.Diagnostics.Tools
@@ -35,6 +36,7 @@ namespace Nitrocid.Extras.Diagnostics.Tools
         /// Gets all thread backtraces
         /// </summary>
         /// <returns>A dictionary containing thread names and addresses as keys and stack traces as values</returns>
+        [CommunicationPrivileged]
         public static Dictionary<string, string[]> GetThreadBacktraces()
         {
             var result = new Dictionary<string, string[]>();

@@ -18,17 +18,18 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Net.Sockets;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 using Nitrocid.Base.Files;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug.RemoteChat;
+using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
 {
@@ -44,6 +45,7 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
         /// Disconnects a specified debug device
         /// </summary>
         /// <param name="address">An IP address of the connected debug device</param>
+        [CommunicationPrivileged]
         public static void DisconnectDevice(string address)
         {
             // Normal remote debugger devices
@@ -92,6 +94,7 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
         /// </summary>
         /// <param name="address">An IP address for device</param>
         /// <param name="throwIfNotFound">Throws if the device is not found to be blocked</param>
+        [CommunicationPrivileged]
         public static void AddToBlockList(string address, bool throwIfNotFound = false)
         {
             var BlockedDevices = ListDeviceAddresses();
@@ -124,6 +127,7 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
         /// </summary>
         /// <param name="address">An IP address for device</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
+        [CommunicationPrivileged]
         public static bool TryAddToBlockList(string address)
         {
             try
@@ -144,6 +148,7 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
         /// Removes device from block list
         /// </summary>
         /// <param name="address">A blocked IP address for device</param>
+        [CommunicationPrivileged]
         public static void RemoveFromBlockList(string address)
         {
             var BlockedDevices = ListDeviceAddresses();
@@ -167,6 +172,7 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
         /// </summary>
         /// <param name="address">A blocked IP address for device</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
+        [CommunicationPrivileged]
         public static bool TryRemoveFromBlockList(string address)
         {
             try
@@ -240,6 +246,7 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
         /// Removes a device IP address from the list
         /// </summary>
         /// <param name="address">Device IP address from remote endpoint address</param>
+        [CommunicationPrivileged]
         public static void RemoveDevice(string address)
         {
             var addresses = ListDeviceAddresses();
@@ -260,6 +267,7 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
         /// </summary>
         /// <param name="address">Device IP address from remote endpoint address</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
+        [CommunicationPrivileged]
         public static bool TryRemoveDevice(string address)
         {
             try

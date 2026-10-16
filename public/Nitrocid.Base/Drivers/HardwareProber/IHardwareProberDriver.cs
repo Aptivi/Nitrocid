@@ -17,8 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Kernel.Hardware;
 using System.Collections;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
+using Nitrocid.Base.Kernel.Hardware;
 
 namespace Nitrocid.Base.Drivers.HardwareProber
 {
@@ -36,29 +37,34 @@ namespace Nitrocid.Base.Drivers.HardwareProber
         /// Probes the processor
         /// </summary>
         /// <returns>An object representing the processor collection object</returns>
+        [CommunicationPrivileged]
         IEnumerable ProbeProcessor();
 
         /// <summary>
         /// Probes the PC memory
         /// </summary>
         /// <returns>An object representing the PC memory collection object</returns>
+        [CommunicationPrivileged]
         IEnumerable ProbePcMemory();
 
         /// <summary>
         /// Probes the graphics adapter
         /// </summary>
         /// <returns>An object representing the graphics adapter collection object</returns>
+        [CommunicationPrivileged]
         IEnumerable? ProbeGraphics();
 
         /// <summary>
         /// Probes the hard drives
         /// </summary>
         /// <returns>An object representing the hard drive collection object</returns>
+        [CommunicationPrivileged]
         IEnumerable? ProbeHardDrive();
 
         /// <summary>
         /// Lists all the probed hardware. Please note that this overload probes all the hardware
         /// </summary>
+        [CommunicationPrivileged]
         void ListHardware();
 
         /// <summary>

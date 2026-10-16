@@ -17,12 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Languages;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Misc.Reflection
 {
@@ -36,6 +37,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
+        [CommunicationPrivileged]
         public static void SetFieldValue(string Variable, object? VariableValue) =>
             SetFieldValue(Variable, VariableValue, null);
 
@@ -45,6 +47,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
         /// <param name="VariableType">Field type</param>
+        [CommunicationPrivileged]
         public static void SetFieldValue(string Variable, object? VariableValue, Type? VariableType)
         {
             // Get field for specified variable
@@ -63,6 +66,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Field info instance.</param>
         /// <param name="VariableValue">New value</param>
+        [CommunicationPrivileged]
         public static void SetFieldValue(FieldInfo? Variable, object? VariableValue)
         {
             // Check the field
@@ -86,6 +90,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="instance">Instance class to make changes on</param>
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
+        [CommunicationPrivileged]
         public static void SetFieldValueInstance<T>(T instance, string Variable, object? VariableValue) =>
             SetFieldValueInstance(instance, Variable, VariableValue, null);
 
@@ -96,6 +101,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
         /// <param name="VariableType">Field type</param>
+        [CommunicationPrivileged]
         public static void SetFieldValueInstance<T>(T instance, string Variable, object? VariableValue, Type? VariableType)
         {
             // Get field for specified variable
@@ -115,6 +121,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="instance">Instance class to make changes on</param>
         /// <param name="Variable">Field info instance.</param>
         /// <param name="VariableValue">New value</param>
+        [CommunicationPrivileged]
         public static void SetFieldValueInstance<T>(T instance, FieldInfo? Variable, object? VariableValue)
         {
             // Check the field
@@ -137,6 +144,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
         /// <param name="VariableType">Field type</param>
+        [CommunicationPrivileged]
         public static void SetFieldValueInstanceExplicit(object instance, string Variable, object? VariableValue, Type? VariableType)
         {
             // Get field for specified variable
@@ -153,6 +161,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <returns>Value of a field</returns>
+        [CommunicationPrivileged]
         public static object? GetFieldValue(string Variable) =>
             GetFieldValue(Variable, null);
 
@@ -162,6 +171,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="VariableType">Field type</param>
         /// <returns>Value of a field</returns>
+        [CommunicationPrivileged]
         public static object? GetFieldValue(string Variable, Type? VariableType)
         {
             // Get field for specified variable
@@ -180,6 +190,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Field info instance.</param>
         /// <returns>Value of a field</returns>
+        [CommunicationPrivileged]
         public static object? GetFieldValue(FieldInfo? Variable)
         {
             // Check the field
@@ -203,6 +214,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="instance">Instance class to fetch value from</param>
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <returns>Value of a field</returns>
+        [CommunicationPrivileged]
         public static object? GetFieldValueInstance<T>(T instance, string Variable) =>
             GetFieldValueInstance(instance, Variable, null);
 
@@ -213,6 +225,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="VariableType">Field type</param>
         /// <returns>Value of a field</returns>
+        [CommunicationPrivileged]
         public static object? GetFieldValueInstance<T>(T instance, string Variable, Type? VariableType)
         {
             // Get field for specified variable
@@ -232,6 +245,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="instance">Instance class to fetch value from</param>
         /// <param name="Variable">Field info instance.</param>
         /// <returns>Value of a field</returns>
+        [CommunicationPrivileged]
         public static object? GetFieldValueInstance<T>(T instance, FieldInfo? Variable)
         {
             // Check the field
@@ -254,6 +268,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="VariableType">Field type</param>
         /// <returns>Value of a field</returns>
+        [CommunicationPrivileged]
         public static object? GetFieldValueInstanceExplicit(object instance, string Variable, Type? VariableType)
         {
             // Get field for specified variable
@@ -271,6 +286,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="Type">Field type</param>
         /// <returns>Field information</returns>
+        [CommunicationPrivileged]
         public static FieldInfo? GetField(string Variable, Type Type)
         {
             // Get fields of specified type
@@ -287,6 +303,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <returns>Field information</returns>
+        [CommunicationPrivileged]
         public static FieldInfo? GetField(string Variable)
         {
             Type[] PossibleTypes;
@@ -309,6 +326,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// Checks the specified field if it exists
         /// </summary>
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
+        [CommunicationPrivileged]
         public static bool CheckField(string Variable)
         {
             // Get field for specified variable
@@ -323,6 +341,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="Type">Field type</param>
+        [CommunicationPrivileged]
         public static bool CheckField(string Variable, Type Type)
         {
             // Get field for specified variable
@@ -337,6 +356,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="VariableType">Variable type</param>
         /// <returns>Dictionary containing all fields</returns>
+        [CommunicationPrivileged]
         public static Dictionary<string, object?> GetFields(Type VariableType)
         {
             // Get field for specified variable
@@ -366,6 +386,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="VariableType">Variable type</param>
         /// <param name="instance">Instance</param>
         /// <returns>Dictionary containing all fields</returns>
+        [CommunicationPrivileged]
         public static Dictionary<string, object?> GetFields<T>(T instance, Type VariableType)
         {
             // Get field for specified variable
@@ -394,6 +415,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="VariableType">Variable type</param>
         /// <returns>Dictionary containing all fields</returns>
+        [CommunicationPrivileged]
         public static Dictionary<string, Type> GetFieldsNoEvaluation(Type VariableType)
         {
             // Get field for specified variable
@@ -410,6 +432,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// Gets all the fields from the type dynamically
         /// </summary>
         /// <returns>Dictionary containing all fields</returns>
+        [CommunicationPrivileged]
         public static Dictionary<string, object?> GetAllFields()
         {
             // Get field for specified variable
@@ -435,6 +458,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// Gets all the fields from the type without evaluation
         /// </summary>
         /// <returns>Dictionary containing all fields</returns>
+        [CommunicationPrivileged]
         public static Dictionary<string, Type> GetAllFieldsNoEvaluation()
         {
             // Get field for specified variable
@@ -461,6 +485,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="instance">Instance</param>
         /// <returns>Dictionary containing all fields</returns>
+        [CommunicationPrivileged]
         public static Dictionary<string, object?> GetAllFields<T>(T instance)
         {
             // Get field for specified variable

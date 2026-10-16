@@ -23,6 +23,7 @@ using Nitrocid.Base.Kernel.Debugging;
 
 #if NKS_EXTENSIONS
 using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 #endif
 
 namespace Nitrocid.Base.Kernel.Threading.Watchdog
@@ -36,6 +37,7 @@ namespace Nitrocid.Base.Kernel.Threading.Watchdog
         /// Gets all thread backtraces
         /// </summary>
         /// <returns>A dictionary containing thread names and addresses as keys and stack traces as values</returns>
+        [CommunicationPrivileged]
         public static Dictionary<string, string[]> GetThreadBacktraces()
         {
 #if NKS_EXTENSIONS

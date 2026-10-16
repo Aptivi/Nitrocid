@@ -18,12 +18,13 @@
 //
 
 using System;
+using Nitrocid.Base.Kernel.Configuration.Instances;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Security.Permissions;
+using Terminaux.Inputs.Interactive;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Inputs.Interactive;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Configuration.Instances;
-using Nitrocid.Base.Security.Permissions;
 
 namespace Nitrocid.Base.Kernel.Configuration.Settings
 {
@@ -36,6 +37,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
         /// <summary>
         /// Opens the main page for settings, listing all the sections that are configurable
         /// </summary>
+        [CommunicationPrivileged]
         public static void OpenMainPage()
         {
             var selectedConfig = SettingsAppTools.SelectConfig();
@@ -48,6 +50,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
         /// Opens the main page for settings, listing all the sections that are configurable
         /// </summary>
         /// <param name="settingsType">Type of settings</param>
+        [CommunicationPrivileged]
         public static void OpenMainPage(string settingsType) =>
             OpenMainPage(Config.GetKernelConfig(settingsType));
 
@@ -55,6 +58,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
         /// Opens the main page for settings, listing all the sections that are configurable
         /// </summary>
         /// <param name="settingsType">Type of settings</param>
+        [CommunicationPrivileged]
         public static void OpenMainPage(BaseKernelConfig? settingsType)
         {
             // Verify that we actually have the type

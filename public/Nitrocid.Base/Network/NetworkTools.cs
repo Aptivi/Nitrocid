@@ -27,6 +27,7 @@ using System.Text;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Network.Transfer;
 using SpecProbe.Software.Platform;
 
@@ -160,6 +161,7 @@ namespace Nitrocid.Base.Network
         /// <summary>
         /// Gets the online devices in your network, including the router and the broadcast address
         /// </summary>
+        [CommunicationPrivileged]
         public static IPAddress[] GetOnlineDevicesInNetwork()
         {
             if (!NetworkAvailable)

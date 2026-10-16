@@ -17,10 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Languages;
 using System;
 using System.Reflection;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Misc.Reflection
 {
@@ -35,6 +36,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="Method">Method name. Use operator NameOf to get name.</param>
         /// <returns>Method information</returns>
+        [CommunicationPrivileged]
         public static MethodBase? GetMethod(string Method)
         {
             Type[] PossibleTypes;
@@ -59,6 +61,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="Method">Method name. Use operator NameOf to get name.</param>
         /// <param name="methodType">From which type do we need to get a method from?</param>
         /// <returns>Method information</returns>
+        [CommunicationPrivileged]
         public static MethodBase? GetMethod(string Method, Type methodType) =>
             methodType.GetMethod(Method);
 
@@ -70,6 +73,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="args">Arguments to be specified to the method. Review the method signature for more information.</param>
         /// <returns>The value of the returned object from the method</returns>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static object? InvokeMethod(string method, object obj, params object?[]? args) =>
             InvokeMethod(method, obj, obj.GetType(), args);
 
@@ -82,6 +86,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="args">Arguments to be specified to the method. Review the method signature for more information.</param>
         /// <returns>The value of the returned object from the method</returns>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static object? InvokeMethod(string method, object obj, Type methodType, params object?[]? args) =>
             InvokeMethod(GetMethod(method, methodType), obj, args);
 
@@ -93,6 +98,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="args">Arguments to be specified to the method. Review the method signature for more information.</param>
         /// <returns>The value of the returned object from the method</returns>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static object? InvokeMethod(MethodBase? method, object obj, params object?[]? args)
         {
             if (method is null)
@@ -113,6 +119,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="args">Arguments to be specified to the method. Review the method signature for more information.</param>
         /// <returns>The value of the returned object from the method</returns>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static object? InvokeMethodStatic(string method, params object?[]? args) =>
             InvokeMethodStatic(GetMethod(method), args);
 
@@ -124,6 +131,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="args">Arguments to be specified to the method. Review the method signature for more information.</param>
         /// <returns>The value of the returned object from the method</returns>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static object? InvokeMethodStatic(string method, Type methodType, params object?[]? args) =>
             InvokeMethodStatic(GetMethod(method, methodType), args);
 
@@ -134,6 +142,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="args">Arguments to be specified to the method. Review the method signature for more information.</param>
         /// <returns>The value of the returned object from the method</returns>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static object? InvokeMethodStatic(MethodBase? method, params object?[]? args)
         {
             if (method is null)

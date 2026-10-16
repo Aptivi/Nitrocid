@@ -27,6 +27,7 @@ using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Types.RPC.Commands;
 using Textify.General;
@@ -66,6 +67,7 @@ namespace Nitrocid.Base.Network.Types.RPC
         /// <param name="clientMode">Client mode (if true, doesn't require RPC server to be running)</param>
         /// <param name="additionalArgs">Additional arguments. If not provided, the IP address will be provided automatically.</param>
         /// <exception cref="InvalidOperationException"></exception>
+        [CommunicationPrivileged]
         public static void SendCommand(RPCCommandEnum Request, string IP, bool clientMode = false, string additionalArgs = "") =>
             SendCommand(Request, IP, Config.MainConfig.RPCPort, clientMode, additionalArgs);
 
@@ -78,6 +80,7 @@ namespace Nitrocid.Base.Network.Types.RPC
         /// <param name="clientMode">Client mode (if true, doesn't require RPC server to be running)</param>
         /// <param name="additionalArgs">Additional arguments. If not provided, the IP address will be provided automatically.</param>
         /// <exception cref="InvalidOperationException"></exception>
+        [CommunicationPrivileged]
         public static void SendCommand(RPCCommandEnum Request, string IP, int Port, bool clientMode = false, string additionalArgs = "") =>
             SendCommand($"<Request:{Request}>({(!string.IsNullOrEmpty(additionalArgs) ? additionalArgs : IP)})", IP, Port, clientMode);
 
@@ -88,6 +91,7 @@ namespace Nitrocid.Base.Network.Types.RPC
         /// <param name="IP">An IP address which the RPC is hosted</param>
         /// <param name="clientMode">Client mode (if true, doesn't require RPC server to be running)</param>
         /// <exception cref="InvalidOperationException"></exception>
+        [CommunicationPrivileged]
         public static void SendCommand(string Request, string IP, bool clientMode = false) =>
             SendCommand(Request, IP, Config.MainConfig.RPCPort, clientMode);
 
@@ -99,6 +103,7 @@ namespace Nitrocid.Base.Network.Types.RPC
         /// <param name="Port">A port which the RPC is hosted</param>
         /// <param name="clientMode">Client mode (if true, doesn't require RPC server to be running)</param>
         /// <exception cref="InvalidOperationException"></exception>
+        [CommunicationPrivileged]
         public static void SendCommand(string Request, string IP, int Port, bool clientMode = false)
         {
             if (Config.MainConfig.RPCEnabled || clientMode)

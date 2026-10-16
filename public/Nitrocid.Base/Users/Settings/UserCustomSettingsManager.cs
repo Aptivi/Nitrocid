@@ -18,6 +18,7 @@
 //
 
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Users.Settings
@@ -33,6 +34,7 @@ namespace Nitrocid.Base.Users.Settings
         /// <param name="user">Target user name</param>
         /// <param name="key">Target key</param>
         /// <param name="value">Value to assign the key to</param>
+        [CommunicationPrivileged]
         public static void AddSettingsEntryToUser(string user, string key, object[] value)
         {
             // Check to see if we have the target user
@@ -59,6 +61,7 @@ namespace Nitrocid.Base.Users.Settings
         /// <param name="user">Target user name</param>
         /// <param name="key">Target key</param>
         /// <param name="value">Value to assign the key to</param>
+        [CommunicationPrivileged]
         public static void ModifySettingsEntryInUser(string user, string key, object[] value)
         {
             // Check to see if we have the target user
@@ -82,6 +85,7 @@ namespace Nitrocid.Base.Users.Settings
         /// </summary>
         /// <param name="user">Target user name</param>
         /// <param name="key">Target key</param>
+        [CommunicationPrivileged]
         public static void RemoveSettingsEntryFromUser(string user, string key)
         {
             // Check to see if we have the target user

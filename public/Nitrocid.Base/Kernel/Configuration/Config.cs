@@ -18,24 +18,24 @@
 //
 
 extern alias TextifyDep;
-
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
 using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Configuration.Instances;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Notifications;
+using Nitrocid.Base.Misc.Splash;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Themes.Colors;
 using TextifyDep::Textify.Tools;
-using Terminaux.Inputs.Styles.Infobox.Tools;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Splash;
-using Nitrocid.Base.Misc.Notifications;
-using Nitrocid.Base.Kernel.Configuration.Instances;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Events;
 
 namespace Nitrocid.Base.Kernel.Configuration
 {
@@ -131,6 +131,7 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// <summary>
         /// Creates the kernel configuration file
         /// </summary>
+        [CommunicationPrivileged]
         public static void CreateConfig()
         {
             var configs = GetKernelConfigs();
@@ -141,6 +142,7 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// <summary>
         /// Creates the kernel configuration file with custom path
         /// </summary>
+        [CommunicationPrivileged]
         public static void CreateConfig(string ConfigFolder)
         {
             if (KernelEntry.SafeMode)
@@ -159,12 +161,14 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// <summary>
         /// Creates the kernel configuration file with custom path and custom type
         /// </summary>
+        [CommunicationPrivileged]
         public static void CreateConfig(BaseKernelConfig type) =>
             CreateConfig(type, ConfigTools.GetPathToCustomSettingsFile(type));
 
         /// <summary>
         /// Creates the kernel configuration file with custom path and custom type
         /// </summary>
+        [CommunicationPrivileged]
         public static void CreateConfig(BaseKernelConfig type, string ConfigPath)
         {
             if (KernelEntry.SafeMode)
@@ -183,6 +187,7 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// Creates the kernel configuration file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful.</returns>
+        [CommunicationPrivileged]
         public static bool TryCreateConfig()
         {
             try
@@ -203,6 +208,7 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// Creates the kernel configuration file with custom folder
         /// </summary>
         /// <returns>True if successful; False if unsuccessful.</returns>
+        [CommunicationPrivileged]
         public static bool TryCreateConfig(string ConfigFolder)
         {
             try
@@ -223,6 +229,7 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// Creates the kernel configuration file with custom folder
         /// </summary>
         /// <returns>True if successful; False if unsuccessful.</returns>
+        [CommunicationPrivileged]
         public static bool TryCreateConfig(BaseKernelConfig type)
         {
             try
@@ -243,6 +250,7 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// Creates the kernel configuration file with custom folder
         /// </summary>
         /// <returns>True if successful; False if unsuccessful.</returns>
+        [CommunicationPrivileged]
         public static bool TryCreateConfig(BaseKernelConfig type, string ConfigPath)
         {
             try
@@ -262,6 +270,7 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// <summary>
         /// Configures the kernel according to the kernel configuration file
         /// </summary>
+        [CommunicationPrivileged]
         public static void ReadConfig()
         {
             var configs = GetKernelConfigs();
@@ -272,12 +281,14 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// <summary>
         /// Configures the kernel according to the custom kernel configuration type
         /// </summary>
+        [CommunicationPrivileged]
         public static void ReadConfig(BaseKernelConfig type) =>
             ReadConfig(type, ConfigTools.GetPathToCustomSettingsFile(type));
 
         /// <summary>
         /// Configures the kernel according to the custom kernel configuration type and file
         /// </summary>
+        [CommunicationPrivileged]
         public static void ReadConfig<TConfig>(TConfig type, string ConfigPath)
         {
             // Open the config JSON file
@@ -315,6 +326,7 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// Configures the kernel according to the kernel configuration file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
+        [CommunicationPrivileged]
         public static bool TryReadConfig()
         {
             try
@@ -336,6 +348,7 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// <summary>
         /// Main loader for configuration file
         /// </summary>
+        [CommunicationPrivileged]
         public static void InitializeConfig()
         {
             // Make a config file if not found

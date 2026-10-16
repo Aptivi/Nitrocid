@@ -19,10 +19,11 @@
 
 using System;
 using System.Collections.Generic;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Kernel.Exceptions;
 using System.Globalization;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Login;
 
 namespace Nitrocid.Base.Languages
@@ -100,6 +101,7 @@ namespace Nitrocid.Base.Languages
         /// </summary>
         /// <param name="lang">A specified language</param>
         /// <returns>True if successful, False if unsuccessful.</returns>
+        [CommunicationPrivileged]
         public static bool SetLang(string lang)
         {
             SetLangDry(lang);

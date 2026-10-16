@@ -30,6 +30,7 @@ using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Login;
 using Nitrocid.Base.Security.Permissions;
@@ -58,6 +59,7 @@ namespace Nitrocid.Base.Users
         /// </summary>
         /// <param name="newUser">A new user</param>
         /// <param name="newPassword">A password</param>
+        [CommunicationPrivileged]
         public static void AddUser(string newUser, string newPassword = "")
         {
             // Check the current login for permissions
@@ -103,6 +105,7 @@ namespace Nitrocid.Base.Users
         /// </summary>
         /// <param name="user">A user</param>
         /// <remarks>This sub is an accomplice of in-shell command arguments.</remarks>
+        [CommunicationPrivileged]
         public static void RemoveUser(string user)
         {
             // Check the current login for permissions
@@ -157,6 +160,7 @@ namespace Nitrocid.Base.Users
         /// <param name="user">A user</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         /// <remarks>This sub is an accomplice of in-shell command arguments.</remarks>
+        [CommunicationPrivileged]
         public static bool TryRemoveUser(string user)
         {
             try
@@ -175,6 +179,7 @@ namespace Nitrocid.Base.Users
         /// </summary>
         /// <param name="OldName">Old username</param>
         /// <param name="Username">New username</param>
+        [CommunicationPrivileged]
         public static void ChangeUsername(string OldName, string Username)
         {
             // Check the current login for permissions
@@ -218,6 +223,7 @@ namespace Nitrocid.Base.Users
         /// <param name="OldName">Old username</param>
         /// <param name="Username">New username</param>
         /// <returns>True if successful; False if unsuccessful</returns>
+        [CommunicationPrivileged]
         public static bool TryChangeUsername(string OldName, string Username)
         {
             try
@@ -237,6 +243,7 @@ namespace Nitrocid.Base.Users
         /// <param name="Target">Target username</param>
         /// <param name="CurrentPass">Current user password</param>
         /// <param name="NewPass">New user password</param>
+        [CommunicationPrivileged]
         public static void ChangePassword(string Target, string CurrentPass, string NewPass)
         {
             // Check the current login for permissions
@@ -286,6 +293,7 @@ namespace Nitrocid.Base.Users
         /// <param name="CurrentPass">Current user password</param>
         /// <param name="NewPass">New user password</param>
         /// <returns>True if successful; False if unsuccessful</returns>
+        [CommunicationPrivileged]
         public static bool TryChangePassword(string Target, string CurrentPass, string NewPass)
         {
             try
@@ -488,6 +496,7 @@ namespace Nitrocid.Base.Users
         /// Locks a user
         /// </summary>
         /// <param name="User">A username to lock</param>
+        [CommunicationPrivileged]
         public static void LockUser(string User)
         {
             if (!IsLocked(User))
@@ -502,6 +511,7 @@ namespace Nitrocid.Base.Users
         /// Unlocks a user
         /// </summary>
         /// <param name="User">A username to unlock</param>
+        [CommunicationPrivileged]
         public static void UnlockUser(string User)
         {
             if (IsLocked(User))
@@ -523,6 +533,7 @@ namespace Nitrocid.Base.Users
         /// <summary>
         /// Saves all the users and their changes
         /// </summary>
+        [CommunicationPrivileged]
         public static void SaveUsers()
         {
             // Make a JSON file to save all user information files

@@ -20,6 +20,7 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Kernel
@@ -32,6 +33,7 @@ namespace Nitrocid.Base.Kernel
         /// <summary>
         /// Checks to see if the kernel is running normally or from somewhere else
         /// </summary>
+        [CommunicationPrivileged]
         public static bool IsOnUsualEnvironment()
         {
             string entryAssemblyName = Assembly.GetEntryAssembly()?.FullName ?? "";
@@ -43,6 +45,7 @@ namespace Nitrocid.Base.Kernel
         /// <summary>
         /// Checks to see if the kernel is being run on the test host (checks against Nitrocid.Tests as entry)
         /// </summary>
+        [CommunicationPrivileged]
         public static bool IsOnTestHost()
         {
             string entryAssemblyName = Assembly.GetEntryAssembly()?.FullName ?? "";
@@ -53,12 +56,14 @@ namespace Nitrocid.Base.Kernel
         /// Gets the current runtime identifier
         /// </summary>
         /// <returns>Returns a runtime identifier (win-x64 for example).</returns>
+        [CommunicationPrivileged]
         public static string GetCurrentRid() =>
             RuntimeInformation.RuntimeIdentifier;
 
         /// <summary>
         /// Checks to see if the current Windows user is an administrator
         /// </summary>
+        [CommunicationPrivileged]
         public static bool IsCurrentWindowsUserAdmin()
         {
             if (PlatformHelper.IsOnWindows() ||

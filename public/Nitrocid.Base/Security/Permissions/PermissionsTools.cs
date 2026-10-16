@@ -17,15 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Kernel.Journaling;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Users.Groups;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Nitrocid.Base.Security.Permissions
 {
@@ -39,6 +40,7 @@ namespace Nitrocid.Base.Security.Permissions
         /// </summary>
         /// <param name="permissionType">A permission type to query</param>
         /// <returns>True if granted or if user is an admin. Otherwise, false.</returns>
+        [CommunicationPrivileged]
         public static bool IsPermissionGranted(PermissionTypes permissionType) =>
             IsPermissionGranted(UserManagement.CurrentUser.Username, permissionType);
 
@@ -48,6 +50,7 @@ namespace Nitrocid.Base.Security.Permissions
         /// <param name="User">Target user</param>
         /// <param name="permissionType">A permission type to query</param>
         /// <returns>True if granted or if user is an admin. Otherwise, false.</returns>
+        [CommunicationPrivileged]
         public static bool IsPermissionGranted(string User, PermissionTypes permissionType)
         {
             // Check to see if we have the target user
@@ -70,6 +73,7 @@ namespace Nitrocid.Base.Security.Permissions
         /// </summary>
         /// <param name="permissionType">A permission type to query</param>
         /// <exception cref="KernelException"></exception>
+        [CommunicationPrivileged]
         public static void Demand(PermissionTypes permissionType)
         {
             // Don't demand when kernel is errored
@@ -97,6 +101,7 @@ namespace Nitrocid.Base.Security.Permissions
         /// </summary>
         /// <param name="User">Username to give the permission to</param>
         /// <param name="permissionType">Permission types to grant</param>
+        [CommunicationPrivileged]
         public static void GrantPermission(string User, PermissionTypes permissionType)
         {
             // Check to see if we have the target user
@@ -141,6 +146,7 @@ namespace Nitrocid.Base.Security.Permissions
         /// </summary>
         /// <param name="User">Username to revoke the permission from</param>
         /// <param name="permissionType">Permission types to revoke</param>
+        [CommunicationPrivileged]
         public static void RevokePermission(string User, PermissionTypes permissionType)
         {
             // Check to see if we have the target user
@@ -185,6 +191,7 @@ namespace Nitrocid.Base.Security.Permissions
         /// </summary>
         /// <param name="Group">Group name to give the permission to</param>
         /// <param name="permissionType">Permission types to grant</param>
+        [CommunicationPrivileged]
         public static void GrantPermissionGroup(string Group, PermissionTypes permissionType)
         {
             // Check to see if we have the target group
@@ -228,6 +235,7 @@ namespace Nitrocid.Base.Security.Permissions
         /// </summary>
         /// <param name="Group">Group name to revoke the permission from</param>
         /// <param name="permissionType">Permission types to revoke</param>
+        [CommunicationPrivileged]
         public static void RevokePermissionGroup(string Group, PermissionTypes permissionType)
         {
             // Check to see if we have the target group

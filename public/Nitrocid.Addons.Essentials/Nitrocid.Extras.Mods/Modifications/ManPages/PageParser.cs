@@ -24,6 +24,7 @@ using System.Text;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Languages;
 using Textify.Tools.Placeholder;
 
@@ -37,6 +38,7 @@ namespace Nitrocid.Extras.Mods.Modifications.ManPages
         /// </summary>
         /// <param name="modName">Kernel modification name</param>
         /// <param name="ManualFile">A manual file path (neutralized)</param>
+        [CommunicationPrivileged]
         public static void InitMan(string modName, string ManualFile)
         {
             ManualFile = FilesystemTools.NeutralizePath(ManualFile);

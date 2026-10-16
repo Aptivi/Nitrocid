@@ -21,8 +21,9 @@ using System.Net.Sockets;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
-using Threadify.Manager;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Languages;
+using Threadify.Manager;
 
 namespace Nitrocid.Base.Network.Types.RPC
 {
@@ -46,6 +47,7 @@ namespace Nitrocid.Base.Network.Types.RPC
         /// <summary>
         /// Starts the RPC listener
         /// </summary>
+        [CommunicationPrivileged]
         public static void StartRPC()
         {
             if (Config.MainConfig.RPCEnabled)
@@ -72,6 +74,7 @@ namespace Nitrocid.Base.Network.Types.RPC
         /// <summary>
         /// Stops the RPC listener
         /// </summary>
+        [CommunicationPrivileged]
         public static void StopRPC()
         {
             if (RPCStarted)

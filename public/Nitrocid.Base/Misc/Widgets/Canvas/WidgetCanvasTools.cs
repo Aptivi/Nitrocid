@@ -54,7 +54,7 @@ namespace Nitrocid.Base.Misc.Widgets.Canvas
         /// <param name="renderInfoJson">A JSON representation of a list of widgets</param>
         /// <returns>A list of <see cref="WidgetRenderInfo"/></returns>
         /// <exception cref="KernelException"></exception>
-        public static WidgetRenderInfo[] GetRenderInfos([StringSyntax("json")] string renderInfoJson)
+        public static WidgetRenderInfo[] GetRenderInfos([StringSyntax(StringSyntaxAttribute.Json)] string renderInfoJson)
         {
             // Load the JSON representation
             WidgetRenderInfo[] renderInfos = JsonConvert.DeserializeObject<WidgetRenderInfo[]?>(renderInfoJson) ??

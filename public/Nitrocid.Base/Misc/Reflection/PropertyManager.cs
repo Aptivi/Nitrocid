@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Misc.Reflection
@@ -36,6 +37,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
+        [CommunicationPrivileged]
         public static void SetPropertyValue(string Variable, object? VariableValue) =>
             SetPropertyValue(Variable, VariableValue, null);
 
@@ -45,6 +47,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
         /// <param name="VariableType">Property type</param>
+        [CommunicationPrivileged]
         public static void SetPropertyValue(string Variable, object? VariableValue, Type? VariableType)
         {
             // Get property for specified variable
@@ -63,6 +66,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Property info instance.</param>
         /// <param name="VariableValue">New value</param>
+        [CommunicationPrivileged]
         public static void SetPropertyValue(PropertyInfo? Variable, object? VariableValue)
         {
             // Check the property
@@ -86,6 +90,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="instance">Instance class to make changes on</param>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
+        [CommunicationPrivileged]
         public static void SetPropertyValueInstance<T>(T instance, string Variable, object? VariableValue) =>
             SetPropertyValueInstance(instance, Variable, VariableValue, null);
 
@@ -96,6 +101,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
         /// <param name="VariableType">Property type</param>
+        [CommunicationPrivileged]
         public static void SetPropertyValueInstance<T>(T instance, string Variable, object? VariableValue, Type? VariableType)
         {
             // Get property for specified variable
@@ -115,6 +121,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="instance">Instance class to make changes on</param>
         /// <param name="Variable">Property info instance.</param>
         /// <param name="VariableValue">New value</param>
+        [CommunicationPrivileged]
         public static void SetPropertyValueInstance<T>(T instance, PropertyInfo? Variable, object? VariableValue)
         {
             // Check the property
@@ -137,6 +144,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
         /// <param name="VariableType">Property type</param>
+        [CommunicationPrivileged]
         public static void SetPropertyValueInstanceExplicit(object instance, string Variable, object? VariableValue, Type? VariableType)
         {
             // Get property for specified variable
@@ -153,6 +161,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <returns>Value of a property</returns>
+        [CommunicationPrivileged]
         public static object? GetPropertyValue(string Variable) =>
             GetPropertyValue(Variable, null);
 
@@ -162,6 +171,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableType">Property type</param>
         /// <returns>Value of a property</returns>
+        [CommunicationPrivileged]
         public static object? GetPropertyValue(string Variable, Type? VariableType)
         {
             // Get property for specified variable
@@ -180,6 +190,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Property info instance.</param>
         /// <returns>Value of a property</returns>
+        [CommunicationPrivileged]
         public static object? GetPropertyValue(PropertyInfo? Variable)
         {
             // Check the property
@@ -203,6 +214,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="instance">Instance class to fetch value from</param>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <returns>Value of a property</returns>
+        [CommunicationPrivileged]
         public static object? GetPropertyValueInstance<T>(T instance, string Variable) =>
             GetPropertyValueInstance(instance, Variable, null);
 
@@ -213,6 +225,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableType">Property type</param>
         /// <returns>Value of a property</returns>
+        [CommunicationPrivileged]
         public static object? GetPropertyValueInstance<T>(T instance, string Variable, Type? VariableType)
         {
             // Get property for specified variable
@@ -232,6 +245,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="instance">Instance class to fetch value from</param>
         /// <param name="Variable">Property info instance.</param>
         /// <returns>Value of a property</returns>
+        [CommunicationPrivileged]
         public static object? GetPropertyValueInstance<T>(T instance, PropertyInfo? Variable)
         {
             // Check the property
@@ -254,6 +268,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableType">Property type</param>
         /// <returns>Value of a property</returns>
+        [CommunicationPrivileged]
         public static object? GetPropertyValueInstanceExplicit(object instance, string Variable, Type? VariableType)
         {
             // Get property for specified variable
@@ -271,6 +286,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="Type">Property type</param>
         /// <returns>Property information</returns>
+        [CommunicationPrivileged]
         public static PropertyInfo? GetProperty(string Variable, Type Type)
         {
             // Get properties of specified type
@@ -287,6 +303,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <returns>Property information</returns>
+        [CommunicationPrivileged]
         public static PropertyInfo? GetProperty(string Variable)
         {
             Type[] PossibleTypes;
@@ -309,6 +326,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// Checks the specified property if it exists
         /// </summary>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
+        [CommunicationPrivileged]
         public static bool CheckProperty(string Variable)
         {
             // Get property for specified variable
@@ -323,6 +341,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="Type">Property type</param>
+        [CommunicationPrivileged]
         public static bool CheckProperty(string Variable, Type Type)
         {
             // Get property for specified variable
@@ -337,6 +356,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="VariableType">Variable type</param>
         /// <returns>Dictionary containing all properties</returns>
+        [CommunicationPrivileged]
         public static Dictionary<string, object?> GetProperties(Type VariableType)
         {
             // Get property for specified variable
@@ -366,6 +386,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// <param name="VariableType">Variable type</param>
         /// <param name="instance">Instance</param>
         /// <returns>Dictionary containing all properties</returns>
+        [CommunicationPrivileged]
         public static Dictionary<string, object?> GetProperties<T>(T instance, Type VariableType)
         {
             // Get property for specified variable
@@ -394,6 +415,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="VariableType">Variable type</param>
         /// <returns>Dictionary containing all properties</returns>
+        [CommunicationPrivileged]
         public static Dictionary<string, Type> GetPropertiesNoEvaluation(Type VariableType)
         {
             // Get property for specified variable
@@ -410,6 +432,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// Gets all the properties from the type dynamically
         /// </summary>
         /// <returns>Dictionary containing all properties</returns>
+        [CommunicationPrivileged]
         public static Dictionary<string, object?> GetAllProperties()
         {
             // Get property for specified variable
@@ -435,6 +458,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// Gets all the properties from the type without evaluation
         /// </summary>
         /// <returns>Dictionary containing all properties</returns>
+        [CommunicationPrivileged]
         public static Dictionary<string, Type> GetAllPropertiesNoEvaluation()
         {
             // Get property for specified variable
@@ -461,6 +485,7 @@ namespace Nitrocid.Base.Misc.Reflection
         /// </summary>
         /// <param name="instance">Instance</param>
         /// <returns>Dictionary containing all properties</returns>
+        [CommunicationPrivileged]
         public static Dictionary<string, object?> GetAllProperties<T>(T instance)
         {
             // Get property for specified variable

@@ -17,17 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Security.Permissions;
-using Nitrocid.Base.Files;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Security.Permissions;
 
 namespace Nitrocid.Base.Users.Groups
 {
@@ -42,6 +43,7 @@ namespace Nitrocid.Base.Users.Groups
         /// Adds a group
         /// </summary>
         /// <param name="groupName">The group which will be added</param>
+        [CommunicationPrivileged]
         public static void AddGroup(string groupName)
         {
             // Check the current login for permissions
@@ -61,6 +63,7 @@ namespace Nitrocid.Base.Users.Groups
         /// Removes a group
         /// </summary>
         /// <param name="groupName">The group which will be removed</param>
+        [CommunicationPrivileged]
         public static void RemoveGroup(string groupName)
         {
             // Check the current login for permissions
@@ -82,6 +85,7 @@ namespace Nitrocid.Base.Users.Groups
         /// </summary>
         /// <param name="user">User which will be added to the group</param>
         /// <param name="groupName">The group that the user will join</param>
+        [CommunicationPrivileged]
         public static void AddUserToGroup(string user, string groupName)
         {
             // Check the current login for permissions
@@ -109,6 +113,7 @@ namespace Nitrocid.Base.Users.Groups
         /// </summary>
         /// <param name="user">User which will be removed from the group</param>
         /// <param name="groupName">The group that the user will leave</param>
+        [CommunicationPrivileged]
         public static void RemoveUserFromGroup(string user, string groupName)
         {
             // Check the current login for permissions

@@ -19,12 +19,13 @@
 
 using System;
 using System.Collections;
+using Nitrocid.Base.Drivers.HardwareProber;
 using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Splash;
-using Nitrocid.Base.Drivers.HardwareProber;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Events;
 using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Kernel.Hardware
@@ -42,6 +43,7 @@ namespace Nitrocid.Base.Kernel.Hardware
         /// <summary>
         /// Starts probing hardware
         /// </summary>
+        [CommunicationPrivileged]
         public static void StartProbing()
         {
             // We will probe hardware

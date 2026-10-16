@@ -31,6 +31,7 @@ using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Misc.Splash;
@@ -52,12 +53,14 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// Loads all mods in KSMods
         /// </summary>
         /// <param name="priority">Specifies the mod load priority</param>
+        [CommunicationPrivileged]
         public static void StartMods(ModLoadPriority priority = ModLoadPriority.Optional) =>
             Manage(true, priority);
 
         /// <summary>
         /// Stops all mods in KSMods
         /// </summary>
+        [CommunicationPrivileged]
         public static void StopMods() =>
             Manage(false);
 
@@ -67,6 +70,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// <param name="ModFilename">Mod filename found in KSMods</param>
         /// <param name="priority">Specifies the mod load priority</param>
         [MethodImpl(MethodImplOptions.NoInlining)]
+        [CommunicationPrivileged]
         public static void StartMod(string ModFilename, ModLoadPriority priority = ModLoadPriority.Optional)
         {
             string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
@@ -112,6 +116,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// </summary>
         /// <param name="ModFilename">Mod filename found in KSMods</param>
         [MethodImpl(MethodImplOptions.NoInlining)]
+        [CommunicationPrivileged]
         public static void StopMod(string ModFilename)
         {
             string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
@@ -206,6 +211,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// Reloads all mods
         /// </summary>
         [MethodImpl(MethodImplOptions.NoInlining)]
+        [CommunicationPrivileged]
         public static void ReloadMods()
         {
             // Stop all mods
@@ -222,6 +228,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// </summary>
         /// <param name="ModFilename">Mod filename found in KSMods</param>
         [MethodImpl(MethodImplOptions.NoInlining)]
+        [CommunicationPrivileged]
         public static void ReloadMod(string ModFilename)
         {
             StopMod(ModFilename);
@@ -254,6 +261,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// Adds the mod to the blacklist (specified mod will not start on the next boot)
         /// </summary>
         /// <param name="ModFilename">Mod filename found in KSMods</param>
+        [CommunicationPrivileged]
         public static void AddModToBlacklist(string ModFilename)
         {
             ModFilename = FilesystemTools.NeutralizePath(ModFilename, PathsManagement.GetKernelPath(KernelPathType.Mods));
@@ -272,6 +280,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// Removes the mod from the blacklist (specified mod will start on the next boot)
         /// </summary>
         /// <param name="ModFilename">Mod filename found in KSMods</param>
+        [CommunicationPrivileged]
         public static void RemoveModFromBlacklist(string ModFilename)
         {
             ModFilename = FilesystemTools.NeutralizePath(ModFilename, PathsManagement.GetKernelPath(KernelPathType.Mods));
@@ -297,6 +306,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// </summary>
         /// <param name="ModPath">Target mod path</param>
         [MethodImpl(MethodImplOptions.NoInlining)]
+        [CommunicationPrivileged]
         public static void InstallMod(string ModPath)
         {
             string TargetModPath = FilesystemTools.NeutralizePath(Path.GetFileName(ModPath), PathsManagement.GetKernelPath(KernelPathType.Mods));
@@ -395,6 +405,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// </summary>
         /// <param name="ModPath">Target mod path found in KSMods</param>
         [MethodImpl(MethodImplOptions.NoInlining)]
+        [CommunicationPrivileged]
         public static void UninstallMod(string ModPath)
         {
             string TargetModPath = FilesystemTools.NeutralizePath(ModPath, PathsManagement.GetKernelPath(KernelPathType.Mods), true);

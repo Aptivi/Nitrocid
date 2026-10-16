@@ -19,30 +19,31 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Reflection;
 using System.Threading;
-using System.Diagnostics;
-using Terminaux.Reader;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
-using Terminaux.Base.Buffered;
-using Nitrocid.Base.Misc.Screensaver.Displays;
-using Terminaux.Base;
-using System.Linq;
-using Terminaux.Inputs.Pointer;
-using Terminaux.Inputs;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Kernel;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
-using Nitrocid.Base.Misc.Splash;
-using Threadify.Manager;
 using Nitrocid.Base.Drivers.RNG;
-using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Kernel.Power;
+using Nitrocid.Base.Languages;
 using Nitrocid.Base.Login;
+using Nitrocid.Base.Misc.Screensaver.Displays;
+using Nitrocid.Base.Misc.Splash;
+using Nitrocid.Base.Users;
+using Terminaux.Base;
+using Terminaux.Base.Buffered;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Pointer;
+using Terminaux.Reader;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Threadify.Manager;
 
 namespace Nitrocid.Base.Misc.Screensaver
 {
@@ -155,6 +156,7 @@ namespace Nitrocid.Base.Misc.Screensaver
         /// <summary>
         /// Shows the screensaver
         /// </summary>
+        [CommunicationPrivileged]
         public static void ShowSavers() =>
             ShowSavers(DefaultSaverName, seizureAcknowledged);
 
@@ -162,6 +164,7 @@ namespace Nitrocid.Base.Misc.Screensaver
         /// Shows the screensaver
         /// </summary>
         /// <param name="saver">A specified screensaver</param>
+        [CommunicationPrivileged]
         public static void ShowSavers(string saver) =>
             ShowSavers(saver, seizureAcknowledged);
 
@@ -170,6 +173,7 @@ namespace Nitrocid.Base.Misc.Screensaver
         /// </summary>
         /// <param name="saver">A specified screensaver</param>
         /// <param name="noSeizureWarning">Whether to prevent the seizure warning from showing up</param>
+        [CommunicationPrivileged]
         public static void ShowSavers(string saver, bool noSeizureWarning)
         {
             try
@@ -220,6 +224,7 @@ namespace Nitrocid.Base.Misc.Screensaver
         /// Locks the screen. The password will be required when unlocking, depending on the kernel settings.
         /// </summary>
         /// <param name="blackScreen">Whether to clear the screen only or to show the current screensaver</param>
+        [CommunicationPrivileged]
         public static void LockScreen(bool blackScreen = false)
         {
             LockMode = true;
@@ -264,6 +269,7 @@ namespace Nitrocid.Base.Misc.Screensaver
         /// Sets the default screensaver
         /// </summary>
         /// <param name="saver">Specified screensaver</param>
+        [CommunicationPrivileged]
         public static void SetDefaultScreensaver(string saver)
         {
             // Check to see if there is a screensaver with this name
@@ -284,6 +290,7 @@ namespace Nitrocid.Base.Misc.Screensaver
         /// Gets a screensaver instance from loaded assembly
         /// </summary>
         /// <param name="Assembly">An assembly</param>
+        [CommunicationPrivileged]
         public static BaseScreensaver? GetScreensaverInstance(Assembly Assembly)
         {
             foreach (Type t in Assembly.GetTypes())
@@ -338,6 +345,7 @@ namespace Nitrocid.Base.Misc.Screensaver
         /// <summary>
         /// Prevents screen lock
         /// </summary>
+        [CommunicationPrivileged]
         public static void PreventLock()
         {
             if (!scrnTimeoutEnabled)
@@ -351,6 +359,7 @@ namespace Nitrocid.Base.Misc.Screensaver
         /// <summary>
         /// Allows screen lock
         /// </summary>
+        [CommunicationPrivileged]
         public static void AllowLock()
         {
             if (!scrnTimeoutEnabled)

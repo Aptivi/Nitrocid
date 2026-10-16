@@ -17,18 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using SpecProbe.Parts.Types;
 using System.Collections;
 using System.Linq;
-using HwProber = SpecProbe.HardwareProber;
-using Nitrocid.Base.Misc.Reflection;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
-using SpecProbe.Parts;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
+using Nitrocid.Base.Misc.Splash;
+using SpecProbe.Parts;
+using SpecProbe.Parts.Types;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using HwProber = SpecProbe.HardwareProber;
 
 namespace Nitrocid.Base.Drivers.HardwareProber
 {
@@ -54,18 +55,22 @@ namespace Nitrocid.Base.Drivers.HardwareProber
             ["HDD", "CPU", "GPU", "RAM"];
 
         /// <inheritdoc/>
+        [CommunicationPrivileged]
         public virtual IEnumerable? ProbeGraphics() =>
             HwProber.GetVideos();
 
         /// <inheritdoc/>
+        [CommunicationPrivileged]
         public virtual IEnumerable? ProbeHardDrive() =>
             HwProber.GetHardDisks();
 
         /// <inheritdoc/>
+        [CommunicationPrivileged]
         public virtual IEnumerable ProbePcMemory() =>
             new MemoryPart?[] { HwProber.GetMemory() };
 
         /// <inheritdoc/>
+        [CommunicationPrivileged]
         public virtual IEnumerable ProbeProcessor() =>
             new ProcessorPart?[] { HwProber.GetProcessor() };
 
@@ -155,6 +160,7 @@ namespace Nitrocid.Base.Drivers.HardwareProber
         }
 
         /// <inheritdoc/>
+        [CommunicationPrivileged]
         public virtual void ListHardware() =>
             ListHardware(ProbeProcessor(), ProbePcMemory(), ProbeGraphics(), ProbeHardDrive());
 

@@ -30,6 +30,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Extensions.Attributes;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Misc.Splash;
@@ -51,6 +52,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// Gets the mod instance from compiled assembly
         /// </summary>
         /// <param name="Assembly">An assembly</param>
+        [CommunicationPrivileged]
         public static IMod? GetModInstance(Assembly Assembly)
         {
             foreach (Type t in Assembly.GetTypes())
@@ -67,6 +69,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// <param name="modFile">Mod file name with extension. It should end with .dll</param>
         /// <param name="priority">Specifies the mod load priority</param>
         [MethodImpl(MethodImplOptions.NoInlining)]
+        [CommunicationPrivileged]
         public static void ParseMod(string modFile, ModLoadPriority priority = ModLoadPriority.Optional)
         {
             string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
