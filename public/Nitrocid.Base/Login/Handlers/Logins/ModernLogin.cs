@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading;
 using Nitrocid.Base.Drivers.Encryption;
@@ -224,7 +225,7 @@ namespace Nitrocid.Base.Login.Handlers.Logins
         {
             // Check if password is empty
             var userInfo = UserManagement.GetUser(user) ??
-            throw new KernelException(KernelExceptionType.LoginHandler, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SUDO_EXCEPTION_USERINFO") + $" {user}");
+                throw new KernelException(KernelExceptionType.LoginHandler, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SUDO_EXCEPTION_USERINFO") + $" {user}");
             string UserPassword = userInfo.Password;
             if (UserPassword == Encryption.GetEmptyHash("SHA256"))
                 return true;
@@ -241,7 +242,10 @@ namespace Nitrocid.Base.Login.Handlers.Logins
             // The password is not empty. Prompt for password.
             pass = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PASSWORD") + $" {user}: ", out bool done, InfoBoxInputType.Password);
             if (!done)
+            {
+                ScreenTools.UnsetCurrent(logonScreenScreen);
                 return false;
+            }
 
             // Validate the password
             bool validated = UserManagement.ValidatePassword(user, pass);
@@ -259,6 +263,15 @@ namespace Nitrocid.Base.Login.Handlers.Logins
         {
             cancel = false;
 
+            // Some common variables
+            var logonScreenScreen = new Screen();
+            var logonScreenScreenBuffer = new ScreenPart();
+            if (!ScreensaverManager.LockMode)
+                logonScreenScreenBuffer.AddDynamicText(() => ModernLogonScreen.PrintConfiguredLogonScreen(ModernLogonScreen.screenNum, ModernLogonScreen.canvases));
+            logonScreenScreen.AddBufferedPart("User selector screen part", logonScreenScreenBuffer);
+            ScreenTools.SetCurrent(logonScreenScreen);
+            ScreenTools.Render();
+
             // Present a prompt that tells the user to provide the 2FA code
             string codeInputStr = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_PROVIDECODE"), out bool done);
             if (!done)
@@ -268,9 +281,13 @@ namespace Nitrocid.Base.Login.Handlers.Logins
             if (string.IsNullOrEmpty(codeInputStr))
                 cancel = true;
             if (cancel)
+            {
+                ScreenTools.UnsetCurrent(logonScreenScreen);
                 return false;
+            }
 
             // Otherwise, check the input
+            bool result = false;
             if (!int.TryParse(codeInputStr, out _) || codeInputStr.Length != 6)
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_CODEINVALID"));
             else
@@ -281,9 +298,11 @@ namespace Nitrocid.Base.Login.Handlers.Logins
                 if (!totpValid)
                     InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_VERIFYFAILED"));
                 else
-                    return true;
+                    result = true;
             }
-            return false;
+            ScreenTools.UnsetCurrent(logonScreenScreen);
+            ConsoleWrapper.Clear();
+            return result;
         }
 
         private (string user, string fullName)[] GetUsersList()
