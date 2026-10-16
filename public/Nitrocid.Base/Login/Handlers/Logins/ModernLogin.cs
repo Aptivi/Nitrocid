@@ -28,6 +28,7 @@ using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Users;
+using OtpNet;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
@@ -36,7 +37,9 @@ using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Reader;
 using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
@@ -250,6 +253,37 @@ namespace Nitrocid.Base.Login.Handlers.Logins
             ScreenTools.UnsetCurrent(logonScreenScreen);
             ConsoleWrapper.Clear();
             return validated;
+        }
+
+        public override bool TwoFactorAuthHandler(Totp otp, out bool cancel)
+        {
+            cancel = false;
+
+            // Present a prompt that tells the user to provide the 2FA code
+            string codeInputStr = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_PROVIDECODE"), out bool done);
+            if (!done)
+                cancel = true;
+
+            // If there is no input, assume cancellation
+            if (string.IsNullOrEmpty(codeInputStr))
+                cancel = true;
+            if (cancel)
+                return false;
+
+            // Otherwise, check the input
+            if (!int.TryParse(codeInputStr, out _) || codeInputStr.Length != 6)
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_CODEINVALID"));
+            else
+            {
+                // Get the current code and compare it
+                bool totpValid = otp.VerifyTotp(codeInputStr, out long timeWindowUsed);
+                DebugWriter.WriteDebug(DebugLevel.D, $"2FA: timeWindowUsed stepMatch = {timeWindowUsed} ({totpValid})");
+                if (!totpValid)
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_VERIFYFAILED"));
+                else
+                    return true;
+            }
+            return false;
         }
 
         private (string user, string fullName)[] GetUsersList()

@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using OtpNet;
+
 namespace Nitrocid.Base.Login.Handlers
 {
     /// <summary>
@@ -41,5 +43,13 @@ namespace Nitrocid.Base.Login.Handlers
         /// </summary>
         /// <returns>True if the password if valid. Otherwise, false. Please be honest here, because we don't want failed logins to appear as successful.</returns>
         bool PasswordHandler(string user, ref string pass);
+
+        /// <summary>
+        /// Two-factor authentication handler
+        /// </summary>
+        /// <param name="otp">TOTP instance</param>
+        /// <param name="cancel">Whether to cancel or not</param>
+        /// <returns>True if the code provided if valid. Otherwise, false. Please be honest here, because we don't want failed logins to appear as successful.</returns>
+        bool TwoFactorAuthHandler(Totp otp, out bool cancel);
     }
 }

@@ -31,6 +31,7 @@ using Nitrocid.Base.Drivers.Encryption;
 using Terminaux.Reader;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Login.Motd;
+using OtpNet;
 
 namespace Nitrocid.Base.Login.Handlers
 {
@@ -119,6 +120,38 @@ namespace Nitrocid.Base.Login.Handlers
                 }
             }
 
+            return false;
+        }
+
+        /// <inheritdoc/>
+        public virtual bool TwoFactorAuthHandler(Totp otp, out bool cancel)
+        {
+            cancel = false;
+
+            // Present a prompt that tells the user to provide the 2FA code
+            string codeInputStr = TermReader.Read(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC") + ": ", out bool done);
+            if (!done)
+                cancel = true;
+
+            // If there is no input, assume cancellation
+            if (string.IsNullOrEmpty(codeInputStr))
+                cancel = true;
+            if (cancel)
+                return false;
+
+            // Otherwise, check the input
+            if (!int.TryParse(codeInputStr, out _) || codeInputStr.Length != 6)
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_CODEINVALID"), ThemeColorType.Error);
+            else
+            {
+                // Get the current code and compare it
+                bool totpValid = otp.VerifyTotp(codeInputStr, out long timeWindowUsed);
+                DebugWriter.WriteDebug(DebugLevel.D, $"2FA: timeWindowUsed stepMatch = {timeWindowUsed} ({totpValid})");
+                if (!totpValid)
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_VERIFYFAILED"), ThemeColorType.Error);
+                else
+                    return true;
+            }
             return false;
         }
 

@@ -150,57 +150,9 @@ namespace Nitrocid.Base.Login
                         var otp = new Totp(TwoFactorAuthTools.SecretToBytes(userSignIn));
                         while (!twoFactorValid)
                         {
-                            if (LoginHandlerTools.CurrentHandlerName == "classic")
-                            {
-                                // Present a prompt that tells the user to provide the 2FA code
-                                string codeInputStr = TermReader.Read(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC") + ": ", out bool done);
-                                if (!done)
-                                    break;
-
-                                // If there is no input, assume cancellation
-                                if (string.IsNullOrEmpty(codeInputStr))
-                                    break;
-
-                                // Otherwise, check the input
-                                if (!int.TryParse(codeInputStr, out _) || codeInputStr.Length != 6)
-                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_CODEINVALID"), ThemeColorType.Error);
-                                else
-                                {
-                                    // Get the current code and compare it
-                                    bool totpValid = otp.VerifyTotp(codeInputStr, out long timeWindowUsed);
-                                    if (!totpValid)
-                                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_VERIFYFAILED"), ThemeColorType.Error);
-                                    else
-                                        twoFactorValid = true;
-                                }
-                            }
-                            else
-                            {
-                                // Present an infobox that tells the user to provide the 2FA code
-                                string codeInputStr = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_PROVIDECODE"), out bool done);
-                                if (!done)
-                                    break;
-
-                                // If there is no input, assume cancellation
-                                if (string.IsNullOrEmpty(codeInputStr))
-                                {
-                                    ConsoleWrapper.Clear();
-                                    break;
-                                }
-
-                                // Otherwise, check the input
-                                if (!int.TryParse(codeInputStr, out _) || codeInputStr.Length != 6)
-                                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_CODEINVALID"));
-                                else
-                                {
-                                    // Get the current code and compare it
-                                    bool totpValid = otp.VerifyTotp(codeInputStr, out long timeWindowUsed);
-                                    if (!totpValid)
-                                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_VERIFYFAILED"));
-                                    else
-                                        twoFactorValid = true;
-                                }
-                            }
+                            twoFactorValid = handler.TwoFactorAuthHandler(otp, out bool cancel);
+                            if (cancel)
+                                break;
                         }
                         if (twoFactorValid)
                             break;
