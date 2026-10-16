@@ -201,6 +201,31 @@ namespace Nitrocid.Base.Misc.Splash
                 ThemeColorType.Tip;
             if (!KernelBooted && !KernelEntry.QuietKernel && (Config.MainConfig.EnableSplash && InSplash || !Config.MainConfig.EnableSplash) || force)
             {
+                // Check to see if we need to be verbose
+                bool isDefault = false;
+                if (!KernelEntry.TalkativePreboot && !force && Config.MainConfig.EnableSplash && InSplash)
+                {
+                    switch (SplashManager.CurrentSplashContext)
+                    {
+                        case SplashContext.Preboot:
+                        case SplashContext.StartingUp:
+                            DebugWriter.WriteDebug(DebugLevel.I, "Resetting to default settings due to non-verbose boot: {0}, {1}, {2}", vars: [finalColor, severity, Text]);
+                            Text = _ProgressText = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STARTING");
+                            isDefault = true;
+                            break;
+                        case SplashContext.ShuttingDown:
+                            DebugWriter.WriteDebug(DebugLevel.I, "Resetting to default settings due to non-verbose boot: {0}, {1}, {2}", vars: [finalColor, severity, Text]);
+                            Text = _ProgressText = LanguageTools.GetLocalized("NKS_KERNEL_POWER_SHUTTINGDOWN");
+                            isDefault = true;
+                            break;
+                        case SplashContext.Rebooting:
+                            DebugWriter.WriteDebug(DebugLevel.I, "Resetting to default settings due to non-verbose boot: {0}, {1}, {2}", vars: [finalColor, severity, Text]);
+                            Text = _ProgressText = LanguageTools.GetLocalized("NKS_KERNEL_POWER_REBOOTING");
+                            isDefault = true;
+                            break;
+                    }
+                }
+
                 // Check the progress value
                 if (Progress < 0)
                     Progress = 0;
@@ -216,7 +241,13 @@ namespace Nitrocid.Base.Misc.Splash
                 }
 
                 // Set the progress text
-                _ProgressText = Text.FormatString(Vars);
+                if (!isDefault)
+                    _ProgressText = Text.FormatString(Vars);
+                else
+                {
+                    finalColor = ThemeColorType.Tip;
+                    severity = SplashReportSeverity.Info;
+                }
 
                 // Report it
                 if (SplashManager.CurrentSplashInfo.DisplaysProgress)

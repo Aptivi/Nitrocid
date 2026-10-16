@@ -173,11 +173,7 @@ namespace Nitrocid.Base.Kernel.Starting
                 ThreadWatchdog.StartWatchdog();
 
                 // Show initializing
-                if (KernelEntry.TalkativePreboot)
-                {
-                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME"));
-                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STARTING"));
-                }
+                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_STARTING"));
 
                 // Turn on safe mode in unusual environments
                 if (!KernelPlatform.IsOnUsualEnvironment())
@@ -194,8 +190,7 @@ namespace Nitrocid.Base.Kernel.Starting
                 // Initialize addons
                 try
                 {
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_IMPORTANTADDONS"));
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_IMPORTANTADDONS"));
                     AddonTools.ProcessAddons(ModLoadPriority.Important);
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded important kernel addons.");
                 }
@@ -205,8 +200,7 @@ namespace Nitrocid.Base.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to load important kernel addons");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS") + $": {exc.Message}");
                 }
 #endif
 
@@ -217,8 +211,7 @@ namespace Nitrocid.Base.Kernel.Starting
                 // Create config file and then read it
                 try
                 {
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_CONFIG"));
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_CONFIG"));
                     if (!KernelEntry.SafeMode)
                         Config.InitializeConfig();
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded configuration.");
@@ -229,8 +222,7 @@ namespace Nitrocid.Base.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to load configuration");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_CONFIG") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_CONFIG") + $": {exc.Message}");
                 }
 
                 // Read privacy consents
@@ -245,8 +237,7 @@ namespace Nitrocid.Base.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to load privacy consents");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_CONSENTS") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_CONSENTS") + $": {exc.Message}");
                 }
 
                 // Load background
@@ -265,8 +256,7 @@ namespace Nitrocid.Base.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to load splash");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_SPLASH") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_SPLASH") + $": {exc.Message}");
                 }
 
 #if NKS_EXTENSIONS
@@ -282,8 +272,7 @@ namespace Nitrocid.Base.Kernel.Starting
                         try
                         {
                             // Check for kernel mod addon
-                            if (KernelEntry.TalkativePreboot)
-                                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_IMPORTANTMODS"));
+                            SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_IMPORTANTMODS"));
                             InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "StartMods", modManagerType, ModLoadPriority.Important);
                             DebugWriter.WriteDebug(DebugLevel.I, "Loaded important mods.");
                         }
@@ -293,8 +282,7 @@ namespace Nitrocid.Base.Kernel.Starting
                             DebugWriter.WriteDebug(DebugLevel.E, "Failed to load important mods");
                             DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                             DebugWriter.WriteDebugStackTrace(exc);
-                            if (KernelEntry.TalkativePreboot)
-                                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_IMPMODS") + $": {exc.Message}");
+                            SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_IMPMODS") + $": {exc.Message}");
                         }
                     }
                 }
@@ -312,8 +300,7 @@ namespace Nitrocid.Base.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to load remote debug devices");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_RDEBUGDEVICES") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_RDEBUGDEVICES") + $": {exc.Message}");
                 }
 
                 // Show first-time color calibration for first-time run
@@ -374,8 +361,7 @@ namespace Nitrocid.Base.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to load notification thread");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_NOTIFICATIONTHREAD") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_NOTIFICATIONTHREAD") + $": {exc.Message}");
                 }
 
                 try
@@ -390,8 +376,7 @@ namespace Nitrocid.Base.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to load cancellation handler");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_CANCELLATIONHANDLER") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_CANCELLATIONHANDLER") + $": {exc.Message}");
                 }
 
                 try
@@ -406,8 +391,7 @@ namespace Nitrocid.Base.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to load speed dial entries");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_SPEEDDIAL") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_SPEEDDIAL") + $": {exc.Message}");
                 }
 
                 try
@@ -422,8 +406,7 @@ namespace Nitrocid.Base.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to load environment variables");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_ENVVARS") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_ENVVARS") + $": {exc.Message}");
                 }
 
                 try
@@ -438,16 +421,14 @@ namespace Nitrocid.Base.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to load alarm listener");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_ALARM") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_ALARM") + $": {exc.Message}");
                 }
 
 #if NKS_EXTENSIONS
                 // Initialize addons
                 try
                 {
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ADDONS"));
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ADDONS"));
                     AddonTools.ProcessAddons(ModLoadPriority.Optional);
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded kernel addons.");
                 }
@@ -457,8 +438,7 @@ namespace Nitrocid.Base.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to load kernel addons");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_ADDONS") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_ADDONS") + $": {exc.Message}");
                 }
 #endif
 
@@ -475,8 +455,7 @@ namespace Nitrocid.Base.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to load MOTD and MAL");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_MOTD") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_MOTD") + $": {exc.Message}");
                 }
 
                 try
@@ -491,8 +470,7 @@ namespace Nitrocid.Base.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to load extension handlers");
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_EXTHANDLERS") + $": {exc.Message}");
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_EXTHANDLERS") + $": {exc.Message}");
                 }
 
 #if NKS_EXTENSIONS
@@ -508,8 +486,7 @@ namespace Nitrocid.Base.Kernel.Starting
                         try
                         {
                             // Check for kernel mod addon
-                            if (KernelEntry.TalkativePreboot)
-                                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_LOADINGMODS"));
+                            SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_LOADINGMODS"));
                             InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "StartMods", modManagerType, ModLoadPriority.Optional);
                             DebugWriter.WriteDebug(DebugLevel.I, "Loaded mods.");
                         }
@@ -519,8 +496,7 @@ namespace Nitrocid.Base.Kernel.Starting
                             DebugWriter.WriteDebug(DebugLevel.E, "Failed to load mods");
                             DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                             DebugWriter.WriteDebugStackTrace(exc);
-                            if (KernelEntry.TalkativePreboot)
-                                SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_MODS") + $": {exc.Message}");
+                            SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_MODS") + $": {exc.Message}");
                         }
                     }
                 }

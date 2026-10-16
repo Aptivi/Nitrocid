@@ -102,8 +102,9 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
                 Width = width,
                 Height = height,
                 UseColors = true,
-                Text = versionStr,
             };
+            if (KernelEntry.TalkativePreboot || context == SplashContext.Showcase)
+                border.Text = versionStr;
             builder.Append(border.Render());
 
             // Write the program name
@@ -138,7 +139,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
                 Width = width,
                 UseColors = true,
                 OneLine = true,
-                Text = modeText,
+                Text = !KernelEntry.TalkativePreboot && context != SplashContext.Showcase ? versionStr : modeText,
                 Settings = new()
                 {
                     Alignment = TextAlignment.Middle,
