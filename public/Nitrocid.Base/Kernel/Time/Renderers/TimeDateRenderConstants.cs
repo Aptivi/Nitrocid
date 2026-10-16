@@ -39,6 +39,13 @@ namespace Nitrocid.Base.Kernel.Time.Renderers
         /// </example>
         public const string ShortTimeFormat = @"hh\:mm\:ss";
         /// <summary>
+        /// Shortest time format. Hours and minutes included.
+        /// </summary>
+        /// <example>
+        /// 12:00
+        /// </example>
+        public const string ShortestTimeFormat = @"hh\:mm";
+        /// <summary>
         /// Minus sign offset for timezone and time remaining indicators
         /// </summary>
         public const string MinusSignOffset = @"\-";

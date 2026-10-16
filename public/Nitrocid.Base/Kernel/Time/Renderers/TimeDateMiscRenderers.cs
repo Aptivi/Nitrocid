@@ -101,16 +101,16 @@ namespace Nitrocid.Base.Kernel.Time.Renderers
             {
                 TextWriterColor.Write
                 (
-                    LanguageTools.GetLocalized("NKS_KERNEL_TIME_RENDERERS_TODAYIS") + " {0} @ {1} ({2}), {3} @ UTC",
-                    TimeDateRenderers.Render(), TimeZones.GetCurrentZoneInfo().StandardName, TimeZoneRenderers.ShowTimeZoneUtcOffsetStringLocal(),
-                    TimeDateRenderersUtc.RenderUtc()
+                    LanguageTools.GetLocalized("NKS_KERNEL_TIME_RENDERERS_TODAYIS") + " {0} @ GMT{1}, {2} @ GMT",
+                    TimeDateRenderers.Render(), TimeZoneRenderers.ShowTimeZoneUtcOffsetStringLocal(),
+                    TimeDateRenderersUtc.RenderTimeUtc()
                 );
             }
             catch (KernelException kex) when (kex.ExceptionType == KernelExceptionType.TimeDate)
             {
                 TextWriterColor.Write
                 (
-                    LanguageTools.GetLocalized("NKS_KERNEL_TIME_RENDERERS_TODAYIS") + " {0}, {1} @ UTC",
+                    LanguageTools.GetLocalized("NKS_KERNEL_TIME_RENDERERS_TODAYIS") + " {0}, {1} @ GMT",
                     TimeDateRenderers.Render(), TimeDateRenderersUtc.RenderUtc()
                 );
             }

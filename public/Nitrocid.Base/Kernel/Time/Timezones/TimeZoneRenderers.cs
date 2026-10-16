@@ -183,7 +183,7 @@ namespace Nitrocid.Base.Kernel.Time.Timezones
         /// <param name="Zone">Target time zone</param>
         /// <returns>A string holding the UTC offset for the selected time zone from the local time zone</returns>
         public static string ShowTimeZoneUtcOffsetString(string Zone) =>
-            ShowTimeZoneUtcOffsetString(Zone, TimeDateRenderConstants.ShortTimeFormat);
+            ShowTimeZoneUtcOffsetString(Zone, TimeDateRenderConstants.ShortestTimeFormat);
 
         /// <summary>
         /// Shows the time zone UTC offset in a string from the local time zone
@@ -199,7 +199,7 @@ namespace Nitrocid.Base.Kernel.Time.Timezones
         /// </summary>
         /// <returns>A string holding the UTC offset for the local time zone</returns>
         public static string ShowTimeZoneUtcOffsetStringLocal() =>
-            ShowTimeZoneUtcOffsetStringLocal(TimeDateRenderConstants.ShortTimeFormat);
+            ShowTimeZoneUtcOffsetStringLocal(TimeDateRenderConstants.ShortestTimeFormat);
 
         /// <summary>
         /// Shows the time zone UTC offset in a string from the local time zone
