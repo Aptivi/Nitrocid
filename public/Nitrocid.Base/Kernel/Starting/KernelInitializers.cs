@@ -763,29 +763,14 @@ namespace Nitrocid.Base.Kernel.Starting
                     SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_STOP_CURSOR") + $": {exc.Message}");
                 }
 
-                // Disable Debugger
-                if (KernelEntry.DebugMode)
-                {
-                    try
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Shutting down debugger");
-                        KernelEntry.DebugMode = false;
-                    }
-                    catch (Exception exc)
-                    {
-                        exceptions.Add(exc);
-                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop the debugger");
-                        DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                        DebugWriter.WriteDebugStackTrace(exc);
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_STOP_DEBUGGER") + $": {exc.Message}");
-                    }
-                }
-
                 try
                 {
                     // Clear all active threads as we're rebooting
                     foreach (ThreadInstance kernelThread in ThreadManager.ThreadInstances)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Stopping kernel thread {0}", vars: [kernelThread.Name]);
                         kernelThread.Stop();
+                    }
                 }
                 catch (Exception exc)
                 {
@@ -860,6 +845,23 @@ namespace Nitrocid.Base.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_RESET_LANGS") + $": {exc.Message}");
+                }
+
+                // Disable Debugger
+                if (KernelEntry.DebugMode)
+                {
+                    try
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Shutting down debugger");
+                        KernelEntry.DebugMode = false;
+                    }
+                    catch (Exception exc)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop the debugger");
+                        DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
+                        DebugWriter.WriteDebugStackTrace(exc);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_STOP_DEBUGGER") + $": {exc.Message}");
+                    }
                 }
 
                 // Clear remaining lists
