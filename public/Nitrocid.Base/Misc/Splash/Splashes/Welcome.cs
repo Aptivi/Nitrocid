@@ -178,7 +178,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             builder.Append(border.Render());
 
             // Write a glorious Welcome screen
-            Color col = ThemeColorsTools.GetColor(ThemeColorType.Stage);
+            int interiorPosX = posX + 2;
             string text =
                 context == SplashContext.StartingUp ?
                 LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME") :
@@ -186,17 +186,21 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             var figFont = FigletTools.GetFigletFont("thin");
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight - 1;
-            var figText = new AlignedFigletText(figFont)
+            var nameText = new AlignedFigletText(figFont)
             {
+                Left = interiorPosX,
                 Top = consoleY,
+                Width = width,
+                UseColors = true,
+                ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Banner),
+                OneLine = true,
                 Text = text,
-                ForegroundColor = col,
                 Settings = new()
                 {
                     Alignment = TextAlignment.Middle,
                 }
             };
-            builder.Append(figText.Render());
+            builder.Append(nameText.Render());
 
             // Print the welcome message
             int welcomeMessagePosY = ConsoleWrapper.WindowHeight / 2 + figHeight;
