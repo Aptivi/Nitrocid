@@ -37,7 +37,9 @@ namespace Nitrocid.Base.Kernel.Threading.Watchdog
         /// Gets all thread backtraces
         /// </summary>
         /// <returns>A dictionary containing thread names and addresses as keys and stack traces as values</returns>
+#if NKS_EXTENSIONS
         [CommunicationPrivileged]
+#endif
         public static Dictionary<string, string[]> GetThreadBacktraces()
         {
 #if NKS_EXTENSIONS
