@@ -198,7 +198,7 @@ namespace Nitrocid.Base.Misc.Splash
             ThemeColorType finalColor =
                 severity == SplashReportSeverity.Warning ? ThemeColorType.Warning :
                 severity == SplashReportSeverity.Error ? ThemeColorType.Error :
-                ThemeColorType.Tip;
+                ThemeColorType.NeutralText;
             if (!KernelBooted && !KernelEntry.QuietKernel && (Config.MainConfig.EnableSplash && InSplash || !Config.MainConfig.EnableSplash) || force)
             {
                 // Check to see if we need to be verbose
@@ -245,7 +245,7 @@ namespace Nitrocid.Base.Misc.Splash
                     _ProgressText = Text.FormatString(Vars);
                 else
                 {
-                    finalColor = ThemeColorType.Tip;
+                    finalColor = ThemeColorType.NeutralText;
                     severity = SplashReportSeverity.Info;
                 }
 

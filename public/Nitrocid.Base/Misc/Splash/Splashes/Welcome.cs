@@ -225,7 +225,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
         }
 
         public override string Report(int Progress, string ProgressReport, params object[] Vars) =>
-            ReportProgress(Progress, ProgressReport, ThemeColorType.Stage, Vars);
+            ReportProgress(Progress, ProgressReport, ThemeColorType.NeutralText, Vars);
 
         public override string ReportWarning(int Progress, string WarningReport, Exception? ExceptionInfo, params object[] Vars) =>
             ReportProgress(Progress, WarningReport, ThemeColorType.Warning, Vars);
