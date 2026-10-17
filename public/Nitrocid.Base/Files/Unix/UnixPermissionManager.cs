@@ -128,6 +128,55 @@ namespace Nitrocid.Base.Files.Unix
         }
 
         /// <summary>
+        /// Gets the permission type from a special permission representation
+        /// </summary>
+        /// <param name="permSpecialRepresentation">Special permission representation (ugt, u-t, ...)</param>
+        /// <returns>Processed special permission type</returns>
+        public static UnixPermissionSpecial GetSpecialTypeFrom(string permSpecialRepresentation)
+        {
+            // TODO: NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONEMPTY -> Special permission representation string is empty.
+            // TODO: NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONLENGTH -> Special permission representation string length must be three.
+            if (string.IsNullOrEmpty(permSpecialRepresentation))
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONEMPTY"));
+            if (permSpecialRepresentation.Length != 3)
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONLENGTH"));
+
+            UnixPermissionSpecial specialPermissionType = 0;
+            for (int i = 0; i < permSpecialRepresentation.Length; i++)
+            {
+                char specialPerm = permSpecialRepresentation[i];
+                bool invalidate = false;
+                switch (specialPerm)
+                {
+                    case 'u':
+                        if (i != 0)
+                            invalidate = true;
+                        specialPermissionType |= UnixPermissionSpecial.SetUid;
+                        break;
+                    case 'g':
+                        if (i != 1)
+                            invalidate = true;
+                        specialPermissionType |= UnixPermissionSpecial.SetGid;
+                        break;
+                    case 't':
+                        if (i != 2)
+                            invalidate = true;
+                        specialPermissionType |= UnixPermissionSpecial.Sticky;
+                        break;
+                    case '-':
+                        break;
+                    default:
+                        invalidate = true;
+                        break;
+                }
+                if (invalidate)
+                    // TODO: NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID -> Invalid special representation at position
+                    throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID") + $" {i + 1}: {specialPerm}");
+            }
+            return specialPermissionType;
+        }
+
+        /// <summary>
         /// Build a special permission representation string
         /// </summary>
         /// <param name="permissionSpecial">Special permission types</param>
