@@ -81,22 +81,32 @@ namespace Nitrocid.Base.Files.Unix
             for (int i = 0; i < permRepresentation.Length; i++)
             {
                 char perm = permRepresentation[i];
+                bool invalidate = false;
                 switch (perm)
                 {
                     case 'r':
+                        if (i != 0)
+                            invalidate = true;
                         permissionType |= UnixPermissionType.Read;
                         break;
                     case 'w':
+                        if (i != 1)
+                            invalidate = true;
                         permissionType |= UnixPermissionType.Write;
                         break;
                     case 'x':
+                        if (i != 2)
+                            invalidate = true;
                         permissionType |= UnixPermissionType.Execute;
                         break;
                     case '-':
                         break;
                     default:
-                        throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONINVALID") + $" {i + 1}: {perm}");
+                        invalidate = true;
+                        break;
                 }
+                if (invalidate)
+                    throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_UNIX_EXCEPTION_REPRESENTATIONINVALID") + $" {i + 1}: {perm}");
             }
             return permissionType;
         }
