@@ -212,7 +212,7 @@ namespace Nitrocid.Base.Misc.Splash
 
         internal static void OpenSplash(ISplash splash, SplashContext context, string nameWatch)
         {
-            if (Config.MainConfig.EnableSplash && !KernelPlatform.IsOnTestHost())
+            if (Config.MainConfig.EnableSplash && !KernelPlatform.IsOnTestHost() && !SplashReport.KernelBooted)
             {
                 // Clean everything up
                 splashScreen.RemoveBufferedParts();
@@ -299,7 +299,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         internal static void CloseSplash(ISplash splash, bool showClosing, SplashContext context)
         {
-            if (Config.MainConfig.EnableSplash)
+            if (Config.MainConfig.EnableSplash && !SplashReport.KernelBooted)
             {
                 bool delay = false;
                 try
@@ -375,7 +375,7 @@ namespace Nitrocid.Base.Misc.Splash
 
         internal static void BeginSplashOut(ISplash currentSplash, SplashContext context)
         {
-            if (Config.MainConfig.EnableSplash && SplashReport._InSplash)
+            if (Config.MainConfig.EnableSplash && SplashReport._InSplash && !SplashReport.KernelBooted)
                 CloseSplash(currentSplash, false, context);
         }
 
@@ -396,7 +396,7 @@ namespace Nitrocid.Base.Misc.Splash
 
         internal static void EndSplashOut(ISplash currentSplash, SplashContext context)
         {
-            if (Config.MainConfig.EnableSplash && !SplashReport._InSplash)
+            if (Config.MainConfig.EnableSplash && !SplashReport._InSplash && !SplashReport.KernelBooted)
                 OpenSplash(currentSplash, context);
         }
 
@@ -448,6 +448,9 @@ namespace Nitrocid.Base.Misc.Splash
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         internal static void PreviewSplash(ISplash splash, bool splashOut, SplashContext context)
         {
+            // Force open splash
+            SplashReport._KernelBooted = false;
+
             // Open the splash and reset the report progress to 0%
             OpenSplash(splash, context);
 
@@ -467,6 +470,7 @@ namespace Nitrocid.Base.Misc.Splash
 
             // Close
             CloseSplash(splash, context);
+            SplashReport._KernelBooted = true;
         }
 
         private static void SplashThreadHandler(SplashThreadParameters? threadParameters)
