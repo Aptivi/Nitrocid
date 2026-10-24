@@ -226,7 +226,10 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Tools
                     lock (pop3Client.SyncRoot)
                     {
                         int messagesCount = pop3Client.GetMessageCount();
-                        popMessages = pop3Client.GetMessages(0, messagesCount);
+                        List<int> indexes = [];
+                        for (int i = messagesCount - 1; i >= 0; i--)
+                            indexes.Add(i);
+                        popMessages = pop3Client.GetMessages(indexes);
                         DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", vars: [messages.LongCount()]);
                     }
                 }
