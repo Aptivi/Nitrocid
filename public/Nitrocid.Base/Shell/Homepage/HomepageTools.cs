@@ -75,6 +75,7 @@ namespace Nitrocid.Base.Shell.Homepage
         private static bool isOnHomepage = false;
         private static string rssSequence = "";
         private static (string feedTitle, string articleTitle)[]? articles = default;
+        private static string feedTitle = "";
         private static readonly Dictionary<string, Action> choiceActionsAddons = [];
         private static readonly Dictionary<string, Action> choiceActionsCustom = [];
         private static readonly Dictionary<string, Action> choiceActionsBuiltin = new()
@@ -145,6 +146,7 @@ namespace Nitrocid.Base.Shell.Homepage
                 bool feedAddonInstalled = IsFeedAddonInstalled();
                 rssSequence = LanguageTools.GetLocalized("NKS_MISC_SPLASH_DEFAULTMSG");
                 articles = null;
+                feedTitle = "";
                 homeScreenBuffer.AddDynamicText(() => RenderHomepagePage(homeScreen.RefreshWasDone, pageNumber, canvases, choices, choiceIdx, buttonHighlight, widget, notificationsWidget));
                 homeScreen.AddBufferedPart("The Nitrocid Homepage", homeScreenBuffer);
 
@@ -326,8 +328,6 @@ namespace Nitrocid.Base.Shell.Homepage
                                     if (!feedAddonInstalled)
                                         InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON"));
 #if NKS_EXTENSIONS
-                                    else if (!Config.MainConfig.ShowHeadlineOnLogin)
-                                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES"));
                                     else
                                         InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.AddonShellPacks, "OpenFeedTui", "Nitrocid.ShellPacks.Shells.RSS.Tools.RSSTools", Config.MainConfig.RssHeadlineUrl);
 #endif
@@ -761,6 +761,7 @@ namespace Nitrocid.Base.Shell.Homepage
                     Top = rssTop,
                     Width = widgetWidth,
                     Height = rssHeight,
+                    Title = !string.IsNullOrEmpty(feedTitle) ? LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_LATESTNEWS") + $" {feedTitle}" : ""
                 };
                 builder.Append(
                     widgetBorder.Render() +
@@ -781,9 +782,10 @@ namespace Nitrocid.Base.Shell.Homepage
                         isHomepageRssFeedUpdating = true;
                         var updateTask = new Task(() =>
                         {
-                            (string rssSequence, (string feedTitle, string articleTitle)[]) tuple = UpdateRssFeeds(widgetWidth, articles);
+                            (string rssSequence, (string feedTitle, string articleTitle)[], string feedTitle) tuple = UpdateRssFeeds(widgetWidth, articles);
                             rssSequence = tuple.rssSequence;
                             articles = tuple.Item2;
+                            feedTitle = tuple.feedTitle;
                         });
                         updateTask.Start();
                     }
@@ -936,9 +938,10 @@ namespace Nitrocid.Base.Shell.Homepage
             return feedAddonInstalled;
         }
 
-        private static (string rssSequence, (string feedTitle, string articleTitle)[]) UpdateRssFeeds(int widgetWidth, (string feedTitle, string articleTitle)[]? articles)
+        private static (string rssSequence, (string feedTitle, string articleTitle)[], string feedTitle) UpdateRssFeeds(int widgetWidth, (string feedTitle, string articleTitle)[]? articles)
         {
             string rssSequence = LanguageTools.GetLocalized("NKS_MISC_SPLASH_DEFAULTMSG");
+            string feedTitle = "";
 
             try
             {
@@ -946,8 +949,6 @@ namespace Nitrocid.Base.Shell.Homepage
                 if (!feedAddonInstalled)
                     rssSequence = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON");
 #if NKS_EXTENSIONS
-                else if (!Config.MainConfig.ShowHeadlineOnLogin)
-                    rssSequence = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES");
                 else
                 {
                     if (articles is null || articles.Length == 0)
@@ -955,8 +956,11 @@ namespace Nitrocid.Base.Shell.Homepage
                     if (articles is not null && articles.Length > 0)
                     {
                         var headlines = new StringBuilder();
-                        foreach (var (_, articleTitle) in articles)
+                        foreach (var (feed, articleTitle) in articles)
+                        {
+                            feedTitle = feed;
                             headlines.AppendLine(articleTitle);
+                        }
                         rssSequence = headlines.ToString();
                     }
                     else
@@ -971,7 +975,7 @@ namespace Nitrocid.Base.Shell.Homepage
                 rssSequence = LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED");
             }
             isHomepageRssFeedUpdating = false;
-            return (rssSequence, articles ?? []);
+            return (rssSequence, articles ?? [], feedTitle);
         }
     }
 }

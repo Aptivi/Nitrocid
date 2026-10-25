@@ -1172,12 +1172,6 @@
                 "Description": "NKS_SETTINGS_KERNEL_MISC_HEADLINE_DESC",
                 "Variables": [
                     {
-                        "Name": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-                        "Type": "SBoolean",
-                        "Variable": "ShowHeadlineOnLogin",
-                        "Description": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC"
-                    },
-                    {
                         "Name": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
                         "Type": "SString",
                         "Variable": "RssHeadlineUrl",

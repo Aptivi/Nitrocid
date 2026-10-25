@@ -137,10 +137,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
             set => NotificationManager.notifyRightFrameChar = value;
         }
         /// <summary>
-        /// Each login, it will show the latest RSS headline from the selected headline URL
-        /// </summary>
-        public bool ShowHeadlineOnLogin { get; set; }
-        /// <summary>
         /// RSS headline URL to be used when showing the latest headline. This is usually your favorite feed
         /// </summary>
         public string RssHeadlineUrl { get; set; } = "https://www.techrepublic.com/rssfeeds/articles/";

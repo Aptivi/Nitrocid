@@ -259,7 +259,6 @@ namespace Nitrocid.Base.Kernel
                     TextWriterRaw.Write();
 
                     // Show headline
-                    ShowHeadlineLogin();
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded headline.");
 
                     // Show a tip telling users to see license information
@@ -278,39 +277,6 @@ namespace Nitrocid.Base.Kernel
                 }
                 LoginTools.LoggedIn = false;
                 LoginTools.LogoutRequested = false;
-            }
-        }
-
-        private static void ShowHeadlineLogin()
-        {
-            if (Config.MainConfig.ShowHeadlineOnLogin)
-            {
-                try
-                {
-#if NKS_EXTENSIONS
-                    var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.AddonShellPacks, "Nitrocid.ShellPacks.Shells.RSS.Tools.RSSTools");
-                    var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.AddonShellPacks, "GetFirstArticle", addonType, Config.MainConfig.RssHeadlineUrl);
-                    if (Feed is (string feedTitle, string articleTitle))
-                    {
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_LATESTNEWS") + " {0}: ", false, ThemeColorType.ListEntry, feedTitle);
-                        TextWriterColor.Write(articleTitle, true, ThemeColorType.ListValue);
-                    }
-#else
-                    throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON"));
-#endif
-                }
-                catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON"), true, ThemeColorType.Tip);
-                }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED"), true, ThemeColorType.Error);
-                }
             }
         }
     }
