@@ -24,7 +24,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
     /// </summary>
     public partial class KernelSplashConfig : BaseKernelConfig
     {
-        private bool welcomeShowProgress = false;
+        private bool welcomeShowProgress = true;
 
         /// <summary>
         /// [Welcome] Show progress or not

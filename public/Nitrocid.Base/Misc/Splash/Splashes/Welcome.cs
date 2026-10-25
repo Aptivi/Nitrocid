@@ -71,7 +71,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             var builder = new StringBuilder();
             var progressColor = ThemeColorsTools.GetColor(ThemeColorType.Progress);
             progress.Position = 0;
-            progress.Indeterminate = !Config.SplashConfig.WelcomeShowProgress;
+            progress.Indeterminate = !Config.SplashConfig.WelcomeShowProgress || context == SplashContext.ShuttingDown || context == SplashContext.Rebooting;
             progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(progressColor);
             progress.ProgressActiveForegroundColor = progressColor;
             progress.ProgressBackgroundColor = ConsoleColoring.CurrentBackgroundColor;
