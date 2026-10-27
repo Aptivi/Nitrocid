@@ -1291,21 +1291,39 @@ namespace Nitrocid.Base.Drivers.Filesystem
                 // Print information
                 if (finalDirInfo.Attributes == FileAttributes.Hidden & Config.MainConfig.HiddenFiles | !finalDirInfo.Attributes.HasFlag(FileAttributes.Hidden))
                 {
-                    UnixPermissionType permissionTypeUser = DirectoryInfo.UnixPermissions[0].Types;
-                    UnixPermissionType permissionTypeGroup = DirectoryInfo.UnixPermissions[1].Types;
-                    UnixPermissionType permissionTypeOther = DirectoryInfo.UnixPermissions[2].Types;
-                    TextWriterColor.Write("- [{0} {1} {2}] [{3}] {4}/", false, ThemeColorType.ListEntry,
-                        UnixPermissionManager.BuildPermissionRepresentation(permissionTypeUser),
-                        UnixPermissionManager.BuildPermissionRepresentation(permissionTypeGroup),
-                        UnixPermissionManager.BuildPermissionRepresentation(permissionTypeOther),
-                        UnixPermissionManager.BuildSpecialPermissionRepresentation(DirectoryInfo.UnixSpecial),
-                        finalDirInfo.Name);
+                    // Add Unix permission type if not running on Windows
+                    var entryColor = ThemeColorsTools.GetColor(ThemeColorType.ListEntry);
+                    var entryBuilder = new StringBuilder(ConsoleColoring.RenderSetConsoleColor(entryColor));
+                    entryBuilder.Append("- ");
+                    if (ShowDirectoryDetails && !PlatformHelper.IsOnWindows())
+                    {
+                        UnixPermissionType permissionTypeUser = DirectoryInfo.UnixPermissions[0].Types;
+                        UnixPermissionType permissionTypeGroup = DirectoryInfo.UnixPermissions[1].Types;
+                        UnixPermissionType permissionTypeOther = DirectoryInfo.UnixPermissions[2].Types;
+                        entryBuilder.Append("[{0} {1} {2}] [{3}] ".FormatString(
+                            UnixPermissionManager.BuildPermissionRepresentation(permissionTypeUser),
+                            UnixPermissionManager.BuildPermissionRepresentation(permissionTypeGroup),
+                            UnixPermissionManager.BuildPermissionRepresentation(permissionTypeOther),
+                            UnixPermissionManager.BuildSpecialPermissionRepresentation(DirectoryInfo.UnixSpecial)));
+                    }
+
+                    // Add file name
+                    entryBuilder.Append(finalDirInfo.Name);
+
+                    // Show more file details
                     if (ShowDirectoryDetails)
                     {
-                        TextWriterColor.Write(": ", false, ThemeColorType.ListEntry);
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_INFODATE"), false, ThemeColorType.ListValue, TotalSize.SizeString(), finalDirInfo.CreationTime.ToShortDateString(), finalDirInfo.CreationTime.ToShortTimeString(), finalDirInfo.LastWriteTime.ToShortDateString(), finalDirInfo.LastWriteTime.ToShortTimeString());
+                        var valueColor = ThemeColorsTools.GetColor(ThemeColorType.ListValue);
+                        entryBuilder.Append(": ");
+                        entryBuilder.Append(ConsoleColoring.RenderSetConsoleColor(valueColor));
+                        entryBuilder.Append(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_INFODATE").FormatString(
+                            TotalSize.SizeString(),
+                            finalDirInfo.CreationTime.ToShortDateString(),
+                            finalDirInfo.CreationTime.ToShortTimeString(),
+                            finalDirInfo.LastWriteTime.ToShortDateString(),
+                            finalDirInfo.LastWriteTime.ToShortTimeString()));
                     }
-                    TextWriterRaw.Write();
+                    TextWriterRaw.WritePlain(entryBuilder.ToString());
                 }
             }
             else
@@ -1328,23 +1346,42 @@ namespace Nitrocid.Base.Drivers.Filesystem
                     throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FILEINFONEEDED"));
                 if (finalFileInfo.Attributes == FileAttributes.Hidden & Config.MainConfig.HiddenFiles | !finalFileInfo.Attributes.HasFlag(FileAttributes.Hidden))
                 {
+                    // Distinguish MESH scripts from regular files
                     bool isMeshScript = finalFileInfo.Name.EndsWith(".mesh");
-                    var entryColor = isMeshScript ? ThemeColorType.Stage : ThemeColorType.ListEntry;
-                    UnixPermissionType permissionTypeUser = FileInfo.UnixPermissions[0].Types;
-                    UnixPermissionType permissionTypeGroup = FileInfo.UnixPermissions[1].Types;
-                    UnixPermissionType permissionTypeOther = FileInfo.UnixPermissions[2].Types;
-                    TextWriterColor.Write("- [{0} {1} {2}] [{3}] {4}", false, entryColor,
-                        UnixPermissionManager.BuildPermissionRepresentation(permissionTypeUser),
-                        UnixPermissionManager.BuildPermissionRepresentation(permissionTypeGroup),
-                        UnixPermissionManager.BuildPermissionRepresentation(permissionTypeOther),
-                        UnixPermissionManager.BuildSpecialPermissionRepresentation(FileInfo.UnixSpecial),
-                        finalFileInfo.Name);
+                    var entryColor = ThemeColorsTools.GetColor(isMeshScript ? ThemeColorType.Stage : ThemeColorType.ListEntry);
+
+                    // Add Unix permission type if not running on Windows
+                    var entryBuilder = new StringBuilder(ConsoleColoring.RenderSetConsoleColor(entryColor));
+                    entryBuilder.Append("- ");
+                    if (ShowFileDetails && !PlatformHelper.IsOnWindows())
+                    {
+                        UnixPermissionType permissionTypeUser = FileInfo.UnixPermissions[0].Types;
+                        UnixPermissionType permissionTypeGroup = FileInfo.UnixPermissions[1].Types;
+                        UnixPermissionType permissionTypeOther = FileInfo.UnixPermissions[2].Types;
+                        entryBuilder.Append("[{0} {1} {2}] [{3}] ".FormatString(
+                            UnixPermissionManager.BuildPermissionRepresentation(permissionTypeUser),
+                            UnixPermissionManager.BuildPermissionRepresentation(permissionTypeGroup),
+                            UnixPermissionManager.BuildPermissionRepresentation(permissionTypeOther),
+                            UnixPermissionManager.BuildSpecialPermissionRepresentation(FileInfo.UnixSpecial)));
+                    }
+
+                    // Add file name
+                    entryBuilder.Append(finalFileInfo.Name);
+
+                    // Show more file details
                     if (ShowFileDetails)
                     {
-                        TextWriterColor.Write(": ", false, entryColor);
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_INFODATE"), false, ThemeColorType.ListValue, ((FileInfo)FileInfo.BaseEntry).Length.SizeString(), FileInfo.BaseEntry.CreationTime.ToShortDateString(), FileInfo.BaseEntry.CreationTime.ToShortTimeString(), FileInfo.BaseEntry.LastWriteTime.ToShortDateString(), FileInfo.BaseEntry.LastWriteTime.ToShortTimeString());
+                        var valueColor = ThemeColorsTools.GetColor(ThemeColorType.ListValue);
+                        entryBuilder.Append(": ");
+                        entryBuilder.Append(ConsoleColoring.RenderSetConsoleColor(valueColor));
+                        entryBuilder.Append(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_INFODATE").FormatString(
+                            ((FileInfo)FileInfo.BaseEntry).Length.SizeString(),
+                            FileInfo.BaseEntry.CreationTime.ToShortDateString(),
+                            FileInfo.BaseEntry.CreationTime.ToShortTimeString(),
+                            FileInfo.BaseEntry.LastWriteTime.ToShortDateString(),
+                            FileInfo.BaseEntry.LastWriteTime.ToShortTimeString()));
                     }
-                    TextWriterRaw.Write();
+                    TextWriterRaw.WritePlain(entryBuilder.ToString());
                 }
             }
             else
