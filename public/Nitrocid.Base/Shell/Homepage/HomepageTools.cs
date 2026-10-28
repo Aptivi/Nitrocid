@@ -44,6 +44,7 @@ using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.Base.Misc.Widgets.Canvas;
 using Nitrocid.Base.Misc.Widgets.Implementations;
+using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Users.Groups.Interactives;
 using Nitrocid.Base.Users.Interactives;
@@ -451,21 +452,38 @@ namespace Nitrocid.Base.Shell.Homepage
                                     homeScreen.RequireRefresh();
                                 break;
                             case ConsoleKey.Escape:
-                                int answer = InfoBoxButtonsColor.WriteInfoBoxButtons([
-                                    new InputChoiceInfo("shutdown", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_SHUTDOWN")),
-                                    new InputChoiceInfo("reboot", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RESTART")),
-                                    new InputChoiceInfo("logout", LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_LOGOUT")),
-                                ], LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_POWERACTION"));
-                                if (answer == 0)
-                                    PowerManager.PowerManage(PowerMode.Shutdown);
-                                else if (answer == 1)
-                                    PowerManager.PowerManage(PowerMode.Reboot);
-                                else if (answer == 2)
+                                bool canShutdown = PermissionsTools.IsPermissionGranted(PermissionTypes.ManagePower);
+                                if (canShutdown)
                                 {
-                                    exiting = true;
-                                    LoginTools.LogoutRequested = true;
+                                    int answer = InfoBoxButtonsColor.WriteInfoBoxButtons([
+                                        new InputChoiceInfo("shutdown", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_SHUTDOWN")),
+                                        new InputChoiceInfo("reboot", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RESTART")),
+                                        new InputChoiceInfo("logout", LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_LOGOUT")),
+                                    ], LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_POWERACTION"));
+                                    if (answer == 0)
+                                        PowerManager.PowerManage(PowerMode.Shutdown);
+                                    else if (answer == 1)
+                                        PowerManager.PowerManage(PowerMode.Reboot);
+                                    else if (answer == 2)
+                                    {
+                                        exiting = true;
+                                        LoginTools.LogoutRequested = true;
+                                    }
+                                    exiting = answer != -1;
                                 }
-                                exiting = answer != -1;
+                                else
+                                {
+                                    // TODO: NKS_USERS_LOGIN_MODERNLOGON_LOGOUTACTION -> Do you want to log out?
+                                    int answer = InfoBoxButtonsColor.WriteInfoBoxButtons([
+                                        new InputChoiceInfo("yes", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMESET_YES")),
+                                        new InputChoiceInfo("no", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMESET_NO")),
+                                    ], LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_LOGOUTACTION"));
+                                    if (answer == 0)
+                                    {
+                                        exiting = true;
+                                        LoginTools.LogoutRequested = true;
+                                    }
+                                }
                                 break;
                             case ConsoleKey.S:
                                 exiting = true;
