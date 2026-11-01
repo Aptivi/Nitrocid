@@ -6,6 +6,29 @@ Magic Bloom
 
 =============================================================================
 
+Aptivi Development Toolkit (ADT) Notice
+=======================================
+
+Starting from this version of the kernel, you can now use the brand new ADT
+application instead of the loose Python script files to build our projects,
+not just Nitrocid. Our projects have been migrated to use the newer ADT
+application, which can be obtained by reading this manual page:
+
+https://aptivi.gitbook.io/aptivi/aptivi-development-toolkit/build-system/getting-started
+
+Please make sure that you install ADT in order to be able to build our
+projects in the most efficient way, since ADT processes pre-build and post-
+build actions, as well as many actions we've defined for each project, to
+make it easier for you to build our projects.
+
+ADT is a drop-in replacement for the older legacy script-based development
+toolkit for your projects. It allows you to implement a set of functions,
+such as build, clean, and test functions, without having to write platform-
+specific scripts, with Python as the scripting language to achieve cross-
+platform support.
+
+=============================================================================
+
 0.1.0.87 - Service Pack 8 (October 8th, 2026)
 =============================================
 
