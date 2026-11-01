@@ -1,10 +1,33 @@
-TBD
+Since the release of Nitrocid 0.2.0 back in February, we've done many changes to both the Nitrocid kernel itself and its components, including Terminaux that powers the whole simulated operating system. Nitrocid 0.2.0 was a major upgrade over the 0.1.x series that is still in active support, but we're working on the 0.2.x version series that is a foundation for what's coming next in the tenth year anniversary of Nitrocid.
+
+Today is the release day, and the new version is...
+
+## Nitrocid 0.2.1
+
+After months of hard work that was poured to Nitrocid, Terminaux, and other libraries, we're excited to announce that the new version is now available for download! Packed with new features and general improvements, we've made your user experience much better than before by introducing a wide array of changes, including the improved API design, as well as new features.
+
+Lots of things happened behind the scenes, such as improved build experience and many updates to Terminaux and related libraries, which made Nitrocid more reliable and performant than before.
+
+(Remove this placeholder once locs and Terminaux 8.9 are finalized.)
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` TBD
+- `[+]` Added user and group management TUI
+- `[+]` Restored POP mail
+- `[+]` Added search function for config and The Nitrocid Homepage
+- `[+]` Added UNIX permission function
+- `[+]` Added new screensavers and splashes
+- `[+]` Added official support for FreeBSD
+- `[*]` Improved calendar rendering
+- `[*]` Improved the kernel codebase
+- `[*]` Made the Windows installer more modular
+- `[*]` Improved how splashes open and close
+- `[*]` Performance improvements
+- `[*]` General improvements and bug fixes
+- `[-]` Removed kernel tips
+- `[-]` Removed legacy theme studio
 
 Review the commit history if you want to get a deep insight about the changes.
 

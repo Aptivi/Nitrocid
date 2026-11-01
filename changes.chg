@@ -2,9 +2,141 @@ Nitrocid changes
 ================
 
 Released November 5th, 2026; version 0.2.1.0 (mod API 4.1.29.65); codename
-Flaming Speed
+Architectural Restructure
 
-((Populate changelogs once we stop development on October 29th))
+=============================================================================
+
+Aptivi Development Toolkit (ADT) Notice
+=======================================
+
+Starting from this version of the kernel, you can now use the brand new ADT
+application instead of the loose Python script files to build our projects,
+not just Nitrocid. Our projects have been migrated to use the newer ADT
+application, which can be obtained by reading this manual page:
+
+https://aptivi.gitbook.io/aptivi/aptivi-development-toolkit/build-system/getting-started
+
+Please make sure that you install ADT in order to be able to build our
+projects in the most efficient way, since ADT processes pre-build and post-
+build actions, as well as many actions we've defined for each project, to
+make it easier for you to build our projects.
+
+ADT is a drop-in replacement for the older legacy script-based development
+toolkit for your projects. It allows you to implement a set of functions,
+such as build, clean, and test functions, without having to write platform-
+specific scripts, with Python as the scripting language to achieve cross-
+platform support.
+
+=============================================================================
+
+Since the release of version 0.2.0, which gave Nitrocid a new makeover and a
+new direction toward the tenth year anniversary, we worked hard to make it
+more reliable and easier to use, such as introducing new features and making
+general improvements to different parts of the simulated operating system.
+This resulted in us working on a brand new version series of Nitrocid, which
+gave it a solid foundation for the biggest update yet.
+
+After more than half a year in adding new features, finding ways to enhance
+user experience, improving performance, and cleaning up old codebase in
+preparation for the biggest update that will accompany the tenth year
+anniversary, we are more excited to announce that Nitrocid 0.2.1 has become
+official!
+
+Nitrocid 0.2.1 is a new version of the simulated operating system that
+focuses on adding new features that enhance user experience while introducing
+general improvements, both in the kernel and in the toolkit behind it.
+Powered by the latest Terminaux version, we have managed to improve the
+performance of the simulated system by introducing many improvements to
+different components, as well as many enhancements related to the appearance.
+
+User and group management TUI
+-----------------------------
+
+Starting from this version of Nitrocid, you can utilize the user and the
+group management textual user interfaces that allow you to manage users and
+groups with just your keyboard and your mouse. There is no need to remember
+commands that do the same thing in both the normal UESH shell and the admin
+shell.
+
+You can perform many operations on users and groups, such as adding users or
+groups, deleting users or groups, and modifying them. Permission management
+is also built-in, so you can grant or deny permissions quickly without having
+to remember the command syntax of `perm` and `permgroup`.
+
+Commands are still available for use to manage both users and groups, such as
+`adduser` or `rmuser`, for those who prefer to use the command-line to manage
+users and groups.
+
+(Note that not all features are available in the TUIs, such as setting up
+two-factor authentication. You'll still have to use the `2fa` command, but
+this limitation will be resolved in a future update.)
+
+POP mail
+--------
+
+While we were working on the mail shell for an early access version of
+Nitrocid, which was Kernel Simulator v0.0.20.0 that was released on February
+22nd, 2022, we added an experimental POP3 mode for the mail shell, which was
+considered to be a big addition to the simulated system. However, further
+tests revealed that this feature caused the simulated operating system to no
+longer start on ARM32 systems.
+
+After a huge update, which was released as Nitrocid 0.1.0 on February 22nd,
+2024, we had considered to restore POP3 mail as .NET Framework was no longer
+supported so that we could take advantage of modern features and performance
+improvements. However, due to unforeseen circumstances during the development
+of 0.1.2, which was supposed to restore POP mail as one of the planned
+features, we had to delay it until further notice.
+
+Starting from this version of Nitrocid, you can now use the POP3 mail system
+in the mail shell again, as we had refactored the mail shell code, which
+allowed us to implement it in another way, clean and serene.
+
+To get started, you must enter your e-mail address when using `popmail`, then
+enter the appropriate authentication information. You can consult your e-mail
+provider for more information on how to sign in to your e-mail account using
+your password. For Gmail, you'll need to set up an application password, as
+Nitrocid doesn't support OAuth2 yet.
+
+Search function expansion
+-------------------------
+
+Since implementing the search function for Terminaux's selection choice TUI
+and selection infoboxes, we've expanded the search function to both the
+kernel configuration TUI and The Nitrocid Homepage.
+
+This means that you can now perform efficient searches for the kernel
+configuration to find a settings entry faster than ever. Say goodbye to
+manual lookup and constant expansion and collapses, as it automatically opens
+the appropriate section to find the correct settings key. Just write part of
+the settings key, and Nitrocid will automatically look for matches.
+
+Sometimes, you may have kernel mods that place many available applications to
+The Nitrocid Homepage's app list, and it can be tedious for you to look for a
+single app in a large list. To solve this, we've implemented the search
+function that allows you to search for a single app, thus making looking for
+an app easier than before.
+
+UNIX permissions
+----------------
+
+When it comes to UNIX permissions, Nitrocid now allows you to manage those
+permissions for files and folders. You can use both the new commands we've
+built for you, and in the file manager textual user interface app, to manage
+UNIX permissions for an item you're interested in modifying its permission.
+
+Additionally, you can use both the numeric representation and the string
+representation to modify permissions if you're using the command-line, and
+you can select permissions from the drop-down list in the infobox that
+appears.
+
+We've also added a command that lets you calculate the UNIX permissions in
+two ways: chmod numeric representation and string representation. For
+example, `unixpermcalc tonum rwx rw- rw-` returns `766`, while `unixpermcalc
+torep 644` returns `rw- r-- r--`.
+
+(Note that this feature is unavailable for Windows, as the underlying
+operating system doesn't support UNIX permissions.)
 
 FreeBSD support
 ---------------
@@ -13,7 +145,7 @@ We have finally added support for FreeBSD systems to Nitrocid the same way we
 added support for Linux and macOS. Starting from this release, you can now
 run Nitrocid more comfortably without any issues on FreeBSD systems. This
 was realized by automated builds that are audited from time to time to make
-sure that things run smoothly. We have tested this support on FreeBSD 15.0,
+sure that things run smoothly. We have tested this support on FreeBSD 15.1,
 which means that if you are running this version of FreeBSD, you can
 confidently run Nitrocid there.
 
@@ -22,3 +154,62 @@ FreeBSD after a successful experiment. This made our list of supported
 operating systems for our projects bigger. FreeBSD support is determined by
 our official support schedule as you can see in our main GitBook instance at
 https://aptivi.gitbook.io/aptivi/csharp-libraries/support-periods.
+
+Modular installer
+-----------------
+
+We have announced earlier that Nitrocid's installers would be more modular
+than before. Nitrocid 0.2.1 now provides you with an installer that allows
+you to choose either a minimal installation (that is, with no addons
+installed), or a full installation (with all addons included). This lets you
+decide whether or not the addons will be installed so that you can save some
+space in systems where resources are scarce.
+
+Additionally, if you don't want extra features and just want to use the core
+features, you can use the minimal installation path. Otherwise, you have an
+option to install all addons. Mods won't work if you've chosen the minimal
+installation, as it requires that the addon responsible for starting kernel
+mods be installed.
+
+Improvements to the codebase
+----------------------------
+
+We've made several improvements to the kernel codebase, including its addons,
+and have analyzed the codebase for any design flaws that need to be resolved.
+Upon further inspection, we've found some really old codebase that need to be
+modernized, such as individual shell tools and their commands. Additionally,
+we've refactored other parts of the kernel to make them more flexible, as
+they were required for us to be able to add more new features and to make
+some more improvements.
+
+As a result of this, we're able to implement POP mail, and we're able to make
+the codebase more readable, as Nitrocid is still open source. This opens
+doors to possible improvements that will land to further Nitrocid releases,
+such as 0.2.2, which is scheduled for next year.
+
+When it comes to drivers, we've refactored the part where we'd handle
+fallback drivers. Now, fallback drivers should reflect the actual fallback
+driver for a specific type, regardless of whether Nitrocid had completely
+started up or not.
+
+Changes to Terminaux have also caused a major refactor when it comes to
+defining shell commands, as we've moved their declarations according to the
+breaking changes guide, which you can find below:
+
+https://aptivi.gitbook.io/aptivi/terminaux-manual/breaking-changes/api-v8.0
+
+Finally, refactors were done to the splash management facility so that kernel
+splashes, which addons provide, can work properly. The facility won't react
+when the kernel has successfully booted up, and we've added appropriate
+safeguards to ensure that splash screens don't show up.
+
+Other improvements
+------------------
+
+We've made a horde of other improvements that make the simulated operating
+system both faster and more reliable. Nitrocid has become faster at rendering
+elements thanks to many improvements that were done to Terminaux and its
+components, especially when it comes to rendering.
+
+Additionally, the build system has been improved, which is explained at the
+top of this page.
