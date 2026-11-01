@@ -34,7 +34,7 @@
   <!-- Extras.Crc32 addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="Crc32.NET" Version="1.2.0" />
+    <PackageReference Include="Crc32.NET" Version="2.1.0" />
   </ItemGroup>
 
 </Project>

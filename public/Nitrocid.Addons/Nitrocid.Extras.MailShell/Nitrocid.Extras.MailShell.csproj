@@ -37,7 +37,8 @@
   <!-- Extras.MailShell addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="MailKit" Version="4.18.1" />
+    <PackageReference Include="MailKit" Version="4.18.2" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.14" />
   </ItemGroup>
 
 </Project>
