@@ -7267,4 +7267,22 @@
   <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC" xml:space="preserve">
     <value>Καθορίζει το χρώμα του κειμένου της ημερομηνίας</value>
   </data>
+  <data name="NKS_ARGUMENTS_ARGUMENT_VERSIONCODE_DESC" xml:space="preserve">
+    <value>Εμφανίζει τον κωδικό έκδοσης του πυρήνα</value>
+  </data>
+  <data name="NKS_ARGUMENTS_ARGUMENT_APIVERSIONCODE_DESC" xml:space="preserve">
+    <value>Εμφανίζει τον κωδικό έκδοσης του API</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_LOGOUTACTION" xml:space="preserve">
+    <value>Θέλετε να αποσυνδεθείτε;</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONEMPTY" xml:space="preserve">
+    <value>Η συμβολοσειρά αναπαράστασης ειδικών δικαιωμάτων είναι κενή.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONLENGTH" xml:space="preserve">
+    <value>Το μήκος της συμβολοσειράς αναπαράστασης ειδικών δικαιωμάτων πρέπει να είναι τρία.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID" xml:space="preserve">
+    <value>Μη έγκυρη ειδική αναπαράσταση στη θέση</value>
+  </data>
 </root>

@@ -9617,6 +9617,30 @@
     {
       "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC",
       "text": "Colorem textus diei definit"
+    },
+    {
+      "loc": "NKS_ARGUMENTS_ARGUMENT_VERSIONCODE_DESC",
+      "text": "Codicem versionis nuclei imprimit"
+    },
+    {
+      "loc": "NKS_ARGUMENTS_ARGUMENT_APIVERSIONCODE_DESC",
+      "text": "Codicem versionis API imprimit"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_LOGOUTACTION",
+      "text": "Visne discedere?"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONEMPTY",
+      "text": "Catena characterum quae ius speciale repraesentat vacua est."
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONLENGTH",
+      "text": "Longitudo catenae characterum quae ius speciale repraesentat debet esse tres."
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID",
+      "text": "Repraesentatio specialis invalida ad locum"
     }
   ]
 }

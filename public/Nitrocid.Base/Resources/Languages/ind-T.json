@@ -9617,6 +9617,30 @@
     {
       "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC",
       "text": "तारीख वाले टेक्स्ट का रंग तय करता है"
+    },
+    {
+      "loc": "NKS_ARGUMENTS_ARGUMENT_VERSIONCODE_DESC",
+      "text": "कर्नेल वर्ज़न कोड प्रिंट करता है"
+    },
+    {
+      "loc": "NKS_ARGUMENTS_ARGUMENT_APIVERSIONCODE_DESC",
+      "text": "API वर्ज़न कोड प्रिंट करता है"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_LOGOUTACTION",
+      "text": "क्या आप लॉग आउट करना चाहते हैं?"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONEMPTY",
+      "text": "विशेष अनुमति दर्शाने वाली स्ट्रिंग खाली है।"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONLENGTH",
+      "text": "विशेष अनुमति दर्शाने वाली स्ट्रिंग की लंबाई तीन होनी चाहिए।"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID",
+      "text": "इस स्थान पर अमान्य विशेष निरूपण है"
     }
   ]
 }

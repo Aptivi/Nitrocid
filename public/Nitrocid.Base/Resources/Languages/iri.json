@@ -9618,6 +9618,30 @@
     {
       "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC",
       "text": "Socraítear dath na téacs-dáta"
+    },
+    {
+      "loc": "NKS_ARGUMENTS_ARGUMENT_VERSIONCODE_DESC",
+      "text": "Priontálann sé cód leagan an eithne"
+    },
+    {
+      "loc": "NKS_ARGUMENTS_ARGUMENT_APIVERSIONCODE_DESC",
+      "text": "Priontálann sé cód leagan an API"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_LOGOUTACTION",
+      "text": "Ar mhaith leat logáil amach?"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONEMPTY",
+      "text": "Tá an teaghrán a léiríonn cead speisialta folamh."
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONLENGTH",
+      "text": "Caithfidh fad an teaghráin a léiríonn cead speisialta a bheith trí."
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID",
+      "text": "Léiriú speisialta neamhbhailí ag an suíomh"
     }
   ]
 }

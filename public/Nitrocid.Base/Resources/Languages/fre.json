@@ -9663,6 +9663,30 @@
     {
       "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC",
       "text": "Définit la couleur du texte de la date"
+    },
+    {
+      "loc": "NKS_ARGUMENTS_ARGUMENT_VERSIONCODE_DESC",
+      "text": "Affiche le code de version du noyau"
+    },
+    {
+      "loc": "NKS_ARGUMENTS_ARGUMENT_APIVERSIONCODE_DESC",
+      "text": "Affiche le code de version de l'API"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_LOGOUTACTION",
+      "text": "Voulez-vous vous déconnecter ?"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONEMPTY",
+      "text": "La chaîne représentant les permissions spéciales est vide."
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONLENGTH",
+      "text": "La longueur de la chaîne représentant les permissions spéciales doit être de trois."
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID",
+      "text": "Représentation spéciale invalide à la position"
     }
   ]
 }

@@ -9643,6 +9643,30 @@
     {
       "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC",
       "text": "تحديد لون نص التاريخ"
+    },
+    {
+      "loc": "NKS_ARGUMENTS_ARGUMENT_VERSIONCODE_DESC",
+      "text": "يطبع رمز إصدار النواة (Kernel)"
+    },
+    {
+      "loc": "NKS_ARGUMENTS_ARGUMENT_APIVERSIONCODE_DESC",
+      "text": "يطبع رمز إصدار واجهة برمجة التطبيقات (API)"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_LOGOUTACTION",
+      "text": "هل تود تسجيل الخروج؟"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONEMPTY",
+      "text": "سلسلة تمثيل الصلاحيات الخاصة فارغة."
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONLENGTH",
+      "text": "يجب أن يكون طول سلسلة تمثيل الصلاحيات الخاصة ثلاثة."
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID",
+      "text": "تمثيل خاص غير صالح عند الموضع"
     }
   ]
 }

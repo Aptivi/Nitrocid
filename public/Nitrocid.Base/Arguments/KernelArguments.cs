@@ -130,7 +130,6 @@ namespace Nitrocid.Base.Arguments
                     ], new ApiVersionArgument())
             },
 
-            // TODO: NKS_ARGUMENTS_ARGUMENT_VERSIONCODE_DESC -> Prints the kernel version code
             { "versioncode",
                 new ArgumentInfo("versioncode", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_VERSIONCODE_DESC"),
                     [
@@ -138,7 +137,6 @@ namespace Nitrocid.Base.Arguments
                     ], new VersionCodeArgument())
             },
             
-            // TODO: NKS_ARGUMENTS_ARGUMENT_VERSIONCODE_DESC -> Prints the API version code
             { "apiversioncode",
                 new ArgumentInfo("apiversioncode", LanguageTools.GetLocalized("NKS_ARGUMENTS_ARGUMENT_APIVERSIONCODE_DESC"),
                     [

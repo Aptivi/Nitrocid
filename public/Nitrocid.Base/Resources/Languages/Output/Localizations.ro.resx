@@ -7267,4 +7267,22 @@
   <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC" xml:space="preserve">
     <value>Specifică culoarea textului cu data</value>
   </data>
+  <data name="NKS_ARGUMENTS_ARGUMENT_VERSIONCODE_DESC" xml:space="preserve">
+    <value>Afișează codul versiunii nucleului</value>
+  </data>
+  <data name="NKS_ARGUMENTS_ARGUMENT_APIVERSIONCODE_DESC" xml:space="preserve">
+    <value>Afișează codul versiunii API</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_LOGOUTACTION" xml:space="preserve">
+    <value>Doriți să vă deconectați?</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONEMPTY" xml:space="preserve">
+    <value>Șirul care reprezintă permisiunea specială este gol.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONLENGTH" xml:space="preserve">
+    <value>Lungimea șirului care reprezintă permisiunea specială trebuie să fie de trei caractere.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID" xml:space="preserve">
+    <value>Reprezentare specială nevalidă la poziția</value>
+  </data>
 </root>

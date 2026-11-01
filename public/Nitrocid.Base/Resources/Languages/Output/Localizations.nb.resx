@@ -7267,4 +7267,22 @@
   <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC" xml:space="preserve">
     <value>Angir fargen på datoteksten</value>
   </data>
+  <data name="NKS_ARGUMENTS_ARGUMENT_VERSIONCODE_DESC" xml:space="preserve">
+    <value>Skriver ut versjonskoden for kjernen</value>
+  </data>
+  <data name="NKS_ARGUMENTS_ARGUMENT_APIVERSIONCODE_DESC" xml:space="preserve">
+    <value>Skriver ut versjonskoden for API-et</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_LOGOUTACTION" xml:space="preserve">
+    <value>Vil du logge ut?</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONEMPTY" xml:space="preserve">
+    <value>Strengen som representerer spesialtillatelser, er tom.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONLENGTH" xml:space="preserve">
+    <value>Lengden på strengen som representerer spesialtillatelser, må være tre.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID" xml:space="preserve">
+    <value>Ugyldig spesialrepresentasjon ved posisjon</value>
+  </data>
 </root>

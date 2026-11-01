@@ -134,8 +134,6 @@ namespace Nitrocid.Base.Files.Unix
         /// <returns>Processed special permission type</returns>
         public static UnixPermissionSpecial GetSpecialTypeFrom(string permSpecialRepresentation)
         {
-            // TODO: NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONEMPTY -> Special permission representation string is empty.
-            // TODO: NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONLENGTH -> Special permission representation string length must be three.
             if (string.IsNullOrEmpty(permSpecialRepresentation))
                 throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONEMPTY"));
             if (permSpecialRepresentation.Length != 3)
@@ -170,7 +168,6 @@ namespace Nitrocid.Base.Files.Unix
                         break;
                 }
                 if (invalidate)
-                    // TODO: NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID -> Invalid special representation at position
                     throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID") + $" {i + 1}: {specialPerm}");
             }
             return specialPermissionType;

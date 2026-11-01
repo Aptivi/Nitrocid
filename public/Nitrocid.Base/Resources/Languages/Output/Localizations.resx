@@ -7267,4 +7267,22 @@
   <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC" xml:space="preserve">
     <value>Specifies the color of the date text</value>
   </data>
+  <data name="NKS_ARGUMENTS_ARGUMENT_VERSIONCODE_DESC" xml:space="preserve">
+    <value>Prints the kernel version code</value>
+  </data>
+  <data name="NKS_ARGUMENTS_ARGUMENT_APIVERSIONCODE_DESC" xml:space="preserve">
+    <value>Prints the API version code</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_LOGOUTACTION" xml:space="preserve">
+    <value>Do you want to log out?</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONEMPTY" xml:space="preserve">
+    <value>Special permission representation string is empty.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONLENGTH" xml:space="preserve">
+    <value>Special permission representation string length must be three.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID" xml:space="preserve">
+    <value>Invalid special representation at position</value>
+  </data>
 </root>

@@ -7267,4 +7267,22 @@
   <data name="NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC" xml:space="preserve">
     <value>تحديد لون نص التاريخ</value>
   </data>
+  <data name="NKS_ARGUMENTS_ARGUMENT_VERSIONCODE_DESC" xml:space="preserve">
+    <value>يطبع رمز إصدار النواة (Kernel)</value>
+  </data>
+  <data name="NKS_ARGUMENTS_ARGUMENT_APIVERSIONCODE_DESC" xml:space="preserve">
+    <value>يطبع رمز إصدار واجهة برمجة التطبيقات (API)</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_LOGOUTACTION" xml:space="preserve">
+    <value>هل تود تسجيل الخروج؟</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONEMPTY" xml:space="preserve">
+    <value>سلسلة تمثيل الصلاحيات الخاصة فارغة.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONLENGTH" xml:space="preserve">
+    <value>يجب أن يكون طول سلسلة تمثيل الصلاحيات الخاصة ثلاثة.</value>
+  </data>
+  <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID" xml:space="preserve">
+    <value>تمثيل خاص غير صالح عند الموضع</value>
+  </data>
 </root>

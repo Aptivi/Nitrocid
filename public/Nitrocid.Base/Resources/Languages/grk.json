@@ -9618,6 +9618,30 @@
     {
       "loc": "NKS_SETTINGS_COMMON_DIGITALCLOCKINFOCOLOR_DESC",
       "text": "Καθορίζει το χρώμα του κειμένου της ημερομηνίας"
+    },
+    {
+      "loc": "NKS_ARGUMENTS_ARGUMENT_VERSIONCODE_DESC",
+      "text": "Εμφανίζει τον κωδικό έκδοσης του πυρήνα"
+    },
+    {
+      "loc": "NKS_ARGUMENTS_ARGUMENT_APIVERSIONCODE_DESC",
+      "text": "Εμφανίζει τον κωδικό έκδοσης του API"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_LOGOUTACTION",
+      "text": "Θέλετε να αποσυνδεθείτε;"
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONEMPTY",
+      "text": "Η συμβολοσειρά αναπαράστασης ειδικών δικαιωμάτων είναι κενή."
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONLENGTH",
+      "text": "Το μήκος της συμβολοσειράς αναπαράστασης ειδικών δικαιωμάτων πρέπει να είναι τρία."
+    },
+    {
+      "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID",
+      "text": "Μη έγκυρη ειδική αναπαράσταση στη θέση"
     }
   ]
 }

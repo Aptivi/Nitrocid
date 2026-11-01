@@ -473,7 +473,6 @@ namespace Nitrocid.Base.Shell.Homepage
                                 }
                                 else
                                 {
-                                    // TODO: NKS_USERS_LOGIN_MODERNLOGON_LOGOUTACTION -> Do you want to log out?
                                     int answer = InfoBoxButtonsColor.WriteInfoBoxButtons([
                                         new InputChoiceInfo("yes", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMESET_YES")),
                                         new InputChoiceInfo("no", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMESET_NO")),
