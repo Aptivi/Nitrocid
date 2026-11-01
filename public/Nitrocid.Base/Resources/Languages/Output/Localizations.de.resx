@@ -1336,14 +1336,8 @@
   <data name="NKS_SHELL_BASE_HELP_NOLISTING" xml:space="preserve">
     <value>Shell-Befehle nicht implementiert!!!</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME" xml:space="preserve">
-    <value>Neueste RSS-Überschrift beim Login anzeigen</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME" xml:space="preserve">
     <value>URL der RSS-Überschrift</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC" xml:space="preserve">
-    <value>Bei jeder Anmeldung wird die neueste RSS-Schlagzeile der ausgewählten Schlagzeilen-URL angezeigt.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC" xml:space="preserve">
     <value>RSS-Schlagzeilen-URL, die verwendet werden soll, wenn die neueste Schlagzeile angezeigt wird. Dies ist normalerweise Ihr Lieblings-Feed.</value>
@@ -3085,9 +3079,6 @@
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS" xml:space="preserve">
     <value>Aktuelle Nachrichten von</value>
   </data>
-  <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>Um die neuesten Nachrichten zu erhalten, müssen Sie das RSS Shell Extras-Add-on installieren. Sie können den Befehl „getaddons“ verwenden, um alle Addons abzurufen!</value>
-  </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Befehl nicht gefunden.</value>
   </data>
@@ -4752,9 +4743,6 @@
   </data>
   <data name="NKS_SHELL_HOMEPAGE_HEADER" xml:space="preserve">
     <value>Hallo, {0}! Willkommen bei Nitrocid!</value>
-  </data>
-  <data name="NKS_SHELL_HOMEPAGE_NEEDSHEADLINES" xml:space="preserve">
-    <value>Aktivieren Sie beim Anmelden Überschriften, um RSS-Feeds anzuzeigen</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_SETTINGS" xml:space="preserve">
     <value>Einstellungen</value>

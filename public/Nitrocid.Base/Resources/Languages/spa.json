@@ -1736,16 +1736,8 @@
       "text": "¡¡¡Comandos de shell no implementados!!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "Mostrar el último titular RSS al iniciar sesión"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "URL del título RSS"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "Cada inicio de sesión, mostrará el último titular RSS de la URL del titular seleccionado."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4068,10 +4060,6 @@
       "text": "Últimas noticias de"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "Para poder obtener las últimas noticias, debe instalar el complemento RSS Shell Extras. ¡Puedes usar el comando 'getaddons' para obtener todos los complementos!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Comando no encontrado."
     },
@@ -6290,10 +6278,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "¡Hola, {0}! ¡Bienvenidos a Nitrocid!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "Habilite los titulares al iniciar sesión para mostrar canales RSS"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

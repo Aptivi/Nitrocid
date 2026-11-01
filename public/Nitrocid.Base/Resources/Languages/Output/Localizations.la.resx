@@ -1336,14 +1336,8 @@
   <data name="NKS_SHELL_BASE_HELP_NOLISTING" xml:space="preserve">
     <value>Testa imperat non impleri!!!</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME" xml:space="preserve">
-    <value>Ostendere latest RSS headline on login</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME" xml:space="preserve">
     <value>RSS headline URL</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC" xml:space="preserve">
-    <value>Singula login, indicabit headline recentissimum RSS ex URL headline delecti.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC" xml:space="preserve">
     <value>RSS headline URL utendum est cum ostendens novissimam headline. Hoc plerumque ventus pascitur.</value>
@@ -3085,9 +3079,6 @@
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS" xml:space="preserve">
     <value>Tardus nuntius e</value>
   </data>
-  <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>Ut novissimum nuntium adsequi possem, Testa RSS addon extras instituere debet. Imperio uti potes "getaddons" ut omnia additamenta!</value>
-  </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Mandatum non inveni.</value>
   </data>
@@ -4752,9 +4743,6 @@
   </data>
   <data name="NKS_SHELL_HOMEPAGE_HEADER" xml:space="preserve">
     <value>Hi, {0}! Welcome to Nitrocid!</value>
-  </data>
-  <data name="NKS_SHELL_HOMEPAGE_NEEDSHEADLINES" xml:space="preserve">
-    <value>Admitte headlines in login ut ostenderet RSS feeds</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_SETTINGS" xml:space="preserve">
     <value>Occasus</value>

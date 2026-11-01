@@ -1336,14 +1336,8 @@
   <data name="NKS_SHELL_BASE_HELP_NOLISTING" xml:space="preserve">
     <value>shel kamaand laagoo nahin !!!</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME" xml:space="preserve">
-    <value>login par naveenatam aareses sheershak dikhaen</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME" xml:space="preserve">
     <value>aareses hedalain yooaarel</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC" xml:space="preserve">
-    <value>pratyek login, yah chayanit sheershak url se naveenatam rss sheershak dikhaega.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC" xml:space="preserve">
     <value>naveenatam sheershak dikhaate samay upayog kiya jaane vaala rss sheershak url. yah aamataur par aapaka pasandeeda feed hota hai.</value>
@@ -3085,9 +3079,6 @@
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS" xml:space="preserve">
     <value>se naveenatam samaachaar</value>
   </data>
-  <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>naveenatam samaachaar praapt karane mein saksham hone ke lie, aapako rss shel ekstra aidon sthaapit karana hoga. aap sabhee aidon praapt karane ke lie gaitaddons kamaand ka upayog kar sakate hain!</value>
-  </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>kamaand nahin mila.</value>
   </data>
@@ -4752,9 +4743,6 @@
   </data>
   <data name="NKS_SHELL_HOMEPAGE_HEADER" xml:space="preserve">
     <value>namaste, {0}! naitrosid mein aapaka svaagat hai!</value>
-  </data>
-  <data name="NKS_SHELL_HOMEPAGE_NEEDSHEADLINES" xml:space="preserve">
-    <value>rss feed dikhaane ke lie login par hedalain saksham karen</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_SETTINGS" xml:space="preserve">
     <value>setings</value>

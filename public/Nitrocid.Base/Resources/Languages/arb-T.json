@@ -1737,16 +1737,8 @@
       "text": "أوامر شل لم تنفذ !!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "عرض أحدث عنوان RSS عند تسجيل الدخول"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "عنوان URL لعنوان RSS"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "في كل تسجيل دخول ، سيعرض أحدث عنوان RSS من عنوان URL الرئيسي المحدد."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4069,10 +4061,6 @@
       "text": "آخر الأخبار من"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "لتتمكن من الحصول على آخر الأخبار، يجب عليك تثبيت الملحق RSS Shell Extras. يمكنك استخدام الأمر \"getaddons\" للحصول على جميع الإضافات!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "القيادة لم يتم العثور."
     },
@@ -6291,10 +6279,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "مرحبًا، {0}! مرحبا بكم في نيتروسيد!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "تمكين العناوين عند تسجيل الدخول لإظهار خلاصات RSS"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

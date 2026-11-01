@@ -1336,14 +1336,8 @@
   <data name="NKS_SHELL_BASE_HELP_NOLISTING" xml:space="preserve">
     <value>Команди оболонки не реалізовані!!!</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME" xml:space="preserve">
-    <value>Показувати останній заголовок RSS під час входу</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME" xml:space="preserve">
     <value>URL-адреса заголовка RSS</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC" xml:space="preserve">
-    <value>Кожного входу в систему відображатиметься останній заголовок RSS із вибраної URL-адреси заголовка.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC" xml:space="preserve">
     <value>URL-адреса заголовка RSS, яка буде використовуватися під час показу останнього заголовка. Зазвичай це ваш улюблений канал.</value>
@@ -3085,9 +3079,6 @@
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS" xml:space="preserve">
     <value>Останні новини від</value>
   </data>
-  <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>Щоб мати можливість отримувати останні новини, ви повинні встановити аддон RSS Shell Extras. Ви можете скористатися командою 'getaddons', щоб отримати всі додатки!</value>
-  </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Команда не знайдена.</value>
   </data>
@@ -4752,9 +4743,6 @@
   </data>
   <data name="NKS_SHELL_HOMEPAGE_HEADER" xml:space="preserve">
     <value>Привіт, {0}! Ласкаво просимо до Nitrocid!</value>
-  </data>
-  <data name="NKS_SHELL_HOMEPAGE_NEEDSHEADLINES" xml:space="preserve">
-    <value>Увімкніть заголовки під час входу, щоб відображати RSS-канали</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_SETTINGS" xml:space="preserve">
     <value>Налаштування</value>

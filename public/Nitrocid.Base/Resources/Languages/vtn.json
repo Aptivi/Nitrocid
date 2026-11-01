@@ -1711,16 +1711,8 @@
       "text": "Lệnh shell chưa được triển khai!!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "Hiển thị tiêu đề RSS mới nhất khi đăng nhập"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "URL tiêu đề RSS"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "Mỗi lần đăng nhập, tiêu đề RSS mới nhất sẽ hiển thị từ URL tiêu đề đã chọn."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4043,10 +4035,6 @@
       "text": "Tin tức mới nhất từ"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "Để có thể nhận được tin tức mới nhất, bạn phải cài đặt tiện ích bổ sung RSS Shell Extras. Bạn có thể sử dụng lệnh 'getaddons' để nhận tất cả các tiện ích bổ sung!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Không tìm thấy lệnh."
     },
@@ -6265,10 +6253,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "Xin chào, {0}! Chào mừng đến với Nitrocid!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "Cho phép tiêu đề khi đăng nhập để hiển thị nguồn cấp RSS"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

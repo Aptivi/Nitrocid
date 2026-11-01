@@ -1712,16 +1712,8 @@
       "text": "Níor cuireadh orduithe Shell i bhfeidhm !!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "Taispeáin an ceannteideal RSS is déanaí ar logáil isteach"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "URL ceannlíne RSS"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "Gach logáil isteach, taispeánfaidh sé an ceannlíne RSS is déanaí ón URL ceannlíne roghnaithe."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4044,10 +4036,6 @@
       "text": "Nuacht is déanaí ó"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "Chun an nuacht is déanaí a fháil, ní mór duit an breiseán RSS Shell Extras a shuiteáil. Is féidir leat an t-ordú 'getaddons' a úsáid chun na breiseáin go léir a fháil!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Níor aimsíodh an t-ordú."
     },
@@ -6266,10 +6254,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "Dia duit, {0}! Fáilte go dtí Nitrocid!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "Cumasaigh ceannlínte ar logáil isteach chun fothaí RSS a thaispeáint"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

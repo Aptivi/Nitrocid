@@ -1336,14 +1336,8 @@
   <data name="NKS_SHELL_BASE_HELP_NOLISTING" xml:space="preserve">
     <value>Shell 命令未執行！！！</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME" xml:space="preserve">
-    <value>登錄時顯示最新的 RSS 標題</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME" xml:space="preserve">
     <value>RSS 標題網址</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC" xml:space="preserve">
-    <value>每次登錄，它將顯示來自所選標題 URL 的最新 RSS 標題。</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC" xml:space="preserve">
     <value>顯示最新標題時使用的 RSS 標題 URL。這通常是您最喜歡的提要。</value>
@@ -3085,9 +3079,6 @@
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS" xml:space="preserve">
     <value>最新消息來自</value>
   </data>
-  <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>為了能夠取得最新新聞，您必須安裝 RSS Shell Extras 外掛程式。您可以使用“getaddons”命令來獲取所有插件！</value>
-  </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>找不到指令。</value>
   </data>
@@ -4752,9 +4743,6 @@
   </data>
   <data name="NKS_SHELL_HOMEPAGE_HEADER" xml:space="preserve">
     <value>嗨，{0}！歡迎來到硝基西德！</value>
-  </data>
-  <data name="NKS_SHELL_HOMEPAGE_NEEDSHEADLINES" xml:space="preserve">
-    <value>登入時啟用標題以顯示 RSS 來源</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_SETTINGS" xml:space="preserve">
     <value>設定</value>

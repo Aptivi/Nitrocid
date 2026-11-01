@@ -1336,14 +1336,8 @@
   <data name="NKS_SHELL_BASE_HELP_NOLISTING" xml:space="preserve">
     <value>Lệnh shell chưa được triển khai!!!</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME" xml:space="preserve">
-    <value>Hiển thị tiêu đề RSS mới nhất khi đăng nhập</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME" xml:space="preserve">
     <value>URL tiêu đề RSS</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC" xml:space="preserve">
-    <value>Mỗi lần đăng nhập, tiêu đề RSS mới nhất sẽ hiển thị từ URL tiêu đề đã chọn.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC" xml:space="preserve">
     <value>URL tiêu đề RSS được sử dụng khi hiển thị tiêu đề mới nhất. Đây thường là nguồn cấp dữ liệu yêu thích của bạn.</value>
@@ -3085,9 +3079,6 @@
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS" xml:space="preserve">
     <value>Tin tức mới nhất từ</value>
   </data>
-  <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>Để có thể nhận được tin tức mới nhất, bạn phải cài đặt tiện ích bổ sung RSS Shell Extras. Bạn có thể sử dụng lệnh 'getaddons' để nhận tất cả các tiện ích bổ sung!</value>
-  </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Không tìm thấy lệnh.</value>
   </data>
@@ -4752,9 +4743,6 @@
   </data>
   <data name="NKS_SHELL_HOMEPAGE_HEADER" xml:space="preserve">
     <value>Xin chào, {0}! Chào mừng đến với Nitrocid!</value>
-  </data>
-  <data name="NKS_SHELL_HOMEPAGE_NEEDSHEADLINES" xml:space="preserve">
-    <value>Cho phép tiêu đề khi đăng nhập để hiển thị nguồn cấp RSS</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_SETTINGS" xml:space="preserve">
     <value>Cài đặt</value>

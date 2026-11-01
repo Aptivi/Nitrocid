@@ -1336,14 +1336,8 @@
   <data name="NKS_SHELL_BASE_HELP_NOLISTING" xml:space="preserve">
     <value>Οι εντολές Shell δεν εφαρμόζονται!!!</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME" xml:space="preserve">
-    <value>Εμφάνιση της τελευταίας επικεφαλίδας RSS κατά τη σύνδεση</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME" xml:space="preserve">
     <value>URL επικεφαλίδας RSS</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC" xml:space="preserve">
-    <value>Κάθε σύνδεση, θα εμφανίζει την τελευταία επικεφαλίδα RSS από την επιλεγμένη διεύθυνση URL επικεφαλίδας.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC" xml:space="preserve">
     <value>URL επικεφαλίδας RSS που θα χρησιμοποιηθεί κατά την εμφάνιση της τελευταίας επικεφαλίδας. Αυτή είναι συνήθως η αγαπημένη σας ροή.</value>
@@ -3085,9 +3079,6 @@
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS" xml:space="preserve">
     <value>Τελευταία νέα από</value>
   </data>
-  <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>Για να μπορείτε να λαμβάνετε τα τελευταία νέα, πρέπει να εγκαταστήσετε το πρόσθετο RSS Shell Extras. Μπορείτε να χρησιμοποιήσετε την εντολή 'getaddons' για να λάβετε όλα τα πρόσθετα!</value>
-  </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Η εντολή δεν βρέθηκε.</value>
   </data>
@@ -4752,9 +4743,6 @@
   </data>
   <data name="NKS_SHELL_HOMEPAGE_HEADER" xml:space="preserve">
     <value>Γεια, {0}! Καλώς ήρθατε στο Nitrocid!</value>
-  </data>
-  <data name="NKS_SHELL_HOMEPAGE_NEEDSHEADLINES" xml:space="preserve">
-    <value>Ενεργοποιήστε τους τίτλους κατά τη σύνδεση για εμφάνιση ροών RSS</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_SETTINGS" xml:space="preserve">
     <value>Ρυθμίσεις</value>

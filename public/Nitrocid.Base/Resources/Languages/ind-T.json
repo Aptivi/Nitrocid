@@ -1711,16 +1711,8 @@
       "text": "शेल कमांड लागू नहीं !!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "लॉगिन पर नवीनतम आरएसएस शीर्षक दिखाएं"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "आरएसएस हेडलाइन यूआरएल"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "प्रत्येक लॉगिन, यह चयनित शीर्षक URL से नवीनतम RSS शीर्षक दिखाएगा।"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4043,10 +4035,6 @@
       "text": "नवीनतम समाचार से"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "नवीनतम समाचार प्राप्त करने में सक्षम होने के लिए, आपको RSS शेल एक्स्ट्राज़ ऐडऑन इंस्टॉल करना होगा। आप सभी ऐडऑन प्राप्त करने के लिए 'गेटएडऑन' कमांड का उपयोग कर सकते हैं!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "यह कमांड नहीं मिला।"
     },
@@ -6265,10 +6253,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "नमस्ते, {0}! नाइट्रोसिड में आपका स्वागत है!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "RSS फ़ीड दिखाने के लिए लॉगिन पर हेडलाइन सक्षम करें"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

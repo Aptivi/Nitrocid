@@ -1714,16 +1714,8 @@
       "text": "Shell 命令未執行！！！"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "登錄時顯示最新的 RSS 標題"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "RSS 標題網址"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "每次登錄，它將顯示來自所選標題 URL 的最新 RSS 標題。"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4046,10 +4038,6 @@
       "text": "最新消息來自"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "為了能夠取得最新新聞，您必須安裝 RSS Shell Extras 外掛程式。您可以使用“getaddons”命令來獲取所有插件！"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "找不到指令。"
     },
@@ -6268,10 +6256,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "嗨，{0}！歡迎來到硝基西德！"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "登入時啟用標題以顯示 RSS 來源"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

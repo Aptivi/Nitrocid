@@ -1711,16 +1711,8 @@
       "text": "shel kamaand laagoo nahin !!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "login par naveenatam aareses sheershak dikhaen"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "aareses hedalain yooaarel"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "pratyek login, yah chayanit sheershak url se naveenatam rss sheershak dikhaega."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4043,10 +4035,6 @@
       "text": "se naveenatam samaachaar"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "naveenatam samaachaar praapt karane mein saksham hone ke lie, aapako rss shel ekstra aidon sthaapit karana hoga. aap sabhee aidon praapt karane ke lie gaitaddons kamaand ka upayog kar sakate hain!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "kamaand nahin mila."
     },
@@ -6265,10 +6253,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "namaste, {0}! naitrosid mein aapaka svaagat hai!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "rss feed dikhaane ke lie login par hedalain saksham karen"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

@@ -1717,16 +1717,8 @@
       "text": "Shell-commando's niet geïmplementeerd!!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "Toon laatste RSS-kop bij inloggen"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "URL van RSS-kop"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "Elke keer dat u inlogt, wordt de laatste RSS-kop van de geselecteerde kop-URL weergegeven."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4049,10 +4041,6 @@
       "text": "Laatste nieuws van"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "Om het laatste nieuws te kunnen ontvangen, moet u de add-on RSS Shell Extras installeren. U kunt de opdracht 'getaddons' gebruiken om alle add-ons te verkrijgen!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Opdracht niet gevonden."
     },
@@ -6271,10 +6259,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "Hallo, {0}! Welkom bij Nitrocid!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "Schakel koppen in bij inloggen om RSS-feeds weer te geven"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

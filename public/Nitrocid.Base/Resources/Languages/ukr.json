@@ -1711,16 +1711,8 @@
       "text": "Команди оболонки не реалізовані!!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "Показувати останній заголовок RSS під час входу"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "URL-адреса заголовка RSS"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "Кожного входу в систему відображатиметься останній заголовок RSS із вибраної URL-адреси заголовка."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4043,10 +4035,6 @@
       "text": "Останні новини від"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "Щоб мати можливість отримувати останні новини, ви повинні встановити аддон RSS Shell Extras. Ви можете скористатися командою 'getaddons', щоб отримати всі додатки!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Команда не знайдена."
     },
@@ -6265,10 +6253,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "Привіт, {0}! Ласкаво просимо до Nitrocid!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "Увімкніть заголовки під час входу, щоб відображати RSS-канали"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

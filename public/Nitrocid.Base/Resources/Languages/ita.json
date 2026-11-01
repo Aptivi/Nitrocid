@@ -1714,16 +1714,8 @@
       "text": "Comandi della shell non implementati!!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "Mostra l'ultimo titolo RSS all'accesso"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "URL del titolo RSS"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "Ad ogni accesso, mostrerà l'ultimo titolo RSS dall'URL del titolo selezionato."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4046,10 +4038,6 @@
       "text": "Ultime notizie da"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "Per poter ricevere le ultime notizie, è necessario installare il componente aggiuntivo RSS Shell Extras. Puoi usare il comando 'getaddons' per ottenere tutti i componenti aggiuntivi!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Comando non trovato."
     },
@@ -6268,10 +6256,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "Ciao, {0}! Benvenuti in Nitrocid!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "Abilita i titoli all'accesso per mostrare i feed RSS"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

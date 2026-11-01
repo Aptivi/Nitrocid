@@ -1712,16 +1712,8 @@
       "text": "Οι εντολές Shell δεν εφαρμόζονται!!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "Εμφάνιση της τελευταίας επικεφαλίδας RSS κατά τη σύνδεση"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "URL επικεφαλίδας RSS"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "Κάθε σύνδεση, θα εμφανίζει την τελευταία επικεφαλίδα RSS από την επιλεγμένη διεύθυνση URL επικεφαλίδας."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4044,10 +4036,6 @@
       "text": "Τελευταία νέα από"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "Για να μπορείτε να λαμβάνετε τα τελευταία νέα, πρέπει να εγκαταστήσετε το πρόσθετο RSS Shell Extras. Μπορείτε να χρησιμοποιήσετε την εντολή 'getaddons' για να λάβετε όλα τα πρόσθετα!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Η εντολή δεν βρέθηκε."
     },
@@ -6266,10 +6254,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "Γεια, {0}! Καλώς ήρθατε στο Nitrocid!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "Ενεργοποιήστε τους τίτλους κατά τη σύνδεση για εμφάνιση ροών RSS"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

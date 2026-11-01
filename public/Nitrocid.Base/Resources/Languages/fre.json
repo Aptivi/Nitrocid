@@ -1757,16 +1757,8 @@
       "text": "Commandes Shell non implémentées !!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "Afficher le dernier titre RSS lors de la connexion"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "URL du titre RSS"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "À chaque connexion, il affichera le dernier titre RSS à partir de l'URL du titre sélectionné."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4089,10 +4081,6 @@
       "text": "Dernières nouvelles de"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "Pour pouvoir recevoir les dernières nouvelles, vous devez installer le module complémentaire RSS Shell Extras. Vous pouvez utiliser la commande 'getaddons' pour obtenir tous les addons !"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Commande non trouvée."
     },
@@ -6311,10 +6299,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "Bonjour, {0} ! Bienvenue chez Nitrocide !"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "Activer les titres lors de la connexion pour afficher les flux RSS"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

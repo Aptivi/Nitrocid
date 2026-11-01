@@ -1336,14 +1336,8 @@
   <data name="NKS_SHELL_BASE_HELP_NOLISTING" xml:space="preserve">
     <value>शेल कमांड लागू नहीं !!!</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME" xml:space="preserve">
-    <value>लॉगिन पर नवीनतम आरएसएस शीर्षक दिखाएं</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME" xml:space="preserve">
     <value>आरएसएस हेडलाइन यूआरएल</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC" xml:space="preserve">
-    <value>प्रत्येक लॉगिन, यह चयनित शीर्षक URL से नवीनतम RSS शीर्षक दिखाएगा।</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC" xml:space="preserve">
     <value>नवीनतम शीर्षक दिखाते समय उपयोग किया जाने वाला RSS शीर्षक URL. यह आमतौर पर आपका पसंदीदा फ़ीड होता है।</value>
@@ -3085,9 +3079,6 @@
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS" xml:space="preserve">
     <value>नवीनतम समाचार से</value>
   </data>
-  <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>नवीनतम समाचार प्राप्त करने में सक्षम होने के लिए, आपको RSS शेल एक्स्ट्राज़ ऐडऑन इंस्टॉल करना होगा। आप सभी ऐडऑन प्राप्त करने के लिए 'गेटएडऑन' कमांड का उपयोग कर सकते हैं!</value>
-  </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>यह कमांड नहीं मिला।</value>
   </data>
@@ -4752,9 +4743,6 @@
   </data>
   <data name="NKS_SHELL_HOMEPAGE_HEADER" xml:space="preserve">
     <value>नमस्ते, {0}! नाइट्रोसिड में आपका स्वागत है!</value>
-  </data>
-  <data name="NKS_SHELL_HOMEPAGE_NEEDSHEADLINES" xml:space="preserve">
-    <value>RSS फ़ीड दिखाने के लिए लॉगिन पर हेडलाइन सक्षम करें</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_SETTINGS" xml:space="preserve">
     <value>समायोजन</value>

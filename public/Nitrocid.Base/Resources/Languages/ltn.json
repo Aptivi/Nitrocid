@@ -1711,16 +1711,8 @@
       "text": "Testa imperat non impleri!!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "Ostendere latest RSS headline on login"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "RSS headline URL"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "Singula login, indicabit headline recentissimum RSS ex URL headline delecti."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4043,10 +4035,6 @@
       "text": "Tardus nuntius e"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "Ut novissimum nuntium adsequi possem, Testa RSS addon extras instituere debet. Imperio uti potes \"getaddons\" ut omnia additamenta!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Mandatum non inveni."
     },
@@ -6265,10 +6253,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "Hi, {0}! Welcome to Nitrocid!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "Admitte headlines in login ut ostenderet RSS feeds"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

@@ -1715,16 +1715,8 @@
       "text": "Shell-kommandoer er ikke implementert!!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "Vis siste RSS-overskrift ved pålogging"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "RSS-overskrifts-URL"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "Hver pålogging vil vise den siste RSS-overskriften fra den valgte overskrifts-URLen."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4047,10 +4039,6 @@
       "text": "Siste nytt fra"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "For å kunne få de siste nyhetene, må du installere RSS Shell Extras-tillegget. Du kan bruke 'getaddons'-kommandoen for å få alle tilleggene!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Kommandoen ble ikke funnet."
     },
@@ -6269,10 +6257,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "Hei, {0}! Velkommen til Nitrocid!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "Aktiver overskrifter ved pålogging for å vise RSS-feeder"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

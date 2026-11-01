@@ -1710,16 +1710,8 @@
       "text": "Shell commands not implemented!!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "Show latest RSS headline on login"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "RSS headline URL"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "Each login, it will show the latest RSS headline from the selected headline URL."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4042,10 +4034,6 @@
       "text": "Latest news from"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "To be able to get the latest news, you must install the RSS Shell Extras addon. You can use the 'getaddons' command to get all the addons!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Command not found."
     },
@@ -6264,10 +6252,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "Hi, {0}! Welcome to Nitrocid!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "Enable headlines on login to show RSS feeds"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

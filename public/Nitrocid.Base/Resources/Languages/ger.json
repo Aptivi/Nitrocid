@@ -1720,16 +1720,8 @@
       "text": "Shell-Befehle nicht implementiert!!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "Neueste RSS-Überschrift beim Login anzeigen"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "URL der RSS-Überschrift"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "Bei jeder Anmeldung wird die neueste RSS-Schlagzeile der ausgewählten Schlagzeilen-URL angezeigt."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4052,10 +4044,6 @@
       "text": "Aktuelle Nachrichten von"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "Um die neuesten Nachrichten zu erhalten, müssen Sie das RSS Shell Extras-Add-on installieren. Sie können den Befehl „getaddons“ verwenden, um alle Addons abzurufen!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Befehl nicht gefunden."
     },
@@ -6274,10 +6262,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "Hallo, {0}! Willkommen bei Nitrocid!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "Aktivieren Sie beim Anmelden Überschriften, um RSS-Feeds anzuzeigen"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

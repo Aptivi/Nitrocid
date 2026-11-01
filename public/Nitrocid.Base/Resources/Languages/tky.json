@@ -1712,16 +1712,8 @@
       "text": "Kabuk komutları uygulanmadı!!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "Girişte en son RSS başlığını göster"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "RSS başlık URL'si"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "Her girişte, seçili başlık URL'sinden en son RSS başlığı gösterilecektir."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4044,10 +4036,6 @@
       "text": "Son haberler"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "En son haberleri alabilmek için RSS Shell Extras eklentisini yüklemeniz gerekir. Tüm eklentileri edinmek için 'getaddons' komutunu kullanabilirsiniz!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Komut bulunamadı."
     },
@@ -6266,10 +6254,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "Merhaba, {0}! Nitrocid'e hoş geldiniz!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "RSS beslemelerini göstermek için girişte başlıkları etkinleştirin"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

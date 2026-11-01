@@ -1711,16 +1711,8 @@
       "text": "シェルコマンドは実装されていません!!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "ログイン時に最新のRSSヘッドラインを表示する"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "RSSヘッドラインURL"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "ログインするたびに、選択したヘッドラインURLからの最新のRSSヘッドラインが表示されます。"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4043,10 +4035,6 @@
       "text": "最新ニュースから"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "最新のニュースを入手するには、RSS Shell Extras アドオンをインストールする必要があります。「getaddons」コマンドを使用すると、すべてのアドオンを取得できます。"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "コマンドが見つかりません。"
     },
@@ -6265,10 +6253,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "こんにちは、{0}さん！Nitrocidへようこそ！"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "ログイン時に見出しを有効にして RSS フィードを表示する"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

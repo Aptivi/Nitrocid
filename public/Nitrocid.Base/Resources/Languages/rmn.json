@@ -1712,16 +1712,8 @@
       "text": "Comenzile Shell nu sunt implementate!!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "Afișați cel mai recent titlu RSS la conectare"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "Adresa URL a titlului RSS"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "La fiecare conectare, va afișa cel mai recent titlu RSS de la adresa URL a titlului selectat."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4044,10 +4036,6 @@
       "text": "Ultimele știri de la"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "Pentru a putea primi cele mai recente știri, trebuie să instalați addonul RSS Shell Extras. Puteți folosi comanda „getaddons” pentru a obține toate suplimentele!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Comanda nu a fost găsită."
     },
@@ -6266,10 +6254,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "Bună, {0}! Bun venit la Nitrocid!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "Activați titlurile la conectare pentru a afișa fluxuri RSS"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

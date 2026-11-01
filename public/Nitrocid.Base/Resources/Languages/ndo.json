@@ -1711,16 +1711,8 @@
       "text": "Perintah Shell tidak diimplementasikan!!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "Tampilkan judul RSS terbaru saat login"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "URL judul RSS"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "Setiap kali login, akan ditampilkan judul RSS terbaru dari URL judul yang dipilih."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4043,10 +4035,6 @@
       "text": "Berita terbaru dari"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "Untuk bisa mendapatkan berita terbaru, Anda harus memasang add-on RSS Shell Extras. Anda dapat menggunakan perintah 'getaddons' untuk mendapatkan semua add-on tersebut!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Perintah tidak ditemukan."
     },
@@ -6265,10 +6253,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "Hai, {0}! Selamat datang di Nitrocid!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "Aktifkan tajuk berita saat login untuk menampilkan umpan RSS"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

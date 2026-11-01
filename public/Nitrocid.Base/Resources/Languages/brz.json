@@ -1710,16 +1710,8 @@
       "text": "Comandos de shell não implementados!!!"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "Mostrar o último título RSS no login"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "URL do título RSS"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "A cada login, será exibido o último título RSS do URL do título selecionado."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4042,10 +4034,6 @@
       "text": "Últimas notícias de"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "Para poder obter as últimas notícias, você deve instalar o addon RSS Shell Extras. Você pode usar o comando 'getaddons' para obter todos os addons!"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Comando não encontrado."
     },
@@ -6264,10 +6252,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "Olá, {0}! Bem-vindo ao Nitrocid!"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "Habilitar manchetes no login para mostrar feeds RSS"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

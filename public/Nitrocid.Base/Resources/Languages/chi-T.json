@@ -1719,16 +1719,8 @@
       "text": "Shell 命令未执行！！！"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME",
-      "text": "登录时显示最新的 RSS 标题"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME",
       "text": "RSS 标题网址"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC",
-      "text": "每次登录，它将显示来自所选标题 URL 的最新 RSS 标题。"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC",
@@ -4051,10 +4043,6 @@
       "text": "最新消息来自"
     },
     {
-      "loc": "NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON",
-      "text": "为了能够获取最新新闻，您必须安装 RSS Shell Extras 插件。您可以使用“getaddons”命令来获取所有插件！"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "找不到命令。"
     },
@@ -6273,10 +6261,6 @@
     {
       "loc": "NKS_SHELL_HOMEPAGE_HEADER",
       "text": "嗨，{0}！欢迎来到 Nitrocid！"
-    },
-    {
-      "loc": "NKS_SHELL_HOMEPAGE_NEEDSHEADLINES",
-      "text": "登录时启用标题以显示 RSS 源"
     },
     {
       "loc": "NKS_SHELL_HOMEPAGE_SETTINGS",

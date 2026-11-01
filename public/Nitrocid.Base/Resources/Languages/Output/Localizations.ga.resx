@@ -1336,14 +1336,8 @@
   <data name="NKS_SHELL_BASE_HELP_NOLISTING" xml:space="preserve">
     <value>Níor cuireadh orduithe Shell i bhfeidhm !!!</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_NAME" xml:space="preserve">
-    <value>Taispeáin an ceannteideal RSS is déanaí ar logáil isteach</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_NAME" xml:space="preserve">
     <value>URL ceannlíne RSS</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_MISC_RSS_SHOWHEADLINELOGIN_DESC" xml:space="preserve">
-    <value>Gach logáil isteach, taispeánfaidh sé an ceannlíne RSS is déanaí ón URL ceannlíne roghnaithe.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_RSS_HEADLINEURL_DESC" xml:space="preserve">
     <value>URL ceannlíne RSS le húsáid agus an ceannlíne is déanaí á thaispeáint. De ghnáth is é seo an beathú is fearr leat.</value>
@@ -3085,9 +3079,6 @@
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS" xml:space="preserve">
     <value>Nuacht is déanaí ó</value>
   </data>
-  <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>Chun an nuacht is déanaí a fháil, ní mór duit an breiseán RSS Shell Extras a shuiteáil. Is féidir leat an t-ordú 'getaddons' a úsáid chun na breiseáin go léir a fháil!</value>
-  </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Níor aimsíodh an t-ordú.</value>
   </data>
@@ -4752,9 +4743,6 @@
   </data>
   <data name="NKS_SHELL_HOMEPAGE_HEADER" xml:space="preserve">
     <value>Dia duit, {0}! Fáilte go dtí Nitrocid!</value>
-  </data>
-  <data name="NKS_SHELL_HOMEPAGE_NEEDSHEADLINES" xml:space="preserve">
-    <value>Cumasaigh ceannlínte ar logáil isteach chun fothaí RSS a thaispeáint</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_SETTINGS" xml:space="preserve">
     <value>Socruithe</value>
