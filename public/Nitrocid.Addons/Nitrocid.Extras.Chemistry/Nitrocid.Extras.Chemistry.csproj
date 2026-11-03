@@ -34,7 +34,7 @@
   <!-- Extras.Chemistry addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="ChemiStar" Version="1.2.0" />
+    <PackageReference Include="ChemiStar" Version="1.2.0.1" />
   </ItemGroup>
 
 </Project>
