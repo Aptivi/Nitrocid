@@ -2747,7 +2747,7 @@
       "text": "文章过滤失败。"
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
       "text": "添加订阅源"
     },
     {
@@ -2755,7 +2755,7 @@
       "text": "全部刷新"
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
       "text": "打开订阅源主页"
     },
     {

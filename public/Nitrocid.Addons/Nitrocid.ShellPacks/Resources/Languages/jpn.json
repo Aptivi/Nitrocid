@@ -2739,7 +2739,7 @@
       "text": "記事のフィルタリングに失敗しました。"
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
       "text": "フィードを追加"
     },
     {
@@ -2747,7 +2747,7 @@
       "text": "すべて更新"
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
       "text": "フィードのホームページを開く"
     },
     {

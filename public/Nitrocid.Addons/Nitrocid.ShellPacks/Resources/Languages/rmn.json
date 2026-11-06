@@ -2740,7 +2740,7 @@
       "text": "Filtrarea articolelor a eșuat."
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
       "text": "Adaugă un flux"
     },
     {
@@ -2748,7 +2748,7 @@
       "text": "Actualizează tot"
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
       "text": "Deschide pagina principală a fluxului"
     },
     {

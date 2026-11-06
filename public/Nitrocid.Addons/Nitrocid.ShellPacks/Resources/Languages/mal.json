@@ -2742,7 +2742,7 @@
       "text": "Penapisan artikel gagal."
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
       "text": "Tambah suapan"
     },
     {
@@ -2750,7 +2750,7 @@
       "text": "Segar semula semua"
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
       "text": "Buka laman utama suapan"
     },
     {

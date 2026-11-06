@@ -2748,7 +2748,7 @@
       "text": "Das Filtern der Artikel ist fehlgeschlagen."
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
       "text": "Fügt einen Feed hinzu"
     },
     {
@@ -2756,7 +2756,7 @@
       "text": "Alle aktualisieren"
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
       "text": "Feed-Homepage öffnen"
     },
     {

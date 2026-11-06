@@ -2740,7 +2740,7 @@
       "text": "Makale filtreleme başarısız oldu."
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
       "text": "Akış ekler"
     },
     {
@@ -2748,7 +2748,7 @@
       "text": "Tümünü yenile"
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
       "text": "Akış ana sayfasını aç"
     },
     {

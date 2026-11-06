@@ -2742,7 +2742,7 @@
       "text": "Filtraggio degli articoli non riuscito."
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
       "text": "Aggiunge un feed"
     },
     {
@@ -2750,7 +2750,7 @@
       "text": "Aggiorna tutto"
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
       "text": "Apri la homepage del feed"
     },
     {

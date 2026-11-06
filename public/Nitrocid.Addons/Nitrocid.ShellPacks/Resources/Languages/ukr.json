@@ -2739,7 +2739,7 @@
       "text": "Не вдалося відфільтрувати статті."
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
       "text": "Додати стрічку"
     },
     {
@@ -2747,7 +2747,7 @@
       "text": "Оновити все"
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
       "text": "Відкрити головну сторінку стрічки"
     },
     {

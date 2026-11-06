@@ -2765,7 +2765,7 @@
       "text": "فشلت عملية تصفية المقالات."
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
       "text": "إضافة موجز"
     },
     {
@@ -2773,7 +2773,7 @@
       "text": "تحديث الكل"
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
       "text": "فتح الصفحة الرئيسية للموجز"
     },
     {

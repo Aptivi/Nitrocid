@@ -2740,7 +2740,7 @@
       "text": "기사 필터링에 실패했습니다."
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
       "text": "피드 추가"
     },
     {
@@ -2748,7 +2748,7 @@
       "text": "모두 새로 고침"
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
       "text": "피드 홈페이지 열기"
     },
     {

@@ -2739,7 +2739,7 @@
       "text": "Gagal menyaring artikel."
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
       "text": "Menambahkan umpan"
     },
     {
@@ -2747,7 +2747,7 @@
       "text": "Segarkan semua"
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
       "text": "Buka beranda umpan"
     },
     {

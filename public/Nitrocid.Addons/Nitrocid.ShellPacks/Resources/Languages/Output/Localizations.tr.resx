@@ -2107,13 +2107,13 @@
   <data name="NKS_SHELLPACKS_RSS_READERCLI_FILTERFAILED" xml:space="preserve">
     <value>Makale filtreleme başarısız oldu.</value>
   </data>
-  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE" xml:space="preserve">
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED" xml:space="preserve">
     <value>Akış ekler</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESHALL" xml:space="preserve">
     <value>Tümünü yenile</value>
   </data>
-  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED" xml:space="preserve">
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE" xml:space="preserve">
     <value>Akış ana sayfasını aç</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FILTERARTICLES" xml:space="preserve">

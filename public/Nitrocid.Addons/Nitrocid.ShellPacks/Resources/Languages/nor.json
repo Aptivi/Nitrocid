@@ -2743,7 +2743,7 @@
       "text": "Filtrering av artikler mislyktes."
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
       "text": "Legger til en strøm"
     },
     {
@@ -2751,7 +2751,7 @@
       "text": "Oppdater alt"
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
       "text": "Åpne strømmens hjemmeside"
     },
     {

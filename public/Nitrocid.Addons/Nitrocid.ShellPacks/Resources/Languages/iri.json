@@ -2740,7 +2740,7 @@
       "text": "Theip ar scagadh na n-alt."
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
       "text": "Cuir fotha leis"
     },
     {
@@ -2748,7 +2748,7 @@
       "text": "Athnuachan gach rud"
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
       "text": "Oscail leathanach baile an fhotha"
     },
     {

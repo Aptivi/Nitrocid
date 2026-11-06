@@ -2764,7 +2764,7 @@
       "text": "Error al filtrar los artículos."
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
       "text": "Añadir canal"
     },
     {
@@ -2772,7 +2772,7 @@
       "text": "Actualizar todo"
     },
     {
-      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_ADDFEED",
+      "loc": "NKS_SHELLPACKS_RSS_TUI_KEYBINDING_FEEDHOMEPAGE",
       "text": "Abrir página de inicio del canal"
     },
     {
