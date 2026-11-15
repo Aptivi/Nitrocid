@@ -23,4 +23,6 @@ jobs:
           for branch in $(git branch -r | grep -v '\->' | sed 's/origin\///'); do
             git branch --track "$branch" "origin/$branch" 2>/dev/null || true
           done
-          git push --mirror alternate
+          git push alternate 'refs/heads/*'
+          git push alternate 'refs/tags/*'
+          git push alternate --prune
