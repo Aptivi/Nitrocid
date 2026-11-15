@@ -19,4 +19,10 @@ jobs:
       - name: Add mirror auth info
         run: git remote add alternate https://AptiviCEO:${{ secrets.GL_APIKEY }}@gitlab.com/aptivi/main/$(echo "${{ github.repository }}" | cut -d "/" -f 2).git
       - name: Push to mirror
-        run: git push alternate
+        run: |
+          for branch in $(git branch -r | grep -v '\->' | sed 's/origin\///'); do
+            git branch --track "$branch" "origin/$branch" 2>/dev/null || true
+          done
+          git push alternate 'refs/heads/*'
+          git push alternate 'refs/tags/*'
+          git push alternate --prune
