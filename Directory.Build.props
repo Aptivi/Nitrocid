@@ -73,7 +73,7 @@
 
     <!-- KS SourceLink -->
     <ItemGroup>
-        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.403" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="11.0.100" PrivateAssets="all" />
     </ItemGroup>
     <!-- KS SourceLink End -->
 
