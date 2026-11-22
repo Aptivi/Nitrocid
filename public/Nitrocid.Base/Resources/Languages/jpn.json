@@ -9537,6 +9537,38 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC",
       "text": "ユーザー管理TUIを開く"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL",
+      "text": "二要素認証を登録する"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL",
+      "text": "二要素認証を削除する"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY",
+      "text": "セットアップキーを表示する"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR",
+      "text": "スキャン用のセットアップQRコードを表示する"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED",
+      "text": "いずれかの方法を選択して、二要素認証を設定します。選択したユーザーは保護されます。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT",
+      "text": "いずれかの方法を選択して、二要素認証を設定します。選択したユーザーはまだ保護されていません。"
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR",
+      "text": "ユーザーの二要素認証の管理に失敗しました"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA",
+      "text": "二要素認証を管理する"
     }
   ]
 }

@@ -9563,6 +9563,38 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC",
       "text": "يفتح واجهة إدارة المستخدمين النصية (TUI)"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL",
+      "text": "تفعيل المصادقة الثنائية"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL",
+      "text": "إزالة المصادقة الثنائية"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY",
+      "text": "عرض مفتاح الإعداد"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR",
+      "text": "عرض رمز الاستجابة السريعة (QR code) الخاص بالإعداد للمسح الضوئي"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED",
+      "text": "اختر أحد الخيارات لإعداد المصادقة الثنائية. المستخدم المختار محمي الآن."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT",
+      "text": "اختر أحد الخيارات لإعداد المصادقة الثنائية. المستخدم المختار غير محمي بعد."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR",
+      "text": "فشل في إدارة المصادقة الثنائية للمستخدم"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA",
+      "text": "إدارة المصادقة الثنائية"
     }
   ]
 }

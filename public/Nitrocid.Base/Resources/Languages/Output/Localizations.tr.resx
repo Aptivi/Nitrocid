@@ -7207,4 +7207,28 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC" xml:space="preserve">
     <value>Kullanıcı yönetimi TUI'sini açar</value>
   </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL" xml:space="preserve">
+    <value>İki faktörlü kimlik doğrulamayı etkinleştir</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL" xml:space="preserve">
+    <value>İki faktörlü kimlik doğrulamayı kaldır</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY" xml:space="preserve">
+    <value>Kurulum anahtarını göster</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR" xml:space="preserve">
+    <value>Tarama için kurulum QR kodunu göster</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED" xml:space="preserve">
+    <value>İki faktörlü kimlik doğrulamayı ayarlamak üzere seçeneklerden birini belirleyin. Seçili kullanıcı korunmaktadır.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT" xml:space="preserve">
+    <value>İki faktörlü kimlik doğrulamayı ayarlamak üzere seçeneklerden birini belirleyin. Seçili kullanıcı henüz korunmamaktadır.</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR" xml:space="preserve">
+    <value>Kullanıcı için iki faktörlü kimlik doğrulama yönetilemedi</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA" xml:space="preserve">
+    <value>İki faktörlü kimlik doğrulamayı yönet</value>
+  </data>
 </root>

@@ -7207,4 +7207,28 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC" xml:space="preserve">
     <value>يفتح واجهة إدارة المستخدمين النصية (TUI)</value>
   </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL" xml:space="preserve">
+    <value>تفعيل المصادقة الثنائية</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL" xml:space="preserve">
+    <value>إزالة المصادقة الثنائية</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY" xml:space="preserve">
+    <value>عرض مفتاح الإعداد</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR" xml:space="preserve">
+    <value>عرض رمز الاستجابة السريعة (QR code) الخاص بالإعداد للمسح الضوئي</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED" xml:space="preserve">
+    <value>اختر أحد الخيارات لإعداد المصادقة الثنائية. المستخدم المختار محمي الآن.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT" xml:space="preserve">
+    <value>اختر أحد الخيارات لإعداد المصادقة الثنائية. المستخدم المختار غير محمي بعد.</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR" xml:space="preserve">
+    <value>فشل في إدارة المصادقة الثنائية للمستخدم</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA" xml:space="preserve">
+    <value>إدارة المصادقة الثنائية</value>
+  </data>
 </root>

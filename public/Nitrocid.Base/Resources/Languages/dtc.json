@@ -9543,6 +9543,38 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC",
       "text": "Opent de TUI voor gebruikersbeheer"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL",
+      "text": "Tweefactorauthenticatie inschakelen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL",
+      "text": "Tweefactorauthenticatie verwijderen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY",
+      "text": "Toont de instelsleutel"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR",
+      "text": "Toont de QR-code voor het instellen (om te scannen)"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED",
+      "text": "Kies een van de opties om tweefactorauthenticatie in te stellen. De geselecteerde gebruiker is beveiligd."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT",
+      "text": "Kies een van de opties om tweefactorauthenticatie in te stellen. De geselecteerde gebruiker is nog niet beveiligd."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR",
+      "text": "Beheer van tweefactorauthenticatie voor gebruiker mislukt"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA",
+      "text": "Tweefactorauthenticatie beheren"
     }
   ]
 }

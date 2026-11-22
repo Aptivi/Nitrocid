@@ -9537,6 +9537,38 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC",
       "text": "यूज़र मैनेजमेंट TUI खोलता है"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL",
+      "text": "टू-फैक्टर ऑथेंटिकेशन एनरोल करें"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL",
+      "text": "टू-फैक्टर ऑथेंटिकेशन हटाएं"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY",
+      "text": "सेटअप की (key) दिखाएं"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR",
+      "text": "स्कैन करने के लिए सेटअप QR कोड दिखाएं"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED",
+      "text": "टू-फैक्टर ऑथेंटिकेशन सेट अप करने के लिए विकल्पों में से कोई एक चुनें। चुना गया यूज़र सुरक्षित है।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT",
+      "text": "टू-फैक्टर ऑथेंटिकेशन सेट अप करने के लिए विकल्पों में से कोई एक चुनें। चुना गया यूज़र अभी सुरक्षित नहीं है।"
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR",
+      "text": "यूज़र के लिए टू-फैक्टर ऑथेंटिकेशन मैनेज करने में विफल"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA",
+      "text": "टू-फैक्टर ऑथेंटिकेशन मैनेज करें"
     }
   ]
 }

@@ -9583,6 +9583,38 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC",
       "text": "Ouvre l'interface de gestion des utilisateurs"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL",
+      "text": "Activer l’authentification à deux facteurs"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL",
+      "text": "Supprimer l’authentification à deux facteurs"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY",
+      "text": "Afficher la clé de configuration"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR",
+      "text": "Afficher le code QR de configuration à scanner"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED",
+      "text": "Choisissez l’une des options pour configurer l’authentification à deux facteurs. L’utilisateur sélectionné est protégé."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT",
+      "text": "Choisissez l’une des options pour configurer l’authentification à deux facteurs. L’utilisateur sélectionné n’est pas encore protégé."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR",
+      "text": "Échec de la gestion de l’authentification à deux facteurs pour l’utilisateur"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA",
+      "text": "Gérer l’authentification à deux facteurs"
     }
   ]
 }

@@ -9546,6 +9546,38 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC",
       "text": "Öffnet die TUI zur Benutzerverwaltung"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL",
+      "text": "Zwei-Faktor-Authentifizierung einrichten"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL",
+      "text": "Zwei-Faktor-Authentifizierung entfernen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY",
+      "text": "Einrichtungsschlüssel anzeigen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR",
+      "text": "Einrichtungs-QR-Code zum Scannen anzeigen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED",
+      "text": "Wählen Sie eine der Optionen aus, um die Zwei-Faktor-Authentifizierung einzurichten. Der ausgewählte Benutzer ist geschützt."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT",
+      "text": "Wählen Sie eine der Optionen aus, um die Zwei-Faktor-Authentifizierung einzurichten. Der ausgewählte Benutzer ist noch nicht geschützt."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR",
+      "text": "Die Verwaltung der Zwei-Faktor-Authentifizierung für den Benutzer ist fehlgeschlagen."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA",
+      "text": "Zwei-Faktor-Authentifizierung verwalten"
     }
   ]
 }

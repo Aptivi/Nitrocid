@@ -7207,4 +7207,28 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC" xml:space="preserve">
     <value>Ανοίγει το περιβάλλον διαχείρισης χρηστών (TUI)</value>
   </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL" xml:space="preserve">
+    <value>Ενεργοποίηση ελέγχου ταυτότητας δύο παραγόντων</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL" xml:space="preserve">
+    <value>Κατάργηση ελέγχου ταυτότητας δύο παραγόντων</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY" xml:space="preserve">
+    <value>Εμφάνιση κλειδιού ρύθμισης</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR" xml:space="preserve">
+    <value>Εμφάνιση κωδικού QR ρύθμισης για σάρωση</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED" xml:space="preserve">
+    <value>Επιλέξτε μία από τις επιλογές για να ρυθμίσετε τον έλεγχο ταυτότητας δύο παραγόντων. Ο επιλεγμένος χρήστης προστατεύεται.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT" xml:space="preserve">
+    <value>Επιλέξτε μία από τις επιλογές για να ρυθμίσετε τον έλεγχο ταυτότητας δύο παραγόντων. Ο επιλεγμένος χρήστης δεν προστατεύεται ακόμη.</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR" xml:space="preserve">
+    <value>Αποτυχία διαχείρισης του ελέγχου ταυτότητας δύο παραγόντων για τον χρήστη</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA" xml:space="preserve">
+    <value>Διαχείριση ελέγχου ταυτότητας δύο παραγόντων</value>
+  </data>
 </root>

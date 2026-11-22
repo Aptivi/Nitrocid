@@ -7207,4 +7207,28 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC" xml:space="preserve">
     <value>Osclaíonn sé an comhéadan téacsbhunaithe (TUI) chun úsáideoirí a bhainistiú</value>
   </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL" xml:space="preserve">
+    <value>Cláraigh fíordheimhniú dhá fhachtóir</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL" xml:space="preserve">
+    <value>Bain fíordheimhniú dhá fhachtóir</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY" xml:space="preserve">
+    <value>Taispeánann sé an eochair shocraithe</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR" xml:space="preserve">
+    <value>Taispeánann sé an cód QR socraithe le scanadh</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED" xml:space="preserve">
+    <value>Roghnaigh ceann de na roghanna chun fíordheimhniú dhá fhachtóir a shocrú. Tá an t-úsáideoir roghnaithe faoi chosaint.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT" xml:space="preserve">
+    <value>Roghnaigh ceann de na roghanna chun fíordheimhniú dhá fhachtóir a shocrú. Níl an t-úsáideoir roghnaithe faoi chosaint go fóill.</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR" xml:space="preserve">
+    <value>Theip ar bhainistiú an fhíordheimhnithe dhá fhachtóir don úsáideoir</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA" xml:space="preserve">
+    <value>Bainistigh fíordheimhniú dhá fhachtóir</value>
+  </data>
 </root>

@@ -9538,6 +9538,38 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC",
       "text": "Ανοίγει το περιβάλλον διαχείρισης χρηστών (TUI)"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL",
+      "text": "Ενεργοποίηση ελέγχου ταυτότητας δύο παραγόντων"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL",
+      "text": "Κατάργηση ελέγχου ταυτότητας δύο παραγόντων"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY",
+      "text": "Εμφάνιση κλειδιού ρύθμισης"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR",
+      "text": "Εμφάνιση κωδικού QR ρύθμισης για σάρωση"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED",
+      "text": "Επιλέξτε μία από τις επιλογές για να ρυθμίσετε τον έλεγχο ταυτότητας δύο παραγόντων. Ο επιλεγμένος χρήστης προστατεύεται."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT",
+      "text": "Επιλέξτε μία από τις επιλογές για να ρυθμίσετε τον έλεγχο ταυτότητας δύο παραγόντων. Ο επιλεγμένος χρήστης δεν προστατεύεται ακόμη."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR",
+      "text": "Αποτυχία διαχείρισης του ελέγχου ταυτότητας δύο παραγόντων για τον χρήστη"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA",
+      "text": "Διαχείριση ελέγχου ταυτότητας δύο παραγόντων"
     }
   ]
 }

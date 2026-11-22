@@ -9538,6 +9538,38 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC",
       "text": "Kullanıcı yönetimi TUI'sini açar"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL",
+      "text": "İki faktörlü kimlik doğrulamayı etkinleştir"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL",
+      "text": "İki faktörlü kimlik doğrulamayı kaldır"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY",
+      "text": "Kurulum anahtarını göster"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR",
+      "text": "Tarama için kurulum QR kodunu göster"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED",
+      "text": "İki faktörlü kimlik doğrulamayı ayarlamak üzere seçeneklerden birini belirleyin. Seçili kullanıcı korunmaktadır."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT",
+      "text": "İki faktörlü kimlik doğrulamayı ayarlamak üzere seçeneklerden birini belirleyin. Seçili kullanıcı henüz korunmamaktadır."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR",
+      "text": "Kullanıcı için iki faktörlü kimlik doğrulama yönetilemedi"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA",
+      "text": "İki faktörlü kimlik doğrulamayı yönet"
     }
   ]
 }

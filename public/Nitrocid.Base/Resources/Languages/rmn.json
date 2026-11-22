@@ -9538,6 +9538,38 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_USERMANTUI_DESC",
       "text": "Deschide interfața text (TUI) pentru gestionarea utilizatorilor"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL",
+      "text": "Activare autentificare cu doi factori"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL",
+      "text": "Eliminare autentificare cu doi factori"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY",
+      "text": "Afișează cheia de configurare"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR",
+      "text": "Afișează codul QR de configurare pentru scanare"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED",
+      "text": "Selectați una dintre opțiuni pentru a configura autentificarea cu doi factori. Utilizatorul selectat este protejat."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT",
+      "text": "Selectați una dintre opțiuni pentru a configura autentificarea cu doi factori. Utilizatorul selectat nu este încă protejat."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR",
+      "text": "Gestionarea autentificării cu doi factori pentru utilizator a eșuat"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA",
+      "text": "Gestionare autentificare cu doi factori"
     }
   ]
 }
