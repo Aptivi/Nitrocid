@@ -67,10 +67,6 @@ Commands are still available for use to manage both users and groups, such as
 `adduser` or `rmuser`, for those who prefer to use the command-line to manage
 users and groups.
 
-(Note that not all features are available in the TUIs, such as setting up
-two-factor authentication. You'll still have to use the `2fa` command, but
-this limitation will be resolved in a future update.)
-
 POP mail
 --------
 

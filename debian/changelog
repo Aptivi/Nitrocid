@@ -1,6 +1,7 @@
 nitrocid-29 (4.1.29.65-0.2.1.4-1) noble; urgency=medium
 
-  * Please populate changelogs here
+  * Added 2FA tools to the user management TUI
+  * General improvements and bug fixes
 
  -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sat, 21 Nov 2026 22:40:03 +0300
 

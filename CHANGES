@@ -1,9 +1,10 @@
-This version is a small release that updates Terminaux with non-breaking changes.
+This version is a small release that adds two-factor authentication tools to the user management TUI.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
+- `[+]` Added 2FA tools to the user management TUI
 - `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
