@@ -9642,6 +9642,38 @@
     {
       "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID",
       "text": "Léiriú speisialta neamhbhailí ag an suíomh"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL",
+      "text": "Cláraigh fíordheimhniú dhá fhachtóir"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL",
+      "text": "Bain fíordheimhniú dhá fhachtóir"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY",
+      "text": "Taispeánann sé an eochair shocraithe"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR",
+      "text": "Taispeánann sé an cód QR socraithe le scanadh"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED",
+      "text": "Roghnaigh ceann de na roghanna chun fíordheimhniú dhá fhachtóir a shocrú. Tá an t-úsáideoir roghnaithe faoi chosaint."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT",
+      "text": "Roghnaigh ceann de na roghanna chun fíordheimhniú dhá fhachtóir a shocrú. Níl an t-úsáideoir roghnaithe faoi chosaint go fóill."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR",
+      "text": "Theip ar bhainistiú an fhíordheimhnithe dhá fhachtóir don úsáideoir"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA",
+      "text": "Bainistigh fíordheimhniú dhá fhachtóir"
     }
   ]
 }

@@ -7285,4 +7285,28 @@
   <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID" xml:space="preserve">
     <value>指定位置の特殊表現が無効です</value>
   </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL" xml:space="preserve">
+    <value>二要素認証を登録する</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL" xml:space="preserve">
+    <value>二要素認証を削除する</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY" xml:space="preserve">
+    <value>セットアップキーを表示する</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR" xml:space="preserve">
+    <value>スキャン用のセットアップQRコードを表示する</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED" xml:space="preserve">
+    <value>いずれかの方法を選択して、二要素認証を設定します。選択したユーザーは保護されます。</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT" xml:space="preserve">
+    <value>いずれかの方法を選択して、二要素認証を設定します。選択したユーザーはまだ保護されていません。</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR" xml:space="preserve">
+    <value>ユーザーの二要素認証の管理に失敗しました</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA" xml:space="preserve">
+    <value>二要素認証を管理する</value>
+  </data>
 </root>

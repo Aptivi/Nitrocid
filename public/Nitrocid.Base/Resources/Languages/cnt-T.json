@@ -9644,6 +9644,38 @@
     {
       "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID",
       "text": "位置處的特殊表示無效"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL",
+      "text": "啟用雙重驗證"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL",
+      "text": "移除雙重驗證"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY",
+      "text": "顯示設定金鑰"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR",
+      "text": "顯示用於掃描的設定 QR Code"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED",
+      "text": "選擇其中一種方式來設定雙重驗證。選定的使用者已受到保護。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT",
+      "text": "選擇其中一種方式來設定雙重驗證。選定的使用者尚未受到保護。"
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR",
+      "text": "無法管理使用者的雙重驗證"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA",
+      "text": "管理雙重驗證"
     }
   ]
 }

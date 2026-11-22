@@ -9645,6 +9645,38 @@
     {
       "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID",
       "text": "Ugyldig spesialrepresentasjon ved posisjon"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL",
+      "text": "Aktiver tofaktorautentisering"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL",
+      "text": "Fjern tofaktorautentisering"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY",
+      "text": "Viser oppsettsnøkkelen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR",
+      "text": "Viser QR-koden for oppsett (for skanning)"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED",
+      "text": "Velg et av alternativene for å sette opp tofaktorautentisering. Den valgte brukeren er beskyttet."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT",
+      "text": "Velg et av alternativene for å sette opp tofaktorautentisering. Den valgte brukeren er ennå ikke beskyttet."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR",
+      "text": "Kunne ikke administrere tofaktorautentisering for brukeren"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA",
+      "text": "Administrer tofaktorautentisering"
     }
   ]
 }

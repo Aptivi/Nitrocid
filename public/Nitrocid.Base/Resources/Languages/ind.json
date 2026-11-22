@@ -9641,6 +9641,38 @@
     {
       "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID",
       "text": "इस स्थान पर अमान्य विशेष निरूपण है"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL",
+      "text": "tu-facter authentication enroll karen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL",
+      "text": "tu-facter authentication hataen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY",
+      "text": "setup ki (key) dikhaen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR",
+      "text": "scan karne ke liye setup QR code dikhaen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED",
+      "text": "tu-facter authentication set up karne ke liye vikalpon mein se koi ek chunen. chuna gaya user surakshit hai."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT",
+      "text": "tu-facter authentication set up karne ke liye vikalpon mein se koi ek chunen. chuna gaya user abhi surakshit nahin hai."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR",
+      "text": "user ke liye tu-facter authentication manage karne mein vifal"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA",
+      "text": "tu-facter authentication manage karen"
     }
   ]
 }

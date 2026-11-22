@@ -7285,4 +7285,28 @@
   <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID" xml:space="preserve">
     <value>Ungültige Sonderdarstellung an Position</value>
   </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL" xml:space="preserve">
+    <value>Zwei-Faktor-Authentifizierung einrichten</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL" xml:space="preserve">
+    <value>Zwei-Faktor-Authentifizierung entfernen</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY" xml:space="preserve">
+    <value>Einrichtungsschlüssel anzeigen</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR" xml:space="preserve">
+    <value>Einrichtungs-QR-Code zum Scannen anzeigen</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED" xml:space="preserve">
+    <value>Wählen Sie eine der Optionen aus, um die Zwei-Faktor-Authentifizierung einzurichten. Der ausgewählte Benutzer ist geschützt.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT" xml:space="preserve">
+    <value>Wählen Sie eine der Optionen aus, um die Zwei-Faktor-Authentifizierung einzurichten. Der ausgewählte Benutzer ist noch nicht geschützt.</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR" xml:space="preserve">
+    <value>Die Verwaltung der Zwei-Faktor-Authentifizierung für den Benutzer ist fehlgeschlagen.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA" xml:space="preserve">
+    <value>Zwei-Faktor-Authentifizierung verwalten</value>
+  </data>
 </root>

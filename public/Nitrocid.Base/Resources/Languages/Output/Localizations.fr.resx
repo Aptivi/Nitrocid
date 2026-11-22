@@ -7285,4 +7285,28 @@
   <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID" xml:space="preserve">
     <value>Représentation spéciale invalide à la position</value>
   </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL" xml:space="preserve">
+    <value>Activer l’authentification à deux facteurs</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL" xml:space="preserve">
+    <value>Supprimer l’authentification à deux facteurs</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY" xml:space="preserve">
+    <value>Afficher la clé de configuration</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR" xml:space="preserve">
+    <value>Afficher le code QR de configuration à scanner</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED" xml:space="preserve">
+    <value>Choisissez l’une des options pour configurer l’authentification à deux facteurs. L’utilisateur sélectionné est protégé.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT" xml:space="preserve">
+    <value>Choisissez l’une des options pour configurer l’authentification à deux facteurs. L’utilisateur sélectionné n’est pas encore protégé.</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR" xml:space="preserve">
+    <value>Échec de la gestion de l’authentification à deux facteurs pour l’utilisateur</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA" xml:space="preserve">
+    <value>Gérer l’authentification à deux facteurs</value>
+  </data>
 </root>

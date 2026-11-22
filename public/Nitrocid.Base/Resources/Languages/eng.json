@@ -9747,6 +9747,38 @@
     {
       "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID",
       "text": "Invalid special representation at position"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL",
+      "text": "Enroll two-factor authentication"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL",
+      "text": "Remove two-factor authentication"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY",
+      "text": "Shows the setup key"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR",
+      "text": "Shows the setup QR code for scanning"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED",
+      "text": "Select one of the choices to set up two-factor authentication. The selected user is protected."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT",
+      "text": "Select one of the choices to set up two-factor authentication. The selected user is not protected yet."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR",
+      "text": "Failed to manage two-factor authentication for user"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA",
+      "text": "Manage two-factor authentication"
     }
   ]
 }

@@ -9641,6 +9641,38 @@
     {
       "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID",
       "text": "Неприпустиме спеціальне представлення на позиції"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL",
+      "text": "Увімкнути двофакторну автентифікацію"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL",
+      "text": "Вимкнути двофакторну автентифікацію"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY",
+      "text": "Показати ключ налаштування"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR",
+      "text": "Показати QR-код для сканування та налаштування"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED",
+      "text": "Виберіть один із варіантів, щоб налаштувати двофакторну автентифікацію. Вибраний користувач захищений."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT",
+      "text": "Виберіть один із варіантів, щоб налаштувати двофакторну автентифікацію. Вибраний користувач ще не захищений."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR",
+      "text": "Не вдалося керувати двофакторною автентифікацією для користувача"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA",
+      "text": "Керування двофакторною автентифікацією"
     }
   ]
 }

@@ -9644,6 +9644,38 @@
     {
       "loc": "NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID",
       "text": "Rappresentazione speciale non valida nella posizione"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL",
+      "text": "Attiva l'autenticazione a due fattori"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL",
+      "text": "Rimuovi l'autenticazione a due fattori"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY",
+      "text": "Mostra la chiave di configurazione"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR",
+      "text": "Mostra il codice QR di configurazione da scansionare"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED",
+      "text": "Seleziona una delle opzioni per configurare l'autenticazione a due fattori. L'utente selezionato è protetto."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT",
+      "text": "Seleziona una delle opzioni per configurare l'autenticazione a due fattori. L'utente selezionato non è ancora protetto."
+    },
+    {
+      "loc": "NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR",
+      "text": "Impossibile gestire l'autenticazione a due fattori per l'utente"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA",
+      "text": "Gestisci l'autenticazione a due fattori"
     }
   ]
 }

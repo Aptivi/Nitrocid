@@ -7285,4 +7285,28 @@
   <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID" xml:space="preserve">
     <value>Rappresentazione speciale non valida nella posizione</value>
   </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL" xml:space="preserve">
+    <value>Attiva l'autenticazione a due fattori</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL" xml:space="preserve">
+    <value>Rimuovi l'autenticazione a due fattori</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY" xml:space="preserve">
+    <value>Mostra la chiave di configurazione</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR" xml:space="preserve">
+    <value>Mostra il codice QR di configurazione da scansionare</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED" xml:space="preserve">
+    <value>Seleziona una delle opzioni per configurare l'autenticazione a due fattori. L'utente selezionato è protetto.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT" xml:space="preserve">
+    <value>Seleziona una delle opzioni per configurare l'autenticazione a due fattori. L'utente selezionato non è ancora protetto.</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR" xml:space="preserve">
+    <value>Impossibile gestire l'autenticazione a due fattori per l'utente</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA" xml:space="preserve">
+    <value>Gestisci l'autenticazione a due fattori</value>
+  </data>
 </root>

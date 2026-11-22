@@ -7285,4 +7285,28 @@
   <data name="NKS_FILES_UNIX_EXCEPTION_SPECIALREPRESENTATIONINVALID" xml:space="preserve">
     <value>Invalid special representation at position</value>
   </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL" xml:space="preserve">
+    <value>Enroll two-factor authentication</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL" xml:space="preserve">
+    <value>Remove two-factor authentication</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY" xml:space="preserve">
+    <value>Shows the setup key</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR" xml:space="preserve">
+    <value>Shows the setup QR code for scanning</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED" xml:space="preserve">
+    <value>Select one of the choices to set up two-factor authentication. The selected user is protected.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT" xml:space="preserve">
+    <value>Select one of the choices to set up two-factor authentication. The selected user is not protected yet.</value>
+  </data>
+  <data name="NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR" xml:space="preserve">
+    <value>Failed to manage two-factor authentication for user</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA" xml:space="preserve">
+    <value>Manage two-factor authentication</value>
+  </data>
 </root>

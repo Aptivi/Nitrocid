@@ -250,18 +250,12 @@ namespace Nitrocid.Base.Users.Interactives
                     bool isEnrolled = TwoFactorAuthTools.IsUserEnrolled(userInstance) || TwoFactorAuthTools.IsUserEnrolledLegacy(userInstance);
                     InputChoiceInfo[] choices =
                     [
-                        // TODO: NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL -> Enroll two-factor authentication
-                        // TODO: NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL -> Remove two-factor authentication
-                        // TODO: NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY -> Shows the setup key
-                        // TODO: NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR -> Shows the setup QR code for scanning
                         new InputChoiceInfo("1", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_USERSCLI_2FA_ENROLL"), LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC"), false, false, isEnrolled),
                         new InputChoiceInfo("2", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_USERSCLI_2FA_UNENROLL"), LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC"), false, false, !isEnrolled),
                         new InputChoiceInfo("3", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPKEY"), LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC"), false, false, !isEnrolled),
                         new InputChoiceInfo("4", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_USERSCLI_2FA_SETUPQR"), LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC"), false, false, !isEnrolled),
                         new InputChoiceInfo("5", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_EXIT")),
                     ];
-                    // TODO: NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED -> Select one of the choices to set up two-factor authentication. The selected user is protected.
-                    // TODO: NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT -> Select one of the choices to set up two-factor authentication. The selected user is not protected yet.
                     int choice = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, isEnrolled ? LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT_ENROLLED") : LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_USERSCLI_2FA_PROMPT"));
                     if (choice == -1 || choice == 4)
                         break;
@@ -307,7 +301,6 @@ namespace Nitrocid.Base.Users.Interactives
             }
             catch (Exception ex)
             {
-                // TODO: NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR -> Failed to manage two-factor authentication for user
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_TWOFACTORAUTHERROR") + $" {user}: {ex.Message}");
             }
         }
@@ -321,8 +314,6 @@ namespace Nitrocid.Base.Users.Interactives
             tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEFLAGS"), ConsoleKey.F3, (user, _, _, _) => tui.ManageFlags(user)));
             tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEPERMS"), ConsoleKey.F4, (user, _, _, _) => tui.ManagePermissions(user)));
             tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGEMEMBERSHIPS"), ConsoleKey.F5, (user, _, _, _) => tui.ManageGroupMemberships(user)));
-
-            // TODO: NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA -> Manage two-factor authentication
             tui.Bindings.Add(new InteractiveTuiBinding<string>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_USERSTUI_KEYBINDING_MANAGE2FA"), ConsoleKey.F6, (user, _, _, _) => tui.ManageTwoFactorAuth(user)));
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }
